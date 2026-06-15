@@ -4,7 +4,7 @@ export type ErrorPageType = {
   errorTag: string;
   title: string;
   description: string;
-  path: string;
+  path?: string;
   session?: boolean;
 };
 export default function ErrorPage({ errorTag, title, description, path, session }: ErrorPageType) {
@@ -23,7 +23,7 @@ export default function ErrorPage({ errorTag, title, description, path, session 
           </h1>
           <p className="max-w-md text-sm leading-7 text-text-muted">{description}</p>
         </div>
-        <BackButton message={session ? "Go Back to My Dashboard" : "Go Back"} />
+        <BackButton path={path} message={session ? "Go Back to My Dashboard" : "Go Back"} />
       </div>
     </div>
   );

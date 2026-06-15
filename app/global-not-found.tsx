@@ -22,7 +22,6 @@ function newFunction() {
       errorTag="Unavailable"
       title="404 — Not Found"
       description="The path you looking for does not exist"
-      path=""
     />
   );
 }
