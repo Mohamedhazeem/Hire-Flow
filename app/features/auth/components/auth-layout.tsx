@@ -15,7 +15,6 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
           <h1 className="text-3xl font-bold text-text-heading">{title}</h1>
           <p className="text-text-muted">{subtitle}</p>
         </div>
-
         {children}
       </div>
     </div>

@@ -10,6 +10,7 @@ import { SignUpSchema } from "../schema/auth.schema";
 import { z } from "zod";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { RoleType } from "../schema/role.schema";
 
 type RegisterInput = z.input<typeof SignUpSchema>;
 
@@ -28,7 +29,7 @@ export function SignUpForm() {
     defaultValues: { role: "USER" },
   });
 
-  const [selectedRole, setSelectedRole] = useState<"RECRUITER" | "USER">("USER");
+  const [selectedRole, setSelectedRole] = useState<RoleType>("USER");
 
   const onSubmit = handleSubmit(async (data) => {
     setIsLoading(true);
