@@ -4,7 +4,7 @@ import { ActionResult, AuthType } from "../schema/auth.type";
 export function authError(error: unknown, authType: AuthType = "SIGNUP"): ActionResult {
   if (error instanceof APIError) {
     if (
-      error.body?.code === "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL" ||
+      error.body?.code?.toLowerCase().includes("already_exists") ||
       error.status === "UNPROCESSABLE_ENTITY"
     ) {
       return {
@@ -15,7 +15,7 @@ export function authError(error: unknown, authType: AuthType = "SIGNUP"): Action
           ],
         },
       };
-    } else if (error.body?.code === "EMAIL_NOT_FOUND") {
+    } else if (error.body?.code?.toLowerCase() === "email_not_found") {
       return {
         success: false,
         errors: {

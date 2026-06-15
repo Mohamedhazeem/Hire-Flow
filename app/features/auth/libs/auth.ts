@@ -3,6 +3,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import prisma from "../../../lib/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins";
+import { Roles } from "../schema/role.schema";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -16,7 +17,7 @@ export const auth = betterAuth({
       role: {
         type: "string",
         required: true,
-        defaultValue: "JOB_SEEKER",
+        defaultValue: Roles.USER,
       },
     },
   },
