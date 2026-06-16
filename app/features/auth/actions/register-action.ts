@@ -21,15 +21,21 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
   let redirectUrl: string | null = null;
 
   try {
+    const { role, ...safeSignupBody } = validation.data as RegisterInput;
+    void role;
+
     const response = await auth.api.signUpEmail({
-      body: validation.data,
+      body: safeSignupBody,
       headers: await headers(),
     });
 
     if (response?.token && response.user?.role) {
       redirectUrl = getRedirectPath(response.user);
+    } else if (response?.user) {
+      return { success: true };
     }
   } catch (error: unknown) {
+    console.log(error);
     const parsedAuthError = authError(error, "SIGNUP");
     if (parsedAuthError) {
       return parsedAuthError;

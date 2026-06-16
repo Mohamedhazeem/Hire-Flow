@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/features/auth/libs/auth";
 import { getRedirectPath } from "./app/features/auth/utils/getRedirectPath";
 
-const authPages = ["/login", "/register"];
+const authPages = ["/login", "/register", "/reset-password"];
 const protectedRoutes = ["/admin", "/recruiter", "/user"];
 
 export async function proxy(request: NextRequest) {
@@ -29,5 +29,12 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/recruiter/:path*", "/user/:path*", "/login", "/register"],
+  matcher: [
+    "/admin/:path*",
+    "/recruiter/:path*",
+    "/user/:path*",
+    "/login",
+    "/register",
+    "/reset-password",
+  ],
 };

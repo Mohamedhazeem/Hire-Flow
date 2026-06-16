@@ -42,7 +42,7 @@ export function authError(error: unknown, authType: AuthType = "SIGNUP"): Action
       form: [
         authType === "SIGNUP"
           ? "Unable to create your account. Please try again later."
-          : "Unable to sign in. Please try again later.",
+          : "Unable to sign in. Please verify your credentials or try again later.",
       ],
     },
   };
