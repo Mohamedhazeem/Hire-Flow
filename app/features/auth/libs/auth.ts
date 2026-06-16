@@ -3,6 +3,9 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import prisma from "../../../lib/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins";
+import { sendEmail } from "./email";
+import { env } from "@/app/utils/env";
+import ms from "ms";
 import { Roles } from "../schema/role.schema";
 
 export const auth = betterAuth({
@@ -11,6 +14,25 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    requireEmailVerification: true,
+    sendResetPassword: async ({ user, url, token }, request) => {
+      void sendEmail({
+        to: user.email,
+        subject: "Reset your password",
+        text: `Use this link to reset your password: ${url}`,
+      });
+    },
+    resetPasswordTokenExpiresIn: ms("5m"),
+  },
+  emailVerification: {
+    expiresIn: ms("10m"),
+    sendVerificationEmail: async ({ user, url, token }, request) => {
+      void sendEmail({
+        to: user.email,
+        subject: "Verify your email address",
+        text: `Click the link to verify your email: ${url}`,
+      });
+    },
   },
   user: {
     additionalFields: {
@@ -18,9 +40,34 @@ export const auth = betterAuth({
         type: "string",
         required: true,
         defaultValue: Roles.USER,
+        input: false,
+        transform: {
+          input: (value) => {
+            if (typeof value === "string") {
+              return value.toUpperCase();
+            }
+            return value;
+          },
+        },
       },
     },
   },
+  updateUserOnSignIn: true,
+  accountLinking: {
+    enabled: true,
+    trustedProviders: ["google", "facebook"],
+  },
+  socialProviders: {
+    google: {
+      clientId: env.data?.GOOGLE_CLIENT_ID as string,
+      clientSecret: env.data?.GOOGLE_CLIENT_SECRET as string,
+    },
+    facebook: {
+      clientId: env.data?.FACEBOOK_CLIENT_ID as string,
+      clientSecret: env.data?.FACEBOOK_CLIENT_SECRET as string,
+    },
+  },
+
   rateLimit: {
     enabled: true, // Explicitly enable it (defaults to false in development mode)
     window: 60,
@@ -33,7 +80,7 @@ export const auth = betterAuth({
       },
       "/sign-up/email": {
         window: 60,
-        max: 3,
+        max: 30,
       },
     },
   },

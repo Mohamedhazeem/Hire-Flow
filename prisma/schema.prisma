@@ -18,12 +18,24 @@ enum Role {
   ADMIN
 }
 
+model RateLimit {
+  id          String @id
+  key         String
+  count       Int
+  lastRequest BigInt
+
+  @@map("rate_limit")
+}
+
 model User {
   id            String    @id
   name          String
   email         String
   emailVerified Boolean   @default(false)
   role          Role      @default(USER)
+  banned        Boolean   @default(false)
+  banReason     String?
+  banExpiresAt  DateTime?
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt

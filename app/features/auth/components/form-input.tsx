@@ -19,7 +19,7 @@ export function FormInput({ label, id, error, register, ...props }: FormInputPro
   const passwordInput = props.type === "password";
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-1">
       <label htmlFor={id} className="block text-sm font-medium text-text-heading">
         {label}
       </label>
