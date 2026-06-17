@@ -36,7 +36,7 @@ export function LoginForm() {
     try {
       const result = await loginAction(data);
       if (!result.success) {
-        const firstError = Object.values(result.errors)[0]?.[0];
+        const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);
       }
     } catch {
@@ -60,7 +60,7 @@ export function LoginForm() {
     try {
       const result = await requestPasswordResetAction({ email });
       if (!result.success) {
-        const firstError = Object.values(result.errors)[0]?.[0];
+        const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) {
           setFormError(firstError);
         }

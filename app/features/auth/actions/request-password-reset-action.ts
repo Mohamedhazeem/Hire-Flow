@@ -8,6 +8,7 @@ import { headers } from "next/headers";
 import { env } from "@/app/utils/env";
 import type { ActionResult } from "@/app/features/auth/schema/auth.type";
 import type { z } from "zod";
+import { logger } from "@/app/utils/logger";
 
 type RequestPasswordResetInput = z.infer<typeof RequestPasswordResetSchema>;
 
@@ -37,7 +38,7 @@ export async function requestPasswordResetAction(data: unknown): Promise<ActionR
 
     const appUrl = env.data?.NEXT_PUBLIC_APP_URL;
     if (!appUrl) {
-      throw new Error("Missing NEXT_PUBLIC_APP_URL environment variable.");
+      logger.server.error("Missing NEXT_PUBLIC_APP_URL environment variable.");
     }
 
     await auth.api.requestPasswordReset({

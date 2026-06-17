@@ -5,17 +5,13 @@ import { validateWithZod } from "@/app/lib/validator";
 import { auth } from "@/app/features/auth/libs/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import type { z } from "zod";
 import { authError } from "../utils/authError";
 import { getRedirectPath } from "../utils/getRedirectPath";
-
-type LoginInput = z.infer<typeof SignInSchema>;
-type ActionResult =
-  | { success: true }
-  | { success: false; errors: Record<string, string[] | undefined> };
+import { ActionResult, LoginInputType } from "../schema/auth.type";
+import { hasUserNotVerified } from "../libs/verification";
 
 export async function loginAction(data: unknown): Promise<ActionResult> {
-  const validation = validateWithZod<LoginInput>(SignInSchema, data);
+  const validation = validateWithZod<LoginInputType>(SignInSchema, data);
 
   if (!validation.success) {
     return {
@@ -25,6 +21,14 @@ export async function loginAction(data: unknown): Promise<ActionResult> {
   }
   let redirectUrl: string | null = null;
   try {
+    const result = await hasUserNotVerified(validation.data.email);
+
+    if (result.success) {
+      return result;
+    }
+    if (result.errors?.form) {
+      return result;
+    }
     const response = await auth.api.signInEmail({
       body: {
         email: validation.data.email,

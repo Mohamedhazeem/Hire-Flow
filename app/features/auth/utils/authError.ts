@@ -3,7 +3,16 @@ import { ActionResult, AuthType } from "../schema/auth.type";
 
 export function authError(error: unknown, authType: AuthType = "SIGNUP"): ActionResult {
   if (error instanceof APIError) {
-    if (
+    if (error.body?.code?.toLowerCase() === "email_not_verified") {
+      // resend verification email here
+
+      return {
+        success: false,
+        errors: {
+          form: ["Your email is not verified. A new verification email has been sent."],
+        },
+      };
+    } else if (
       error.body?.code?.toLowerCase().includes("already_exists") ||
       error.status === "UNPROCESSABLE_ENTITY"
     ) {

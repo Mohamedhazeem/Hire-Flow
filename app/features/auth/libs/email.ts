@@ -3,9 +3,8 @@ import { Resend } from "resend";
 import { VerificationEmail } from "../components/verfication-email";
 import React from "react";
 import { render } from "react-email";
+import { logger } from "@/app/utils/logger";
 
-// Initialize the client. Fallback allows your build process to succeed
-// even if env validation happens strictly at runtime.
 const resend = new Resend(env.data?.RESEND_API_KEY || "dummy-key");
 const emailFrom = env.data?.EMAIL_FROM || "onboarding@resend.dev";
 
@@ -18,7 +17,7 @@ interface SendEmailArgs {
 export async function sendEmail({ to, subject, text }: SendEmailArgs): Promise<void> {
   // Graceful fallback for local development setup checks
   if (!env.data?.RESEND_API_KEY) {
-    console.warn(
+    logger.server.warn(
       `⚠️ [sendEmail] Missing RESEND_API_KEY. Email simulation to <${to}>:\nSubject: ${subject}\nBody: ${text}\n`,
     );
     return;
@@ -35,14 +34,11 @@ export async function sendEmail({ to, subject, text }: SendEmailArgs): Promise<v
     });
 
     if (error) {
-      console.error(`❌ [sendEmail] Provider Error while emailing ${to}:`, error.message);
+      logger.server.error(`❌ [sendEmail] Provider Error while emailing ${to}: ${error.message}`);
       return;
     }
-
-    console.log(`✅ [sendEmail] Dispatched successfully! ID: ${data?.id}`);
+    logger.server.info(`✅ [sendEmail] Dispatched successfully! ID: ${data?.id}`);
   } catch (error) {
-    // Better Auth calls sendEmail inside a non-blocking macro (void).
-    // We catch structural errors here so unexpected network breaks don't derail authentication pipelines.
-    console.error(`❌ [sendEmail] Fatal exception during delivery to ${to}:`, error);
+    logger.server.error(`❌ [sendEmail] Fatal exception during delivery to ${to}:`, error);
   }
 }

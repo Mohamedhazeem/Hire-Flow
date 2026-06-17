@@ -25,6 +25,7 @@ export const auth = betterAuth({
     resetPasswordTokenExpiresIn: ms("5m"),
   },
   emailVerification: {
+    autoSignInAfterVerification: true,
     expiresIn: ms("10m"),
     sendVerificationEmail: async ({ user, url, token }, request) => {
       void sendEmail({

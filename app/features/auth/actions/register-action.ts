@@ -5,12 +5,15 @@ import { validateWithZod } from "@/app/lib/validator";
 import { auth } from "@/app/features/auth/libs/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { ActionResult, RegisterInput } from "../schema/auth.type";
+import { ActionResult, RegisterInputType } from "../schema/auth.type";
 import { authError } from "../utils/authError";
 import { getRedirectPath } from "../utils/getRedirectPath";
+import prisma from "@/app/lib/prisma";
+import { hasUserNotVerified } from "../libs/verification";
 
 export async function registerAction(data: unknown): Promise<ActionResult> {
-  const validation = validateWithZod<RegisterInput>(SignUpSchema, data);
+  // 1. Validate form fields first
+  const validation = validateWithZod<RegisterInputType>(SignUpSchema, data);
 
   if (!validation.success) {
     return {
@@ -18,12 +21,23 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
       errors: validation.error.fieldErrors,
     };
   }
+
+  const { role, ...safeSignupBody } = validation.data as RegisterInputType;
+  void role;
+
   let redirectUrl: string | null = null;
 
   try {
-    const { role, ...safeSignupBody } = validation.data as RegisterInput;
-    void role;
+    // 2. Run the unverified user intercept check right here
+    const result = await hasUserNotVerified(validation.data.email);
 
+    if (result.success) {
+      return result;
+    }
+
+    if (result.errors?.email) {
+      return result;
+    }
     const response = await auth.api.signUpEmail({
       body: safeSignupBody,
       headers: await headers(),
@@ -37,9 +51,7 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
   } catch (error: unknown) {
     console.log(error);
     const parsedAuthError = authError(error, "SIGNUP");
-    if (parsedAuthError) {
-      return parsedAuthError;
-    }
+    if (parsedAuthError) return parsedAuthError;
   }
 
   if (redirectUrl) {

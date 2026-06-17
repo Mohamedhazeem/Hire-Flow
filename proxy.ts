@@ -15,8 +15,9 @@ export async function proxy(request: NextRequest) {
   const isProtectedRoute = protectedRoutes.some(
     (route) => pathname === route || pathname.startsWith(`${route}/`),
   );
+
   // 1. SIGNED-IN USERS: Redirect if they touch auth pages OR the generic /dashboard root
-  if (session && isAuthPage) {
+  if (session && (isAuthPage || pathname === "/")) {
     const redirectPath = getRedirectPath(session.user);
     return NextResponse.redirect(new URL(redirectPath, request.url));
   }
@@ -30,6 +31,7 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/",
     "/admin/:path*",
     "/recruiter/:path*",
     "/user/:path*",

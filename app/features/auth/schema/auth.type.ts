@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { SignUpSchema } from "./auth.schema";
+import { SignInSchema, SignUpSchema } from "./auth.schema";
 
-export type RegisterInput = z.infer<typeof SignUpSchema>;
-
+export type RegisterInputType = z.infer<typeof SignUpSchema>;
+export type LoginInputType = z.infer<typeof SignInSchema>;
 export type ActionResult =
   | { success: true }
-  | { success: false; errors: Record<string, string[] | undefined> };
+  | { success: false; errors?: Record<string, string[] | undefined> };
 
 export type AuthType = "LOGIN" | "SIGNUP";
 
