@@ -1,13 +1,14 @@
-// app/features/auth/utils/verifyUserStatus.ts
 import prisma from "@/app/lib/prisma";
 import { auth } from "../libs/auth";
 import { headers } from "next/headers";
+import { env } from "@/app/utils/env";
+import { logger } from "@/app/utils/logger";
 
 type UserStatusResult = { status: "NOT_FOUND" } | { status: "UNVERIFIED" } | { status: "VERIFIED" };
 
 export async function verifyUserStatus(
   email: string,
-  callbackURL: string,
+  callbackPath = "/verify-email",
 ): Promise<UserStatusResult> {
   const existingUser = await prisma.user.findUnique({
     where: { email },
@@ -18,6 +19,12 @@ export async function verifyUserStatus(
   }
 
   if (!existingUser.emailVerified) {
+    const appUrl = env.data?.NEXT_PUBLIC_APP_URL;
+    if (!appUrl) {
+      logger.server.error("Missing NEXT_PUBLIC_APP_URL");
+    }
+
+    const callbackURL = `${appUrl}${callbackPath.startsWith("/") ? callbackPath : `/${callbackPath}`}`;
     await auth.api.sendVerificationEmail({
       body: {
         email,

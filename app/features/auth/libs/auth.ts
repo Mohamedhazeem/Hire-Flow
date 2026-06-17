@@ -7,6 +7,7 @@ import { sendEmail } from "./email";
 import { env } from "@/app/utils/env";
 import ms from "ms";
 import { Roles } from "../schema/role.schema";
+import { headers } from "next/headers";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -90,3 +91,7 @@ export const auth = betterAuth({
 
   plugins: [admin(), nextCookies()],
 });
+
+export async function getSession() {
+  return await auth.api.getSession({ headers: await headers() });
+}

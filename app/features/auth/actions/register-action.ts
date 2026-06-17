@@ -27,27 +27,29 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
   let redirectUrl: string | null = null;
 
   try {
-    // 2. Run the unverified user intercept check right here
-    const status = await verifyUserStatus(validation.data.email, "/");
+    const userStatus = await verifyUserStatus(validation.data.email);
 
-    if (status.status === "UNVERIFIED") {
-      return {
-        success: false,
-        errors: {
-          form: [
-            "This email is already registered but not verified. A new verification link has been sent.",
-          ],
-        },
-      };
-    }
+    switch (userStatus.status) {
+      case "NOT_FOUND":
+        break; // continue signup
 
-    if (status.status === "VERIFIED") {
-      return {
-        success: false,
-        errors: {
-          form: ["This email is already registered. Please sign in instead."],
-        },
-      };
+      case "UNVERIFIED":
+        return {
+          success: false,
+          errors: {
+            form: [
+              "Your account already exists but is not verified. A new verification email has been sent.",
+            ],
+          },
+        };
+
+      case "VERIFIED":
+        return {
+          success: false,
+          errors: {
+            form: ["An account with this email already exists."],
+          },
+        };
     }
 
     const response = await auth.api.signUpEmail({

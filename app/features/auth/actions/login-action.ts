@@ -21,26 +21,27 @@ export async function loginAction(data: unknown): Promise<ActionResult> {
   }
   let redirectUrl: string | null = null;
   try {
-    const status = await verifyUserStatus(validation.data.email, "/");
+    const userStatus = await verifyUserStatus(validation.data.email);
 
-    if (status.status === "NOT_FOUND") {
-      return {
-        success: false,
-        errors: {
-          form: ["No account found for this email. Please register first."],
-        },
-      };
-    }
+    switch (userStatus.status) {
+      case "NOT_FOUND":
+        return {
+          success: false,
+          errors: {
+            email: ["No account found with this email."],
+          },
+        };
 
-    if (status.status === "UNVERIFIED") {
-      return {
-        success: false,
-        errors: {
-          form: [
-            "Your email is not verified yet. A verification link has been resent to your inbox.",
-          ],
-        },
-      };
+      case "UNVERIFIED":
+        return {
+          success: false,
+          errors: {
+            email: ["Your email is not verified. A new verification email has been sent."],
+          },
+        };
+
+      case "VERIFIED":
+        break;
     }
 
     const response = await auth.api.signInEmail({
