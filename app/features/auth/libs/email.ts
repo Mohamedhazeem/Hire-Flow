@@ -1,6 +1,7 @@
 import { env } from "@/app/utils/env";
 import { Resend } from "resend";
 import { VerificationEmail } from "../components/verfication-email";
+import { ResetPasswordEmail } from "../components/reset-password-email";
 import React from "react";
 import { render } from "react-email";
 import { logger } from "@/app/utils/logger";
@@ -11,21 +12,22 @@ const emailFrom = env.data?.EMAIL_FROM || "onboarding@resend.dev";
 interface SendEmailArgs {
   to: string;
   subject: string;
-  text: string;
+  url: string;
+  type: "verification" | "reset";
 }
 
-export async function sendEmail({ to, subject, text }: SendEmailArgs): Promise<void> {
+export async function sendEmail({ to, subject, url, type }: SendEmailArgs): Promise<void> {
   // Graceful fallback for local development setup checks
   if (!env.data?.RESEND_API_KEY) {
     logger.server.warn(
-      `⚠️ [sendEmail] Missing RESEND_API_KEY. Email simulation to <${to}>:\nSubject: ${subject}\nBody: ${text}\n`,
+      `⚠️ [sendEmail] Missing RESEND_API_KEY. Email simulation to <${to}>:\nSubject: ${subject}\nBody: ${url}\n`,
     );
     return;
   }
 
   try {
-    const htmlComponent = await render(React.createElement(VerificationEmail, { url: text }));
-
+    const emailComponent = type === "reset" ? ResetPasswordEmail : VerificationEmail;
+    const htmlComponent = await render(React.createElement(emailComponent, { url }));
     const { data, error } = await resend.emails.send({
       from: emailFrom,
       to: [to],

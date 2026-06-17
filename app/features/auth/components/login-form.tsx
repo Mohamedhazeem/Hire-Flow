@@ -18,6 +18,7 @@ type SignInInput = z.infer<typeof SignInSchema>;
 export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const {
     register,
@@ -49,6 +50,7 @@ export function LoginForm() {
   const handleForgotPassword = async () => {
     setIsLoading(true);
     setFormError(null);
+    setSuccessMessage(null);
 
     const email = getValues("email");
     if (!email) {
@@ -65,7 +67,9 @@ export function LoginForm() {
           setFormError(firstError);
         }
       } else {
-        setFormError("If that email is registered, reset instructions have been sent.");
+        setSuccessMessage(
+          result.message ?? "If that email is registered, reset instructions have been sent.",
+        );
       }
     } catch {
       setFormError("An unexpected error occurred. Please try again.");
@@ -77,6 +81,11 @@ export function LoginForm() {
   return (
     <AuthLayout title="Welcome Back" subtitle="Sign in to your account">
       <form onSubmit={onSubmit} className="space-y-6">
+        {successMessage ? (
+          <div className="bg-success/10 border border-success/50 text-success px-4 py-3 rounded-lg text-sm">
+            {successMessage}
+          </div>
+        ) : null}
         {formError && (
           <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
             {formError}

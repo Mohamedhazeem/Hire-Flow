@@ -8,8 +8,7 @@ import { redirect } from "next/navigation";
 import { ActionResult, RegisterInputType } from "../schema/auth.type";
 import { authError } from "../utils/authError";
 import { getRedirectPath } from "../utils/getRedirectPath";
-import prisma from "@/app/lib/prisma";
-import { hasUserNotVerified } from "../libs/verification";
+import { verifyUserStatus } from "../libs/verification";
 
 export async function registerAction(data: unknown): Promise<ActionResult> {
   // 1. Validate form fields first
@@ -29,15 +28,28 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
 
   try {
     // 2. Run the unverified user intercept check right here
-    const result = await hasUserNotVerified(validation.data.email);
+    const status = await verifyUserStatus(validation.data.email, "/");
 
-    if (result.success) {
-      return result;
+    if (status.status === "UNVERIFIED") {
+      return {
+        success: false,
+        errors: {
+          form: [
+            "This email is already registered but not verified. A new verification link has been sent.",
+          ],
+        },
+      };
     }
 
-    if (result.errors?.email) {
-      return result;
+    if (status.status === "VERIFIED") {
+      return {
+        success: false,
+        errors: {
+          form: ["This email is already registered. Please sign in instead."],
+        },
+      };
     }
+
     const response = await auth.api.signUpEmail({
       body: safeSignupBody,
       headers: await headers(),

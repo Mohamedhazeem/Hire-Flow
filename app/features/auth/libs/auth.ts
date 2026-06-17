@@ -15,11 +15,12 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: true,
-    sendResetPassword: async ({ user, url, token }, request) => {
+    sendResetPassword: async ({ user, url }) => {
       void sendEmail({
         to: user.email,
         subject: "Reset your password",
-        text: `Use this link to reset your password: ${url}`,
+        url,
+        type: "reset",
       });
     },
     resetPasswordTokenExpiresIn: ms("5m"),
@@ -27,11 +28,12 @@ export const auth = betterAuth({
   emailVerification: {
     autoSignInAfterVerification: true,
     expiresIn: ms("10m"),
-    sendVerificationEmail: async ({ user, url, token }, request) => {
+    sendVerificationEmail: async ({ user, url }) => {
       void sendEmail({
         to: user.email,
         subject: "Verify your email address",
-        text: `Click the link to verify your email: ${url}`,
+        url,
+        type: "verification",
       });
     },
   },

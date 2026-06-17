@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthLayout } from "./auth-layout";
@@ -23,12 +23,20 @@ export function ResetPasswordForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<ResetPasswordInput>({
     resolver: zodResolver(ResetPasswordSchema),
     mode: "onChange",
     defaultValues: { token },
   });
+
+  // Sync token value dynamically if URL finishes parsing late
+  useEffect(() => {
+    if (token) {
+      setValue("token", token, { shouldValidate: true });
+    }
+  }, [token, setValue]);
 
   const onSubmit = handleSubmit(async (data) => {
     setIsLoading(true);
@@ -37,7 +45,7 @@ export function ResetPasswordForm() {
     try {
       const result = await resetPasswordAction(data);
       if (!result.success) {
-        const firstError = Object.values(result.errors)[0]?.[0];
+        const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);
       }
     } catch {
@@ -59,14 +67,8 @@ export function ResetPasswordForm() {
           </div>
         )}
 
-        <FormInput
-          label="Reset Token"
-          id="token"
-          type="text"
-          placeholder="Paste the reset token"
-          register={register("token")}
-          error={errors.token}
-        />
+        {/* Secretly tracks the token without showing it to the user */}
+        <input type="hidden" {...register("token")} />
 
         <FormInput
           label="New Password"

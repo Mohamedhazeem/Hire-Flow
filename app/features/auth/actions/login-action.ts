@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import { authError } from "../utils/authError";
 import { getRedirectPath } from "../utils/getRedirectPath";
 import { ActionResult, LoginInputType } from "../schema/auth.type";
-import { hasUserNotVerified } from "../libs/verification";
+import { verifyUserStatus } from "../libs/verification";
 
 export async function loginAction(data: unknown): Promise<ActionResult> {
   const validation = validateWithZod<LoginInputType>(SignInSchema, data);
@@ -21,14 +21,28 @@ export async function loginAction(data: unknown): Promise<ActionResult> {
   }
   let redirectUrl: string | null = null;
   try {
-    const result = await hasUserNotVerified(validation.data.email);
+    const status = await verifyUserStatus(validation.data.email, "/");
 
-    if (result.success) {
-      return result;
+    if (status.status === "NOT_FOUND") {
+      return {
+        success: false,
+        errors: {
+          form: ["No account found for this email. Please register first."],
+        },
+      };
     }
-    if (result.errors?.form) {
-      return result;
+
+    if (status.status === "UNVERIFIED") {
+      return {
+        success: false,
+        errors: {
+          form: [
+            "Your email is not verified yet. A verification link has been resent to your inbox.",
+          ],
+        },
+      };
     }
+
     const response = await auth.api.signInEmail({
       body: {
         email: validation.data.email,

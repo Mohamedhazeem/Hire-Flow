@@ -36,6 +36,7 @@ export const ForgotPasswordSchema = z.object({
 export const RequestPasswordResetSchema = ForgotPasswordSchema;
 
 export const ResetPasswordSchema = z.object({
+  email: emailSchema,
   token: z.string().min(1, "Invalid reset token"),
   newPassword: PasswordSchema,
 });

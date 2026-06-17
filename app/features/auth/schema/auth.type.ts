@@ -1,10 +1,19 @@
 import { z } from "zod";
-import { SignInSchema, SignUpSchema } from "./auth.schema";
+import {
+  ForgotPasswordSchema,
+  RequestPasswordResetSchema,
+  ResetPasswordSchema,
+  SignInSchema,
+  SignUpSchema,
+} from "./auth.schema";
 
 export type RegisterInputType = z.infer<typeof SignUpSchema>;
 export type LoginInputType = z.infer<typeof SignInSchema>;
+export type ForgotPasswordType = z.infer<typeof ForgotPasswordSchema>;
+export type RequestPasswordResetType = z.infer<typeof RequestPasswordResetSchema>;
+export type ResetPasswordType = z.infer<typeof ResetPasswordSchema>;
 export type ActionResult =
-  | { success: true }
+  | { success: true; message?: string }
   | { success: false; errors?: Record<string, string[] | undefined> };
 
 export type AuthType = "LOGIN" | "SIGNUP";

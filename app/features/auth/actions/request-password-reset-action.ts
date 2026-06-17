@@ -1,61 +1,60 @@
+// app/features/auth/actions/requestPasswordResetAction.ts
 "use server";
 
 import { RequestPasswordResetSchema } from "@/app/features/auth/schema/auth.schema";
 import { validateWithZod } from "@/app/lib/validator";
 import { auth } from "@/app/features/auth/libs/auth";
-import { prisma } from "@/app/lib/prisma";
 import { headers } from "next/headers";
-import { env } from "@/app/utils/env";
-import type { ActionResult } from "@/app/features/auth/schema/auth.type";
-import type { z } from "zod";
 import { logger } from "@/app/utils/logger";
 
-type RequestPasswordResetInput = z.infer<typeof RequestPasswordResetSchema>;
+import type { ActionResult, RequestPasswordResetType } from "@/app/features/auth/schema/auth.type";
+import { verifyUserStatus } from "../libs/verification";
 
 export async function requestPasswordResetAction(data: unknown): Promise<ActionResult> {
-  const validation = validateWithZod<RequestPasswordResetInput>(RequestPasswordResetSchema, data);
+  const validation = validateWithZod<RequestPasswordResetType>(RequestPasswordResetSchema, data);
 
   if (!validation.success) {
-    return {
-      success: false,
-      errors: validation.error.fieldErrors,
-    };
+    return { success: false, errors: validation.error.fieldErrors };
   }
 
-  try {
-    const existingUser = await prisma.user.findUnique({
-      where: { email: validation.data.email },
-    });
+  const email = validation.data.email;
 
-    if (!existingUser) {
+  try {
+    // Execute shared database checking and email verification routing rules
+    const userState = await verifyUserStatus(email, `/login`);
+
+    if (userState.status === "NOT_FOUND") {
       return {
         success: false,
-        errors: {
-          email: ["Email address not found. Please register first."],
-        },
+        errors: { email: ["Email address not found. Please register first."] },
       };
     }
 
-    const appUrl = env.data?.NEXT_PUBLIC_APP_URL;
-    if (!appUrl) {
-      logger.server.error("Missing NEXT_PUBLIC_APP_URL environment variable.");
+    if (userState.status === "UNVERIFIED") {
+      return {
+        success: true,
+        message: "Your email is not verified. A fresh verification link has been sent.",
+      };
     }
 
+    // If status is "VERIFIED", proceed safely with the core reset pipeline
     await auth.api.requestPasswordReset({
       body: {
-        email: validation.data.email,
-        redirectTo: `${appUrl}/reset-password`,
+        email,
+        redirectTo: `/reset-password`,
       },
       headers: await headers(),
     });
 
-    return { success: true };
-  } catch {
+    return {
+      success: true,
+      message: "If that email is registered, reset instructions have been sent.",
+    };
+  } catch (error) {
+    logger.server.error("Password reset failure exception:", error);
     return {
       success: false,
-      errors: {
-        form: ["Unable to send reset instructions. Please try again later."],
-      },
+      errors: { form: ["Unable to send reset instructions. Please try again later."] },
     };
   }
 }
