@@ -30,6 +30,10 @@ Before making code changes:
 5. Read relevant feature files
 6. Read existing implementations
 
+# Rule
+
+Respond ONLY with code blocks. No intro. No outro. Max 20 lines. Use placeholders.
+
 Never create a new pattern when an existing pattern already exists.
 
 Prefer consistency over novelty.

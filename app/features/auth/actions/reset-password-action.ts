@@ -12,7 +12,7 @@ import prisma from "@/app/lib/prisma";
 export async function resetPasswordAction(data: unknown): Promise<ActionResult> {
   // 1. Structural schema validation
   const validation = validateWithZod<ResetPasswordType>(ResetPasswordSchema, data);
-  console.log(validation);
+
   if (!validation.success) {
     return {
       success: false,
@@ -32,7 +32,6 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
       },
     });
 
-    console.log("Verification Record Found:", verificationRecord);
     if (!verificationRecord || new Date() > verificationRecord.expiresAt) {
       return {
         success: false,
@@ -92,8 +91,7 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
     });
 
     shouldRedirect = true;
-  } catch (error: unknown) {
-    console.error("Password reset failure exception:", error);
+  } catch {
     return {
       success: false,
       errors: {
@@ -104,7 +102,6 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
 
   // 4. Redirect cleanly outside the try/catch block
   if (shouldRedirect) {
-    console.warn("redirect");
     redirect("/login?reset=success");
   }
 
