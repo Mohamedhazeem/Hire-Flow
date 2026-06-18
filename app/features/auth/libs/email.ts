@@ -1,7 +1,7 @@
 import { env } from "@/app/utils/env";
 import { Resend } from "resend";
-import { VerificationEmail } from "../components/verfication-email";
-import { ResetPasswordEmail } from "../components/reset-password-email";
+import { VerificationEmail } from "../components/email/verfication-email";
+import { ResetPasswordEmail } from "../components/email/reset-password-email";
 import React from "react";
 import { render } from "react-email";
 import { logger } from "@/app/utils/logger";

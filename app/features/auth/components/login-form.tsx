@@ -14,8 +14,13 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 type SignInInput = z.infer<typeof SignInSchema>;
+
+type LoginFormProps = {
+  pageMessage?: string;
+};
+
 // LoginForm.tsx
-export function LoginForm() {
+export function LoginForm({ pageMessage }: LoginFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -36,12 +41,19 @@ export function LoginForm() {
 
     try {
       const result = await loginAction(data);
-      if (!result.success) {
+      if (result && !result.success) {
         const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);
+        setIsLoading(false); // Only turn off loading if it actually failed
+        return;
       }
-    } catch {
+    } catch (error) {
+      if (error instanceof Error && error.message.includes("NEXT_REDIRECT")) {
+        return;
+      }
+
       setFormError("An unexpected error occurred. Please try again.");
+      setIsLoading(false);
     } finally {
       setIsLoading(false);
     }
@@ -80,6 +92,11 @@ export function LoginForm() {
 
   return (
     <AuthLayout title="Welcome Back" subtitle="Sign in to your account">
+      {pageMessage ? (
+        <div className="mb-4 rounded-lg border border-success/50 bg-success/10 px-4 py-3 text-sm text-success">
+          {pageMessage}
+        </div>
+      ) : null}
       <form onSubmit={onSubmit} className="space-y-6">
         {successMessage ? (
           <div className="bg-success/10 border border-success/50 text-success px-4 py-3 rounded-lg text-sm">

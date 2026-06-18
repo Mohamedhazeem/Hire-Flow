@@ -7,11 +7,12 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import type { ActionResult, ResetPasswordType } from "@/app/features/auth/schema/auth.type";
 import { verifyUserStatus } from "../libs/verification";
+import prisma from "@/app/lib/prisma";
 
 export async function resetPasswordAction(data: unknown): Promise<ActionResult> {
   // 1. Structural schema validation
   const validation = validateWithZod<ResetPasswordType>(ResetPasswordSchema, data);
-
+  console.log(validation);
   if (!validation.success) {
     return {
       success: false,
@@ -23,7 +24,43 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
 
   try {
     // 1. Verify that the entered email belongs to an existing, verified account.
-    const userState = await verifyUserStatus(validation.data.email, "/login");
+    const verificationRecord = await prisma.verification.findFirst({
+      where: {
+        identifier: {
+          contains: validation.data.token,
+        },
+      },
+    });
+
+    console.log("Verification Record Found:", verificationRecord);
+    if (!verificationRecord || new Date() > verificationRecord.expiresAt) {
+      return {
+        success: false,
+        errors: {
+          form: ["Your reset token has expired or is invalid. Please request a new link."],
+        },
+      };
+    }
+
+    // 4. Extract the target user's ID out of Better Auth's prefixed identifier string
+    // Better Auth formats this field as: "reset-password:USER_ID_HERE"
+
+    // 5. Query the User table using that ID to get their clean email address
+    const targetUser = await prisma.user.findUnique({
+      where: { id: verificationRecord.value },
+    });
+
+    if (!targetUser) {
+      return {
+        success: false,
+        errors: {
+          form: ["This account no longer exists in our database."],
+        },
+      };
+    }
+
+    // 6. Pass the retrieved email to your custom verifyUserStatus helper
+    const userState = await verifyUserStatus(targetUser.email, "/login");
 
     if (userState.status === "NOT_FOUND") {
       return {
@@ -67,6 +104,7 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
 
   // 4. Redirect cleanly outside the try/catch block
   if (shouldRedirect) {
+    console.warn("redirect");
     redirect("/login?reset=success");
   }
 

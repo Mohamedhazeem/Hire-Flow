@@ -8,21 +8,17 @@ export const metadata = {
 type Props = {
   searchParams: Promise<{
     verified?: string;
+    reset?: string; // 👈 1. Declare the password reset query string type
   }>;
 };
-
 export default async function LoginPage({ searchParams }: Props) {
   const params = await searchParams;
+  const pageMessage =
+    params.verified === "success"
+      ? "Email verified successfully. Please sign in."
+      : params.reset === "success"
+        ? "Password updated successfully! Please sign in with your new password."
+        : undefined;
 
-  return (
-    <>
-      {params.verified === "success" && (
-        <div className="mb-6 rounded-lg border border-success/50 bg-success/10 px-4 py-3 text-sm text-success">
-          Email verified successfully. Please sign in.
-        </div>
-      )}
-
-      <LoginForm />
-    </>
-  );
+  return <LoginForm pageMessage={pageMessage} />;
 }

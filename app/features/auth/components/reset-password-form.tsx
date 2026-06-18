@@ -67,6 +67,15 @@ export function ResetPasswordForm() {
           </div>
         )}
 
+        {/* <FormInput
+          label="Email Address"
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          register={register("email")}
+          error={errors.email}
+        /> */}
+
         {/* Secretly tracks the token without showing it to the user */}
         <input type="hidden" {...register("token")} />
 

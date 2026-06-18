@@ -5,7 +5,7 @@ import { getRedirectPath } from "./app/features/auth/utils/getRedirectPath";
 const authPages = ["/login", "/register", "/reset-password", "/verify-email"];
 const protectedRoutes = ["/admin", "/recruiter", "/user"];
 
-export async function proxy(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session = await auth.api.getSession({
     headers: request.headers,

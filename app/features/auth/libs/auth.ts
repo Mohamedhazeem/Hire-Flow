@@ -24,11 +24,11 @@ export const auth = betterAuth({
         type: "reset",
       });
     },
-    resetPasswordTokenExpiresIn: ms("5m"),
+    resetPasswordTokenExpiresIn: ms("5m") / 1000,
   },
   emailVerification: {
     autoSignInAfterVerification: true,
-    expiresIn: ms("10m"),
+    expiresIn: ms("10m") / 1000,
     sendVerificationEmail: async ({ user, url }) => {
       void sendEmail({
         to: user.email,
