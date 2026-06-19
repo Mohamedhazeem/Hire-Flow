@@ -33,7 +33,7 @@ export const ForgotPasswordSchema = z.object({
   email: emailSchema,
 });
 
-export const RequestPasswordResetSchema = ForgotPasswordSchema;
+// export const RequestPasswordResetSchema = ForgotPasswordSchema;
 
 export const ResetPasswordSchema = z.object({
   token: z.string().min(1, "Invalid reset token"),

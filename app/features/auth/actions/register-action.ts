@@ -63,7 +63,6 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
       return { success: true };
     }
   } catch (error: unknown) {
-    console.log(error);
     const parsedAuthError = authError(error, "SIGNUP");
     if (parsedAuthError) return parsedAuthError;
   }

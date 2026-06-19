@@ -1,7 +1,6 @@
 import { z } from "zod";
 import {
   ForgotPasswordSchema,
-  RequestPasswordResetSchema,
   ResetPasswordSchema,
   SignInSchema,
   SignUpSchema,
@@ -10,7 +9,6 @@ import {
 export type RegisterInputType = z.infer<typeof SignUpSchema>;
 export type LoginInputType = z.infer<typeof SignInSchema>;
 export type ForgotPasswordType = z.infer<typeof ForgotPasswordSchema>;
-export type RequestPasswordResetType = z.infer<typeof RequestPasswordResetSchema>;
 export type ResetPasswordType = z.infer<typeof ResetPasswordSchema>;
 export type ActionResult =
   | { success: true; message?: string }
