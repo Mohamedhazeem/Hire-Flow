@@ -1,6 +1,5 @@
 "use client";
 
-import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState, useTransition } from "react";
 import { socialSignInAction } from "@/app/features/auth/actions/social-signin-action";
@@ -12,14 +11,6 @@ const providers = [
     icon: FcGoogle,
     // Google brand styles
     styles: "bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-gray-500",
-    iconStyles: "text-white",
-  },
-  {
-    id: "facebook" as const,
-    label: "Continue with Facebook",
-    icon: FaFacebook,
-    // Facebook brand styles
-    styles: "bg-[#1877F2] text-white border-transparent hover:bg-[#166FE5] focus:ring-[#1877F2]",
     iconStyles: "text-white",
   },
 ];

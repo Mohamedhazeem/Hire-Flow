@@ -66,10 +66,6 @@ export const auth = betterAuth({
       clientId: env.data?.GOOGLE_CLIENT_ID as string,
       clientSecret: env.data?.GOOGLE_CLIENT_SECRET as string,
     },
-    facebook: {
-      clientId: env.data?.FACEBOOK_CLIENT_ID as string,
-      clientSecret: env.data?.FACEBOOK_CLIENT_SECRET as string,
-    },
   },
 
   rateLimit: {
