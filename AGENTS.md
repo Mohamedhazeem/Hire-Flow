@@ -2,22 +2,58 @@
 description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · Shadcn UI · Motion · Lucid · Prisma 7/PG · Better Auth 1.6 · RHF 7 · Zod 4
 ---
 
+# MANDATORY STARTUP PROCEDURE (READ FIRST)
+
+**Before you generate any code, respond to this user, or execute any step, you MUST:**
+
+1. Read the entire contents of `MANIFEST.md` located in the project root.
+2. Based on the manifest, report back to the user in this exact format:
+   - **Current Phase:** (e.g., Phase 1)
+   - **Last Completed Step:** (e.g., Step 1.1)
+   - **Next Pending Step:** (e.g., Step 1.2)
+   - **Blockers / Pending Dependencies:** (list any)
+3. **Do not proceed** to write code or execute a new step until the user confirms the next step to execute.
+4. If the user asks to execute a step, always cross-reference the step number against `MANIFEST.md` to ensure it hasn't already been completed.
+
+# hire-flow-next Architecture Rules
+You are an expert Next.js 16 (App Router) and Prisma developer. Strictly adhere to these rules:
+
+1. **Mutations & Fetching:**
+   - **REST route handlers** (`app/api/...`) are the DEFAULT for all data mutations and fetching (e.g., apply, send message, ban, analytics, delete actions).
+   - **Server Actions** (`'use server'`) are strictly reserved for PLAIN FORM SUBMISSIONS ONLY (e.g., create job, update profile, edit company) to save network round-trips.
+   - Use **TanStack Query** (`@tanstack/react-query`) for all client-side data fetching, caching, and background updates.
+   - Use **Zustand** exclusively for global UI client-state (sidebars, modals, collapse toggles) – never store API data in Zustand.
+
+2. **Messaging & Notifications:** - Event-Driven WebSockets via Hosted Provider (Pusher) for real-time messaging and notifications. 
+   - NO interval polling.
+   - Use private-thread-[threadId] channels for chat (one‑to‑one DMs) and private-user-[userId] channels for global notifications. This ensures Better Auth can easily authorise subscriptions.
+
+3. **Route Groups:** - Use `(admin)`, `(recruiter)`, `(user)`, `(auth)`, and public routes. 
+   - Each protected group must have a layout role guard.
+
+4. **Auth:** - Assume Better Auth is configured at `lib/auth.ts`. 
+   - Use `auth.api.getSession()` for all server-side auth checks.
+
+5. **Validation & Safety:**
+After any modification to prisma/schema.prisma, you must run npx prisma validate and npx prisma generate.
+After any step that creates or modifies TypeScript files, you must run npm run build or tsc --noEmit to confirm zero type errors.
+
 # hire-flow-next — Agent Rules
 
 > **Retrieval-first:** Read `package.json` (version source-of-truth), `tsconfig.json`, `prisma/schema.prisma`, and existing feature files before writing any code. Never invent APIs — verify against the installed version.
 
 ## Stack
 
-| Layer              | Package                                                                                   |
-| ------------------ | ----------------------------------------------------------------------------------------- |
-| Framework          | next@16.2.7 (App Router, Turbopack default)                                               |
-| Styling            | tailwindcss@4 — PostCSS only, config via `globals.css @theme {}`, no `tailwind.config.js` |
-| ORM                | prisma@7 + `@prisma/adapter-pg` + `pg`                                                    |
-| Auth               | better-auth@1.6.15 + `@better-auth/prisma-adapter`                                        |
-| Forms / Validation | react-hook-form@7 + `@hookform/resolvers` + zod@4                                         |
-| Compiler           | babel-plugin-react-compiler (no manual `useMemo`/`useCallback`/`memo`)                    |
-| Styling & Icons    | tailwindcss@4 + lucide-react (Config via `globals.css @theme {}`, no config files)        |
-| Animation          | Motion (`motion`) — Best for micro-interactions & layout animations in React 19           |
+Framework: Next.js (App Router, Turbopack)
+Styling: Tailwind v4 (`@theme` in `globals.css`, no config)
+DB: Prisma + PostgreSQL
+Auth: Better Auth + Prisma Adapter
+Data fetching: TanStack Query (server-state & caching)
+Client state: Zustand (UI store only – modals, sidebars)
+Forms/Validation: RHF + Zod
+Compiler: React Compiler (Automatic memoization)
+Icons: react-icons
+Animations: motion
 
 ## Absolute Rules
 
@@ -33,38 +69,41 @@ description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · S
 - **Minimal scope** — touch only files required by the task; no renames, refactors, or dep upgrades unless asked
 - **Don't Repeat Yourself (DRY) Styling** — If a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/` or localized feature `components/`. Never copy-paste dense Tailwind utility chunks across files.
 
-## Feature-Based Structure (target — all new code must follow this)
+# Project Structure Rules
+Strictly follow this directory structure. Do not create new top-level directories.
 
-```
-app/
-  (auth)/login/ register/ layout.tsx       ← public route group
-  (dashboard)/layout.tsx                   ← auth shell (sidebar/nav)
-    dashboard/ jobs/[jobId]/ candidates/[id]/ applications/[id]/
-  api/auth/[...all]/route.ts               ← Better Auth catch-all only
-features/<name>/
-  types.ts        ← Zod schemas + z.infer<> types
-  queries/        ← Prisma queries, server-side only
-  actions/        ← 'use server' Server Actions
-  components/     ← co-located UI ('use client' where needed)
-  hooks/          ← client-only hooks
-components/ui/    ← shared primitives
-components/layout/
-lib/auth.ts  auth-client.ts  prisma.ts  utils.ts
-types/index.ts    ← cross-feature types
-proxy.ts     ← session check + redirect
-```
+## Core Routing (app/)
+- `(auth)/`: Public authentication routes (login, register, etc.)
+- `(roles)/`: Protected dashboard routes grouped by `admin`, `recruiter`, `user`.
+- `api/`: REST route handlers (DEFAULT for mutations).
+- `features/`: Business logic, scoped by domain (e.g., `admin`, `auth`, `jobs`).
+
+## Feature-Based Logic (`features/<name>/`)
+- `actions/`: 'use server' (Form submissions only).
+- `components/`: Co-located UI, client/server components.
+- `queries/`: Server-side Prisma fetchers.
+- `schema/`: Zod definitions and inferred TS types.
+- `libs/`: Feature-specific utilities.
+- `hooks/`: Client-side logic.
+
+## Shared Layers
+- `components/ui/`: Shadcn primitives.
+- `lib/`: Global utilities (prisma.ts, auth.ts, validator.ts).
+- `utils/`: Environment, logger, and global helpers.
 
 Pages are thin orchestrators. All logic lives in `features/`.
 
 ## Naming
 
-| Thing             | Convention                 | Example                     |
-| ----------------- | -------------------------- | --------------------------- |
-| Files/folders     | kebab-case                 | `job-card.tsx`              |
-| Components        | PascalCase named export    | `export function JobCard()` |
-| Actions / queries | camelCase verb-noun        | `createJob`, `findJobById`  |
-| Zod schemas       | PascalCase + `Schema`      | `CreateJobSchema`           |
-| Inferred types    | PascalCase via `z.infer<>` | `type CreateJobInput`       |
+Files/Folders: kebab-case (e.g., job-card.tsx)
+
+Components: PascalCase named exports (e.g., export function JobCard())
+
+Actions/Queries: camelCase verb-noun (e.g., createJob, findJobById)
+
+Zod Schemas: PascalCase + Schema (e.g., CreateJobSchema)
+
+Inferred Types: PascalCase via z.infer (e.g., type CreateJobInput)
 
 ## Key Patterns (rules — no code examples needed)
 
@@ -103,16 +142,6 @@ Pages are thin orchestrators. All logic lives in `features/`.
 - `fetch` in Client Components (use Server Actions or Route Handlers)
 - Per-component CSS files · `any` type · `as` casts except `unknown` narrowing
 
-## New Feature Checklist
-
-1. `features/<name>/types.ts` — schemas + types
-2. `features/<name>/queries/` — Prisma reads/writes
-3. `features/<name>/actions/` — mutations
-4. `features/<name>/components/` — UI
-5. `app/(dashboard)/<name>/page.tsx` — thin page
-6. Schema changes → `npx prisma migrate dev --name add-<name>`
-7. Add new protected paths to `middleware.ts`
-
 ## New Dependency Protocol
 
 1. Read `package.json` for exact version; check official docs before generating any code
@@ -127,28 +156,13 @@ npx prisma migrate dev --name <n> | generate | studio | db push
 
 `postinstall` = `prisma generate` · `build` = `prisma migrate deploy && next build`
 
-## Env Vars
-
-`DATABASE_URL` · `BETTER_AUTH_SECRET` · `BETTER_AUTH_URL` · `NEXT_PUBLIC_APP_URL`
-
 ## Task Completion Gate
 
 TypeScript passes · ESLint passes · no unused imports · no `any` · no dead code · no secrets in source · architecture rules followed
 
-# My Copilot Agent
-
-## Profile
-
-You are an expert development assistant focused on writing clean, concise code.
-
 ## Output Constraints
-
-To optimize token usage, you MUST follow these strict response rules:
-
-- **Be Concise**: Provide the shortest possible answer that completely resolves the request.
-- **No Yapping**: Omit conversational filler, pleasantries, and lengthy explanations.
-- **Code Only**: Deliver only the requested code block unless explanation is explicitly requested.
-- **Output Limit**: Limit all code outputs to a maximum of 30 lines at a time.
-- **Truncate Tests**: Never write more than 3 sample test cases in a single response.
-- **Use Placeholders**: Use `// ... existing code ...` or comments to skip repetitive structures.
-- **Paginate**: If data or tests exceed limits, ask the user: "Would you like more?"
+- **Be concise:** Provide the shortest possible answer that fully resolves the request.
+- **Skip filler:** Omit conversational pleasantries and lengthy explanations unless explicitly asked.
+- **Full files only:** Always output the complete file content for newly created files. For updates, output the entire updated file.
+- **Use comments for repeats:** If a file is large and you are only changing one function, use `// ... existing code ...` to skip repetitive boilerplate, but ensure the final code block is complete enough to copy‑paste without errors.
+- **Ask for confirmation:** If a file exceeds 150 lines, ask: *"This file is large. Do you want the full version or only the changed sections?"*
