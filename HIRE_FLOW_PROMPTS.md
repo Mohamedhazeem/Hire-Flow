@@ -8,25 +8,25 @@ My current tools have free tiers, such as the GitHub Copilot, Cursor agent, and 
 
 Each role has specific features.
 
-ADMIN:
+**ADMIN:**
 
 Full control over recruiters, users, job posts, adding fellow team members, and analytics about job posts, recruiters, and users. Able to ban recruiters and users. Own dashboard. Direct message to any recruiter and user.
 
-RECRUITER:
+**RECRUITER:**
 
 Able to create a company profile, links, and social links; create job posts; see applied user profiles and resumes; job post analytics like views and applications; and advanced filters on jobs and users. Direct message (built-in chat box) any users if they applied to the job post and reject users if they are not a fit for the particular job.
 
-USER:
+**USER:**
 
 Create your own profile and add experiences, skills, resumes, work mode, base pay, CTC, ECTC, and location. Able to apply to job posts based on job preference, like software developer or backend developer. Activity panels like applied post and status like recruiter viewed, application rejected, etc., and get notifications about this inside the application; be able to see the recruiter's profile from the job posts; have an in-built resume builder if they don't have a resume; and have social links and portfolio links that are shared to the applied job post. able to reply to messages from recruiters inside the built-in chat box.
 
 All roles have a navbar. I'm not sure if this navbar is the same for every role or specific for each one. Maybe create a reusable component and change data.
 
-Job posts:
+**Job posts:**
 
 It has a title, description, locations, work mode, time zone, skills, tags, and experience.
 
-Routes:
+**Routes:**
 
 want to create routes for admin, user, recruiter, and jobs. The jobs route is public; anyone can search and filter jobs from here, but to apply, they have to sign up.
 
@@ -38,7 +38,7 @@ Home Page (domain.com/)
 
 Here I want to create a homepage for a job board. I'm not sure what type of section is needed, like contact, hero, etc., so create yourself about this.
 
-Goal:
+**Goal:**
 
 I want you to make the above project details and recruitments very efficient, add any missing details for this job board platform, and turn it into the best prompt to put on Claude/Gemini for planning to create prompts for each specific thing, like users/admins, etc., to put on chat agents/agents to create codes. I want you to judge priority on the description to create main things first and follow-ups. I just need you to clean and structure this into the best prompt, then other LLMs use your given prompt and give output prompts and flows for each recruitment.
 
@@ -247,6 +247,7 @@ A complete **phased development plan** in the form of sequential **agent prompts
 Now, based on all the above, generate the **phased roadmap with agent prompts**. Start with Phase 0 (project base), then go role by role. Ensure that each step is a prompt an AI agent can directly follow.
 
 Begin your output now.
+---
 
 **```prisma**
 
@@ -588,6 +589,7 @@ model Ban {
  liftedAt    DateTime?
 
 }
+---
 
 # **CLAUDE OUTPUT REFINE WITH GEMENI**
 
@@ -655,7 +657,7 @@ After any step that creates or modifies TypeScript files, you must run npm run b
 
 2. Initialize `shadcn-ui` if not already done.**
 
-3. Add the following shadcn components via CLI: `button`, `input`, `badge`, `table`, `dialog`, `select`, `popover`, `textarea`.**
+3. Add the following shadcn components via CLI: `button`, `input`, `badge`, `table`, `dialog`, `select`, `popover`, `textarea`.
 
 4. Ensure `tailwind.config.ts` or `globals.css` is configured for standard theme tokens (primary, muted, destructive). Do not use hardcoded hex colors in future components.**
 
@@ -780,12 +782,12 @@ After any step that creates or modifies TypeScript files, you must run npm run b
    ```ts
    queryClient.setDefaultOptions({
   queries: {
-      queryFn: async ({ queryKey }) => {
-        const [path, params] = queryKey as [string, Record<string, unknown>?];
-        return apiClient(path, { params });
-      },
+    queryFn: async ({ queryKey }) => {
+      const [path, params] = queryKey as [string, Record<string, unknown>?];
+      return apiClient(path, { params });
     },
-   });
+  },
+    });
    ```
 ---
 

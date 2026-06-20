@@ -125,4 +125,4 @@
 *(Agent: record temporary workarounds, known bugs, or future refactoring tasks.)*
 
 - [ ] TODO: Replace mock upload (`/api/upload`) with S3/Vercel Blob in production.
-- [ ] TODO: Add comprehensive E2E tests once core features are stable.
+- [ ] TODO: Add comprehensive tests once core features are stable.

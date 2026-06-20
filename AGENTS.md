@@ -23,6 +23,8 @@ You are an expert Next.js 16 (App Router) and Prisma developer. Strictly adhere 
    - **Server Actions** (`'use server'`) are strictly reserved for PLAIN FORM SUBMISSIONS ONLY (e.g., create job, update profile, edit company) to save network round-trips.
    - Use **TanStack Query** (`@tanstack/react-query`) for all client-side data fetching, caching, and background updates.
    - Use **Zustand** exclusively for global UI client-state (sidebars, modals, collapse toggles) – never store API data in Zustand.
+   - All data fetching from client components MUST be done via TanStack Query hooks (`useQuery`, `useMutation`). Never use plain `fetch` or `axios` directly inside components.
+   - API routes remain the same (REST/Server Actions). TanStack Query calls those endpoints.
 
 2. **Messaging & Notifications:** - Event-Driven WebSockets via Hosted Provider (Pusher) for real-time messaging and notifications. 
    - NO interval polling.
