@@ -1203,3 +1203,4 @@ Actionable Tasks:
 5. Build `features/notifications/hooks/use-notifications.ts` → `useQuery` for initial list, plus `useMutation` for marking as read.
 
 6. Use the Zustand chat store to track unread counts updated by the subscription, not API data.
+
