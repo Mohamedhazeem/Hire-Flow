@@ -29,47 +29,106 @@ function userId(name: string) {
 
 // ─── Seed data ────────────────────────────────────────────────────────────────
 
-const ADMIN = { id: userId("admin"), name: "Alice Admin", email: "admin@hireflow.dev" };
+const ADMIN = {
+  id: userId("admin"),
+  name: "Alice Admin",
+  email: "admin@hireflow.dev",
+};
 
 const RECRUITERS = [
   {
     id: userId("recruiter_1"),
     name: "Bob Recruiter",
     email: "bob@acmecorp.dev",
-    company: { name: "Acme Corp", description: "We build the best products.", industry: "Software" },
+    company: {
+      name: "Acme Corp",
+      description: "We build the best products.",
+      industry: "Software",
+    },
   },
   {
     id: userId("recruiter_2"),
     name: "Carol Recruiter",
     email: "carol@globex.dev",
-    company: { name: "Globex Inc", description: "Global excellence.", industry: "Finance" },
+    company: {
+      name: "Globex Inc",
+      description: "Global excellence.",
+      industry: "Finance",
+    },
   },
   {
     id: userId("recruiter_3"),
     name: "Dave Recruiter",
     email: "dave@initech.dev",
-    company: { name: "Initech", description: "Efficiency is our business.", industry: "Consulting" },
+    company: {
+      name: "Initech",
+      description: "Efficiency is our business.",
+      industry: "Consulting",
+    },
   },
 ];
 
 const USERS = [
-  { id: userId("user_1"), name: "Eve Applicant", email: "eve@example.dev", headline: "Full-Stack Engineer", skills: ["TypeScript", "React", "Node.js"] },
-  { id: userId("user_2"), name: "Frank Applicant", email: "frank@example.dev", headline: "Backend Developer", skills: ["Go", "PostgreSQL", "Docker"] },
-  { id: userId("user_3"), name: "Grace Applicant", email: "grace@example.dev", headline: "Frontend Engineer", skills: ["Vue.js", "CSS", "Figma"] },
+  {
+    id: userId("user_1"),
+    name: "Eve Applicant",
+    email: "eve@example.dev",
+    headline: "Full-Stack Engineer",
+    skills: ["TypeScript", "React", "Node.js"],
+  },
+  {
+    id: userId("user_2"),
+    name: "Frank Applicant",
+    email: "frank@example.dev",
+    headline: "Backend Developer",
+    skills: ["Go", "PostgreSQL", "Docker"],
+  },
+  {
+    id: userId("user_3"),
+    name: "Grace Applicant",
+    email: "grace@example.dev",
+    headline: "Frontend Engineer",
+    skills: ["Vue.js", "CSS", "Figma"],
+  },
 ];
 
 const JOB_TEMPLATES = [
-  { title: "Senior Software Engineer", experienceLevel: "senior", workMode: "remote" as const, employmentType: "full_time" as const },
-  { title: "Product Manager", experienceLevel: "mid", workMode: "hybrid" as const, employmentType: "full_time" as const },
-  { title: "DevOps Engineer", experienceLevel: "mid", workMode: "remote" as const, employmentType: "contract" as const },
-  { title: "UX Designer", experienceLevel: "entry", workMode: "onsite" as const, employmentType: "full_time" as const },
-  { title: "Data Analyst", experienceLevel: "entry", workMode: "hybrid" as const, employmentType: "part_time" as const },
+  {
+    title: "Senior Software Engineer",
+    experienceLevel: "senior",
+    workMode: "remote" as const,
+    employmentType: "full_time" as const,
+  },
+  {
+    title: "Product Manager",
+    experienceLevel: "mid",
+    workMode: "hybrid" as const,
+    employmentType: "full_time" as const,
+  },
+  {
+    title: "DevOps Engineer",
+    experienceLevel: "mid",
+    workMode: "remote" as const,
+    employmentType: "contract" as const,
+  },
+  {
+    title: "UX Designer",
+    experienceLevel: "entry",
+    workMode: "onsite" as const,
+    employmentType: "full_time" as const,
+  },
+  {
+    title: "Data Analyst",
+    experienceLevel: "entry",
+    workMode: "hybrid" as const,
+    employmentType: "part_time" as const,
+  },
 ];
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log("🌱  Seeding database…");
+  console.warn("🌱  Seeding database…");
 
   // ── 1. Admin user ────────────────────────────────────────────────────────────
   await prisma.user.upsert({
@@ -96,7 +155,7 @@ async function main() {
     },
   });
 
-  console.log("  ✔ Admin created");
+  console.warn("  ✔ Admin created");
 
   // ── 2. Recruiters + Companies + Jobs ─────────────────────────────────────────
   for (const rec of RECRUITERS) {
@@ -164,7 +223,7 @@ async function main() {
       });
     }
 
-    console.log(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
+    console.warn(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
   }
 
   // ── 3. Users + Profiles + Resumes ────────────────────────────────────────────
@@ -205,7 +264,9 @@ async function main() {
         location: "San Francisco, CA",
         workMode: "remote",
         basePay: 80_000,
-        socialLinks: { linkedin: `https://linkedin.com/in/${usr.name.toLowerCase().replace(/\s+/g, "")}` },
+        socialLinks: {
+          linkedin: `https://linkedin.com/in/${usr.name.toLowerCase().replace(/\s+/g, "")}`,
+        },
       },
     });
 
@@ -220,12 +281,14 @@ async function main() {
           label: r === 0 ? "General Resume" : "Tailored Resume",
           isPrimary: r === 0,
           fileUrl: null,
-          builderData: { summary: `${usr.headline} with ${usr.skills.join(", ")} skills.` },
+          builderData: {
+            summary: `${usr.headline} with ${usr.skills.join(", ")} skills.`,
+          },
         },
       });
     }
 
-    console.log(`  ✔ User "${usr.name}" + profile + 2 resumes created`);
+    console.warn(`  ✔ User "${usr.name}" + profile + 2 resumes created`);
   }
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────
@@ -252,12 +315,12 @@ async function main() {
     }
   }
 
-  console.log("  ✔ Applications created");
-  console.log("\n✅  Seed complete.");
-  console.log("\n📋  Seed credentials (all accounts use password: Password1)");
-  console.log(`   Admin      → ${ADMIN.email}`);
-  RECRUITERS.forEach((r) => console.log(`   Recruiter  → ${r.email}`));
-  USERS.forEach((u) => console.log(`   User       → ${u.email}`));
+  console.warn("  ✔ Applications created");
+  console.warn("\n✅  Seed complete.");
+  console.warn("\n📋  Seed credentials (all accounts use password: Password1)");
+  console.warn(`   Admin      → ${ADMIN.email}`);
+  RECRUITERS.forEach((r) => console.warn(`   Recruiter  → ${r.email}`));
+  USERS.forEach((u) => console.warn(`   User       → ${u.email}`));
 }
 
 main()

@@ -1,5 +1,3 @@
-import { checkRole } from "@/app/features/auth/utils/rbac";
-
 export const metadata = {
   title: "Recruiter Dashboard",
   description: "Your recruiter dashboard",
