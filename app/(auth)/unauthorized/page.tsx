@@ -7,12 +7,14 @@ export default async function UnauthorizedPage() {
     headers: await headers(),
   });
 
-  const userRole = session?.user ? (session.user as { role: string }).role : undefined;
+  const userRole = session?.user
+    ? (session.user as { role: string }).role
+    : undefined;
 
   let dashboardPath = "/login";
-  if (userRole === "ADMIN") dashboardPath = "/admin";
-  else if (userRole === "EMPLOYER") dashboardPath = "/company";
-  else if (userRole === "USER") dashboardPath = "/user";
+  if (userRole === "admin") dashboardPath = "/admin";
+  else if (userRole === "recruiter") dashboardPath = "/recruiter";
+  else if (userRole === "user") dashboardPath = "/user";
 
   return (
     <ErrorPage

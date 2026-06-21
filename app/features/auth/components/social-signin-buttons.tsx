@@ -26,7 +26,10 @@ export function SocialSignInButtons({ isVertical }: { isVertical?: boolean }) {
     startTransition(async () => {
       try {
         await socialSignInAction(provider);
-      } catch {
+      } catch (err) {
+        if (err instanceof Error && err.message.includes("NEXT_REDIRECT")) {
+          return;
+        }
         setError("Unable to connect with that provider. Please try again.");
       }
     });

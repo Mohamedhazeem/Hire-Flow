@@ -31,7 +31,7 @@ export function SignUpForm() {
     defaultValues: { role: Roles.USER },
   });
 
-  const [selectedRole, setSelectedRole] = useState<RoleType>("USER");
+  const [selectedRole, setSelectedRole] = useState<RoleType>("user");
 
   const onSubmit = handleSubmit(async (data) => {
     setIsLoading(true);
@@ -63,11 +63,11 @@ export function SignUpForm() {
           <button
             type="button"
             onClick={() => {
-              setSelectedRole("RECRUITER");
-              setValue("role", "RECRUITER", { shouldDirty: true, shouldTouch: true });
+              setSelectedRole("recruiter");
+              setValue("role", "recruiter", { shouldDirty: true, shouldTouch: true });
             }}
             className={`flex-1 py-2 text-sm font-semibold rounded-xl transition-all ${
-              selectedRole === "RECRUITER"
+              selectedRole === "recruiter"
                 ? "bg-brand text-text-inverse shadow-sm shadow-brand/20"
                 : "text-text-body hover:bg-bg-surface"
             }`}
@@ -78,11 +78,11 @@ export function SignUpForm() {
           <button
             type="button"
             onClick={() => {
-              setSelectedRole("USER");
-              setValue("role", "USER", { shouldDirty: true, shouldTouch: true });
+              setSelectedRole("user");
+              setValue("role", "user", { shouldDirty: true, shouldTouch: true });
             }}
             className={`flex-1 py-2 text-sm font-semibold rounded-xl transition-all ${
-              selectedRole === "USER"
+              selectedRole === "user"
                 ? "bg-brand text-text-inverse shadow-sm shadow-brand/20"
                 : "text-text-body hover:bg-bg-surface"
             }`}

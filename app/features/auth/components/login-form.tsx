@@ -44,7 +44,7 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
       if (result && !result.success) {
         const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);
-        setIsLoading(false); // Only turn off loading if it actually failed
+        setIsLoading(false);
         return;
       }
     } catch (error) {
@@ -80,7 +80,8 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
         }
       } else {
         setSuccessMessage(
-          result.message ?? "If that email is registered, reset instructions have been sent.",
+          result.message ??
+            "If that email is registered, reset instructions have been sent.",
         );
       }
     } catch {
@@ -127,7 +128,11 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           error={errors.password}
         />
 
-        <FormButton isLoading={isLoading} loadingText="Signing in..." submitText="Sign In" />
+        <FormButton
+          isLoading={isLoading}
+          loadingText="Signing in..."
+          submitText="Sign In"
+        />
 
         <div className="flex justify-between text-sm text-text-muted">
           <button

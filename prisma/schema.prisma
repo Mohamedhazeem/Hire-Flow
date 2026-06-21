@@ -12,9 +12,9 @@ datasource db {
 
 // --------------- Enums ---------------
 enum Role {
-  USER
-  RECRUITER
-  ADMIN
+  user
+  recruiter
+  admin
 }
 
 enum WorkMode {
@@ -60,8 +60,7 @@ model User {
   name          String
   email         String
   emailVerified Boolean   @default(false)
-  role          Role      @default(USER)
-  // Ban fields for quick checks
+  role          Role      @default(user)
   banned        Boolean   @default(false)
   banReason     String?
   banExpiresAt  DateTime?
@@ -69,18 +68,19 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
-  sessions        Session[]
-  accounts        Account[]
+  sessions Session[]
+  accounts Account[]
 
   // Relations
-  profile           UserProfile?
-  company           Company?
-  jobsPosted        Job[]          @relation("RecruiterJobs")
-  applications      Application[]
-  sentMessages      Message[]      @relation("MessageSender")
-  receivedMessages  Message[]      @relation("MessageReceiver")
-  notifications     Notification[]
-  adminInvitesSent  AdminInvite[]  @relation("InviteSender")
+  profile          UserProfile?
+  company          Company?
+  jobsPosted       Job[]          @relation("RecruiterJobs")
+  applications     Application[]
+  sentMessages     Message[]      @relation("MessageSender")
+  receivedMessages Message[]      @relation("MessageReceiver")
+  notifications    Notification[]
+  adminInvitesSent AdminInvite[]  @relation("InviteSender")
+  bookmarks        Bookmark[]
 
   @@unique([email])
   @@map("user")
@@ -210,6 +210,7 @@ model Job {
   applications        Application[]
   createdAt           DateTime       @default(now())
   updatedAt           DateTime       @updatedAt
+  bookmarks           Bookmark[]
 
   @@index([isActive, createdAt])
   @@map("job")
@@ -236,7 +237,7 @@ model Application {
 // --------------- Messaging (threadID convention) ---------------
 model Message {
   id         String   @id @default(cuid())
-  threadId   String   // convention: [smallerUserId]_[largerUserId]
+  threadId   String // convention: [smallerUserId]_[largerUserId]
   senderId   String
   sender     User     @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
   receiverId String

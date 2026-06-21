@@ -48,7 +48,7 @@ export const auth = betterAuth({
         transform: {
           input: (value) => {
             if (typeof value === "string") {
-              return value.toUpperCase();
+              return value.toLowerCase();
             }
             return value;
           },

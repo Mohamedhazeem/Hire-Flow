@@ -1,10 +1,9 @@
-// generate role scheme for checkrole
 import { z } from "zod";
 
 export const Roles = {
-  ADMIN: "ADMIN",
-  RECRUITER: "RECRUITER",
-  USER: "USER",
+  ADMIN: "admin",
+  RECRUITER: "recruiter",
+  USER: "user",
 } as const;
 
 export const RoleSchema = z.enum([Roles.ADMIN, Roles.RECRUITER, Roles.USER]);

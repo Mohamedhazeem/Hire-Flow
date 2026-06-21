@@ -6,6 +6,5 @@ export const metadata = {
 };
 
 export default async function RecruiterPage() {
-  await checkRole(["RECRUITER"]);
   return <>RECRUITER DASHBOARD</>;
 }
