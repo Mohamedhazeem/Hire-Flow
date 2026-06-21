@@ -1,13 +1,18 @@
 import { z } from "zod";
 
 export const envSchema = z.object({
-  NEXT_PUBLIC_APP_URL: z.url(),
-  NEXT_PUBLIC_ENABLE_TEMP_CHECK: z.string().default("false"),
+
+  NODE_ENV: z.enum(["development", "production"]).default("development"),
+  ALLOW_SEED: z.enum(["true", "false"]).default("false"),
 
   BETTER_AUTH_URL: z.url(),
+  
+  NEXT_PUBLIC_APP_URL: z.url(),
+  NEXT_PUBLIC_ENABLE_TEMP_MAIL_CHECK: z.enum(["true", "false"]).default("false"),
+
   GOOGLE_CLIENT_ID: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
-
+  
   BETTER_AUTH_SECRET: z.string(),
   DATABASE_URL: z.string(),
 

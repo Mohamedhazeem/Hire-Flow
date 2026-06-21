@@ -5,7 +5,7 @@ import disposableDomains from "disposable-email-domains";
 
 const disposableSet = new Set(disposableDomains);
 
-const ENABLE_TEMP_MAIL_CHECK = env.data?.NEXT_PUBLIC_ENABLE_TEMP_CHECK !== "false";
+const ENABLE_TEMP_MAIL_CHECK = env.data?.NEXT_PUBLIC_ENABLE_TEMP_MAIL_CHECK !== "false";
 
 const emailSchema = z.email("Invalid email address").refine((email) => {
   if (!ENABLE_TEMP_MAIL_CHECK) return true;
