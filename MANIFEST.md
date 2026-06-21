@@ -5,15 +5,15 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-20T12:04:00Z` – (agent: fill with current timestamp)
+`2026-06-21T12:00:00Z`
 
 ---
 
 ## 📊 Overview
-- **Current Phase:** (e.g., Phase 0)
-- **Current Step:** (e.g., Step 0.7)
-- **Next Step:** (e.g., Step 1.1)
-- **Blockers:** (list any blockers, or write "None")
+- **Current Phase:** Phase 0
+- **Current Step:** Step 0.5
+- **Next Step:** Step 0.6 – TanStack Query Provider & Zustand Stores
+- **Blockers:** None
 
 ---
 
@@ -25,8 +25,8 @@
 - [x] Step 0.1 – Prisma Schema
 - [x] Step 0.2 – Middleware & Route Guards
 - [x] Step 0.3 – Shared UI Primitives
-- [ ] Step 0.4 – Mock File Upload Provider
-- [ ] Step 0.5 – Database Seed Script
+- [x] Step 0.4 – Mock File Upload Provider
+- [x] Step 0.5 – Database Seed Script
 - [ ] Step 0.6 – TanStack Query Provider & Zustand Stores
 - [ ] Step 0.7 – Project Manifest (this file)
 

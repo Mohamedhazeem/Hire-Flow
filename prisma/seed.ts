@@ -2,14 +2,27 @@
  * prisma/seed.ts
  *
  * Populates the database with deterministic test data.
- * Run with:  npx prisma db seed
+ *
+ * Local / dev:
+ *   npm run seed
+ *   — or —
+ *   npx prisma db seed
+ *
+ * Production (staging only — never against live user data without review):
+ *   1. Point DATABASE_URL at the target database.
+ *   2. Run migrations first:  npx prisma migrate deploy
+ *   3. Set ALLOW_SEED=true to bypass the production guard.
+ *   4. Run:  ALLOW_SEED=true npm run seed
  *
  * Idempotent — uses upsert throughout, safe to re-run.
  */
 import "dotenv/config";
+import { hashPassword } from "better-auth/crypto";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
+
+const SEED_PASSWORD = "Password1";
 
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
@@ -17,14 +30,22 @@ const prisma = new PrismaClient({ adapter });
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-/** Better Auth stores passwords inside the Account table using this format. */
-const SEED_PASSWORD_HASH =
-  // bcrypt hash of "Password1" — safe for development only
-  "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy";
-
 function userId(name: string) {
-  // Deterministic fake CUID-like IDs so upserts work on re-runs
   return `seed_${name.toLowerCase().replace(/\s+/g, "_")}`;
+}
+
+async function upsertCredentialAccount(userId: string, passwordHash: string) {
+  await prisma.account.upsert({
+    where: { id: `acc_${userId}` },
+    update: { password: passwordHash },
+    create: {
+      id: `acc_${userId}`,
+      accountId: userId,
+      providerId: "credential",
+      userId,
+      password: passwordHash,
+    },
+  });
 }
 
 // ─── Seed data ────────────────────────────────────────────────────────────────
@@ -54,16 +75,6 @@ const RECRUITERS = [
       name: "Globex Inc",
       description: "Global excellence.",
       industry: "Finance",
-    },
-  },
-  {
-    id: userId("recruiter_3"),
-    name: "Dave Recruiter",
-    email: "dave@initech.dev",
-    company: {
-      name: "Initech",
-      description: "Efficiency is our business.",
-      industry: "Consulting",
     },
   },
 ];
@@ -128,6 +139,18 @@ const JOB_TEMPLATES = [
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
+  if (
+    process.env.NODE_ENV === "production" &&
+    process.env.ALLOW_SEED !== "true"
+  ) {
+    console.error(
+      "Refusing to seed a production database. Set ALLOW_SEED=true if this is intentional (e.g. staging).",
+    );
+    process.exit(1);
+  }
+
+  const passwordHash = await hashPassword(SEED_PASSWORD);
+
   console.warn("🌱  Seeding database…");
 
   // ── 1. Admin user ────────────────────────────────────────────────────────────
@@ -143,18 +166,7 @@ async function main() {
     },
   });
 
-  await prisma.account.upsert({
-    where: { id: `acc_${ADMIN.id}` },
-    update: {},
-    create: {
-      id: `acc_${ADMIN.id}`,
-      accountId: ADMIN.id,
-      providerId: "credential",
-      userId: ADMIN.id,
-      password: SEED_PASSWORD_HASH,
-    },
-  });
-
+  await upsertCredentialAccount(ADMIN.id, passwordHash);
   console.warn("  ✔ Admin created");
 
   // ── 2. Recruiters + Companies + Jobs ─────────────────────────────────────────
@@ -171,17 +183,7 @@ async function main() {
       },
     });
 
-    await prisma.account.upsert({
-      where: { id: `acc_${rec.id}` },
-      update: {},
-      create: {
-        id: `acc_${rec.id}`,
-        accountId: rec.id,
-        providerId: "credential",
-        userId: rec.id,
-        password: SEED_PASSWORD_HASH,
-      },
-    });
+    await upsertCredentialAccount(rec.id, passwordHash);
 
     const company = await prisma.company.upsert({
       where: { recruiterId: rec.id },
@@ -196,7 +198,6 @@ async function main() {
       },
     });
 
-    // 5 jobs per recruiter
     for (let i = 0; i < JOB_TEMPLATES.length; i++) {
       const tpl = JOB_TEMPLATES[i];
       const jobId = `job_${rec.id}_${i}`;
@@ -240,17 +241,7 @@ async function main() {
       },
     });
 
-    await prisma.account.upsert({
-      where: { id: `acc_${usr.id}` },
-      update: {},
-      create: {
-        id: `acc_${usr.id}`,
-        accountId: usr.id,
-        providerId: "credential",
-        userId: usr.id,
-        password: SEED_PASSWORD_HASH,
-      },
-    });
+    await upsertCredentialAccount(usr.id, passwordHash);
 
     const profile = await prisma.userProfile.upsert({
       where: { userId: usr.id },
@@ -270,7 +261,6 @@ async function main() {
       },
     });
 
-    // 2 resumes per user
     for (let r = 0; r < 2; r++) {
       await prisma.resume.upsert({
         where: { id: `resume_${usr.id}_${r}` },
@@ -297,7 +287,7 @@ async function main() {
 
   for (let u = 0; u < USERS.length; u++) {
     const usr = USERS[u];
-    const targetJobs = allJobs.slice(u * 3, u * 3 + 3); // 3 different jobs per user
+    const targetJobs = allJobs.slice(u * 3, u * 3 + 3);
 
     for (let j = 0; j < targetJobs.length; j++) {
       const appId = `app_${usr.id}_${j}`;
@@ -317,7 +307,7 @@ async function main() {
 
   console.warn("  ✔ Applications created");
   console.warn("\n✅  Seed complete.");
-  console.warn("\n📋  Seed credentials (all accounts use password: Password1)");
+  console.warn(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
   console.warn(`   Admin      → ${ADMIN.email}`);
   RECRUITERS.forEach((r) => console.warn(`   Recruiter  → ${r.email}`));
   USERS.forEach((u) => console.warn(`   User       → ${u.email}`));
