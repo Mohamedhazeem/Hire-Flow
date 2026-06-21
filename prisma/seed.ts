@@ -21,6 +21,7 @@ import { hashPassword } from "better-auth/crypto";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
+import { logger } from "@/app/utils/logger";
 
 const SEED_PASSWORD = "Password1";
 
@@ -143,7 +144,7 @@ async function main() {
     process.env.NODE_ENV === "production" &&
     process.env.ALLOW_SEED !== "true"
   ) {
-    console.error(
+    logger.server.error(
       "Refusing to seed a production database. Set ALLOW_SEED=true if this is intentional (e.g. staging).",
     );
     process.exit(1);
@@ -151,7 +152,7 @@ async function main() {
 
   const passwordHash = await hashPassword(SEED_PASSWORD);
 
-  console.warn("🌱  Seeding database…");
+  logger.server.info("🌱  Seeding database…");
 
   // ── 1. Admin user ────────────────────────────────────────────────────────────
   await prisma.user.upsert({
@@ -167,7 +168,7 @@ async function main() {
   });
 
   await upsertCredentialAccount(ADMIN.id, passwordHash);
-  console.warn("  ✔ Admin created");
+  logger.server.info("  ✔ Admin created");
 
   // ── 2. Recruiters + Companies + Jobs ─────────────────────────────────────────
   for (const rec of RECRUITERS) {
@@ -224,7 +225,7 @@ async function main() {
       });
     }
 
-    console.warn(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
+    logger.server.info(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
   }
 
   // ── 3. Users + Profiles + Resumes ────────────────────────────────────────────
@@ -278,7 +279,7 @@ async function main() {
       });
     }
 
-    console.warn(`  ✔ User "${usr.name}" + profile + 2 resumes created`);
+    logger.server.info(`  ✔ User "${usr.name}" + profile + 2 resumes created`);
   }
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────
@@ -305,17 +306,17 @@ async function main() {
     }
   }
 
-  console.warn("  ✔ Applications created");
-  console.warn("\n✅  Seed complete.");
-  console.warn(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
-  console.warn(`   Admin      → ${ADMIN.email}`);
-  RECRUITERS.forEach((r) => console.warn(`   Recruiter  → ${r.email}`));
-  USERS.forEach((u) => console.warn(`   User       → ${u.email}`));
+  logger.server.info("  ✔ Applications created");
+  logger.server.info("\n✅  Seed complete.");
+  logger.server.info(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
+  logger.server.info(`   Admin      → ${ADMIN.email}`);
+  RECRUITERS.forEach((r) => logger.server.info(`   Recruiter  → ${r.email}`));
+  USERS.forEach((u) => logger.server.info(`   User       → ${u.email}`));
 }
 
 main()
   .catch((e) => {
-    console.error("❌  Seed failed:", e);
+    logger.server.error("❌  Seed failed:", e);
     process.exit(1);
   })
   .finally(async () => {
