@@ -333,7 +333,7 @@ Here is your new, prompt-efficient `hire-flow-roadmap.md`. You can copy and past
 
 Enums: `Role (user, admin, recruiter)`, `WorkMode`, `ApplicationStatus`, `NotificationType`.
 
-Models: Extend existing `User` (add `role`, `isBanned`, and relations). Add `UserProfile`, `Resume`, `Company`, `Job`, `Application`, `Message`, `Notification`, `AdminInvite`, `Ban`.
+Models: Extend existing `User` (add `role` and relations). Add `UserProfile`, `Resume`, `Company`, `Job`, `Application`, `Message`, `Notification`, `AdminInvite`.
 
 2. Ensure `onDelete: Cascade` is applied to related records (e.g., Job deletions delete Applications).
 
