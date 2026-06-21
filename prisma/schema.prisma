@@ -1,8 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../app/generated/prisma"
@@ -12,12 +10,42 @@ datasource db {
   provider = "postgresql"
 }
 
+// --------------- Enums ---------------
 enum Role {
   USER
   RECRUITER
   ADMIN
 }
 
+enum WorkMode {
+  remote
+  hybrid
+  onsite
+}
+
+enum EmploymentType {
+  full_time
+  part_time
+  contract
+  internship
+  freelance
+}
+
+enum ApplicationStatus {
+  applied
+  viewed
+  rejected
+  accepted
+}
+
+enum NotificationType {
+  application_status
+  new_message
+  profile_viewed
+  ban_status
+}
+
+// --------------- Better Auth models (keep exactly as required) ---------------
 model RateLimit {
   id          String @id
   key         String
@@ -33,14 +61,26 @@ model User {
   email         String
   emailVerified Boolean   @default(false)
   role          Role      @default(USER)
+  // Ban fields for quick checks
   banned        Boolean   @default(false)
   banReason     String?
   banExpiresAt  DateTime?
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  sessions      Session[]
-  accounts      Account[]
+
+  sessions        Session[]
+  accounts        Account[]
+
+  // Relations
+  profile           UserProfile?
+  company           Company?
+  jobsPosted        Job[]          @relation("RecruiterJobs")
+  applications      Application[]
+  sentMessages      Message[]      @relation("MessageSender")
+  receivedMessages  Message[]      @relation("MessageReceiver")
+  notifications     Notification[]
+  adminInvitesSent  AdminInvite[]  @relation("InviteSender")
 
   @@unique([email])
   @@map("user")
@@ -92,4 +132,161 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+// --------------- Platform models ---------------
+model UserProfile {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  headline    String?
+  bio         String?
+  skills      String[]
+  experiences Json?
+  workMode    WorkMode?
+  basePay     Int?
+  ctc         Int?
+  ectc        Int?
+  location    String?
+  socialLinks Json?
+  resumes     Resume[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("user_profile")
+}
+
+model Resume {
+  id            String      @id @default(cuid())
+  userProfileId String
+  userProfile   UserProfile @relation(fields: [userProfileId], references: [id], onDelete: Cascade)
+  label         String
+  fileUrl       String?
+  builderData   Json?
+  isPrimary     Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+
+  @@map("resume")
+}
+
+model Company {
+  id          String   @id @default(cuid())
+  recruiterId String   @unique
+  recruiter   User     @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
+  name        String
+  logoUrl     String?
+  website     String?
+  socialLinks Json?
+  description String?
+  industry    String?
+  jobs        Job[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("company")
+}
+
+model Job {
+  id                  String         @id @default(cuid())
+  recruiterId         String
+  recruiter           User           @relation("RecruiterJobs", fields: [recruiterId], references: [id], onDelete: Cascade)
+  companyId           String
+  company             Company        @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  title               String
+  description         String
+  locations           String[]
+  workMode            WorkMode
+  employmentType      EmploymentType @default(full_time)
+  timezone            String?
+  skills              String[]
+  tags                String[]
+  experienceLevel     String
+  salaryMin           Int?
+  salaryMax           Int?
+  salaryCurrency      String         @default("USD")
+  applicationDeadline DateTime?
+  isActive            Boolean        @default(true)
+  viewCount           Int            @default(0)
+  applications        Application[]
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  @@index([isActive, createdAt])
+  @@map("job")
+}
+
+model Application {
+  id              String            @id @default(cuid())
+  jobId           String
+  job             Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status          ApplicationStatus @default(applied)
+  rejectionReason String?
+  recruiterNote   String?
+  resumeId        String?
+  appliedAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@unique([jobId, userId])
+  @@index([userId, status])
+  @@map("application")
+}
+
+// --------------- Messaging (threadID convention) ---------------
+model Message {
+  id         String   @id @default(cuid())
+  threadId   String   // convention: [smallerUserId]_[largerUserId]
+  senderId   String
+  sender     User     @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId String
+  receiver   User     @relation("MessageReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+  content    String
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@index([threadId, createdAt])
+  @@index([receiverId, read])
+  @@map("message")
+}
+
+// --------------- Notifications ---------------
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  data      Json
+  read      Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  @@index([userId, read, createdAt])
+  @@map("notification")
+}
+
+// --------------- Saved Jobs ---------------
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  jobId     String
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, jobId])
+  @@index([userId])
+  @@map("bookmark")
+}
+
+// --------------- Admin Invite ---------------
+model AdminInvite {
+  id          String    @id @default(cuid())
+  email       String
+  invitedById String
+  invitedBy   User      @relation("InviteSender", fields: [invitedById], references: [id], onDelete: Cascade)
+  token       String    @unique
+  acceptedAt  DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@map("admin_invite")
 }
