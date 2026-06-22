@@ -1,22 +1,39 @@
-import { QueryClient } from "@tanstack/react-query";
+import { QueryClient, QueryKey } from "@tanstack/react-query";
 import { apiClient } from "./api-client";
+import { UnauthorizedError, ForbiddenError } from "./api-error";
+
+type QueryKeyShape = [string, Record<string, unknown>?];
+
+const DEFAULT_QUERY_OPTIONS = {
+  staleTime: 30_000,
+  retry: 2,
+  refetchOnWindowFocus: false,
+} as const;
+
+async function defaultQueryFn({ queryKey }: { queryKey: QueryKey }) {
+  const [path, params] = queryKey as QueryKeyShape;
+  try {
+    return await apiClient(path, { params });
+  } catch (error) {
+    if (
+      error instanceof UnauthorizedError ||
+      error instanceof ForbiddenError
+    ) {
+      window.location.href = "/login";
+    }
+    throw error;
+  }
+}
 
 function makeQueryClient(): QueryClient {
-  const client = new QueryClient({
+  return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 30_000,
-        retry: 2,
-        refetchOnWindowFocus: false,
-        queryFn: async ({ queryKey }) => {
-          const [path, params] = queryKey as [string, Record<string, unknown>?];
-          return apiClient(path, { params });
-        },
+        ...DEFAULT_QUERY_OPTIONS,
+        queryFn: defaultQueryFn,
       },
     },
   });
-
-  return client;
 }
 
 let browserQueryClient: QueryClient | undefined;

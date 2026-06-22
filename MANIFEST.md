@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-22T13:02:00Z`
+`2026-06-22T14:00:00Z`
 
 ---
 
 ## 📊 Overview
-- **Current Phase:** Phase 0
-- **Current Step:** Step 0.7 – Project Manifest (this file)
-- **Next Step:** Step 1.1 – Admin API (Queries & Ban Action)
+- **Current Phase:** Phase 1
+- **Current Step:** Step 1.1 – Admin API (Queries & Ban Action)
+- **Next Step:** Step 1.2 – Admin UI (Users & Recruiters)
 - **Blockers:** None
 
 ---
@@ -31,7 +31,7 @@
 - [x] Step 0.7 – Project Manifest (this file)
 
 ### Phase 1: Admin
-- [ ] Step 1.1 – Admin API (Queries & Ban Action)
+- [x] Step 1.1 – Admin API (Queries & Ban Action)
 - [ ] Step 1.2 – Admin UI (Users & Recruiters)
 - [ ] Step 1.3 – Admin Team Management
 - [ ] Step 1.4 – Admin Job Oversight & Analytics
@@ -107,7 +107,16 @@
 - `MANIFEST.md` (this file)
 
 ### Phase 1
-*(agent to fill)*
+- `features/admin/schema/admin.schema.ts` (Zod schemas for admin queries/ban)
+- `features/admin/queries/user-queries.ts` (Prisma queries: listUsers, getUserById, listUserSessions)
+- `features/admin/api/require-admin.ts` (server-side admin auth guard)
+- `features/admin/hooks/use-admin-users.ts` (TanStack Query hooks)
+- `app/api/admin/users/route.ts` (GET – list users with pagination/filter/sort)
+- `app/api/admin/users/[id]/route.ts` (GET – user detail, DELETE – remove user)
+- `app/api/admin/users/[id]/ban/route.ts` (POST – ban user)
+- `app/api/admin/users/[id]/unban/route.ts` (POST – unban user)
+- `app/api/admin/users/[id]/role/route.ts` (POST – set user role)
+- `app/api/admin/users/[id]/sessions/route.ts` (GET – list sessions, DELETE – revoke all)
 
 ### Phase 2
 *(agent to fill)*
