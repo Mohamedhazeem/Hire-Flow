@@ -432,7 +432,7 @@ Models: Extend existing `User` (add `role` and relations). Add `UserProfile`, `R
 
 1. Create `lib/query-client.ts` that exports a `QueryClient` singleton with default options (`staleTime: 30_000`, `retry: 2`).
 2. Wrap the root layout (`app/layout.tsx`) in a `<QueryClientProvider>` from `@tanstack/react-query`.
-3. Create a Zustand store `stores/ui-store.ts` with slices for `sidebarOpen`, `chatSidebarOpen`, and helper actions (`toggleSidebar`, etc.).
+3. Create a Zustand store `stores/ui-store.ts` with slices for themeStore,`sidebarOpen`, `chatSidebarOpen` and helper actions (`toggleSidebar`, etc.).
 4. Create a Zustand store `stores/chat-store.ts` that holds the `activeThreadId` and `unreadCounts` for the global inbox – **never cache API data**.
 5. Create `lib/api-client.ts` – a thin wrapper around the global `fetch`:
    - Automatically prepends `process.env.NEXT_PUBLIC_APP_URL` as the base URL.

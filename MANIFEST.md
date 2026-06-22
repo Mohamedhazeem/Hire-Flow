@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-21T12:00:00Z`
+`2026-06-22T12:53:00Z`
 
 ---
 
 ## 📊 Overview
 - **Current Phase:** Phase 0
-- **Current Step:** Step 0.5
-- **Next Step:** Step 0.6 – TanStack Query Provider & Zustand Stores
+- **Current Step:** Step 0.6 – TanStack Query Provider & Zustand Stores
+- **Next Step:** Step 0.7 – Project Manifest (this file)
 - **Blockers:** None
 
 ---
@@ -27,7 +27,7 @@
 - [x] Step 0.3 – Shared UI Primitives
 - [x] Step 0.4 – Mock File Upload Provider
 - [x] Step 0.5 – Database Seed Script
-- [ ] Step 0.6 – TanStack Query Provider & Zustand Stores
+- [x] Step 0.6 – TanStack Query Provider & Zustand Stores
 - [ ] Step 0.7 – Project Manifest (this file)
 
 ### Phase 1: Admin
