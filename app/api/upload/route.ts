@@ -1,15 +1,17 @@
 // TODO: Swap with S3/Vercel Blob in production.
+import { NextRequest } from "next/server";
 import { saveUpload } from "@/app/lib/upload";
-import { fail, ok } from "@/app/lib/api-response";
+import { fail, ok } from "@/lib/api-response";
+import { UnauthorizedError } from "@/lib/api-error";
 import { getSession } from "@/app/features/auth/libs/auth";
+import { withErrorHandler } from "@/lib/api-wrapper";
 
 export const runtime = "nodejs"; // needs fs access
 
-export async function POST(request: Request): Promise<Response> {
-  // Auth guard — must be signed in to upload
+async function handlePOST(request: NextRequest) {
   const session = await getSession();
   if (!session?.user) {
-    return fail("Unauthorized", 401);
+    throw new UnauthorizedError();
   }
 
   let formData: FormData;
@@ -36,9 +38,4 @@ export async function POST(request: Request): Promise<Response> {
   }
 }
 
-//USAGE
-
-// const form = new FormData();
-// form.append("file", fileInput.files[0]);
-// const res = await fetch("/api/upload", { method: "POST", body: form });
-// const { data } = await res.json(); // data.url = "/uploads/..."
+export const POST = withErrorHandler(handlePOST);
