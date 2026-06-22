@@ -1,0 +1,51 @@
+# .kilocodeignore — Kilo Code ignore file
+
+# Dependencies
+node_modules/
+.pnpm-store/
+vendor/
+bower_components/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+*.min.js
+*.bundle.js
+
+# Cache and temp
+.cache/
+tmp/
+*.log
+*.tmp
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+credentials.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Block media/assets to prevent token waste
+public/assets/
+*.png
+*.jpg
+*.mp4
+
+# Large binary files
+*.mp4
+*.mp3
+*.zip
+*.tar.gz
+*.exe
+*.dmg
+
+# Block internal versioning
+.git/
+.kilo/
