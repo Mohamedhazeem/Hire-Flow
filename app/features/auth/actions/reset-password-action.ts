@@ -1,13 +1,13 @@
 "use server";
 
 import { ResetPasswordSchema } from "@/app/features/auth/schema/auth.schema";
-import { validateWithZod } from "@/app/lib/validator";
+import { validateWithZod } from "@/lib/validator";
 import { auth } from "@/app/features/auth/libs/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import type { ActionResult, ResetPasswordType } from "@/app/features/auth/schema/auth.type";
 import { verifyUserStatus } from "../libs/verification";
-import prisma from "@/app/lib/prisma";
+import prisma from "@/lib/prisma";
 
 export async function resetPasswordAction(data: unknown): Promise<ActionResult> {
   // 1. Structural schema validation

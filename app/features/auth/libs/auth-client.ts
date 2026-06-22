@@ -1,4 +1,4 @@
-import { env } from "@/app/utils/env";
+import { env } from "@/utils/env";
 import { adminClient } from "better-auth/client/plugins";
 import { createAuthClient } from "better-auth/react";
 

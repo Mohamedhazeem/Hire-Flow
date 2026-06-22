@@ -1,4 +1,4 @@
-import { env } from "@/app/utils/env";
+import { env } from "@/utils/env";
 import { z } from "zod";
 import { Roles, RoleSchema } from "./role.schema";
 import disposableDomains from "disposable-email-domains";

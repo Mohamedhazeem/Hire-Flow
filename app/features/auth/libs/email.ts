@@ -1,10 +1,10 @@
-import { env } from "@/app/utils/env";
+import { env } from "@/utils/env";
 import { Resend } from "resend";
 import { VerificationEmail } from "../components/email/verfication-email";
 import { ResetPasswordEmail } from "../components/email/reset-password-email";
 import React from "react";
 import { render } from "react-email";
-import { logger } from "@/app/utils/logger";
+import { logger } from "@/utils/logger";
 
 const resend = new Resend(env.data?.RESEND_API_KEY || "dummy-key");
 const emailFrom = env.data?.EMAIL_FROM || "onboarding@resend.dev";

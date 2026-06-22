@@ -1,6 +1,6 @@
 // TODO: Swap with S3/Vercel Blob in production.
-import { saveUpload } from "@/lib/upload";
-import { fail, ok } from "@/lib/api-response";
+import { saveUpload } from "@/app/lib/upload";
+import { fail, ok } from "@/app/lib/api-response";
 import { getSession } from "@/app/features/auth/libs/auth";
 
 export const runtime = "nodejs"; // needs fs access

@@ -2,10 +2,10 @@
 "use server";
 
 import { ForgotPasswordSchema } from "@/app/features/auth/schema/auth.schema";
-import { validateWithZod } from "@/app/lib/validator";
+import { validateWithZod } from "@/lib/validator";
 import { auth } from "@/app/features/auth/libs/auth";
 import { headers } from "next/headers";
-import { logger } from "@/app/utils/logger";
+import { logger } from "@/utils/logger";
 
 import type { ActionResult, ForgotPasswordType } from "@/app/features/auth/schema/auth.type";
 import { verifyUserStatus } from "../libs/verification";

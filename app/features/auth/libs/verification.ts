@@ -1,8 +1,8 @@
-import prisma from "@/app/lib/prisma";
+import prisma from "@/lib/prisma";
 import { auth } from "../libs/auth";
 import { headers } from "next/headers";
-import { env } from "@/app/utils/env";
-import { logger } from "@/app/utils/logger";
+import { env } from "@/utils/env";
+import { logger } from "@/utils/logger";
 
 type UserStatusResult = { status: "NOT_FOUND" } | { status: "UNVERIFIED" } | { status: "VERIFIED" };
 

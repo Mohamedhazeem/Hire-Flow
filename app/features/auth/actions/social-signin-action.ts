@@ -1,7 +1,7 @@
 "use server";
 
 import { auth } from "@/app/features/auth/libs/auth";
-import { logger } from "@/app/utils/logger";
+import { logger } from "@/utils/logger";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 

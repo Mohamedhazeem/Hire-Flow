@@ -21,7 +21,7 @@ import { hashPassword } from "better-auth/crypto";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
-import { logger } from "@/app/utils/logger";
+import { logger } from "@/utils/logger";
 
 const SEED_PASSWORD = "Password1";
 
@@ -140,10 +140,7 @@ const JOB_TEMPLATES = [
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  if (
-    process.env.NODE_ENV === "production" &&
-    process.env.ALLOW_SEED !== "true"
-  ) {
+  if (process.env.NODE_ENV === "production" && process.env.ALLOW_SEED !== "true") {
     logger.server.error(
       "Refusing to seed a production database. Set ALLOW_SEED=true if this is intentional (e.g. staging).",
     );

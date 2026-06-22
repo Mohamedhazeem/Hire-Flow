@@ -48,7 +48,10 @@ export function DataTable<TData>({
             {columns.map((col) => (
               <TableHead
                 key={col.key}
-                className={cn("text-text-muted text-xs font-semibold uppercase tracking-wide px-4 py-3", col.className)}
+                className={cn(
+                  "text-text-muted text-xs font-semibold uppercase tracking-wide px-4 py-3",
+                  col.className,
+                )}
               >
                 {col.header}
               </TableHead>

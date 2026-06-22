@@ -1,10 +1,10 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import prisma from "../../../lib/prisma";
+import prisma from "../../../../lib/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins";
 import { sendEmail } from "./email";
-import { env } from "@/app/utils/env";
+import { env } from "@/utils/env";
 import ms from "ms";
 import { Roles } from "../schema/role.schema";
 import { headers } from "next/headers";

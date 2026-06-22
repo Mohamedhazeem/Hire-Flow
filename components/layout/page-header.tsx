@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 import type { ReactNode } from "react";
 
 type PageHeaderProps = {
@@ -22,16 +22,10 @@ export function PageHeader({ title, description, actions, className }: PageHeade
     >
       <div className="space-y-1">
         <h1 className="text-2xl font-bold text-text-heading leading-tight">{title}</h1>
-        {description && (
-          <p className="text-sm text-text-muted">{description}</p>
-        )}
+        {description && <p className="text-sm text-text-muted">{description}</p>}
       </div>
 
-      {actions && (
-        <div className="flex items-center gap-2 shrink-0 mt-3 sm:mt-0">
-          {actions}
-        </div>
-      )}
+      {actions && <div className="flex items-center gap-2 shrink-0 mt-3 sm:mt-0">{actions}</div>}
     </div>
   );
 }
