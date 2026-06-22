@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-22T12:53:00Z`
+`2026-06-22T13:02:00Z`
 
 ---
 
 ## 📊 Overview
 - **Current Phase:** Phase 0
-- **Current Step:** Step 0.6 – TanStack Query Provider & Zustand Stores
-- **Next Step:** Step 0.7 – Project Manifest (this file)
+- **Current Step:** Step 0.7 – Project Manifest (this file)
+- **Next Step:** Step 1.1 – Admin API (Queries & Ban Action)
 - **Blockers:** None
 
 ---
@@ -28,7 +28,7 @@
 - [x] Step 0.4 – Mock File Upload Provider
 - [x] Step 0.5 – Database Seed Script
 - [x] Step 0.6 – TanStack Query Provider & Zustand Stores
-- [ ] Step 0.7 – Project Manifest (this file)
+- [x] Step 0.7 – Project Manifest (this file)
 
 ### Phase 1: Admin
 - [ ] Step 1.1 – Admin API (Queries & Ban Action)
@@ -66,23 +66,44 @@
 *(Agent: append new files to the appropriate phase section.)*
 
 ### Phase 0
-- `prisma/schema.prisma` (updated)
-- `middleware.ts`
-- `app/(admin)/layout.tsx`
-- `app/(recruiter)/layout.tsx`
-- `app/(user)/layout.tsx`
-- `lib/api-response.ts`
-- `lib/pagination.ts`
+- `prisma/schema.prisma` (platform models & enums)
+- `prisma/seed.ts` (test data)
+- `proxy.ts` (middleware)
+- `app/(roles)/admin/layout.tsx`
+- `app/(roles)/admin/page.tsx`
+- `app/(roles)/recruiter/layout.tsx`
+- `app/(roles)/recruiter/page.tsx`
+- `app/(roles)/user/layout.tsx`
+- `app/(roles)/user/page.tsx`
+- `app/(auth)/login/page.tsx`
+- `app/(auth)/register/page.tsx`
+- `app/(auth)/verify-email/page.tsx`
+- `app/(auth)/reset-password/page.tsx`
+- `app/(auth)/unauthorized/page.tsx`
+- `app/api/upload/route.ts`
+- `app/layout.tsx` (wrapped in Providers)
+- `app/providers.tsx` (QueryClientProvider)
+- `lib/utils.ts` (cn helper)
+- `lib/api-response.ts` (ok/fail helpers)
+- `lib/pagination.ts` (offset & cursor pagination)
+- `lib/upload.ts` (mock file upload)
+- `lib/query-client.ts` (QueryClient singleton + defaultQueryFn)
+- `lib/api-client.ts` (thin fetch wrapper)
+- `stores/ui-store.ts` (Zustand – sidebar, theme)
+- `stores/chat-store.ts` (Zustand – activeThreadId, unreadCounts)
+- `components/ui/button.tsx`
+- `components/ui/input.tsx`
+- `components/ui/badge.tsx`
+- `components/ui/table.tsx`
+- `components/ui/select.tsx`
+- `components/ui/popover.tsx`
+- `components/ui/textarea.tsx`
+- `components/ui/dialog.tsx`
 - `components/ui/data-table.tsx`
 - `components/ui/status-badge.tsx`
 - `components/layout/page-header.tsx`
-- `lib/upload.ts`
-- `app/api/upload/route.ts`
-- `prisma/seed.ts`
-- `lib/query-client.ts`
-- `stores/ui-store.ts`
-- `stores/chat-store.ts`
-- `lib/api-client.ts`
+- `components/back-button.tsx`
+- `components/error-page.tsx`
 - `MANIFEST.md` (this file)
 
 ### Phase 1
@@ -105,7 +126,12 @@
 ## 🔗 Pending Dependencies
 *(Agent: list anything that must be built before the next step can start.)*
 
-- None – ready to start Phase 1.
+- None – Phase 0 complete, ready to start Phase 1 (Admin features).
+
+## 🔜 Upcoming Dependencies (Phase 1)
+- Step 1.1 must be built before Step 1.2 (UI depends on API hooks).
+- Step 1.1–1.4 must be built before Step 1.5 (messaging entry point).
+- Pusher SDK will be needed in Phase 5; not required yet.
 
 ---
 
@@ -125,4 +151,5 @@
 *(Agent: record temporary workarounds, known bugs, or future refactoring tasks.)*
 
 - [ ] TODO: Replace mock upload (`/api/upload`) with S3/Vercel Blob in production.
+- [ ] TODO: Implement Pusher messaging backend (Phase 5).
 - [ ] TODO: Add comprehensive tests once core features are stable.
