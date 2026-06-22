@@ -491,7 +491,7 @@ Objective: Build queries, REST routes, and TanStack Query hooks for Admin people
 Actionable Tasks:
 
 1. Create `features/admin/queries/list-people.ts` (paginated, filtered by role).
-2. Create `POST /api/admin/ban` to ban a user (upsert Ban, set isBanned: true, create Notification).
+2. Create `POST /api/admin/ban` to ban a user (upsert Ban, set Banned: true, create Notification).
 3. Create `DELETE /api/admin/ban` to lift the ban.
 4. **Build two TanStack Query hooks:**
    - `features/admin/hooks/use-people.ts` → `useQuery` for the list.

@@ -1,12 +1,5 @@
-export class ApiError extends Error {
-  status: number;
-
-  constructor(message: string, status: number) {
-    super(message);
-    this.name = "ApiError";
-    this.status = status;
-  }
-}
+import { toAbsoluteUrl } from "@/utils/url";
+import { ApiError } from "./api-error";
 
 export async function apiClient<T = unknown>(
   path: string,
@@ -19,7 +12,8 @@ export async function apiClient<T = unknown>(
 ): Promise<T> {
   const { method = "GET", body, params, headers: extraHeaders } = options ?? {};
 
-  let url = path;
+  let url = toAbsoluteUrl(path);
+
   if (params) {
     const search = new URLSearchParams();
     for (const [key, value] of Object.entries(params)) {
