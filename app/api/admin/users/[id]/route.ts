@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
-import { ok, fail } from "@/lib/api-response";
+import { ok } from "@/lib/api-response";
 import { getUserById } from "@/app/features/admin/queries/user-queries";
 import { requireAdmin } from "@/app/features/admin/api/require-admin";
 import { auth } from "@/app/features/auth/libs/auth";
+import { NotFoundError, ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handleGET(
@@ -14,7 +15,7 @@ async function handleGET(
 
   const user = await getUserById(id);
   if (!user) {
-    return fail("User not found", 404);
+    throw new NotFoundError("User not found");
   }
 
   return ok(user);
@@ -28,7 +29,7 @@ async function handleDELETE(
   const { id } = await params;
 
   if (adminUser.id === id) {
-    return fail("You cannot remove yourself", 400);
+    throw new ValidationError("You cannot remove yourself");
   }
 
   await auth.api.removeUser({ body: { userId: id }, headers: _request.headers });

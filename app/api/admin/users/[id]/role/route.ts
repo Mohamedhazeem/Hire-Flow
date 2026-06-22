@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
-import { ok, fail } from "@/lib/api-response";
+import { ok } from "@/lib/api-response";
 import { requireAdmin } from "@/app/features/admin/api/require-admin";
 import { RoleSchema } from "@/app/features/auth/schema/role.schema";
 import { auth } from "@/app/features/auth/libs/auth";
+import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handlePOST(
@@ -16,7 +17,7 @@ async function handlePOST(
   const role = RoleSchema.safeParse(body.role);
 
   if (!role.success) {
-    return fail("Invalid role", 400);
+    throw new ValidationError("Invalid role");
   }
 
   await auth.api.adminUpdateUser({

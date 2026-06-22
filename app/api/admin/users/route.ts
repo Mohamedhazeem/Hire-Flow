@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
-import { ok, fail } from "@/lib/api-response";
+import { ok } from "@/lib/api-response";
 import { requireAdmin } from "@/app/features/admin/api/require-admin";
 import { AdminListUsersParamsSchema } from "@/app/features/admin/schema/admin.schema";
 import { listUsers } from "@/app/features/admin/queries/user-queries";
+import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handleGET(request: NextRequest) {
@@ -20,7 +21,7 @@ async function handleGET(request: NextRequest) {
   });
 
   if (!params.success) {
-    return fail("Invalid query parameters", 400);
+    throw new ValidationError("Invalid query parameters");
   }
 
   const result = await listUsers(params.data);

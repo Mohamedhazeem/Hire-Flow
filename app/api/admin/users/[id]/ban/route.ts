@@ -1,8 +1,9 @@
 import { NextRequest } from "next/server";
-import { ok, fail } from "@/lib/api-response";
+import { ok } from "@/lib/api-response";
 import { requireAdmin } from "@/app/features/admin/api/require-admin";
 import { AdminBanUserSchema } from "@/app/features/admin/schema/admin.schema";
 import { auth } from "@/app/features/auth/libs/auth";
+import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handlePOST(
@@ -13,14 +14,14 @@ async function handlePOST(
   const { id } = await params;
 
   if (adminUser.id === id) {
-    return fail("You cannot ban yourself", 400);
+    throw new ValidationError("You cannot ban yourself");
   }
 
   const body = await request.json().catch(() => ({}));
   const input = AdminBanUserSchema.safeParse(body);
 
   if (!input.success) {
-    return fail("Invalid ban parameters", 400);
+    throw new ValidationError("Invalid ban parameters");
   }
 
   await auth.api.banUser({
