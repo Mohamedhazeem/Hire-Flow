@@ -1,10 +1,10 @@
 // TODO: Swap with S3/Vercel Blob in production.
 import { NextRequest } from "next/server";
-import { saveUpload } from "@/app/lib/upload";
 import { fail, ok } from "@/lib/api-response";
 import { UnauthorizedError, ValidationError } from "@/lib/api-error";
 import { getSession } from "@/app/features/auth/libs/auth";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { saveUpload } from "@/lib/upload";
 
 export const runtime = "nodejs"; // needs fs access
 

@@ -100,9 +100,9 @@
     "semantic_hash": "220fab34a75300245190a31d7e91c5ec"
   },
   "app/api/upload/route.ts": {
-    "mtime": 1782149946.6144795,
-    "ast_hash": "7cfff691b58c0ab1aa7f3219274100a4",
-    "semantic_hash": "7cfff691b58c0ab1aa7f3219274100a4"
+    "mtime": 1782330457.2975807,
+    "ast_hash": "dcb50e2a7a6ee9c02ef6329ae1e1dd4f",
+    "semantic_hash": ""
   },
   "app/features/admin/api/require-admin.ts": {
     "mtime": 1782275482.5729604,
@@ -370,8 +370,8 @@
     "semantic_hash": "0a76fee99be5716809e9a85890c05a85"
   },
   "lib/api-response.ts": {
-    "mtime": 1782317633.294192,
-    "ast_hash": "9b5341d1a3cd7ce011d55d367105041d",
+    "mtime": 1782330422.1521,
+    "ast_hash": "26b6ff1cf940e7f3fca4a980fd6b6c9f",
     "semantic_hash": ""
   },
   "lib/api-wrapper.ts": {
@@ -485,8 +485,8 @@
     "semantic_hash": "5deee74bc0c47e863484fee965ae08d1"
   },
   ".kilo/kilo.json": {
-    "mtime": 1782268545.161394,
-    "ast_hash": "59dda2bdebbbcdce1517faeb8f5bc0d7",
+    "mtime": 1782328830.5413442,
+    "ast_hash": "2f9c077ff70b77e7985e7628b37c546c",
     "semantic_hash": ""
   },
   ".kilo/plugins/graphify.js": {
@@ -760,8 +760,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/[threadId]/page.tsx": {
-    "mtime": 1782327974.6308963,
-    "ast_hash": "7321b183ad8d20b3d5172579a6bbba52",
+    "mtime": 1782329134.3991334,
+    "ast_hash": "5eacc9bc0732acb67d98a323dc7efa90",
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
@@ -780,8 +780,28 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782327979.97056,
-    "ast_hash": "3d7edbef87b4aef1c0a4bde068940ef0",
+    "mtime": 1782331680.0477011,
+    "ast_hash": "905d88e5a68b081f141d99704e95fefd",
+    "semantic_hash": ""
+  },
+  "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
+    "mtime": 1782330738.7787864,
+    "ast_hash": "7fdbded121bc6771639dbf000329dc28",
+    "semantic_hash": ""
+  },
+  "app/api/admin/messages/[threadId]/route.ts": {
+    "mtime": 1782330727.8237596,
+    "ast_hash": "274de9438ac8802fd7f30f77dca6f7f8",
+    "semantic_hash": ""
+  },
+  "app/features/admin/hooks/messages/use-admin-messages.ts": {
+    "mtime": 1782331074.0817254,
+    "ast_hash": "956f2b475a7470636e94bb5c93d80c4a",
+    "semantic_hash": ""
+  },
+  "components/ui/skeleton.tsx": {
+    "mtime": 1782329203.270327,
+    "ast_hash": "1f47bce191ce7a11971c0aa183964f0b",
     "semantic_hash": ""
   }
 }

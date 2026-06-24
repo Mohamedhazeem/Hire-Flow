@@ -12,3 +12,8 @@ export type ApiResponse<T> = {
   success: boolean;
   data: T;
 };
+
+export type ApiEnvelope<T> = {
+  success: boolean;
+  data: T;
+};
