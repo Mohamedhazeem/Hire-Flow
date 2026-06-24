@@ -5,11 +5,13 @@
 ---
 
 ## Last Updated
+
 2026-06-25T01:43:00Z
 
 ---
 
 ## Overview
+
 - **Current Phase:** Phase 1
 - **Current Step:** Step 1.5 - Admin Messaging Entry Point
 - **Next Step:** Step 2.1 - Company Profile CRUD
@@ -20,6 +22,7 @@
 ## Completed Steps
 
 ### Phase 0: Foundation
+
 - [x] Step 0.0 - Project Initialisation & Dependencies
 - [x] Step 0.1 - Prisma Schema
 - [x] Step 0.2 - Middleware & Route Guards
@@ -30,30 +33,37 @@
 - [x] Step 0.7 - Project Manifest (this file)
 
 ### Phase 1: Admin
+
 - [x] Step 1.1 - Admin API (Queries & Ban Action)
 - [x] Step 1.2 - Admin UI (Users & Recruiters)
 - [x] Step 1.3 - Admin Team Management
 - [x] Step 1.4 - Admin Job Oversight & Analytics
 - [x] Step 1.5 - Admin Messaging Entry Point
+      _(Note: Phase 1 also successfully established the global `api-error.ts`, React Email pipeline, Bulk Actions, and URL-based table filtering patterns)._
 
 ### Phase 2: Recruiter
+
+- [ ] Step 2.0 - Pre-Phase 2 Refactoring: Extract Shared Components & Role Guards
 - [ ] Step 2.1 - Company Profile CRUD
 - [ ] Step 2.2 - Job Posts CRUD
-- [ ] Step 2.3 - Applicants View & Status Updates
-- [ ] Step 2.4 - Recruiter Analytics & Filters
+- [ ] Step 2.3 - Applicants View & Status Updates (Includes Bulk Actions & Email)
+- [ ] Step 2.4 - Recruiter Analytics & Filters (URL-driven state)
 
 ### Phase 3: User
+
 - [ ] Step 3.1 - User Profile
 - [ ] Step 3.2 - Resumes & In-App Builder
-- [ ] Step 3.3 - Job Application Flow
-- [ ] Step 3.4 - User Activity Panel
+- [ ] Step 3.3 - Job Application Flow (Includes Email Notifications)
+- [ ] Step 3.4 - User Activity Panel (Uses Shared Data Table)
 
 ### Phase 4: Public Job Routes & Home Page
+
 - [ ] Step 4.1 - Public Job Listings
 - [ ] Step 4.2 - Public Job Details & View Tracking
 - [ ] Step 4.3 - Home Page & Global Navbar
 
 ### Phase 5: Messaging & Notifications
+
 - [ ] Step 5.1 - Messaging & Real-Time Setup
 - [ ] Step 5.2 - Real-Time Subscriptions & Shared Chat UI
 - [ ] Step 5.3 - Wiring Chat into Role Pages
@@ -64,6 +74,7 @@
 ## Created File Paths (Grouped by Phase)
 
 ### Phase 0
+
 - prisma/schema.prisma (platform models & enums)
 - prisma/seed.ts (test data)
 - proxy.ts (middleware)
@@ -105,6 +116,7 @@
 - MANIFEST.md (this file)
 
 ### Phase 1
+
 - features/admin/schema/admin.schema.ts (Zod schemas for admin queries/ban)
 - features/admin/queries/user-queries.ts (Prisma queries: listUsers, getUserById, listUserSessions)
 - features/admin/api/require-admin.ts (server-side admin auth guard)
@@ -155,23 +167,29 @@
 - lib/api-response.ts (Updated with fail helper for ValidationError)
 
 ### Phase 2
-*(agent to fill)*
+
+_(agent to fill)_
 
 ### Phase 3
-*(agent to fill)*
+
+_(agent to fill)_
 
 ### Phase 4
-*(agent to fill)*
+
+_(agent to fill)_
 
 ### Phase 5
-*(agent to fill)*
+
+_(agent to fill)_
 
 ---
 
 ## Pending Dependencies
+
 - None - Phase 0 complete, ready to start Phase 1 (Admin features).
 
 ## Upcoming Dependencies (Phase 1)
+
 - Step 1.1 must be built before Step 1.2 (UI depends on API hooks).
 - Step 1.1-1.3 must be built before Step 1.4 (admin job oversight depends on invite system).
 - Step 1.4 must be built before Step 1.5 (messaging entry point needs sidebar nav).
@@ -179,6 +197,7 @@
 ---
 
 ## Active Global Context Snapshot
+
 - **Mutations/Fetching:** REST route handlers for complex mutations; Server Actions only for plain forms. TanStack Query for all client-side data.
 - **State Management:** Zustand strictly for UI client-state (sidebars, modals), never for API data.
 - **Real-time:** Pusher with private-thread-[id] and private-user-[id] channels.
@@ -189,6 +208,7 @@
 ---
 
 ## Known Issues / TODOs
+
 - [ ] TODO: Replace mock upload (/api/upload) with S3/Vercel Blob in production.
 - [ ] TODO: Implement Pusher messaging backend (Phase 5).
 - [ ] TODO: Add comprehensive tests once core features are stable.
