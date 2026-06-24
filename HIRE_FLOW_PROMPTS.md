@@ -575,73 +575,64 @@ Actionable Tasks:
 
 ---
 
-**### Phase 2: Recruiter**
+### Phase 2: Recruiter
 
-**#### Step 2.1: Company Profile CRUD**
+#### Step 2.1: Company Profile CRUD
 
 **Prompt to Agent:**
 
 **Objective:** Build the one-time company profile setup.
 
-**Architecture Constraint:** This is a plain form. USE A SERVER ACTION (`upsert-company.ts`).
+**Architecture Constraint:** This is a plain form. USE A SERVER ACTION (`upsert-company.ts`). Use the standardized `api-error.ts` for all error handling.
 
 **Actionable Tasks:**
 
-1. Build `features/recruiter/components/company-form.tsx` using RHF/Zod. Include a field for `logoUrl` (utilize the mock upload route from Step 0.4 if needed).
-
-2. Build `upsert-company.ts`. Validate session is recruiter. Upsert `Company` row linked to `recruiterId`.
-
-3. Build `/recruiter/company/page.tsx`. Pre-fill if data exists.
-
-4. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+1. Refactor `features/admin/api/require-super-admin.ts` into a generic `lib/auth/require-role.ts` (or `features/auth/api/require-role.ts`) that accepts an array of allowed roles. Use `requireRole(['recruiter'])` to protect all recruiter server actions and API routes moving forward.
+2. Build `features/recruiter/components/company-form.tsx` using RHF/Zod. Include a field for `logoUrl` (utilizing the mock upload route).
+3. Build `upsert-company.ts` action. Validate session via `requireRole(['recruiter'])`. Upsert Company row linked to `recruiterId`. Throw `ValidationError` or `UnauthorizedError` from `api-error.ts` if checks fail.
+4. Build `/recruiter/company/page.tsx`. Pre-fill if data exists.
+5. Build a corresponding TanStack Query hook `use-company-mutation.ts`.
 
 ---
 
-**#### Step 2.2: Job Posts CRUD**
+#### Step 2.2: Job Posts CRUD
 
 **Prompt to Agent:**
 
 **Objective:** Allow recruiters to create, edit, and delete job posts.
 
-**Architecture Constraint:** Create/Edit are plain forms -> USE SERVER ACTIONS. Delete is destructive -> USE REST `DELETE /api/recruiter/jobs/[id]`.
+**Architecture Constraint:** Create/Edit -> Server Actions. Delete -> REST `DELETE /api/recruiter/jobs/[id]`.
 
 **Actionable Tasks:**
 
 1. Build `job-form.tsx`. Ensure it accepts `defaultValues` so it can be reused for both Create and Edit pages.
-
-2. Build Server Actions: `create-job.ts` and `update-job.ts`. Validate `companyId` belongs to the logged-in recruiter.
-
-3. Build REST Route: `DELETE /api/recruiter/jobs/[id]`. Ensure cascade delete on applications.
-
-4. Build `/recruiter/jobs`, `/recruiter/jobs/new`, and `/recruiter/jobs/[id]/edit` pages.
-
-5. Build TanStack Query hooks:
-   - `features/recruiter/hooks/use-jobs.ts` (useQuery)
-   - `features/recruiter/hooks/use-create-job.ts` (useMutation calling Server Action)
-   - `features/recruiter/hooks/use-delete-job.ts` (useMutation calling REST DELETE)
+2. Build Server Actions: `create-job.ts` and `update-job.ts`. Validate companyId ownership. Throw `ForbiddenError` from `api-error.ts` if the recruiter attempts to modify a job they do not own.
+3. Build REST Route: `DELETE /api/recruiter/jobs/[id]`. Ensure cascade delete on applications. Protect with `requireRole(['recruiter'])` and strict ownership checks. Throw `NotFoundError` if the job is missing.
+4. Build `/recruiter/jobs`, `/recruiter/jobs/new`, and `/recruiter/jobs/[id]/edit` pages. Re-use the shared `data-table.tsx` wrapped in `recruiter-jobs-table.tsx` for the list view.
+5. Build TanStack Query hooks: `use-jobs.ts`, `use-create-job.ts`, `use-delete-job.ts`.
 
 ---
 
-**#### Step 2.3: Applicants View & Status Updates**
+#### Step 2.3: Applicants View & Status Updates
 
 **Prompt to Agent:**
 
-**Objective:** Let recruiters view applicants and change statuses.
+**Objective:** Let recruiters view applicants, change statuses, and send email notifications.
 
-**Architecture Constraint:** Status change is a UI interaction. USE REST `PATCH`.
+**Architecture Constraint:** Status change is a UI interaction. USE REST `PATCH`. Implement bulk actions mimicking the admin bulk-invite structure.
 
 **Actionable Tasks:**
 
-1. Create `PATCH /api/recruiter/applications/[id]/status`. Require `rejectionReason` if status is 'rejected'. Create a `Notification` for the applicant.
-
-2. Build `/recruiter/jobs/[jobId]/applicants/page.tsx`.
-
-3. Build `applicant-card.tsx` with a status select dropdown. If "rejected" is selected, trigger a `reject-dialog.tsx` to capture the reason before calling the API.
-4. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+1. Create `features/recruiter/components/email/application-status-email.tsx` (a React Email template notifying the user of an interview/rejection, dynamically including the recruiter's `rejectionReason`).
+2. Create `PATCH /api/recruiter/applications/[id]/status`. Require `rejectionReason` if status is 'rejected'. Throw `ValidationError` from `api-error.ts` if missing. Create an in-app Notification AND trigger the React Email template via the email pipeline.
+3. Create a Server Action `bulk-update-applications.ts` to allow recruiters to accept/reject multiple applicants at once. Mirror the Zod schema deduplication and batch processing from `bulk-invite-admin.ts`.
+4. Build `/recruiter/jobs/[jobId]/applicants/page.tsx`. Use the shared `data-table.tsx` with `applicant-columns.tsx` instead of individual cards. This provides sorting, filtering, and multi-select for the bulk action.
+5. Build `reject-dialog.tsx` to capture the reason when "rejected" is selected from the table's row actions. Trigger the mutation and call `router.refresh()` or invalidate the query on success.
+6. Build corresponding TanStack Query mutation hooks.
 
 ---
 
-**#### Step 2.4: Recruiter Analytics & Filters**
+#### Step 2.4: Recruiter Analytics & Filters
 
 **Prompt to Agent:**
 
@@ -649,19 +640,16 @@ Actionable Tasks:
 
 **Actionable Tasks:**
 
-1. Build `get-job-analytics.ts` (view counts, app counts, conversion rate).
-
-2. Build `/recruiter/analytics/page.tsx` reusing `stats-cards.tsx`.
-
+1. Build `get-job-analytics.ts` (view counts, app counts, conversion rate). Protect with `requireRole(['recruiter'])`.
+2. Build `/recruiter/analytics/page.tsx`. Reuse the shared `stats-cards.tsx` and `growth-chart.tsx` from the Admin phase (move them to a shared `components/ui/` folder if not already there).
 3. Build `job-filter-bar.tsx` and `applicant-filter-bar.tsx`.
-
-4. State Management Rule: Store filter states in URL `searchParams` (e.g., `?status=accepted`), DO NOT use `useState` for the applied filters. Read them server-side.
+4. **State Management Rule:** Store filter states strictly in URL `searchParams` (e.g., `?status=accepted`), DO NOT use `useState` for applied filters. Read them server-side and pass to the data table.
 
 ---
 
-**### Phase 3: User**
+### Phase 3: User
 
-**#### Step 3.1: User Profile**
+#### Step 3.1: User Profile
 
 **Prompt to Agent:**
 
@@ -672,53 +660,48 @@ Actionable Tasks:
 **Actionable Tasks:**
 
 1. Build `profile-form.tsx`. Use RHF `useFieldArray` for an `experience-list-editor.tsx` (dynamic add/remove rows).
-
-2. Build Server Action to persist `skills`, `workMode`, pay expectations, and JSON `experiences`.
-
+2. Build `upsert-profile.ts` Server Action. Verify session via `requireRole(['user'])` (throws `UnauthorizedError`/`ForbiddenError`). Throw `ValidationError` for schema failures. Persist skills, workMode, pay expectations, and JSON experiences.
 3. Build `/user/profile/page.tsx`.
-
-4. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+4. Build a corresponding TanStack Query hook.
 
 ---
 
-**#### Step 3.2: Resumes & In-App Builder**
+#### Step 3.2: Resumes & In-App Builder
 
 **Prompt to Agent:**
 
 **Objective:** Handle resume uploads and structured resume building.
 
-**Architecture Constraint:** File Upload = REST (`POST /api/user/resumes`). Builder Form = Server Action.
+**Architecture Constraint:** File Upload = REST `POST /api/user/resumes`. Builder Form = Server Action.
 
 **Actionable Tasks:**
 
-1. Create `POST /api/user/resumes` to accept a file URL metadata and insert a `Resume` row.
-
-2. Build `resume-builder-form.tsx` using a Server Action to save JSON into `builderData`.
-
-3. Ensure marking one resume as `isPrimary` unsets it for the others.
-
-4. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+1. Create `POST /api/user/resumes`. Verify session. Use `api-error.ts` to throw `ValidationError` if the file payload is invalid or missing. Insert Resume row.
+2. Build `resume-builder-form.tsx` using a Server Action to save JSON into `builderData`. Throw `ValidationError` for malformed data.
+3. Ensure marking one resume as `isPrimary` unsets it for the others (use a database transaction if supported by the ORM).
+4. Build corresponding TanStack Query hooks.
 
 ---
 
-**#### Step 3.3: Job Application Flow**
+#### Step 3.3: Job Application Flow
 
 **Prompt to Agent:**
+
 **Objective:** Build the API and UI for applying to a job.
 
 **Architecture Constraint:** Complex mutation. USE REST `POST /api/jobs/[id]/apply`.
 
 **Actionable Tasks:**
 
-1. Build REST route. Check for existing application (fail gracefully). Create `Application`. Create `Notification` for recruiter (type: `application_status`). DO NOT increment view count here.
-
-2. Build `apply-button.tsx` (client component). Opens `resume-picker-dialog.tsx`. Disables if already applied.
-
-3. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+1. Create `features/jobs/components/email/new-application-email.tsx` (a React Email template to notify the recruiter of a new applicant).
+2. Build REST route. Throw `NotFoundError` from `api-error.ts` if the job doesn't exist. Check for an existing application and throw `ValidationError` with a user-friendly message if they already applied.
+3. Inside the route: Create Application, Create in-app Notification for the recruiter, AND trigger the `new-application-email.tsx` template. DO NOT increment view count here.
+4. Build `apply-button.tsx` (client component). Opens `resume-picker-dialog.tsx`. Disables if already applied. Ensure successful application invalidates relevant TanStack queries.
+5. Build corresponding TanStack Query hooks.
 
 ---
 
-**#### Step 3.4: User Activity Panel**
+#### Step 3.4: User Activity Panel
 
 **Prompt to Agent:**
 
@@ -726,13 +709,12 @@ Actionable Tasks:
 
 **Actionable Tasks:**
 
-1. Create `list-my-applications.ts`.
-
+1. Create `list-my-applications.ts`. Protect with `requireRole(['user'])`.
 2. Build `/user/applications/page.tsx`.
-
-3. Render `application-row.tsx`. If status is rejected, show the `rejectionReason` inline in a collapsible section.
-
-4. Build a corresponding TanStack Query hook in features/<role>/hooks/ (useQuery or useMutation).
+3. Replace custom application rows by reusing the shared `data-table.tsx`. This provides sortable columns and consistent styling.
+4. Show the `rejectionReason` inline within the table (via an expandable row component or tooltip), reusing the UI pattern established for admin ban-details if applicable.
+5. Store status filters (e.g., `?status=rejected`) in URL `searchParams`, identical to the recruiter/admin table patterns.
+6. Build corresponding TanStack Query hooks.
 
 ---
 

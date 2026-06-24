@@ -2,6 +2,18 @@
 description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · Shadcn UI · Motion · Lucid · Prisma 7/PG · Better Auth 1.6 · RHF 7 · Zod 4 · recharts · tanstack · zustand
 ---
 
+# Agent Rules (applied always)
+
+- **Retrieval-first:** Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and relevant feature files before writing code. Never invent APIs — verify against the installed version.
+- **Shared assets** – Reuse the following; do not rebuild them:  
+  (table of assets goes here, immediately after the rule)
+- **All protected actions/routes must call `requireRole(...)`**
+- **All errors must be thrown from `lib/api-error.ts`**
+
+### Role Guard Requirement
+
+Whenever you create a new protected Server Action or API Route, you MUST use this generic role guard (create it in `features/shared/api/require-role.ts` if it doesn't exist yet)
+
 # STATE & CACHE RULES (short)
 
 - **Startup:** Read `MANIFEST.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
@@ -23,9 +35,19 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
-# hire-flow-next — Agent Rules
+# Agent Instructions
 
-> **Retrieval-first:** Read `package.json` (version source-of-truth), `tsconfig.json`, `prisma/schema.prisma`, and existing feature files before writing any code. Never invent APIs — verify against the installed version.
+## Global Coding Rules & Shared Infrastructure
+
+Do not reinvent the wheel. You must reuse the following assets for all upcoming tasks and create re-usable components and patterns for future tasks:
+
+| Asset                  | Path                                          | Purpose                                                                   |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------- |
+| Standardised errors    | `lib/api-error.ts`                            | `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `ValidationError` |
+| Data table             | `components/data-table.tsx`                   | Reusable table with sorting, pagination, debounced search                 |
+| React Email pipeline   | `features/auth/libs/email.ts`                 | Used to send all transactional emails                                     |
+| URL search params      | Admin search reads/writes `searchParams`      | **Mandatory** for all filterable lists – never use `useState`             |
+| Bulk operation pattern | `features/admin/actions/bulk-invite-admin.ts` | Extend for bulk status updates, bulk reject, etc.                         |
 
 ## Stack
 
