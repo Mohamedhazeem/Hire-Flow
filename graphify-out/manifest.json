@@ -1,6 +1,6 @@
 {
   ".kilo/agent-manager.json": {
-    "mtime": 1782098680.230935,
+    "mtime": 1782270555.5827687,
     "ast_hash": "59d79d9088d944a0b7689fae47b9beb5",
     "semantic_hash": "59d79d9088d944a0b7689fae47b9beb5"
   },
@@ -560,8 +560,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782137078.040068,
-    "ast_hash": "92bbf8edb3f65c53b1b4b66129c6dc95",
+    "mtime": 1782271481.04766,
+    "ast_hash": "fd1b91b5045c06940fd6d6b406bc64cb",
     "semantic_hash": ""
   },
   "README.md": {
@@ -597,6 +597,26 @@
   "public/window.svg": {
     "mtime": 1780988827.0267193,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/recruiters/page.tsx": {
+    "mtime": 1782271337.5193307,
+    "ast_hash": "155b4bf031b46bd38d0d968ebffd4816",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/users/page.tsx": {
+    "mtime": 1782271336.2694826,
+    "ast_hash": "04b3ca7f1ffa6c3aeb1c80380b380fe3",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/ban-dialog.tsx": {
+    "mtime": 1782271215.2835035,
+    "ast_hash": "50faa612b8bca8b04cb206dc948cf443",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/people-table.tsx": {
+    "mtime": 1782271448.7743845,
+    "ast_hash": "90b9c49ff1f6e6498d4e71b8ab3657d7",
     "semantic_hash": ""
   }
 }

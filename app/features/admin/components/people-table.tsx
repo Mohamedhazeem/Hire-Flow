@@ -1,0 +1,295 @@
+"use client";
+
+import { useState, useCallback, useMemo } from "react";
+import {
+  useAdminUsers,
+  useSetUserRole,
+  useRevokeUserSessions,
+  useDeleteUser,
+} from "@/app/features/admin/hooks/use-admin-users";
+import { BanDialog } from "@/app/features/admin/components/ban-dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  DataTable,
+  type ColumnDef,
+} from "@/components/ui/data-table";
+import { Search, ChevronLeft, ChevronRight, Trash2, LogOut } from "lucide-react";
+
+type PeopleTableProps = {
+  roleFilter?: string;
+};
+
+const ROLE_OPTIONS = ["user", "recruiter", "admin"] as const;
+
+export function PeopleTable({ roleFilter }: PeopleTableProps) {
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [role, setRole] = useState<string | undefined>(roleFilter);
+  const [banned, setBanned] = useState("all");
+
+  const { data, isLoading, isError, error } = useAdminUsers({
+    page,
+    pageSize: 20,
+    search: search || undefined,
+    role: role as "user" | "recruiter" | "admin" | undefined,
+    banned: banned as "true" | "false" | "all",
+    sortBy: "createdAt",
+    sortOrder: "desc",
+  });
+
+  const setUserRole = useSetUserRole();
+  const revokeSessions = useRevokeUserSessions();
+  const deleteUser = useDeleteUser();
+
+  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+    setPage(1);
+  }, []);
+
+  const handleRoleChange = useCallback(
+    (userId: string, newRole: string) => {
+      setUserRole.mutate({ userId, role: newRole });
+    },
+    [setUserRole],
+  );
+
+  const handleRevokeSessions = useCallback(
+    (userId: string) => {
+      if (confirm("Revoke all sessions for this user?")) {
+        revokeSessions.mutate(userId);
+      }
+    },
+    [revokeSessions],
+  );
+
+  const handleDelete = useCallback(
+    (userId: string, userName: string) => {
+      if (confirm(`Delete user "${userName}"? This cannot be undone.`)) {
+        deleteUser.mutate(userId);
+      }
+    },
+    [deleteUser],
+  );
+
+  type UserRow = {
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+    banned: boolean;
+    banReason: string | null;
+    emailVerified: boolean;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  const columns: ColumnDef<UserRow>[] = useMemo(
+    () => [
+      {
+        key: "name",
+        header: "Name",
+        cell: (row) => (
+          <div className="flex flex-col">
+            <span className="font-medium text-text-heading">{row.name}</span>
+            <span className="text-xs text-text-muted">{row.email}</span>
+          </div>
+        ),
+      },
+      {
+        key: "role",
+        header: "Role",
+        cell: (row) => (
+          <Select
+            value={row.role}
+            onValueChange={(val) => val && handleRoleChange(row.id, val)}
+          >
+            <SelectTrigger className="w-28 h-8 text-xs">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {ROLE_OPTIONS.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {r.charAt(0).toUpperCase() + r.slice(1)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        ),
+      },
+      {
+        key: "status",
+        header: "Status",
+        cell: (row) => (
+          <div className="flex items-center gap-2">
+            {row.banned ? (
+              <Badge variant="destructive">Banned</Badge>
+            ) : (
+              <Badge variant="secondary">Active</Badge>
+            )}
+            {!row.emailVerified && (
+              <Badge variant="outline">Unverified</Badge>
+            )}
+          </div>
+        ),
+      },
+      {
+        key: "createdAt",
+        header: "Joined",
+        cell: (row) => (
+          <span className="text-text-muted text-xs">
+            {new Date(row.createdAt).toLocaleDateString()}
+          </span>
+        ),
+      },
+      {
+        key: "actions",
+        header: "Actions",
+        cell: (row) => (
+          <div className="flex items-center gap-1">
+            <BanDialog
+              userId={row.id}
+              userName={row.name}
+              currentlyBanned={row.banned}
+              banReason={row.banReason}
+            />
+            <Button
+              variant="ghost"
+              size="icon-xs"
+              onClick={() => handleRevokeSessions(row.id)}
+              disabled={revokeSessions.isPending}
+              title="Revoke sessions"
+            >
+              <LogOut className="size-3.5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon-xs"
+              onClick={() => handleDelete(row.id, row.name)}
+              disabled={deleteUser.isPending}
+              title="Delete user"
+            >
+              <Trash2 className="size-3.5 text-error" />
+            </Button>
+          </div>
+        ),
+      },
+    ],
+    [handleRoleChange, handleRevokeSessions, handleDelete],
+  );
+
+  const responseData = data as { success: boolean; data: { users: UserRow[]; total: number; totalPages: number; page: number; pageSize: number } } | undefined;
+  const totalUsers = responseData?.data?.total ?? 0;
+  const totalPages = responseData?.data?.totalPages ?? 0;
+  const users = responseData?.data?.users ?? [];
+
+  const pageSize = 20;
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <div className="relative flex-1">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
+          <Input
+            placeholder="Search by name or email..."
+            value={search}
+            onChange={handleSearch}
+            className="pl-8"
+          />
+        </div>
+        {!roleFilter && (
+          <Select
+            value={role ?? "all"}
+            onValueChange={(val) => {
+              setRole(val === "all" ? undefined : (val ?? undefined));
+              setPage(1);
+            }}
+          >
+            <SelectTrigger className="w-36">
+              <SelectValue placeholder="All roles" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All roles</SelectItem>
+              {ROLE_OPTIONS.map((r) => (
+                <SelectItem key={r} value={r}>
+                  {r.charAt(0).toUpperCase() + r.slice(1)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
+        <Select
+          value={banned}
+          onValueChange={(val) => {
+            setBanned(val ?? "all");
+            setPage(1);
+          }}
+        >
+          <SelectTrigger className="w-32">
+            <SelectValue placeholder="Status" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All</SelectItem>
+            <SelectItem value="true">Banned</SelectItem>
+            <SelectItem value="false">Active</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {isLoading ? (
+        <div className="text-center py-12 text-text-muted text-sm">
+          Loading users...
+        </div>
+      ) : isError ? (
+        <div className="text-center py-12 text-error text-sm">
+          {(error as Error)?.message ?? "Failed to load users"}
+        </div>
+      ) : (
+        <>
+          <DataTable
+            columns={columns}
+            data={users}
+            emptyMessage="No users found."
+          />
+
+          {totalPages > 1 && (
+            <div className="flex items-center justify-between text-sm text-text-muted">
+              <span>
+                Showing {(page - 1) * pageSize + 1}–
+                {Math.min(page * pageSize, totalUsers)} of {totalUsers}
+              </span>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={page <= 1}
+                >
+                  <ChevronLeft className="size-4" />
+                  Previous
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={page >= totalPages}
+                >
+                  Next
+                  <ChevronRight className="size-4" />
+                </Button>
+              </div>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}

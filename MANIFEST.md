@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-22T14:00:00Z`
+`2026-06-24T08:55:00Z`
 
 ---
 
 ## 📊 Overview
 - **Current Phase:** Phase 1
-- **Current Step:** Step 1.1 – Admin API (Queries & Ban Action)
-- **Next Step:** Step 1.2 – Admin UI (Users & Recruiters)
+- **Current Step:** Step 1.2 – Admin UI (Users & Recruiters)
+- **Next Step:** Step 1.3 – Admin Team Management
 - **Blockers:** None
 
 ---
@@ -32,7 +32,7 @@
 
 ### Phase 1: Admin
 - [x] Step 1.1 – Admin API (Queries & Ban Action)
-- [ ] Step 1.2 – Admin UI (Users & Recruiters)
+- [x] Step 1.2 – Admin UI (Users & Recruiters)
 - [ ] Step 1.3 – Admin Team Management
 - [ ] Step 1.4 – Admin Job Oversight & Analytics
 - [ ] Step 1.5 – Admin Messaging Entry Point
@@ -117,6 +117,10 @@
 - `app/api/admin/users/[id]/unban/route.ts` (POST – unban user)
 - `app/api/admin/users/[id]/role/route.ts` (POST – set user role)
 - `app/api/admin/users/[id]/sessions/route.ts` (GET – list sessions, DELETE – revoke all)
+- `app/features/admin/components/ban-dialog.tsx` (Ban/unban dialog with reason/expiry inputs)
+- `app/features/admin/components/people-table.tsx` (Shared data-table with search, filters, pagination, actions)
+- `app/(roles)/admin/users/page.tsx` (Admin users management page)
+- `app/(roles)/admin/recruiters/page.tsx` (Admin recruiters management page)
 
 ### Phase 2
 *(agent to fill)*

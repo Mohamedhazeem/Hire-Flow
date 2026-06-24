@@ -483,5 +483,120 @@
     "mtime": 1782136491.3399463,
     "ast_hash": "5deee74bc0c47e863484fee965ae08d1",
     "semantic_hash": "5deee74bc0c47e863484fee965ae08d1"
+  },
+  ".kilo/kilo.json": {
+    "mtime": 1782268545.161394,
+    "ast_hash": "59dda2bdebbbcdce1517faeb8f5bc0d7",
+    "semantic_hash": ""
+  },
+  ".kilo/plugins/graphify.js": {
+    "mtime": 1782268544.9742703,
+    "ast_hash": "bc04cfb00d18a5796ab01efd44595781",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/SKILL.md": {
+    "mtime": 1782266876.4863524,
+    "ast_hash": "84998b342036bc4e24d7234a45381c95",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/add-watch.md": {
+    "mtime": 1782266384.8348475,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/exports.md": {
+    "mtime": 1782266384.836843,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1782266384.8398342,
+    "ast_hash": "2e620982acb506f557538cdcfb1ef6da",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1782266384.8448222,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/hooks.md": {
+    "mtime": 1782266384.8468158,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/query.md": {
+    "mtime": 1782266384.8478134,
+    "ast_hash": "0b329f30b63b0bd89282848575c86428",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/transcribe.md": {
+    "mtime": 1782266384.848811,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".config/kilo/skills/graphify/references/update.md": {
+    "mtime": 1782266384.8498077,
+    "ast_hash": "c698309979460d0f02ba616417844399",
+    "semantic_hash": ""
+  },
+  ".github/copilot-instructions.md": {
+    "mtime": 1782266916.0980618,
+    "ast_hash": "b0a8401d4ba929939e3fc6d8b31dbed8",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1782268989.1997604,
+    "ast_hash": "39928eabd738cb9e8ce3509fe7f549ca",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1780988921.1491268,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": ""
+  },
+  "HIRE_FLOW_PROMPTS.md": {
+    "mtime": 1782114094.6600013,
+    "ast_hash": "67cc1618fa968cf26cd2880efd746aa7",
+    "semantic_hash": ""
+  },
+  "MANIFEST.md": {
+    "mtime": 1782137078.040068,
+    "ast_hash": "92bbf8edb3f65c53b1b4b66129c6dc95",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1780988826.801228,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": ""
+  },
+  "TESTING_PLANS.md": {
+    "mtime": 1781968401.6849854,
+    "ast_hash": "5f1ee539a2d443a411295fe811702a7a",
+    "semantic_hash": ""
+  },
+  "public/file.svg": {
+    "mtime": 1780988826.9192436,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "public/globe.svg": {
+    "mtime": 1780988826.9447145,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "public/next.svg": {
+    "mtime": 1780988826.9799297,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "public/vercel.svg": {
+    "mtime": 1780988827.0085576,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "public/window.svg": {
+    "mtime": 1780988827.0267193,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
   }
 }
