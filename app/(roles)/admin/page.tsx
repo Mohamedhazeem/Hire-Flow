@@ -1,8 +1,10 @@
+import { AdminDashboard } from "@/app/features/admin/components/admin-dashboard";
+
 export const metadata = {
   title: "Admin Dashboard",
-  description: "Your personal admin dashboard",
+  description: "Platform overview and analytics",
 };
 
 export default async function AdminPage() {
-  return <>ADMIN DASHBOARD</>;
+  return <AdminDashboard />;
 }

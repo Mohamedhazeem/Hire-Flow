@@ -1,5 +1,6 @@
 import { z } from "zod/v4";
 import { RoleSchema } from "@/app/features/auth/schema/role.schema";
+import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
 
 export const AdminListUsersParamsSchema = z.object({
   page: z.coerce.number().int().min(1).optional().default(1),
@@ -66,3 +67,27 @@ export const AdminBulkInviteSchema = z.object({
 });
 
 export type AdminBulkInviteInput = z.infer<typeof AdminBulkInviteSchema>;
+
+// ------ Admin Job List Schema ------
+
+export const AdminListJobsParamsSchema = z.object({
+  page: z.coerce.number().int().min(1).optional().default(1),
+  pageSize: z.coerce.number().int().min(1).max(100).optional().default(20),
+  search: z.string().optional(),
+  status: z.enum(["active", "inactive", "all"]).optional().default("all"),
+  workMode: z.nativeEnum(WorkMode).optional(),
+  employmentType: z.nativeEnum(EmploymentType).optional(),
+  experienceLevel: z.string().optional(),
+  sortBy: z.enum(["title", "createdAt", "updatedAt", "viewCount", "isActive"]).optional().default("createdAt"),
+  sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
+});
+
+export type AdminListJobsParams = z.infer<typeof AdminListJobsParamsSchema>;
+
+// ------ Admin Toggle Job Status Schema ------
+
+export const AdminToggleJobStatusSchema = z.object({
+  isActive: z.boolean(),
+});
+
+export type AdminToggleJobStatusInput = z.infer<typeof AdminToggleJobStatusSchema>;

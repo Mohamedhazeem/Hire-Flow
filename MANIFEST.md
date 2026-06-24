@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-24T09:20:00Z`
+`2026-06-24T12:30:00Z`
 
 ---
 
 ## 📊 Overview
 - **Current Phase:** Phase 1
-- **Current Step:** Step 1.3 – Admin Team Management
-- **Next Step:** Step 1.4 – Admin Job Oversight & Analytics
+- **Current Step:** Step 1.4 – Admin Job Oversight & Analytics
+- **Next Step:** Step 1.5 – Admin Messaging Entry Point
 - **Blockers:** None
 
 ---
@@ -34,7 +34,7 @@
 - [x] Step 1.1 – Admin API (Queries & Ban Action)
 - [x] Step 1.2 – Admin UI (Users & Recruiters)
 - [x] Step 1.3 – Admin Team Management
-- [ ] Step 1.4 – Admin Job Oversight & Analytics
+- [x] Step 1.4 – Admin Job Oversight & Analytics
 - [ ] Step 1.5 – Admin Messaging Entry Point
 
 ### Phase 2: Recruiter
@@ -131,6 +131,19 @@
 - `app/api/admin/invite/accept/route.ts` (POST – accept invite with token)
 - `app/api/admin/invite/[id]/route.ts` (DELETE – cancel pending invite)
 - `app/api/admin/team/[id]/route.ts` (DELETE – remove admin from team)
+- `app/features/admin/schema/admin.schema.ts` (Added AdminListJobsParamsSchema, AdminToggleJobStatusSchema)
+- `app/features/admin/queries/job-queries.ts` (Prisma queries: listJobs with pagination/filter)
+- `app/features/admin/hooks/use-admin-jobs.ts` (TanStack Query hooks: useAdminJobs, useDeleteJob, useToggleJobStatus)
+- `app/features/admin/components/admin-jobs-table.tsx` (DataTable with search, filters, pagination, toggle/delete actions)
+- `app/features/admin/components/admin-sidebar.tsx` (Sidebar nav with links to all admin sections)
+- `app/api/admin/jobs/route.ts` (GET – list jobs with pagination/filter/sort)
+- `app/api/admin/jobs/[id]/route.ts` (DELETE – remove job, PATCH – toggle active/inactive)
+- `app/(roles)/admin/jobs/page.tsx` (Admin jobs management page)
+- `app/(roles)/admin/layout.tsx` (Updated with AdminSidebar)
+- `app/features/admin/queries/dashboard-queries.ts` (Prisma aggregations for stats, trends, recent items)
+- `app/features/admin/hooks/use-admin-dashboard.ts` (TanStack Query hook for dashboard data)
+- `app/features/admin/components/admin-dashboard.tsx` (Stat cards, Recharts line/bar charts, recent signups/apps tables)
+- `app/api/admin/dashboard/route.ts` (GET – dashboard stats endpoint)
 
 ### Phase 2
 *(agent to fill)*
@@ -154,6 +167,7 @@
 ## 🔜 Upcoming Dependencies (Phase 1)
 - Step 1.1 must be built before Step 1.2 (UI depends on API hooks).
 - Step 1.1–1.3 must be built before Step 1.4 (admin job oversight depends on invite system for team context).
+- Step 1.4 must be built before Step 1.5 (messaging entry point needs sidebar nav).
 - Pusher SDK will be needed in Phase 5; not required yet.
 
 ---
