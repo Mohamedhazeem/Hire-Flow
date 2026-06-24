@@ -1,12 +1,27 @@
 ---
-description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · Shadcn UI · Motion · Lucid · Prisma 7/PG · Better Auth 1.6 · RHF 7 · Zod 4 · recharts · tanstack · zustand 
+description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · Shadcn UI · Motion · Lucid · Prisma 7/PG · Better Auth 1.6 · RHF 7 · Zod 4 · recharts · tanstack · zustand
 ---
 
 # STATE & CACHE RULES (short)
+
 - **Startup:** Read `MANIFEST.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
 - **Runtime:** Never re‑read MANIFEST; use cache for step lookups.
 - **Updates:** Update cache + write to disk after **every** completed step; bump `Last Updated`.
 - **Resync:** Re‑read only if user says they edited it manually.
+
+# graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
+
+Rules:
+
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
 # hire-flow-next — Agent Rules
 
@@ -40,15 +55,18 @@ Animations: motion
 - **Don't Repeat Yourself (DRY) Styling** — If a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/` or localized feature `components/`. Never copy-paste dense Tailwind utility chunks across files.
 
 # Project Structure Rules
+
 Strictly follow this directory structure. Do not create new top-level directories.
 
 ## Core Routing (app/)
+
 - `(auth)/`: Public authentication routes (login, register, etc.)
 - `(roles)/`: Protected dashboard routes grouped by `admin`, `recruiter`, `user`.
 - `api/`: REST route handlers (DEFAULT for mutations).
 - `features/`: Business logic, scoped by domain (e.g., `admin`, `auth`, `jobs`).
 
 ## Feature-Based Logic (`features/<name>/`)
+
 - `actions/`: 'use server' (Form submissions only).
 - `components/`: Co-located UI, client/server components.
 - `queries/`: Server-side Prisma fetchers.
@@ -57,6 +75,7 @@ Strictly follow this directory structure. Do not create new top-level directorie
 - `hooks/`: Client-side logic.
 
 ## Shared Layers
+
 - `components/ui/`: Shadcn primitives.
 - `lib/`: Global utilities (prisma.ts, auth.ts, validator.ts).
 - `utils/`: Environment, logger, and global helpers.
@@ -65,36 +84,40 @@ Pages are thin orchestrators. All logic lives in `features/`.
 
 ## Naming
 
-- Files/folders: `kebab-case`  
-- Components: `PascalCase` named exports  
-- Actions/queries: `camelCase` verb‑noun  
-- Zod schemas: `PascalCase + Schema`  
+- Files/folders: `kebab-case`
+- Components: `PascalCase` named exports
+- Actions/queries: `camelCase` verb‑noun
+- Zod schemas: `PascalCase + Schema`
 - Inferred types: `PascalCase` via `z.infer`
 
 ## Key Patterns (enforce)
-- Server Action: `'use server'` → `Schema.safeParse()` → DB write → `revalidatePath()` → `redirect()`  
-- Dynamic page: `params: Promise<{ id: string }>` → `await params`  
-- Form: `useForm<T>({ resolver: zodResolver(Schema) })`  
-- Route handler: only for auth webhooks or third‑party REST  
-- Middleware: `auth.api.getSession()` → redirect if no session  
-- Auth catch‑all: `app/api/auth/[...all]/route.ts` with `toNextJsHandler(auth)`  
-- Extract reusable inputs with `React.forwardRef` for RHF.  
+
+- Server Action: `'use server'` → `Schema.safeParse()` → DB write → `revalidatePath()` → `redirect()`
+- Dynamic page: `params: Promise<{ id: string }>` → `await params`
+- Form: `useForm<T>({ resolver: zodResolver(Schema) })`
+- Route handler: only for auth webhooks or third‑party REST
+- Middleware: `auth.api.getSession()` → redirect if no session
+- Auth catch‑all: `app/api/auth/[...all]/route.ts` with `toNextJsHandler(auth)`
+- Extract reusable inputs with `React.forwardRef` for RHF.
 - Isolate shared wrappers into layout components.
 
 ## Theme & UI
-- **Tailwind v4 tokens only** – never `[...]`; use `text-text-body`, `bg‑bg‑surface`, `p‑spacing‑4`, `rounded‑radius‑md` from `@theme`.  
-- **Lucide icons** from `'lucide-react'` with `size‑4`/`size‑5` and `strokeWidth={2}`.  
-- **Shadcn:** install via `npx shadcn@latest add`; map tokens in `globals.css` `@theme inline`.  
+
+- **Tailwind v4 tokens only** – never `[...]`; use `text-text-body`, `bg‑bg‑surface`, `p‑spacing‑4`, `rounded‑radius‑md` from `@theme`.
+- **Lucide icons** from `'lucide-react'` with `size‑4`/`size‑5` and `strokeWidth={2}`.
+- **Shadcn:** install via `npx shadcn@latest add`; map tokens in `globals.css` `@theme inline`.
 - **Animations:** native Tailwind utilities for simple; Framer Motion (`motion.div`) only for complex orchestration, layoutId, AnimatePresence. Keep <300ms, prefer transform/opacity.
 
 ## Forbidden
-- `pages/` · `new PrismaClient()` inline · `useEffect` for data  
-- `getServerSideProps` · synchronous `params` · `$queryRawUnsafe` / `$executeRawUnsafe`  
-- `deleteMany`/`updateMany` without explicit request · `fetch` in components  
+
+- `pages/` · `new PrismaClient()` inline · `useEffect` for data
+- `getServerSideProps` · synchronous `params` · `$queryRawUnsafe` / `$executeRawUnsafe`
+- `deleteMany`/`updateMany` without explicit request · `fetch` in components
 - Per‑component CSS · `any` type · `as` casts (except `unknown` narrowing)
 
 ## Dependencies Protocol
-- Check `package.json` for exact version; read official docs before code generation.  
+
+- Check `package.json` for exact version; read official docs before code generation.
 - Placement: UI lib → `components/ui/` · email → `lib/email.ts` · uploads → `lib/upload.ts`.
 
 ## Commands
@@ -103,12 +126,15 @@ Pages are thin orchestrators. All logic lives in `features/`.
 npm run dev|build|start|lint
 npx prisma migrate dev --name <n> | generate | studio | db push
 ```
+
 postinstall = prisma generate · build = prisma migrate deploy && next build
 
 ## Task Completion Gate
+
 TypeScript passes · ESLint passes · no unused imports · no any · no dead code · no secrets · architecture followed.
 
 ## Output Constraints
+
 - **Be concise** – shortest answer that fully resolves request.
 - **Full files** for new files; for updates, output entire file or use // ... existing ... for boilerplate, but ensure copy‑paste‑able.
 - **Ask** if file >150 lines: "Full or changes only?"
