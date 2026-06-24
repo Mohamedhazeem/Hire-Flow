@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-06-24)
 
 ## Corpus Check
-- 146 files · ~40,676 words
+- 146 files · ~40,682 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 747 nodes · 1242 edges · 67 communities (53 shown, 14 thin omitted)
+- 747 nodes · 1244 edges · 65 communities (51 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `64ecce3e`
+- Built from commit: `24091621`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -72,10 +72,8 @@
 - [[_COMMUNITY_Community 58|Community 58]]
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
-- [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
-- [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 
@@ -111,7 +109,7 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (67 total, 14 thin omitted)
+## Communities (65 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.13
@@ -138,8 +136,8 @@ Cohesion: 0.15
 Nodes (17): bulkInviteAdmins(), BulkInviteResult, inviteAdmin(), InviteAdminForm(), Tab, ForbiddenError, sendEmail(), AdminAcceptInviteInput (+9 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.12
-Nodes (17): devDependencies, babel-plugin-react-compiler, cross-env, eslint, eslint-config-next, eslint-plugin-react-hooks, prisma, tailwindcss (+9 more)
+Cohesion: 0.06
+Nodes (31): devDependencies, babel-plugin-react-compiler, cross-env, eslint, eslint-config-next, eslint-plugin-react-hooks, prisma, tailwindcss (+23 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
@@ -183,7 +181,7 @@ Nodes (9): { POST, GET }, adapter, globalForPrisma, pool, auth, UserStatusResult
 
 ### Community 24 - "Community 24"
 Cohesion: 0.25
-Nodes (10): AdminJobsTable(), AdminJobsTableProps, ApiResponse, useAdminJobs(), useDeleteJob(), useToggleJobStatus(), metadata, AdminJobListResult (+2 more)
+Nodes (10): AdminJobsTable(), AdminJobsTableProps, useAdminJobs(), useDeleteJob(), useToggleJobStatus(), metadata, ApiResponse, AdminJobListResult (+2 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.29
@@ -285,10 +283,6 @@ Nodes (4): POST, DELETE, NotFoundError, AdminAcceptInviteSchema
 Cohesion: 0.28
 Nodes (4): PageHeader(), PageHeaderProps, metadata, metadata
 
-### Community 61 - "Community 61"
-Cohesion: 0.22
-Nodes (9): scripts, build, demote, dev, lint, postinstall, promote, seed (+1 more)
-
 ### Community 62 - "Community 62"
 Cohesion: 0.32
 Nodes (6): authPages, config, protectedRoutes, proxy(), getRedirectPath(), VerifyEmailPage()
@@ -296,10 +290,6 @@ Nodes (6): authPages, config, protectedRoutes, proxy(), getRedirectPath(), Verif
 ### Community 63 - "Community 63"
 Cohesion: 0.33
 Nodes (5): GET, handleGET(), ValidationError, listJobs(), AdminListJobsParamsSchema
-
-### Community 64 - "Community 64"
-Cohesion: 0.33
-Nodes (5): name, prisma, seed, private, version
 
 ### Community 65 - "Community 65"
 Cohesion: 0.33
@@ -310,7 +300,7 @@ Cohesion: 0.50
 Nodes (3): ALLOWED_MIME_TYPES, UPLOAD_DIR, UploadResult
 
 ## Knowledge Gaps
-- **359 isolated node(s):** `📅 Last Updated`, `📊 Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+354 more)
+- **358 isolated node(s):** `📅 Last Updated`, `📊 Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+353 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -324,7 +314,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `auth` connect `Community 16` to `Community 0`, `Community 11`, `Community 13`, `Community 47`, `Community 52`, `Community 53`, `Community 57`, `Community 62`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `📅 Last Updated`, `📊 Overview`, `Phase 0: Foundation` to the rest of the system?**
-  _359 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _358 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**

@@ -35,14 +35,14 @@
     "semantic_hash": "dc24d5d7bd8bf62da91ae7e185482532"
   },
   "app/(roles)/admin/layout.tsx": {
-    "mtime": 1782276273.9065242,
-    "ast_hash": "2ebd2849eec292600084a61c4eccc42d",
+    "mtime": 1782280233.7892902,
+    "ast_hash": "1627d844698c82a0ccac779fc8f26850",
     "semantic_hash": ""
   },
   "app/(roles)/admin/page.tsx": {
-    "mtime": 1782020760.9076467,
-    "ast_hash": "e6b9a987da596ce347e76051284d49bb",
-    "semantic_hash": "e6b9a987da596ce347e76051284d49bb"
+    "mtime": 1782284532.2733896,
+    "ast_hash": "975c3da741a5dae395bb38acc0f17b7a",
+    "semantic_hash": ""
   },
   "app/(roles)/recruiter/layout.tsx": {
     "mtime": 1782020723.0450954,
@@ -120,8 +120,8 @@
     "semantic_hash": "343d453d7faacbf6fdda885b6981fa27"
   },
   "app/features/admin/schema/admin.schema.ts": {
-    "mtime": 1782274914.552358,
-    "ast_hash": "9644e15d4d72ddb7b0ef3d12aa4e07bd",
+    "mtime": 1782280163.7523699,
+    "ast_hash": "5f1ab879a5a320f3dda6ef0a280770d3",
     "semantic_hash": ""
   },
   "app/features/auth/actions/login-action.ts": {
@@ -200,9 +200,9 @@
     "semantic_hash": "9a0db8b21235b83025489740b517a9d2"
   },
   "app/features/auth/components/social-signin-buttons.tsx": {
-    "mtime": 1782024035.5789697,
-    "ast_hash": "c0f0ee6788fb4728a2bf37d857f5ff70",
-    "semantic_hash": "c0f0ee6788fb4728a2bf37d857f5ff70"
+    "mtime": 1782285140.687089,
+    "ast_hash": "bbc0402ee19f2919b871d4abf693b577",
+    "semantic_hash": ""
   },
   "app/features/auth/hooks/useCheckRole.ts": {
     "mtime": 1781686443.015457,
@@ -560,8 +560,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782272931.4773278,
-    "ast_hash": "ca82ac8bfed25e8e9a0b918a5e6d7aa5",
+    "mtime": 1782284607.2229779,
+    "ast_hash": "3e06cafed1f520d5dcedf8090d8f3768",
     "semantic_hash": ""
   },
   "README.md": {
@@ -697,6 +697,61 @@
   "scripts/promote-super-admin.ts": {
     "mtime": 1782278512.986313,
     "ast_hash": "7bd2119b250825950d51322eaef49870",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/jobs/page.tsx": {
+    "mtime": 1782280221.3197238,
+    "ast_hash": "2f8247b588217efa8c73baf745156036",
+    "semantic_hash": ""
+  },
+  "app/api/admin/dashboard/route.ts": {
+    "mtime": 1782314680.0140693,
+    "ast_hash": "69c8b51762db4b548d4026f7a4d1fbde",
+    "semantic_hash": ""
+  },
+  "app/api/admin/jobs/[id]/route.ts": {
+    "mtime": 1782280176.6413138,
+    "ast_hash": "477d83ad26f5598bb8ec8a100ad50373",
+    "semantic_hash": ""
+  },
+  "app/api/admin/jobs/route.ts": {
+    "mtime": 1782280174.2551637,
+    "ast_hash": "dce7998f3c8a31b154bbe3a6583e8273",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/admin-dashboard.tsx": {
+    "mtime": 1782314427.3573303,
+    "ast_hash": "741596e330463c6ad6bc9b6c49a19eee",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/admin-jobs-table.tsx": {
+    "mtime": 1782314866.260889,
+    "ast_hash": "2da12896841c26494fa0271341415f58",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/admin-sidebar.tsx": {
+    "mtime": 1782284739.3431163,
+    "ast_hash": "e5fff83a880ab688eee9fbd412f56e59",
+    "semantic_hash": ""
+  },
+  "app/features/admin/hooks/use-admin-dashboard.ts": {
+    "mtime": 1782284507.1297638,
+    "ast_hash": "5b7802ed56518d197820ac260381dfa8",
+    "semantic_hash": ""
+  },
+  "app/features/admin/hooks/use-admin-jobs.ts": {
+    "mtime": 1782280187.3769054,
+    "ast_hash": "ddb0286e2fb8b6670ebf3ea0ff9e7569",
+    "semantic_hash": ""
+  },
+  "app/features/admin/queries/dashboard-queries.ts": {
+    "mtime": 1782284487.2533493,
+    "ast_hash": "90c7dd6e5e134ec99bb9796c88e60c38",
+    "semantic_hash": ""
+  },
+  "app/features/admin/queries/job-queries.ts": {
+    "mtime": 1782280172.308585,
+    "ast_hash": "45fb657d887c00c5f86a2566392bbfa6",
     "semantic_hash": ""
   }
 }

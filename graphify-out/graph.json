@@ -56,536 +56,6 @@
   },
   "nodes": [
     {
-      "label": "MANIFEST.md",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "manifest",
-      "community": 33,
-      "norm_label": "manifest.md"
-    },
-    {
-      "label": "Hire Flow Next \u2013 Project Manifest",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "manifest_hire_flow_next_project_manifest",
-      "community": 33,
-      "norm_label": "hire flow next \u2013 project manifest"
-    },
-    {
-      "label": "\ud83d\udcc5 Last Updated",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "manifest_last_updated",
-      "community": 33,
-      "norm_label": "\ud83d\udcc5 last updated"
-    },
-    {
-      "label": "\ud83d\udcca Overview",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "manifest_overview",
-      "community": 33,
-      "norm_label": "\ud83d\udcca overview"
-    },
-    {
-      "label": "\u2705 Completed Steps",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "manifest_completed_steps",
-      "community": 33,
-      "norm_label": "\u2705 completed steps"
-    },
-    {
-      "label": "Phase 0: Foundation",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "manifest_phase_0_foundation",
-      "community": 33,
-      "norm_label": "phase 0: foundation"
-    },
-    {
-      "label": "Phase 1: Admin",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "manifest_phase_1_admin",
-      "community": 33,
-      "norm_label": "phase 1: admin"
-    },
-    {
-      "label": "Phase 2: Recruiter",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L40",
-      "_origin": "ast",
-      "id": "manifest_phase_2_recruiter",
-      "community": 33,
-      "norm_label": "phase 2: recruiter"
-    },
-    {
-      "label": "Phase 3: User",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "manifest_phase_3_user",
-      "community": 33,
-      "norm_label": "phase 3: user"
-    },
-    {
-      "label": "Phase 4: Public Job Routes & Home Page",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L52",
-      "_origin": "ast",
-      "id": "manifest_phase_4_public_job_routes_home_page",
-      "community": 33,
-      "norm_label": "phase 4: public job routes & home page"
-    },
-    {
-      "label": "Phase 5: Messaging & Notifications",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "manifest_phase_5_messaging_notifications",
-      "community": 33,
-      "norm_label": "phase 5: messaging & notifications"
-    },
-    {
-      "label": "\ud83d\udcc1 Created File Paths (Grouped by Phase)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "manifest_created_file_paths_grouped_by_phase",
-      "community": 33,
-      "norm_label": "\ud83d\udcc1 created file paths (grouped by phase)"
-    },
-    {
-      "label": "Phase 0",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "manifest_phase_0",
-      "community": 33,
-      "norm_label": "phase 0"
-    },
-    {
-      "label": "Phase 1",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L109",
-      "_origin": "ast",
-      "id": "manifest_phase_1",
-      "community": 33,
-      "norm_label": "phase 1"
-    },
-    {
-      "label": "Phase 2",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L148",
-      "_origin": "ast",
-      "id": "manifest_phase_2",
-      "community": 33,
-      "norm_label": "phase 2"
-    },
-    {
-      "label": "Phase 3",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L151",
-      "_origin": "ast",
-      "id": "manifest_phase_3",
-      "community": 33,
-      "norm_label": "phase 3"
-    },
-    {
-      "label": "Phase 4",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L154",
-      "_origin": "ast",
-      "id": "manifest_phase_4",
-      "community": 33,
-      "norm_label": "phase 4"
-    },
-    {
-      "label": "Phase 5",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L157",
-      "_origin": "ast",
-      "id": "manifest_phase_5",
-      "community": 33,
-      "norm_label": "phase 5"
-    },
-    {
-      "label": "\ud83d\udd17 Pending Dependencies",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L162",
-      "_origin": "ast",
-      "id": "manifest_pending_dependencies",
-      "community": 33,
-      "norm_label": "\ud83d\udd17 pending dependencies"
-    },
-    {
-      "label": "\ud83d\udd1c Upcoming Dependencies (Phase 1)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L167",
-      "_origin": "ast",
-      "id": "manifest_upcoming_dependencies_phase_1",
-      "community": 33,
-      "norm_label": "\ud83d\udd1c upcoming dependencies (phase 1)"
-    },
-    {
-      "label": "\ud83e\udde0 Active Global Context Snapshot",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L175",
-      "_origin": "ast",
-      "id": "manifest_active_global_context_snapshot",
-      "community": 33,
-      "norm_label": "\ud83e\udde0 active global context snapshot"
-    },
-    {
-      "label": "\ud83d\udc1b Known Issues / TODOs",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L187",
-      "_origin": "ast",
-      "id": "manifest_known_issues_todos",
-      "community": 33,
-      "norm_label": "\ud83d\udc1b known issues / todos"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/jobs/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "jobs_page",
-      "community": 24,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/jobs/page.tsx",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "jobs_page_metadata",
-      "community": 24,
-      "norm_label": "metadata"
-    },
-    {
-      "label": "AdminJobsPage()",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/jobs/page.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "jobs_page_adminjobspage",
-      "community": 24,
-      "norm_label": "adminjobspage()"
-    },
-    {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "admin_layout",
-      "community": 11,
-      "norm_label": "layout.tsx"
-    },
-    {
-      "label": "AdminLayout()",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/layout.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "admin_layout_adminlayout",
-      "community": 11,
-      "norm_label": "adminlayout()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "admin_page",
-      "community": 9,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "admin_page_metadata",
-      "community": 9,
-      "norm_label": "metadata"
-    },
-    {
-      "label": "AdminPage()",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "admin_page_adminpage",
-      "community": 9,
-      "norm_label": "adminpage()"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "dashboard_route",
-      "community": 0,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "dashboard_route_get",
-      "community": 0,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "id_route",
-      "community": 57,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "id_route_handledelete",
-      "community": 57,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "handlePATCH()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "id_route_handlepatch",
-      "community": 57,
-      "norm_label": "handlepatch()"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L54",
-      "_origin": "ast",
-      "id": "id_route_delete",
-      "community": 57,
-      "norm_label": "delete"
-    },
-    {
-      "label": "PATCH",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "id_route_patch",
-      "community": 57,
-      "norm_label": "patch"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "jobs_route",
-      "community": 63,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "jobs_route_handleget",
-      "community": 63,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "jobs_route_get",
-      "community": 63,
-      "norm_label": "get"
-    },
-    {
-      "label": "admin-dashboard.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_admin_dashboard",
-      "community": 9,
-      "norm_label": "admin-dashboard.tsx"
-    },
-    {
-      "label": "StatCardProps",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "components_admin_dashboard_statcardprops",
-      "community": 9,
-      "norm_label": "statcardprops"
-    },
-    {
-      "label": "StatCard()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "components_admin_dashboard_statcard",
-      "community": 9,
-      "norm_label": "statcard()"
-    },
-    {
-      "label": "WORKMODE_COLORS",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "components_admin_dashboard_workmode_colors",
-      "community": 9,
-      "norm_label": "workmode_colors"
-    },
-    {
-      "label": "AdminDashboard()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L55",
-      "_origin": "ast",
-      "id": "components_admin_dashboard_admindashboard",
-      "community": 9,
-      "norm_label": "admindashboard()"
-    },
-    {
-      "label": "admin-jobs-table.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_admin_jobs_table",
-      "community": 24,
-      "norm_label": "admin-jobs-table.tsx"
-    },
-    {
-      "label": "AdminJobsTableProps",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L41",
-      "_origin": "ast",
-      "id": "components_admin_jobs_table_adminjobstableprops",
-      "community": 24,
-      "norm_label": "adminjobstableprops"
-    },
-    {
-      "label": "AdminJobsTable()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "components_admin_jobs_table_adminjobstable",
-      "community": 24,
-      "norm_label": "adminjobstable()"
-    },
-    {
-      "label": "admin-sidebar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-sidebar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_admin_sidebar",
-      "community": 11,
-      "norm_label": "admin-sidebar.tsx"
-    },
-    {
-      "label": "sidebarLinks",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-sidebar.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "components_admin_sidebar_sidebarlinks",
-      "community": 11,
-      "norm_label": "sidebarlinks"
-    },
-    {
-      "label": "AdminSidebar()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-sidebar.tsx",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "components_admin_sidebar_adminsidebar",
-      "community": 11,
-      "norm_label": "adminsidebar()"
-    },
-    {
-      "label": "use-admin-dashboard.ts",
-      "file_type": "code",
-      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "hooks_use_admin_dashboard",
-      "community": 9,
-      "norm_label": "use-admin-dashboard.ts"
-    },
-    {
-      "label": "useAdminDashboard()",
-      "file_type": "code",
-      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "hooks_use_admin_dashboard_useadmindashboard",
-      "community": 9,
-      "norm_label": "useadmindashboard()"
-    },
-    {
       "label": "use-admin-jobs.ts",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
@@ -596,20 +66,10 @@
       "norm_label": "use-admin-jobs.ts"
     },
     {
-      "label": "ApiResponse",
-      "file_type": "code",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "hooks_use_admin_jobs_apiresponse",
-      "community": 24,
-      "norm_label": "apiresponse"
-    },
-    {
       "label": "useAdminJobs()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L11",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_useadminjobs",
       "community": 24,
@@ -619,7 +79,7 @@
       "label": "useDeleteJob()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L18",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_usedeletejob",
       "community": 24,
@@ -629,11 +89,581 @@
       "label": "useToggleJobStatus()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L29",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_usetogglejobstatus",
       "community": 24,
       "norm_label": "usetogglejobstatus()"
+    },
+    {
+      "label": "api-response.ts",
+      "file_type": "code",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_api_response",
+      "community": 2,
+      "norm_label": "api-response.ts"
+    },
+    {
+      "label": "ok()",
+      "file_type": "code",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "lib_api_response_ok",
+      "community": 0,
+      "norm_label": "ok()"
+    },
+    {
+      "label": "fail()",
+      "file_type": "code",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "lib_api_response_fail",
+      "community": 2,
+      "norm_label": "fail()"
+    },
+    {
+      "label": "ApiResponse",
+      "file_type": "code",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "lib_api_response_apiresponse",
+      "community": 24,
+      "norm_label": "apiresponse"
+    },
+    {
+      "label": "MANIFEST.md",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "manifest.md",
+      "id": "manifest"
+    },
+    {
+      "label": "Hire Flow Next \u2013 Project Manifest",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "hire flow next \u2013 project manifest",
+      "id": "manifest_hire_flow_next_project_manifest"
+    },
+    {
+      "label": "\ud83d\udcc5 Last Updated",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udcc5 last updated",
+      "id": "manifest_last_updated"
+    },
+    {
+      "label": "\ud83d\udcca Overview",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udcca overview",
+      "id": "manifest_overview"
+    },
+    {
+      "label": "\u2705 Completed Steps",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\u2705 completed steps",
+      "id": "manifest_completed_steps"
+    },
+    {
+      "label": "Phase 0: Foundation",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 0: foundation",
+      "id": "manifest_phase_0_foundation"
+    },
+    {
+      "label": "Phase 1: Admin",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 1: admin",
+      "id": "manifest_phase_1_admin"
+    },
+    {
+      "label": "Phase 2: Recruiter",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 2: recruiter",
+      "id": "manifest_phase_2_recruiter"
+    },
+    {
+      "label": "Phase 3: User",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L46",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 3: user",
+      "id": "manifest_phase_3_user"
+    },
+    {
+      "label": "Phase 4: Public Job Routes & Home Page",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 4: public job routes & home page",
+      "id": "manifest_phase_4_public_job_routes_home_page"
+    },
+    {
+      "label": "Phase 5: Messaging & Notifications",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 5: messaging & notifications",
+      "id": "manifest_phase_5_messaging_notifications"
+    },
+    {
+      "label": "\ud83d\udcc1 Created File Paths (Grouped by Phase)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L65",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udcc1 created file paths (grouped by phase)",
+      "id": "manifest_created_file_paths_grouped_by_phase"
+    },
+    {
+      "label": "Phase 0",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 0",
+      "id": "manifest_phase_0"
+    },
+    {
+      "label": "Phase 1",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L109",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 1",
+      "id": "manifest_phase_1"
+    },
+    {
+      "label": "Phase 2",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L148",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 2",
+      "id": "manifest_phase_2"
+    },
+    {
+      "label": "Phase 3",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L151",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 3",
+      "id": "manifest_phase_3"
+    },
+    {
+      "label": "Phase 4",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L154",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 4",
+      "id": "manifest_phase_4"
+    },
+    {
+      "label": "Phase 5",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L157",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "phase 5",
+      "id": "manifest_phase_5"
+    },
+    {
+      "label": "\ud83d\udd17 Pending Dependencies",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L162",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udd17 pending dependencies",
+      "id": "manifest_pending_dependencies"
+    },
+    {
+      "label": "\ud83d\udd1c Upcoming Dependencies (Phase 1)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L167",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udd1c upcoming dependencies (phase 1)",
+      "id": "manifest_upcoming_dependencies_phase_1"
+    },
+    {
+      "label": "\ud83e\udde0 Active Global Context Snapshot",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L175",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83e\udde0 active global context snapshot",
+      "id": "manifest_active_global_context_snapshot"
+    },
+    {
+      "label": "\ud83d\udc1b Known Issues / TODOs",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L187",
+      "_origin": "ast",
+      "community": 33,
+      "norm_label": "\ud83d\udc1b known issues / todos",
+      "id": "manifest_known_issues_todos"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/jobs/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "page.tsx",
+      "id": "jobs_page"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/jobs/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "metadata",
+      "id": "jobs_page_metadata"
+    },
+    {
+      "label": "AdminJobsPage()",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/jobs/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "adminjobspage()",
+      "id": "jobs_page_adminjobspage"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "layout.tsx",
+      "id": "admin_layout"
+    },
+    {
+      "label": "AdminLayout()",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/layout.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "adminlayout()",
+      "id": "admin_layout_adminlayout"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "page.tsx",
+      "id": "admin_page"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "metadata",
+      "id": "admin_page_metadata"
+    },
+    {
+      "label": "AdminPage()",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "adminpage()",
+      "id": "admin_page_adminpage"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "route.ts",
+      "id": "dashboard_route"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "get",
+      "id": "dashboard_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 57,
+      "norm_label": "route.ts",
+      "id": "id_route"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 57,
+      "norm_label": "handledelete()",
+      "id": "id_route_handledelete"
+    },
+    {
+      "label": "handlePATCH()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 57,
+      "norm_label": "handlepatch()",
+      "id": "id_route_handlepatch"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L54",
+      "_origin": "ast",
+      "community": 57,
+      "norm_label": "delete",
+      "id": "id_route_delete"
+    },
+    {
+      "label": "PATCH",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 57,
+      "norm_label": "patch",
+      "id": "id_route_patch"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 63,
+      "norm_label": "route.ts",
+      "id": "jobs_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 63,
+      "norm_label": "handleget()",
+      "id": "jobs_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 63,
+      "norm_label": "get",
+      "id": "jobs_route_get"
+    },
+    {
+      "label": "admin-dashboard.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "admin-dashboard.tsx",
+      "id": "components_admin_dashboard"
+    },
+    {
+      "label": "StatCardProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "statcardprops",
+      "id": "components_admin_dashboard_statcardprops"
+    },
+    {
+      "label": "StatCard()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "statcard()",
+      "id": "components_admin_dashboard_statcard"
+    },
+    {
+      "label": "WORKMODE_COLORS",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "workmode_colors",
+      "id": "components_admin_dashboard_workmode_colors"
+    },
+    {
+      "label": "AdminDashboard()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "admindashboard()",
+      "id": "components_admin_dashboard_admindashboard"
+    },
+    {
+      "label": "admin-jobs-table.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "admin-jobs-table.tsx",
+      "id": "components_admin_jobs_table"
+    },
+    {
+      "label": "AdminJobsTableProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "adminjobstableprops",
+      "id": "components_admin_jobs_table_adminjobstableprops"
+    },
+    {
+      "label": "AdminJobsTable()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "adminjobstable()",
+      "id": "components_admin_jobs_table_adminjobstable"
+    },
+    {
+      "label": "admin-sidebar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-sidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "admin-sidebar.tsx",
+      "id": "components_admin_sidebar"
+    },
+    {
+      "label": "sidebarLinks",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-sidebar.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "sidebarlinks",
+      "id": "components_admin_sidebar_sidebarlinks"
+    },
+    {
+      "label": "AdminSidebar()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-sidebar.tsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "adminsidebar()",
+      "id": "components_admin_sidebar_adminsidebar"
+    },
+    {
+      "label": "use-admin-dashboard.ts",
+      "file_type": "code",
+      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "use-admin-dashboard.ts",
+      "id": "hooks_use_admin_dashboard"
+    },
+    {
+      "label": "useAdminDashboard()",
+      "file_type": "code",
+      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "useadmindashboard()",
+      "id": "hooks_use_admin_dashboard_useadmindashboard"
     },
     {
       "label": "dashboard-queries.ts",
@@ -641,9 +671,9 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "queries_dashboard_queries",
       "community": 9,
-      "norm_label": "dashboard-queries.ts"
+      "norm_label": "dashboard-queries.ts",
+      "id": "queries_dashboard_queries"
     },
     {
       "label": "DashboardStats",
@@ -651,9 +681,9 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "queries_dashboard_queries_dashboardstats",
       "community": 9,
-      "norm_label": "dashboardstats"
+      "norm_label": "dashboardstats",
+      "id": "queries_dashboard_queries_dashboardstats"
     },
     {
       "label": "getDashboardStats()",
@@ -661,9 +691,9 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "queries_dashboard_queries_getdashboardstats",
       "community": 9,
-      "norm_label": "getdashboardstats()"
+      "norm_label": "getdashboardstats()",
+      "id": "queries_dashboard_queries_getdashboardstats"
     },
     {
       "label": "job-queries.ts",
@@ -671,9 +701,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "queries_job_queries",
       "community": 24,
-      "norm_label": "job-queries.ts"
+      "norm_label": "job-queries.ts",
+      "id": "queries_job_queries"
     },
     {
       "label": "AdminJobRow",
@@ -681,9 +711,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "queries_job_queries_adminjobrow",
       "community": 24,
-      "norm_label": "adminjobrow"
+      "norm_label": "adminjobrow",
+      "id": "queries_job_queries_adminjobrow"
     },
     {
       "label": "AdminJobListResult",
@@ -691,9 +721,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "queries_job_queries_adminjoblistresult",
       "community": 24,
-      "norm_label": "adminjoblistresult"
+      "norm_label": "adminjoblistresult",
+      "id": "queries_job_queries_adminjoblistresult"
     },
     {
       "label": "listJobs()",
@@ -701,9 +731,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "queries_job_queries_listjobs",
       "community": 63,
-      "norm_label": "listjobs()"
+      "norm_label": "listjobs()",
+      "id": "queries_job_queries_listjobs"
     },
     {
       "label": "admin.schema.ts",
@@ -711,9 +741,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "schema_admin_schema",
       "community": 5,
-      "norm_label": "admin.schema.ts"
+      "norm_label": "admin.schema.ts",
+      "id": "schema_admin_schema"
     },
     {
       "label": "AdminListUsersParamsSchema",
@@ -721,9 +751,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminlistusersparamsschema",
       "community": 0,
-      "norm_label": "adminlistusersparamsschema"
+      "norm_label": "adminlistusersparamsschema",
+      "id": "schema_admin_schema_adminlistusersparamsschema"
     },
     {
       "label": "AdminListUsersParams",
@@ -731,9 +761,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminlistusersparams",
       "community": 12,
-      "norm_label": "adminlistusersparams"
+      "norm_label": "adminlistusersparams",
+      "id": "schema_admin_schema_adminlistusersparams"
     },
     {
       "label": "AdminBanUserSchema",
@@ -741,9 +771,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbanuserschema",
       "community": 0,
-      "norm_label": "adminbanuserschema"
+      "norm_label": "adminbanuserschema",
+      "id": "schema_admin_schema_adminbanuserschema"
     },
     {
       "label": "AdminBanUserInput",
@@ -751,9 +781,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbanuserinput",
       "community": 5,
-      "norm_label": "adminbanuserinput"
+      "norm_label": "adminbanuserinput",
+      "id": "schema_admin_schema_adminbanuserinput"
     },
     {
       "label": "AdminInviteSchema",
@@ -761,9 +791,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "id": "schema_admin_schema_admininviteschema",
       "community": 5,
-      "norm_label": "admininviteschema"
+      "norm_label": "admininviteschema",
+      "id": "schema_admin_schema_admininviteschema"
     },
     {
       "label": "AdminInviteInput",
@@ -771,9 +801,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "schema_admin_schema_admininviteinput",
       "community": 5,
-      "norm_label": "admininviteinput"
+      "norm_label": "admininviteinput",
+      "id": "schema_admin_schema_admininviteinput"
     },
     {
       "label": "AdminAcceptInviteSchema",
@@ -781,9 +811,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminacceptinviteschema",
       "community": 59,
-      "norm_label": "adminacceptinviteschema"
+      "norm_label": "adminacceptinviteschema",
+      "id": "schema_admin_schema_adminacceptinviteschema"
     },
     {
       "label": "AdminAcceptInviteInput",
@@ -791,9 +821,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminacceptinviteinput",
       "community": 5,
-      "norm_label": "adminacceptinviteinput"
+      "norm_label": "adminacceptinviteinput",
+      "id": "schema_admin_schema_adminacceptinviteinput"
     },
     {
       "label": "AdminBulkInviteFormSchema",
@@ -801,9 +831,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbulkinviteformschema",
       "community": 5,
-      "norm_label": "adminbulkinviteformschema"
+      "norm_label": "adminbulkinviteformschema",
+      "id": "schema_admin_schema_adminbulkinviteformschema"
     },
     {
       "label": "AdminBulkInviteFormInput",
@@ -811,9 +841,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbulkinviteforminput",
       "community": 5,
-      "norm_label": "adminbulkinviteforminput"
+      "norm_label": "adminbulkinviteforminput",
+      "id": "schema_admin_schema_adminbulkinviteforminput"
     },
     {
       "label": "AdminBulkInviteSchema",
@@ -821,9 +851,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbulkinviteschema",
       "community": 5,
-      "norm_label": "adminbulkinviteschema"
+      "norm_label": "adminbulkinviteschema",
+      "id": "schema_admin_schema_adminbulkinviteschema"
     },
     {
       "label": "AdminBulkInviteInput",
@@ -831,9 +861,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminbulkinviteinput",
       "community": 5,
-      "norm_label": "adminbulkinviteinput"
+      "norm_label": "adminbulkinviteinput",
+      "id": "schema_admin_schema_adminbulkinviteinput"
     },
     {
       "label": "AdminListJobsParamsSchema",
@@ -841,9 +871,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminlistjobsparamsschema",
       "community": 63,
-      "norm_label": "adminlistjobsparamsschema"
+      "norm_label": "adminlistjobsparamsschema",
+      "id": "schema_admin_schema_adminlistjobsparamsschema"
     },
     {
       "label": "AdminListJobsParams",
@@ -851,9 +881,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "schema_admin_schema_adminlistjobsparams",
       "community": 24,
-      "norm_label": "adminlistjobsparams"
+      "norm_label": "adminlistjobsparams",
+      "id": "schema_admin_schema_adminlistjobsparams"
     },
     {
       "label": "AdminToggleJobStatusSchema",
@@ -861,9 +891,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L89",
       "_origin": "ast",
-      "id": "schema_admin_schema_admintogglejobstatusschema",
       "community": 5,
-      "norm_label": "admintogglejobstatusschema"
+      "norm_label": "admintogglejobstatusschema",
+      "id": "schema_admin_schema_admintogglejobstatusschema"
     },
     {
       "label": "AdminToggleJobStatusInput",
@@ -871,9 +901,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L93",
       "_origin": "ast",
-      "id": "schema_admin_schema_admintogglejobstatusinput",
       "community": 5,
-      "norm_label": "admintogglejobstatusinput"
+      "norm_label": "admintogglejobstatusinput",
+      "id": "schema_admin_schema_admintogglejobstatusinput"
     },
     {
       "label": "social-signin-buttons.tsx",
@@ -881,9 +911,9 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_social_signin_buttons",
       "community": 47,
-      "norm_label": "social-signin-buttons.tsx"
+      "norm_label": "social-signin-buttons.tsx",
+      "id": "components_social_signin_buttons"
     },
     {
       "label": "providers",
@@ -891,9 +921,9 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "components_social_signin_buttons_providers",
       "community": 47,
-      "norm_label": "providers"
+      "norm_label": "providers",
+      "id": "components_social_signin_buttons_providers"
     },
     {
       "label": "SocialProvider",
@@ -901,9 +931,9 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "components_social_signin_buttons_socialprovider",
       "community": 47,
-      "norm_label": "socialprovider"
+      "norm_label": "socialprovider",
+      "id": "components_social_signin_buttons_socialprovider"
     },
     {
       "label": "SocialSignInButtons()",
@@ -911,9 +941,9 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "components_social_signin_buttons_socialsigninbuttons",
       "community": 48,
-      "norm_label": "socialsigninbuttons()"
+      "norm_label": "socialsigninbuttons()",
+      "id": "components_social_signin_buttons_socialsigninbuttons"
     },
     {
       "label": "route.ts",
@@ -1051,7 +1081,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "package.json",
       "id": "package"
     },
@@ -1061,7 +1091,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "name",
       "id": "package_name"
     },
@@ -1071,7 +1101,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "version",
       "id": "package_version"
     },
@@ -1081,7 +1111,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "private",
       "id": "package_private"
     },
@@ -1091,7 +1121,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "scripts",
       "id": "package_scripts"
     },
@@ -1101,7 +1131,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "dev",
       "id": "package_scripts_dev"
     },
@@ -1111,7 +1141,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "postinstall",
       "id": "package_scripts_postinstall"
     },
@@ -1121,7 +1151,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "build",
       "id": "package_scripts_build"
     },
@@ -1131,7 +1161,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "start",
       "id": "package_scripts_start"
     },
@@ -1141,7 +1171,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "lint",
       "id": "package_scripts_lint"
     },
@@ -1151,7 +1181,7 @@
       "source_file": "package.json",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "seed",
       "id": "package_scripts_seed"
     },
@@ -1161,7 +1191,7 @@
       "source_file": "package.json",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "promote",
       "id": "package_scripts_promote"
     },
@@ -1171,7 +1201,7 @@
       "source_file": "package.json",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 61,
+      "community": 6,
       "norm_label": "demote",
       "id": "package_scripts_demote"
     },
@@ -1181,7 +1211,7 @@
       "source_file": "package.json",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "prisma",
       "id": "package_prisma"
     },
@@ -1191,7 +1221,7 @@
       "source_file": "package.json",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 64,
+      "community": 6,
       "norm_label": "seed",
       "id": "package_prisma_seed"
     },
@@ -5246,36 +5276,6 @@
       "id": "lib_api_error_validationerror_constructor"
     },
     {
-      "label": "api-response.ts",
-      "file_type": "code",
-      "source_file": "lib/api-response.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "api-response.ts",
-      "id": "lib_api_response"
-    },
-    {
-      "label": "ok()",
-      "file_type": "code",
-      "source_file": "lib/api-response.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "ok()",
-      "id": "lib_api_response_ok"
-    },
-    {
-      "label": "fail()",
-      "file_type": "code",
-      "source_file": "lib/api-response.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "fail()",
-      "id": "lib_api_response_fail"
-    },
-    {
       "label": "api-wrapper.ts",
       "file_type": "code",
       "source_file": "lib/api-wrapper.ts",
@@ -7603,6 +7603,594 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "hooks_use_admin_jobs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "hooks_use_admin_jobs_useadminjobs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "hooks_use_admin_jobs_usedeletejob"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "hooks_use_admin_jobs_usetogglejobstatus"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "lib_api_client_apiclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "lib_api_response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "lib_api_response_apiresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "queries_job_queries"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "queries_job_queries_adminjoblistresult"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "schema_admin_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_jobs",
+      "target": "schema_admin_schema_adminlistjobsparams"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "hooks_use_admin_jobs_useadminjobs"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "components_admin_jobs_table_adminjobstable",
+      "target": "hooks_use_admin_jobs_useadminjobs"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "hooks_use_admin_jobs_usedeletejob"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "components_admin_jobs_table_adminjobstable",
+      "target": "hooks_use_admin_jobs_usedeletejob"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "hooks_use_admin_jobs_usetogglejobstatus"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "components_admin_jobs_table_adminjobstable",
+      "target": "hooks_use_admin_jobs_usetogglejobstatus"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ban_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "lib_api_response",
+      "target": "lib_api_response_apiresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_api_response",
+      "target": "lib_api_response_fail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-response.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_api_response",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-wrapper.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_api_wrapper",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "role_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessions_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unban_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/upload/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "upload_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_route",
+      "target": "lib_api_response"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/invite/accept/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "accept_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/invite/[id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_admin_invite_id_route_ts_id_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ban_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ban_route_handlepost",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "dashboard_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_route_handledelete",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "id_route_handleget",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/invite/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "invite_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jobs_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "role_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "role_route_handlepost",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessions_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessions_route_handledelete",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sessions_route_handleget",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unban_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unban_route_handlepost",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/upload/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "upload_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/upload/route.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "upload_route_handlepost",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_route",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_route_handleget",
+      "target": "lib_api_response_ok"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/invite/accept/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "accept_route",
+      "target": "lib_api_response_fail"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-wrapper.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_api_wrapper",
+      "target": "lib_api_response_fail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/api-wrapper.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_api_wrapper_handleerror",
+      "target": "lib_api_response_fail"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/upload/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "upload_route",
+      "target": "lib_api_response_fail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/upload/route.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "upload_route_handlepost",
+      "target": "lib_api_response_fail"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "MANIFEST.md",
@@ -7819,9 +8407,9 @@
       "source_file": "app/(roles)/admin/jobs/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "components_admin_jobs_table",
-      "confidence_score": 1.0
+      "target": "components_admin_jobs_table"
     },
     {
       "relation": "imports",
@@ -7830,9 +8418,9 @@
       "source_file": "app/(roles)/admin/jobs/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "components_admin_jobs_table_adminjobstable",
-      "confidence_score": 1.0
+      "target": "components_admin_jobs_table_adminjobstable"
     },
     {
       "relation": "contains",
@@ -7840,9 +8428,9 @@
       "source_file": "app/(roles)/admin/jobs/page.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "jobs_page_adminjobspage",
-      "confidence_score": 1.0
+      "target": "jobs_page_adminjobspage"
     },
     {
       "relation": "contains",
@@ -7850,9 +8438,9 @@
       "source_file": "app/(roles)/admin/jobs/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "jobs_page_metadata",
-      "confidence_score": 1.0
+      "target": "jobs_page_metadata"
     },
     {
       "relation": "imports",
@@ -7861,9 +8449,9 @@
       "source_file": "app/(roles)/admin/jobs/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "layout_page_header_pageheader",
-      "confidence_score": 1.0
+      "target": "layout_page_header_pageheader"
     },
     {
       "relation": "contains",
@@ -7882,9 +8470,9 @@
       "source_file": "app/(roles)/admin/layout.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_layout",
-      "target": "components_admin_sidebar",
-      "confidence_score": 1.0
+      "target": "components_admin_sidebar"
     },
     {
       "relation": "imports",
@@ -7893,9 +8481,9 @@
       "source_file": "app/(roles)/admin/layout.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_layout",
-      "target": "components_admin_sidebar_adminsidebar",
-      "confidence_score": 1.0
+      "target": "components_admin_sidebar_adminsidebar"
     },
     {
       "relation": "imports_from",
@@ -7957,9 +8545,9 @@
       "source_file": "app/(roles)/admin/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_page",
-      "target": "components_admin_dashboard",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard"
     },
     {
       "relation": "imports",
@@ -7968,9 +8556,9 @@
       "source_file": "app/(roles)/admin/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_page",
-      "target": "components_admin_dashboard_admindashboard",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard_admindashboard"
     },
     {
       "relation": "imports",
@@ -7979,9 +8567,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "contains",
@@ -7989,20 +8577,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "dashboard_route_get",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "dashboard_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "dashboard_route_get"
     },
     {
       "relation": "imports",
@@ -8011,9 +8588,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports_from",
@@ -8022,9 +8599,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "queries_dashboard_queries",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries"
     },
     {
       "relation": "imports",
@@ -8033,9 +8610,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "queries_dashboard_queries_getdashboardstats",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries_getdashboardstats"
     },
     {
       "relation": "imports_from",
@@ -8127,9 +8704,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "id_route",
-      "target": "id_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "id_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -8137,9 +8714,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "id_route",
-      "target": "id_route_patch",
-      "confidence_score": 1.0
+      "target": "id_route_patch"
     },
     {
       "relation": "imports_from",
@@ -8173,28 +8750,6 @@
       "confidence_score": 1.0,
       "source": "id_route",
       "target": "lib_api_error_validationerror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -8285,26 +8840,15 @@
       "target": "api_require_super_admin_requiresuperadmin"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_route_handledelete",
-      "target": "lib_api_response_ok"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "contains",
@@ -8312,9 +8856,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "jobs_route_get",
-      "confidence_score": 1.0
+      "target": "jobs_route_get"
     },
     {
       "relation": "contains",
@@ -8322,9 +8866,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "jobs_route_handleget",
-      "confidence_score": 1.0
+      "target": "jobs_route_handleget"
     },
     {
       "relation": "imports",
@@ -8333,20 +8877,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "jobs_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports",
@@ -8355,9 +8888,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports_from",
@@ -8366,9 +8899,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "queries_job_queries",
-      "confidence_score": 1.0
+      "target": "queries_job_queries"
     },
     {
       "relation": "imports",
@@ -8377,9 +8910,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "queries_job_queries_listjobs",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_listjobs"
     },
     {
       "relation": "imports_from",
@@ -8388,9 +8921,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "schema_admin_schema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema"
     },
     {
       "relation": "imports",
@@ -8399,9 +8932,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "schema_admin_schema_adminlistjobsparamsschema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_adminlistjobsparamsschema"
     },
     {
       "relation": "calls",
@@ -8410,9 +8943,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route_handleget",
-      "target": "queries_job_queries_listjobs",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_listjobs"
     },
     {
       "relation": "contains",
@@ -8420,9 +8953,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_admindashboard",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard_admindashboard"
     },
     {
       "relation": "contains",
@@ -8430,9 +8963,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_statcard",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard_statcard"
     },
     {
       "relation": "contains",
@@ -8440,9 +8973,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_statcardprops",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard_statcardprops"
     },
     {
       "relation": "contains",
@@ -8450,9 +8983,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_workmode_colors",
-      "confidence_score": 1.0
+      "target": "components_admin_dashboard_workmode_colors"
     },
     {
       "relation": "imports_from",
@@ -8461,9 +8994,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "hooks_use_admin_dashboard",
-      "confidence_score": 1.0
+      "target": "hooks_use_admin_dashboard"
     },
     {
       "relation": "imports",
@@ -8472,9 +9005,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "hooks_use_admin_dashboard_useadmindashboard",
-      "confidence_score": 1.0
+      "target": "hooks_use_admin_dashboard_useadmindashboard"
     },
     {
       "relation": "imports",
@@ -8483,9 +9016,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "ui_badge_badge",
-      "confidence_score": 1.0
+      "target": "ui_badge_badge"
     },
     {
       "relation": "imports",
@@ -8494,9 +9027,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "ui_data_table_columndef",
-      "confidence_score": 1.0
+      "target": "ui_data_table_columndef"
     },
     {
       "relation": "imports",
@@ -8505,9 +9038,9 @@
       "source_file": "app/features/admin/components/admin-dashboard.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_dashboard",
-      "target": "ui_data_table_datatable",
-      "confidence_score": 1.0
+      "target": "ui_data_table_datatable"
     },
     {
       "relation": "calls",
@@ -8526,9 +9059,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "components_admin_jobs_table_adminjobstable",
-      "confidence_score": 1.0
+      "target": "components_admin_jobs_table_adminjobstable"
     },
     {
       "relation": "contains",
@@ -8536,53 +9069,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "components_admin_jobs_table_adminjobstableprops",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "hooks_use_admin_jobs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "hooks_use_admin_jobs_useadminjobs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "hooks_use_admin_jobs_usedeletejob",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "hooks_use_admin_jobs_usetogglejobstatus",
-      "confidence_score": 1.0
+      "target": "components_admin_jobs_table_adminjobstableprops"
     },
     {
       "relation": "imports_from",
@@ -8591,9 +9080,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "queries_job_queries",
-      "confidence_score": 1.0
+      "target": "queries_job_queries"
     },
     {
       "relation": "imports",
@@ -8602,9 +9091,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "queries_job_queries_adminjobrow",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_adminjobrow"
     },
     {
       "relation": "imports_from",
@@ -8613,9 +9102,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "schema_admin_schema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema"
     },
     {
       "relation": "imports",
@@ -8624,9 +9113,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "schema_admin_schema_adminlistjobsparams",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_adminlistjobsparams"
     },
     {
       "relation": "imports",
@@ -8635,9 +9124,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_badge_badge",
-      "confidence_score": 1.0
+      "target": "ui_badge_badge"
     },
     {
       "relation": "imports",
@@ -8646,9 +9135,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "imports",
@@ -8657,9 +9146,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_data_table_columndef",
-      "confidence_score": 1.0
+      "target": "ui_data_table_columndef"
     },
     {
       "relation": "imports",
@@ -8668,9 +9157,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_data_table_datatable",
-      "confidence_score": 1.0
+      "target": "ui_data_table_datatable"
     },
     {
       "relation": "imports",
@@ -8679,9 +9168,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialog",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialog"
     },
     {
       "relation": "imports",
@@ -8690,9 +9179,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogclose",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogclose"
     },
     {
       "relation": "imports",
@@ -8701,9 +9190,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogcontent",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogcontent"
     },
     {
       "relation": "imports",
@@ -8712,9 +9201,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogdescription",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogdescription"
     },
     {
       "relation": "imports",
@@ -8723,9 +9212,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogheader",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogheader"
     },
     {
       "relation": "imports",
@@ -8734,9 +9223,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogtitle",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogtitle"
     },
     {
       "relation": "imports",
@@ -8745,9 +9234,9 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
-      "target": "ui_dialog_dialogtrigger",
-      "confidence_score": 1.0
+      "target": "ui_dialog_dialogtrigger"
     },
     {
       "relation": "imports",
@@ -8756,86 +9245,53 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L16",
       "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "ui_input_input",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "ui_select_selectcontent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "ui_select_selectitem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "ui_select_selecttrigger",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table",
-      "target": "ui_select_selectvalue",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L68",
-      "weight": 1.0,
-      "source": "components_admin_jobs_table_adminjobstable",
-      "target": "hooks_use_admin_jobs_useadminjobs"
+      "source": "components_admin_jobs_table",
+      "target": "ui_input_input"
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L69",
+      "source_location": "L17",
       "weight": 1.0,
-      "source": "components_admin_jobs_table_adminjobstable",
-      "target": "hooks_use_admin_jobs_usedeletejob"
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "ui_select_selectcontent"
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L70",
+      "source_location": "L17",
       "weight": 1.0,
-      "source": "components_admin_jobs_table_adminjobstable",
-      "target": "hooks_use_admin_jobs_usetogglejobstatus"
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "ui_select_selectitem"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "ui_select_selecttrigger"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "ui_select_selectvalue"
     },
     {
       "relation": "contains",
@@ -8843,9 +9299,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_sidebar",
-      "target": "components_admin_sidebar_adminsidebar",
-      "confidence_score": 1.0
+      "target": "components_admin_sidebar_adminsidebar"
     },
     {
       "relation": "contains",
@@ -8853,9 +9309,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_sidebar",
-      "target": "components_admin_sidebar_sidebarlinks",
-      "confidence_score": 1.0
+      "target": "components_admin_sidebar_sidebarlinks"
     },
     {
       "relation": "imports",
@@ -8864,9 +9320,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_sidebar",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports",
@@ -8875,9 +9331,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_sidebar",
-      "target": "stores_ui_store_useuistore",
-      "confidence_score": 1.0
+      "target": "stores_ui_store_useuistore"
     },
     {
       "relation": "contains",
@@ -8885,9 +9341,9 @@
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_dashboard",
-      "target": "hooks_use_admin_dashboard_useadmindashboard",
-      "confidence_score": 1.0
+      "target": "hooks_use_admin_dashboard_useadmindashboard"
     },
     {
       "relation": "imports",
@@ -8896,9 +9352,9 @@
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_dashboard",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
+      "target": "lib_api_client_apiclient"
     },
     {
       "relation": "imports_from",
@@ -8907,9 +9363,9 @@
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_dashboard",
-      "target": "queries_dashboard_queries",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries"
     },
     {
       "relation": "imports",
@@ -8918,104 +9374,9 @@
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_dashboard",
-      "target": "queries_dashboard_queries_dashboardstats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "hooks_use_admin_jobs_apiresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "hooks_use_admin_jobs_useadminjobs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "hooks_use_admin_jobs_usedeletejob",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "hooks_use_admin_jobs_usetogglejobstatus",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "queries_job_queries",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "queries_job_queries_adminjoblistresult",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "schema_admin_schema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "hooks_use_admin_jobs",
-      "target": "schema_admin_schema_adminlistjobsparams",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries_dashboardstats"
     },
     {
       "relation": "contains",
@@ -9023,9 +9384,9 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_dashboard_queries",
-      "target": "queries_dashboard_queries_dashboardstats",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries_dashboardstats"
     },
     {
       "relation": "contains",
@@ -9033,9 +9394,9 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_dashboard_queries",
-      "target": "queries_dashboard_queries_getdashboardstats",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries_getdashboardstats"
     },
     {
       "relation": "imports",
@@ -9044,9 +9405,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "lib_pagination_buildoffsetmeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildoffsetmeta"
     },
     {
       "relation": "imports",
@@ -9055,9 +9416,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "lib_pagination_parseoffsetparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parseoffsetparams"
     },
     {
       "relation": "contains",
@@ -9065,9 +9426,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "queries_job_queries_adminjoblistresult",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_adminjoblistresult"
     },
     {
       "relation": "contains",
@@ -9075,9 +9436,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "queries_job_queries_adminjobrow",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_adminjobrow"
     },
     {
       "relation": "contains",
@@ -9085,9 +9446,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "queries_job_queries_listjobs",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_listjobs"
     },
     {
       "relation": "imports_from",
@@ -9096,9 +9457,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "schema_admin_schema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema"
     },
     {
       "relation": "imports",
@@ -9107,9 +9468,9 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_job_queries",
-      "target": "schema_admin_schema_adminlistjobsparams",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_adminlistjobsparams"
     },
     {
       "relation": "imports_from",
@@ -9294,9 +9655,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "schema_admin_schema_adminlistjobsparams",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_adminlistjobsparams"
     },
     {
       "relation": "contains",
@@ -9304,9 +9665,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "schema_admin_schema_adminlistjobsparamsschema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_adminlistjobsparamsschema"
     },
     {
       "relation": "contains",
@@ -9334,9 +9695,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "schema_admin_schema_admintogglejobstatusinput",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_admintogglejobstatusinput"
     },
     {
       "relation": "contains",
@@ -9344,9 +9705,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "schema_admin_schema_admintogglejobstatusschema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_admintogglejobstatusschema"
     },
     {
       "relation": "imports_from",
@@ -9639,28 +10000,6 @@
       "confidence_score": 1.0,
       "source": "accept_route",
       "target": "lib_api_error_notfounderror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/invite/accept/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "accept_route",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/invite/accept/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "accept_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -11541,17 +11880,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/invite/[id]/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11577,17 +11905,6 @@
       "confidence_score": 1.0,
       "source": "invite_route",
       "target": "invite_route_handleget"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "invite_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -13476,28 +13793,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ban_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ban_route",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13538,17 +13833,6 @@
       "target": "libs_auth_auth"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ban_route_handlepost",
-      "target": "lib_api_response_ok"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -13569,28 +13853,6 @@
       "confidence_score": 1.0,
       "source": "role_route",
       "target": "lib_api_error_validationerror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "role_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "role_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -13660,56 +13922,12 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "role_route_handlepost",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "id_route_handleget",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "id_route_handleget",
       "target": "queries_user_queries_getuserbyid"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sessions_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sessions_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -13822,55 +14040,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sessions_route_handleget",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "sessions_route_handleget",
       "target": "queries_user_queries_listusersessions"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sessions_route_handledelete",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unban_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unban_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -13937,17 +14111,6 @@
       "target": "unban_route_post"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unban_route_handlepost",
-      "target": "lib_api_response_ok"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -13968,28 +14131,6 @@
       "confidence_score": 1.0,
       "source": "users_route",
       "target": "lib_api_error_validationerror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_route",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -14054,17 +14195,6 @@
       "confidence_score": 1.0,
       "source": "users_route",
       "target": "users_route_handleget"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_route_handleget",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "calls",
@@ -14147,39 +14277,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/upload/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "upload_route",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/upload/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "upload_route",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/upload/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "upload_route",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/upload/route.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14249,28 +14346,6 @@
       "confidence_score": 1.0,
       "source": "upload_route",
       "target": "upload_route_post"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/upload/route.ts",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "upload_route_handlepost",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/upload/route.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "upload_route_handlepost",
-      "target": "lib_api_response_ok"
     },
     {
       "relation": "calls",
@@ -18631,59 +18706,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/api-response.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_api_response",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/api-response.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_api_response",
-      "target": "lib_api_response_ok"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/api-wrapper.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_api_wrapper",
-      "target": "lib_api_response"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/api-wrapper.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_api_wrapper",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/api-wrapper.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_api_wrapper_handleerror",
-      "target": "lib_api_response_fail"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L7",
       "weight": 1.0,
@@ -20708,5 +20730,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "64ecce3e7e1c1c7e2d8f42fc677df8e7865f516b"
+  "built_at_commit": "24091621237ff46614ad21a1e820f141f1f671fe"
 }

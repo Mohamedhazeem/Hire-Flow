@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { VerificationEmail } from "../components/email/verfication-email";
 import { ResetPasswordEmail } from "../components/email/reset-password-email";
 import { AdminInviteEmail } from "@/app/features/admin/components/email/admin-invite-email";
+import { BanNotificationEmail } from "@/app/features/admin/components/email/ban-notification-email";
 import React from "react";
 import { render } from "react-email";
 import { logger } from "@/utils/logger";
@@ -13,12 +14,16 @@ const emailFrom = env.data?.EMAIL_FROM || "onboarding@resend.dev";
 interface SendEmailArgs {
   to: string;
   subject: string;
-  url: string;
-  type: "verification" | "reset" | "admin-invite";
+  url?: string;
+  type: "verification" | "reset" | "admin-invite" | "ban-notification";
   invitedByName?: string;
+  banDetails?: {
+    reason?: string | null;
+    expiresInDays?: number | null;
+  };
 }
 
-export async function sendEmail({ to, subject, url, type, invitedByName }: SendEmailArgs): Promise<void> {
+export async function sendEmail({ to, subject, url, type, invitedByName, banDetails }: SendEmailArgs): Promise<void> {
   if (!env.data?.RESEND_API_KEY) {
     logger.server.warn(
       `⚠️ [sendEmail] Missing RESEND_API_KEY. Email simulation to <${to}>:\nSubject: ${subject}\nBody: ${url}\n`,
@@ -31,10 +36,18 @@ export async function sendEmail({ to, subject, url, type, invitedByName }: SendE
       ? ResetPasswordEmail
       : type === "admin-invite"
         ? AdminInviteEmail
-        : VerificationEmail;
+        : type === "ban-notification"
+          ? BanNotificationEmail
+          : VerificationEmail;
     const htmlComponent = type === "admin-invite"
-      ? await render(React.createElement(emailComponent as typeof AdminInviteEmail, { url, invitedByName: invitedByName! }))
-      : await render(React.createElement(emailComponent as typeof VerificationEmail, { url }));
+      ? await render(React.createElement(emailComponent as typeof AdminInviteEmail, { url: url!, invitedByName: invitedByName! }))
+      : type === "ban-notification"
+        ? await render(React.createElement(emailComponent as typeof BanNotificationEmail, {
+            adminName: invitedByName!,
+            reason: banDetails?.reason,
+            expiresInDays: banDetails?.expiresInDays,
+          }))
+        : await render(React.createElement(emailComponent as typeof VerificationEmail, { url: url! }));
     const { data, error } = await resend.emails.send({
       from: emailFrom,
       to: [to],

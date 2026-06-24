@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AdminInviteSchema,
@@ -10,7 +10,10 @@ import {
   type AdminBulkInviteFormInput,
 } from "@/app/features/admin/schema/admin.schema";
 import { inviteAdmin } from "@/app/features/admin/actions/invite-admin";
-import { bulkInviteAdmins, type BulkInviteResult } from "@/app/features/admin/actions/bulk-invite-admin";
+import {
+  bulkInviteAdmins,
+  type BulkInviteResult,
+} from "@/app/features/admin/actions/bulk-invite-admin";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,6 +33,9 @@ export function InviteAdminForm() {
 
   const bulkForm = useForm<AdminBulkInviteFormInput>({
     resolver: zodResolver(AdminBulkInviteFormSchema),
+    defaultValues: {
+      emailsRaw: "", // Good practice: provide a default value
+    },
   });
 
   const onSubmitSingle = async (data: AdminInviteInput) => {
@@ -68,7 +74,11 @@ export function InviteAdminForm() {
     }
   };
 
-  const rawEmails = bulkForm.watch("emailsRaw") ?? "";
+  const rawEmails =
+    useWatch({
+      control: bulkForm.control,
+      name: "emailsRaw",
+    }) ?? "";
   const parsedEmails = rawEmails
     .split(/[,;\s]+/)
     .map((e: string) => e.trim())
@@ -80,9 +90,15 @@ export function InviteAdminForm() {
       <div className="flex gap-1 rounded-lg bg-muted p-1 w-fit">
         <button
           type="button"
-          onClick={() => { setTab("single"); setServerError(null); setBulkResult(null); }}
+          onClick={() => {
+            setTab("single");
+            setServerError(null);
+            setBulkResult(null);
+          }}
           className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-            tab === "single" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+            tab === "single"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           <Mail className="size-4" />
@@ -90,9 +106,15 @@ export function InviteAdminForm() {
         </button>
         <button
           type="button"
-          onClick={() => { setTab("bulk"); setServerError(null); setSuccess(false); }}
+          onClick={() => {
+            setTab("bulk");
+            setServerError(null);
+            setSuccess(false);
+          }}
           className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-            tab === "bulk" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+            tab === "bulk"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           <Users className="size-4" />
@@ -160,7 +182,9 @@ export function InviteAdminForm() {
           </div>
           <Button type="submit" disabled={bulkForm.formState.isSubmitting}>
             <Users className="size-4" />
-            {bulkForm.formState.isSubmitting ? "Sending..." : `Send Invites (${parsedEmails.length})`}
+            {bulkForm.formState.isSubmitting
+              ? "Sending..."
+              : `Send Invites (${parsedEmails.length})`}
           </Button>
         </form>
       )}
@@ -181,7 +205,9 @@ export function InviteAdminForm() {
               <p className="text-muted-foreground">Skipped ({bulkResult.skipped.length}):</p>
               <ul className="list-disc list-inside text-xs text-muted-foreground space-y-0.5">
                 {bulkResult.skipped.map((s, i) => (
-                  <li key={i}>{s.email} &mdash; {s.reason}</li>
+                  <li key={i}>
+                    {s.email} &mdash; {s.reason}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -191,7 +217,9 @@ export function InviteAdminForm() {
               <p className="text-error">Errors ({bulkResult.errors.length}):</p>
               <ul className="list-disc list-inside text-xs text-error space-y-0.5">
                 {bulkResult.errors.map((e, i) => (
-                  <li key={i}>{e.email} &mdash; {e.error}</li>
+                  <li key={i}>
+                    {e.email} &mdash; {e.error}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -200,9 +228,7 @@ export function InviteAdminForm() {
       )}
 
       {/* General error */}
-      {serverError && (
-        <p className="text-sm text-error">{serverError}</p>
-      )}
+      {serverError && <p className="text-sm text-error">{serverError}</p>}
     </div>
   );
 }
