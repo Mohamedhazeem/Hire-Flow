@@ -7556,50 +7556,50 @@
       "norm_label": "manifest.md"
     },
     {
-      "label": "Hire Flow Next \u2013 Project Manifest",
+      "label": "Hire Flow Next - Project Manifest",
       "file_type": "document",
       "source_file": "MANIFEST.md",
       "source_location": "L1",
       "_origin": "ast",
       "id": "manifest_hire_flow_next_project_manifest",
       "community": 33,
-      "norm_label": "hire flow next \u2013 project manifest"
+      "norm_label": "hire flow next - project manifest"
     },
     {
-      "label": "\ud83d\udcc5 Last Updated",
+      "label": "Last Updated",
       "file_type": "document",
       "source_file": "MANIFEST.md",
       "source_location": "L7",
       "_origin": "ast",
       "id": "manifest_last_updated",
       "community": 33,
-      "norm_label": "\ud83d\udcc5 last updated"
+      "norm_label": "last updated"
     },
     {
-      "label": "\ud83d\udcca Overview",
+      "label": "Overview",
       "file_type": "document",
       "source_file": "MANIFEST.md",
       "source_location": "L12",
       "_origin": "ast",
       "id": "manifest_overview",
       "community": 33,
-      "norm_label": "\ud83d\udcca overview"
+      "norm_label": "overview"
     },
     {
-      "label": "\u2705 Completed Steps",
+      "label": "Completed Steps",
       "file_type": "document",
       "source_file": "MANIFEST.md",
       "source_location": "L20",
       "_origin": "ast",
       "id": "manifest_completed_steps",
       "community": 33,
-      "norm_label": "\u2705 completed steps"
+      "norm_label": "completed steps"
     },
     {
       "label": "Phase 0: Foundation",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L23",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "manifest_phase_0_foundation",
       "community": 33,
@@ -7609,7 +7609,7 @@
       "label": "Phase 1: Admin",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L33",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "manifest_phase_1_admin",
       "community": 33,
@@ -7619,7 +7619,7 @@
       "label": "Phase 2: Recruiter",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L40",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "manifest_phase_2_recruiter",
       "community": 33,
@@ -7629,7 +7629,7 @@
       "label": "Phase 3: User",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L46",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "manifest_phase_3_user",
       "community": 33,
@@ -7639,7 +7639,7 @@
       "label": "Phase 4: Public Job Routes & Home Page",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L52",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "manifest_phase_4_public_job_routes_home_page",
       "community": 33,
@@ -7649,27 +7649,27 @@
       "label": "Phase 5: Messaging & Notifications",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L57",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "manifest_phase_5_messaging_notifications",
       "community": 33,
       "norm_label": "phase 5: messaging & notifications"
     },
     {
-      "label": "\ud83d\udcc1 Created File Paths (Grouped by Phase)",
+      "label": "Created File Paths (Grouped by Phase)",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L65",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "manifest_created_file_paths_grouped_by_phase",
       "community": 33,
-      "norm_label": "\ud83d\udcc1 created file paths (grouped by phase)"
+      "norm_label": "created file paths (grouped by phase)"
     },
     {
       "label": "Phase 0",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L68",
+      "source_location": "L66",
       "_origin": "ast",
       "id": "manifest_phase_0",
       "community": 33,
@@ -7679,7 +7679,7 @@
       "label": "Phase 1",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L109",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "manifest_phase_1",
       "community": 33,
@@ -7689,7 +7689,7 @@
       "label": "Phase 2",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L148",
+      "source_location": "L157",
       "_origin": "ast",
       "id": "manifest_phase_2",
       "community": 33,
@@ -7699,7 +7699,7 @@
       "label": "Phase 3",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L151",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "manifest_phase_3",
       "community": 33,
@@ -7709,7 +7709,7 @@
       "label": "Phase 4",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L154",
+      "source_location": "L163",
       "_origin": "ast",
       "id": "manifest_phase_4",
       "community": 33,
@@ -7719,51 +7719,51 @@
       "label": "Phase 5",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L157",
+      "source_location": "L166",
       "_origin": "ast",
       "id": "manifest_phase_5",
       "community": 33,
       "norm_label": "phase 5"
     },
     {
-      "label": "\ud83d\udd17 Pending Dependencies",
+      "label": "Pending Dependencies",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L162",
+      "source_location": "L171",
       "_origin": "ast",
       "id": "manifest_pending_dependencies",
       "community": 33,
-      "norm_label": "\ud83d\udd17 pending dependencies"
+      "norm_label": "pending dependencies"
     },
     {
-      "label": "\ud83d\udd1c Upcoming Dependencies (Phase 1)",
+      "label": "Upcoming Dependencies (Phase 1)",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L167",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "manifest_upcoming_dependencies_phase_1",
       "community": 33,
-      "norm_label": "\ud83d\udd1c upcoming dependencies (phase 1)"
+      "norm_label": "upcoming dependencies (phase 1)"
     },
     {
-      "label": "\ud83e\udde0 Active Global Context Snapshot",
+      "label": "Active Global Context Snapshot",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L175",
+      "source_location": "L181",
       "_origin": "ast",
       "id": "manifest_active_global_context_snapshot",
       "community": 33,
-      "norm_label": "\ud83e\udde0 active global context snapshot"
+      "norm_label": "active global context snapshot"
     },
     {
-      "label": "\ud83d\udc1b Known Issues / TODOs",
+      "label": "Known Issues / TODOs",
       "file_type": "document",
       "source_file": "MANIFEST.md",
-      "source_location": "L187",
+      "source_location": "L191",
       "_origin": "ast",
       "id": "manifest_known_issues_todos",
       "community": 33,
-      "norm_label": "\ud83d\udc1b known issues / todos"
+      "norm_label": "known issues / todos"
     },
     {
       "label": "README.md",
@@ -24086,5 +24086,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "09978683348398e3a116c91c8ce997880d0a4eb2"
+  "built_at_commit": "ed78a066d0dfe2f1f82b2cb4c2fc82186b3ecb9f"
 }

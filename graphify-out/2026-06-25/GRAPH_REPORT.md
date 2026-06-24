@@ -1,11 +1,11 @@
 # Graph Report - hire-flow-next  (2026-06-25)
 
 ## Corpus Check
-- 158 files · ~43,562 words
+- 156 files · ~44,292 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 816 nodes · 1493 edges · 62 communities (47 shown, 15 thin omitted)
+- 814 nodes · 1493 edges · 60 communities (45 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.79)
 - Token cost: 0 input · 0 output
 
@@ -103,7 +103,7 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (62 total, 15 thin omitted)
+## Communities (60 total, 15 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06

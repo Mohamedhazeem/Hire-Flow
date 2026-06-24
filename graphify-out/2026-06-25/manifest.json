@@ -780,13 +780,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782331137.9257886,
-    "ast_hash": "636c37f27e2e2ff77eb113a9e71b51a6",
-    "semantic_hash": ""
-  },
-  ".kilo/temp-write-file.ps1": {
-    "mtime": 1782329883.8824227,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1782331680.0477011,
+    "ast_hash": "905d88e5a68b081f141d99704e95fefd",
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
@@ -807,11 +802,6 @@
   "components/ui/skeleton.tsx": {
     "mtime": 1782329203.270327,
     "ast_hash": "1f47bce191ce7a11971c0aa183964f0b",
-    "semantic_hash": ""
-  },
-  "temp-write.mjs": {
-    "mtime": 1782330793.217716,
-    "ast_hash": "6a99c575ab87f8c7d1ed1e52e7e349ce",
     "semantic_hash": ""
   }
 }

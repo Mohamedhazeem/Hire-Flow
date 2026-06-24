@@ -136,16 +136,6 @@
       "norm_label": "graphifyplugin()"
     },
     {
-      "label": "temp-write-file.ps1",
-      "file_type": "code",
-      "source_file": ".kilo/temp-write-file.ps1",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "kilo_temp_write_file",
-      "community": 59,
-      "norm_label": "temp-write-file.ps1"
-    },
-    {
       "label": "accept-invite-client.tsx",
       "file_type": "code",
       "source_file": "app/(auth)/admin-invite/accept-invite-client.tsx",
@@ -1929,7 +1919,7 @@
       "label": "ALLOWED_FILE_TYPES",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L13",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "components_thread_view_allowed_file_types",
       "community": 15,
@@ -1939,7 +1929,7 @@
       "label": "ThreadViewProps",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L15",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "components_thread_view_threadviewprops",
       "community": 15,
@@ -1949,7 +1939,7 @@
       "label": "formatFileSize()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L16",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "components_thread_view_formatfilesize",
       "community": 15,
@@ -1959,7 +1949,7 @@
       "label": "fileIcon()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L18",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "components_thread_view_fileicon",
       "community": 15,
@@ -1969,7 +1959,7 @@
       "label": "AttachmentPreview()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L20",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "components_thread_view_attachmentpreview",
       "community": 15,
@@ -1979,7 +1969,7 @@
       "label": "MessageBubble()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L27",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "components_thread_view_messagebubble",
       "community": 15,
@@ -1989,7 +1979,7 @@
       "label": "SkeletonMessages()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L41",
+      "source_location": "L166",
       "_origin": "ast",
       "id": "components_thread_view_skeletonmessages",
       "community": 15,
@@ -1999,7 +1989,7 @@
       "label": "ThreadView()",
       "file_type": "code",
       "source_file": "app/features/admin/components/thread-view.tsx",
-      "source_location": "L42",
+      "source_location": "L177",
       "_origin": "ast",
       "id": "components_thread_view_threadview",
       "community": 15,
@@ -6276,16 +6266,6 @@
       "norm_label": "useuistore"
     },
     {
-      "label": "temp-write.mjs",
-      "file_type": "code",
-      "source_file": "temp-write.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "temp_write",
-      "community": 61,
-      "norm_label": "temp-write.mjs"
-    },
-    {
       "label": "tsconfig.json",
       "file_type": "code",
       "source_file": "tsconfig.json",
@@ -10335,9 +10315,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_admin",
-      "confidence_score": 1.0
+      "target": "api_require_admin"
     },
     {
       "relation": "imports",
@@ -10346,9 +10326,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "imports_from",
@@ -10357,9 +10337,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports",
@@ -10368,9 +10348,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -10379,9 +10359,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports_from",
@@ -10390,9 +10370,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -10401,9 +10381,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -10412,9 +10392,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_wrapper",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper"
     },
     {
       "relation": "imports",
@@ -10423,9 +10403,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports_from",
@@ -10434,9 +10414,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -10444,9 +10424,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "messageid_route_delete",
-      "confidence_score": 1.0
+      "target": "messageid_route_delete"
     },
     {
       "relation": "contains",
@@ -10454,9 +10434,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "messageid_route_handledelete",
-      "confidence_score": 1.0
+      "target": "messageid_route_handledelete"
     },
     {
       "relation": "calls",
@@ -10465,9 +10445,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route_handledelete",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "calls",
@@ -10476,9 +10456,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route_handledelete",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -10487,9 +10467,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_admin",
-      "confidence_score": 1.0
+      "target": "api_require_admin"
     },
     {
       "relation": "imports",
@@ -10498,9 +10478,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "imports_from",
@@ -10509,9 +10489,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports",
@@ -10520,9 +10500,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports_from",
@@ -10531,9 +10511,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -10542,9 +10522,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -10553,9 +10533,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_wrapper",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper"
     },
     {
       "relation": "imports",
@@ -10564,9 +10544,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports_from",
@@ -10575,9 +10555,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_pagination",
-      "confidence_score": 1.0
+      "target": "lib_pagination"
     },
     {
       "relation": "imports",
@@ -10586,9 +10566,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_pagination_buildcursormeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildcursormeta"
     },
     {
       "relation": "imports",
@@ -10597,9 +10577,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_pagination_parsecursorparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsecursorparams"
     },
     {
       "relation": "imports_from",
@@ -10608,9 +10588,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -10618,9 +10598,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_delete",
-      "confidence_score": 1.0
+      "target": "threadid_route_delete"
     },
     {
       "relation": "contains",
@@ -10628,9 +10608,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L143",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_get",
-      "confidence_score": 1.0
+      "target": "threadid_route_get"
     },
     {
       "relation": "contains",
@@ -10638,9 +10618,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_handledelete",
-      "confidence_score": 1.0
+      "target": "threadid_route_handledelete"
     },
     {
       "relation": "contains",
@@ -10648,9 +10628,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_handleget",
-      "confidence_score": 1.0
+      "target": "threadid_route_handleget"
     },
     {
       "relation": "contains",
@@ -10658,9 +10638,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_handlepost",
-      "confidence_score": 1.0
+      "target": "threadid_route_handlepost"
     },
     {
       "relation": "contains",
@@ -10668,9 +10648,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_messageselect",
-      "confidence_score": 1.0
+      "target": "threadid_route_messageselect"
     },
     {
       "relation": "contains",
@@ -10678,9 +10658,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_post",
-      "confidence_score": 1.0
+      "target": "threadid_route_post"
     },
     {
       "relation": "contains",
@@ -10688,9 +10668,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "threadid_route_sendmessageschema",
-      "confidence_score": 1.0
+      "target": "threadid_route_sendmessageschema"
     },
     {
       "relation": "calls",
@@ -10699,9 +10679,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "calls",
@@ -10710,9 +10690,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "calls",
@@ -10721,9 +10701,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "lib_pagination_buildcursormeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildcursormeta"
     },
     {
       "relation": "calls",
@@ -10732,9 +10712,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "lib_pagination_parsecursorparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsecursorparams"
     },
     {
       "relation": "calls",
@@ -10743,9 +10723,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handlepost",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "calls",
@@ -10754,9 +10734,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handlepost",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "calls",
@@ -10765,9 +10745,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handledelete",
-      "target": "api_require_admin_requireadmin",
-      "confidence_score": 1.0
+      "target": "api_require_admin_requireadmin"
     },
     {
       "relation": "calls",
@@ -10776,9 +10756,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handledelete",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports_from",
@@ -12339,9 +12319,9 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "upload_route",
-      "target": "lib_upload",
-      "confidence_score": 1.0
+      "target": "lib_upload"
     },
     {
       "relation": "imports",
@@ -14866,9 +14846,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_allowed_file_types",
-      "confidence_score": 1.0
+      "target": "components_thread_view_allowed_file_types"
     },
     {
       "relation": "contains",
@@ -14876,9 +14856,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_attachmentpreview",
-      "confidence_score": 1.0
+      "target": "components_thread_view_attachmentpreview"
     },
     {
       "relation": "contains",
@@ -14886,9 +14866,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_fileicon",
-      "confidence_score": 1.0
+      "target": "components_thread_view_fileicon"
     },
     {
       "relation": "contains",
@@ -14896,9 +14876,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_formatfilesize",
-      "confidence_score": 1.0
+      "target": "components_thread_view_formatfilesize"
     },
     {
       "relation": "contains",
@@ -14906,9 +14886,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_messagebubble",
-      "confidence_score": 1.0
+      "target": "components_thread_view_messagebubble"
     },
     {
       "relation": "contains",
@@ -14916,9 +14896,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "components_thread_view_skeletonmessages",
-      "confidence_score": 1.0
+      "target": "components_thread_view_skeletonmessages"
     },
     {
       "relation": "contains",
@@ -14947,9 +14927,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -14958,9 +14938,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports_from",
@@ -14969,9 +14949,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "libs_auth_client",
-      "confidence_score": 1.0
+      "target": "libs_auth_client"
     },
     {
       "relation": "imports_from",
@@ -14980,9 +14960,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages"
     },
     {
       "relation": "imports",
@@ -14991,9 +14971,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_messageitem",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_messageitem"
     },
     {
       "relation": "imports",
@@ -15002,9 +14982,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_sendmessagepayload"
     },
     {
       "relation": "imports",
@@ -15013,9 +14993,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_useadminmessages",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_useadminmessages"
     },
     {
       "relation": "imports",
@@ -15024,9 +15004,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_usedeletemessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletemessage"
     },
     {
       "relation": "imports",
@@ -15035,9 +15015,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_usedeletethread",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletethread"
     },
     {
       "relation": "imports",
@@ -15046,9 +15026,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "messages_use_admin_messages_usesendmessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usesendmessage"
     },
     {
       "relation": "imports_from",
@@ -15057,9 +15037,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "ui_input",
-      "confidence_score": 1.0
+      "target": "ui_input"
     },
     {
       "relation": "imports",
@@ -15068,9 +15048,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "ui_input_input",
-      "confidence_score": 1.0
+      "target": "ui_input_input"
     },
     {
       "relation": "imports_from",
@@ -15079,9 +15059,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "ui_skeleton",
-      "confidence_score": 1.0
+      "target": "ui_skeleton"
     },
     {
       "relation": "imports",
@@ -15090,9 +15070,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view",
-      "target": "ui_skeleton_skeleton",
-      "confidence_score": 1.0
+      "target": "ui_skeleton_skeleton"
     },
     {
       "relation": "calls",
@@ -15101,9 +15081,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_attachmentpreview",
-      "target": "components_thread_view_formatfilesize",
-      "confidence_score": 1.0
+      "target": "components_thread_view_formatfilesize"
     },
     {
       "relation": "calls",
@@ -15112,9 +15092,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_threadview",
-      "target": "components_thread_view_formatfilesize",
-      "confidence_score": 1.0
+      "target": "components_thread_view_formatfilesize"
     },
     {
       "relation": "calls",
@@ -15123,9 +15103,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_attachmentpreview",
-      "target": "components_thread_view_fileicon",
-      "confidence_score": 1.0
+      "target": "components_thread_view_fileicon"
     },
     {
       "relation": "calls",
@@ -15134,9 +15114,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_threadview",
-      "target": "components_thread_view_fileicon",
-      "confidence_score": 1.0
+      "target": "components_thread_view_fileicon"
     },
     {
       "relation": "calls",
@@ -15156,9 +15136,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_messagebubble",
-      "target": "messages_use_admin_messages_useadminmessages",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_useadminmessages"
     },
     {
       "relation": "calls",
@@ -15167,9 +15147,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_messagebubble",
-      "target": "messages_use_admin_messages_usedeletemessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletemessage"
     },
     {
       "relation": "calls",
@@ -15178,9 +15158,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_messagebubble",
-      "target": "messages_use_admin_messages_usedeletethread",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletethread"
     },
     {
       "relation": "calls",
@@ -15189,9 +15169,9 @@
       "source_file": "app/features/admin/components/thread-view.tsx",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_thread_view_messagebubble",
-      "target": "messages_use_admin_messages_usesendmessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usesendmessage"
     },
     {
       "relation": "calls",
@@ -15244,9 +15224,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "lib_api_client",
-      "confidence_score": 1.0
+      "target": "lib_api_client"
     },
     {
       "relation": "imports",
@@ -15255,9 +15235,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
+      "target": "lib_api_client_apiclient"
     },
     {
       "relation": "imports_from",
@@ -15266,9 +15246,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -15277,9 +15257,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "lib_api_response_apienvelope",
-      "confidence_score": 1.0
+      "target": "lib_api_response_apienvelope"
     },
     {
       "relation": "contains",
@@ -15287,9 +15267,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_messageitem",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_messageitem"
     },
     {
       "relation": "contains",
@@ -15297,9 +15277,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_messagesresponse",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_messagesresponse"
     },
     {
       "relation": "contains",
@@ -15307,9 +15287,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_sendmessagepayload"
     },
     {
       "relation": "contains",
@@ -15317,9 +15297,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_useadminmessages",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_useadminmessages"
     },
     {
       "relation": "contains",
@@ -15327,9 +15307,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_usedeletemessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletemessage"
     },
     {
       "relation": "contains",
@@ -15337,9 +15317,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_usedeletethread",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usedeletethread"
     },
     {
       "relation": "contains",
@@ -15347,9 +15327,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "messages_use_admin_messages_usesendmessage",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_messages_usesendmessage"
     },
     {
       "relation": "contains",
@@ -20336,9 +20316,9 @@
       "source_file": "components/ui/skeleton.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_skeleton",
-      "target": "ui_skeleton_skeleton",
-      "confidence_score": 1.0
+      "target": "ui_skeleton_skeleton"
     },
     {
       "relation": "imports_from",
@@ -20969,9 +20949,9 @@
       "source_file": "lib/api-response.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_api_response",
-      "target": "lib_api_response_apienvelope",
-      "confidence_score": 1.0
+      "target": "lib_api_response_apienvelope"
     },
     {
       "relation": "contains",
