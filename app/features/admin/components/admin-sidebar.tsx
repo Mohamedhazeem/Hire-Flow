@@ -10,12 +10,21 @@ import {
   BriefcaseIcon,
   UserCogIcon,
   ShieldIcon,
+  MessageSquareTextIcon,
   PanelLeftCloseIcon,
   PanelLeftOpenIcon,
 } from "lucide-react";
 
-const sidebarLinks = [
+type SidebarLinkConfig = {
+  href: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: number;
+};
+
+const sidebarLinks: SidebarLinkConfig[] = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
+  { href: "/admin/messages", label: "Messages", icon: MessageSquareTextIcon },
   { href: "/admin/users", label: "Users", icon: UsersIcon },
   { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
   { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
@@ -66,7 +75,7 @@ export function AdminSidebar() {
               href={link.href}
               title={sidebarOpen ? undefined : link.label}
               className={cn(
-                "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors relative",
                 sidebarOpen ? "px-3" : "justify-center px-0",
                 isActive
                   ? "bg-primary/10 text-primary"
@@ -75,6 +84,16 @@ export function AdminSidebar() {
             >
               <link.icon className="size-4 shrink-0" />
               {sidebarOpen && <span className="truncate">{link.label}</span>}
+              {link.badge != null && link.badge > 0 && (
+                <span
+                  className={cn(
+                    "ml-auto bg-primary text-primary-foreground text-[10px] font-bold rounded-full flex items-center justify-center size-5",
+                    !sidebarOpen && "absolute -top-1 -right-1",
+                  )}
+                >
+                  {link.badge > 99 ? "99+" : link.badge}
+                </span>
+              )}
             </Link>
           );
         })}

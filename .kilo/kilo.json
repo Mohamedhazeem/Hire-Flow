@@ -1,4 +1,5 @@
 {
+  "$schema": "https://app.kilo.ai/config.json",
   "plugin": [
     "file:///D:/hire-flow-next/.kilo/plugins/graphify.js"
   ]

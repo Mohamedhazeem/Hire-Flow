@@ -615,8 +615,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1782271448.7743845,
-    "ast_hash": "90b9c49ff1f6e6498d4e71b8ab3657d7",
+    "mtime": 1782327836.615876,
+    "ast_hash": "07d0cac5a035ab183e6ddb85eee517ef",
     "semantic_hash": ""
   },
   "app/(auth)/admin-invite/accept-invite-client.tsx": {
@@ -730,8 +730,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782284739.3431163,
-    "ast_hash": "e5fff83a880ab688eee9fbd412f56e59",
+    "mtime": 1782327999.7305639,
+    "ast_hash": "4505bc37b2f14af5dd00b04ceec34e4b",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -757,6 +757,31 @@
   "app/features/admin/components/email/ban-notification-email.tsx": {
     "mtime": 1782327087.8553019,
     "ast_hash": "4888f924819dfd99154f66419a62bbb0",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/messages/[threadId]/page.tsx": {
+    "mtime": 1782327974.6308963,
+    "ast_hash": "7321b183ad8d20b3d5172579a6bbba52",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/messages/page.tsx": {
+    "mtime": 1782327742.7925751,
+    "ast_hash": "dd3ab7fa0ab9612420b191f4c8db782c",
+    "semantic_hash": ""
+  },
+  "app/api/admin/messages/search/route.ts": {
+    "mtime": 1782327762.9867847,
+    "ast_hash": "79dde42a6ccd7197da827a2e7403ea86",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/start-thread-search.tsx": {
+    "mtime": 1782327774.864182,
+    "ast_hash": "97196d2f6d4b4c0b8bdb0ca2ee41cf85",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/thread-view.tsx": {
+    "mtime": 1782327979.97056,
+    "ast_hash": "3d7edbef87b4aef1c0a4bde068940ef0",
     "semantic_hash": ""
   }
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { useSession } from "@/app/features/auth/libs/auth-client";
 import {
   useAdminUsers,
   useSetUserRole,
@@ -22,7 +24,12 @@ import {
   DataTable,
   type ColumnDef,
 } from "@/components/ui/data-table";
-import { Search, ChevronLeft, ChevronRight, Trash2, LogOut } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Trash2, LogOut, MessageSquareTextIcon } from "lucide-react";
+
+function computeChatThreadId(idA: string, idB: string): string {
+  const sorted = [idA, idB].sort();
+  return `${sorted[0]}_${sorted[1]}`;
+}
 
 type PeopleTableProps = {
   roleFilter?: string;
@@ -31,6 +38,8 @@ type PeopleTableProps = {
 const ROLE_OPTIONS = ["user", "recruiter", "admin"] as const;
 
 export function PeopleTable({ roleFilter }: PeopleTableProps) {
+  const router = useRouter();
+  const { data: session } = useSession();
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [role, setRole] = useState<string | undefined>(roleFilter);
@@ -78,6 +87,15 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
       }
     },
     [deleteUser],
+  );
+
+  const handleChat = useCallback(
+    (targetUserId: string) => {
+      const adminId = (session?.user as { id?: string })?.id;
+      if (!adminId) return;
+      router.push(`/admin/messages/${computeChatThreadId(adminId, targetUserId)}`);
+    },
+    [router, session],
   );
 
   type UserRow = {
@@ -155,6 +173,14 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         header: "Actions",
         cell: (row) => (
           <div className="flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="icon-xs"
+              onClick={() => handleChat(row.id)}
+              title={`Chat with ${row.name}`}
+            >
+              <MessageSquareTextIcon className="size-3.5" />
+            </Button>
             <BanDialog
               userId={row.id}
               userName={row.name}
@@ -183,7 +209,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         ),
       },
     ],
-    [handleRoleChange, handleRevokeSessions, handleDelete],
+    [handleRoleChange, handleRevokeSessions, handleDelete, handleChat],
   );
 
   const responseData = data as { success: boolean; data: { users: UserRow[]; total: number; totalPages: number; page: number; pageSize: number } } | undefined;
