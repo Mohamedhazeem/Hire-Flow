@@ -2,11 +2,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import type { AdminListJobsParams } from "@/app/features/admin/schema/admin.schema";
 import type { AdminJobListResult } from "@/app/features/admin/queries/job-queries";
-
-export type ApiResponse<T> = {
-  success: boolean;
-  data: T;
-};
+import { ApiResponse } from "@/lib/api-response";
 
 export function useAdminJobs(params: AdminListJobsParams) {
   return useQuery<ApiResponse<AdminJobListResult>>({
@@ -18,8 +14,7 @@ export function useAdminJobs(params: AdminListJobsParams) {
 export function useDeleteJob() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (jobId: string) =>
-      apiClient(`/api/admin/jobs/${jobId}`, { method: "DELETE" }),
+    mutationFn: (jobId: string) => apiClient(`/api/admin/jobs/${jobId}`, { method: "DELETE" }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "jobs"] });
     },
