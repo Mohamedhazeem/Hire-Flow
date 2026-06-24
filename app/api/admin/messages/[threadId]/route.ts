@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { z } from "zod";
 import { ok } from "@/lib/api-response";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError } from "@/lib/api-error";
@@ -34,7 +34,7 @@ async function handleGET(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
   const { searchParams } = request.nextUrl;
   const cursor = searchParams.get("cursor") ?? undefined;
@@ -79,7 +79,7 @@ async function handlePOST(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
   const parts = threadId.split("_");
@@ -121,7 +121,7 @@ async function handleDELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
   const parts = threadId.split("_");

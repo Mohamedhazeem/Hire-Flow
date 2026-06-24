@@ -1,13 +1,13 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { AdminListJobsParamsSchema } from "@/app/features/admin/schema/admin.schema";
 import { listJobs } from "@/app/features/admin/queries/job-queries";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handleGET(request: NextRequest) {
-  await requireAdmin();
+  await requireRole(["admin", "super_admin"]);
 
   const { searchParams } = request.nextUrl;
   const params = AdminListJobsParamsSchema.safeParse({

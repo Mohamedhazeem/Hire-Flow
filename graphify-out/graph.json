@@ -212,7 +212,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "login_page",
-      "community": 63,
+      "community": 55,
       "norm_label": "page.tsx"
     },
     {
@@ -222,7 +222,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "login_page_metadata",
-      "community": 63,
+      "community": 55,
       "norm_label": "metadata"
     },
     {
@@ -232,7 +232,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "login_page_props",
-      "community": 63,
+      "community": 55,
       "norm_label": "props"
     },
     {
@@ -242,7 +242,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "login_page_loginpage",
-      "community": 63,
+      "community": 55,
       "norm_label": "loginpage()"
     },
     {
@@ -252,7 +252,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "register_page",
-      "community": 55,
+      "community": 58,
       "norm_label": "page.tsx"
     },
     {
@@ -262,7 +262,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "register_page_metadata",
-      "community": 55,
+      "community": 58,
       "norm_label": "metadata"
     },
     {
@@ -272,7 +272,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "register_page_registerpage",
-      "community": 55,
+      "community": 58,
       "norm_label": "registerpage()"
     },
     {
@@ -332,7 +332,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "verify_email_page",
-      "community": 58,
+      "community": 0,
       "norm_label": "page.tsx"
     },
     {
@@ -342,7 +342,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "verify_email_page_verifyemailpage",
-      "community": 58,
+      "community": 0,
       "norm_label": "verifyemailpage()"
     },
     {
@@ -472,7 +472,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "admin_page",
-      "community": 52,
+      "community": 1,
       "norm_label": "page.tsx"
     },
     {
@@ -482,7 +482,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "admin_page_metadata",
-      "community": 52,
+      "community": 1,
       "norm_label": "metadata"
     },
     {
@@ -492,7 +492,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "admin_page_adminpage",
-      "community": 52,
+      "community": 1,
       "norm_label": "adminpage()"
     },
     {
@@ -779,7 +779,7 @@
       "label": "handleGET()",
       "file_type": "code",
       "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L7",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "invite_route_handleget",
       "community": 0,
@@ -789,7 +789,7 @@
       "label": "GET",
       "file_type": "code",
       "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L27",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "invite_route_get",
       "community": 0,
@@ -819,7 +819,7 @@
       "label": "handlePATCH()",
       "file_type": "code",
       "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "id_route_handlepatch",
       "community": 0,
@@ -829,7 +829,7 @@
       "label": "DELETE",
       "file_type": "code",
       "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L54",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "app_api_admin_jobs_id_route_ts_id_route_delete",
       "community": 0,
@@ -839,7 +839,7 @@
       "label": "PATCH",
       "file_type": "code",
       "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L55",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "id_route_patch",
       "community": 0,
@@ -1282,7 +1282,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "all_route",
-      "community": 5,
+      "community": 28,
       "norm_label": "route.ts"
     },
     {
@@ -1292,7 +1292,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "all_route_post_get",
-      "community": 5,
+      "community": 28,
       "norm_label": "{ post, get }"
     },
     {
@@ -1332,14 +1332,14 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_bulk_invite_admin",
-      "community": 5,
+      "community": 0,
       "norm_label": "bulk-invite-admin.ts"
     },
     {
       "label": "BulkInviteResult",
       "file_type": "code",
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "actions_bulk_invite_admin_bulkinviteresult",
       "community": 24,
@@ -1349,10 +1349,10 @@
       "label": "bulkInviteAdmins()",
       "file_type": "code",
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
-      "source_location": "L19",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "actions_bulk_invite_admin_bulkinviteadmins",
-      "community": 5,
+      "community": 0,
       "norm_label": "bulkinviteadmins()"
     },
     {
@@ -1362,58 +1362,18 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_invite_admin",
-      "community": 5,
+      "community": 0,
       "norm_label": "invite-admin.ts"
     },
     {
       "label": "inviteAdmin()",
       "file_type": "code",
       "source_file": "app/features/admin/actions/invite-admin.ts",
-      "source_location": "L12",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "actions_invite_admin_inviteadmin",
-      "community": 5,
+      "community": 0,
       "norm_label": "inviteadmin()"
-    },
-    {
-      "label": "require-admin.ts",
-      "file_type": "code",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "api_require_admin",
-      "community": 0,
-      "norm_label": "require-admin.ts"
-    },
-    {
-      "label": "requireAdmin()",
-      "file_type": "code",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "api_require_admin_requireadmin",
-      "community": 0,
-      "norm_label": "requireadmin()"
-    },
-    {
-      "label": "require-super-admin.ts",
-      "file_type": "code",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "api_require_super_admin",
-      "community": 0,
-      "norm_label": "require-super-admin.ts"
-    },
-    {
-      "label": "requireSuperAdmin()",
-      "file_type": "code",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "api_require_super_admin_requiresuperadmin",
-      "community": 0,
-      "norm_label": "requiresuperadmin()"
     },
     {
       "label": "admin-dashboard.tsx",
@@ -1422,7 +1382,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_dashboard",
-      "community": 52,
+      "community": 1,
       "norm_label": "admin-dashboard.tsx"
     },
     {
@@ -1432,7 +1392,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "components_admin_dashboard_statcardprops",
-      "community": 52,
+      "community": 1,
       "norm_label": "statcardprops"
     },
     {
@@ -1442,7 +1402,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "components_admin_dashboard_statcard",
-      "community": 52,
+      "community": 1,
       "norm_label": "statcard()"
     },
     {
@@ -1452,7 +1412,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_admin_dashboard_workmode_colors",
-      "community": 52,
+      "community": 1,
       "norm_label": "workmode_colors"
     },
     {
@@ -1462,7 +1422,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "components_admin_dashboard_admindashboard",
-      "community": 52,
+      "community": 1,
       "norm_label": "admindashboard()"
     },
     {
@@ -1472,7 +1432,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_jobs_table",
-      "community": 11,
+      "community": 1,
       "norm_label": "admin-jobs-table.tsx"
     },
     {
@@ -1482,7 +1442,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "components_admin_jobs_table_adminjobstableprops",
-      "community": 11,
+      "community": 1,
       "norm_label": "adminjobstableprops"
     },
     {
@@ -1492,7 +1452,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "components_admin_jobs_table_adminjobstable",
-      "community": 11,
+      "community": 24,
       "norm_label": "adminjobstable()"
     },
     {
@@ -1562,7 +1522,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ban_dialog",
-      "community": 16,
+      "community": 1,
       "norm_label": "ban-dialog.tsx"
     },
     {
@@ -1572,7 +1532,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_ban_dialog_bandialogprops",
-      "community": 16,
+      "community": 1,
       "norm_label": "bandialogprops"
     },
     {
@@ -1582,7 +1542,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_ban_dialog_bandialog",
-      "community": 48,
+      "community": 1,
       "norm_label": "bandialog()"
     },
     {
@@ -1822,7 +1782,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_people_table",
-      "community": 48,
+      "community": 1,
       "norm_label": "people-table.tsx"
     },
     {
@@ -1832,7 +1792,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "components_people_table_computechatthreadid",
-      "community": 48,
+      "community": 1,
       "norm_label": "computechatthreadid()"
     },
     {
@@ -1842,7 +1802,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "components_people_table_peopletableprops",
-      "community": 48,
+      "community": 1,
       "norm_label": "peopletableprops"
     },
     {
@@ -1852,7 +1812,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "components_people_table_role_options",
-      "community": 48,
+      "community": 1,
       "norm_label": "role_options"
     },
     {
@@ -1862,7 +1822,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_people_table_peopletable",
-      "community": 48,
+      "community": 1,
       "norm_label": "peopletable()"
     },
     {
@@ -1872,7 +1832,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_start_thread_search",
-      "community": 65,
+      "community": 1,
       "norm_label": "start-thread-search.tsx"
     },
     {
@@ -1882,7 +1842,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_start_thread_search_searchresult",
-      "community": 65,
+      "community": 1,
       "norm_label": "searchresult"
     },
     {
@@ -1892,7 +1852,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_start_thread_search_computethreadid",
-      "community": 65,
+      "community": 1,
       "norm_label": "computethreadid()"
     },
     {
@@ -2092,7 +2052,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "hooks_use_admin_dashboard_useadmindashboard",
-      "community": 52,
+      "community": 1,
       "norm_label": "useadmindashboard()"
     },
     {
@@ -2172,7 +2132,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs",
-      "community": 11,
+      "community": 24,
       "norm_label": "use-admin-jobs.ts"
     },
     {
@@ -2182,7 +2142,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_useadminjobs",
-      "community": 11,
+      "community": 24,
       "norm_label": "useadminjobs()"
     },
     {
@@ -2192,7 +2152,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_usedeletejob",
-      "community": 11,
+      "community": 24,
       "norm_label": "usedeletejob()"
     },
     {
@@ -2202,7 +2162,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "hooks_use_admin_jobs_usetogglejobstatus",
-      "community": 11,
+      "community": 24,
       "norm_label": "usetogglejobstatus()"
     },
     {
@@ -2212,7 +2172,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_admin_users",
-      "community": 48,
+      "community": 1,
       "norm_label": "use-admin-users.ts"
     },
     {
@@ -2222,7 +2182,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "hooks_use_admin_users_useadminusers",
-      "community": 48,
+      "community": 1,
       "norm_label": "useadminusers()"
     },
     {
@@ -2232,7 +2192,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "hooks_use_admin_users_useadminuser",
-      "community": 48,
+      "community": 1,
       "norm_label": "useadminuser()"
     },
     {
@@ -2242,7 +2202,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "hooks_use_admin_users_usebanuser",
-      "community": 48,
+      "community": 1,
       "norm_label": "usebanuser()"
     },
     {
@@ -2252,7 +2212,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "hooks_use_admin_users_useunbanuser",
-      "community": 48,
+      "community": 1,
       "norm_label": "useunbanuser()"
     },
     {
@@ -2262,7 +2222,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "hooks_use_admin_users_usedeleteuser",
-      "community": 48,
+      "community": 1,
       "norm_label": "usedeleteuser()"
     },
     {
@@ -2272,7 +2232,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "hooks_use_admin_users_usesetuserrole",
-      "community": 48,
+      "community": 1,
       "norm_label": "usesetuserrole()"
     },
     {
@@ -2282,7 +2242,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "hooks_use_admin_users_userevokeusersessions",
-      "community": 48,
+      "community": 1,
       "norm_label": "userevokeusersessions()"
     },
     {
@@ -2322,7 +2282,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_job_queries",
-      "community": 11,
+      "community": 24,
       "norm_label": "job-queries.ts"
     },
     {
@@ -2332,7 +2292,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "queries_job_queries_adminjobrow",
-      "community": 11,
+      "community": 24,
       "norm_label": "adminjobrow"
     },
     {
@@ -2342,7 +2302,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "queries_job_queries_adminjoblistresult",
-      "community": 11,
+      "community": 24,
       "norm_label": "adminjoblistresult"
     },
     {
@@ -2352,7 +2312,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "queries_job_queries_listjobs",
-      "community": 0,
+      "community": 24,
       "norm_label": "listjobs()"
     },
     {
@@ -2362,7 +2322,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_user_queries",
-      "community": 0,
+      "community": 24,
       "norm_label": "user-queries.ts"
     },
     {
@@ -2372,7 +2332,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "queries_user_queries_adminuserrow",
-      "community": 0,
+      "community": 24,
       "norm_label": "adminuserrow"
     },
     {
@@ -2382,7 +2342,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "queries_user_queries_adminuserlistresult",
-      "community": 48,
+      "community": 24,
       "norm_label": "adminuserlistresult"
     },
     {
@@ -2392,7 +2352,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "queries_user_queries_listusers",
-      "community": 0,
+      "community": 24,
       "norm_label": "listusers()"
     },
     {
@@ -2412,7 +2372,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "queries_user_queries_adminuserdetail",
-      "community": 48,
+      "community": 24,
       "norm_label": "adminuserdetail"
     },
     {
@@ -2439,7 +2399,7 @@
       "label": "AdminListUsersParamsSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "schema_admin_schema_adminlistusersparamsschema",
       "community": 24,
@@ -2449,7 +2409,7 @@
       "label": "AdminListUsersParams",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "schema_admin_schema_adminlistusersparams",
       "community": 24,
@@ -2459,7 +2419,7 @@
       "label": "AdminBanUserSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbanuserschema",
       "community": 24,
@@ -2469,7 +2429,7 @@
       "label": "AdminBanUserInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbanuserinput",
       "community": 24,
@@ -2479,7 +2439,7 @@
       "label": "AdminInviteSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "schema_admin_schema_admininviteschema",
       "community": 24,
@@ -2489,7 +2449,7 @@
       "label": "AdminInviteInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "schema_admin_schema_admininviteinput",
       "community": 24,
@@ -2499,7 +2459,7 @@
       "label": "AdminAcceptInviteSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "schema_admin_schema_adminacceptinviteschema",
       "community": 24,
@@ -2509,7 +2469,7 @@
       "label": "AdminAcceptInviteInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "schema_admin_schema_adminacceptinviteinput",
       "community": 24,
@@ -2519,7 +2479,7 @@
       "label": "AdminBulkInviteFormSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L43",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbulkinviteformschema",
       "community": 24,
@@ -2529,7 +2489,7 @@
       "label": "AdminBulkInviteFormInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbulkinviteforminput",
       "community": 24,
@@ -2539,7 +2499,7 @@
       "label": "AdminBulkInviteSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L50",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbulkinviteschema",
       "community": 24,
@@ -2549,7 +2509,7 @@
       "label": "AdminBulkInviteInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L69",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "schema_admin_schema_adminbulkinviteinput",
       "community": 24,
@@ -2559,7 +2519,7 @@
       "label": "AdminListJobsParamsSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L73",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "schema_admin_schema_adminlistjobsparamsschema",
       "community": 24,
@@ -2569,17 +2529,17 @@
       "label": "AdminListJobsParams",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L85",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "schema_admin_schema_adminlistjobsparams",
-      "community": 11,
+      "community": 24,
       "norm_label": "adminlistjobsparams"
     },
     {
       "label": "AdminToggleJobStatusSchema",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L89",
+      "source_location": "L75",
       "_origin": "ast",
       "id": "schema_admin_schema_admintogglejobstatusschema",
       "community": 24,
@@ -2589,7 +2549,7 @@
       "label": "AdminToggleJobStatusInput",
       "file_type": "code",
       "source_file": "app/features/admin/schema/admin.schema.ts",
-      "source_location": "L93",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "schema_admin_schema_admintogglejobstatusinput",
       "community": 24,
@@ -2622,7 +2582,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_logout_action",
-      "community": 5,
+      "community": 28,
       "norm_label": "logout-action.ts"
     },
     {
@@ -2632,7 +2592,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "actions_logout_action_logoutaction",
-      "community": 5,
+      "community": 28,
       "norm_label": "logoutaction()"
     },
     {
@@ -2662,7 +2622,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_request_password_reset_action",
-      "community": 9,
+      "community": 28,
       "norm_label": "request-password-reset-action.ts"
     },
     {
@@ -2682,7 +2642,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_reset_password_action",
-      "community": 9,
+      "community": 5,
       "norm_label": "reset-password-action.ts"
     },
     {
@@ -3012,7 +2972,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_form_input",
-      "community": 16,
+      "community": 55,
       "norm_label": "form-input.tsx"
     },
     {
@@ -3022,7 +2982,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_form_input_forminputprops",
-      "community": 16,
+      "community": 55,
       "norm_label": "forminputprops"
     },
     {
@@ -3072,7 +3032,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "components_login_form_loginform",
-      "community": 63,
+      "community": 55,
       "norm_label": "loginform()"
     },
     {
@@ -3132,7 +3092,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_signup_form",
-      "community": 55,
+      "community": 58,
       "norm_label": "signup-form.tsx"
     },
     {
@@ -3142,7 +3102,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_signup_form_registerinput",
-      "community": 55,
+      "community": 58,
       "norm_label": "registerinput"
     },
     {
@@ -3152,7 +3112,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "components_signup_form_signupform",
-      "community": 55,
+      "community": 58,
       "norm_label": "signupform()"
     },
     {
@@ -3242,7 +3202,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "libs_auth",
-      "community": 5,
+      "community": 0,
       "norm_label": "auth.ts"
     },
     {
@@ -3252,7 +3212,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "libs_auth_auth",
-      "community": 5,
+      "community": 28,
       "norm_label": "auth"
     },
     {
@@ -3262,7 +3222,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "libs_auth_getsession",
-      "community": 5,
+      "community": 0,
       "norm_label": "getsession()"
     },
     {
@@ -3272,7 +3232,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "libs_email",
-      "community": 5,
+      "community": 0,
       "norm_label": "email.ts"
     },
     {
@@ -3282,7 +3242,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "libs_email_resend",
-      "community": 5,
+      "community": 0,
       "norm_label": "resend"
     },
     {
@@ -3292,7 +3252,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "libs_email_sendemailargs",
-      "community": 5,
+      "community": 0,
       "norm_label": "sendemailargs"
     },
     {
@@ -3302,7 +3262,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "libs_email_sendemail",
-      "community": 5,
+      "community": 0,
       "norm_label": "sendemail()"
     },
     {
@@ -3312,7 +3272,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "libs_verification",
-      "community": 5,
+      "community": 28,
       "norm_label": "verification.ts"
     },
     {
@@ -3322,7 +3282,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "libs_verification_userstatusresult",
-      "community": 5,
+      "community": 28,
       "norm_label": "userstatusresult"
     },
     {
@@ -3342,7 +3302,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_auth_schema",
-      "community": 55,
+      "community": 5,
       "norm_label": "auth.schema.ts"
     },
     {
@@ -3352,7 +3312,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "schema_auth_schema_disposableset",
-      "community": 55,
+      "community": 5,
       "norm_label": "disposableset"
     },
     {
@@ -3362,7 +3322,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "schema_auth_schema_emailschema",
-      "community": 55,
+      "community": 5,
       "norm_label": "emailschema"
     },
     {
@@ -3372,7 +3332,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "schema_auth_schema_passwordschema",
-      "community": 55,
+      "community": 5,
       "norm_label": "passwordschema"
     },
     {
@@ -3382,7 +3342,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "schema_auth_schema_signinschema",
-      "community": 9,
+      "community": 5,
       "norm_label": "signinschema"
     },
     {
@@ -3392,7 +3352,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "schema_auth_schema_signupschema",
-      "community": 55,
+      "community": 5,
       "norm_label": "signupschema"
     },
     {
@@ -3402,7 +3362,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "schema_auth_schema_forgotpasswordschema",
-      "community": 55,
+      "community": 5,
       "norm_label": "forgotpasswordschema"
     },
     {
@@ -3412,7 +3372,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "schema_auth_schema_resetpasswordschema",
-      "community": 55,
+      "community": 5,
       "norm_label": "resetpasswordschema"
     },
     {
@@ -3422,7 +3382,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_auth_type",
-      "community": 9,
+      "community": 5,
       "norm_label": "auth.type.ts"
     },
     {
@@ -3432,7 +3392,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "schema_auth_type_registerinputtype",
-      "community": 9,
+      "community": 5,
       "norm_label": "registerinputtype"
     },
     {
@@ -3442,7 +3402,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "schema_auth_type_logininputtype",
-      "community": 9,
+      "community": 5,
       "norm_label": "logininputtype"
     },
     {
@@ -3452,7 +3412,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "schema_auth_type_forgotpasswordtype",
-      "community": 9,
+      "community": 5,
       "norm_label": "forgotpasswordtype"
     },
     {
@@ -3462,7 +3422,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "schema_auth_type_resetpasswordtype",
-      "community": 9,
+      "community": 5,
       "norm_label": "resetpasswordtype"
     },
     {
@@ -3492,7 +3452,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "schema_auth_type_authredirecttargettype",
-      "community": 58,
+      "community": 5,
       "norm_label": "authredirecttargettype"
     },
     {
@@ -3502,7 +3462,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "schema_auth_type_usercredentials",
-      "community": 58,
+      "community": 5,
       "norm_label": "usercredentials"
     },
     {
@@ -3512,7 +3472,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "schema_auth_type_sessioncredentials",
-      "community": 9,
+      "community": 5,
       "norm_label": "sessioncredentials"
     },
     {
@@ -3522,7 +3482,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "schema_auth_type_session",
-      "community": 9,
+      "community": 5,
       "norm_label": "session"
     },
     {
@@ -3532,7 +3492,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "schema_auth_type_user",
-      "community": 58,
+      "community": 5,
       "norm_label": "user"
     },
     {
@@ -3602,7 +3562,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_getredirectpath",
-      "community": 58,
+      "community": 5,
       "norm_label": "getredirectpath.ts"
     },
     {
@@ -3612,7 +3572,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "utils_getredirectpath_getredirectpath",
-      "community": 58,
+      "community": 9,
       "norm_label": "getredirectpath()"
     },
     {
@@ -3634,6 +3594,26 @@
       "id": "utils_rbac_checkrole",
       "community": 56,
       "norm_label": "checkrole()"
+    },
+    {
+      "label": "require-role.ts",
+      "file_type": "code",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_require_role",
+      "community": 0,
+      "norm_label": "require-role.ts"
+    },
+    {
+      "label": "requireRole()",
+      "file_type": "code",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "api_require_role_requirerole",
+      "community": 0,
+      "norm_label": "requirerole()"
     },
     {
       "label": "global-not-found.tsx",
@@ -4102,7 +4082,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_badge",
-      "community": 52,
+      "community": 1,
       "norm_label": "badge.tsx"
     },
     {
@@ -4112,7 +4092,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_badge_badgevariants",
-      "community": 52,
+      "community": 1,
       "norm_label": "badgevariants"
     },
     {
@@ -4122,7 +4102,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_badge_badge",
-      "community": 52,
+      "community": 1,
       "norm_label": "badge()"
     },
     {
@@ -4132,7 +4112,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_button",
-      "community": 16,
+      "community": 1,
       "norm_label": "button.tsx"
     },
     {
@@ -4142,7 +4122,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_button_buttonvariants",
-      "community": 16,
+      "community": 1,
       "norm_label": "buttonvariants"
     },
     {
@@ -4152,7 +4132,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "ui_button_button",
-      "community": 16,
+      "community": 1,
       "norm_label": "button()"
     },
     {
@@ -4162,7 +4142,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_data_table",
-      "community": 61,
+      "community": 1,
       "norm_label": "data-table.tsx"
     },
     {
@@ -4172,7 +4152,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_data_table_columndef",
-      "community": 52,
+      "community": 1,
       "norm_label": "columndef"
     },
     {
@@ -4182,7 +4162,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_data_table_datatableprops",
-      "community": 61,
+      "community": 1,
       "norm_label": "datatableprops"
     },
     {
@@ -4192,7 +4172,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "ui_data_table_datatable",
-      "community": 52,
+      "community": 1,
       "norm_label": "datatable()"
     },
     {
@@ -4202,7 +4182,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialog",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialog.tsx"
     },
     {
@@ -4212,7 +4192,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialog_dialog",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialog()"
     },
     {
@@ -4222,7 +4202,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_dialog_dialogtrigger",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogtrigger()"
     },
     {
@@ -4232,7 +4212,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_dialog_dialogportal",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogportal()"
     },
     {
@@ -4242,7 +4222,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "ui_dialog_dialogclose",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogclose()"
     },
     {
@@ -4252,7 +4232,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_dialog_dialogoverlay",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogoverlay()"
     },
     {
@@ -4262,7 +4242,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_dialog_dialogcontent",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogcontent()"
     },
     {
@@ -4272,7 +4252,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "ui_dialog_dialogheader",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogheader()"
     },
     {
@@ -4282,7 +4262,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "ui_dialog_dialogfooter",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogfooter()"
     },
     {
@@ -4292,7 +4272,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "ui_dialog_dialogtitle",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogtitle()"
     },
     {
@@ -4302,7 +4282,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "ui_dialog_dialogdescription",
-      "community": 16,
+      "community": 1,
       "norm_label": "dialogdescription()"
     },
     {
@@ -4312,7 +4292,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 65,
+      "community": 1,
       "norm_label": "input.tsx"
     },
     {
@@ -4322,7 +4302,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 65,
+      "community": 1,
       "norm_label": "input()"
     },
     {
@@ -4522,7 +4502,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_status_badge",
-      "community": 54,
+      "community": 1,
       "norm_label": "status-badge.tsx"
     },
     {
@@ -4532,7 +4512,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "ui_status_badge_applicationstatus",
-      "community": 54,
+      "community": 1,
       "norm_label": "applicationstatus"
     },
     {
@@ -4542,7 +4522,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_status_badge_statusconfig",
-      "community": 54,
+      "community": 1,
       "norm_label": "statusconfig"
     },
     {
@@ -4552,7 +4532,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_status_badge_status_map",
-      "community": 54,
+      "community": 1,
       "norm_label": "status_map"
     },
     {
@@ -4562,7 +4542,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_status_badge_statusbadgeprops",
-      "community": 54,
+      "community": 1,
       "norm_label": "statusbadgeprops"
     },
     {
@@ -4572,7 +4552,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_status_badge_statusbadge",
-      "community": 54,
+      "community": 1,
       "norm_label": "statusbadge()"
     },
     {
@@ -4582,7 +4562,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_table",
-      "community": 61,
+      "community": 1,
       "norm_label": "table.tsx"
     },
     {
@@ -4592,7 +4572,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_table_table",
-      "community": 61,
+      "community": 1,
       "norm_label": "table()"
     },
     {
@@ -4602,7 +4582,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "ui_table_tableheader",
-      "community": 61,
+      "community": 1,
       "norm_label": "tableheader()"
     },
     {
@@ -4612,7 +4592,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_table_tablebody",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablebody()"
     },
     {
@@ -4622,7 +4602,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "ui_table_tablefooter",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablefooter()"
     },
     {
@@ -4632,7 +4612,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "ui_table_tablerow",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablerow()"
     },
     {
@@ -4642,7 +4622,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "ui_table_tablehead",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablehead()"
     },
     {
@@ -4652,7 +4632,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "ui_table_tablecell",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablecell()"
     },
     {
@@ -4662,7 +4642,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "ui_table_tablecaption",
-      "community": 61,
+      "community": 1,
       "norm_label": "tablecaption()"
     },
     {
@@ -4872,7 +4852,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_api_response_apiresponse",
-      "community": 11,
+      "community": 24,
       "norm_label": "apiresponse"
     },
     {
@@ -4962,7 +4942,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_pagination",
-      "community": 0,
+      "community": 24,
       "norm_label": "pagination.ts"
     },
     {
@@ -4972,7 +4952,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "lib_pagination_offsetpaginationparams",
-      "community": 0,
+      "community": 24,
       "norm_label": "offsetpaginationparams"
     },
     {
@@ -4982,7 +4962,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "lib_pagination_offsetpaginationmeta",
-      "community": 0,
+      "community": 24,
       "norm_label": "offsetpaginationmeta"
     },
     {
@@ -4992,7 +4972,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "lib_pagination_parseoffsetparams",
-      "community": 0,
+      "community": 24,
       "norm_label": "parseoffsetparams()"
     },
     {
@@ -5002,7 +4982,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "lib_pagination_buildoffsetmeta",
-      "community": 0,
+      "community": 24,
       "norm_label": "buildoffsetmeta()"
     },
     {
@@ -5012,7 +4992,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "lib_pagination_cursorpaginationparams",
-      "community": 0,
+      "community": 24,
       "norm_label": "cursorpaginationparams"
     },
     {
@@ -5022,7 +5002,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "lib_pagination_cursorpaginationmeta",
-      "community": 0,
+      "community": 24,
       "norm_label": "cursorpaginationmeta"
     },
     {
@@ -5152,7 +5132,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_upload",
-      "community": 0,
+      "community": 11,
       "norm_label": "upload.ts"
     },
     {
@@ -5162,7 +5142,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "lib_upload_upload_dir",
-      "community": 0,
+      "community": 11,
       "norm_label": "upload_dir"
     },
     {
@@ -5172,7 +5152,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "lib_upload_allowed_mime_types",
-      "community": 0,
+      "community": 11,
       "norm_label": "allowed_mime_types"
     },
     {
@@ -5182,7 +5162,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "lib_upload_uploadresult",
-      "community": 0,
+      "community": 11,
       "norm_label": "uploadresult"
     },
     {
@@ -5214,6 +5194,36 @@
       "id": "lib_utils_cn",
       "community": 1,
       "norm_label": "cn()"
+    },
+    {
+      "label": "batch-helpers.ts",
+      "file_type": "code",
+      "source_file": "lib/utils/batch-helpers.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "utils_batch_helpers",
+      "community": 24,
+      "norm_label": "batch-helpers.ts"
+    },
+    {
+      "label": "BulkEmailsSchema",
+      "file_type": "code",
+      "source_file": "lib/utils/batch-helpers.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "utils_batch_helpers_bulkemailsschema",
+      "community": 24,
+      "norm_label": "bulkemailsschema"
+    },
+    {
+      "label": "BulkEmailsInput",
+      "file_type": "code",
+      "source_file": "lib/utils/batch-helpers.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "utils_batch_helpers_bulkemailsinput",
+      "community": 24,
+      "norm_label": "bulkemailsinput"
     },
     {
       "label": "validator.ts",
@@ -5272,7 +5282,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 7,
+      "community": 6,
       "norm_label": "package.json"
     },
     {
@@ -5282,7 +5292,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 7,
+      "community": 6,
       "norm_label": "name"
     },
     {
@@ -5292,7 +5302,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_version",
-      "community": 7,
+      "community": 6,
       "norm_label": "version"
     },
     {
@@ -5302,7 +5312,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_private",
-      "community": 7,
+      "community": 6,
       "norm_label": "private"
     },
     {
@@ -5312,7 +5322,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 7,
+      "community": 6,
       "norm_label": "scripts"
     },
     {
@@ -5322,7 +5332,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 7,
+      "community": 6,
       "norm_label": "dev"
     },
     {
@@ -5332,7 +5342,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_postinstall",
-      "community": 7,
+      "community": 6,
       "norm_label": "postinstall"
     },
     {
@@ -5342,7 +5352,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 7,
+      "community": 6,
       "norm_label": "build"
     },
     {
@@ -5352,7 +5362,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_start",
-      "community": 7,
+      "community": 6,
       "norm_label": "start"
     },
     {
@@ -5362,7 +5372,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 7,
+      "community": 6,
       "norm_label": "lint"
     },
     {
@@ -5372,7 +5382,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_scripts_seed",
-      "community": 7,
+      "community": 6,
       "norm_label": "seed"
     },
     {
@@ -5382,7 +5392,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_scripts_promote",
-      "community": 7,
+      "community": 6,
       "norm_label": "promote"
     },
     {
@@ -5392,7 +5402,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_scripts_demote",
-      "community": 7,
+      "community": 6,
       "norm_label": "demote"
     },
     {
@@ -5402,7 +5412,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "package_prisma",
-      "community": 7,
+      "community": 6,
       "norm_label": "prisma"
     },
     {
@@ -5412,7 +5422,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "package_prisma_seed",
-      "community": 7,
+      "community": 6,
       "norm_label": "seed"
     },
     {
@@ -6482,7 +6492,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_env",
-      "community": 5,
+      "community": 0,
       "norm_label": "env.ts"
     },
     {
@@ -6492,7 +6502,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "utils_env_envschema",
-      "community": 5,
+      "community": 0,
       "norm_label": "envschema"
     },
     {
@@ -6502,7 +6512,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "utils_env_envtypes",
-      "community": 5,
+      "community": 0,
       "norm_label": "envtypes"
     },
     {
@@ -6512,7 +6522,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "utils_env_env",
-      "community": 5,
+      "community": 0,
       "norm_label": "env"
     },
     {
@@ -9337,9 +9347,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -9348,9 +9358,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9435,9 +9445,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -9446,9 +9456,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9565,9 +9575,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9737,22 +9747,22 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "invite_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "invite_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9834,11 +9844,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "invite_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9858,9 +9868,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -9869,9 +9879,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10010,7 +10020,7 @@
       "source_location": "L12",
       "weight": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10028,11 +10038,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "id_route_handlepatch",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10052,9 +10062,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10063,9 +10073,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10204,9 +10214,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "jobs_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10237,9 +10247,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10248,9 +10258,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -10367,9 +10377,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "messageid_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10389,9 +10399,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10400,9 +10410,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -10601,9 +10611,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L37",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10645,9 +10655,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L82",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "threadid_route_handlepost",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10667,9 +10677,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L124",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "threadid_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10689,9 +10699,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "search_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10700,9 +10710,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "search_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -10786,9 +10796,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "search_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10808,9 +10818,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "api_require_super_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10819,9 +10829,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "api_require_super_admin_requiresuperadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10934,13 +10944,13 @@
     {
       "relation": "calls",
       "context": "call",
-      "confidence": "EXTRACTED",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route_handledelete",
-      "target": "api_require_super_admin_requiresuperadmin"
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10960,9 +10970,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -10971,9 +10981,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11154,11 +11164,11 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ban_route_handlepost",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11189,9 +11199,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -11200,9 +11210,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -11341,9 +11351,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "role_route_handlepost",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11363,9 +11373,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -11374,9 +11384,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11546,9 +11556,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "id_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11581,7 +11591,7 @@
       "source_location": "L28",
       "weight": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11601,9 +11611,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -11612,9 +11622,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -11751,9 +11761,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "sessions_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11784,9 +11794,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L23",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "sessions_route_handledelete",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11806,9 +11816,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -11817,9 +11827,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -11914,9 +11924,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "unban_route_handlepost",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11936,9 +11946,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "api_require_admin"
+      "target": "api_require_role",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -11947,9 +11957,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -12088,9 +12098,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "users_route_handleget",
-      "target": "api_require_admin_requireadmin"
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -12367,6 +12377,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "actions_bulk_invite_admin",
+      "target": "api_require_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "actions_bulk_invite_admin",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12577,6 +12609,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "actions_bulk_invite_admin_bulkinviteadmins",
+      "target": "api_require_role_requirerole"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L20",
       "weight": 1.0,
       "source": "actions_bulk_invite_admin_bulkinviteadmins",
@@ -12602,6 +12645,28 @@
       "confidence_score": 1.0,
       "source": "actions_invite_admin",
       "target": "actions_invite_admin_inviteadmin"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "actions_invite_admin",
+      "target": "api_require_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "actions_invite_admin",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -12785,6 +12850,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "actions_invite_admin_inviteadmin",
+      "target": "api_require_role_requirerole"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/actions/invite-admin.ts",
       "source_location": "L13",
       "weight": 1.0,
       "source": "actions_invite_admin_inviteadmin",
@@ -12811,180 +12887,6 @@
       "confidence_score": 1.0,
       "source": "components_invite_admin_form",
       "target": "actions_invite_admin_inviteadmin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "api_require_admin_requireadmin"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "lib_api_error"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "lib_api_error_forbiddenerror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "lib_api_error_unauthorizederror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "libs_auth"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "schema_role_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_admin",
-      "target": "schema_role_schema_roleschema"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/admin/api/require-admin.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "api_require_admin_requireadmin",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "api_require_super_admin_requiresuperadmin"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "lib_api_error"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "lib_api_error_forbiddenerror"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "lib_api_error_unauthorizederror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "libs_auth"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_super_admin",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/admin/api/require-super-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "api_require_super_admin_requiresuperadmin",
-      "target": "libs_auth_getsession"
     },
     {
       "relation": "contains",
@@ -16145,6 +16047,28 @@
       "target": "schema_role_schema_roleschema"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/schema/admin.schema.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "schema_admin_schema",
+      "target": "utils_batch_helpers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/schema/admin.schema.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "schema_admin_schema",
+      "target": "utils_batch_helpers_bulkemailsschema",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/actions/login-action.ts",
@@ -18005,6 +17929,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "libs_auth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -18163,6 +18098,28 @@
       "confidence_score": 1.0,
       "source": "utils_rbac",
       "target": "libs_auth_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "libs_auth_getsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "api_require_role_requirerole",
+      "target": "libs_auth_getsession"
     },
     {
       "relation": "contains",
@@ -18853,6 +18810,49 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "lib_api_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "lib_api_error_forbiddenerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "lib_api_error_unauthorizederror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/global-not-found.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -19351,6 +19351,17 @@
       "confidence_score": 1.0,
       "source": "layout_page_header",
       "target": "layout_page_header_pageheaderprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/page-header.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "layout_page_header",
+      "target": "lib_utils",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -21240,6 +21251,26 @@
       "confidence_score": 1.0,
       "source": "lib_utils",
       "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils/batch-helpers.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "utils_batch_helpers",
+      "target": "utils_batch_helpers_bulkemailsinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/utils/batch-helpers.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "utils_batch_helpers",
+      "target": "utils_batch_helpers_bulkemailsschema",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23928,5 +23959,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "5a46c6ffc896025371f6c3ba746cf508acf589bc"
+  "built_at_commit": "eb6758d522299dd67822ee59c87582b786ac4286"
 }

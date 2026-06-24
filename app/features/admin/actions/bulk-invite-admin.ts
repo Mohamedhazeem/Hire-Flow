@@ -1,12 +1,11 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { getSession } from "@/app/features/auth/libs/auth";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { sendEmail } from "@/app/features/auth/libs/email";
 import { AdminBulkInviteSchema } from "@/app/features/admin/schema/admin.schema";
-import { UnauthorizedError, ForbiddenError, ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api-error";
 import { revalidatePath } from "next/cache";
-import { RoleSchema } from "@/app/features/auth/schema/role.schema";
 import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";
 
@@ -17,16 +16,7 @@ export type BulkInviteResult = {
 };
 
 export async function bulkInviteAdmins(formData: FormData): Promise<BulkInviteResult> {
-  const session = await getSession();
-
-  if (!session?.user) {
-    throw new UnauthorizedError();
-  }
-
-  const role = RoleSchema.safeParse((session.user as { role?: string }).role);
-  if (!role.success || role.data !== "admin") {
-    throw new ForbiddenError();
-  }
+  const adminUser = await requireRole(["admin", "super_admin"]);
 
   const raw = formData.get("emails");
   const parsed = AdminBulkInviteSchema.safeParse({ emails: raw });
@@ -37,7 +27,7 @@ export async function bulkInviteAdmins(formData: FormData): Promise<BulkInviteRe
 
   const emails = parsed.data.emails;
   const baseUrl = env.data?.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const invitedByName = session.user.name ?? session.user.email;
+  const invitedByName = adminUser.name ?? adminUser.email;
 
   const [existingUsers, existingInvites] = await Promise.all([
     prisma.user.findMany({
@@ -68,7 +58,7 @@ export async function bulkInviteAdmins(formData: FormData): Promise<BulkInviteRe
 
   const invitesToCreate = Array.from(pendingEmails).map((email) => ({
     email,
-    invitedById: session.user.id,
+    invitedById: adminUser.id,
     token: crypto.randomUUID(),
   }));
 

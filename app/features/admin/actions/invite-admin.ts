@@ -1,25 +1,15 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { getSession } from "@/app/features/auth/libs/auth";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { sendEmail } from "@/app/features/auth/libs/email";
 import { AdminInviteSchema } from "@/app/features/admin/schema/admin.schema";
-import { ValidationError, UnauthorizedError, ForbiddenError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api-error";
 import { revalidatePath } from "next/cache";
-import { RoleSchema } from "@/app/features/auth/schema/role.schema";
 import { env } from "@/utils/env";
 
 export async function inviteAdmin(formData: FormData) {
-  const session = await getSession();
-
-  if (!session?.user) {
-    throw new UnauthorizedError();
-  }
-
-  const role = RoleSchema.safeParse((session.user as { role?: string }).role);
-  if (!role.success || role.data !== "admin") {
-    throw new ForbiddenError();
-  }
+  const session = await requireRole(["admin", "super_admin"]);
 
   const email = formData.get("email");
   const parsed = AdminInviteSchema.safeParse({ email });
@@ -48,12 +38,12 @@ export async function inviteAdmin(formData: FormData) {
   const token = crypto.randomUUID();
   const baseUrl = env.data?.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
   const acceptUrl = `${baseUrl}/admin-invite?token=${token}`;
-  const invitedByName = session.user.name ?? session.user.email;
+  const invitedByName = session.name ?? session.email;
 
   await prisma.adminInvite.create({
     data: {
       email: parsed.data.email,
-      invitedById: session.user.id,
+      invitedById: session.id,
       token,
     },
   });

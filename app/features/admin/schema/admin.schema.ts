@@ -1,5 +1,6 @@
 import { z } from "zod/v4";
 import { RoleSchema } from "@/app/features/auth/schema/role.schema";
+import { BulkEmailsSchema } from "@/lib/utils/batch-helpers";
 import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
 
 export const AdminListUsersParamsSchema = z.object({
@@ -48,22 +49,7 @@ export type AdminBulkInviteFormInput = z.infer<typeof AdminBulkInviteFormSchema>
 
 // Server-side validated result — parsed + deduplicated array
 export const AdminBulkInviteSchema = z.object({
-  emails: z
-    .string()
-    .min(1, "At least one email is required")
-    .transform((raw) =>
-      raw
-        .split(/[,;\s]+/)
-        .map((e) => e.trim())
-        .filter((e) => e.length > 0),
-    )
-    .pipe(
-      z
-        .array(z.string().email("Invalid email address"))
-        .min(1, "At least one valid email is required")
-        .max(50, "Maximum 50 emails at a time")
-        .transform((emails) => [...new Set(emails)]),
-    ),
+  emails: BulkEmailsSchema,
 });
 
 export type AdminBulkInviteInput = z.infer<typeof AdminBulkInviteSchema>;

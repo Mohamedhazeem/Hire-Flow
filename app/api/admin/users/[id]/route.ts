@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
 import { getUserById } from "@/app/features/admin/queries/user-queries";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { auth } from "@/app/features/auth/libs/auth";
 import { NotFoundError, ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
@@ -10,7 +10,7 @@ async function handleGET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  await requireAdmin();
+  await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
   const user = await getUserById(id);
@@ -25,7 +25,7 @@ async function handleDELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
   if (adminUser.id === id) {

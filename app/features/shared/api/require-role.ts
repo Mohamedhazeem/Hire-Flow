@@ -1,7 +1,7 @@
 import { getSession } from "@/app/features/auth/libs/auth";
 import { UnauthorizedError, ForbiddenError } from "@/lib/api-error";
 
-export async function requireSuperAdmin() {
+export async function requireRole(allowedRoles: string[]) {
   const session = await getSession();
 
   if (!session?.user) {
@@ -9,8 +9,8 @@ export async function requireSuperAdmin() {
   }
 
   const role = (session.user as { role?: string }).role;
-  if (role !== "super_admin") {
-    throw new ForbiddenError("Only super admins can perform this action");
+  if (!role || !allowedRoles.includes(role)) {
+    throw new ForbiddenError("Insufficient permissions");
   }
 
   return session.user;

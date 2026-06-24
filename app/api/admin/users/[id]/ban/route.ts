@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { AdminBanUserSchema } from "@/app/features/admin/schema/admin.schema";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/app/features/auth/libs/auth";
@@ -12,7 +12,7 @@ async function handlePOST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
   if (adminUser.id === id) {

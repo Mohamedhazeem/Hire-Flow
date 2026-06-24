@@ -1,11 +1,10 @@
-import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handleGET() {
-  await requireAdmin();
+  await requireRole(["admin", "super_admin"]);
 
   const [invites, teamMembers] = await Promise.all([
     prisma.adminInvite.findMany({

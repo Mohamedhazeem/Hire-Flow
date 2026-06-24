@@ -1,11 +1,11 @@
 # Graph Report - hire-flow-next  (2026-06-25)
 
 ## Corpus Check
-- 156 files · ~44,683 words
+- 156 files · ~44,731 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 811 nodes · 1485 edges · 65 communities (50 shown, 15 thin omitted)
+- 811 nodes · 1485 edges · 66 communities (50 shown, 16 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -75,6 +75,7 @@
 - [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 53 edges
@@ -85,8 +86,8 @@
 6. `compilerOptions` - 17 edges
 7. `ValidationError` - 16 edges
 8. `getSession()` - 13 edges
-9. `Project Structure Rules` - 12 edges
-10. `What You Must Do When Invoked` - 12 edges
+9. `What You Must Do When Invoked` - 12 edges
+10. `Project Structure Rules` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `RootLayout()` --calls--> `cn()`  [EXTRACTED]
@@ -108,14 +109,14 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (65 total, 15 thin omitted)
+## Communities (66 total, 16 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.05
 Nodes (80): handlePOST(), POST, requireAdmin(), requireSuperAdmin(), DELETE, handleDELETE(), DELETE, handleDELETE() (+72 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (15): cn(), PopoverContent(), PopoverDescription(), PopoverHeader(), PopoverTitle(), SelectContent(), SelectGroup(), SelectItem() (+7 more)
 
 ### Community 2 - "Community 2"
@@ -251,8 +252,8 @@ Cohesion: 0.19
 Nodes (9): metadata, AdminDashboard(), StatCardProps, WORKMODE_COLORS, useAdminDashboard(), Badge(), badgeVariants, ColumnDef (+1 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.20
-Nodes (7): SearchResult, Input(), ApplicationStatus, STATUS_MAP, StatusBadge(), StatusBadgeProps, StatusConfig
+Cohesion: 0.33
+Nodes (5): ApplicationStatus, STATUS_MAP, StatusBadge(), StatusBadgeProps, StatusConfig
 
 ### Community 55 - "Community 55"
 Cohesion: 0.11
@@ -291,14 +292,14 @@ Cohesion: 0.40
 Nodes (3): LoginForm(), metadata, Props
 
 ## Knowledge Gaps
-- **388 isolated node(s):** `Role Guard Requirement`, `STATE & CACHE RULES (short)`, `graphify`, `Global Coding Rules & Shared Infrastructure`, `Stack` (+383 more)
+- **388 isolated node(s):** `$schema`, `plugin`, `@kilocode/plugin`, `AcceptInviteClientProps`, `Props` (+383 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 1` to `Community 12`, `Community 15`, `Community 16`, `Community 52`, `Community 54`, `Community 56`, `Community 60`, `Community 61`?**
+- **Why does `cn()` connect `Community 1` to `Community 65`, `Community 12`, `Community 15`, `Community 16`, `Community 52`, `Community 54`, `Community 56`, `Community 60`, `Community 61`?**
   _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Why does `Button()` connect `Community 16` to `Community 1`, `Community 2`, `Community 11`, `Community 48`, `Community 24`, `Community 60`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
@@ -308,7 +309,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`ok()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 2 inferred relationships involving `requireAdmin()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireAdmin()` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Role Guard Requirement`, `STATE & CACHE RULES (short)`, `graphify` to the rest of the system?**
+- **What connects `$schema`, `plugin`, `@kilocode/plugin` to the rest of the system?**
   _388 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.05045045045045045 - nodes in this community are weakly interconnected._
