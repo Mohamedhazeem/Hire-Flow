@@ -5,14 +5,14 @@
 ---
 
 ## 📅 Last Updated
-`2026-06-24T08:55:00Z`
+`2026-06-24T09:20:00Z`
 
 ---
 
 ## 📊 Overview
 - **Current Phase:** Phase 1
-- **Current Step:** Step 1.2 – Admin UI (Users & Recruiters)
-- **Next Step:** Step 1.3 – Admin Team Management
+- **Current Step:** Step 1.3 – Admin Team Management
+- **Next Step:** Step 1.4 – Admin Job Oversight & Analytics
 - **Blockers:** None
 
 ---
@@ -33,7 +33,7 @@
 ### Phase 1: Admin
 - [x] Step 1.1 – Admin API (Queries & Ban Action)
 - [x] Step 1.2 – Admin UI (Users & Recruiters)
-- [ ] Step 1.3 – Admin Team Management
+- [x] Step 1.3 – Admin Team Management
 - [ ] Step 1.4 – Admin Job Oversight & Analytics
 - [ ] Step 1.5 – Admin Messaging Entry Point
 
@@ -121,6 +121,16 @@
 - `app/features/admin/components/people-table.tsx` (Shared data-table with search, filters, pagination, actions)
 - `app/(roles)/admin/users/page.tsx` (Admin users management page)
 - `app/(roles)/admin/recruiters/page.tsx` (Admin recruiters management page)
+- `app/features/admin/schema/admin.schema.ts` (Added AdminInviteSchema, AdminAcceptInviteSchema)
+- `app/features/admin/actions/invite-admin.ts` (Server action: create invite)
+- `app/features/admin/hooks/use-admin-invites.ts` (TanStack Query: invites, cancel, remove)
+- `app/features/admin/components/invite-admin-form.tsx` (RHF + Zod form for sending invites)
+- `app/features/admin/components/admin-team-list.tsx` (DataTable of team members + invites)
+- `app/(roles)/admin/team/page.tsx` (Admin team management page)
+- `app/api/admin/invite/route.ts` (GET – list invites & team members)
+- `app/api/admin/invite/accept/route.ts` (POST – accept invite with token)
+- `app/api/admin/invite/[id]/route.ts` (DELETE – cancel pending invite)
+- `app/api/admin/team/[id]/route.ts` (DELETE – remove admin from team)
 
 ### Phase 2
 *(agent to fill)*
@@ -143,7 +153,7 @@
 
 ## 🔜 Upcoming Dependencies (Phase 1)
 - Step 1.1 must be built before Step 1.2 (UI depends on API hooks).
-- Step 1.1–1.4 must be built before Step 1.5 (messaging entry point).
+- Step 1.1–1.3 must be built before Step 1.4 (admin job oversight depends on invite system for team context).
 - Pusher SDK will be needed in Phase 5; not required yet.
 
 ---
