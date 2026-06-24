@@ -21,10 +21,16 @@ async function handlePOST(request: NextRequest) {
     throw new NotFoundError("Invalid or expired invitation token");
   }
 
+  const existingAdminCount = await prisma.user.count({
+    where: { role: { in: ["admin", "super_admin"] } },
+  });
+
+  const newRole = existingAdminCount === 0 ? "super_admin" : "admin";
+
   await prisma.$transaction([
     prisma.user.update({
       where: { email: invite.email },
-      data: { role: "admin" },
+      data: { role: newRole },
     }),
     prisma.adminInvite.update({
       where: { id: invite.id },
@@ -32,7 +38,7 @@ async function handlePOST(request: NextRequest) {
     }),
   ]);
 
-  return ok({ accepted: true });
+  return ok({ accepted: true, role: newRole });
 }
 
 export const POST = withErrorHandler(handlePOST);

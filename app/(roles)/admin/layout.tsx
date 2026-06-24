@@ -5,7 +5,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  await checkRole(["admin"]);
+  await checkRole(["admin", "super_admin"]);
 
   return <>{children}</>;
 }

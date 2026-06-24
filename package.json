@@ -8,8 +8,9 @@
     "build": "npx prisma migrate deploy && next build",
     "start": "next start",
     "lint": "eslint",
-    "db:setup": "npx create-db && npx prisma db push",
-    "seed": "tsx prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts",
+    "promote": "tsx scripts/promote-super-admin.ts",
+    "demote": "tsx scripts/demote-super-admin.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

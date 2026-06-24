@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
-import { requireAdmin } from "@/app/features/admin/api/require-admin";
+import { requireSuperAdmin } from "@/app/features/admin/api/require-super-admin";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { NotFoundError, ValidationError } from "@/lib/api-error";
@@ -9,16 +9,16 @@ async function handleDELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const adminUser = await requireAdmin();
+  await requireSuperAdmin();
   const { id } = await params;
 
-  if (adminUser.id === id) {
-    throw new ValidationError("You cannot remove yourself from the admin team");
+  if (id === "") {
+    throw new ValidationError("User ID is required");
   }
 
   const user = await prisma.user.findUnique({ where: { id }, select: { id: true, role: true } });
 
-  if (!user || user.role !== "admin") {
+  if (!user || (user.role !== "admin" && user.role !== "super_admin")) {
     throw new NotFoundError("Admin not found");
   }
 

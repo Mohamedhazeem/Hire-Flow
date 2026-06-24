@@ -10,7 +10,7 @@ export async function requireAdmin() {
   }
 
   const role = RoleSchema.safeParse((session.user as { role?: string }).role);
-  if (!role.success || role.data !== "admin") {
+  if (!role.success || (role.data !== "admin" && role.data !== "super_admin")) {
     throw new ForbiddenError();
   }
 

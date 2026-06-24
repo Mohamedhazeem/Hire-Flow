@@ -5,6 +5,7 @@ export function getRedirectPath(response: User | UserCredentials): AuthRedirectT
   let redirectTarget: AuthRedirectTargetType = "/";
   const role = (response as User).role ?? (response as UserCredentials).user?.role;
   switch (role) {
+    case Roles.SUPER_ADMIN:
     case Roles.ADMIN:
       redirectTarget = "/admin";
       break;

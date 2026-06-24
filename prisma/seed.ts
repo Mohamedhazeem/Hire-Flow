@@ -160,7 +160,7 @@ async function main() {
       name: ADMIN.name,
       email: ADMIN.email,
       emailVerified: true,
-      role: "admin",
+      role: "super_admin",
     },
   });
 
@@ -303,10 +303,26 @@ async function main() {
     }
   }
 
+  // ── 5. Super Admin promotion ────────────────────────────────────────────────
+  // Set PROMOTE_TO_SUPER_ADMINS as a comma-separated list of email addresses:
+  //   PROMOTE_TO_SUPER_ADMINS="admin@hireflow.dev,bob@acmecorp.dev" npx prisma db seed
+  const promoteEmails = (process.env.PROMOTE_TO_SUPER_ADMINS ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  for (const email of promoteEmails) {
+    await prisma.user.update({
+      where: { email },
+      data: { role: "super_admin" },
+    });
+    logger.server.info(`  ✔ "${email}" promoted to super_admin`);
+  }
+
   logger.server.info("  ✔ Applications created");
   logger.server.info("\n✅  Seed complete.");
   logger.server.info(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
-  logger.server.info(`   Admin      → ${ADMIN.email}`);
+  logger.server.info(`   Admin (super) → ${ADMIN.email}`);
   RECRUITERS.forEach((r) => logger.server.info(`   Recruiter  → ${r.email}`));
   USERS.forEach((u) => logger.server.info(`   User       → ${u.email}`));
 }

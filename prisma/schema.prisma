@@ -15,6 +15,7 @@ enum Role {
   user
   recruiter
   admin
+  super_admin
 }
 
 enum WorkMode {
