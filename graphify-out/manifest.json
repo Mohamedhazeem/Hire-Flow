@@ -35,9 +35,9 @@
     "semantic_hash": "dc24d5d7bd8bf62da91ae7e185482532"
   },
   "app/(roles)/admin/layout.tsx": {
-    "mtime": 1782020744.3464618,
-    "ast_hash": "813b802a7b2fc9cdc39540c2d3cafa6b",
-    "semantic_hash": "813b802a7b2fc9cdc39540c2d3cafa6b"
+    "mtime": 1782276273.9065242,
+    "ast_hash": "2ebd2849eec292600084a61c4eccc42d",
+    "semantic_hash": ""
   },
   "app/(roles)/admin/page.tsx": {
     "mtime": 1782020760.9076467,
@@ -105,9 +105,9 @@
     "semantic_hash": "7cfff691b58c0ab1aa7f3219274100a4"
   },
   "app/features/admin/api/require-admin.ts": {
-    "mtime": 1782146390.4166658,
-    "ast_hash": "77f39c4c5e6e350d9edd8b67c489a5d9",
-    "semantic_hash": "77f39c4c5e6e350d9edd8b67c489a5d9"
+    "mtime": 1782275482.5729604,
+    "ast_hash": "771994d4f293b4d5aa188ec88a9a1691",
+    "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-users.ts": {
     "mtime": 1782145505.258015,
@@ -240,9 +240,9 @@
     "semantic_hash": "0ff17516be07e53fb23a5939728fb98f"
   },
   "app/features/auth/schema/role.schema.ts": {
-    "mtime": 1782020831.0690074,
-    "ast_hash": "19da3d1429b8f8c3786c120319f71e09",
-    "semantic_hash": "19da3d1429b8f8c3786c120319f71e09"
+    "mtime": 1782275478.7561772,
+    "ast_hash": "5937c836f1966116dbac7a3c98caf046",
+    "semantic_hash": ""
   },
   "app/features/auth/utils/authError.ts": {
     "mtime": 1781767255.1128826,
@@ -250,9 +250,9 @@
     "semantic_hash": "5e6ef0b61e50201b562f5a1396dfe435"
   },
   "app/features/auth/utils/getRedirectPath.ts": {
-    "mtime": 1781367922.4826941,
-    "ast_hash": "868e76cd9c78239dbcffd931a006b1ab",
-    "semantic_hash": "868e76cd9c78239dbcffd931a006b1ab"
+    "mtime": 1782276274.7024338,
+    "ast_hash": "537794a4d8f68e94a3509beb3be7323e",
+    "semantic_hash": ""
   },
   "app/features/auth/utils/rbac.ts": {
     "mtime": 1781364245.570081,
@@ -415,9 +415,9 @@
     "semantic_hash": "f9a25fa58212edbdc3e265575a14a67b"
   },
   "package.json": {
-    "mtime": 1782039205.7032347,
-    "ast_hash": "09542669e1e9986f0d391c89a9f0605c",
-    "semantic_hash": "09542669e1e9986f0d391c89a9f0605c"
+    "mtime": 1782277933.3722715,
+    "ast_hash": "be1a9ca6d2f2407a7099673245271202",
+    "semantic_hash": ""
   },
   "postcss.config.mjs": {
     "mtime": 1780988826.9075253,
@@ -445,9 +445,9 @@
     "semantic_hash": "68c43230a399767c965f3300bd068712"
   },
   "prisma/seed.ts": {
-    "mtime": 1782134827.2758515,
-    "ast_hash": "6c12d0555b617f378334dc7fb66d2695",
-    "semantic_hash": "6c12d0555b617f378334dc7fb66d2695"
+    "mtime": 1782276547.2071383,
+    "ast_hash": "1b99ddbddcd5cd6ca31fb6366e3ae989",
+    "semantic_hash": ""
   },
   "proxy.ts": {
     "mtime": 1782146687.8665519,
@@ -640,8 +640,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/invite/accept/route.ts": {
-    "mtime": 1782272825.60534,
-    "ast_hash": "ae16db5e1d0f599eeaa8480025201f34",
+    "mtime": 1782275497.1140504,
+    "ast_hash": "698bc419911f54ded7268b9220aee296",
     "semantic_hash": ""
   },
   "app/api/admin/invite/route.ts": {
@@ -650,8 +650,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/team/[id]/route.ts": {
-    "mtime": 1782272858.1395006,
-    "ast_hash": "fc2d2657f205ed0c3080b689a3fd0675",
+    "mtime": 1782275509.30899,
+    "ast_hash": "be287d4863087c38518e9732adda95c8",
     "semantic_hash": ""
   },
   "app/features/admin/actions/bulk-invite-admin.ts": {
@@ -682,6 +682,21 @@
   "app/features/admin/hooks/use-admin-invites.ts": {
     "mtime": 1782272834.3537858,
     "ast_hash": "f7926fd56f4c44c34e32c2bea8bbc97a",
+    "semantic_hash": ""
+  },
+  "app/features/admin/api/require-super-admin.ts": {
+    "mtime": 1782275513.6126535,
+    "ast_hash": "d3d88d19ece722f7e2a1cfc49f6fbb5a",
+    "semantic_hash": ""
+  },
+  "scripts/demote-super-admin.ts": {
+    "mtime": 1782278523.551357,
+    "ast_hash": "057bd757ad370b680d8d195beeb3b2fc",
+    "semantic_hash": ""
+  },
+  "scripts/promote-super-admin.ts": {
+    "mtime": 1782278512.986313,
+    "ast_hash": "7bd2119b250825950d51322eaef49870",
     "semantic_hash": ""
   }
 }
