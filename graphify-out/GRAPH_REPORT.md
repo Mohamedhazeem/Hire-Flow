@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 642 nodes · 1015 edges · 47 communities (33 shown, 14 thin omitted)
+- 641 nodes · 1013 edges · 47 communities (32 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `48162947`
+- Built from commit: `1d574bb0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,15 +66,15 @@
 5. `requireAdmin()` - 16 edges
 6. `What You Must Do When Invoked` - 12 edges
 7. `Project Structure Rules` - 12 edges
-8. `hire-flow-next: Job Board Platform` - 12 edges
-9. `/graphify` - 11 edges
+8. `/graphify` - 11 edges
+9. `hire-flow-next: Job Board Platform` - 11 edges
 10. `Post‑Phase 5: Full Test Suite Generation` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `proxy()` --calls--> `getRedirectPath()`  [EXTRACTED]
-  proxy.ts → app/features/auth/utils/getRedirectPath.ts
 - `RootLayout()` --calls--> `cn()`  [EXTRACTED]
   app/layout.tsx → lib/utils.ts
+- `proxy()` --calls--> `getRedirectPath()`  [EXTRACTED]
+  proxy.ts → app/features/auth/utils/getRedirectPath.ts
 - `DialogOverlay()` --calls--> `cn()`  [EXTRACTED]
   components/ui/dialog.tsx → lib/utils.ts
 - `PopoverContent()` --calls--> `cn()`  [EXTRACTED]
@@ -90,31 +90,31 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (47 total, 14 thin omitted)
+## Communities (47 total, 15 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (54): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), SocialProvider, socialSignInAction(), AuthLayout(), AuthLayoutProps (+46 more)
+Cohesion: 0.05
+Nodes (58): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), { POST, GET }, AuthLayout(), AuthLayoutProps, FormButton() (+50 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
 Nodes (59): BanDialog(), BanDialogProps, PeopleTable(), PeopleTableProps, ROLE_OPTIONS, useAdminUsers(), useBanUser(), useDeleteUser() (+51 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.09
-Nodes (38): { POST, GET }, requireAdmin(), handlePOST(), POST, DELETE, GET, handleDELETE(), handleGET() (+30 more)
+Cohesion: 0.07
+Nodes (50): requireAdmin(), handlePOST(), POST, DELETE, GET, handleDELETE(), handleGET(), ApiError (+42 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.08
-Nodes (23): button, buttonContainer, container, fallbackLink, heading, main, paragraph, ResetPasswordEmail() (+15 more)
+Cohesion: 0.05
+Nodes (38): SocialProvider, socialSignInAction(), providers, SocialProvider, button, buttonContainer, container, fallbackLink (+30 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.11
-Nodes (23): Analytics - aggregated counts and charts (admin/recruiter), Applications - user applies, status tracking, Job Posts - title, description, locations, skills, etc., Messaging - real-time chat per thread, Notifications - in-app toast/bell system, extraction-spec.md - Subagent Prompt Template, graphify CLI - knowledge graph extraction tool, HIRE_FLOW_PROMPTS.md - Project Spec & Roadmap (+15 more)
+Nodes (22): Analytics - aggregated counts and charts (admin/recruiter), Applications - user applies, status tracking, Job Posts - title, description, locations, skills, etc., Messaging - real-time chat per thread, Notifications - in-app toast/bell system, extraction-spec.md - Subagent Prompt Template, graphify CLI - knowledge graph extraction tool, HIRE_FLOW_PROMPTS.md - Project Spec & Roadmap (+14 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.11
-Nodes (17): buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams, OffsetPaginationMeta, OffsetPaginationParams, parseOffsetParams(), adapter, globalForPrisma (+9 more)
+Cohesion: 0.40
+Nodes (3): LoginForm(), metadata, Props
 
 ### Community 6 - "Community 6"
 Cohesion: 0.06
@@ -128,21 +128,17 @@ Nodes (31): dependencies, @base-ui/react, better-auth, @better-auth/prisma-adapt
 Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
-### Community 9 - "Community 9"
-Cohesion: 0.20
-Nodes (9): adapter, ADMIN, JOB_TEMPLATES, main(), pool, prisma, RECRUITERS, upsertCredentialAccount() (+1 more)
-
 ### Community 10 - "Community 10"
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFileNames, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.18
-Nodes (10): AdminLayout(), authPages, config, protectedRoutes, proxy(), RecruiterLayout(), RoleSchema, RoleType (+2 more)
+Cohesion: 0.28
+Nodes (6): AdminLayout(), RecruiterLayout(), RoleSchema, RoleType, UserLayout(), checkRole()
 
 ### Community 12 - "Community 12"
-Cohesion: 0.09
-Nodes (19): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), LogoutButton(), apiClient() (+11 more)
+Cohesion: 0.16
+Nodes (13): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), apiClient(), DEFAULT_QUERY_OPTIONS (+5 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.21
@@ -205,9 +201,9 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **321 isolated node(s):** `@kilocode/plugin`, `metadata`, `Props`, `metadata`, `metadata` (+316 more)
+- **321 isolated node(s):** `📅 Last Updated`, `📊 Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+316 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -216,13 +212,13 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `Button()` connect `Community 1` to `Community 0`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `auth` connect `Community 0` to `Community 2`, `Community 11`, `Community 13`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **What connects `@kilocode/plugin`, `metadata`, `Props` to the rest of the system?**
+- **Why does `auth` connect `Community 0` to `Community 11`, `Community 2`, `Community 3`, `Community 13`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **What connects `📅 Last Updated`, `📊 Overview`, `Phase 0: Foundation` to the rest of the system?**
   _321 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.057911392405063294 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05426356589147287 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.053482221569203646 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.0853302162478083 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06599597585513078 - nodes in this community are weakly interconnected._

@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-06-24)
 
 ## Corpus Check
-- 115 files · ~32,747 words
+- 119 files · ~33,845 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 511 nodes · 853 edges · 32 communities (21 shown, 11 thin omitted)
+- 642 nodes · 1015 edges · 47 communities (33 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `05891f9e`
+- Built from commit: `48162947`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,6 +43,20 @@
 - [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 48 edges
@@ -50,23 +64,23 @@
 3. `ok()` - 17 edges
 4. `compilerOptions` - 17 edges
 5. `requireAdmin()` - 16 edges
-6. `Project Structure Rules` - 12 edges
-7. `hire-flow-next: Job Board Platform` - 12 edges
-8. `verifyUserStatus()` - 9 edges
-9. `getRedirectPath()` - 9 edges
-10. `validateWithZod()` - 9 edges
+6. `What You Must Do When Invoked` - 12 edges
+7. `Project Structure Rules` - 12 edges
+8. `hire-flow-next: Job Board Platform` - 12 edges
+9. `/graphify` - 11 edges
+10. `Post‑Phase 5: Full Test Suite Generation` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `proxy()` --calls--> `getRedirectPath()`  [EXTRACTED]
   proxy.ts → app/features/auth/utils/getRedirectPath.ts
 - `RootLayout()` --calls--> `cn()`  [EXTRACTED]
   app/layout.tsx → lib/utils.ts
-- `PageHeader()` --calls--> `cn()`  [EXTRACTED]
-  components/layout/page-header.tsx → lib/utils.ts
-- `DataTable()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/data-table.tsx → lib/utils.ts
 - `DialogOverlay()` --calls--> `cn()`  [EXTRACTED]
   components/ui/dialog.tsx → lib/utils.ts
+- `PopoverContent()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/popover.tsx → lib/utils.ts
+- `PopoverHeader()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/popover.tsx → lib/utils.ts
 
 ## Import Cycles
 - None detected.
@@ -76,30 +90,30 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (32 total, 11 thin omitted)
+## Communities (47 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
-Nodes (53): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), SocialProvider, socialSignInAction(), AuthLayout(), AuthLayoutProps (+45 more)
+Nodes (54): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), SocialProvider, socialSignInAction(), AuthLayout(), AuthLayoutProps (+46 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.06
-Nodes (44): PageHeader(), PageHeaderProps, cn(), Badge(), badgeVariants, Button(), buttonVariants, ColumnDef (+36 more)
+Cohesion: 0.05
+Nodes (59): BanDialog(), BanDialogProps, PeopleTable(), PeopleTableProps, ROLE_OPTIONS, useAdminUsers(), useBanUser(), useDeleteUser() (+51 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.10
-Nodes (37): { POST, GET }, requireAdmin(), handlePOST(), POST, DELETE, GET, handleDELETE(), handleGET() (+29 more)
+Cohesion: 0.09
+Nodes (38): { POST, GET }, requireAdmin(), handlePOST(), POST, DELETE, GET, handleDELETE(), handleGET() (+30 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (29): LogoutButton(), button, buttonContainer, container, fallbackLink, heading, main, paragraph (+21 more)
+Cohesion: 0.08
+Nodes (23): button, buttonContainer, container, fallbackLink, heading, main, paragraph, ResetPasswordEmail() (+15 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.11
 Nodes (23): Analytics - aggregated counts and charts (admin/recruiter), Applications - user applies, status tracking, Job Posts - title, description, locations, skills, etc., Messaging - real-time chat per thread, Notifications - in-app toast/bell system, extraction-spec.md - Subagent Prompt Template, graphify CLI - knowledge graph extraction tool, HIRE_FLOW_PROMPTS.md - Project Spec & Roadmap (+15 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.09
+Cohesion: 0.11
 Nodes (17): buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams, OffsetPaginationMeta, OffsetPaginationParams, parseOffsetParams(), adapter, globalForPrisma (+9 more)
 
 ### Community 6 - "Community 6"
@@ -123,12 +137,12 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFileNames, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.17
-Nodes (11): AdminLayout(), authPages, config, protectedRoutes, proxy(), RecruiterLayout(), Roles, RoleSchema (+3 more)
+Cohesion: 0.18
+Nodes (10): AdminLayout(), authPages, config, protectedRoutes, proxy(), RecruiterLayout(), RoleSchema, RoleType (+2 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.14
-Nodes (14): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), apiClient(), ApiError (+6 more)
+Cohesion: 0.09
+Nodes (19): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), LogoutButton(), apiClient() (+11 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.21
@@ -146,25 +160,69 @@ Nodes (4): PersistedState, Theme, UIStore, useUIStore
 Cohesion: 0.50
 Nodes (3): ALLOWED_MIME_TYPES, UPLOAD_DIR, UploadResult
 
+### Community 32 - "Community 32"
+Cohesion: 0.08
+Nodes (25): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Kilo-specific rules (+17 more)
+
+### Community 33 - "Community 33"
+Cohesion: 0.09
+Nodes (21): 🧠 Active Global Context Snapshot, ✅ Completed Steps, 📁 Created File Paths (Grouped by Phase), Hire Flow Next – Project Manifest, 🐛 Known Issues / TODOs, 📅 Last Updated, 📊 Overview, 🔗 Pending Dependencies (+13 more)
+
+### Community 34 - "Community 34"
+Cohesion: 0.15
+Nodes (12): 1. Dependencies & Configuration, 2. Unit Tests (Server Actions & Helpers), 3. Integration Tests (REST API Routes), 4. Integration Tests (Server Actions from the UI), 5. Component Tests (React Testing Library), 6. End‑to‑End Tests (Playwright), 7. Code Coverage, 8. CI / GitHub Actions (Optional but recommended) (+4 more)
+
+### Community 35 - "Community 35"
+Cohesion: 0.18
+Nodes (10): Begin your output now., **CLAUDE OUTPUT REFINE WITH GEMENI**, Current project setup:, **DEEPSEAK PROMPT:**, My details:, PROJECT CONTEXT, Step 0.6: TanStack Query Provider & Zustand Stores, Step 0.7: Project Manifest (Agent Memory) (+2 more)
+
+### Community 36 - "Community 36"
+Cohesion: 0.22
+Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
+
+### Community 37 - "Community 37"
+Cohesion: 0.33
+Nodes (5): GitHub Copilot Instructions, graphify, Mandatory Retrieval, Primary Instruction Source, Rule
+
+### Community 38 - "Community 38"
+Cohesion: 0.33
+Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
+
+### Community 39 - "Community 39"
+Cohesion: 0.50
+Nodes (3): Deploy on Vercel, Getting Started, Learn More
+
+### Community 40 - "Community 40"
+Cohesion: 0.50
+Nodes (3): For /graphify add, For --watch, graphify reference: add a URL and watch a folder
+
+### Community 41 - "Community 41"
+Cohesion: 0.50
+Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify reference: commit hook and native CLAUDE.md integration
+
+### Community 42 - "Community 42"
+Cohesion: 0.50
+Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
+
 ## Knowledge Gaps
-- **233 isolated node(s):** `STATE & CACHE RULES (short)`, `graphify`, `Stack`, `Absolute Rules`, `Core Routing (app/)` (+228 more)
+- **321 isolated node(s):** `@kilocode/plugin`, `metadata`, `Props`, `metadata`, `metadata` (+316 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 1` to `Community 12`?**
-  _High betweenness centrality (0.108) - this node is a cross-community bridge._
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Why does `Button()` connect `Community 1` to `Community 0`?**
-  _High betweenness centrality (0.051) - this node is a cross-community bridge._
-- **Why does `auth` connect `Community 2` to `Community 0`, `Community 11`, `Community 13`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **What connects `STATE & CACHE RULES (short)`, `graphify`, `Stack` to the rest of the system?**
-  _233 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `auth` connect `Community 0` to `Community 2`, `Community 11`, `Community 13`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **What connects `@kilocode/plugin`, `metadata`, `Props` to the rest of the system?**
+  _321 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.056329113924050635 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.057911392405063294 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.061343204653622425 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.053482221569203646 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.09545454545454546 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0853302162478083 - nodes in this community are weakly interconnected._
