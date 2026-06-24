@@ -65,9 +65,9 @@
     "semantic_hash": "cb127284990566e7497feb7fa5c7d70f"
   },
   "app/api/admin/users/[id]/ban/route.ts": {
-    "mtime": 1782327113.3356209,
-    "ast_hash": "21b4f08eb47a93be7fed20c1dd51adef",
-    "semantic_hash": ""
+    "mtime": 1782149924.9345403,
+    "ast_hash": "aa72a75200b180436608e67db182820e",
+    "semantic_hash": "aa72a75200b180436608e67db182820e"
   },
   "app/api/admin/users/[id]/role/route.ts": {
     "mtime": 1782149916.077608,
@@ -220,8 +220,8 @@
     "semantic_hash": "3729bf92fd9eda2ee233705ba43b89f1"
   },
   "app/features/auth/libs/email.ts": {
-    "mtime": 1782327100.6699052,
-    "ast_hash": "59cfc57f42d23d0d0743e4e7680eaee0",
+    "mtime": 1782273368.5182998,
+    "ast_hash": "a454abbdd7a6c22967d44325d239c08d",
     "semantic_hash": ""
   },
   "app/features/auth/libs/verification.ts": {
@@ -280,9 +280,9 @@
     "semantic_hash": "74cd3e6772ada217ebffc5872b29802d"
   },
   "app/providers.tsx": {
-    "mtime": 1782325519.2375793,
-    "ast_hash": "cb338c5cf3005801b4d718621237f596",
-    "semantic_hash": ""
+    "mtime": 1782134003.847006,
+    "ast_hash": "1caa963326029b4ac32279b3bd62848a",
+    "semantic_hash": "1caa963326029b4ac32279b3bd62848a"
   },
   "components.json": {
     "mtime": 1781334677.690489,
@@ -675,8 +675,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-admin-form.tsx": {
-    "mtime": 1782326555.5459244,
-    "ast_hash": "4b8d6423bbaec7e99fdd9f50426458bc",
+    "mtime": 1782274932.9585512,
+    "ast_hash": "8c30792120f39b5807103a9371df107f",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-invites.ts": {
@@ -752,11 +752,6 @@
   "app/features/admin/queries/job-queries.ts": {
     "mtime": 1782280172.308585,
     "ast_hash": "45fb657d887c00c5f86a2566392bbfa6",
-    "semantic_hash": ""
-  },
-  "app/features/admin/components/email/ban-notification-email.tsx": {
-    "mtime": 1782327087.8553019,
-    "ast_hash": "4888f924819dfd99154f66419a62bbb0",
     "semantic_hash": ""
   }
 }
