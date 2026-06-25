@@ -11,14 +11,12 @@ import {
 import { cn } from "@/lib/utils";
 
 export type ColumnDef<TData> = {
-  /** Unique key for this column */
   key: string;
-  /** Column header label */
   header: string;
-  /** Render cell content. Receives the full row object. */
   cell: (row: TData) => React.ReactNode;
-  /** Optional extra className for the <th> and <td> */
   className?: string;
+  /** Alignment for the column content (both header and body). Defaults to left. */
+  align?: "left" | "center" | "right";
 };
 
 type DataTableProps<TData> = {
@@ -49,7 +47,9 @@ export function DataTable<TData>({
               <TableHead
                 key={col.key}
                 className={cn(
-                  "text-text-muted text-xs font-semibold uppercase tracking-wide px-4 py-3",
+                  "text-text-muted text-xs font-semibold uppercase tracking-wide px-4 py-3 text-left",
+                  col.align === "center" && "text-center",
+                  col.align === "right" && "text-right",
                   col.className,
                 )}
               >
@@ -77,7 +77,13 @@ export function DataTable<TData>({
                 {columns.map((col) => (
                   <TableCell
                     key={col.key}
-                    className={cn("px-4 py-3 text-sm text-text-body", col.className)}
+                    className={cn(
+                      "px-4 py-3 text-sm text-text-body",
+                      col.align === "center" && "text-center",
+                      col.align === "right" && "text-right",
+                      (!col.align || col.align === "left") && "text-left",
+                      col.className,
+                    )}
                   >
                     {col.cell(row)}
                   </TableCell>

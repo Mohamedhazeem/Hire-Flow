@@ -252,7 +252,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "register_page",
-      "community": 58,
+      "community": 55,
       "norm_label": "page.tsx"
     },
     {
@@ -262,7 +262,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "register_page_metadata",
-      "community": 58,
+      "community": 55,
       "norm_label": "metadata"
     },
     {
@@ -272,7 +272,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "register_page_registerpage",
-      "community": 58,
+      "community": 55,
       "norm_label": "registerpage()"
     },
     {
@@ -352,7 +352,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_admin_jobs_page_tsx_jobs_page",
-      "community": 60,
+      "community": 11,
       "norm_label": "page.tsx"
     },
     {
@@ -362,7 +362,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "jobs_page_metadata",
-      "community": 60,
+      "community": 11,
       "norm_label": "metadata"
     },
     {
@@ -372,7 +372,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "jobs_page_adminjobspage",
-      "community": 60,
+      "community": 11,
       "norm_label": "adminjobspage()"
     },
     {
@@ -402,7 +402,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "threadid_page",
-      "community": 60,
+      "community": 11,
       "norm_label": "page.tsx"
     },
     {
@@ -412,7 +412,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "threadid_page_metadata",
-      "community": 60,
+      "community": 11,
       "norm_label": "metadata"
     },
     {
@@ -422,7 +422,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "threadid_page_props",
-      "community": 60,
+      "community": 11,
       "norm_label": "props"
     },
     {
@@ -432,7 +432,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "threadid_page_adminmessagethreadpage",
-      "community": 60,
+      "community": 11,
       "norm_label": "adminmessagethreadpage()"
     },
     {
@@ -442,7 +442,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "messages_page",
-      "community": 60,
+      "community": 48,
       "norm_label": "page.tsx"
     },
     {
@@ -452,7 +452,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "messages_page_metadata",
-      "community": 60,
+      "community": 48,
       "norm_label": "metadata"
     },
     {
@@ -462,7 +462,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "messages_page_adminmessagespage",
-      "community": 60,
+      "community": 48,
       "norm_label": "adminmessagespage()"
     },
     {
@@ -472,7 +472,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "admin_page",
-      "community": 1,
+      "community": 12,
       "norm_label": "page.tsx"
     },
     {
@@ -482,7 +482,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "admin_page_metadata",
-      "community": 1,
+      "community": 12,
       "norm_label": "metadata"
     },
     {
@@ -492,7 +492,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "admin_page_adminpage",
-      "community": 1,
+      "community": 12,
       "norm_label": "adminpage()"
     },
     {
@@ -502,7 +502,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "recruiters_page",
-      "community": 60,
+      "community": 11,
       "norm_label": "page.tsx"
     },
     {
@@ -512,7 +512,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "recruiters_page_metadata",
-      "community": 60,
+      "community": 11,
       "norm_label": "metadata"
     },
     {
@@ -522,7 +522,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "recruiters_page_adminrecruiterspage",
-      "community": 60,
+      "community": 11,
       "norm_label": "adminrecruiterspage()"
     },
     {
@@ -532,7 +532,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "team_page",
-      "community": 60,
+      "community": 12,
       "norm_label": "page.tsx"
     },
     {
@@ -542,7 +542,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "team_page_metadata",
-      "community": 60,
+      "community": 12,
       "norm_label": "metadata"
     },
     {
@@ -552,7 +552,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "team_page_adminteampage",
-      "community": 60,
+      "community": 12,
       "norm_label": "adminteampage()"
     },
     {
@@ -562,7 +562,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "users_page",
-      "community": 60,
+      "community": 11,
       "norm_label": "page.tsx"
     },
     {
@@ -572,7 +572,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "users_page_metadata",
-      "community": 60,
+      "community": 11,
       "norm_label": "metadata"
     },
     {
@@ -582,7 +582,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "users_page_adminuserspage",
-      "community": 60,
+      "community": 11,
       "norm_label": "adminuserspage()"
     },
     {
@@ -929,7 +929,7 @@
       "label": "messageSelect",
       "file_type": "code",
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "threadid_route_messageselect",
       "community": 0,
@@ -939,7 +939,7 @@
       "label": "handleGET()",
       "file_type": "code",
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "threadid_route_handleget",
       "community": 0,
@@ -949,7 +949,7 @@
       "label": "handlePOST()",
       "file_type": "code",
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
-      "source_location": "L78",
+      "source_location": "L75",
       "_origin": "ast",
       "id": "threadid_route_handlepost",
       "community": 0,
@@ -959,7 +959,7 @@
       "label": "handleDELETE()",
       "file_type": "code",
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
-      "source_location": "L120",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "threadid_route_handledelete",
       "community": 0,
@@ -1252,7 +1252,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "users_route",
-      "community": 0,
+      "community": 24,
       "norm_label": "route.ts"
     },
     {
@@ -1262,7 +1262,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "users_route_handleget",
-      "community": 0,
+      "community": 24,
       "norm_label": "handleget()"
     },
     {
@@ -1272,7 +1272,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "users_route_get",
-      "community": 0,
+      "community": 24,
       "norm_label": "get"
     },
     {
@@ -1282,7 +1282,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "all_route",
-      "community": 28,
+      "community": 0,
       "norm_label": "route.ts"
     },
     {
@@ -1292,7 +1292,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "all_route_post_get",
-      "community": 28,
+      "community": 0,
       "norm_label": "{ post, get }"
     },
     {
@@ -1382,7 +1382,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_dashboard",
-      "community": 1,
+      "community": 12,
       "norm_label": "admin-dashboard.tsx"
     },
     {
@@ -1392,7 +1392,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "components_admin_dashboard_statcardprops",
-      "community": 1,
+      "community": 12,
       "norm_label": "statcardprops"
     },
     {
@@ -1402,7 +1402,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "components_admin_dashboard_statcard",
-      "community": 1,
+      "community": 12,
       "norm_label": "statcard()"
     },
     {
@@ -1412,7 +1412,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_admin_dashboard_workmode_colors",
-      "community": 1,
+      "community": 12,
       "norm_label": "workmode_colors"
     },
     {
@@ -1422,7 +1422,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "components_admin_dashboard_admindashboard",
-      "community": 1,
+      "community": 12,
       "norm_label": "admindashboard()"
     },
     {
@@ -1436,10 +1436,30 @@
       "norm_label": "admin-jobs-table.tsx"
     },
     {
-      "label": "AdminJobsTableProps",
+      "label": "WORK_MODE_LABELS",
       "file_type": "code",
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L41",
+      "_origin": "ast",
+      "id": "components_admin_jobs_table_work_mode_labels",
+      "community": 1,
+      "norm_label": "work_mode_labels"
+    },
+    {
+      "label": "EMPLOYMENT_TYPE_LABELS",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "components_admin_jobs_table_employment_type_labels",
+      "community": 1,
+      "norm_label": "employment_type_labels"
+    },
+    {
+      "label": "AdminJobsTableProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "components_admin_jobs_table_adminjobstableprops",
       "community": 1,
@@ -1449,7 +1469,7 @@
       "label": "AdminJobsTable()",
       "file_type": "code",
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
-      "source_location": "L45",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "components_admin_jobs_table_adminjobstable",
       "community": 24,
@@ -1502,7 +1522,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_team_list",
-      "community": 60,
+      "community": 12,
       "norm_label": "admin-team-list.tsx"
     },
     {
@@ -1512,7 +1532,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "components_admin_team_list_adminteamlist",
-      "community": 60,
+      "community": 12,
       "norm_label": "adminteamlist()"
     },
     {
@@ -1662,7 +1682,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "email_ban_notification_email",
-      "community": 62,
+      "community": 3,
       "norm_label": "ban-notification-email.tsx"
     },
     {
@@ -1672,7 +1692,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "email_ban_notification_email_bannotificationemailprops",
-      "community": 62,
+      "community": 3,
       "norm_label": "bannotificationemailprops"
     },
     {
@@ -1682,7 +1702,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "email_ban_notification_email_bannotificationemail",
-      "community": 62,
+      "community": 3,
       "norm_label": "bannotificationemail()"
     },
     {
@@ -1692,7 +1712,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "email_ban_notification_email_main",
-      "community": 62,
+      "community": 3,
       "norm_label": "main"
     },
     {
@@ -1702,7 +1722,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "email_ban_notification_email_container",
-      "community": 62,
+      "community": 3,
       "norm_label": "container"
     },
     {
@@ -1712,7 +1732,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "email_ban_notification_email_heading",
-      "community": 62,
+      "community": 3,
       "norm_label": "heading"
     },
     {
@@ -1722,7 +1742,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "email_ban_notification_email_paragraph",
-      "community": 62,
+      "community": 3,
       "norm_label": "paragraph"
     },
     {
@@ -1732,7 +1752,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "email_ban_notification_email_notebox",
-      "community": 62,
+      "community": 3,
       "norm_label": "notebox"
     },
     {
@@ -1742,7 +1762,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "email_ban_notification_email_notetext",
-      "community": 62,
+      "community": 3,
       "norm_label": "notetext"
     },
     {
@@ -1772,7 +1792,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "components_invite_admin_form_inviteadminform",
-      "community": 60,
+      "community": 12,
       "norm_label": "inviteadminform()"
     },
     {
@@ -1782,47 +1802,127 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_people_table",
-      "community": 1,
+      "community": 9,
       "norm_label": "people-table.tsx"
     },
     {
       "label": "computeChatThreadId()",
       "file_type": "code",
       "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L29",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "components_people_table_computechatthreadid",
-      "community": 1,
+      "community": 9,
       "norm_label": "computechatthreadid()"
+    },
+    {
+      "label": "capitalizeLabel()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "components_people_table_capitalizelabel",
+      "community": 9,
+      "norm_label": "capitalizelabel()"
+    },
+    {
+      "label": "formatLabel()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "components_people_table_formatlabel",
+      "community": 9,
+      "norm_label": "formatlabel()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "components_people_table_formatdate",
+      "community": 9,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "statusBadge()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "components_people_table_statusbadge",
+      "community": 9,
+      "norm_label": "statusbadge()"
+    },
+    {
+      "label": "ActionButtonProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "components_people_table_actionbuttonprops",
+      "community": 9,
+      "norm_label": "actionbuttonprops"
+    },
+    {
+      "label": "ActionButton()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "components_people_table_actionbutton",
+      "community": 9,
+      "norm_label": "actionbutton()"
     },
     {
       "label": "PeopleTableProps",
       "file_type": "code",
       "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L34",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "components_people_table_peopletableprops",
-      "community": 1,
+      "community": 9,
       "norm_label": "peopletableprops"
     },
     {
       "label": "ROLE_OPTIONS",
       "file_type": "code",
       "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L38",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "components_people_table_role_options",
-      "community": 1,
+      "community": 9,
       "norm_label": "role_options"
+    },
+    {
+      "label": "UserRow",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "components_people_table_userrow",
+      "community": 9,
+      "norm_label": "userrow"
+    },
+    {
+      "label": "UsersApiResponse",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L119",
+      "_origin": "ast",
+      "id": "components_people_table_usersapiresponse",
+      "community": 9,
+      "norm_label": "usersapiresponse"
     },
     {
       "label": "PeopleTable()",
       "file_type": "code",
       "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L40",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "components_people_table_peopletable",
-      "community": 1,
+      "community": 9,
       "norm_label": "peopletable()"
     },
     {
@@ -1832,7 +1932,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_start_thread_search",
-      "community": 1,
+      "community": 48,
       "norm_label": "start-thread-search.tsx"
     },
     {
@@ -1842,7 +1942,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_start_thread_search_searchresult",
-      "community": 1,
+      "community": 48,
       "norm_label": "searchresult"
     },
     {
@@ -1852,7 +1952,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_start_thread_search_computethreadid",
-      "community": 1,
+      "community": 48,
       "norm_label": "computethreadid()"
     },
     {
@@ -1862,7 +1962,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "components_start_thread_search_startthreadsearch",
-      "community": 60,
+      "community": 48,
       "norm_label": "startthreadsearch()"
     },
     {
@@ -2049,10 +2149,10 @@
       "label": "useAdminDashboard()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "hooks_use_admin_dashboard_useadmindashboard",
-      "community": 1,
+      "community": 12,
       "norm_label": "useadmindashboard()"
     },
     {
@@ -2062,67 +2162,67 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_admin_invites",
-      "community": 60,
+      "community": 12,
       "norm_label": "use-admin-invites.ts"
     },
     {
       "label": "AdminInvite",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_admininvite",
-      "community": 60,
+      "community": 12,
       "norm_label": "admininvite"
     },
     {
       "label": "AdminTeamMember",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_adminteammember",
-      "community": 60,
+      "community": 12,
       "norm_label": "adminteammember"
     },
     {
       "label": "InviteListResponse",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_invitelistresponse",
-      "community": 60,
+      "community": 12,
       "norm_label": "invitelistresponse"
     },
     {
       "label": "useAdminInvites()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_useadmininvites",
-      "community": 60,
+      "community": 12,
       "norm_label": "useadmininvites()"
     },
     {
       "label": "useCancelInvite()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L31",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_usecancelinvite",
-      "community": 60,
+      "community": 12,
       "norm_label": "usecancelinvite()"
     },
     {
       "label": "useRemoveAdmin()",
       "file_type": "code",
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
-      "source_location": "L43",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "hooks_use_admin_invites_useremoveadmin",
-      "community": 60,
+      "community": 12,
       "norm_label": "useremoveadmin()"
     },
     {
@@ -2172,7 +2272,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_admin_users",
-      "community": 1,
+      "community": 24,
       "norm_label": "use-admin-users.ts"
     },
     {
@@ -2182,7 +2282,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "hooks_use_admin_users_useadminusers",
-      "community": 1,
+      "community": 9,
       "norm_label": "useadminusers()"
     },
     {
@@ -2192,7 +2292,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "hooks_use_admin_users_useadminuser",
-      "community": 1,
+      "community": 24,
       "norm_label": "useadminuser()"
     },
     {
@@ -2222,7 +2322,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "hooks_use_admin_users_usedeleteuser",
-      "community": 1,
+      "community": 9,
       "norm_label": "usedeleteuser()"
     },
     {
@@ -2232,7 +2332,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "hooks_use_admin_users_usesetuserrole",
-      "community": 1,
+      "community": 9,
       "norm_label": "usesetuserrole()"
     },
     {
@@ -2242,7 +2342,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "hooks_use_admin_users_userevokeusersessions",
-      "community": 1,
+      "community": 9,
       "norm_label": "userevokeusersessions()"
     },
     {
@@ -2362,7 +2462,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "queries_user_queries_getuserbyid",
-      "community": 0,
+      "community": 24,
       "norm_label": "getuserbyid()"
     },
     {
@@ -2562,7 +2662,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_login_action",
-      "community": 9,
+      "community": 55,
       "norm_label": "login-action.ts"
     },
     {
@@ -2572,7 +2672,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "actions_login_action_loginaction",
-      "community": 9,
+      "community": 55,
       "norm_label": "loginaction()"
     },
     {
@@ -2582,7 +2682,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_logout_action",
-      "community": 28,
+      "community": 0,
       "norm_label": "logout-action.ts"
     },
     {
@@ -2592,7 +2692,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "actions_logout_action_logoutaction",
-      "community": 28,
+      "community": 0,
       "norm_label": "logoutaction()"
     },
     {
@@ -2602,7 +2702,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_register_action",
-      "community": 9,
+      "community": 55,
       "norm_label": "register-action.ts"
     },
     {
@@ -2612,7 +2712,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "actions_register_action_registeraction",
-      "community": 9,
+      "community": 55,
       "norm_label": "registeraction()"
     },
     {
@@ -2622,7 +2722,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_request_password_reset_action",
-      "community": 28,
+      "community": 55,
       "norm_label": "request-password-reset-action.ts"
     },
     {
@@ -2632,7 +2732,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "actions_request_password_reset_action_requestpasswordresetaction",
-      "community": 9,
+      "community": 55,
       "norm_label": "requestpasswordresetaction()"
     },
     {
@@ -2642,7 +2742,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_reset_password_action",
-      "community": 5,
+      "community": 55,
       "norm_label": "reset-password-action.ts"
     },
     {
@@ -2652,7 +2752,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "actions_reset_password_action_resetpasswordaction",
-      "community": 9,
+      "community": 55,
       "norm_label": "resetpasswordaction()"
     },
     {
@@ -2662,7 +2762,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_social_signin_action",
-      "community": 28,
+      "community": 55,
       "norm_label": "social-signin-action.ts"
     },
     {
@@ -2672,7 +2772,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "actions_social_signin_action_socialprovider",
-      "community": 28,
+      "community": 55,
       "norm_label": "socialprovider"
     },
     {
@@ -2682,7 +2782,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "actions_social_signin_action_socialsigninaction",
-      "community": 28,
+      "community": 55,
       "norm_label": "socialsigninaction()"
     },
     {
@@ -2722,7 +2822,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "email_reset_password_email",
-      "community": 57,
+      "community": 3,
       "norm_label": "reset-password-email.tsx"
     },
     {
@@ -2732,7 +2832,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "email_reset_password_email_resetpasswordemailprops",
-      "community": 57,
+      "community": 3,
       "norm_label": "resetpasswordemailprops"
     },
     {
@@ -2742,7 +2842,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "email_reset_password_email_resetpasswordemail",
-      "community": 57,
+      "community": 3,
       "norm_label": "resetpasswordemail()"
     },
     {
@@ -2752,7 +2852,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "email_reset_password_email_main",
-      "community": 57,
+      "community": 3,
       "norm_label": "main"
     },
     {
@@ -2762,7 +2862,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "email_reset_password_email_container",
-      "community": 57,
+      "community": 3,
       "norm_label": "container"
     },
     {
@@ -2772,7 +2872,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "email_reset_password_email_heading",
-      "community": 57,
+      "community": 3,
       "norm_label": "heading"
     },
     {
@@ -2782,7 +2882,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "email_reset_password_email_paragraph",
-      "community": 57,
+      "community": 3,
       "norm_label": "paragraph"
     },
     {
@@ -2792,7 +2892,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "email_reset_password_email_buttoncontainer",
-      "community": 57,
+      "community": 3,
       "norm_label": "buttoncontainer"
     },
     {
@@ -2802,7 +2902,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "email_reset_password_email_button",
-      "community": 57,
+      "community": 3,
       "norm_label": "button"
     },
     {
@@ -2812,7 +2912,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "email_reset_password_email_separatortext",
-      "community": 57,
+      "community": 3,
       "norm_label": "separatortext"
     },
     {
@@ -2822,7 +2922,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "email_reset_password_email_fallbacklink",
-      "community": 57,
+      "community": 3,
       "norm_label": "fallbacklink"
     },
     {
@@ -2832,7 +2932,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "email_verfication_email",
-      "community": 59,
+      "community": 3,
       "norm_label": "verfication-email.tsx"
     },
     {
@@ -2842,7 +2942,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "email_verfication_email_verificationemailprops",
-      "community": 59,
+      "community": 3,
       "norm_label": "verificationemailprops"
     },
     {
@@ -2852,7 +2952,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "email_verfication_email_verificationemail",
-      "community": 59,
+      "community": 3,
       "norm_label": "verificationemail()"
     },
     {
@@ -2862,7 +2962,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "email_verfication_email_main",
-      "community": 59,
+      "community": 3,
       "norm_label": "main"
     },
     {
@@ -2872,7 +2972,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "email_verfication_email_container",
-      "community": 59,
+      "community": 3,
       "norm_label": "container"
     },
     {
@@ -2882,7 +2982,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "email_verfication_email_heading",
-      "community": 59,
+      "community": 3,
       "norm_label": "heading"
     },
     {
@@ -2892,7 +2992,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "email_verfication_email_paragraph",
-      "community": 59,
+      "community": 3,
       "norm_label": "paragraph"
     },
     {
@@ -2902,7 +3002,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "email_verfication_email_buttoncontainer",
-      "community": 59,
+      "community": 3,
       "norm_label": "buttoncontainer"
     },
     {
@@ -2912,7 +3012,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "email_verfication_email_button",
-      "community": 59,
+      "community": 3,
       "norm_label": "button"
     },
     {
@@ -2922,7 +3022,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "email_verfication_email_separatortext",
-      "community": 59,
+      "community": 3,
       "norm_label": "separatortext"
     },
     {
@@ -2932,7 +3032,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "email_verfication_email_fallbacklink",
-      "community": 59,
+      "community": 3,
       "norm_label": "fallbacklink"
     },
     {
@@ -3092,7 +3192,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_signup_form",
-      "community": 58,
+      "community": 55,
       "norm_label": "signup-form.tsx"
     },
     {
@@ -3102,7 +3202,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_signup_form_registerinput",
-      "community": 58,
+      "community": 55,
       "norm_label": "registerinput"
     },
     {
@@ -3112,7 +3212,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "components_signup_form_signupform",
-      "community": 58,
+      "community": 55,
       "norm_label": "signupform()"
     },
     {
@@ -3122,7 +3222,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_social_signin_buttons",
-      "community": 28,
+      "community": 55,
       "norm_label": "social-signin-buttons.tsx"
     },
     {
@@ -3132,7 +3232,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_social_signin_buttons_providers",
-      "community": 28,
+      "community": 55,
       "norm_label": "providers"
     },
     {
@@ -3142,7 +3242,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "components_social_signin_buttons_socialprovider",
-      "community": 28,
+      "community": 55,
       "norm_label": "socialprovider"
     },
     {
@@ -3152,7 +3252,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_social_signin_buttons_socialsigninbuttons",
-      "community": 28,
+      "community": 55,
       "norm_label": "socialsigninbuttons()"
     },
     {
@@ -3162,7 +3262,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_usecheckrole",
-      "community": 58,
+      "community": 56,
       "norm_label": "usecheckrole.ts"
     },
     {
@@ -3172,7 +3272,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "hooks_usecheckrole_usecheckrole",
-      "community": 58,
+      "community": 56,
       "norm_label": "usecheckrole()"
     },
     {
@@ -3212,7 +3312,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "libs_auth_auth",
-      "community": 28,
+      "community": 0,
       "norm_label": "auth"
     },
     {
@@ -3232,7 +3332,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "libs_email",
-      "community": 0,
+      "community": 3,
       "norm_label": "email.ts"
     },
     {
@@ -3242,7 +3342,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "libs_email_resend",
-      "community": 0,
+      "community": 3,
       "norm_label": "resend"
     },
     {
@@ -3252,7 +3352,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "libs_email_sendemailargs",
-      "community": 0,
+      "community": 3,
       "norm_label": "sendemailargs"
     },
     {
@@ -3272,7 +3372,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "libs_verification",
-      "community": 28,
+      "community": 55,
       "norm_label": "verification.ts"
     },
     {
@@ -3282,7 +3382,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "libs_verification_userstatusresult",
-      "community": 28,
+      "community": 55,
       "norm_label": "userstatusresult"
     },
     {
@@ -3292,7 +3392,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "libs_verification_verifyuserstatus",
-      "community": 9,
+      "community": 55,
       "norm_label": "verifyuserstatus()"
     },
     {
@@ -3302,7 +3402,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_auth_schema",
-      "community": 5,
+      "community": 55,
       "norm_label": "auth.schema.ts"
     },
     {
@@ -3312,7 +3412,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "schema_auth_schema_disposableset",
-      "community": 5,
+      "community": 55,
       "norm_label": "disposableset"
     },
     {
@@ -3322,7 +3422,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "schema_auth_schema_emailschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "emailschema"
     },
     {
@@ -3332,7 +3432,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "schema_auth_schema_passwordschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "passwordschema"
     },
     {
@@ -3342,7 +3442,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "schema_auth_schema_signinschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "signinschema"
     },
     {
@@ -3352,7 +3452,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "schema_auth_schema_signupschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "signupschema"
     },
     {
@@ -3362,7 +3462,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "schema_auth_schema_forgotpasswordschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "forgotpasswordschema"
     },
     {
@@ -3372,7 +3472,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "schema_auth_schema_resetpasswordschema",
-      "community": 5,
+      "community": 55,
       "norm_label": "resetpasswordschema"
     },
     {
@@ -3382,7 +3482,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_auth_type",
-      "community": 5,
+      "community": 55,
       "norm_label": "auth.type.ts"
     },
     {
@@ -3392,7 +3492,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "schema_auth_type_registerinputtype",
-      "community": 5,
+      "community": 55,
       "norm_label": "registerinputtype"
     },
     {
@@ -3402,7 +3502,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "schema_auth_type_logininputtype",
-      "community": 5,
+      "community": 55,
       "norm_label": "logininputtype"
     },
     {
@@ -3412,7 +3512,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "schema_auth_type_forgotpasswordtype",
-      "community": 5,
+      "community": 55,
       "norm_label": "forgotpasswordtype"
     },
     {
@@ -3422,7 +3522,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "schema_auth_type_resetpasswordtype",
-      "community": 5,
+      "community": 55,
       "norm_label": "resetpasswordtype"
     },
     {
@@ -3432,7 +3532,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "schema_auth_type_actionresult",
-      "community": 9,
+      "community": 55,
       "norm_label": "actionresult"
     },
     {
@@ -3442,7 +3542,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "schema_auth_type_authtype",
-      "community": 9,
+      "community": 55,
       "norm_label": "authtype"
     },
     {
@@ -3452,7 +3552,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "schema_auth_type_authredirecttargettype",
-      "community": 5,
+      "community": 55,
       "norm_label": "authredirecttargettype"
     },
     {
@@ -3462,7 +3562,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "schema_auth_type_usercredentials",
-      "community": 5,
+      "community": 55,
       "norm_label": "usercredentials"
     },
     {
@@ -3472,7 +3572,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "schema_auth_type_sessioncredentials",
-      "community": 5,
+      "community": 55,
       "norm_label": "sessioncredentials"
     },
     {
@@ -3482,7 +3582,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "schema_auth_type_session",
-      "community": 5,
+      "community": 55,
       "norm_label": "session"
     },
     {
@@ -3492,7 +3592,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "schema_auth_type_user",
-      "community": 5,
+      "community": 55,
       "norm_label": "user"
     },
     {
@@ -3502,7 +3602,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_role_schema",
-      "community": 58,
+      "community": 56,
       "norm_label": "role.schema.ts"
     },
     {
@@ -3512,7 +3612,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "schema_role_schema_roles",
-      "community": 58,
+      "community": 55,
       "norm_label": "roles"
     },
     {
@@ -3522,7 +3622,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "schema_role_schema_roleschema",
-      "community": 58,
+      "community": 56,
       "norm_label": "roleschema"
     },
     {
@@ -3532,7 +3632,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "schema_role_schema_roletype",
-      "community": 58,
+      "community": 56,
       "norm_label": "roletype"
     },
     {
@@ -3542,7 +3642,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_autherror",
-      "community": 9,
+      "community": 55,
       "norm_label": "autherror.ts"
     },
     {
@@ -3552,7 +3652,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "utils_autherror_autherror",
-      "community": 9,
+      "community": 55,
       "norm_label": "autherror()"
     },
     {
@@ -3562,7 +3662,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_getredirectpath",
-      "community": 5,
+      "community": 55,
       "norm_label": "getredirectpath.ts"
     },
     {
@@ -3572,7 +3672,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "utils_getredirectpath_getredirectpath",
-      "community": 9,
+      "community": 55,
       "norm_label": "getredirectpath()"
     },
     {
@@ -4052,7 +4152,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "layout_page_header",
-      "community": 60,
+      "community": 11,
       "norm_label": "page-header.tsx"
     },
     {
@@ -4062,7 +4162,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "layout_page_header_pageheaderprops",
-      "community": 60,
+      "community": 11,
       "norm_label": "pageheaderprops"
     },
     {
@@ -4072,7 +4172,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "layout_page_header_pageheader",
-      "community": 60,
+      "community": 11,
       "norm_label": "pageheader()"
     },
     {
@@ -4082,7 +4182,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_badge",
-      "community": 1,
+      "community": 9,
       "norm_label": "badge.tsx"
     },
     {
@@ -4092,7 +4192,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_badge_badgevariants",
-      "community": 1,
+      "community": 9,
       "norm_label": "badgevariants"
     },
     {
@@ -4102,7 +4202,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_badge_badge",
-      "community": 1,
+      "community": 9,
       "norm_label": "badge()"
     },
     {
@@ -4142,7 +4242,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_data_table",
-      "community": 1,
+      "community": 28,
       "norm_label": "data-table.tsx"
     },
     {
@@ -4152,27 +4252,27 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_data_table_columndef",
-      "community": 1,
+      "community": 12,
       "norm_label": "columndef"
     },
     {
       "label": "DataTableProps",
       "file_type": "code",
       "source_file": "components/ui/data-table.tsx",
-      "source_location": "L24",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "ui_data_table_datatableprops",
-      "community": 1,
+      "community": 28,
       "norm_label": "datatableprops"
     },
     {
       "label": "DataTable()",
       "file_type": "code",
       "source_file": "components/ui/data-table.tsx",
-      "source_location": "L32",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "ui_data_table_datatable",
-      "community": 1,
+      "community": 12,
       "norm_label": "datatable()"
     },
     {
@@ -4232,7 +4332,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_dialog_dialogoverlay",
-      "community": 1,
+      "community": 5,
       "norm_label": "dialogoverlay()"
     },
     {
@@ -4292,7 +4392,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 1,
+      "community": 48,
       "norm_label": "input.tsx"
     },
     {
@@ -4302,7 +4402,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 1,
+      "community": 48,
       "norm_label": "input()"
     },
     {
@@ -4312,7 +4412,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_popover",
-      "community": 1,
+      "community": 5,
       "norm_label": "popover.tsx"
     },
     {
@@ -4322,7 +4422,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_popover_popover",
-      "community": 1,
+      "community": 5,
       "norm_label": "popover()"
     },
     {
@@ -4332,7 +4432,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "ui_popover_popovertrigger",
-      "community": 1,
+      "community": 5,
       "norm_label": "popovertrigger()"
     },
     {
@@ -4342,7 +4442,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_popover_popovercontent",
-      "community": 1,
+      "community": 5,
       "norm_label": "popovercontent()"
     },
     {
@@ -4352,7 +4452,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "ui_popover_popoverheader",
-      "community": 1,
+      "community": 5,
       "norm_label": "popoverheader()"
     },
     {
@@ -4362,7 +4462,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "ui_popover_popovertitle",
-      "community": 1,
+      "community": 5,
       "norm_label": "popovertitle()"
     },
     {
@@ -4372,7 +4472,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "ui_popover_popoverdescription",
-      "community": 1,
+      "community": 5,
       "norm_label": "popoverdescription()"
     },
     {
@@ -4382,7 +4482,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_select",
-      "community": 1,
+      "community": 5,
       "norm_label": "select.tsx"
     },
     {
@@ -4392,7 +4492,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_select_selectgroup",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectgroup()"
     },
     {
@@ -4402,7 +4502,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "ui_select_selectvalue",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectvalue()"
     },
     {
@@ -4412,7 +4512,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "ui_select_selecttrigger",
-      "community": 1,
+      "community": 5,
       "norm_label": "selecttrigger()"
     },
     {
@@ -4422,7 +4522,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "ui_select_selectcontent",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectcontent()"
     },
     {
@@ -4432,7 +4532,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "ui_select_selectlabel",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectlabel()"
     },
     {
@@ -4442,7 +4542,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "ui_select_selectitem",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectitem()"
     },
     {
@@ -4452,7 +4552,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "ui_select_selectseparator",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectseparator()"
     },
     {
@@ -4462,7 +4562,7 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "ui_select_selectscrollupbutton",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectscrollupbutton()"
     },
     {
@@ -4472,7 +4572,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "ui_select_selectscrolldownbutton",
-      "community": 1,
+      "community": 5,
       "norm_label": "selectscrolldownbutton()"
     },
     {
@@ -4502,7 +4602,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_status_badge",
-      "community": 1,
+      "community": 54,
       "norm_label": "status-badge.tsx"
     },
     {
@@ -4512,7 +4612,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "ui_status_badge_applicationstatus",
-      "community": 1,
+      "community": 54,
       "norm_label": "applicationstatus"
     },
     {
@@ -4522,7 +4622,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_status_badge_statusconfig",
-      "community": 1,
+      "community": 54,
       "norm_label": "statusconfig"
     },
     {
@@ -4532,7 +4632,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_status_badge_status_map",
-      "community": 1,
+      "community": 54,
       "norm_label": "status_map"
     },
     {
@@ -4542,7 +4642,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_status_badge_statusbadgeprops",
-      "community": 1,
+      "community": 54,
       "norm_label": "statusbadgeprops"
     },
     {
@@ -4552,7 +4652,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "ui_status_badge_statusbadge",
-      "community": 1,
+      "community": 54,
       "norm_label": "statusbadge()"
     },
     {
@@ -4562,7 +4662,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_table",
-      "community": 1,
+      "community": 28,
       "norm_label": "table.tsx"
     },
     {
@@ -4572,7 +4672,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_table_table",
-      "community": 1,
+      "community": 28,
       "norm_label": "table()"
     },
     {
@@ -4582,7 +4682,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "ui_table_tableheader",
-      "community": 1,
+      "community": 28,
       "norm_label": "tableheader()"
     },
     {
@@ -4592,7 +4692,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_table_tablebody",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablebody()"
     },
     {
@@ -4602,7 +4702,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "ui_table_tablefooter",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablefooter()"
     },
     {
@@ -4612,7 +4712,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "ui_table_tablerow",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablerow()"
     },
     {
@@ -4622,7 +4722,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "ui_table_tablehead",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablehead()"
     },
     {
@@ -4632,7 +4732,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "ui_table_tablecell",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablecell()"
     },
     {
@@ -4642,7 +4742,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "ui_table_tablecaption",
-      "community": 1,
+      "community": 28,
       "norm_label": "tablecaption()"
     },
     {
@@ -4652,7 +4752,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_textarea",
-      "community": 1,
+      "community": 5,
       "norm_label": "textarea.tsx"
     },
     {
@@ -4662,7 +4762,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_textarea_textarea",
-      "community": 1,
+      "community": 5,
       "norm_label": "textarea()"
     },
     {
@@ -4722,7 +4822,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_api_error_apierror",
-      "community": 0,
+      "community": 12,
       "norm_label": "apierror"
     },
     {
@@ -4732,7 +4832,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "lib_api_error_apierror_constructor",
-      "community": 0,
+      "community": 12,
       "norm_label": ".constructor()"
     },
     {
@@ -4852,7 +4952,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_api_response_apiresponse",
-      "community": 24,
+      "community": 12,
       "norm_label": "apiresponse"
     },
     {
@@ -5132,7 +5232,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_upload",
-      "community": 11,
+      "community": 0,
       "norm_label": "upload.ts"
     },
     {
@@ -5142,7 +5242,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "lib_upload_upload_dir",
-      "community": 11,
+      "community": 0,
       "norm_label": "upload_dir"
     },
     {
@@ -5152,7 +5252,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "lib_upload_allowed_mime_types",
-      "community": 11,
+      "community": 0,
       "norm_label": "allowed_mime_types"
     },
     {
@@ -5162,7 +5262,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "lib_upload_uploadresult",
-      "community": 11,
+      "community": 0,
       "norm_label": "uploadresult"
     },
     {
@@ -5182,7 +5282,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_utils",
-      "community": 1,
+      "community": 48,
       "norm_label": "utils.ts"
     },
     {
@@ -5192,7 +5292,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "lib_utils_cn",
-      "community": 1,
+      "community": 5,
       "norm_label": "cn()"
     },
     {
@@ -5232,7 +5332,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_validator",
-      "community": 9,
+      "community": 55,
       "norm_label": "validator.ts"
     },
     {
@@ -5242,7 +5342,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "lib_validator_validatorresult",
-      "community": 9,
+      "community": 55,
       "norm_label": "validatorresult"
     },
     {
@@ -5252,7 +5352,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "lib_validator_validatewithzod",
-      "community": 9,
+      "community": 55,
       "norm_label": "validatewithzod()"
     },
     {
@@ -5282,7 +5382,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 6,
+      "community": 52,
       "norm_label": "package.json"
     },
     {
@@ -5292,7 +5392,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 6,
+      "community": 52,
       "norm_label": "name"
     },
     {
@@ -5302,7 +5402,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_version",
-      "community": 6,
+      "community": 52,
       "norm_label": "version"
     },
     {
@@ -5312,7 +5412,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_private",
-      "community": 6,
+      "community": 52,
       "norm_label": "private"
     },
     {
@@ -5322,7 +5422,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 6,
+      "community": 16,
       "norm_label": "scripts"
     },
     {
@@ -5332,7 +5432,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 6,
+      "community": 16,
       "norm_label": "dev"
     },
     {
@@ -5342,7 +5442,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_postinstall",
-      "community": 6,
+      "community": 16,
       "norm_label": "postinstall"
     },
     {
@@ -5352,7 +5452,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 6,
+      "community": 16,
       "norm_label": "build"
     },
     {
@@ -5362,7 +5462,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_start",
-      "community": 6,
+      "community": 16,
       "norm_label": "start"
     },
     {
@@ -5372,7 +5472,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 6,
+      "community": 16,
       "norm_label": "lint"
     },
     {
@@ -5382,7 +5482,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_scripts_seed",
-      "community": 6,
+      "community": 16,
       "norm_label": "seed"
     },
     {
@@ -5392,7 +5492,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_scripts_promote",
-      "community": 6,
+      "community": 16,
       "norm_label": "promote"
     },
     {
@@ -5402,7 +5502,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_scripts_demote",
-      "community": 6,
+      "community": 16,
       "norm_label": "demote"
     },
     {
@@ -5412,7 +5512,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "package_prisma",
-      "community": 6,
+      "community": 52,
       "norm_label": "prisma"
     },
     {
@@ -5422,7 +5522,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "package_prisma_seed",
-      "community": 6,
+      "community": 52,
       "norm_label": "seed"
     },
     {
@@ -6052,7 +6152,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "proxy",
-      "community": 58,
+      "community": 56,
       "norm_label": "proxy.ts"
     },
     {
@@ -6062,7 +6162,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "proxy_authpages",
-      "community": 58,
+      "community": 56,
       "norm_label": "authpages"
     },
     {
@@ -6072,7 +6172,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "proxy_protectedroutes",
-      "community": 58,
+      "community": 56,
       "norm_label": "protectedroutes"
     },
     {
@@ -6082,7 +6182,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "proxy_proxy",
-      "community": 58,
+      "community": 56,
       "norm_label": "proxy()"
     },
     {
@@ -6092,7 +6192,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "proxy_config",
-      "community": 58,
+      "community": 56,
       "norm_label": "config"
     },
     {
@@ -6509,7 +6609,7 @@
       "label": "EnvTypes",
       "file_type": "code",
       "source_file": "utils/env.ts",
-      "source_location": "L23",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "utils_env_envtypes",
       "community": 0,
@@ -6519,7 +6619,7 @@
       "label": "env",
       "file_type": "code",
       "source_file": "utils/env.ts",
-      "source_location": "L25",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "utils_env_env",
       "community": 0,
@@ -6532,7 +6632,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_logger",
-      "community": 28,
+      "community": 55,
       "norm_label": "logger.ts"
     },
     {
@@ -6542,7 +6642,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "utils_logger_logmethods",
-      "community": 28,
+      "community": 55,
       "norm_label": "logmethods"
     },
     {
@@ -6552,7 +6652,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "utils_logger_createlogger",
-      "community": 28,
+      "community": 55,
       "norm_label": "createlogger()"
     },
     {
@@ -6562,7 +6662,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "utils_logger_logger",
-      "community": 28,
+      "community": 55,
       "norm_label": "logger"
     },
     {
@@ -7596,94 +7696,14 @@
       "norm_label": "phase 2: recruiter"
     },
     {
-      "label": "Step 2.1: Company Profile CRUD",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L580",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_1_company_profile_crud",
-      "community": 35,
-      "norm_label": "step 2.1: company profile crud"
-    },
-    {
-      "label": "Step 2.2: Job Posts CRUD",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L598",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_2_job_posts_crud",
-      "community": 35,
-      "norm_label": "step 2.2: job posts crud"
-    },
-    {
-      "label": "Step 2.3: Applicants View & Status Updates",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L616",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_3_applicants_view_status_updates",
-      "community": 35,
-      "norm_label": "step 2.3: applicants view & status updates"
-    },
-    {
-      "label": "Step 2.4: Recruiter Analytics & Filters",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L635",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_4_recruiter_analytics_filters",
-      "community": 35,
-      "norm_label": "step 2.4: recruiter analytics & filters"
-    },
-    {
       "label": "Phase 3: User",
       "file_type": "document",
       "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L650",
+      "source_location": "L629",
       "_origin": "ast",
       "id": "hire_flow_prompts_phase_3_user",
       "community": 35,
       "norm_label": "phase 3: user"
-    },
-    {
-      "label": "Step 3.1: User Profile",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L652",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_1_user_profile",
-      "community": 35,
-      "norm_label": "step 3.1: user profile"
-    },
-    {
-      "label": "Step 3.2: Resumes & In-App Builder",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L669",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_2_resumes_in_app_builder",
-      "community": 35,
-      "norm_label": "step 3.2: resumes & in-app builder"
-    },
-    {
-      "label": "Step 3.3: Job Application Flow",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L686",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_3_job_application_flow",
-      "community": 35,
-      "norm_label": "step 3.3: job application flow"
-    },
-    {
-      "label": "Step 3.4: User Activity Panel",
-      "file_type": "document",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L704",
-      "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_4_user_activity_panel",
-      "community": 35,
-      "norm_label": "step 3.4: user activity panel"
     },
     {
       "label": "MANIFEST.md",
@@ -9347,9 +9367,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -9358,9 +9378,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -9445,9 +9465,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -9456,9 +9476,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -9575,9 +9595,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route_handledelete",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -9749,9 +9769,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "invite_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -9760,9 +9780,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "invite_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -9846,9 +9866,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "invite_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -9868,9 +9888,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -9879,9 +9899,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -10040,9 +10060,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "id_route_handlepatch",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10062,9 +10082,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10073,9 +10093,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -10214,9 +10234,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10247,9 +10267,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10258,9 +10278,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -10377,9 +10397,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messageid_route_handledelete",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10399,9 +10419,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10410,9 +10430,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -10611,9 +10631,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10655,9 +10675,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handlepost",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10677,9 +10697,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "threadid_route_handledelete",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10699,9 +10719,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "search_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10710,9 +10730,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "search_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -10796,9 +10816,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "search_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -10818,9 +10838,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10829,9 +10849,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -10970,9 +10990,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -10981,9 +11001,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -11166,9 +11186,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route_handlepost",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11199,9 +11219,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -11210,9 +11230,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -11351,9 +11371,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route_handlepost",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11373,9 +11393,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -11384,9 +11404,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -11556,9 +11576,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "id_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11611,9 +11631,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -11622,9 +11642,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -11761,9 +11781,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11794,9 +11814,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route_handledelete",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11816,9 +11836,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -11827,9 +11847,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -11924,9 +11944,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route_handlepost",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -11946,9 +11966,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -11957,9 +11977,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -12098,9 +12118,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route_handleget",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "calls",
@@ -12379,9 +12399,9 @@
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "actions_bulk_invite_admin",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -12390,9 +12410,9 @@
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "actions_bulk_invite_admin",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -12653,9 +12673,9 @@
       "source_file": "app/features/admin/actions/invite-admin.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "actions_invite_admin",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -12664,9 +12684,9 @@
       "source_file": "app/features/admin/actions/invite-admin.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "actions_invite_admin",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -13035,6 +13055,26 @@
       "confidence_score": 1.0,
       "source": "components_admin_jobs_table",
       "target": "components_admin_jobs_table_adminjobstableprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "components_admin_jobs_table_employment_type_labels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-jobs-table.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_jobs_table",
+      "target": "components_admin_jobs_table_work_mode_labels"
     },
     {
       "relation": "imports_from",
@@ -14257,11 +14297,61 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_actionbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_actionbuttonprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_capitalizelabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L29",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_people_table",
       "target": "components_people_table_computechatthreadid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_formatlabel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14292,6 +14382,36 @@
       "confidence_score": 1.0,
       "source": "components_people_table",
       "target": "components_people_table_role_options"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_statusbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_userrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "components_people_table",
+      "target": "components_people_table_usersapiresponse",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -14512,6 +14632,28 @@
       "confidence_score": 1.0,
       "source": "components_people_table",
       "target": "ui_select_selectvalue"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "components_people_table_formatlabel",
+      "target": "components_people_table_capitalizelabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L291",
+      "weight": 1.0,
+      "source": "components_people_table_peopletable",
+      "target": "components_people_table_formatlabel",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -15194,6 +15336,28 @@
       "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "source": "hooks_use_admin_dashboard",
+      "target": "lib_api_response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_dashboard",
+      "target": "lib_api_response_apiresponse"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-dashboard.ts",
+      "source_location": "L3",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "hooks_use_admin_dashboard",
       "target": "queries_dashboard_queries"
@@ -15290,6 +15454,28 @@
       "confidence_score": 1.0,
       "source": "hooks_use_admin_invites",
       "target": "lib_api_client_apiclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-invites.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "hooks_use_admin_invites",
+      "target": "lib_api_response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/hooks/use-admin-invites.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_admin_invites",
+      "target": "lib_api_response_apiresponse"
     },
     {
       "relation": "contains",
@@ -16053,9 +16239,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "utils_batch_helpers",
-      "confidence_score": 1.0
+      "target": "utils_batch_helpers"
     },
     {
       "relation": "imports",
@@ -16064,9 +16250,9 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schema_admin_schema",
-      "target": "utils_batch_helpers_bulkemailsschema",
-      "confidence_score": 1.0
+      "target": "utils_batch_helpers_bulkemailsschema"
     },
     {
       "relation": "contains",
@@ -17932,9 +18118,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "libs_auth",
-      "confidence_score": 1.0
+      "target": "libs_auth"
     },
     {
       "relation": "imports_from",
@@ -18106,9 +18292,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "libs_auth_getsession",
-      "confidence_score": 1.0
+      "target": "libs_auth_getsession"
     },
     {
       "relation": "calls",
@@ -18813,9 +18999,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports_from",
@@ -18824,9 +19010,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports",
@@ -18835,9 +19021,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "lib_api_error_forbiddenerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_forbiddenerror"
     },
     {
       "relation": "imports",
@@ -18846,9 +19032,9 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_require_role",
-      "target": "lib_api_error_unauthorizederror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_unauthorizederror"
     },
     {
       "relation": "contains",
@@ -19359,9 +19545,9 @@
       "source_file": "components/layout/page-header.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layout_page_header",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -21258,9 +21444,9 @@
       "source_file": "lib/utils/batch-helpers.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_batch_helpers",
-      "target": "utils_batch_helpers_bulkemailsinput",
-      "confidence_score": 1.0
+      "target": "utils_batch_helpers_bulkemailsinput"
     },
     {
       "relation": "contains",
@@ -21268,9 +21454,9 @@
       "source_file": "lib/utils/batch-helpers.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_batch_helpers",
-      "target": "utils_batch_helpers_bulkemailsschema",
-      "confidence_score": 1.0
+      "target": "utils_batch_helpers_bulkemailsschema"
     },
     {
       "relation": "contains",
@@ -23430,86 +23616,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L580",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_2_recruiter",
-      "target": "hire_flow_prompts_step_2_1_company_profile_crud"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L598",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_2_recruiter",
-      "target": "hire_flow_prompts_step_2_2_job_posts_crud"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L616",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_2_recruiter",
-      "target": "hire_flow_prompts_step_2_3_applicants_view_status_updates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L635",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_2_recruiter",
-      "target": "hire_flow_prompts_step_2_4_recruiter_analytics_filters"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L652",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_1_user_profile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L669",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_2_resumes_in_app_builder"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L686",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_3_job_application_flow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HIRE_FLOW_PROMPTS.md",
-      "source_location": "L704",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_4_user_activity_panel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "MANIFEST.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -23959,5 +24065,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "eb6758d522299dd67822ee59c87582b786ac4286"
+  "built_at_commit": "a376a4c5ad1aade74f3f44ebae2539812e1f2563"
 }

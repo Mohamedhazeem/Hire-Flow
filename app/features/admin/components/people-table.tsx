@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import {
   useAdminUsers,
-  useSetUserRole,
   useRevokeUserSessions,
   useDeleteUser,
 } from "@/app/features/admin/hooks/use-admin-users";
 import { BanDialog } from "@/app/features/admin/components/ban-dialog";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -17,18 +19,83 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import {
-  DataTable,
-  type ColumnDef,
-} from "@/components/ui/data-table";
-import { Search, ChevronLeft, ChevronRight, Trash2, LogOut, MessageSquareTextIcon } from "lucide-react";
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  Trash2,
+  LogOut,
+  MessageSquareTextIcon,
+} from "lucide-react";
 
 function computeChatThreadId(idA: string, idB: string): string {
   const sorted = [idA, idB].sort();
   return `${sorted[0]}_${sorted[1]}`;
+}
+
+function capitalizeLabel(value: string): string {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+}
+
+function formatLabel(value: string): string {
+  return capitalizeLabel(value.replace(/_/g, " "));
+}
+
+function formatDate(dateString: string): string {
+  try {
+    return new Date(dateString).toLocaleDateString();
+  } catch {
+    return dateString;
+  }
+}
+
+function statusBadge(banned: boolean, emailVerified: boolean) {
+  return (
+    <div className="flex items-center justify-center gap-2">
+      {banned ? (
+        <Badge variant="destructive">Banned</Badge>
+      ) : (
+        <Badge variant="secondary">Active</Badge>
+      )}
+      {!emailVerified && <Badge variant="outline">Unverified</Badge>}
+    </div>
+  );
+}
+
+type ActionButtonProps = {
+  icon: React.ReactNode;
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  title?: string;
+  color?: "default" | "error";
+};
+
+function ActionButton({
+  icon,
+  label,
+  onClick,
+  disabled,
+  title,
+  color = "default",
+}: ActionButtonProps) {
+  return (
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={onClick}
+      disabled={disabled}
+      title={title}
+      className={
+        color === "error" ? "h-8 px-2 text-xs text-error hover:text-error" : "h-8 px-2 text-xs"
+      }
+    >
+      <span className="size-4 mr-1 flex items-center justify-center">{icon}</span>
+      {label}
+    </Button>
+  );
 }
 
 type PeopleTableProps = {
@@ -37,13 +104,36 @@ type PeopleTableProps = {
 
 const ROLE_OPTIONS = ["user", "recruiter", "admin"] as const;
 
+type UserRow = {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  banned: boolean;
+  banReason: string | null;
+  emailVerified: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type UsersApiResponse = {
+  success: boolean;
+  data: {
+    users: UserRow[];
+    total: number;
+    totalPages: number;
+    page: number;
+    pageSize: number;
+  };
+};
+
 export function PeopleTable({ roleFilter }: PeopleTableProps) {
   const router = useRouter();
   const { data: session } = useSession();
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [role, setRole] = useState<string | undefined>(roleFilter);
-  const [banned, setBanned] = useState("all");
+  const [banned, setBanned] = useState<string>("all");
 
   const { data, isLoading, isError, error } = useAdminUsers({
     page,
@@ -55,7 +145,6 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     sortOrder: "desc",
   });
 
-  const setUserRole = useSetUserRole();
   const revokeSessions = useRevokeUserSessions();
   const deleteUser = useDeleteUser();
 
@@ -64,12 +153,17 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     setPage(1);
   }, []);
 
-  const handleRoleChange = useCallback(
-    (userId: string, newRole: string) => {
-      setUserRole.mutate({ userId, role: newRole });
-    },
-    [setUserRole],
-  );
+  const handleRoleFilter = useCallback((value: string | null) => {
+    // If value is 'all', null, or undefined, reset the role to undefined
+    setRole(!value || value === "all" ? undefined : value);
+    setPage(1);
+  }, []);
+
+  const handleBannedFilter = useCallback((value: string | null) => {
+    // Fallback to "all" if the value is cleared (null)
+    setBanned(value ?? "all");
+    setPage(1); // Assuming you reset page here too
+  }, []);
 
   const handleRevokeSessions = useCallback(
     (userId: string) => {
@@ -98,125 +192,85 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     [router, session],
   );
 
-  type UserRow = {
-    id: string;
-    name: string;
-    email: string;
-    role: string;
-    banned: boolean;
-    banReason: string | null;
-    emailVerified: boolean;
-    createdAt: string;
-    updatedAt: string;
-  };
+  const columns: ColumnDef<UserRow>[] = [
+    {
+      key: "name",
+      header: "Name",
+      align: "center",
+      cell: (row) => (
+        <div className="flex flex-col items-center">
+          <span className="font-medium text-text-heading">{row.name}</span>
+          <span className="text-xs text-text-muted">{row.email}</span>
+        </div>
+      ),
+    },
+    {
+      key: "role",
+      header: "Role",
+      align: "center",
+      cell: (row) => (
+        <Badge variant="outline" className="capitalize text-xs font-medium">
+          {formatLabel(row.role)}
+        </Badge>
+      ),
+    },
+    {
+      key: "status",
+      header: "Status",
+      align: "center",
+      cell: (row) => statusBadge(row.banned, row.emailVerified),
+    },
+    {
+      key: "createdAt",
+      header: "Joined",
+      align: "center",
+      cell: (row) => <span className="text-text-muted text-xs">{formatDate(row.createdAt)}</span>,
+    },
+    {
+      key: "actions",
+      header: "Actions",
+      align: "center",
+      cell: (row) => (
+        <div className="flex items-center justify-center gap-2">
+          <ActionButton
+            icon={<MessageSquareTextIcon className="size-4" />}
+            label="Chat"
+            onClick={() => handleChat(row.id)}
+            title={`Chat with ${row.name}`}
+          />
+          <div> | </div>
+          <BanDialog
+            userId={row.id}
+            userName={row.name}
+            currentlyBanned={row.banned}
+            banReason={row.banReason}
+          />
+          <div> | </div>
+          <ActionButton
+            icon={<LogOut className="size-4" />}
+            label="Revoke"
+            onClick={() => handleRevokeSessions(row.id)}
+            disabled={revokeSessions.isPending}
+            title="Revoke sessions"
+          />
+          <div> | </div>
+          <ActionButton
+            icon={<Trash2 className="size-4" />}
+            label="Delete"
+            onClick={() => handleDelete(row.id, row.name)}
+            disabled={deleteUser.isPending}
+            title="Delete user"
+            color="error"
+          />
+        </div>
+      ),
+    },
+  ];
 
-  const columns: ColumnDef<UserRow>[] = useMemo(
-    () => [
-      {
-        key: "name",
-        header: "Name",
-        cell: (row) => (
-          <div className="flex flex-col">
-            <span className="font-medium text-text-heading">{row.name}</span>
-            <span className="text-xs text-text-muted">{row.email}</span>
-          </div>
-        ),
-      },
-      {
-        key: "role",
-        header: "Role",
-        cell: (row) => (
-          <Select
-            value={row.role}
-            onValueChange={(val) => val && handleRoleChange(row.id, val)}
-          >
-            <SelectTrigger className="w-28 h-8 text-xs">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {ROLE_OPTIONS.map((r) => (
-                <SelectItem key={r} value={r}>
-                  {r.charAt(0).toUpperCase() + r.slice(1)}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        ),
-      },
-      {
-        key: "status",
-        header: "Status",
-        cell: (row) => (
-          <div className="flex items-center gap-2">
-            {row.banned ? (
-              <Badge variant="destructive">Banned</Badge>
-            ) : (
-              <Badge variant="secondary">Active</Badge>
-            )}
-            {!row.emailVerified && (
-              <Badge variant="outline">Unverified</Badge>
-            )}
-          </div>
-        ),
-      },
-      {
-        key: "createdAt",
-        header: "Joined",
-        cell: (row) => (
-          <span className="text-text-muted text-xs">
-            {new Date(row.createdAt).toLocaleDateString()}
-          </span>
-        ),
-      },
-      {
-        key: "actions",
-        header: "Actions",
-        cell: (row) => (
-          <div className="flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="icon-xs"
-              onClick={() => handleChat(row.id)}
-              title={`Chat with ${row.name}`}
-            >
-              <MessageSquareTextIcon className="size-3.5" />
-            </Button>
-            <BanDialog
-              userId={row.id}
-              userName={row.name}
-              currentlyBanned={row.banned}
-              banReason={row.banReason}
-            />
-            <Button
-              variant="ghost"
-              size="icon-xs"
-              onClick={() => handleRevokeSessions(row.id)}
-              disabled={revokeSessions.isPending}
-              title="Revoke sessions"
-            >
-              <LogOut className="size-3.5" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon-xs"
-              onClick={() => handleDelete(row.id, row.name)}
-              disabled={deleteUser.isPending}
-              title="Delete user"
-            >
-              <Trash2 className="size-3.5 text-error" />
-            </Button>
-          </div>
-        ),
-      },
-    ],
-    [handleRoleChange, handleRevokeSessions, handleDelete, handleChat],
-  );
-
-  const responseData = data as { success: boolean; data: { users: UserRow[]; total: number; totalPages: number; page: number; pageSize: number } } | undefined;
+  const responseData = data as UsersApiResponse | undefined;
   const totalUsers = responseData?.data?.total ?? 0;
   const totalPages = responseData?.data?.totalPages ?? 0;
   const users = responseData?.data?.users ?? [];
-
   const pageSize = 20;
 
   return (
@@ -232,35 +286,25 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
           />
         </div>
         {!roleFilter && (
-          <Select
-            value={role ?? "all"}
-            onValueChange={(val) => {
-              setRole(val === "all" ? undefined : (val ?? undefined));
-              setPage(1);
-            }}
-          >
+          <Select value={role ?? "all"} onValueChange={handleRoleFilter}>
             <SelectTrigger className="w-36">
-              <SelectValue placeholder="All roles" />
+              <SelectValue>{role === undefined ? "All roles" : formatLabel(role)}</SelectValue>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All roles</SelectItem>
               {ROLE_OPTIONS.map((r) => (
                 <SelectItem key={r} value={r}>
-                  {r.charAt(0).toUpperCase() + r.slice(1)}
+                  {formatLabel(r)}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         )}
-        <Select
-          value={banned}
-          onValueChange={(val) => {
-            setBanned(val ?? "all");
-            setPage(1);
-          }}
-        >
+        <Select value={banned} onValueChange={handleBannedFilter}>
           <SelectTrigger className="w-32">
-            <SelectValue placeholder="Status" />
+            <SelectValue>
+              {banned === "all" ? "All" : banned === "true" ? "Banned" : "Active"}
+            </SelectValue>
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All</SelectItem>
@@ -271,26 +315,19 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
       </div>
 
       {isLoading ? (
-        <div className="text-center py-12 text-text-muted text-sm">
-          Loading users...
-        </div>
+        <div className="text-center py-12 text-text-muted text-sm">Loading users...</div>
       ) : isError ? (
         <div className="text-center py-12 text-error text-sm">
           {(error as Error)?.message ?? "Failed to load users"}
         </div>
       ) : (
         <>
-          <DataTable
-            columns={columns}
-            data={users}
-            emptyMessage="No users found."
-          />
-
+          <DataTable columns={columns} data={users} emptyMessage="No users found." className="[&_table]:table-auto" />
           {totalPages > 1 && (
             <div className="flex items-center justify-between text-sm text-text-muted">
               <span>
-                Showing {(page - 1) * pageSize + 1}–
-                {Math.min(page * pageSize, totalUsers)} of {totalUsers}
+                Showing {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, totalUsers)} of{" "}
+                {totalUsers}
               </span>
               <div className="flex items-center gap-2">
                 <Button

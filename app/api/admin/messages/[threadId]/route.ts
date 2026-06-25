@@ -7,16 +7,17 @@ import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
-const SendMessageSchema = z.object({
-  content: z.string().min(0).max(2000).default(""),
-  fileUrl: z.string().url().optional(),
-  fileName: z.string().min(1).max(255).optional(),
-  fileSize: z.number().int().positive().optional(),
-  fileType: z.string().min(1).max(100).optional(),
-}).refine(
-  (data) => data.content.length > 0 || data.fileUrl,
-  { message: "Message must contain text or a file attachment" },
-);
+const SendMessageSchema = z
+  .object({
+    content: z.string().min(0).max(2000).default(""),
+    fileUrl: z.string().url().optional(),
+    fileName: z.string().min(1).max(255).optional(),
+    fileSize: z.number().int().positive().optional(),
+    fileType: z.string().min(1).max(100).optional(),
+  })
+  .refine((data) => data.content.length > 0 || data.fileUrl, {
+    message: "Message must contain text or a file attachment",
+  });
 
 const messageSelect = {
   id: true,
@@ -40,11 +41,9 @@ async function handleGET(
   const cursor = searchParams.get("cursor") ?? undefined;
   const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
     throw new ValidationError("Invalid thread ID format");
   }
-
   if (!threadId.includes(adminUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
@@ -62,9 +61,7 @@ async function handleGET(
 
   const { items, meta } = buildCursorMeta(messages, limit);
 
-  const unreadIds = items
-    .filter((m) => m.senderId !== adminUser.id && !m.read)
-    .map((m) => m.id);
+  const unreadIds = items.filter((m) => m.senderId !== adminUser.id && !m.read).map((m) => m.id);
   if (unreadIds.length > 0) {
     void prisma.message.updateMany({
       where: { id: { in: unreadIds } },
@@ -82,12 +79,16 @@ async function handlePOST(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  const otherUserId = parts[0] === adminUser.id ? parts[1] : parts[0];
+  const otherUserId = threadId.startsWith(adminUser.id + "_")
+    ? threadId.slice(adminUser.id.length + 1)
+    : threadId.endsWith("_" + adminUser.id)
+      ? threadId.slice(0, threadId.length - adminUser.id.length - 1)
+      : null;
+
   if (!otherUserId) {
     throw new ValidationError("You are not a participant in this thread");
   }
@@ -124,8 +125,7 @@ async function handleDELETE(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
     throw new ValidationError("Invalid thread ID format");
   }
 
