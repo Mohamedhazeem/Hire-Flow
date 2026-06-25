@@ -10,10 +10,7 @@ import { ThreadView } from "@/app/features/admin/components/thread-view";
 import { StartConversationSearch } from "@/features/shared/components/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import {
-  MessageSquareTextIcon,
-  ChevronRightIcon,
-} from "lucide-react";
+import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";
 
 function formatTime(dateString: string) {
   const d = new Date(dateString);
@@ -47,7 +44,7 @@ function ThreadListItem({
         active && "bg-bg-elevated",
       )}
     >
-      <div className="size-10 rounded-xl bg-gradient-to-br from-brand/15 to-brand/5 flex items-center justify-center shrink-0">
+      <div className="size-10 rounded-xl bg-linear-to-br from-brand/15 to-brand/5 flex items-center justify-center shrink-0">
         <span className="text-sm font-bold text-brand">
           {thread.user.name.charAt(0).toUpperCase()}
         </span>
@@ -109,13 +106,16 @@ function ThreadListPanel({
   activeThreadId: string | null;
 }) {
   return (
-    <div className="flex flex-col min-h-0 bg-bg-surface lg:border-r-2 lg:border-border-subtle lg:w-80 lg:shrink-0">
+    <div className="flex flex-col min-h-0 h-full bg-bg-surface lg:border-r-2 lg:border-border-subtle lg:w-80 lg:shrink-0">
       <div className="shrink-0 px-4 pt-5 pb-3 border-b border-border-subtle">
         <h1 className="text-lg font-bold text-text-heading">Messages</h1>
         <p className="text-xs text-text-muted mt-0.5">Your conversations</p>
       </div>
       <div className="shrink-0 px-4 pt-3 pb-2">
-        <StartConversationSearch searchEndpoint="/api/admin/messages/search" messagesBasePath="/admin/messages" />
+        <StartConversationSearch
+          searchEndpoint="/api/admin/messages/search"
+          messagesBasePath="/admin/messages"
+        />
       </div>
 
       <div className="flex-1 overflow-y-auto min-h-0 px-2">
@@ -157,12 +157,14 @@ export default function AdminMessagesPage() {
   const { data: threads, isLoading } = useAdminThreads();
 
   return (
-    <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8">
+    <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8 -mt-3 lg:-mt-8">
       {/* Thread list: always visible on desktop, hidden on mobile when thread is active */}
-      <div className={cn(
-        "flex-1 flex flex-col min-h-0 lg:flex-none",
-        activeThreadId ? "hidden lg:flex lg:w-80" : "flex",
-      )}>
+      <div
+        className={cn(
+          "flex-1 flex flex-col min-h-0 lg:flex-none",
+          activeThreadId ? "hidden lg:flex lg:w-80" : "flex",
+        )}
+      >
         <ThreadListPanel
           threads={threads}
           isLoading={isLoading}
@@ -172,10 +174,9 @@ export default function AdminMessagesPage() {
       </div>
 
       {/* Thread view: shown on desktop inline; on mobile replaces thread list */}
-      <div className={cn(
-        "flex-1 flex flex-col min-h-0",
-        activeThreadId ? "flex" : "hidden lg:flex",
-      )}>
+      <div
+        className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}
+      >
         {activeThreadId ? (
           <ThreadView
             threadId={activeThreadId}
@@ -187,12 +188,8 @@ export default function AdminMessagesPage() {
               <div className="size-16 rounded-2xl bg-bg-elevated flex items-center justify-center mx-auto mb-4">
                 <MessageSquareTextIcon className="size-8 text-text-muted/50" />
               </div>
-              <p className="text-text-muted text-sm font-medium">
-                Select a conversation
-              </p>
-              <p className="text-text-muted text-xs mt-1">
-                Or start a new thread from the sidebar
-              </p>
+              <p className="text-text-muted text-sm font-medium">Select a conversation</p>
+              <p className="text-text-muted text-xs mt-1">Or start a new thread from the sidebar</p>
             </div>
           </div>
         )}
