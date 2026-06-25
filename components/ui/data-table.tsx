@@ -36,7 +36,7 @@ export function DataTable<TData>({
   return (
     <div
       className={cn(
-        "rounded-radius-lg border border-border-subtle bg-bg-surface overflow-hidden",
+        "rounded-radius-lg border border-border-subtle bg-bg-surface overflow-x-auto",
         className,
       )}
     >

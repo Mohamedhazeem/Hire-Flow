@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import {
   useAdminUsers,
@@ -92,8 +93,8 @@ function ActionButton({
         color === "error" ? "h-8 px-2 text-xs text-error hover:text-error" : "h-8 px-2 text-xs"
       }
     >
-      <span className="size-4 mr-1 flex items-center justify-center">{icon}</span>
-      {label}
+      <span className={cn("size-4 flex items-center justify-center", label && "sm:mr-1")}>{icon}</span>
+      {label && <span className="hidden sm:inline">{label}</span>}
     </Button>
   );
 }
@@ -275,8 +276,8 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="relative flex-1">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div className="relative flex-1 min-w-0">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
           <Input
             placeholder="Search by name or email..."
@@ -287,7 +288,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         </div>
         {!roleFilter && (
           <Select value={role ?? "all"} onValueChange={handleRoleFilter}>
-            <SelectTrigger className="w-36">
+            <SelectTrigger className="w-full sm:w-36">
               <SelectValue>{role === undefined ? "All roles" : formatLabel(role)}</SelectValue>
             </SelectTrigger>
             <SelectContent>
@@ -301,7 +302,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
           </Select>
         )}
         <Select value={banned} onValueChange={handleBannedFilter}>
-          <SelectTrigger className="w-32">
+          <SelectTrigger className="w-full sm:w-32">
             <SelectValue>
               {banned === "all" ? "All" : banned === "true" ? "Banned" : "Active"}
             </SelectValue>
@@ -325,9 +326,12 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
           <DataTable columns={columns} data={users} emptyMessage="No users found." className="[&_table]:table-auto" />
           {totalPages > 1 && (
             <div className="flex items-center justify-between text-sm text-text-muted">
-              <span>
+              <span className="hidden sm:inline">
                 Showing {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, totalUsers)} of{" "}
                 {totalUsers}
+              </span>
+              <span className="sm:hidden text-xs">
+                {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, totalUsers)}/{totalUsers}
               </span>
               <div className="flex items-center gap-2">
                 <Button
@@ -337,7 +341,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
                   disabled={page <= 1}
                 >
                   <ChevronLeft className="size-4" />
-                  Previous
+                  <span className="hidden sm:inline ml-1">Previous</span>
                 </Button>
                 <Button
                   variant="outline"
@@ -345,7 +349,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page >= totalPages}
                 >
-                  Next
+                  <span className="hidden sm:inline mr-1">Next</span>
                   <ChevronRight className="size-4" />
                 </Button>
               </div>

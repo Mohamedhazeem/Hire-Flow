@@ -10,7 +10,10 @@ import { ThreadView } from "@/app/features/admin/components/thread-view";
 import { StartThreadSearch } from "@/app/features/admin/components/start-thread-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";
+import {
+  MessageSquareTextIcon,
+  ChevronRightIcon,
+} from "lucide-react";
 
 function formatTime(dateString: string) {
   const d = new Date(dateString);
@@ -93,65 +96,98 @@ function ThreadListSkeleton() {
     </div>
   );
 }
+
+function ThreadListPanel({
+  threads,
+  isLoading,
+  adminId,
+  activeThreadId,
+}: {
+  threads: ThreadItem[] | undefined;
+  isLoading: boolean;
+  adminId: string;
+  activeThreadId: string | null;
+}) {
+  return (
+    <div className="flex flex-col min-h-0 bg-bg-surface lg:border-r lg:border-border-subtle lg:w-80 lg:shrink-0">
+      <div className="shrink-0 pl-4 pr-4 pt-2 pb-2">
+        <div className="lg:pt-2">
+          <h1 className="text-xl font-bold text-text-heading">Messages</h1>
+          <p className="text-sm text-text-muted mt-0.5">Start a new conversation</p>
+        </div>
+      </div>
+      <div className="shrink-0 px-4 pb-2">
+        <StartThreadSearch />
+      </div>
+
+      <div className="flex-1 overflow-y-auto min-h-0">
+        {isLoading ? (
+          <ThreadListSkeleton />
+        ) : threads && threads.length > 0 ? (
+          <div className="space-y-0.5">
+            {threads.map((thread) => (
+              <ThreadListItem
+                key={thread.threadId}
+                thread={thread}
+                adminId={adminId}
+                active={thread.threadId === activeThreadId}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full text-center px-4">
+            <MessageSquareTextIcon className="size-8 text-text-muted mb-2" />
+            <p className="text-sm text-text-muted">No conversations yet</p>
+            <p className="text-xs text-text-muted mt-1">
+              Search for a user above to start messaging
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function AdminMessagesPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeThreadId = searchParams.get("thread");
   const { data: session } = useSession();
-  const adminId = (session?.user as { id?: string })?.id;
+  const adminId = (session?.user as { id?: string })?.id ?? "";
   const { data: threads, isLoading } = useAdminThreads();
 
   return (
-    <div className="flex flex-1 gap-0 -m-6 lg:-m-8 min-h-0">
-      {/* Thread list panel (Sidebar) */}
-      <div className="w-80 shrink-0 border-r border-border-subtle flex flex-col min-h-0 bg-bg-surface">
-        <div className="shrink-0 px-4 pt-4 pb-2">
-          <h1 className="text-xl font-bold text-text-heading">Messages</h1>
-          <p className="text-sm text-text-muted mt-0.5">Start a new conversation</p>
-          <div className="mt-3">
-            <StartThreadSearch />
-          </div>
-        </div>
-
-        {/* Scrollable Thread List */}
-        <div className="flex-1 overflow-y-auto min-h-0">
-          {isLoading ? (
-            <ThreadListSkeleton />
-          ) : threads && threads.length > 0 ? (
-            <div className="space-y-0.5">
-              {threads.map((thread) => (
-                <ThreadListItem
-                  key={thread.threadId}
-                  thread={thread}
-                  adminId={adminId ?? ""}
-                  active={thread.threadId === activeThreadId}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-full text-center px-4">
-              <MessageSquareTextIcon className="size-8 text-text-muted mb-2" />
-              <p className="text-sm text-text-muted">No conversations yet</p>
-              <p className="text-xs text-text-muted mt-1">
-                Search for a user above to start messaging
-              </p>
-            </div>
-          )}
-        </div>
+    <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8">
+      {/* Thread list: always visible on desktop, hidden on mobile when thread is active */}
+      <div className={cn(
+        "flex-1 flex flex-col min-h-0 lg:flex-none",
+        activeThreadId ? "hidden lg:flex lg:w-80" : "flex",
+      )}>
+        <ThreadListPanel
+          threads={threads}
+          isLoading={isLoading}
+          adminId={adminId}
+          activeThreadId={activeThreadId}
+        />
       </div>
 
-      {/* Thread view panel (WhatsApp Web style Main Area) */}
-      <div className="flex-1 flex flex-col min-h-0">
+      {/* Thread view: shown on desktop inline; on mobile replaces thread list */}
+      <div className={cn(
+        "flex-1 flex flex-col min-h-0",
+        activeThreadId ? "flex" : "hidden lg:flex",
+      )}>
         {activeThreadId ? (
           <ThreadView
             threadId={activeThreadId}
             onBack={() => router.push("/admin/messages", { scroll: false })}
           />
         ) : (
-          <div className="flex-1 flex items-center justify-center bg-bg-elevated/30">
+          <div className="flex-1 hidden lg:flex items-center justify-center bg-bg-elevated/30">
             <div className="text-center">
               <MessageSquareTextIcon className="size-12 text-text-muted mx-auto mb-3" />
-              <p className="text-text-muted text-sm">Select a conversation or start a new thread</p>
+              <p className="text-text-muted text-sm">
+                Select a conversation or start a new thread
+              </p>
             </div>
           </div>
         )}

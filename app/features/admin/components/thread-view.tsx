@@ -400,7 +400,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
   const isSending = sendMessage.isPending || isUploading;
 
   return (
-    <div className="flex flex-1 min-h-0 flex-col bg-bg-elevated/30 backdrop-blur-xl border border-border/40 shadow-brand overflow-hidden">
+    <div className="flex flex-1 min-h-0 flex-col bg-bg-elevated/30 lg:border lg:border-border/40 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between bg-bg-surface/60 backdrop-blur-sm border-b border-border/30 px-5 py-3 shrink-0 z-10">
         <div className="flex items-center gap-3 min-w-0">
@@ -462,7 +462,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 min-h-0 overflow-y-auto px-4 py-4 space-y-1.5 bg-bg-page/60 mx-2 my-1 rounded-radius-xl"
+        className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-4 py-4 space-y-1.5 bg-bg-page/60 lg:mx-2 lg:my-1 lg:rounded-xl"
       >
         {isFetchingNextPage && (
           <div className="flex justify-center py-3">

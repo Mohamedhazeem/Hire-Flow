@@ -54,15 +54,15 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
         onClick={handleUnban}
         disabled={unbanUser.isPending}
       >
-        <RotateCcw className="size-4" />
-        Unban
+        <RotateCcw className="size-4 sm:mr-1" />
+        <span className="hidden sm:inline">Unban</span>
       </Button>
     );
   }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={<Button variant="destructive" size="sm"><Ban className="size-4" />Ban</Button>} />
+      <DialogTrigger render={<Button variant="destructive" size="sm"><Ban className="size-4 sm:mr-1" /><span className="hidden sm:inline">Ban</span></Button>} />
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Ban {userName}</DialogTitle>

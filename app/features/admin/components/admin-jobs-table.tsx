@@ -250,8 +250,8 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="relative flex-1 min-w-50 max-w-xs">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div className="relative flex-1 min-w-0">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
           <Input
             placeholder="Search jobs..."
@@ -270,7 +270,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-35">
+          <SelectTrigger className="w-full sm:w-35">
             <SelectValue>{status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -286,7 +286,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-35">
+          <SelectTrigger className="w-full sm:w-35">
             <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -303,7 +303,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-37.5">
+          <SelectTrigger className="w-full sm:w-37.5">
             <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -323,10 +323,13 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
         emptyMessage="No jobs found matching your filters."
       />
 
-      <div className="flex items-center justify-between text-sm text-text-muted">
-        <span>
+      <div className="flex items-center justify-between text-sm text-text-muted gap-2">
+        <span className="hidden sm:inline">
           Page {responseData?.page ?? 1} of {totalPages}
           {responseData && ` (${responseData.total} total)`}
+        </span>
+        <span className="sm:hidden text-xs">
+          {responseData?.page ?? 1}/{totalPages}
         </span>
         <div className="flex items-center gap-2">
           <Button
@@ -336,7 +339,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             onClick={() => setPage((p) => Math.max(1, p - 1))}
           >
             <ChevronLeftIcon className="size-4" />
-            Previous
+            <span className="hidden sm:inline ml-1">Previous</span>
           </Button>
           <Button
             variant="outline"
@@ -344,7 +347,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             disabled={!hasNextPage}
             onClick={() => setPage((p) => p + 1)}
           >
-            Next
+            <span className="hidden sm:inline mr-1">Next</span>
             <ChevronRightIcon className="size-4" />
           </Button>
         </div>

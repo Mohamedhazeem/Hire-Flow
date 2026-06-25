@@ -35,8 +35,8 @@
     "semantic_hash": "dc24d5d7bd8bf62da91ae7e185482532"
   },
   "app/(roles)/admin/layout.tsx": {
-    "mtime": 1782375787.0177865,
-    "ast_hash": "1985fff134bb666d65c654e37edede62",
+    "mtime": 1782378250.294658,
+    "ast_hash": "4eac9c41d4770d9e5155ae238139ed57",
     "semantic_hash": ""
   },
   "app/(roles)/admin/page.tsx": {
@@ -310,8 +310,8 @@
     "semantic_hash": "01f4366beea2dcf87ee2e90abe2a80ec"
   },
   "components/ui/data-table.tsx": {
-    "mtime": 1782369645.8682697,
-    "ast_hash": "d61cab7ce0e5168ed9276b542268a9e9",
+    "mtime": 1782380129.212945,
+    "ast_hash": "99f2163231b7376d9e70d83eb502956f",
     "semantic_hash": ""
   },
   "components/ui/dialog.tsx": {
@@ -340,9 +340,9 @@
     "semantic_hash": "4f9326c9e031a6739c666850f773e448"
   },
   "components/ui/table.tsx": {
-    "mtime": 1782136249.8286004,
-    "ast_hash": "b5ab7f3200cb27dbd4b921afc6427e8c",
-    "semantic_hash": "b5ab7f3200cb27dbd4b921afc6427e8c"
+    "mtime": 1782380647.9620216,
+    "ast_hash": "0249450b9be04df63cec413c2c9cd662",
+    "semantic_hash": ""
   },
   "components/ui/textarea.tsx": {
     "mtime": 1782136253.819271,
@@ -605,13 +605,13 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/ban-dialog.tsx": {
-    "mtime": 1782271215.2835035,
-    "ast_hash": "50faa612b8bca8b04cb206dc948cf443",
+    "mtime": 1782380825.2286718,
+    "ast_hash": "6cd02ce31715b78cea13af7657442550",
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1782365168.0255904,
-    "ast_hash": "866013c746946a187a0abe23331d2207",
+    "mtime": 1782380840.0933802,
+    "ast_hash": "a40869079acad5d8b63b78b2669f75bd",
     "semantic_hash": ""
   },
   "app/(auth)/admin-invite/accept-invite-client.tsx": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-admin-form.tsx": {
-    "mtime": 1782326555.5459244,
-    "ast_hash": "4b8d6423bbaec7e99fdd9f50426458bc",
+    "mtime": 1782380665.0202234,
+    "ast_hash": "574146122dc041c053c9e14d54620cfe",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-invites.ts": {
@@ -710,18 +710,18 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782369533.7382588,
+    "mtime": 1782379418.9829974,
     "ast_hash": "f5a041a7a80409beef3da97bb1b52f64",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
-    "mtime": 1782362129.1113992,
-    "ast_hash": "98d984061fa478d7fd709d8af694bbd9",
+    "mtime": 1782380860.2910678,
+    "ast_hash": "848cb10c2fd4d527c27470fbef7c34d9",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782369853.582755,
-    "ast_hash": "769513c871b065700594a5a04fe60e6c",
+    "mtime": 1782377538.2252517,
+    "ast_hash": "935afc6b260db61f30cc3d6775b6976f",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -755,8 +755,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
-    "mtime": 1782375818.935858,
-    "ast_hash": "4be14722cc5ebf704c877b84df5e6491",
+    "mtime": 1782379408.8378444,
+    "ast_hash": "e3f7e43946f0112b279763b9465fa312",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -770,8 +770,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782376159.8981633,
-    "ast_hash": "65248cb554af11e4747c6c594d0b2787",
+    "mtime": 1782377608.6863904,
+    "ast_hash": "769a95d21caa13c974a20dc2faeec8a4",
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
@@ -817,6 +817,16 @@
   "app/features/admin/hooks/messages/use-admin-threads.ts": {
     "mtime": 1782374569.4066908,
     "ast_hash": "a3d0b7bfedca95bf41d21f6f5aad52cd",
+    "semantic_hash": ""
+  },
+  "app/(roles)/admin/admin-layout-client.tsx": {
+    "mtime": 1782379598.32503,
+    "ast_hash": "25a9ab65ee1fd7b6b8e3447923eaa752",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/mobile-menu-button.tsx": {
+    "mtime": 1782378488.4247153,
+    "ast_hash": "c67b929c17192cad74068a53f2f77994",
     "semantic_hash": ""
   }
 }

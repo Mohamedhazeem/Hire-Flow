@@ -125,8 +125,8 @@ export function InviteAdminForm() {
       {/* Single invite form */}
       {tab === "single" && (
         <form onSubmit={singleForm.handleSubmit(onSubmitSingle)} className="space-y-4">
-          <div className="flex items-end gap-3">
-            <div className="flex-1 space-y-1">
+          <div className="flex flex-col sm:flex-row sm:items-end gap-3">
+            <div className="flex-1 space-y-1 min-w-0">
               <label htmlFor="invite-email" className="text-sm font-medium text-text-heading">
                 Invite admin by email
               </label>
@@ -140,7 +140,7 @@ export function InviteAdminForm() {
                 <p className="text-xs text-error">{singleForm.formState.errors.email.message}</p>
               )}
             </div>
-            <Button type="submit" disabled={singleForm.formState.isSubmitting}>
+            <Button type="submit" disabled={singleForm.formState.isSubmitting} className="sm:w-auto">
               <UserPlus className="size-4" />
               {singleForm.formState.isSubmitting ? "Sending..." : "Send Invite"}
             </Button>
