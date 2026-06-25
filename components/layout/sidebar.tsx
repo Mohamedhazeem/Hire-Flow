@@ -5,11 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useUIStore } from "@/stores/ui-store";
-import {
-  PanelLeftCloseIcon,
-  PanelLeftOpenIcon,
-  XIcon,
-} from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { PanelLeftCloseIcon, PanelLeftOpenIcon, LogOutIcon, XIcon } from "lucide-react";
 
 export type SidebarLink = {
   href: string;
@@ -22,9 +19,10 @@ type SidebarProps = {
   links: SidebarLink[];
   roleLabel: string;
   homeHref: string;
+  onSignOut: () => void;
 };
 
-export function Sidebar({ links, roleLabel, homeHref }: SidebarProps) {
+export function Sidebar({ links, roleLabel, homeHref, onSignOut }: SidebarProps) {
   const pathname = usePathname();
   const sidebarOpen = useUIStore((s) => s.sidebarOpen);
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
@@ -50,7 +48,12 @@ export function Sidebar({ links, roleLabel, homeHref }: SidebarProps) {
 
   return (
     <>
-      <div className="hidden lg:block shrink-0 transition-all duration-200" style={{ width: sidebarOpen ? 256 : 64 }} />
+      <div
+        className={cn(
+          "hidden md:block shrink-0 transition-all duration-200",
+          sidebarOpen ? "w-64" : "w-16",
+        )}
+      />
 
       {/* Mobile backdrop */}
       {sidebarOpen && (
@@ -67,7 +70,7 @@ export function Sidebar({ links, roleLabel, homeHref }: SidebarProps) {
           "fixed top-0 left-0 z-40 border-r border-border-subtle bg-bg-surface h-screen transition-all duration-200 flex flex-col",
           sidebarOpen ? "w-64" : "w-16",
           "lg:z-30",
-          "max-lg:data-[closed]:-translate-x-full",
+          "max-lg:data-closed:-translate-x-full",
         )}
         data-closed={sidebarOpen ? undefined : ""}
       >
@@ -125,9 +128,25 @@ export function Sidebar({ links, roleLabel, homeHref }: SidebarProps) {
           })}
         </nav>
 
-        <div className="shrink-0 p-2 border-t border-border-subtle">
+        <div className="shrink-0 border-t border-border-subtle p-2 space-y-1">
+          <div className={sidebarOpen ? "block" : "hidden lg:block"}>
+            <ThemeToggle collapsed={!sidebarOpen} />
+          </div>
+          <button
+            onClick={onSignOut}
+            className={cn(
+              "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full",
+              sidebarOpen ? "px-3" : "justify-center px-0",
+              "text-text-muted hover:bg-bg-elevated hover:text-text-heading",
+            )}
+            title={sidebarOpen ? "Sign out" : "Sign out"}
+          >
+            <LogOutIcon className="size-4 shrink-0" />
+            {sidebarOpen && <span className="truncate">Sign out</span>}
+          </button>
           <button
             onClick={toggleSidebar}
+            aria-label="Close sidebar"
             className="flex items-center justify-center w-full p-2 rounded-md text-text-muted hover:bg-bg-elevated hover:text-text-heading transition-colors lg:hidden"
           >
             <XIcon className="size-5" />
