@@ -7,7 +7,7 @@ import {
   type ThreadItem,
 } from "@/app/features/admin/hooks/messages/use-admin-threads";
 import { ThreadView } from "@/app/features/admin/components/thread-view";
-import { StartThreadSearch } from "@/app/features/admin/components/start-thread-search";
+import { StartConversationSearch } from "@/features/shared/components/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import {
@@ -117,7 +117,7 @@ function ThreadListPanel({
         </div>
       </div>
       <div className="shrink-0 px-4 pb-2">
-        <StartThreadSearch />
+        <StartConversationSearch searchEndpoint="/api/admin/messages/search" messagesBasePath="/admin/messages" />
       </div>
 
       <div className="flex-1 overflow-y-auto min-h-0">

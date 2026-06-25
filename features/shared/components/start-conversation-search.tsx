@@ -21,7 +21,15 @@ function computeThreadId(idA: string, idB: string): string {
   return `${sorted[0]}_${sorted[1]}`;
 }
 
-export function StartThreadSearch() {
+type StartConversationSearchProps = {
+  searchEndpoint: string;
+  messagesBasePath: string;
+};
+
+export function StartConversationSearch({
+  searchEndpoint,
+  messagesBasePath,
+}: StartConversationSearchProps) {
   const router = useRouter();
   const { data: session } = useSession();
   const [query, setQuery] = useState("");
@@ -42,7 +50,7 @@ export function StartThreadSearch() {
 
     try {
       const res = await apiClient<{ data: SearchResult[] }>(
-        `/api/admin/messages/search?q=${encodeURIComponent(value)}`,
+        `${searchEndpoint}?q=${encodeURIComponent(value)}`,
       );
       setResults(res.data);
       setIsOpen(res.data.length > 0);
@@ -50,16 +58,16 @@ export function StartThreadSearch() {
       setResults([]);
       setIsOpen(false);
     }
-  }, []);
+  }, [searchEndpoint]);
 
   const navigateToThread = useCallback(
     (targetId: string) => {
-      const adminId = (session?.user as { id?: string })?.id;
-      if (!adminId) return;
-      const threadId = computeThreadId(adminId, targetId);
-      router.push(`/admin/messages?thread=${threadId}`, { scroll: false });
+      const currentUserId = (session?.user as { id?: string })?.id;
+      if (!currentUserId) return;
+      const threadId = computeThreadId(currentUserId, targetId);
+      router.push(`${messagesBasePath}?thread=${threadId}`, { scroll: false });
     },
-    [router, session],
+    [router, session, messagesBasePath],
   );
 
   const handleKeyDown = useCallback(
