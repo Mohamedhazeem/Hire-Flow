@@ -35,26 +35,10 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
-# Agent Instructions
+## Phase 2 & 3 – Missing Features
 
-## Global Coding Rules & Shared Infrastructure
-
-Do not reinvent the wheel. You must reuse the following assets for all upcoming tasks and create re-usable components and patterns for future tasks:
-
-| Asset                  | Path                                          | Purpose                                                                   |
-| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------- |
-| Standardised errors    | `lib/api-error.ts`                            | `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `ValidationError` |
-| Data table             | `components/ui/data-table.tsx`                | Reusable table with sorting, pagination, debounced search                 |
-| React Email pipeline   | `features/auth/libs/email.ts`                 | Used to send all transactional emails                                     |
-| URL search params      | Admin search reads/writes `searchParams`      | **Mandatory** for all filterable lists – never use `useState`             |
-| Bulk operation pattern | `features/admin/actions/bulk-invite-admin.ts` | Extend for bulk status updates, bulk reject, etc.                         |
-| Sidebar                | `components/layout/sidebar.tsx`               | Generic sidebar – pass `links`, `roleLabel`, `homeHref`, `onSignOut` props |
-| Role layout shell      | `components/layout/role-layout-client.tsx`    | Accepts `sidebar` ReactNode – inject any role's sidebar                   |
-| Mobile menu button     | `components/layout/mobile-menu-button.tsx`    | Role-agnostic hamburger, uses `useUIStore`                                |
-| StatCard               | `components/ui/stat-card.tsx`                 | `title`, `value`, `icon`, optional `description`, `trend`, `href`         |
-| Chat components        | `components/chat/message-bubble.tsx`          | `MessageBubble`, `AttachmentPreview`, `formatTime`, `formatDateSeparator`, `formatFileSize`, `fileIcon` |
-| Conversation search    | `features/shared/components/start-conversation-search.tsx` | Generic user search → thread navigation with `searchEndpoint` + `messagesBasePath` props |
-| Page header            | `components/layout/page-header.tsx`           | `title`, `description`, `actions` slot                                    |
+Phase 2 (Recruiter) and Phase 3 (User) are not yet built.
+**Before implementing any feature from these phases, read `hire_flow_prompt.md`** – it contains the step‑by‑step specifications, architecture constraints, and component lists.
 
 ## Stack
 

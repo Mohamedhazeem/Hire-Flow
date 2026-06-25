@@ -583,6 +583,14 @@ Actionable Tasks:
 - **Layout & Sidebar:** Create app/(roles)/recruiter/layout.tsx that wraps all recruiter pages. Build features/recruiter/components/recruiter-sidebar.tsx (mirroring the admin sidebar) with navigation links to: **Dashboard**, **Company Profile**, **Jobs**, **Analytics**, and **Notifications**.
 - **Recruiter Dashboard:** Build /recruiter/dashboard/page.tsx. Reuse the shared stats-cards.tsx and growth-chart.tsx to show a high-level overview (active jobs, total applicants, conversion rate, recent applications).
 - **Notification Bell (Recruiter):** Build a global notification-bell.tsx component (placed in the layout header) that fetches unread in-app notifications for the recruiter (e.g., when a user applies). Implement a dropdown list and a "mark as read" action via a REST PATCH or server action. Add a corresponding GET /api/notifications route (protected by requireRole(\['recruiter', 'admin'\])) to power this.
+- The recruiter layout MUST use `<RoleLayoutClient>` from `components/layout/role-layout-client.tsx` and inject a `<Sidebar>` from `components/layout/sidebar.tsx` (see `admin-layout-client.tsx` for the exact pattern).
+- Create `RecruiterSidebar` as a simple component that passes role‑specific `links`, `roleLabel`, `homeHref` to the shared `Sidebar`.
+- Same for the user layout and `UserSidebar`.
+- Create directories:
+  `app/features/recruiter/{actions,components,queries,schema,libs,hooks}`
+  `app/features/user/{actions,components,queries,schema,libs,hooks}`
+- Include a **Messages** link in the sidebar (e.g., `/recruiter/messages`).
+- Build a minimal `/recruiter/messages/page.tsx` that displays a “Coming soon” or reuses the shared `MessageBubble` / `StartConversationSearch` to let recruiters start conversations immediately.
 
 **#### Step 2.1: Company Profile CRUD (UPDATED)**
 
@@ -634,6 +642,14 @@ Actionable Tasks:
 - **Layout & Sidebar:** Create app/(roles)/user/layout.tsx that wraps all user pages. Build features/user/components/user-sidebar.tsx with navigation links to: **Dashboard**, **Profile**, **Resumes**, **Applications**, and **Notifications**.
 - **User Dashboard:** Build /user/dashboard/page.tsx. Show a personalized summary: current application statuses, recent job views, and recommended quick actions (e.g., "Complete your profile", "Upload a resume"). Reuse shared stat cards.
 - **Notification Bell (User):** Integrate the shared notification-bell.tsx into the user layout header. Ensure it fetches notifications for the user (e.g., status updates from recruiters).
+- The recruiter layout MUST use `<RoleLayoutClient>` from `components/layout/role-layout-client.tsx` and inject a `<Sidebar>` from `components/layout/sidebar.tsx` (see `admin-layout-client.tsx` for the exact pattern).
+- Create `RecruiterSidebar` as a simple component that passes role‑specific `links`, `roleLabel`, `homeHref` to the shared `Sidebar`.
+- Same for the user layout and `UserSidebar`.
+- Create directories:
+  `app/features/recruiter/{actions,components,queries,schema,libs,hooks}`
+  `app/features/user/{actions,components,queries,schema,libs,hooks}`
+- Include a **Messages** link in the sidebar (e.g., `/user/messages`).
+- Build a minimal `/recruiter/messages/page.tsx` that displays a “Coming soon” or reuses the shared `MessageBubble` / `StartConversationSearch` to let recruiters start conversations immediately.
 
 **#### Step 3.1: User Profile (UPDATED)**_Prompt to Agent:_
 
