@@ -87,7 +87,7 @@ export function InviteAdminForm() {
   return (
     <div className="space-y-4">
       {/* Tab toggle */}
-      <div className="flex gap-1 rounded-lg bg-muted p-1 w-fit">
+      <div className="flex gap-1 rounded-xl bg-bg-elevated p-1 w-fit border border-border-subtle">
         <button
           type="button"
           onClick={() => {
@@ -95,10 +95,10 @@ export function InviteAdminForm() {
             setServerError(null);
             setBulkResult(null);
           }}
-          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
             tab === "single"
-              ? "bg-background text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+              ? "bg-bg-surface text-text-heading shadow-sm border border-border-subtle"
+              : "text-text-muted hover:text-text-heading hover:bg-bg-surface/50"
           }`}
         >
           <Mail className="size-4" />
@@ -111,10 +111,10 @@ export function InviteAdminForm() {
             setServerError(null);
             setSuccess(false);
           }}
-          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
             tab === "bulk"
-              ? "bg-background text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+              ? "bg-bg-surface text-text-heading shadow-sm border border-border-subtle"
+              : "text-text-muted hover:text-text-heading hover:bg-bg-surface/50"
           }`}
         >
           <Users className="size-4" />
@@ -140,7 +140,11 @@ export function InviteAdminForm() {
                 <p className="text-xs text-error">{singleForm.formState.errors.email.message}</p>
               )}
             </div>
-            <Button type="submit" disabled={singleForm.formState.isSubmitting} className="sm:w-auto">
+            <Button
+              type="submit"
+              disabled={singleForm.formState.isSubmitting}
+              className="sm:w-auto"
+            >
               <UserPlus className="size-4" />
               {singleForm.formState.isSubmitting ? "Sending..." : "Send Invite"}
             </Button>

@@ -720,8 +720,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782382894.3130853,
-    "ast_hash": "6f0ed15619656101aabbf788505070d8",
+    "mtime": 1782384188.9782822,
+    "ast_hash": "b600db3fc54b24c3f6b9eba9a7923cef",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
-    "mtime": 1782382846.9434464,
-    "ast_hash": "3179c03fb65a9f703ec0cf6b8c28614f",
+    "mtime": 1782384495.3352897,
+    "ast_hash": "67bff4c485a3f8df1e7cebfc641e1c3d",
     "semantic_hash": ""
   },
   "components/ui/stat-card.tsx": {
@@ -847,6 +847,11 @@
   "features/shared/components/start-conversation-search.tsx": {
     "mtime": 1782382886.1300788,
     "ast_hash": "474b3c0ee8e9a1afdafab6af0e86ef98",
+    "semantic_hash": ""
+  },
+  "components/ui/theme-toggle.tsx": {
+    "mtime": 1782384136.172391,
+    "ast_hash": "3d8641db4f1da7374e33271f7ccb0302",
     "semantic_hash": ""
   }
 }

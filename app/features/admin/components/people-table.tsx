@@ -277,15 +277,15 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <div className="relative flex-1 min-w-0">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
-          <Input
-            placeholder="Search by name or email..."
-            value={search}
-            onChange={handleSearch}
-            className="pl-8"
-          />
-        </div>
+          <div className="relative flex-1 min-w-0">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
+            <Input
+              placeholder="Search by name or email..."
+              value={search}
+              onChange={handleSearch}
+              className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
+            />
+          </div>
         {!roleFilter && (
           <Select value={role ?? "all"} onValueChange={handleRoleFilter}>
             <SelectTrigger className="w-full sm:w-36">

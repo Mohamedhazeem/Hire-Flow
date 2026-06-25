@@ -252,7 +252,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
   return (
     <div className="flex flex-1 min-h-0 flex-col bg-bg-elevated/30 lg:border lg:border-border/40 overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between bg-bg-surface/60 backdrop-blur-sm border-b border-border/30 px-5 py-3 shrink-0 z-10">
+      <div className="flex items-center justify-between bg-bg-surface border-b-2 border-border-subtle px-5 py-3.5 shrink-0 z-10">
         <div className="flex items-center gap-3 min-w-0">
           {onBack && (
             <button
@@ -264,14 +264,17 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
               <ArrowLeftIcon className="size-4" />
             </button>
           )}
-          <div className="size-9 rounded-full bg-brand/10 flex items-center justify-center shrink-0">
-            <span className="text-sm font-bold text-brand">
+          <div className="size-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center shrink-0 shadow-brand">
+            <span className="text-sm font-bold text-brand-foreground">
               {chatName ? chatName.charAt(0).toUpperCase() : "?"}
             </span>
           </div>
-          <h2 className="text-sm font-semibold text-text-heading truncate">
-            {chatName || "Loading..."}
-          </h2>
+          <div className="min-w-0">
+            <h2 className="text-sm font-semibold text-text-heading truncate">
+              {chatName || "Loading..."}
+            </h2>
+            <p className="text-[11px] text-text-muted">Direct message</p>
+          </div>
         </div>
         <div className="shrink-0">
           {confirmDeleteThread ? (
@@ -279,7 +282,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
               <button
                 type="button"
                 onClick={() => setConfirmDeleteThread(false)}
-                className="text-sm text-text-heading px-2 py-1 rounded-4xl border border-border-subtle"
+                className="text-sm text-text-heading px-3 py-1.5 rounded-lg border border-border-subtle hover:bg-bg-elevated transition-colors"
               >
                 Cancel
               </button>
@@ -287,7 +290,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
                 type="button"
                 onClick={handleDeleteThread}
                 disabled={deleteThread.isPending}
-                className="text-sm text-text-inverse bg-error px-2 py-1 rounded-4xl border border-error/30 disabled:opacity-50 flex items-center justify-center min-w-16"
+                className="text-sm text-white bg-gradient-to-r from-error to-error/80 px-3 py-1.5 rounded-lg disabled:opacity-50 flex items-center justify-center min-w-16 font-medium shadow-sm"
               >
                 {deleteThread.isPending ? (
                   <Loader2Icon className="size-4 animate-spin" />
@@ -300,10 +303,10 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
             <button
               type="button"
               onClick={() => setConfirmDeleteThread(true)}
-              className="flex items-center justify-center size-8 rounded-full hover:text-error transition-colors"
+              className="flex items-center justify-center size-9 rounded-xl hover:bg-error/10 hover:text-error transition-colors text-text-muted"
               aria-label="Delete conversation"
             >
-              <Trash2Icon className="size-6 text-error" />
+              <Trash2Icon className="size-4" />
             </button>
           )}
         </div>
@@ -312,7 +315,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-4 py-4 space-y-1.5 bg-bg-page/60 lg:mx-2 lg:my-1 lg:rounded-xl"
+        className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-5 py-4 space-y-1 bg-bg-page/40 lg:mx-3 lg:my-2 lg:rounded-2xl"
       >
         {isFetchingNextPage && (
           <div className="flex justify-center py-3">
@@ -401,7 +404,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
 
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 bg-bg-surface/60 backdrop-blur-sm border-t border-border/30 px-4 py-3 shrink-0"
+        className="flex items-center gap-2 bg-bg-surface border-t-2 border-border-subtle px-4 py-3.5 shrink-0"
       >
         <input
           ref={fileInputRef}
@@ -431,7 +434,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
         <button
           type="submit"
           disabled={(!input.trim() && !selectedFile) || isSending}
-          className="shrink-0 flex items-center justify-center size-10 rounded-full bg-brand text-brand-foreground hover:bg-brand-dark transition-colors shadow-sm"
+          className="shrink-0 flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark text-brand-foreground hover:from-brand-dark hover:to-brand transition-all shadow-brand disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSending ? (
             <Loader2Icon className="size-4 animate-spin" />

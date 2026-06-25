@@ -251,18 +251,18 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <div className="relative flex-1 min-w-0">
-          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
-          <Input
-            placeholder="Search jobs..."
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setPage(1);
-            }}
-            className="pl-9"
-          />
-        </div>
+          <div className="relative flex-1 min-w-0">
+            <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
+            <Input
+              placeholder="Search jobs..."
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setPage(1);
+              }}
+              className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
+            />
+          </div>
         <Select
           value={status}
           onValueChange={(v) => {

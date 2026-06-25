@@ -56,14 +56,54 @@
   },
   "nodes": [
     {
+      "label": "admin-dashboard.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_admin_dashboard",
+      "community": 48,
+      "norm_label": "admin-dashboard.tsx"
+    },
+    {
+      "label": "WORKMODE_COLORS",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "components_admin_dashboard_workmode_colors",
+      "community": 48,
+      "norm_label": "workmode_colors"
+    },
+    {
+      "label": "CHART_TOOLTIP_STYLE",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "components_admin_dashboard_chart_tooltip_style",
+      "community": 48,
+      "norm_label": "chart_tooltip_style"
+    },
+    {
+      "label": "AdminDashboard()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "components_admin_dashboard_admindashboard",
+      "community": 48,
+      "norm_label": "admindashboard()"
+    },
+    {
       "label": "admin-sidebar.tsx",
       "file_type": "code",
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_admin_sidebar",
       "community": 56,
-      "norm_label": "admin-sidebar.tsx"
+      "norm_label": "admin-sidebar.tsx",
+      "id": "components_admin_sidebar"
     },
     {
       "label": "adminLinks",
@@ -71,9 +111,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_admin_sidebar_adminlinks",
       "community": 56,
-      "norm_label": "adminlinks"
+      "norm_label": "adminlinks",
+      "id": "components_admin_sidebar_adminlinks"
     },
     {
       "label": "AdminSidebar()",
@@ -81,9 +121,9 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "components_admin_sidebar_adminsidebar",
       "community": 56,
-      "norm_label": "adminsidebar()"
+      "norm_label": "adminsidebar()",
+      "id": "components_admin_sidebar_adminsidebar"
     },
     {
       "label": "sidebar.tsx",
@@ -91,9 +131,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "layout_sidebar",
       "community": 56,
-      "norm_label": "sidebar.tsx"
+      "norm_label": "sidebar.tsx",
+      "id": "layout_sidebar"
     },
     {
       "label": "SidebarLink",
@@ -101,9 +141,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "layout_sidebar_sidebarlink",
       "community": 56,
-      "norm_label": "sidebarlink"
+      "norm_label": "sidebarlink",
+      "id": "layout_sidebar_sidebarlink"
     },
     {
       "label": "SidebarProps",
@@ -111,9 +151,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "layout_sidebar_sidebarprops",
       "community": 56,
-      "norm_label": "sidebarprops"
+      "norm_label": "sidebarprops",
+      "id": "layout_sidebar_sidebarprops"
     },
     {
       "label": "Sidebar()",
@@ -121,9 +161,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "layout_sidebar_sidebar",
       "community": 56,
-      "norm_label": "sidebar()"
+      "norm_label": "sidebar()",
+      "id": "layout_sidebar_sidebar"
     },
     {
       "label": "theme-toggle.tsx",
@@ -131,9 +171,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ui_theme_toggle",
       "community": 56,
-      "norm_label": "theme-toggle.tsx"
+      "norm_label": "theme-toggle.tsx",
+      "id": "ui_theme_toggle"
     },
     {
       "label": "themes",
@@ -141,9 +181,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "ui_theme_toggle_themes",
       "community": 56,
-      "norm_label": "themes"
+      "norm_label": "themes",
+      "id": "ui_theme_toggle_themes"
     },
     {
       "label": "ThemeToggle()",
@@ -151,9 +191,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "ui_theme_toggle_themetoggle",
       "community": 56,
-      "norm_label": "themetoggle()"
+      "norm_label": "themetoggle()",
+      "id": "ui_theme_toggle_themetoggle"
     },
     {
       "label": "kilo.json",
@@ -351,7 +391,7 @@
       "source_file": "app/(auth)/register/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "page.tsx",
       "id": "register_page"
     },
@@ -361,7 +401,7 @@
       "source_file": "app/(auth)/register/page.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "metadata",
       "id": "register_page_metadata"
     },
@@ -371,7 +411,7 @@
       "source_file": "app/(auth)/register/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "registerpage()",
       "id": "register_page_registerpage"
     },
@@ -431,7 +471,7 @@
       "source_file": "app/(auth)/verify-email/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "page.tsx",
       "id": "verify_email_page"
     },
@@ -441,7 +481,7 @@
       "source_file": "app/(auth)/verify-email/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "verifyemailpage()",
       "id": "verify_email_page_verifyemailpage"
     },
@@ -671,7 +711,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "page.tsx",
       "id": "team_page"
     },
@@ -681,7 +721,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "metadata",
       "id": "team_page_metadata"
     },
@@ -691,7 +731,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "adminteampage()",
       "id": "team_page_adminteampage"
     },
@@ -701,7 +741,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 12,
       "norm_label": "page.tsx",
       "id": "users_page"
     },
@@ -711,7 +751,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 9,
+      "community": 12,
       "norm_label": "metadata",
       "id": "users_page_metadata"
     },
@@ -721,7 +761,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 9,
+      "community": 12,
       "norm_label": "adminuserspage()",
       "id": "users_page_adminuserspage"
     },
@@ -801,7 +841,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "page.tsx",
       "id": "user_page"
     },
@@ -811,7 +851,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "metadata",
       "id": "user_page_metadata"
     },
@@ -821,7 +861,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "candidatepage()",
       "id": "user_page_candidatepage"
     },
@@ -1451,7 +1491,7 @@
       "source_file": "app/api/auth/[...all]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "route.ts",
       "id": "all_route"
     },
@@ -1461,7 +1501,7 @@
       "source_file": "app/api/auth/[...all]/route.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "{ post, get }",
       "id": "all_route_post_get"
     },
@@ -1501,7 +1541,7 @@
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "bulk-invite-admin.ts",
       "id": "actions_bulk_invite_admin"
     },
@@ -1521,7 +1561,7 @@
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "bulkinviteadmins()",
       "id": "actions_bulk_invite_admin_bulkinviteadmins"
     },
@@ -1531,7 +1571,7 @@
       "source_file": "app/features/admin/actions/invite-admin.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "invite-admin.ts",
       "id": "actions_invite_admin"
     },
@@ -1541,39 +1581,9 @@
       "source_file": "app/features/admin/actions/invite-admin.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "inviteadmin()",
       "id": "actions_invite_admin_inviteadmin"
-    },
-    {
-      "label": "admin-dashboard.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "admin-dashboard.tsx",
-      "id": "components_admin_dashboard"
-    },
-    {
-      "label": "WORKMODE_COLORS",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "workmode_colors",
-      "id": "components_admin_dashboard_workmode_colors"
-    },
-    {
-      "label": "AdminDashboard()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "admindashboard()",
-      "id": "components_admin_dashboard_admindashboard"
     },
     {
       "label": "admin-jobs-table.tsx",
@@ -1581,7 +1591,7 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 57,
+      "community": 1,
       "norm_label": "admin-jobs-table.tsx",
       "id": "components_admin_jobs_table"
     },
@@ -1591,7 +1601,7 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 57,
+      "community": 1,
       "norm_label": "work_mode_labels",
       "id": "components_admin_jobs_table_work_mode_labels"
     },
@@ -1601,7 +1611,7 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 57,
+      "community": 1,
       "norm_label": "employment_type_labels",
       "id": "components_admin_jobs_table_employment_type_labels"
     },
@@ -1611,7 +1621,7 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 57,
+      "community": 1,
       "norm_label": "adminjobstableprops",
       "id": "components_admin_jobs_table_adminjobstableprops"
     },
@@ -1621,7 +1631,7 @@
       "source_file": "app/features/admin/components/admin-jobs-table.tsx",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 57,
+      "community": 11,
       "norm_label": "adminjobstable()",
       "id": "components_admin_jobs_table_adminjobstable"
     },
@@ -1791,7 +1801,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "ban-notification-email.tsx",
       "id": "email_ban_notification_email"
     },
@@ -1801,7 +1811,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "bannotificationemailprops",
       "id": "email_ban_notification_email_bannotificationemailprops"
     },
@@ -1811,7 +1821,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "bannotificationemail()",
       "id": "email_ban_notification_email_bannotificationemail"
     },
@@ -1821,7 +1831,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "main",
       "id": "email_ban_notification_email_main"
     },
@@ -1831,7 +1841,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "container",
       "id": "email_ban_notification_email_container"
     },
@@ -1841,7 +1851,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "heading",
       "id": "email_ban_notification_email_heading"
     },
@@ -1851,7 +1861,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "paragraph",
       "id": "email_ban_notification_email_paragraph"
     },
@@ -1861,7 +1871,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "notebox",
       "id": "email_ban_notification_email_notebox"
     },
@@ -1871,7 +1881,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 62,
+      "community": 24,
       "norm_label": "notetext",
       "id": "email_ban_notification_email_notetext"
     },
@@ -1901,7 +1911,7 @@
       "source_file": "app/features/admin/components/invite-admin-form.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 12,
+      "community": 11,
       "norm_label": "inviteadminform()",
       "id": "components_invite_admin_form_inviteadminform"
     },
@@ -2031,7 +2041,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L131",
       "_origin": "ast",
-      "community": 9,
+      "community": 57,
       "norm_label": "peopletable()",
       "id": "components_people_table_peopletable"
     },
@@ -2331,7 +2341,7 @@
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 57,
+      "community": 11,
       "norm_label": "use-admin-jobs.ts",
       "id": "hooks_use_admin_jobs"
     },
@@ -2341,7 +2351,7 @@
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 57,
+      "community": 11,
       "norm_label": "useadminjobs()",
       "id": "hooks_use_admin_jobs_useadminjobs"
     },
@@ -2351,7 +2361,7 @@
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 57,
+      "community": 11,
       "norm_label": "usedeletejob()",
       "id": "hooks_use_admin_jobs_usedeletejob"
     },
@@ -2361,7 +2371,7 @@
       "source_file": "app/features/admin/hooks/use-admin-jobs.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 57,
+      "community": 11,
       "norm_label": "usetogglejobstatus()",
       "id": "hooks_use_admin_jobs_usetogglejobstatus"
     },
@@ -2371,7 +2381,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "use-admin-users.ts",
       "id": "hooks_use_admin_users"
     },
@@ -2381,7 +2391,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 9,
+      "community": 57,
       "norm_label": "useadminusers()",
       "id": "hooks_use_admin_users_useadminusers"
     },
@@ -2391,7 +2401,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "useadminuser()",
       "id": "hooks_use_admin_users_useadminuser"
     },
@@ -2421,7 +2431,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 9,
+      "community": 57,
       "norm_label": "usedeleteuser()",
       "id": "hooks_use_admin_users_usedeleteuser"
     },
@@ -2431,7 +2441,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 9,
+      "community": 57,
       "norm_label": "usesetuserrole()",
       "id": "hooks_use_admin_users_usesetuserrole"
     },
@@ -2441,7 +2451,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 9,
+      "community": 57,
       "norm_label": "userevokeusersessions()",
       "id": "hooks_use_admin_users_userevokeusersessions"
     },
@@ -2511,7 +2521,7 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "listjobs()",
       "id": "queries_job_queries_listjobs"
     },
@@ -2521,7 +2531,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "user-queries.ts",
       "id": "queries_user_queries"
     },
@@ -2531,7 +2541,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "adminuserrow",
       "id": "queries_user_queries_adminuserrow"
     },
@@ -2541,7 +2551,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "adminuserlistresult",
       "id": "queries_user_queries_adminuserlistresult"
     },
@@ -2551,7 +2561,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "listusers()",
       "id": "queries_user_queries_listusers"
     },
@@ -2571,7 +2581,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L95",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "adminuserdetail",
       "id": "queries_user_queries_adminuserdetail"
     },
@@ -2611,7 +2621,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "adminlistusersparams",
       "id": "schema_admin_schema_adminlistusersparams"
     },
@@ -2631,7 +2641,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "adminbanuserinput",
       "id": "schema_admin_schema_adminbanuserinput"
     },
@@ -2761,7 +2771,7 @@
       "source_file": "app/features/auth/actions/login-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "login-action.ts",
       "id": "actions_login_action"
     },
@@ -2771,7 +2781,7 @@
       "source_file": "app/features/auth/actions/login-action.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "loginaction()",
       "id": "actions_login_action_loginaction"
     },
@@ -2781,7 +2791,7 @@
       "source_file": "app/features/auth/actions/logout-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "logout-action.ts",
       "id": "actions_logout_action"
     },
@@ -2791,7 +2801,7 @@
       "source_file": "app/features/auth/actions/logout-action.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "logoutaction()",
       "id": "actions_logout_action_logoutaction"
     },
@@ -2801,7 +2811,7 @@
       "source_file": "app/features/auth/actions/register-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "register-action.ts",
       "id": "actions_register_action"
     },
@@ -2811,7 +2821,7 @@
       "source_file": "app/features/auth/actions/register-action.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "registeraction()",
       "id": "actions_register_action_registeraction"
     },
@@ -2821,7 +2831,7 @@
       "source_file": "app/features/auth/actions/request-password-reset-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "request-password-reset-action.ts",
       "id": "actions_request_password_reset_action"
     },
@@ -2831,7 +2841,7 @@
       "source_file": "app/features/auth/actions/request-password-reset-action.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "requestpasswordresetaction()",
       "id": "actions_request_password_reset_action_requestpasswordresetaction"
     },
@@ -2841,7 +2851,7 @@
       "source_file": "app/features/auth/actions/reset-password-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "reset-password-action.ts",
       "id": "actions_reset_password_action"
     },
@@ -2851,7 +2861,7 @@
       "source_file": "app/features/auth/actions/reset-password-action.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "resetpasswordaction()",
       "id": "actions_reset_password_action_resetpasswordaction"
     },
@@ -2861,7 +2871,7 @@
       "source_file": "app/features/auth/actions/social-signin-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "social-signin-action.ts",
       "id": "actions_social_signin_action"
     },
@@ -2871,7 +2881,7 @@
       "source_file": "app/features/auth/actions/social-signin-action.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "socialprovider",
       "id": "actions_social_signin_action_socialprovider"
     },
@@ -2881,7 +2891,7 @@
       "source_file": "app/features/auth/actions/social-signin-action.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "socialsigninaction()",
       "id": "actions_social_signin_action_socialsigninaction"
     },
@@ -3241,7 +3251,7 @@
       "source_file": "app/features/auth/components/logout-button.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "logout-button.tsx",
       "id": "components_logout_button"
     },
@@ -3251,7 +3261,7 @@
       "source_file": "app/features/auth/components/logout-button.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
+      "community": 15,
       "norm_label": "logoutbutton()",
       "id": "components_logout_button_logoutbutton"
     },
@@ -3291,7 +3301,7 @@
       "source_file": "app/features/auth/components/signup-form.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "signup-form.tsx",
       "id": "components_signup_form"
     },
@@ -3301,7 +3311,7 @@
       "source_file": "app/features/auth/components/signup-form.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "registerinput",
       "id": "components_signup_form_registerinput"
     },
@@ -3311,7 +3321,7 @@
       "source_file": "app/features/auth/components/signup-form.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "signupform()",
       "id": "components_signup_form_signupform"
     },
@@ -3321,7 +3331,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "social-signin-buttons.tsx",
       "id": "components_social_signin_buttons"
     },
@@ -3331,7 +3341,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "providers",
       "id": "components_social_signin_buttons_providers"
     },
@@ -3341,7 +3351,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "socialprovider",
       "id": "components_social_signin_buttons_socialprovider"
     },
@@ -3351,7 +3361,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "socialsigninbuttons()",
       "id": "components_social_signin_buttons_socialsigninbuttons"
     },
@@ -3361,7 +3371,7 @@
       "source_file": "app/features/auth/hooks/useCheckRole.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 24,
       "norm_label": "usecheckrole.ts",
       "id": "hooks_usecheckrole"
     },
@@ -3371,7 +3381,7 @@
       "source_file": "app/features/auth/hooks/useCheckRole.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 52,
+      "community": 24,
       "norm_label": "usecheckrole()",
       "id": "hooks_usecheckrole_usecheckrole"
     },
@@ -3401,7 +3411,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "auth.ts",
       "id": "libs_auth"
     },
@@ -3411,7 +3421,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 15,
+      "community": 55,
       "norm_label": "auth",
       "id": "libs_auth_auth"
     },
@@ -3421,7 +3431,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "getsession()",
       "id": "libs_auth_getsession"
     },
@@ -3431,7 +3441,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "email.ts",
       "id": "libs_email"
     },
@@ -3441,7 +3451,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "resend",
       "id": "libs_email_resend"
     },
@@ -3451,7 +3461,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "sendemailargs",
       "id": "libs_email_sendemailargs"
     },
@@ -3461,7 +3471,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "sendemail()",
       "id": "libs_email_sendemail"
     },
@@ -3471,7 +3481,7 @@
       "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "verification.ts",
       "id": "libs_verification"
     },
@@ -3481,7 +3491,7 @@
       "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "userstatusresult",
       "id": "libs_verification_userstatusresult"
     },
@@ -3491,7 +3501,7 @@
       "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "verifyuserstatus()",
       "id": "libs_verification_verifyuserstatus"
     },
@@ -3501,7 +3511,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "auth.schema.ts",
       "id": "schema_auth_schema"
     },
@@ -3511,7 +3521,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "disposableset",
       "id": "schema_auth_schema_disposableset"
     },
@@ -3521,7 +3531,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "emailschema",
       "id": "schema_auth_schema_emailschema"
     },
@@ -3531,7 +3541,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "passwordschema",
       "id": "schema_auth_schema_passwordschema"
     },
@@ -3541,7 +3551,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "signinschema",
       "id": "schema_auth_schema_signinschema"
     },
@@ -3551,7 +3561,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "signupschema",
       "id": "schema_auth_schema_signupschema"
     },
@@ -3561,7 +3571,7 @@
       "source_file": "app/features/auth/schema/auth.schema.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "forgotpasswordschema",
       "id": "schema_auth_schema_forgotpasswordschema"
     },
@@ -3581,7 +3591,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "auth.type.ts",
       "id": "schema_auth_type"
     },
@@ -3591,7 +3601,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "registerinputtype",
       "id": "schema_auth_type_registerinputtype"
     },
@@ -3601,7 +3611,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "logininputtype",
       "id": "schema_auth_type_logininputtype"
     },
@@ -3611,7 +3621,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "forgotpasswordtype",
       "id": "schema_auth_type_forgotpasswordtype"
     },
@@ -3621,7 +3631,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "resetpasswordtype",
       "id": "schema_auth_type_resetpasswordtype"
     },
@@ -3631,7 +3641,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "actionresult",
       "id": "schema_auth_type_actionresult"
     },
@@ -3641,7 +3651,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "authtype",
       "id": "schema_auth_type_authtype"
     },
@@ -3651,7 +3661,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "authredirecttargettype",
       "id": "schema_auth_type_authredirecttargettype"
     },
@@ -3661,7 +3671,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "usercredentials",
       "id": "schema_auth_type_usercredentials"
     },
@@ -3671,7 +3681,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "sessioncredentials",
       "id": "schema_auth_type_sessioncredentials"
     },
@@ -3681,7 +3691,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "session",
       "id": "schema_auth_type_session"
     },
@@ -3691,7 +3701,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "user",
       "id": "schema_auth_type_user"
     },
@@ -3701,7 +3711,7 @@
       "source_file": "app/features/auth/schema/role.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 24,
       "norm_label": "role.schema.ts",
       "id": "schema_role_schema"
     },
@@ -3711,7 +3721,7 @@
       "source_file": "app/features/auth/schema/role.schema.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "roles",
       "id": "schema_role_schema_roles"
     },
@@ -3721,7 +3731,7 @@
       "source_file": "app/features/auth/schema/role.schema.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 52,
+      "community": 24,
       "norm_label": "roleschema",
       "id": "schema_role_schema_roleschema"
     },
@@ -3731,7 +3741,7 @@
       "source_file": "app/features/auth/schema/role.schema.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 52,
+      "community": 24,
       "norm_label": "roletype",
       "id": "schema_role_schema_roletype"
     },
@@ -3741,7 +3751,7 @@
       "source_file": "app/features/auth/utils/authError.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "autherror.ts",
       "id": "utils_autherror"
     },
@@ -3751,7 +3761,7 @@
       "source_file": "app/features/auth/utils/authError.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "autherror()",
       "id": "utils_autherror_autherror"
     },
@@ -3761,7 +3771,7 @@
       "source_file": "app/features/auth/utils/getRedirectPath.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 59,
+      "community": 55,
       "norm_label": "getredirectpath.ts",
       "id": "utils_getredirectpath"
     },
@@ -3771,7 +3781,7 @@
       "source_file": "app/features/auth/utils/getRedirectPath.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "getredirectpath()",
       "id": "utils_getredirectpath_getredirectpath"
     },
@@ -3781,7 +3791,7 @@
       "source_file": "app/features/auth/utils/rbac.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 56,
+      "community": 24,
       "norm_label": "rbac.ts",
       "id": "utils_rbac"
     },
@@ -4521,7 +4531,7 @@
       "source_file": "components/ui/data-table.tsx",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 48,
+      "community": 28,
       "norm_label": "datatable()",
       "id": "ui_data_table_datatable"
     },
@@ -4731,7 +4741,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "select.tsx",
       "id": "ui_select"
     },
@@ -4741,7 +4751,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectgroup()",
       "id": "ui_select_selectgroup"
     },
@@ -4751,7 +4761,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectvalue()",
       "id": "ui_select_selectvalue"
     },
@@ -4761,7 +4771,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selecttrigger()",
       "id": "ui_select_selecttrigger"
     },
@@ -4771,7 +4781,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectcontent()",
       "id": "ui_select_selectcontent"
     },
@@ -4781,7 +4791,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectlabel()",
       "id": "ui_select_selectlabel"
     },
@@ -4791,7 +4801,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 5,
+      "community": 1,
       "norm_label": "selectitem()",
       "id": "ui_select_selectitem"
     },
@@ -4801,7 +4811,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L133",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectseparator()",
       "id": "ui_select_selectseparator"
     },
@@ -4811,7 +4821,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L143",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectscrollupbutton()",
       "id": "ui_select_selectscrollupbutton"
     },
@@ -4821,7 +4831,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L161",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "selectscrolldownbutton()",
       "id": "ui_select_selectscrolldownbutton"
     },
@@ -5031,7 +5041,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 54,
       "norm_label": "textarea.tsx",
       "id": "ui_textarea"
     },
@@ -5041,7 +5051,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 5,
+      "community": 54,
       "norm_label": "textarea()",
       "id": "ui_textarea_textarea"
     },
@@ -5111,7 +5121,7 @@
       "source_file": "features/shared/components/start-conversation-search.tsx",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 12,
+      "community": 54,
       "norm_label": "startconversationsearch()",
       "id": "components_start_conversation_search_startconversationsearch"
     },
@@ -5171,7 +5181,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "unauthorizederror",
       "id": "lib_api_error_unauthorizederror"
     },
@@ -5181,7 +5191,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": ".constructor()",
       "id": "lib_api_error_unauthorizederror_constructor"
     },
@@ -5191,7 +5201,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "forbiddenerror",
       "id": "lib_api_error_forbiddenerror"
     },
@@ -5201,7 +5211,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": ".constructor()",
       "id": "lib_api_error_forbiddenerror_constructor"
     },
@@ -5371,7 +5381,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "pagination.ts",
       "id": "lib_pagination"
     },
@@ -5381,7 +5391,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "offsetpaginationparams",
       "id": "lib_pagination_offsetpaginationparams"
     },
@@ -5391,7 +5401,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "offsetpaginationmeta",
       "id": "lib_pagination_offsetpaginationmeta"
     },
@@ -5401,7 +5411,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "parseoffsetparams()",
       "id": "lib_pagination_parseoffsetparams"
     },
@@ -5411,7 +5421,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "buildoffsetmeta()",
       "id": "lib_pagination_buildoffsetmeta"
     },
@@ -5421,7 +5431,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "cursorpaginationparams",
       "id": "lib_pagination_cursorpaginationparams"
     },
@@ -5431,7 +5441,7 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 24,
+      "community": 57,
       "norm_label": "cursorpaginationmeta",
       "id": "lib_pagination_cursorpaginationmeta"
     },
@@ -5611,7 +5621,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 54,
       "norm_label": "utils.ts",
       "id": "lib_utils"
     },
@@ -5621,7 +5631,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 5,
+      "community": 28,
       "norm_label": "cn()",
       "id": "lib_utils_cn"
     },
@@ -5661,7 +5671,7 @@
       "source_file": "lib/validator.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "validator.ts",
       "id": "lib_validator"
     },
@@ -5671,7 +5681,7 @@
       "source_file": "lib/validator.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "validatorresult",
       "id": "lib_validator_validatorresult"
     },
@@ -5681,7 +5691,7 @@
       "source_file": "lib/validator.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
+      "community": 55,
       "norm_label": "validatewithzod()",
       "id": "lib_validator_validatewithzod"
     },
@@ -6481,7 +6491,7 @@
       "source_file": "proxy.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "proxy.ts",
       "id": "proxy"
     },
@@ -6491,7 +6501,7 @@
       "source_file": "proxy.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "authpages",
       "id": "proxy_authpages"
     },
@@ -6501,7 +6511,7 @@
       "source_file": "proxy.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "protectedroutes",
       "id": "proxy_protectedroutes"
     },
@@ -6511,7 +6521,7 @@
       "source_file": "proxy.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "proxy()",
       "id": "proxy_proxy"
     },
@@ -6521,7 +6531,7 @@
       "source_file": "proxy.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 52,
+      "community": 55,
       "norm_label": "config",
       "id": "proxy_config"
     },
@@ -6921,7 +6931,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "env.ts",
       "id": "utils_env"
     },
@@ -6931,7 +6941,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "envschema",
       "id": "utils_env_envschema"
     },
@@ -6941,7 +6951,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "envtypes",
       "id": "utils_env_envtypes"
     },
@@ -6951,7 +6961,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 0,
+      "community": 24,
       "norm_label": "env",
       "id": "utils_env_env"
     },
@@ -6961,7 +6971,7 @@
       "source_file": "utils/logger.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "logger.ts",
       "id": "utils_logger"
     },
@@ -6971,7 +6981,7 @@
       "source_file": "utils/logger.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "logmethods",
       "id": "utils_logger_logmethods"
     },
@@ -6981,7 +6991,7 @@
       "source_file": "utils/logger.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "createlogger()",
       "id": "utils_logger_createlogger"
     },
@@ -6991,7 +7001,7 @@
       "source_file": "utils/logger.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 15,
+      "community": 24,
       "norm_label": "logger",
       "id": "utils_logger_logger"
     },
@@ -8578,6 +8588,179 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "components_admin_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "components_admin_dashboard_admindashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "components_admin_dashboard_chart_tooltip_style",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "components_admin_dashboard_workmode_colors"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "hooks_use_admin_dashboard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "hooks_use_admin_dashboard_useadmindashboard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "layout_page_header_pageheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_badge"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_badge_badge"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_data_table"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_data_table_columndef"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_data_table_datatable"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_stat_card"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_admin_dashboard",
+      "target": "ui_stat_card_statcard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_page",
+      "target": "components_admin_dashboard_admindashboard"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/admin/components/admin-dashboard.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "components_admin_dashboard_admindashboard",
+      "target": "hooks_use_admin_dashboard_useadmindashboard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(roles)/admin/admin-layout-client.tsx",
       "source_location": "L3",
       "weight": 1.0,
@@ -8818,9 +9001,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layout_sidebar",
-      "target": "ui_theme_toggle",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle"
     },
     {
       "relation": "imports",
@@ -8829,9 +9012,9 @@
       "source_file": "components/layout/sidebar.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "layout_sidebar",
-      "target": "ui_theme_toggle_themetoggle",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle_themetoggle"
     },
     {
       "relation": "calls",
@@ -8862,9 +9045,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_theme_toggle",
-      "target": "stores_ui_store_theme",
-      "confidence_score": 1.0
+      "target": "stores_ui_store_theme"
     },
     {
       "relation": "imports",
@@ -8873,9 +9056,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_theme_toggle",
-      "target": "stores_ui_store_useuistore",
-      "confidence_score": 1.0
+      "target": "stores_ui_store_useuistore"
     },
     {
       "relation": "contains",
@@ -8883,9 +9066,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_theme_toggle",
-      "target": "ui_theme_toggle_themes",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle_themes"
     },
     {
       "relation": "contains",
@@ -8893,9 +9076,9 @@
       "source_file": "components/ui/theme-toggle.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_theme_toggle",
-      "target": "ui_theme_toggle_themetoggle",
-      "confidence_score": 1.0
+      "target": "ui_theme_toggle_themetoggle"
     },
     {
       "relation": "contains",
@@ -9854,28 +10037,6 @@
       "confidence_score": 1.0,
       "source": "admin_page",
       "target": "admin_page_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "components_admin_dashboard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_page",
-      "target": "components_admin_dashboard_admindashboard"
     },
     {
       "relation": "imports_from",
@@ -13905,136 +14066,6 @@
       "confidence_score": 1.0,
       "source": "components_invite_admin_form",
       "target": "actions_invite_admin_inviteadmin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_admindashboard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "components_admin_dashboard_workmode_colors"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "hooks_use_admin_dashboard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "hooks_use_admin_dashboard_useadmindashboard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_badge"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_badge_badge"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_data_table"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_data_table_columndef"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_data_table_datatable"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_stat_card"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_admin_dashboard",
-      "target": "ui_stat_card_statcard"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/admin/components/admin-dashboard.tsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "components_admin_dashboard_admindashboard",
-      "target": "hooks_use_admin_dashboard_useadmindashboard"
     },
     {
       "relation": "contains",
@@ -25379,5 +25410,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "59f0a9be4581226a2dc09eac04260340e52aaa12"
+  "built_at_commit": "68b8686c5d8995ca466d0d792758024e51f6599c"
 }
