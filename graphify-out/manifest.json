@@ -310,8 +310,8 @@
     "semantic_hash": "01f4366beea2dcf87ee2e90abe2a80ec"
   },
   "components/ui/data-table.tsx": {
-    "mtime": 1782385248.779502,
-    "ast_hash": "5f0306cf0fd2dcdc9081e7c62f591a77",
+    "mtime": 1782400601.6421075,
+    "ast_hash": "5b00b59c69e9b08fe6a8806d3cbe0b19",
     "semantic_hash": ""
   },
   "components/ui/dialog.tsx": {
@@ -405,9 +405,9 @@
     "semantic_hash": "d2111ee370c93afcdab3e80089f00753"
   },
   "next.config.ts": {
-    "mtime": 1781512660.3093133,
-    "ast_hash": "f9a25fa58212edbdc3e265575a14a67b",
-    "semantic_hash": "f9a25fa58212edbdc3e265575a14a67b"
+    "mtime": 1782396545.194475,
+    "ast_hash": "30dea9d8099368f1ca79544db5ce4f77",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1782277933.3722715,
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-team-list.tsx": {
-    "mtime": 1782272893.1568305,
-    "ast_hash": "c52b509598c825fb913d15fc19c961f0",
+    "mtime": 1782402021.4179335,
+    "ast_hash": "821244f5b02b19aa267f84f2764702b8",
     "semantic_hash": ""
   },
   "app/features/admin/components/email/admin-invite-email.tsx": {
@@ -675,8 +675,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-invites.ts": {
-    "mtime": 1782361407.629102,
-    "ast_hash": "7851abced224bb61bdbcbc92a6dad3f1",
+    "mtime": 1782401690.4235175,
+    "ast_hash": "a6672d6815ed2bc912c711f8863592c3",
     "semantic_hash": ""
   },
   "scripts/demote-super-admin.ts": {
@@ -710,18 +710,18 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782394635.6294549,
-    "ast_hash": "5ad52744e146485b054f0e62151a4fba",
+    "mtime": 1782395661.504923,
+    "ast_hash": "251052b0657199faa4b0906a00a7306a",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
-    "mtime": 1782385473.81304,
-    "ast_hash": "86804c875c230c9e534f39c0db374fd4",
+    "mtime": 1782400736.675866,
+    "ast_hash": "77d2eefdf3f44dcdb0c541fbc49171da",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782384188.9782822,
-    "ast_hash": "b600db3fc54b24c3f6b9eba9a7923cef",
+    "mtime": 1782395915.3020687,
+    "ast_hash": "dfb7c7d19a18e2eea4023e8fb62a666a",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
-    "mtime": 1782384495.3352897,
-    "ast_hash": "67bff4c485a3f8df1e7cebfc641e1c3d",
+    "mtime": 1782399149.9641166,
+    "ast_hash": "215e5b16d67f5ed66dd68003fb29143c",
     "semantic_hash": ""
   },
   "components/ui/stat-card.tsx": {
@@ -852,6 +852,11 @@
   "components/ui/theme-toggle.tsx": {
     "mtime": 1782384136.172391,
     "ast_hash": "3d8641db4f1da7374e33271f7ccb0302",
+    "semantic_hash": ""
+  },
+  "utils/format-string.ts": {
+    "mtime": 1782398509.29851,
+    "ast_hash": "856cccc4c2612fb8489809c13dd002ee",
     "semantic_hash": ""
   }
 }

@@ -38,6 +38,29 @@ export function useCancelInvite() {
   return useMutation({
     mutationFn: (inviteId: string) =>
       apiClient(`/api/admin/invite/${inviteId}`, { method: "DELETE" }),
+    onMutate: async (inviteId) => {
+      // Cancel outgoing refetches so they don't overwrite our optimistic update
+      await queryClient.cancelQueries({ queryKey: ["admin", "invites"] });
+
+      // Snapshot previous value
+      const previous = queryClient.getQueryData<InviteListResponse>(["admin", "invites"]);
+
+      // Optimistically remove the invite from the list
+      if (previous) {
+        queryClient.setQueryData<InviteListResponse>(["admin", "invites"], {
+          ...previous,
+          invites: previous.invites.filter((i) => i.id !== inviteId),
+        });
+      }
+
+      return { previous };
+    },
+    onError: (_err, _inviteId, context) => {
+      // Rollback on error
+      if (context?.previous) {
+        queryClient.setQueryData(["admin", "invites"], context.previous);
+      }
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "invites"] });
     },
@@ -49,6 +72,25 @@ export function useRemoveAdmin() {
 
   return useMutation({
     mutationFn: (userId: string) => apiClient(`/api/admin/team/${userId}`, { method: "DELETE" }),
+    onMutate: async (userId) => {
+      await queryClient.cancelQueries({ queryKey: ["admin", "invites"] });
+
+      const previous = queryClient.getQueryData<InviteListResponse>(["admin", "invites"]);
+
+      if (previous) {
+        queryClient.setQueryData<InviteListResponse>(["admin", "invites"], {
+          ...previous,
+          teamMembers: previous.teamMembers.filter((m) => m.id !== userId),
+        });
+      }
+
+      return { previous };
+    },
+    onError: (_err, _userId, context) => {
+      if (context?.previous) {
+        queryClient.setQueryData(["admin", "invites"], context.previous);
+      }
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "invites"] });
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });

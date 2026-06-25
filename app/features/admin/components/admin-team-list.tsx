@@ -5,8 +5,10 @@ import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { X, Trash2 } from "lucide-react";
+import { useSession } from "@/app/features/auth/libs/auth-client";
 
 export function AdminTeamList() {
+  const { data: session } = useSession();
   const { data, isLoading, isError, error } = useAdminInvites();
   const cancelInvite = useCancelInvite();
   const removeAdmin = useRemoveAdmin();
@@ -103,6 +105,8 @@ export function AdminTeamList() {
           >
             <X className="size-3.5 text-text-muted" />
           </Button>
+        ) : row.id === session?.user?.id ? (
+          <span className="text-xs text-text-muted italic">You</span>
         ) : (
           <Button
             variant="ghost"

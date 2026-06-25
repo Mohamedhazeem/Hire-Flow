@@ -405,9 +405,9 @@
     "semantic_hash": "d2111ee370c93afcdab3e80089f00753"
   },
   "next.config.ts": {
-    "mtime": 1781512660.3093133,
-    "ast_hash": "f9a25fa58212edbdc3e265575a14a67b",
-    "semantic_hash": "f9a25fa58212edbdc3e265575a14a67b"
+    "mtime": 1782396545.194475,
+    "ast_hash": "30dea9d8099368f1ca79544db5ce4f77",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1782277933.3722715,
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-admin-form.tsx": {
-    "mtime": 1782385466.9016707,
-    "ast_hash": "35f0d0c9a70288992785a4adb39d5b90",
+    "mtime": 1782393607.6979587,
+    "ast_hash": "9695caf686cf604cdaeca65b4c224e3b",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-invites.ts": {
@@ -710,18 +710,18 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782385377.9871786,
-    "ast_hash": "4ee257facf3d8e1bd8cc8511fd3e2f45",
+    "mtime": 1782395661.504923,
+    "ast_hash": "251052b0657199faa4b0906a00a7306a",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
-    "mtime": 1782385473.81304,
-    "ast_hash": "86804c875c230c9e534f39c0db374fd4",
+    "mtime": 1782399556.531893,
+    "ast_hash": "77e1f25a8fa7a7fe672e1d64f0502677",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782384188.9782822,
-    "ast_hash": "b600db3fc54b24c3f6b9eba9a7923cef",
+    "mtime": 1782395915.3020687,
+    "ast_hash": "dfb7c7d19a18e2eea4023e8fb62a666a",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
-    "mtime": 1782384495.3352897,
-    "ast_hash": "67bff4c485a3f8df1e7cebfc641e1c3d",
+    "mtime": 1782399149.9641166,
+    "ast_hash": "215e5b16d67f5ed66dd68003fb29143c",
     "semantic_hash": ""
   },
   "components/ui/stat-card.tsx": {
@@ -852,6 +852,11 @@
   "components/ui/theme-toggle.tsx": {
     "mtime": 1782384136.172391,
     "ast_hash": "3d8641db4f1da7374e33271f7ccb0302",
+    "semantic_hash": ""
+  },
+  "utils/format-string.ts": {
+    "mtime": 1782398509.29851,
+    "ast_hash": "856cccc4c2612fb8489809c13dd002ee",
     "semantic_hash": ""
   }
 }
