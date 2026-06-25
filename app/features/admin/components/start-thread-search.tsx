@@ -57,7 +57,7 @@ export function StartThreadSearch() {
       const adminId = (session?.user as { id?: string })?.id;
       if (!adminId) return;
       const threadId = computeThreadId(adminId, targetId);
-      router.push(`/admin/messages/${threadId}`);
+      router.push(`/admin/messages?thread=${threadId}`, { scroll: false });
     },
     [router, session],
   );

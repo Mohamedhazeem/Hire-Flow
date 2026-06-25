@@ -35,7 +35,7 @@
     "semantic_hash": "dc24d5d7bd8bf62da91ae7e185482532"
   },
   "app/(roles)/admin/layout.tsx": {
-    "mtime": 1782280233.7892902,
+    "mtime": 1782369838.6936,
     "ast_hash": "1627d844698c82a0ccac779fc8f26850",
     "semantic_hash": ""
   },
@@ -310,9 +310,9 @@
     "semantic_hash": "01f4366beea2dcf87ee2e90abe2a80ec"
   },
   "components/ui/data-table.tsx": {
-    "mtime": 1782136225.6157072,
-    "ast_hash": "db1b23795a360921ce1befe51d2c772a",
-    "semantic_hash": "db1b23795a360921ce1befe51d2c772a"
+    "mtime": 1782369645.8682697,
+    "ast_hash": "d61cab7ce0e5168ed9276b542268a9e9",
+    "semantic_hash": ""
   },
   "components/ui/dialog.tsx": {
     "mtime": 1782136230.349347,
@@ -610,8 +610,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1782327836.615876,
-    "ast_hash": "07d0cac5a035ab183e6ddb85eee517ef",
+    "mtime": 1782365168.0255904,
+    "ast_hash": "866013c746946a187a0abe23331d2207",
     "semantic_hash": ""
   },
   "app/(auth)/admin-invite/accept-invite-client.tsx": {
@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782314427.3573303,
-    "ast_hash": "741596e330463c6ad6bc9b6c49a19eee",
+    "mtime": 1782369533.7382588,
+    "ast_hash": "f5a041a7a80409beef3da97bb1b52f64",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
@@ -720,8 +720,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-    "mtime": 1782327999.7305639,
-    "ast_hash": "4505bc37b2f14af5dd00b04ceec34e4b",
+    "mtime": 1782369853.582755,
+    "ast_hash": "769513c871b065700594a5a04fe60e6c",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-dashboard.ts": {
@@ -735,8 +735,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/queries/dashboard-queries.ts": {
-    "mtime": 1782284487.2533493,
-    "ast_hash": "90c7dd6e5e134ec99bb9796c88e60c38",
+    "mtime": 1782368897.7276478,
+    "ast_hash": "5666740305eabfeb6a5ecd5a4fb10f15",
     "semantic_hash": ""
   },
   "app/features/admin/queries/job-queries.ts": {
@@ -770,8 +770,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782331680.0477011,
-    "ast_hash": "905d88e5a68b081f141d99704e95fefd",
+    "mtime": 1782372490.746444,
+    "ast_hash": "bf75510ba8f1c14322bebbcb9a611215",
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
@@ -780,8 +780,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/route.ts": {
-    "mtime": 1782336167.3240519,
-    "ast_hash": "9a11cea42ff88f600e3d480366e9ae75",
+    "mtime": 1782363636.7010753,
+    "ast_hash": "2eebe0e1e3cba0dba5d072689b882d5b",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/messages/use-admin-messages.ts": {

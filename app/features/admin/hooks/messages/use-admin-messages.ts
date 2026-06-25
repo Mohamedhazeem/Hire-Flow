@@ -105,6 +105,7 @@ export function useDeleteThread() {
     onSuccess: (_, threadId) => {
       queryClient.removeQueries({ queryKey: ["admin", "messages", threadId] });
       queryClient.invalidateQueries({ queryKey: ["admin", "messages"] });
+      queryClient.invalidateQueries({ queryKey: ["admin", "threads"] });
     },
   });
 }

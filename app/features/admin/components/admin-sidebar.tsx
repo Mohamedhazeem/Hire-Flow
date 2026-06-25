@@ -37,12 +37,19 @@ export function AdminSidebar() {
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
 
   return (
-    <aside
-      className={cn(
-        "shrink-0 border-r border-border-subtle bg-bg-surface min-h-screen transition-all duration-200",
-        sidebarOpen ? "w-64" : "w-16",
-      )}
-    >
+    <>
+      <div
+        className={cn(
+          "shrink-0 transition-all duration-200",
+          sidebarOpen ? "w-64" : "w-16",
+        )}
+      />
+      <aside
+        className={cn(
+          "fixed top-0 left-0 z-30 border-r border-border-subtle bg-bg-surface h-screen transition-all duration-200",
+          sidebarOpen ? "w-64" : "w-16",
+        )}
+      >
       {/* Header */}
       <div className="flex items-center justify-between p-3 border-b border-border-subtle h-14">
         {sidebarOpen && (
@@ -99,5 +106,6 @@ export function AdminSidebar() {
         })}
       </nav>
     </aside>
+    </>
   );
 }

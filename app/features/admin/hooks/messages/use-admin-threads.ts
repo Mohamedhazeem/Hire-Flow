@@ -1,0 +1,39 @@
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { apiClient } from "@/lib/api-client";
+import { ApiEnvelope } from "@/lib/api-response";
+
+export type ThreadUser = {
+  id: string;
+  name: string;
+  email: string;
+  image: string | null;
+  role: string;
+};
+
+export type ThreadLastMessage = {
+  content: string;
+  createdAt: string;
+  senderId: string;
+  unread: boolean;
+};
+
+export type ThreadItem = {
+  threadId: string;
+  user: ThreadUser;
+  lastMessage: ThreadLastMessage | null;
+};
+
+export function useAdminThreads() {
+  return useQuery<ThreadItem[]>({
+    queryKey: ["admin", "threads"],
+    queryFn: async () => {
+      const res = await apiClient<ApiEnvelope<ThreadItem[]>>("/api/admin/threads");
+      return res.data;
+    },
+  });
+}
+
+export function useInvalidateThreads() {
+  const queryClient = useQueryClient();
+  return () => queryClient.invalidateQueries({ queryKey: ["admin", "threads"] });
+}

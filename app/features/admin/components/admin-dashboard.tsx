@@ -22,6 +22,7 @@ import {
   UserCogIcon,
   TrendingUpIcon,
   ActivityIcon,
+  UserPlusIcon,
 } from "lucide-react";
 
 type StatCardProps = {
@@ -71,69 +72,32 @@ export function AdminDashboard() {
     {
       key: "name",
       header: "Name",
+      align: "center",
       cell: (row) => <span className="font-medium text-text-heading">{row.name ?? "—"}</span>,
     },
     {
       key: "email",
       header: "Email",
+      align: "center",
       cell: (row) => <span className="text-text-body text-sm">{row.email}</span>,
     },
     {
       key: "role",
       header: "Role",
+      align: "center",
       cell: (row) => (
-        <Badge variant={row.role === "recruiter" ? "default" : "secondary"}>{row.role}</Badge>
+        <Badge variant="outline" className="capitalize text-xs font-medium">
+          {row.role.charAt(0).toUpperCase() + row.role.slice(1)}
+        </Badge>
       ),
     },
     {
       key: "createdAt",
       header: "Joined",
+      align: "center",
       cell: (row) => (
         <span className="text-text-muted text-xs whitespace-nowrap">
           {new Date(row.createdAt).toLocaleDateString()}
-        </span>
-      ),
-    },
-  ];
-
-  const recentAppColumns: ColumnDef<(typeof data.recentApplications)[number]>[] = [
-    {
-      key: "jobTitle",
-      header: "Job",
-      cell: (row) => (
-        <span className="font-medium text-text-heading max-w-50 truncate block">
-          {row.jobTitle}
-        </span>
-      ),
-    },
-    {
-      key: "userName",
-      header: "Applicant",
-      cell: (row) => <span className="text-text-body">{row.userName ?? "—"}</span>,
-    },
-    {
-      key: "status",
-      header: "Status",
-      cell: (row) => (
-        <Badge
-          variant={
-            row.status === "accepted"
-              ? "default"
-              : row.status === "rejected"
-                ? "destructive"
-                : "secondary"
-          }
-        >
-          {row.status}
-        </Badge>
-      ),
-    },
-    {
-      key: "appliedAt",
-      header: "Applied",
-      cell: (row) => (
-        <span className="text-text-muted text-xs whitespace-nowrap">
-          {new Date(row.appliedAt).toLocaleDateString()}
         </span>
       ),
     },
@@ -172,18 +136,18 @@ export function AdminDashboard() {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="rounded-radius-lg border border-border-subtle bg-bg-surface p-5">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUpIcon className="size-4 text-primary" />
-            <h2 className="text-sm font-semibold text-text-heading">Applications (Last 14 Days)</h2>
+            <h2 className="text-sm font-semibold text-text-heading">Applications (14d)</h2>
           </div>
           {data.applicationsLast14Days.length === 0 ? (
             <p className="text-text-muted text-sm py-8 text-center">
               No applications in the last 14 days.
             </p>
           ) : (
-            <ResponsiveContainer width="100%" height={240}>
+            <ResponsiveContainer width="100%" height={200}>
               <LineChart data={data.applicationsLast14Days}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle, #e5e7eb)" />
                 <XAxis
@@ -214,13 +178,52 @@ export function AdminDashboard() {
 
         <div className="rounded-radius-lg border border-border-subtle bg-bg-surface p-5">
           <div className="flex items-center gap-2 mb-4">
+            <UserPlusIcon className="size-4 text-primary" />
+            <h2 className="text-sm font-semibold text-text-heading">Signups (14d)</h2>
+          </div>
+          {data.signupsLast14Days.length === 0 ? (
+            <p className="text-text-muted text-sm py-8 text-center">
+              No signups in the last 14 days.
+            </p>
+          ) : (
+            <ResponsiveContainer width="100%" height={200}>
+              <LineChart data={data.signupsLast14Days}>
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle, #e5e7eb)" />
+                <XAxis
+                  dataKey="date"
+                  tick={{ fontSize: 11, fill: "var(--color-text-muted, #9ca3af)" }}
+                  tickFormatter={(val: string) => {
+                    const d = new Date(val + "T00:00:00");
+                    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+                  }}
+                />
+                <YAxis
+                  tick={{ fontSize: 11, fill: "var(--color-text-muted, #9ca3af)" }}
+                  allowDecimals={false}
+                />
+                <Tooltip />
+                <Line
+                  type="monotone"
+                  dataKey="count"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  dot={{ r: 3, fill: "#10b981" }}
+                  activeDot={{ r: 5 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          )}
+        </div>
+
+        <div className="rounded-radius-lg border border-border-subtle bg-bg-surface p-5">
+          <div className="flex items-center gap-2 mb-4">
             <ActivityIcon className="size-4 text-primary" />
             <h2 className="text-sm font-semibold text-text-heading">Jobs by Work Mode</h2>
           </div>
           {data.jobsByWorkMode.length === 0 ? (
             <p className="text-text-muted text-sm py-8 text-center">No jobs posted yet.</p>
           ) : (
-            <ResponsiveContainer width="100%" height={240}>
+            <ResponsiveContainer width="100%" height={200}>
               <BarChart data={data.jobsByWorkMode}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle, #e5e7eb)" />
                 <XAxis
@@ -253,15 +256,6 @@ export function AdminDashboard() {
           columns={recentUserColumns}
           data={data.recentUsers}
           emptyMessage="No users signed up yet."
-        />
-      </div>
-
-      <div>
-        <h2 className="text-lg font-semibold text-text-heading mb-3">Recent Applications</h2>
-        <DataTable
-          columns={recentAppColumns}
-          data={data.recentApplications}
-          emptyMessage="No applications yet."
         />
       </div>
     </div>

@@ -24,6 +24,10 @@ export type DashboardStats = {
     date: string;
     count: number;
   }>;
+  signupsLast14Days: Array<{
+    date: string;
+    count: number;
+  }>;
   jobsByWorkMode: Array<{
     workMode: string;
     count: number;
@@ -40,6 +44,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     recentUsers,
     recentApplications,
     applicationTrend,
+    signupTrend,
     jobsByWorkMode,
   ] = await Promise.all([
     prisma.user.count(),
@@ -72,6 +77,15 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       GROUP BY TO_CHAR("appliedAt", 'YYYY-MM-DD')
       ORDER BY date ASC
     `,
+    prisma.$queryRaw<Array<{ date: string; count: bigint }>>`
+      SELECT
+        TO_CHAR("createdAt", 'YYYY-MM-DD') AS date,
+        COUNT(*)::BIGINT AS count
+      FROM "user"
+      WHERE "createdAt" >= NOW() - INTERVAL '14 days'
+      GROUP BY TO_CHAR("createdAt", 'YYYY-MM-DD')
+      ORDER BY date ASC
+    `,
     prisma.job.groupBy({
       by: ["workMode"],
       _count: { workMode: true },
@@ -92,7 +106,11 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       status: a.status,
       appliedAt: a.appliedAt,
     })),
-    applicationsLast14Days: applicationTrend.map((r) => ({
+    applicationsLast14Days:     applicationTrend.map((r) => ({
+      date: r.date,
+      count: Number(r.count),
+    })),
+    signupsLast14Days: signupTrend.map((r) => ({
       date: r.date,
       count: Number(r.count),
     })),
