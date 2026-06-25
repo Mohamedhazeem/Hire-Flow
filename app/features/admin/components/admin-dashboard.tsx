@@ -15,7 +15,7 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
-  Rectangle,
+  type BarShapeProps,
 } from "recharts";
 import {
   UsersIcon,
@@ -295,16 +295,29 @@ export function AdminDashboard() {
                   axisLine={false}
                   tickLine={false}
                 />
-                <Tooltip {...CHART_TOOLTIP_STYLE} />
-                <Bar dataKey="count" radius={[6, 6, 0, 0]} barSize={40}>
-                  {data.jobsByWorkMode.map((entry) => (
-                    <Rectangle
-                      key={entry.workMode}
-                      fill={WORKMODE_COLORS[entry.workMode] ?? "#6b7280"}
-                      fillOpacity={0.9}
-                    />
-                  ))}
-                </Bar>
+                <Tooltip {...CHART_TOOLTIP_STYLE} cursor={false} />
+                <Bar
+                  dataKey="count"
+                  radius={[6, 6, 0, 0]}
+                  barSize={40}
+                  shape={(props: BarShapeProps) => {
+                    const color =
+                      WORKMODE_COLORS[(props.payload as { workMode: string })?.workMode] ??
+                      "#6b7280";
+                    return (
+                      <rect
+                        x={props.x}
+                        y={props.y}
+                        width={props.width}
+                        height={props.height}
+                        fill={color}
+                        fillOpacity={0.9}
+                        rx={6}
+                        ry={6}
+                      />
+                    );
+                  }}
+                />
               </BarChart>
             </ResponsiveContainer>
           )}

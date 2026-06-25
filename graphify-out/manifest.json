@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-admin-form.tsx": {
-    "mtime": 1782385466.9016707,
-    "ast_hash": "35f0d0c9a70288992785a4adb39d5b90",
+    "mtime": 1782393607.6979587,
+    "ast_hash": "9695caf686cf604cdaeca65b4c224e3b",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/use-admin-invites.ts": {
@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782385377.9871786,
-    "ast_hash": "4ee257facf3d8e1bd8cc8511fd3e2f45",
+    "mtime": 1782394635.6294549,
+    "ast_hash": "5ad52744e146485b054f0e62151a4fba",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {

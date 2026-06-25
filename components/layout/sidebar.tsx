@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { useUIStore } from "@/stores/ui-store";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { PanelLeftCloseIcon, PanelLeftOpenIcon, LogOutIcon, XIcon } from "lucide-react";
-
+import Image from "next/image";
+import { formatPascalCase } from "@/utils/format-string";
 export type SidebarLink = {
   href: string;
   label: string;
@@ -15,14 +16,31 @@ export type SidebarLink = {
   badge?: number;
 };
 
+export type SidebarUser = {
+  name: string;
+  image?: string | null;
+  role: string;
+};
+
 type SidebarProps = {
   links: SidebarLink[];
   roleLabel: string;
   homeHref: string;
   onSignOut: () => void;
+  user?: SidebarUser;
 };
+const getSidebarDisplayName = (name: string, threshold = 14): string => {
+  if (!name) return "";
+  const formattedFullName = formatPascalCase(name);
 
-export function Sidebar({ links, roleLabel, homeHref, onSignOut }: SidebarProps) {
+  if (formattedFullName.length > threshold) {
+    const firstName = name.trim().split(/\s+/)[0];
+    return formatPascalCase(firstName);
+  }
+
+  return formattedFullName;
+};
+export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: SidebarProps) {
   const pathname = usePathname();
   const sidebarOpen = useUIStore((s) => s.sidebarOpen);
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
@@ -74,13 +92,76 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut }: SidebarProps)
         )}
         data-closed={sidebarOpen ? undefined : ""}
       >
-        <div className="flex items-center justify-between p-3 border-b border-border-subtle h-14 shrink-0">
-          {sidebarOpen && (
+        <div
+          className={`flex ${user && !sidebarOpen ? "flex-col gap-2 py-3" : "flex-row py-0"} items-center justify-between min-h-14 h-auto shrink-0 p-3 border-b border-border-subtle`}
+        >
+          {!user && sidebarOpen && (
             <Link href={homeHref} className="text-lg font-bold text-text-heading truncate">
               {roleLabel}
             </Link>
           )}
+          {user && (
+            <>
+              {sidebarOpen ? (
+                <div className="flex items-center gap-3 px-3 py-2.5 ">
+                  {user.image ? (
+                    <Image
+                      src={user.image}
+                      alt={user.name}
+                      width={36}
+                      height={36}
+                      className="rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div className="size-9 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold shrink-0">
+                      {user.name
+                        .trim()
+                        .split(/\s+/)
+                        .map((n) => n[0])
+                        .join("")
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </div>
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className="text-sm font-semibold text-text-heading truncate block"
+                      title={formatPascalCase(user.name)}
+                    >
+                      {getSidebarDisplayName(user.name, 14)}
+                    </p>
+                    <p className="text-[11px] text-text-muted capitalize truncate">
+                      {user.role.replace(/_/g, " ")}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex justify-center py-1">
+                  {user.image ? (
+                    <Image
+                      src={user.image}
+                      alt={user.name}
+                      width={36}
+                      height={36}
+                      className="rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="size-9 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs font-bold">
+                      {user.name
+                        .trim()
+                        .split(/\s+/)
+                        .map((n) => n[0])
+                        .join("")
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </div>
+                  )}
+                </div>
+              )}
+            </>
+          )}
           <button
+            type="button"
             onClick={toggleSidebar}
             className="p-1.5 rounded-md text-text-muted hover:bg-bg-elevated hover:text-text-heading transition-colors"
             title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}

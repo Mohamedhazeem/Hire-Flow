@@ -9,8 +9,9 @@ import {
   ShieldIcon,
   MessageSquareTextIcon,
 } from "lucide-react";
-import { Sidebar, type SidebarLink } from "@/components/layout/sidebar";
+import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
 import { signOut } from "@/app/features/auth/libs/auth-client";
+import { useSession } from "@/app/features/auth/libs/auth-client";
 
 const adminLinks: SidebarLink[] = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
@@ -23,6 +24,11 @@ const adminLinks: SidebarLink[] = [
 
 export function AdminSidebar() {
   const router = useRouter();
+  const { data: session } = useSession();
+
+  const sidebarUser: SidebarUser | undefined = session?.user
+    ? { name: session.user.name, image: session.user.image, role: (session.user as { role?: string }).role ?? "user" }
+    : undefined;
 
   const handleSignOut = async () => {
     await signOut({
@@ -40,6 +46,7 @@ export function AdminSidebar() {
       roleLabel="Admin"
       homeHref="/admin"
       onSignOut={handleSignOut}
+      user={sidebarUser}
     />
   );
 }

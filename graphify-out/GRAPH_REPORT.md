@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-06-25)
 
 ## Corpus Check
-- 166 files · ~48,301 words
+- 166 files · ~48,318 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 850 nodes · 1587 edges · 62 communities (46 shown, 16 thin omitted)
+- 850 nodes · 1589 edges · 66 communities (48 shown, 18 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `68b8686c`
+- Built from commit: `e21683df`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -31,6 +31,7 @@
 - [[_COMMUNITY_Community 13|Community 13]]
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
 - [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
@@ -61,6 +62,7 @@
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
+- [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
@@ -69,12 +71,13 @@
 - [[_COMMUNITY_Community 58|Community 58]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
+- [[_COMMUNITY_Community 62|Community 62]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `cn()` - 61 edges
+1. `cn()` - 62 edges
 2. `requireRole()` - 42 edges
 3. `ok()` - 41 edges
 4. `withErrorHandler()` - 19 edges
@@ -92,10 +95,10 @@
   app/layout.tsx → lib/utils.ts
 - `DialogOverlay()` --calls--> `cn()`  [EXTRACTED]
   components/ui/dialog.tsx → lib/utils.ts
-- `PopoverContent()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/popover.tsx → lib/utils.ts
-- `PopoverHeader()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/popover.tsx → lib/utils.ts
+- `StatusBadge()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/status-badge.tsx → lib/utils.ts
+- `TableFooter()` --calls--> `cn()`  [EXTRACTED]
+  components/ui/table.tsx → lib/utils.ts
 
 ## Import Cycles
 - None detected.
@@ -105,15 +108,15 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (62 total, 16 thin omitted)
+## Communities (66 total, 18 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (70): handlePOST(), POST, requireRole(), DELETE, handleDELETE(), DELETE, handleDELETE(), DELETE (+62 more)
+Cohesion: 0.05
+Nodes (82): handlePOST(), POST, requireRole(), DELETE, handleDELETE(), DELETE, handleDELETE(), DELETE (+74 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.16
-Nodes (19): AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, BanDialog(), BanDialogProps, useBanUser(), useUnbanUser(), Button() (+11 more)
+Cohesion: 0.19
+Nodes (16): AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, BanDialogProps, Button(), buttonVariants, DataTable(), Dialog() (+8 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.28
@@ -128,8 +131,8 @@ Cohesion: 0.40
 Nodes (5): extraction-spec.md - Subagent Prompt Template, graphify CLI - knowledge graph extraction tool, query.md - Graph Traversal & Query, graphify SKILL.md - Graph Extraction Skill, update.md - Incremental Update & Cluster-Only
 
 ### Community 5 - "Community 5"
-Cohesion: 0.29
-Nodes (4): PopoverContent(), PopoverDescription(), PopoverHeader(), PopoverTitle()
+Cohesion: 0.20
+Nodes (14): cn(), PopoverContent(), PopoverDescription(), PopoverHeader(), PopoverTitle(), SelectContent(), SelectGroup(), SelectItem() (+6 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.12
@@ -144,20 +147,20 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.18
-Nodes (8): ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTableProps, ROLE_OPTIONS, UserRow, UsersApiResponse
+Cohesion: 0.13
+Nodes (17): BanDialog(), ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTable(), PeopleTableProps, ROLE_OPTIONS (+9 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFileNames, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.08
-Nodes (29): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), AdminJobsTable(), AdminTeamList() (+21 more)
+Cohesion: 0.07
+Nodes (25): metadata, AdminDashboard(), CHART_TOOLTIP_STYLE, WORKMODE_COLORS, AdminTeamList(), InviteAdminForm(), useAdminDashboard(), AdminInvite (+17 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.06
-Nodes (35): AttachmentPreview(), AttachmentPreviewProps, fileIcon(), formatDateSeparator(), formatFileSize(), formatTime(), getDayKey(), MessageBubble() (+27 more)
+Nodes (43): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), AttachmentPreview(), AttachmentPreviewProps (+35 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.21
@@ -167,13 +170,17 @@ Nodes (6): inter, metadata, newFunction(), NotFound(), ErrorPage(), ErrorPageTyp
 Cohesion: 0.09
 Nodes (22): Absolute Rules, Agent Instructions, Agent Rules (applied always), Commands, Core Routing (app/), Dependencies Protocol, Feature-Based Logic (`features/<name>/`), Forbidden (+14 more)
 
+### Community 16 - "Community 16"
+Cohesion: 0.24
+Nodes (10): bulkInviteAdmins(), inviteAdmin(), ForbiddenError, UnauthorizedError, getSession(), sendEmail(), UserStatusResult, env (+2 more)
+
 ### Community 24 - "Community 24"
-Cohesion: 0.06
-Nodes (43): bulkInviteAdmins(), BulkInviteResult, inviteAdmin(), SocialProvider, { POST, GET }, Tab, BanNotificationEmail(), BanNotificationEmailProps (+35 more)
+Cohesion: 0.10
+Nodes (24): BulkInviteResult, AdminJobsTable(), Tab, useAdminJobs(), useDeleteJob(), useToggleJobStatus(), AdminJobListResult, AdminJobRow (+16 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.19
-Nodes (19): cn(), DataTable(), DataTableProps, SelectContent(), SelectGroup(), SelectLabel(), SelectScrollDownButton(), SelectScrollUpButton() (+11 more)
+Cohesion: 0.29
+Nodes (9): DataTableProps, Table(), TableBody(), TableCaption(), TableCell(), TableFooter(), TableHead(), TableHeader() (+1 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.08
@@ -223,10 +230,6 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 Cohesion: 0.20
 Nodes (9): adapter, ADMIN, JOB_TEMPLATES, main(), pool, prisma, RECRUITERS, upsertCredentialAccount() (+1 more)
 
-### Community 48 - "Community 48"
-Cohesion: 0.18
-Nodes (10): metadata, AdminDashboard(), CHART_TOOLTIP_STYLE, WORKMODE_COLORS, useAdminDashboard(), Badge(), badgeVariants, ColumnDef (+2 more)
-
 ### Community 50 - "Community 50"
 Cohesion: 0.40
 Nodes (3): adapter, pool, prisma
@@ -235,21 +238,25 @@ Nodes (3): adapter, pool, prisma
 Cohesion: 0.40
 Nodes (3): adapter, pool, prisma
 
+### Community 52 - "Community 52"
+Cohesion: 0.18
+Nodes (10): BanNotificationEmail(), BanNotificationEmailProps, container, heading, main, noteBox, noteText, paragraph (+2 more)
+
 ### Community 54 - "Community 54"
 Cohesion: 0.24
 Nodes (5): SearchResult, StartConversationSearch(), StartConversationSearchProps, Input(), Textarea()
 
 ### Community 55 - "Community 55"
-Cohesion: 0.06
-Nodes (55): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), socialSignInAction(), AuthLayout(), AuthLayoutProps, FormButton() (+47 more)
+Cohesion: 0.05
+Nodes (57): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), socialSignInAction(), AuthLayout(), AuthLayoutProps, FormButton() (+49 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.12
 Nodes (19): AdminLayoutClient(), AdminLayout(), adminLinks, AdminSidebar(), MobileMenuButton(), RoleLayoutClient(), RoleLayoutClientProps, Sidebar() (+11 more)
 
 ### Community 57 - "Community 57"
-Cohesion: 0.12
-Nodes (21): PeopleTable(), useAdminUsers(), useDeleteUser(), useRevokeUserSessions(), useSetUserRole(), buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams (+13 more)
+Cohesion: 0.40
+Nodes (3): SocialProvider, logger, LogMethods
 
 ### Community 58 - "Community 58"
 Cohesion: 0.18
@@ -272,24 +279,24 @@ Cohesion: 0.33
 Nodes (5): name, prisma, seed, private, version
 
 ## Knowledge Gaps
-- **396 isolated node(s):** `WORKMODE_COLORS`, `CHART_TOOLTIP_STYLE`, `adminLinks`, `SidebarProps`, `themes` (+391 more)
+- **396 isolated node(s):** `WORKMODE_COLORS`, `CHART_TOOLTIP_STYLE`, `WORK_MODE_LABELS`, `EMPLOYMENT_TYPE_LABELS`, `AdminJobsTableProps` (+391 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 28` to `Community 1`, `Community 5`, `Community 9`, `Community 11`, `Community 12`, `Community 48`, `Community 54`, `Community 56`, `Community 60`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
-- **Why does `env` connect `Community 24` to `Community 2`, `Community 11`, `Community 55`?**
+- **Why does `cn()` connect `Community 5` to `Community 1`, `Community 9`, `Community 11`, `Community 12`, `Community 60`, `Community 48`, `Community 54`, `Community 56`, `Community 28`?**
+  _High betweenness centrality (0.066) - this node is a cross-community bridge._
+- **Why does `env` connect `Community 16` to `Community 2`, `Community 52`, `Community 12`, `Community 55`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Button()` connect `Community 1` to `Community 2`, `Community 9`, `Community 11`, `Community 55`, `Community 24`, `Community 28`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 1` to `Community 2`, `Community 5`, `Community 9`, `Community 11`, `Community 55`, `Community 24`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `WORKMODE_COLORS`, `CHART_TOOLTIP_STYLE`, `adminLinks` to the rest of the system?**
+- **What connects `WORKMODE_COLORS`, `CHART_TOOLTIP_STYLE`, `WORK_MODE_LABELS` to the rest of the system?**
   _396 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05970790378006873 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.050614250614250615 - nodes in this community are weakly interconnected._
