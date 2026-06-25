@@ -44,10 +44,17 @@ Do not reinvent the wheel. You must reuse the following assets for all upcoming 
 | Asset                  | Path                                          | Purpose                                                                   |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------- |
 | Standardised errors    | `lib/api-error.ts`                            | `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `ValidationError` |
-| Data table             | `components/data-table.tsx`                   | Reusable table with sorting, pagination, debounced search                 |
+| Data table             | `components/ui/data-table.tsx`                | Reusable table with sorting, pagination, debounced search                 |
 | React Email pipeline   | `features/auth/libs/email.ts`                 | Used to send all transactional emails                                     |
 | URL search params      | Admin search reads/writes `searchParams`      | **Mandatory** for all filterable lists – never use `useState`             |
 | Bulk operation pattern | `features/admin/actions/bulk-invite-admin.ts` | Extend for bulk status updates, bulk reject, etc.                         |
+| Sidebar                | `components/layout/sidebar.tsx`               | Generic sidebar – pass `links`, `roleLabel`, `homeHref`, `onSignOut` props |
+| Role layout shell      | `components/layout/role-layout-client.tsx`    | Accepts `sidebar` ReactNode – inject any role's sidebar                   |
+| Mobile menu button     | `components/layout/mobile-menu-button.tsx`    | Role-agnostic hamburger, uses `useUIStore`                                |
+| StatCard               | `components/ui/stat-card.tsx`                 | `title`, `value`, `icon`, optional `description`, `trend`, `href`         |
+| Chat components        | `components/chat/message-bubble.tsx`          | `MessageBubble`, `AttachmentPreview`, `formatTime`, `formatDateSeparator`, `formatFileSize`, `fileIcon` |
+| Conversation search    | `features/shared/components/start-conversation-search.tsx` | Generic user search → thread navigation with `searchEndpoint` + `messagesBasePath` props |
+| Page header            | `components/layout/page-header.tsx`           | `title`, `description`, `actions` slot                                    |
 
 ## Stack
 
@@ -129,6 +136,31 @@ Pages are thin orchestrators. All logic lives in `features/`.
 - **Lucide icons** from `'lucide-react'` with `size‑4`/`size‑5` and `strokeWidth={2}`.
 - **Shadcn:** install via `npx shadcn@latest add`; map tokens in `globals.css` `@theme inline`.
 - **Animations:** native Tailwind utilities for simple; Framer Motion (`motion.div`) only for complex orchestration, layoutId, AnimatePresence. Keep <300ms, prefer transform/opacity.
+
+## Responsive Design (Mobile-First)
+
+- **Mobile-first always** – base styles target 320px; use `sm:`(640), `md:`(768), `lg:`(1024) to scale up. Never desktop-first.
+- **`min-w-0` on all flex children** that contain scrollable content. Flex items default to `min-width: auto` which prevents `overflow` from working.
+- **Tables:** wrap in `overflow-x-auto` + parent must have `min-w-0`. `TableHead`/`TableCell` use `whitespace-nowrap` for horizontal scroll.
+- **Actions:** labels go `hidden sm:inline` (icon-only on mobile). Pipe separators between action buttons: `hidden sm:inline`.
+- **Forms/filters:** `flex-col sm:flex-row`; selects `w-full sm:w-36`. Buttons `w-full sm:w-auto`.
+- **Grid:** `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4` pattern for cards; `md:grid-cols-2 lg:grid-cols-3` for charts.
+- **Padding:** `px-4 md:px-6 lg:p-8` gradient across breakpoints.
+- **Cards/modals:** padding `p-6 sm:p-8`; headings `text-2xl sm:text-3xl lg:text-4xl`.
+- **Decorative blobs:** `hidden sm:block` to save GPU on mobile.
+- **Touch targets:** ≥36px (`size-9`); `icon-xs` (24px) only in data tables where space is tight.
+- **Admin layout:** `h-screen overflow-hidden` on outer flex → `flex-1 min-h-0 min-w-0 overflow-y-auto` on content.
+
+## Shared Components Across Roles
+
+- **Admin sidebar** (`admin-sidebar.tsx`): `AdminSidebar` is reusable for `recruiter`/`user` roles. Pass `links`, `role label`, `onSignOut` as props. Backdrop + slide-over on mobile (`max-lg:`), persistent on desktop (`lg:`). Uses `useUIStore` for open/close state.
+- **Mobile menu button** (`mobile-menu-button.tsx`): `MobileMenuButton` is role-agnostic. Include in any role layout's hamburger row (`lg:hidden`).
+- **Page header** (`components/layout/page-header.tsx`): `PageHeader` with `title`, `description`, `actions` slot. Use for all role dashboards.
+- **Data table** (`components/ui/data-table.tsx`): `DataTable<T>` with `ColumnDef[]`. Use for all admin/recruiter/user listing pages.
+- **UI primitives** (`components/ui/`): Button, Input, Select, Badge, Dialog, Skeleton, Popover, StatusBadge — shared across all roles.
+- **Auth components** (`features/auth/components/`): `AuthLayout`, `LoginForm`, `SignUpForm`, `FormInput`, `FormButton` — shared across all auth pages.
+- **Error page** (`components/error-page.tsx`): `ErrorPage` with `errorTag`, `title`, `description` — used by all unauthorized/error states.
+- **When building recruiter/user layouts:** Use `RoleLayoutClient` from `components/layout/role-layout-client.tsx` and inject a `Sidebar` from `components/layout/sidebar.tsx` with role-specific `links`, `roleLabel`, `homeHref` props. Example: admin's `admin-layout-client.tsx` is now a thin wrapper around `<RoleLayoutClient sidebar={<AdminSidebar />}>`.
 
 ## Forbidden
 
