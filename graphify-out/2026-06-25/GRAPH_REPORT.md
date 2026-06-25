@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-06-25)
 
 ## Corpus Check
-- 161 files · ~46,888 words
+- 165 files · ~47,508 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 833 nodes · 1553 edges · 62 communities (47 shown, 15 thin omitted)
+- 846 nodes · 1579 edges · 60 communities (45 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `47c53038`
+- Built from commit: `0bb8365e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -67,34 +67,32 @@
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
-- [[_COMMUNITY_Community 57|Community 57]]
-- [[_COMMUNITY_Community 58|Community 58]]
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 64|Community 64]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `cn()` - 58 edges
+1. `cn()` - 61 edges
 2. `requireRole()` - 42 edges
 3. `ok()` - 41 edges
 4. `withErrorHandler()` - 19 edges
 5. `auth` - 17 edges
 6. `compilerOptions` - 17 edges
 7. `ValidationError` - 16 edges
-8. `apiClient()` - 12 edges
-9. `What You Must Do When Invoked` - 12 edges
-10. `Project Structure Rules` - 12 edges
+8. `Project Structure Rules` - 14 edges
+9. `apiClient()` - 12 edges
+10. `What You Must Do When Invoked` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `ActionButton()` --calls--> `cn()`  [EXTRACTED]
   app/features/admin/components/people-table.tsx → lib/utils.ts
+- `proxy()` --calls--> `getRedirectPath()`  [EXTRACTED]
+  proxy.ts → app/features/auth/utils/getRedirectPath.ts
 - `RootLayout()` --calls--> `cn()`  [EXTRACTED]
   app/layout.tsx → lib/utils.ts
 - `StatusBadge()` --calls--> `cn()`  [EXTRACTED]
   components/ui/status-badge.tsx → lib/utils.ts
 - `TableFooter()` --calls--> `cn()`  [EXTRACTED]
-  components/ui/table.tsx → lib/utils.ts
-- `TableCaption()` --calls--> `cn()`  [EXTRACTED]
   components/ui/table.tsx → lib/utils.ts
 
 ## Import Cycles
@@ -105,19 +103,19 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (62 total, 15 thin omitted)
+## Communities (60 total, 15 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
-Nodes (71): handlePOST(), POST, requireRole(), DELETE, handleDELETE(), DELETE, handleDELETE(), DELETE (+63 more)
+Nodes (76): handlePOST(), POST, bulkInviteAdmins(), inviteAdmin(), requireRole(), DELETE, handleDELETE(), DELETE (+68 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.15
-Nodes (22): AdminJobsTable(), AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, BanDialog(), BanDialogProps, useAdminJobs(), useDeleteJob() (+14 more)
+Cohesion: 0.22
+Nodes (14): AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, BanDialogProps, Button(), buttonVariants, Dialog(), DialogClose() (+6 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.18
-Nodes (7): AcceptInviteClient(), AcceptInviteClientProps, metadata, Props, LogoutButton(), authClient, metadata
+Cohesion: 0.13
+Nodes (10): AcceptInviteClient(), AcceptInviteClientProps, metadata, Props, LogoutButton(), authClient, metadata, env (+2 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.05
@@ -144,8 +142,8 @@ Cohesion: 0.09
 Nodes (21): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+13 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.15
-Nodes (11): ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTableProps, ROLE_OPTIONS, UserRow, UsersApiResponse (+3 more)
+Cohesion: 0.12
+Nodes (17): BanDialog(), ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTable(), PeopleTableProps, ROLE_OPTIONS (+9 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
@@ -153,31 +151,31 @@ Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFi
 
 ### Community 11 - "Community 11"
 Cohesion: 0.10
-Nodes (18): metadata, AdminDashboard(), StatCardProps, WORKMODE_COLORS, AdminTeamList(), InviteAdminForm(), useAdminDashboard(), AdminInvite (+10 more)
+Nodes (23): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), AdminTeamList(), AdminInvite (+15 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.07
-Nodes (37): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), ALLOWED_FILE_TYPES, AttachmentPreview() (+29 more)
+Cohesion: 0.06
+Nodes (36): AttachmentPreview(), AttachmentPreviewProps, fileIcon(), formatDateSeparator(), formatFileSize(), formatTime(), getDayKey(), MessageBubble() (+28 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.21
 Nodes (6): inter, metadata, newFunction(), NotFound(), ErrorPage(), ErrorPageType
 
 ### Community 14 - "Community 14"
-Cohesion: 0.10
-Nodes (20): Absolute Rules, Agent Instructions, Agent Rules (applied always), Commands, Core Routing (app/), Dependencies Protocol, Feature-Based Logic (`features/<name>/`), Forbidden (+12 more)
+Cohesion: 0.09
+Nodes (22): Absolute Rules, Agent Instructions, Agent Rules (applied always), Commands, Core Routing (app/), Dependencies Protocol, Feature-Based Logic (`features/<name>/`), Forbidden (+14 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.22
-Nodes (7): SocialProvider, socialSignInAction(), { POST, GET }, auth, UserStatusResult, logger, LogMethods
+Cohesion: 0.15
+Nodes (10): SocialProvider, socialSignInAction(), { POST, GET }, providers, SocialProvider, SocialSignInButtons(), auth, UserStatusResult (+2 more)
 
 ### Community 16 - "Community 16"
-Cohesion: 0.21
-Nodes (16): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), validateWithZod(), ValidatorResult, verifyUserStatus(), ActionResult (+8 more)
+Cohesion: 0.29
+Nodes (11): loginAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), validateWithZod(), ValidatorResult, verifyUserStatus(), ActionResult (+3 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.12
-Nodes (22): bulkInviteAdmins(), BulkInviteResult, inviteAdmin(), Tab, ForbiddenError, getSession(), sendEmail(), AdminAcceptInviteInput (+14 more)
+Cohesion: 0.07
+Nodes (37): BulkInviteResult, AdminJobsTable(), Tab, useAdminJobs(), useDeleteJob(), useToggleJobStatus(), buildOffsetMeta(), CursorPaginationMeta (+29 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.29
@@ -232,8 +230,8 @@ Cohesion: 0.20
 Nodes (9): adapter, ADMIN, JOB_TEMPLATES, main(), pool, prisma, RECRUITERS, upsertCredentialAccount() (+1 more)
 
 ### Community 48 - "Community 48"
-Cohesion: 0.13
-Nodes (20): PeopleTable(), useAdminUsers(), useDeleteUser(), useRevokeUserSessions(), useSetUserRole(), buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams (+12 more)
+Cohesion: 0.18
+Nodes (10): metadata, AdminDashboard(), WORKMODE_COLORS, useAdminDashboard(), Badge(), badgeVariants, ColumnDef, DataTable() (+2 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.40
@@ -244,56 +242,48 @@ Cohesion: 0.40
 Nodes (3): adapter, pool, prisma
 
 ### Community 52 - "Community 52"
-Cohesion: 0.17
-Nodes (12): authPages, config, protectedRoutes, proxy(), AuthRedirectTargetType, User, UserCredentials, Roles (+4 more)
+Cohesion: 0.16
+Nodes (10): RegisterInput, SignUpForm(), authPages, config, protectedRoutes, proxy(), metadata, Roles (+2 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.21
-Nodes (7): SearchResult, StartThreadSearch(), AdminMessagesPage(), formatTime(), ThreadListItem(), useAdminThreads(), Input()
+Cohesion: 0.32
+Nodes (4): SearchResult, StartConversationSearch(), StartConversationSearchProps, Input()
 
 ### Community 55 - "Community 55"
 Cohesion: 0.12
 Nodes (15): AuthLayout(), AuthLayoutProps, FormButton(), FormButtonProps, FormInput(), FormInputProps, LoginForm(), LoginFormProps (+7 more)
 
 ### Community 56 - "Community 56"
-Cohesion: 0.17
-Nodes (13): AdminLayoutClient(), AdminLayout(), AdminSidebar(), SidebarLinkConfig, sidebarLinks, MobileMenuButton(), RecruiterLayout(), PersistedState (+5 more)
-
-### Community 57 - "Community 57"
-Cohesion: 0.22
-Nodes (7): RegisterInput, SignUpForm(), providers, SocialProvider, SocialSignInButtons(), metadata, SignUpSchema
-
-### Community 58 - "Community 58"
-Cohesion: 0.17
-Nodes (6): metadata, PageHeader(), PageHeaderProps, metadata, Props, metadata
+Cohesion: 0.14
+Nodes (17): AdminLayoutClient(), AdminLayout(), adminLinks, AdminSidebar(), MobileMenuButton(), RoleLayoutClient(), RoleLayoutClientProps, Sidebar() (+9 more)
 
 ### Community 59 - "Community 59"
-Cohesion: 0.33
-Nodes (5): disposableSet, emailSchema, ForgotPasswordSchema, PasswordSchema, SignInSchema
+Cohesion: 0.14
+Nodes (16): disposableSet, emailSchema, ForgotPasswordSchema, PasswordSchema, SignInSchema, SignUpSchema, AuthRedirectTargetType, AuthType (+8 more)
 
 ### Community 60 - "Community 60"
 Cohesion: 0.33
 Nodes (5): ApplicationStatus, STATUS_MAP, StatusBadge(), StatusBadgeProps, StatusConfig
 
 ## Knowledge Gaps
-- **389 isolated node(s):** `$schema`, `plugin`, `@kilocode/plugin`, `AcceptInviteClientProps`, `Props` (+384 more)
+- **395 isolated node(s):** `$schema`, `plugin`, `@kilocode/plugin`, `AcceptInviteClientProps`, `Props` (+390 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 5` to `Community 1`, `Community 9`, `Community 12`, `Community 60`, `Community 54`, `Community 56`, `Community 58`, `Community 28`?**
-  _High betweenness centrality (0.057) - this node is a cross-community bridge._
-- **Why does `env` connect `Community 12` to `Community 2`, `Community 3`, `Community 15`, `Community 24`, `Community 59`?**
+- **Why does `cn()` connect `Community 5` to `Community 1`, `Community 9`, `Community 11`, `Community 12`, `Community 60`, `Community 48`, `Community 54`, `Community 56`, `Community 28`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **Why does `env` connect `Community 2` to `Community 0`, `Community 59`, `Community 3`, `Community 15`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 0` to `Community 24`?**
+- **Why does `Button()` connect `Community 1` to `Community 2`, `Community 5`, `Community 9`, `Community 11`, `Community 55`, `Community 24`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `plugin`, `@kilocode/plugin` to the rest of the system?**
-  _389 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _395 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05833848690991548 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05711318795430945 - nodes in this community are weakly interconnected._

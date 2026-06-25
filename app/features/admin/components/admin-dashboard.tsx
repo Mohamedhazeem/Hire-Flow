@@ -27,9 +27,9 @@ import {
 } from "lucide-react";
 
 const WORKMODE_COLORS: Record<string, string> = {
-  remote: "#3b82f6",
-  hybrid: "#8b5cf6",
-  onsite: "#f59e0b",
+  remote: "#22c55e",
+  hybrid: "#a855f7",
+  onsite: "#f97316",
 };
 
 export function AdminDashboard() {
@@ -215,14 +215,14 @@ export function AdminDashboard() {
                   allowDecimals={false}
                 />
                 <Tooltip />
-                <Bar dataKey="count" radius={[4, 4, 0, 0]}>
-                  {data.jobsByWorkMode.map((entry) => (
-                    <Rectangle
-                      key={entry.workMode}
-                      fill={WORKMODE_COLORS[entry.workMode] ?? "#6b7280"}
-                    />
-                  ))}
-                </Bar>
+                <Bar
+                  dataKey="count"
+                  radius={[4, 4, 0, 0]}
+                  shape={(props: unknown) => {
+                    const p = props as { payload?: { workMode?: string } };
+                    return <Rectangle {...(p as object)} fill={WORKMODE_COLORS[p.payload?.workMode ?? ""] ?? "#6b7280"} />;
+                  }}
+                />
               </BarChart>
             </ResponsiveContainer>
           )}
