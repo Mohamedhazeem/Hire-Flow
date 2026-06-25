@@ -31,7 +31,7 @@ export default async function proxy(request: NextRequest) {
   // 3. ADMIN ROLE ENFORCEMENT: Non-admin users redirected from /admin routes
   if (session && isAdminRoute) {
     const role = RoleSchema.safeParse((session.user as { role?: string }).role);
-    if (!role.success || role.data !== "admin") {
+    if (!role.success || (role.data !== "admin" && role.data !== "super_admin")) {
       return NextResponse.redirect(new URL("/unauthorized", request.url));
     }
   }

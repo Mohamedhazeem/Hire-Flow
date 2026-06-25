@@ -38,6 +38,22 @@ import {
 } from "lucide-react";
 import type { AdminJobRow } from "@/app/features/admin/queries/job-queries";
 
+const WORK_MODE_LABELS: Record<string, string> = {
+  all: "All Modes",
+  remote: "Remote",
+  hybrid: "Hybrid",
+  onsite: "On-site",
+};
+
+const EMPLOYMENT_TYPE_LABELS: Record<string, string> = {
+  all: "All Types",
+  full_time: "Full-time",
+  part_time: "Part-time",
+  contract: "Contract",
+  internship: "Internship",
+  freelance: "Freelance",
+};
+
 type AdminJobsTableProps = {
   statusFilter?: "active" | "inactive" | "all";
 };
@@ -46,8 +62,8 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState<string>(statusFilter);
-  const [workMode, setWorkMode] = useState<string>("");
-  const [employmentType, setEmploymentType] = useState<string>("");
+  const [workMode, setWorkMode] = useState<string>("all");
+  const [employmentType, setEmploymentType] = useState<string>("all");
   const [deleteJobId, setDeleteJobId] = useState<string | null>(null);
 
   const params = useMemo(
@@ -59,8 +75,8 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
         sortOrder: "desc" as const,
         search: search || undefined,
         status: status !== "all" ? (status as "active" | "inactive") : undefined,
-        workMode: workMode || undefined,
-        employmentType: employmentType || undefined,
+        workMode: workMode !== "all" ? workMode : undefined,
+        employmentType: employmentType !== "all" ? employmentType : undefined,
       }) as AdminListJobsParams,
     [page, search, status, workMode, employmentType],
   );
@@ -255,7 +271,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
           }}
         >
           <SelectTrigger className="w-35">
-            <SelectValue />
+            <SelectValue>{status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Status</SelectItem>
@@ -266,15 +282,15 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
         <Select
           value={workMode}
           onValueChange={(v) => {
-            setWorkMode(v ?? "");
+            setWorkMode(v ?? "all");
             setPage(1);
           }}
         >
           <SelectTrigger className="w-35">
-            <SelectValue />
+            <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Modes</SelectItem>
+            <SelectItem value="all">All Modes</SelectItem>
             <SelectItem value="remote">Remote</SelectItem>
             <SelectItem value="hybrid">Hybrid</SelectItem>
             <SelectItem value="onsite">On-site</SelectItem>
@@ -283,15 +299,15 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
         <Select
           value={employmentType}
           onValueChange={(v) => {
-            setEmploymentType(v ?? "");
+            setEmploymentType(v ?? "all");
             setPage(1);
           }}
         >
           <SelectTrigger className="w-37.5">
-            <SelectValue />
+            <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Types</SelectItem>
+            <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="full_time">Full-time</SelectItem>
             <SelectItem value="part_time">Part-time</SelectItem>
             <SelectItem value="contract">Contract</SelectItem>

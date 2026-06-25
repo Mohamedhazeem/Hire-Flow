@@ -43,7 +43,7 @@
 
 ### Phase 2: Recruiter
 
-- [ ] Step 2.0 - Pre-Phase 2 Refactoring: Extract Shared Components & Role Guards
+- [x] Step 2.0 - Pre-Phase 2 Refactoring: Extract Shared Components & Role Guards
 - [ ] Step 2.1 - Company Profile CRUD
 - [ ] Step 2.2 - Job Posts CRUD
 - [ ] Step 2.3 - Applicants View & Status Updates (Includes Bulk Actions & Email)

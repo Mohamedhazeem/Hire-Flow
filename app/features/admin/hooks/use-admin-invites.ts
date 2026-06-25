@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
+import type { ApiResponse } from "@/lib/api-response";
 
 export type AdminInvite = {
   id: string;
@@ -24,7 +25,10 @@ type InviteListResponse = {
 export function useAdminInvites() {
   return useQuery<InviteListResponse>({
     queryKey: ["admin", "invites"],
-    queryFn: () => apiClient("/api/admin/invite"),
+    queryFn: async () => {
+      const res = await apiClient<ApiResponse<InviteListResponse>>("/api/admin/invite");
+      return res.data;
+    },
   });
 }
 
@@ -44,8 +48,7 @@ export function useRemoveAdmin() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (userId: string) =>
-      apiClient(`/api/admin/team/${userId}`, { method: "DELETE" }),
+    mutationFn: (userId: string) => apiClient(`/api/admin/team/${userId}`, { method: "DELETE" }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "invites"] });
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });
