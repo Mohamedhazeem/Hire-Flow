@@ -270,7 +270,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-full sm:w-35">
+          <SelectTrigger className="w-full sm:w-36">
             <SelectValue>{status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -286,7 +286,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-full sm:w-35">
+          <SelectTrigger className="w-full sm:w-36">
             <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
           </SelectTrigger>
           <SelectContent>
@@ -303,7 +303,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
             setPage(1);
           }}
         >
-          <SelectTrigger className="w-full sm:w-37.5">
+          <SelectTrigger className="w-full sm:w-40">
             <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
           </SelectTrigger>
           <SelectContent>

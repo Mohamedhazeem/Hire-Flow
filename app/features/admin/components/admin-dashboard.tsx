@@ -136,7 +136,7 @@ export function AdminDashboard() {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="rounded-radius-lg border border-border-subtle bg-bg-surface p-5">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUpIcon className="size-4 text-primary" />

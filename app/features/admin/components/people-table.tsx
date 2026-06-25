@@ -232,21 +232,21 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
       header: "Actions",
       align: "center",
       cell: (row) => (
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-1 sm:gap-2">
           <ActionButton
             icon={<MessageSquareTextIcon className="size-4" />}
             label="Chat"
             onClick={() => handleChat(row.id)}
             title={`Chat with ${row.name}`}
           />
-          <div> | </div>
+          <div className="hidden sm:inline text-text-muted">|</div>
           <BanDialog
             userId={row.id}
             userName={row.name}
             currentlyBanned={row.banned}
             banReason={row.banReason}
           />
-          <div> | </div>
+          <div className="hidden sm:inline text-text-muted">|</div>
           <ActionButton
             icon={<LogOut className="size-4" />}
             label="Revoke"
@@ -254,7 +254,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
             disabled={revokeSessions.isPending}
             title="Revoke sessions"
           />
-          <div> | </div>
+          <div className="hidden sm:inline text-text-muted">|</div>
           <ActionButton
             icon={<Trash2 className="size-4" />}
             label="Delete"

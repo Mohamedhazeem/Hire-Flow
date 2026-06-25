@@ -429,7 +429,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
               <button
                 type="button"
                 onClick={() => setConfirmDeleteThread(false)}
-                className="text-md text-black px-2 py-1 rounded-4xl border border-border-subtle"
+                className="text-sm text-text-heading px-2 py-1 rounded-4xl border border-border-subtle"
               >
                 Cancel
               </button>
@@ -437,7 +437,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
                 type="button"
                 onClick={handleDeleteThread}
                 disabled={deleteThread.isPending}
-                className="text-md text-text-inverse bg-error px-2 py-1 rounded-4xl border border-error/30 disabled:opacity-50 flex items-center justify-center min-w-16"
+                className="text-sm text-text-inverse bg-error px-2 py-1 rounded-4xl border border-error/30 disabled:opacity-50 flex items-center justify-center min-w-16"
               >
                 {deleteThread.isPending ? (
                   <Loader2Icon className="size-4 animate-spin" />
@@ -453,7 +453,7 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
               className="flex items-center justify-center size-8 rounded-full hover:text-error transition-colors"
               aria-label="Delete conversation"
             >
-              <Trash2Icon className="size-6" color="red" />
+              <Trash2Icon className="size-6 text-error" />
             </button>
           )}
         </div>

@@ -182,7 +182,7 @@ export default function AdminMessagesPage() {
             onBack={() => router.push("/admin/messages", { scroll: false })}
           />
         ) : (
-          <div className="flex-1 hidden lg:flex items-center justify-center bg-bg-elevated/30">
+          <div className="flex-1 flex items-center justify-center bg-bg-elevated/30">
             <div className="text-center">
               <MessageSquareTextIcon className="size-12 text-text-muted mx-auto mb-3" />
               <p className="text-text-muted text-sm">

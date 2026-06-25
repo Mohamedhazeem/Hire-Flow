@@ -39,14 +39,17 @@ export function AdminSidebar() {
   const toggleSidebar = useUIStore((s) => s.toggleSidebar);
 
   useEffect(() => {
-    const closeOnResize = () => {
-      if (window.innerWidth >= 1024 && !sidebarOpen) {
-        useUIStore.getState().setSidebarOpen(true);
+    const handleResize = () => {
+      const state = useUIStore.getState();
+      if (window.innerWidth >= 1024 && !state.sidebarOpen) {
+        state.setSidebarOpen(true);
+      } else if (window.innerWidth < 1024 && state.sidebarOpen) {
+        state.setSidebarOpen(false);
       }
     };
-    window.addEventListener("resize", closeOnResize);
-    return () => window.removeEventListener("resize", closeOnResize);
-  }, [sidebarOpen]);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 1024) {

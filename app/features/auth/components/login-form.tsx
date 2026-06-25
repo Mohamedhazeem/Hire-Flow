@@ -134,7 +134,7 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           submitText="Sign In"
         />
 
-        <div className="flex justify-between text-sm text-text-muted">
+        <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between text-sm text-text-muted">
           <button
             type="button"
             onClick={handleForgotPassword}
