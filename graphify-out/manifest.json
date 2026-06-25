@@ -755,8 +755,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
-    "mtime": 1782402611.1695142,
-    "ast_hash": "f61f948269bd9fbd4802cfa82051bda3",
+    "mtime": 1782403001.392949,
+    "ast_hash": "29325e9e0acbcb649ad2db8102ebab4b",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
-    "mtime": 1782399149.9641166,
-    "ast_hash": "215e5b16d67f5ed66dd68003fb29143c",
+    "mtime": 1782403089.730786,
+    "ast_hash": "60959660be342103b15aa72efdb667f0",
     "semantic_hash": ""
   },
   "components/ui/stat-card.tsx": {

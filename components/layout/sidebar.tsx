@@ -218,9 +218,9 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
             className={cn(
               "flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full",
               sidebarOpen ? "px-3" : "justify-center px-0",
-              "text-text-muted hover:bg-bg-elevated hover:text-text-heading",
+              "text-error/80 hover:bg-error/10 hover:text-error",
             )}
-            title={sidebarOpen ? "Sign out" : "Sign out"}
+            title="Sign out"
           >
             <LogOutIcon className="size-4 shrink-0" />
             {sidebarOpen && <span className="truncate">Sign out</span>}
