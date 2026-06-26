@@ -1,8 +1,8 @@
 {
   ".kilo/agent-manager.json": {
-    "mtime": 1782270555.5827687,
+    "mtime": 1782457243.7863126,
     "ast_hash": "59d79d9088d944a0b7689fae47b9beb5",
-    "semantic_hash": "59d79d9088d944a0b7689fae47b9beb5"
+    "semantic_hash": ""
   },
   ".kilo/package.json": {
     "mtime": 1782098778.7709134,
@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1782404975.9620194,
-    "ast_hash": "c8606e664ddfab35b6384fd03339a117",
+    "mtime": 1782446828.3264828,
+    "ast_hash": "8595cd9e6eaec6c633395398343401d8",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "HIRE_FLOW_PROMPTS.md": {
-    "mtime": 1782404908.337695,
-    "ast_hash": "29346cdba6f0c9c86d8dec5678a91179",
+    "mtime": 1782458602.922475,
+    "ast_hash": "e3fa531a1ac1d2b60c4e44c0d3d1ec8b",
     "semantic_hash": ""
   },
   "MANIFEST.md": {

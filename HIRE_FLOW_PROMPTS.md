@@ -575,64 +575,255 @@ Actionable Tasks:
 
 ---
 
-### Phase 2: Recruiter
+# Phase 2: Recruiter Portal – Implementation Guide for AI Agent
 
-**#### Step 2.0: Recruiter Infrastructure & Navigation (NEW)**
+**Agent Execution Instructions:**
+Do not implement this entire document at once. Treat this as the Master Context. Implement the features chunk by chunk (e.g., Step 0 first, wait for review, then Step 2.1, etc.). Before writing code for any step, ensure you have the exact Prisma schema context for the relevant models.
 
-- Build the foundational layout and navigation for the recruiter dashboard.
-- **Layout & Sidebar:** Create app/(roles)/recruiter/layout.tsx that wraps all recruiter pages. Build features/recruiter/components/recruiter-sidebar.tsx (mirroring the admin sidebar) with navigation links to: **Dashboard**, **Company Profile**, **Jobs**, **Analytics**, and **Notifications**.
-- **Recruiter Dashboard:** Build /recruiter/dashboard/page.tsx. Reuse the shared stats-cards.tsx and growth-chart.tsx to show a high-level overview (active jobs, total applicants, conversion rate, recent applications).
-- **Notification Bell (Recruiter):** Build a global notification-bell.tsx component (placed in the layout header) that fetches unread in-app notifications for the recruiter (e.g., when a user applies). Implement a dropdown list and a "mark as read" action via a REST PATCH or server action. Add a corresponding GET /api/notifications route (protected by requireRole(\['recruiter', 'admin'\])) to power this.
-- The recruiter layout MUST use `<RoleLayoutClient>` from `components/layout/role-layout-client.tsx` and inject a `<Sidebar>` from `components/layout/sidebar.tsx` (see `admin-layout-client.tsx` for the exact pattern).
-- Create `RecruiterSidebar` as a simple component that passes role‑specific `links`, `roleLabel`, `homeHref` to the shared `Sidebar`.
-- Same for the user layout and `UserSidebar`.
-- Create directories:
-  `app/features/recruiter/{actions,components,queries,schema,libs,hooks}`
-  `app/features/user/{actions,components,queries,schema,libs,hooks}`
-- Include a **Messages** link in the sidebar (e.g., `/recruiter/messages`).
-- Build a minimal `/recruiter/messages/page.tsx` that displays a “Coming soon” or reuses the shared `MessageBubble` / `StartConversationSearch` to let recruiters start conversations immediately.
+---
 
-**#### Step 2.1: Company Profile CRUD (UPDATED)**
+## Core Principles & Constraints
 
-- Build the one-time company profile setup.
-- **Architecture Constraint:** Plain form. USE A SERVER ACTION (upsert-company.ts). Use api-error.ts for all error handling.
-- **Form UI:** Build features/recruiter/components/company-form.tsx using RHF/Zod. Include a logoUrl field. Implement a **file upload UI** (drag-and-drop or input) that calls the mock upload route and sets the returned URL into the form.
-- **Read/Pre-fill:** Create a **server-side read function** (or a GET /api/recruiter/company route) to fetch the existing company data. On /recruiter/company/page.tsx, fetch this data server-side (or via a query hook) to pre-fill the form if it exists.
-- **Action:** Build upsert-company.ts. Validate session via requireRole(\['recruiter'\]). Upsert the Company row linked to recruiterId. Throw ValidationError or UnauthorizedError if checks fail.
-- **Query Hook:** Build use-company-mutation.ts and a corresponding use-company.ts query hook for fetching data.
+- **Reuse over rewrite**: Admin components (tables, forms, charts, uploads, notifications, team management) are extracted to `components/shared/`, `hooks/`, `lib/`, and `features/team/`. Recruiter features import these and apply recruiter-specific data fetching and permission checks.
+- **Component Interfaces**: Assume reused UI components like `DataTable` accept standard props (e.g., `{ columns, data, pageCount, searchKey }`). Ensure you pass properly typed data.
+- **Error Handling**: All server actions must use `api-error.ts` (`ValidationError`, `UnauthorizedError`, `ForbiddenError`, `NotFoundError`). Never throw a raw `Error`.
+- **Session & Role Validation**: Every server operation must call `await requireRole(['recruiter'])` (or `['recruiter-member']` as needed) at the start.
+- **Data Ownership (Tenant Isolation)**: All database queries must include a `where` clause that restricts to the recruiter's company (via `recruiter.companyId`). Never allow cross-company data access.
+- **Unified Mutation Paradigm**: Use Next.js Server Actions for all state mutations. Do not mix REST API routes (`/api/...`) with Server Actions unless building a public webhook.
+- **Handling Scale & Edge Cases**:
+  - **Data Retention**: Never hard-delete active or past jobs. Implement soft-deletes (e.g., updating `status` to `archived`) so application data and history are preserved.
+  - **Server-Side Pagination**: All data tables (Jobs, Applicants) must utilize server-side pagination, sorting, and filtering via URL `searchParams`. Do not fetch all records into client memory.
+  - **Async Heavy Tasks**: For bulk status updates involving emails, ensure the database transaction completes first. Offload email sending (e.g., via a background queue or returning success early) to prevent serverless function timeouts.
+  - **File Security**: Applicant attachments (resumes, portfolios) must be fetched via an authenticated route or signed URL. Do not expose public raw storage URLs.
+  - **Rate Limiting**: Implement basic rate limiting (or DB checks) for high-abuse endpoints like Team Invitations and Direct Messaging.
 
-**#### Step 2.2: Job Posts CRUD (UPDATED)**_Prompt to Agent:_
+---
 
-- Allow recruiters to create, edit, delete, and toggle job posts.
-- **Architecture Constraint:** Create/Edit -> Server Actions. Delete & Toggle -> REST endpoints.
-- **Job Form:** Build job-form.tsx. Ensure it accepts defaultValues so it can be reused for Create and Edit pages.
-- **Server Actions:** Build create-job.ts and update-job.ts. Validate companyId ownership. Throw ForbiddenError from api-error.ts if the recruiter attempts to modify a job they do not own.
-- **REST Routes:**
+## Step 2.0: Recruiter Layout & Sidebar (Foundation)
 
-  - DELETE /api/recruiter/jobs/\[id\] – Ensure cascade delete on applications. Protect with requireRole(\['recruiter'\]) and strict ownership checks. Throw NotFoundError if missing.
-  - PATCH /api/recruiter/jobs/\[id\]/toggle – Allow recruiters to activate/deactivate a job posting (reusing the admin pattern).
+**Goal**: Create the shell that all recruiter pages share.
 
-- **Pages:** Build /recruiter/jobs, /recruiter/jobs/new, and /recruiter/jobs/\[id\]/edit. Re-use the shared data-table.tsx wrapped in recruiter-jobs-table.tsx for the list view.
-- **Query Hooks:** Build use-jobs.ts, use-create-job.ts, use-delete-job.ts, and use-toggle-job.ts.
+**Implementation**:
 
-**#### Step 2.3: Applicants View & Status Updates (UPDATED)**_Prompt to Agent:_
+1. Create `app/recruiter/layout.tsx`:
+   - Import the shared `Sidebar` component (extracted from admin to `components/layout/sidebar.tsx`).
+   - Pass a `navItems` array:
+     ```ts
+     const navItems = [
+       { href: "/recruiter", label: "Dashboard", icon: DashboardIcon },
+       { href: "/recruiter/company", label: "Company Profile", icon: CompanyIcon },
+       { href: "/recruiter/team", label: "Team Members", icon: TeamIcon },
+       { href: "/recruiter/jobs", label: "Jobs", icon: JobsIcon },
+       { href: "/recruiter/analytics", label: "Analytics", icon: AnalyticsIcon },
+     ];
+     ```
+   - Fetch recruiter data (name, email, avatar) and company logo server-side (using `getServerSession` + Prisma) and pass to the sidebar for the profile section.
+   - The sidebar should highlight the active route using `usePathname()` client-side.
+   - **Profile Section**: Display the recruiter's avatar, name, and company name/logo at the bottom of the sidebar, with a logout button (reuse admin's user menu dropdown).
 
-- Let recruiters view applicants, change statuses, and send email notifications.
-- **Architecture Constraint:** Status change via REST PATCH. Bulk actions mimic the admin bulk-invite structure.
-- **Email Template:** Create features/recruiter/components/email/application-status-email.tsx (React Email) notifying the user of an interview/rejection, dynamically including the recruiter's rejectionReason.
-- **REST PATCH:** Create PATCH /api/recruiter/applications/\[id\]/status. Require rejectionReason if status is 'rejected'. Throw ValidationError from api-error.ts if missing. Create an in-app Notification AND trigger the React Email template via the email pipeline.
-- **Bulk Action:** Create a Server Action bulk-update-applications.ts. Mirror the Zod schema deduplication and batch processing from bulk-invite-admin.ts.
-- **Applicants Page:** Build /recruiter/jobs/\[jobId\]/applicants/page.tsx. Use the shared data-table.tsx with applicant-columns.tsx. Implement sorting, filtering, and multi-select for bulk actions. **Add an expandable row or tooltip** to show the rejectionReason inline (reusing the admin ban-details UI pattern).
-- **Reject Dialog:** Explicitly build reject-dialog.tsx to capture the reason when "Rejected" is selected from the table's row actions. Trigger the mutation and call router.refresh() / invalidate queries on success.
-- **Query Hooks:** Build corresponding TanStack Query mutation hooks.
+---
 
-**#### Step 2.4: Recruiter Analytics & Filters (UPDATED)**_Prompt to Agent:_
+## Step 2.1: Company Profile CRUD
 
-- Add analytics and job/applicant filtering.
-- **Analytics Query:** Build get-job-analytics.ts (view counts, app counts, conversion rate). Protect with requireRole(\['recruiter'\]).
-- **Analytics Page:** Build /recruiter/analytics/page.tsx. Reuse the shared stats-cards.tsx and growth-chart.tsx (moved to components/ui/).
-- **Filter Bars:** Explicitly build job-filter-bar.tsx and applicant-filter-bar.tsx.
-- **State Management Rule:** Store filter states strictly in URL searchParams (e.g., ?status=accepted), **DO NOT** use useState for applied filters. Read them server-side and pass to the data table.
+**Goal**: Allow the primary recruiter to set up and edit their company details.
+
+**Data Model**:
+`Company`: id, name, description, website, logoUrl, industry, createdAt, updatedAt.
+
+**Implementation**:
+
+- **Page (`app/recruiter/company/page.tsx`)**: Server component that calls a server action `getCompany()` to fetch the company linked to `recruiterId`. If exists, pass as `defaultValues`. If not, show empty form.
+- **Form Component (`features/recruiter/components/company-form.tsx`)**:
+  - react-hook-form + Zod validation.
+  - Fields: name (required), description, website, logoUrl (hidden input), industry.
+  - Include file upload UI that returns a URL into the `logoUrl` field (reuse admin upload component).
+- **Server Action (`upsert-company.ts`)**:
+  - Validate session `requireRole(['recruiter'])`.
+  - Validate input with Zod.
+  - Upsert Company where `recruiterId = session.user.id`.
+  - Revalidate page on success.
+- **Hooks**: `useCompany.ts` (fetch) and `useCompanyMutation.ts` (mutate).
+
+---
+
+## Step 2.2: Recruiter Team Management
+
+**Goal**: Let the company admin invite other recruiters/hiring managers to the same company.
+
+**Implementation**:
+
+- **Page (`app/recruiter/team/page.tsx`)**: Fetch current recruiter's role. If not 'admin', show forbidden state. Render `TeamManagement` component (extracted to `features/team/components/team-management.tsx`).
+- **TeamManagement Component**: Displays a `DataTable` of current team members. Actions: Remove Member, Change Role, Invite Member.
+- **Server Action (`invite-team-member.ts`)**:
+  - Validate role `['recruiter']` AND check if role is `'admin'`.
+  - **Rate Limit**: Restrict invites to prevent spam.
+  - Generate token, create `Invitation` record, send `TeamInviteEmail`.
+- **Accept Invite Flow (`app/accept-recruiter-invite/page.tsx`)**: Read/validate token. If logged in, create/update `Recruiter` record and delete invitation. If logged out, redirect to auth, then back.
+
+---
+
+## Step 2.3: Job Posts CRUD (with Job Detail View)
+
+**Goal**: Allow recruiters to create, edit, view, delete (soft/hard), and toggle job posts.
+
+**Data Model**:
+`Job`: id, companyId, title, description, requirements (JSON/text), status (ENUM: 'draft' | 'active' | 'archived'), viewCount, createdAt, updatedAt, postedAt.
+
+**Implementation**:
+
+- **Pages**:
+  - `/recruiter/jobs` (list view, server-side pagination)
+  - `/recruiter/jobs/new` (create form)
+  - `/recruiter/jobs/[id]/edit` (edit form)
+  - `/recruiter/jobs/[id]` (Job Detail View)
+- **Job Form (`components/shared/forms/job-form.tsx`)**: Accepts `defaultValues` and `onSubmit`. Hides `companyId` (set server-side).
+- **Server Actions**:
+  - `create-job.ts`: Validate session, set `companyId`, create job.
+  - `update-job.ts`: Validate ownership. Update job.
+  - `delete-job.ts`: Validate ownership. If job is `draft`, hard delete. If `active` or `archived`, **soft delete** by updating status to `archived` to preserve application data. Also add hard delete option.
+  - `toggle-job-status.ts`: Toggle status between 'active' and 'archived'/'draft'.
+- **Job Detail Page (`/recruiter/jobs/[id]`)**: Show job details. Embed the Applicants Table (filtered by `jobId`) below it.
+
+---
+
+## Step 2.4: Applicants View, Status Pipeline & Selection Workflow
+
+**Goal**: Show applicants for a specific job, allow status changes with custom dialogs.
+
+**Data Model**:
+`Application`: id, jobId, userId, status (ENUM: applied, reviewing, shortlisted, interview_scheduled, offered, hired, rejected), rejectionReason, interviewDate, meetingLink, offerDetails, createdAt, updatedAt.
+
+**Implementation**:
+
+- **Page (`/recruiter/jobs/[jobId]/applicants`)**: Server component. **Must use server-side pagination via URL searchParams.**
+- **ApplicantsTable (`components/shared/tables/applicants-table.tsx`)**: Columns: Name, Email, Status, Applied Date, Actions (View Application, Status Change Dropdown). Expandable row for `rejectionReason`.
+- **Status Pipeline Dialogs**:
+  - `ShortlistDialog`: Confirmation.
+  - `ScheduleInterviewDialog`: Capture date, time, meeting link, optional message.
+  - `SendOfferDialog`: Capture offer details, custom message.
+  - `RejectDialog`: Capture rejection reason (required).
+  - Include a toggle in each dialog: "Send email notification". or direct messaging
+- **Server Action (`update-application-status.ts`)**:
+  - Validate ownership: `application.job.companyId === recruiter.companyId`.
+  - Validate inputs via Zod based on status.
+  - **Concurrency Check**: Verify the `updatedAt` timestamp matches the client's version to prevent race conditions.
+  - Trigger in-app notification. If "Send email" is toggled, trigger email.
+
+---
+
+## Step 2.5: Direct Messaging (Thread‑Based)
+
+**Goal:** Recruiters can have threaded, persistent conversations with applicants, reusing the admin chat system’s `Message` model and shared UI components. if any server action is shared logic with admin then use it.
+
+**Data Model:**
+
+- Reuse existing `Message` model: `id`, `threadId` (derived as `[smallerUserId]_[largerUserId]`), `senderId`, `receiverId`, `content`, `fileUrl` (stores `fileId`), `fileName`, `fileSize`, `fileType`, `read`, `createdAt`.
+
+**Shared Utilities:**
+
+- `computeThreadId(userA, userB)` → deterministic thread key.
+- `verifyRecruiterApplicantRelationship(recruiterUserId, applicantUserId)` → ensures applicant applied to a job of recruiter’s company; throws `ForbiddenError` otherwise.
+
+**Server Actions** (under `features/recruiter/actions/messages/`):
+
+- `get-threads.ts`- List all conversation threads for the recruiter.Group `Message` by `threadId` where recruiter is sender/receiver, filter to only applicants of company’s jobs. Return `{ success, data: Thread[] }`. -`get-messages.ts` - Cursor‑paginated messages for a thread. Verify relationship, fetch messages (`?cursor=&limit=30`), mark received as read.
+  `send-message.ts` Send text / file. Validate input (`content` or `fileId`).
+- Rate limit: max 20 messages per recruiter‑applicant per hour. Store `fileId` in `fileUrl` field. Future: publish Pusher event. Return new message. -`delete-thread.ts` Delete entire thread. Ownership check; delete all messages in thread.
+- `delete-message.ts`Delete own single message. Own sender check.
+- `search-applicants.ts`Search users who applied to company’s jobs. Return `{ id, name, email }[]` based on query.
+
+**Client‑Side Hooks** (`features/recruiter/hooks/messages/`):
+
+- `useRecruiterThreads()` → `useQuery`
+- `useRecruiterMessages(threadId)` → `useInfiniteQuery`
+- `useSendMessage(threadId)` → `useMutation` (optimistic update)
+- `useDeleteMessage(threadId)` / `useDeleteThread()` → `useMutation`
+
+---
+
+## Step 2.6: Applicant Detail View
+
+**Goal**: Full-page view of a single application.
+
+**Implementation**:
+
+- **Page (`/recruiter/applications/[applicationId]`)**: Fetch application data with ownership check.
+- **Content**:
+  - Applicant info (name, email, phone).
+  - **File Security**: Resume/Cover letter links **must** use an authenticated API route (e.g., `/api/files?fileId=...`) or generate a temporary signed URL. Do not use raw public storage URLs.
+  - Custom question answers (if applicable).
+  - Status Timeline (history of status changes).
+  - Communication Log (list of messages) or Chat Icon to open message .
+- **Actions**: Shortlist, Schedule Interview, Offer, Reject, Send Message.
+
+---
+
+## Step 2.7: Bulk Actions for Selection
+
+**Goal**: Apply status changes to multiple applicants at once.
+
+**Implementation**:
+
+- **Server Action (`bulk-update-applications.ts`)**:
+  - Validate session and ownership for all `applicationIds`.
+  - Deduplicate IDs.
+  - Perform DB update in a single transaction.
+  - **Async Processing**: If emails are triggered, dispatch them to a background queue or edge function. Do NOT await hundreds of emails in the main thread to prevent serverless timeouts.
+- **UI**: Add row selection to `ApplicantsTable`. Add "Bulk Actions" dropdown. Prompt for required fields (meeting link, rejection reason) via modals for bulk actions.
+
+---
+
+## Step 2.8: Recruiter Analytics & Filters
+
+**Goal**: Aggregated metrics and filtering capabilities.
+
+**Implementation**:
+
+- **Page (`/recruiter/analytics`)**:
+- **Server Action (`get-job-analytics.ts`)**: Calculate total jobs, total applications, average applications per job, conversion rate.
+- **UI**: Reuse `stats-cards.tsx` and `growth-chart.tsx`.
+- **Filters**: Add filter bars (`job-filter-bar.tsx`, `applicant-filter-bar.tsx`) that update URL `searchParams` for deep linking and server-side filtering.
+
+---
+
+## Step 2.9: Recruiter Dashboard
+
+**Goal**: Default landing page overview.
+
+**Implementation**:
+
+- **Page (`/recruiter/page.tsx`)**:
+- **Server Action (`get-dashboard-stats.ts`)**: Returns counts (Total Jobs, Total Applicants, Pending Reviews, New Applications) and Recent Applications (last 5).
+- **UI**: Stats cards, Recent Applications Table, Quick Action Buttons ("Create New Job", "Invite Team Member").
+
+---
+
+## Step 2.10: Notifications & Activity Feed
+
+**Goal**: Keep recruiters informed of applicant actions.
+
+**Implementation**:
+
+- **Component**: Notification Bell in the sidebar header.
+- **Logic**: Fetch unread count from `Notification` table. Dropdown shows recent events (e.g., "New application for Senior Dev"). Mark as read on click.
+- **Triggers**: New applications, status changes, team invitations. Extract logic to `lib/notifications.ts`.
+
+---
+
+## Step 2.11: Export Applicants (CSV)
+
+**Goal**: Download applicant data.
+
+**Implementation**:
+
+- **Action**: "Export CSV" button on `/recruiter/jobs/[jobId]/applicants`.
+- **Server Action (`export-applicants-csv.ts`)**:
+  - Validate job ownership.
+  - Fetch all applications for the job.
+  - Generate CSV string. Return as a Base64 string or downloadable blob payload to the client.
+  - Use `csv-writer` or `papaparse` for CSV generation.
+
+---
 
 ### Phase 3: User
 

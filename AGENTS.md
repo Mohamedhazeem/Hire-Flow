@@ -16,8 +16,8 @@ Whenever you create a new protected Server Action or API Route, you MUST use thi
 
 # STATE & CACHE RULES (short)
 
-- **Startup:** Read `MANIFEST.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
-- **Runtime:** Never re‑read MANIFEST; use cache for step lookups.
+- **Startup:** Read `MANIFEST.md` and `HIRE_FLOW_PROMPTS.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
+- **Runtime:** Never re‑read MANIFEST and HIRE_FLOW_PROMPTS; use cache for step lookups.
 - **Updates:** Update cache + write to disk after **every** completed step; bump `Last Updated`.
 - **Resync:** Re‑read only if user says they edited it manually.
 
@@ -35,10 +35,11 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 
-## Phase 2 & 3 – Missing Features
+## Phase 2 & 3
 
-Phase 2 (Recruiter) and Phase 3 (User) are not yet built.
-**Before implementing any feature from these phases, read `hire_flow_prompt.md`** – it contains the step‑by‑step specifications, architecture constraints, and component lists.
+Phase 2 (Recruiter) and Phase 3 (User).
+**Before implementing any feature from these phases, use `hire_flow_prompt.md`** from cache – it contains the step‑by‑step specifications, architecture constraints, and component lists.
+Most of them share similar components and patterns from `admin`. so whenever you implement a feature from Phase 2 or 3, you should first check if the component already exists in Phase 1 and make it reusable.
 
 ## Stack
 
@@ -65,7 +66,7 @@ Animations: motion
 - **npm only** — never yarn/pnpm/bun
 - **No secrets in source** — values in `.env.local`, names only in `.env.example`
 - **Minimal scope** — touch only files required by the task; no renames, refactors, or dep upgrades unless asked
-- **Don't Repeat Yourself (DRY) Styling** — If a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/` or localized feature `components/`. Never copy-paste dense Tailwind utility chunks across files.
+- **Don't Repeat Yourself (DRY) Styling** — If a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/shared` or `components/ui/layout` or localized feature `components/`. Never copy-paste dense Tailwind utility chunks across files.
 
 # Project Structure Rules
 
