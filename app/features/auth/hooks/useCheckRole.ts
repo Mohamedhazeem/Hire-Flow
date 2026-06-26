@@ -12,15 +12,14 @@ export function useCheckRole(allowedRoles: RoleType[]) {
   useEffect(() => {
     if (isPending) return;
 
-    if (!session || !session.user) {
+    if (!session?.user) {
       router.push("/login");
       return;
     }
 
-    // 3. Check roles safely
-    const userRole = RoleSchema.safeParse((session.user as { role?: string }).role);
+    const parsed = RoleSchema.safeParse(session.user.role);
 
-    if (!userRole.success || !allowedRoles.includes(userRole.data)) {
+    if (!parsed.success || !allowedRoles.includes(parsed.data)) {
       router.push("/unauthorized");
     }
   }, [session, isPending, allowedRoles, router]);

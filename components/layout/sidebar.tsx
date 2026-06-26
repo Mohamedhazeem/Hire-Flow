@@ -68,7 +68,7 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
     <>
       <div
         className={cn(
-          "hidden md:block shrink-0 transition-all duration-200",
+          "hidden lg:block shrink-0 transition-all duration-200",
           sidebarOpen ? "w-64" : "w-16",
         )}
       />

@@ -6,15 +6,15 @@
 
 ## Last Updated
 
-2026-06-26T14:05:47Z
+2026-06-26T14:55:47Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.2 - Recruiter Team Management
-- **Next Step:** Step 2.3 - Recruiter Jobs (Job Posts CRUD)
+- **Current Step:** Step 2.3 - Job Posts CRUD
+- **Next Step:** Step 2.4 - Applicants View & Status Updates
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful.
 
 ---
@@ -47,7 +47,7 @@
 - [x] Step 2.0 - Recruiter Layout & Sidebar
 - [x] Step 2.1 - Company Profile CRUD
 - [x] Step 2.2 - Recruiter Team Management
-- [ ] Step 2.3 - Job Posts CRUD
+- [x] Step 2.3 - Job Posts CRUD
 - [ ] Step 2.4 - Applicants View & Status Updates (Includes Bulk Actions & Email)
 - [ ] Step 2.5 - Recruiter Analytics & Filters (URL-driven state)
 
@@ -199,6 +199,19 @@
 - app/api/recruiter/invite/[id]/route.ts
 - app/api/recruiter/team/[id]/route.ts
 - components/shared/confirm-action-button.tsx (shared — used by team list)
+- app/features/recruiter/schema/job.schema.ts (JobCreateSchema, JobUpdateSchema, RecruiterListJobsParamsSchema)
+- app/features/recruiter/queries/job-queries.ts (listJobs, getJobById — tenant-isolated by companyId)
+- app/features/recruiter/hooks/use-recruiter-jobs.ts (useRecruiterJobs, useCreateJob, useUpdateJob, useDeleteJob, useToggleJobStatus)
+- app/features/recruiter/components/recruiter-jobs-table.tsx (DataTable with search, filters, pagination, inline status toggle)
+- app/features/recruiter/components/job-form.tsx (RHF + Zod form for create/edit)
+- app/features/recruiter/components/job-detail.tsx (Full job detail view with metadata + applicants placeholder)
+- app/api/recruiter/jobs/route.ts (GET list + POST create)
+- app/api/recruiter/jobs/[id]/route.ts (GET single + PATCH update + DELETE with soft/hard logic)
+- app/api/recruiter/jobs/[id]/toggle/route.ts (POST toggle draft→active→archived)
+- app/(roles)/recruiter/jobs/page.tsx (Job listing page with DataTable)
+- app/(roles)/recruiter/jobs/new/page.tsx (Create job page)
+- app/(roles)/recruiter/jobs/[id]/page.tsx (Job detail page)
+- app/(roles)/recruiter/jobs/[id]/edit/page.tsx (Edit job page)
 
 ### Phase 3
 
@@ -217,11 +230,11 @@ _(agent to fill)_
 ## Pending Dependencies
 
 - Phase 1 complete; Phase 2 Steps 2.0–2.2 complete.
-- Prisma migration (`add_company_team_member_and_recruiter_invite`) cannot run locally — `db.prisma.io:5432` unreachable. Client generation succeeds; migration deferred.
+- Prisma migrations cannot run locally — `localhost:5432` unreachable. `status` column added to `Job` model (`String @default("draft")` replacing `isActive: Boolean`). Client generation succeeds; `db push` can apply schema changes without migration file.
 
 ## Upcoming Dependencies (Phase 2)
 
-- Step 2.3 (Job Posts CRUD) — independent, can start immediately.
+- Step 2.3 (Job Posts CRUD) — complete.
 - Step 2.4 (Applicants View) — depends on job posts existing.
 - Step 2.5 (Analytics) — depends on job posts and applications data.
 - Phase 2 must be complete before Phase 3 (User) or Phase 4 (Public Routes).

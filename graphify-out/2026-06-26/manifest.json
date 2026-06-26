@@ -978,5 +978,75 @@
     "mtime": 1782461930.3884902,
     "ast_hash": "992da86c684be87e7b2258e2cd12f269",
     "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/[id]/edit/page.tsx": {
+    "mtime": 1782485365.3090558,
+    "ast_hash": "5a7fbfa5017276589a42a3a2aeeedb65",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/[id]/page.tsx": {
+    "mtime": 1782485361.6081831,
+    "ast_hash": "6ef4eecb55b3a627f6148c39000407d8",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/new/page.tsx": {
+    "mtime": 1782485359.5206025,
+    "ast_hash": "52654f839a379ef1341ab9491bb87a5c",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/page.tsx": {
+    "mtime": 1782485358.3522096,
+    "ast_hash": "68cf51dfd19199e65efe6049a4783ec5",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/jobs/[id]/route.ts": {
+    "mtime": 1782485244.2627704,
+    "ast_hash": "038af666eeb149a940517ccb55aa7810",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/jobs/[id]/toggle/route.ts": {
+    "mtime": 1782485247.6843755,
+    "ast_hash": "a5d4caa4d5b60f25376560cb8dafa42a",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/jobs/route.ts": {
+    "mtime": 1782485237.2510257,
+    "ast_hash": "0250a7a0cbdd3e3b232163943a84b134",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/job-detail.tsx": {
+    "mtime": 1782485332.2057383,
+    "ast_hash": "6824375095314bb3b669dbfef4beb4e3",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/job-form.tsx": {
+    "mtime": 1782485287.2183268,
+    "ast_hash": "92f81fe42766d8f0cc0660f27767ff6f",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/recruiter-jobs-table.tsx": {
+    "mtime": 1782485313.2399614,
+    "ast_hash": "1c79fe10ef9bf42ea99fcd055aac3d0a",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/hooks/use-recruiter-jobs.ts": {
+    "mtime": 1782485261.6975844,
+    "ast_hash": "4424977455ff995eb7921533e8ac9b7c",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/queries/job-queries.ts": {
+    "mtime": 1782485215.1816378,
+    "ast_hash": "3daba6bc9a3458841ed3a09fbddb4b53",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/schema/job.schema.ts": {
+    "mtime": 1782485446.7068005,
+    "ast_hash": "dc420101d8b0c630f165006c19fbbcb6",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782458322810-job-posts-crud.md": {
+    "mtime": 1782484092.789187,
+    "ast_hash": "b78145f54744024346ee668a26b1173f",
+    "semantic_hash": ""
   }
 }
