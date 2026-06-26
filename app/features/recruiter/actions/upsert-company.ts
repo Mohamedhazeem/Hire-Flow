@@ -3,12 +3,16 @@
 import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { CompanyProfileSchema } from "@/app/features/recruiter/schema/company.schema";
-import { ValidationError } from "@/lib/api-error";
+import { ForbiddenError, ValidationError } from "@/lib/api-error";
 import { revalidatePath } from "next/cache";
 import type { CompanyProfileInput } from "@/app/features/recruiter/schema/company.schema";
 
 export async function upsertCompany(input: CompanyProfileInput) {
   const session = await requireRole(["recruiter"]);
+
+  if (session.memberRole && session.memberRole !== "owner") {
+    throw new ForbiddenError("Only the company owner can edit company profile");
+  }
 
   const parsed = CompanyProfileSchema.safeParse(input);
 

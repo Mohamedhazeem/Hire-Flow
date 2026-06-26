@@ -80,8 +80,10 @@ model User {
   sentMessages     Message[]      @relation("MessageSender")
   receivedMessages Message[]      @relation("MessageReceiver")
   notifications    Notification[]
-  adminInvitesSent AdminInvite[]  @relation("InviteSender")
-  bookmarks        Bookmark[]
+  adminInvitesSent     AdminInvite[]      @relation("InviteSender")
+  recruiterInvitesSent RecruiterInvite[]   @relation("RecruiterInviteSender")
+  companyMembership    CompanyTeamMember?
+  bookmarks            Bookmark[]
 
   @@unique([email])
   @@map("user")
@@ -171,9 +173,9 @@ model Resume {
 }
 
 model Company {
-  id          String   @id @default(cuid())
-  recruiterId String   @unique
-  recruiter   User     @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
+  id          String              @id @default(cuid())
+  recruiterId String              @unique
+  recruiter   User                @relation(fields: [recruiterId], references: [id], onDelete: Cascade)
   name        String
   logoUrl     String?
   website     String?
@@ -181,10 +183,38 @@ model Company {
   description String?
   industry    String?
   jobs        Job[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  teamMembers CompanyTeamMember[]
+  invites     RecruiterInvite[]
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
 
   @@map("company")
+}
+
+model CompanyTeamMember {
+  id        String   @id @default(cuid())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      String   @default("member")
+  createdAt DateTime @default(now())
+
+  @@map("company_team_member")
+}
+
+model RecruiterInvite {
+  id          String    @id @default(cuid())
+  email       String
+  companyId   String
+  company     Company   @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  invitedById String
+  invitedBy   User      @relation("RecruiterInviteSender", fields: [invitedById], references: [id], onDelete: Cascade)
+  token       String    @unique
+  acceptedAt  DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@map("recruiter_invite")
 }
 
 model Job {

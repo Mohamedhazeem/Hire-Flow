@@ -4,6 +4,7 @@ import { VerificationEmail } from "../components/email/verfication-email";
 import { ResetPasswordEmail } from "../components/email/reset-password-email";
 import { AdminInviteEmail } from "@/app/features/admin/components/email/admin-invite-email";
 import { BanNotificationEmail } from "@/app/features/admin/components/email/ban-notification-email";
+import { RecruiterInviteEmail } from "@/app/features/recruiter/components/email/recruiter-invite-email";
 import React from "react";
 import { render } from "react-email";
 import { logger } from "@/utils/logger";
@@ -15,7 +16,7 @@ interface SendEmailArgs {
   to: string;
   subject: string;
   url?: string;
-  type: "verification" | "reset" | "admin-invite" | "ban-notification";
+  type: "verification" | "reset" | "admin-invite" | "ban-notification" | "recruiter-invite";
   invitedByName?: string;
   banDetails?: {
     reason?: string | null;
@@ -38,9 +39,11 @@ export async function sendEmail({ to, subject, url, type, invitedByName, banDeta
         ? AdminInviteEmail
         : type === "ban-notification"
           ? BanNotificationEmail
-          : VerificationEmail;
-    const htmlComponent = type === "admin-invite"
-      ? await render(React.createElement(emailComponent as typeof AdminInviteEmail, { url: url!, invitedByName: invitedByName! }))
+          : type === "recruiter-invite"
+            ? RecruiterInviteEmail
+            : VerificationEmail;
+    const htmlComponent = (type === "admin-invite" || type === "recruiter-invite")
+      ? await render(React.createElement(emailComponent as typeof RecruiterInviteEmail, { url: url!, invitedByName: invitedByName! }))
       : type === "ban-notification"
         ? await render(React.createElement(emailComponent as typeof BanNotificationEmail, {
             adminName: invitedByName!,

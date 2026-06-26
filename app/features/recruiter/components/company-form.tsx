@@ -12,14 +12,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { apiClient } from "@/lib/api-client";
-import { Building2, Globe, Upload, CheckCircle2, AlertCircle } from "lucide-react";
+import { Building2, Globe, Upload, CheckCircle2, AlertCircle, Eye } from "lucide-react";
 import Image from "next/image";
 
 type CompanyFormProps = {
   defaultValues?: CompanyProfileInput;
+  readOnly?: boolean;
 };
 
-export function CompanyForm({ defaultValues }: CompanyFormProps) {
+export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProps) {
   const [serverError, setServerError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -83,6 +84,54 @@ export function CompanyForm({ defaultValues }: CompanyFormProps) {
       setServerError(err instanceof Error ? err.message : "Failed to save company profile");
     }
   };
+
+  if (readOnly && defaultValues) {
+    return (
+      <div className="w-full max-w-3xl space-y-6">
+        <div className="rounded-xl border border-border-subtle bg-bg-surface p-6 sm:p-8 space-y-6">
+          <div className="flex items-center gap-2 text-sm text-text-muted mb-4">
+            <Eye className="size-4" />
+            View-only mode &mdash; only the company owner can edit the profile
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-sm font-medium text-text-heading">Company name</span>
+            <p className="text-text-body">{defaultValues.name || "—"}</p>
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-sm font-medium text-text-heading">Industry</span>
+            <p className="text-text-body">{defaultValues.industry || "—"}</p>
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-sm font-medium text-text-heading">Website</span>
+            <p className="text-text-body">{defaultValues.website || "—"}</p>
+          </div>
+
+          <div className="space-y-1">
+            <span className="text-sm font-medium text-text-heading">Description</span>
+            <p className="text-text-body whitespace-pre-wrap">
+              {defaultValues.description || "—"}
+            </p>
+          </div>
+
+          {defaultValues.logoUrl && (
+            <div className="space-y-1">
+              <span className="text-sm font-medium text-text-heading">Company logo</span>
+              <Image
+                src={defaultValues.logoUrl}
+                alt="Company logo"
+                width={80}
+                height={80}
+                className="size-20 rounded-lg border border-border-subtle object-cover"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-3xl space-y-6">
@@ -162,7 +211,6 @@ export function CompanyForm({ defaultValues }: CompanyFormProps) {
         <div className="space-y-1">
           <label className="text-sm font-medium text-text-heading">Company logo</label>
 
-          {/* Logo preview */}
           {logoUrl && (
             <div className="relative w-fit">
               <Image

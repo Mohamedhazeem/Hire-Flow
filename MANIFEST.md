@@ -6,16 +6,16 @@
 
 ## Last Updated
 
-2026-06-26T08:12:43Z
+2026-06-26T14:05:47Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.1 - Company Profile CRUD
-- **Next Step:** Step 2.2 - Recruiter Team Management
-- **Blockers:** None
+- **Current Step:** Step 2.2 - Recruiter Team Management
+- **Next Step:** Step 2.3 - Recruiter Jobs (Job Posts CRUD)
+- **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful.
 
 ---
 
@@ -46,9 +46,10 @@
 - [x] Step 2.0 - Pre-Phase 2 Refactoring: Extract Shared Components & Role Guards
 - [x] Step 2.0 - Recruiter Layout & Sidebar
 - [x] Step 2.1 - Company Profile CRUD
-- [ ] Step 2.2 - Job Posts CRUD
-- [ ] Step 2.3 - Applicants View & Status Updates (Includes Bulk Actions & Email)
-- [ ] Step 2.4 - Recruiter Analytics & Filters (URL-driven state)
+- [x] Step 2.2 - Recruiter Team Management
+- [ ] Step 2.3 - Job Posts CRUD
+- [ ] Step 2.4 - Applicants View & Status Updates (Includes Bulk Actions & Email)
+- [ ] Step 2.5 - Recruiter Analytics & Filters (URL-driven state)
 
 ### Phase 3: User
 
@@ -171,18 +172,33 @@
 
 - app/features/recruiter/actions/
 - app/features/recruiter/actions/upsert-company.ts
+- app/features/recruiter/actions/invite-recruiter.ts
+- app/features/recruiter/actions/bulk-invite-recruiters.ts
 - app/features/recruiter/components/
 - app/features/recruiter/components/recruiter-sidebar.tsx
 - app/features/recruiter/components/company-form.tsx
+- app/features/recruiter/components/invite-recruiter-form.tsx
+- app/features/recruiter/components/recruiter-team-list.tsx
+- app/features/recruiter/components/email/recruiter-invite-email.tsx
 - app/features/recruiter/queries/
 - app/features/recruiter/schema/
 - app/features/recruiter/schema/company.schema.ts
+- app/features/recruiter/schema/team.schema.ts
 - app/features/recruiter/libs/
 - app/features/recruiter/hooks/
 - app/features/recruiter/hooks/use-company-mutation.ts
+- app/features/recruiter/hooks/use-recruiter-invites.ts
 - app/(roles)/recruiter/recruiter-layout-client.tsx
 - app/(roles)/recruiter/layout.tsx (updated: wraps RecruiterLayoutClient)
 - app/(roles)/recruiter/company/page.tsx
+- app/(roles)/recruiter/team/page.tsx
+- app/(auth)/recruiter-invite/page.tsx
+- app/(auth)/recruiter-invite/accept-invite-client.tsx
+- app/api/recruiter/invite/route.ts
+- app/api/recruiter/invite/accept/route.ts
+- app/api/recruiter/invite/[id]/route.ts
+- app/api/recruiter/team/[id]/route.ts
+- components/shared/confirm-action-button.tsx (shared — used by team list)
 
 ### Phase 3
 
@@ -200,7 +216,15 @@ _(agent to fill)_
 
 ## Pending Dependencies
 
-- None - Phase 0 complete, ready to start Phase 1 (Admin features).
+- Phase 1 complete; Phase 2 Steps 2.0–2.2 complete.
+- Prisma migration (`add_company_team_member_and_recruiter_invite`) cannot run locally — `db.prisma.io:5432` unreachable. Client generation succeeds; migration deferred.
+
+## Upcoming Dependencies (Phase 2)
+
+- Step 2.3 (Job Posts CRUD) — independent, can start immediately.
+- Step 2.4 (Applicants View) — depends on job posts existing.
+- Step 2.5 (Analytics) — depends on job posts and applications data.
+- Phase 2 must be complete before Phase 3 (User) or Phase 4 (Public Routes).
 
 ## Upcoming Dependencies (Phase 1)
 
@@ -209,6 +233,8 @@ _(agent to fill)_
 - Step 1.4 must be built before Step 1.5 (messaging entry point needs sidebar nav).
 
 ---
+
+
 
 ## Active Global Context Snapshot
 
@@ -226,3 +252,5 @@ _(agent to fill)_
 - [ ] TODO: Replace mock upload (/api/upload) with S3/Vercel Blob in production.
 - [ ] TODO: Implement Pusher messaging backend (Phase 5).
 - [ ] TODO: Add comprehensive tests once core features are stable.
+- [ ] TODO: Run Prisma migration `add_company_team_member_and_recruiter_invite` when database is reachable.
+- [ ] TODO: `form.watch()` triggers React Compiler `react-hooks/incompatible-library` warning — project-wide pattern, not a regression.

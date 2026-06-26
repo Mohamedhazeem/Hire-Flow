@@ -13,18 +13,40 @@ export const metadata = {
 export default async function CompanyPage() {
   const session = await auth.api.getSession({ headers: await headers() });
 
-  const company = session?.user
-    ? await prisma.company.findUnique({
-        where: { recruiterId: session.user.id },
-        select: {
-          name: true,
-          description: true,
-          website: true,
-          logoUrl: true,
-          industry: true,
-        },
-      })
-    : null;
+  if (!session?.user) return null;
+
+  const membership = await prisma.companyTeamMember.findUnique({
+    where: { userId: session.user.id },
+    select: { companyId: true, role: true },
+  });
+
+  const isOwner = membership?.role === "owner" || !membership;
+
+  let company = null;
+
+  if (membership) {
+    company = await prisma.company.findUnique({
+      where: { id: membership.companyId },
+      select: {
+        name: true,
+        description: true,
+        website: true,
+        logoUrl: true,
+        industry: true,
+      },
+    });
+  } else {
+    company = await prisma.company.findUnique({
+      where: { recruiterId: session.user.id },
+      select: {
+        name: true,
+        description: true,
+        website: true,
+        logoUrl: true,
+        industry: true,
+      },
+    });
+  }
 
   const defaultValues: CompanyProfileInput | undefined = company
     ? {
@@ -42,7 +64,7 @@ export default async function CompanyPage() {
         title="Company Profile"
         description="Manage your company details visible to candidates"
       />
-      <CompanyForm defaultValues={defaultValues} />
+      <CompanyForm defaultValues={defaultValues} readOnly={!isOwner} />
     </div>
   );
 }

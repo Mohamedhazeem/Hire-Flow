@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-06-26)
 
 ## Corpus Check
-- 177 files · ~51,346 words
+- 177 files · ~51,357 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d199cdbc`
+- Built from commit: `9c2e4576`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -161,8 +161,8 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFileNames, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.21
-Nodes (5): metadata, PageHeader(), PageHeaderProps, metadata, metadata
+Cohesion: 0.16
+Nodes (7): InviteAdminForm(), metadata, PageHeader(), PageHeaderProps, metadata, metadata, metadata
 
 ### Community 12 - "Community 12"
 Cohesion: 0.22
@@ -253,8 +253,8 @@ Cohesion: 0.40
 Nodes (3): adapter, pool, prisma
 
 ### Community 52 - "Community 52"
-Cohesion: 0.13
-Nodes (17): CHART_TOOLTIP_STYLE, WORKMODE_COLORS, AdminTeamList(), InviteAdminForm(), AdminInvite, AdminTeamMember, InviteListResponse, useAdminInvites() (+9 more)
+Cohesion: 0.16
+Nodes (15): CHART_TOOLTIP_STYLE, WORKMODE_COLORS, AdminTeamList(), AdminInvite, AdminTeamMember, InviteListResponse, useAdminInvites(), useCancelInvite() (+7 more)
 
 ### Community 54 - "Community 54"
 Cohesion: 0.32
@@ -317,7 +317,7 @@ Cohesion: 0.33
 Nodes (4): SearchResult, StartConversationSearch(), StartConversationSearchProps, Input()
 
 ## Knowledge Gaps
-- **414 isolated node(s):** `$schema`, `plugin`, `@kilocode/plugin`, `AcceptInviteClientProps`, `Props` (+409 more)
+- **414 isolated node(s):** `Last Updated`, `Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+409 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -334,7 +334,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`requireRole()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `$schema`, `plugin`, `@kilocode/plugin` to the rest of the system?**
+- **What connects `Last Updated`, `Overview`, `Phase 0: Foundation` to the rest of the system?**
   _414 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.056074766355140186 - nodes in this community are weakly interconnected._

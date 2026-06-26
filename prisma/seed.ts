@@ -196,6 +196,17 @@ async function main() {
       },
     });
 
+    await prisma.companyTeamMember.upsert({
+      where: { userId: rec.id },
+      update: {},
+      create: {
+        id: `ctm_${rec.id}`,
+        companyId: company.id,
+        userId: rec.id,
+        role: "owner",
+      },
+    });
+
     for (let i = 0; i < JOB_TEMPLATES.length; i++) {
       const tpl = JOB_TEMPLATES[i];
       const jobId = `job_${rec.id}_${i}`;
