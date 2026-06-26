@@ -32,13 +32,6 @@ enum EmploymentType {
   freelance
 }
 
-enum ApplicationStatus {
-  applied
-  viewed
-  rejected
-  accepted
-}
-
 enum NotificationType {
   application_status
   new_message
@@ -249,17 +242,20 @@ model Job {
 }
 
 model Application {
-  id              String            @id @default(cuid())
+  id              String   @id @default(cuid())
   jobId           String
-  job             Job               @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  job             Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
   userId          String
-  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  status          ApplicationStatus @default(applied)
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status          String   @default("applied")
   rejectionReason String?
   recruiterNote   String?
+  interviewDate   DateTime?
+  meetingLink     String?
+  offerDetails    String?
   resumeId        String?
-  appliedAt       DateTime          @default(now())
-  updatedAt       DateTime          @updatedAt
+  appliedAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
   @@unique([jobId, userId])
   @@index([userId, status])

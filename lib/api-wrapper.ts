@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { fail } from "@/lib/api-response";
-import { ApiError, ForbiddenError, NotFoundError, UnauthorizedError, ValidationError } from "./api-error";
+import { ApiError, ForbiddenError, NotFoundError, UnauthorizedError, ValidationError, ConflictError } from "./api-error";
 import { logger } from "@/utils/logger";
 import z, { ZodError } from "zod";
 
@@ -9,6 +9,7 @@ const ERROR_STATUS_MAP: Record<string, number> = {
   [ForbiddenError.name]: 403,
   [NotFoundError.name]: 404,
   [ValidationError.name]: 400,
+  [ConflictError.name]: 409,
   [ApiError.name]: 0, // dynamic — use error.status
 };
 

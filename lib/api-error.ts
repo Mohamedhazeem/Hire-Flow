@@ -35,3 +35,10 @@ export class ValidationError extends Error {
     this.name = "ValidationError";
   }
 }
+
+export class ConflictError extends Error {
+  constructor(message = "Resource conflict") {
+    super(message);
+    this.name = "ConflictError";
+  }
+}
