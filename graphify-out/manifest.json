@@ -545,8 +545,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782459299.3561368,
-    "ast_hash": "ee9751722130eb7cf60a08503fcdb55f",
+    "mtime": 1782460106.9713988,
+    "ast_hash": "b3cc4ae93f9386f953aa819550f1275a",
     "semantic_hash": ""
   },
   "README.md": {
@@ -895,8 +895,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/company-form.tsx": {
-    "mtime": 1782460043.6431832,
-    "ast_hash": "79181ee9fc106a236e3f772dd98b5be5",
+    "mtime": 1782460616.6871214,
+    "ast_hash": "159fd4d86aece1cea48f8b9689c42ed5",
     "semantic_hash": ""
   },
   "app/features/recruiter/hooks/use-company-mutation.ts": {
@@ -905,8 +905,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/company.schema.ts": {
-    "mtime": 1782459964.653337,
-    "ast_hash": "5b464c565b6f0db5af476320a78a3ef4",
+    "mtime": 1782460467.0015562,
+    "ast_hash": "c453b2fff8108cab8a9b101339266ba7",
     "semantic_hash": ""
   }
 }

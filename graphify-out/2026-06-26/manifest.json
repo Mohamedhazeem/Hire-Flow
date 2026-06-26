@@ -883,5 +883,30 @@
     "mtime": 1782459111.1558444,
     "ast_hash": "8958d1ee638eec537a0d1a9458eb6fd8",
     "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/company/page.tsx": {
+    "mtime": 1782459861.4516098,
+    "ast_hash": "42d73622f58000af118df46840b43047",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/actions/upsert-company.ts": {
+    "mtime": 1782459792.4111297,
+    "ast_hash": "688479bf7f06bccdf12cbf6ac818e7f6",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/company-form.tsx": {
+    "mtime": 1782460043.6431832,
+    "ast_hash": "79181ee9fc106a236e3f772dd98b5be5",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/hooks/use-company-mutation.ts": {
+    "mtime": 1782459988.8041253,
+    "ast_hash": "eb53f9020595dc10a3cec4d1d5ca23c5",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/schema/company.schema.ts": {
+    "mtime": 1782459964.653337,
+    "ast_hash": "5b464c565b6f0db5af476320a78a3ef4",
+    "semantic_hash": ""
   }
 }
