@@ -38,6 +38,7 @@ export function AdminTeamList() {
     name: string;
     email: string;
     type: "admin" | "invite";
+    role?: string;
     invitedBy?: string;
     createdAt: string;
     acceptedAt?: string | null;
@@ -49,6 +50,7 @@ export function AdminTeamList() {
       name: m.name ?? "Unnamed",
       email: m.email,
       type: "admin" as const,
+      role: m.role,
       createdAt: m.createdAt,
     })),
     ...data.invites.map((i) => ({
@@ -78,7 +80,9 @@ export function AdminTeamList() {
       header: "Status",
       cell: (row) =>
         row.type === "admin" ? (
-          <Badge variant="secondary">Active</Badge>
+          <Badge variant={row.role === "super_admin" ? "default" : "secondary"}>
+            {row.role === "super_admin" ? "Super Admin" : "Admin"}
+          </Badge>
         ) : (
           <Badge variant="outline">Invited</Badge>
         ),
@@ -100,24 +104,37 @@ export function AdminTeamList() {
     {
       key: "actions",
       header: "Actions",
-      cell: (row) =>
-        row.type === "invite" ? (
-          <ConfirmActionButton
-            dialogVariant="warning"
-            title="Cancel Invite"
-            description={`Are you sure you want to cancel the invite for ${row.email}?`}
-            confirmLabel="Cancel Invite"
-            action={() => cancelInvite.mutate(row.id)}
-            isPending={cancelInvite.isPending}
-            variant="ghost"
-            size="icon-xs"
-            tooltip="Cancel invite"
-          >
-            <X className="size-3.5 text-text-muted" />
-          </ConfirmActionButton>
-        ) : row.id === session?.user?.id ? (
-          <span className="text-xs text-text-muted italic">You</span>
-        ) : (
+      cell: (row) => {
+        const isSelf = row.id === session?.user?.id;
+        const isSuperAdmin = row.role === "super_admin";
+
+        if (row.type === "invite") {
+          return (
+            <ConfirmActionButton
+              dialogVariant="warning"
+              title="Cancel Invite"
+              description={`Are you sure you want to cancel the invite for ${row.email}?`}
+              confirmLabel="Cancel Invite"
+              action={() => cancelInvite.mutate(row.id)}
+              isPending={cancelInvite.isPending}
+              variant="ghost"
+              size="icon-xs"
+              tooltip="Cancel invite"
+            >
+              <X className="size-3.5 text-text-muted" />
+            </ConfirmActionButton>
+          );
+        }
+
+        if (isSelf) {
+          return <span className="text-xs text-text-muted italic">You</span>;
+        }
+
+        if (isSuperAdmin) {
+          return <span className="text-xs text-text-muted italic">Protected</span>;
+        }
+
+        return (
           <ConfirmActionButton
             dialogVariant="destructive"
             title="Remove Admin"
@@ -132,7 +149,8 @@ export function AdminTeamList() {
           >
             <Trash2 className={`size-3.5 ${canRemoveAdmins ? "text-error" : "text-text-muted"}`} />
           </ConfirmActionButton>
-        ),
+        );
+      },
     },
   ];
 

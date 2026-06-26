@@ -599,7 +599,7 @@ Do not implement this entire document at once. Treat this as the Master Context.
 
 ---
 
-## Step 2.0: Recruiter Layout & Sidebar (Foundation)
+## Step 0: Recruiter Layout & Sidebar (Foundation)
 
 **Goal**: Create the shell that all recruiter pages share.
 
@@ -702,7 +702,7 @@ Do not implement this entire document at once. Treat this as the Master Context.
   - `ScheduleInterviewDialog`: Capture date, time, meeting link, optional message.
   - `SendOfferDialog`: Capture offer details, custom message.
   - `RejectDialog`: Capture rejection reason (required).
-  - Include a toggle in each dialog: "Send email notification". or direct messaging
+  - \_Include a toggle in each dialog: "Send email notification". or direct messaging
 - **Server Action (`update-application-status.ts`)**:
   - Validate ownership: `application.job.companyId === recruiter.companyId`.
   - Validate inputs via Zod based on status.

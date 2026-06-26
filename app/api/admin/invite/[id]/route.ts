@@ -3,13 +3,13 @@ import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
+import { NotFoundError, ValidationError, ForbiddenError } from "@/lib/api-error";
 
 async function handleDELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  await requireRole(["admin", "super_admin"]);
+  const session = await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
   const invite = await prisma.adminInvite.findUnique({ where: { id } });
@@ -20,6 +20,10 @@ async function handleDELETE(
 
   if (invite.acceptedAt) {
     throw new ValidationError("Cannot cancel an already accepted invite");
+  }
+
+  if (session.role !== "super_admin" && invite.invitedById !== session.id) {
+    throw new ForbiddenError("You can only cancel your own invites");
   }
 
   await prisma.adminInvite.delete({ where: { id } });

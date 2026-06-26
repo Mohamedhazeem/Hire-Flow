@@ -14,6 +14,7 @@ export type AdminTeamMember = {
   id: string;
   name: string | null;
   email: string;
+  role: string;
   createdAt: string;
 };
 

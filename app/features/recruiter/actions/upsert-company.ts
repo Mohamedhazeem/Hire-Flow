@@ -41,6 +41,16 @@ export async function upsertCompany(input: CompanyProfileInput) {
     },
   });
 
+  if (!session.memberRole) {
+    await prisma.companyTeamMember.create({
+      data: {
+        companyId: company.id,
+        userId: session.id,
+        role: "owner",
+      },
+    });
+  }
+
   revalidatePath("/recruiter/company");
 
   return { success: true, company };

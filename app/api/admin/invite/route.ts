@@ -14,8 +14,8 @@ async function handleGET() {
       },
     }),
     prisma.user.findMany({
-      where: { role: "admin" },
-      select: { id: true, name: true, email: true, createdAt: true },
+      where: { role: { in: ["admin", "super_admin"] } },
+      select: { id: true, name: true, email: true, role: true, createdAt: true },
       orderBy: { createdAt: "desc" },
     }),
   ]);

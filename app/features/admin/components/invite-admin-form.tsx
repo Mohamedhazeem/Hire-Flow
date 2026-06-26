@@ -206,8 +206,8 @@ export function InviteAdminForm() {
           )}
           {bulkResult.skipped.length > 0 && (
             <div>
-              <p className="text-muted-foreground">Skipped ({bulkResult.skipped.length}):</p>
-              <ul className="list-disc list-inside text-xs text-muted-foreground space-y-0.5">
+              <p className="text-text-muted">Skipped ({bulkResult.skipped.length}):</p>
+              <ul className="list-disc list-inside text-xs text-text-muted space-y-0.5">
                 {bulkResult.skipped.map((s, i) => (
                   <li key={i}>
                     {s.email} &mdash; {s.reason}
