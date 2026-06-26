@@ -21,6 +21,8 @@ import {
   formatFileSize,
   fileIcon,
 } from "@/components/chat/message-bubble";
+import { getPusherClient } from "@/lib/pusher-client";
+import type { MessageItem } from "@/app/features/admin/hooks/messages/use-admin-messages";
 import {
   SendHorizonalIcon,
   Loader2Icon,
@@ -95,6 +97,41 @@ export function ThreadView({ threadId, onBack }: ThreadViewProps) {
       .then((res) => setChatName(res.data.name))
       .catch(() => setChatName("Unknown"));
   }, [otherUserId]);
+
+  useEffect(() => {
+    if (!threadId.includes("_") || !adminId) return;
+
+    const pusher = getPusherClient();
+    const channel = pusher.subscribe(`private-thread-${threadId}`);
+
+    channel.bind("new-message", (data: { message: MessageItem; senderId: string }) => {
+      if (data.senderId === adminId) return;
+
+      queryClient.setQueryData(["admin", "messages", threadId], (old: unknown) => {
+        if (!old || typeof old !== "object") return old;
+        const data_ = old as {
+          pages: { data: { messages: MessageItem[] } }[];
+          pageParams: unknown[];
+        };
+        if (!data_.pages?.length) return old;
+        const newPages = [...data_.pages];
+        const lastIdx = newPages.length - 1;
+        newPages[lastIdx] = {
+          ...newPages[lastIdx],
+          data: {
+            ...newPages[lastIdx].data,
+            messages: [...newPages[lastIdx].data.messages, data.message],
+          },
+        };
+        return { ...data_, pages: newPages };
+      });
+    });
+
+    return () => {
+      channel.unbind_all();
+      pusher.unsubscribe(`private-thread-${threadId}`);
+    };
+  }, [threadId, adminId, queryClient]);
 
   const scrollToBottom = useCallback((behavior: ScrollBehavior = "instant") => {
     const el = scrollRef.current;

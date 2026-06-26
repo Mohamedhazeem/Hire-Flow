@@ -33,6 +33,7 @@ export type SendMessagePayload = {
 export function useAdminMessages(threadId: string) {
   return useInfiniteQuery<ApiEnvelope<MessagesResponse>>({
     queryKey: ["admin", "messages", threadId],
+    refetchInterval: 60_000,
     queryFn: async ({ pageParam }) => {
       const cursor = pageParam as string | undefined;
       const params: Record<string, unknown> = { limit: 30 };

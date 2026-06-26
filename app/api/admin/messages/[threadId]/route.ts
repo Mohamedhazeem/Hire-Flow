@@ -3,6 +3,7 @@ import { z } from "zod";
 import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
+import { pusher } from "@/lib/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
@@ -112,7 +113,38 @@ async function handlePOST(
       fileSize: input.data.fileSize ?? null,
       fileType: input.data.fileType ?? null,
     },
-    select: messageSelect,
+    select: {
+      ...messageSelect,
+      createdAt: true,
+    },
+  });
+
+  void pusher.trigger(`private-thread-${threadId}`, "new-message", {
+    message: { ...message, createdAt: (message.createdAt as Date).toISOString() },
+    senderId: adminUser.id,
+  });
+
+  const notification = await prisma.notification.create({
+    data: {
+      userId: otherUserId,
+      type: "new_message",
+      data: {
+        threadId,
+        senderId: adminUser.id,
+        senderName: adminUser.name,
+        preview: input.data.content.slice(0, 100),
+        fileUrl: input.data.fileUrl ?? null,
+        fileType: input.data.fileType ?? null,
+      },
+    },
+  });
+
+  void pusher.trigger(`private-user-${otherUserId}`, "new-notification", {
+    notification: {
+      ...notification,
+      createdAt: notification.createdAt.toISOString(),
+      data: notification.data as Record<string, unknown>,
+    },
   });
 
   return ok(message, 201);
