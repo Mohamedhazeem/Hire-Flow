@@ -6,14 +6,14 @@
 
 ## Last Updated
 
-2026-06-27T01:40:00Z
+2026-06-27T04:55:00Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.6 - Applicant Detail View — COMPLETE
+- **Current Step:** Step 2.7 - Bulk Actions for Selection — COMPLETE
 - **Next Step:** Step 2.8 - Recruiter Analytics & Filters (per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
@@ -51,6 +51,7 @@
 - [x] Step 2.4 - Applicants View & Status Updates (7-status pipeline, OCC, URL-driven pagination, in-app notifications)
 - [x] Step 2.5 - Recruiter Direct Messaging (Thread‑based, Pusher realtime, rate-limited, user reply page)
 - [x] Step 2.6 - Applicant Detail View (Profile, Timeline, Resume download, Messages, Status actions)
+- [x] Step 2.7 - Bulk Actions for Selection (mass status transitions, checkbox selection, bulk reject dialog, in-app notifications)
 
 ### Phase 3: User
 
@@ -254,6 +255,17 @@
 - app/features/recruiter/components/applicants-table.tsx (added EyeIcon button → /recruiter/applicants/[id])
 - app/features/recruiter/components/job-detail.tsx (replaced applicants placeholder with View All link)
 - tsconfig.json (excluded prisma/scripts from typecheck)
+
+### Phase 2 (continued — Step 2.7 Bulk Actions)
+
+- components/ui/data-table.tsx (extended with selection: enableSelection, selectedIds, onSelectionChange, getRowId, checkbox column, disabledIds)
+- app/features/recruiter/schema/application.schema.ts (added BulkStatusTransitionSchema)
+- app/api/recruiter/applications/bulk/status/route.ts (POST — atomic bulk status transition with tenant isolation, $transaction)
+- app/features/recruiter/hooks/use-applications.ts (added useBulkTransitionStatus, useRevertStatus hooks)
+- app/features/recruiter/components/bulk-reject-dialog.tsx (bulk rejection dialog with shared reason)
+- app/features/recruiter/components/applicants-table.tsx (selection state, bulk action bar, intersection-based available actions, BulkRejectDialog integration, actionedIds one-time constraint, feedback banner, revert support, colored filter dots)
+- app/features/recruiter/components/revert-dialog.tsx (revert confirmation dialog)
+- app/api/recruiter/applications/[applicationId]/revert/route.ts (POST — revert application to previous status from audit trail)
 
 ### Phase 3
 

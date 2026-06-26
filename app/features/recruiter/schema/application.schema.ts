@@ -71,3 +71,14 @@ export const StatusTransitionSchema = z.discriminatedUnion("status", [
 ]);
 
 export type StatusTransitionInput = z.infer<typeof StatusTransitionSchema>;
+
+// ── Bulk Status Transition Body ──────────────────────────────────────────
+
+export const BulkStatusTransitionSchema = z.object({
+  applicationIds: z.array(z.string()).min(1).max(50),
+  status: ApplicationStatusSchema,
+  rejectionReason: z.string().min(1).max(500).optional(),
+  email: z.boolean().optional().default(false),
+});
+
+export type BulkStatusTransitionInput = z.infer<typeof BulkStatusTransitionSchema>;

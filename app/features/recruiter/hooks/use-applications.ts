@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import type { ListApplicantsParams, StatusTransitionInput } from "@/app/features/recruiter/schema/application.schema";
+import type { ListApplicantsParams, StatusTransitionInput, BulkStatusTransitionInput } from "@/app/features/recruiter/schema/application.schema";
 import type { ApplicantListResult } from "@/app/features/recruiter/queries/application-queries";
 import type { ApiResponse } from "@/lib/api-response";
 
@@ -31,7 +31,34 @@ export function useTransitionStatus() {
         method: "PATCH",
         body: data,
       }),
-    onSuccess: (_data, variables) => {
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["recruiter", "applicants"] });
+    },
+  });
+}
+
+export function useBulkTransitionStatus() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data: BulkStatusTransitionInput) =>
+      apiClient("/api/recruiter/applications/bulk/status", {
+        method: "POST",
+        body: data,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["recruiter", "applicants"] });
+    },
+  });
+}
+
+export function useRevertStatus() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ applicationId }: { applicationId: string }) =>
+      apiClient(`/api/recruiter/applications/${applicationId}/revert`, {
+        method: "POST",
+      }),
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["recruiter", "applicants"] });
     },
   });

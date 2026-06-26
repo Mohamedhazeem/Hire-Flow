@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,8 @@ import { StatusBadge } from "@/components/ui/status-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   useApplicants,
+  useBulkTransitionStatus,
+  useRevertStatus,
 } from "@/app/features/recruiter/hooks/use-applications";
 import {
   ShortlistDialog,
@@ -23,9 +25,13 @@ import {
   SendOfferDialog,
   RejectDialog,
 } from "@/app/features/recruiter/components/application-dialogs";
-import type { ListApplicantsParams } from "@/app/features/recruiter/schema/application.schema";
+import { BulkRejectDialog } from "@/app/features/recruiter/components/bulk-reject-dialog";
+import { RevertConfirmDialog } from "@/app/features/recruiter/components/revert-dialog";
+import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application.schema";
+import type { ListApplicantsParams, BulkStatusTransitionInput } from "@/app/features/recruiter/schema/application.schema";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 import { useSession } from "@/app/features/auth/libs/auth-client";
+import { cn } from "@/lib/utils";
 import {
   SearchIcon,
   ChevronLeftIcon,
@@ -36,6 +42,9 @@ import {
   SendIcon,
   XCircleIcon,
   MessageSquareTextIcon,
+  RotateCcwIcon,
+  Undo2Icon,
+  XIcon,
 } from "lucide-react";
 
 const STATUS_OPTIONS = [
@@ -49,6 +58,7 @@ const STATUS_OPTIONS = [
   { value: "rejected", label: "Rejected" },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
   applied: [
     { label: "Start Review", status: "reviewing" },
@@ -74,6 +84,49 @@ const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
   rejected: [],
 };
 
+type BulkActionDef = { label: string; status: string };
+
+const STATUS_DOT_COLORS: Record<string, string> = {
+  all: "bg-muted",
+  applied: "bg-brand",
+  reviewing: "bg-info",
+  shortlisted: "bg-accent",
+  interview_scheduled: "bg-warning",
+  offered: "bg-success",
+  hired: "bg-success",
+  rejected: "bg-error",
+};
+
+const BULK_ACTION_LABELS: Record<string, string> = {
+  reviewing: "Start Review",
+  shortlisted: "Shortlist",
+  interview_scheduled: "Schedule Interview",
+  offered: "Send Offer",
+  hired: "Mark Hired",
+  rejected: "Reject",
+};
+
+/** Compute intersection of allowed bulk actions across all selected applicants */
+function getBulkActions(selectedApplicants: ApplicantRow[]): BulkActionDef[] {
+  if (selectedApplicants.length === 0) return [];
+
+  const statusCounts: Record<string, number> = {};
+  for (const a of selectedApplicants) {
+    statusCounts[a.status] = (statusCounts[a.status] ?? 0) + 1;
+  }
+  const uniqueStatuses = Object.keys(statusCounts);
+
+  const allAllowed = uniqueStatuses.map((s) => ALLOWED_TRANSITIONS[s] ?? []);
+  const intersection = allAllowed.reduce((acc, allowed) =>
+    acc.filter((s) => allowed.includes(s)),
+  );
+
+  return intersection.map((status) => ({
+    label: BULK_ACTION_LABELS[status] ?? status,
+    status,
+  }));
+}
+
 type ApplicantsTableProps = {
   jobId: string;
 };
@@ -95,6 +148,15 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
     applicant: ApplicantRow | null;
   }>({ type: "", applicant: null });
 
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [bulkDialog, setBulkDialog] = useState<string>("");
+  const [actionedIds, setActionedIds] = useState<Set<string>>(new Set());
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [revertTarget, setRevertTarget] = useState<ApplicantRow | null>(null);
+  const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const bulkTransition = useBulkTransitionStatus();
+  const revertTransition = useRevertStatus();
+
   const params: ListApplicantsParams = {
     page,
     pageSize: 20,
@@ -107,10 +169,14 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
   const { data, isLoading, isError } = useApplicants(jobId, params);
 
   const responseData = data?.data;
-  const applicants = responseData?.applicants ?? [];
   const totalPages = responseData?.totalPages ?? 1;
   const hasNextPage = responseData?.hasNextPage ?? false;
   const hasPrevPage = responseData?.hasPrevPage ?? false;
+
+  const applicants = useMemo(
+    () => responseData?.applicants ?? [],
+    [responseData?.applicants],
+  );
 
   const updateParams = useCallback(
     (updates: Record<string, string>) => {
@@ -125,6 +191,87 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
       router.push(`/recruiter/jobs/${jobId}/applicants?${sp.toString()}`);
     },
     [router, searchParams, jobId],
+  );
+
+  const selectedRows = useMemo(
+    () => applicants.filter((a) => selectedIds.has(a.id) && !actionedIds.has(a.id)),
+    [applicants, selectedIds, actionedIds],
+  );
+
+  const bulkActions = useMemo(() => getBulkActions(selectedRows), [selectedRows]);
+
+  const showFeedback = useCallback((type: "success" | "error", message: string) => {
+    setFeedback({ type, message });
+    if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+    feedbackTimeoutRef.current = setTimeout(() => setFeedback(null), 5000);
+  }, []);
+
+  const handleBulkAction = useCallback(
+    (targetStatus: string) => {
+      const needsReason = targetStatus === "rejected";
+
+      if (needsReason) {
+        setBulkDialog("reject");
+        return;
+      }
+
+      const ids = [...selectedIds].filter((id) => !actionedIds.has(id));
+
+      bulkTransition.mutate(
+        { applicationIds: ids, status: targetStatus as BulkStatusTransitionInput["status"], email: false },
+        {
+          onSuccess: () => {
+            showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`);
+            setActionedIds((prev) => { const n = new Set(prev); for (const id of ids) n.add(id); return n; });
+            setSelectedIds(new Set());
+          },
+          onError: (error: Error) => {
+            showFeedback("error", (error as { message?: string }).message ?? "Bulk action failed");
+          },
+        },
+      );
+    },
+    [selectedIds, actionedIds, bulkTransition, showFeedback],
+  );
+
+  const handleBulkRejectConfirm = useCallback(
+    (rejectionReason: string) => {
+      const ids = [...selectedIds].filter((id) => !actionedIds.has(id));
+
+      bulkTransition.mutate(
+        { applicationIds: ids, status: "rejected", rejectionReason, email: false },
+        {
+          onSuccess: () => {
+            showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} rejected`);
+            setActionedIds((prev) => { const n = new Set(prev); for (const id of ids) n.add(id); return n; });
+            setSelectedIds(new Set());
+            setBulkDialog("");
+          },
+          onError: (error: Error) => {
+            showFeedback("error", (error as { message?: string }).message ?? "Bulk rejection failed");
+          },
+        },
+      );
+    },
+    [selectedIds, actionedIds, bulkTransition, showFeedback],
+  );
+
+  const handleRevert = useCallback(
+    (applicantId: string) => {
+      revertTransition.mutate(
+        { applicationId: applicantId },
+        {
+          onSuccess: () => {
+            setActionedIds((prev) => { const n = new Set(prev); n.delete(applicantId); return n; });
+            showFeedback("success", "Applicant reverted to previous status");
+          },
+          onError: (error: Error) => {
+            showFeedback("error", (error as { message?: string }).message ?? "Revert failed");
+          },
+        },
+      );
+    },
+    [revertTransition, showFeedback],
   );
 
   const columns: ColumnDef<ApplicantRow>[] = [
@@ -165,6 +312,9 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
           recruiterId && row.userId
             ? [recruiterId, row.userId].sort().join("_")
             : null;
+
+        const isActioned = actionedIds.has(row.id);
+
         return (
           <div className="flex items-center justify-end gap-1">
             <Button
@@ -189,45 +339,58 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
                 <MessageSquareTextIcon className="size-4 text-text-muted hover:text-brand" />
               </Button>
             )}
-            {row.status === "reviewing" && (
+            {isActioned ? (
               <Button
                 variant="ghost"
                 size="icon-sm"
-                title="Shortlist"
-                onClick={() => setDialog({ type: "shortlist", applicant: row })}
+                title="Revert"
+                onClick={() => setRevertTarget(row)}
               >
-                <CheckCircle2Icon className="size-4 text-accent" />
+                <Undo2Icon className="size-4 text-warning" />
               </Button>
-            )}
-            {row.status === "shortlisted" && (
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                title="Schedule Interview"
-                onClick={() => setDialog({ type: "schedule_interview", applicant: row })}
-              >
-                <CalendarIcon className="size-4 text-warning" />
-              </Button>
-            )}
-            {row.status === "interview_scheduled" && (
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                title="Send Offer"
-                onClick={() => setDialog({ type: "send_offer", applicant: row })}
-              >
-                <SendIcon className="size-4 text-success" />
-              </Button>
-            )}
-            {row.status !== "hired" && row.status !== "rejected" && (
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                title="Reject"
-                onClick={() => setDialog({ type: "reject", applicant: row })}
-              >
-                <XCircleIcon className="size-4 text-destructive" />
-              </Button>
+            ) : (
+              <>
+                {row.status === "reviewing" && (
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    title="Shortlist"
+                    onClick={() => setDialog({ type: "shortlist", applicant: row })}
+                  >
+                    <CheckCircle2Icon className="size-4 text-accent" />
+                  </Button>
+                )}
+                {row.status === "shortlisted" && (
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    title="Schedule Interview"
+                    onClick={() => setDialog({ type: "schedule_interview", applicant: row })}
+                  >
+                    <CalendarIcon className="size-4 text-warning" />
+                  </Button>
+                )}
+                {row.status === "interview_scheduled" && (
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    title="Send Offer"
+                    onClick={() => setDialog({ type: "send_offer", applicant: row })}
+                  >
+                    <SendIcon className="size-4 text-success" />
+                  </Button>
+                )}
+                {row.status !== "hired" && row.status !== "rejected" && (
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    title="Reject"
+                    onClick={() => setDialog({ type: "reject", applicant: row })}
+                  >
+                    <XCircleIcon className="size-4 text-destructive" />
+                  </Button>
+                )}
+              </>
             )}
           </div>
         );
@@ -290,7 +453,10 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
           <SelectContent>
             {STATUS_OPTIONS.map((opt) => (
               <SelectItem key={opt.value} value={opt.value}>
-                {opt.label}
+                <span className="flex items-center gap-2">
+                  <span className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")} />
+                  {opt.label}
+                </span>
               </SelectItem>
             ))}
           </SelectContent>
@@ -300,12 +466,93 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
       <DataTable
         columns={columns}
         data={applicants}
+        enableSelection
+        selectedIds={selectedIds}
+        onSelectionChange={setSelectedIds}
+        getRowId={(row) => (row as ApplicantRow).id}
+        disabledIds={actionedIds}
         emptyMessage={
           Object.keys(Object.fromEntries(searchParams)).length > 1
             ? "No applicants match your filters. Try clearing the filters."
             : "No applicants yet for this job."
         }
       />
+
+      {selectedIds.size > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border-subtle bg-bg-surface shadow-xl p-4 sm:static sm:border sm:rounded-2xl sm:shadow-xs">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-medium text-text-heading whitespace-nowrap">
+                {selectedIds.size} selected
+              </span>
+              {selectedIds.size < (responseData?.total ?? 0) && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    const newSet = new Set(applicants.filter((a) => !actionedIds.has(a.id)).map((a) => a.id));
+                    setSelectedIds(newSet);
+                  }}
+                  className="text-xs"
+                >
+                  Select all {applicants.filter((a) => !actionedIds.has(a.id)).length} on this page
+                </Button>
+              )}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setSelectedIds(new Set())}
+                className="text-xs"
+              >
+                <RotateCcwIcon className="size-3 mr-1" />
+                Clear
+              </Button>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              {bulkActions.length === 0 ? (
+                <span className="text-xs text-text-muted">
+                  No bulk actions available for this selection
+                </span>
+              ) : (
+                bulkActions.map((action) => (
+                  <Button
+                    key={action.status}
+                    size="sm"
+                    variant={action.status === "rejected" ? "destructive" : "default"}
+                    onClick={() => handleBulkAction(action.status)}
+                    disabled={bulkTransition.isPending}
+                  >
+                    {action.label}
+                  </Button>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {feedback && (
+        <div
+          className={cn(
+            "flex items-center justify-between rounded-xl px-4 py-2.5 text-sm",
+            feedback.type === "success" && "bg-success/10 text-success border border-success/20",
+            feedback.type === "error" && "bg-error/10 text-error border border-error/20",
+          )}
+        >
+          <span className="flex items-center gap-2">
+            {feedback.type === "success" && <CheckCircle2Icon className="size-4" />}
+            {feedback.type === "error" && <XCircleIcon className="size-4" />}
+            {feedback.message}
+          </span>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            onClick={() => setFeedback(null)}
+          >
+            <XIcon className="size-3" />
+          </Button>
+        </div>
+      )}
 
       <div className="flex items-center justify-between text-sm text-text-muted gap-2">
         <span className="hidden sm:inline">
@@ -367,6 +614,31 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
           if (!open) setDialog({ type: "", applicant: null });
         }}
         applicant={selectedApplicant}
+      />
+
+      <BulkRejectDialog
+        open={bulkDialog === "reject"}
+        onOpenChange={(open) => {
+          if (!open) setBulkDialog("");
+        }}
+        selectedCount={selectedIds.size}
+        onConfirm={handleBulkRejectConfirm}
+        isPending={bulkTransition.isPending}
+      />
+
+      <RevertConfirmDialog
+        open={revertTarget !== null}
+        onOpenChange={(open) => {
+          if (!open) setRevertTarget(null);
+        }}
+        applicantName={revertTarget?.name ?? ""}
+        currentStatus={revertTarget?.status ?? ""}
+        onConfirm={() => {
+          if (!revertTarget) return;
+          handleRevert(revertTarget.id);
+          setRevertTarget(null);
+        }}
+        isPending={revertTransition.isPending}
       />
     </div>
   );
