@@ -6,16 +6,16 @@
 
 ## Last Updated
 
-2026-06-27T01:06:40Z
+2026-06-27T01:40:00Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.5 - Recruiter Direct Messaging (Thread‑Based) — COMPLETE
-- **Next Step:** Step 2.6 - Applicant Detail View (or Step 2.8 Recruiter Analytics per HIRE_FLOW_PROMPTS.md)
-- **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful.
+- **Current Step:** Step 2.6 - Applicant Detail View — COMPLETE
+- **Next Step:** Step 2.8 - Recruiter Analytics & Filters (per HIRE_FLOW_PROMPTS.md)
+- **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
 ---
 
@@ -50,6 +50,7 @@
 - [x] Step 2.3 - Job Posts CRUD
 - [x] Step 2.4 - Applicants View & Status Updates (7-status pipeline, OCC, URL-driven pagination, in-app notifications)
 - [x] Step 2.5 - Recruiter Direct Messaging (Thread‑based, Pusher realtime, rate-limited, user reply page)
+- [x] Step 2.6 - Applicant Detail View (Profile, Timeline, Resume download, Messages, Status actions)
 
 ### Phase 3: User
 
@@ -236,6 +237,23 @@
 - lib/api-error.ts (added TooManyRequestsError — 429)
 - lib/api-wrapper.ts (registered TooManyRequestsError → 429)
 - app/features/recruiter/components/applicants-table.tsx (added MessageSquareTextIcon action button)
+
+### Phase 2 (continued — Step 2.6 Applicant Detail View)
+
+- prisma/schema.prisma (added ApplicationStatusChange model)
+- prisma/scripts/backfill-status-changes.ts (one-time backfill script)
+- app/api/files/download/route.ts (GET — auth-guarded file proxy for resume/file downloads)
+- app/api/recruiter/applications/[applicationId]/detail/route.ts (GET — unified applicant detail)
+- app/api/recruiter/applications/[applicationId]/status/route.ts (added ApplicationStatusChange creation on every transition)
+- app/features/recruiter/libs/get-applicant-detail.ts (server query: application + profile + timeline + messages)
+- app/features/recruiter/hooks/use-applicant-detail.ts (TanStack Query hooks: detail, status transition with refresh)
+- app/features/recruiter/components/applicant-detail-page.tsx (full-page detail view: profile, resume, timeline, messages, status actions)
+- app/features/recruiter/components/applicant-detail-skeleton.tsx (loading skeleton)
+- app/(roles)/recruiter/applicants/[applicationId]/page.tsx (Next.js page route)
+- components/shared/status-timeline.tsx (reusable vertical timeline component)
+- app/features/recruiter/components/applicants-table.tsx (added EyeIcon button → /recruiter/applicants/[id])
+- app/features/recruiter/components/job-detail.tsx (replaced applicants placeholder with View All link)
+- tsconfig.json (excluded prisma/scripts from typecheck)
 
 ### Phase 3
 

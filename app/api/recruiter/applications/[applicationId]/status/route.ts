@@ -77,6 +77,24 @@ async function handlePATCH(
     );
   }
 
+  // Record immutable status change for timeline
+  await prisma.applicationStatusChange.create({
+    data: {
+      applicationId,
+      fromStatus: application.status,
+      toStatus: status,
+      changedById: session.id,
+      note:
+        ("rejectionReason" in parsed.data
+          ? (parsed.data as { rejectionReason: string }).rejectionReason
+          : undefined) ??
+        ("offerDetails" in parsed.data
+          ? (parsed.data as { offerDetails: string }).offerDetails
+          : undefined) ??
+        null,
+    },
+  });
+
   // Create in-app notification for the applicant
   await prisma.notification.create({
     data: {

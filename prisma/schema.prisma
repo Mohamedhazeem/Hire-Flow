@@ -76,6 +76,7 @@ model User {
   adminInvitesSent     AdminInvite[]      @relation("InviteSender")
   recruiterInvitesSent RecruiterInvite[]   @relation("RecruiterInviteSender")
   companyMembership    CompanyTeamMember?
+  initiatedStatusChanges ApplicationStatusChange[] @relation("StatusChangeInitiator")
   bookmarks            Bookmark[]
 
   @@unique([email])
@@ -248,6 +249,8 @@ model Application {
   userId          String
   user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   status          String   @default("applied")
+  statusChanges   ApplicationStatusChange[]
+
   rejectionReason String?
   recruiterNote   String?
   interviewDate   DateTime?
@@ -308,6 +311,22 @@ model Bookmark {
   @@unique([userId, jobId])
   @@index([userId])
   @@map("bookmark")
+}
+
+// --------------- Application Status History ---------------
+model ApplicationStatusChange {
+  id             String      @id @default(cuid())
+  applicationId  String
+  application    Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  fromStatus     String
+  toStatus       String
+  changedById    String
+  changedBy      User        @relation("StatusChangeInitiator", fields: [changedById], references: [id])
+  note           String?
+  createdAt      DateTime    @default(now())
+
+  @@index([applicationId, createdAt])
+  @@map("application_status_change")
 }
 
 // --------------- Admin Invite ---------------

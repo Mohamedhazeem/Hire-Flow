@@ -18,7 +18,6 @@ import {
   useApplicants,
 } from "@/app/features/recruiter/hooks/use-applications";
 import {
-  ReviewDialog,
   ShortlistDialog,
   ScheduleInterviewDialog,
   SendOfferDialog,
@@ -166,9 +165,18 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
           recruiterId && row.userId
             ? [recruiterId, row.userId].sort().join("_")
             : null;
-        const actions = NEXT_ACTIONS[row.status] ?? [];
         return (
           <div className="flex items-center justify-end gap-1">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              title="View Details"
+              onClick={() =>
+                router.push(`/recruiter/applicants/${row.id}`)
+              }
+            >
+              <EyeIcon className="size-4 text-text-muted hover:text-brand" />
+            </Button>
             {threadId && (
               <Button
                 variant="ghost"

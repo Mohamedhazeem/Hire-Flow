@@ -217,10 +217,26 @@ export function JobDetail({ jobId }: JobDetailProps) {
       </div>
 
       <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-3">
-          Applicants ({job.applicationCount})
-        </h2>
-        <p className="text-sm text-text-muted">Applicants will appear here (Step 2.4)</p>
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
+            Applicants ({job.applicationCount})
+          </h2>
+          <Link
+            href={`/recruiter/jobs/${job.id}/applicants`}
+            className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
+          >
+            <UsersIcon className="size-3.5" />
+            View All
+          </Link>
+        </div>
+        {job.applicationCount > 0 ? (
+          <p className="text-sm text-text-muted">
+            {job.applicationCount} applicant{job.applicationCount !== 1 ? "s" : ""}{" "}
+            have applied to this position.
+          </p>
+        ) : (
+          <p className="text-sm text-text-muted">No applicants yet for this position.</p>
+        )}
       </div>
 
       <div className="flex items-center gap-4 text-xs text-text-muted">
