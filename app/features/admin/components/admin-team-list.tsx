@@ -1,9 +1,13 @@
 "use client";
 
-import { useAdminInvites, useCancelInvite, useRemoveAdmin } from "@/app/features/admin/hooks/use-admin-invites";
+import {
+  useAdminInvites,
+  useCancelInvite,
+  useRemoveAdmin,
+} from "@/app/features/admin/hooks/use-admin-invites";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ConfirmActionButton } from "@/app/features/shared/components/confirm-action-button";
 import { X, Trash2 } from "lucide-react";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 
@@ -12,13 +16,19 @@ export function AdminTeamList() {
   const { data, isLoading, isError, error } = useAdminInvites();
   const cancelInvite = useCancelInvite();
   const removeAdmin = useRemoveAdmin();
+  const userRole = (session?.user as { role?: string })?.role;
+  const canRemoveAdmins = userRole === "super_admin";
 
   if (isLoading) {
     return <div className="text-center py-8 text-text-muted text-sm">Loading team...</div>;
   }
 
   if (isError) {
-    return <div className="text-center py-8 text-error text-sm">{(error as Error)?.message ?? "Failed to load team"}</div>;
+    return (
+      <div className="text-center py-8 text-error text-sm">
+        {(error as Error)?.message ?? "Failed to load team"}
+      </div>
+    );
   }
 
   if (!data) return null;
@@ -76,11 +86,7 @@ export function AdminTeamList() {
     {
       key: "invitedBy",
       header: "Invited By",
-      cell: (row) => (
-        <span className="text-sm text-text-muted">
-          {row.invitedBy ?? "—"}
-        </span>
-      ),
+      cell: (row) => <span className="text-sm text-text-muted">{row.invitedBy ?? "—"}</span>,
     },
     {
       key: "createdAt",
@@ -96,40 +102,41 @@ export function AdminTeamList() {
       header: "Actions",
       cell: (row) =>
         row.type === "invite" ? (
-          <Button
+          <ConfirmActionButton
+            dialogVariant="warning"
+            title="Cancel Invite"
+            description={`Are you sure you want to cancel the invite for ${row.email}?`}
+            confirmLabel="Cancel Invite"
+            action={() => cancelInvite.mutate(row.id)}
+            isPending={cancelInvite.isPending}
             variant="ghost"
             size="icon-xs"
-            onClick={() => cancelInvite.mutate(row.id)}
-            disabled={cancelInvite.isPending}
-            title="Cancel invite"
+            tooltip="Cancel invite"
           >
             <X className="size-3.5 text-text-muted" />
-          </Button>
+          </ConfirmActionButton>
         ) : row.id === session?.user?.id ? (
           <span className="text-xs text-text-muted italic">You</span>
         ) : (
-          <Button
+          <ConfirmActionButton
+            dialogVariant="destructive"
+            title="Remove Admin"
+            description={`Are you sure you want to remove ${row.name} from the admin team? This will revoke their admin access.`}
+            confirmLabel="Remove"
+            action={() => removeAdmin.mutate(row.id)}
+            isPending={removeAdmin.isPending}
+            disabled={!canRemoveAdmins}
             variant="ghost"
             size="icon-xs"
-            onClick={() => {
-              if (confirm(`Remove ${row.name} from admin team?`)) {
-                removeAdmin.mutate(row.id);
-              }
-            }}
-            disabled={removeAdmin.isPending}
-            title="Remove admin"
+            tooltip={canRemoveAdmins ? "Remove admin" : "Only super admins can remove team members"}
           >
-            <Trash2 className="size-3.5 text-error" />
-          </Button>
+            <Trash2 className={`size-3.5 ${canRemoveAdmins ? "text-error" : "text-text-muted"}`} />
+          </ConfirmActionButton>
         ),
     },
   ];
 
   return (
-    <DataTable
-      columns={columns}
-      data={rows}
-      emptyMessage="No team members or pending invites."
-    />
+    <DataTable columns={columns} data={rows} emptyMessage="No team members or pending invites." />
   );
 }

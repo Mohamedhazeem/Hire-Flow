@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
@@ -7,7 +7,7 @@ import {
   type ThreadItem,
 } from "@/app/features/admin/hooks/messages/use-admin-threads";
 import { ThreadView } from "@/app/features/admin/components/thread-view";
-import { StartConversationSearch } from "@/features/shared/components/start-conversation-search";
+import { StartConversationSearch } from "@/app/features/shared/components/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";

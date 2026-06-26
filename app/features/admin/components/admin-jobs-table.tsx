@@ -4,15 +4,6 @@ import { useState, useCallback } from "react";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogClose,
-} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -21,6 +12,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { ConfirmActionButton } from "@/app/features/shared/components/confirm-action-button";
 import {
   useAdminJobs,
   useDeleteJob,
@@ -34,7 +26,6 @@ import {
   SearchIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-  AlertTriangleIcon,
 } from "lucide-react";
 import type { AdminJobRow } from "@/app/features/admin/queries/job-queries";
 
@@ -64,8 +55,6 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   const [status, setStatus] = useState<string>(statusFilter);
   const [workMode, setWorkMode] = useState<string>("all");
   const [employmentType, setEmploymentType] = useState<string>("all");
-  const [deleteJobId, setDeleteJobId] = useState<string | null>(null);
-
   const params: AdminListJobsParams = {
     page,
     pageSize: 20,
@@ -82,6 +71,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   const { data, isLoading, isError } = useAdminJobs(params);
   const deleteJob = useDeleteJob();
   const toggleStatus = useToggleJobStatus();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const responseData = data?.data;
   const jobs = responseData?.jobs ?? [];
@@ -95,14 +85,6 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     },
     [toggleStatus],
   );
-
-  const handleDelete = useCallback(() => {
-    if (deleteJobId) {
-      deleteJob.mutate(deleteJobId, {
-        onSuccess: () => setDeleteJobId(null),
-      });
-    }
-  }, [deleteJob, deleteJobId]);
 
   const columns: ColumnDef<AdminJobRow>[] = [
     {
@@ -187,41 +169,25 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
               <ToggleLeftIcon className="size-6 text-text-muted" />
             )}
           </Button>
-          <Dialog
-            open={deleteJobId === row.id}
-            onOpenChange={(open) => !open && setDeleteJobId(null)}
+          <ConfirmActionButton
+            dialogVariant="destructive"
+            title="Delete Job"
+            description={`Are you sure you want to delete "${row.title}"? This action cannot be undone and will remove all associated applications.`}
+            confirmLabel="Delete"
+            action={() => {
+              setDeletingId(row.id);
+              deleteJob.mutate(row.id, {
+                onSuccess: () => setDeletingId(null),
+                onError: () => setDeletingId(null),
+              });
+            }}
+            isPending={deletingId === row.id && deleteJob.isPending}
+            variant="ghost"
+            size="icon-sm"
+            tooltip="Delete job"
           >
-            <DialogTrigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="icon-sm"
-                  title="Delete job"
-                  onClick={() => setDeleteJobId(row.id)}
-                >
-                  <Trash2Icon className="size-5 text-destructive" />
-                </Button>
-              }
-            />
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle className="flex items-center gap-2">
-                  <AlertTriangleIcon className="size-5 text-destructive" />
-                  Delete Job
-                </DialogTitle>
-                <DialogDescription>
-                  Are you sure you want to delete &quot;{row.title}&quot;? This action cannot be
-                  undone and will remove all associated applications.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="flex justify-end gap-2 pt-4">
-                <DialogClose render={<Button variant="outline">Cancel</Button>} />
-                <Button variant="destructive" onClick={handleDelete} disabled={deleteJob.isPending}>
-                  {deleteJob.isPending ? "Deleting..." : "Delete"}
-                </Button>
-              </div>
-            </DialogContent>
-          </Dialog>
+            <Trash2Icon className="size-5 text-destructive" />
+          </ConfirmActionButton>
         </div>
       ),
     },
