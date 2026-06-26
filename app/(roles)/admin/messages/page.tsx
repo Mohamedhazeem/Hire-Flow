@@ -7,21 +7,11 @@ import {
   type ThreadItem,
 } from "@/app/features/admin/hooks/messages/use-admin-threads";
 import { ThreadView } from "@/app/features/admin/components/thread-view";
-import { StartConversationSearch } from "@/app/features/shared/components/start-conversation-search";
+import { StartConversationSearch } from "@/components/shared/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";
-
-function formatTime(dateString: string) {
-  const d = new Date(dateString);
-  const now = new Date();
-  const diff = now.getTime() - d.getTime();
-  const days = Math.floor(diff / 86400000);
-  if (days === 0) return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  if (days === 1) return "Yesterday";
-  if (days < 7) return d.toLocaleDateString([], { weekday: "short" });
-  return d.toLocaleDateString([], { day: "numeric", month: "short" });
-}
+import { formatTime } from "@/utils/format-time";
 
 function ThreadListItem({
   thread,

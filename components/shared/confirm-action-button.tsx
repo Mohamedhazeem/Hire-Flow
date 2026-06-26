@@ -2,10 +2,7 @@
 
 import { useState, useCallback, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  ConfirmDialog,
-  type ConfirmDialogVariant,
-} from "@/app/features/shared/components/confirm-dialog";
+import { ConfirmDialog, type ConfirmDialogVariant } from "@/components/shared/confirm-dialog";
 
 type ConfirmActionButtonProps = {
   action: () => void;

@@ -7,7 +7,7 @@ import {
 } from "@/app/features/admin/hooks/use-admin-invites";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Badge } from "@/components/ui/badge";
-import { ConfirmActionButton } from "@/app/features/shared/components/confirm-action-button";
+import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { X, Trash2 } from "lucide-react";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 

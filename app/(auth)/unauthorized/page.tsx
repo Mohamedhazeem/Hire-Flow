@@ -1,5 +1,5 @@
 import { auth } from "@/app/features/auth/libs/auth";
-import ErrorPage from "@/components/error-page";
+import ErrorPage from "@/components/shared/error-page";
 import { headers } from "next/headers";
 
 export default async function UnauthorizedPage() {
@@ -7,9 +7,7 @@ export default async function UnauthorizedPage() {
     headers: await headers(),
   });
 
-  const userRole = session?.user
-    ? (session.user as { role: string }).role
-    : undefined;
+  const userRole = session?.user ? (session.user as { role: string }).role : undefined;
 
   let dashboardPath = "/login";
   if (userRole === "admin") dashboardPath = "/admin";

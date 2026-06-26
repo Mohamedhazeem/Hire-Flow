@@ -12,7 +12,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import { ConfirmActionButton } from "@/app/features/shared/components/confirm-action-button";
+import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import {
   useAdminJobs,
   useDeleteJob,
