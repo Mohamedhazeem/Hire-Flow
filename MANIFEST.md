@@ -6,14 +6,14 @@
 
 ## Last Updated
 
-2026-06-25T01:43:00Z
+2026-06-26T07:31:00Z
 
 ---
 
 ## Overview
 
-- **Current Phase:** Phase 1
-- **Current Step:** Step 1.5 - Admin Messaging Entry Point
+- **Current Phase:** Phase 2
+- **Current Step:** Step 2.0 - Recruiter Layout & Sidebar
 - **Next Step:** Step 2.1 - Company Profile CRUD
 - **Blockers:** None
 
@@ -44,6 +44,7 @@
 ### Phase 2: Recruiter
 
 - [x] Step 2.0 - Pre-Phase 2 Refactoring: Extract Shared Components & Role Guards
+- [x] Step 2.0 - Recruiter Layout & Sidebar
 - [ ] Step 2.1 - Company Profile CRUD
 - [ ] Step 2.2 - Job Posts CRUD
 - [ ] Step 2.3 - Applicants View & Status Updates (Includes Bulk Actions & Email)
@@ -168,7 +169,15 @@
 
 ### Phase 2
 
-_(agent to fill)_
+- app/features/recruiter/actions/
+- app/features/recruiter/components/
+- app/features/recruiter/components/recruiter-sidebar.tsx
+- app/features/recruiter/queries/
+- app/features/recruiter/schema/
+- app/features/recruiter/libs/
+- app/features/recruiter/hooks/
+- app/(roles)/recruiter/recruiter-layout-client.tsx
+- app/(roles)/recruiter/layout.tsx (updated: wraps RecruiterLayoutClient)
 
 ### Phase 3
 
