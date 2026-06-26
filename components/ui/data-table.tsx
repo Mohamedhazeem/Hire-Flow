@@ -51,7 +51,7 @@ export function DataTable<TData>({
     selectableRows.length > 0 &&
     selectableRows.every((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
-  const someSelected = enableSelection && data.some(
+  const someSelected = enableSelection && selectableRows.some(
     (row) => selectedIds?.has(getRowId?.(row) ?? ""),
   );
 

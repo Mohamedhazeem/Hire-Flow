@@ -23,38 +23,37 @@ async function handlePOST(request: NextRequest) {
 
   const { applicationIds, status, rejectionReason, email } = parsed.data;
 
-  const applications = await prisma.application.findMany({
-    where: {
-      id: { in: applicationIds },
-      job: { companyId },
-    },
-    select: {
-      id: true,
-      userId: true,
-      jobId: true,
-      status: true,
-      updatedAt: true,
-      user: { select: { email: true } },
-    },
-  });
+  const result = await prisma.$transaction(async (tx) => {
+    const applications = await tx.application.findMany({
+      where: {
+        id: { in: applicationIds },
+        job: { companyId },
+      },
+      select: {
+        id: true,
+        userId: true,
+        jobId: true,
+        status: true,
+        user: { select: { email: true } },
+      },
+    });
 
-  if (applications.length !== applicationIds.length) {
-    throw new NotFoundError(
-      `${applications.length} of ${applicationIds.length} applications found. Some applications do not exist or do not belong to your company.`,
-    );
-  }
-
-  for (const app of applications) {
-    const allowedTransitions = ALLOWED_TRANSITIONS[app.status];
-    if (!allowedTransitions || !allowedTransitions.includes(status)) {
-      throw new ValidationError(
-        `Application ${app.id}: cannot transition from "${app.status}" to "${status}"`,
+    if (applications.length !== applicationIds.length) {
+      throw new NotFoundError(
+        `${applications.length} of ${applicationIds.length} applications found. Some applications do not exist or do not belong to your company.`,
       );
     }
-  }
 
-  await prisma.$transaction(async (tx) => {
-    const updateData: Record<string, unknown> = { status, updatedAt: new Date() };
+    for (const app of applications) {
+      const allowedTransitions = ALLOWED_TRANSITIONS[app.status];
+      if (!allowedTransitions || !allowedTransitions.includes(status)) {
+        throw new ValidationError(
+          `Application ${app.id}: cannot transition from "${app.status}" to "${status}"`,
+        );
+      }
+    }
+
+    const updateData: Record<string, unknown> = { status };
     if (status === "rejected" && rejectionReason) {
       updateData.rejectionReason = rejectionReason;
     }
@@ -88,9 +87,11 @@ async function handlePOST(request: NextRequest) {
         },
       })),
     });
+
+    return { count: applications.length, status };
   });
 
-  return ok({ count: applications.length, status });
+  return ok(result);
 }
 
 export const POST = withErrorHandler(handlePOST);

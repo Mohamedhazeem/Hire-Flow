@@ -79,6 +79,14 @@ export const BulkStatusTransitionSchema = z.object({
   status: ApplicationStatusSchema,
   rejectionReason: z.string().min(1).max(500).optional(),
   email: z.boolean().optional().default(false),
+}).superRefine((data, ctx) => {
+  if (data.status === "rejected" && (!data.rejectionReason || data.rejectionReason.trim().length === 0)) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Rejection reason is required when rejecting",
+      path: ["rejectionReason"],
+    });
+  }
 });
 
 export type BulkStatusTransitionInput = z.infer<typeof BulkStatusTransitionSchema>;

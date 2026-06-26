@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo, useRef } from "react";
+import { useState, useCallback, useMemo, useRef, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
@@ -86,6 +86,22 @@ const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
 
 type BulkActionDef = { label: string; status: string };
 
+const MAX_ACTIONED_IDS = 1000;
+
+function addActionedIds(prev: Set<string>, ids: string[]): Set<string> {
+  const next = new Set(prev);
+  for (const id of ids) {
+    if (next.size >= MAX_ACTIONED_IDS) break;
+    next.add(id);
+  }
+  if (next.size !== prev.size + ids.length) {
+    const entries = [...next];
+    const evictCount = Math.floor(entries.length * 0.2);
+    for (let i = 0; i < evictCount; i++) next.delete(entries[i]);
+  }
+  return next;
+}
+
 const STATUS_DOT_COLORS: Record<string, string> = {
   all: "bg-muted",
   applied: "bg-brand",
@@ -169,7 +185,7 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
   const { data, isLoading, isError } = useApplicants(jobId, params);
 
   const responseData = data?.data;
-  const totalPages = responseData?.totalPages ?? 1;
+  const totalPages = Math.max(1, responseData?.totalPages ?? 1);
   const hasNextPage = responseData?.hasNextPage ?? false;
   const hasPrevPage = responseData?.hasPrevPage ?? false;
 
@@ -200,6 +216,12 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
 
   const bulkActions = useMemo(() => getBulkActions(selectedRows), [selectedRows]);
 
+  useEffect(() => {
+    return () => {
+      if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+    };
+  }, []);
+
   const showFeedback = useCallback((type: "success" | "error", message: string) => {
     setFeedback({ type, message });
     if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
@@ -222,7 +244,7 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
         {
           onSuccess: () => {
             showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`);
-            setActionedIds((prev) => { const n = new Set(prev); for (const id of ids) n.add(id); return n; });
+            setActionedIds((prev) => addActionedIds(prev, ids));
             setSelectedIds(new Set());
           },
           onError: (error: Error) => {
@@ -243,7 +265,7 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
         {
           onSuccess: () => {
             showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} rejected`);
-            setActionedIds((prev) => { const n = new Set(prev); for (const id of ids) n.add(id); return n; });
+            setActionedIds((prev) => addActionedIds(prev, ids));
             setSelectedIds(new Set());
             setBulkDialog("");
           },

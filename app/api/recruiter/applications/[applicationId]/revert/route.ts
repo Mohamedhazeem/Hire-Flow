@@ -15,27 +15,27 @@ async function handlePOST(
 
   const { applicationId } = await params;
 
-  const application = await prisma.application.findFirst({
-    where: { id: applicationId, job: { companyId } },
-    select: { id: true, userId: true, jobId: true, status: true },
-  });
+  const result = await prisma.$transaction(async (tx) => {
+    const application = await tx.application.findFirst({
+      where: { id: applicationId, job: { companyId } },
+      select: { id: true, userId: true, jobId: true, status: true },
+    });
 
-  if (!application) {
-    throw new NotFoundError("Application not found");
-  }
+    if (!application) {
+      throw new NotFoundError("Application not found");
+    }
 
-  const lastChange = await prisma.applicationStatusChange.findFirst({
-    where: { applicationId, changedById: session.id },
-    orderBy: { createdAt: "desc" },
-  });
+    const lastChange = await tx.applicationStatusChange.findFirst({
+      where: { applicationId },
+      orderBy: { createdAt: "desc" },
+    });
 
-  if (!lastChange) {
-    throw new ValidationError("No previous status change to revert");
-  }
+    if (!lastChange) {
+      throw new ValidationError("No previous status change to revert");
+    }
 
-  const revertToStatus = lastChange.fromStatus;
+    const revertToStatus = lastChange.fromStatus;
 
-  await prisma.$transaction(async (tx) => {
     const updateData: Record<string, unknown> = { status: revertToStatus };
 
     if (application.status === "rejected") {
@@ -56,9 +56,11 @@ async function handlePOST(
         note: "Reverted",
       },
     });
+
+    return revertToStatus;
   });
 
-  return ok({ status: revertToStatus });
+  return ok({ status: result });
 }
 
 export const POST = withErrorHandler(handlePOST);
