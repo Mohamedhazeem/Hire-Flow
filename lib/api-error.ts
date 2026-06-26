@@ -42,3 +42,10 @@ export class ConflictError extends Error {
     this.name = "ConflictError";
   }
 }
+
+export class TooManyRequestsError extends Error {
+  constructor(message = "Too many requests") {
+    super(message);
+    this.name = "TooManyRequestsError";
+  }
+}

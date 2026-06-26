@@ -6,15 +6,15 @@
 
 ## Last Updated
 
-2026-06-26T14:55:47Z
+2026-06-27T01:06:40Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.3 - Job Posts CRUD
-- **Next Step:** Step 2.4 - Applicants View & Status Updates
+- **Current Step:** Step 2.5 - Recruiter Direct Messaging (Thread‑Based) — COMPLETE
+- **Next Step:** Step 2.6 - Applicant Detail View (or Step 2.8 Recruiter Analytics per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful.
 
 ---
@@ -38,8 +38,8 @@
 - [x] Step 1.2 - Admin UI (Users & Recruiters)
 - [x] Step 1.3 - Admin Team Management
 - [x] Step 1.4 - Admin Job Oversight & Analytics
-- [x] Step 1.5 - Admin Messaging Entry Point
-      _(Note: Phase 1 also successfully established the global `api-error.ts`, React Email pipeline, Bulk Actions, and URL-based table filtering patterns)._
+- [x] Step 1.5 - Admin Messaging Entry Point (REST + polling)
+- [x] Step 1.6 - Real-Time Admin Messaging (Pusher — private-thread, private-user channels, NotificationDropdown bell)
 
 ### Phase 2: Recruiter
 
@@ -48,8 +48,8 @@
 - [x] Step 2.1 - Company Profile CRUD
 - [x] Step 2.2 - Recruiter Team Management
 - [x] Step 2.3 - Job Posts CRUD
-- [ ] Step 2.4 - Applicants View & Status Updates (Includes Bulk Actions & Email)
-- [ ] Step 2.5 - Recruiter Analytics & Filters (URL-driven state)
+- [x] Step 2.4 - Applicants View & Status Updates (7-status pipeline, OCC, URL-driven pagination, in-app notifications)
+- [x] Step 2.5 - Recruiter Direct Messaging (Thread‑based, Pusher realtime, rate-limited, user reply page)
 
 ### Phase 3: User
 
@@ -213,6 +213,30 @@
 - app/(roles)/recruiter/jobs/[id]/page.tsx (Job detail page)
 - app/(roles)/recruiter/jobs/[id]/edit/page.tsx (Edit job page)
 
+### Phase 2 (continued — Step 2.5 Messaging)
+
+- app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts (tenant-scoped relationship check)
+- app/features/recruiter/libs/rate-limit-message.ts (20 msgs/hr per pair)
+- app/api/recruiter/threads/route.ts (GET — list recruiter threads)
+- app/api/recruiter/messages/[threadId]/route.ts (GET/POST/DELETE — thread CRUD with Pusher + Notifications)
+- app/api/recruiter/messages/search/route.ts (GET — search applicants)
+- app/api/recruiter/applications/[applicationId]/profile/route.ts (GET — applicant user lookup)
+- app/features/recruiter/hooks/messages/use-recruiter-threads.ts
+- app/features/recruiter/hooks/messages/use-recruiter-messages.ts
+- app/features/recruiter/components/recruiter-messages-page.tsx (split-panel inbox)
+- app/(roles)/recruiter/messages/page.tsx
+- app/features/user/components/user-sidebar.tsx (sidebar with Messages link)
+- app/features/user/components/user-messages-page.tsx (split-panel inbox)
+- app/features/user/components/user-thread-view.tsx (full chat with Pusher)
+- app/features/user/hooks/messages/use-user-threads.ts
+- app/features/user/hooks/messages/use-user-messages.ts
+- app/(roles)/user/user-layout-client.tsx
+- app/(roles)/user/layout.tsx (updated with UserLayoutClient + UserSidebar)
+- app/(roles)/user/messages/page.tsx
+- lib/api-error.ts (added TooManyRequestsError — 429)
+- lib/api-wrapper.ts (registered TooManyRequestsError → 429)
+- app/features/recruiter/components/applicants-table.tsx (added MessageSquareTextIcon action button)
+
 ### Phase 3
 
 _(agent to fill)_
@@ -253,7 +277,7 @@ _(agent to fill)_
 
 - **Mutations/Fetching:** REST route handlers for complex mutations; Server Actions only for plain forms. TanStack Query for all client-side data.
 - **State Management:** Zustand strictly for UI client-state (sidebars, modals), never for API data.
-- **Real-time:** Pusher with private-thread-[id] and private-user-[id] channels.
+- **Real-time:** Pusher with `private-thread-[id]` and `private-user-[id]` channels. Admin and Recruiter/User messaging both use Pusher for realtime delivery.
 - **Route Guards:** Role-based middleware and layout-level protection.
 - **Styling:** Tailwind v4 + Shadcn, using theme variables, no hardcoded hex.
 - **Validation:** Always run prisma validate and npm run build after changes.
@@ -263,7 +287,7 @@ _(agent to fill)_
 ## Known Issues / TODOs
 
 - [ ] TODO: Replace mock upload (/api/upload) with S3/Vercel Blob in production.
-- [ ] TODO: Implement Pusher messaging backend (Phase 5).
+- [x] TODO: Implement Pusher messaging backend — DONE in Step 1.6 + Step 2.5.
 - [ ] TODO: Add comprehensive tests once core features are stable.
 - [ ] TODO: Run Prisma migration `add_company_team_member_and_recruiter_invite` when database is reachable.
 - [ ] TODO: `form.watch()` triggers React Compiler `react-hooks/incompatible-library` warning — project-wide pattern, not a regression.

@@ -1,0 +1,191 @@
+import { NextRequest } from "next/server";
+import { z } from "zod";
+import { ok } from "@/lib/api-response";
+import { requireRole } from "@/app/features/shared/api/require-role";
+import { prisma } from "@/lib/prisma";
+import { pusher } from "@/lib/pusher";
+import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
+import { ValidationError } from "@/lib/api-error";
+import { withErrorHandler } from "@/lib/api-wrapper";
+import { verifyRecruiterApplicantRelationship } from "@/app/features/recruiter/libs/verify-recruiter-applicant-relationship";
+import { checkMessageRateLimit } from "@/app/features/recruiter/libs/rate-limit-message";
+
+const SendMessageSchema = z
+  .object({
+    content: z.string().min(0).max(2000).default(""),
+    fileUrl: z.string().optional(),
+    fileName: z.string().min(1).max(255).optional(),
+    fileSize: z.number().int().positive().optional(),
+    fileType: z.string().min(1).max(100).optional(),
+  })
+  .refine((data) => data.content.length > 0 || data.fileUrl, {
+    message: "Message must contain text or a file attachment",
+  });
+
+const messageSelect = {
+  id: true,
+  senderId: true,
+  content: true,
+  fileUrl: true,
+  fileName: true,
+  fileSize: true,
+  fileType: true,
+  createdAt: true,
+  read: true,
+} as const;
+
+async function handleGET(
+  request: NextRequest,
+  { params }: { params: Promise<{ threadId: string }> },
+) {
+  const recruiter = await requireRole(["recruiter"]);
+  const { threadId } = await params;
+  const { searchParams } = request.nextUrl;
+  const cursor = searchParams.get("cursor") ?? undefined;
+  const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
+
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+    throw new ValidationError("Invalid thread ID format");
+  }
+  if (!threadId.includes(recruiter.id)) {
+    throw new ValidationError("You are not a participant in this thread");
+  }
+
+  const otherUserId = threadId.startsWith(recruiter.id + "_")
+    ? threadId.slice(recruiter.id.length + 1)
+    : threadId.endsWith("_" + recruiter.id)
+      ? threadId.slice(0, threadId.length - recruiter.id.length - 1)
+      : null;
+
+  if (otherUserId) {
+    await verifyRecruiterApplicantRelationship(recruiter.id, otherUserId);
+  }
+
+  const { take, cursor: cursorVal } = parseCursorParams({ cursor, limit });
+  const prismaCursor = cursorVal ? { id: cursorVal } : undefined;
+
+  const messages = await prisma.message.findMany({
+    where: { threadId },
+    take,
+    orderBy: { createdAt: "desc" },
+    ...(prismaCursor ? { cursor: prismaCursor, skip: 1 } : {}),
+    select: messageSelect,
+  });
+
+  const { items, meta } = buildCursorMeta(messages, limit);
+
+  const unreadIds = items.filter((m) => m.senderId !== recruiter.id && !m.read).map((m) => m.id);
+  if (unreadIds.length > 0) {
+    void prisma.message.updateMany({
+      where: { id: { in: unreadIds } },
+      data: { read: true },
+    });
+  }
+
+  return ok({ messages: items.reverse(), meta });
+}
+
+async function handlePOST(
+  request: NextRequest,
+  { params }: { params: Promise<{ threadId: string }> },
+) {
+  const recruiter = await requireRole(["recruiter"]);
+  const { threadId } = await params;
+
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+    throw new ValidationError("Invalid thread ID format");
+  }
+
+  const otherUserId = threadId.startsWith(recruiter.id + "_")
+    ? threadId.slice(recruiter.id.length + 1)
+    : threadId.endsWith("_" + recruiter.id)
+      ? threadId.slice(0, threadId.length - recruiter.id.length - 1)
+      : null;
+
+  if (!otherUserId) {
+    throw new ValidationError("You are not a participant in this thread");
+  }
+
+  await checkMessageRateLimit(recruiter.id, otherUserId);
+  await verifyRecruiterApplicantRelationship(recruiter.id, otherUserId);
+
+  const body = await request.json();
+  const input = SendMessageSchema.safeParse(body);
+  if (!input.success) {
+    throw new ValidationError(
+      input.error.issues.map((e) => e.message).join("; ") || "Invalid message",
+    );
+  }
+
+  const message = await prisma.message.create({
+    data: {
+      threadId,
+      senderId: recruiter.id,
+      receiverId: otherUserId,
+      content: input.data.content,
+      fileUrl: input.data.fileUrl ?? null,
+      fileName: input.data.fileName ?? null,
+      fileSize: input.data.fileSize ?? null,
+      fileType: input.data.fileType ?? null,
+    },
+    select: {
+      ...messageSelect,
+      createdAt: true,
+    },
+  });
+
+  void pusher.trigger(`private-thread-${threadId}`, "new-message", {
+    message: { ...message, createdAt: (message.createdAt as Date).toISOString() },
+    senderId: recruiter.id,
+  });
+
+  const notification = await prisma.notification.create({
+    data: {
+      userId: otherUserId,
+      type: "new_message",
+      data: {
+        threadId,
+        senderId: recruiter.id,
+        senderName: recruiter.name,
+        preview: input.data.content.slice(0, 100),
+        fileUrl: input.data.fileUrl ?? null,
+        fileType: input.data.fileType ?? null,
+      },
+    },
+  });
+
+  void pusher.trigger(`private-user-${otherUserId}`, "new-notification", {
+    notification: {
+      ...notification,
+      createdAt: notification.createdAt.toISOString(),
+    },
+  });
+
+  return ok(message, 201);
+}
+
+async function handleDELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ threadId: string }> },
+) {
+  const recruiter = await requireRole(["recruiter"]);
+  const { threadId } = await params;
+
+  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+    throw new ValidationError("Invalid thread ID format");
+  }
+
+  if (!threadId.includes(recruiter.id)) {
+    throw new ValidationError("You are not a participant in this thread");
+  }
+
+  await prisma.message.deleteMany({
+    where: { threadId },
+  });
+
+  return ok({ deleted: true });
+}
+
+export const GET = withErrorHandler(handleGET);
+export const POST = withErrorHandler(handlePOST);
+export const DELETE = withErrorHandler(handleDELETE);

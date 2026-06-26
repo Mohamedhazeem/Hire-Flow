@@ -26,6 +26,7 @@ import {
 } from "@/app/features/recruiter/components/application-dialogs";
 import type { ListApplicantsParams } from "@/app/features/recruiter/schema/application.schema";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
+import { useSession } from "@/app/features/auth/libs/auth-client";
 import {
   SearchIcon,
   ChevronLeftIcon,
@@ -35,6 +36,7 @@ import {
   CalendarIcon,
   SendIcon,
   XCircleIcon,
+  MessageSquareTextIcon,
 } from "lucide-react";
 
 const STATUS_OPTIONS = [
@@ -80,6 +82,8 @@ type ApplicantsTableProps = {
 export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { data: session } = useSession();
+  const recruiterId = (session?.user as { id?: string })?.id ?? "";
 
   const page = Number(searchParams.get("page") ?? "1");
   const search = searchParams.get("search") ?? "";
@@ -158,9 +162,25 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
       header: "Actions",
       className: "text-right",
       cell: (row) => {
+        const threadId =
+          recruiterId && row.userId
+            ? [recruiterId, row.userId].sort().join("_")
+            : null;
         const actions = NEXT_ACTIONS[row.status] ?? [];
         return (
           <div className="flex items-center justify-end gap-1">
+            {threadId && (
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                title="Message"
+                onClick={() =>
+                  router.push(`/recruiter/messages?thread=${threadId}`, { scroll: false })
+                }
+              >
+                <MessageSquareTextIcon className="size-4 text-text-muted hover:text-brand" />
+              </Button>
+            )}
             {row.status === "reviewing" && (
               <Button
                 variant="ghost"
