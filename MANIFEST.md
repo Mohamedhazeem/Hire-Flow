@@ -6,15 +6,15 @@
 
 ## Last Updated
 
-2026-06-27T05:55:00Z
+2026-06-27T06:10:00Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.8 - Recruiter Analytics & Filters — COMPLETE
-- **Next Step:** Step 3.x — User features (per HIRE_FLOW_PROMPTS.md)
+- **Current Step:** Step 2.9 - Recruiter Dashboard — COMPLETE
+- **Next Step:** Step 2.10 — Notifications & Activity Feed (per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
 ---
@@ -284,6 +284,12 @@
 - app/(roles)/recruiter/jobs/[id]/analytics/page.tsx (per-job page wrapper)
 - app/features/recruiter/components/job-detail.tsx (added tab navigation — View Details / Applicants / Analytics)
 - app/(roles)/recruiter/jobs/[id]/applicants/page.tsx (renamed from [jobId] to [id] for consistency)
+
+### Phase 2 (continued — Step 2.9 Recruiter Dashboard)
+
+- app/features/recruiter/queries/dashboard-queries.ts (DashboardData + getRecruiterDashboardStats — 5 parallel Prisma counts/queries)
+- app/features/recruiter/components/recruiter-dashboard.tsx (client component: 4 StatCards, recent applications DataTable, 4 quick action cards)
+- app/(roles)/recruiter/page.tsx (replaced placeholder with server-side call + NoCompanyPrompt + RecruiterDashboard)
 
 ### Phase 3
 

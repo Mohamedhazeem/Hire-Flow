@@ -50,9 +50,9 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/page.tsx": {
-    "mtime": 1782025499.3352988,
-    "ast_hash": "7edebb52ce25bac9b54f25fd33756fc1",
-    "semantic_hash": "7edebb52ce25bac9b54f25fd33756fc1"
+    "mtime": 1782520604.800542,
+    "ast_hash": "f637f1a89f065421f8f7498862c67b8a",
+    "semantic_hash": ""
   },
   "app/(roles)/user/layout.tsx": {
     "mtime": 1782502796.4957345,
@@ -545,8 +545,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782520002.2685473,
-    "ast_hash": "359de68bc7eb04f026e010990d6597ad",
+    "mtime": 1782520663.5667484,
+    "ast_hash": "5b4aefea7c543fc53a5af9570a9b6b5f",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1417,6 +1417,21 @@
   "app/features/recruiter/schema/analytics.schema.ts": {
     "mtime": 1782519660.6430938,
     "ast_hash": "5bb85ab784655e1f23525e49c8623834",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/recruiter-dashboard.tsx": {
+    "mtime": 1782520594.1605165,
+    "ast_hash": "f062d9ded7f9a0666ae7c1822946e014",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/queries/dashboard-queries.ts": {
+    "mtime": 1782520564.229447,
+    "ast_hash": "abe8441d758b2002651a5e19ae77e60e",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782490602120-recruiter-dashboard.md": {
+    "mtime": 1782520541.885954,
+    "ast_hash": "1adc669c4779e7a9d437a720b4d7146c",
     "semantic_hash": ""
   }
 }
