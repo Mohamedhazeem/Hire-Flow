@@ -124,7 +124,7 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
   useEffect(() => {
     if (chatNameOverride) return;
     if (!otherUserId) return;
-    apiClient<{ data: { name: string } }>(`/api/admin/users/${otherUserId}`)
+    apiClient<{ data: { name: string } }>(`/api/users/${otherUserId}`)
       .then((res) => setChatName(res.data?.name ?? "Unknown"))
       .catch(() => setChatName("Unknown"));
   }, [otherUserId, chatNameOverride]);
