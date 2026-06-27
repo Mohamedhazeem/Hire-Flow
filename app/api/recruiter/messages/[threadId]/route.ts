@@ -35,31 +35,34 @@ const messageSelect = {
   read: true,
 } as const;
 
+function getOtherUserId(threadId: string, userId: string): string | null {
+  const parts = threadId.split("_");
+  if (parts.length !== 2) return null;
+  return parts[0] === userId ? parts[1] : parts[0];
+}
+
 async function handleGET(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const recruiter = await requireRole(["recruiter"]);
+  const currentUser = await requireRole(["recruiter", "user"]);
   const { threadId } = await params;
   const { searchParams } = request.nextUrl;
   const cursor = searchParams.get("cursor") ?? undefined;
   const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
-  if (!threadId.includes(recruiter.id)) {
+  if (!threadId.includes(currentUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 
-  const otherUserId = threadId.startsWith(recruiter.id + "_")
-    ? threadId.slice(recruiter.id.length + 1)
-    : threadId.endsWith("_" + recruiter.id)
-      ? threadId.slice(0, threadId.length - recruiter.id.length - 1)
-      : null;
+  const otherUserId = getOtherUserId(threadId, currentUser.id);
 
-  if (otherUserId) {
-    await verifyRecruiterApplicantRelationship(recruiter.id, otherUserId);
+  if (currentUser.role === "recruiter" && otherUserId) {
+    await verifyRecruiterApplicantRelationship(currentUser.id, otherUserId);
   }
 
   const { take, cursor: cursorVal } = parseCursorParams({ cursor, limit });
@@ -75,7 +78,7 @@ async function handleGET(
 
   const { items, meta } = buildCursorMeta(messages, limit);
 
-  const unreadIds = items.filter((m) => m.senderId !== recruiter.id && !m.read).map((m) => m.id);
+  const unreadIds = items.filter((m) => m.senderId !== currentUser.id && !m.read).map((m) => m.id);
   if (unreadIds.length > 0) {
     void prisma.message.updateMany({
       where: { id: { in: unreadIds } },
@@ -90,25 +93,25 @@ async function handlePOST(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const recruiter = await requireRole(["recruiter"]);
+  const currentUser = await requireRole(["recruiter", "user"]);
   const { threadId } = await params;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  const otherUserId = threadId.startsWith(recruiter.id + "_")
-    ? threadId.slice(recruiter.id.length + 1)
-    : threadId.endsWith("_" + recruiter.id)
-      ? threadId.slice(0, threadId.length - recruiter.id.length - 1)
-      : null;
+  const otherUserId = getOtherUserId(threadId, currentUser.id);
 
   if (!otherUserId) {
     throw new ValidationError("You are not a participant in this thread");
   }
 
-  await checkMessageRateLimit(recruiter.id, otherUserId);
-  await verifyRecruiterApplicantRelationship(recruiter.id, otherUserId);
+  await checkMessageRateLimit(currentUser.id, otherUserId);
+
+  if (currentUser.role === "recruiter") {
+    await verifyRecruiterApplicantRelationship(currentUser.id, otherUserId);
+  }
 
   const body = await request.json();
   const input = SendMessageSchema.safeParse(body);
@@ -121,7 +124,7 @@ async function handlePOST(
   const message = await prisma.message.create({
     data: {
       threadId,
-      senderId: recruiter.id,
+      senderId: currentUser.id,
       receiverId: otherUserId,
       content: input.data.content,
       fileUrl: input.data.fileUrl ?? null,
@@ -137,13 +140,13 @@ async function handlePOST(
 
   void pusher.trigger(`private-thread-${threadId}`, "new-message", {
     message: { ...message, createdAt: (message.createdAt as Date).toISOString() },
-    senderId: recruiter.id,
+    senderId: currentUser.id,
   });
 
   void createNotification(otherUserId, "new_message", {
     threadId,
-    senderId: recruiter.id,
-    senderName: recruiter.name,
+    senderId: currentUser.id,
+    senderName: currentUser.name,
     preview: input.data.content.slice(0, 100),
     fileUrl: input.data.fileUrl ?? null,
     fileType: input.data.fileType ?? null,
@@ -156,19 +159,20 @@ async function handleDELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
 ) {
-  const recruiter = await requireRole(["recruiter"]);
+  const currentUser = await requireRole(["recruiter", "user"]);
   const { threadId } = await params;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  if (!threadId.includes(recruiter.id)) {
+  if (!threadId.includes(currentUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 
   await prisma.message.deleteMany({
-    where: { threadId },
+    where: { threadId, senderId: currentUser.id },
   });
 
   return ok({ deleted: true });

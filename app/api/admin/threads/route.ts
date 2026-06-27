@@ -1,8 +1,12 @@
-import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
+
+function getOtherUserId(threadId: string, userId: string): string {
+  const parts = threadId.split("_");
+  return parts[0] === userId ? parts[1] : parts[0];
+}
 
 async function handleGET() {
   const adminUser = await requireRole(["admin", "super_admin"]);
@@ -38,11 +42,7 @@ async function handleGET() {
 
   const latestByThread = new Map(latestMessages.map((m) => [m.threadId, m]));
 
-  const otherUserIds = threadIds.map((id) => {
-    return id.startsWith(adminUser.id + "_")
-      ? id.slice(adminUser.id.length + 1)
-      : id.slice(0, id.indexOf("_" + adminUser.id));
-  });
+  const otherUserIds = threadIds.map((id) => getOtherUserId(id, adminUser.id));
 
   const users = await prisma.user.findMany({
     where: { id: { in: otherUserIds } },
@@ -53,9 +53,7 @@ async function handleGET() {
 
   const result = threadIds
     .map((threadId) => {
-      const otherId = threadId.startsWith(adminUser.id + "_")
-        ? threadId.slice(adminUser.id.length + 1)
-        : threadId.slice(0, threadId.indexOf("_" + adminUser.id));
+      const otherId = getOtherUserId(threadId, adminUser.id);
       const user = userMap.get(otherId);
       const latest = latestByThread.get(threadId);
       if (!user) return null;

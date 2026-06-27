@@ -7,6 +7,7 @@ import { pusher } from "@/lib/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { checkMessageRateLimit } from "@/app/features/recruiter/libs/rate-limit-message";
 import { createNotification } from "@/lib/notifications";
 
 const SendMessageSchema = z
@@ -33,6 +34,12 @@ const messageSelect = {
   read: true,
 } as const;
 
+function getOtherUserId(threadId: string, userId: string): string | null {
+  const parts = threadId.split("_");
+  if (parts.length !== 2) return null;
+  return parts[0] === userId ? parts[1] : parts[0];
+}
+
 async function handleGET(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
@@ -43,7 +50,8 @@ async function handleGET(
   const cursor = searchParams.get("cursor") ?? undefined;
   const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
   if (!threadId.includes(adminUser.id)) {
@@ -81,19 +89,18 @@ async function handlePOST(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  const otherUserId = threadId.startsWith(adminUser.id + "_")
-    ? threadId.slice(adminUser.id.length + 1)
-    : threadId.endsWith("_" + adminUser.id)
-      ? threadId.slice(0, threadId.length - adminUser.id.length - 1)
-      : null;
+  const otherUserId = getOtherUserId(threadId, adminUser.id);
 
   if (!otherUserId) {
     throw new ValidationError("You are not a participant in this thread");
   }
+
+  await checkMessageRateLimit(adminUser.id, otherUserId);
 
   const body = await request.json();
   const input = SendMessageSchema.safeParse(body);
@@ -144,7 +151,8 @@ async function handleDELETE(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  if (!threadId.includes("_") || threadId.startsWith("_") || threadId.endsWith("_")) {
+  const parts = threadId.split("_");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
     throw new ValidationError("Invalid thread ID format");
   }
 
@@ -153,7 +161,7 @@ async function handleDELETE(
   }
 
   await prisma.message.deleteMany({
-    where: { threadId },
+    where: { threadId, senderId: adminUser.id },
   });
 
   return ok({ deleted: true });

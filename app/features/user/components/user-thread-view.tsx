@@ -108,6 +108,8 @@ export function UserThreadView({ threadId, onBack }: UserThreadViewProps) {
             pageParams: unknown[];
           };
           if (!data_.pages?.length) return old;
+          const existingIds = new Set(data_.pages.flatMap((p) => p.data.messages.map((m) => m.id)));
+          if (existingIds.has(data.message.id)) return old;
           const newPages = [...data_.pages];
           const lastIdx = newPages.length - 1;
           newPages[lastIdx] = {

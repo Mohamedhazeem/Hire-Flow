@@ -16,6 +16,17 @@ export async function POST(request: Request) {
     return new Response("Missing socket_id or channel_name", { status: 400 });
   }
 
+  if (channelName.startsWith("private-thread-")) {
+    const threadId = channelName.slice("private-thread-".length);
+    const parts = threadId.split("_");
+    if (parts.length !== 2 || !parts[0] || !parts[1]) {
+      return new Response("Invalid channel name", { status: 403 });
+    }
+    if (session.user.id !== parts[0] && session.user.id !== parts[1]) {
+      return new Response("Not a participant in this thread", { status: 403 });
+    }
+  }
+
   const authResponse = pusher.authorizeChannel(socketId, channelName, {
     user_id: session.user.id,
     user_info: { name: session.user.name },

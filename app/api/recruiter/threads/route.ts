@@ -3,13 +3,18 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
+function getOtherUserId(threadId: string, userId: string): string {
+  const parts = threadId.split("_");
+  return parts[0] === userId ? parts[1] : parts[0];
+}
+
 async function handleGET() {
-  const recruiter = await requireRole(["recruiter"]);
+  const currentUser = await requireRole(["recruiter", "user"]);
 
   const threads = await prisma.message.groupBy({
     by: ["threadId"],
     where: {
-      OR: [{ senderId: recruiter.id }, { receiverId: recruiter.id }],
+      OR: [{ senderId: currentUser.id }, { receiverId: currentUser.id }],
     },
     _max: { createdAt: true },
   });
@@ -37,11 +42,7 @@ async function handleGET() {
 
   const latestByThread = new Map(latestMessages.map((m) => [m.threadId, m]));
 
-  const otherUserIds = threadIds.map((id) =>
-    id.startsWith(recruiter.id + "_")
-      ? id.slice(recruiter.id.length + 1)
-      : id.slice(0, id.indexOf("_" + recruiter.id)),
-  );
+  const otherUserIds = threadIds.map((id) => getOtherUserId(id, currentUser.id));
 
   const users = await prisma.user.findMany({
     where: { id: { in: otherUserIds } },
@@ -52,9 +53,7 @@ async function handleGET() {
 
   const result = threadIds
     .map((threadId) => {
-      const otherId = threadId.startsWith(recruiter.id + "_")
-        ? threadId.slice(recruiter.id.length + 1)
-        : threadId.slice(0, threadId.indexOf("_" + recruiter.id));
+      const otherId = getOtherUserId(threadId, currentUser.id);
       const user = userMap.get(otherId);
       const latest = latestByThread.get(threadId);
       if (!user) return null;
@@ -78,7 +77,7 @@ async function handleGET() {
                   : ""),
               createdAt: latest.createdAt.toISOString(),
               senderId: latest.senderId,
-              unread: latest.senderId !== recruiter.id && !latest.read,
+              unread: latest.senderId !== currentUser.id && !latest.read,
             }
           : null,
       };

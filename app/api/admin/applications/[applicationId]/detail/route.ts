@@ -8,9 +8,9 @@ async function handleGET(
   _request: NextRequest,
   { params }: { params: Promise<{ applicationId: string }> },
 ) {
-  await requireRole(["admin", "super_admin"]);
+  const adminUser = await requireRole(["admin", "super_admin"]);
   const { applicationId } = await params;
-  const detail = await getAdminApplicantDetail(applicationId);
+  const detail = await getAdminApplicantDetail(applicationId, adminUser.id);
   return ok(detail);
 }
 

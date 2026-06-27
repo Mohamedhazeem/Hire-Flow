@@ -77,6 +77,7 @@ const STATUS_LABELS: Record<string, string> = {
 
 export async function getAdminApplicantDetail(
   applicationId: string,
+  adminUserId: string,
 ): Promise<AdminApplicantDetailResponse> {
   const application = await prisma.application.findUnique({
     where: { id: applicationId },
@@ -169,10 +170,7 @@ export async function getAdminApplicantDetail(
     }),
     prisma.message.findMany({
       where: {
-        OR: [
-          { threadId: { startsWith: `${application.userId}_` } },
-          { threadId: { endsWith: `_${application.userId}` } },
-        ],
+        threadId: [adminUserId, application.userId].sort().join("_"),
       },
       orderBy: { createdAt: "desc" },
       take: 5,

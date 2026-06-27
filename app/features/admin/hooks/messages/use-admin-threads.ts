@@ -30,6 +30,7 @@ export function useAdminThreads() {
       const res = await apiClient<ApiEnvelope<ThreadItem[]>>("/api/admin/threads");
       return res.data;
     },
+    refetchInterval: 60_000,
   });
 }
 

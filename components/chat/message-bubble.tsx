@@ -137,7 +137,7 @@ export function MessageBubble({
           className={cn(
             "rounded-2xl px-4 py-2.5 text-sm wrap-break-word shadow-sm",
             isOwn
-              ? "bg-gradient-to-br from-brand to-brand-dark text-brand-foreground rounded-br-md shadow-brand"
+              ? "bg-linear-to-br from-brand to-brand-dark text-brand-foreground rounded-br-md shadow-brand"
               : "bg-bg-surface border border-border-subtle text-text-body rounded-bl-md",
           )}
         >
@@ -151,7 +151,7 @@ export function MessageBubble({
               />
             </div>
           )}
-          {content && <p className="whitespace-pre-wrap">{content}</p>}
+          {content && <p className="whitespace-pre-wrap break-words">{content}</p>}
         </div>
 
         <div
