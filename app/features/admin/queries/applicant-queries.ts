@@ -11,7 +11,7 @@ type ResumeInfo = {
 
 type DeletedResume = { source: "deleted" };
 
-export type ApplicantDetailResponse = {
+export type AdminApplicantDetailResponse = {
   application: {
     id: string;
     jobId: string;
@@ -75,13 +75,11 @@ const STATUS_LABELS: Record<string, string> = {
   rejected: "Rejected",
 };
 
-export async function getApplicantDetail(
+export async function getAdminApplicantDetail(
   applicationId: string,
-  companyId: string,
-  recruiterId: string,
-): Promise<ApplicantDetailResponse> {
-  const application = await prisma.application.findFirst({
-    where: { id: applicationId, job: { companyId } },
+): Promise<AdminApplicantDetailResponse> {
+  const application = await prisma.application.findUnique({
+    where: { id: applicationId },
     select: {
       id: true,
       jobId: true,
@@ -156,8 +154,6 @@ export async function getApplicantDetail(
     }
   }
 
-  const threadId = [recruiterId, application.userId].sort().join("_");
-
   const [statusChanges, recentMessages] = await Promise.all([
     prisma.applicationStatusChange.findMany({
       where: { applicationId },
@@ -172,7 +168,12 @@ export async function getApplicantDetail(
       },
     }),
     prisma.message.findMany({
-      where: { threadId },
+      where: {
+        OR: [
+          { threadId: { startsWith: `${application.userId}_` } },
+          { threadId: { endsWith: `_${application.userId}` } },
+        ],
+      },
       orderBy: { createdAt: "desc" },
       take: 5,
       select: {
@@ -187,7 +188,7 @@ export async function getApplicantDetail(
   ]);
 
   const now = new Date();
-  const timeline: ApplicantDetailResponse["statusTimeline"] = [];
+  const timeline: AdminApplicantDetailResponse["statusTimeline"] = [];
 
   timeline.push({
     id: `submitted-${application.id}`,
@@ -257,5 +258,42 @@ export async function getApplicantDetail(
     applicantResume: resolvedResume,
     statusTimeline: timeline,
     recentMessages: recentMessages,
+  };
+}
+
+export type AdminUserApplicationsResponse = {
+  applications: {
+    id: string;
+    jobId: string;
+    jobTitle: string;
+    status: string;
+    appliedAt: Date;
+    updatedAt: Date;
+  }[];
+};
+
+export async function getUserApplications(userId: string): Promise<AdminUserApplicationsResponse> {
+  const applications = await prisma.application.findMany({
+    where: { userId },
+    orderBy: { appliedAt: "desc" },
+    select: {
+      id: true,
+      jobId: true,
+      status: true,
+      appliedAt: true,
+      updatedAt: true,
+      job: { select: { title: true } },
+    },
+  });
+
+  return {
+    applications: applications.map((a) => ({
+      id: a.id,
+      jobId: a.jobId,
+      jobTitle: a.job.title,
+      status: a.status,
+      appliedAt: a.appliedAt,
+      updatedAt: a.updatedAt,
+    })),
   };
 }

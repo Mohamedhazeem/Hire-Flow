@@ -28,6 +28,7 @@ import {
   Trash2,
   LogOut,
   MessageSquareTextIcon,
+  EyeIcon,
 } from "lucide-react";
 
 function computeChatThreadId(idA: string, idB: string): string {
@@ -233,6 +234,13 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
       align: "center",
       cell: (row) => (
         <div className="flex items-center justify-center gap-1 sm:gap-2">
+          <ActionButton
+            icon={<EyeIcon className="size-4" />}
+            label="Profile"
+            onClick={() => router.push(`/admin/users/${row.id}`)}
+            title={`View ${row.name}'s profile`}
+          />
+          <div className="hidden sm:inline text-text-muted">|</div>
           <ActionButton
             icon={<MessageSquareTextIcon className="size-4" />}
             label="Chat"

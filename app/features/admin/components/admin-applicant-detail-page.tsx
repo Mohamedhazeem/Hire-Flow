@@ -1,6 +1,5 @@
 "use client";
 
-import { useSession } from "@/app/features/auth/libs/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState, useCallback } from "react";
@@ -11,7 +10,6 @@ import {
   FileTextIcon,
   MapPinIcon,
   BriefcaseIcon,
-  MessageSquareTextIcon,
   GraduationCapIcon,
   EyeIcon,
   AlertCircleIcon,
@@ -19,47 +17,11 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
-import {
-  useApplicantDetail,
-  useTransitionStatusWithRefresh,
-} from "@/app/features/recruiter/hooks/use-applicant-detail";
+import { useAdminApplicantDetail } from "@/app/features/admin/hooks/use-applicant-detail";
 import { StatusTimeline } from "@/components/shared/status-timeline";
 import { ResumePreviewDialog } from "@/components/shared/resume-preview-dialog";
-import {
-  ReviewDialog,
-  ShortlistDialog,
-  ScheduleInterviewDialog,
-  SendOfferDialog,
-  RejectDialog,
-} from "@/app/features/recruiter/components/application-dialogs";
-import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 
-const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
-  applied: [
-    { label: "Start Review", status: "reviewing" },
-    { label: "Reject", status: "rejected" },
-  ],
-  reviewing: [
-    { label: "Shortlist", status: "shortlisted" },
-    { label: "Reject", status: "rejected" },
-  ],
-  shortlisted: [
-    { label: "Schedule Interview", status: "interview_scheduled" },
-    { label: "Reject", status: "rejected" },
-  ],
-  interview_scheduled: [
-    { label: "Send Offer", status: "offered" },
-    { label: "Reject", status: "rejected" },
-  ],
-  offered: [
-    { label: "Mark Hired", status: "hired" },
-    { label: "Reject", status: "rejected" },
-  ],
-  hired: [],
-  rejected: [],
-};
-
-type ApplicantDetailPageProps = {
+type AdminApplicantDetailPageProps = {
   applicationId: string;
 };
 
@@ -83,16 +45,9 @@ function InfoRow({
   );
 }
 
-export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps) {
+export function AdminApplicantDetailPage({ applicationId }: AdminApplicantDetailPageProps) {
   const router = useRouter();
-  const { data: session } = useSession();
-  const recruiterId = (session?.user as { id?: string })?.id ?? "";
-  const { data, isLoading, isError } = useApplicantDetail(applicationId);
-  const transitionStatus = useTransitionStatusWithRefresh(applicationId);
-  const [dialog, setDialog] = useState<{
-    type: string;
-    applicant: ApplicantRow | null;
-  }>({ type: "", applicant: null });
+  const { data, isLoading, isError } = useAdminApplicantDetail(applicationId);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [downloadError, setDownloadError] = useState<string | null>(null);
 
@@ -144,7 +99,6 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             <Skeleton className="h-24 rounded-2xl" />
           </div>
         </div>
-        <Skeleton className="h-16 rounded-2xl" />
       </div>
     );
   }
@@ -160,30 +114,75 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
     );
   }
 
-  const detail = data.data;
+  const detail = data.data as {
+    application: {
+      id: string;
+      jobId: string;
+      userId: string;
+      status: string;
+      rejectionReason: string | null;
+      recruiterNote: string | null;
+      interviewDate: string | null;
+      meetingLink: string | null;
+      offerDetails: string | null;
+      appliedAt: string;
+      updatedAt: string;
+      job: { id: string; title: string };
+      resumeId: string | null;
+    };
+    applicant: {
+      id: string;
+      name: string;
+      email: string;
+      role: string;
+      profile: {
+        headline: string | null;
+        bio: string | null;
+        skills: string[];
+        experiences: unknown;
+        location: string | null;
+        basePay: number | null;
+        ctc: number | null;
+        socialLinks: unknown;
+      } | null;
+    };
+    applicantResume: {
+      id: string;
+      label: string;
+      fileUrl: string | null;
+      isPrimary: boolean;
+      createdAt: string;
+      source: "application" | "current_profile" | "deleted";
+    } | null;
+    statusTimeline: {
+      id: string;
+      type: "application_submitted" | "status_change";
+      fromStatus: string | null;
+      toStatus: string | null;
+      label: string;
+      changedByName: string | null;
+      note: string | null;
+      createdAt: string;
+      isUpcoming: boolean;
+    }[];
+    recentMessages: {
+      id: string;
+      content: string;
+      fileUrl: string | null;
+      fileName: string | null;
+      senderId: string;
+      createdAt: string;
+    }[];
+  };
+
   const { application, applicant, statusTimeline, recentMessages, applicantResume } = detail;
   const profile = applicant.profile;
   const experiencesArray =
     profile?.experiences != null && Array.isArray(profile.experiences)
       ? (profile.experiences as unknown[])
       : null;
-  const threadId = [recruiterId, application.userId].sort().join("_");
 
-  const actions = NEXT_ACTIONS[application.status] ?? [];
-
-  const applicantRowForDialog: ApplicantRow = {
-    id: application.id,
-    userId: applicant.id,
-    name: applicant.name,
-    email: applicant.email,
-    status: application.status,
-    appliedAt: application.appliedAt,
-    updatedAt: application.updatedAt,
-  };
-
-  const isDeleted = applicantResume?.source === "deleted";
-  const resumeInfo = !isDeleted && applicantResume ? applicantResume : null;
-  const ext = resumeInfo?.fileUrl?.split(".").pop()?.toLowerCase() ?? "";
+  const ext = applicantResume?.fileUrl?.split(".").pop()?.toLowerCase() ?? "";
   const isPreviewable = ext === "pdf" || ["jpg", "jpeg", "png", "webp", "gif"].includes(ext);
 
   function renderResumeSourceBadge(source: string | undefined) {
@@ -206,7 +205,6 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-center gap-3">
           <button
@@ -225,7 +223,7 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
           </div>
         </div>
         <Link
-          href={`/recruiter/jobs/${application.job.id}`}
+          href={`/admin/jobs/${application.job.id}`}
           className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-brand transition-colors"
         >
           <BriefcaseIcon className="size-4" />
@@ -234,11 +232,8 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
         </Link>
       </div>
 
-      {/* Main content: two columns on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left column: Profile */}
         <div className="space-y-6">
-          {/* Profile Card */}
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
             <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
               Profile
@@ -319,7 +314,6 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             </div>
           </div>
 
-          {/* Resume Card */}
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
             <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
               Resume
@@ -405,9 +399,7 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
           </div>
         </div>
 
-        {/* Right column: Timeline + Messages */}
         <div className="space-y-6">
-          {/* Timeline */}
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
             <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
               Timeline
@@ -415,19 +407,11 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             <StatusTimeline entries={statusTimeline} />
           </div>
 
-          {/* Recent Messages */}
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
                 Recent Messages
               </h2>
-              <Link
-                href={`/recruiter/messages?thread=${threadId}`}
-                className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
-              >
-                <MessageSquareTextIcon className="size-3.5" />
-                View All
-              </Link>
             </div>
             {recentMessages.length > 0 ? (
               <div className="space-y-2">
@@ -437,7 +421,7 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
                     className="p-3 rounded-xl bg-bg-elevated border border-border-subtle"
                   >
                     <p className="text-sm text-text-body line-clamp-2">
-                      {msg.content || (msg.fileUrl ? "📎 File" : "")}
+                      {msg.content || (msg.fileUrl ? "File attachment" : "")}
                     </p>
                     <p className="text-xs text-text-muted mt-1">
                       {new Date(msg.createdAt).toLocaleDateString(undefined, {
@@ -451,94 +435,20 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
                 ))}
               </div>
             ) : (
-              <div className="text-center py-4">
-                <p className="text-sm text-text-muted mb-2">No messages yet.</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => router.push(`/recruiter/messages?thread=${threadId}`)}
-                >
-                  <MessageSquareTextIcon className="size-4 mr-1.5" />
-                  Start Conversation
-                </Button>
-              </div>
+              <p className="text-sm text-text-muted text-center py-4">
+                No messages for this application.
+              </p>
             )}
           </div>
         </div>
       </div>
 
-      {/* Status Actions */}
-      {actions.length > 0 && (
-        <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-            Actions
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {actions.map((action) => {
-              const variant = action.status === "rejected" ? "destructive" : "default";
-              return (
-                <Button
-                  key={action.status}
-                  variant={variant}
-                  disabled={transitionStatus.isPending}
-                  onClick={() =>
-                    setDialog({
-                      type: action.status,
-                      applicant: applicantRowForDialog,
-                    })
-                  }
-                >
-                  {action.label}
-                </Button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* Dialogs */}
-      <ReviewDialog
-        open={dialog.type === "reviewing"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <ShortlistDialog
-        open={dialog.type === "shortlisted"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <ScheduleInterviewDialog
-        open={dialog.type === "interview_scheduled"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <SendOfferDialog
-        open={dialog.type === "offered"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <RejectDialog
-        open={dialog.type === "rejected"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-
       <ResumePreviewDialog
         open={previewOpen}
         onOpenChange={setPreviewOpen}
-        fileUrl={resumeInfo?.fileUrl ?? null}
-        label={resumeInfo?.label ?? "Resume"}
-        onDownload={resumeInfo?.fileUrl ? () => handleDownload(resumeInfo.fileUrl!) : undefined}
+        fileUrl={applicantResume?.fileUrl ?? null}
+        label={applicantResume?.label ?? "Resume"}
+        onDownload={applicantResume?.fileUrl ? () => handleDownload(applicantResume.fileUrl!) : undefined}
         downloadError={downloadError}
       />
     </div>

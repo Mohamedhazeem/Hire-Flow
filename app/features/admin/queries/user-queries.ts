@@ -73,7 +73,38 @@ export async function listUsers(params: AdminListUsersParams): Promise<AdminUser
   return { users, ...buildOffsetMeta(total, page, pageSize) };
 }
 
-export async function getUserById(id: string) {
+export type AdminUserProfile = {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  banned: boolean;
+  banReason: string | null;
+  banExpiresAt: Date | null;
+  emailVerified: boolean;
+  image: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+  profile: {
+    headline: string | null;
+    bio: string | null;
+    skills: string[];
+    experiences: unknown;
+    location: string | null;
+    basePay: number | null;
+    ctc: number | null;
+    socialLinks: unknown;
+    resumes: {
+      id: string;
+      label: string;
+      fileUrl: string | null;
+      isPrimary: boolean;
+      createdAt: Date;
+    }[];
+  } | null;
+};
+
+export async function getUserById(id: string): Promise<AdminUserProfile | null> {
   return prisma.user.findUnique({
     where: { id },
     select: {
@@ -88,6 +119,28 @@ export async function getUserById(id: string) {
       image: true,
       createdAt: true,
       updatedAt: true,
+      profile: {
+        select: {
+          headline: true,
+          bio: true,
+          skills: true,
+          experiences: true,
+          location: true,
+          basePay: true,
+          ctc: true,
+          socialLinks: true,
+          resumes: {
+            select: {
+              id: true,
+              label: true,
+              fileUrl: true,
+              isPrimary: true,
+              createdAt: true,
+            },
+            orderBy: { createdAt: "desc" },
+          },
+        },
+      },
     },
   });
 }

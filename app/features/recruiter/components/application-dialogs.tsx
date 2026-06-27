@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Dialog,
   DialogContent,
@@ -14,8 +13,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2Icon } from "lucide-react";
-import { cn } from "@/lib/utils";
-import type { StatusTransitionInput } from "@/app/features/recruiter/schema/application.schema";
 import { useTransitionStatus } from "@/app/features/recruiter/hooks/use-applications";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 
@@ -125,6 +122,8 @@ function formatDateForInput(isoString: string): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
+const TOMORROW_DEFAULT = formatDateForInput(new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString());
+
 type InterviewFormData = {
   interviewDate: string;
   meetingLink: string;
@@ -143,7 +142,7 @@ export function ScheduleInterviewDialog({
     formState: { errors },
   } = useForm<InterviewFormData>({
     defaultValues: {
-      interviewDate: formatDateForInput(new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()),
+      interviewDate: TOMORROW_DEFAULT,
       meetingLink: "",
     },
   });

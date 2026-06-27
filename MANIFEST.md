@@ -6,7 +6,7 @@
 
 ## Last Updated
 
-2026-06-27T06:44:20Z
+2026-06-27T07:40:00Z
 
 ---
 
@@ -321,9 +321,26 @@
 - app/api/recruiter/jobs/[jobId]/applicants/export/route.ts (GET — auth-guarded CSV download with Content-Disposition attachment)
 - app/features/recruiter/components/applicants-table.tsx (added DownloadIcon + Export CSV link in filter toolbar)
 
-### Phase 3
+### Phase 3 — Admin Applicant Detail View
 
-_(agent to fill)_
+- app/features/admin/queries/applicant-queries.ts (getAdminApplicantDetail — admin resume fallback chain, getUserApplications — list user's apps)
+- app/api/admin/applications/[applicationId]/detail/route.ts (GET — admin applicant detail endpoint)
+- app/features/admin/hooks/use-applicant-detail.ts (useAdminApplicantDetail hook)
+- app/features/admin/hooks/use-admin-users.ts (updated: added useAdminUserApplications hook)
+- app/features/admin/components/admin-applicant-detail-page.tsx (read-only detail view: profile, resume with preview/download/error, timeline, messages)
+- app/(roles)/admin/applications/[applicationId]/page.tsx (route: /admin/applications/[id])
+- app/api/admin/users/[id]/applications/route.ts (GET — user's applications list)
+- app/features/admin/components/user-profile-view.tsx (updated: added Applications card with StatusBadge + links to /admin/applications/[id])
+- app/features/admin/components/people-table.tsx (updated: added EyeIcon → /admin/users/[id] in actions)
+
+Resume error handling:
+- No resume → "No resume attached to this application"
+- resumeId exists but deleted → "Resume was removed by the applicant" (source: "deleted")
+- Fallback to current profile resume → source badge "Current Resume"
+- File URL 404 → inline error message (5s auto-dismiss)
+- PDF load fail → "Failed to load PDF preview" + Download button
+- DOC/DOCX → "Preview not available" + Download button
+- No fileUrl → "File not available" badge
 
 ### Phase 4
 

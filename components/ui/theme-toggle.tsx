@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore, useEffect } from "react";
 import { MoonIcon, SunIcon, MonitorIcon } from "lucide-react";
 import { useUIStore, type Theme } from "@/stores/ui-store";
 
@@ -13,11 +13,11 @@ const themes: { value: Theme; icon: typeof SunIcon; label: string }[] = [
 export function ThemeToggle({ collapsed }: { collapsed?: boolean }) {
   const theme = useUIStore((s) => s.theme);
   const setTheme = useUIStore((s) => s.setTheme);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     if (!mounted) return;
