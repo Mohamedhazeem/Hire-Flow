@@ -17,6 +17,7 @@ import {
 } from "@/components/chat/message-bubble";
 import { getPusherClient } from "@/lib/pusher-client";
 import type { MessageItem } from "@/components/chat/message-item";
+import { usePresenceStore } from "@/features/messages/stores/presence-store";
 import {
   SendHorizonalIcon,
   Loader2Icon,
@@ -120,6 +121,9 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
   const [deletingMessageIds, setDeletingMessageIds] = useState<Set<string>>(new Set());
 
   const otherUserId = currentUserId ? getOtherUserId(threadId, currentUserId) : null;
+  const isOnline = usePresenceStore((s) => s.isOnline);
+  const subscribeToUser = usePresenceStore((s) => s.subscribeToUser);
+  const unsubscribeFromUser = usePresenceStore((s) => s.unsubscribeFromUser);
 
   useEffect(() => {
     if (chatNameOverride) return;
@@ -128,6 +132,14 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
       .then((res) => setChatName(res.data?.name ?? "Unknown"))
       .catch(() => setChatName("Unknown"));
   }, [otherUserId, chatNameOverride]);
+
+  useEffect(() => {
+    if (!otherUserId) return;
+    subscribeToUser(otherUserId);
+    return () => {
+      unsubscribeFromUser(otherUserId);
+    };
+  }, [otherUserId, subscribeToUser, unsubscribeFromUser]);
 
   useEffect(() => {
     if (!threadId.includes("_") || !currentUserId) return;
@@ -341,7 +353,11 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
             <h2 className="text-sm font-semibold text-text-heading truncate">
               {chatName || "Loading..."}
             </h2>
-            <p className="text-[11px] text-text-muted">{config.roleLabel}</p>
+            {otherUserId && isOnline(otherUserId) ? (
+              <p className="text-[11px] text-green-500 font-medium">Online</p>
+            ) : (
+              <p className="text-[11px] text-text-muted">{config.roleLabel}</p>
+            )}
           </div>
         </div>
         {hooks.useDeleteThread && (

@@ -10,63 +10,16 @@ import { AdminThreadView as ThreadView } from "@/app/features/admin/components/a
 import { StartConversationSearch } from "@/components/shared/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";
-import { formatTime } from "@/utils/format-time";
-
-function ThreadListItem({
-  thread,
-  adminId,
-  active,
-}: {
-  thread: ThreadItem;
-  adminId: string;
-  active?: boolean;
-}) {
-  const router = useRouter();
-  const isUnread = thread.lastMessage?.senderId !== adminId && thread.lastMessage?.unread;
-
-  return (
-    <button
-      type="button"
-      onClick={() => router.push(`/admin/messages?thread=${thread.threadId}`, { scroll: false })}
-      className={cn(
-        "w-full flex items-start gap-3 px-3 py-3 text-left hover:bg-bg-elevated transition-colors rounded-radius-lg group",
-        active && "bg-bg-elevated",
-      )}
-    >
-      <div className="size-10 rounded-xl bg-linear-to-br from-brand/15 to-brand/5 flex items-center justify-center shrink-0">
-        <span className="text-sm font-bold text-brand">
-          {thread.user.name.charAt(0).toUpperCase()}
-        </span>
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center justify-between gap-2">
-          <span
-            className={cn(
-              "text-sm truncate",
-              isUnread ? "font-semibold text-text-heading" : "font-medium text-text-body",
-            )}
-          >
-            {thread.user.name}
-          </span>
-          <span className="text-[10px] text-text-muted shrink-0">
-            {thread.lastMessage ? formatTime(thread.lastMessage.createdAt) : ""}
-          </span>
-        </div>
-        <p
-          className={cn(
-            "text-xs truncate mt-0.5",
-            isUnread ? "font-medium text-text-body" : "text-text-muted",
-          )}
-        >
-          {thread.lastMessage?.content || "No messages yet"}
-        </p>
-      </div>
-      {isUnread && <div className="size-2 rounded-full bg-brand shrink-0 mt-1.5" />}
-      <ChevronRightIcon className="size-4 text-text-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
-    </button>
-  );
-}
+import { MessageSquareTextIcon } from "lucide-react";
+import {
+  ThreadListItem,
+  type ThreadListItemData,
+} from "@/components/chat/thread-list-item";
+import { usePresenceStore } from "@/features/messages/stores/presence-store";
+import {
+  useOwnPresence,
+  useThreadPresence,
+} from "@/features/messages/stores/use-thread-presence";
 
 function ThreadListSkeleton() {
   return (
@@ -95,6 +48,9 @@ function ThreadListPanel({
   adminId: string;
   activeThreadId: string | null;
 }) {
+  const isOnline = usePresenceStore((s) => s.isOnline);
+  useThreadPresence(threads);
+
   return (
     <div className="flex flex-col min-h-0 h-full bg-bg-surface lg:border-r-2 lg:border-border-subtle lg:w-80 lg:shrink-0">
       <div className="shrink-0 px-4 pt-5 pb-3 border-b border-border-subtle">
@@ -116,9 +72,11 @@ function ThreadListPanel({
             {threads.map((thread) => (
               <ThreadListItem
                 key={thread.threadId}
-                thread={thread}
-                adminId={adminId}
+                thread={thread as unknown as ThreadListItemData}
+                currentUserId={adminId}
                 active={thread.threadId === activeThreadId}
+                basePath="/admin/messages"
+                isOnline={isOnline(thread.user.id)}
               />
             ))}
           </div>
@@ -146,9 +104,10 @@ export default function AdminMessagesPage() {
   const adminId = (session?.user as { id?: string })?.id ?? "";
   const { data: threads, isLoading } = useAdminThreads();
 
+  useOwnPresence(adminId);
+
   return (
     <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8 -mt-3 lg:-mt-8">
-      {/* Thread list: always visible on desktop, hidden on mobile when thread is active */}
       <div
         className={cn(
           "flex-1 flex flex-col min-h-0 lg:flex-none",
@@ -163,7 +122,6 @@ export default function AdminMessagesPage() {
         />
       </div>
 
-      {/* Thread view: shown on desktop inline; on mobile replaces thread list */}
       <div
         className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}
       >

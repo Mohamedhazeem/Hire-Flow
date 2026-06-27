@@ -27,6 +27,13 @@ export async function POST(request: Request) {
     }
   }
 
+  if (channelName.startsWith("presence-")) {
+    const targetUserId = channelName.slice("presence-online-".length);
+    if (session.user.id !== targetUserId) {
+      return new Response("Cannot authenticate presence as another user", { status: 403 });
+    }
+  }
+
   const authResponse = pusher.authorizeChannel(socketId, channelName, {
     user_id: session.user.id,
     user_info: { name: session.user.name },

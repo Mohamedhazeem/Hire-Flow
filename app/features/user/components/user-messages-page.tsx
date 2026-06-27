@@ -4,71 +4,20 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import {
   useUserThreads,
-  type UserThreadItem,
 } from "@/app/features/user/hooks/messages/use-user-threads";
 import { UserThreadView } from "@/app/features/user/components/user-thread-view";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import { MessageSquareTextIcon, ChevronRightIcon } from "lucide-react";
-import { formatTime } from "@/utils/format-time";
-
-function ThreadListItem({
-  thread,
-  userId,
-  active,
-}: {
-  thread: UserThreadItem;
-  userId: string;
-  active?: boolean;
-}) {
-  const router = useRouter();
-  const isUnread =
-    thread.lastMessage?.senderId !== userId && thread.lastMessage?.unread;
-
-  return (
-    <button
-      type="button"
-      onClick={() =>
-        router.push(`/user/messages?thread=${thread.threadId}`, { scroll: false })
-      }
-      className={cn(
-        "w-full flex items-start gap-3 px-3 py-3 text-left hover:bg-bg-elevated transition-colors rounded-radius-lg group",
-        active && "bg-bg-elevated",
-      )}
-    >
-      <div className="size-10 rounded-xl bg-linear-to-br from-brand/15 to-brand/5 flex items-center justify-center shrink-0">
-        <span className="text-sm font-bold text-brand">
-          {thread.user.name.charAt(0).toUpperCase()}
-        </span>
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center justify-between gap-2">
-          <span
-            className={cn(
-              "text-sm truncate",
-              isUnread ? "font-semibold text-text-heading" : "font-medium text-text-body",
-            )}
-          >
-            {thread.user.name}
-          </span>
-          <span className="text-[10px] text-text-muted shrink-0">
-            {thread.lastMessage ? formatTime(thread.lastMessage.createdAt) : ""}
-          </span>
-        </div>
-        <p
-          className={cn(
-            "text-xs truncate mt-0.5",
-            isUnread ? "font-medium text-text-body" : "text-text-muted",
-          )}
-        >
-          {thread.lastMessage?.content || "No messages yet"}
-        </p>
-      </div>
-      {isUnread && <div className="size-2 rounded-full bg-brand shrink-0 mt-1.5" />}
-      <ChevronRightIcon className="size-4 text-text-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
-    </button>
-  );
-}
+import { MessageSquareTextIcon } from "lucide-react";
+import {
+  ThreadListItem,
+  type ThreadListItemData,
+} from "@/components/chat/thread-list-item";
+import { usePresenceStore } from "@/features/messages/stores/presence-store";
+import {
+  useOwnPresence,
+  useThreadPresence,
+} from "@/features/messages/stores/use-thread-presence";
 
 function ThreadListSkeleton() {
   return (
@@ -93,6 +42,10 @@ export function UserMessagesPage() {
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
   const { data: threads, isLoading } = useUserThreads();
+  const isOnline = usePresenceStore((s) => s.isOnline);
+
+  useOwnPresence(userId);
+  useThreadPresence(threads);
 
   return (
     <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8 -mt-3 lg:-mt-8">
@@ -115,9 +68,11 @@ export function UserMessagesPage() {
                 {threads.map((thread) => (
                   <ThreadListItem
                     key={thread.threadId}
-                    thread={thread}
-                    userId={userId}
+                    thread={thread as unknown as ThreadListItemData}
+                    currentUserId={userId}
                     active={thread.threadId === activeThreadId}
+                    basePath="/user/messages"
+                    isOnline={isOnline(thread.user.id)}
                   />
                 ))}
               </div>

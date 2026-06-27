@@ -745,8 +745,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
-    "mtime": 1782531917.2073934,
-    "ast_hash": "b69211fd11b70c3f9af6b2d314ebb606",
+    "mtime": 1782534686.267995,
+    "ast_hash": "9e10516c77219ec5f288cf50ee9cf361",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -1140,8 +1140,8 @@
     "semantic_hash": ""
   },
   "app/api/pusher/auth/route.ts": {
-    "mtime": 1782530545.7951221,
-    "ast_hash": "4fa2704a9fa584b8f8f546956ac26b32",
+    "mtime": 1782534618.9624443,
+    "ast_hash": "d418c11640e9abbd37a51cfb436bc87f",
     "semantic_hash": ""
   },
   "app/api/recruiter/applications/[applicationId]/profile/route.ts": {
@@ -1185,8 +1185,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-messages-page.tsx": {
-    "mtime": 1782531929.6038356,
-    "ast_hash": "61b259d2c63ab33817a4e1c8184f35fd",
+    "mtime": 1782534706.875409,
+    "ast_hash": "eb82acbe6a627929de6550510fdb46a1",
     "semantic_hash": ""
   },
   "app/features/recruiter/hooks/messages/use-recruiter-messages.ts": {
@@ -1210,8 +1210,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-messages-page.tsx": {
-    "mtime": 1782531953.3939576,
-    "ast_hash": "cc614f506cd94d00a1c05b574675d74f",
+    "mtime": 1782534889.550498,
+    "ast_hash": "56d42377569b19b0b092c9ed54d28325",
     "semantic_hash": ""
   },
   "app/features/user/components/user-sidebar.tsx": {
@@ -1550,13 +1550,33 @@
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
-    "mtime": 1782532867.2212443,
-    "ast_hash": "cd50e0a2a7970c38f9658baac4ca4243",
+    "mtime": 1782534755.3138082,
+    "ast_hash": "0399cb26fe2ced36f9e7b793092a5ec6",
     "semantic_hash": ""
   },
   "app/api/users/[id]/route.ts": {
     "mtime": 1782532993.349376,
     "ast_hash": "417d0a1d79f3812f9bfa422dc8f4d569",
+    "semantic_hash": ""
+  },
+  "components/chat/thread-list-item.tsx": {
+    "mtime": 1782534659.9025545,
+    "ast_hash": "b20d9a1838bc28e446bfeedbf824296c",
+    "semantic_hash": ""
+  },
+  "features/messages/stores/presence-store.ts": {
+    "mtime": 1782534639.9757504,
+    "ast_hash": "e79b8c97e1328e114c2f9106648dca9d",
+    "semantic_hash": ""
+  },
+  "features/messages/stores/use-thread-presence.ts": {
+    "mtime": 1782534645.558236,
+    "ast_hash": "3484ebd8860f22555accb0e656975396",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782458322810-online-presence-plan.md": {
+    "mtime": 1782534572.6654608,
+    "ast_hash": "aca5acf9dfc187e1de451131fa4ab668",
     "semantic_hash": ""
   }
 }
