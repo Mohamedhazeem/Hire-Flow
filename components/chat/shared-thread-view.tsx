@@ -145,6 +145,7 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
     if (!threadId.includes("_") || !currentUserId) return;
 
     const pusher = getPusherClient();
+    if (!pusher) return;
     const channel = pusher.subscribe(`private-thread-${threadId}`);
 
     channel.bind("new-message", (data: { message: MessageItem; senderId: string }) => {

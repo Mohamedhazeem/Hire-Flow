@@ -127,7 +127,7 @@ export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: N
   useRealtimeNotifications(userId);
 
   const allNotifications = useMemo(
-    () => data?.pages.flatMap((p) => p.notifications as NotificationItem[]) ?? [],
+    () => data?.pages.flatMap((p) => (p as { notifications?: NotificationItem[] })?.notifications ?? []) ?? [],
     [data?.pages],
   );
 

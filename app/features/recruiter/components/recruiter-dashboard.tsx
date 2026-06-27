@@ -53,7 +53,7 @@ const recentColumns: ColumnDef<DashboardData["recentApplications"][number]>[] = 
     align: "center",
     cell: (row) => (
       <span className="text-text-muted text-xs whitespace-nowrap">
-        {new Date(row.appliedAt).toLocaleDateString(undefined, {
+        {new Date(row.appliedAt).toLocaleDateString("en-US", {
           month: "short",
           day: "numeric",
         })}

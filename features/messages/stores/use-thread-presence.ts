@@ -8,6 +8,7 @@ export function useOwnPresence(userId: string | undefined) {
   useEffect(() => {
     if (!userId) return;
     const pusher = getPusherClient();
+    if (!pusher) return;
     const channelName = `presence-online-${userId}`;
     pusher.subscribe(channelName);
     return () => {

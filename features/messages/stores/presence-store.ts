@@ -22,6 +22,7 @@ export const usePresenceStore = create<PresenceState>((set, get) => ({
 
     const channelName = `presence-online-${userId}`;
     const pusher = getPusherClient();
+    if (!pusher) return;
     const channel = pusher.subscribe(channelName);
 
     channel.bind("pusher:subscription_succeeded", (members: { members: Record<string, unknown> }) => {
@@ -64,6 +65,7 @@ export const usePresenceStore = create<PresenceState>((set, get) => ({
 
     const channelName = `presence-online-${userId}`;
     const pusher = getPusherClient();
+    if (!pusher) return;
     pusher.unsubscribe(channelName);
 
     const newSubs = { ..._subscriptions };
@@ -78,6 +80,7 @@ export const usePresenceStore = create<PresenceState>((set, get) => ({
   clear: () => {
     const { _subscriptions } = get();
     const pusher = getPusherClient();
+    if (!pusher) return;
     for (const userId of Object.keys(_subscriptions)) {
       pusher.unsubscribe(`presence-online-${userId}`);
     }

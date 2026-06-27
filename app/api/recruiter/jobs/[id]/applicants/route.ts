@@ -9,13 +9,13 @@ import { prisma } from "@/lib/prisma";
 
 async function handleGET(
   request: NextRequest,
-  { params }: { params: Promise<{ jobId: string }> },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");
 
-  const { jobId } = await params;
+  const jobId = (await params).id;
 
   const job = await prisma.job.findUnique({
     where: { id: jobId },

@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import {
-  useInfiniteQuery,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
+import type Pusher from "pusher-js";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useInfiniteQuery, useMutation } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { getPusherClient } from "@/lib/pusher-client";
+
+type Channel = ReturnType<NonNullable<ReturnType<typeof getPusherClient>>["subscribe"]>;
 
 type NotificationItem = {
   id: string;
@@ -49,7 +48,7 @@ export function useUnreadCount(userId: string) {
       const res = await apiClient<NotificationsResponse>("/api/notifications", {
         params: { take: "1" },
       });
-      return res.unreadCount;
+      return res?.unreadCount ?? 0;
     },
     enabled: !!userId,
     refetchInterval: 30_000,
@@ -73,12 +72,13 @@ export function useMarkAsRead() {
 
 export function useRealtimeNotifications(userId: string) {
   const queryClient = useQueryClient();
-  const channelRef = useRef<ReturnType<ReturnType<typeof getPusherClient>["subscribe"]> | null>(null);
+  const channelRef = useRef<Channel | null>(null);
 
   useEffect(() => {
     if (!userId) return;
 
     const pusher = getPusherClient();
+    if (!pusher) return;
     const channel = pusher.subscribe(`private-user-${userId}`);
     channelRef.current = channel;
 

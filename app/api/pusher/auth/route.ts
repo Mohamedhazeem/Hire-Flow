@@ -1,5 +1,5 @@
 import { auth } from "@/app/features/auth/libs/auth";
-import { pusher } from "@/lib/pusher";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const session = await auth.api.getSession({ headers: request.headers });
@@ -32,6 +32,12 @@ export async function POST(request: Request) {
     if (session.user.id !== targetUserId) {
       return new Response("Cannot authenticate presence as another user", { status: 403 });
     }
+  }
+
+  // Lazy-import pusher so the auth route still works when Pusher is not configured
+  const { pusher } = await import("@/lib/pusher");
+  if (!pusher) {
+    return NextResponse.json({ auth: "" }, { status: 200 });
   }
 
   const authResponse = pusher.authorizeChannel(socketId, channelName, {
