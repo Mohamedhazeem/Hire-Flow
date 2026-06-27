@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { NotFoundError, ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { prisma } from "@/lib/prisma";
+import { createNotification } from "@/lib/notifications";
 
 async function handlePOST(
   _request: NextRequest,
@@ -55,6 +56,15 @@ async function handlePOST(
         changedById: session.id,
         note: "Reverted",
       },
+    });
+
+    void createNotification(application.userId, "application_status", {
+      applicationId: application.id,
+      jobId: application.jobId,
+      previousStatus: application.status,
+      newStatus: revertToStatus,
+      updatedBy: session.id,
+      note: "Reverted",
     });
 
     return revertToStatus;

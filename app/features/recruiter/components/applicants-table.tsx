@@ -45,6 +45,7 @@ import {
   RotateCcwIcon,
   Undo2Icon,
   XIcon,
+  DownloadIcon,
 } from "lucide-react";
 
 const STATUS_OPTIONS = [
@@ -483,6 +484,14 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
             ))}
           </SelectContent>
         </Select>
+        <a
+          href={`/api/recruiter/jobs/${jobId}/applicants/export?${searchParams.toString()}`}
+          download
+          className="inline-flex items-center gap-2 h-9 px-4 rounded-xl bg-bg-elevated border border-border-subtle text-sm font-medium text-text-body hover:bg-bg-elevated/80 transition-colors whitespace-nowrap"
+        >
+          <DownloadIcon className="size-4" />
+          <span className="hidden sm:inline">Export CSV</span>
+        </a>
       </div>
 
       <DataTable

@@ -9,6 +9,7 @@ import { getApplicationById } from "@/app/features/recruiter/queries/application
 import { ValidationError, NotFoundError, ConflictError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { prisma } from "@/lib/prisma";
+import { createNotification } from "@/lib/notifications";
 
 async function handlePATCH(
   request: NextRequest,
@@ -95,19 +96,12 @@ async function handlePATCH(
     },
   });
 
-  // Create in-app notification for the applicant
-  await prisma.notification.create({
-    data: {
-      userId: application.userId,
-      type: "application_status",
-      data: {
-        applicationId: application.id,
-        jobId: application.jobId,
-        previousStatus: application.status,
-        newStatus: status,
-        updatedBy: session.id,
-      },
-    },
+  void createNotification(application.userId, "application_status", {
+    applicationId: application.id,
+    jobId: application.jobId,
+    previousStatus: application.status,
+    newStatus: status,
+    updatedBy: session.id,
   });
 
   return ok({ success: true, status });

@@ -9,6 +9,7 @@ import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { verifyRecruiterApplicantRelationship } from "@/app/features/recruiter/libs/verify-recruiter-applicant-relationship";
 import { checkMessageRateLimit } from "@/app/features/recruiter/libs/rate-limit-message";
+import { createNotification } from "@/lib/notifications";
 
 const SendMessageSchema = z
   .object({
@@ -139,26 +140,13 @@ async function handlePOST(
     senderId: recruiter.id,
   });
 
-  const notification = await prisma.notification.create({
-    data: {
-      userId: otherUserId,
-      type: "new_message",
-      data: {
-        threadId,
-        senderId: recruiter.id,
-        senderName: recruiter.name,
-        preview: input.data.content.slice(0, 100),
-        fileUrl: input.data.fileUrl ?? null,
-        fileType: input.data.fileType ?? null,
-      },
-    },
-  });
-
-  void pusher.trigger(`private-user-${otherUserId}`, "new-notification", {
-    notification: {
-      ...notification,
-      createdAt: notification.createdAt.toISOString(),
-    },
+  void createNotification(otherUserId, "new_message", {
+    threadId,
+    senderId: recruiter.id,
+    senderName: recruiter.name,
+    preview: input.data.content.slice(0, 100),
+    fileUrl: input.data.fileUrl ?? null,
+    fileType: input.data.fileType ?? null,
   });
 
   return ok(message, 201);

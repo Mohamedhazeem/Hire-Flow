@@ -6,15 +6,15 @@
 
 ## Last Updated
 
-2026-06-27T06:10:00Z
+2026-06-27T06:44:20Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.9 - Recruiter Dashboard — COMPLETE
-- **Next Step:** Step 2.10 — Notifications & Activity Feed (per HIRE_FLOW_PROMPTS.md)
+- **Current Step:** Step 2.11 — Export Applicants (CSV) — COMPLETE
+- **Next Step:** Step 3.1 — User Profile (per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
 ---
@@ -52,6 +52,10 @@
 - [x] Step 2.5 - Recruiter Direct Messaging (Thread‑based, Pusher realtime, rate-limited, user reply page)
 - [x] Step 2.6 - Applicant Detail View (Profile, Timeline, Resume download, Messages, Status actions)
 - [x] Step 2.7 - Bulk Actions for Selection (mass status transitions, checkbox selection, bulk reject dialog, in-app notifications)
+- [x] Step 2.8 - Recruiter Analytics & Filters (per-job + standalone analytics, charts, funnel, calendar daterange, advanced filters)
+- [x] Step 2.9 - Recruiter Dashboard (4 StatCards, recent applications, quick actions, NoCompanyPrompt)
+- [x] Step 2.10 - Notifications & Activity Feed (shared lib/notifications.ts utility, role-aware dropdown + standalone activity page, sidebar badge, refactored 4 route handlers to use shared utility)
+- [x] Step 2.11 - Export Applicants (CSV) (RFC 4180 csv-builder.ts, ReadableStream cursor-batched export, /api/recruiter/jobs/[jobId]/applicants/export route, filter-aware Export CSV button in toolbar)
 
 ### Phase 3: User
 
@@ -165,6 +169,7 @@
 - app/api/admin/messages/search/route.ts (GET - search users/recruiters)
 - app/api/admin/messages/[threadId]/route.ts (GET - messages, POST - send, DELETE - thread)
 - app/api/admin/messages/[threadId]/[messageId]/route.ts (DELETE - per-message)
+- app/api/admin/messages/route.ts
 - app/(roles)/admin/messages/page.tsx (Messages list page)
 - app/(roles)/admin/messages/[threadId]/page.tsx (Dynamic thread route)
 - components/ui/skeleton.tsx (Shared Skeleton component)
@@ -291,6 +296,31 @@
 - app/features/recruiter/components/recruiter-dashboard.tsx (client component: 4 StatCards, recent applications DataTable, 4 quick action cards)
 - app/(roles)/recruiter/page.tsx (replaced placeholder with server-side call + NoCompanyPrompt + RecruiterDashboard)
 
+### Phase 2 (continued — Step 2.10 Notifications & Activity Feed)
+
+- lib/notifications.ts (shared utility: createNotification, createNotificationsBulk, triggerForCompany — DB + Pusher in one call)
+- app/features/notifications/components/notifications-page.tsx (standalone activity page with infinite scroll, role-aware routing)
+- app/(roles)/recruiter/notifications/page.tsx (page wrapper for recruiter)
+- app/(roles)/user/notifications/page.tsx (page wrapper for user — prevents 404 on existing sidebar link)
+- components/layout/role-layout-client.tsx (accepts messagesBasePath prop for role-aware notification navigation)
+- app/(roles)/recruiter/recruiter-layout-client.tsx (passes messagesBasePath="/recruiter/messages")
+- app/(roles)/user/user-layout-client.tsx (passes messagesBasePath="/user/messages")
+- app/(roles)/admin/admin-layout-client.tsx (passes messagesBasePath="/admin/messages" explicitly)
+- app/features/notifications/components/notification-dropdown.tsx (role-aware getNotificationHref for recruiter/user/admin)
+- app/features/recruiter/components/recruiter-sidebar.tsx (added Notifications link with dynamic unread badge via useUnreadCount)
+- app/api/recruiter/applications/[applicationId]/status/route.ts (refactored to use createNotification)
+- app/api/recruiter/applications/bulk/status/route.ts (refactored to use createNotificationsBulk — now fires Pusher)
+- app/api/recruiter/applications/[applicationId]/revert/route.ts (added notification creation — was missing)
+- app/api/recruiter/messages/[threadId]/route.ts (refactored to use createNotification)
+- app/api/admin/messages/[threadId]/route.ts (refactored to use createNotification)
+
+### Phase 2 (continued — Step 2.11 CSV Export)
+
+- app/features/recruiter/libs/csv-builder.ts (RFC 4180 CSV string builder: escapeCsvField, buildCsvRow, buildCsvString with BOM)
+- app/features/recruiter/queries/export-queries.ts (exportApplicantsAsCsv — ReadableStream with cursor-batched findMany, 50K cap, filter-aware)
+- app/api/recruiter/jobs/[jobId]/applicants/export/route.ts (GET — auth-guarded CSV download with Content-Disposition attachment)
+- app/features/recruiter/components/applicants-table.tsx (added DownloadIcon + Export CSV link in filter toolbar)
+
 ### Phase 3
 
 _(agent to fill)_
@@ -307,15 +337,13 @@ _(agent to fill)_
 
 ## Pending Dependencies
 
-- Phase 1 complete; Phase 2 Steps 2.0–2.2 complete.
+- Phase 1 complete; Phase 2 complete (Steps 2.0–2.11).
 - Prisma migrations cannot run locally — `localhost:5432` unreachable. `status` column added to `Job` model (`String @default("draft")` replacing `isActive: Boolean`). Client generation succeeds; `db push` can apply schema changes without migration file.
 
-## Upcoming Dependencies (Phase 2)
+## Upcoming Dependencies (Phase 3)
 
-- Step 2.3 (Job Posts CRUD) — complete.
-- Step 2.4 (Applicants View) — depends on job posts existing.
-- Step 2.8 (Analytics) — complete. Depends on job posts, applications, and status changes.
-- Phase 2 must be complete before Phase 3 (User) or Phase 4 (Public Routes).
+- Step 3.1 (User Profile) — depends on Phase 2 being complete.
+- Phase 3 must be complete before Phase 4 (Public Routes).
 
 ## Upcoming Dependencies (Phase 1)
 
@@ -331,7 +359,7 @@ _(agent to fill)_
 
 - **Mutations/Fetching:** REST route handlers for complex mutations; Server Actions only for plain forms. TanStack Query for all client-side data.
 - **State Management:** Zustand strictly for UI client-state (sidebars, modals), never for API data.
-- **Real-time:** Pusher with `private-thread-[id]` and `private-user-[id]` channels. Admin and Recruiter/User messaging both use Pusher for realtime delivery.
+- **Real-time:** Pusher with `private-thread-[id]` and `private-user-[id]` channels. Admin and Recruiter/User messaging both use Pusher for realtime delivery. Notifications delivered in realtime via `lib/notifications.ts` shared utility (DB create + Pusher trigger in one call).
 - **Route Guards:** Role-based middleware and layout-level protection.
 - **Styling:** Tailwind v4 + Shadcn, using theme variables, no hardcoded hex.
 - **Validation:** Always run prisma validate and npm run build after changes.

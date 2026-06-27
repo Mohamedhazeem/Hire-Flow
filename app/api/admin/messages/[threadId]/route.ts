@@ -7,6 +7,7 @@ import { pusher } from "@/lib/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { createNotification } from "@/lib/notifications";
 
 const SendMessageSchema = z
   .object({
@@ -124,27 +125,13 @@ async function handlePOST(
     senderId: adminUser.id,
   });
 
-  const notification = await prisma.notification.create({
-    data: {
-      userId: otherUserId,
-      type: "new_message",
-      data: {
-        threadId,
-        senderId: adminUser.id,
-        senderName: adminUser.name,
-        preview: input.data.content.slice(0, 100),
-        fileUrl: input.data.fileUrl ?? null,
-        fileType: input.data.fileType ?? null,
-      },
-    },
-  });
-
-  void pusher.trigger(`private-user-${otherUserId}`, "new-notification", {
-    notification: {
-      ...notification,
-      createdAt: notification.createdAt.toISOString(),
-      data: notification.data as Record<string, unknown>,
-    },
+  void createNotification(otherUserId, "new_message", {
+    threadId,
+    senderId: adminUser.id,
+    senderName: adminUser.name,
+    preview: input.data.content.slice(0, 100),
+    fileUrl: input.data.fileUrl ?? null,
+    fileType: input.data.fileType ?? null,
   });
 
   return ok(message, 201);

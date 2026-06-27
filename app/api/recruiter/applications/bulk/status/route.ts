@@ -8,6 +8,7 @@ import {
 import { NotFoundError, ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { prisma } from "@/lib/prisma";
+import { createNotificationsBulk } from "@/lib/notifications";
 
 async function handlePOST(request: NextRequest) {
   const session = await requireRole(["recruiter"]);
@@ -73,8 +74,8 @@ async function handlePOST(request: NextRequest) {
       })),
     });
 
-    await tx.notification.createMany({
-      data: applications.map((a) => ({
+    void createNotificationsBulk(
+      applications.map((a) => ({
         userId: a.userId,
         type: "application_status",
         data: {
@@ -86,7 +87,7 @@ async function handlePOST(request: NextRequest) {
           pendingEmail: email,
         },
       })),
-    });
+    );
 
     return { count: applications.length, status };
   });

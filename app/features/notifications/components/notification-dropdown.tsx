@@ -54,7 +54,9 @@ function getNotificationPreview(n: NotificationItem): string {
         ? `New message: ${(data.preview as string).slice(0, 80)}`
         : "New message";
     case "application_status":
-      return `Application status changed to "${data.newStatus as string}"`;
+      return data.previousStatus === null
+        ? `New application from ${(data.applicantName as string) ?? "someone"}`
+        : `Status changed to "${data.newStatus as string}"`;
     case "profile_viewed":
       return "Your profile was viewed";
     case "ban_status":
@@ -68,17 +70,28 @@ function getNotificationPreview(n: NotificationItem): string {
 
 function getNotificationHref(n: NotificationItem, messagesBasePath: string): string {
   const data = n.data;
+  const basePath = messagesBasePath.replace("/messages", "");
+
   switch (n.type) {
     case "new_message":
       return `${messagesBasePath}?thread=${data.threadId as string}`;
-    case "application_status":
-      return `/admin/jobs`;
+    case "application_status": {
+      const isRecruiter = messagesBasePath.startsWith("/recruiter");
+      const isUser = messagesBasePath.startsWith("/user");
+      if (isRecruiter && data.applicationId) {
+        return `/recruiter/applicants/${data.applicationId as string}`;
+      }
+      if (isUser) {
+        return `/user/applications`;
+      }
+      return `${basePath}/jobs`;
+    }
     case "profile_viewed":
-      return `/admin`;
+      return basePath;
     case "ban_status":
-      return `/admin`;
+      return basePath;
     default:
-      return "/admin";
+      return basePath;
   }
 }
 
