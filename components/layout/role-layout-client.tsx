@@ -27,7 +27,7 @@ export function RoleLayoutClient({
         <div className="hidden lg:flex items-center justify-end gap-2 px-6 pt-4 pb-1 shrink-0">
           <NotificationDropdown messagesBasePath={messagesBasePath} />
         </div>
-        <div className="flex-1 flex flex-col px-4 pb-4 md:px-6 lg:p-8 overflow-y-auto min-w-0">
+        <div className="flex-1 flex flex-col px-4 pb-4 md:px-6 lg:px-8 lg:pb-8  overflow-y-auto min-w-0">
           {children}
         </div>
       </main>

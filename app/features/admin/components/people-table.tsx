@@ -94,7 +94,9 @@ function ActionButton({
         color === "error" ? "h-8 px-2 text-xs text-error hover:text-error" : "h-8 px-2 text-xs"
       }
     >
-      <span className={cn("size-4 flex items-center justify-center", label && "sm:mr-1")}>{icon}</span>
+      <span className={cn("size-4 flex items-center justify-center", label && "sm:mr-1")}>
+        {icon}
+      </span>
       {label && <span className="hidden sm:inline">{label}</span>}
     </Button>
   );
@@ -285,15 +287,15 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <div className="relative flex-1 min-w-0">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
-            <Input
-              placeholder="Search by name or email..."
-              value={search}
-              onChange={handleSearch}
-              className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
-            />
-          </div>
+        <div className="relative flex-1 min-w-0">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
+          <Input
+            placeholder="Search by name or email..."
+            value={search}
+            onChange={handleSearch}
+            className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
+          />
+        </div>
         {!roleFilter && (
           <Select value={role ?? "all"} onValueChange={handleRoleFilter}>
             <SelectTrigger className="w-full sm:w-36">
@@ -331,7 +333,12 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         </div>
       ) : (
         <>
-          <DataTable columns={columns} data={users} emptyMessage="No users found." className="[&_table]:table-auto" />
+          <DataTable
+            columns={columns}
+            data={users}
+            emptyMessage="No users found."
+            className="[&_table]:table-auto"
+          />
           {totalPages > 1 && (
             <div className="flex items-center justify-between text-sm text-text-muted">
               <span className="hidden sm:inline">

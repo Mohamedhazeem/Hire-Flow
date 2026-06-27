@@ -400,8 +400,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1782525273.0294955,
-    "ast_hash": "81bef3812c7fca359bff8f3054fcbca7",
+    "mtime": 1782572137.1046288,
+    "ast_hash": "c9f6737cb1d65c72ab565fa10bd3b29e",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -455,7 +455,7 @@
     "semantic_hash": "5deee74bc0c47e863484fee965ae08d1"
   },
   ".kilo/kilo.json": {
-    "mtime": 1782532825.744438,
+    "mtime": 1782570641.4424212,
     "ast_hash": "fab9c3fa96c160fd8c923c4d3f026f3e",
     "semantic_hash": ""
   },
@@ -730,8 +730,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
-    "mtime": 1782534686.267995,
-    "ast_hash": "9e10516c77219ec5f288cf50ee9cf361",
+    "mtime": 1782572009.144498,
+    "ast_hash": "dcf99adcb36457cb3d0b5087cec0d715",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -790,8 +790,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1782521586.1073766,
-    "ast_hash": "71a90b960e351c2a9799cff850f4d969",
+    "mtime": 1782571435.443121,
+    "ast_hash": "a708a11f0dd9bbb289d05a7a64f9b546",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
@@ -1160,8 +1160,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-messages-page.tsx": {
-    "mtime": 1782534706.875409,
-    "ast_hash": "eb82acbe6a627929de6550510fdb46a1",
+    "mtime": 1782571538.160216,
+    "ast_hash": "191f5cfac718ec31fff0231534b86316",
     "semantic_hash": ""
   },
   "app/features/recruiter/hooks/messages/use-recruiter-messages.ts": {
@@ -1185,8 +1185,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-messages-page.tsx": {
-    "mtime": 1782534889.550498,
-    "ast_hash": "56d42377569b19b0b092c9ed54d28325",
+    "mtime": 1782570816.9408793,
+    "ast_hash": "88c0e160751222d91ec8246eb63b1c45",
     "semantic_hash": ""
   },
   "app/features/user/components/user-sidebar.tsx": {
@@ -1520,8 +1520,8 @@
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
-    "mtime": 1782568773.5122745,
-    "ast_hash": "65b7d59b925641ec083f021676d53287",
+    "mtime": 1782570040.7716813,
+    "ast_hash": "862ee2e0d19c69236f0236c791669dc3",
     "semantic_hash": ""
   },
   "app/api/users/[id]/route.ts": {
