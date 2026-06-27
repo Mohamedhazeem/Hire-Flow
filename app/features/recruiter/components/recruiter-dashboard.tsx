@@ -26,6 +26,7 @@ const recentColumns: ColumnDef<DashboardData["recentApplications"][number]>[] = 
   {
     key: "userName",
     header: "Applicant",
+    align: "center",
     cell: (row) => (
       <span className="font-medium text-text-heading text-sm">{row.userName ?? "—"}</span>
     ),
@@ -33,8 +34,11 @@ const recentColumns: ColumnDef<DashboardData["recentApplications"][number]>[] = 
   {
     key: "jobTitle",
     header: "Job",
+    align: "center",
     cell: (row) => (
-      <span className="text-text-body text-sm truncate block max-w-[180px]">{row.jobTitle}</span>
+      <span className="flex items-center justify-center text-text-body text-sm truncate max-w-45 w-full mx-auto">
+        {row.jobTitle}
+      </span>
     ),
   },
   {
@@ -66,37 +70,6 @@ export function RecruiterDashboard({ data }: RecruiterDashboardProps) {
         description="Overview of your recruiting activity"
         icon={<LayoutDashboardIcon className="size-5" />}
       />
-
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <StatCard
-          title="Total Jobs"
-          value={data.totalJobs}
-          icon={<BriefcaseIcon className="size-5" />}
-          description={data.totalJobs === 1 ? "1 job posted" : `${data.totalJobs} jobs posted`}
-          gradient="from-emerald-500/10 via-emerald-500/5 to-transparent"
-        />
-        <StatCard
-          title="Applications"
-          value={data.totalApplications}
-          icon={<FileTextIcon className="size-5" />}
-          description="Across all job postings"
-          gradient="from-purple-500/10 via-purple-500/5 to-transparent"
-        />
-        <StatCard
-          title="Pending Reviews"
-          value={data.pendingReviews}
-          icon={<ClockIcon className="size-5" />}
-          description={data.pendingReviews > 0 ? "Awaiting your decision" : "No pending reviews"}
-          gradient="from-amber-500/10 via-amber-500/5 to-transparent"
-        />
-        <StatCard
-          title="New This Week"
-          value={data.newThisWeek}
-          icon={<TrendingUpIcon className="size-5" />}
-          description={data.newThisWeek > 0 ? "Last 7 days" : "No new applications this week"}
-          gradient="from-blue-500/10 via-blue-500/5 to-transparent"
-        />
-      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Link
@@ -150,6 +123,37 @@ export function RecruiterDashboard({ data }: RecruiterDashboardProps) {
             <p className="text-xs text-text-muted">Insights and metrics</p>
           </div>
         </Link>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <StatCard
+          title="Total Jobs"
+          value={data.totalJobs}
+          icon={<BriefcaseIcon className="size-5" />}
+          description={data.totalJobs === 1 ? "1 job posted" : `${data.totalJobs} jobs posted`}
+          gradient="from-emerald-500/10 via-emerald-500/5 to-transparent"
+        />
+        <StatCard
+          title="Applications"
+          value={data.totalApplications}
+          icon={<FileTextIcon className="size-5" />}
+          description="Across all job postings"
+          gradient="from-purple-500/10 via-purple-500/5 to-transparent"
+        />
+        <StatCard
+          title="Pending Reviews"
+          value={data.pendingReviews}
+          icon={<ClockIcon className="size-5" />}
+          description={data.pendingReviews > 0 ? "Awaiting your decision" : "No pending reviews"}
+          gradient="from-amber-500/10 via-amber-500/5 to-transparent"
+        />
+        <StatCard
+          title="New This Week"
+          value={data.newThisWeek}
+          icon={<TrendingUpIcon className="size-5" />}
+          description={data.newThisWeek > 0 ? "Last 7 days" : "No new applications this week"}
+          gradient="from-blue-500/10 via-blue-500/5 to-transparent"
+        />
       </div>
 
       <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs">

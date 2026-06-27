@@ -51,9 +51,8 @@ export function DataTable<TData>({
     selectableRows.length > 0 &&
     selectableRows.every((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
-  const someSelected = enableSelection && selectableRows.some(
-    (row) => selectedIds?.has(getRowId?.(row) ?? ""),
-  );
+  const someSelected =
+    enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
   const handleSelectAll = () => {
     if (!enableSelection || !onSelectionChange || !getRowId) return;
@@ -111,13 +110,17 @@ export function DataTable<TData>({
                 key={col.key}
                 className={cn(
                   "text-text-muted text-[11px] font-bold uppercase tracking-wider px-5 py-3.5",
+                  col.align === "center" && "text-center",
+                  col.align === "right" && "text-right",
                   col.className,
                 )}
               >
                 {col.key === "__selection" ? (
                   <Checkbox
                     checked={allSelected}
-                    data-state={allSelected ? "checked" : someSelected ? "indeterminate" : "unchecked"}
+                    data-state={
+                      allSelected ? "checked" : someSelected ? "indeterminate" : "unchecked"
+                    }
                     onCheckedChange={handleSelectAll}
                     aria-label="Select all"
                     className="size-4"
@@ -166,8 +169,8 @@ export function DataTable<TData>({
                   className={cn(
                     "border-b border-border-subtle last:border-0 transition-all duration-150",
                     isDisabled && "opacity-50",
-                    isSelected && "bg-brand/[0.04]",
-                    !isSelected && !isDisabled && "hover:bg-brand/[0.02]",
+                    isSelected && "bg-brand/4",
+                    !isSelected && !isDisabled && "hover:bg-brand/2",
                   )}
                   onClick={() => {
                     if (isDisabled) return;
