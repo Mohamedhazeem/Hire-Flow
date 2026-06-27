@@ -22,10 +22,11 @@ import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
 import { logger } from "@/utils/logger";
+import { env } from "@/utils/env";
 
 const SEED_PASSWORD = "Password1";
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new pg.Pool({ connectionString: env.data?.DATABASE_URL });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
@@ -140,7 +141,7 @@ const JOB_TEMPLATES = [
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  if (process.env.NODE_ENV === "production" && process.env.ALLOW_SEED !== "true") {
+  if (env.data?.NODE_ENV === "production" && env.data?.ALLOW_SEED !== "true") {
     logger.server.error(
       "Refusing to seed a production database. Set ALLOW_SEED=true if this is intentional (e.g. staging).",
     );
@@ -292,7 +293,14 @@ async function main() {
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────
   const allJobs = await prisma.job.findMany({ select: { id: true } });
-  const statuses = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired"] as const;
+  const statuses = [
+    "applied",
+    "reviewing",
+    "shortlisted",
+    "interview_scheduled",
+    "offered",
+    "hired",
+  ] as const;
 
   for (let u = 0; u < USERS.length; u++) {
     const usr = USERS[u];

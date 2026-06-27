@@ -2,8 +2,9 @@ import "dotenv/config";
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
+import { env } from "@/utils/env";
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new pg.Pool({ connectionString: env.data?.DATABASE_URL });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
@@ -12,7 +13,9 @@ async function main() {
 
   if (emails.length === 0) {
     console.error("Usage: npx tsx scripts/promote-super-admin.ts <email1> <email2> ...");
-    console.error("Example: npx tsx scripts/promote-super-admin.ts admin@hireflow.dev bob@acmecorp.dev");
+    console.error(
+      "Example: npx tsx scripts/promote-super-admin.ts admin@hireflow.dev bob@acmecorp.dev",
+    );
     process.exit(1);
   }
 
