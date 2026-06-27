@@ -1,14 +1,11 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import {
   XIcon,
@@ -46,6 +43,7 @@ export function ResumePreviewDialog({
   const [loadError, setLoadError] = useState(false);
   const [pdfLoadErrorMessage, setPdfLoadErrorMessage] = useState<string | null>(null);
   const [imgError, setImgError] = useState(false);
+  const [pageRenderError, setPageRenderError] = useState(false);
   const [lastOpen, setLastOpen] = useState(false);
 
   if (open !== lastOpen) {
@@ -56,6 +54,8 @@ export function ResumePreviewDialog({
       setLoadError(false);
       setPdfLoadErrorMessage(null);
       setImgError(false);
+      setPageRenderError(false);
+      setPageRenderError(false);
     }
   }
 
@@ -90,11 +90,7 @@ export function ResumePreviewDialog({
     setPdfLoadErrorMessage("Failed to load PDF — file may be corrupt or inaccessible.");
   }, []);
 
-  const [pageRenderError, setPageRenderError] = useState(false);
-
-  const downloadUrl = fileUrl
-    ? `/api/files/download?path=${encodeURIComponent(fileUrl)}`
-    : null;
+  const downloadUrl = fileUrl ? `/api/files/download?path=${encodeURIComponent(fileUrl)}` : null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -103,16 +99,9 @@ export function ResumePreviewDialog({
         showCloseButton={false}
       >
         <div className="flex items-center justify-between px-4 py-3 border-b border-border-subtle">
-          <DialogTitle className="text-sm font-medium truncate">
-            {label}
-          </DialogTitle>
+          <DialogTitle className="text-sm font-medium truncate">{label}</DialogTitle>
           <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={handleDialogDownload}
-              title="Download"
-            >
+            <Button variant="ghost" size="icon-sm" onClick={handleDialogDownload} title="Download">
               <DownloadIcon className="size-4" />
             </Button>
             <Button
@@ -137,9 +126,7 @@ export function ResumePreviewDialog({
           {!isPreviewable && downloadUrl && (
             <div className="flex flex-col items-center justify-center gap-4 py-12">
               <FileTextIcon className="size-12 text-text-muted" />
-              <p className="text-sm text-text-muted">
-                Preview not available for this file type.
-              </p>
+              <p className="text-sm text-text-muted">Preview not available for this file type.</p>
               <Button onClick={handleDialogDownload}>
                 <DownloadIcon className="size-4 mr-2" />
                 Download File
@@ -152,9 +139,7 @@ export function ResumePreviewDialog({
               {loadError ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-12">
                   <AlertCircleIcon className="size-10 text-error" />
-                  <p className="text-sm text-text-muted">
-                    {pdfLoadErrorMessage}
-                  </p>
+                  <p className="text-sm text-text-muted">{pdfLoadErrorMessage}</p>
                   <Button variant="outline" size="sm" onClick={handleDialogDownload}>
                     <DownloadIcon className="size-4 mr-1.5" />
                     Download Instead
@@ -179,7 +164,10 @@ export function ResumePreviewDialog({
                 >
                   <Page
                     pageNumber={pageNumber}
-                    width={Math.min(800, typeof window !== "undefined" ? window.innerWidth - 48 : 800)}
+                    width={Math.min(
+                      800,
+                      typeof window !== "undefined" ? window.innerWidth - 48 : 800,
+                    )}
                     onRenderError={() => setPageRenderError(true)}
                   />
                 </Document>
@@ -214,21 +202,24 @@ export function ResumePreviewDialog({
           )}
 
           {isImage && downloadUrl && !imgError && (
-            <img
+            <Image
               src={downloadUrl}
               alt={label}
+              width={800}
+              height={1200}
               className="max-w-full h-auto rounded-lg shadow-md"
-              style={{ maxHeight: "80vh" }}
-              onError={() => { setImgError(true); }}
+              style={{ maxHeight: "80vh", width: "auto", height: "auto" }}
+              unoptimized
+              onError={() => {
+                setImgError(true);
+              }}
             />
           )}
 
           {!downloadUrl && (
             <div className="flex flex-col items-center justify-center gap-3 py-12">
               <AlertCircleIcon className="size-10 text-text-muted" />
-              <p className="text-sm text-text-muted">
-                File not available.
-              </p>
+              <p className="text-sm text-text-muted">File not available.</p>
             </div>
           )}
         </div>
