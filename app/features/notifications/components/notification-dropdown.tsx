@@ -50,9 +50,7 @@ function getNotificationPreview(n: NotificationItem): string {
   const data = n.data;
   switch (n.type) {
     case "new_message":
-      return data.preview
-        ? `New message: ${(data.preview as string).slice(0, 80)}`
-        : "New message";
+      return data.preview ? `New message: ${(data.preview as string).slice(0, 80)}` : "New message";
     case "application_status":
       return data.previousStatus === null
         ? `New application from ${(data.applicantName as string) ?? "someone"}`
@@ -115,7 +113,9 @@ type NotificationDropdownProps = {
   messagesBasePath?: string;
 };
 
-export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: NotificationDropdownProps) {
+export function NotificationDropdown({
+  messagesBasePath = "/admin/messages",
+}: NotificationDropdownProps) {
   const router = useRouter();
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
@@ -127,7 +127,10 @@ export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: N
   useRealtimeNotifications(userId);
 
   const allNotifications = useMemo(
-    () => data?.pages.flatMap((p) => (p as { notifications?: NotificationItem[] })?.notifications ?? []) ?? [],
+    () =>
+      data?.pages.flatMap(
+        (p) => (p as { notifications?: NotificationItem[] })?.notifications ?? [],
+      ) ?? [],
     [data?.pages],
   );
 
@@ -195,7 +198,11 @@ export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: N
           className="max-h-80 overflow-y-auto"
           onScroll={(e) => {
             const el = e.currentTarget;
-            if (el.scrollHeight - el.scrollTop - el.clientHeight < 60 && hasNextPage && !isFetchingNextPage) {
+            if (
+              el.scrollHeight - el.scrollTop - el.clientHeight < 60 &&
+              hasNextPage &&
+              !isFetchingNextPage
+            ) {
               fetchNextPage();
             }
           }}
@@ -246,12 +253,8 @@ export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: N
                       {getNotificationPreview(n)}
                     </p>
                     <div className="flex items-center gap-1.5 mt-1">
-                      <span className="text-[10px] text-text-muted">
-                        {formatTime(n.createdAt)}
-                      </span>
-                      {!n.read && (
-                        <span className="size-1.5 rounded-full bg-brand shrink-0" />
-                      )}
+                      <span className="text-[10px] text-text-muted">{formatTime(n.createdAt)}</span>
+                      {!n.read && <span className="size-1.5 rounded-full bg-brand shrink-0" />}
                       <ExternalLinkIcon className="size-2.5 text-text-muted/50 shrink-0 ml-auto" />
                     </div>
                   </div>
