@@ -70,13 +70,6 @@
 - [ ] Step 4.2 - Public Job Details & View Tracking
 - [ ] Step 4.3 - Home Page & Global Navbar
 
-### Phase 5: Messaging & Notifications
-
-- [ ] Step 5.1 - Messaging & Real-Time Setup
-- [ ] Step 5.2 - Real-Time Subscriptions & Shared Chat UI
-- [ ] Step 5.3 - Wiring Chat into Role Pages
-- [ ] Step 5.4 - Real-Time Notifications System
-
 ---
 
 ## Created File Paths (Grouped by Phase)
@@ -334,6 +327,7 @@
 - app/features/admin/components/people-table.tsx (updated: added EyeIcon → /admin/users/[id] in actions)
 
 Resume error handling:
+
 - No resume → "No resume attached to this application"
 - resumeId exists but deleted → "Resume was removed by the applicant" (source: "deleted")
 - Fallback to current profile resume → source badge "Current Resume"
@@ -369,8 +363,6 @@ _(agent to fill)_
 - Step 1.4 must be built before Step 1.5 (messaging entry point needs sidebar nav).
 
 ---
-
-
 
 ## Active Global Context Snapshot
 

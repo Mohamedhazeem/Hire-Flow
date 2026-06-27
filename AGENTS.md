@@ -4,7 +4,7 @@ description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · S
 
 # Agent Rules (applied always)
 
-- **Retrieval-first:** Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and relevant feature files before writing code. Never invent APIs — verify against the installed version.
+- **Retrieval-first:** Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and relevant feature files before writing code. Always use graphify for query, Never invent APIs — verify against the installed version.
 - **Shared assets** – Reuse the following; do not rebuild them:  
   (table of assets goes here, immediately after the rule)
 - **All protected actions/routes must call `requireRole(...)`**
@@ -18,7 +18,6 @@ Whenever you create a new protected Server Action or API Route, you MUST use thi
 
 - **Startup:** Read `MANIFEST.md` and `HIRE_FLOW_PROMPTS.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
 - **Runtime:** Never re‑read MANIFEST and HIRE_FLOW_PROMPTS; use cache for step lookups.
-- **Updates:** Update cache + write to disk after **every** completed step; bump `Last Updated`.
 - **Resync:** Re‑read only if user says they edited it manually.
 
 # graphify
@@ -39,7 +38,7 @@ Rules:
 
 Phase 2 (Recruiter) and Phase 3 (User).
 **Before implementing any feature from these phases, use `hire_flow_prompt.md`** from cache – it contains the step‑by‑step specifications, architecture constraints, and component lists.
-Most of them share similar components and patterns from `admin`. so whenever you implement a feature from Phase 2 or 3, you should first check if the component already exists in Phase 1 and make it reusable.
+Most of them share similar components and patterns from `admin`. so whenever you implement a feature from Phase 2 or 3, you should first check if the component already exists in and reuse.
 
 ## Stack
 
