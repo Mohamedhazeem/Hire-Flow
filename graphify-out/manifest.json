@@ -545,8 +545,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782516548.6376848,
-    "ast_hash": "9a262f260b491f8f7b57d7f00d315262",
+    "mtime": 1782520002.2685473,
+    "ast_hash": "359de68bc7eb04f026e010990d6597ad",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1015,8 +1015,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-detail.tsx": {
-    "mtime": 1782504535.2217722,
-    "ast_hash": "ecc09636562d5ee204c81721030fcb01",
+    "mtime": 1782519789.5455313,
+    "ast_hash": "1b6a1fe1a377d1bc414293ac41aa4396",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-form.tsx": {
@@ -1087,11 +1087,6 @@
   "app/(roles)/user/loading.tsx": {
     "mtime": 1782487753.7048793,
     "ast_hash": "1db049edeb5b87abcda81c56522eba79",
-    "semantic_hash": ""
-  },
-  "app/(roles)/recruiter/jobs/[jobId]/applicants/page.tsx": {
-    "mtime": 1782491554.2719088,
-    "ast_hash": "da1785164bf5c03cd151fef37ef859ff",
     "semantic_hash": ""
   },
   "app/api/recruiter/applications/[applicationId]/status/route.ts": {
@@ -1347,6 +1342,81 @@
   ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md": {
     "mtime": 1782517794.9440527,
     "ast_hash": "e9a5b5b0540b9d98b38cd006c31a0495",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782486917801-recruiter-analytics-filters.md": {
+    "mtime": 1782519454.1467845,
+    "ast_hash": "56763c8506556a6ab203fd3c7f9d3d25",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/analytics/page.tsx": {
+    "mtime": 1782519756.8379116,
+    "ast_hash": "62fe72e57461813fd99bd9f9168125f6",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/[id]/analytics/page.tsx": {
+    "mtime": 1782519769.2041194,
+    "ast_hash": "86854b5a497130a42b7b2c55f49ee93e",
+    "semantic_hash": ""
+  },
+  "app/(roles)/recruiter/jobs/[id]/applicants/page.tsx": {
+    "mtime": 1782519640.4063706,
+    "ast_hash": "de52789d25e7af242fee9d232bf1215a",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/analytics/route.ts": {
+    "mtime": 1782519685.7976005,
+    "ast_hash": "fe1eab09bd6f81c035020e18ff47ff37",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/jobs/[id]/analytics/route.ts": {
+    "mtime": 1782519686.361239,
+    "ast_hash": "a9266a5ab08eea0a067c4325659c957f",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/charts/distribution-bar-chart.tsx": {
+    "mtime": 1782519710.1992419,
+    "ast_hash": "05862b4f5bee32f55eb98ff18a7119f1",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/charts/funnel-chart.tsx": {
+    "mtime": 1782519720.129193,
+    "ast_hash": "c2b35acf43dae2ef200cdf01b6e18773",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/charts/trend-chart.tsx": {
+    "mtime": 1782519706.2446501,
+    "ast_hash": "1fb6ac523991ed2244e1bcac71476f8a",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/filters/analytics-filter-bar.tsx": {
+    "mtime": 1782519733.5474467,
+    "ast_hash": "1af61e9d96276703c6ca30e7c6691e75",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/per-job-analytics-page.tsx": {
+    "mtime": 1782519917.9666355,
+    "ast_hash": "adecad7416dafa1d6aca3fdc13eefa8b",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/recruiter-analytics-page.tsx": {
+    "mtime": 1782519929.8600647,
+    "ast_hash": "e2a361251cedd2741601165b521898e2",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/hooks/use-analytics.ts": {
+    "mtime": 1782519692.6187258,
+    "ast_hash": "68e045428e5b5f6ca323d40ff3d614db",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/queries/analytics-queries.ts": {
+    "mtime": 1782519877.6619582,
+    "ast_hash": "0b5d5f8e52801603bce0415ec2baff06",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/schema/analytics.schema.ts": {
+    "mtime": 1782519660.6430938,
+    "ast_hash": "5bb85ab784655e1f23525e49c8623834",
     "semantic_hash": ""
   }
 }

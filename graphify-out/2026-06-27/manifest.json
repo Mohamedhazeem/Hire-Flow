@@ -300,8 +300,8 @@
     "semantic_hash": "01f4366beea2dcf87ee2e90abe2a80ec"
   },
   "components/ui/data-table.tsx": {
-    "mtime": 1782516236.477126,
-    "ast_hash": "9bab9f828949e100eb7cbc229505c0f2",
+    "mtime": 1782517973.7127821,
+    "ast_hash": "605ce82bfb6edbc6d526373e1046ea75",
     "semantic_hash": ""
   },
   "components/ui/dialog.tsx": {
@@ -1105,8 +1105,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/applicants-table.tsx": {
-    "mtime": 1782516491.0590029,
-    "ast_hash": "50fadf26ac86a8ead263b454f78f646a",
+    "mtime": 1782517934.1030235,
+    "ast_hash": "aa787795606129ffc01762c808053c40",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/application-dialogs.tsx": {
@@ -1125,8 +1125,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
-    "mtime": 1782506858.6348157,
-    "ast_hash": "13bd54ba8caaab3e5a7d4773693739a0",
+    "mtime": 1782517944.7907503,
+    "ast_hash": "268f5b2b9f38285c2f6eae16336ba5c8",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/messages/page.tsx": {
@@ -1315,13 +1315,13 @@
     "semantic_hash": ""
   },
   "app/api/recruiter/applications/[applicationId]/revert/route.ts": {
-    "mtime": 1782516262.1733916,
-    "ast_hash": "376ac60390c98df3e65625ff0e6aae60",
+    "mtime": 1782517845.4820724,
+    "ast_hash": "817c5d1c9663078cde773cb405d2bdc3",
     "semantic_hash": ""
   },
   "app/api/recruiter/applications/bulk/status/route.ts": {
-    "mtime": 1782506878.1612148,
-    "ast_hash": "20219b687e855ca878abba1237c4f3a5",
+    "mtime": 1782517863.2107189,
+    "ast_hash": "b860668ef5c19a5212c946b622b6ec09",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/bulk-reject-dialog.tsx": {
@@ -1342,6 +1342,16 @@
   ".kilo/plans/step-2.7-revert-and-enhance.md": {
     "mtime": 1782516129.0653071,
     "ast_hash": "a2b9c6a3607653a032e6216bcfac7e9e",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md": {
+    "mtime": 1782517794.9440527,
+    "ast_hash": "e9a5b5b0540b9d98b38cd006c31a0495",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782486917801-recruiter-analytics-filters.md": {
+    "mtime": 1782519454.1467845,
+    "ast_hash": "56763c8506556a6ab203fd3c7f9d3d25",
     "semantic_hash": ""
   }
 }

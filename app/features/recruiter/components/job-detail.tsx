@@ -1,10 +1,11 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { apiClient } from "@/lib/api-client";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 import type { RecruiterJobDetail } from "@/app/features/recruiter/queries/job-queries";
 import type { ApiResponse } from "@/lib/api-response";
 import {
@@ -20,6 +21,7 @@ import {
   WrenchIcon,
   TagIcon,
   UsersIcon,
+  BarChart3Icon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -45,8 +47,15 @@ function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string;
   );
 }
 
+const TABS = [
+  { href: "", label: "View Details", icon: ArrowLeftIcon },
+  { href: "/applicants", label: "Applicants", icon: UsersIcon },
+  { href: "/analytics", label: "Analytics", icon: BarChart3Icon },
+];
+
 export function JobDetail({ jobId }: JobDetailProps) {
   const router = useRouter();
+  const pathname = usePathname();
 
   const { data, isLoading, isError } = useQuery<ApiResponse<{ job: RecruiterJobDetail }>>({
     queryKey: ["recruiter", "job", jobId],
@@ -115,6 +124,30 @@ export function JobDetail({ jobId }: JobDetailProps) {
             </Link>
           )}
         </div>
+      </div>
+
+      <div className="flex gap-4 border-b border-border-subtle mb-6 -mx-4 md:-mx-6 lg:-mx-8 px-4 md:px-6 lg:px-8">
+        {TABS.map((tab) => {
+          const href = `/recruiter/jobs/${jobId}${tab.href}`;
+          const isActive = tab.href === ""
+            ? pathname === `/recruiter/jobs/${jobId}`
+            : pathname === href || pathname.startsWith(href + "/");
+          return (
+            <Link
+              key={tab.href}
+              href={href}
+              className={cn(
+                "pb-3 text-sm font-medium border-b-2 transition-colors inline-flex items-center gap-1.5",
+                isActive
+                  ? "border-brand text-text-heading"
+                  : "border-transparent text-text-muted hover:text-text-heading",
+              )}
+            >
+              <tab.icon className="size-4" />
+              {tab.label}
+            </Link>
+          );
+        })}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -6,15 +6,15 @@
 
 ## Last Updated
 
-2026-06-27T04:55:00Z
+2026-06-27T05:55:00Z
 
 ---
 
 ## Overview
 
 - **Current Phase:** Phase 2
-- **Current Step:** Step 2.7 - Bulk Actions for Selection — COMPLETE
-- **Next Step:** Step 2.8 - Recruiter Analytics & Filters (per HIRE_FLOW_PROMPTS.md)
+- **Current Step:** Step 2.8 - Recruiter Analytics & Filters — COMPLETE
+- **Next Step:** Step 3.x — User features (per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
 ---
@@ -267,6 +267,24 @@
 - app/features/recruiter/components/revert-dialog.tsx (revert confirmation dialog)
 - app/api/recruiter/applications/[applicationId]/revert/route.ts (POST — revert application to previous status from audit trail)
 
+### Phase 2 (continued — Step 2.8 Recruiter Analytics & Filters)
+
+- app/features/recruiter/schema/analytics.schema.ts (AnalyticsFilterSchema, types, CHART_COLORS, FUNNEL_STAGE_ORDER)
+- app/features/recruiter/queries/analytics-queries.ts (getAnalytics, getJobAnalytics — $queryRaw aggregations, funnel, trends)
+- app/api/recruiter/analytics/route.ts (GET — standalone analytics)
+- app/api/recruiter/jobs/[id]/analytics/route.ts (GET — per-job analytics)
+- app/features/recruiter/hooks/use-analytics.ts (useAnalytics, useJobAnalytics hooks)
+- app/features/recruiter/components/charts/trend-chart.tsx (reusable LineChart)
+- app/features/recruiter/components/charts/distribution-bar-chart.tsx (reusable BarChart)
+- app/features/recruiter/components/charts/funnel-chart.tsx (custom pipeline funnel visualization)
+- app/features/recruiter/components/filters/analytics-filter-bar.tsx (calendar daterange, status/type/mode/location filters)
+- app/features/recruiter/components/recruiter-analytics-page.tsx (standalone analytics page)
+- app/features/recruiter/components/per-job-analytics-page.tsx (per-job analytics page)
+- app/(roles)/recruiter/analytics/page.tsx (standalone page wrapper)
+- app/(roles)/recruiter/jobs/[id]/analytics/page.tsx (per-job page wrapper)
+- app/features/recruiter/components/job-detail.tsx (added tab navigation — View Details / Applicants / Analytics)
+- app/(roles)/recruiter/jobs/[id]/applicants/page.tsx (renamed from [jobId] to [id] for consistency)
+
 ### Phase 3
 
 _(agent to fill)_
@@ -290,7 +308,7 @@ _(agent to fill)_
 
 - Step 2.3 (Job Posts CRUD) — complete.
 - Step 2.4 (Applicants View) — depends on job posts existing.
-- Step 2.5 (Analytics) — depends on job posts and applications data.
+- Step 2.8 (Analytics) — complete. Depends on job posts, applications, and status changes.
 - Phase 2 must be complete before Phase 3 (User) or Phase 4 (Public Routes).
 
 ## Upcoming Dependencies (Phase 1)

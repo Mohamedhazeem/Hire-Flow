@@ -10,11 +10,11 @@ export const metadata = {
 };
 
 type Props = {
-  params: Promise<{ jobId: string }>;
+  params: Promise<{ id: string }>;
 };
 
 export default async function ApplicantsPage({ params }: Props) {
-  const { jobId } = await params;
+  const { id: jobId } = await params;
 
   return (
     <div className="space-y-6">
