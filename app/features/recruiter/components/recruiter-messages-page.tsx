@@ -11,15 +11,9 @@ import { StartConversationSearch } from "@/components/shared/start-conversation-
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { MessageSquareTextIcon } from "lucide-react";
-import {
-  ThreadListItem,
-  type ThreadListItemData,
-} from "@/components/chat/thread-list-item";
+import { ThreadListItem, type ThreadListItemData } from "@/components/chat/thread-list-item";
 import { usePresenceStore } from "@/features/messages/stores/presence-store";
-import {
-  useOwnPresence,
-  useThreadPresence,
-} from "@/features/messages/stores/use-thread-presence";
+import { useOwnPresence, useThreadPresence } from "@/features/messages/stores/use-thread-presence";
 
 function ThreadListSkeleton() {
   return (
@@ -107,7 +101,7 @@ export function RecruiterMessagesPage() {
   useOwnPresence(recruiterId);
 
   return (
-    <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 lg:-mx-8 -mb-4 lg:-mb-8 -mt-3 lg:-mt-8">
+    <div className="flex flex-1 min-h-0 overflow-hidden -m-4 md:-m-6 lg:-m-8">
       <div
         className={cn(
           "flex-1 flex flex-col min-h-0 lg:flex-none",
@@ -123,10 +117,7 @@ export function RecruiterMessagesPage() {
       </div>
 
       <div
-        className={cn(
-          "flex-1 flex flex-col min-h-0",
-          activeThreadId ? "flex" : "hidden lg:flex",
-        )}
+        className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}
       >
         {activeThreadId ? (
           <ThreadView

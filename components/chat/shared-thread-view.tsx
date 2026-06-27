@@ -402,7 +402,7 @@ export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOver
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-5 py-4 space-y-1 bg-bg-page/40 lg:mx-3 lg:my-2 lg:rounded-2xl"
+        className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-5 pb-4 space-y-1 bg-bg-page/40 lg:mx-3 lg:rounded-2xl"
       >
         {isFetchingNextPage && (
           <div className="flex justify-center py-3">

@@ -9,7 +9,11 @@ type RoleLayoutClientProps = {
   messagesBasePath?: string;
 };
 
-export function RoleLayoutClient({ children, sidebar, messagesBasePath = "/admin/messages" }: RoleLayoutClientProps) {
+export function RoleLayoutClient({
+  children,
+  sidebar,
+  messagesBasePath = "/admin/messages",
+}: RoleLayoutClientProps) {
   return (
     <div className="flex h-screen overflow-hidden">
       {sidebar}

@@ -414,21 +414,6 @@
     "ast_hash": "0f9fa58e768fcb3fd6498d422ce577b5",
     "semantic_hash": "0f9fa58e768fcb3fd6498d422ce577b5"
   },
-  "prisma/migrations/20260611024703_setup/migration.sql": {
-    "mtime": 1781146023.149727,
-    "ast_hash": "c73541b97a7617767c5790f1c5affb71",
-    "semantic_hash": "c73541b97a7617767c5790f1c5affb71"
-  },
-  "prisma/migrations/20260613080948_rate_limit/migration.sql": {
-    "mtime": 1781338188.595806,
-    "ast_hash": "391c46f9bc4ad906ca7dd8b33d25eb7f",
-    "semantic_hash": "391c46f9bc4ad906ca7dd8b33d25eb7f"
-  },
-  "prisma/migrations/20260621062430_update/migration.sql": {
-    "mtime": 1782023070.7341187,
-    "ast_hash": "68c43230a399767c965f3300bd068712",
-    "semantic_hash": "68c43230a399767c965f3300bd068712"
-  },
   "prisma/seed.ts": {
     "mtime": 1782536836.0592372,
     "ast_hash": "eed7c70702cc8eea86962012d2822ccb",
@@ -530,8 +515,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1782548334.2635956,
-    "ast_hash": "fef8ca2905581f4d40b393b1413ca2c0",
+    "mtime": 1782567522.869831,
+    "ast_hash": "67ac0ca06e6632f68db5b343f4543a54",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -540,8 +525,8 @@
     "semantic_hash": ""
   },
   "HIRE_FLOW_PROMPTS.md": {
-    "mtime": 1782548279.2599845,
-    "ast_hash": "4ceba8f9279320f488225faae324d0b8",
+    "mtime": 1782567465.9579654,
+    "ast_hash": "c4d91e6fba08bf5bf9bf2e73631a51e6",
     "semantic_hash": ""
   },
   "MANIFEST.md": {
@@ -777,11 +762,6 @@
   "app/features/shared/api/require-role.ts": {
     "mtime": 1782461915.7969658,
     "ast_hash": "0168c0b063143a2a53f6035ab77b4ffe",
-    "semantic_hash": ""
-  },
-  "prisma/migrations/20260625034201_admin/migration.sql": {
-    "mtime": 1782358921.744243,
-    "ast_hash": "63444036ea116dc27a3b0d0288ce736f",
     "semantic_hash": ""
   },
   "app/api/admin/threads/route.ts": {
@@ -1577,6 +1557,11 @@
   ".kilo/plans/1782458322810-online-presence-plan.md": {
     "mtime": 1782534572.6654608,
     "ast_hash": "aca5acf9dfc187e1de451131fa4ab668",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260627134156_recruiter/migration.sql": {
+    "mtime": 1782567716.8631163,
+    "ast_hash": "65bc84ea374b2191f7277c0142fb2b56",
     "semantic_hash": ""
   }
 }
