@@ -470,8 +470,8 @@
     "semantic_hash": "5deee74bc0c47e863484fee965ae08d1"
   },
   ".kilo/kilo.json": {
-    "mtime": 1782328830.5413442,
-    "ast_hash": "2f9c077ff70b77e7985e7628b37c546c",
+    "mtime": 1782532825.744438,
+    "ast_hash": "fab9c3fa96c160fd8c923c4d3f026f3e",
     "semantic_hash": ""
   },
   ".kilo/plugins/graphify.js": {
@@ -752,11 +752,6 @@
   "app/api/admin/messages/search/route.ts": {
     "mtime": 1782336147.9833512,
     "ast_hash": "6d8fd7b90cf38723918a0f105f254713",
-    "semantic_hash": ""
-  },
-  "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782530708.3815272,
-    "ast_hash": "12245b8643512e06f11f1b761cf8029a",
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
@@ -1555,8 +1550,13 @@
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
-    "mtime": 1782532163.1523385,
-    "ast_hash": "1d7a13d8309858293cc6c578264300c7",
+    "mtime": 1782532867.2212443,
+    "ast_hash": "cd50e0a2a7970c38f9658baac4ca4243",
+    "semantic_hash": ""
+  },
+  "app/api/users/[id]/route.ts": {
+    "mtime": 1782532993.349376,
+    "ast_hash": "417d0a1d79f3812f9bfa422dc8f4d569",
     "semantic_hash": ""
   }
 }
