@@ -790,8 +790,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1782573917.114428,
-    "ast_hash": "bd4e446e17d6c196e0b999cdecbb27af",
+    "mtime": 1782577004.1705134,
+    "ast_hash": "905a3ad18856eb2900083a14b6a4f1c9",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
@@ -1140,8 +1140,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
-    "mtime": 1782569602.562021,
-    "ast_hash": "407eb51a945f852c2840983528ec88ea",
+    "mtime": 1782576839.5220788,
+    "ast_hash": "735abd9680ad6b73a851c8e1eba73b53",
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {

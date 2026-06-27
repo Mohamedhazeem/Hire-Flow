@@ -27,18 +27,14 @@ const recentColumns: ColumnDef<DashboardData["recentApplications"][number]>[] = 
     key: "userName",
     header: "Applicant",
     cell: (row) => (
-      <span className="font-medium text-text-heading text-sm">
-        {row.userName ?? "—"}
-      </span>
+      <span className="font-medium text-text-heading text-sm">{row.userName ?? "—"}</span>
     ),
   },
   {
     key: "jobTitle",
     header: "Job",
     cell: (row) => (
-      <span className="text-text-body text-sm truncate block max-w-[180px]">
-        {row.jobTitle}
-      </span>
+      <span className="text-text-body text-sm truncate block max-w-[180px]">{row.jobTitle}</span>
     ),
   },
   {
@@ -102,33 +98,6 @@ export function RecruiterDashboard({ data }: RecruiterDashboardProps) {
         />
       </div>
 
-      <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h2 className="text-base font-semibold text-text-heading">Recent Applications</h2>
-            <p className="text-[11px] text-text-muted mt-0.5">Latest 5 applications across all jobs</p>
-          </div>
-          {data.recentApplications.length > 0 && (
-            <Link
-              href="/recruiter/jobs"
-              className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
-            >
-              View All Jobs
-              <ArrowRightIcon className="size-3" />
-            </Link>
-          )}
-        </div>
-        <DataTable
-          columns={recentColumns}
-          data={data.recentApplications}
-          emptyMessage={
-            data.totalJobs === 0
-              ? "Post your first job to start receiving applications."
-              : "No applications received yet."
-          }
-        />
-      </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Link
           href="/recruiter/jobs/new"
@@ -181,6 +150,35 @@ export function RecruiterDashboard({ data }: RecruiterDashboardProps) {
             <p className="text-xs text-text-muted">Insights and metrics</p>
           </div>
         </Link>
+      </div>
+
+      <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h2 className="text-base font-semibold text-text-heading">Recent Applications</h2>
+            <p className="text-[11px] text-text-muted mt-0.5">
+              Latest 5 applications across all jobs
+            </p>
+          </div>
+          {data.recentApplications.length > 0 && (
+            <Link
+              href="/recruiter/jobs"
+              className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
+            >
+              View All Jobs
+              <ArrowRightIcon className="size-3" />
+            </Link>
+          )}
+        </div>
+        <DataTable
+          columns={recentColumns}
+          data={data.recentApplications}
+          emptyMessage={
+            data.totalJobs === 0
+              ? "Post your first job to start receiving applications."
+              : "No applications received yet."
+          }
+        />
       </div>
     </div>
   );

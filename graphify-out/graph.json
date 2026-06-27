@@ -56,424 +56,84 @@
   },
   "nodes": [
     {
-      "label": "shared-messages-page-layout.md",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "label": "notification-dropdown.tsx",
+      "file_type": "code",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "plans_shared_messages_page_layout",
-      "community": 107,
-      "norm_label": "shared-messages-page-layout.md"
+      "id": "components_notification_dropdown",
+      "community": 92,
+      "norm_label": "notification-dropdown.tsx"
     },
     {
-      "label": "Shared Messages Page Layout",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "community": 107,
-      "norm_label": "shared messages page layout"
-    },
-    {
-      "label": "Files",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_files",
-      "community": 107,
-      "norm_label": "files"
-    },
-    {
-      "label": "Create",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_create",
-      "community": 107,
-      "norm_label": "create"
-    },
-    {
-      "label": "Modify",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_modify",
-      "community": 107,
-      "norm_label": "modify"
-    },
-    {
-      "label": "Props",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_props",
-      "community": 107,
-      "norm_label": "props"
-    },
-    {
-      "label": "Edge Cases Preserved",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L41",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_edge_cases_preserved",
-      "community": 107,
-      "norm_label": "edge cases preserved"
-    },
-    {
-      "label": "Tasks",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L56",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_tasks",
-      "community": 107,
-      "norm_label": "tasks"
-    },
-    {
-      "label": "Non-goals",
-      "file_type": "document",
-      "source_file": ".kilo/plans/shared-messages-page-layout.md",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "plans_shared_messages_page_layout_non_goals",
-      "community": 107,
-      "norm_label": "non-goals"
-    },
-    {
-      "label": "page.tsx",
+      "label": "NotificationItem",
       "file_type": "code",
-      "source_file": "app/(roles)/admin/messages/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "messages_page",
-      "community": 101,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "Page()",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/messages/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "messages_page_page",
-      "community": 101,
-      "norm_label": "page()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/users/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "users_page",
-      "community": 52,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/users/page.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "users_page_metadata",
-      "community": 52,
-      "norm_label": "metadata"
-    },
-    {
-      "label": "AdminUsersPage()",
-      "file_type": "code",
-      "source_file": "app/(roles)/admin/users/page.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "users_page_adminuserspage",
-      "community": 52,
-      "norm_label": "adminuserspage()"
-    },
-    {
-      "label": "admin-message-page.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-message-page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_admin_message_page",
-      "community": 101,
-      "norm_label": "admin-message-page.tsx"
-    },
-    {
-      "label": "config",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-message-page.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "components_admin_message_page_config",
-      "community": 101,
-      "norm_label": "config"
-    },
-    {
-      "label": "AdminMessagesPage()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/admin-message-page.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "components_admin_message_page_adminmessagespage",
-      "community": 101,
-      "norm_label": "adminmessagespage()"
-    },
-    {
-      "label": "people-table.tsx",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_people_table",
-      "community": 47,
-      "norm_label": "people-table.tsx"
-    },
-    {
-      "label": "computeChatThreadId()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "components_people_table_computechatthreadid",
-      "community": 47,
-      "norm_label": "computechatthreadid()"
+      "id": "components_notification_dropdown_notificationitem",
+      "community": 92,
+      "norm_label": "notificationitem"
     },
     {
-      "label": "capitalizeLabel()",
+      "label": "notificationIconMap",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L39",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L42",
       "_origin": "ast",
-      "id": "components_people_table_capitalizelabel",
-      "community": 47,
-      "norm_label": "capitalizelabel()"
+      "id": "components_notification_dropdown_notificationiconmap",
+      "community": 92,
+      "norm_label": "notificationiconmap"
     },
     {
-      "label": "formatLabel()",
+      "label": "getNotificationPreview()",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L44",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L49",
       "_origin": "ast",
-      "id": "components_people_table_formatlabel",
-      "community": 47,
-      "norm_label": "formatlabel()"
+      "id": "components_notification_dropdown_getnotificationpreview",
+      "community": 92,
+      "norm_label": "getnotificationpreview()"
     },
     {
-      "label": "formatDate()",
+      "label": "getNotificationHref()",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "components_people_table_formatdate",
-      "community": 47,
-      "norm_label": "formatdate()"
-    },
-    {
-      "label": "statusBadge()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L56",
-      "_origin": "ast",
-      "id": "components_people_table_statusbadge",
-      "community": 47,
-      "norm_label": "statusbadge()"
-    },
-    {
-      "label": "ActionButtonProps",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
       "source_location": "L69",
       "_origin": "ast",
-      "id": "components_people_table_actionbuttonprops",
-      "community": 47,
-      "norm_label": "actionbuttonprops"
+      "id": "components_notification_dropdown_getnotificationhref",
+      "community": 92,
+      "norm_label": "getnotificationhref()"
     },
     {
-      "label": "ActionButton()",
+      "label": "NotificationsSkeleton()",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L78",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L96",
       "_origin": "ast",
-      "id": "components_people_table_actionbutton",
-      "community": 47,
-      "norm_label": "actionbutton()"
+      "id": "components_notification_dropdown_notificationsskeleton",
+      "community": 92,
+      "norm_label": "notificationsskeleton()"
     },
     {
-      "label": "PeopleTableProps",
+      "label": "NotificationDropdownProps",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L105",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L112",
       "_origin": "ast",
-      "id": "components_people_table_peopletableprops",
-      "community": 47,
-      "norm_label": "peopletableprops"
+      "id": "components_notification_dropdown_notificationdropdownprops",
+      "community": 92,
+      "norm_label": "notificationdropdownprops"
     },
     {
-      "label": "ROLE_OPTIONS",
+      "label": "NotificationDropdown()",
       "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L109",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L116",
       "_origin": "ast",
-      "id": "components_people_table_role_options",
-      "community": 47,
-      "norm_label": "role_options"
-    },
-    {
-      "label": "UserRow",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L111",
-      "_origin": "ast",
-      "id": "components_people_table_userrow",
-      "community": 47,
-      "norm_label": "userrow"
-    },
-    {
-      "label": "UsersApiResponse",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L123",
-      "_origin": "ast",
-      "id": "components_people_table_usersapiresponse",
-      "community": 47,
-      "norm_label": "usersapiresponse"
-    },
-    {
-      "label": "PeopleTable()",
-      "file_type": "code",
-      "source_file": "app/features/admin/components/people-table.tsx",
-      "source_location": "L134",
-      "_origin": "ast",
-      "id": "components_people_table_peopletable",
-      "community": 47,
-      "norm_label": "peopletable()"
-    },
-    {
-      "label": "recruiter-messages-page.tsx",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_recruiter_messages_page",
-      "community": 89,
-      "norm_label": "recruiter-messages-page.tsx"
-    },
-    {
-      "label": "config",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "components_recruiter_messages_page_config",
-      "community": 89,
-      "norm_label": "config"
-    },
-    {
-      "label": "RecruiterMessagesPage()",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "components_recruiter_messages_page_recruitermessagespage",
-      "community": 89,
-      "norm_label": "recruitermessagespage()"
-    },
-    {
-      "label": "user-messages-page.tsx",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-messages-page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_user_messages_page",
-      "community": 84,
-      "norm_label": "user-messages-page.tsx"
-    },
-    {
-      "label": "config",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-messages-page.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "components_user_messages_page_config",
-      "community": 84,
-      "norm_label": "config"
-    },
-    {
-      "label": "UserMessagesPage()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-messages-page.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "components_user_messages_page_usermessagespage",
-      "community": 84,
-      "norm_label": "usermessagespage()"
-    },
-    {
-      "label": "messages-page-layout.tsx",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout",
-      "community": 89,
-      "norm_label": "messages-page-layout.tsx"
-    },
-    {
-      "label": "MessagesPageConfig",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout_messagespageconfig",
-      "community": 89,
-      "norm_label": "messagespageconfig"
-    },
-    {
-      "label": "Props",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout_props",
-      "community": 89,
-      "norm_label": "props"
-    },
-    {
-      "label": "ThreadListSkeleton()",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout_threadlistskeleton",
-      "community": 89,
-      "norm_label": "threadlistskeleton()"
-    },
-    {
-      "label": "ThreadListPanel()",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout_threadlistpanel",
-      "community": 89,
-      "norm_label": "threadlistpanel()"
-    },
-    {
-      "label": "MessagesPageLayout()",
-      "file_type": "code",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L114",
-      "_origin": "ast",
-      "id": "chat_messages_page_layout_messagespagelayout",
-      "community": 89,
-      "norm_label": "messagespagelayout()"
+      "id": "components_notification_dropdown_notificationdropdown",
+      "community": 59,
+      "norm_label": "notificationdropdown()"
     },
     {
       "label": "role-layout-client.tsx",
@@ -504,6 +164,426 @@
       "id": "layout_role_layout_client_rolelayoutclient",
       "community": 96,
       "norm_label": "rolelayoutclient()"
+    },
+    {
+      "label": "shared-messages-page-layout.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "shared-messages-page-layout.md",
+      "id": "plans_shared_messages_page_layout"
+    },
+    {
+      "label": "Shared Messages Page Layout",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "shared messages page layout",
+      "id": "plans_shared_messages_page_layout_shared_messages_page_layout"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "files",
+      "id": "plans_shared_messages_page_layout_files"
+    },
+    {
+      "label": "Create",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "create",
+      "id": "plans_shared_messages_page_layout_create"
+    },
+    {
+      "label": "Modify",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "modify",
+      "id": "plans_shared_messages_page_layout_modify"
+    },
+    {
+      "label": "Props",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "props",
+      "id": "plans_shared_messages_page_layout_props"
+    },
+    {
+      "label": "Edge Cases Preserved",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "edge cases preserved",
+      "id": "plans_shared_messages_page_layout_edge_cases_preserved"
+    },
+    {
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L56",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "tasks",
+      "id": "plans_shared_messages_page_layout_tasks"
+    },
+    {
+      "label": "Non-goals",
+      "file_type": "document",
+      "source_file": ".kilo/plans/shared-messages-page-layout.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "non-goals",
+      "id": "plans_shared_messages_page_layout_non_goals"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/messages/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 101,
+      "norm_label": "page.tsx",
+      "id": "messages_page"
+    },
+    {
+      "label": "Page()",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/messages/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 101,
+      "norm_label": "page()",
+      "id": "messages_page_page"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/users/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 52,
+      "norm_label": "page.tsx",
+      "id": "users_page"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/users/page.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 52,
+      "norm_label": "metadata",
+      "id": "users_page_metadata"
+    },
+    {
+      "label": "AdminUsersPage()",
+      "file_type": "code",
+      "source_file": "app/(roles)/admin/users/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 52,
+      "norm_label": "adminuserspage()",
+      "id": "users_page_adminuserspage"
+    },
+    {
+      "label": "admin-message-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-message-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 101,
+      "norm_label": "admin-message-page.tsx",
+      "id": "components_admin_message_page"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-message-page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 101,
+      "norm_label": "config",
+      "id": "components_admin_message_page_config"
+    },
+    {
+      "label": "AdminMessagesPage()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/admin-message-page.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 101,
+      "norm_label": "adminmessagespage()",
+      "id": "components_admin_message_page_adminmessagespage"
+    },
+    {
+      "label": "people-table.tsx",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "people-table.tsx",
+      "id": "components_people_table"
+    },
+    {
+      "label": "computeChatThreadId()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "computechatthreadid()",
+      "id": "components_people_table_computechatthreadid"
+    },
+    {
+      "label": "capitalizeLabel()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "capitalizelabel()",
+      "id": "components_people_table_capitalizelabel"
+    },
+    {
+      "label": "formatLabel()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "formatlabel()",
+      "id": "components_people_table_formatlabel"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "formatdate()",
+      "id": "components_people_table_formatdate"
+    },
+    {
+      "label": "statusBadge()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L56",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "statusbadge()",
+      "id": "components_people_table_statusbadge"
+    },
+    {
+      "label": "ActionButtonProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L69",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "actionbuttonprops",
+      "id": "components_people_table_actionbuttonprops"
+    },
+    {
+      "label": "ActionButton()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L78",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "actionbutton()",
+      "id": "components_people_table_actionbutton"
+    },
+    {
+      "label": "PeopleTableProps",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L105",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "peopletableprops",
+      "id": "components_people_table_peopletableprops"
+    },
+    {
+      "label": "ROLE_OPTIONS",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L109",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "role_options",
+      "id": "components_people_table_role_options"
+    },
+    {
+      "label": "UserRow",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L111",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "userrow",
+      "id": "components_people_table_userrow"
+    },
+    {
+      "label": "UsersApiResponse",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L123",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "usersapiresponse",
+      "id": "components_people_table_usersapiresponse"
+    },
+    {
+      "label": "PeopleTable()",
+      "file_type": "code",
+      "source_file": "app/features/admin/components/people-table.tsx",
+      "source_location": "L134",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "peopletable()",
+      "id": "components_people_table_peopletable"
+    },
+    {
+      "label": "recruiter-messages-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "recruiter-messages-page.tsx",
+      "id": "components_recruiter_messages_page"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "config",
+      "id": "components_recruiter_messages_page_config"
+    },
+    {
+      "label": "RecruiterMessagesPage()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "recruitermessagespage()",
+      "id": "components_recruiter_messages_page_recruitermessagespage"
+    },
+    {
+      "label": "user-messages-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-messages-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 84,
+      "norm_label": "user-messages-page.tsx",
+      "id": "components_user_messages_page"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-messages-page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 84,
+      "norm_label": "config",
+      "id": "components_user_messages_page_config"
+    },
+    {
+      "label": "UserMessagesPage()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-messages-page.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 84,
+      "norm_label": "usermessagespage()",
+      "id": "components_user_messages_page_usermessagespage"
+    },
+    {
+      "label": "messages-page-layout.tsx",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "messages-page-layout.tsx",
+      "id": "chat_messages_page_layout"
+    },
+    {
+      "label": "MessagesPageConfig",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "messagespageconfig",
+      "id": "chat_messages_page_layout_messagespageconfig"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "props",
+      "id": "chat_messages_page_layout_props"
+    },
+    {
+      "label": "ThreadListSkeleton()",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "threadlistskeleton()",
+      "id": "chat_messages_page_layout_threadlistskeleton"
+    },
+    {
+      "label": "ThreadListPanel()",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "threadlistpanel()",
+      "id": "chat_messages_page_layout_threadlistpanel"
+    },
+    {
+      "label": "MessagesPageLayout()",
+      "file_type": "code",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L114",
+      "_origin": "ast",
+      "community": 89,
+      "norm_label": "messagespagelayout()",
+      "id": "chat_messages_page_layout_messagespagelayout"
     },
     {
       "label": "shared-thread-view.tsx",
@@ -1324,86 +1404,6 @@
       "community": 50,
       "norm_label": "get",
       "id": "applicants_route_get"
-    },
-    {
-      "label": "notification-dropdown.tsx",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "notification-dropdown.tsx",
-      "id": "components_notification_dropdown"
-    },
-    {
-      "label": "NotificationItem",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L34",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "notificationitem",
-      "id": "components_notification_dropdown_notificationitem"
-    },
-    {
-      "label": "notificationIconMap",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "notificationiconmap",
-      "id": "components_notification_dropdown_notificationiconmap"
-    },
-    {
-      "label": "getNotificationPreview()",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L49",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "getnotificationpreview()",
-      "id": "components_notification_dropdown_getnotificationpreview"
-    },
-    {
-      "label": "getNotificationHref()",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L71",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "getnotificationhref()",
-      "id": "components_notification_dropdown_getnotificationhref"
-    },
-    {
-      "label": "NotificationsSkeleton()",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L98",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "notificationsskeleton()",
-      "id": "components_notification_dropdown_notificationsskeleton"
-    },
-    {
-      "label": "NotificationDropdownProps",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L114",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "notificationdropdownprops",
-      "id": "components_notification_dropdown_notificationdropdownprops"
-    },
-    {
-      "label": "NotificationDropdown()",
-      "file_type": "code",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L118",
-      "_origin": "ast",
-      "community": 59,
-      "norm_label": "notificationdropdown()",
-      "id": "components_notification_dropdown_notificationdropdown"
     },
     {
       "label": "use-notifications.ts",
@@ -17537,12 +17537,454 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_getnotificationhref"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_getnotificationpreview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_notificationdropdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_notificationdropdownprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_notificationiconmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_notificationitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "components_notification_dropdown_notificationsskeleton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "hooks_use_notifications"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "hooks_use_notifications_usemarkasread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "hooks_use_notifications_usenotifications"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "hooks_use_notifications_userealtimenotifications"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "hooks_use_notifications_useunreadcount"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover_popovercontent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover_popoverheader"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover_popovertitle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_popover_popovertrigger"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "ui_skeleton_skeleton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "utils_format_time"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_notification_dropdown",
+      "target": "utils_format_time_formattime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "components_notification_dropdown"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "components_notification_dropdown_notificationdropdown",
+      "target": "hooks_use_notifications_usemarkasread"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "components_notification_dropdown_notificationdropdown",
+      "target": "hooks_use_notifications_usenotifications"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "components_notification_dropdown_notificationdropdown",
+      "target": "hooks_use_notifications_userealtimenotifications"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "components_notification_dropdown_notificationdropdown",
+      "target": "hooks_use_notifications_useunreadcount"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "components_notification_dropdown_notificationdropdown"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/admin-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_admin_layout_client",
+      "target": "layout_role_layout_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "layout_mobile_menu_button"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "layout_mobile_menu_button_mobilemenubutton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "layout_role_layout_client_rolelayoutclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/role-layout-client.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_role_layout_client",
+      "target": "layout_role_layout_client_rolelayoutclientprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_recruiter_layout_client",
+      "target": "layout_role_layout_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/user-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_user_layout_client",
+      "target": "layout_role_layout_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/admin-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_admin_layout_client",
+      "target": "layout_role_layout_client_rolelayoutclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_recruiter_layout_client",
+      "target": "layout_role_layout_client_rolelayoutclient"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/user-layout-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_user_layout_client",
+      "target": "layout_role_layout_client_rolelayoutclient"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_shared_messages_page_layout"
     },
     {
       "relation": "contains",
@@ -17550,9 +17992,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_edge_cases_preserved",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_edge_cases_preserved"
     },
     {
       "relation": "contains",
@@ -17560,9 +18002,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_files",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_files"
     },
     {
       "relation": "contains",
@@ -17570,9 +18012,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_non_goals",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_non_goals"
     },
     {
       "relation": "contains",
@@ -17580,9 +18022,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_props",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_props"
     },
     {
       "relation": "contains",
@@ -17590,9 +18032,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_shared_messages_page_layout",
-      "target": "plans_shared_messages_page_layout_tasks",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_tasks"
     },
     {
       "relation": "contains",
@@ -17600,9 +18042,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_files",
-      "target": "plans_shared_messages_page_layout_create",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_create"
     },
     {
       "relation": "contains",
@@ -17610,9 +18052,9 @@
       "source_file": ".kilo/plans/shared-messages-page-layout.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_shared_messages_page_layout_files",
-      "target": "plans_shared_messages_page_layout_modify",
-      "confidence_score": 1.0
+      "target": "plans_shared_messages_page_layout_modify"
     },
     {
       "relation": "imports",
@@ -17643,9 +18085,9 @@
       "source_file": "app/(roles)/admin/messages/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_page",
-      "target": "components_admin_message_page",
-      "confidence_score": 1.0
+      "target": "components_admin_message_page"
     },
     {
       "relation": "imports",
@@ -17654,9 +18096,9 @@
       "source_file": "app/(roles)/admin/messages/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_page",
-      "target": "components_admin_message_page_adminmessagespage",
-      "confidence_score": 1.0
+      "target": "components_admin_message_page_adminmessagespage"
     },
     {
       "relation": "imports",
@@ -17686,9 +18128,9 @@
       "source_file": "app/(roles)/admin/messages/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_page",
-      "target": "messages_page_page",
-      "confidence_score": 1.0
+      "target": "messages_page_page"
     },
     {
       "relation": "imports",
@@ -17838,9 +18280,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "chat_messages_page_layout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout"
     },
     {
       "relation": "imports",
@@ -17849,9 +18291,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "chat_messages_page_layout_messagespageconfig",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespageconfig"
     },
     {
       "relation": "imports",
@@ -17860,9 +18302,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "chat_messages_page_layout_messagespagelayout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespagelayout"
     },
     {
       "relation": "contains",
@@ -17870,9 +18312,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "components_admin_message_page_adminmessagespage",
-      "confidence_score": 1.0
+      "target": "components_admin_message_page_adminmessagespage"
     },
     {
       "relation": "contains",
@@ -17880,9 +18322,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "components_admin_message_page_config",
-      "confidence_score": 1.0
+      "target": "components_admin_message_page_config"
     },
     {
       "relation": "imports",
@@ -17891,9 +18333,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "components_admin_thread_view_adminthreadview",
-      "confidence_score": 1.0
+      "target": "components_admin_thread_view_adminthreadview"
     },
     {
       "relation": "imports",
@@ -17902,9 +18344,9 @@
       "source_file": "app/features/admin/components/admin-message-page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_admin_message_page",
-      "target": "messages_use_admin_threads_useadminthreads",
-      "confidence_score": 1.0
+      "target": "messages_use_admin_threads_useadminthreads"
     },
     {
       "relation": "imports_from",
@@ -18407,9 +18849,9 @@
       "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiter_messages_page",
-      "target": "chat_messages_page_layout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout"
     },
     {
       "relation": "imports",
@@ -18418,9 +18860,9 @@
       "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiter_messages_page",
-      "target": "chat_messages_page_layout_messagespageconfig",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespageconfig"
     },
     {
       "relation": "imports",
@@ -18429,9 +18871,9 @@
       "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiter_messages_page",
-      "target": "chat_messages_page_layout_messagespagelayout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespagelayout"
     },
     {
       "relation": "imports_from",
@@ -18472,9 +18914,9 @@
       "source_file": "app/features/recruiter/components/recruiter-messages-page.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_recruiter_messages_page",
-      "target": "components_recruiter_messages_page_config",
-      "confidence_score": 1.0
+      "target": "components_recruiter_messages_page_config"
     },
     {
       "relation": "contains",
@@ -18757,9 +19199,9 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_user_messages_page",
-      "target": "chat_messages_page_layout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout"
     },
     {
       "relation": "imports",
@@ -18768,9 +19210,9 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_user_messages_page",
-      "target": "chat_messages_page_layout_messagespageconfig",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespageconfig"
     },
     {
       "relation": "imports",
@@ -18779,9 +19221,9 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_user_messages_page",
-      "target": "chat_messages_page_layout_messagespagelayout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespagelayout"
     },
     {
       "relation": "imports_from",
@@ -18822,9 +19264,9 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_user_messages_page",
-      "target": "components_user_messages_page_config",
-      "confidence_score": 1.0
+      "target": "components_user_messages_page_config"
     },
     {
       "relation": "contains",
@@ -19095,9 +19537,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_messages_page_layout_messagespageconfig",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespageconfig"
     },
     {
       "relation": "contains",
@@ -19105,9 +19547,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_messages_page_layout_messagespagelayout",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_messagespagelayout"
     },
     {
       "relation": "contains",
@@ -19115,9 +19557,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_messages_page_layout_props",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_props"
     },
     {
       "relation": "contains",
@@ -19125,9 +19567,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_messages_page_layout_threadlistpanel",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_threadlistpanel"
     },
     {
       "relation": "contains",
@@ -19135,9 +19577,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_messages_page_layout_threadlistskeleton",
-      "confidence_score": 1.0
+      "target": "chat_messages_page_layout_threadlistskeleton"
     },
     {
       "relation": "imports",
@@ -19146,9 +19588,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_thread_list_item_threadlistitem",
-      "confidence_score": 1.0
+      "target": "chat_thread_list_item_threadlistitem"
     },
     {
       "relation": "imports",
@@ -19157,9 +19599,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "chat_thread_list_item_threadlistitemdata",
-      "confidence_score": 1.0
+      "target": "chat_thread_list_item_threadlistitemdata"
     },
     {
       "relation": "imports",
@@ -19168,9 +19610,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports",
@@ -19179,9 +19621,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "shared_start_conversation_search_startconversationsearch",
-      "confidence_score": 1.0
+      "target": "shared_start_conversation_search_startconversationsearch"
     },
     {
       "relation": "imports",
@@ -19190,9 +19632,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "stores_presence_store_usepresencestore",
-      "confidence_score": 1.0
+      "target": "stores_presence_store_usepresencestore"
     },
     {
       "relation": "imports",
@@ -19201,9 +19643,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "stores_use_thread_presence_useownpresence",
-      "confidence_score": 1.0
+      "target": "stores_use_thread_presence_useownpresence"
     },
     {
       "relation": "imports",
@@ -19212,9 +19654,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "stores_use_thread_presence_usethreadpresence",
-      "confidence_score": 1.0
+      "target": "stores_use_thread_presence_usethreadpresence"
     },
     {
       "relation": "imports",
@@ -19223,139 +19665,9 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "chat_messages_page_layout",
-      "target": "ui_skeleton_skeleton",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/admin-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_admin_layout_client",
-      "target": "layout_role_layout_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "components_notification_dropdown"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "components_notification_dropdown_notificationdropdown"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "layout_mobile_menu_button"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "layout_mobile_menu_button_mobilemenubutton"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "layout_role_layout_client_rolelayoutclient"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/role-layout-client.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_role_layout_client",
-      "target": "layout_role_layout_client_rolelayoutclientprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_recruiter_layout_client",
-      "target": "layout_role_layout_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/user-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_user_layout_client",
-      "target": "layout_role_layout_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/admin-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_admin_layout_client",
-      "target": "layout_role_layout_client_rolelayoutclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_recruiter_layout_client",
-      "target": "layout_role_layout_client_rolelayoutclient"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/user-layout-client.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_user_layout_client",
-      "target": "layout_role_layout_client_rolelayoutclient"
+      "target": "ui_skeleton_skeleton"
     },
     {
       "relation": "imports_from",
@@ -20896,318 +21208,6 @@
       "confidence_score": 1.0,
       "source": "applicants_route_handleget",
       "target": "queries_application_queries_listapplicants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_getnotificationhref"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_getnotificationpreview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_notificationdropdown"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L101",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_notificationdropdownprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_notificationiconmap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_notificationitem"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "components_notification_dropdown_notificationsskeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "hooks_use_notifications"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "hooks_use_notifications_usemarkasread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "hooks_use_notifications_usenotifications"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "hooks_use_notifications_userealtimenotifications"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "hooks_use_notifications_useunreadcount"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover_popover"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover_popovercontent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover_popoverheader"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover_popovertitle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_popover_popovertrigger"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_skeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "ui_skeleton_skeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "utils_format_time"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_notification_dropdown",
-      "target": "utils_format_time_formattime"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L112",
-      "weight": 1.0,
-      "source": "components_notification_dropdown_notificationdropdown",
-      "target": "hooks_use_notifications_usemarkasread"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L110",
-      "weight": 1.0,
-      "source": "components_notification_dropdown_notificationdropdown",
-      "target": "hooks_use_notifications_usenotifications"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L114",
-      "weight": 1.0,
-      "source": "components_notification_dropdown_notificationdropdown",
-      "target": "hooks_use_notifications_userealtimenotifications"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/notifications/components/notification-dropdown.tsx",
-      "source_location": "L111",
-      "weight": 1.0,
-      "source": "components_notification_dropdown_notificationdropdown",
-      "target": "hooks_use_notifications_useunreadcount"
     },
     {
       "relation": "imports_from",
@@ -55008,5 +55008,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "74f93d3ac5db42d924431ab43cfe013da79fc581"
+  "built_at_commit": "f7391a9c626c89229bf115d9da88ba117149cddb"
 }
