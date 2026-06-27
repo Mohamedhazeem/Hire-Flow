@@ -6,7 +6,7 @@ import {
   useAdminThreads,
   type ThreadItem,
 } from "@/app/features/admin/hooks/messages/use-admin-threads";
-import { ThreadView } from "@/app/features/admin/components/thread-view";
+import { AdminThreadView as ThreadView } from "@/app/features/admin/components/admin-thread-view";
 import { StartConversationSearch } from "@/components/shared/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";

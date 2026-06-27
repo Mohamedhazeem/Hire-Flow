@@ -6,7 +6,7 @@ import {
   useRecruiterThreads,
   type ThreadItem,
 } from "@/app/features/recruiter/hooks/messages/use-recruiter-threads";
-import { ThreadView } from "@/app/features/admin/components/thread-view";
+import { RecruiterThreadView as ThreadView } from "@/app/features/recruiter/components/recruiter-thread-view";
 import { StartConversationSearch } from "@/components/shared/start-conversation-search";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";

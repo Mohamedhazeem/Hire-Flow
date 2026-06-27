@@ -745,8 +745,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/messages/page.tsx": {
-    "mtime": 1782445830.6163948,
-    "ast_hash": "93056c9fd9579d807eeb126de6aec4cc",
+    "mtime": 1782531917.2073934,
+    "ast_hash": "b69211fd11b70c3f9af6b2d314ebb606",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -755,8 +755,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/thread-view.tsx": {
-    "mtime": 1782501471.81468,
-    "ast_hash": "05de6c74b77d2a74b85881b1e5c6ae00",
+    "mtime": 1782530708.3815272,
+    "ast_hash": "12245b8643512e06f11f1b761cf8029a",
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/[messageId]/route.ts": {
@@ -765,8 +765,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/route.ts": {
-    "mtime": 1782521698.9546587,
-    "ast_hash": "d0d6f2ea8603d09e26a5d64835a155fe",
+    "mtime": 1782530610.855409,
+    "ast_hash": "d6817f6e5a3c64bfef4f93e3fa0a5f0b",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/messages/use-admin-messages.ts": {
@@ -790,13 +790,13 @@
     "semantic_hash": ""
   },
   "app/api/admin/threads/route.ts": {
-    "mtime": 1782374405.2436461,
-    "ast_hash": "b7fea894cc6d97f569b395f2054155b7",
+    "mtime": 1782530824.6344905,
+    "ast_hash": "5e896209fac561a3eb00908e61264362",
     "semantic_hash": ""
   },
   "app/features/admin/hooks/messages/use-admin-threads.ts": {
-    "mtime": 1782374569.4066908,
-    "ast_hash": "a3d0b7bfedca95bf41d21f6f5aad52cd",
+    "mtime": 1782530688.9194686,
+    "ast_hash": "6558b2b8bd657eeb239e9f8a58b836d6",
     "semantic_hash": ""
   },
   "app/(roles)/admin/admin-layout-client.tsx": {
@@ -805,8 +805,8 @@
     "semantic_hash": ""
   },
   "components/chat/message-bubble.tsx": {
-    "mtime": 1782385265.055826,
-    "ast_hash": "b964c630dc47fd95546798b77e330d53",
+    "mtime": 1782531385.0659025,
+    "ast_hash": "80269c4c4468c8e82ab1840e02276e32",
     "semantic_hash": ""
   },
   "components/layout/mobile-menu-button.tsx": {
@@ -1145,8 +1145,8 @@
     "semantic_hash": ""
   },
   "app/api/pusher/auth/route.ts": {
-    "mtime": 1782501375.8279474,
-    "ast_hash": "b8da6a4208093ed1ceaf62bb6d86aa7b",
+    "mtime": 1782530545.7951221,
+    "ast_hash": "4fa2704a9fa584b8f8f546956ac26b32",
     "semantic_hash": ""
   },
   "app/api/recruiter/applications/[applicationId]/profile/route.ts": {
@@ -1155,8 +1155,8 @@
     "semantic_hash": ""
   },
   "app/api/recruiter/messages/[threadId]/route.ts": {
-    "mtime": 1782521687.1480932,
-    "ast_hash": "33ed24735fb75e128fdc3e691e02ac96",
+    "mtime": 1782530570.717978,
+    "ast_hash": "aeb3ddfe52ad9dc2918cc007bcc93da1",
     "semantic_hash": ""
   },
   "app/api/recruiter/messages/search/route.ts": {
@@ -1165,8 +1165,8 @@
     "semantic_hash": ""
   },
   "app/api/recruiter/threads/route.ts": {
-    "mtime": 1782502655.5329988,
-    "ast_hash": "c03dca0d2470ae0884c2127418afd810",
+    "mtime": 1782530585.2860346,
+    "ast_hash": "3cfd47c07797edc5e1c7a412f1d5dbfa",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
@@ -1190,8 +1190,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-messages-page.tsx": {
-    "mtime": 1782502714.0106318,
-    "ast_hash": "6ee207fb4fb38fa1daec72cd979500fe",
+    "mtime": 1782531929.6038356,
+    "ast_hash": "61b259d2c63ab33817a4e1c8184f35fd",
     "semantic_hash": ""
   },
   "app/features/recruiter/hooks/messages/use-recruiter-messages.ts": {
@@ -1215,7 +1215,7 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-messages-page.tsx": {
-    "mtime": 1782502728.6074665,
+    "mtime": 1782531953.3939576,
     "ast_hash": "cc614f506cd94d00a1c05b574675d74f",
     "semantic_hash": ""
   },
@@ -1225,8 +1225,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
-    "mtime": 1782502890.3695467,
-    "ast_hash": "e1a7cb485d5710952faae807a59d22e2",
+    "mtime": 1782532033.2819731,
+    "ast_hash": "979579381cb4dd9554988565dfee4045",
     "semantic_hash": ""
   },
   "app/features/user/hooks/messages/use-user-messages.ts": {
@@ -1490,8 +1490,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/applications/[applicationId]/detail/route.ts": {
-    "mtime": 1782525920.9480977,
-    "ast_hash": "a3f2f86e4c37d4dfd57c84132e452005",
+    "mtime": 1782530681.7510304,
+    "ast_hash": "b4d47ce344ed35a32cc2abeb1efa5dac",
     "semantic_hash": ""
   },
   "app/api/admin/users/[id]/applications/route.ts": {
@@ -1515,8 +1515,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/queries/applicant-queries.ts": {
-    "mtime": 1782528265.3339772,
-    "ast_hash": "bf62d1e9962db73fd667669569eafc74",
+    "mtime": 1782530669.803411,
+    "ast_hash": "b5703553bd3ba6a97e150946edf6e4e1",
     "semantic_hash": ""
   },
   "components/shared/resume-preview-dialog.tsx": {
@@ -1527,6 +1527,36 @@
   ".kilo/plans/fix-applicant-resume-resolution.md": {
     "mtime": 1782525034.5684102,
     "ast_hash": "3a0a456980ec3ba871665ffee0a3553d",
+    "semantic_hash": ""
+  },
+  "app/api/recruiter/messages/[threadId]/[messageId]/route.ts": {
+    "mtime": 1782530644.5294583,
+    "ast_hash": "651a468c24a1e3fe2b2713bb8c7ec819",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1782458322810-message-system-fixes.md": {
+    "mtime": 1782530448.2278638,
+    "ast_hash": "375d192c30315a463bfefc6cec2518cf",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/admin-thread-view.tsx": {
+    "mtime": 1782532012.8099458,
+    "ast_hash": "882c4cad15d4d6c941e20422c93a8b1c",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/recruiter-thread-view.tsx": {
+    "mtime": 1782532024.345277,
+    "ast_hash": "18c9a60aa471fc6538e2a4130329e168",
+    "semantic_hash": ""
+  },
+  "components/chat/message-item.ts": {
+    "mtime": 1782531824.7284021,
+    "ast_hash": "f9a8345d429015a333c733f1cd00dfd9",
+    "semantic_hash": ""
+  },
+  "components/chat/shared-thread-view.tsx": {
+    "mtime": 1782532163.1523385,
+    "ast_hash": "1d7a13d8309858293cc6c578264300c7",
     "semantic_hash": ""
   }
 }
