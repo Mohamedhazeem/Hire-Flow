@@ -147,12 +147,13 @@ export function DateRangePicker({
             button_next: cn(
               "inline-flex items-center justify-center size-7 rounded-md text-text-muted hover:text-text-body hover:bg-bg-elevated transition-colors [&>svg]:size-4",
             ),
-            weekday: "text-text-muted font-medium text-[0.65rem] uppercase tracking-wider",
+            weekday: "text-text-muted font-medium text-[0.65rem] uppercase tracking-wider w-[36px] text-center",
             weekdays: "flex",
             week: "flex w-full mt-1",
             day_button: cn(
               "inline-flex items-center justify-center size-8 rounded-md text-sm font-normal text-text-body hover:bg-bg-elevated transition-colors",
               "dark:hover:bg-brand-dark",
+              "w-[36px]",
             ),
             day: "text-center p-0",
             today: "font-semibold text-brand",
