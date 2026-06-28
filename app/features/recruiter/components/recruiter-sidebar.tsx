@@ -15,10 +15,10 @@ import { useSession } from "@/app/features/auth/libs/auth-client";
 
 const recruiterLinks: SidebarLink[] = [
   { href: "/recruiter", label: "Dashboard", icon: LayoutDashboardIcon },
-  { href: "/recruiter/messages", label: "Messages", icon: MessageSquareTextIcon },
   { href: "/recruiter/company", label: "Company Profile", icon: Building2Icon },
   { href: "/recruiter/team", label: "Team Members", icon: UsersIcon },
   { href: "/recruiter/jobs", label: "Jobs", icon: BriefcaseIcon },
+  { href: "/recruiter/messages", label: "Messages", icon: MessageSquareTextIcon },
   { href: "/recruiter/analytics", label: "Analytics", icon: BarChart3Icon },
 ];
 
@@ -27,7 +27,11 @@ export function RecruiterSidebar() {
   const { data: session } = useSession();
 
   const sidebarUser: SidebarUser | undefined = session?.user
-    ? { name: session.user.name, image: session.user.image, role: (session.user as { role?: string }).role ?? "recruiter" }
+    ? {
+        name: session.user.name,
+        image: session.user.image,
+        role: (session.user as { role?: string }).role ?? "recruiter",
+      }
     : undefined;
 
   const handleSignOut = async () => {

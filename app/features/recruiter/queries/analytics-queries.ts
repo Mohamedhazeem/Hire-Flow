@@ -66,108 +66,77 @@ function whereSQL(companyId: string, filter: AnalyticsFilter): string {
   return "WHERE " + clauses.join(" AND ");
 }
 
+function buildJobBreakdownSQL(companyId: string, filter: AnalyticsFilter): string {
+  const clauses = buildWhereClauses(companyId, filter, { application: "a", job: "j" });
+  const joinClauses = clauses.filter((c) => !c.includes(`j."companyId"`));
+  const joinSQL = joinClauses.length > 0 ? " AND " + joinClauses.join(" AND ") : "";
+  const cleanJoinSQL = filter.jobId
+    ? joinSQL.replace(`a."jobId" = '${filter.jobId}'`, "").replace(" AND  AND ", " AND ").replace(/^ AND /, "")
+    : joinSQL;
+  return `
+    SELECT
+      j."id" AS "jobId",
+      j."title",
+      COUNT(DISTINCT a."id")::BIGINT AS "totalApplications",
+      COUNT(DISTINCT CASE WHEN a."status" = 'hired' THEN a."id" END)::BIGINT AS hired,
+      j."viewCount"::BIGINT AS "viewCount"
+    FROM "job" j
+    LEFT JOIN "application" a ON a."jobId" = j."id" ${cleanJoinSQL}
+    WHERE j."companyId" = '${companyId}'
+    GROUP BY j."id", j."title", j."viewCount"
+    ORDER BY "totalApplications" DESC
+    LIMIT 50
+  `;
+}
+
 export async function getAnalytics(companyId: string, filter: AnalyticsFilter): Promise<AnalyticsResponse> {
   const defaults = defaultDateRange();
   const from = filter.dateFrom ?? defaults.dateFrom;
   const to = filter.dateTo ?? defaults.dateTo;
 
-  const where = whereSQL(companyId, filter);
+  const [
+    summaryResult, trendRaw, statusRaw, workModeRaw, employmentTypeRaw,
+    topJobsRaw, funnelHistoricalRaw, conversionsRaw, jobBreakdownRaw, fulfillmentRaw,
+  ] = await (async () => {
+    // Run each query independently so we can identify which one fails
+    const r1 = prisma.$queryRawUnsafe<RawCountRow[]>(
+      `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, { ...filter })}`,
+    );
+    const r2 = prisma.$queryRawUnsafe<RawTrendRow[]>(
+      `SELECT TO_CHAR(a."appliedAt", 'YYYY-MM-DD') AS date, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY TO_CHAR(a."appliedAt", 'YYYY-MM-DD') ORDER BY date ASC`,
+    );
+    const r3 = prisma.$queryRawUnsafe<Array<{ status: string; count: bigint }>>(
+      `SELECT a."status", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY a."status" ORDER BY count DESC`,
+    );
+    const r4 = prisma.$queryRawUnsafe<Array<{ workMode: string; count: bigint }>>(
+      `SELECT j."workMode", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY j."workMode" ORDER BY count DESC`,
+    );
+    const r5 = prisma.$queryRawUnsafe<Array<{ employmentType: string; count: bigint }>>(
+      `SELECT j."employmentType", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY j."employmentType" ORDER BY count DESC`,
+    );
+    const r6 = prisma.$queryRawUnsafe<Array<{ jobId: string; title: string; count: bigint }>>(
+      `SELECT a."jobId" AS "jobId", j."title", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY a."jobId", j."title" ORDER BY count DESC LIMIT 10`,
+    );
+    const r7 = prisma.$queryRawUnsafe<Array<{ stage: string; uniqueApplications: bigint }>>(
+      `SELECT asc_ref."toStatus" AS stage, COUNT(DISTINCT asc_ref."applicationId")::BIGINT AS "uniqueApplications" FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY asc_ref."toStatus" ORDER BY MIN(asc_ref."createdAt") ASC`,
+    );
+    const r8 = prisma.$queryRawUnsafe<Array<{ fromStage: string; toStage: string; count: bigint }>>(
+      `SELECT asc_ref."fromStatus" AS "fromStage", asc_ref."toStatus" AS "toStage", COUNT(*)::BIGINT AS count FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY asc_ref."fromStatus", asc_ref."toStatus" ORDER BY count DESC`,
+    );
+    const r9 = prisma.$queryRawUnsafe<Array<{ jobId: string; title: string; totalApplications: bigint; hired: bigint; viewCount: bigint }>>(
+      buildJobBreakdownSQL(companyId, filter),
+    );
+    const r10 = prisma.$queryRawUnsafe<Array<{ avg: string | null }>>(
+      `SELECT AVG(EXTRACT(EPOCH FROM (a."updatedAt" - a."appliedAt")) / 86400)::TEXT AS avg FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} AND a."status" = 'hired'`,
+    );
 
-  const [summaryResult, trendRaw, statusRaw, workModeRaw, employmentTypeRaw, topJobsRaw, funnelHistoricalRaw, conversionsRaw, jobBreakdownRaw, fulfillmentRaw] = await Promise.all([
-    prisma.$queryRaw<RawCountRow[]>`
-      SELECT COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${whereSQL(companyId, { ...filter })}
-    `,
-    prisma.$queryRaw<RawTrendRow[]>`
-      SELECT TO_CHAR(a."appliedAt", 'YYYY-MM-DD') AS date, COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY TO_CHAR(a."appliedAt", 'YYYY-MM-DD')
-      ORDER BY date ASC
-    `,
-    prisma.$queryRaw<Array<{ status: string; count: bigint }>>`
-      SELECT a."status", COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY a."status"
-      ORDER BY count DESC
-    `,
-    prisma.$queryRaw<Array<{ workMode: string; count: bigint }>>`
-      SELECT j."workMode", COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY j."workMode"
-      ORDER BY count DESC
-    `,
-    prisma.$queryRaw<Array<{ employmentType: string; count: bigint }>>`
-      SELECT j."employmentType", COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY j."employmentType"
-      ORDER BY count DESC
-    `,
-    prisma.$queryRaw<Array<{ jobId: string; title: string; count: bigint }>>`
-      SELECT a."jobId" AS "jobId", j."title", COUNT(*)::BIGINT AS count
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY a."jobId", j."title"
-      ORDER BY count DESC
-      LIMIT 10
-    `,
-    prisma.$queryRaw<Array<{ stage: string; uniqueApplications: bigint }>>`
-      SELECT asc_ref."toStatus" AS stage, COUNT(DISTINCT asc_ref."applicationId")::BIGINT AS "uniqueApplications"
-      FROM "application_status_change" asc_ref
-      JOIN "application" a ON asc_ref."applicationId" = a."id"
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY asc_ref."toStatus"
-      ORDER BY MIN(asc_ref."createdAt") ASC
-    `,
-    prisma.$queryRaw<Array<{ fromStage: string; toStage: string; count: bigint }>>`
-      SELECT asc_ref."fromStatus" AS "fromStage", asc_ref."toStatus" AS "toStage", COUNT(*)::BIGINT AS count
-      FROM "application_status_change" asc_ref
-      JOIN "application" a ON asc_ref."applicationId" = a."id"
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where}
-      GROUP BY asc_ref."fromStatus", asc_ref."toStatus"
-      ORDER BY count DESC
-    `,
-    prisma.$queryRaw<Array<{ jobId: string; title: string; totalApplications: bigint; hired: bigint; viewCount: bigint }>>`
-      SELECT
-        j."id" AS "jobId",
-        j."title",
-        COUNT(DISTINCT a."id")::BIGINT AS "totalApplications",
-        COUNT(DISTINCT CASE WHEN a."status" = 'hired' THEN a."id" END)::BIGINT AS hired,
-        j."viewCount"::BIGINT AS "viewCount"
-      FROM "job" j
-      LEFT JOIN "application" a ON a."jobId" = j."id" ${filter.dateFrom || filter.dateTo || filter.status || filter.location || filter.workMode || filter.employmentType ? `AND ${buildWhereClauses(companyId, filter, { application: "a", job: "j" }).join(" AND ").replace(`${filter.jobId ? `a."jobId" = '${filter.jobId}'` : ""}`, "")}` : ""}
-      WHERE j."companyId" = '${companyId}'
-      GROUP BY j."id", j."title", j."viewCount"
-      ORDER BY "totalApplications" DESC
-      LIMIT 50
-    `,
-    prisma.$queryRaw<Array<{ avg: string | null }>>`
-      SELECT AVG(EXTRACT(EPOCH FROM (a."updatedAt" - a."appliedAt")) / 86400)::TEXT AS avg
-      FROM "application" a
-      JOIN "job" j ON a."jobId" = j."id"
-      ${where} AND a."status" = 'hired'
-    `,
-  ]);
+    return Promise.all([r1, r2, r3, r4, r5, r6, r7, r8, r9, r10]);
+  })();
 
   const totalApplications = Number(summaryResult[0]?.count ?? 0);
-  const hiredCount = Number((await prisma.$queryRaw<RawCountRow[]>`
-    SELECT COUNT(*)::BIGINT AS count
-    FROM "application" a
-    JOIN "job" j ON a."jobId" = j."id"
-    ${where} AND a."status" = 'hired'
-  `)[0]?.count ?? 0);
+  const hiredCount = Number((await prisma.$queryRawUnsafe<RawCountRow[]>(
+    `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} AND a."status" = 'hired'`,
+  ))[0]?.count ?? 0);
 
   const totalJobs = await prisma.job.count({
     where: {
