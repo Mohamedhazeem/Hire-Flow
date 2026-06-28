@@ -150,8 +150,8 @@
     "semantic_hash": "1f685874339cbac2f5fb988434838b9c"
   },
   "app/features/auth/components/auth-layout.tsx": {
-    "mtime": 1782626576.5704682,
-    "ast_hash": "9aadd5852f85fa9a2cc35967f496b936",
+    "mtime": 1782381867.0009387,
+    "ast_hash": "abb9dbe9f9a27585912b5e948f812c84",
     "semantic_hash": ""
   },
   "app/features/auth/components/email/reset-password-email.tsx": {
@@ -1145,8 +1145,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {
-    "mtime": 1782579030.75325,
-    "ast_hash": "019762642016b5ab7ee0534bd2de9fe5",
+    "mtime": 1782569638.369288,
+    "ast_hash": "04cb827cb04584d02259417d3c44c492",
     "semantic_hash": ""
   },
   "app/features/notifications/queries/notification-queries.ts": {
@@ -1415,8 +1415,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notifications-page.tsx": {
-    "mtime": 1782579041.102738,
-    "ast_hash": "cc090755e40b0fea7c0900350b62ad0f",
+    "mtime": 1782521564.0788367,
+    "ast_hash": "4a1f823b033f7483631e066dacd67237",
     "semantic_hash": ""
   },
   "lib/notifications.ts": {

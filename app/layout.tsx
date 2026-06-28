@@ -37,7 +37,27 @@ export default function RootLayout({
         "font-sans",
         inter.variable,
       )}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{
+              var e=localStorage.getItem("hireflow-ui");
+              var isDark=false;
+              if(e){
+                var t=JSON.parse(e).state||{};
+                if(t.theme==="dark") isDark=true;
+                else if(t.theme!=="light") isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+              }else{
+                isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+              }
+              if(isDark) document.documentElement.classList.add("dark");
+              else document.documentElement.classList.remove("dark");
+            }catch(err){}})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
       </body>
