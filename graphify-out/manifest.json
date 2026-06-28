@@ -265,9 +265,9 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "app/layout.tsx": {
-    "mtime": 1782135039.90451,
-    "ast_hash": "467bac234d59a7948826d4c884549849",
-    "semantic_hash": "467bac234d59a7948826d4c884549849"
+    "mtime": 1782627558.920709,
+    "ast_hash": "57eef4e939027e1066598bf04c6b284b",
+    "semantic_hash": ""
   },
   "app/page.tsx": {
     "mtime": 1781149163.514498,
@@ -275,8 +275,8 @@
     "semantic_hash": "74cd3e6772ada217ebffc5872b29802d"
   },
   "app/providers.tsx": {
-    "mtime": 1782487880.4403684,
-    "ast_hash": "db4653d4b8558a6d7f9b3b60f3baaa3c",
+    "mtime": 1782626983.0137312,
+    "ast_hash": "3071ccbe767a0ba859eeb752f20dbf87",
     "semantic_hash": ""
   },
   "components.json": {
@@ -455,7 +455,7 @@
     "semantic_hash": "5deee74bc0c47e863484fee965ae08d1"
   },
   ".kilo/kilo.json": {
-    "mtime": 1782570641.4424212,
+    "mtime": 1782627983.4119296,
     "ast_hash": "fab9c3fa96c160fd8c923c4d3f026f3e",
     "semantic_hash": ""
   },
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-sidebar.tsx": {
-    "mtime": 1782521628.3916845,
-    "ast_hash": "b551bdf967dc3b896936a1d8510f8bbe",
+    "mtime": 1782627941.00164,
+    "ast_hash": "8958d1ee638eec537a0d1a9458eb6fd8",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/company/page.tsx": {
@@ -1190,8 +1190,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-sidebar.tsx": {
-    "mtime": 1782502783.117171,
-    "ast_hash": "dbf7a84091f85d8e215d448504595c1c",
+    "mtime": 1782628073.222025,
+    "ast_hash": "2feaf741c61f2ed2587caeeebce83d4d",
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
@@ -1577,6 +1577,11 @@
   ".kilo/plans/shared-messages-page-layout.md": {
     "mtime": 1782575122.9508395,
     "ast_hash": "872f37811ce136f2d8cdc69701fd444e",
+    "semantic_hash": ""
+  },
+  "components/ui/theme-initializer.tsx": {
+    "mtime": 1782627127.1979885,
+    "ast_hash": "9547624f6ec1e8a2e85a4be21e019cc1",
     "semantic_hash": ""
   }
 }

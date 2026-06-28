@@ -150,8 +150,8 @@
     "semantic_hash": "1f685874339cbac2f5fb988434838b9c"
   },
   "app/features/auth/components/auth-layout.tsx": {
-    "mtime": 1782381867.0009387,
-    "ast_hash": "abb9dbe9f9a27585912b5e948f812c84",
+    "mtime": 1782626576.5704682,
+    "ast_hash": "9aadd5852f85fa9a2cc35967f496b936",
     "semantic_hash": ""
   },
   "app/features/auth/components/email/reset-password-email.tsx": {
@@ -265,9 +265,9 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "app/layout.tsx": {
-    "mtime": 1782135039.90451,
-    "ast_hash": "467bac234d59a7948826d4c884549849",
-    "semantic_hash": "467bac234d59a7948826d4c884549849"
+    "mtime": 1782627558.920709,
+    "ast_hash": "57eef4e939027e1066598bf04c6b284b",
+    "semantic_hash": ""
   },
   "app/page.tsx": {
     "mtime": 1781149163.514498,
@@ -275,8 +275,8 @@
     "semantic_hash": "74cd3e6772ada217ebffc5872b29802d"
   },
   "app/providers.tsx": {
-    "mtime": 1782487880.4403684,
-    "ast_hash": "db4653d4b8558a6d7f9b3b60f3baaa3c",
+    "mtime": 1782626983.0137312,
+    "ast_hash": "3071ccbe767a0ba859eeb752f20dbf87",
     "semantic_hash": ""
   },
   "components.json": {
@@ -1145,8 +1145,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {
-    "mtime": 1782569638.369288,
-    "ast_hash": "04cb827cb04584d02259417d3c44c492",
+    "mtime": 1782579030.75325,
+    "ast_hash": "019762642016b5ab7ee0534bd2de9fe5",
     "semantic_hash": ""
   },
   "app/features/notifications/queries/notification-queries.ts": {
@@ -1415,8 +1415,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notifications-page.tsx": {
-    "mtime": 1782521564.0788367,
-    "ast_hash": "4a1f823b033f7483631e066dacd67237",
+    "mtime": 1782579041.102738,
+    "ast_hash": "cc090755e40b0fea7c0900350b62ad0f",
     "semantic_hash": ""
   },
   "lib/notifications.ts": {
@@ -1577,6 +1577,11 @@
   ".kilo/plans/shared-messages-page-layout.md": {
     "mtime": 1782575122.9508395,
     "ast_hash": "872f37811ce136f2d8cdc69701fd444e",
+    "semantic_hash": ""
+  },
+  "components/ui/theme-initializer.tsx": {
+    "mtime": 1782627127.1979885,
+    "ast_hash": "9547624f6ec1e8a2e85a4be21e019cc1",
     "semantic_hash": ""
   }
 }
