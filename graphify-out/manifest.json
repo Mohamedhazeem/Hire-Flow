@@ -400,8 +400,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1782572137.1046288,
-    "ast_hash": "c9f6737cb1d65c72ab565fa10bd3b29e",
+    "mtime": 1782634881.1137457,
+    "ast_hash": "4b418b878acbcb53e2ebde9111a3e90a",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -1350,18 +1350,18 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/charts/funnel-chart.tsx": {
-    "mtime": 1782630497.656893,
-    "ast_hash": "65df7b13d73fa964e9d4f7b893e62d21",
+    "mtime": 1782633253.236327,
+    "ast_hash": "b015291fa204a2c204fb8cd7720faf4d",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/charts/trend-chart.tsx": {
-    "mtime": 1782630830.633797,
-    "ast_hash": "420860cdc0316e83bb1ea7957daf5e65",
+    "mtime": 1782632755.2672217,
+    "ast_hash": "4fa395c53ea998e53f07b65062b46672",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/filters/analytics-filter-bar.tsx": {
-    "mtime": 1782631831.5587215,
-    "ast_hash": "cd8e6bff5dee78583341931c23f79646",
+    "mtime": 1782636132.872975,
+    "ast_hash": "5443855e9a6db25a1b704488922670c3",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/per-job-analytics-page.tsx": {
@@ -1587,6 +1587,11 @@
   ".kilo/plans/1782458322810-analytics-layout-fix.md": {
     "mtime": 1782630365.2245178,
     "ast_hash": "f322defb81bacf2049549da64b6faaf2",
+    "semantic_hash": ""
+  },
+  "components/ui/date-range-picker.tsx": {
+    "mtime": 1782634914.160992,
+    "ast_hash": "2241a1ba89a942103c49d0774c32fe3e",
     "semantic_hash": ""
   }
 }
