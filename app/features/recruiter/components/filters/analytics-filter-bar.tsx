@@ -3,12 +3,17 @@
 import { useCallback, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
+  FilterIcon,
   RotateCcwIcon,
   ChevronDownIcon,
-  MapPinIcon,
   SlidersHorizontalIcon,
   CheckIcon,
   XIcon,
+  BriefcaseIcon,
+  WorkflowIcon,
+  GlobeIcon,
+  ClockIcon,
+  MapPinIcon,
 } from "lucide-react";
 import { APPLICATION_STATUSES } from "../../schema/application.schema";
 import { CHART_COLORS } from "../../schema/analytics.schema";
@@ -21,7 +26,6 @@ type AnalyticsFilterBarProps = {
   showJobFilter?: boolean;
 };
 
-// Sub-component: Status Dot
 function StatusDot({ status }: { status: string }) {
   const color = CHART_COLORS[status] ?? "#6b7280";
   return (
@@ -32,139 +36,47 @@ function StatusDot({ status }: { status: string }) {
   );
 }
 
-// Sub-component: Active Badge Counter
-function ActiveBadge({ count }: { count: number }) {
-  if (count === 0) return null;
-  return (
-    <span className="ml-1.5 flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
-      {count}
-    </span>
-  );
-}
-
-// Sub-component: Consistent Dropdown Trigger
-const DropdownTrigger = ({
+function FilterButton({
+  icon,
   label,
   isActive,
-  badgeCount = 0,
+  badgeCount,
+  children,
 }: {
+  icon: React.ReactNode;
   label: string;
   isActive: boolean;
   badgeCount?: number;
-}) => (
-  <div
-    className={cn(
-      "group flex h-9 w-full sm:w-auto cursor-pointer items-center justify-between gap-2 rounded-lg border px-3 text-sm transition-all hover:bg-bg-subtle",
-      isActive
-        ? "border-brand/50 bg-brand/5 text-brand dark:border-brand/30"
-        : "border-border bg-background text-text-body dark:border-border/60",
-    )}
-  >
-    <span className="truncate max-w-30">{label}</span>
-    {badgeCount > 0 && <ActiveBadge count={badgeCount} />}
-    <ChevronDownIcon className="size-3.5 shrink-0 opacity-50 transition-transform group-data-[state=open]:rotate-180" />
-  </div>
-);
-
-// Sub-component: Unified Single Select
-function SingleSelect({
-  label,
-  value,
-  options,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  options: Array<{ value: string; label: string }>;
-  onChange: (value: string) => void;
+  children?: React.ReactNode;
 }) {
-  const selectedLabel = options.find((o) => o.value === value)?.label;
-
   return (
     <Popover>
-      <PopoverTrigger className="w-full sm:w-auto text-left outline-none">
-        <DropdownTrigger label={selectedLabel ?? label} isActive={!!value} />
-      </PopoverTrigger>
-      <PopoverContent align="start" className="w-50 p-1">
-        <div className="flex flex-col gap-0.5">
-          <button
-            onClick={() => onChange("")}
-            className={cn(
-              "flex w-full items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-subtle",
-              !value && "bg-brand/10 text-brand font-medium",
-            )}
-          >
-            All {label}s
-          </button>
-          {options.map((option) => (
-            <button
-              key={option.value}
-              onClick={() => onChange(option.value)}
-              className={cn(
-                "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-subtle",
-                value === option.value ? "bg-brand/10 text-brand font-medium" : "text-text-body",
-              )}
-            >
-              {option.label}
-              {value === option.value && <CheckIcon className="size-3.5" />}
-            </button>
-          ))}
+      <PopoverTrigger className="outline-none" aria-label={label}>
+        <div
+          className={cn(
+            "relative flex h-9 cursor-pointer items-center gap-1.5 rounded-lg border px-2.5 transition-all",
+            isActive
+              ? "border-brand/50 bg-brand/5 text-brand"
+              : "border-border bg-background text-text-muted hover:border-border-strong hover:text-text-body hover:bg-bg-subtle dark:border-border/60",
+          )}
+          title={label}
+        >
+          {icon}
+          <span className="text-xs font-medium">{label}</span>
+          {badgeCount !== undefined && badgeCount > 0 && (
+            <span className="flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
+              {badgeCount}
+            </span>
+          )}
         </div>
+      </PopoverTrigger>
+      <PopoverContent align="start" side="bottom" sideOffset={6} className="w-52 p-1">
+        {children}
       </PopoverContent>
     </Popover>
   );
 }
 
-// Sub-component: Unified Multi Select (For Status)
-function MultiSelect({
-  label,
-  values,
-  options,
-  onToggle,
-}: {
-  label: string;
-  values: string[];
-  options: Array<{ value: string; label: string; dot?: boolean }>;
-  onToggle: (value: string) => void;
-}) {
-  return (
-    <Popover>
-      <PopoverTrigger className="w-full sm:w-auto text-left outline-none">
-        <DropdownTrigger label={label} isActive={values.length > 0} badgeCount={values.length} />
-      </PopoverTrigger>
-      <PopoverContent align="start" className="w-55 p-1">
-        <div className="flex flex-col gap-0.5 max-h-75 overflow-y-auto">
-          {options.map((option) => {
-            const isSelected = values.includes(option.value);
-            return (
-              <button
-                key={option.value}
-                onClick={() => onToggle(option.value)}
-                className={cn(
-                  "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-subtle",
-                  isSelected ? "bg-brand/10 text-brand font-medium" : "text-text-body",
-                )}
-              >
-                <div
-                  className={cn(
-                    "flex size-4 shrink-0 items-center justify-center rounded border text-white transition-colors",
-                    isSelected ? "border-brand bg-brand" : "border-border-strong",
-                  )}
-                >
-                  {isSelected && <CheckIcon className="size-3" />}
-                </div>
-                {option.dot && <StatusDot status={option.value} />}
-                <span className="truncate">{option.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </PopoverContent>
-    </Popover>
-  );
-}
-
-// Main Component
 export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilterBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -227,33 +139,198 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
     currentLocation ||
     currentJobId;
 
-  // Formatting options for sub-components
   const jobDropdownOptions = jobOptions?.map((j) => ({ value: j.id, label: j.title })) || [];
   const statusOptions = APPLICATION_STATUSES.map((s) => ({
     value: s,
     label: s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-    dot: true,
   }));
 
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-border-subtle bg-bg-surface p-3 shadow-sm transition-all sm:p-4">
-      {/* Top Row: Core Controls & Mobile Toggle */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-1 flex-wrap items-center gap-3">
+    <div className="flex flex-col justify-center rounded-xl border border-border-subtle bg-bg-surface p-3 shadow-sm sm:p-4">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-1 flex-wrap items-center gap-2">
+          <div className="hidden sm:flex items-center gap-1.5 h-9 text-text-muted shrink-0">
+            <FilterIcon className="size-3.5" />
+            <span className="text-[11px] font-semibold uppercase tracking-wider">Filters</span>
+          </div>
+
           <DateRangePicker
             value={{ from: currentDateFrom || undefined, to: currentDateTo || undefined }}
             onChange={handleDateRangeChange}
-            placeholder="Select date range"
-            className="w-full sm:w-[240px]"
+            placeholder="Date range"
+            className="w-full sm:w-52"
           />
 
-          {/* Mobile Filter Toggle */}
+          <div className="hidden sm:flex items-center gap-2">
+            {showJobFilter && jobOptions && (
+              <FilterButton
+                icon={<BriefcaseIcon className="size-4" />}
+                label="Job"
+                isActive={!!currentJobId}
+              >
+                <button
+                  onClick={() => updateParam("jobId", "")}
+                  className={cn(
+                    "flex w-full items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                    !currentJobId && "bg-brand/10 text-brand font-medium",
+                  )}
+                >
+                  All Jobs
+                </button>
+                {jobDropdownOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => updateParam("jobId", option.value)}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                      currentJobId === option.value
+                        ? "bg-brand/10 text-brand font-medium"
+                        : "text-text-body",
+                    )}
+                  >
+                    {option.label}
+                    {currentJobId === option.value && <CheckIcon className="size-3.5" />}
+                  </button>
+                ))}
+              </FilterButton>
+            )}
+
+            <FilterButton
+              icon={<WorkflowIcon className="size-4" />}
+              label="Status"
+              isActive={activeStatusArray.length > 0}
+              badgeCount={activeStatusArray.length}
+            >
+              {statusOptions.map((option) => {
+                const isSelected = activeStatusArray.includes(option.value);
+                return (
+                  <button
+                    key={option.value}
+                    onClick={() => toggleMultiValue("status", option.value)}
+                    className={cn(
+                      "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                      isSelected ? "bg-brand/10 text-brand font-medium" : "text-text-body",
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "flex size-4 shrink-0 items-center justify-center rounded border text-white transition-colors",
+                        isSelected ? "border-brand bg-brand" : "border-border-strong",
+                      )}
+                    >
+                      {isSelected && <CheckIcon className="size-3" />}
+                    </div>
+                    <StatusDot status={option.value} />
+                    <span className="truncate">{option.label}</span>
+                  </button>
+                );
+              })}
+            </FilterButton>
+
+            <FilterButton
+              icon={<GlobeIcon className="size-4" />}
+              label="Work Mode"
+              isActive={!!currentWorkMode}
+            >
+              <button
+                onClick={() => updateParam("workMode", "")}
+                className={cn(
+                  "flex w-full items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                  !currentWorkMode && "bg-brand/10 text-brand font-medium",
+                )}
+              >
+                All
+              </button>
+              {[
+                { value: "remote", label: "Remote" },
+                { value: "hybrid", label: "Hybrid" },
+                { value: "onsite", label: "Onsite" },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => updateParam("workMode", option.value)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                    currentWorkMode === option.value
+                      ? "bg-brand/10 text-brand font-medium"
+                      : "text-text-body",
+                  )}
+                >
+                  {option.label}
+                  {currentWorkMode === option.value && <CheckIcon className="size-3.5" />}
+                </button>
+              ))}
+            </FilterButton>
+
+            <FilterButton
+              icon={<ClockIcon className="size-4" />}
+              label="Type"
+              isActive={!!currentEmploymentType}
+            >
+              <button
+                onClick={() => updateParam("employmentType", "")}
+                className={cn(
+                  "flex w-full items-center rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                  !currentEmploymentType && "bg-brand/10 text-brand font-medium",
+                )}
+              >
+                All
+              </button>
+              {[
+                { value: "full_time", label: "Full Time" },
+                { value: "part_time", label: "Part Time" },
+                { value: "contract", label: "Contract" },
+                { value: "internship", label: "Internship" },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => updateParam("employmentType", option.value)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-bg-elevated",
+                    currentEmploymentType === option.value
+                      ? "bg-brand/10 text-brand font-medium"
+                      : "text-text-body",
+                  )}
+                >
+                  {option.label}
+                  {currentEmploymentType === option.value && <CheckIcon className="size-3.5" />}
+                </button>
+              ))}
+            </FilterButton>
+
+            <FilterButton
+              icon={<MapPinIcon className="size-4" />}
+              label="Location"
+              isActive={!!currentLocation}
+            >
+              <div className="px-2 pt-1">
+                <input
+                  type="text"
+                  autoFocus
+                  value={currentLocation}
+                  onChange={(e) => updateParam("location", e.target.value)}
+                  placeholder="Enter location..."
+                  className="w-full h-8 rounded-md border border-border bg-background px-2 text-sm text-text-body placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand/30 dark:border-border/60"
+                />
+              </div>
+              {currentLocation && (
+                <button
+                  onClick={() => updateParam("location", "")}
+                  className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm text-text-muted transition-colors hover:bg-bg-elevated hover:text-text-body"
+                >
+                  <XIcon className="size-3.5" />
+                  Clear location
+                </button>
+              )}
+            </FilterButton>
+          </div>
+
           <button
             onClick={() => setIsMobileExpanded(!isMobileExpanded)}
             className="flex h-9 w-full sm:hidden items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 text-sm font-medium text-text-body transition-colors hover:bg-bg-subtle"
           >
             <SlidersHorizontalIcon className="size-4" />
-            Filters {hasFilters ? <ActiveBadge count={1} /> : null}
+            Filters {hasFilters && <span className="text-brand font-bold">{">"}</span>}
             <ChevronDownIcon
               className={cn(
                 "size-4 ml-auto transition-transform",
@@ -263,103 +340,111 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
           </button>
         </div>
 
-        {hasFilters && (
-          <button
-            onClick={clearFilters}
-            className="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-lg px-3 text-xs font-medium text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-heading"
-          >
-            <RotateCcwIcon className="size-3.5" />
-            Clear filters
-          </button>
-        )}
+        <button
+          onClick={clearFilters}
+          className="hidden sm:inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg px-3 text-xs font-medium text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-heading"
+        >
+          <RotateCcwIcon className="size-3.5" />
+          Clear
+        </button>
       </div>
 
-      {/* Expandable/Responsive Filters Row */}
       <div
         className={cn(
-          "flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 overflow-hidden transition-all duration-300 ease-in-out",
-          isMobileExpanded
-            ? "max-h-125 opacity-100 mt-2"
-            : "max-h-0 opacity-0 sm:max-h-25 sm:opacity-100 sm:mt-0",
+          "flex flex-col gap-3 overflow-hidden transition-all duration-300 ease-in-out",
+          isMobileExpanded ? "max-h-200 opacity-100" : "max-h-0 opacity-0 sm:max-h-0 sm:opacity-0",
         )}
       >
         {showJobFilter && jobOptions && (
-          <SingleSelect
-            label="Job"
-            value={currentJobId}
-            options={jobDropdownOptions}
-            onChange={(v) => updateParam("jobId", v)}
-          />
+          <div>
+            <label className="block text-[11px] font-medium text-text-muted mb-1">Job</label>
+            <select
+              value={currentJobId}
+              onChange={(e) => updateParam("jobId", e.target.value)}
+              className="w-full h-9 rounded-md border border-border bg-background px-2.5 text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-brand/30 dark:border-border/60"
+              aria-label="Select job"
+            >
+              <option value="">All Jobs</option>
+              {jobOptions.map((job) => (
+                <option key={job.id} value={job.id}>
+                  {job.title}
+                </option>
+              ))}
+            </select>
+          </div>
         )}
 
-        <MultiSelect
-          label="Status"
-          values={activeStatusArray}
-          options={statusOptions}
-          onToggle={(v) => toggleMultiValue("status", v)}
-        />
+        <div>
+          <label className="block text-[11px] font-medium text-text-muted mb-1">Status</label>
+          <div className="flex flex-wrap gap-1.5">
+            {APPLICATION_STATUSES.map((status) => {
+              const selected = activeStatusArray.includes(status);
+              return (
+                <button
+                  key={status}
+                  type="button"
+                  onClick={() => toggleMultiValue("status", status)}
+                  className={cn(
+                    "inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium border transition-all",
+                    selected
+                      ? "border-brand bg-brand/10 text-brand"
+                      : "border-border text-text-muted hover:border-border-subtle hover:text-text-body dark:border-border/60",
+                  )}
+                >
+                  <StatusDot status={status} />
+                  <span className="capitalize">{status.replace(/_/g, " ")}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-        <SingleSelect
-          label="Work Mode"
-          value={currentWorkMode}
-          options={[
-            { value: "remote", label: "Remote" },
-            { value: "hybrid", label: "Hybrid" },
-            { value: "onsite", label: "Onsite" },
-          ]}
-          onChange={(v) => updateParam("workMode", v)}
-        />
+        <div>
+          <label className="block text-[11px] font-medium text-text-muted mb-1">Work Mode</label>
+          <select
+            value={currentWorkMode}
+            onChange={(e) => updateParam("workMode", e.target.value)}
+            aria-label="Select work mode"
+            className="w-full h-9 rounded-md border border-border bg-background px-2.5 text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-brand/30 dark:border-border/60"
+          >
+            <option value="">All</option>
+            <option value="remote">Remote</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="onsite">Onsite</option>
+          </select>
+        </div>
 
-        <SingleSelect
-          label="Type"
-          value={currentEmploymentType}
-          options={[
-            { value: "full_time", label: "Full Time" },
-            { value: "part_time", label: "Part Time" },
-            { value: "contract", label: "Contract" },
-            { value: "internship", label: "Internship" },
-          ]}
-          onChange={(v) => updateParam("employmentType", v)}
-        />
+        <div>
+          <label className="block text-[11px] font-medium text-text-muted mb-1">Type</label>
+          <select
+            value={currentEmploymentType}
+            aria-label="Select employment type"
+            onChange={(e) => updateParam("employmentType", e.target.value)}
+            className="w-full h-9 rounded-md border border-border bg-background px-2.5 text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-brand/30 dark:border-border/60"
+          >
+            <option value="">All</option>
+            <option value="full_time">Full Time</option>
+            <option value="part_time">Part Time</option>
+            <option value="contract">Contract</option>
+            <option value="internship">Internship</option>
+          </select>
+        </div>
 
-        {/* Location Input wrapped to match pill aesthetic */}
-        <div
-          className={cn(
-            "group relative flex h-9 w-full sm:w-45 items-center rounded-lg border transition-all focus-within:ring-2 focus-within:ring-brand/30",
-            currentLocation
-              ? "border-brand/50 bg-brand/5 dark:border-brand/30"
-              : "border-border bg-background hover:bg-bg-subtle",
-          )}
-        >
-          <MapPinIcon
-            className={cn(
-              "absolute left-3 size-3.5 pointer-events-none transition-colors",
-              currentLocation ? "text-brand" : "text-text-muted",
-            )}
-          />
+        <div>
+          <label className="block text-[11px] font-medium text-text-muted mb-1">Location</label>
           <input
             type="text"
             value={currentLocation}
             onChange={(e) => updateParam("location", e.target.value)}
-            placeholder="Location..."
-            className="h-full w-full bg-transparent pl-8 pr-8 text-sm text-text-body placeholder:text-text-muted/70 focus:outline-none"
+            placeholder="e.g. New York"
+            className="w-full h-9 rounded-md border border-border bg-background px-2.5 text-sm text-text-body placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-brand/30 dark:border-border/60"
           />
-          {currentLocation && (
-            <button
-              onClick={() => updateParam("location", "")}
-              aria-label="location filter"
-              className="absolute right-2 flex size-5 items-center justify-center rounded-full text-text-muted hover:bg-black/10 hover:text-text-heading dark:hover:bg-white/10"
-            >
-              <XIcon className="size-3" />
-            </button>
-          )}
         </div>
 
-        {/* Clear filters button inside mobile view */}
         {hasFilters && (
           <button
             onClick={clearFilters}
-            className="sm:hidden mt-2 flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-bg-subtle px-3 text-sm font-medium text-text-heading transition-colors"
+            className="flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-bg-subtle px-3 text-sm font-medium text-text-heading transition-colors"
           >
             <RotateCcwIcon className="size-3.5" />
             Clear all filters

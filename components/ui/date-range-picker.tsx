@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { DayPicker } from "react-day-picker";
-import { format, isAfter, isBefore, isValid, parse } from "date-fns";
+import { format, isValid, parse } from "date-fns";
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
@@ -36,12 +36,6 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
     to: toDate,
   });
 
-  React.useEffect(() => {
-    if (open) {
-      setTempRange({ from: fromDate, to: toDate });
-    }
-  }, [open, value.from, value.to]);
-
   const hasRange = value.from || value.to;
 
   const displayText = React.useMemo(() => {
@@ -62,44 +56,45 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
       setTempRange({});
       return;
     }
-    setTempRange(range);
-
-    if (range.from && range.to) {
-      const fromStr = format(range.from, "yyyy-MM-dd");
-      const toStr = format(range.to, "yyyy-MM-dd");
-      onChange({ from: fromStr, to: toStr });
-      setOpen(false);
-    } else if (range.from) {
-      setTempRange({ from: range.from, to: undefined });
-    }
+    setTempRange({ from: range.from, to: range.to });
   };
 
-  const clearRange = (e: React.MouseEvent) => {
+  const handleApply = () => {
+    if (tempRange.from && tempRange.to) {
+      const fromStr = format(tempRange.from, "yyyy-MM-dd");
+      const toStr = format(tempRange.to, "yyyy-MM-dd");
+      onChange({ from: fromStr, to: toStr });
+    } else if (tempRange.from) {
+      const fromStr = format(tempRange.from, "yyyy-MM-dd");
+      onChange({ from: fromStr, to: fromStr });
+    } else {
+      onChange({});
+    }
+    setOpen(false);
+  };
+
+  const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     onChange({});
     setTempRange({});
   };
 
-  const applySingleDayRange = () => {
-    if (tempRange.from && !tempRange.to) {
-      const fromStr = format(tempRange.from, "yyyy-MM-dd");
-      onChange({ from: fromStr, to: fromStr });
-      setOpen(false);
-    }
-  };
+  const hasTempRange = tempRange.from || tempRange.to;
 
   return (
-    <Popover open={open} onOpenChange={(open) => {
-      if (!open) {
+    <Popover open={open} onOpenChange={(newOpen) => {
+      if (newOpen) {
         setTempRange({ from: fromDate, to: toDate });
       }
-      setOpen(open);
+      setOpen(newOpen);
     }}>
       <PopoverTrigger>
         <div
           className={cn(
-            "group flex h-9 w-full cursor-pointer items-center gap-2 rounded-md border border-border bg-background px-2.5 text-sm text-text-body transition-all hover:border-border-strong focus-within:ring-2 focus-within:ring-brand/30",
-            "dark:border-border/60 dark:hover:border-border dark:focus-within:border-brand/60",
+            "group flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border bg-background px-3 text-sm text-text-body transition-all hover:bg-bg-subtle",
+            hasRange
+              ? "border-brand/50 bg-brand/5"
+              : "border-border dark:border-border/60",
             !hasRange && "text-text-muted",
             className,
           )}
@@ -107,14 +102,16 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
           <CalendarIcon className="size-3.5 shrink-0 text-text-muted group-hover:text-text-body transition-colors" />
           <span className="truncate min-w-0">{displayText ?? placeholder}</span>
           {hasRange && (
-            <button
-              type="button"
-              onClick={clearRange}
-              className="ml-auto shrink-0 rounded p-0.5 text-text-muted hover:text-text-body hover:bg-bg-elevated transition-colors"
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={handleClear}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClear(e as unknown as React.MouseEvent); } }}
+              className="ml-auto shrink-0 rounded p-0.5 text-text-muted hover:text-text-heading hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
               aria-label="Clear date range"
             >
               <XIcon className="size-3" />
-            </button>
+            </span>
           )}
         </div>
       </PopoverTrigger>
@@ -194,27 +191,13 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
           >
             Cancel
           </Button>
-          {tempRange.from && !tempRange.to && (
-            <Button
-              size="xs"
-              onClick={applySingleDayRange}
-            >
-              Apply
-            </Button>
-          )}
-          {tempRange.from && tempRange.to && (
-            <Button
-              size="xs"
-              onClick={() => {
-                const fromStr = format(tempRange.from!, "yyyy-MM-dd");
-                const toStr = format(tempRange.to!, "yyyy-MM-dd");
-                onChange({ from: fromStr, to: toStr });
-                setOpen(false);
-              }}
-            >
-              Apply
-            </Button>
-          )}
+          <Button
+            size="xs"
+            onClick={handleApply}
+            disabled={!hasTempRange}
+          >
+            Apply
+          </Button>
         </div>
       </PopoverContent>
     </Popover>
