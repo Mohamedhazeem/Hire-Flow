@@ -147,13 +147,19 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
 
   return (
     <div className="flex flex-col justify-center rounded-xl border border-border-subtle bg-bg-surface p-3 shadow-sm sm:p-4">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-row gap-1.5 h-9 items-center text-text-muted shrink-0">
+        <div
+          className="size-11 rounded-xl shrink-0 flex items-center justify-center 
+            bg-linear-to-br
+            from-brand/10 via-brand/5 to-transparent
+            text-brand"
+        >
+          <FilterIcon className="size-3.5" />
+        </div>
+        <span className="text-sm font-semibold text-text-heading">Filters</span>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 mt-4">
         <div className="flex flex-1 flex-wrap items-center gap-2">
-          <div className="hidden sm:flex items-center gap-1.5 h-9 text-text-muted shrink-0">
-            <FilterIcon className="size-3.5" />
-            <span className="text-[11px] font-semibold uppercase tracking-wider">Filters</span>
-          </div>
-
           <DateRangePicker
             value={{ from: currentDateFrom || undefined, to: currentDateTo || undefined }}
             onChange={handleDateRangeChange}
@@ -161,7 +167,7 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
             className="w-full sm:w-52"
           />
 
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-3">
             {showJobFilter && jobOptions && (
               <FilterButton
                 icon={<BriefcaseIcon className="size-4" />}
@@ -357,7 +363,7 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
       >
         {showJobFilter && jobOptions && (
           <div>
-            <label className="block text-[11px] font-medium text-text-muted mb-1">Job</label>
+            <label className="block text-[11px] font-medium text-text-muted my-2">Job</label>
             <select
               value={currentJobId}
               onChange={(e) => updateParam("jobId", e.target.value)}

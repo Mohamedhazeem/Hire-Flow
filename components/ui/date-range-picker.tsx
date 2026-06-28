@@ -25,7 +25,12 @@ function parseDate(str: string): Date | undefined {
   return isValid(parsed) ? parsed : undefined;
 }
 
-export function DateRangePicker({ value, onChange, placeholder = "Select dates...", className }: DateRangePickerProps) {
+export function DateRangePicker({
+  value,
+  onChange,
+  placeholder = "Select dates...",
+  className,
+}: DateRangePickerProps) {
   const [open, setOpen] = React.useState(false);
 
   const fromDate = value.from ? parseDate(value.from) : undefined;
@@ -82,19 +87,20 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
   const hasTempRange = tempRange.from || tempRange.to;
 
   return (
-    <Popover open={open} onOpenChange={(newOpen) => {
-      if (newOpen) {
-        setTempRange({ from: fromDate, to: toDate });
-      }
-      setOpen(newOpen);
-    }}>
+    <Popover
+      open={open}
+      onOpenChange={(newOpen) => {
+        if (newOpen) {
+          setTempRange({ from: fromDate, to: toDate });
+        }
+        setOpen(newOpen);
+      }}
+    >
       <PopoverTrigger>
         <div
           className={cn(
             "group flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border bg-background px-3 text-sm text-text-body transition-all hover:bg-bg-subtle",
-            hasRange
-              ? "border-brand/50 bg-brand/5"
-              : "border-border dark:border-border/60",
+            hasRange ? "border-brand/50 bg-brand/5" : "border-border dark:border-border/60",
             !hasRange && "text-text-muted",
             className,
           )}
@@ -106,7 +112,12 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
               role="button"
               tabIndex={0}
               onClick={handleClear}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClear(e as unknown as React.MouseEvent); } }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleClear(e as unknown as React.MouseEvent);
+                }
+              }}
               className="ml-auto shrink-0 rounded p-0.5 text-text-muted hover:text-text-heading hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
               aria-label="Clear date range"
             >
@@ -115,12 +126,7 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
           )}
         </div>
       </PopoverTrigger>
-      <PopoverContent
-        align="start"
-        side="bottom"
-        sideOffset={8}
-        className="w-auto p-0"
-      >
+      <PopoverContent align="start" side="bottom" sideOffset={8} className="w-auto p-0">
         <DayPicker
           mode="range"
           selected={{ from: tempRange.from, to: tempRange.to }}
@@ -146,17 +152,14 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
             week: "flex w-full mt-1",
             day_button: cn(
               "inline-flex items-center justify-center size-8 rounded-md text-sm font-normal text-text-body hover:bg-bg-elevated transition-colors",
-              "dark:hover:bg-neutral-800",
+              "dark:hover:bg-brand-dark",
             ),
             day: "text-center p-0",
             today: "font-semibold text-brand",
             selected: "bg-brand text-brand-foreground hover:bg-brand-dark rounded-md",
-            range_start: "bg-brand text-brand-foreground rounded-r-none",
+            range_start: "bg-brand/80 text-brand-foreground rounded-r-none",
             range_end: "bg-brand text-brand-foreground rounded-l-none",
-            range_middle: cn(
-              "bg-brand/10 text-brand rounded-none",
-              "dark:bg-brand/20",
-            ),
+            range_middle: cn("bg-brand/10 text-brand rounded-none", "dark:bg-brand/10"),
             outside: "text-text-muted opacity-30 pointer-events-none",
             disabled: "text-text-muted opacity-30 pointer-events-none",
           }}
@@ -191,11 +194,7 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
           >
             Cancel
           </Button>
-          <Button
-            size="xs"
-            onClick={handleApply}
-            disabled={!hasTempRange}
-          >
+          <Button size="xs" onClick={handleApply} disabled={!hasTempRange}>
             Apply
           </Button>
         </div>

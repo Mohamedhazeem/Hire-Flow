@@ -62,7 +62,7 @@ export function StatCard({
         <div
           className={cn(
             "size-11 rounded-xl shrink-0 flex items-center justify-center",
-            "bg-gradient-to-br",
+            "bg-linear-to-br",
             accentGradient,
             "text-brand",
           )}
@@ -71,7 +71,9 @@ export function StatCard({
         </div>
       </div>
       {description && (
-        <p className="text-xs text-text-muted mt-3 pt-3 border-t border-border-subtle">{description}</p>
+        <p className="text-xs text-text-muted mt-3 pt-3 border-t border-border-subtle">
+          {description}
+        </p>
       )}
     </div>
   );
