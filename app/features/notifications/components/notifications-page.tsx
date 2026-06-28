@@ -121,7 +121,10 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
   useRealtimeNotifications(userId);
 
   const allNotifications = useMemo(
-    () => data?.pages.flatMap((p) => p.notifications as NotificationItem[]) ?? [],
+    () =>
+      data?.pages.flatMap(
+        (p) => (p as { notifications?: NotificationItem[] })?.notifications ?? [],
+      ) ?? [],
     [data?.pages],
   );
 

@@ -5,6 +5,7 @@ import type Pusher from "pusher-js";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useInfiniteQuery, useMutation } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
+import type { ApiEnvelope } from "@/lib/api-response";
 import { getPusherClient } from "@/lib/pusher-client";
 
 type Channel = ReturnType<NonNullable<ReturnType<typeof getPusherClient>>["subscribe"]>;
@@ -32,7 +33,8 @@ export function useNotifications(userId: string) {
       const cursor = pageParam as string | undefined;
       const params: Record<string, unknown> = { take: 20 };
       if (cursor) params.cursor = cursor;
-      return apiClient<NotificationsResponse>("/api/notifications", { params });
+      const res = await apiClient<ApiEnvelope<NotificationsResponse>>("/api/notifications", { params });
+      return res.data;
     },
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (lastPage) =>
@@ -45,10 +47,10 @@ export function useUnreadCount(userId: string) {
   return useQuery({
     queryKey: ["notifications", "unread", userId],
     queryFn: async () => {
-      const res = await apiClient<NotificationsResponse>("/api/notifications", {
+      const res = await apiClient<ApiEnvelope<NotificationsResponse>>("/api/notifications", {
         params: { take: "1" },
       });
-      return res?.unreadCount ?? 0;
+      return res.data?.unreadCount ?? 0;
     },
     enabled: !!userId,
     refetchInterval: 30_000,
