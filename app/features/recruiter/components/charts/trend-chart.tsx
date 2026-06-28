@@ -31,9 +31,16 @@ type TrendChartProps = {
   emptyMessage?: string;
 };
 
-export function TrendChart({ data, color, title, subtitle, gradientId, emptyMessage }: TrendChartProps) {
+export function TrendChart({
+  data,
+  color,
+  title,
+  subtitle,
+  gradientId,
+  emptyMessage,
+}: TrendChartProps) {
   return (
-    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 hover:border-brand/30">
+    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
       <div className="flex items-center gap-2.5 mb-5">
         <div
           className="size-9 rounded-xl flex items-center justify-center"
@@ -47,7 +54,9 @@ export function TrendChart({ data, color, title, subtitle, gradientId, emptyMess
         </div>
       </div>
       {data.length === 0 ? (
-        <p className="text-text-muted text-sm py-12 text-center">{emptyMessage ?? "No data available"}</p>
+        <p className="text-text-muted text-sm py-12 text-center flex-1">
+          {emptyMessage ?? "No data available"}
+        </p>
       ) : (
         <ResponsiveContainer width="100%" height={220}>
           <LineChart data={data}>
@@ -70,10 +79,7 @@ export function TrendChart({ data, color, title, subtitle, gradientId, emptyMess
                 return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
               }}
             />
-            <YAxis
-              tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
-              allowDecimals={false}
-            />
+            <YAxis tick={{ fontSize: 11, fill: "var(--color-text-muted)" }} allowDecimals={false} />
             <Tooltip {...CHART_TOOLTIP_STYLE} />
             <Line
               type="monotone"

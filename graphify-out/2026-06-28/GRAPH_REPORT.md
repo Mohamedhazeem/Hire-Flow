@@ -1,11 +1,11 @@
 # Graph Report - hire-flow-next  (2026-06-28)
 
 ## Corpus Check
-- 312 files · ~107,740 words
+- 312 files · ~107,678 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1751 nodes · 3548 edges · 112 communities (94 shown, 18 thin omitted)
+- 1751 nodes · 3550 edges · 111 communities (93 shown, 18 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 65 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -88,7 +88,6 @@
 - [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 81|Community 81]]
-- [[_COMMUNITY_Community 82|Community 82]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 85|Community 85]]
@@ -132,8 +131,6 @@
 10. `compilerOptions` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `RootLayout()` --calls--> `cn()`  [EXTRACTED]
-  app/layout.tsx → lib/utils.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
   app/api/admin/team/[id]/route.ts → lib/api-response.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
@@ -142,6 +139,8 @@
   app/api/notifications/route.ts → lib/api-response.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
   app/api/recruiter/invite/[id]/route.ts → lib/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/recruiter/jobs/[id]/route.ts → lib/api-response.ts
 
 ## Import Cycles
 - None detected.
@@ -151,7 +150,7 @@
 - **Development Phases from Roadmap** — phase_foundation, phase_admin, phase_recruiter, phase_user, phase_public_jobs, phase_messaging_notifications [EXTRACTED 1.00]
 - **Platform User Roles (RBAC)** — role_admin, role_recruiter, role_user [EXTRACTED 1.00]
 
-## Communities (112 total, 18 thin omitted)
+## Communities (111 total, 18 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.27
@@ -389,10 +388,6 @@ Nodes (11): SocialProvider, socialSignInAction(), FormInput(), FormInputProps, R
 Cohesion: 0.11
 Nodes (18): `app/api/recruiter/applications/bulk/status/route.ts` — New bulk API route, `app/features/recruiter/components/applicant-detail-page.tsx` — No change, `app/features/recruiter/components/applicants-table.tsx` — Add selection + bulk action bar, `app/features/recruiter/components/application-dialogs.tsx` — Add BulkRejectDialog, `app/features/recruiter/hooks/use-applications.ts` — Add bulk mutation hook, `app/features/recruiter/schema/application.schema.ts` — Add bulk schemas, Checklist, `components/ui/data-table.tsx` — Add optional row selection (+10 more)
 
-### Community 82 - "Community 82"
-Cohesion: 0.18
-Nodes (9): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), getQueryClient(), makeQueryClient() (+1 more)
-
 ### Community 83 - "Community 83"
 Cohesion: 0.12
 Nodes (15): apiClient(), ApiEnvelope, DEFAULT_QUERY_OPTIONS, defaultQueryFn(), QueryKeyShape, ThreadItem, ThreadLastMessage, ThreadUser (+7 more)
@@ -434,8 +429,8 @@ Cohesion: 0.24
 Nodes (8): recentColumns, RecruiterDashboard(), RecruiterDashboardProps, DashboardData, getRecruiterDashboardStats(), RecentApplication, metadata, RecruiterPage()
 
 ### Community 96 - "Community 96"
-Cohesion: 0.10
-Nodes (28): AdminLayoutClient(), AdminLayout(), adminLinks, AdminSidebar(), baseRecruiterLinks, RecruiterSidebar(), userLinks, UserSidebar() (+20 more)
+Cohesion: 0.07
+Nodes (37): AdminLayoutClient(), AdminLayout(), geistMono, geistSans, inter, metadata, RootLayout(), Providers() (+29 more)
 
 ### Community 97 - "Community 97"
 Cohesion: 0.23
@@ -494,24 +489,24 @@ Cohesion: 0.19
 Nodes (12): ThreadViewHooks, config, hooks, Props, RecruiterThreadView(), MessageItem, MessagesResponse, SendMessagePayload (+4 more)
 
 ## Knowledge Gaps
-- **831 isolated node(s):** `inter`, `geistSans`, `geistMono`, `metadata`, `AuthLayoutProps` (+826 more)
+- **831 isolated node(s):** `$schema`, `plugin`, `snapshot`, `@kilocode/plugin`, `AcceptInviteClientProps` (+826 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 1` to `Community 96`, `Community 100`, `Community 106`, `Community 74`, `Community 12`, `Community 47`, `Community 48`, `Community 82`, `Community 52`, `Community 55`, `Community 24`, `Community 89`, `Community 90`, `Community 59`, `Community 60`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
-- **Why does `env` connect `Community 114` to `Community 65`, `Community 97`, `Community 100`, `Community 13`, `Community 83`, `Community 116`, `Community 85`, `Community 89`, `Community 58`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 1` to `Community 96`, `Community 100`, `Community 106`, `Community 74`, `Community 12`, `Community 47`, `Community 48`, `Community 52`, `Community 55`, `Community 24`, `Community 89`, `Community 90`, `Community 59`, `Community 60`?**
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 13` to `Community 65`, `Community 98`, `Community 66`, `Community 101`, `Community 9`, `Community 50`, `Community 85`, `Community 57`, `Community 94`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+- **Why does `env` connect `Community 114` to `Community 65`, `Community 97`, `Community 100`, `Community 13`, `Community 83`, `Community 116`, `Community 85`, `Community 89`, `Community 58`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Are the 21 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 21 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 20 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 20 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `inter`, `geistSans`, `geistMono` to the rest of the system?**
+- **What connects `$schema`, `plugin`, `snapshot` to the rest of the system?**
   _831 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected._

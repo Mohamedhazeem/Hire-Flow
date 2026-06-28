@@ -201,7 +201,7 @@ export function RecruiterAnalyticsPage() {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <TrendChart
           data={data.applicationTrend}
           color="#3b82f6"
@@ -220,13 +220,13 @@ export function RecruiterAnalyticsPage() {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <FunnelChart
           current={data.funnelCurrent}
           historical={data.funnelHistorical}
           emptyMessage="No pipeline data available"
         />
-        <div className="space-y-5">
+        <div className="flex flex-col gap-3">
           <DistributionBarChart
             data={workModeBarData(data)}
             colorMap={{

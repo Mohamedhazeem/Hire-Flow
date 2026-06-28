@@ -7,12 +7,7 @@ import { TrendChart } from "./charts/trend-chart";
 import { DistributionBarChart } from "./charts/distribution-bar-chart";
 import { FunnelChart } from "./charts/funnel-chart";
 import { CHART_COLORS } from "../schema/analytics.schema";
-import {
-  FileTextIcon,
-  TrendingUpIcon,
-  ClockIcon,
-  BarChart3Icon,
-} from "lucide-react";
+import { FileTextIcon, TrendingUpIcon, ClockIcon, BarChart3Icon } from "lucide-react";
 import type { AnalyticsFilter, AnalyticsResponse } from "../schema/analytics.schema";
 
 type PerJobAnalyticsPageProps = {
@@ -50,7 +45,10 @@ export function PerJobAnalyticsPage({ jobId }: PerJobAnalyticsPageProps) {
       <div className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="h-24 rounded-2xl bg-bg-surface border border-border-subtle animate-pulse" />
+            <div
+              key={i}
+              className="h-24 rounded-2xl bg-bg-surface border border-border-subtle animate-pulse"
+            />
           ))}
         </div>
         <div className="flex items-center justify-center h-48">
@@ -94,16 +92,20 @@ export function PerJobAnalyticsPage({ jobId }: PerJobAnalyticsPageProps) {
         />
         <StatCard
           title="Avg Fulfillment"
-          value={data.summary.avgFulfillmentDays !== null ? `${data.summary.avgFulfillmentDays}d` : "—"}
+          value={
+            data.summary.avgFulfillmentDays !== null ? `${data.summary.avgFulfillmentDays}d` : "—"
+          }
           icon={<ClockIcon className="size-5" />}
-          description={data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet"}
+          description={
+            data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet"
+          }
           gradient="from-amber-500/10 via-amber-500/5 to-transparent"
         />
       </div>
 
       <AnalyticsFilterBarPerJob />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <TrendChart
           data={data.applicationTrend}
           color="#3b82f6"
@@ -115,7 +117,10 @@ export function PerJobAnalyticsPage({ jobId }: PerJobAnalyticsPageProps) {
         <DistributionBarChart
           data={statusBarData(data)}
           colorMap={Object.fromEntries(
-            (Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [k.replace(/_/g, " "), v]),
+            (Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [
+              k.replace(/_/g, " "),
+              v,
+            ]),
           )}
           title="Applications by Status"
           emptyMessage="No applications yet"
@@ -145,6 +150,7 @@ function AnalyticsFilterBarPerJob() {
           <input
             type="date"
             value={currentDateFrom}
+            aria-label="Date from"
             onChange={(e) => {
               const params = new URLSearchParams(searchParams.toString());
               if (e.target.value) params.set("dateFrom", e.target.value);
@@ -159,6 +165,7 @@ function AnalyticsFilterBarPerJob() {
           <input
             type="date"
             value={currentDateTo}
+            aria-label="Date to"
             onChange={(e) => {
               const params = new URLSearchParams(searchParams.toString());
               if (e.target.value) params.set("dateTo", e.target.value);
