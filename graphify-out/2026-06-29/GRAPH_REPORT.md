@@ -1,7 +1,7 @@
-# Graph Report - hire-flow-next  (2026-06-28)
+# Graph Report - hire-flow-next  (2026-06-29)
 
 ## Corpus Check
-- 314 files · ~109,560 words
+- 314 files · ~112,097 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3e2499f3`
+- Built from commit: `151aeb75`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -342,8 +342,8 @@ Cohesion: 0.12
 Nodes (15): 1. Page Header, 2. Stat Cards (`grid-cols-2 sm:grid-cols-4 gap-4`), 3. Recent Applications Table, 4. Quick Action Buttons, Architecture, Client Component — `app/features/recruiter/components/recruiter-dashboard.tsx`, Data Query — `app/features/recruiter/queries/dashboard-queries.ts`, Edge Cases (+7 more)
 
 ### Community 62 - "Community 62"
-Cohesion: 0.16
-Nodes (10): socialSignInAction(), LoginForm(), LoginFormProps, SignInInput, providers, SocialProvider, SocialSignInButtons(), metadata (+2 more)
+Cohesion: 0.22
+Nodes (7): socialSignInAction(), RegisterInput, SignUpForm(), providers, SocialProvider, SocialSignInButtons(), metadata
 
 ### Community 63 - "Community 63"
 Cohesion: 0.22
@@ -390,8 +390,8 @@ Cohesion: 0.18
 Nodes (6): AcceptInviteClient(), metadata, Props, SearchResult, StartConversationSearch(), StartConversationSearchProps
 
 ### Community 75 - "Community 75"
-Cohesion: 0.16
-Nodes (10): FormButton(), FormButtonProps, FormInput(), FormInputProps, ResetPasswordForm(), ResetPasswordInput, RegisterInput, SignUpForm() (+2 more)
+Cohesion: 0.13
+Nodes (13): FormButton(), FormButtonProps, FormInput(), FormInputProps, LoginForm(), LoginFormProps, SignInInput, ResetPasswordForm() (+5 more)
 
 ### Community 81 - "Community 81"
 Cohesion: 0.11
@@ -534,7 +534,7 @@ Cohesion: 0.40
 Nodes (4): CHART_TOOLTIP_STYLE, TrendChart(), TrendChartProps, TrendPoint
 
 ## Knowledge Gaps
-- **842 isolated node(s):** `$schema`, `plugin`, `snapshot`, `@kilocode/plugin`, `AcceptInviteClientProps` (+837 more)
+- **842 isolated node(s):** `Role Guard Requirement`, `STATE & CACHE RULES (short)`, `Phase 2 & 3`, `Stack`, `Absolute Rules` (+837 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -542,16 +542,16 @@ Nodes (4): CHART_TOOLTIP_STYLE, TrendChart(), TrendChartProps, TrendPoint
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 1` to `Community 96`, `Community 99`, `Community 101`, `Community 106`, `Community 74`, `Community 108`, `Community 12`, `Community 110`, `Community 47`, `Community 48`, `Community 52`, `Community 55`, `Community 24`, `Community 89`, `Community 90`, `Community 59`, `Community 60`, `Community 94`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 66` to `Community 65`, `Community 98`, `Community 71`, `Community 13`, `Community 47`, `Community 50`, `Community 114`, `Community 85`, `Community 57`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `env` connect `Community 13` to `Community 3`, `Community 103`, `Community 74`, `Community 83`, `Community 89`, `Community 58`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Are the 21 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 21 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 20 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 20 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `$schema`, `plugin`, `snapshot` to the rest of the system?**
+- **What connects `Role Guard Requirement`, `STATE & CACHE RULES (short)`, `Phase 2 & 3` to the rest of the system?**
   _842 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected._

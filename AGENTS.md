@@ -150,23 +150,61 @@ Pages are thin orchestrators. All logic lives in `features/`.
 
 Agent must `view`/`grep` these existing files first. Do not redefine anything found here.
 
+### Core Layout & Shell
+
 - `components/layout/role-layout-client.tsx`, `components/layout/sidebar.tsx` — shared shell, accepts `messagesBasePath`.
-- `app/(roles)/user/layout.tsx`, `app/(roles)/user/user-layout-client.tsx` — already wired with UserSidebar.
-- `app/features/user/components/user-sidebar.tsx`, `user-messages-page.tsx`, `user-thread-view.tsx` — messaging already built.
-- `app/features/user/hooks/messages/use-user-threads.ts`, `use-user-messages.ts`.
-- `app/(roles)/user/messages/page.tsx`, `app/(roles)/user/notifications/page.tsx` — already built.
-- `app/features/notifications/components/notifications-page.tsx`, `notification-dropdown.tsx`, `lib/notifications.ts` (`createNotification`, `createNotificationsBulk`, `triggerForCompany`) — reuse for every new notification trigger, never call `prisma.notification.create` directly.
+- `app/(roles)/user/layout.tsx`, `app/(roles)/user/user-layout-client.tsx` — already wired with `UserSidebar`.
+
+### User Messaging (already built)
+
+- `app/features/user/components/user-sidebar.tsx`, `user-messages-page.tsx`, `user-thread-view.tsx`
+- `app/features/user/hooks/messages/use-user-threads.ts`, `use-user-messages.ts`
+- `app/(roles)/user/messages/page.tsx`, `app/(roles)/user/notifications/page.tsx`
+
+### Notifications (reuse, never direct Prisma)
+
+- `app/features/notifications/components/notifications-page.tsx`, `notification-dropdown.tsx`
+- `lib/notifications.ts` (`createNotification`, `createNotificationsBulk`, `triggerForCompany`) — reuse for every new notification trigger, **never call** `prisma.notification.create` directly.
+
+### Error & API Utilities
+
 - `lib/api-error.ts` / `lib/api-wrapper.ts` — `ValidationError`, `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `TooManyRequestsError`. Reuse, never throw raw `Error`.
 - `lib/api-response.ts` (`ok`/`fail`), `lib/pagination.ts`, `lib/api-client.ts`, `lib/query-client.ts`.
+
+### File Upload & Downloads
+
 - `lib/upload.ts`, `app/api/upload/route.ts` — mock upload provider (Phase 0.4).
-- `app/api/files/download/route.ts` — auth-gated file proxy built in Phase 2.6 for resume access. **Resumes must go through this, never a raw public `/uploads/...` URL.**
-- `components/ui/data-table.tsx` — already extended with `enableSelection`, `selectedIds`, `onSelectionChange`, `getRowId`, `disabledIds` (Phase 2.7). Reuse for any multi-select UI.
+- `app/api/files/download/route.ts` — auth‑gated file proxy built in Phase 2.6 for resume access. **Resumes must go through this, never a raw public `/uploads/…` URL.**
+
+### UI Components
+
+- `components/ui/data-table.tsx` — already extended with `enableSelection`, `selectedIds`, `onSelectionChange`, `getRowId`, `disabledIds` (Phase 2.7). Reuse for any multi‑select UI.
 - `components/ui/status-badge.tsx`, `components/ui/skeleton.tsx`, `components/shared/status-timeline.tsx`, `components/shared/confirm-action-button.tsx`.
+
+### New Shared Components (reusable across roles)
+
+- `components/shared/info-row.tsx` — **centralised** `InfoRow` (was duplicated 4×). Migrate existing instances in `user-profile-view.tsx` and `job-detail.tsx` to this import.
+- `components/shared/applicant-profile-card.tsx` — shared between recruiter & admin detail pages.
+- `components/shared/applicant-resume-card.tsx` — shared between recruiter & admin detail pages.
+- `components/shared/recent-messages-card.tsx` — shared between recruiter & admin detail pages.
+
+### Cross‑Feature Reuse
+
+- `app/features/recruiter/components/skeletons/applicant-detail-skeleton.tsx` — now **reused** by `admin-applicant-detail-page.tsx` (cross‑feature import). Do not duplicate.
+
+### Schema & Data Model
+
 - `prisma/schema.prisma` — `ApplicationStatusChange` model (Phase 2.6) already logs every status transition. Reuse it for any "history" UI instead of inventing a parallel log.
-- The `requireRole([...])` helper used throughout `app/features/recruiter/actions/*` — locate its real import path (do not redefine); use `requireRole(['user'])` everywhere below.
-- Job model carries **two** independent gates: recruiter-controlled `status` (`draft|active|archived`, Phase 2.3) and admin-controlled `isActive` boolean kill-switch (Phase 1.4). Any public/user-facing query must filter on **both**.
+- Job model carries **two** independent gates: recruiter‑controlled `status` (`draft|active|archived`, Phase 2.3) and admin‑controlled `isActive` boolean kill‑switch (Phase 1.4). Any public/user‑facing query must filter on **both**.
+
+### Role & Authorization
+
+- The `requireRole([…])` helper used throughout `app/features/recruiter/actions/*` — locate its real import path (do not redefine); use `requireRole(['user'])` everywhere below.
+
+### Utilities to Promote/Generalise
+
 - `app/features/recruiter/libs/csv-builder.ts` — promote to `lib/csv-builder.ts` if reused outside recruiter scope (see Step 3.4).
-- `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`, `compute-thread-id` util — reuse/generalize for user-initiated messaging in Step 3.5.
+- `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`, `compute-thread-id` util — reuse/generalise for user‑initiated messaging in Step 3.5.
 
 ---
 

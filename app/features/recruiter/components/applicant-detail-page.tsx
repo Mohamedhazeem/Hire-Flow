@@ -4,83 +4,34 @@ import { useSession } from "@/app/features/auth/libs/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState, useCallback } from "react";
-import {
-  ArrowLeftIcon,
-  ExternalLinkIcon,
-  DownloadIcon,
-  FileTextIcon,
-  MapPinIcon,
-  BriefcaseIcon,
-  MessageSquareTextIcon,
-  GraduationCapIcon,
-  EyeIcon,
-  AlertCircleIcon,
-} from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowLeftIcon, ExternalLinkIcon, BriefcaseIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
-import {
-  useApplicantDetail,
-  useTransitionStatusWithRefresh,
-} from "@/app/features/recruiter/hooks/use-applicant-detail";
+import { useApplicantDetail, useTransitionStatusWithRefresh } from "@/app/features/recruiter/hooks/use-applicant-detail";
 import { StatusTimeline } from "@/components/shared/status-timeline";
 import { ResumePreviewDialog } from "@/components/shared/resume-preview-dialog";
-import {
-  ReviewDialog,
-  ShortlistDialog,
-  ScheduleInterviewDialog,
-  SendOfferDialog,
-  RejectDialog,
-} from "@/app/features/recruiter/components/application-dialogs";
+import { ApplicantProfileCard } from "@/components/shared/applicant-profile-card";
+import { ApplicantResumeCard } from "@/components/shared/applicant-resume-card";
+import { RecentMessagesCard } from "@/components/shared/recent-messages-card";
+import { ApplicantDetailSkeleton } from "@/app/features/recruiter/components/applicant-detail-skeleton";
+import { ApplicantDetailDialogs } from "@/app/features/recruiter/components/applicant-detail-dialogs";
+import { NEXT_ACTIONS } from "@/app/features/recruiter/components/applicant-table-constants";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 
-const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
-  applied: [
-    { label: "Start Review", status: "reviewing" },
-    { label: "Reject", status: "rejected" },
-  ],
-  reviewing: [
-    { label: "Shortlist", status: "shortlisted" },
-    { label: "Reject", status: "rejected" },
-  ],
-  shortlisted: [
-    { label: "Schedule Interview", status: "interview_scheduled" },
-    { label: "Reject", status: "rejected" },
-  ],
-  interview_scheduled: [
-    { label: "Send Offer", status: "offered" },
-    { label: "Reject", status: "rejected" },
-  ],
-  offered: [
-    { label: "Mark Hired", status: "hired" },
-    { label: "Reject", status: "rejected" },
-  ],
-  hired: [],
-  rejected: [],
-};
+type ApplicantDetailPageProps = { applicationId: string };
 
-type ApplicantDetailPageProps = {
-  applicationId: string;
-};
-
-function InfoRow({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: React.ReactNode;
-}) {
-  return (
-    <div className="flex items-start gap-3">
-      <div className="size-5 shrink-0 text-text-muted mt-0.5">{icon}</div>
-      <div>
-        <p className="text-xs text-text-muted font-medium uppercase tracking-wider">{label}</p>
-        <div className="text-sm text-text-body mt-0.5">{value}</div>
-      </div>
-    </div>
-  );
+async function downloadFile(fileUrl: string, onError: (msg: string) => void) {
+  try {
+    const res = await fetch(`/api/files/download?path=${encodeURIComponent(fileUrl)}`);
+    if (!res.ok) { onError("File unavailable — removed by applicant"); return; }
+    const ct = res.headers.get("content-type") ?? "";
+    if (!ct || ct.startsWith("text/html")) { onError("Server returned an unexpected response"); return; }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = fileUrl.split("/").pop() ?? "resume"; a.click();
+    URL.revokeObjectURL(url);
+  } catch { onError("Download failed. Please try again."); }
 }
 
 export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps) {
@@ -89,73 +40,20 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
   const recruiterId = (session?.user as { id?: string })?.id ?? "";
   const { data, isLoading, isError } = useApplicantDetail(applicationId);
   const transitionStatus = useTransitionStatusWithRefresh(applicationId);
-  const [dialog, setDialog] = useState<{
-    type: string;
-    applicant: ApplicantRow | null;
-  }>({ type: "", applicant: null });
+  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({ type: "", applicant: null });
   const [previewOpen, setPreviewOpen] = useState(false);
   const [downloadError, setDownloadError] = useState<string | null>(null);
 
-  const handleDownload = useCallback(async (fileUrl: string) => {
-    try {
-      const res = await fetch(`/api/files/download?path=${encodeURIComponent(fileUrl)}`);
-      if (!res.ok) {
-        setDownloadError("File unavailable — removed by applicant");
-        setTimeout(() => setDownloadError(null), 5000);
-        return;
-      }
-      const contentType = res.headers.get("content-type") ?? "";
-      if (!contentType || contentType.startsWith("text/html")) {
-        setDownloadError("Server returned an unexpected response");
-        setTimeout(() => setDownloadError(null), 5000);
-        return;
-      }
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = fileUrl.split("/").pop() ?? "resume";
-      a.click();
-      URL.revokeObjectURL(url);
-    } catch {
-      setDownloadError("Download failed. Please try again.");
-      setTimeout(() => setDownloadError(null), 5000);
-    }
-  }, []);
+  const showDownloadError = useCallback((msg: string) => { setDownloadError(msg); setTimeout(() => setDownloadError(null), 5000); }, []);
+  const handleDownload = useCallback((fileUrl: string) => downloadFile(fileUrl, showDownloadError), [showDownloadError]);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <Skeleton className="size-8 rounded-md" />
-          <div className="space-y-1.5">
-            <Skeleton className="h-6 w-48 rounded-md" />
-            <Skeleton className="h-4 w-72 rounded-md" />
-          </div>
-        </div>
-        <Skeleton className="h-5 w-28 rounded-md" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <Skeleton className="h-64 rounded-2xl" />
-            <Skeleton className="h-20 rounded-2xl" />
-          </div>
-          <div className="space-y-4">
-            <Skeleton className="h-80 rounded-2xl" />
-            <Skeleton className="h-24 rounded-2xl" />
-          </div>
-        </div>
-        <Skeleton className="h-16 rounded-2xl" />
-      </div>
-    );
-  }
+  if (isLoading) return <ApplicantDetailSkeleton />;
 
   if (isError || !data?.data) {
     return (
       <div className="text-destructive text-sm py-8 text-center">
         Failed to load applicant details.{" "}
-        <button onClick={() => router.back()} className="text-brand underline">
-          Go back
-        </button>
+        <button onClick={() => router.back()} className="text-brand underline">Go back</button>
       </div>
     );
   }
@@ -163,57 +61,20 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
   const detail = data.data;
   const { application, applicant, statusTimeline, recentMessages, applicantResume } = detail;
   const profile = applicant.profile;
-  const experiencesArray =
-    profile?.experiences != null && Array.isArray(profile.experiences)
-      ? (profile.experiences as unknown[])
-      : null;
   const threadId = [recruiterId, application.userId].sort().join("_");
-
   const actions = NEXT_ACTIONS[application.status] ?? [];
 
   const applicantRowForDialog: ApplicantRow = {
-    id: application.id,
-    userId: applicant.id,
-    name: applicant.name,
-    email: applicant.email,
-    status: application.status,
-    appliedAt: application.appliedAt,
-    updatedAt: application.updatedAt,
+    id: application.id, userId: applicant.id, name: applicant.name,
+    email: applicant.email, status: application.status,
+    appliedAt: application.appliedAt, updatedAt: application.updatedAt,
   };
-
-  const isDeleted = applicantResume?.source === "deleted";
-  const resumeInfo = !isDeleted && applicantResume ? applicantResume : null;
-  const ext = resumeInfo?.fileUrl?.split(".").pop()?.toLowerCase() ?? "";
-  const isPreviewable = ext === "pdf" || ["jpg", "jpeg", "png", "webp", "gif"].includes(ext);
-
-  function renderResumeSourceBadge(source: string | undefined) {
-    if (source === "application") {
-      return (
-        <span className="inline-flex items-center rounded-full bg-brand/10 text-brand border border-brand/20 px-2 py-0.5 text-[10px] font-medium leading-none">
-          Resume Used for This Application
-        </span>
-      );
-    }
-    if (source === "current_profile") {
-      return (
-        <span className="inline-flex items-center rounded-full bg-bg-elevated text-text-muted border border-border-subtle px-2 py-0.5 text-[10px] font-medium leading-none">
-          Current Resume
-        </span>
-      );
-    }
-    return null;
-  }
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => router.back()}
-            className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all"
-            aria-label="back"
-          >
+          <button onClick={() => router.back()} className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all" aria-label="back">
             <ArrowLeftIcon className="size-5" />
           </button>
           <div>
@@ -224,323 +85,41 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             <p className="text-sm text-text-muted mt-0.5">{applicant.email}</p>
           </div>
         </div>
-        <Link
-          href={`/recruiter/jobs/${application.job.id}`}
-          className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-brand transition-colors"
-        >
-          <BriefcaseIcon className="size-4" />
-          {application.job.title}
-          <ExternalLinkIcon className="size-3" />
+        <Link href={`/recruiter/jobs/${application.job.id}`} className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-brand transition-colors">
+          <BriefcaseIcon className="size-4" />{application.job.title}<ExternalLinkIcon className="size-3" />
         </Link>
       </div>
 
-      {/* Main content: two columns on desktop */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left column: Profile */}
         <div className="space-y-6">
-          {/* Profile Card */}
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Profile
-            </h2>
-            <div className="space-y-4">
-              {profile?.headline && (
-                <p className="text-sm text-text-body font-medium">{profile.headline}</p>
-              )}
-              {profile?.bio && (
-                <p className="text-sm text-text-muted leading-relaxed">{profile.bio}</p>
-              )}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <InfoRow
-                  icon={<MapPinIcon className="size-5" />}
-                  label="Location"
-                  value={profile?.location ?? "Not specified"}
-                />
-                <InfoRow
-                  icon={<GraduationCapIcon className="size-5" />}
-                  label="Expected CTC"
-                  value={
-                    profile?.ctc != null
-                      ? `$${profile.ctc.toLocaleString()}`
-                      : profile?.basePay != null
-                        ? `$${profile.basePay.toLocaleString()}/yr`
-                        : "Not specified"
-                  }
-                />
-              </div>
-              {profile?.skills && profile.skills.length > 0 && (
-                <div>
-                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">
-                    Skills
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {profile.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center rounded-radius-full bg-brand/10 text-brand border border-brand/20 px-2.5 py-0.5 text-xs font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {experiencesArray && experiencesArray.length > 0 && (
-                <div>
-                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">
-                    Experience
-                  </p>
-                  <div className="space-y-2">
-                    {experiencesArray.map((item, i) => {
-                      const exp = item as {
-                        title?: string;
-                        company?: string;
-                        startDate?: string;
-                        endDate?: string;
-                      };
-                      return (
-                        <div
-                          key={i}
-                          className="text-sm text-text-body border-l-2 border-border-subtle pl-3"
-                        >
-                          {exp.title && <p className="font-medium">{exp.title}</p>}
-                          {exp.company && <p className="text-text-muted text-xs">{exp.company}</p>}
-                          {exp.startDate && (
-                            <p className="text-text-muted text-xs">
-                              {exp.startDate} – {exp.endDate ?? "Present"}
-                            </p>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Resume Card */}
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Resume
-            </h2>
-
-            {applicantResume?.source === "deleted" ? (
-              <div className="flex flex-col items-center gap-2 py-4 text-center">
-                <AlertCircleIcon className="size-8 text-text-muted" />
-                <p className="text-sm text-text-muted">
-                  Resume was removed by the applicant.
-                </p>
-              </div>
-            ) : applicantResume ? (
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-bg-elevated border border-border-subtle">
-                  <FileTextIcon className="size-5 text-brand shrink-0" />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <p className="text-sm font-medium text-text-heading truncate">
-                        {applicantResume.label}
-                      </p>
-                      {renderResumeSourceBadge(applicantResume.source)}
-                    </div>
-                  </div>
-                </div>
-
-                {downloadError && (
-                  <div className="flex items-center gap-2 text-xs text-error bg-error/10 border border-error/20 rounded-lg px-3 py-2">
-                    <AlertCircleIcon className="size-3.5 shrink-0" />
-                    {downloadError}
-                  </div>
-                )}
-
-                <div className="flex items-center gap-2">
-                  {applicantResume.fileUrl ? (
-                    <>
-                      {isPreviewable ? (
-                        <Button
-                          variant="default"
-                          size="sm"
-                          onClick={() => setPreviewOpen(true)}
-                        >
-                          <EyeIcon className="size-4 mr-1.5" />
-                          Preview
-                        </Button>
-                      ) : (
-                        <Button
-                          variant="default"
-                          size="sm"
-                          onClick={() => applicantResume.fileUrl && handleDownload(applicantResume.fileUrl)}
-                        >
-                          <DownloadIcon className="size-4 mr-1.5" />
-                          Download
-                        </Button>
-                      )}
-                      {isPreviewable && applicantResume.fileUrl && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => handleDownload(applicantResume.fileUrl!)}
-                        >
-                          <DownloadIcon className="size-4 mr-1.5" />
-                          Download
-                        </Button>
-                      )}
-                    </>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5 text-xs text-text-muted bg-bg-elevated border border-border-subtle rounded-lg px-2.5 py-1">
-                      <AlertCircleIcon className="size-3" />
-                      File not available
-                    </span>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-2 py-4 text-center">
-                <FileTextIcon className="size-8 text-text-muted" />
-                <p className="text-sm text-text-muted">
-                  No resume attached to this application.
-                </p>
-              </div>
-            )}
-          </div>
+          <ApplicantProfileCard headline={profile?.headline} bio={profile?.bio} location={profile?.location} ctc={profile?.ctc} basePay={profile?.basePay} skills={profile?.skills} experiences={profile?.experiences} />
+          <ApplicantResumeCard resume={applicantResume} downloadError={downloadError} onPreview={() => setPreviewOpen(true)} onDownload={handleDownload} />
         </div>
-
-        {/* Right column: Timeline + Messages */}
         <div className="space-y-6">
-          {/* Timeline */}
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Timeline
-            </h2>
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Timeline</h2>
             <StatusTimeline entries={statusTimeline} />
           </div>
-
-          {/* Recent Messages */}
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
-                Recent Messages
-              </h2>
-              <Link
-                href={`/recruiter/messages?thread=${threadId}`}
-                className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
-              >
-                <MessageSquareTextIcon className="size-3.5" />
-                View All
-              </Link>
-            </div>
-            {recentMessages.length > 0 ? (
-              <div className="space-y-2">
-                {recentMessages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className="p-3 rounded-xl bg-bg-elevated border border-border-subtle"
-                  >
-                    <p className="text-sm text-text-body line-clamp-2">
-                      {msg.content || (msg.fileUrl ? "📎 File" : "")}
-                    </p>
-                    <p className="text-xs text-text-muted mt-1">
-                      {new Date(msg.createdAt).toLocaleDateString(undefined, {
-                        month: "short",
-                        day: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-4">
-                <p className="text-sm text-text-muted mb-2">No messages yet.</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => router.push(`/recruiter/messages?thread=${threadId}`)}
-                >
-                  <MessageSquareTextIcon className="size-4 mr-1.5" />
-                  Start Conversation
-                </Button>
-              </div>
-            )}
-          </div>
+          <RecentMessagesCard messages={recentMessages} threadId={threadId} messagesBasePath="/recruiter/messages" hasStartButton onStartConversation={() => router.push(`/recruiter/messages?thread=${threadId}`)} />
         </div>
       </div>
 
-      {/* Status Actions */}
       {actions.length > 0 && (
         <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-            Actions
-          </h2>
+          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Actions</h2>
           <div className="flex flex-wrap gap-3">
-            {actions.map((action) => {
-              const variant = action.status === "rejected" ? "destructive" : "default";
-              return (
-                <Button
-                  key={action.status}
-                  variant={variant}
-                  disabled={transitionStatus.isPending}
-                  onClick={() =>
-                    setDialog({
-                      type: action.status,
-                      applicant: applicantRowForDialog,
-                    })
-                  }
-                >
-                  {action.label}
-                </Button>
-              );
-            })}
+            {actions.map((action) => (
+              <Button key={action.status} variant={action.status === "rejected" ? "destructive" : "default"} disabled={transitionStatus.isPending} onClick={() => setDialog({ type: action.status, applicant: applicantRowForDialog })}>
+                {action.label}
+              </Button>
+            ))}
           </div>
         </div>
       )}
 
-      {/* Dialogs */}
-      <ReviewDialog
-        open={dialog.type === "reviewing"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <ShortlistDialog
-        open={dialog.type === "shortlisted"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <ScheduleInterviewDialog
-        open={dialog.type === "interview_scheduled"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <SendOfferDialog
-        open={dialog.type === "offered"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
-      <RejectDialog
-        open={dialog.type === "rejected"}
-        onOpenChange={(open) => {
-          if (!open) setDialog({ type: "", applicant: null });
-        }}
-        applicant={dialog.applicant}
-      />
+      <ApplicantDetailDialogs dialog={dialog} onDialogClose={() => setDialog({ type: "", applicant: null })} />
 
-      <ResumePreviewDialog
-        open={previewOpen}
-        onOpenChange={setPreviewOpen}
-        fileUrl={resumeInfo?.fileUrl ?? null}
-        label={resumeInfo?.label ?? "Resume"}
-        onDownload={resumeInfo?.fileUrl ? () => handleDownload(resumeInfo.fileUrl!) : undefined}
-        downloadError={downloadError}
-      />
+      <ResumePreviewDialog open={previewOpen} onOpenChange={setPreviewOpen} fileUrl={applicantResume?.fileUrl ?? null} label={applicantResume?.label ?? "Resume"} onDownload={applicantResume?.fileUrl ? () => handleDownload(applicantResume.fileUrl!) : undefined} downloadError={downloadError} />
     </div>
   );
 }
