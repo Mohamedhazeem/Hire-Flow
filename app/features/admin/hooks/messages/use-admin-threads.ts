@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { ApiEnvelope } from "@/lib/api-response";
+import { ApiResponse } from "@/lib/api-response";
 
 export type ThreadUser = {
   id: string;
@@ -27,7 +27,8 @@ export function useAdminThreads() {
   return useQuery<ThreadItem[]>({
     queryKey: ["admin", "threads"],
     queryFn: async () => {
-      const res = await apiClient<ApiEnvelope<ThreadItem[]>>("/api/admin/threads");
+      const res =
+        await apiClient<ApiResponse<ThreadItem[]>>("/api/admin/threads");
       return res.data;
     },
     refetchInterval: 60_000,
@@ -36,5 +37,6 @@ export function useAdminThreads() {
 
 export function useInvalidateThreads() {
   const queryClient = useQueryClient();
-  return () => queryClient.invalidateQueries({ queryKey: ["admin", "threads"] });
+  return () =>
+    queryClient.invalidateQueries({ queryKey: ["admin", "threads"] });
 }

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function ok<T>(data: T, status = 200): NextResponse {
+export function ok<T>(data: T, status = 200): NextResponse<ApiResponse<T>> {
   return NextResponse.json({ success: true, data }, { status });
 }
 
@@ -9,11 +9,6 @@ export function fail(message: string, status = 400): NextResponse {
 }
 
 export type ApiResponse<T> = {
-  success: boolean;
-  data: T;
-};
-
-export type ApiEnvelope<T> = {
   success: boolean;
   data: T;
 };

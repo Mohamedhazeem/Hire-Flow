@@ -1,6 +1,10 @@
-import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  useInfiniteQuery,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { ApiEnvelope } from "@/lib/api-response";
+import { ApiResponse } from "@/lib/api-response";
 
 export type MessageItem = {
   id: string;
@@ -31,20 +35,25 @@ export type SendMessagePayload = {
 };
 
 export function useAdminMessages(threadId: string) {
-  return useInfiniteQuery<ApiEnvelope<MessagesResponse>>({
+  return useInfiniteQuery<ApiResponse<MessagesResponse>>({
     queryKey: ["admin", "messages", threadId],
     refetchInterval: 60_000,
     queryFn: async ({ pageParam }) => {
       const cursor = pageParam as string | undefined;
       const params: Record<string, unknown> = { limit: 30 };
       if (cursor) params.cursor = cursor;
-      return apiClient<ApiEnvelope<MessagesResponse>>(`/api/admin/messages/${threadId}`, {
-        params,
-      });
+      return apiClient<ApiResponse<MessagesResponse>>(
+        `/api/admin/messages/${threadId}`,
+        {
+          params,
+        },
+      );
     },
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (lastPage) =>
-      lastPage.data.meta.hasNextPage ? lastPage.data.meta.nextCursor : undefined,
+      lastPage.data.meta.hasNextPage
+        ? lastPage.data.meta.nextCursor
+        : undefined,
     enabled: threadId.includes("_"),
   });
 }
@@ -59,7 +68,9 @@ export function useSendMessage(threadId: string) {
         body: payload,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin", "messages", threadId] });
+      queryClient.invalidateQueries({
+        queryKey: ["admin", "messages", threadId],
+      });
     },
   });
 }
@@ -76,7 +87,9 @@ export function useDeleteMessage(threadId: string) {
       queryClient.setQueryData(
         ["admin", "messages", threadId],
         (old: unknown) => {
-          const data = old as { pages: { data: { messages: { id: string }[] } }[] } | undefined;
+          const data = old as
+            | { pages: { data: { messages: { id: string }[] } }[] }
+            | undefined;
           if (!data?.pages) return old;
           return {
             ...data,
@@ -84,13 +97,17 @@ export function useDeleteMessage(threadId: string) {
               ...page,
               data: {
                 ...page.data,
-                messages: page.data.messages.filter((m: { id: string }) => m.id !== messageId),
+                messages: page.data.messages.filter(
+                  (m: { id: string }) => m.id !== messageId,
+                ),
               },
             })),
           };
         },
       );
-      queryClient.invalidateQueries({ queryKey: ["admin", "messages", threadId] });
+      queryClient.invalidateQueries({
+        queryKey: ["admin", "messages", threadId],
+      });
     },
   });
 }

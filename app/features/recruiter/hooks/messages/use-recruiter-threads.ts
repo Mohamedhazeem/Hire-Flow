@@ -2,7 +2,7 @@
 
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { ApiEnvelope } from "@/lib/api-response";
+import { ApiResponse } from "@/lib/api-response";
 
 export type ThreadUser = {
   id: string;
@@ -29,7 +29,9 @@ export function useRecruiterThreads() {
   return useQuery<ThreadItem[]>({
     queryKey: ["recruiter", "threads"],
     queryFn: async () => {
-      const res = await apiClient<ApiEnvelope<ThreadItem[]>>("/api/recruiter/threads");
+      const res = await apiClient<ApiResponse<ThreadItem[]>>(
+        "/api/recruiter/threads",
+      );
       return res.data;
     },
     refetchInterval: 60_000,
@@ -38,5 +40,6 @@ export function useRecruiterThreads() {
 
 export function useInvalidateRecruiterThreads() {
   const queryClient = useQueryClient();
-  return () => queryClient.invalidateQueries({ queryKey: ["recruiter", "threads"] });
+  return () =>
+    queryClient.invalidateQueries({ queryKey: ["recruiter", "threads"] });
 }

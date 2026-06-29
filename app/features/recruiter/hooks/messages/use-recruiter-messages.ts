@@ -1,8 +1,12 @@
 "use client";
 
-import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  useInfiniteQuery,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { ApiEnvelope } from "@/lib/api-response";
+import { ApiResponse } from "@/lib/api-response";
 
 export type MessageItem = {
   id: string;
@@ -33,21 +37,23 @@ export type SendMessagePayload = {
 };
 
 export function useRecruiterMessages(threadId: string) {
-  return useInfiniteQuery<ApiEnvelope<MessagesResponse>>({
+  return useInfiniteQuery<ApiResponse<MessagesResponse>>({
     queryKey: ["recruiter", "messages", threadId],
     refetchInterval: 60_000,
     queryFn: async ({ pageParam }) => {
       const cursor = pageParam as string | undefined;
       const params: Record<string, unknown> = { limit: 30 };
       if (cursor) params.cursor = cursor;
-      return apiClient<ApiEnvelope<MessagesResponse>>(
+      return apiClient<ApiResponse<MessagesResponse>>(
         `/api/recruiter/messages/${threadId}`,
         { params },
       );
     },
     initialPageParam: undefined as string | undefined,
     getNextPageParam: (lastPage) =>
-      lastPage.data.meta.hasNextPage ? lastPage.data.meta.nextCursor : undefined,
+      lastPage.data.meta.hasNextPage
+        ? lastPage.data.meta.nextCursor
+        : undefined,
     enabled: threadId.includes("_"),
   });
 }
@@ -62,7 +68,9 @@ export function useSendRecruiterMessage(threadId: string) {
         body: payload,
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["recruiter", "messages", threadId] });
+      queryClient.invalidateQueries({
+        queryKey: ["recruiter", "messages", threadId],
+      });
       queryClient.invalidateQueries({ queryKey: ["recruiter", "threads"] });
     },
   });
@@ -80,9 +88,11 @@ export function useDeleteRecruiterMessage(threadId: string) {
       queryClient.setQueryData(
         ["recruiter", "messages", threadId],
         (old: unknown) => {
-          const data = old as {
-            pages: { data: { messages: { id: string }[] } }[];
-          } | undefined;
+          const data = old as
+            | {
+                pages: { data: { messages: { id: string }[] } }[];
+              }
+            | undefined;
           if (!data?.pages) return old;
           return {
             ...data,
@@ -98,7 +108,9 @@ export function useDeleteRecruiterMessage(threadId: string) {
           };
         },
       );
-      queryClient.invalidateQueries({ queryKey: ["recruiter", "messages", threadId] });
+      queryClient.invalidateQueries({
+        queryKey: ["recruiter", "messages", threadId],
+      });
     },
   });
 }
@@ -112,7 +124,9 @@ export function useDeleteRecruiterThread() {
         method: "DELETE",
       }),
     onSuccess: (_, threadId) => {
-      queryClient.removeQueries({ queryKey: ["recruiter", "messages", threadId] });
+      queryClient.removeQueries({
+        queryKey: ["recruiter", "messages", threadId],
+      });
       queryClient.invalidateQueries({ queryKey: ["recruiter", "messages"] });
       queryClient.invalidateQueries({ queryKey: ["recruiter", "threads"] });
     },
