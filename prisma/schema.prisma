@@ -66,18 +66,18 @@ model User {
   accounts Account[]
 
   // Relations
-  profile          UserProfile?
-  company          Company?
-  jobsPosted       Job[]          @relation("RecruiterJobs")
-  applications     Application[]
-  sentMessages     Message[]      @relation("MessageSender")
-  receivedMessages Message[]      @relation("MessageReceiver")
-  notifications    Notification[]
-  adminInvitesSent     AdminInvite[]      @relation("InviteSender")
-  recruiterInvitesSent RecruiterInvite[]   @relation("RecruiterInviteSender")
-  companyMembership    CompanyTeamMember?
+  profile                UserProfile?
+  company                Company?
+  jobsPosted             Job[]                     @relation("RecruiterJobs")
+  applications           Application[]
+  sentMessages           Message[]                 @relation("MessageSender")
+  receivedMessages       Message[]                 @relation("MessageReceiver")
+  notifications          Notification[]
+  adminInvitesSent       AdminInvite[]             @relation("InviteSender")
+  recruiterInvitesSent   RecruiterInvite[]         @relation("RecruiterInviteSender")
+  companyMembership      CompanyTeamMember?
   initiatedStatusChanges ApplicationStatusChange[] @relation("StatusChangeInitiator")
-  bookmarks            Bookmark[]
+  bookmarks              Bookmark[]
 
   @@unique([email])
   @@map("user")
@@ -162,6 +162,7 @@ model Resume {
   builderData   Json?
   isPrimary     Boolean     @default(false)
   createdAt     DateTime    @default(now())
+  deletedAt     DateTime?
 
   @@map("resume")
 }
@@ -243,22 +244,24 @@ model Job {
 }
 
 model Application {
-  id              String   @id @default(cuid())
-  jobId           String
-  job             Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
-  userId          String
-  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  status          String   @default("applied")
-  statusChanges   ApplicationStatusChange[]
+  id            String                    @id @default(cuid())
+  jobId         String
+  job           Job                       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status        String                    @default("applied")
+  statusChanges ApplicationStatusChange[]
 
-  rejectionReason String?
-  recruiterNote   String?
-  interviewDate   DateTime?
-  meetingLink     String?
-  offerDetails    String?
-  resumeId        String?
-  appliedAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  rejectionReason           String?
+  recruiterNote             String?
+  interviewDate             DateTime?
+  meetingLink               String?
+  offerDetails              String?
+  resumeId                  String?
+  resumeSnapshotUrl         String?
+  resumeSnapshotBuilderData Json?
+  appliedAt                 DateTime  @default(now())
+  updatedAt                 DateTime  @updatedAt
 
   @@unique([jobId, userId])
   @@index([userId, status])
@@ -285,6 +288,7 @@ model Message {
   @@index([receiverId, read])
   @@map("message")
 }
+
 // --------------- Notifications ---------------
 model Notification {
   id        String           @id @default(cuid())
@@ -315,15 +319,15 @@ model Bookmark {
 
 // --------------- Application Status History ---------------
 model ApplicationStatusChange {
-  id             String      @id @default(cuid())
-  applicationId  String
-  application    Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
-  fromStatus     String
-  toStatus       String
-  changedById    String
-  changedBy      User        @relation("StatusChangeInitiator", fields: [changedById], references: [id])
-  note           String?
-  createdAt      DateTime    @default(now())
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  fromStatus    String
+  toStatus      String
+  changedById   String
+  changedBy     User        @relation("StatusChangeInitiator", fields: [changedById], references: [id])
+  note          String?
+  createdAt     DateTime    @default(now())
 
   @@index([applicationId, createdAt])
   @@map("application_status_change")

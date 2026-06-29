@@ -64,6 +64,14 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
   const threadId = [recruiterId, application.userId].sort().join("_");
   const actions = NEXT_ACTIONS[application.status] ?? [];
 
+  const messagesForCard = recentMessages.map((m) => ({
+    ...m,
+    createdAt: typeof m.createdAt === "string" ? m.createdAt : new Date(m.createdAt).toISOString(),
+  }));
+
+  const resumeFileUrl = applicantResume && "fileUrl" in applicantResume ? (applicantResume as { fileUrl?: string | null }).fileUrl ?? null : null;
+  const resumeLabel = applicantResume && "label" in applicantResume ? (applicantResume as { label?: string }).label ?? "Resume" : "Resume";
+
   const applicantRowForDialog: ApplicantRow = {
     id: application.id, userId: applicant.id, name: applicant.name,
     email: applicant.email, status: application.status,
@@ -100,7 +108,7 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Timeline</h2>
             <StatusTimeline entries={statusTimeline} />
           </div>
-          <RecentMessagesCard messages={recentMessages} threadId={threadId} messagesBasePath="/recruiter/messages" hasStartButton onStartConversation={() => router.push(`/recruiter/messages?thread=${threadId}`)} />
+          <RecentMessagesCard messages={messagesForCard} threadId={threadId} messagesBasePath="/recruiter/messages" hasStartButton onStartConversation={() => router.push(`/recruiter/messages?thread=${threadId}`)} />
         </div>
       </div>
 
@@ -119,7 +127,7 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
 
       <ApplicantDetailDialogs dialog={dialog} onDialogClose={() => setDialog({ type: "", applicant: null })} />
 
-      <ResumePreviewDialog open={previewOpen} onOpenChange={setPreviewOpen} fileUrl={applicantResume?.fileUrl ?? null} label={applicantResume?.label ?? "Resume"} onDownload={applicantResume?.fileUrl ? () => handleDownload(applicantResume.fileUrl!) : undefined} downloadError={downloadError} />
+      <ResumePreviewDialog open={previewOpen} onOpenChange={setPreviewOpen} fileUrl={resumeFileUrl} label={resumeLabel} onDownload={resumeFileUrl ? () => handleDownload(resumeFileUrl) : undefined} downloadError={downloadError} />
     </div>
   );
 }

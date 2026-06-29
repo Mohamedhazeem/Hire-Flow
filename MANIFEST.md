@@ -6,14 +6,14 @@
 
 ## Last Updated
 
-2026-06-27T07:40:00Z
+2026-06-29T21:16:00Z
 
 ---
 
 ## Overview
 
-- **Current Phase:** Phase 2
-- **Current Step:** Step 2.11 — Export Applicants (CSV) — COMPLETE
+- **Current Phase:** Phase 3
+- **Current Step:** Step 3.0b — Schema Migration (Resume Snapshot & Soft-Delete) — COMPLETE
 - **Next Step:** Step 3.1 — User Profile (per HIRE_FLOW_PROMPTS.md)
 - **Blockers:** Prisma migration cannot run locally — database server at db.prisma.io:5432 is unreachable; client generation is successful. Migration `add_application_status_change` is pending deploy.
 
@@ -59,8 +59,8 @@
 
 ### Phase 3: User
 
-- [ ] Step 3.0a - Schema Migration (Resume Snapshot & Soft-Delete)
-- [ ] Step 3.0b - Schema Migration (Resume Snapshot & Soft-Delete)
+- [x] Step 3.0a - Schema Migration (Resume Snapshot & Soft-Delete) — VERIFIED (infrastructure audit, no changes needed)
+- [x] Step 3.0b - Schema Migration (Resume Snapshot & Soft-Delete) — COMPLETE (added `deletedAt` to Resume, `resumeSnapshotUrl`/`resumeSnapshotBuilderData` to Application)
 - [ ] Step 3.1 - User Profile
 - [ ] Step 3.2 - Resumes & In-App Builder (File & Builder, 60-Day Soft-Delete)
 - [ ] Step 3.2a - AI-Powered Resume Assistance (Optional)
@@ -344,6 +344,10 @@ Resume error handling:
 - DOC/DOCX → "Preview not available" + Download button
 - No fileUrl → "File not available" badge
 
+### Phase 3
+
+- prisma/schema.prisma (added `deletedAt` to Resume, `resumeSnapshotUrl`/`resumeSnapshotBuilderData` to Application — Steps 3.0a/b)
+
 ### Phase 4
 
 _(agent to fill)_
@@ -354,10 +358,10 @@ _(agent to fill)_
 
 ---
 
-## Pending Dependencies
-
 - Phase 1 complete; Phase 2 complete (Steps 2.0–2.11).
-- Prisma migrations cannot run locally — `localhost:5432` unreachable. `status` column added to `Job` model (`String @default("draft")` replacing `isActive: Boolean`). Client generation succeeds; `db push` can apply schema changes without migration file.
+- Phase 3 Steps 3.0a/3.0b complete.
+- Prisma migrations cannot run locally — `db.prisma.io:5432` unreachable. `db push` fails with `P1001`. Schema changes applied via `prisma generate` only; `db push` must run when database is reachable.
+- Pre-existing type errors in `applicant-detail-page.tsx` (4) and `applicant-table-toolbar.tsx` (1) — not regressions from Phase 3 changes.
 
 ## Upcoming Dependencies (Phase 3)
 

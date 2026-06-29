@@ -44,7 +44,7 @@ export function ApplicantTableToolbar({
           className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
         />
       </div>
-      <Select value={status} onValueChange={onStatusChange}>
+      <Select value={status} onValueChange={(v: string | null) => { if (v !== null) onStatusChange(v); }}>
         <SelectTrigger className="w-full sm:w-36">
           <SelectValue>
             {STATUS_OPTIONS.find((o) => o.value === status)?.label ?? "All Status"}

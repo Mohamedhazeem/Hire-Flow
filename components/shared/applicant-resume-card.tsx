@@ -4,10 +4,10 @@ import { AlertCircleIcon, FileTextIcon, EyeIcon, DownloadIcon } from "lucide-rea
 import { Button } from "@/components/ui/button";
 
 type ResumeInfo = {
-  id: string;
-  label: string;
-  fileUrl: string | null;
-  source: "application" | "current_profile" | "deleted";
+  id?: string;
+  label?: string;
+  fileUrl?: string | null;
+  source: string;
 } | null;
 
 type ApplicantResumeCardProps = {
