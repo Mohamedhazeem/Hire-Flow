@@ -563,44 +563,20 @@ Objective: Confirm Phase 2 spillover already satisfies the original Step 3.0.
 
 Already done, do not rebuild: `app/(roles)/user/layout.tsx`, `user-layout-client.tsx`, `user-sidebar.tsx` (with Messages link), Notification bell wiring, `/user/messages`, `/user/notifications`, recruiter-side messaging entry point.
 
-Remaining gap: `app/(roles)/user/page.tsx` is still the Phase-0 placeholder. Build the real dashboard there (Step 3.0b) — **not** at `/user/dashboard` as the original draft said; follow the recruiter precedent (`app/(roles)/recruiter/page.tsx`, Step 2.9) where the dashboard lives at the role's index route.
+**Superseded decision:** there is no User Dashboard. After login, `user` lands on `/jobs`, not `/user` — Phase 4 Step 4.3 owns the redirect rule (`lib/get-role-home.ts`) and the bare `/user` route just forwards to `/user/applications`. Build that redirect as part of Phase 4 Step 4.3, not here — don't build a parallel one in this step. The account popover (also Phase 4 Step 4.3) replaces what would have been the dashboard's nav; it deliberately has no "Dashboard" entry for `user`, only Profile / Resumes / Applications / Saved Jobs / Messages.
 
-Verification: `grep -r "UserSidebar\|messagesBasePath" app/(roles)/user` returns matches with no missing imports.
+What the dashboard *would* have surfaced (profile completeness nudge, "upload a resume" prompt) is cheaper to handle as a small dismissible banner on `/jobs` for logged-in users with an incomplete profile or zero resumes, rather than a dedicated stats page+route+query layer. If wanted, add a one-off `app/features/public/components/onboarding-banner.tsx` that does a lightweight `prisma.userProfile`/`resume.count` check and renders nothing once both are satisfied — this is optional polish, not a blocking step.
 
----
-
-#### Step 3.0b: User Dashboard (Real Implementation)
-
-Objective: Replace the placeholder root page with a real summary view, mirroring `recruiter-dashboard.tsx`.
-
-Reuse: locate and reuse the existing StatCard component used by `app/features/recruiter/components/recruiter-dashboard.tsx` and `app/features/admin/components/admin-dashboard.tsx` (search `components/shared/` and both feature dirs) — do not create a duplicate stat card.
-
-Files to Create/Edit:
-
-- `app/features/user/queries/dashboard-queries.ts`
-- `app/features/user/hooks/use-user-dashboard.ts`
-- `app/features/user/components/user-dashboard.tsx`
-- `app/api/user/dashboard/route.ts`
-- `app/(roles)/user/page.tsx` (replace placeholder)
-
-Actionable Tasks:
-
-- `getUserDashboardStats(userId)`: parallel Prisma queries → total applications, applications by status (group by), profile completeness % (computed from `UserProfile` field presence — skills.length>0, workMode set, ≥1 experience, ≥1 resume), recent applications (last 5, include job.title + company.name + status), unread notification count.
-- Quick action cards: "Complete Your Profile" (hidden once completeness=100%), "Upload a Resume" (hidden once ≥1 resume exists), "Browse Jobs" (always), each linking to the relevant page.
-- Auth: `requireRole(['user'])` inside the route handler.
-
-Verification: visiting `/user/page.tsx` for a new user shows 0 applications + both onboarding quick actions; for a seeded user with applications it shows correct counts and hides completed quick actions.
+Verification: `grep -r "UserSidebar\|messagesBasePath" app/(roles)/user` returns matches with no missing imports; `grep -rn "dashboard-queries\|use-user-dashboard\|user-dashboard.tsx" app/features/user` returns nothing (confirms no stale dashboard scaffolding was left behind from an earlier draft of this plan — delete it if it exists). Check all edge cases.
 
 ---
 
-#### Step 3.0c: Schema Migration — Missing Fields
+#### Step 3.0b: Schema Migration — Missing Fields
 
 Objective: Add fields required by Steps 3.2–3.3 that the original Phase 0 schema omitted.
 
 Actionable Tasks:
-
 - Inspect current `Resume` model. If absent/incomplete, define:
-
 ```prisma
 model Resume {
   id          String   @id @default(uuid())
@@ -614,23 +590,23 @@ model Resume {
   builderData Json?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  deletedAt   DateTime?  // soft‑delete: set when user removes resume, kept 60 days for snapshot access
 }
 ```
-
-- Add the missing FK on `Application` (required by the resume picker in Step 3.3):
-
+- **Update the `Application` model** to support resume snapshots and make the FK optional:
 ```prisma
 model Application {
-  // ...existing fields
-  resumeId String
-  resume   Resume @relation(fields: [resumeId], references: [id])
+    // … existing fields …
+    resumeId                   String?   // optional FK – kept for user reference only
+    resume                     Resume?   @relation(fields: [resumeId], references: [id])
+    resumeSnapshotUrl          String?   // fileId for uploaded resumes (snapshot at apply time)
+    resumeSnapshotBuilderData  Json?     // **JSON** for in‑app builder resumes (snapshot at apply time)
 }
 ```
-
 - Check existing `NotificationType` enum for a value already implied by Step 2.10's trigger list ("New applications"). Reuse it; only add a new enum value if genuinely missing.
 - Run `npx prisma format && npx prisma validate && npx prisma generate`, then `npx prisma migrate dev --name user-resume-application-fields`.
 
-Verification: `npx prisma validate` passes; `npx prisma studio` shows `Resume` and `Application.resumeId` columns.
+Verification: `npx prisma validate` passes; `npx prisma studio` shows `Resume` table and `Application.resumeSnapshotUrl`, `Application.resumeSnapshotBuilderData`, `Application.resumeId` (nullable) columns.
 
 ---
 
@@ -639,7 +615,6 @@ Verification: `npx prisma validate` passes; `npx prisma studio` shows `Resume` a
 Architecture Constraint: Plain form → Server Action (matches recruiter `upsert-company.ts` pattern).
 
 Files to Create/Edit:
-
 - `app/features/user/schema/profile.schema.ts`
 - `app/features/user/actions/upsert-profile.ts`
 - `app/features/user/components/profile-form.tsx`
@@ -648,7 +623,6 @@ Files to Create/Edit:
 - `app/(roles)/user/profile/page.tsx`
 
 Actionable Tasks:
-
 ```ts
 // profile.schema.ts
 export const ExperienceSchema = z.object({
@@ -659,16 +633,12 @@ export const ExperienceSchema = z.object({
   description: z.string().max(2000).optional(),
 });
 export const ProfileSchema = z.object({
-  skills: z
-    .array(z.string().min(1))
-    .max(50)
-    .transform((arr) => [...new Set(arr)]), // dedupe
+  skills: z.array(z.string().min(1)).max(50).transform(arr => [...new Set(arr)]), // dedupe
   workMode: z.nativeEnum(WorkMode),
   payExpectations: z.coerce.number().int().nonnegative().optional(),
   experiences: z.array(ExperienceSchema).max(20),
 });
 ```
-
 - `upsert-profile.ts`: `await requireRole(['user'])` → throws `UnauthorizedError`/`ForbiddenError` from `lib/api-error.ts`. Parse with `ProfileSchema`; throw `ValidationError` on failure. `prisma.userProfile.upsert({ where: { userId }, ... })`. `revalidatePath('/user/profile')`.
 - `experience-list-editor.tsx`: RHF `useFieldArray`, add/remove rows, date validation (`endDate` null = "Present").
 - Page: server component, fetch existing profile, pass as `defaultValues` or render empty form.
@@ -680,16 +650,14 @@ Verification: submitting with a malformed `payExpectations` (negative) returns a
 #### Step 3.2: Resumes & In-App Builder (Lightweight Form-Based)
 
 **Scope Clarification:** This is NOT a professional resume-builder SaaS (like Indeed/LinkedIn/Canva). It is a lightweight, form-based resume data manager embedded within the hiring platform. Users can:
-
 - Upload PDF/DOCX files directly (most common).
-- Build a basic resume using a structured JSON form (education, experience, skills, summary) — if any best library available for nextjs react resume builder use it otherwise **no rich editor, no templates, no WYSIWYG drag-and-drop, no PDF export**. The preview is HTML-rendered JSON, not a polished PDF.
+- Build a basic resume using a structured JSON form (education, experience, skills, summary) — **no rich editor, no templates, no WYSIWYG drag-and-drop, no PDF export**. The preview is HTML-rendered JSON, not a polished PDF.
 - Mark one resume as primary (used by default in applications).
 - AI enhancement optional (Step 3.2b) — suggestions only, not generative PDF output.
 
 Architecture Constraint: File upload → REST `POST /api/user/resumes`. Builder JSON save → Server Action.
 
 Files to Create/Edit:
-
 - `app/features/user/schema/resume.schema.ts`
 - `app/api/user/resumes/route.ts` (GET list, POST upload)
 - `app/api/user/resumes/[id]/route.ts` (PATCH set-primary, DELETE)
@@ -702,56 +670,59 @@ Files to Create/Edit:
 - `app/(roles)/user/resumes/page.tsx`
 
 Actionable Tasks:
-
 - Before writing the upload route, read `lib/upload.ts`'s return shape and `app/api/files/download/route.ts`'s lookup logic. Derive the resume's `fileUrl` (fileId) exactly the way that download route expects — do not invent a second file-resolution scheme.
-- `POST /api/user/resumes`: `requireRole(['user'])`. Validate `multipart/form-data` — accept only `application/pdf`, `application/msword`, `.docx` mime types, max 5MB; throw `ValidationError` otherwise. Cap at 5 resumes per user; throw `ValidationError` ("Resume limit reached") past that. Call `lib/upload.ts`, insert `Resume` row with `builderData: null` (file-uploaded type).
+- `POST /api/user/resumes`: `requireRole(['user'])`. Validate `multipart/form-data` — accept only `application/pdf`, `application/msword`, `.docx` mime types, max 5MB; throw `ValidationError` otherwise. Cap at 5 resumes per user; throw `ValidationError`("Resume limit reached (5). Please delete an existing resume before uploading a new one.") past that. Call `lib/upload.ts`, insert `Resume` row with `builderData: null` (file-uploaded type).
 - `GET /api/user/resumes`: list own resumes, newest first. Include `{ id, fileName, fileType, builderData, isPrimary, createdAt }` — no large file content. This powers the Step 3.3 resume picker — do not build a second listing endpoint there.
 - `PATCH /api/user/resumes/[id]` (set primary): `$transaction([unset all other isPrimary, set this one])`.
-- `DELETE /api/user/resumes/[id]`: ownership check; block deletion (`ValidationError`) if `resumeId` is referenced by any existing `Application` — surface "Used in N application(s), cannot delete" instead of a hard FK error.
+- `DELETE /api/user/resumes/[id]` (Soft‑delete): ownership check only. Instead of removing the row, update deletedAt to new Date(). Do not delete the file from storage – recruiters may still need it for up to 60 days.
+The resume disappears from the user's list `(GET endpoint filters deletedAt: null)` and from the apply‑time picker, but applications already referencing its fileUrl via resumeSnapshotUrl continue to work.
+- Scheduled cleanup (implementation note):
+- A daily cron/background job (e.g., a Vercel cron or a minimal API endpoint + external scheduler) must perform:
+- Query all Resume rows where deletedAt is not null and deletedAt < now - 60 days.
+- For each, check if any Application has resumeSnapshotUrl equal to the fileUrl. If none, delete the file from storage.
+- Hard‑delete the Resume row.
+- Build this as part of Step 3.2 – it can be a simple script or a protected API route you trigger externally.
+- `GET /api/user/resumes`: add where: { deletedAt: null } to exclude soft‑deleted resumes. Resume picker (Step 3.3) must also filter only deletedAt: null.
+
 - Resume download/view anywhere in the app (this page, recruiter's existing applicant-detail view) must route through `app/api/files/download/route.ts`. Extend that route's auth check to also allow `userId === resume.userId` (self-download) alongside the existing recruiter-applicant relationship check — do not fork a second download route.
 - `resume-builder-form.tsx` + `save-resume-builder.ts`: Server Action, `requireRole(['user'])`, Zod-validate builder JSON, throw `ValidationError` on malformed shape, persist into `Resume.builderData` as JSON (create a builder-type `Resume` row with `fileUrl: null` and `builderData: { ... }` — file-based and builder-based resumes coexist).
 - `resume-builder-form.tsx` schema: `{ summary: string, educations: [{ school, degree, field, graduationYear }], experiences: [{ company, title, startYear, endYear, description }], skills: string[] }`. Use RHF + `useFieldArray` for dynamic sections. **No file upload here** — this is JSON-only.
 - `resume-preview.tsx`: if `builderData` exists, render as plain HTML/Tailwind (minimal styling, no PDF). If `fileUrl` exists, show a "View File" link via `/api/files/download`. Do not generate/export PDF from the builder.
 
-Verification: uploading a 6th resume returns a 422 with the limit message; uploading a `.exe` is rejected client- and server-side; deleting a resume attached to an application is blocked with a clear error; resume opens via `/api/files/download?...` returns 200 only for the owner or a recruiter with a valid relationship, 403 otherwise; builder-created resume stores and retrieves JSON without corruption.
+Verification:
+- Uploading a 6th resume returns a **422** with the limit message.
+- Uploading a `.exe` is rejected client- and server-side.
+- **Deleting a resume that is attached to an application succeeds** — no error, no blockage. Recruiters will still see the snapshot from the application.
+- Resume opens via `/api/files/download?...` returns **200** only for the owner or a recruiter with a valid relationship, **403** otherwise.
+- Builder-created resume stores and retrieves **JSON** without corruption.
 
 ---
 
-#### Step 3.2b (NEW, Optional): AI-Powered Resume Assistance
+#### Step 3.2a (NEW, Optional): AI-Powered Resume Assistance
 
 **Scope:** Lightweight AI suggestions/improvements, not generative content replacement. Use Claude API (`claude-sonnet-4-6`) via a new route `POST /api/user/resumes/[id]/ai-enhance/route.ts` to:
-
 1. Analyze the resume (file or JSON).
 2. Suggest improvements: bullet-point rewrites for experiences, skill relevance, missing sections, ATS optimization tips.
 3. **Never modify the resume directly** — return suggestions only; user decides what to apply.
-4. I may change AI providers later.
-   Files to Create/Edit:
 
+Files to Create/Edit:
 - `app/features/user/schema/resume-ai.schema.ts`
 - `app/api/user/resumes/[id]/ai-enhance/route.ts`
 - `app/features/user/actions/apply-ai-suggestions.ts`
 - `app/features/user/components/ai-suggestions-panel.tsx`
 - `app/features/user/hooks/use-ai-resume-enhance.ts`
-- `lib/ai-client.ts` (thin wrapper around AI API)
+- `lib/ai-client.ts` (thin wrapper around Anthropic API)
 
 Actionable Tasks:
-
 - `resume-ai.schema.ts`:
-
 ```ts
 export const ResumeSuggestionSchema = z.object({
-  type: z.enum([
-    "bullet_improvement",
-    "skill_addition",
-    "section_expansion",
-    "ats_optimization",
-    "grammar",
-  ]),
+  type: z.enum(['bullet_improvement', 'skill_addition', 'section_expansion', 'ats_optimization', 'grammar']),
   section: z.string(), // 'experience', 'education', 'skills', etc.
   original: z.string().optional(),
   suggestion: z.string(),
   reasoning: z.string().max(500),
-  priority: z.enum(["high", "medium", "low"]),
+  priority: z.enum(['high', 'medium', 'low']),
 });
 export const EnhancementsResponseSchema = z.object({
   suggestions: z.array(ResumeSuggestionSchema),
@@ -762,23 +733,22 @@ export const EnhancementsResponseSchema = z.object({
 ```
 
 - `lib/ai-client.ts`: Thin wrapper:
-
 ```ts
 export async function callClaudeAPI(userPrompt: string, systemPrompt?: string, maxTokens = 1024) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
-
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "x-api-key": apiKey },
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY not set');
+  
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey },
     body: JSON.stringify({
-      model: "claude-sonnet-4-6",
+      model: 'claude-sonnet-4-6',
       max_tokens: maxTokens,
-      messages: [{ role: "user", content: userPrompt }],
+      messages: [{ role: 'user', content: userPrompt }],
       system: systemPrompt,
     }),
   });
-
+  
   if (!response.ok) throw new Error(`Claude API error: ${response.status}`);
   const data = await response.json();
   return data.content[0].text;
@@ -790,7 +760,6 @@ export async function callClaudeAPI(userPrompt: string, systemPrompt?: string, m
   - Fetch resume (file or builder JSON).
   - For file uploads: extract text using `pdf-parse` (PDF) or `mammoth` (DOCX) — **text-only, no OCR**.
   - Build a system prompt:
-
 ```
 You are a professional resume coach. Analyze the resume and provide specific, actionable suggestions for:
 1. Improving experience descriptions with strong action verbs and quantifiable results.
@@ -800,14 +769,12 @@ You are a professional resume coach. Analyze the resume and provide specific, ac
 
 Respond ONLY with valid JSON matching this schema: { suggestions: [...], overallScore: <0-100>, keyStrengths: [...], improvementAreas: [...] }
 ```
-
-- Call `callClaudeAPI(resumeText, systemPrompt)` with the full resume text.
-- Parse response with `EnhancementsResponseSchema`. Throw `ValidationError` if malformed.
-- Rate-limit: 3 enhance requests per user per day. Check count in `ResumeEnhancementLog` table (or Redis if set up). Throw `TooManyRequestsError` ("Daily AI enhancement limit reached").
-- Return `{ success, data: EnhancementsResponse }`.
+  - Call `callClaudeAPI(resumeText, systemPrompt)` with the full resume text.
+  - Parse response with `EnhancementsResponseSchema`. Throw `ValidationError` if malformed.
+  - Rate-limit: 5 enhance requests per user per day. Check count in `ResumeEnhancementLog` table (or Redis if set up). Throw `TooManyRequestsError` ("Daily AI enhancement limit reached").
+  - Return `{ success, data: EnhancementsResponse }`.
 
 - `ResumeEnhancementLog` schema migration:
-
 ```prisma
 model ResumeEnhancementLog {
   id        String   @id @default(uuid())
@@ -815,7 +782,7 @@ model ResumeEnhancementLog {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   resumeId  String
   createdAt DateTime @default(now())
-
+  
   @@index([userId, createdAt])
 }
 ```
@@ -825,14 +792,12 @@ model ResumeEnhancementLog {
 - `apply-ai-suggestions.ts`: Server Action, `requireRole(['user'])`. Accept `resumeId` + array of `suggestionIds`. For each: update corresponding field in `Resume.builderData` (for builder resumes) OR reject with `ValidationError` (for file uploads — users must re-download, edit externally, re-upload). Return updated resume. Invalidate resume query.
 
 - `use-ai-resume-enhance.ts`:
-
 ```ts
 export function useAiResumeEnhance(resumeId: string) {
   return useMutation({
-    mutationFn: async () =>
-      apiClient(`/api/user/resumes/${resumeId}/ai-enhance`, { method: "POST" }),
+    mutationFn: async () => apiClient(`/api/user/resumes/${resumeId}/ai-enhance`, { method: 'POST' }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["user", "resumes"] });
+      queryClient.invalidateQueries({ queryKey: ['user', 'resumes'] });
     },
   });
 }
@@ -848,44 +813,53 @@ export function useAiResumeEnhance(resumeId: string) {
 
 - Cost control: Claude Sonnet costs ~$0.003 per 1K input tokens; typical resume = 1K–3K tokens. Max 5/user/day = ~$0.02 daily worst-case per active user. Monitor usage via Claude API dashboard.
 
-Verification: requesting AI enhance twice within 1 hour succeeds once, then returns 429 on second. Suggestions include ≥1 `bullet_improvement` type and priority levels. "Copy to clipboard" works (test with Playwright `navigator.clipboard`). "Apply" on builder resume updates JSON; "Apply" on file resume shows helpful error ("File-uploaded resumes cannot auto-apply suggestions — download and re-upload edited version"). Disabling `ANTHROPIC_API_KEY` causes graceful error in the UI ("AI features temporarily unavailable").
+Verification: requesting AI enhance twice within 1 hour succeeds once, then returns 429 on second. Suggestions include ≥1 `bullet_improvement` type and priority levels. "Copy to clipboard" works (test with Playwright `navigator.clipboard`). "Apply" on builder resume updates JSON; "Apply" on file resume shows helpful error ("File-uploaded resumes cannot auto-apply suggestions — download and re-upload edited version"). Disabling `ANTHROPIC_API_KEY` causes graceful error in the UI ("AI features temporarily unavailable"). Check all edge cases.
+
 
 #### Step 3.3: Job Application Flow
 
 Architecture Constraint: Complex mutation → REST `POST /api/jobs/[id]/apply`.
 
 Files to Create/Edit:
-
 - `app/api/jobs/[id]/apply/route.ts`
 - `app/features/user/components/apply-button.tsx`
 - `app/features/user/components/resume-picker-dialog.tsx`
 - `app/features/user/hooks/use-apply.ts`
 
 Actionable Tasks:
-
 - Route: `requireRole(['user'])`. `prisma.job.findUnique` → throw `NotFoundError` if missing. **Also reject if `job.status !== 'active'` or `job.isActive === false`** with a `ValidationError` ("This position is no longer accepting applications") — do not rely on the client to hide the apply button only.
-- Existing-application check → `ValidationError` ("You've already applied to this job").
-- `$transaction`: create `Application` with the chosen `resumeId` (FK from Step 3.0c) and `status: 'applied'`, then immediately insert the first `ApplicationStatusChange` row (`fromStatus: null, toStatus: 'applied'`) so the timeline component built in Phase 2.6 works unmodified for the user side too.
+- Existing-application check → `ValidationError` (*You've already applied to this job*).
+- **Snapshot logic inside the `$transaction`:**
+    1. Fetch the chosen `Resume` record.
+    2. Create the `Application` with:
+    - `resumeId`: `resume.id` (optional FK, for user’s own reference)
+    - `resumeSnapshotUrl`: `resume.fileUrl` (if file‑based) or `null`
+    - `resumeSnapshotBuilderData`: `resume.builderData` (if builder‑based) or `null`
+    - `status: 'applied'`
+    3. Insert the first `ApplicationStatusChange` row (`fromStatus: null, toStatus: 'applied'`) — so the timeline component built in Phase 2.6 works unmodified for the user side too.
 - After the transaction commits, call the existing `createNotification` (from `lib/notifications.ts`) targeting the recruiter(s) of `job.companyId` — reuse `triggerForCompany` if it already fans out to all company recruiters. **Do not** send email here. **Do not** touch `viewCount` here (that's Step 4.2's route).
 - Rate-limit applies per user (e.g. 30/hour) reusing the same pattern as `app/features/recruiter/libs/rate-limit-message.ts`; throw `TooManyRequestsError` past the limit.
 - `apply-button.tsx`: disabled state if already applied (server-confirmed, not just client cache) or job inactive. Opens `resume-picker-dialog.tsx`, which calls `GET /api/user/resumes` (Step 3.2) — do not refetch resumes via a new endpoint.
 - On success: invalidate the job's query key and `['user','applications']` so Step 3.4's list updates without a refresh.
 
-Verification: applying twice to the same job returns the friendly duplicate error on the second attempt; applying to a `status: 'archived'` or `isActive: false` job is rejected even via direct API call; recruiter's existing notification bell (Phase 2.10/1.6 Pusher wiring) shows the new-application event live without any new realtime code.
+Verification:
+- Applying twice to the same job returns the friendly duplicate error on the second attempt.
+- Applying to a `status: 'archived'` or `isActive: false` job is rejected even via direct **API** call.
+- Recruiter's existing notification bell (Phase 2.10/1.6 Pusher wiring) shows the new-application event live without any new realtime code.
+- **Snapshot integrity check:** after applying, delete the resume from the user's account; the recruiter still sees the submitted resume via the snapshot. The user's application detail page also shows the snapshot.
+
 
 ---
 
 #### Step 3.4: User Activity Panel (My Applications)
 
 Files to Create/Edit:
-
 - `app/features/user/queries/list-my-applications.ts`
 - `app/features/user/hooks/use-my-applications.ts`
 - `app/features/user/components/applications-table.tsx`
 - `app/(roles)/user/applications/page.tsx`
 
 Actionable Tasks:
-
 - `list-my-applications.ts`: `requireRole(['user'])`, filter `userId`, support `?status=` and pagination via the same URL-searchParams pattern used in admin/recruiter tables (reuse `lib/pagination.ts`).
 - `applications-table.tsx`: built on the existing `components/ui/data-table.tsx` (reuse, do not fork). Columns: Job title, Company, Status (`status-badge.tsx`), Applied date, Actions (View Detail → Step 3.5).
 - Expandable row or tooltip shows `rejectionReason` when present — reuse the exact pattern from the recruiter applicant view, not a new implementation.
@@ -898,25 +872,31 @@ Verification: filtering `?status=rejected` server-side returns only rejected row
 
 #### Step 3.5 (NEW): Application Detail, Withdraw & Message Recruiter
 
+*(Minor addition: resume display now uses snapshot; no structural changes)*
+
 Goal: Mirror the recruiter's Applicant Detail View (Phase 2.6) from the user's side, and close the loop with messaging.
 
 Architecture Constraint: Withdraw is a simple state mutation (no file, no webhook) → Server Action, consistent with Step 3.1/3.2's builder save.
 
 Files to Create/Edit:
-
 - `app/(roles)/user/applications/[id]/page.tsx`
 - `app/features/user/components/application-detail.tsx`
 - `app/features/user/actions/withdraw-application.ts`
 - `app/features/user/hooks/use-application-detail.ts`
 
 Actionable Tasks:
-
 - Page: fetch application with ownership check (`application.userId === session.user.id`, else `ForbiddenError`).
-- Content: job + company summary, resume used (link via `/api/files/download`), full status timeline (reuse `components/shared/status-timeline.tsx` against the `ApplicationStatusChange` rows — same component the recruiter side already uses, fed with this application's history), "Message Recruiter" button.
+- Content: job + company summary, **resume used** – render the snapshot: if `resumeSnapshotUrl` exists, provide a view link via `/api/files/download` using that file ID; if `resumeSnapshotBuilderData` exists, render the builder preview; fallback to the live resume reference only for old applications that predate the snapshot system. Full status timeline (reuse `components/shared/status-timeline.tsx` against the `ApplicationStatusChange` rows — same component the recruiter side already uses, fed with this application's history), *Message Recruiter* button.
 - `withdraw-application.ts`: `requireRole(['user'])`, ownership check, only allowed while `status` is `applied` or `reviewing` (block with `ValidationError` once `interview_scheduled`/`offered`/`hired`/`rejected`); set `status: 'withdrawn'` — **add `withdrawn` to the `ApplicationStatus` enum** if missing, insert an `ApplicationStatusChange` row, notify the recruiter via `createNotification`. Confirm via `components/shared/confirm-action-button.tsx` (reuse, don't rebuild a confirm dialog).
-- "Message Recruiter": compute the thread id with the existing `computeThreadId` util (same one used in Step 2.5) against the company's primary recruiter. Generalize `verify-recruiter-applicant-relationship.ts` to accept either calling direction instead of writing a second relationship check. Navigate to `/user/messages?thread={id}`; confirm `user-thread-view.tsx` already supports rendering an empty/new thread (no messages yet) — extend it only if it currently assumes a non-empty thread. I think message already written for it, check it. if any thing missing then add it.
+- "Message Recruiter": compute the thread id with the existing `computeThreadId` util (same one used in Step 2.5) against the company's primary recruiter. Generalize `verify-recruiter-applicant-relationship.ts` to accept either calling direction instead of writing a second relationship check. Navigate to `/user/messages?thread={id}`; confirm `user-thread-view.tsx` already supports rendering an empty/new thread (no messages yet) — extend it only if it currently assumes a non-empty thread.
 
-Verification: withdraw is blocked with a 422 once status has moved past `reviewing`; withdrawing notifies the recruiter (visible in their existing notification dropdown, no new realtime code needed); "Message Recruiter" on an application with zero prior messages opens an empty thread ready to send the first message.
+Verification:
+- Withdraw is blocked with a **422** once status has moved past `reviewing`.
+- Withdrawing notifies the recruiter (visible in their existing notification dropdown, no new realtime code needed).
+- *Message Recruiter* on an application with zero prior messages opens an empty thread ready to send the first message.
+- **Resume snapshot:** after user deletes their resume, the application detail page still shows the submitted resume (via snapshot link or builder data). No broken links.
+- Optional one‑time backfill for existing applications:
+If there are already applications in the database that lack snapshots, write a script to copy `resume.fileUrl` → `Application.resumeSnapshotUrl` and `resume.builderData` → `Application.resumeSnapshotBuilderData` for all existing rows where snapshot fields are null. This ensures historical applications remain visible after future resume deletions.
 
 ---
 
@@ -925,7 +905,6 @@ Verification: withdraw is blocked with a 422 once status has moved past `reviewi
 Goal: Lightweight bookmarking, consumed by Phase 4's public job listing.
 
 Actionable Tasks:
-
 - Schema: `model SavedJob { id String @id @default(uuid()) userId String job Job @relation(...) jobId String createdAt DateTime @default(now()) @@unique([userId, jobId]) }`. Migrate.
 - `app/api/user/saved-jobs/route.ts` (GET list, POST save), `app/api/user/saved-jobs/[jobId]/route.ts` (DELETE).
 - `app/features/user/hooks/use-saved-jobs.ts`.
@@ -938,30 +917,45 @@ Verification: saving the same job twice is a no-op (unique constraint caught and
 
 ## Phase 4: Public Job Routes & Home Page
 
-#### Step 4.0 (NEW): Public Route Group & Shared Shell
+**Renumbering note:** this supersedes the earlier draft. Step 4.3 is split into 4.3 (auth/redirect/popover — the technical core) and 4.4 (home page sections — the content). SEO moves to 4.6. A new optional 4.5 (Career Resources) is added but explicitly skip-friendly.
+
+**Scope decision on the reference home-page checklist:** Indeed-style job boards typically ship Header/Nav, Hero+Search, Categories, Top Employers, Employer CTA, Career Resources, Footer. Mapped against what's *actually built*:
+
+| Section | Decision | Reasoning |
+|---|---|---|
+| Header & Nav | **Build** | Core; covered in 4.0/4.3 |
+| Hero + Search | **Build** | Reuses `job-search-bar.tsx` from 4.1, zero new backend |
+| Job Categories/Industries | **Build, lightweight** | Curated static list mapped to existing `Company.industry` + `WorkMode` filters already supported by 4.1 — no new schema |
+| Top Employers/Companies | **Build, lightweight** | One new query against the existing `Company` model; links into `/jobs?companyId=`, no dedicated company-profile pages built (that's a separate future phase) |
+| Employer CTA ("Post a Job") | **Adapt, not literal** | Recruiter onboarding is invite-only (Phase 1.3 admin invites, Phase 2.2 recruiter invites). A "Post a Job" button with no signup flow behind it would be a dead end. Replaced with an honest "Request Recruiter Access" CTA. |
+| Career Resources | **Defer — optional Step 4.5** | No CMS/blog exists. Marked bonus; skipping it blocks nothing downstream. |
+| Footer | **Build** | Needs two new static legal pages that don't exist yet (`/privacy`, `/terms`) |
+
+---
+
+#### Step 4.0: Public Route Group & Shared Shell
 
 Objective: Give marketing/public pages a consistent chrome without touching the existing `(roles)` layouts.
 
 Files to Create/Edit:
-
 - `app/(public)/layout.tsx`
-- `components/layout/navbar.tsx`
 - `components/layout/footer.tsx`
+- `app/(public)/privacy/page.tsx`
+- `app/(public)/terms/page.tsx`
 
 Actionable Tasks:
-
 - Move (or create fresh, if not yet built) the root `page.tsx`, `jobs/page.tsx`, `jobs/[id]/page.tsx` under `app/(public)/...` — route group folders don't affect the URL, so `/`, `/jobs`, `/jobs/[id]` are unchanged.
-- `app/(public)/layout.tsx` wraps children with `<Navbar />` and `<Footer />`. This is separate from `RoleLayoutClient`/`Sidebar` used inside `(roles)` — do not merge the two shells.
-- Navbar built here is a placeholder shell; role-aware link logic is finished in Step 4.3 once session-fetching needs are clear.
+- `app/(public)/layout.tsx` wraps children with `<Navbar />` (built fully in Step 4.3) and `<Footer />`. This is separate from `RoleLayoutClient`/`Sidebar` used inside `(roles)` — do not merge the two shells.
+- `footer.tsx`: links to `/jobs`, `/for-employers` (anchor on home page, Step 4.4), `/privacy`, `/terms`, social icon placeholders. Keep static, no CMS.
+- `/privacy`, `/terms`: static placeholder copy — flag clearly in a code comment that this is placeholder legal text to be replaced by real counsel-reviewed copy before any real launch. Do not fabricate legal language as if final.
 
-Verification: `/`, `/jobs`, and any future public route render with Navbar+Footer with zero duplicated layout code; `(roles)` pages are unaffected (still render Sidebar, no Navbar/Footer leakage).
+Verification: `/`, `/jobs`, `/privacy`, `/terms` all render with Navbar+Footer with zero duplicated layout code; `(roles)` pages are unaffected (still render Sidebar, no Navbar/Footer leakage); footer links 404 nowhere.
 
 ---
 
 #### Step 4.1: Public Job Listings
 
 Files to Create/Edit:
-
 - `app/features/public/queries/list-public-jobs.ts`
 - `app/features/public/schema/public-job.schema.ts`
 - `app/features/public/hooks/use-public-jobs.ts`
@@ -969,17 +963,27 @@ Files to Create/Edit:
 - `app/features/public/components/job-card.tsx`
 - `app/features/public/components/job-search-bar.tsx`
 - `app/features/public/components/job-filter-sidebar.tsx`
+- `lib/job-categories.ts`
 
 Actionable Tasks:
-
 - `list-public-jobs.ts`: **must filter `status: 'active'` AND `isActive: true`** (two independent gates — recruiter-owned status from Phase 2.3, admin kill-switch from Phase 1.4). Missing either condition silently leaks archived or admin-deactivated jobs.
-- No auth required; all filters (`q`, `workMode`, `location`, `industry`, pagination) live in `searchParams`, identical convention to the recruiter/admin tables.
+- No auth required; all filters (`q`, `workMode`, `industry`, `companyId`, pagination) live in `searchParams`, identical convention to the recruiter/admin tables. `companyId` powers the "Top Employers" homepage cards (Step 4.4); `industry`/`workMode` power the "Categories" strip (Step 4.4) — build the filter handling once here, both homepage sections just deep-link into it.
+- `lib/job-categories.ts`: a small curated constant, not a DB-derived list (free-text `Company.industry` values are too inconsistent to drive a clean UI):
+```ts
+export const JOB_CATEGORIES = [
+  { label: 'Technology', filter: { industry: 'Technology' } },
+  { label: 'Healthcare', filter: { industry: 'Healthcare' } },
+  { label: 'Finance', filter: { industry: 'Finance' } },
+  { label: 'Marketing', filter: { industry: 'Marketing' } },
+  { label: 'Remote', filter: { workMode: 'REMOTE' } },
+] as const;
+```
 - `job-search-bar.tsx`: debounce input using the same debounce approach as `people-table.tsx`'s admin search (reuse the hook/util if one was extracted, don't rewrite debounce logic from scratch).
 - `job-card.tsx`: include the bookmark toggle from Step 3.6 (`save-job-button.tsx`) only when a session exists; render nothing (not a broken button) for anonymous visitors.
 - Loading state: reuse `components/ui/skeleton.tsx` for the card grid, not a bespoke spinner.
 - Empty state: distinct copy for "no jobs posted yet" vs "no results for these filters."
 
-Verification: an admin-deactivated-but-recruiter-active job never appears in `/jobs`; clearing all filters restores the full active list without a full page reload.
+Verification: an admin-deactivated-but-recruiter-active job never appears in `/jobs`; `?industry=Technology` and `?workMode=REMOTE` both correctly filter; clearing all filters restores the full active list without a full page reload.
 
 ---
 
@@ -988,61 +992,292 @@ Verification: an admin-deactivated-but-recruiter-active job never appears in `/j
 Architecture Constraint: View increment = REST `POST /api/jobs/[id]/view`, fire-and-forget, the one sanctioned fetch-on-mount exception.
 
 Files to Create/Edit:
-
 - `app/(public)/jobs/[id]/page.tsx`
 - `app/api/jobs/[id]/view/route.ts`
 - `app/features/public/components/view-tracker.tsx`
 - `app/features/public/components/company-preview-card.tsx`
 
 Actionable Tasks:
-
 - Page: `prisma.job.findUnique`. If truly absent → Next.js `notFound()` (real 404). If it exists but `status !== 'active'` or `isActive === false` → render a distinct "This position is no longer available" state with a link back to `/jobs`, **not** a 404 — these are different failure modes and must look different to a user who bookmarked an old link.
 - `view-tracker.tsx`: client component, `useEffect` on mount, `POST /api/jobs/[id]/view`. Dedupe with a 30-minute `sessionStorage` flag keyed `view:{jobId}` so refresh/back-nav doesn't inflate `viewCount`.
 - View route: increment `viewCount` only — no notification, no status check needed (viewing an inactive job via direct link shouldn't 500, just don't increment if you choose to guard it).
 - Assemble the page with `apply-button.tsx` + `resume-picker-dialog.tsx` (Step 3.3) and `company-preview-card.tsx` (new — `Company.name/description/website/logoUrl/industry` from Phase 2.1).
+- Edge case: anonymous visitor sees the full job + a "Log in to Apply" CTA instead of `apply-button.tsx` (which assumes a session).
+- Edge case: `companyId` from this page should reuse the **same** `company-preview-card.tsx` the homepage's "Top Employers" section uses (Step 4.4) — do not build two card variants.
 
-Verification: refreshing the same job page within 30 minutes does not double-increment `viewCount`; visiting a never-existing job id returns a real 404; visiting an archived job id returns the "no longer available" state with a 200, not a 404.
+Verification: refreshing the same job page within 30 minutes does not double-increment `viewCount`; visiting a never-existing job id returns a real 404; visiting an archived job id returns the "no longer available" state with a 200, not a 404; anonymous visitors see "Log in to Apply", not a broken apply button.
 
 ---
 
-#### Step 4.3: Home Page & Role-Aware Navbar
+#### Step 4.3: Auth-Aware Navbar, Redirect Logic & Account Popover
+
+**This is the technical core of the role/redirect change.** Sets the rule: after login, `user` → `/jobs` (the marketplace, not a stats dashboard — there isn't one); `admin`/`recruiter` → their respective dashboards, but they remain free to browse `/jobs` anytime since it's outside the role-gated route groups, and get back to their dashboard via the popover below — no special browser-history handling needed, it's a plain nav link.
 
 Files to Create/Edit:
-
-- `app/(public)/page.tsx`
-- `components/layout/navbar.tsx` (finish the Step 4.0 placeholder)
+- `lib/get-role-home.ts`
+- `proxy.ts` (EDIT)
+- `app/(roles)/user/page.tsx` (EDIT — bare `/user` is no longer a landing page)
+- `components/layout/navbar.tsx`
+- `components/layout/account-popover.tsx`
+- The login form/page where `signIn()` currently redirects (EDIT)
 
 Actionable Tasks:
 
-- Home page: hero, featured jobs (reuse `job-card.tsx` from 4.1, do not rebuild), "how it works", footer. `motion/react` scroll-into-view, animations <300ms.
-- Navbar: fetch session server-side. Role-aware destination for the primary CTA:
-  - no session → Login/Register
-  - `role: 'admin'` → `/admin`
-  - `role: 'recruiter'` → `/recruiter`
-  - `role: 'user'` → `/user`
-- Edge case: `session.user.isBanned === true` → don't link to the role dashboard (middleware would just bounce them to `/banned` anyway); instead show an "Account Restricted" indicator linking directly to `/banned`.
-- Include the same shared `notification-dropdown.tsx` in the navbar when a session exists, so a logged-in user browsing the public site still sees their bell — reuse the component as-is, it's already role-aware.
+1. `lib/get-role-home.ts` — single source of truth for "where does this role land":
+```ts
+import type { Role } from '@prisma/client';
 
-Verification: logged-out, recruiter, user, admin, and banned-user sessions each render the correct, distinct navbar state with no client-side flash of the wrong state (resolve role server-side before render).
+export function getRoleHomeRoute(role: Role | undefined | null): string {
+  switch (role) {
+    case 'admin': return '/admin';
+    case 'recruiter': return '/recruiter';
+    case 'user': return '/jobs';
+    default: return '/jobs';
+  }
+}
+```
+Reuse this everywhere a post-login destination is computed. Do not hardcode `/admin`/`/recruiter`/`/jobs` redirect strings in more than this one place — grep for any existing hardcoded post-login redirect and replace it with a call to this function.
+
+2. Login success handler: locate the existing `signIn()` call (Better Auth) in the login form/page. On success, fetch the resolved session and `router.push(getRoleHomeRoute(session.user.role))` instead of whatever static redirect currently exists.
+
+3. `proxy.ts` — keep all existing rules (no session → `/login`; `isBanned` → `/banned`; wrong role prefix → `/`). Add:
+   - If a session exists and `pathname` is `/login` or `/register` → `redirect(getRoleHomeRoute(role))` (a logged-in admin shouldn't see the login form again).
+   - Confirm — no code change, just verify — that `/`, `/jobs`, `/jobs/[id]`, `/privacy`, `/terms` carry no entry in `ROLE_PREFIXES`, so all roles and anonymous visitors pass through untouched. This is what makes "admin browses `/jobs` freely" work without any special-casing.
+
+4. `app/(roles)/user/page.tsx` — since `/user` is still role-gated but is no longer a meaningful landing page, redirect it to the most useful in-account default instead of resurrecting a dashboard:
+```ts
+import { redirect } from 'next/navigation';
+
+export default function UserRootPage() {
+  redirect('/user/applications');
+}
+```
+
+5. `components/layout/account-popover.tsx` — role-aware menu, reusing each role's **existing** sidebar nav-item arrays rather than redefining a parallel list. If those arrays aren't currently exported from `admin-sidebar.tsx` / `recruiter-sidebar.tsx`, export them — don't copy-paste the link list into a third location.
+```tsx
+'use client';
+
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
+import { adminNavItems } from '@/app/features/admin/components/admin-sidebar';
+import { recruiterNavItems } from '@/app/features/recruiter/components/recruiter-sidebar';
+import Link from 'next/link';
+import { LogOut } from 'lucide-react';
+import { signOut } from '@/lib/auth-client';
+
+const userNavItems = [
+  { href: '/user/profile', label: 'Profile' },
+  { href: '/user/resumes', label: 'My Resumes' },
+  { href: '/user/applications', label: 'My Applications' },
+  { href: '/user/saved-jobs', label: 'Saved Jobs' },
+  { href: '/user/messages', label: 'Messages' },
+];
+
+type Role = 'admin' | 'recruiter' | 'user';
+
+export function AccountPopover({ role, isBanned, name }: { role: Role; isBanned: boolean; name: string }) {
+  if (isBanned) {
+    return (
+      <Link href="/banned" className="flex items-center gap-1 text-red-600 text-sm">
+        <span className="w-2 h-2 rounded-full bg-red-500" /> Restricted
+      </Link>
+    );
+  }
+
+  const items = role === 'admin' ? adminNavItems : role === 'recruiter' ? recruiterNavItems : userNavItems;
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <button className="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-sm font-medium">
+          {name?.[0]?.toUpperCase() ?? '?'}
+        </button>
+      </PopoverTrigger>
+      <PopoverContent align="end" className="w-56 p-2">
+        {role !== 'user' && (
+          <Link href={`/${role}`} className="block px-3 py-2 rounded hover:bg-muted text-sm font-medium">
+            Dashboard
+          </Link>
+        )}
+        {items.map((item) => (
+          <Link key={item.href} href={item.href} className="block px-3 py-2 rounded hover:bg-muted text-sm">
+            {item.label}
+          </Link>
+        ))}
+        {role !== 'user' && (
+          <Link href="/jobs" className="block px-3 py-2 rounded hover:bg-muted text-sm border-t mt-1 pt-2">
+            Browse Jobs
+          </Link>
+        )}
+        <button
+          onClick={() => signOut()}
+          className="w-full text-left px-3 py-2 rounded hover:bg-muted text-sm text-red-600 flex items-center gap-2 border-t mt-1 pt-2"
+        >
+          <LogOut className="w-4 h-4" /> Logout
+        </button>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```
+Note the deliberate asymmetry: `admin`/`recruiter` get a "Dashboard" entry (they have one) and a "Browse Jobs" escape hatch; `user` gets neither — their popover starts directly at Profile, since `/jobs` already *is* where they are most of the time.
+
+6. `components/layout/navbar.tsx` — finish the Step 4.0 placeholder:
+```tsx
+import { getServerSession } from '@/lib/auth';
+import Link from 'next/link';
+import { AccountPopover } from './account-popover';
+import { NotificationDropdown } from '@/app/features/notifications/components/notification-dropdown';
+
+export async function Navbar() {
+  const session = await getServerSession();
+
+  return (
+    <nav className="border-b px-6 py-3 flex items-center justify-between">
+      <Link href="/" className="font-bold text-lg">HireFlow</Link>
+
+      <div className="hidden md:flex items-center gap-6 text-sm">
+        <Link href="/jobs">Find Jobs</Link>
+        <Link href="/#for-employers">For Employers</Link>
+      </div>
+
+      <div className="flex items-center gap-4">
+        {session ? (
+          <>
+            <NotificationDropdown userId={session.user.id} />
+            <AccountPopover role={session.user.role} isBanned={session.user.isBanned} name={session.user.name} />
+          </>
+        ) : (
+          <>
+            <Link href="/login" className="text-sm">Log in</Link>
+            <Link href="/register" className="text-sm font-medium bg-primary text-white px-4 py-2 rounded-lg">Sign up</Link>
+          </>
+        )}
+      </div>
+    </nav>
+  );
+}
+```
+
+**Edge cases to check explicitly:**
+- Anonymous visitor on `/jobs` → Login/Sign up buttons, no popover, no bell.
+- `user` role logs in → lands on `/jobs`; popover has no Dashboard entry.
+- `recruiter`/`admin` logs in → lands on their dashboard; navigates to `/jobs` via the nav link; popover still shows Dashboard + Browse Jobs to get back.
+- `isBanned: true` (any role) → popover replaced by the restricted indicator everywhere the Navbar renders, including on `/jobs`.
+- Authenticated user manually visits `/login` → bounced to their role home via the new `proxy.ts` rule, never sees the form.
+- Server-resolve the session before render (no client-side flash of the logged-out state then a snap to logged-in).
+
+Verification: each of the six edge cases above produces the exact described behavior; `grep -rn "router.push('/admin')\|router.push(\"/recruiter\")\|router.push('/user')"` outside of `get-role-home.ts` returns nothing (no duplicated redirect logic).
 
 ---
 
-#### Step 4.4 (NEW): SEO — Metadata, Sitemap & Robots
+#### Step 4.4: Home Page Composition
+
+Files to Create/Edit:
+- `app/(public)/page.tsx`
+- `app/features/public/components/hero-search.tsx`
+- `app/features/public/components/category-strip.tsx`
+- `app/features/public/components/featured-companies.tsx`
+- `app/features/public/components/employer-cta.tsx`
+- `app/features/public/queries/list-featured-companies.ts`
+
+Actionable Tasks:
+
+1. **Hero + Search** (`hero-search.tsx`): headline + subhead, embeds `job-search-bar.tsx` from Step 4.1 (do not rebuild a second search input) — submitting navigates to `/jobs?q=...`. `motion/react` fade/slide-in on mount, <300ms.
+
+2. **Job Categories strip** (`category-strip.tsx`): renders `JOB_CATEGORIES` from `lib/job-categories.ts` (Step 4.1) as clickable tiles, each linking to `/jobs?industry=X` or `/jobs?workMode=REMOTE`. No live job counts in v1 (free-text `industry` + a relation-count groupBy adds real complexity for low payoff at this stage) — if counts are wanted later, mimic the `$queryRaw` aggregation pattern already established in `app/features/recruiter/queries/analytics-queries.ts` (Phase 2.8) rather than inventing a new aggregation approach.
+
+3. **Featured Companies** (`featured-companies.tsx` + `list-featured-companies.ts`):
+```ts
+import { prisma } from '@/lib/prisma';
+
+export async function listFeaturedCompanies(limit = 6) {
+  return prisma.company.findMany({
+    where: { jobs: { some: { status: 'active', isActive: true } } },
+    select: { id: true, name: true, logoUrl: true, industry: true },
+    orderBy: { jobs: { _count: 'desc' } },
+    take: limit,
+  });
+}
+```
+Cards link to `/jobs?companyId={id}` — no dedicated `/companies/[id]` profile page in this phase (explicitly deferred; note it as a future Phase 5 candidate if wanted, don't build it now). Reuse `company-preview-card.tsx` from Step 4.2 for the card UI rather than a third company-card variant.
+
+4. **For Employers CTA** (`employer-cta.tsx`), anchored at `id="for-employers"` so the Navbar link in Step 4.3 scrolls to it:
+```tsx
+export function EmployerCTA() {
+  return (
+    <section id="for-employers" className="bg-slate-900 text-white p-12 rounded-xl text-center my-16">
+      <h2 className="text-2xl font-bold">Hiring? Let's talk.</h2>
+      <p className="mt-2 text-slate-300 max-w-md mx-auto">
+        Recruiter accounts on HireFlow are currently provisioned by invitation to keep hiring data tenant-isolated per company.
+      </p>
+      <a
+        href="mailto:hello@hireflow.example?subject=Recruiter Access Request"
+        className="inline-block mt-4 bg-white text-slate-900 font-medium px-6 py-3 rounded-lg"
+      >
+        Request Recruiter Access
+      </a>
+    </section>
+  );
+}
+```
+**Do not build a "Post a Job" form that posts into nothing.** This is intentionally a contact funnel, not a self-serve signup, because the real onboarding path is admin-invites-recruiter (Phase 1.3) / recruiter-invites-team (Phase 2.2). Swap the `mailto:` for a real `/contact` route later if one gets built; don't fake a working form now.
+
+5. **Featured Jobs**: reuse `job-card.tsx` from Step 4.1 directly (do not rebuild), feed it the top N active jobs ordered by `postedAt desc`.
+
+6. **How It Works**: 3-step strip (Search → Apply → Track), static copy, no new data needed.
+
+7. Assemble `app/(public)/page.tsx` in this order: Hero+Search → Category Strip → Featured Jobs → Featured Companies → How It Works → Employer CTA. Footer comes from the `(public)` layout (Step 4.0), not duplicated here.
+
+Verification: every homepage section's link target resolves to a real, working page or filtered `/jobs` view — none of them point at a page that doesn't exist yet; anchor-link `#for-employers` actually scrolls there from the Navbar; featured companies only ever show companies with at least one currently active+isActive job (a company with zero live jobs shouldn't appear and then 404 when clicked).
+
+---
+
+#### Step 4.5 (Optional, skip-friendly): Career Resources
+
+Goal: A single static resources page — explicitly **not required** for Phase 4 to be considered done; skipping it blocks nothing.
+
+Files to Create/Edit:
+- `app/(public)/resources/page.tsx`
+
+Actionable Tasks:
+- Static page, hardcoded content sections: resume tips, interview prep checklist, salary negotiation basics. No CMS, no database model, no dynamic routing.
+- Link it from the Footer (Step 4.0) only if built; otherwise leave the Footer's resources link out entirely rather than linking to a 404.
+
+Verification: if built, `/resources` renders with no data fetching; if skipped, no dangling Footer link references it.
+
+---
+
+#### Step 4.6: SEO — Metadata, Sitemap, Robots & Structured Data
 
 Goal: Make public job listings indexable; keep authenticated areas out of search engines.
 
 Files to Create/Edit:
-
-- `app/(public)/jobs/[id]/page.tsx` (add `generateMetadata`)
+- `app/(public)/jobs/[id]/page.tsx` (add `generateMetadata` + JSON-LD)
 - `app/sitemap.ts`
 - `app/robots.ts`
 
 Actionable Tasks:
-
 - `generateMetadata` per job: `title: "${job.title} at ${company.name}"`, `description` truncated from `job.description`, Open Graph fallback image if `company.logoUrl` absent.
-- `app/sitemap.ts`: static entries (`/`, `/jobs`) + dynamic entries for every job where `status: 'active' AND isActive: true` (same dual-gate filter as Step 4.1 — do not re-derive a different filter here).
+- Add `JobPosting` JSON-LD structured data (schema.org) inside the job detail page — this is what makes a listing eligible for Google's job-search rich results:
+```tsx
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org/',
+      '@type': 'JobPosting',
+      title: job.title,
+      description: job.description,
+      datePosted: job.postedAt,
+      hiringOrganization: { '@type': 'Organization', name: job.company.name, logo: job.company.logoUrl },
+      jobLocationType: job.workMode === 'REMOTE' ? 'TELECOMMUTE' : undefined,
+      employmentType: job.employmentType ?? undefined,
+    }),
+  }}
+/>
+```
+Only include fields that genuinely exist on the `Job`/`Company` models — do not fabricate fields like `baseSalary` if no such data is collected.
+- `app/sitemap.ts`: static entries (`/`, `/jobs`, `/privacy`, `/terms`, and `/resources` if Step 4.5 was built) + dynamic entries for every job where `status: 'active' AND isActive: true` (same dual-gate filter as Step 4.1 — do not re-derive a different filter here).
 - `app/robots.ts`: disallow `/admin`, `/recruiter`, `/user`, `/api`; allow everything else.
 
-## Verification: `/sitemap.xml` lists only currently-active jobs (archived/deactivated jobs disappear from it automatically as their status flips); `/robots.txt` disallows all role-prefixed paths.
-
----
+Verification: `/sitemap.xml` lists only currently-active jobs (archived/deactivated jobs disappear from it automatically as their status flips) plus the static pages that actually exist; `/robots.txt` disallows all role-prefixed paths; pasting a job detail URL into Google's Rich Results Test shows a valid `JobPosting` with no fabricated fields.

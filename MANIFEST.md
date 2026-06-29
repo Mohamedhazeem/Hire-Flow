@@ -59,16 +59,24 @@
 
 ### Phase 3: User
 
+- [ ] Step 3.0a - Schema Migration (Resume Snapshot & Soft-Delete)
+- [ ] Step 3.0b - Schema Migration (Resume Snapshot & Soft-Delete)
 - [ ] Step 3.1 - User Profile
-- [ ] Step 3.2 - Resumes & In-App Builder
-- [ ] Step 3.3 - Job Application Flow (Includes Email Notifications)
-- [ ] Step 3.4 - User Activity Panel (Uses Shared Data Table)
+- [ ] Step 3.2 - Resumes & In-App Builder (File & Builder, 60-Day Soft-Delete)
+- [ ] Step 3.2a - AI-Powered Resume Assistance (Optional)
+- [ ] Step 3.3 - Job Application Flow (Snapshot Creation, Recruiter Notification)
+- [ ] Step 3.4 - User Activity Panel (My Applications)
+- [ ] Step 3.5 - Application Detail, Withdraw & Message Recruiter
+- [ ] Step 3.6 - Saved / Bookmarked Jobs (Optional)
 
 ### Phase 4: Public Job Routes & Home Page
 
+- [ ] Step 4.0 - Public Route Group & Shared Shell
 - [ ] Step 4.1 - Public Job Listings
 - [ ] Step 4.2 - Public Job Details & View Tracking
-- [ ] Step 4.3 - Home Page & Global Navbar
+- [ ] Step 4.3 - Auth-Aware Navbar, Redirect Logic & Account Popover
+- [ ] Step 4.4 - Home Page Composition
+- [ ] Step 4.5 - Career Resources (Optional)
 
 ---
 

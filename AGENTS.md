@@ -168,6 +168,8 @@ Agent must `view`/`grep` these existing files first. Do not redefine anything fo
 - `app/features/recruiter/libs/csv-builder.ts` — promote to `lib/csv-builder.ts` if reused outside recruiter scope (see Step 3.4).
 - `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`, `compute-thread-id` util — reuse/generalize for user-initiated messaging in Step 3.5.
 
+---
+
 ## Forbidden
 
 - `pages/` · `new PrismaClient()` inline · `useEffect` for data
