@@ -10,8 +10,9 @@ import {
   TimerOffIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SaveJobButton } from "@/app/features/user/components/save-job-button";
 
-type JobCardProps = {
+export type JobCardProps = {
   id: string;
   title: string;
   companyName: string;
@@ -77,12 +78,15 @@ export function JobCard({
           <h3 className="font-semibold text-text-heading truncate">{title}</h3>
           <p className="text-sm text-text-muted mt-0.5">{companyName}</p>
         </div>
-        {isExpired ? (
-          <span className="inline-flex items-center gap-1 text-xs font-medium text-text-muted bg-bg-muted px-2 py-1 rounded-full shrink-0">
-            <TimerOffIcon className="size-3" />
-            Expired
-          </span>
-        ) : null}
+        <div className="flex items-center gap-1 shrink-0">
+          {isExpired ? (
+            <span className="inline-flex items-center gap-1 text-xs font-medium text-text-muted bg-bg-muted px-2 py-1 rounded-full shrink-0">
+              <TimerOffIcon className="size-3" />
+              Expired
+            </span>
+          ) : null}
+          <SaveJobButton jobId={id} />
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-1.5 mt-3">
