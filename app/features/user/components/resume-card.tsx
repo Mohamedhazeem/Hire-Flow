@@ -1,9 +1,13 @@
 "use client";
 
-import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon } from "lucide-react";
+import { useState } from "react";
+import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon, SparklesIcon, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
+import { AiSuggestionsPanel } from "@/app/features/user/components/ai-suggestions-panel";
+import { useAiResumeEnhance, useApplyAiSuggestions } from "@/app/features/user/hooks/use-ai-resume-enhance";
 import type { ResumeListItem } from "@/app/features/user/hooks/use-resumes";
+import type { EnhancementsResponse, ResumeSuggestion } from "@/app/features/user/schema/resume-ai.schema";
 
 type ResumeCardProps = {
   resume: ResumeListItem;
@@ -30,89 +34,146 @@ function formatDate(dateStr: string): string {
 }
 
 export function ResumeCard({ resume, onSetPrimary, onDelete, onDownload, onEdit }: ResumeCardProps) {
+  const [aiResult, setAiResult] = useState<EnhancementsResponse | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
   const isBuilder = !resume.fileUrl;
   const isPrimary = resume.isPrimary;
+  const enhanceMutation = useAiResumeEnhance(resume.id);
+  const applyMutation = useApplyAiSuggestions(resume.id);
+
+  const handleAiEnhance = () => {
+    setAiError(null);
+    enhanceMutation.mutate(undefined, {
+      onSuccess: (res) => {
+        if (res.data) {
+          setAiResult(res.data);
+        } else if (res.message) {
+          setAiError(res.message);
+        }
+      },
+      onError: (error) => {
+        const msg = error instanceof Error ? error.message : "AI service error";
+        setAiError(msg);
+      },
+    });
+  };
+
+  const handleApply = (suggestion: ResumeSuggestion) => {
+    applyMutation.mutate(
+      { suggestions: [suggestion] },
+    );
+  };
 
   return (
-    <div className="rounded-xl border border-border-subtle bg-bg-surface p-4 space-y-3 hover:border-border transition-colors">
-      <div className="flex items-start justify-between gap-2">
-        <div className="flex items-center gap-2 min-w-0">
-          <div className="size-9 rounded-lg bg-brand/10 flex items-center justify-center shrink-0">
-            <FileTextIcon className="size-4 text-brand" />
+    <>
+      <div className="rounded-xl border border-border-subtle bg-bg-surface p-4 space-y-3 hover:border-border transition-colors">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="size-9 rounded-lg bg-brand/10 flex items-center justify-center shrink-0">
+              <FileTextIcon className="size-4 text-brand" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-text-heading truncate">
+                {resume.label}
+              </p>
+              <p className="text-xs text-text-muted">
+                {formatDate(resume.createdAt)} &middot; {isBuilder ? "Builder" : formatSize(resume.fileSize)}
+              </p>
+            </div>
           </div>
-          <div className="min-w-0">
-            <p className="text-sm font-medium text-text-heading truncate">
-              {resume.label}
-            </p>
-            <p className="text-xs text-text-muted">
-              {formatDate(resume.createdAt)} &middot; {isBuilder ? "Builder" : formatSize(resume.fileSize)}
-            </p>
-          </div>
+          {isPrimary && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-amber/10 text-amber border border-amber/20 px-2 py-0.5 text-[10px] font-medium shrink-0">
+              <StarIcon className="size-2.5" />
+              Primary
+            </span>
+          )}
         </div>
-        {isPrimary && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-amber/10 text-amber border border-amber/20 px-2 py-0.5 text-[10px] font-medium shrink-0">
-            <StarIcon className="size-2.5" />
-            Primary
+
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="inline-flex items-center rounded-full bg-bg-elevated text-text-muted border border-border-subtle px-2 py-0.5 text-[10px] font-medium">
+            {isBuilder ? "Builder Resume" : resume.fileType?.split("/").pop()?.toUpperCase() ?? "File"}
           </span>
-        )}
-      </div>
+        </div>
 
-      <div className="flex items-center gap-1.5 flex-wrap">
-        <span className="inline-flex items-center rounded-full bg-bg-elevated text-text-muted border border-border-subtle px-2 py-0.5 text-[10px] font-medium">
-          {isBuilder ? "Builder Resume" : resume.fileType?.split("/").pop()?.toUpperCase() ?? "File"}
-        </span>
-      </div>
+        <div className="flex items-center gap-1 pt-1 border-t border-border-subtle flex-wrap">
+          {resume.fileUrl && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1 text-xs"
+              onClick={() => onDownload(resume.fileUrl!)}
+            >
+              <DownloadIcon className="size-3.5" />
+              Download
+            </Button>
+          )}
 
-      <div className="flex items-center gap-1 pt-1 border-t border-border-subtle flex-wrap">
-        {resume.fileUrl && (
+          {isBuilder && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1 text-xs"
+              onClick={() => onEdit(resume.id)}
+            >
+              <PencilIcon className="size-3.5" />
+              Edit
+            </Button>
+          )}
+
           <Button
             variant="ghost"
             size="sm"
             className="gap-1 text-xs"
-            onClick={() => onDownload(resume.fileUrl!)}
+            onClick={handleAiEnhance}
+            disabled={enhanceMutation.isPending}
           >
-            <DownloadIcon className="size-3.5" />
-            Download
+            <SparklesIcon className="size-3.5" />
+            {enhanceMutation.isPending ? "Analyzing..." : "AI Suggestions"}
           </Button>
-        )}
 
-        {isBuilder && (
-          <Button
+          {!isPrimary && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1 text-xs"
+              onClick={() => onSetPrimary(resume.id)}
+            >
+              <StarIcon className="size-3.5" />
+              Set Primary
+            </Button>
+          )}
+
+          <ConfirmActionButton
+            action={() => onDelete(resume.id)}
+            title="Delete Resume"
+            description={`Are you sure you want to delete "${resume.label}"? Applications that used this resume will still show the submitted version.`}
+            confirmLabel="Delete"
             variant="ghost"
             size="sm"
-            className="gap-1 text-xs"
-            onClick={() => onEdit(resume.id)}
+            className="gap-1 text-xs text-error hover:text-error"
           >
-            <PencilIcon className="size-3.5" />
-            Edit
-          </Button>
-        )}
-
-        {!isPrimary && (
-          <Button
-            variant="ghost"
-            size="sm"
-            className="gap-1 text-xs"
-            onClick={() => onSetPrimary(resume.id)}
-          >
-            <StarIcon className="size-3.5" />
-            Set Primary
-          </Button>
-        )}
-
-        <ConfirmActionButton
-          action={() => onDelete(resume.id)}
-          title="Delete Resume"
-          description={`Are you sure you want to delete "${resume.label}"? Applications that used this resume will still show the submitted version.`}
-          confirmLabel="Delete"
-          variant="ghost"
-          size="sm"
-          className="gap-1 text-xs text-error hover:text-error"
-        >
-          <Trash2Icon className="size-3.5" />
-          Delete
-        </ConfirmActionButton>
+            <Trash2Icon className="size-3.5" />
+            Delete
+          </ConfirmActionButton>
+        </div>
       </div>
-    </div>
+
+      {aiError && (
+        <div className="flex items-start gap-2 rounded-lg bg-error/5 border border-error/20 p-2.5">
+          <AlertCircle className="size-4 text-error shrink-0 mt-0.5" />
+          <p className="text-xs text-text-muted">{aiError}</p>
+        </div>
+      )}
+
+      {aiResult && (
+        <AiSuggestionsPanel
+          result={aiResult}
+          isBuilder={isBuilder}
+          isApplying={applyMutation.isPending}
+          onApply={handleApply}
+          onClose={() => { setAiResult(null); setAiError(null); enhanceMutation.reset(); }}
+        />
+      )}
+    </>
   );
 }

@@ -24,6 +24,14 @@ export const envSchema = z.object({
   PUSHER_CLUSTER: z.string().optional(),
   NEXT_PUBLIC_PUSHER_KEY: z.string().optional(),
   NEXT_PUBLIC_PUSHER_CLUSTER: z.string().optional(),
+
+  AI_PROVIDER: z.enum(["anthropic", "openai", "google"]).default("anthropic"),
+  ANTHROPIC_API_KEY: z.string().optional(),
+  OPENAI_API_KEY: z.string().optional(),
+  GEMINI_API_KEY: z.string().optional(),
+  ANTHROPIC_MODEL: z.string().optional(),
+  OPENAI_MODEL: z.string().optional(),
+  GEMINI_MODEL: z.string().optional(),
 });
 
 export type EnvTypes = z.infer<typeof envSchema>;

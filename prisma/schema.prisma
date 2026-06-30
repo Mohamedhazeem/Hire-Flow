@@ -79,6 +79,7 @@ model User {
   initiatedStatusChanges ApplicationStatusChange[] @relation("StatusChangeInitiator")
   bookmarks              Bookmark[]
   resumes                Resume[]
+  enhancementLogs        ResumeEnhancementLog[]
 
   @@unique([email])
   @@map("user")
@@ -335,6 +336,18 @@ model ApplicationStatusChange {
 
   @@index([applicationId, createdAt])
   @@map("application_status_change")
+}
+
+// --------------- AI Resume Enhancement Log ---------------
+model ResumeEnhancementLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resumeId  String
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@map("resume_enhancement_log")
 }
 
 // --------------- Admin Invite ---------------
