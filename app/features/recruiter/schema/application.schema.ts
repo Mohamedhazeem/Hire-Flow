@@ -8,6 +8,7 @@ export const APPLICATION_STATUSES = [
   "offered",
   "hired",
   "rejected",
+  "withdrawn",
 ] as const;
 
 export const ApplicationStatusSchema = z.enum(APPLICATION_STATUSES);
