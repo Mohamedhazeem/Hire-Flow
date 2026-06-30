@@ -1,6 +1,7 @@
 "use client";
 
 import { Building2Icon } from "lucide-react";
+import { StatusTimeline, type StatusTimelineEntry } from "@/components/shared/status-timeline";
 
 type StatusChange = {
   id: string;
@@ -11,10 +12,34 @@ type StatusChange = {
 
 type Props = { statusChanges: StatusChange[] };
 
+function statusLabel(from: string | null, to: string): string {
+  if (!from) return "Applied";
+  const fmt = (s: string) => s.replace(/_/g, " ");
+  return `${fmt(from)} → ${fmt(to)}`;
+}
+
 export function ApplicationTimeline({ statusChanges }: Props) {
-  const timeline = statusChanges.length > 0
-    ? statusChanges
-    : [{ id: "i", fromStatus: null, toStatus: "applied", createdAt: new Date().toISOString() }];
+  const entries: StatusTimelineEntry[] = statusChanges.length > 0
+    ? statusChanges.map((sc) => ({
+        id: sc.id,
+        type: "status_change" as const,
+        fromStatus: sc.fromStatus,
+        toStatus: sc.toStatus,
+        label: statusLabel(sc.fromStatus, sc.toStatus),
+        changedByName: null,
+        note: null,
+        createdAt: sc.createdAt,
+      }))
+    : [{
+        id: "initial",
+        type: "application_submitted" as const,
+        fromStatus: null,
+        toStatus: "applied",
+        label: "Applied",
+        changedByName: null,
+        note: null,
+        createdAt: new Date().toISOString(),
+      }];
 
   return (
     <div className="bg-bg-surface border border-border-subtle rounded-xl p-5">
@@ -22,31 +47,7 @@ export function ApplicationTimeline({ statusChanges }: Props) {
         <Building2Icon className="size-4" />
         Status Timeline
       </h2>
-      {timeline.map((sc, i) => (
-        <div key={sc.id} className="flex gap-3">
-          <div className="flex flex-col items-center">
-            <div className={`size-2.5 rounded-full mt-1.5 ${i === timeline.length - 1 ? "bg-brand" : "bg-border-subtle"}`} />
-            {i < timeline.length - 1 && <div className="w-px flex-1 bg-border-subtle min-h-6" />}
-          </div>
-          <div className="pb-4">
-            <p className="text-sm text-text-body">
-              {sc.fromStatus ? (
-                <>
-                  <span className="capitalize">{sc.fromStatus.replace(/_/g, " ")}</span> &rarr;{" "}
-                  <span className="font-medium capitalize">{sc.toStatus.replace(/_/g, " ")}</span>
-                </>
-              ) : (
-                <span className="font-medium text-text-heading">Applied</span>
-              )}
-            </p>
-            <p className="text-xs text-text-muted mt-0.5">
-              {new Date(sc.createdAt).toLocaleDateString(undefined, {
-                day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
-              })}
-            </p>
-          </div>
-        </div>
-      ))}
+      <StatusTimeline entries={entries} />
     </div>
   );
 }

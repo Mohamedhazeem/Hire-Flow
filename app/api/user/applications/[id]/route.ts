@@ -4,6 +4,7 @@ import { NotFoundError, ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
+import { createNotification } from "@/lib/notifications";
 import { getUserApplicationDetail } from "@/app/features/user/queries/user-application-queries";
 import { revalidatePath } from "next/cache";
 
@@ -36,7 +37,23 @@ async function handleDELETE(
     throw new ValidationError("Can only withdraw applications that are in 'applied' or 'reviewing' status");
   }
 
+  const { jobId } = application;
+
+  const job = await prisma.job.findUnique({
+    where: { id: jobId },
+    select: { recruiterId: true, title: true },
+  });
+
   await prisma.application.delete({ where: { id } });
+
+  if (job) {
+    void createNotification(job.recruiterId, "application_status", {
+      applicationId: id,
+      jobId,
+      jobTitle: job.title,
+      status: "withdrawn",
+    });
+  }
 
   revalidatePath("/user/applications");
 

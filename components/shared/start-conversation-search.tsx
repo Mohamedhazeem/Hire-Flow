@@ -7,6 +7,7 @@ import { apiClient } from "@/lib/api-client";
 import { Input } from "@/components/ui/input";
 import { SearchIcon, MessageSquareTextIcon, Building2Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { computeThreadId } from "@/lib/thread-utils";
 
 type SearchResult = {
   id: string;
@@ -15,11 +16,6 @@ type SearchResult = {
   role: string;
   company: { name: string } | null;
 };
-
-function computeThreadId(idA: string, idB: string): string {
-  const sorted = [idA, idB].sort();
-  return `${sorted[0]}_${sorted[1]}`;
-}
 
 type StartConversationSearchProps = {
   searchEndpoint: string;
