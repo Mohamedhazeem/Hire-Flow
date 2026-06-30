@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon, SparklesIcon, AlertCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon, SparklesIcon, AlertCircle, XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { AiSuggestionsPanel } from "@/app/features/user/components/ai-suggestions-panel";
@@ -16,6 +17,38 @@ type ResumeCardProps = {
   onDownload: (fileUrl: string) => void;
   onEdit: (id: string) => void;
 };
+
+function AiErrorBanner({ message, onClose }: { message: string; onClose: () => void }) {
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => {
+    timerRef.current = setTimeout(onClose, 10_000);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8 }}
+      transition={{ duration: 0.2 }}
+      className="flex items-start gap-2 rounded-lg bg-error/5 border border-error/20 p-2.5"
+    >
+      <AlertCircle className="size-4 text-error shrink-0 mt-0.5" />
+      <p className="text-xs text-text-muted flex-1">{message}</p>
+      <button
+        type="button"
+        onClick={onClose}
+        className="size-5 flex items-center justify-center rounded text-text-muted hover:text-text-body hover:bg-bg-muted transition-colors shrink-0"
+        aria-label="Dismiss error"
+      >
+        <XIcon className="size-3" />
+      </button>
+    </motion.div>
+  );
+}
 
 function formatSize(bytes: number | null): string {
   if (!bytes) return "-";
@@ -158,12 +191,9 @@ export function ResumeCard({ resume, onSetPrimary, onDelete, onDownload, onEdit 
         </div>
       </div>
 
-      {aiError && (
-        <div className="flex items-start gap-2 rounded-lg bg-error/5 border border-error/20 p-2.5">
-          <AlertCircle className="size-4 text-error shrink-0 mt-0.5" />
-          <p className="text-xs text-text-muted">{aiError}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {aiError ? <AiErrorBanner message={aiError} onClose={() => setAiError(null)} /> : null}
+      </AnimatePresence>
 
       {aiResult && (
         <AiSuggestionsPanel
