@@ -15,6 +15,7 @@ export type PublicJobRow = {
   salaryCurrency: string;
   skills: string[];
   experienceLevel: string;
+  applicationDeadline: Date | null;
   createdAt: Date;
 };
 
@@ -59,6 +60,7 @@ export type PublicJobListParams = {
   workMode?: string;
   employmentType?: string;
   experienceLevel?: string;
+  status?: "open" | "expired" | "all";
   sortBy?: string;
   sortOrder?: string;
 };
@@ -80,6 +82,13 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.workMode) where.workMode = params.workMode;
   if (params.employmentType) where.employmentType = params.employmentType;
   if (params.experienceLevel) where.experienceLevel = params.experienceLevel;
+
+  if (params.status === "open") {
+    where.applicationDeadline = { gte: new Date() };
+  } else if (params.status === "expired") {
+    where.applicationDeadline = { lt: new Date() };
+  }
+  // "all" or undefined — no deadline filter
 
   const sortBy = params.sortBy ?? "createdAt";
   const sortOrder = params.sortOrder ?? "desc";
@@ -107,6 +116,7 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
     salaryCurrency: job.salaryCurrency,
     skills: job.skills,
     experienceLevel: job.experienceLevel,
+    applicationDeadline: job.applicationDeadline,
     createdAt: job.createdAt,
   }));
 

@@ -6,6 +6,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { ApplySchema } from "@/app/features/jobs/schema/application-submit.schema";
 import { createNotification, triggerForCompany } from "@/lib/notifications";
+import { checkRateLimit } from "@/lib/rate-limiter";
 import { revalidatePath } from "next/cache";
 
 async function handlePOST(
@@ -14,6 +15,8 @@ async function handlePOST(
 ) {
   const session = await requireRole(["user"]);
   const { id: jobId } = await params;
+
+  checkRateLimit(`apply:${session.id}`, { max: 10, windowMs: 60000 });
 
   const body = await request.json().catch(() => ({}));
   const parsed = ApplySchema.safeParse(body);
@@ -33,7 +36,8 @@ async function handlePOST(
     throw new ValidationError("This job is no longer accepting applications");
   }
 
-  if (job.applicationDeadline && new Date(job.applicationDeadline) < new Date()) {
+  const now = new Date();
+  if (job.applicationDeadline && new Date(job.applicationDeadline) < now) {
     throw new ValidationError("The application deadline has passed");
   }
 

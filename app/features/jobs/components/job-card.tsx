@@ -7,6 +7,7 @@ import {
   BriefcaseIcon,
   MapPinIcon,
   ClockIcon,
+  TimerOffIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,7 @@ type JobCardProps = {
   salaryCurrency: string;
   skills: string[];
   experienceLevel: string;
+  applicationDeadline: string | null;
   createdAt: string;
 };
 
@@ -39,6 +41,7 @@ export function JobCard({
   salaryCurrency,
   skills,
   experienceLevel,
+  applicationDeadline,
   createdAt,
 }: JobCardProps) {
   const router = useRouter();
@@ -52,6 +55,9 @@ export function JobCard({
   const daysAgo = Math.floor(
     (now - new Date(createdAt).getTime()) / 86400000,
   );
+  const isExpired =
+    applicationDeadline != null &&
+    new Date(applicationDeadline).getTime() < now;
 
   return (
     <button
@@ -71,6 +77,12 @@ export function JobCard({
           <h3 className="font-semibold text-text-heading truncate">{title}</h3>
           <p className="text-sm text-text-muted mt-0.5">{companyName}</p>
         </div>
+        {isExpired ? (
+          <span className="inline-flex items-center gap-1 text-xs font-medium text-text-muted bg-bg-muted px-2 py-1 rounded-full shrink-0">
+            <TimerOffIcon className="size-3" />
+            Expired
+          </span>
+        ) : null}
       </div>
 
       <div className="flex flex-wrap gap-1.5 mt-3">

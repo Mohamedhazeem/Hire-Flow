@@ -12,6 +12,7 @@ import { SearchIcon, BriefcaseIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } f
 const WORK_MODES = ["remote", "hybrid", "on_site"] as const;
 const EMPLOYMENT_TYPES = ["full_time", "part_time", "contract", "freelance", "internship"] as const;
 const EXPERIENCE_LEVELS = ["entry", "mid", "senior", "lead"] as const;
+const STATUS_OPTIONS = ["open", "expired"] as const;
 const FILTER_LABELS: Record<string, string> = {
   remote: "Remote",
   hybrid: "Hybrid",
@@ -68,6 +69,7 @@ export function JobListPage() {
       workMode: sp.get("workMode") || undefined,
       employmentType: sp.get("employmentType") || undefined,
       experienceLevel: sp.get("experienceLevel") || undefined,
+      status: sp.get("status") || undefined,
     }),
     [sp],
   );
@@ -104,7 +106,8 @@ export function JobListPage() {
     params.search ||
     params.workMode ||
     params.employmentType ||
-    params.experienceLevel
+    params.experienceLevel ||
+    params.status
   );
 
   return (
@@ -149,6 +152,13 @@ export function JobListPage() {
               paramKey="experienceLevel"
               options={EXPERIENCE_LEVELS}
               value={params.experienceLevel}
+              onChange={setParam}
+            />
+            <Filter
+              label="Status"
+              paramKey="status"
+              options={STATUS_OPTIONS}
+              value={params.status}
               onChange={setParam}
             />
           </div>
@@ -205,6 +215,7 @@ export function JobListPage() {
                   salaryCurrency={job.salaryCurrency as string}
                   skills={job.skills as string[]}
                   experienceLevel={job.experienceLevel as string}
+                  applicationDeadline={job.applicationDeadline as string | null}
                   createdAt={job.createdAt as string}
                 />
               ))}
