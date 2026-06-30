@@ -1,9 +1,5 @@
-import Link from "next/link";
+import { LandingPage } from "@/app/features/landing/components/landing-page";
 
 export default function Home() {
-  return (
-    <>
-      <Link href="/login">Login</Link>
-    </>
-  );
+  return <LandingPage />;
 }
