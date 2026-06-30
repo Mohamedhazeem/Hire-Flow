@@ -9,9 +9,19 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { FileTextIcon, ChevronLeftIcon, ChevronRightIcon, ExternalLinkIcon, XIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const STATUSES = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected"];
-type AppRow = { id: string; jobId: string; jobTitle: string; companyName: string; status: string; appliedAt: string; updatedAt: string };
+type AppRow = { id: string; jobId: string; jobTitle: string; companyName: string; companyLogo: string | null; status: string; appliedAt: string; updatedAt: string };
+
+function daysAgo(d: string): string {
+  const diff = Date.now() - new Date(d).getTime();
+  const days = Math.floor(diff / 86400000);
+  if (days < 1) return "today";
+  if (days === 1) return "yesterday";
+  if (days < 7) return `${days}d ago`;
+  return new Date(d).toLocaleDateString();
+}
 
 export function ApplicationsPage() {
   const router = useRouter();
@@ -78,15 +88,24 @@ export function ApplicationsPage() {
                   <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden sm:table-cell">Company</th>
                   <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">Status</th>
                   <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden md:table-cell">Applied</th>
+                  <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden lg:table-cell">Updated</th>
                   <th className="text-right font-medium text-text-muted pb-3 whitespace-nowrap" />
                 </tr></thead>
                 <tbody>
                   {data.applications.map((app) => (
                     <tr key={app.id} className="border-b border-border-subtle hover:bg-bg-muted/40 transition-colors">
                       <td className="py-3 pr-4"><Link href={`/user/applications/${app.id}`} className="font-medium text-text-heading hover:text-brand transition-colors">{app.jobTitle}</Link></td>
-                      <td className="py-3 pr-4 text-text-muted hidden sm:table-cell">{app.companyName}</td>
+                      <td className="py-3 pr-4 hidden sm:table-cell">
+                        <div className="flex items-center gap-2">
+                          <div className="size-6 rounded-md bg-brand/10 flex items-center justify-center text-brand text-[10px] font-bold shrink-0">
+                            {app.companyLogo ? <Image src={app.companyLogo} alt="" width={16} height={16} className="size-4 object-contain" /> : (app.companyName[0]?.toUpperCase() ?? "?")}
+                          </div>
+                          <span className="text-text-muted">{app.companyName}</span>
+                        </div>
+                      </td>
                       <td className="py-3 pr-4"><StatusBadge status={app.status} /></td>
                       <td className="py-3 pr-4 text-text-muted hidden md:table-cell">{new Date(app.appliedAt).toLocaleDateString()}</td>
+                      <td className="py-3 pr-4 text-text-muted hidden lg:table-cell whitespace-nowrap">{daysAgo(app.updatedAt)}</td>
                       <td className="py-3 text-right"><Link href={`/user/applications/${app.id}`} className="text-sm text-brand hover:underline">View</Link></td>
                     </tr>
                   ))}

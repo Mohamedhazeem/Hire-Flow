@@ -1,15 +1,10 @@
-import { LogoutButton } from "@/app/features/auth/components/logout-button";
+import { ActivityPanel } from "@/app/features/user/components/activity-panel";
 
 export const metadata = {
-  title: "Candidate Dashboard",
-  description: "Your personal candidate dashboard",
+  title: "Activity",
+  description: "Track your job applications and activity",
 };
 
-export default function CandidatePage() {
-  return (
-    <>
-      CANDIDATEDASHBOARD
-      <LogoutButton />
-    </>
-  );
+export default function UserDashboardPage() {
+  return <ActivityPanel />;
 }

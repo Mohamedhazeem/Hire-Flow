@@ -6,6 +6,7 @@ export type UserApplicationRow = {
   jobId: string;
   jobTitle: string;
   companyName: string;
+  companyLogo: string | null;
   status: string;
   appliedAt: Date;
   updatedAt: Date;
@@ -66,7 +67,7 @@ export async function listUserApplications(
     prisma.application.findMany({
       where, skip, take,
       orderBy: { appliedAt: "desc" },
-      include: { job: { include: { company: { select: { name: true } } } } },
+      include: { job: { include: { company: { select: { name: true, logoUrl: true } } } } },
     }),
     prisma.application.count({ where }),
   ]);
@@ -80,6 +81,7 @@ export async function listUserApplications(
       jobId: record.jobId as string,
       jobTitle: job.title as string,
       companyName: company.name ?? "Unknown",
+      companyLogo: company.logoUrl,
       status: record.status as string,
       appliedAt: record.appliedAt as Date,
       updatedAt: record.updatedAt as Date,

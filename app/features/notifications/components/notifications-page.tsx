@@ -74,6 +74,9 @@ function getNotificationHref(n: NotificationItem, messagesBasePath: string): str
       if (isRecruiter && data.applicationId) {
         return `/recruiter/applicants/${data.applicationId as string}`;
       }
+      if (isUser && data.applicationId) {
+        return `/user/applications/${data.applicationId as string}`;
+      }
       if (isUser) {
         return `/user/applications`;
       }
