@@ -60,6 +60,8 @@ export type PublicJobListParams = {
   workMode?: string;
   employmentType?: string;
   experienceLevel?: string;
+  industry?: string;
+  companyId?: string;
   status?: "open" | "expired" | "all";
   sortBy?: string;
   sortOrder?: string;
@@ -82,6 +84,8 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.workMode) where.workMode = params.workMode;
   if (params.employmentType) where.employmentType = params.employmentType;
   if (params.experienceLevel) where.experienceLevel = params.experienceLevel;
+  if (params.industry) where.company = { industry: params.industry };
+  if (params.companyId) where.companyId = params.companyId;
 
   if (params.status === "open") {
     where.applicationDeadline = { gte: new Date() };

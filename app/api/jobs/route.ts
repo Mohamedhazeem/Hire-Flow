@@ -12,6 +12,8 @@ async function handleGET(request: NextRequest) {
     workMode: url.searchParams.get("workMode") || undefined,
     employmentType: url.searchParams.get("employmentType") || undefined,
     experienceLevel: url.searchParams.get("experienceLevel") || undefined,
+    industry: url.searchParams.get("industry") || undefined,
+    companyId: url.searchParams.get("companyId") || undefined,
     status: (url.searchParams.get("status") as "open" | "expired" | "all" | undefined) || undefined,
     sortBy: url.searchParams.get("sortBy") || undefined,
     sortOrder: url.searchParams.get("sortOrder") || undefined,
