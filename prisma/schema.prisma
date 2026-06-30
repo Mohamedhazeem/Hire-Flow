@@ -78,6 +78,7 @@ model User {
   companyMembership      CompanyTeamMember?
   initiatedStatusChanges ApplicationStatusChange[] @relation("StatusChangeInitiator")
   bookmarks              Bookmark[]
+  resumes                Resume[]
 
   @@unique([email])
   @@map("user")
@@ -146,7 +147,6 @@ model UserProfile {
   ectc        Int?
   location    String?
   socialLinks Json?
-  resumes     Resume[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
@@ -154,16 +154,20 @@ model UserProfile {
 }
 
 model Resume {
-  id            String      @id @default(cuid())
-  userProfileId String
-  userProfile   UserProfile @relation(fields: [userProfileId], references: [id], onDelete: Cascade)
-  label         String
-  fileUrl       String?
-  builderData   Json?
-  isPrimary     Boolean     @default(false)
-  createdAt     DateTime    @default(now())
-  deletedAt     DateTime?
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label       String
+  fileUrl     String?
+  fileName    String?
+  fileSize    Int?
+  fileType    String?
+  builderData Json?
+  isPrimary   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
 
+  @@index([userId, deletedAt])
   @@map("resume")
 }
 

@@ -10,6 +10,8 @@ const ALLOWED_MIME_TYPES = [
   "image/webp",
   "image/gif",
   "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
 export type UploadResult = {

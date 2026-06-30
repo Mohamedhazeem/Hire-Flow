@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireRole } from "@/app/features/shared/api/require-role";
+import { prisma } from "@/lib/prisma";
 import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { readFile } from "fs/promises";
@@ -21,7 +22,7 @@ const MIME_MAP: Record<string, string> = {
 };
 
 async function handleGET(request: NextRequest) {
-  await requireRole(["admin", "super_admin", "recruiter"]);
+  const session = await requireRole(["admin", "super_admin", "recruiter", "user"]);
 
   const rawPath = request.nextUrl.searchParams.get("path");
   if (!rawPath) throw new ValidationError("Missing 'path' query parameter");
@@ -39,6 +40,16 @@ async function handleGET(request: NextRequest) {
 
   if (!existsSync(resolvedPath)) {
     throw new NotFoundError("File not found or has been removed");
+  }
+
+  if (session.role === "user") {
+    const resume = await prisma.resume.findFirst({
+      where: { userId: session.id, fileUrl: { contains: relativePath } },
+      select: { id: true },
+    });
+    if (!resume) {
+      throw new ForbiddenError("You do not have access to this file");
+    }
   }
 
   const stat = await import("fs/promises").then((m) => m.stat(resolvedPath));

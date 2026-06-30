@@ -44,14 +44,14 @@ type AdminUserProfileViewProps = {
       basePay: number | null;
       ctc: number | null;
       socialLinks: unknown;
-      resumes: {
-        id: string;
-        label: string;
-        fileUrl: string | null;
-        isPrimary: boolean;
-        createdAt: string;
-      }[];
     } | null;
+    resumes: {
+      id: string;
+      label: string;
+      fileUrl: string | null;
+      isPrimary: boolean;
+      createdAt: string;
+    }[];
   };
 };
 
@@ -223,9 +223,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
           <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
             Resumes
           </h2>
-          {profile?.resumes && profile.resumes.length > 0 ? (
+          {user.resumes && user.resumes.length > 0 ? (
             <div className="space-y-3">
-              {profile.resumes.map((resume) => (
+              {user.resumes.map((resume) => (
                 <div
                   key={resume.id}
                   className="flex items-center gap-3 p-3 rounded-xl bg-bg-elevated border border-border-subtle"

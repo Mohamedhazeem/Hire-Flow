@@ -35,17 +35,17 @@ export default async function AdminUserDetailPage({ params }: Props) {
           basePay: true,
           ctc: true,
           socialLinks: true,
-          resumes: {
-            select: {
-              id: true,
-              label: true,
-              fileUrl: true,
-              isPrimary: true,
-              createdAt: true,
-            },
-            orderBy: { createdAt: "desc" },
-          },
         },
+      },
+      resumes: {
+        select: {
+          id: true,
+          label: true,
+          fileUrl: true,
+          isPrimary: true,
+          createdAt: true,
+        },
+        orderBy: { createdAt: "desc" },
       },
     },
   });
@@ -60,12 +60,12 @@ export default async function AdminUserDetailPage({ params }: Props) {
     profile: user.profile
       ? {
           ...user.profile,
-          resumes: user.profile.resumes.map((r) => ({
-            ...r,
-            createdAt: r.createdAt.toISOString(),
-          })),
         }
       : null,
+    resumes: user.resumes.map((r) => ({
+      ...r,
+      createdAt: r.createdAt.toISOString(),
+    })),
   };
 
   return <AdminUserProfileView user={serialized} />;

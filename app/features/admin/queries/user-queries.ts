@@ -94,14 +94,14 @@ export type AdminUserProfile = {
     basePay: number | null;
     ctc: number | null;
     socialLinks: unknown;
-    resumes: {
-      id: string;
-      label: string;
-      fileUrl: string | null;
-      isPrimary: boolean;
-      createdAt: Date;
-    }[];
   } | null;
+  resumes: {
+    id: string;
+    label: string;
+    fileUrl: string | null;
+    isPrimary: boolean;
+    createdAt: Date;
+  }[];
 };
 
 export async function getUserById(id: string): Promise<AdminUserProfile | null> {
@@ -129,17 +129,17 @@ export async function getUserById(id: string): Promise<AdminUserProfile | null> 
           basePay: true,
           ctc: true,
           socialLinks: true,
-          resumes: {
-            select: {
-              id: true,
-              label: true,
-              fileUrl: true,
-              isPrimary: true,
-              createdAt: true,
-            },
-            orderBy: { createdAt: "desc" },
-          },
         },
+      },
+      resumes: {
+        select: {
+          id: true,
+          label: true,
+          fileUrl: true,
+          isPrimary: true,
+          createdAt: true,
+        },
+        orderBy: { createdAt: "desc" },
       },
     },
   });

@@ -94,22 +94,24 @@ export async function getAdminApplicantDetail(
       appliedAt: true,
       updatedAt: true,
       resumeId: true,
-      user: {
-        select: {
-          id: true,
-          name: true,
-          email: true,
-          role: true,
-          profile: {
+          user: {
             select: {
-              headline: true,
-              bio: true,
-              skills: true,
-              experiences: true,
-              location: true,
-              basePay: true,
-              ctc: true,
-              socialLinks: true,
+              id: true,
+              name: true,
+              email: true,
+              role: true,
+              profile: {
+                select: {
+                  headline: true,
+                  bio: true,
+                  skills: true,
+                  experiences: true,
+                  location: true,
+                  basePay: true,
+                  ctc: true,
+                  socialLinks: true,
+                },
+              },
               resumes: {
                 select: {
                   id: true,
@@ -122,9 +124,7 @@ export async function getAdminApplicantDetail(
               },
             },
           },
-        },
-      },
-      job: { select: { id: true, title: true } },
+          job: { select: { id: true, title: true } },
     },
   });
 
@@ -132,7 +132,7 @@ export async function getAdminApplicantDetail(
     throw new NotFoundError("Application not found");
   }
 
-  const profileResumes = application.user.profile?.resumes ?? [];
+  const profileResumes = application.user.resumes ?? [];
 
   let resolvedResume: (ResumeInfo & { source: "application" | "current_profile" }) | DeletedResume | null = null;
 

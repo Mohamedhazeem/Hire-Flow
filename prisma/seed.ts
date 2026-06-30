@@ -277,7 +277,7 @@ async function main() {
         update: {},
         create: {
           id: `resume_${usr.id}_${r}`,
-          userProfileId: profile.id,
+          userId: usr.id,
           label: r === 0 ? "General Resume" : "Tailored Resume",
           isPrimary: r === 0,
           fileUrl: null,
