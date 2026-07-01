@@ -3,9 +3,6 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { cn } from "@/lib/utils";
-import { Suspense } from "react";
-import { PublicNavbarSkeleton } from "@/app/features/public/components/public-navbar-skeleton";
-import { PublicNavbar } from "@/app/features/public/components/public-navbar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -63,9 +60,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Providers>
-          <Suspense fallback={<PublicNavbarSkeleton />}>
-            <PublicNavbar />
-          </Suspense>
           {children}
         </Providers>
       </body>
