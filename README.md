@@ -1,4 +1,3 @@
-````markdown
 # 🚀 Hire Flow Next
 
 ### A full-stack, multi-tenant hiring platform built for scale
@@ -315,4 +314,3 @@ This project is available under the [MIT License](LICENSE).
 ## 📬 Contact
 
 Built by **Mohamed Hazeem** — reach out via [a.mohamedhazeem@gmail.com](mailto:a.mohamedhazeem@gmail.com) or [GitHub](https://github.com/Mohamedhazeem).
-````
