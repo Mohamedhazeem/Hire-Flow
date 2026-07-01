@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import {
   LayoutDashboardIcon,
   UsersIcon,
@@ -10,8 +9,8 @@ import {
   MessageSquareTextIcon,
 } from "lucide-react";
 import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
-import { signOut } from "@/app/features/auth/libs/auth-client";
 import { useSession } from "@/app/features/auth/libs/auth-client";
+import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 
 const adminLinks: SidebarLink[] = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
@@ -23,29 +22,19 @@ const adminLinks: SidebarLink[] = [
 ];
 
 export function AdminSidebar() {
-  const router = useRouter();
   const { data: session } = useSession();
+  const signOut = useSignOut();
 
   const sidebarUser: SidebarUser | undefined = session?.user
     ? { name: session.user.name, image: session.user.image, role: (session.user as { role?: string }).role ?? "user" }
     : undefined;
-
-  const handleSignOut = async () => {
-    await signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/login");
-        },
-      },
-    });
-  };
 
   return (
     <Sidebar
       links={adminLinks}
       roleLabel="Admin"
       homeHref="/admin"
-      onSignOut={handleSignOut}
+      onSignOut={signOut}
       user={sidebarUser}
     />
   );

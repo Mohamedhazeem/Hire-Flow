@@ -7,11 +7,17 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { authError } from "../utils/authError";
 import { getRedirectPath } from "../utils/getRedirectPath";
-import { ActionResult, LoginInputType } from "../schema/auth.type";
+import { ActionResult } from "../schema/auth.type";
 import { verifyUserStatus } from "../libs/verification";
+import { z } from "zod";
+
+const LoginActionSchema = SignInSchema.extend({
+  returnUrl: z.string().optional(),
+});
+type LoginActionInput = z.infer<typeof LoginActionSchema>;
 
 export async function loginAction(data: unknown): Promise<ActionResult> {
-  const validation = validateWithZod<LoginInputType>(SignInSchema, data);
+  const validation = validateWithZod<LoginActionInput>(LoginActionSchema, data);
 
   if (!validation.success) {
     return {
@@ -53,7 +59,7 @@ export async function loginAction(data: unknown): Promise<ActionResult> {
     });
 
     if (response?.token && response.user?.role) {
-      redirectUrl = getRedirectPath(response.user);
+      redirectUrl = getRedirectPath(response.user, validation.data.returnUrl);
     }
   } catch (error: unknown) {
     const parsedAuthError = authError(error, "LOGIN");

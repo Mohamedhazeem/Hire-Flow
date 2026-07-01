@@ -2,18 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/features/auth/libs/auth";
 import { getRedirectPath } from "./app/features/auth/utils/getRedirectPath";
 import { RoleSchema } from "./app/features/auth/schema/role.schema";
-
-const authPages = ["/login", "/register", "/reset-password", "/verify-email"];
-const protectedRoutes = ["/admin", "/recruiter", "/user"];
+import { AUTH_PAGES, PROTECTED_ROUTES } from "./lib/routes";
 
 export default async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session = await auth.api.getSession({
     headers: request.headers,
   });
-  const isAuthPage = authPages.includes(pathname);
+  const isAuthPage = AUTH_PAGES.includes(pathname as typeof AUTH_PAGES[number]);
 
-  const isProtectedRoute = protectedRoutes.some(
+  const isProtectedRoute = PROTECTED_ROUTES.some(
     (route) => pathname === route || pathname.startsWith(`${route}/`),
   );
   const isAdminRoute = pathname === "/admin" || pathname.startsWith("/admin/");

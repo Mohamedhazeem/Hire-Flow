@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import {
   LayoutDashboardIcon,
   UserIcon,
@@ -9,8 +8,8 @@ import {
   BookmarkIcon,
 } from "lucide-react";
 import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
-import { signOut } from "@/app/features/auth/libs/auth-client";
 import { useSession } from "@/app/features/auth/libs/auth-client";
+import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 
 const userLinks: SidebarLink[] = [
   { href: "/user", label: "Dashboard", icon: LayoutDashboardIcon },
@@ -21,8 +20,8 @@ const userLinks: SidebarLink[] = [
 ];
 
 export function UserSidebar() {
-  const router = useRouter();
   const { data: session } = useSession();
+  const signOut = useSignOut();
 
   const sidebarUser: SidebarUser | undefined = session?.user
     ? {
@@ -32,22 +31,12 @@ export function UserSidebar() {
       }
     : undefined;
 
-  const handleSignOut = async () => {
-    await signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/login");
-        },
-      },
-    });
-  };
-
   return (
     <Sidebar
       links={userLinks}
       roleLabel="Candidate"
       homeHref="/user"
-      onSignOut={handleSignOut}
+      onSignOut={signOut}
       user={sidebarUser}
     />
   );

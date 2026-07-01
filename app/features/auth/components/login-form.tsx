@@ -12,6 +12,7 @@ import { SignInSchema } from "../schema/auth.schema";
 import { z } from "zod";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
 
 type SignInInput = z.infer<typeof SignInSchema>;
 
@@ -19,8 +20,8 @@ type LoginFormProps = {
   pageMessage?: string;
 };
 
-// LoginForm.tsx
 export function LoginForm({ pageMessage }: LoginFormProps) {
+  const sp = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -39,8 +40,11 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
     setIsLoading(true);
     setFormError(null);
 
+    // Read returnUrl fresh from URL to avoid stale closure
+    const returnUrl = sp.get("returnUrl") ?? undefined;
+
     try {
-      const result = await loginAction(data);
+      const result = await loginAction({ ...data, returnUrl });
       if (result && !result.success) {
         const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);

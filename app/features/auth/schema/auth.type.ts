@@ -16,7 +16,7 @@ export type ActionResult =
 
 export type AuthType = "LOGIN" | "SIGNUP";
 
-export type AuthRedirectTargetType = "/user" | "/admin" | "/recruiter" | "/";
+export type AuthRedirectTargetType = "/user" | "/admin" | "/recruiter" | "/jobs" | "/";
 
 export type UserCredentials = {
   token: string;

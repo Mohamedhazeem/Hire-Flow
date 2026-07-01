@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { LoginForm } from "@/app/features/auth/components/login-form";
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 type Props = {
   searchParams: Promise<{
     verified?: string;
-    reset?: string; // 👈 1. Declare the password reset query string type
+    reset?: string;
   }>;
 };
 export default async function LoginPage({ searchParams }: Props) {
@@ -20,5 +21,9 @@ export default async function LoginPage({ searchParams }: Props) {
         ? "Password updated successfully! Please sign in with your new password."
         : undefined;
 
-  return <LoginForm pageMessage={pageMessage} />;
+  return (
+    <Suspense fallback={null}>
+      <LoginForm pageMessage={pageMessage} />
+    </Suspense>
+  );
 }
