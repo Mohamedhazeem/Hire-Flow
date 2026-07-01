@@ -16,8 +16,8 @@ Whenever you create a new protected Server Action or API Route, you MUST use thi
 
 # STATE & CACHE RULES (short)
 
-- **Startup:** Read `MANIFEST.md` and `HIRE_FLOW_PROMPTS.md` once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
-- **Runtime:** Never re‑read MANIFEST and HIRE_FLOW_PROMPTS; use cache for step lookups.
+- **Startup:** Read `MANIFEST.md`, `HIRE_FLOW_PROMPTS.md` and `HIRE_FLOW_TESTING.md`once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
+- **Runtime:** Never re‑read MANIFEST, HIRE_FLOW_TESTING and HIRE_FLOW_PROMPTS; use cache for step lookups.
 - **Resync:** Re‑read only if user says they edited it manually.
 
 # graphify

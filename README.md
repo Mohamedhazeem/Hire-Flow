@@ -273,6 +273,42 @@ npx prisma migrate deploy && next build
 
 ---
 
+## 🧪 Testing
+
+Hire Flow Next uses a layered testing strategy matched to each layer of the stack:
+
+| Layer       | Tool                            | What it covers                                                                                 |
+| ----------- | ------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Unit        | Vitest                          | Pure logic: rate limiter, CSV builder, pagination, Zod schemas, AI client fallback             |
+| Integration | Vitest + local Postgres test DB | API route handlers called directly, tenant isolation, transactions, audit trails               |
+| Component   | React Testing Library           | Data table selection, bulk action logic, forms, AI suggestions panel                           |
+| End-to-End  | Playwright                      | Full role-based journeys (anonymous → user → recruiter → admin) with real Better Auth sessions |
+
+External services (Pusher, AI providers, Resend) are mocked at the module level — tests never make real network calls or incur API costs.
+
+### Running tests
+
+```bash
+# One-time: create local test database
+createdb hireflow_test
+
+# Add to .env.test
+DATABASE_URL_TEST="postgresql://<user>:<password>@localhost:5432/hireflow_test"
+
+# Unit + integration + component tests
+npm run test
+npm run test:watch
+npm run test:coverage
+
+# End-to-end (spins up a production build automatically)
+npm run test:e2e
+npm run test:e2e:ui   # interactive mode
+```
+
+Coverage thresholds are enforced via `vitest.config.ts` and ratchet upward as suites mature. CI runs the full unit/integration suite against a Postgres service container on every pull request, with Playwright E2E running as a separate job.
+
+---
+
 ## 📄 License
 
 This project is available under the [MIT License](LICENSE).
