@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRightIcon, SparklesIcon } from "lucide-react";
+import { JobSearchBar } from "@/app/features/jobs/components/job-search-bar";
 
-export function HeroSection() {
+export function HeroSearch() {
   return (
     <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden">
       <div
@@ -17,7 +18,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
       <div className="absolute inset-0 bg-gradient-to-t from-bg-page via-transparent to-transparent" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +57,16 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8"
+          className="mt-8"
+        >
+          <JobSearchBar />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6"
         >
           <Link
             href="/jobs"
