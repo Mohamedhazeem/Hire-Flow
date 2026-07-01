@@ -10,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { JobCard } from "./job-card";
 import { JobSearchBar } from "./job-search-bar";
 import { FilterSelect } from "./filter-select";
+import type { PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
 import { BriefcaseIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 
 const WORK_MODES = ["remote", "hybrid", "onsite"] as const;
@@ -57,19 +58,19 @@ export function JobListPage() {
     [sp],
   );
 
+  type ListResponse = {
+    jobs: PublicJobRow[];
+    total: number;
+    totalPages: number;
+    page: number;
+    hasNextPage: boolean;
+    hasPrevPage: boolean;
+  };
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["public", "jobs", params],
     queryFn: async () => {
-      const res = (await apiClient("/api/jobs", { params })) as {
-        data: {
-          jobs: Record<string, unknown>[];
-          total: number;
-          totalPages: number;
-          page: number;
-          hasNextPage: boolean;
-          hasPrevPage: boolean;
-        };
-      };
+      const res = await apiClient<{ data: ListResponse }>("/api/jobs", { params });
       return res.data;
     },
   });
@@ -197,22 +198,22 @@ export function JobListPage() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {data.jobs.map((job) => (
-                <motion.div key={job.id as string} variants={cardVariants}>
+                <motion.div key={job.id} variants={cardVariants}>
                   <JobCard
-                    id={job.id as string}
-                    title={job.title as string}
-                    companyName={job.companyName as string}
-                    companyLogo={job.companyLogo as string | null}
-                    locations={job.locations as string[]}
-                    workMode={job.workMode as string}
-                    employmentType={job.employmentType as string}
-                    salaryMin={job.salaryMin as number | null}
-                    salaryMax={job.salaryMax as number | null}
-                    salaryCurrency={job.salaryCurrency as string}
-                    skills={job.skills as string[]}
-                    experienceLevel={job.experienceLevel as string}
-                    applicationDeadline={job.applicationDeadline as string | null}
-                    createdAt={job.createdAt as string}
+                    id={job.id}
+                    title={job.title}
+                    companyName={job.companyName}
+                    companyLogo={job.companyLogo}
+                    locations={job.locations}
+                    workMode={job.workMode}
+                    employmentType={job.employmentType}
+                    salaryMin={job.salaryMin}
+                    salaryMax={job.salaryMax}
+                    salaryCurrency={job.salaryCurrency}
+                    skills={job.skills}
+                    experienceLevel={job.experienceLevel}
+                    applicationDeadline={job.applicationDeadline ? job.applicationDeadline.toString() : null}
+                    createdAt={job.createdAt.toString()}
                   />
                 </motion.div>
               ))}
@@ -224,7 +225,7 @@ export function JobListPage() {
           <div className="flex items-center justify-center gap-3 mt-8">
             <button
               type="button"
-              onClick={() => setParam("page", String(Number(params.page ?? 1) - 1))}
+              onClick={() => setParam("page", String(Math.max(1, Number(params.page ?? 1) - 1)))}
               disabled={!data.hasPrevPage}
               className="inline-flex items-center gap-1 px-3 py-2 text-sm rounded-lg border border-border-subtle disabled:opacity-40 disabled:cursor-not-allowed hover:bg-bg-muted transition-colors"
             >

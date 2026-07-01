@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useDeferredValue, useEffect, useTransition } from "react";
+import { useState, useEffect, useRef, useDeferredValue, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SearchIcon, XIcon } from "lucide-react";
 
@@ -10,17 +10,14 @@ export function JobSearchBar() {
   const [value, setValue] = useState(sp.get("search") ?? "");
   const deferredValue = useDeferredValue(value);
   const [, startTransition] = useTransition();
-  const initialRef = useRef(true);
+  const mountedRef = useRef(false);
 
   useEffect(() => {
-    if (initialRef.current) {
-      initialRef.current = false;
-      setValue(sp.get("search") ?? "");
-    }
-  }, [sp]);
+    mountedRef.current = true;
+  }, []);
 
   useEffect(() => {
-    if (initialRef.current) return;
+    if (!mountedRef.current) return;
     const timer = setTimeout(() => {
       startTransition(() => {
         const np = new URLSearchParams(sp.toString());

@@ -40,6 +40,9 @@ export type PublicJobDetail = {
   salaryCurrency: string;
   applicationDeadline: Date | null;
   applicationCount: number;
+  isActive: boolean;
+  status: string;
+  viewCount: number;
   createdAt: Date;
 };
 
@@ -66,6 +69,9 @@ export type PublicJobListParams = {
   sortBy?: string;
   sortOrder?: string;
 };
+
+const ALLOWED_SORT_FIELDS = new Set(["createdAt", "salaryMin", "salaryMax", "title", "applicationDeadline"]);
+const ALLOWED_SORT_ORDERS = new Set(["asc", "desc"]);
 
 export async function listPublicJobs(params: PublicJobListParams): Promise<PublicJobListResult> {
   const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
@@ -94,8 +100,8 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   }
   // "all" or undefined — no deadline filter
 
-  const sortBy = params.sortBy ?? "createdAt";
-  const sortOrder = params.sortOrder ?? "desc";
+  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "") ? (params.sortBy as string) : "createdAt";
+  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "") ? (params.sortOrder as string) : "desc";
 
   const [jobs, total] = await Promise.all([
     prisma.job.findMany({
@@ -129,14 +135,14 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
 
 export async function getPublicJobById(id: string): Promise<PublicJobDetail | null> {
   const job = await prisma.job.findUnique({
-    where: { id },
+    where: { id, isActive: true, status: "active" },
     include: {
       company: { select: { name: true, logoUrl: true, website: true, description: true } },
       _count: { select: { applications: { where: { status: { not: "withdrawn" } } } } },
     },
   });
 
-  if (!job || job.status !== "active" || !job.isActive) return null;
+  if (!job) return null;
   return {
     id: job.id,
     title: job.title,
@@ -158,6 +164,9 @@ export async function getPublicJobById(id: string): Promise<PublicJobDetail | nu
     salaryCurrency: job.salaryCurrency,
     applicationDeadline: job.applicationDeadline,
     applicationCount: job._count.applications,
+    isActive: job.isActive,
+    status: job.status,
+    viewCount: job.viewCount,
     createdAt: job.createdAt,
   };
 }
