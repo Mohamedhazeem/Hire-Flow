@@ -14,9 +14,7 @@ const columns = [
   {
     title: "Resources",
     links: [
-      { label: "Blog", href: "#" },
-      { label: "Guide", href: "#" },
-      { label: "FAQ", href: "#" },
+      { label: "Career Resources", href: "/resources" },
     ],
   },
   {

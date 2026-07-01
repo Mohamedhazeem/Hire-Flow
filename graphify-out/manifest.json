@@ -530,8 +530,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782748147.1888065,
-    "ast_hash": "f97daa523dbcbc54f6b16fca37881402",
+    "mtime": 1782885134.1776981,
+    "ast_hash": "20ae87a67510543310c04c95a0663e1b",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1735,8 +1735,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/queries/public-job-queries.ts": {
-    "mtime": 1782884151.7025785,
-    "ast_hash": "e6fa55e1d24cd055d75bb0f358b0be99",
+    "mtime": 1782884642.0046194,
+    "ast_hash": "4596e581df340d870d2c53fab723b661",
     "semantic_hash": ""
   },
   "app/features/jobs/schema/application-submit.schema.ts": {
@@ -1755,8 +1755,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1782882326.688868,
-    "ast_hash": "36fe15aabf3d33dcff8c766b9a52afe8",
+    "mtime": 1782885032.5400128,
+    "ast_hash": "9614a434e17e674c2630f80c2a4d593b",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
@@ -2135,8 +2135,8 @@
     "semantic_hash": ""
   },
   "lib/routes.ts": {
-    "mtime": 1782878624.6609087,
-    "ast_hash": "515496758b5e4883afe4d728601dc3ae",
+    "mtime": 1782885729.4946778,
+    "ast_hash": "fe27f4e4639a322fa6ebb23ff6871d57",
     "semantic_hash": ""
   },
   "lib/thread-utils.ts": {
@@ -2207,6 +2207,51 @@
   ".kilo/plans/step-4.3-auth-navbar.md": {
     "mtime": 1782877282.4880335,
     "ast_hash": "85b0fac7299bf28c3ec38875bf9c6742",
+    "semantic_hash": ""
+  },
+  "app/(resources)/page.tsx": {
+    "mtime": 1782885785.4274945,
+    "ast_hash": "20e37d715fe180303a2cb2a6a0043d5e",
+    "semantic_hash": ""
+  },
+  "plan-4.5-career-resources.md": {
+    "mtime": 1782884975.5547292,
+    "ast_hash": "c0eee040e425e4e7cc6bd150b694ac7f",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/career-resources-page.tsx": {
+    "mtime": 1782885822.3374147,
+    "ast_hash": "094036c0dd1299f3d0e3305821025846",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/index.ts": {
+    "mtime": 1782885818.395181,
+    "ast_hash": "24f23b1f94ffa856ec473d5eb5cb27e1",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/interview-checklist-section.tsx": {
+    "mtime": 1782885765.950408,
+    "ast_hash": "35ffe562709a8c9cd0d132646bf7756c",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/resource-hero.tsx": {
+    "mtime": 1782885744.8664694,
+    "ast_hash": "a9e8cfaccee4a4e94f4f2da6567ef8c8",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/resources-cta.tsx": {
+    "mtime": 1782885777.1933608,
+    "ast_hash": "3174cd66250bb5a42a40a0767e541b5b",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/resume-tips-section.tsx": {
+    "mtime": 1782885760.6251307,
+    "ast_hash": "fbe4dda07d22dbf34278f8e04a88dafd",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources/salary-faq-section.tsx": {
+    "mtime": 1782885772.6267853,
+    "ast_hash": "80c53dabaa7135bbe77165b1be419dd7",
     "semantic_hash": ""
   }
 }

@@ -6,7 +6,7 @@
 
 ## Last Updated
 
-2026-06-29T21:16:00Z
+2026-07-01T11:20:00Z
 
 ---
 
@@ -76,7 +76,7 @@
 - [ ] Step 4.2 - Public Job Details & View Tracking
 - [ ] Step 4.3 - Auth-Aware Navbar, Redirect Logic & Account Popover
 - [ ] Step 4.4 - Home Page Composition
-- [ ] Step 4.5 - Career Resources (Optional)
+- [x] Step 4.5 - Career Resources
 
 ---
 
@@ -350,7 +350,10 @@ Resume error handling:
 
 ### Phase 4
 
-_(agent to fill)_
+- app/features/public/components/career-resources/ (7 files: index.ts, career-resources-page.tsx, resource-hero.tsx, resume-tips-section.tsx, interview-checklist-section.tsx, salary-faq-section.tsx, resources-cta.tsx)
+- app/(resources)/page.tsx (route wrapper with metadata)
+- lib/routes.ts (added /resources to PUBLIC_CONTENT_PATHS)
+- app/features/landing/components/footer.tsx (removed # links, added /resources)
 
 ### Phase 5
 

@@ -1735,8 +1735,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/queries/public-job-queries.ts": {
-    "mtime": 1782875783.825064,
-    "ast_hash": "78996c24e5bc196a0a4e11dba38a3231",
+    "mtime": 1782884642.0046194,
+    "ast_hash": "4596e581df340d870d2c53fab723b661",
     "semantic_hash": ""
   },
   "app/features/jobs/schema/application-submit.schema.ts": {
@@ -1755,8 +1755,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1782882326.688868,
-    "ast_hash": "36fe15aabf3d33dcff8c766b9a52afe8",
+    "mtime": 1782885032.5400128,
+    "ast_hash": "9614a434e17e674c2630f80c2a4d593b",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
@@ -2145,8 +2145,8 @@
     "semantic_hash": ""
   },
   ".kilo/plans/1782747685285-home-page-composition.md": {
-    "mtime": 1782882225.2156506,
-    "ast_hash": "f7244348e78314658f738e92fb8509b7",
+    "mtime": 1782884102.9575071,
+    "ast_hash": "98f2e4d59fee9e86b45d048b7cf4e90c",
     "semantic_hash": ""
   },
   ".kilo/plans/202606292111-phase-3-schema-migration.md": {
@@ -2207,6 +2207,21 @@
   ".kilo/plans/step-4.3-auth-navbar.md": {
     "mtime": 1782877282.4880335,
     "ast_hash": "85b0fac7299bf28c3ec38875bf9c6742",
+    "semantic_hash": ""
+  },
+  "app/(resources)/page.tsx": {
+    "mtime": 1782885026.6439466,
+    "ast_hash": "c9f8b5950e088b536fcd329fe6072585",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/career-resources-page.tsx": {
+    "mtime": 1782885017.2485118,
+    "ast_hash": "97819762c6b1dd6c4d65c4462db32703",
+    "semantic_hash": ""
+  },
+  "plan-4.5-career-resources.md": {
+    "mtime": 1782884975.5547292,
+    "ast_hash": "c0eee040e425e4e7cc6bd150b694ac7f",
     "semantic_hash": ""
   }
 }
