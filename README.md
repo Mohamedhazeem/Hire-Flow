@@ -123,7 +123,6 @@ git clone https://github.com/<your-username>/hire-flow-next.git
 cd hire-flow-next
 npm install
 ```
-````
 
 ### 2. Configure environment variables
 
@@ -316,7 +315,4 @@ This project is available under the [MIT License](LICENSE).
 ## 📬 Contact
 
 Built by **Mohamed Hazeem** — reach out via [a.mohamedhazeem@gmail.com](mailto:a.mohamedhazeem@gmail.com) or [GitHub](https://github.com/Mohamedhazeem).
-
-```
-
-```
+````
