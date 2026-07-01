@@ -56,14 +56,374 @@
   },
   "nodes": [
     {
+      "label": "1782747685285-home-page-composition.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition",
+      "community": 86,
+      "norm_label": "1782747685285-home-page-composition.md"
+    },
+    {
+      "label": "Phase 4.4 \u2014 Home Page Composition",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "community": 86,
+      "norm_label": "phase 4.4 \u2014 home page composition"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_goal",
+      "community": 86,
+      "norm_label": "goal"
+    },
+    {
+      "label": "Context Files (read first)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_context_files_read_first",
+      "community": 86,
+      "norm_label": "context files (read first)"
+    },
+    {
+      "label": "Existing Files to NOT Touch",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_existing_files_to_not_touch",
+      "community": 86,
+      "norm_label": "existing files to not touch"
+    },
+    {
+      "label": "New Files (4)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_new_files_4",
+      "community": 86,
+      "norm_label": "new files (4)"
+    },
+    {
+      "label": "1. `app/features/public/components/hero-search.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx",
+      "community": 86,
+      "norm_label": "1. `app/features/public/components/hero-search.tsx`"
+    },
+    {
+      "label": "2. `app/features/public/components/category-strip.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx",
+      "community": 86,
+      "norm_label": "2. `app/features/public/components/category-strip.tsx`"
+    },
+    {
+      "label": "3. `app/features/public/queries/list-featured-companies.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts",
+      "community": 86,
+      "norm_label": "3. `app/features/public/queries/list-featured-companies.ts`"
+    },
+    {
+      "label": "4. `app/features/public/components/featured-companies.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx",
+      "community": 86,
+      "norm_label": "4. `app/features/public/components/featured-companies.tsx`"
+    },
+    {
+      "label": "5. `app/features/public/components/employer-cta.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx",
+      "community": 86,
+      "norm_label": "5. `app/features/public/components/employer-cta.tsx`"
+    },
+    {
+      "label": "Files to Modify (2)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "community": 86,
+      "norm_label": "files to modify (2)"
+    },
+    {
+      "label": "6. `app/features/landing/components/footer.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx",
+      "community": 86,
+      "norm_label": "6. `app/features/landing/components/footer.tsx`"
+    },
+    {
+      "label": "7. `app/features/landing/components/landing-page.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx",
+      "community": 86,
+      "norm_label": "7. `app/features/landing/components/landing-page.tsx`"
+    },
+    {
+      "label": "Delete",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_delete",
+      "community": 86,
+      "norm_label": "delete"
+    },
+    {
+      "label": "Edge Cases Verified",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_edge_cases_verified",
+      "community": 86,
+      "norm_label": "edge cases verified"
+    },
+    {
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_validation",
+      "community": 86,
+      "norm_label": "validation"
+    },
+    {
+      "label": "Designs Resolved",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "plans_1782747685285_home_page_composition_designs_resolved",
+      "community": 86,
+      "norm_label": "designs resolved"
+    },
+    {
+      "label": "footer.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_footer",
+      "community": 85,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_footer_columns",
+      "community": 85,
+      "norm_label": "columns"
+    },
+    {
+      "label": "socials",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "components_footer_socials",
+      "community": 85,
+      "norm_label": "socials"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "components_footer_footer",
+      "community": 85,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "landing-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_landing_page",
+      "community": 85,
+      "norm_label": "landing-page.tsx"
+    },
+    {
+      "label": "LandingPage()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "components_landing_page_landingpage",
+      "community": 85,
+      "norm_label": "landingpage()"
+    },
+    {
+      "label": "category-strip.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/category-strip.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_category_strip",
+      "community": 85,
+      "norm_label": "category-strip.tsx"
+    },
+    {
+      "label": "CATEGORY_ICONS",
+      "file_type": "code",
+      "source_file": "app/features/public/components/category-strip.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_category_strip_category_icons",
+      "community": 85,
+      "norm_label": "category_icons"
+    },
+    {
+      "label": "CategoryStrip()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/category-strip.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "components_category_strip_categorystrip",
+      "community": 85,
+      "norm_label": "categorystrip()"
+    },
+    {
+      "label": "employer-cta.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_employer_cta",
+      "community": 85,
+      "norm_label": "employer-cta.tsx"
+    },
+    {
+      "label": "EmployerCTA()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_employer_cta_employercta",
+      "community": 85,
+      "norm_label": "employercta()"
+    },
+    {
+      "label": "featured-companies.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_featured_companies",
+      "community": 85,
+      "norm_label": "featured-companies.tsx"
+    },
+    {
+      "label": "FeaturedCompanies()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_featured_companies_featuredcompanies",
+      "community": 85,
+      "norm_label": "featuredcompanies()"
+    },
+    {
+      "label": "hero-search.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_hero_search",
+      "community": 85,
+      "norm_label": "hero-search.tsx"
+    },
+    {
+      "label": "HeroSearch()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_hero_search_herosearch",
+      "community": 85,
+      "norm_label": "herosearch()"
+    },
+    {
+      "label": "list-featured-companies.ts",
+      "file_type": "code",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "queries_list_featured_companies",
+      "community": 85,
+      "norm_label": "list-featured-companies.ts"
+    },
+    {
+      "label": "FeaturedCompanyRow",
+      "file_type": "code",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "queries_list_featured_companies_featuredcompanyrow",
+      "community": 85,
+      "norm_label": "featuredcompanyrow"
+    },
+    {
+      "label": "listFeaturedCompanies()",
+      "file_type": "code",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "queries_list_featured_companies_listfeaturedcompanies",
+      "community": 85,
+      "norm_label": "listfeaturedcompanies()"
+    },
+    {
       "label": "AGENTS.md",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents",
       "community": 14,
-      "norm_label": "agents.md"
+      "norm_label": "agents.md",
+      "id": "agents"
     },
     {
       "label": "Agent Rules (applied always)",
@@ -71,9 +431,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "agents_agent_rules_applied_always",
       "community": 14,
-      "norm_label": "agent rules (applied always)"
+      "norm_label": "agent rules (applied always)",
+      "id": "agents_agent_rules_applied_always"
     },
     {
       "label": "Role Guard Requirement",
@@ -81,9 +441,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "agents_role_guard_requirement",
       "community": 14,
-      "norm_label": "role guard requirement"
+      "norm_label": "role guard requirement",
+      "id": "agents_role_guard_requirement"
     },
     {
       "label": "STATE & CACHE RULES (short)",
@@ -91,9 +451,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "agents_state_cache_rules_short",
       "community": 14,
-      "norm_label": "state & cache rules (short)"
+      "norm_label": "state & cache rules (short)",
+      "id": "agents_state_cache_rules_short"
     },
     {
       "label": "graphify",
@@ -101,9 +461,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "agents_graphify",
       "community": 14,
-      "norm_label": "graphify"
+      "norm_label": "graphify",
+      "id": "agents_graphify"
     },
     {
       "label": "Phase 2 & 3",
@@ -111,9 +471,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "agents_phase_2_3",
       "community": 14,
-      "norm_label": "phase 2 & 3"
+      "norm_label": "phase 2 & 3",
+      "id": "agents_phase_2_3"
     },
     {
       "label": "Stack",
@@ -121,9 +481,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "agents_stack",
       "community": 14,
-      "norm_label": "stack"
+      "norm_label": "stack",
+      "id": "agents_stack"
     },
     {
       "label": "Absolute Rules",
@@ -131,9 +491,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L56",
       "_origin": "ast",
-      "id": "agents_absolute_rules",
       "community": 14,
-      "norm_label": "absolute rules"
+      "norm_label": "absolute rules",
+      "id": "agents_absolute_rules"
     },
     {
       "label": "Project Structure Rules",
@@ -141,9 +501,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "agents_project_structure_rules",
       "community": 14,
-      "norm_label": "project structure rules"
+      "norm_label": "project structure rules",
+      "id": "agents_project_structure_rules"
     },
     {
       "label": "Core Routing (app/)",
@@ -151,9 +511,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "agents_core_routing_app",
       "community": 14,
-      "norm_label": "core routing (app/)"
+      "norm_label": "core routing (app/)",
+      "id": "agents_core_routing_app"
     },
     {
       "label": "Feature-Based Logic (`features/<name>/`)",
@@ -161,9 +521,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "agents_feature_based_logic_features_name",
       "community": 14,
-      "norm_label": "feature-based logic (`features/<name>/`)"
+      "norm_label": "feature-based logic (`features/<name>/`)",
+      "id": "agents_feature_based_logic_features_name"
     },
     {
       "label": "Shared Layers",
@@ -171,9 +531,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L90",
       "_origin": "ast",
-      "id": "agents_shared_layers",
       "community": 14,
-      "norm_label": "shared layers"
+      "norm_label": "shared layers",
+      "id": "agents_shared_layers"
     },
     {
       "label": "Naming",
@@ -181,9 +541,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L98",
       "_origin": "ast",
-      "id": "agents_naming",
       "community": 14,
-      "norm_label": "naming"
+      "norm_label": "naming",
+      "id": "agents_naming"
     },
     {
       "label": "Key Patterns (enforce)",
@@ -191,9 +551,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L106",
       "_origin": "ast",
-      "id": "agents_key_patterns_enforce",
       "community": 14,
-      "norm_label": "key patterns (enforce)"
+      "norm_label": "key patterns (enforce)",
+      "id": "agents_key_patterns_enforce"
     },
     {
       "label": "Theme & UI",
@@ -201,9 +561,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L117",
       "_origin": "ast",
-      "id": "agents_theme_ui",
       "community": 14,
-      "norm_label": "theme & ui"
+      "norm_label": "theme & ui",
+      "id": "agents_theme_ui"
     },
     {
       "label": "Responsive Design (Mobile-First)",
@@ -211,9 +571,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L124",
       "_origin": "ast",
-      "id": "agents_responsive_design_mobile_first",
       "community": 14,
-      "norm_label": "responsive design (mobile-first)"
+      "norm_label": "responsive design (mobile-first)",
+      "id": "agents_responsive_design_mobile_first"
     },
     {
       "label": "Shared Components Across Roles",
@@ -221,9 +581,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "agents_shared_components_across_roles",
       "community": 14,
-      "norm_label": "shared components across roles"
+      "norm_label": "shared components across roles",
+      "id": "agents_shared_components_across_roles"
     },
     {
       "label": "Context Pack \u2014 Read Before Writing Any Code",
@@ -231,9 +591,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L149",
       "_origin": "ast",
-      "id": "agents_context_pack_read_before_writing_any_code",
       "community": 14,
-      "norm_label": "context pack \u2014 read before writing any code"
+      "norm_label": "context pack \u2014 read before writing any code",
+      "id": "agents_context_pack_read_before_writing_any_code"
     },
     {
       "label": "Forbidden",
@@ -241,9 +601,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "agents_forbidden",
       "community": 14,
-      "norm_label": "forbidden"
+      "norm_label": "forbidden",
+      "id": "agents_forbidden"
     },
     {
       "label": "Dependencies Protocol",
@@ -251,9 +611,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L180",
       "_origin": "ast",
-      "id": "agents_dependencies_protocol",
       "community": 14,
-      "norm_label": "dependencies protocol"
+      "norm_label": "dependencies protocol",
+      "id": "agents_dependencies_protocol"
     },
     {
       "label": "Commands",
@@ -261,9 +621,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L185",
       "_origin": "ast",
-      "id": "agents_commands",
       "community": 14,
-      "norm_label": "commands"
+      "norm_label": "commands",
+      "id": "agents_commands"
     },
     {
       "label": "Task Completion Gate",
@@ -271,9 +631,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L194",
       "_origin": "ast",
-      "id": "agents_task_completion_gate",
       "community": 14,
-      "norm_label": "task completion gate"
+      "norm_label": "task completion gate",
+      "id": "agents_task_completion_gate"
     },
     {
       "label": "Output Constraints",
@@ -281,9 +641,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L198",
       "_origin": "ast",
-      "id": "agents_output_constraints",
       "community": 14,
-      "norm_label": "output constraints"
+      "norm_label": "output constraints",
+      "id": "agents_output_constraints"
     },
     {
       "label": "HIRE_FLOW_PROMPTS.md",
@@ -291,9 +651,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hire_flow_prompts",
       "community": 35,
-      "norm_label": "hire_flow_prompts.md"
+      "norm_label": "hire_flow_prompts.md",
+      "id": "hire_flow_prompts"
     },
     {
       "label": "**CLAUDE OUTPUT REFINE WITH GEMENI**",
@@ -301,9 +661,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hire_flow_prompts_claude_output_refine_with_gemeni",
       "community": 35,
-      "norm_label": "**claude output refine with gemeni**"
+      "norm_label": "**claude output refine with gemeni**",
+      "id": "hire_flow_prompts_claude_output_refine_with_gemeni"
     },
     {
       "label": "Step 0.6: TanStack Query Provider & Zustand Stores",
@@ -311,9 +671,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L156",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores",
       "community": 35,
-      "norm_label": "step 0.6: tanstack query provider & zustand stores"
+      "norm_label": "step 0.6: tanstack query provider & zustand stores",
+      "id": "hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores"
     },
     {
       "label": "Step 0.7: Project Manifest (Agent Memory)",
@@ -321,9 +681,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L185",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_0_7_project_manifest_agent_memory",
       "community": 35,
-      "norm_label": "step 0.7: project manifest (agent memory)"
+      "norm_label": "step 0.7: project manifest (agent memory)",
+      "id": "hire_flow_prompts_step_0_7_project_manifest_agent_memory"
     },
     {
       "label": "Phase 2: Recruiter Portal \u2013 Implementation Guide for AI Agent",
@@ -331,9 +691,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L308",
       "_origin": "ast",
-      "id": "hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
       "community": 35,
-      "norm_label": "phase 2: recruiter portal \u2013 implementation guide for ai agent"
+      "norm_label": "phase 2: recruiter portal \u2013 implementation guide for ai agent",
+      "id": "hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent"
     },
     {
       "label": "Core Principles & Constraints",
@@ -341,9 +701,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L315",
       "_origin": "ast",
-      "id": "hire_flow_prompts_core_principles_constraints",
       "community": 35,
-      "norm_label": "core principles & constraints"
+      "norm_label": "core principles & constraints",
+      "id": "hire_flow_prompts_core_principles_constraints"
     },
     {
       "label": "Step 2.0: Recruiter Layout & Sidebar (Foundation)",
@@ -351,9 +711,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L332",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation",
       "community": 35,
-      "norm_label": "step 2.0: recruiter layout & sidebar (foundation)"
+      "norm_label": "step 2.0: recruiter layout & sidebar (foundation)",
+      "id": "hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation"
     },
     {
       "label": "Step 2.1: Company Profile CRUD",
@@ -361,9 +721,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L356",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_1_company_profile_crud",
       "community": 35,
-      "norm_label": "step 2.1: company profile crud"
+      "norm_label": "step 2.1: company profile crud",
+      "id": "hire_flow_prompts_step_2_1_company_profile_crud"
     },
     {
       "label": "Step 2.2: Recruiter Team Management",
@@ -371,9 +731,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L379",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_2_recruiter_team_management",
       "community": 35,
-      "norm_label": "step 2.2: recruiter team management"
+      "norm_label": "step 2.2: recruiter team management",
+      "id": "hire_flow_prompts_step_2_2_recruiter_team_management"
     },
     {
       "label": "Step 2.3: Job Posts CRUD (with Job Detail View)",
@@ -381,9 +741,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L395",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view",
       "community": 35,
-      "norm_label": "step 2.3: job posts crud (with job detail view)"
+      "norm_label": "step 2.3: job posts crud (with job detail view)",
+      "id": "hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view"
     },
     {
       "label": "Step 2.4: Applicants View, Status Pipeline & Selection Workflow",
@@ -391,9 +751,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L419",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow",
       "community": 35,
-      "norm_label": "step 2.4: applicants view, status pipeline & selection workflow"
+      "norm_label": "step 2.4: applicants view, status pipeline & selection workflow",
+      "id": "hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow"
     },
     {
       "label": "Step 2.5: Direct Messaging (Thread\u2011Based)",
@@ -401,9 +761,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L444",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_5_direct_messaging_thread_based",
       "community": 35,
-      "norm_label": "step 2.5: direct messaging (thread\u2010based)"
+      "norm_label": "step 2.5: direct messaging (thread\u2010based)",
+      "id": "hire_flow_prompts_step_2_5_direct_messaging_thread_based"
     },
     {
       "label": "Step 2.6: Applicant Detail View",
@@ -411,9 +771,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L474",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_6_applicant_detail_view",
       "community": 35,
-      "norm_label": "step 2.6: applicant detail view"
+      "norm_label": "step 2.6: applicant detail view",
+      "id": "hire_flow_prompts_step_2_6_applicant_detail_view"
     },
     {
       "label": "Step 2.7: Bulk Actions for Selection",
@@ -421,9 +781,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L491",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_7_bulk_actions_for_selection",
       "community": 35,
-      "norm_label": "step 2.7: bulk actions for selection"
+      "norm_label": "step 2.7: bulk actions for selection",
+      "id": "hire_flow_prompts_step_2_7_bulk_actions_for_selection"
     },
     {
       "label": "Step 2.8: Recruiter Analytics & Filters",
@@ -431,9 +791,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L506",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_8_recruiter_analytics_filters",
       "community": 35,
-      "norm_label": "step 2.8: recruiter analytics & filters"
+      "norm_label": "step 2.8: recruiter analytics & filters",
+      "id": "hire_flow_prompts_step_2_8_recruiter_analytics_filters"
     },
     {
       "label": "Step 2.9: Recruiter Dashboard",
@@ -441,9 +801,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L519",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_9_recruiter_dashboard",
       "community": 35,
-      "norm_label": "step 2.9: recruiter dashboard"
+      "norm_label": "step 2.9: recruiter dashboard",
+      "id": "hire_flow_prompts_step_2_9_recruiter_dashboard"
     },
     {
       "label": "Step 2.10: Notifications & Activity Feed",
@@ -451,9 +811,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L531",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_10_notifications_activity_feed",
       "community": 35,
-      "norm_label": "step 2.10: notifications & activity feed"
+      "norm_label": "step 2.10: notifications & activity feed",
+      "id": "hire_flow_prompts_step_2_10_notifications_activity_feed"
     },
     {
       "label": "Step 2.11: Export Applicants (CSV)",
@@ -461,9 +821,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L543",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_2_11_export_applicants_csv",
       "community": 35,
-      "norm_label": "step 2.11: export applicants (csv)"
+      "norm_label": "step 2.11: export applicants (csv)",
+      "id": "hire_flow_prompts_step_2_11_export_applicants_csv"
     },
     {
       "label": "Phase 3: User",
@@ -471,9 +831,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L558",
       "_origin": "ast",
-      "id": "hire_flow_prompts_phase_3_user",
       "community": 35,
-      "norm_label": "phase 3: user"
+      "norm_label": "phase 3: user",
+      "id": "hire_flow_prompts_phase_3_user"
     },
     {
       "label": "Step 3.0a: Infrastructure Audit (Status: Already Built \u2014 No Action)",
@@ -481,9 +841,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L560",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action",
       "community": 35,
-      "norm_label": "step 3.0a: infrastructure audit (status: already built \u2014 no action)"
+      "norm_label": "step 3.0a: infrastructure audit (status: already built \u2014 no action)",
+      "id": "hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action"
     },
     {
       "label": "Step 3.0b: Schema Migration \u2014 Missing Fields",
@@ -491,9 +851,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L574",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_0b_schema_migration_missing_fields",
       "community": 35,
-      "norm_label": "step 3.0b: schema migration \u2014 missing fields"
+      "norm_label": "step 3.0b: schema migration \u2014 missing fields",
+      "id": "hire_flow_prompts_step_3_0b_schema_migration_missing_fields"
     },
     {
       "label": "Step 3.1: User Profile",
@@ -501,9 +861,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L613",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_1_user_profile",
       "community": 35,
-      "norm_label": "step 3.1: user profile"
+      "norm_label": "step 3.1: user profile",
+      "id": "hire_flow_prompts_step_3_1_user_profile"
     },
     {
       "label": "Step 3.2: Resumes & In-App Builder (Lightweight Form-Based)",
@@ -511,9 +871,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L650",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based",
       "community": 35,
-      "norm_label": "step 3.2: resumes & in-app builder (lightweight form-based)"
+      "norm_label": "step 3.2: resumes & in-app builder (lightweight form-based)",
+      "id": "hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based"
     },
     {
       "label": "Step 3.2a (NEW, Optional): AI-Powered Resume Assistance",
@@ -521,9 +881,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L701",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_2a_new_optional_ai_powered_resume_assistance",
       "community": 35,
-      "norm_label": "step 3.2a (new, optional): ai-powered resume assistance"
+      "norm_label": "step 3.2a (new, optional): ai-powered resume assistance",
+      "id": "hire_flow_prompts_step_3_2a_new_optional_ai_powered_resume_assistance"
     },
     {
       "label": "Step 3.3: Job Application Flow",
@@ -531,9 +891,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L819",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_3_job_application_flow",
       "community": 35,
-      "norm_label": "step 3.3: job application flow"
+      "norm_label": "step 3.3: job application flow",
+      "id": "hire_flow_prompts_step_3_3_job_application_flow"
     },
     {
       "label": "Step 3.4: User Activity Panel (My Applications)",
@@ -541,9 +901,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L854",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_4_user_activity_panel_my_applications",
       "community": 35,
-      "norm_label": "step 3.4: user activity panel (my applications)"
+      "norm_label": "step 3.4: user activity panel (my applications)",
+      "id": "hire_flow_prompts_step_3_4_user_activity_panel_my_applications"
     },
     {
       "label": "Step 3.5 (NEW): Application Detail, Withdraw & Message Recruiter",
@@ -551,9 +911,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L873",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter",
       "community": 35,
-      "norm_label": "step 3.5 (new): application detail, withdraw & message recruiter"
+      "norm_label": "step 3.5 (new): application detail, withdraw & message recruiter",
+      "id": "hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter"
     },
     {
       "label": "Step 3.6 (NEW, optional): Saved / Bookmarked Jobs",
@@ -561,9 +921,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L903",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs",
       "community": 35,
-      "norm_label": "step 3.6 (new, optional): saved / bookmarked jobs"
+      "norm_label": "step 3.6 (new, optional): saved / bookmarked jobs",
+      "id": "hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs"
     },
     {
       "label": "Phase 4: Public Job Routes & Home Page",
@@ -571,9 +931,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L918",
       "_origin": "ast",
-      "id": "hire_flow_prompts_phase_4_public_job_routes_home_page",
       "community": 35,
-      "norm_label": "phase 4: public job routes & home page"
+      "norm_label": "phase 4: public job routes & home page",
+      "id": "hire_flow_prompts_phase_4_public_job_routes_home_page"
     },
     {
       "label": "Step 4.0: Public Route Group & Shared Shell",
@@ -581,9 +941,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L936",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_0_public_route_group_shared_shell",
       "community": 35,
-      "norm_label": "step 4.0: public route group & shared shell"
+      "norm_label": "step 4.0: public route group & shared shell",
+      "id": "hire_flow_prompts_step_4_0_public_route_group_shared_shell"
     },
     {
       "label": "Step 4.1: Public Job Listings",
@@ -591,9 +951,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L956",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_1_public_job_listings",
       "community": 35,
-      "norm_label": "step 4.1: public job listings"
+      "norm_label": "step 4.1: public job listings",
+      "id": "hire_flow_prompts_step_4_1_public_job_listings"
     },
     {
       "label": "Step 4.2: Public Job Details & View Tracking",
@@ -601,9 +961,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L990",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_2_public_job_details_view_tracking",
       "community": 35,
-      "norm_label": "step 4.2: public job details & view tracking"
+      "norm_label": "step 4.2: public job details & view tracking",
+      "id": "hire_flow_prompts_step_4_2_public_job_details_view_tracking"
     },
     {
       "label": "Step 4.3: Auth-Aware Navbar, Redirect Logic & Account Popover",
@@ -611,9 +971,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1012",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_3_auth_aware_navbar_redirect_logic_account_popover",
       "community": 35,
-      "norm_label": "step 4.3: auth-aware navbar, redirect logic & account popover"
+      "norm_label": "step 4.3: auth-aware navbar, redirect logic & account popover",
+      "id": "hire_flow_prompts_step_4_3_auth_aware_navbar_redirect_logic_account_popover"
     },
     {
       "label": "Step 4.4: Home Page Composition",
@@ -621,9 +981,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1173",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_4_home_page_composition",
       "community": 35,
-      "norm_label": "step 4.4: home page composition"
+      "norm_label": "step 4.4: home page composition",
+      "id": "hire_flow_prompts_step_4_4_home_page_composition"
     },
     {
       "label": "Step 4.5 (Optional, skip-friendly): Career Resources",
@@ -631,9 +991,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1235",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_5_optional_skip_friendly_career_resources",
       "community": 35,
-      "norm_label": "step 4.5 (optional, skip-friendly): career resources"
+      "norm_label": "step 4.5 (optional, skip-friendly): career resources",
+      "id": "hire_flow_prompts_step_4_5_optional_skip_friendly_career_resources"
     },
     {
       "label": "Step 4.6: SEO \u2014 Metadata, Sitemap, Robots & Structured Data",
@@ -641,9 +1001,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1250",
       "_origin": "ast",
-      "id": "hire_flow_prompts_step_4_6_seo_metadata_sitemap_robots_structured_data",
       "community": 35,
-      "norm_label": "step 4.6: seo \u2014 metadata, sitemap, robots & structured data"
+      "norm_label": "step 4.6: seo \u2014 metadata, sitemap, robots & structured data",
+      "id": "hire_flow_prompts_step_4_6_seo_metadata_sitemap_robots_structured_data"
     },
     {
       "label": "MANIFEST.md",
@@ -651,9 +1011,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "manifest",
       "community": 33,
-      "norm_label": "manifest.md"
+      "norm_label": "manifest.md",
+      "id": "manifest"
     },
     {
       "label": "Hire Flow Next - Project Manifest",
@@ -661,9 +1021,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "manifest_hire_flow_next_project_manifest",
       "community": 33,
-      "norm_label": "hire flow next - project manifest"
+      "norm_label": "hire flow next - project manifest",
+      "id": "manifest_hire_flow_next_project_manifest"
     },
     {
       "label": "Last Updated",
@@ -671,9 +1031,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "manifest_last_updated",
       "community": 33,
-      "norm_label": "last updated"
+      "norm_label": "last updated",
+      "id": "manifest_last_updated"
     },
     {
       "label": "Overview",
@@ -681,9 +1041,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "manifest_overview",
       "community": 33,
-      "norm_label": "overview"
+      "norm_label": "overview",
+      "id": "manifest_overview"
     },
     {
       "label": "Completed Steps",
@@ -691,9 +1051,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "manifest_completed_steps",
       "community": 33,
-      "norm_label": "completed steps"
+      "norm_label": "completed steps",
+      "id": "manifest_completed_steps"
     },
     {
       "label": "Phase 0: Foundation",
@@ -701,9 +1061,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "manifest_phase_0_foundation",
       "community": 33,
-      "norm_label": "phase 0: foundation"
+      "norm_label": "phase 0: foundation",
+      "id": "manifest_phase_0_foundation"
     },
     {
       "label": "Phase 1: Admin",
@@ -711,9 +1071,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "manifest_phase_1_admin",
       "community": 33,
-      "norm_label": "phase 1: admin"
+      "norm_label": "phase 1: admin",
+      "id": "manifest_phase_1_admin"
     },
     {
       "label": "Phase 2: Recruiter",
@@ -721,9 +1081,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "manifest_phase_2_recruiter",
       "community": 33,
-      "norm_label": "phase 2: recruiter"
+      "norm_label": "phase 2: recruiter",
+      "id": "manifest_phase_2_recruiter"
     },
     {
       "label": "Phase 3: User",
@@ -731,9 +1091,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "manifest_phase_3_user",
       "community": 33,
-      "norm_label": "phase 3: user"
+      "norm_label": "phase 3: user",
+      "id": "manifest_phase_3_user"
     },
     {
       "label": "Phase 4: Public Job Routes & Home Page",
@@ -741,9 +1101,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L72",
       "_origin": "ast",
-      "id": "manifest_phase_4_public_job_routes_home_page",
       "community": 33,
-      "norm_label": "phase 4: public job routes & home page"
+      "norm_label": "phase 4: public job routes & home page",
+      "id": "manifest_phase_4_public_job_routes_home_page"
     },
     {
       "label": "Created File Paths (Grouped by Phase)",
@@ -751,9 +1111,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L83",
       "_origin": "ast",
-      "id": "manifest_created_file_paths_grouped_by_phase",
       "community": 33,
-      "norm_label": "created file paths (grouped by phase)"
+      "norm_label": "created file paths (grouped by phase)",
+      "id": "manifest_created_file_paths_grouped_by_phase"
     },
     {
       "label": "Phase 0",
@@ -761,9 +1121,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "manifest_phase_0",
       "community": 33,
-      "norm_label": "phase 0"
+      "norm_label": "phase 0",
+      "id": "manifest_phase_0"
     },
     {
       "label": "Phase 1",
@@ -771,9 +1131,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L127",
       "_origin": "ast",
-      "id": "manifest_phase_1",
       "community": 33,
-      "norm_label": "phase 1"
+      "norm_label": "phase 1",
+      "id": "manifest_phase_1"
     },
     {
       "label": "Phase 2",
@@ -781,9 +1141,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L179",
       "_origin": "ast",
-      "id": "manifest_phase_2",
       "community": 33,
-      "norm_label": "phase 2"
+      "norm_label": "phase 2",
+      "id": "manifest_phase_2"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.5 Messaging)",
@@ -791,9 +1151,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L224",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_5_messaging",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.5 messaging)"
+      "norm_label": "phase 2 (continued \u2014 step 2.5 messaging)",
+      "id": "manifest_phase_2_continued_step_2_5_messaging"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.6 Applicant Detail View)",
@@ -801,9 +1161,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L248",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.6 applicant detail view)"
+      "norm_label": "phase 2 (continued \u2014 step 2.6 applicant detail view)",
+      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.7 Bulk Actions)",
@@ -811,9 +1171,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L265",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_7_bulk_actions",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.7 bulk actions)"
+      "norm_label": "phase 2 (continued \u2014 step 2.7 bulk actions)",
+      "id": "manifest_phase_2_continued_step_2_7_bulk_actions"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.8 Recruiter Analytics & Filters)",
@@ -821,9 +1181,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L276",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.8 recruiter analytics & filters)"
+      "norm_label": "phase 2 (continued \u2014 step 2.8 recruiter analytics & filters)",
+      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.9 Recruiter Dashboard)",
@@ -831,9 +1191,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L294",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.9 recruiter dashboard)"
+      "norm_label": "phase 2 (continued \u2014 step 2.9 recruiter dashboard)",
+      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.10 Notifications & Activity Feed)",
@@ -841,9 +1201,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L300",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.10 notifications & activity feed)"
+      "norm_label": "phase 2 (continued \u2014 step 2.10 notifications & activity feed)",
+      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed"
     },
     {
       "label": "Phase 2 (continued \u2014 Step 2.11 CSV Export)",
@@ -851,9 +1211,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L318",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_11_csv_export",
       "community": 33,
-      "norm_label": "phase 2 (continued \u2014 step 2.11 csv export)"
+      "norm_label": "phase 2 (continued \u2014 step 2.11 csv export)",
+      "id": "manifest_phase_2_continued_step_2_11_csv_export"
     },
     {
       "label": "Phase 3 \u2014 Admin Applicant Detail View",
@@ -861,9 +1221,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L325",
       "_origin": "ast",
-      "id": "manifest_phase_3_admin_applicant_detail_view",
       "community": 33,
-      "norm_label": "phase 3 \u2014 admin applicant detail view"
+      "norm_label": "phase 3 \u2014 admin applicant detail view",
+      "id": "manifest_phase_3_admin_applicant_detail_view"
     },
     {
       "label": "Phase 4",
@@ -871,9 +1231,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L347",
       "_origin": "ast",
-      "id": "manifest_phase_4",
       "community": 33,
-      "norm_label": "phase 4"
+      "norm_label": "phase 4",
+      "id": "manifest_phase_4"
     },
     {
       "label": "Phase 5",
@@ -881,9 +1241,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L351",
       "_origin": "ast",
-      "id": "manifest_phase_5",
       "community": 33,
-      "norm_label": "phase 5"
+      "norm_label": "phase 5",
+      "id": "manifest_phase_5"
     },
     {
       "label": "Pending Dependencies",
@@ -891,9 +1251,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L357",
       "_origin": "ast",
-      "id": "manifest_pending_dependencies",
       "community": 33,
-      "norm_label": "pending dependencies"
+      "norm_label": "pending dependencies",
+      "id": "manifest_pending_dependencies"
     },
     {
       "label": "Upcoming Dependencies (Phase 3)",
@@ -901,9 +1261,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L362",
       "_origin": "ast",
-      "id": "manifest_upcoming_dependencies_phase_3",
       "community": 33,
-      "norm_label": "upcoming dependencies (phase 3)"
+      "norm_label": "upcoming dependencies (phase 3)",
+      "id": "manifest_upcoming_dependencies_phase_3"
     },
     {
       "label": "Upcoming Dependencies (Phase 1)",
@@ -911,9 +1271,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L367",
       "_origin": "ast",
-      "id": "manifest_upcoming_dependencies_phase_1",
       "community": 33,
-      "norm_label": "upcoming dependencies (phase 1)"
+      "norm_label": "upcoming dependencies (phase 1)",
+      "id": "manifest_upcoming_dependencies_phase_1"
     },
     {
       "label": "Active Global Context Snapshot",
@@ -921,9 +1281,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L375",
       "_origin": "ast",
-      "id": "manifest_active_global_context_snapshot",
       "community": 33,
-      "norm_label": "active global context snapshot"
+      "norm_label": "active global context snapshot",
+      "id": "manifest_active_global_context_snapshot"
     },
     {
       "label": "Known Issues / TODOs",
@@ -931,9 +1291,9 @@
       "source_file": "MANIFEST.md",
       "source_location": "L386",
       "_origin": "ast",
-      "id": "manifest_known_issues_todos",
       "community": 33,
-      "norm_label": "known issues / todos"
+      "norm_label": "known issues / todos",
+      "id": "manifest_known_issues_todos"
     },
     {
       "label": "kilo.json",
@@ -1361,7 +1721,7 @@
       "source_file": "app/(roles)/admin/applications/[applicationId]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "page.tsx",
       "id": "app_roles_admin_applications_applicationid_page_tsx_applicationid_page"
     },
@@ -1371,7 +1731,7 @@
       "source_file": "app/(roles)/admin/applications/[applicationId]/page.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "props",
       "id": "app_roles_admin_applications_applicationid_page_tsx_applicationid_page_props"
     },
@@ -1381,7 +1741,7 @@
       "source_file": "app/(roles)/admin/applications/[applicationId]/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "metadata",
       "id": "app_roles_admin_applications_applicationid_page_tsx_applicationid_page_metadata"
     },
@@ -1391,7 +1751,7 @@
       "source_file": "app/(roles)/admin/applications/[applicationId]/page.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "adminapplicantdetailroute()",
       "id": "applicationid_page_adminapplicantdetailroute"
     },
@@ -1601,7 +1961,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 93,
+      "community": 51,
       "norm_label": "page.tsx",
       "id": "app_roles_admin_team_page_tsx_team_page"
     },
@@ -1611,7 +1971,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 93,
+      "community": 51,
       "norm_label": "metadata",
       "id": "app_roles_admin_team_page_tsx_team_page_metadata"
     },
@@ -1621,7 +1981,7 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 93,
+      "community": 51,
       "norm_label": "adminteampage()",
       "id": "team_page_adminteampage"
     },
@@ -1631,7 +1991,7 @@
       "source_file": "app/(roles)/admin/users/[id]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 12,
       "norm_label": "page.tsx",
       "id": "app_roles_admin_users_id_page_tsx_id_page"
     },
@@ -1641,7 +2001,7 @@
       "source_file": "app/(roles)/admin/users/[id]/page.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 66,
+      "community": 12,
       "norm_label": "props",
       "id": "id_page_props"
     },
@@ -1651,7 +2011,7 @@
       "source_file": "app/(roles)/admin/users/[id]/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 66,
+      "community": 54,
       "norm_label": "adminuserdetailpage()",
       "id": "id_page_adminuserdetailpage"
     },
@@ -1761,7 +2121,7 @@
       "source_file": "app/(roles)/recruiter/company/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "page.tsx",
       "id": "company_page"
     },
@@ -1771,7 +2131,7 @@
       "source_file": "app/(roles)/recruiter/company/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "metadata",
       "id": "company_page_metadata"
     },
@@ -1781,7 +2141,7 @@
       "source_file": "app/(roles)/recruiter/company/page.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companypage()",
       "id": "company_page_companypage"
     },
@@ -1891,7 +2251,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "page.tsx",
       "id": "edit_page"
     },
@@ -1901,7 +2261,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "pageprops",
       "id": "edit_page_pageprops"
     },
@@ -1911,7 +2271,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "generatemetadata()",
       "id": "edit_page_generatemetadata"
     },
@@ -1931,7 +2291,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "page.tsx",
       "id": "app_roles_recruiter_jobs_id_page_tsx_id_page"
     },
@@ -1941,7 +2301,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "pageprops",
       "id": "id_page_pageprops"
     },
@@ -1951,7 +2311,7 @@
       "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "generatemetadata()",
       "id": "id_page_generatemetadata"
     },
@@ -2121,7 +2481,7 @@
       "source_file": "app/(roles)/recruiter/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "page.tsx",
       "id": "recruiter_page"
     },
@@ -2131,7 +2491,7 @@
       "source_file": "app/(roles)/recruiter/page.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "metadata",
       "id": "recruiter_page_metadata"
     },
@@ -2141,7 +2501,7 @@
       "source_file": "app/(roles)/recruiter/page.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "recruiterpage()",
       "id": "recruiter_page_recruiterpage"
     },
@@ -2171,7 +2531,7 @@
       "source_file": "app/(roles)/recruiter/team/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "page.tsx",
       "id": "app_roles_recruiter_team_page_tsx_team_page"
     },
@@ -2181,7 +2541,7 @@
       "source_file": "app/(roles)/recruiter/team/page.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "metadata",
       "id": "app_roles_recruiter_team_page_tsx_team_page_metadata"
     },
@@ -2191,7 +2551,7 @@
       "source_file": "app/(roles)/recruiter/team/page.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterteampage()",
       "id": "team_page_recruiterteampage"
     },
@@ -2301,7 +2661,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 84,
+      "community": 74,
       "norm_label": "page.tsx",
       "id": "user_page"
     },
@@ -2311,7 +2671,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 84,
+      "community": 74,
       "norm_label": "metadata",
       "id": "user_page_metadata"
     },
@@ -2321,7 +2681,7 @@
       "source_file": "app/(roles)/user/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 84,
+      "community": 74,
       "norm_label": "candidatepage()",
       "id": "user_page_candidatepage"
     },
@@ -2381,7 +2741,7 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "dashboard_route"
     },
@@ -2391,7 +2751,7 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "get",
       "id": "dashboard_route_get"
     },
@@ -2431,7 +2791,7 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "app_api_admin_invite_accept_route_ts_accept_route"
     },
@@ -2441,7 +2801,7 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "handlepost()",
       "id": "app_api_admin_invite_accept_route_ts_accept_route_handlepost"
     },
@@ -2451,7 +2811,7 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "post",
       "id": "app_api_admin_invite_accept_route_ts_accept_route_post"
     },
@@ -2461,7 +2821,7 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "app_api_admin_invite_route_ts_invite_route"
     },
@@ -2471,7 +2831,7 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_admin_invite_route_ts_invite_route_handleget"
     },
@@ -2481,7 +2841,7 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "app_api_admin_invite_route_ts_invite_route_get"
     },
@@ -2541,7 +2901,7 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "app_api_admin_jobs_route_ts_jobs_route"
     },
@@ -2551,7 +2911,7 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_admin_jobs_route_ts_jobs_route_handleget"
     },
@@ -2561,7 +2921,7 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "app_api_admin_jobs_route_ts_jobs_route_get"
     },
@@ -2571,7 +2931,7 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "app_api_admin_messages_threadid_messageid_route_ts_messageid_route"
     },
@@ -2581,7 +2941,7 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "handledelete()",
       "id": "app_api_admin_messages_threadid_messageid_route_ts_messageid_route_handledelete"
     },
@@ -2591,7 +2951,7 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "delete",
       "id": "app_api_admin_messages_threadid_messageid_route_ts_messageid_route_delete"
     },
@@ -2701,7 +3061,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "app_api_admin_messages_search_route_ts_search_route"
     },
@@ -2711,7 +3071,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_admin_messages_search_route_ts_search_route_handleget"
     },
@@ -2721,7 +3081,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "app_api_admin_messages_search_route_ts_search_route_get"
     },
@@ -2761,7 +3121,7 @@
       "source_file": "app/api/admin/threads/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "app_api_admin_threads_route_ts_threads_route"
     },
@@ -2771,7 +3131,7 @@
       "source_file": "app/api/admin/threads/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "getotheruserid()",
       "id": "app_api_admin_threads_route_ts_threads_route_getotheruserid"
     },
@@ -2791,7 +3151,7 @@
       "source_file": "app/api/admin/threads/route.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "get",
       "id": "app_api_admin_threads_route_ts_threads_route_get"
     },
@@ -2891,7 +3251,7 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 110,
       "norm_label": "route.ts",
       "id": "app_api_admin_users_id_route_ts_id_route"
     },
@@ -2901,7 +3261,7 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 66,
+      "community": 110,
       "norm_label": "handleget()",
       "id": "app_api_admin_users_id_route_ts_id_route_handleget"
     },
@@ -2911,7 +3271,7 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 66,
+      "community": 110,
       "norm_label": "handledelete()",
       "id": "app_api_admin_users_id_route_ts_id_route_handledelete"
     },
@@ -2921,7 +3281,7 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 66,
+      "community": 110,
       "norm_label": "get",
       "id": "app_api_admin_users_id_route_ts_id_route_get"
     },
@@ -2931,7 +3291,7 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 66,
+      "community": 110,
       "norm_label": "delete",
       "id": "app_api_admin_users_id_route_ts_id_route_delete"
     },
@@ -3021,7 +3381,7 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "users_route"
     },
@@ -3031,7 +3391,7 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "users_route_handleget"
     },
@@ -3041,7 +3401,7 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "users_route_get"
     },
@@ -3071,7 +3431,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "route.ts",
       "id": "download_route"
     },
@@ -3081,7 +3441,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "upload_dir",
       "id": "download_route_upload_dir"
     },
@@ -3091,7 +3451,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "mime_map",
       "id": "download_route_mime_map"
     },
@@ -3101,7 +3461,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "handleget()",
       "id": "download_route_handleget"
     },
@@ -3111,7 +3471,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "get",
       "id": "download_route_get"
     },
@@ -3191,7 +3551,7 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_analytics_route_ts_analytics_route"
     },
@@ -3201,7 +3561,7 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_analytics_route_ts_analytics_route_handleget"
     },
@@ -3211,7 +3571,7 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "get",
       "id": "app_api_recruiter_analytics_route_ts_analytics_route_get"
     },
@@ -3221,7 +3581,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 84,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route"
     },
@@ -3231,7 +3591,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 71,
+      "community": 84,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_handleget"
     },
@@ -3241,7 +3601,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 71,
+      "community": 84,
       "norm_label": "get",
       "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_get"
     },
@@ -3251,7 +3611,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "profile_route"
     },
@@ -3261,7 +3621,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "handleget()",
       "id": "profile_route_handleget"
     },
@@ -3271,7 +3631,7 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 66,
+      "community": 50,
       "norm_label": "get",
       "id": "profile_route_get"
     },
@@ -3401,7 +3761,7 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_invite_accept_route_ts_accept_route"
     },
@@ -3411,7 +3771,7 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "handlepost()",
       "id": "app_api_recruiter_invite_accept_route_ts_accept_route_handlepost"
     },
@@ -3421,7 +3781,7 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "post",
       "id": "app_api_recruiter_invite_accept_route_ts_accept_route_post"
     },
@@ -3431,7 +3791,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_invite_route_ts_invite_route"
     },
@@ -3441,7 +3801,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_invite_route_ts_invite_route_handleget"
     },
@@ -3451,7 +3811,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "app_api_recruiter_invite_route_ts_invite_route_get"
     },
@@ -3461,7 +3821,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route"
     },
@@ -3471,7 +3831,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_handleget"
     },
@@ -3481,7 +3841,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "get",
       "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_get"
     },
@@ -3491,7 +3851,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "route.ts",
       "id": "export_route"
     },
@@ -3501,7 +3861,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "handleget()",
       "id": "export_route_handleget"
     },
@@ -3511,7 +3871,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "get",
       "id": "export_route_get"
     },
@@ -3831,7 +4191,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_messages_search_route_ts_search_route"
     },
@@ -3841,7 +4201,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_messages_search_route_ts_search_route_handleget"
     },
@@ -3851,7 +4211,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "get",
       "id": "app_api_recruiter_messages_search_route_ts_search_route_get"
     },
@@ -3961,7 +4321,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "route.ts",
       "id": "app_api_users_id_route_ts_id_route"
     },
@@ -3971,7 +4331,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 71,
+      "community": 66,
       "norm_label": "handleget()",
       "id": "app_api_users_id_route_ts_id_route_handleget"
     },
@@ -3981,7 +4341,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "get",
       "id": "app_api_users_id_route_ts_id_route_get"
     },
@@ -4071,7 +4431,7 @@
       "source_file": "app/features/admin/components/admin-applicant-detail-page.tsx",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "adminapplicantdetailpage()",
       "id": "components_admin_applicant_detail_page_adminapplicantdetailpage"
     },
@@ -4551,7 +4911,7 @@
       "source_file": "app/features/admin/components/invite-admin-form.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 93,
+      "community": 51,
       "norm_label": "inviteadminform()",
       "id": "components_invite_admin_form_inviteadminform"
     },
@@ -4681,7 +5041,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L134",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "peopletable()",
       "id": "components_people_table_peopletable"
     },
@@ -5001,7 +5361,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "use-admin-users.ts",
       "id": "hooks_use_admin_users"
     },
@@ -5011,7 +5371,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "useadminusers()",
       "id": "hooks_use_admin_users_useadminusers"
     },
@@ -5021,7 +5381,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "useadminuser()",
       "id": "hooks_use_admin_users_useadminuser"
     },
@@ -5051,7 +5411,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "usedeleteuser()",
       "id": "hooks_use_admin_users_usedeleteuser"
     },
@@ -5061,7 +5421,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "usesetuserrole()",
       "id": "hooks_use_admin_users_usesetuserrole"
     },
@@ -5071,7 +5431,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 100,
+      "community": 90,
       "norm_label": "userevokeusersessions()",
       "id": "hooks_use_admin_users_userevokeusersessions"
     },
@@ -5091,7 +5451,7 @@
       "source_file": "app/features/admin/hooks/use-applicant-detail.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 114,
+      "community": 83,
       "norm_label": "use-applicant-detail.ts",
       "id": "app_features_admin_hooks_use_applicant_detail_ts_hooks_use_applicant_detail"
     },
@@ -5101,7 +5461,7 @@
       "source_file": "app/features/admin/hooks/use-applicant-detail.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 114,
+      "community": 12,
       "norm_label": "useadminapplicantdetail()",
       "id": "hooks_use_applicant_detail_useadminapplicantdetail"
     },
@@ -5241,7 +5601,7 @@
       "source_file": "app/features/admin/queries/job-queries.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 11,
+      "community": 0,
       "norm_label": "adminjoblistresult",
       "id": "queries_job_queries_adminjoblistresult"
     },
@@ -5291,7 +5651,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 11,
+      "community": 100,
       "norm_label": "listusers()",
       "id": "queries_user_queries_listusers"
     },
@@ -5311,7 +5671,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L107",
       "_origin": "ast",
-      "community": 100,
+      "community": 110,
       "norm_label": "getuserbyid()",
       "id": "queries_user_queries_getuserbyid"
     },
@@ -5381,7 +5741,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 100,
+      "community": 51,
       "norm_label": "adminbanuserinput",
       "id": "schema_admin_schema_adminbanuserinput"
     },
@@ -5411,7 +5771,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 71,
+      "community": 51,
       "norm_label": "adminacceptinviteschema",
       "id": "schema_admin_schema_adminacceptinviteschema"
     },
@@ -5481,7 +5841,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 11,
+      "community": 0,
       "norm_label": "adminlistjobsparams",
       "id": "schema_admin_schema_adminlistjobsparams"
     },
@@ -6011,7 +6371,7 @@
       "source_file": "app/features/auth/components/logout-button.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 84,
+      "community": 74,
       "norm_label": "logout-button.tsx",
       "id": "components_logout_button"
     },
@@ -6021,7 +6381,7 @@
       "source_file": "app/features/auth/components/logout-button.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 84,
+      "community": 74,
       "norm_label": "logoutbutton()",
       "id": "components_logout_button_logoutbutton"
     },
@@ -6901,7 +7261,7 @@
       "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "bulkinviteresult",
       "id": "actions_bulk_invite_recruiters_bulkinviteresult"
     },
@@ -6911,7 +7271,7 @@
       "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 85,
+      "community": 66,
       "norm_label": "bulkinviterecruiters()",
       "id": "actions_bulk_invite_recruiters_bulkinviterecruiters"
     },
@@ -6941,7 +7301,7 @@
       "source_file": "app/features/recruiter/actions/upsert-company.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "upsert-company.ts",
       "id": "actions_upsert_company"
     },
@@ -6951,7 +7311,7 @@
       "source_file": "app/features/recruiter/actions/upsert-company.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "upsertcompany()",
       "id": "actions_upsert_company_upsertcompany"
     },
@@ -7351,7 +7711,7 @@
       "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "funnel-chart.tsx",
       "id": "charts_funnel_chart"
     },
@@ -7361,7 +7721,7 @@
       "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "funnelstage",
       "id": "charts_funnel_chart_funnelstage"
     },
@@ -7371,7 +7731,7 @@
       "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "funnelchartprops",
       "id": "charts_funnel_chart_funnelchartprops"
     },
@@ -7381,7 +7741,7 @@
       "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "funnelrow()",
       "id": "charts_funnel_chart_funnelrow"
     },
@@ -7391,7 +7751,7 @@
       "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 9,
+      "community": 106,
       "norm_label": "funnelchart()",
       "id": "charts_funnel_chart_funnelchart"
     },
@@ -7441,7 +7801,7 @@
       "source_file": "app/features/recruiter/components/company-form.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "company-form.tsx",
       "id": "components_company_form"
     },
@@ -7451,7 +7811,7 @@
       "source_file": "app/features/recruiter/components/company-form.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companyformprops",
       "id": "components_company_form_companyformprops"
     },
@@ -7461,7 +7821,7 @@
       "source_file": "app/features/recruiter/components/company-form.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companyform()",
       "id": "components_company_form_companyform"
     },
@@ -7661,7 +8021,7 @@
       "source_file": "app/features/recruiter/components/invite-recruiter-form.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "invite-recruiter-form.tsx",
       "id": "components_invite_recruiter_form"
     },
@@ -7671,7 +8031,7 @@
       "source_file": "app/features/recruiter/components/invite-recruiter-form.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "tab",
       "id": "components_invite_recruiter_form_tab"
     },
@@ -7681,7 +8041,7 @@
       "source_file": "app/features/recruiter/components/invite-recruiter-form.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "inviterecruiterform()",
       "id": "components_invite_recruiter_form_inviterecruiterform"
     },
@@ -7691,7 +8051,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "job-detail.tsx",
       "id": "components_job_detail"
     },
@@ -7701,7 +8061,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "status_badge",
       "id": "components_job_detail_status_badge"
     },
@@ -7711,7 +8071,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "jobdetailprops",
       "id": "components_job_detail_jobdetailprops"
     },
@@ -7721,7 +8081,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "inforow()",
       "id": "components_job_detail_inforow"
     },
@@ -7731,7 +8091,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "tabs",
       "id": "components_job_detail_tabs"
     },
@@ -7741,7 +8101,7 @@
       "source_file": "app/features/recruiter/components/job-detail.tsx",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 106,
+      "community": 83,
       "norm_label": "jobdetail()",
       "id": "components_job_detail_jobdetail"
     },
@@ -7941,7 +8301,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 12,
       "norm_label": "recruiter-dashboard.tsx",
       "id": "components_recruiter_dashboard"
     },
@@ -7951,7 +8311,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 47,
+      "community": 12,
       "norm_label": "recruiterdashboardprops",
       "id": "components_recruiter_dashboard_recruiterdashboardprops"
     },
@@ -7961,7 +8321,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 47,
+      "community": 12,
       "norm_label": "recentcolumns",
       "id": "components_recruiter_dashboard_recentcolumns"
     },
@@ -7971,7 +8331,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "recruiterdashboard()",
       "id": "components_recruiter_dashboard_recruiterdashboard"
     },
@@ -8091,7 +8451,7 @@
       "source_file": "app/features/recruiter/components/recruiter-team-list.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 51,
       "norm_label": "recruiter-team-list.tsx",
       "id": "components_recruiter_team_list"
     },
@@ -8101,7 +8461,7 @@
       "source_file": "app/features/recruiter/components/recruiter-team-list.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "recruiterteamlist()",
       "id": "components_recruiter_team_list_recruiterteamlist"
     },
@@ -8451,7 +8811,7 @@
       "source_file": "app/features/recruiter/hooks/use-company-mutation.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "use-company-mutation.ts",
       "id": "hooks_use_company_mutation"
     },
@@ -8461,7 +8821,7 @@
       "source_file": "app/features/recruiter/hooks/use-company-mutation.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "usecompanymutation()",
       "id": "hooks_use_company_mutation_usecompanymutation"
     },
@@ -8471,7 +8831,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "use-recruiter-invites.ts",
       "id": "hooks_use_recruiter_invites"
     },
@@ -8481,7 +8841,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "recruiterinvite",
       "id": "hooks_use_recruiter_invites_recruiterinvite"
     },
@@ -8491,7 +8851,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "recruiterteammember",
       "id": "hooks_use_recruiter_invites_recruiterteammember"
     },
@@ -8501,7 +8861,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "invitelistresponse",
       "id": "hooks_use_recruiter_invites_invitelistresponse"
     },
@@ -8511,7 +8871,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "userecruiterinvites()",
       "id": "hooks_use_recruiter_invites_userecruiterinvites"
     },
@@ -8521,7 +8881,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "usecancelinvite()",
       "id": "hooks_use_recruiter_invites_usecancelinvite"
     },
@@ -8531,7 +8891,7 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 86,
+      "community": 51,
       "norm_label": "useremovemember()",
       "id": "hooks_use_recruiter_invites_useremovemember"
     },
@@ -8691,7 +9051,7 @@
       "source_file": "app/features/recruiter/libs/get-applicant-detail.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 105,
+      "community": 84,
       "norm_label": "getapplicantdetail()",
       "id": "libs_get_applicant_detail_getapplicantdetail"
     },
@@ -8701,7 +9061,7 @@
       "source_file": "app/features/recruiter/libs/rate-limit-message.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": "rate-limit-message.ts",
       "id": "libs_rate_limit_message"
     },
@@ -8821,7 +9181,7 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L229",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "getjobanalytics()",
       "id": "queries_analytics_queries_getjobanalytics"
     },
@@ -8841,7 +9201,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 60,
+      "community": 108,
       "norm_label": "applicantrow",
       "id": "queries_application_queries_applicantrow"
     },
@@ -8861,7 +9221,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 11,
+      "community": 108,
       "norm_label": "listapplicants()",
       "id": "queries_application_queries_listapplicants"
     },
@@ -8871,7 +9231,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L88",
       "_origin": "ast",
-      "community": 108,
+      "community": 65,
       "norm_label": "getapplicationbyid()",
       "id": "queries_application_queries_getapplicationbyid"
     },
@@ -8881,7 +9241,7 @@
       "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "dashboard-queries.ts",
       "id": "app_features_recruiter_queries_dashboard_queries_ts_queries_dashboard_queries"
     },
@@ -8891,7 +9251,7 @@
       "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "recentapplication",
       "id": "queries_dashboard_queries_recentapplication"
     },
@@ -8901,7 +9261,7 @@
       "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "dashboarddata",
       "id": "queries_dashboard_queries_dashboarddata"
     },
@@ -8911,7 +9271,7 @@
       "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 47,
+      "community": 95,
       "norm_label": "getrecruiterdashboardstats()",
       "id": "queries_dashboard_queries_getrecruiterdashboardstats"
     },
@@ -8971,7 +9331,7 @@
       "source_file": "app/features/recruiter/queries/export-queries.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "exportapplicantsascsv()",
       "id": "queries_export_queries_exportapplicantsascsv"
     },
@@ -8981,7 +9341,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 11,
       "norm_label": "job-queries.ts",
       "id": "app_features_recruiter_queries_job_queries_ts_queries_job_queries"
     },
@@ -8991,7 +9351,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 95,
+      "community": 11,
       "norm_label": "recruiterjobrow",
       "id": "queries_job_queries_recruiterjobrow"
     },
@@ -9001,7 +9361,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 106,
+      "community": 11,
       "norm_label": "recruiterjobdetail",
       "id": "queries_job_queries_recruiterjobdetail"
     },
@@ -9011,7 +9371,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 95,
+      "community": 11,
       "norm_label": "recruiterjoblistresult",
       "id": "queries_job_queries_recruiterjoblistresult"
     },
@@ -9031,7 +9391,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L127",
       "_origin": "ast",
-      "community": 95,
+      "community": 66,
       "norm_label": "getjobbyid()",
       "id": "queries_job_queries_getjobbyid"
     },
@@ -9051,7 +9411,7 @@
       "source_file": "app/features/recruiter/schema/analytics.schema.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "analyticsfilterschema",
       "id": "schema_analytics_schema_analyticsfilterschema"
     },
@@ -9141,7 +9501,7 @@
       "source_file": "app/features/recruiter/schema/analytics.schema.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "funnel_stage_order",
       "id": "schema_analytics_schema_funnel_stage_order"
     },
@@ -9151,7 +9511,7 @@
       "source_file": "app/features/recruiter/schema/analytics.schema.ts",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 24,
+      "community": 106,
       "norm_label": "chart_colors",
       "id": "schema_analytics_schema_chart_colors"
     },
@@ -9331,7 +9691,7 @@
       "source_file": "app/features/recruiter/schema/company.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "company.schema.ts",
       "id": "schema_company_schema"
     },
@@ -9341,7 +9701,7 @@
       "source_file": "app/features/recruiter/schema/company.schema.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companyprofileschema",
       "id": "schema_company_schema_companyprofileschema"
     },
@@ -9351,7 +9711,7 @@
       "source_file": "app/features/recruiter/schema/company.schema.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companyprofileinput",
       "id": "schema_company_schema_companyprofileinput"
     },
@@ -9361,7 +9721,7 @@
       "source_file": "app/features/recruiter/schema/company.schema.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 47,
+      "community": 93,
       "norm_label": "companyprofileoutput",
       "id": "schema_company_schema_companyprofileoutput"
     },
@@ -9371,7 +9731,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "job.schema.ts",
       "id": "schema_job_schema"
     },
@@ -9381,7 +9741,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "jobcreateschema",
       "id": "schema_job_schema_jobcreateschema"
     },
@@ -9391,7 +9751,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "jobupdateschema",
       "id": "schema_job_schema_jobupdateschema"
     },
@@ -9401,7 +9761,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "recruiterlistjobsparamsschema",
       "id": "schema_job_schema_recruiterlistjobsparamsschema"
     },
@@ -9411,7 +9771,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "recruitertogglejobstatusschema",
       "id": "schema_job_schema_recruitertogglejobstatusschema"
     },
@@ -9421,7 +9781,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "jobforminput",
       "id": "schema_job_schema_jobforminput"
     },
@@ -9431,7 +9791,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "jobupdateinput",
       "id": "schema_job_schema_jobupdateinput"
     },
@@ -9441,7 +9801,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 95,
+      "community": 11,
       "norm_label": "joblistparams",
       "id": "schema_job_schema_joblistparams"
     },
@@ -9451,7 +9811,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 95,
+      "community": 52,
       "norm_label": "jobtoggleinput",
       "id": "schema_job_schema_jobtoggleinput"
     },
@@ -9461,7 +9821,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "team.schema.ts",
       "id": "schema_team_schema"
     },
@@ -9471,7 +9831,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterinviteschema",
       "id": "schema_team_schema_recruiterinviteschema"
     },
@@ -9481,7 +9841,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterinviteinput",
       "id": "schema_team_schema_recruiterinviteinput"
     },
@@ -9491,7 +9851,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiteracceptinviteschema",
       "id": "schema_team_schema_recruiteracceptinviteschema"
     },
@@ -9501,7 +9861,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiteracceptinviteinput",
       "id": "schema_team_schema_recruiteracceptinviteinput"
     },
@@ -9511,7 +9871,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterbulkinviteformschema",
       "id": "schema_team_schema_recruiterbulkinviteformschema"
     },
@@ -9521,7 +9881,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterbulkinviteforminput",
       "id": "schema_team_schema_recruiterbulkinviteforminput"
     },
@@ -9531,7 +9891,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterbulkinviteschema",
       "id": "schema_team_schema_recruiterbulkinviteschema"
     },
@@ -9541,7 +9901,7 @@
       "source_file": "app/features/recruiter/schema/team.schema.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 85,
+      "community": 51,
       "norm_label": "recruiterbulkinviteinput",
       "id": "schema_team_schema_recruiterbulkinviteinput"
     },
@@ -9551,7 +9911,7 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": "require-role.ts",
       "id": "api_require_role"
     },
@@ -9561,7 +9921,7 @@
       "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": "resolvedsession",
       "id": "api_require_role_resolvedsession"
     },
@@ -10331,7 +10691,7 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 89,
+      "community": 70,
       "norm_label": "messagespageconfig",
       "id": "chat_messages_page_layout_messagespageconfig"
     },
@@ -10661,7 +11021,7 @@
       "source_file": "components/shared/confirm-action-button.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 55,
       "norm_label": "confirm-action-button.tsx",
       "id": "shared_confirm_action_button"
     },
@@ -10671,7 +11031,7 @@
       "source_file": "components/shared/confirm-action-button.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 94,
+      "community": 55,
       "norm_label": "confirmactionbuttonprops",
       "id": "shared_confirm_action_button_confirmactionbuttonprops"
     },
@@ -10681,7 +11041,7 @@
       "source_file": "components/shared/confirm-action-button.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 94,
+      "community": 55,
       "norm_label": "confirmactionbutton()",
       "id": "shared_confirm_action_button_confirmactionbutton"
     },
@@ -10871,7 +11231,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "status-timeline.tsx",
       "id": "shared_status_timeline"
     },
@@ -10881,7 +11241,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "statustimelineentry",
       "id": "shared_status_timeline_statustimelineentry"
     },
@@ -10891,7 +11251,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "props",
       "id": "shared_status_timeline_props"
     },
@@ -10901,7 +11261,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "status_icons",
       "id": "shared_status_timeline_status_icons"
     },
@@ -10911,7 +11271,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "status_colors",
       "id": "shared_status_timeline_status_colors"
     },
@@ -10921,7 +11281,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "relativetime()",
       "id": "shared_status_timeline_relativetime"
     },
@@ -10931,7 +11291,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "geticon()",
       "id": "shared_status_timeline_geticon"
     },
@@ -10941,7 +11301,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "getcolor()",
       "id": "shared_status_timeline_getcolor"
     },
@@ -10951,7 +11311,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 110,
+      "community": 12,
       "norm_label": "statustimeline()",
       "id": "shared_status_timeline_statustimeline"
     },
@@ -10991,7 +11351,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 55,
       "norm_label": "button.tsx",
       "id": "ui_button"
     },
@@ -11001,7 +11361,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 12,
+      "community": 55,
       "norm_label": "buttonvariants",
       "id": "ui_button_buttonvariants"
     },
@@ -11011,7 +11371,7 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 12,
+      "community": 55,
       "norm_label": "button()",
       "id": "ui_button_button"
     },
@@ -11051,7 +11411,7 @@
       "source_file": "components/ui/data-table.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 94,
+      "community": 12,
       "norm_label": "columndef",
       "id": "ui_data_table_columndef"
     },
@@ -11241,7 +11601,7 @@
       "source_file": "components/ui/input.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 90,
+      "community": 60,
       "norm_label": "input.tsx",
       "id": "ui_input"
     },
@@ -11251,7 +11611,7 @@
       "source_file": "components/ui/input.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 90,
+      "community": 60,
       "norm_label": "input()",
       "id": "ui_input_input"
     },
@@ -11331,7 +11691,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "select.tsx",
       "id": "ui_select"
     },
@@ -11341,7 +11701,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectgroup()",
       "id": "ui_select_selectgroup"
     },
@@ -11351,7 +11711,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectvalue()",
       "id": "ui_select_selectvalue"
     },
@@ -11381,7 +11741,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L99",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectlabel()",
       "id": "ui_select_selectlabel"
     },
@@ -11391,7 +11751,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectitem()",
       "id": "ui_select_selectitem"
     },
@@ -11401,7 +11761,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L133",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectseparator()",
       "id": "ui_select_selectseparator"
     },
@@ -11411,7 +11771,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L143",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectscrollupbutton()",
       "id": "ui_select_selectscrollupbutton"
     },
@@ -11421,7 +11781,7 @@
       "source_file": "components/ui/select.tsx",
       "source_location": "L161",
       "_origin": "ast",
-      "community": 52,
+      "community": 1,
       "norm_label": "selectscrolldownbutton()",
       "id": "ui_select_selectscrolldownbutton"
     },
@@ -11481,7 +11841,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "status-badge.tsx",
       "id": "ui_status_badge"
     },
@@ -11491,7 +11851,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "applicationstatus",
       "id": "ui_status_badge_applicationstatus"
     },
@@ -11501,7 +11861,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "statusconfig",
       "id": "ui_status_badge_statusconfig"
     },
@@ -11511,7 +11871,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "status_map",
       "id": "ui_status_badge_status_map"
     },
@@ -11521,7 +11881,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "statusbadgeprops",
       "id": "ui_status_badge_statusbadgeprops"
     },
@@ -11531,7 +11891,7 @@
       "source_file": "components/ui/status-badge.tsx",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 60,
+      "community": 12,
       "norm_label": "statusbadge()",
       "id": "ui_status_badge_statusbadge"
     },
@@ -11821,7 +12181,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": "api-error.ts",
       "id": "lib_api_error"
     },
@@ -11831,7 +12191,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": "apierror",
       "id": "lib_api_error_apierror"
     },
@@ -11841,7 +12201,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": ".constructor()",
       "id": "lib_api_error_apierror_constructor"
     },
@@ -11851,7 +12211,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": "unauthorizederror",
       "id": "lib_api_error_unauthorizederror"
     },
@@ -11861,7 +12221,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": ".constructor()",
       "id": "lib_api_error_unauthorizederror_constructor"
     },
@@ -11871,7 +12231,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": "forbiddenerror",
       "id": "lib_api_error_forbiddenerror"
     },
@@ -11881,7 +12241,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 50,
+      "community": 13,
       "norm_label": ".constructor()",
       "id": "lib_api_error_forbiddenerror_constructor"
     },
@@ -11891,7 +12251,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 65,
+      "community": 50,
       "norm_label": "notfounderror",
       "id": "lib_api_error_notfounderror"
     },
@@ -11901,7 +12261,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 65,
+      "community": 50,
       "norm_label": ".constructor()",
       "id": "lib_api_error_notfounderror_constructor"
     },
@@ -11911,7 +12271,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": "validationerror",
       "id": "lib_api_error_validationerror"
     },
@@ -11921,7 +12281,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 50,
+      "community": 84,
       "norm_label": ".constructor()",
       "id": "lib_api_error_validationerror_constructor"
     },
@@ -11951,7 +12311,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": "toomanyrequestserror",
       "id": "lib_api_error_toomanyrequestserror"
     },
@@ -11961,7 +12321,7 @@
       "source_file": "lib/api-error.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 50,
+      "community": 57,
       "norm_label": ".constructor()",
       "id": "lib_api_error_toomanyrequestserror_constructor"
     },
@@ -11971,7 +12331,7 @@
       "source_file": "lib/api-response.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "api-response.ts",
       "id": "lib_api_response"
     },
@@ -11991,7 +12351,7 @@
       "source_file": "lib/api-response.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "fail()",
       "id": "lib_api_response_fail"
     },
@@ -12001,7 +12361,7 @@
       "source_file": "lib/api-response.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 114,
+      "community": 83,
       "norm_label": "apiresponse",
       "id": "lib_api_response_apiresponse"
     },
@@ -12021,7 +12381,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "api-wrapper.ts",
       "id": "lib_api_wrapper"
     },
@@ -12031,7 +12391,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "error_status_map",
       "id": "lib_api_wrapper_error_status_map"
     },
@@ -12041,7 +12401,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "routecontext",
       "id": "lib_api_wrapper_routecontext"
     },
@@ -12051,7 +12411,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "simplehandler",
       "id": "lib_api_wrapper_simplehandler"
     },
@@ -12061,7 +12421,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "paramhandler",
       "id": "lib_api_wrapper_paramhandler"
     },
@@ -12071,7 +12431,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "handleerror()",
       "id": "lib_api_wrapper_handleerror"
     },
@@ -12081,7 +12441,7 @@
       "source_file": "lib/api-wrapper.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 71,
+      "community": 50,
       "norm_label": "witherrorhandler()",
       "id": "lib_api_wrapper_witherrorhandler"
     },
@@ -12091,7 +12451,7 @@
       "source_file": "lib/batch-helpers.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 119,
+      "community": 51,
       "norm_label": "batch-helpers.ts",
       "id": "lib_batch_helpers"
     },
@@ -12101,7 +12461,7 @@
       "source_file": "lib/batch-helpers.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 119,
+      "community": 51,
       "norm_label": "bulkemailsschema",
       "id": "lib_batch_helpers_bulkemailsschema"
     },
@@ -12111,7 +12471,7 @@
       "source_file": "lib/batch-helpers.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 119,
+      "community": 51,
       "norm_label": "bulkemailsinput",
       "id": "lib_batch_helpers_bulkemailsinput"
     },
@@ -12361,7 +12721,7 @@
       "source_file": "lib/query-client.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 83,
+      "community": 96,
       "norm_label": "query-client.ts",
       "id": "lib_query_client"
     },
@@ -12371,7 +12731,7 @@
       "source_file": "lib/query-client.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 83,
+      "community": 96,
       "norm_label": "querykeyshape",
       "id": "lib_query_client_querykeyshape"
     },
@@ -12381,7 +12741,7 @@
       "source_file": "lib/query-client.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 83,
+      "community": 96,
       "norm_label": "default_query_options",
       "id": "lib_query_client_default_query_options"
     },
@@ -12391,7 +12751,7 @@
       "source_file": "lib/query-client.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 83,
+      "community": 96,
       "norm_label": "defaultqueryfn()",
       "id": "lib_query_client_defaultqueryfn"
     },
@@ -12421,7 +12781,7 @@
       "source_file": "lib/upload.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 103,
+      "community": 71,
       "norm_label": "upload.ts",
       "id": "lib_upload"
     },
@@ -12431,7 +12791,7 @@
       "source_file": "lib/upload.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 103,
+      "community": 71,
       "norm_label": "upload_dir",
       "id": "lib_upload_upload_dir"
     },
@@ -12441,7 +12801,7 @@
       "source_file": "lib/upload.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 103,
+      "community": 71,
       "norm_label": "allowed_mime_types",
       "id": "lib_upload_allowed_mime_types"
     },
@@ -12451,7 +12811,7 @@
       "source_file": "lib/upload.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 103,
+      "community": 71,
       "norm_label": "uploadresult",
       "id": "lib_upload_uploadresult"
     },
@@ -13481,7 +13841,7 @@
       "source_file": "scripts/promote-super-admin.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 103,
+      "community": 114,
       "norm_label": "promote-super-admin.ts",
       "id": "scripts_promote_super_admin"
     },
@@ -13491,7 +13851,7 @@
       "source_file": "scripts/promote-super-admin.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 103,
+      "community": 114,
       "norm_label": "pool",
       "id": "scripts_promote_super_admin_pool"
     },
@@ -13501,7 +13861,7 @@
       "source_file": "scripts/promote-super-admin.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 103,
+      "community": 114,
       "norm_label": "adapter",
       "id": "scripts_promote_super_admin_adapter"
     },
@@ -13511,7 +13871,7 @@
       "source_file": "scripts/promote-super-admin.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 103,
+      "community": 114,
       "norm_label": "prisma",
       "id": "scripts_promote_super_admin_prisma"
     },
@@ -13521,7 +13881,7 @@
       "source_file": "scripts/promote-super-admin.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 103,
+      "community": 114,
       "norm_label": "main()",
       "id": "scripts_promote_super_admin_main"
     },
@@ -17817,6 +18177,429 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_context_files_read_first",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_designs_resolved",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_edge_cases_verified",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_existing_files_to_not_touch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_goal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_new_files_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "target": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "target": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_socials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_category_strip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_category_strip_categorystrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta_employercta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_featured_companies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_featured_companies_featuredcompanies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_hero_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_hero_search_herosearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "components_landing_page",
+      "target": "components_landing_page_landingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/category-strip.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_category_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/category-strip.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_categorystrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_employer_cta",
+      "target": "components_employer_cta_employercta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_featured_companies",
+      "target": "components_featured_companies_featuredcompanies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_featured_companies",
+      "target": "queries_list_featured_companies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_featured_companies",
+      "target": "queries_list_featured_companies_listfeaturedcompanies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/featured-companies.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_featured_companies_featuredcompanies",
+      "target": "queries_list_featured_companies_listfeaturedcompanies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_hero_search",
+      "target": "components_hero_search_herosearch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "queries_list_featured_companies",
+      "target": "queries_list_featured_companies_featuredcompanyrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "queries_list_featured_companies",
+      "target": "queries_list_featured_companies_listfeaturedcompanies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "AGENTS.md",
       "source_location": "L5",
       "weight": 1.0,
@@ -18250,9 +19033,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L574",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_0b_schema_migration_missing_fields",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_3_0b_schema_migration_missing_fields"
     },
     {
       "relation": "contains",
@@ -18280,9 +19063,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L701",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_3_user",
-      "target": "hire_flow_prompts_step_3_2a_new_optional_ai_powered_resume_assistance",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_3_2a_new_optional_ai_powered_resume_assistance"
     },
     {
       "relation": "contains",
@@ -18330,9 +19113,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L936",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_4_public_job_routes_home_page",
-      "target": "hire_flow_prompts_step_4_0_public_route_group_shared_shell",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_4_0_public_route_group_shared_shell"
     },
     {
       "relation": "contains",
@@ -18360,9 +19143,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1012",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_4_public_job_routes_home_page",
-      "target": "hire_flow_prompts_step_4_3_auth_aware_navbar_redirect_logic_account_popover",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_4_3_auth_aware_navbar_redirect_logic_account_popover"
     },
     {
       "relation": "contains",
@@ -18370,9 +19153,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_4_public_job_routes_home_page",
-      "target": "hire_flow_prompts_step_4_4_home_page_composition",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_4_4_home_page_composition"
     },
     {
       "relation": "contains",
@@ -18380,9 +19163,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1235",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_4_public_job_routes_home_page",
-      "target": "hire_flow_prompts_step_4_5_optional_skip_friendly_career_resources",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_4_5_optional_skip_friendly_career_resources"
     },
     {
       "relation": "contains",
@@ -18390,9 +19173,9 @@
       "source_file": "HIRE_FLOW_PROMPTS.md",
       "source_location": "L1250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hire_flow_prompts_phase_4_public_job_routes_home_page",
-      "target": "hire_flow_prompts_step_4_6_seo_metadata_sitemap_robots_structured_data",
-      "confidence_score": 1.0
+      "target": "hire_flow_prompts_step_4_6_seo_metadata_sitemap_robots_structured_data"
     },
     {
       "relation": "contains",
@@ -55901,5 +56684,5 @@
       "source_file": "HIRE_FLOW_PROMPTS.md"
     }
   ],
-  "built_at_commit": "151aeb75fbcc08d06a77ec69728c45f08402e7d0"
+  "built_at_commit": "8e5f934264321f04710d6bae799fd067703f4168"
 }

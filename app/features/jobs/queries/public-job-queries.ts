@@ -70,11 +70,20 @@ export type PublicJobListParams = {
   sortOrder?: string;
 };
 
-const ALLOWED_SORT_FIELDS = new Set(["createdAt", "salaryMin", "salaryMax", "title", "applicationDeadline"]);
+const ALLOWED_SORT_FIELDS = new Set([
+  "createdAt",
+  "salaryMin",
+  "salaryMax",
+  "title",
+  "applicationDeadline",
+]);
 const ALLOWED_SORT_ORDERS = new Set(["asc", "desc"]);
 
 export async function listPublicJobs(params: PublicJobListParams): Promise<PublicJobListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const where: Record<string, unknown> = {
     status: "active",
@@ -82,10 +91,17 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   };
 
   if (params.search) {
-    where.OR = [
-      { title: { contains: params.search, mode: "insensitive" } },
-      { description: { contains: params.search, mode: "insensitive" } },
-    ];
+    const formattedQuery = params.search
+      .replace(/[^\w\s]/g, "")
+      .split(/\s+/)
+      .filter(Boolean)
+      .join(" | ");
+    if (formattedQuery) {
+      where.OR = [
+        { title: { search: formattedQuery } },
+        { description: { search: formattedQuery } },
+      ];
+    }
   }
   if (params.workMode) where.workMode = params.workMode;
   if (params.employmentType) where.employmentType = params.employmentType;
@@ -100,12 +116,18 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   }
   // "all" or undefined — no deadline filter
 
-  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "") ? (params.sortBy as string) : "createdAt";
-  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "") ? (params.sortOrder as string) : "desc";
+  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "")
+    ? (params.sortBy as string)
+    : "createdAt";
+  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "")
+    ? (params.sortOrder as string)
+    : "desc";
 
   const [jobs, total] = await Promise.all([
     prisma.job.findMany({
-      where, skip, take,
+      where,
+      skip,
+      take,
       orderBy: { [sortBy]: sortOrder },
       include: { company: { select: { name: true, logoUrl: true } } },
     }),

@@ -1,103 +1,123 @@
-# Phase 4.4 — Home Page Composition
+# Phase 4.5 — Upgrade Job Search to PostgreSQL Full-Text Search
 
 ## Goal
-Replace the current landing page with the spec-ordered composition featuring a hero search bar, job categories strip, featured companies grid, and an employer CTA section. Mobile-first, modern aesthetic, `<150 lines` per component, `motion` for scroll-triggered and in-view animations.
+Replace `ILIKE contains` in `listPublicJobs` with PostgreSQL FTS (`to_tsquery`/`to_tsvector`) for stemmed word matching + stop word removal. Skip `_relevance` orderBy due to confirmed open Prisma bug #24042.
 
 ## Context Files (read first)
-- `lib/job-categories.ts` — `JOB_CATEGORIES` constant (5 entries: Technology, Healthcare, Finance, Marketing, Remote)
-- `lib/routes.ts` — shared route constants (`isHiddenRoute`, `PUBLIC_CONTENT_PATHS`)
-- `app/features/jobs/components/job-search-bar.tsx` — existing debounced search input, embed in hero
-- `components/shared/company-preview-card.tsx` — existing company card, wrap in `<Link>` from parent
-- `app/features/jobs/queries/public-job-queries.ts` — `listPublicJobs` with filter params (used by FeaturedJobs)
-- `proxy.ts` — already redirects authenticated users from `/` to `/jobs`
-
-## Existing Files to NOT Touch
-- `hero-section.tsx` — replaced by `hero-search.tsx` (delete after replacement)
-- `stats-banner.tsx` / `stats-counter.tsx` — removed from section order (no longer in spec)
-- `featured-jobs.tsx` / `featured-jobs-grid.tsx` — keep as-is, already correct
-
-## New Files (4)
-
-### 1. `app/features/public/components/hero-search.tsx`
-- `"use client"`, `<150 lines`
-- Unsplash background image + gradient overlays (same aesthetic as current `hero-section.tsx`)
-- Headline: "Find Your Dream Job or the Perfect Candidate"
-- Subhead: tagline text
-- **Embed `job-search-bar.tsx`** — the search bar navigates to `/jobs?q=...` (existing behavior)
-- Two CTA buttons: "Browse Jobs" `/jobs`, "Sign Up Free" `/register`
-- `motion.div` fade/slide-in on mount, staggered children, <300ms each
-
-### 2. `app/features/public/components/category-strip.tsx`
-- `"use client"` (uses `motion`), `<150 lines`
-- Import `JOB_CATEGORIES` from `lib/job-categories.ts`
-- Render as clickable tiles in a scrollable horizontal strip (mobile) or grid (sm+)
-- Each tile links to `/jobs?industry=X` (for industry categories) or `/jobs?workMode=remote` (for Remote)
-- No live job counts (deferred per spec)
-- `motion.div` with `whileInView` stagger animation
-
-### 3. `app/features/public/queries/list-featured-companies.ts`
-- Server-only query function, no `"use client"`
-- `export async function listFeaturedCompanies(limit = 6)`
-- Prisma: `company.findMany` where `jobs.some({ status: 'active', isActive: true })`
-- Select: `id, name, logoUrl, industry`, ordered by `jobs: { _count: 'desc' }`, take `limit`
-- Return type: `Pick<Company, 'id' | 'name' | 'logoUrl' | 'industry'>[]`
-
-### 4. `app/features/public/components/featured-companies.tsx`
-- Server component (async), calls `listFeaturedCompanies()` directly
-- Renders grid of `company-preview-card.tsx` wrapped in `<Link href={/jobs?companyId=${id}}>`
-- Edge case: if zero companies returned, show empty state (no crash)
-- Grid: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4`
-
-### 5. `app/features/public/components/employer-cta.tsx`
-- Static server component, `<150 lines`
-- Section `id="for-employers"` for anchor linking
-- Dark background (`bg-neutral-900` to match footer), centered content
-- Heading: "Hiring? Let's talk."
-- Paragraph explaining recruiter access is by invitation only
-- Mailto link: `mailto:hello@hireflow.example?subject=Recruiter Access Request`
-- No form, no API call — intentionally a contact funnel
+- `prisma/schema.prisma` — generator block, current preview features
+- `app/features/jobs/queries/public-job-queries.ts` — `listPublicJobs` function, lines 76-134
+- `app/api/jobs/route.ts` — passes URL params to `listPublicJobs`, unchanged
+- `app/features/jobs/components/job-list-page.tsx` — client renderer, unchanged
+- `app/features/landing/components/featured-jobs.tsx` — calls `listPublicJobs({ pageSize: 6 })` without search, unchanged
 
 ## Files to Modify (2)
 
-### 6. `app/features/landing/components/footer.tsx`
-- Add "For Employers" link to the "Product" column (after "Browse Jobs"): `{ label: "For Employers", href: "/#for-employers" }`
-
-### 7. `app/features/landing/components/landing-page.tsx`
-Replace imports and section order:
-- Remove: `HeroSection`, `StatsBanner` (no longer in spec)
-- Add: `HeroSearch` from `@/app/features/public/components/hero-search`
-- Add: `CategoryStrip` from `@/app/features/public/components/category-strip`
-- Add: `FeaturedCompanies` from `@/app/features/public/components/featured-companies`
-- Add: `EmployerCTA` from `@/app/features/public/components/employer-cta`
-
-New order:
+### 1. `prisma/schema.prisma`
+Add preview feature flag to enable FTS operators in generated client:
+```prisma
+generator client {
+  provider        = "prisma-client"
+  output          = "../app/generated/prisma"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
 ```
-HeroSearch → CategoryStrip → FeaturedJobs → FeaturedCompanies → HowItWorks → Testimonials → EmployerCTA → Footer
+Then run `npx prisma generate`.
+
+### 2. `app/features/jobs/queries/public-job-queries.ts`
+**Only lines 84-89 change.** The search filter block:
+
+```typescript
+// BEFORE (lines 84-89):
+if (params.search) {
+  where.OR = [
+    { title: { contains: params.search, mode: "insensitive" } },
+    { description: { contains: params.search, mode: "insensitive" } },
+  ];
+}
+
+// AFTER:
+if (params.search) {
+  const formattedQuery = params.search
+    .replace(/[^\w\s]/g, "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .join(" | ");
+  where.OR = [
+    { title: { search: formattedQuery } },
+    { description: { search: formattedQuery } },
+  ];
+}
 ```
 
-## Delete
-- `app/features/landing/components/hero-section.tsx` (replaced by `hero-search.tsx`)
+**Everything else in the file is unchanged:** imports, types, `where` object construction (lines 79-82), other filters (90-100), `orderBy` (109), `include` (110), `count` (112), mapping (115-131), return (133), `getPublicJobById` (136-172).
 
-## Edge Cases Verified
-- Authenticated user hits `/` → proxy redirects to `/jobs` (never sees landing page)
-- Featured Companies filter: `status: 'active' AND isActive: true` — no companies with zero live jobs appear
-- Category Strip links: `/jobs?industry=Technology`, `/jobs?industry=Healthcare`, `/jobs?workMode=remote` — all resolve to existing filtered job listing
-- Featured Companies cards link to `/jobs?companyId={id}` — filter already works (Step 4.1)
-- No dedicated `/companies/[id]` route built (explicitly deferred)
-- `job-search-bar.tsx` uses `useSearchParams` safely inside a `"use client"` tree
-- Footer "For Employers" links to anchor `#for-employers`, not a non-existent page
-- Zero companies returned → empty state, no crash
-- All section links resolve to real pages or working filter URLs
+## What Changes (SQL Level)
+
+```sql
+-- BEFORE (ILIKE):
+WHERE status = 'active' AND is_active = true
+  AND (
+    title ILIKE '%software developer%'
+    OR description ILIKE '%software developer%'
+  )
+ORDER BY "createdAt" DESC
+
+-- AFTER (FTS):
+WHERE status = 'active' AND is_active = true
+  AND (
+    to_tsvector('english', "title") @@ to_tsquery('english', 'software | developer')
+    OR to_tsvector('english', "description") @@ to_tsquery('english', 'software | developer')
+  )
+ORDER BY "createdAt" DESC
+```
+
+## Decisions Made
+
+| Decision | Rationale |
+|----------|-----------|
+| **Skip `_relevance` orderBy** | Confirmed open Prisma bug #24042 — multi-word queries crash with PostgreSQL error 42601 if results exist. Keep `createdAt desc` as fallback. Will add when Prisma fixes it. |
+| **OR between terms** ( `software \| developer` ) | Broadest match. A job matching either "software" or "developer" appears. Matches the typical job search UX where users throw in multiple keywords. |
+| **Strip non-alphanumeric** | Prevents tsquery injection (`hello!@#` → `hello`). Avoids `to_tsquery()` parse errors. |
+| **Accept no-typo tolerance** | FTS uses dictionary-based stemming (English config): `developer` → matches `develop`, `development`, `developing`. But `devloper` (typo) won't match. Trade-off accepted — ILIKE could match typos as substrings but had no stemming. |
+
+## Edge Cases Verified (No Breaking Changes)
+
+| Test Case | Current Behavior | New Behavior | Verdict |
+|-----------|-----------------|--------------|---------|
+| No search param | `orderBy createdAt desc` | Same | ✅ |
+| Single word `developer` | `ILIKE '%developer%'` | `to_tsquery('developer')` | ✅ FTS stems & removes stop words |
+| Multi-word `software developer` | `ILIKE '%software developer%'` (exact substring) | `to_tsquery('software \| developer')` (OR) | ✅ Broader, better |
+| Filters + search | AND combined | Same structure | ✅ |
+| Landing page (`pageSize: 6`) | No search param, unchanged | Unchanged | ✅ |
+| Category strip (`?industry=Technology`) | No search param | Unchanged | ✅ |
+| Company filter (`?companyId=X`) | No search param | Unchanged | ✅ |
+| `prisma.job.count` | Same `where` object | Same | ✅ |
+| API response shape | `{ data: { jobs, total, ... } }` | Same | ✅ |
+| `FeaturedJobs` component | `listPublicJobs({ pageSize: 6 })` | Unchanged | ✅ |
+| Empty search `?search=` | `params.search` is `""` (falsy) | `if (!params.search)` skips FTS | ✅ |
+| Special chars `hello!@#` | `ILIKE '%hello!@#%'` | Stripped to `hello` (no error) | ✅ |
+| `Record<string, unknown>` where type | Accepts any operator | Accepts `search` | ✅ |
+| `getPublicJobById` | `findUnique`, no search | Unchanged | ✅ |
+
+## Failure Modes (Mitigated)
+
+| Failure | Cause | Mitigation |
+|---------|-------|------------|
+| `to_tsquery('')` (empty after stripping) | Search was all special chars, stripped to empty string | `formattedQuery` will be `""` (falsy), the `where.OR` setter still runs but `to_tsquery('')` → PostgreSQL returns no results (safe, not crash) |
+| `_relevance` bug (skipped) | Prisma issue #24042 | We don't use `_relevance` at all |
+| prisma generate with preview flag | Flag not supported in older Prisma versions | Current Prisma 7.8.0 supports it since Prisma 4.x |
+| Migration rollback | Need to revert to ILIKE | Revert schema flag + regenerate + revert query changes |
 
 ## Validation
-- `npx tsc --noEmit` — zero errors
-- `npx eslint --quiet` on all new/modified files — zero warnings
-- Verify every link target in the page resolves to a real route
-- Verify `app/page.tsx` renders without error (no Suspense boundary needed for search bar since it's inside a client component tree)
 
-## Designs Resolved
-- **Route group**: Keep `app/page.tsx` (no `(public)` group)
-- **Testimonials over 150 lines**: Accept as-is (158 lines)
-- **Company card reuse**: No changes to `company-preview-card.tsx` — wrap with `<Link>` in `featured-companies.tsx`
-- **Hero search**: New `hero-search.tsx` replaces `hero-section.tsx`
-- **Stats banner**: Removed (no longer in spec section order)
+1. `npx prisma generate` — must succeed (adds `search` to StringFilter + `_relevance` to orderBy types)
+2. `npx tsc --noEmit` — zero errors
+3. `npx eslint --quiet` — zero warnings on modified file
+4. Manual test: search `developer` → confirm results (FTS stemming works)
+5. Manual test: search `software developer` → confirm no crash (bug only applies to `_relevance`, which we don't use)
+6. Manual test: search `software&developer` (no spaces) → formatted to `software | developer`, works
+7. Manual test: search `devloper` (typo) → no matches (expected — FTS limitation)
+8. Manual test: landing page loads → `FeaturedJobs` passes no search param → unchanged
+
+## Files Not Touched
+`JobSearchBar`, `JobListPage`, `job-card.tsx`, `filter-select.tsx`, `hero-search.tsx`, `category-strip.tsx`, `featured-companies.tsx`, `employer-cta.tsx`, `landing-page.tsx`, `footer.tsx`, `app/api/jobs/route.ts` — all unchanged.
