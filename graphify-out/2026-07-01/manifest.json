@@ -259,19 +259,9 @@
     "ast_hash": "a39b4f0addd0408220ef2f7a7836e611",
     "semantic_hash": ""
   },
-  "app/jobs/page.tsx": {
-    "mtime": 1782801397.5879831,
-    "ast_hash": "0f64475194751cd87f174eae67e8c9b9",
-    "semantic_hash": ""
-  },
   "app/layout.tsx": {
-    "mtime": 1782877372.925455,
-    "ast_hash": "473c5acfa9cfecca4a3624c4429a06c7",
-    "semantic_hash": ""
-  },
-  "app/page.tsx": {
-    "mtime": 1782830423.5510404,
-    "ast_hash": "496075e42df1dc3a613fda86991e4a91",
+    "mtime": 1782886372.2533224,
+    "ast_hash": "b89f2ef57fd5074fd273fd91ff60ab06",
     "semantic_hash": ""
   },
   "app/providers.tsx": {
@@ -530,8 +520,8 @@
     "semantic_hash": ""
   },
   "MANIFEST.md": {
-    "mtime": 1782885938.9130137,
-    "ast_hash": "4c64d4671453148502d185ef9692897a",
+    "mtime": 1782887270.4873745,
+    "ast_hash": "ee47109a2ea9d506d3f8d217660205f3",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1019,11 +1009,6 @@
     "ast_hash": "dc420101d8b0c630f165006c19fbbcb6",
     "semantic_hash": ""
   },
-  ".kilo/plans/1782458322810-job-posts-crud.md": {
-    "mtime": 1782484092.789187,
-    "ast_hash": "b78145f54744024346ee668a26b1173f",
-    "semantic_hash": ""
-  },
   "app/(auth)/error.tsx": {
     "mtime": 1782487828.521395,
     "ast_hash": "9ed37f984edaf3370fa0b599dcf1e174",
@@ -1219,16 +1204,6 @@
     "ast_hash": "cc7db53cb76f0f98676a75f634548627",
     "semantic_hash": ""
   },
-  ".kilo/plans/20260627004431-realtime-admin-messaging.md": {
-    "mtime": 1782501295.636798,
-    "ast_hash": "0da0ab413813aee43c111cce54b173f0",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/20260627005817-recruiter-messaging-step2.5.md": {
-    "mtime": 1782502544.5132253,
-    "ast_hash": "e60d80eeae3aa72cdfa4ee7c6d613b0e",
-    "semantic_hash": ""
-  },
   "app/(roles)/recruiter/applicants/[applicationId]/page.tsx": {
     "mtime": 1782504882.2380161,
     "ast_hash": "e8e1a29b27b000bce65ca207815b5099",
@@ -1274,11 +1249,6 @@
     "ast_hash": "9ea84ca4c6d5a34fb9b8260a00073b59",
     "semantic_hash": ""
   },
-  ".kilo/plans/1782458322810-applicant-detail-view.md": {
-    "mtime": 1782506613.165864,
-    "ast_hash": "d0bbea908f5fef8093a809dd872bd004",
-    "semantic_hash": ""
-  },
   "app/api/recruiter/applications/[applicationId]/revert/route.ts": {
     "mtime": 1782521675.064608,
     "ast_hash": "43a781d9a502b852b17075f4c6b24c30",
@@ -1307,16 +1277,6 @@
   ".kilo/plans/step-2.7-revert-and-enhance.md": {
     "mtime": 1782516129.0653071,
     "ast_hash": "a2b9c6a3607653a032e6216bcfac7e9e",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md": {
-    "mtime": 1782517794.9440527,
-    "ast_hash": "e9a5b5b0540b9d98b38cd006c31a0495",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1782486917801-recruiter-analytics-filters.md": {
-    "mtime": 1782519454.1467845,
-    "ast_hash": "56763c8506556a6ab203fd3c7f9d3d25",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/analytics/page.tsx": {
@@ -1399,11 +1359,6 @@
     "ast_hash": "abe8441d758b2002651a5e19ae77e60e",
     "semantic_hash": ""
   },
-  ".kilo/plans/1782490602120-recruiter-dashboard.md": {
-    "mtime": 1782520541.885954,
-    "ast_hash": "1adc669c4779e7a9d437a720b4d7146c",
-    "semantic_hash": ""
-  },
   "app/(roles)/recruiter/notifications/page.tsx": {
     "mtime": 1782521573.756575,
     "ast_hash": "8c038b5c8605c75c1e55e80640849f2f",
@@ -1422,11 +1377,6 @@
   "lib/notifications.ts": {
     "mtime": 1782521845.0764358,
     "ast_hash": "b46000fd61ba0aed72c13710d58ab3f1",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1782458322810-step-2-10-notifications.md": {
-    "mtime": 1782521501.4292583,
-    "ast_hash": "1286b2767ab08501abe5df2501cb0eb5",
     "semantic_hash": ""
   },
   "app/features/recruiter/libs/csv-builder.ts": {
@@ -1499,11 +1449,6 @@
     "ast_hash": "651a468c24a1e3fe2b2713bb8c7ec819",
     "semantic_hash": ""
   },
-  ".kilo/plans/1782458322810-message-system-fixes.md": {
-    "mtime": 1782530448.2278638,
-    "ast_hash": "375d192c30315a463bfefc6cec2518cf",
-    "semantic_hash": ""
-  },
   "app/features/admin/components/admin-thread-view.tsx": {
     "mtime": 1782532012.8099458,
     "ast_hash": "882c4cad15d4d6c941e20422c93a8b1c",
@@ -1544,11 +1489,6 @@
     "ast_hash": "031af824739f6afd9e5963f4c0c6872f",
     "semantic_hash": ""
   },
-  ".kilo/plans/1782458322810-online-presence-plan.md": {
-    "mtime": 1782534572.6654608,
-    "ast_hash": "aca5acf9dfc187e1de451131fa4ab668",
-    "semantic_hash": ""
-  },
   "prisma/migrations/20260627134156_recruiter/migration.sql": {
     "mtime": 1782567716.8631163,
     "ast_hash": "65bc84ea374b2191f7277c0142fb2b56",
@@ -1582,11 +1522,6 @@
   "components/ui/theme-initializer.tsx": {
     "mtime": 1782627127.1979885,
     "ast_hash": "9547624f6ec1e8a2e85a4be21e019cc1",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1782458322810-analytics-layout-fix.md": {
-    "mtime": 1782630365.2245178,
-    "ast_hash": "f322defb81bacf2049549da64b6faaf2",
     "semantic_hash": ""
   },
   "components/ui/date-range-picker.tsx": {
@@ -1755,8 +1690,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1782885032.5400128,
-    "ast_hash": "9614a434e17e674c2630f80c2a4d593b",
+    "mtime": 1782886414.3237026,
+    "ast_hash": "d38675389d5d300a1d007238aa817e5c",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
@@ -2059,11 +1994,6 @@
     "ast_hash": "b0e4542dfe2d2b34ce38b7de32bcd1f5",
     "semantic_hash": ""
   },
-  "app/jobs/[id]/page.tsx": {
-    "mtime": 1782836527.0735445,
-    "ast_hash": "ecc1bdea47e9100d0ce96542ba4a1dba",
-    "semantic_hash": ""
-  },
   "components/chat/chat-header.tsx": {
     "mtime": 1782745922.5828874,
     "ast_hash": "42b056ef521f01cb8d9bdd391ab15d86",
@@ -2135,23 +2065,13 @@
     "semantic_hash": ""
   },
   "lib/routes.ts": {
-    "mtime": 1782885729.4946778,
-    "ast_hash": "fe27f4e4639a322fa6ebb23ff6871d57",
+    "mtime": 1782886418.8400888,
+    "ast_hash": "cc0960158e81bc2133b015b587fdab5f",
     "semantic_hash": ""
   },
   "lib/thread-utils.ts": {
     "mtime": 1782812049.790396,
     "ast_hash": "c7051be116d20e80f6102887736ef1d9",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1782747685285-home-page-composition.md": {
-    "mtime": 1782884102.9575071,
-    "ast_hash": "98f2e4d59fee9e86b45d048b7cf4e90c",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/202606292111-phase-3-schema-migration.md": {
-    "mtime": 1782747981.652296,
-    "ast_hash": "15340bc18677605347b035b2781a8be8",
     "semantic_hash": ""
   },
   ".kilo/plans/step-3-1-user-profile.md": {
@@ -2214,11 +2134,6 @@
     "ast_hash": "20e37d715fe180303a2cb2a6a0043d5e",
     "semantic_hash": ""
   },
-  "plan-4.5-career-resources.md": {
-    "mtime": 1782884975.5547292,
-    "ast_hash": "c0eee040e425e4e7cc6bd150b694ac7f",
-    "semantic_hash": ""
-  },
   "app/features/public/components/career-resources/career-resources-page.tsx": {
     "mtime": 1782885822.3374147,
     "ast_hash": "094036c0dd1299f3d0e3305821025846",
@@ -2252,6 +2167,116 @@
   "app/features/public/components/career-resources/salary-faq-section.tsx": {
     "mtime": 1782885772.6267853,
     "ast_hash": "80c53dabaa7135bbe77165b1be419dd7",
+    "semantic_hash": ""
+  },
+  "app/(public)/jobs/[id]/page.tsx": {
+    "mtime": 1782886433.5653913,
+    "ast_hash": "bccb8b80ee433b83764aceb0bc4b411e",
+    "semantic_hash": ""
+  },
+  "app/(public)/jobs/page.tsx": {
+    "mtime": 1782801397.5879831,
+    "ast_hash": "0f64475194751cd87f174eae67e8c9b9",
+    "semantic_hash": ""
+  },
+  "app/(public)/layout.tsx": {
+    "mtime": 1782886339.9159234,
+    "ast_hash": "56afe949ebc6d0b4f8f3a5fdafb544f0",
+    "semantic_hash": ""
+  },
+  "app/(public)/page.tsx": {
+    "mtime": 1782830423.5510404,
+    "ast_hash": "496075e42df1dc3a613fda86991e4a91",
+    "semantic_hash": ""
+  },
+  "app/(public)/privacy/page.tsx": {
+    "mtime": 1782886390.642937,
+    "ast_hash": "710e5af56dc1b76115ce23cc89eaccb6",
+    "semantic_hash": ""
+  },
+  "app/(public)/terms/page.tsx": {
+    "mtime": 1782886407.2042513,
+    "ast_hash": "2cf6416cbadf8da1463a32790ebaae07",
+    "semantic_hash": ""
+  },
+  "app/robots.ts": {
+    "mtime": 1782886442.286465,
+    "ast_hash": "2c5c53792a1eb9d54a772b7f9fb3e884",
+    "semantic_hash": ""
+  },
+  "app/sitemap.ts": {
+    "mtime": 1782886438.5649958,
+    "ast_hash": "78fe09b8ffb51c2fed1778baf4d73742",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/analytics-layout-fix.md": {
+    "mtime": 1782630365.2245178,
+    "ast_hash": "f322defb81bacf2049549da64b6faaf2",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/applicant-detail-view.md": {
+    "mtime": 1782506613.165864,
+    "ast_hash": "d0bbea908f5fef8093a809dd872bd004",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/bulk-actions-edge-case-fixes.md": {
+    "mtime": 1782517794.9440527,
+    "ast_hash": "e9a5b5b0540b9d98b38cd006c31a0495",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/home-page-composition.md": {
+    "mtime": 1782884102.9575071,
+    "ast_hash": "98f2e4d59fee9e86b45d048b7cf4e90c",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/job-posts-crud.md": {
+    "mtime": 1782484092.789187,
+    "ast_hash": "b78145f54744024346ee668a26b1173f",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/message-system-fixes.md": {
+    "mtime": 1782530448.2278638,
+    "ast_hash": "375d192c30315a463bfefc6cec2518cf",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/online-presence-plan.md": {
+    "mtime": 1782534572.6654608,
+    "ast_hash": "aca5acf9dfc187e1de451131fa4ab668",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/phase-3-schema-migration.md": {
+    "mtime": 1782747981.652296,
+    "ast_hash": "15340bc18677605347b035b2781a8be8",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/realtime-admin-messaging.md": {
+    "mtime": 1782501295.636798,
+    "ast_hash": "0da0ab413813aee43c111cce54b173f0",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/recruiter-analytics-filters.md": {
+    "mtime": 1782519454.1467845,
+    "ast_hash": "56763c8506556a6ab203fd3c7f9d3d25",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/recruiter-dashboard.md": {
+    "mtime": 1782520541.885954,
+    "ast_hash": "1adc669c4779e7a9d437a720b4d7146c",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/recruiter-messaging-step2.5.md": {
+    "mtime": 1782502544.5132253,
+    "ast_hash": "e60d80eeae3aa72cdfa4ee7c6d613b0e",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/step-2-10-notifications.md": {
+    "mtime": 1782521501.4292583,
+    "ast_hash": "1286b2767ab08501abe5df2501cb0eb5",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/step-4.5-career-resources.md": {
+    "mtime": 1782884975.5547292,
+    "ast_hash": "c0eee040e425e4e7cc6bd150b694ac7f",
     "semantic_hash": ""
   }
 }
