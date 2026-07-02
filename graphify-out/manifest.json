@@ -960,8 +960,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/landing-page.tsx": {
-    "mtime": 1782882328.8985624,
-    "ast_hash": "fcd0f011144a40862d1ef6b4b97a22f1",
+    "mtime": 1783010160.134819,
+    "ast_hash": "5f9ccd294958af92da75b3df8888e84a",
     "semantic_hash": ""
   },
   "app/features/landing/components/stats-banner.tsx": {
@@ -975,8 +975,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/testimonials.tsx": {
-    "mtime": 1782831076.3164575,
-    "ast_hash": "4af759071ceb69767a1180b2e34caf09",
+    "mtime": 1783007474.2235477,
+    "ast_hash": "dc9388e44d4297f8f07fa3131750d7e0",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
@@ -1050,8 +1050,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/employer-cta.tsx": {
-    "mtime": 1782882320.4890046,
-    "ast_hash": "5f9f0bc6059908ed8b0342b857748443",
+    "mtime": 1783007281.8530014,
+    "ast_hash": "87ed51042f6049211c48b4a8f65c0977",
     "semantic_hash": ""
   },
   "app/features/public/components/featured-companies.tsx": {
@@ -1060,8 +1060,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/hero-search.tsx": {
-    "mtime": 1783005179.2763014,
-    "ast_hash": "c0c8921c74e57d78442101df006da031",
+    "mtime": 1783006575.2388246,
+    "ast_hash": "86d120f708a686183bca5a479bc9f12d",
     "semantic_hash": ""
   },
   "app/features/public/components/mobile-nav-menu.tsx": {
@@ -1075,8 +1075,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/public-navbar.tsx": {
-    "mtime": 1783001458.660041,
-    "ast_hash": "f2ca55062326a8a76226fabfc5d1b549",
+    "mtime": 1783006885.8044372,
+    "ast_hash": "05c7e1a013bc90a3125222644fb0cb58",
     "semantic_hash": ""
   },
   "app/features/public/hooks/use-sign-out.ts": {
@@ -1825,8 +1825,8 @@
     "semantic_hash": ""
   },
   "components/ui/theme-toggle.tsx": {
-    "mtime": 1783001234.8990858,
-    "ast_hash": "4c0de632f66ac5f90893110367240061",
+    "mtime": 1783006875.1160474,
+    "ast_hash": "4ef21a44c4ac849a807daf11841fcbbc",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {

@@ -4,14 +4,274 @@
   "graph": {},
   "nodes": [
     {
+      "label": "testimonials.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_testimonials",
+      "community": 58,
+      "norm_label": "testimonials.tsx"
+    },
+    {
+      "label": "testimonials",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_testimonials_testimonials",
+      "community": 58,
+      "norm_label": "testimonials"
+    },
+    {
+      "label": "employer-cta.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_employer_cta",
+      "community": 58,
+      "norm_label": "employer-cta.tsx"
+    },
+    {
+      "label": "EmployerCTA()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_employer_cta_employercta",
+      "community": 58,
+      "norm_label": "employercta()"
+    },
+    {
+      "label": "hero-search.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_hero_search",
+      "community": 65,
+      "norm_label": "hero-search.tsx"
+    },
+    {
+      "label": "HeroSearch()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_hero_search_herosearch",
+      "community": 65,
+      "norm_label": "herosearch()"
+    },
+    {
+      "label": "public-navbar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_public_navbar",
+      "community": 61,
+      "norm_label": "public-navbar.tsx"
+    },
+    {
+      "label": "PublicNavbar()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "components_public_navbar_publicnavbar",
+      "community": 61,
+      "norm_label": "publicnavbar()"
+    },
+    {
+      "label": "NavLink()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "components_public_navbar_navlink",
+      "community": 61,
+      "norm_label": "navlink()"
+    },
+    {
+      "label": "theme-toggle.tsx",
+      "file_type": "code",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_theme_toggle",
+      "community": 61,
+      "norm_label": "theme-toggle.tsx"
+    },
+    {
+      "label": "themes",
+      "file_type": "code",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "ui_theme_toggle_themes",
+      "community": 61,
+      "norm_label": "themes"
+    },
+    {
+      "label": "ThemeToggle()",
+      "file_type": "code",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "ui_theme_toggle_themetoggle",
+      "community": 61,
+      "norm_label": "themetoggle()"
+    },
+    {
+      "label": "filter-select.tsx",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "filter-select.tsx",
+      "id": "components_filter_select"
+    },
+    {
+      "label": "FilterSelectProps",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "filterselectprops",
+      "id": "components_filter_select_filterselectprops"
+    },
+    {
+      "label": "FilterSelect()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "filterselect()",
+      "id": "components_filter_select_filterselect"
+    },
+    {
+      "label": "job-list-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "job-list-page.tsx",
+      "id": "components_job_list_page"
+    },
+    {
+      "label": "WORK_MODES",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "work_modes",
+      "id": "components_job_list_page_work_modes"
+    },
+    {
+      "label": "EMPLOYMENT_TYPES",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "employment_types",
+      "id": "components_job_list_page_employment_types"
+    },
+    {
+      "label": "EXPERIENCE_LEVELS",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "experience_levels",
+      "id": "components_job_list_page_experience_levels"
+    },
+    {
+      "label": "STATUS_OPTIONS",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "status_options",
+      "id": "components_job_list_page_status_options"
+    },
+    {
+      "label": "FILTER_LABELS",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "filter_labels",
+      "id": "components_job_list_page_filter_labels"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "containervariants",
+      "id": "components_job_list_page_containervariants"
+    },
+    {
+      "label": "cardVariants",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "cardvariants",
+      "id": "components_job_list_page_cardvariants"
+    },
+    {
+      "label": "JobListPage()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "joblistpage()",
+      "id": "components_job_list_page_joblistpage"
+    },
+    {
+      "label": "job-search-bar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-search-bar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "job-search-bar.tsx",
+      "id": "components_job_search_bar"
+    },
+    {
+      "label": "JobSearchBar()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-search-bar.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 65,
+      "norm_label": "jobsearchbar()",
+      "id": "components_job_search_bar_jobsearchbar"
+    },
+    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "apply_route",
       "community": 22,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "apply_route"
     },
     {
       "label": "handlePOST()",
@@ -19,9 +279,9 @@
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "apply_route_handlepost",
       "community": 22,
-      "norm_label": "handlepost()"
+      "norm_label": "handlepost()",
+      "id": "apply_route_handlepost"
     },
     {
       "label": "POST",
@@ -29,9 +289,9 @@
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L118",
       "_origin": "ast",
-      "id": "apply_route_post",
       "community": 22,
-      "norm_label": "post"
+      "norm_label": "post",
+      "id": "apply_route_post"
     },
     {
       "label": "route.ts",
@@ -39,9 +299,9 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_api_jobs_id_route_ts_id_route",
       "community": 17,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "app_api_jobs_id_route_ts_id_route"
     },
     {
       "label": "handleGET()",
@@ -49,9 +309,9 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "app_api_jobs_id_route_ts_id_route_handleget",
       "community": 17,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "app_api_jobs_id_route_ts_id_route_handleget"
     },
     {
       "label": "GET",
@@ -59,9 +319,9 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "app_api_jobs_id_route_ts_id_route_get",
       "community": 17,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "app_api_jobs_id_route_ts_id_route_get"
     },
     {
       "label": "route.ts",
@@ -69,9 +329,9 @@
       "source_file": "app/api/jobs/[id]/view/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "view_route",
       "community": 22,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "view_route"
     },
     {
       "label": "handlePOST()",
@@ -79,9 +339,9 @@
       "source_file": "app/api/jobs/[id]/view/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "view_route_handlepost",
       "community": 22,
-      "norm_label": "handlepost()"
+      "norm_label": "handlepost()",
+      "id": "view_route_handlepost"
     },
     {
       "label": "POST",
@@ -89,9 +349,9 @@
       "source_file": "app/api/jobs/[id]/view/route.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "view_route_post",
       "community": 22,
-      "norm_label": "post"
+      "norm_label": "post",
+      "id": "view_route_post"
     },
     {
       "label": "route.ts",
@@ -99,9 +359,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "jobs_route",
       "community": 105,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "jobs_route"
     },
     {
       "label": "handleGET()",
@@ -109,9 +369,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "jobs_route_handleget",
       "community": 105,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "jobs_route_handleget"
     },
     {
       "label": "GET",
@@ -119,9 +379,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "jobs_route_get",
       "community": 105,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "jobs_route_get"
     },
     {
       "label": "route.ts",
@@ -129,9 +389,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_api_user_applications_id_route_ts_id_route",
       "community": 22,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "app_api_user_applications_id_route_ts_id_route"
     },
     {
       "label": "handleGET()",
@@ -139,9 +399,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "app_api_user_applications_id_route_ts_id_route_handleget",
       "community": 22,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "app_api_user_applications_id_route_ts_id_route_handleget"
     },
     {
       "label": "handleDELETE()",
@@ -149,9 +409,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "app_api_user_applications_id_route_ts_id_route_handledelete",
       "community": 22,
-      "norm_label": "handledelete()"
+      "norm_label": "handledelete()",
+      "id": "app_api_user_applications_id_route_ts_id_route_handledelete"
     },
     {
       "label": "GET",
@@ -159,9 +419,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "app_api_user_applications_id_route_ts_id_route_get",
       "community": 22,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "app_api_user_applications_id_route_ts_id_route_get"
     },
     {
       "label": "DELETE",
@@ -169,9 +429,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "id": "app_api_user_applications_id_route_ts_id_route_delete",
       "community": 22,
-      "norm_label": "delete"
+      "norm_label": "delete",
+      "id": "app_api_user_applications_id_route_ts_id_route_delete"
     },
     {
       "label": "route.ts",
@@ -179,9 +439,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "applications_route",
       "community": 17,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "applications_route"
     },
     {
       "label": "handleGET()",
@@ -189,9 +449,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "applications_route_handleget",
       "community": 17,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "applications_route_handleget"
     },
     {
       "label": "GET",
@@ -199,9 +459,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "applications_route_get",
       "community": 17,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "applications_route_get"
     },
     {
       "label": "route.ts",
@@ -209,9 +469,9 @@
       "source_file": "app/api/user/applications/stats/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "stats_route",
       "community": 17,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "stats_route"
     },
     {
       "label": "handleGET()",
@@ -219,9 +479,9 @@
       "source_file": "app/api/user/applications/stats/route.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "stats_route_handleget",
       "community": 17,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "stats_route_handleget"
     },
     {
       "label": "GET",
@@ -229,9 +489,9 @@
       "source_file": "app/api/user/applications/stats/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "stats_route_get",
       "community": 17,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "stats_route_get"
     },
     {
       "label": "route.ts",
@@ -239,9 +499,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "bookmarks_route",
       "community": 17,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "bookmarks_route"
     },
     {
       "label": "ToggleSchema",
@@ -249,9 +509,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "bookmarks_route_toggleschema",
       "community": 17,
-      "norm_label": "toggleschema"
+      "norm_label": "toggleschema",
+      "id": "bookmarks_route_toggleschema"
     },
     {
       "label": "handleGET()",
@@ -259,9 +519,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "bookmarks_route_handleget",
       "community": 17,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "bookmarks_route_handleget"
     },
     {
       "label": "handlePOST()",
@@ -269,9 +529,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "bookmarks_route_handlepost",
       "community": 17,
-      "norm_label": "handlepost()"
+      "norm_label": "handlepost()",
+      "id": "bookmarks_route_handlepost"
     },
     {
       "label": "GET",
@@ -279,9 +539,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "bookmarks_route_get",
       "community": 17,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "bookmarks_route_get"
     },
     {
       "label": "POST",
@@ -289,9 +549,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "bookmarks_route_post",
       "community": 17,
-      "norm_label": "post"
+      "norm_label": "post",
+      "id": "bookmarks_route_post"
     },
     {
       "label": "route.ts",
@@ -299,9 +559,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "profile_route",
       "community": 17,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "profile_route"
     },
     {
       "label": "GET()",
@@ -309,9 +569,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "profile_route_get",
       "community": 17,
-      "norm_label": "get()"
+      "norm_label": "get()",
+      "id": "profile_route_get"
     },
     {
       "label": "route.ts",
@@ -319,9 +579,9 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "ai_enhance_route",
       "community": 109,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "ai_enhance_route"
     },
     {
       "label": "handlePOST()",
@@ -329,9 +589,9 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "ai_enhance_route_handlepost",
       "community": 109,
-      "norm_label": "handlepost()"
+      "norm_label": "handlepost()",
+      "id": "ai_enhance_route_handlepost"
     },
     {
       "label": "POST",
@@ -339,9 +599,9 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L104",
       "_origin": "ast",
-      "id": "ai_enhance_route_post",
       "community": 109,
-      "norm_label": "post"
+      "norm_label": "post",
+      "id": "ai_enhance_route_post"
     },
     {
       "label": "route.ts",
@@ -349,9 +609,9 @@
       "source_file": "app/api/user/resumes/[id]/builder-data/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "builder_data_route",
       "community": 26,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "builder_data_route"
     },
     {
       "label": "handlePATCH()",
@@ -359,9 +619,9 @@
       "source_file": "app/api/user/resumes/[id]/builder-data/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "builder_data_route_handlepatch",
       "community": 26,
-      "norm_label": "handlepatch()"
+      "norm_label": "handlepatch()",
+      "id": "builder_data_route_handlepatch"
     },
     {
       "label": "PATCH",
@@ -369,9 +629,9 @@
       "source_file": "app/api/user/resumes/[id]/builder-data/route.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "id": "builder_data_route_patch",
       "community": 26,
-      "norm_label": "patch"
+      "norm_label": "patch",
+      "id": "builder_data_route_patch"
     },
     {
       "label": "route.ts",
@@ -379,9 +639,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_api_user_resumes_id_route_ts_id_route",
       "community": 26,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "app_api_user_resumes_id_route_ts_id_route"
     },
     {
       "label": "handlePATCH()",
@@ -389,9 +649,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "id_route_handlepatch",
       "community": 26,
-      "norm_label": "handlepatch()"
+      "norm_label": "handlepatch()",
+      "id": "id_route_handlepatch"
     },
     {
       "label": "handleDELETE()",
@@ -399,9 +659,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "app_api_user_resumes_id_route_ts_id_route_handledelete",
       "community": 26,
-      "norm_label": "handledelete()"
+      "norm_label": "handledelete()",
+      "id": "app_api_user_resumes_id_route_ts_id_route_handledelete"
     },
     {
       "label": "PATCH",
@@ -409,9 +669,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "id_route_patch",
       "community": 26,
-      "norm_label": "patch"
+      "norm_label": "patch",
+      "id": "id_route_patch"
     },
     {
       "label": "DELETE",
@@ -419,9 +679,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "app_api_user_resumes_id_route_ts_id_route_delete",
       "community": 26,
-      "norm_label": "delete"
+      "norm_label": "delete",
+      "id": "app_api_user_resumes_id_route_ts_id_route_delete"
     },
     {
       "label": "route.ts",
@@ -429,9 +689,9 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "resumes_route",
       "community": 21,
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "resumes_route"
     },
     {
       "label": "handleGET()",
@@ -439,9 +699,9 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "resumes_route_handleget",
       "community": 21,
-      "norm_label": "handleget()"
+      "norm_label": "handleget()",
+      "id": "resumes_route_handleget"
     },
     {
       "label": "handlePOST()",
@@ -449,9 +709,9 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "resumes_route_handlepost",
       "community": 21,
-      "norm_label": "handlepost()"
+      "norm_label": "handlepost()",
+      "id": "resumes_route_handlepost"
     },
     {
       "label": "GET",
@@ -459,9 +719,9 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "resumes_route_get",
       "community": 21,
-      "norm_label": "get"
+      "norm_label": "get",
+      "id": "resumes_route_get"
     },
     {
       "label": "POST",
@@ -469,9 +729,9 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "resumes_route_post",
       "community": 21,
-      "norm_label": "post"
+      "norm_label": "post",
+      "id": "resumes_route_post"
     },
     {
       "label": "apply-modal.tsx",
@@ -479,9 +739,9 @@
       "source_file": "app/features/jobs/components/apply-modal.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_apply_modal",
       "community": 93,
-      "norm_label": "apply-modal.tsx"
+      "norm_label": "apply-modal.tsx",
+      "id": "components_apply_modal"
     },
     {
       "label": "ResumeOption",
@@ -489,9 +749,9 @@
       "source_file": "app/features/jobs/components/apply-modal.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "components_apply_modal_resumeoption",
       "community": 93,
-      "norm_label": "resumeoption"
+      "norm_label": "resumeoption",
+      "id": "components_apply_modal_resumeoption"
     },
     {
       "label": "ApplyModalProps",
@@ -499,9 +759,9 @@
       "source_file": "app/features/jobs/components/apply-modal.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "components_apply_modal_applymodalprops",
       "community": 93,
-      "norm_label": "applymodalprops"
+      "norm_label": "applymodalprops",
+      "id": "components_apply_modal_applymodalprops"
     },
     {
       "label": "ApplyModal()",
@@ -509,9 +769,9 @@
       "source_file": "app/features/jobs/components/apply-modal.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "components_apply_modal_applymodal",
       "community": 93,
-      "norm_label": "applymodal()"
+      "norm_label": "applymodal()",
+      "id": "components_apply_modal_applymodal"
     },
     {
       "label": "activity-panel.tsx",
@@ -519,9 +779,9 @@
       "source_file": "app/features/user/components/activity-panel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_activity_panel",
       "community": 125,
-      "norm_label": "activity-panel.tsx"
+      "norm_label": "activity-panel.tsx",
+      "id": "components_activity_panel"
     },
     {
       "label": "AppRow",
@@ -529,9 +789,9 @@
       "source_file": "app/features/user/components/activity-panel.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "components_activity_panel_approw",
       "community": 125,
-      "norm_label": "approw"
+      "norm_label": "approw",
+      "id": "components_activity_panel_approw"
     },
     {
       "label": "Stats",
@@ -539,9 +799,9 @@
       "source_file": "app/features/user/components/activity-panel.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "components_activity_panel_stats",
       "community": 125,
-      "norm_label": "stats"
+      "norm_label": "stats",
+      "id": "components_activity_panel_stats"
     },
     {
       "label": "statConfig",
@@ -549,9 +809,9 @@
       "source_file": "app/features/user/components/activity-panel.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "components_activity_panel_statconfig",
       "community": 125,
-      "norm_label": "statconfig"
+      "norm_label": "statconfig",
+      "id": "components_activity_panel_statconfig"
     },
     {
       "label": "ActivityPanel()",
@@ -559,9 +819,9 @@
       "source_file": "app/features/user/components/activity-panel.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "components_activity_panel_activitypanel",
       "community": 125,
-      "norm_label": "activitypanel()"
+      "norm_label": "activitypanel()",
+      "id": "components_activity_panel_activitypanel"
     },
     {
       "label": "application-detail-view.tsx",
@@ -569,9 +829,9 @@
       "source_file": "app/features/user/components/application-detail-view.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_application_detail_view",
       "community": 82,
-      "norm_label": "application-detail-view.tsx"
+      "norm_label": "application-detail-view.tsx",
+      "id": "components_application_detail_view"
     },
     {
       "label": "ApplicationDetailView()",
@@ -579,9 +839,9 @@
       "source_file": "app/features/user/components/application-detail-view.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_application_detail_view_applicationdetailview",
       "community": 82,
-      "norm_label": "applicationdetailview()"
+      "norm_label": "applicationdetailview()",
+      "id": "components_application_detail_view_applicationdetailview"
     },
     {
       "label": "applications-page.tsx",
@@ -589,9 +849,9 @@
       "source_file": "app/features/user/components/applications-page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_applications_page",
       "community": 70,
-      "norm_label": "applications-page.tsx"
+      "norm_label": "applications-page.tsx",
+      "id": "components_applications_page"
     },
     {
       "label": "STATUSES",
@@ -599,9 +859,9 @@
       "source_file": "app/features/user/components/applications-page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "components_applications_page_statuses",
       "community": 70,
-      "norm_label": "statuses"
+      "norm_label": "statuses",
+      "id": "components_applications_page_statuses"
     },
     {
       "label": "AppRow",
@@ -609,9 +869,9 @@
       "source_file": "app/features/user/components/applications-page.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_applications_page_approw",
       "community": 70,
-      "norm_label": "approw"
+      "norm_label": "approw",
+      "id": "components_applications_page_approw"
     },
     {
       "label": "daysAgo()",
@@ -619,9 +879,9 @@
       "source_file": "app/features/user/components/applications-page.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "components_applications_page_daysago",
       "community": 70,
-      "norm_label": "daysago()"
+      "norm_label": "daysago()",
+      "id": "components_applications_page_daysago"
     },
     {
       "label": "ApplicationsPage()",
@@ -629,9 +889,9 @@
       "source_file": "app/features/user/components/applications-page.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "components_applications_page_applicationspage",
       "community": 70,
-      "norm_label": "applicationspage()"
+      "norm_label": "applicationspage()",
+      "id": "components_applications_page_applicationspage"
     },
     {
       "label": "resume-card.tsx",
@@ -639,9 +899,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_resume_card",
       "community": 19,
-      "norm_label": "resume-card.tsx"
+      "norm_label": "resume-card.tsx",
+      "id": "components_resume_card"
     },
     {
       "label": "ResumeCardProps",
@@ -649,9 +909,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "components_resume_card_resumecardprops",
       "community": 19,
-      "norm_label": "resumecardprops"
+      "norm_label": "resumecardprops",
+      "id": "components_resume_card_resumecardprops"
     },
     {
       "label": "AiErrorBanner()",
@@ -659,9 +919,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "components_resume_card_aierrorbanner",
       "community": 19,
-      "norm_label": "aierrorbanner()"
+      "norm_label": "aierrorbanner()",
+      "id": "components_resume_card_aierrorbanner"
     },
     {
       "label": "formatSize()",
@@ -669,9 +929,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "components_resume_card_formatsize",
       "community": 19,
-      "norm_label": "formatsize()"
+      "norm_label": "formatsize()",
+      "id": "components_resume_card_formatsize"
     },
     {
       "label": "formatDate()",
@@ -679,9 +939,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L60",
       "_origin": "ast",
-      "id": "components_resume_card_formatdate",
       "community": 19,
-      "norm_label": "formatdate()"
+      "norm_label": "formatdate()",
+      "id": "components_resume_card_formatdate"
     },
     {
       "label": "ResumeCard()",
@@ -689,9 +949,9 @@
       "source_file": "app/features/user/components/resume-card.tsx",
       "source_location": "L69",
       "_origin": "ast",
-      "id": "components_resume_card_resumecard",
       "community": 19,
-      "norm_label": "resumecard()"
+      "norm_label": "resumecard()",
+      "id": "components_resume_card_resumecard"
     },
     {
       "label": "use-ai-resume-enhance.ts",
@@ -699,9 +959,9 @@
       "source_file": "app/features/user/hooks/use-ai-resume-enhance.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hooks_use_ai_resume_enhance",
       "community": 19,
-      "norm_label": "use-ai-resume-enhance.ts"
+      "norm_label": "use-ai-resume-enhance.ts",
+      "id": "hooks_use_ai_resume_enhance"
     },
     {
       "label": "useAiResumeEnhance()",
@@ -709,9 +969,9 @@
       "source_file": "app/features/user/hooks/use-ai-resume-enhance.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "hooks_use_ai_resume_enhance_useairesumeenhance",
       "community": 19,
-      "norm_label": "useairesumeenhance()"
+      "norm_label": "useairesumeenhance()",
+      "id": "hooks_use_ai_resume_enhance_useairesumeenhance"
     },
     {
       "label": "useApplyAiSuggestions()",
@@ -719,9 +979,9 @@
       "source_file": "app/features/user/hooks/use-ai-resume-enhance.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "hooks_use_ai_resume_enhance_useapplyaisuggestions",
       "community": 19,
-      "norm_label": "useapplyaisuggestions()"
+      "norm_label": "useapplyaisuggestions()",
+      "id": "hooks_use_ai_resume_enhance_useapplyaisuggestions"
     },
     {
       "label": "use-resumes.ts",
@@ -729,9 +989,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hooks_use_resumes",
       "community": 19,
-      "norm_label": "use-resumes.ts"
+      "norm_label": "use-resumes.ts",
+      "id": "hooks_use_resumes"
     },
     {
       "label": "ResumeListItem",
@@ -739,9 +999,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "hooks_use_resumes_resumelistitem",
       "community": 19,
-      "norm_label": "resumelistitem"
+      "norm_label": "resumelistitem",
+      "id": "hooks_use_resumes_resumelistitem"
     },
     {
       "label": "ListResponse",
@@ -749,9 +1009,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "hooks_use_resumes_listresponse",
       "community": 19,
-      "norm_label": "listresponse"
+      "norm_label": "listresponse",
+      "id": "hooks_use_resumes_listresponse"
     },
     {
       "label": "useResumes()",
@@ -759,9 +1019,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "hooks_use_resumes_useresumes",
       "community": 19,
-      "norm_label": "useresumes()"
+      "norm_label": "useresumes()",
+      "id": "hooks_use_resumes_useresumes"
     },
     {
       "label": "useUploadResume()",
@@ -769,9 +1029,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "hooks_use_resumes_useuploadresume",
       "community": 19,
-      "norm_label": "useuploadresume()"
+      "norm_label": "useuploadresume()",
+      "id": "hooks_use_resumes_useuploadresume"
     },
     {
       "label": "useSetPrimaryResume()",
@@ -779,9 +1039,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "hooks_use_resumes_usesetprimaryresume",
       "community": 19,
-      "norm_label": "usesetprimaryresume()"
+      "norm_label": "usesetprimaryresume()",
+      "id": "hooks_use_resumes_usesetprimaryresume"
     },
     {
       "label": "useDeleteResume()",
@@ -789,9 +1049,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "id": "hooks_use_resumes_usedeleteresume",
       "community": 19,
-      "norm_label": "usedeleteresume()"
+      "norm_label": "usedeleteresume()",
+      "id": "hooks_use_resumes_usedeleteresume"
     },
     {
       "label": "useUpdateBuilderData()",
@@ -799,9 +1059,9 @@
       "source_file": "app/features/user/hooks/use-resumes.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "id": "hooks_use_resumes_useupdatebuilderdata",
       "community": 19,
-      "norm_label": "useupdatebuilderdata()"
+      "norm_label": "useupdatebuilderdata()",
+      "id": "hooks_use_resumes_useupdatebuilderdata"
     },
     {
       "label": "use-saved-jobs.ts",
@@ -809,9 +1069,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs",
       "community": 51,
-      "norm_label": "use-saved-jobs.ts"
+      "norm_label": "use-saved-jobs.ts",
+      "id": "hooks_use_saved_jobs"
     },
     {
       "label": "ToggleResponse",
@@ -819,9 +1079,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_toggleresponse",
       "community": 51,
-      "norm_label": "toggleresponse"
+      "norm_label": "toggleresponse",
+      "id": "hooks_use_saved_jobs_toggleresponse"
     },
     {
       "label": "CheckResponse",
@@ -829,9 +1089,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_checkresponse",
       "community": 51,
-      "norm_label": "checkresponse"
+      "norm_label": "checkresponse",
+      "id": "hooks_use_saved_jobs_checkresponse"
     },
     {
       "label": "useBookmarkedIds()",
@@ -839,9 +1099,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_usebookmarkedids",
       "community": 51,
-      "norm_label": "usebookmarkedids()"
+      "norm_label": "usebookmarkedids()",
+      "id": "hooks_use_saved_jobs_usebookmarkedids"
     },
     {
       "label": "useBookmarkedJobs()",
@@ -849,9 +1109,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_usebookmarkedjobs",
       "community": 51,
-      "norm_label": "usebookmarkedjobs()"
+      "norm_label": "usebookmarkedjobs()",
+      "id": "hooks_use_saved_jobs_usebookmarkedjobs"
     },
     {
       "label": "useCheckBookmark()",
@@ -859,9 +1119,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_usecheckbookmark",
       "community": 51,
-      "norm_label": "usecheckbookmark()"
+      "norm_label": "usecheckbookmark()",
+      "id": "hooks_use_saved_jobs_usecheckbookmark"
     },
     {
       "label": "useToggleBookmark()",
@@ -869,9 +1129,9 @@
       "source_file": "app/features/user/hooks/use-saved-jobs.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "hooks_use_saved_jobs_usetogglebookmark",
       "community": 51,
-      "norm_label": "usetogglebookmark()"
+      "norm_label": "usetogglebookmark()",
+      "id": "hooks_use_saved_jobs_usetogglebookmark"
     },
     {
       "label": "kilo.json",
@@ -6984,36 +7244,6 @@
       "id": "utils_rbac_checkrole"
     },
     {
-      "label": "filter-select.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "filter-select.tsx",
-      "id": "components_filter_select"
-    },
-    {
-      "label": "FilterSelectProps",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "filterselectprops",
-      "id": "components_filter_select_filterselectprops"
-    },
-    {
-      "label": "FilterSelect()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "filterselect()",
-      "id": "components_filter_select_filterselect"
-    },
-    {
       "label": "job-card.tsx",
       "file_type": "code",
       "source_file": "app/features/jobs/components/job-card.tsx",
@@ -7072,116 +7302,6 @@
       "community": 93,
       "norm_label": "jobdetailview()",
       "id": "components_job_detail_view_jobdetailview"
-    },
-    {
-      "label": "job-list-page.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "job-list-page.tsx",
-      "id": "components_job_list_page"
-    },
-    {
-      "label": "WORK_MODES",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "work_modes",
-      "id": "components_job_list_page_work_modes"
-    },
-    {
-      "label": "EMPLOYMENT_TYPES",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "employment_types",
-      "id": "components_job_list_page_employment_types"
-    },
-    {
-      "label": "EXPERIENCE_LEVELS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "experience_levels",
-      "id": "components_job_list_page_experience_levels"
-    },
-    {
-      "label": "STATUS_OPTIONS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "status_options",
-      "id": "components_job_list_page_status_options"
-    },
-    {
-      "label": "FILTER_LABELS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "filter_labels",
-      "id": "components_job_list_page_filter_labels"
-    },
-    {
-      "label": "containerVariants",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "containervariants",
-      "id": "components_job_list_page_containervariants"
-    },
-    {
-      "label": "cardVariants",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "cardvariants",
-      "id": "components_job_list_page_cardvariants"
-    },
-    {
-      "label": "JobListPage()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L45",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "joblistpage()",
-      "id": "components_job_list_page_joblistpage"
-    },
-    {
-      "label": "job-search-bar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-search-bar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "job-search-bar.tsx",
-      "id": "components_job_search_bar"
-    },
-    {
-      "label": "JobSearchBar()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-search-bar.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "jobsearchbar()",
-      "id": "components_job_search_bar_jobsearchbar"
     },
     {
       "label": "use-apply-job.ts",
@@ -7532,26 +7652,6 @@
       "community": 126,
       "norm_label": "statscounter()",
       "id": "components_stats_counter_statscounter"
-    },
-    {
-      "label": "testimonials.tsx",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 58,
-      "norm_label": "testimonials.tsx",
-      "id": "components_testimonials"
-    },
-    {
-      "label": "testimonials",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 58,
-      "norm_label": "testimonials",
-      "id": "components_testimonials_testimonials"
     },
     {
       "label": "notification-dropdown.tsx",
@@ -8134,26 +8234,6 @@
       "id": "components_category_strip_categorystrip"
     },
     {
-      "label": "employer-cta.tsx",
-      "file_type": "code",
-      "source_file": "app/features/public/components/employer-cta.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 58,
-      "norm_label": "employer-cta.tsx",
-      "id": "components_employer_cta"
-    },
-    {
-      "label": "EmployerCTA()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/employer-cta.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 58,
-      "norm_label": "employercta()",
-      "id": "components_employer_cta_employercta"
-    },
-    {
       "label": "featured-companies.tsx",
       "file_type": "code",
       "source_file": "app/features/public/components/featured-companies.tsx",
@@ -8172,26 +8252,6 @@
       "community": 118,
       "norm_label": "featuredcompanies()",
       "id": "components_featured_companies_featuredcompanies"
-    },
-    {
-      "label": "hero-search.tsx",
-      "file_type": "code",
-      "source_file": "app/features/public/components/hero-search.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "hero-search.tsx",
-      "id": "components_hero_search"
-    },
-    {
-      "label": "HeroSearch()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/hero-search.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "herosearch()",
-      "id": "components_hero_search_herosearch"
     },
     {
       "label": "mobile-nav-menu.tsx",
@@ -8252,36 +8312,6 @@
       "community": 61,
       "norm_label": "publicnavbarskeleton()",
       "id": "components_public_navbar_skeleton_publicnavbarskeleton"
-    },
-    {
-      "label": "public-navbar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "public-navbar.tsx",
-      "id": "components_public_navbar"
-    },
-    {
-      "label": "PublicNavbar()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "publicnavbar()",
-      "id": "components_public_navbar_publicnavbar"
-    },
-    {
-      "label": "NavLink()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L83",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "navlink()",
-      "id": "components_public_navbar_navlink"
     },
     {
       "label": "use-sign-out.ts",
@@ -14782,36 +14812,6 @@
       "community": 92,
       "norm_label": "themeinitializer()",
       "id": "ui_theme_initializer_themeinitializer"
-    },
-    {
-      "label": "theme-toggle.tsx",
-      "file_type": "code",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "theme-toggle.tsx",
-      "id": "ui_theme_toggle"
-    },
-    {
-      "label": "themes",
-      "file_type": "code",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "themes",
-      "id": "ui_theme_toggle_themes"
-    },
-    {
-      "label": "ThemeToggle()",
-      "file_type": "code",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 61,
-      "norm_label": "themetoggle()",
-      "id": "ui_theme_toggle_themetoggle"
     },
     {
       "label": "eslint.config.mjs",
@@ -28479,6 +28479,747 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_testimonials",
+      "target": "components_testimonials_testimonials"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_testimonials_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/employer-cta.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_employer_cta",
+      "target": "components_employer_cta_employercta"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta_employercta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_hero_search",
+      "target": "components_hero_search_herosearch"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_hero_search",
+      "target": "components_job_search_bar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/hero-search.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_hero_search",
+      "target": "components_job_search_bar_jobsearchbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_hero_search"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_hero_search_herosearch"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_mobile_nav_menu"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_mobile_nav_menu_mobilenavmenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_navlink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_publicnavbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_sign_out"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "lib_routes"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "lib_routes_ishiddenroute"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "lib_routes_ishiddenroute"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar_publicnavbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/mobile-nav-menu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_mobile_nav_menu",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/sidebar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_sidebar",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_theme_toggle",
+      "target": "stores_ui_store"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_theme_toggle",
+      "target": "stores_ui_store_theme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_theme_toggle",
+      "target": "stores_ui_store_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_theme_toggle",
+      "target": "ui_theme_toggle_themes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_theme_toggle",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/mobile-nav-menu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_mobile_nav_menu",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/layout/sidebar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_sidebar",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/ui/theme-toggle.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "ui_theme_toggle_themetoggle",
+      "target": "stores_ui_store_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_filter_select",
+      "target": "components_filter_select_filterselect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_filter_select",
+      "target": "components_filter_select_filterselectprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_filter_select"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_filter_select_filterselect"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/jobs/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_public_jobs_page_tsx_jobs_page",
+      "target": "components_job_list_page"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card_jobcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_cardvariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_containervariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_employment_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_experience_levels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_filter_labels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_joblistpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_status_options"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_work_modes"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_search_bar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_search_bar_jobsearchbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "layout_page_header"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "layout_page_header_pageheader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "lib_api_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "lib_api_client_apiclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "queries_public_job_queries"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "queries_public_job_queries_publicjobrow"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "ui_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "ui_skeleton_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/jobs/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_public_jobs_page_tsx_jobs_page",
+      "target": "components_job_list_page_joblistpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-search-bar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_search_bar",
+      "target": "components_job_search_bar_jobsearchbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -29025,9 +29766,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "jobs_route_get",
-      "confidence_score": 1.0
+      "target": "jobs_route_get"
     },
     {
       "relation": "contains",
@@ -29035,9 +29776,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "jobs_route_handleget",
-      "confidence_score": 1.0
+      "target": "jobs_route_handleget"
     },
     {
       "relation": "imports",
@@ -29046,9 +29787,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -29057,9 +29798,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports",
@@ -29068,9 +29809,9 @@
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_route",
-      "target": "queries_public_job_queries_listpublicjobs",
-      "confidence_score": 1.0
+      "target": "queries_public_job_queries_listpublicjobs"
     },
     {
       "relation": "imports_from",
@@ -29339,9 +30080,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -29349,9 +30090,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "applications_route_get",
-      "confidence_score": 1.0
+      "target": "applications_route_get"
     },
     {
       "relation": "contains",
@@ -29359,9 +30100,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "applications_route_handleget",
-      "confidence_score": 1.0
+      "target": "applications_route_handleget"
     },
     {
       "relation": "imports",
@@ -29370,9 +30111,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -29381,9 +30122,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "imports",
@@ -29392,9 +30133,9 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applications_route",
-      "target": "queries_user_application_queries_listuserapplications",
-      "confidence_score": 1.0
+      "target": "queries_user_application_queries_listuserapplications"
     },
     {
       "relation": "imports_from",
@@ -29715,9 +30456,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "profile_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -29726,9 +30467,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "profile_route",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "contains",
@@ -29736,9 +30477,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "profile_route",
-      "target": "profile_route_get",
-      "confidence_score": 1.0
+      "target": "profile_route_get"
     },
     {
       "relation": "contains",
@@ -30202,9 +30943,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_resumes_id_route_ts_id_route",
-      "target": "id_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "id_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -30212,9 +30953,9 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_resumes_id_route_ts_id_route",
-      "target": "id_route_patch",
-      "confidence_score": 1.0
+      "target": "id_route_patch"
     },
     {
       "relation": "imports_from",
@@ -32637,28 +33378,6 @@
       "target": "app_public_jobs_page_tsx_jobs_page_metadata"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/jobs/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_public_jobs_page_tsx_jobs_page",
-      "target": "components_job_list_page"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/jobs/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_public_jobs_page_tsx_jobs_page",
-      "target": "components_job_list_page_joblistpage"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(public)/jobs/page.tsx",
@@ -32689,28 +33408,6 @@
       "confidence_score": 1.0,
       "source": "public_layout",
       "target": "components_footer_footer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar_publicnavbar"
     },
     {
       "relation": "imports_from",
@@ -49680,17 +50377,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
       "source_location": "L12",
       "weight": 1.0,
@@ -50800,48 +51486,6 @@
       "target": "queries_export_queries_headers"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_filter_select",
-      "target": "components_filter_select_filterselect"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_filter_select",
-      "target": "components_filter_select_filterselectprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_filter_select"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_filter_select_filterselect"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -50920,17 +51564,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/user/components/saved-jobs-page.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -50970,17 +51603,6 @@
       "weight": 1.0,
       "source": "components_job_card_jobcard",
       "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card_jobcard"
     },
     {
       "relation": "imports",
@@ -51133,228 +51755,6 @@
       "confidence_score": 1.0,
       "source": "components_job_detail_view_jobdetailview",
       "target": "components_job_detail_view_fmtsalary"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_cardvariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_containervariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_employment_types"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_experience_levels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_filter_labels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_joblistpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_status_options"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_work_modes"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_search_bar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_search_bar_jobsearchbar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "layout_page_header"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "layout_page_header_pageheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "lib_api_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "lib_api_client_apiclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "queries_public_job_queries"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "queries_public_job_queries_publicjobrow"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "ui_skeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "ui_skeleton_skeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/hero-search.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_hero_search",
-      "target": "components_job_search_bar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-search-bar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_search_bar",
-      "target": "components_job_search_bar_jobsearchbar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/hero-search.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_hero_search",
-      "target": "components_job_search_bar_jobsearchbar"
     },
     {
       "relation": "contains",
@@ -51825,28 +52225,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_employer_cta"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_employer_cta_employercta"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -51865,28 +52243,6 @@
       "target": "components_featured_companies_featuredcompanies"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_hero_search"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_hero_search_herosearch"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/landing/components/landing-page.tsx",
@@ -51895,28 +52251,6 @@
       "confidence_score": 1.0,
       "source": "components_landing_page",
       "target": "components_landing_page_landingpage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_testimonials"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_testimonials_testimonials"
     },
     {
       "relation": "contains",
@@ -51979,16 +52313,6 @@
       "confidence_score": 1.0,
       "source": "components_stats_counter",
       "target": "components_stats_counter_statscounterprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_testimonials",
-      "target": "components_testimonials_testimonials"
     },
     {
       "relation": "contains",
@@ -52854,39 +53178,6 @@
       "target": "ui_popover_popovertrigger"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -52896,17 +53187,6 @@
       "weight": 1.0,
       "source": "components_account_popover_accountpopover",
       "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover_accountpopover"
     },
     {
       "relation": "contains",
@@ -53247,16 +53527,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/employer-cta.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_employer_cta",
-      "target": "components_employer_cta_employercta"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/featured-companies.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -53322,16 +53592,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/hero-search.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_hero_search",
-      "target": "components_hero_search_herosearch"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/mobile-nav-menu.tsx",
       "source_location": "L22",
       "weight": 1.0,
@@ -53382,61 +53642,6 @@
       "target": "shared_avatar_fallback_avatarfallback"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/mobile-nav-menu.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_mobile_nav_menu",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/mobile-nav-menu.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_mobile_nav_menu",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_mobile_nav_menu"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_mobile_nav_menu_mobilenavmenu"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_skeleton"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/public-navbar-skeleton.tsx",
@@ -53445,125 +53650,6 @@
       "confidence_score": 1.0,
       "source": "components_public_navbar_skeleton",
       "target": "components_public_navbar_skeleton_publicnavbarskeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L83",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_navlink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_publicnavbar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_sign_out"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "lib_routes"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "lib_routes_ishiddenroute"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "lib_routes_ishiddenroute"
     },
     {
       "relation": "imports_from",
@@ -66327,28 +66413,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/layout/sidebar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_sidebar",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/sidebar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_sidebar",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/layout/sidebar.tsx",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -68764,70 +68828,6 @@
       "confidence_score": 1.0,
       "source": "ui_theme_initializer",
       "target": "ui_theme_initializer_themeinitializer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_theme_toggle",
-      "target": "stores_ui_store"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_theme_toggle",
-      "target": "stores_ui_store_theme"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_theme_toggle",
-      "target": "stores_ui_store_useuistore"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_theme_toggle",
-      "target": "ui_theme_toggle_themes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_theme_toggle",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/ui/theme-toggle.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "ui_theme_toggle_themetoggle",
-      "target": "stores_ui_store_useuistore"
     },
     {
       "relation": "contains",
@@ -82220,5 +82220,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7c9d99f98ce520981d57377ae616213d6ebeef73"
+  "built_at_commit": "0e8fc7a1a5f94fb04893c83e9597207a29349b80"
 }

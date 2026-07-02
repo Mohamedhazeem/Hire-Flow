@@ -5,7 +5,6 @@ import { FeaturedCompanies } from "@/app/features/public/components/featured-com
 import { HowItWorks } from "./how-it-works";
 import { Testimonials } from "./testimonials";
 import { EmployerCTA } from "@/app/features/public/components/employer-cta";
-import { Footer } from "./footer";
 
 export function LandingPage() {
   return (
@@ -17,7 +16,6 @@ export function LandingPage() {
       <HowItWorks />
       <Testimonials />
       <EmployerCTA />
-      <Footer />
     </>
   );
 }
