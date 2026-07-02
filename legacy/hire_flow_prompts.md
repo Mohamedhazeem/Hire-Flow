@@ -1,3 +1,14 @@
+> ⚠️ ARCHIVED
+>
+> This document has been superseded by the documentation inside the `/docs` directory.
+>
+> Source of truth:
+>
+> - `docs/architecture/technical-design.md`
+> - `docs/specs/hire-flow-requirements.md`
+> - `docs/implementation/implementation-tasks.md`
+> - `docs/testing/testing-strategy.md`
+
 # Hire Flow Next — Test Suite Build Plan
 
 > Zero tests currently exist. This document is chunked into phases. Implement one phase at a time, Verify each phase (commands given per step) before pasting the next. Do not paste multiple phases in one message — context window + review quality both degrade.

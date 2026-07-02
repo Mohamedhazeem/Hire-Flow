@@ -4,22 +4,6 @@ description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · S
 
 # Agent Rules (applied always)
 
-## Spec Migration Protocol (First‑Run Only)
-
-> **If** `docs/specs/` does **not** exist, and root `hire_flow_prompts.md` and `hire_flow_testing.md` **do** exist, perform this **one‑time migration** before any planning:
-
-1. **Create folders:** `docs/specs/`, `docs/architecture/`, `docs/implementation/`, `docs/testing/`.
-2. **Split `hire_flow_prompts.md`**:
-   - Extract the **Global Context** (stack, rules, structure) → `docs/architecture/technical-design.md`.
-   - Extract **User Stories & Acceptance Criteria** from each Phase → `docs/specs/hire-flow-requirements.md`.
-   - Extract the **Actionable Tasks** from each Step → `docs/implementation/implementation-tasks.md` (assign stable Task IDs like `TASK-2.3.1`).
-3. **Move `hire_flow_testing.md`** verbatim → `docs/testing/testing-strategy.md`.
-4. **Deprecate root files**: Add a clear `⚠️ ARCHIVED` banner at the top of `hire_flow_prompts.md` and `hire_flow_testing.md`, pointing to the new `/docs` folders.
-5. **Update `MANIFEST.md`** to reflect the new spec‑driven structure and mark the migration as complete.
-6. **Cache the new specs** in memory immediately. **Never read the old root files again** unless the user explicitly says they edited them manually.
-
----
-
 ## Retrieval‑first (Always)
 
 - Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and **relevant spec files** before writing code.
@@ -111,27 +95,115 @@ _(Keep the full “Core Routing”, “Feature‑Based Logic”, “Shared Layer
 
 ---
 
-## Theme & UI (unchanged)
+## Theme & UI
 
-_(Keep all responsive design, component reuse, and admin layout rules.)_
+- **Tailwind v4 tokens only** – never `[...]`; use `text-text-body`, `bg‑bg‑surface`, `p‑spacing‑4`, `rounded‑radius‑md` from `@theme`.
+- **Lucide icons** from `'lucide-react'` with `size‑4`/`size‑5` and `strokeWidth={2}`.
+- **Shadcn:** install via `npx shadcn@latest add`; map tokens in `globals.css` `@theme inline`.
+- **Animations:** native Tailwind utilities for simple; Framer Motion (`motion.div`) only for complex orchestration, layoutId, AnimatePresence. Keep <300ms, prefer transform/opacity.
+
+## Responsive Design (Mobile-First)
+
+- **Mobile-first always** – base styles target 320px; use `sm:`(640), `md:`(768), `lg:`(1024) to scale up. Never desktop-first.
+- **`min-w-0` on all flex children** that contain scrollable content. Flex items default to `min-width: auto` which prevents `overflow` from working.
+- **Tables:** wrap in `overflow-x-auto` + parent must have `min-w-0`. `TableHead`/`TableCell` use `whitespace-nowrap` for horizontal scroll.
+- **Actions:** labels go `hidden sm:inline` (icon-only on mobile). Pipe separators between action buttons: `hidden sm:inline`.
+- **Forms/filters:** `flex-col sm:flex-row`; selects `w-full sm:w-36`. Buttons `w-full sm:w-auto`.
+- **Grid:** `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4` pattern for cards; `md:grid-cols-2 lg:grid-cols-3` for charts.
+- **Padding:** `px-4 md:px-6 lg:p-8` gradient across breakpoints.
+- **Cards/modals:** padding `p-6 sm:p-8`; headings `text-2xl sm:text-3xl lg:text-4xl`.
+- **Decorative blobs:** `hidden sm:block` to save GPU on mobile.
+- **Touch targets:** ≥36px (`size-9`); `icon-xs` (24px) only in data tables where space is tight.
+- **Admin layout:** `h-screen overflow-hidden` on outer flex → `flex-1 min-h-0 min-w-0 overflow-y-auto` on content.
+
+## Shared Components Across Roles
+
+- **Admin sidebar** (`admin-sidebar.tsx`): `AdminSidebar` is reusable for `recruiter`/`user` roles. Pass `links`, `role label`, `onSignOut` as props. Backdrop + slide-over on mobile (`max-lg:`), persistent on desktop (`lg:`). Uses `useUIStore` for open/close state.
+- **Mobile menu button** (`mobile-menu-button.tsx`): `MobileMenuButton` is role-agnostic. Include in any role layout's hamburger row (`lg:hidden`).
+- **Page header** (`components/layout/page-header.tsx`): `PageHeader` with `title`, `description`, `actions` slot. Use for all role dashboards.
+- **Data table** (`components/ui/data-table.tsx`): `DataTable<T>` with `ColumnDef[]`. Use for all admin/recruiter/user listing pages.
+- **UI primitives** (`components/ui/`): Button, Input, Select, Badge, Dialog, Skeleton, Popover, StatusBadge — shared across all roles.
+- **Auth components** (`features/auth/components/`): `AuthLayout`, `LoginForm`, `SignUpForm`, `FormInput`, `FormButton` — shared across all auth pages.
+- **Error page** (`components/error-page.tsx`): `ErrorPage` with `errorTag`, `title`, `description` — used by all unauthorized/error states.
+- **When building recruiter/user layouts:** Use `RoleLayoutClient` from `components/layout/role-layout-client.tsx` and inject a `Sidebar` from `components/layout/sidebar.tsx` with role-specific `links`, `roleLabel`, `homeHref` props. Example: admin's `admin-layout-client.tsx` is now a thin wrapper around `<RoleLayoutClient sidebar={<AdminSidebar />}>`.
 
 ---
 
-## Context Pack — Read Before Writing Any Code (unchanged)
+## Context Pack — Read Before Writing Any Code
 
-_(Keep the full list of existing components, utilities, and cross‑feature reuse notes – these are critical for the agent.)_
+Agent must `view`/`grep` these existing files first. Do not redefine anything found here.
+
+### Core Layout & Shell
+
+- `components/layout/role-layout-client.tsx`, `components/layout/sidebar.tsx` — shared shell, accepts `messagesBasePath`.
+- `app/(roles)/user/layout.tsx`, `app/(roles)/user/user-layout-client.tsx` — already wired with `UserSidebar`.
+
+### User Messaging (already built)
+
+- `app/features/user/components/user-sidebar.tsx`, `user-messages-page.tsx`, `user-thread-view.tsx`
+- `app/features/user/hooks/messages/use-user-threads.ts`, `use-user-messages.ts`
+- `app/(roles)/user/messages/page.tsx`, `app/(roles)/user/notifications/page.tsx`
+
+### Notifications (reuse, never direct Prisma)
+
+- `app/features/notifications/components/notifications-page.tsx`, `notification-dropdown.tsx`
+- `lib/notifications.ts` (`createNotification`, `createNotificationsBulk`, `triggerForCompany`) — reuse for every new notification trigger, **never call** `prisma.notification.create` directly.
+
+### Error & API Utilities
+
+- `lib/api-error.ts` / `lib/api-wrapper.ts` — `ValidationError`, `UnauthorizedError`, `ForbiddenError`, `NotFoundError`, `TooManyRequestsError`. Reuse, never throw raw `Error`.
+- `lib/api-response.ts` (`ok`/`fail`), `lib/pagination.ts`, `lib/api-client.ts`, `lib/query-client.ts`.
+
+### File Upload & Downloads
+
+- `lib/upload.ts`, `app/api/upload/route.ts` — mock upload provider (Phase 0.4).
+- `app/api/files/download/route.ts` — auth‑gated file proxy built in Phase 2.6 for resume access. **Resumes must go through this, never a raw public `/uploads/…` URL.**
+
+### UI Components
+
+- `components/ui/data-table.tsx` — already extended with `enableSelection`, `selectedIds`, `onSelectionChange`, `getRowId`, `disabledIds` (Phase 2.7). Reuse for any multi‑select UI.
+- `components/ui/status-badge.tsx`, `components/ui/skeleton.tsx`, `components/shared/status-timeline.tsx`, `components/shared/confirm-action-button.tsx`.
+
+### New Shared Components (reusable across roles)
+
+- `components/shared/info-row.tsx` — **centralised** `InfoRow` (was duplicated 4×). Migrate existing instances in `user-profile-view.tsx` and `job-detail.tsx` to this import.
+- `components/shared/applicant-profile-card.tsx` — shared between recruiter & admin detail pages.
+- `components/shared/applicant-resume-card.tsx` — shared between recruiter & admin detail pages.
+- `components/shared/recent-messages-card.tsx` — shared between recruiter & admin detail pages.
+
+### Cross‑Feature Reuse
+
+- `app/features/recruiter/components/skeletons/applicant-detail-skeleton.tsx` — now **reused** by `admin-applicant-detail-page.tsx` (cross‑feature import). Do not duplicate.
+
+### Schema & Data Model
+
+- `prisma/schema.prisma` — `ApplicationStatusChange` model (Phase 2.6) already logs every status transition. Reuse it for any "history" UI instead of inventing a parallel log.
+- Job model carries **two** independent gates: recruiter‑controlled `status` (`draft|active|archived`, Phase 2.3) and admin‑controlled `isActive` boolean kill‑switch (Phase 1.4). Any public/user‑facing query must filter on **both**.
+
+### Role & Authorization
+
+- The `requireRole([…])` helper used throughout `app/features/recruiter/actions/*` — locate its real import path (do not redefine); use `requireRole(['user'])` everywhere below.
+
+### Utilities to Promote/Generalise
+
+- `app/features/recruiter/libs/csv-builder.ts` — promote to `lib/csv-builder.ts` if reused outside recruiter scope (see Step 3.4).
+- `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`, `compute-thread-id` util — reuse/generalise for user‑initiated messaging in Step 3.5.
 
 ---
 
 ## Forbidden (unchanged)
 
-_(Keep all forbidden patterns.)_
+- `pages/` · `new PrismaClient()` inline · `useEffect` for data
+- `getServerSideProps` · synchronous `params` · `$queryRawUnsafe` / `$executeRawUnsafe`
+- `deleteMany`/`updateMany` without explicit request · `fetch` in components
+- Per‑component CSS · `any` type · `as` casts (except `unknown` narrowing)
 
 ---
 
 ## Dependencies Protocol (unchanged)
 
-_(Keep the dependency checking rules.)_
+- Check `package.json` for exact version; read official docs before code generation.
+- Placement: UI lib → `components/ui/` · email → `lib/email.ts` · uploads → `lib/upload.ts`.
 
 ---
 

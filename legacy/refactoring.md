@@ -15,6 +15,7 @@ Use ALL of the following:
 1. hire_flow_prompts.md
 2. hire_flow_testing.md
 3. The current codebase
+4. manifest.md
 
 Inspect at minimum:
 
@@ -155,7 +156,9 @@ Example:
 
 Do not include implementation details.
 
-If additional features were implemented that are missing from the prompt, include them.
+Phases include functionality that evolved during implementation.
+
+Cross-reference the current codebase and ensure every implemented feature, enhancement, UI change, business rule, and acceptance criterion is reflected in this specification, even if it was not originally planned.
 
 If features changed scope, document the current behavior.
 
@@ -209,7 +212,9 @@ Keep all technical implementation details including:
 
 Remove only the AI prompt wrappers.
 
-If implementation changed in the current codebase, document the real implementation.
+If the current implementation contains additional tasks, refactors, or enhancements—especially those introduced during each Phases — create new Task IDs while preserving the existing phase hierarchy.
+
+Do not force the implementation document to match the historical prompt if the codebase has evolved beyond it.
 
 ---
 
@@ -238,24 +243,48 @@ Do not remove or weaken existing tests.
 
 ---
 
-# Codebase Verification
+# Codebase Verification (Required)
 
-Before writing documentation, inspect the implementation.
+Before writing any documentation, thoroughly inspect the current codebase and compare it against `hire_flow_prompts.md`. Also check `manifest.md` to get additional details.
 
-Identify:
+The current codebase is the source of truth.
 
-- Features added after the original prompt
-- Features removed
-- Refactors
-- Additional fields
-- Database changes
-- New APIs
-- Middleware changes
+Each **Phases** may contain numerous enhancements, fixes, refactors, and additional functionality that were implemented after the original planning document was written.
+
+Your goal is to ensure the new documentation represents the **actual implemented application**, not merely the historical plan.
+
+Identify and document:
+
+- Features added after the original documentation
+- Additional UI fields
+- New filters
+- Bulk operations
+- Additional CRUD functionality
+- Database schema changes
+- Validation changes
+- Business rule updates
+- Authentication/authorization changes
+- Middleware updates
+- Shared components
+- Shared utilities
+- API changes
+- Server Action ↔ Route Handler refactors
+- Additional reusable abstractions
 - UI improvements
-- Shared abstractions
 - Naming changes
+- Folder structure changes
+- Performance improvements
+- Any implementation divergence from the original documents
 
-Update the documentation to match the current implementation.
+If a feature exists in the codebase but is missing from the original documentation:
+
+- Add it to the appropriate Specification.
+- Add its implementation details to the Implementation document.
+- Add corresponding testing requirements to the Testing document.
+
+Do not omit implemented functionality simply because it was not present in the historical planning documents.
+
+The final documentation must accurately describe the application's current implementation while preserving the original development phases and implementation order.
 
 ---
 
