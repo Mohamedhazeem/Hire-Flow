@@ -24,7 +24,7 @@ async function handleGET() {
     },
   });
 
-  return ok({ data: resumes });
+  return ok(resumes);
 }
 
 async function handlePOST(request: NextRequest) {
@@ -78,7 +78,7 @@ async function handlePOST(request: NextRequest) {
     },
   });
 
-  return ok({ data: resume }, 201);
+  return ok(resume, 201);
 }
 
 export const GET = withErrorHandler(handleGET);

@@ -21,5 +21,5 @@ export async function GET() {
     },
   });
 
-  return ok({ data: profile });
+  return ok(profile);
 }

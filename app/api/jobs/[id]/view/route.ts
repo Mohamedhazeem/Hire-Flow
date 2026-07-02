@@ -25,7 +25,7 @@ async function handlePOST(
     data: { viewCount: { increment: 1 } },
   });
 
-  return ok({ data: { success: true } });
+  return ok({ success: true });
 }
 
 export const POST = withErrorHandler(handlePOST);

@@ -7,8 +7,8 @@ import type { EnhancementsResponse, ResumeSuggestion } from "@/app/features/user
 
 export function useAiResumeEnhance(resumeId: string) {
   return useMutation({
-    mutationFn: async (): Promise<{ data: EnhancementsResponse | null; message?: string }> =>
-      apiClient(`/api/user/resumes/${resumeId}/ai-enhance`, { method: "POST" }),
+    mutationFn: async (): Promise<EnhancementsResponse | null> =>
+      apiClient<{ data: EnhancementsResponse | null }>(`/api/user/resumes/${resumeId}/ai-enhance`, { method: "POST" }).then((r) => r.data),
   });
 }
 

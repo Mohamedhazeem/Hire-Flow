@@ -22,7 +22,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
   const { data, isLoading, isError } = useQuery({
     queryKey: ["user", "application", id],
     queryFn: async () => {
-      const res = (await apiClient(`/api/user/applications/${id}`)) as { data: Record<string, unknown> };
+      const res = await apiClient<{ data: Record<string, unknown> }>(`/api/user/applications/${id}`);
       return res.data;
     },
     enabled: !!id,

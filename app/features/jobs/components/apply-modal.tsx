@@ -35,17 +35,17 @@ export function ApplyModal({ jobId, onClose }: ApplyModalProps) {
   const { data: resumes, isLoading: resumesLoading } = useQuery({
     queryKey: ["user", "resumes"],
     queryFn: async () => {
-      const res = (await apiClient("/api/user/resumes")) as { data: ResumeOption[] };
+      const res = await apiClient<{ data: ResumeOption[] }>("/api/user/resumes");
       return res.data;
     },
   });
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = (await apiClient(`/api/jobs/${jobId}/apply`, {
+      const res = await apiClient<{ data: { id: string; status: string } }>(`/api/jobs/${jobId}/apply`, {
         method: "POST",
         body: { resumeId: selectedResumeId, coverLetter: coverLetter || undefined },
-      })) as { data: { id: string; status: string } };
+      });
       return res.data;
     },
     onSuccess: () => {

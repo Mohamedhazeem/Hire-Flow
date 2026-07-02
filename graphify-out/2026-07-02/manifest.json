@@ -1959,11 +1959,6 @@
     "ast_hash": "0f9fa58e768fcb3fd6498d422ce577b5",
     "semantic_hash": ""
   },
-  "prisma/migrations/20260627134156_recruiter/migration.sql": {
-    "mtime": 1782567716.8631163,
-    "ast_hash": "65bc84ea374b2191f7277c0142fb2b56",
-    "semantic_hash": ""
-  },
   "prisma/scripts/backfill-status-changes.ts": {
     "mtime": 1782504936.1850827,
     "ast_hash": "9ea84ca4c6d5a34fb9b8260a00073b59",
@@ -2307,6 +2302,11 @@
   "public/window.svg": {
     "mtime": 1780988827.0267193,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260702081558_user/migration.sql": {
+    "mtime": 1782980158.5807939,
+    "ast_hash": "099d2fdc380e3874c3d6768a15cfe076",
     "semantic_hash": ""
   }
 }

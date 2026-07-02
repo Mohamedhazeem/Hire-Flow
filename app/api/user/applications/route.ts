@@ -16,7 +16,7 @@ async function handleGET(request: NextRequest) {
   };
 
   const result = await listUserApplications(session.id, params);
-  return ok({ data: result });
+  return ok(result);
 }
 
 export const GET = withErrorHandler(handleGET);

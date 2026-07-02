@@ -8,9 +8,7 @@ export function useBookmarkedIds() {
   return useQuery<string[]>({
     queryKey: ["user", "bookmarks", "ids"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/bookmarks") as {
-        data: Array<{ jobId: string }>;
-      };
+      const res = await apiClient("/api/user/bookmarks") as { data: Array<{ jobId: string }> };
       return res.data.map((b) => b.jobId);
     },
     staleTime: 30_000,
@@ -21,9 +19,7 @@ export function useBookmarkedJobs() {
   return useQuery({
     queryKey: ["user", "bookmarks", "jobs"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/bookmarks") as {
-        data: Array<Record<string, unknown>>;
-      };
+      const res = await apiClient("/api/user/bookmarks") as { data: Array<Record<string, unknown>> };
       return res.data;
     },
     staleTime: 30_000,
@@ -34,7 +30,8 @@ export function useCheckBookmark(jobId: string) {
   return useQuery<CheckResponse>({
     queryKey: ["user", "bookmarks", "check", jobId],
     queryFn: async () => {
-      return await apiClient(`/api/user/bookmarks/${jobId}`) as CheckResponse;
+      const res = await apiClient<{ data: CheckResponse }>(`/api/user/bookmarks/${jobId}`);
+      return res.data;
     },
     enabled: !!jobId,
     staleTime: 30_000,
@@ -44,12 +41,12 @@ export function useCheckBookmark(jobId: string) {
 export function useToggleBookmark() {
   const queryClient = useQueryClient();
 
-  return useMutation<ToggleResponse, Error, string>({
+  return useMutation<{ data: ToggleResponse }, Error, string>({
     mutationFn: async (jobId) => {
-      return await apiClient("/api/user/bookmarks", {
+      return await apiClient<{ data: ToggleResponse }>("/api/user/bookmarks", {
         method: "POST",
         body: JSON.stringify({ jobId }),
-      }) as ToggleResponse;
+      });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["user", "bookmarks", "ids"] });

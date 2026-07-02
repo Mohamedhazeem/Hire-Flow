@@ -38,7 +38,7 @@ async function handleGET() {
     },
     orderBy: { createdAt: "desc" },
   });
-  return ok({ data: bookmarks });
+  return ok(bookmarks);
 }
 
 async function handlePOST(request: NextRequest) {

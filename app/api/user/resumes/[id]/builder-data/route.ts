@@ -36,7 +36,7 @@ async function handlePATCH(
     },
   });
 
-  return ok({ data: updated });
+  return ok(updated);
 }
 
 export const PATCH = withErrorHandler(handlePATCH);

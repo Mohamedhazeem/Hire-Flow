@@ -31,7 +31,7 @@ async function handlePATCH(
     ]);
 
     const updated = await prisma.resume.findUnique({ where: { id } });
-    return ok({ data: updated });
+    return ok(updated);
   }
 
   throw new ValidationError('Unknown action. Use "set-primary".');
@@ -53,7 +53,7 @@ async function handleDELETE(
     data: { deletedAt: new Date() },
   });
 
-  return ok({ success: true });
+  return ok(undefined, 204);
 }
 
 export const PATCH = withErrorHandler(handlePATCH);

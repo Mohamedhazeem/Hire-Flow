@@ -112,7 +112,7 @@ async function handlePOST(
   revalidatePath("/jobs");
   revalidatePath("/user/applications");
 
-  return ok({ data: { id: application.id, status: "applied" } }, 201);
+  return ok({ id: application.id, status: "applied" }, 201);
 }
 
 export const POST = withErrorHandler(handlePOST);

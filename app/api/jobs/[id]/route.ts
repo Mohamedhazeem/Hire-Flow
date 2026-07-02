@@ -11,7 +11,7 @@ async function handleGET(
   const { id } = await params;
   const job = await getPublicJobById(id);
   if (!job) throw new NotFoundError("Job not found");
-  return ok({ data: job });
+  return ok(job);
 }
 
 export const GET = withErrorHandler(handleGET);

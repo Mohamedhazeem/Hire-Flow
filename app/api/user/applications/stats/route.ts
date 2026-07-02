@@ -18,7 +18,7 @@ async function handleGET() {
     prisma.application.count({ where: { userId, status: { in: offerStatuses } } }),
   ]);
 
-  return ok({ data: { total, active, interviews, offers } });
+  return ok({ total, active, interviews, offers });
 }
 
 export const GET = withErrorHandler(handleGET);

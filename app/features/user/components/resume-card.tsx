@@ -78,10 +78,10 @@ export function ResumeCard({ resume, onSetPrimary, onDelete, onDownload, onEdit 
     setAiError(null);
     enhanceMutation.mutate(undefined, {
       onSuccess: (res) => {
-        if (res.data) {
-          setAiResult(res.data);
-        } else if (res.message) {
-          setAiError(res.message);
+        if (res) {
+          setAiResult(res);
+        } else {
+          setAiError("AI features temporarily unavailable. Configure an API key to use this feature.");
         }
       },
       onError: (error) => {

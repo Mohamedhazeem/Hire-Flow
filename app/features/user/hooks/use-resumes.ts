@@ -13,13 +13,13 @@ export type ResumeListItem = {
   createdAt: string;
 };
 
-type ListResponse = { data: ResumeListItem[] };
+type ListResponse = ResumeListItem[];
 
 export function useResumes() {
   return useQuery({
     queryKey: ["user", "resumes"],
     queryFn: async () => {
-      const res = await apiClient<ListResponse>("/api/user/resumes");
+      const res = await apiClient<{ data: ListResponse }>("/api/user/resumes");
       return res.data;
     },
   });
@@ -29,10 +29,7 @@ export function useUploadResume() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (formData: FormData) => {
-      const res = await apiClient<{ data: ResumeListItem }>("/api/user/resumes", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await apiClient<{ data: ResumeListItem }>("/api/user/resumes", { method: "POST", body: formData });
       return res.data;
     },
     onSuccess: () => {

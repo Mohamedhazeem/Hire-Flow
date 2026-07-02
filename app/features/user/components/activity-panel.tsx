@@ -22,7 +22,7 @@ export function ActivityPanel() {
   const { data: stats, isLoading: statsLoad, isError: statsErr } = useQuery({
     queryKey: ["user", "applications", "stats"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/applications/stats") as { data: Stats };
+      const res = await apiClient<{ data: Stats }>("/api/user/applications/stats");
       return res.data;
     },
   });
@@ -30,7 +30,7 @@ export function ActivityPanel() {
   const { data: appsData, isLoading: appsLoad, isError: appsErr } = useQuery({
     queryKey: ["user", "applications", "recent"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/applications", { params: { page: "1", pageSize: "5" } }) as { data: { applications: AppRow[]; total: number } };
+      const res = await apiClient<{ data: { applications: AppRow[]; total: number } }>("/api/user/applications", { params: { page: "1", pageSize: "5" } });
       return res.data;
     },
   });

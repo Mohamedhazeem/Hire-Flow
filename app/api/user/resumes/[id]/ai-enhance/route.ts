@@ -79,7 +79,7 @@ async function handlePOST(
 
   const raw = await callAI(resumeText, systemPrompt, 2048);
   if (raw === null) {
-    return ok({ data: null, message: "AI features temporarily unavailable. Configure an API key to use this feature." });
+    return ok(null, 503);
   }
 
   let parsed: unknown;
@@ -98,7 +98,7 @@ async function handlePOST(
     data: { userId: session.id, resumeId: id },
   });
 
-  return ok({ data: validated.data });
+  return ok(validated.data);
 }
 
 export const POST = withErrorHandler(handlePOST);

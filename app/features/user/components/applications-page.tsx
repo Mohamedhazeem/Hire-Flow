@@ -34,7 +34,7 @@ export function ApplicationsPage() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["user", "applications", params],
     queryFn: async () => {
-      const res = await apiClient("/api/user/applications", { params }) as { data: { applications: AppRow[]; total: number; totalPages: number; page: number; hasNextPage: boolean; hasPrevPage: boolean } };
+      const res = await apiClient<{ data: { applications: AppRow[]; total: number; totalPages: number; page: number; hasNextPage: boolean; hasPrevPage: boolean } }>("/api/user/applications", { params });
       return res.data;
     },
   });

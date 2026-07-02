@@ -18,7 +18,7 @@ async function handleGET(
   const detail = await getUserApplicationDetail(id, session.id);
   if (!detail) throw new NotFoundError("Application not found");
 
-  return ok({ data: detail });
+  return ok(detail);
 }
 
 async function handleDELETE(
@@ -57,7 +57,7 @@ async function handleDELETE(
 
   revalidatePath("/user/applications");
 
-  return ok({ success: true });
+  return ok(undefined, 204);
 }
 
 export const GET = withErrorHandler(handleGET);

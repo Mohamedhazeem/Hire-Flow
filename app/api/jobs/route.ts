@@ -20,7 +20,7 @@ async function handleGET(request: NextRequest) {
   };
 
   const result = await listPublicJobs(params);
-  return ok({ data: result });
+  return ok(result);
 }
 
 export const GET = withErrorHandler(handleGET);
