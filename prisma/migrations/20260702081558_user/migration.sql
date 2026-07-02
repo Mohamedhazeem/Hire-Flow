@@ -105,12 +105,16 @@ CREATE TABLE "user_profile" (
 -- CreateTable
 CREATE TABLE "resume" (
     "id" TEXT NOT NULL,
-    "userProfileId" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
     "label" TEXT NOT NULL,
     "fileUrl" TEXT,
+    "fileName" TEXT,
+    "fileSize" INTEGER,
+    "fileType" TEXT,
     "builderData" JSONB,
     "isPrimary" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "deletedAt" TIMESTAMP(3),
 
     CONSTRAINT "resume_pkey" PRIMARY KEY ("id")
 );
@@ -194,6 +198,8 @@ CREATE TABLE "application" (
     "meetingLink" TEXT,
     "offerDetails" TEXT,
     "resumeId" TEXT,
+    "resumeSnapshotUrl" TEXT,
+    "resumeSnapshotBuilderData" JSONB,
     "appliedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -253,6 +259,16 @@ CREATE TABLE "application_status_change" (
 );
 
 -- CreateTable
+CREATE TABLE "resume_enhancement_log" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "resumeId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "resume_enhancement_log_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "admin_invite" (
     "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
@@ -281,6 +297,9 @@ CREATE INDEX "verification_identifier_idx" ON "verification"("identifier");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "user_profile_userId_key" ON "user_profile"("userId");
+
+-- CreateIndex
+CREATE INDEX "resume_userId_deletedAt_idx" ON "resume"("userId", "deletedAt");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "company_recruiterId_key" ON "company"("recruiterId");
@@ -319,6 +338,9 @@ CREATE UNIQUE INDEX "bookmark_userId_jobId_key" ON "bookmark"("userId", "jobId")
 CREATE INDEX "application_status_change_applicationId_createdAt_idx" ON "application_status_change"("applicationId", "createdAt");
 
 -- CreateIndex
+CREATE INDEX "resume_enhancement_log_userId_createdAt_idx" ON "resume_enhancement_log"("userId", "createdAt");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "admin_invite_token_key" ON "admin_invite"("token");
 
 -- AddForeignKey
@@ -331,7 +353,7 @@ ALTER TABLE "account" ADD CONSTRAINT "account_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "user_profile" ADD CONSTRAINT "user_profile_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "resume" ADD CONSTRAINT "resume_userProfileId_fkey" FOREIGN KEY ("userProfileId") REFERENCES "user_profile"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "resume" ADD CONSTRAINT "resume_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "company" ADD CONSTRAINT "company_recruiterId_fkey" FOREIGN KEY ("recruiterId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -380,6 +402,9 @@ ALTER TABLE "application_status_change" ADD CONSTRAINT "application_status_chang
 
 -- AddForeignKey
 ALTER TABLE "application_status_change" ADD CONSTRAINT "application_status_change_changedById_fkey" FOREIGN KEY ("changedById") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "resume_enhancement_log" ADD CONSTRAINT "resume_enhancement_log_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "admin_invite" ADD CONSTRAINT "admin_invite_invitedById_fkey" FOREIGN KEY ("invitedById") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
