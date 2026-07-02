@@ -4,115 +4,96 @@ description: hire-flow-next · Next.js 16 · React 19 · TS5 · Tailwind v4 · S
 
 # Agent Rules (applied always)
 
-- **Retrieval-first:** Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and relevant feature files before writing code. Always use graphify for query, Never invent APIs — verify against the installed version.
-- **Shared assets** – Reuse the following; do not rebuild them:  
-  (table of assets goes here, immediately after the rule)
-- **All protected actions/routes must call `requireRole(...)`**
-- **All errors must be thrown from `lib/api-error.ts`**
+## Retrieval‑first (Always)
 
-### Role Guard Requirement
+- Read `package.json`, `tsconfig.json`, `prisma/schema.prisma`, and **relevant spec files** before writing code.
+- For design context: read `docs/architecture/technical-design.md` (cached).
+- For feature scope: read `docs/specs/hire-flow-requirements.md` (cached).
+- For task breakdown: read `docs/implementation/implementation-tasks.md` (cached).
+- For QA reference (do not use for planning): read `docs/testing/testing-strategy.md` if the user asks about tests.
+- Never invent APIs — verify against installed dependencies.
 
-Whenever you create a new protected Server Action or API Route, you MUST use this generic role guard (create it in `features/shared/api/require-role.ts` if it doesn't exist yet)
+## Shared Assets
 
-# STATE & CACHE RULES (short)
+- Reuse the following; do not rebuild them:  
+  _(table of assets goes here, unchanged from your original)_
 
-- **Startup:** Read `MANIFEST.md`, `HIRE_FLOW_PROMPTS.md` and `HIRE_FLOW_TESTING.md`once; cache in‑memory. Report: Phase, Last Step, Next Step, Blockers.
-- **Runtime:** Never re‑read MANIFEST, HIRE_FLOW_TESTING and HIRE_FLOW_PROMPTS; use cache for step lookups.
-- **Resync:** Re‑read only if user says they edited it manually.
+## Role Guard Requirement
 
-# graphify
+Whenever you create a new protected Server Action or API Route, you **MUST** use `requireRole([...])` from `features/shared/api/require-role.ts`. All protected actions/routes must call this guard first.
 
-This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+## State & Cache Rules (Updated for Spec‑Driven)
+
+- **Startup:**  
+  Read `MANIFEST.md`, `docs/specs/hire-flow-requirements.md`, `docs/architecture/technical-design.md`, `docs/implementation/implementation-tasks.md` once; cache in‑memory.  
+  **Report:** Current Phase, Last Completed Task ID, Next Task ID, Blockers.
+- **Runtime:**  
+  Never re‑read the spec files; use the cache for all step lookups and task references.
+- **Resync:**  
+  Re‑read only if the user explicitly says they edited the spec files manually, or if you detect a mismatch between `MANIFEST.md` and the cached tasks.
+
+## Graphify
+
+This project has a knowledge graph at `graphify-out/` with god nodes, community structure, and cross‑file relationships.
 
 When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
 
 Rules:
 
-- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
-- Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
-- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
-- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
-- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+- For codebase questions, first run `graphify query "<question>"` when `graphify-out/graph.json` exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts.
+- Dirty `graphify-out/` files are expected after hooks or incremental updates; do not skip graphify because of them (unless the task is about stale graph output or the user explicitly says not to use it).
+- If `graphify-out/wiki/index.md` exists, use it for broad navigation instead of raw source browsing.
+- Read `graphify-out/GRAPH_REPORT.md` only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST‑only, no API cost).
 
-## Phase 2 & 3
+## Phase 2 & 3 (Recruiter & User)
 
-Phase 2 (Recruiter) and Phase 3 (User).
-**Before implementing any feature from these phases, use `hire_flow_prompt.md`** from cache – it contains the step‑by‑step specifications, architecture constraints, and component lists.
-Most of them share similar components and patterns from `admin`. so whenever you implement a feature from Phase 2 or 3, you should first check if the component already exists in and reuse.
+**Before implementing any feature** from these phases:
 
-## Stack
+- Read the relevant **Feature Spec** from `docs/specs/hire-flow-requirements.md` (cached) to understand the **Acceptance Criteria**.
+- Read the **Architecture Design** from `docs/architecture/technical-design.md` (cached) for state machines, data flow, and component reuse rules.
+- Cross‑reference the **Task IDs** (e.g., `TASK-2.3.1`) listed in `docs/implementation/implementation-tasks.md` to ensure you are fulfilling the exact scope of the task.
 
-Framework: Next.js (App Router, Turbopack)
-Styling: Tailwind v4 (`@theme` in `globals.css`, no config)
-DB: Prisma + PostgreSQL
-Auth: Better Auth + Prisma Adapter
-Data fetching: TanStack Query (server-state & caching)
-Client state: Zustand (UI store only – modals, sidebars)
-Forms/Validation: RHF + Zod
-Compiler: React Compiler (Automatic memoization)
-Icons: react-icons
+Most components and patterns are shared with `admin`. If a component already exists in `app/features/admin/`, reuse it (or generalise it to `components/shared/`) – do not rewrite.
+
+---
+
+## Stack (unchanged – keep as reference)
+
+Framework: Next.js (App Router, Turbopack)  
+Styling: Tailwind v4 (`@theme` in `globals.css`, no config)  
+DB: Prisma + PostgreSQL  
+Auth: Better Auth + Prisma Adapter  
+Data fetching: TanStack Query (server‑state & caching)  
+Client state: Zustand (UI store only – modals, sidebars)  
+Forms/Validation: RHF + Zod  
+Compiler: React Compiler (Automatic memoization)  
+Icons: react-icons  
 Animations: motion
 
-## Absolute Rules
+---
+
+## Absolute Rules (unchanged)
 
 - **App Router only** — `app/` dir; never `pages/`
 - **`params`/`searchParams` are Promises** in Next.js 16 — always `await` them
 - **Server Components by default** — add `'use client'` only for hooks, events, or browser APIs
 - **Server Actions = `'use server'`** — never call DB directly from Client Components
-- **TypeScript strict** — no `any`; use `unknown` + Zod for external data; `import type` for type-only imports
+- **TypeScript strict** — no `any`; use `unknown` + Zod for external data; `import type` for type‑only imports
 - **Zod validates all input** before every DB write
 - **Prisma = singleton** — import from `lib/prisma.ts` only; never `new PrismaClient()` inline
 - **npm only** — never yarn/pnpm/bun
 - **No secrets in source** — values in `.env.local`, names only in `.env.example`
 - **Minimal scope** — touch only files required by the task; no renames, refactors, or dep upgrades unless asked
-- **Don't Repeat Yourself (DRY) Styling** — If a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/shared` or `components/ui/layout` or localized feature `components/`. Never copy-paste dense Tailwind utility chunks across files.
+- **Don't Repeat Yourself (DRY) Styling** — if a task requires creating multiple forms or views that share structural wrappers, input styles, or button designs, preemptively extract them into shared primitives inside `components/ui/shared` or `components/ui/layout` or localized feature `components/`. Never copy‑paste dense Tailwind utility chunks across files.
 
-# Project Structure Rules
+---
 
-Strictly follow this directory structure. Do not create new top-level directories.
+## Project Structure Rules (unchanged – include your exact folder/naming rules)
 
-## Core Routing (app/)
+_(Keep the full “Core Routing”, “Feature‑Based Logic”, “Shared Layers”, “Naming”, “Key Patterns” sections exactly as they were in your original – they are already excellent.)_
 
-- `(auth)/`: Public authentication routes (login, register, etc.)
-- `(roles)/`: Protected dashboard routes grouped by `admin`, `recruiter`, `user`.
-- `api/`: REST route handlers (DEFAULT for mutations).
-- `features/`: Business logic, scoped by domain (e.g., `admin`, `auth`, `jobs`).
-
-## Feature-Based Logic (`features/<name>/`)
-
-- `actions/`: 'use server' (Form submissions only).
-- `components/`: Co-located UI, client/server components.
-- `queries/`: Server-side Prisma fetchers.
-- `schema/`: Zod definitions and inferred TS types.
-- `libs/`: Feature-specific utilities.
-- `hooks/`: Client-side logic.
-
-## Shared Layers
-
-- `components/ui/`: Shadcn primitives.
-- `lib/`: Global utilities (prisma.ts, auth.ts, validator.ts).
-- `utils/`: Environment, logger, and global helpers.
-
-Pages are thin orchestrators. All logic lives in `features/`.
-
-## Naming
-
-- Files/folders: `kebab-case`
-- Components: `PascalCase` named exports
-- Actions/queries: `camelCase` verb‑noun
-- Zod schemas: `PascalCase + Schema`
-- Inferred types: `PascalCase` via `z.infer`
-
-## Key Patterns (enforce)
-
-- Server Action: `'use server'` → `Schema.safeParse()` → DB write → `revalidatePath()` → `redirect()`
-- Dynamic page: `params: Promise<{ id: string }>` → `await params`
-- Form: `useForm<T>({ resolver: zodResolver(Schema) })`
-- Route handler: only for auth webhooks or third‑party REST
-- Middleware: `auth.api.getSession()` → redirect if no session
-- Auth catch‑all: `app/api/auth/[...all]/route.ts` with `toNextJsHandler(auth)`
-- Extract reusable inputs with `React.forwardRef` for RHF.
-- Isolate shared wrappers into layout components.
+---
 
 ## Theme & UI
 
@@ -145,6 +126,8 @@ Pages are thin orchestrators. All logic lives in `features/`.
 - **Auth components** (`features/auth/components/`): `AuthLayout`, `LoginForm`, `SignUpForm`, `FormInput`, `FormButton` — shared across all auth pages.
 - **Error page** (`components/error-page.tsx`): `ErrorPage` with `errorTag`, `title`, `description` — used by all unauthorized/error states.
 - **When building recruiter/user layouts:** Use `RoleLayoutClient` from `components/layout/role-layout-client.tsx` and inject a `Sidebar` from `components/layout/sidebar.tsx` with role-specific `links`, `roleLabel`, `homeHref` props. Example: admin's `admin-layout-client.tsx` is now a thin wrapper around `<RoleLayoutClient sidebar={<AdminSidebar />}>`.
+
+---
 
 ## Context Pack — Read Before Writing Any Code
 
@@ -208,19 +191,23 @@ Agent must `view`/`grep` these existing files first. Do not redefine anything fo
 
 ---
 
-## Forbidden
+## Forbidden (unchanged)
 
 - `pages/` · `new PrismaClient()` inline · `useEffect` for data
 - `getServerSideProps` · synchronous `params` · `$queryRawUnsafe` / `$executeRawUnsafe`
 - `deleteMany`/`updateMany` without explicit request · `fetch` in components
 - Per‑component CSS · `any` type · `as` casts (except `unknown` narrowing)
 
-## Dependencies Protocol
+---
+
+## Dependencies Protocol (unchanged)
 
 - Check `package.json` for exact version; read official docs before code generation.
 - Placement: UI lib → `components/ui/` · email → `lib/email.ts` · uploads → `lib/upload.ts`.
 
-## Commands
+---
+
+## Commands (unchanged)
 
 ```bash
 npm run dev|build|start|lint

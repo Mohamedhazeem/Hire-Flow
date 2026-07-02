@@ -505,8 +505,13 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
+<<<<<<< HEAD
     "mtime": 1782978577.946499,
     "ast_hash": "f5551a516fc02519fbab37982b35a143",
+=======
+    "mtime": 1782971344.2677593,
+    "ast_hash": "fb1dadb88c817a682dceaf143b047bb9",
+>>>>>>> refactor-spec
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -514,11 +519,14 @@
     "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
     "semantic_hash": ""
   },
+<<<<<<< HEAD
   "HIRE_FLOW_PROMPTS.md": {
     "mtime": 1782978577.9505,
     "ast_hash": "f0e6f797098a21d78ed74e96061f9a56",
     "semantic_hash": ""
   },
+=======
+>>>>>>> refactor-spec
   "MANIFEST.md": {
     "mtime": 1782887270.4873745,
     "ast_hash": "ee47109a2ea9d506d3f8d217660205f3",
@@ -2274,9 +2282,55 @@
     "ast_hash": "20e37d715fe180303a2cb2a6a0043d5e",
     "semantic_hash": ""
   },
+<<<<<<< HEAD
   "HIRE_FLOW_TESTING.md": {
     "mtime": 1782978577.9535353,
     "ast_hash": "92a30ee5dc886f28db1bbe1c87ffcf65",
+=======
+  "legacy/refactoring.md": {
+    "mtime": 1782965345.341432,
+    "ast_hash": "647ab3fa4a7b06a104a35fca843ca428",
+    "semantic_hash": ""
+  },
+  "docs/architecture/technical-design.md": {
+    "mtime": 1782965850.761991,
+    "ast_hash": "d747daec0275a11a6179d98ede07a5e4",
+    "semantic_hash": ""
+  },
+  "docs/implementation/implementation-tasks.md": {
+    "mtime": 1782966083.1150472,
+    "ast_hash": "e3ff9018ace189b4289b6ed07eea1383",
+    "semantic_hash": ""
+  },
+  "docs/specs/hire-flow-requirements.md": {
+    "mtime": 1782965928.5906277,
+    "ast_hash": "12c282da248a1e401d2598020c35d726",
+    "semantic_hash": ""
+  },
+  "docs/testing/testing-strategy.md": {
+    "mtime": 1782972570.4021976,
+    "ast_hash": "384be803a6aaeaa0727cada589175f04",
+    "semantic_hash": ""
+  },
+  "legacy/hire_flow_prompts.md": {
+    "mtime": 1782966130.5385528,
+    "ast_hash": "48b8e5f743cf3eb0426110f8f1514ad5",
+    "semantic_hash": ""
+  },
+  "legacy/hire_flow_testing.md": {
+    "mtime": 1782966133.4618075,
+    "ast_hash": "48b8e5f743cf3eb0426110f8f1514ad5",
+    "semantic_hash": ""
+  },
+  "manifest.md": {
+    "mtime": 1782887270.4873745,
+    "ast_hash": "ee47109a2ea9d506d3f8d217660205f3",
+    "semantic_hash": ""
+  },
+  "test-manifest.md": {
+    "mtime": 1782972608.2004766,
+    "ast_hash": "9b44bedf3eccb6d7840aaa0ef5e92dbb",
+>>>>>>> refactor-spec
     "semantic_hash": ""
   },
   "manifest.md": {
