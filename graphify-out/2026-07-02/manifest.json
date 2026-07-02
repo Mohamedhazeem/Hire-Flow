@@ -505,7 +505,7 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1782978577.946499,
+    "mtime": 1782894317.39723,
     "ast_hash": "f5551a516fc02519fbab37982b35a143",
     "semantic_hash": ""
   },
@@ -515,7 +515,7 @@
     "semantic_hash": ""
   },
   "HIRE_FLOW_PROMPTS.md": {
-    "mtime": 1782978577.9505,
+    "mtime": 1782712429.145563,
     "ast_hash": "f0e6f797098a21d78ed74e96061f9a56",
     "semantic_hash": ""
   },
@@ -2275,13 +2275,8 @@
     "semantic_hash": ""
   },
   "HIRE_FLOW_TESTING.md": {
-    "mtime": 1782978577.9535353,
+    "mtime": 1782894126.7648258,
     "ast_hash": "92a30ee5dc886f28db1bbe1c87ffcf65",
-    "semantic_hash": ""
-  },
-  "manifest.md": {
-    "mtime": 1782887270.4873745,
-    "ast_hash": "ee47109a2ea9d506d3f8d217660205f3",
     "semantic_hash": ""
   }
 }
