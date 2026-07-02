@@ -10,7 +10,7 @@ const themes: { value: Theme; icon: typeof SunIcon; label: string }[] = [
   { value: "system", icon: MonitorIcon, label: "System" },
 ];
 
-export function ThemeToggle({ collapsed }: { collapsed?: boolean }) {
+export function ThemeToggle({ collapsed, variant }: { collapsed?: boolean; variant?: "icon" }) {
   const theme = useUIStore((s) => s.theme);
   const setTheme = useUIStore((s) => s.setTheme);
   const mounted = useSyncExternalStore(
@@ -31,6 +31,19 @@ export function ThemeToggle({ collapsed }: { collapsed?: boolean }) {
   }, [theme, mounted]);
 
   const cycleIndex = (themes.findIndex((t) => t.value === theme) + 1) % themes.length;
+
+  if (variant === "icon") {
+    const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    return (
+      <button
+        onClick={() => setTheme(isDark ? "light" : "dark")}
+        className="flex items-center justify-center size-9 rounded-md text-text-muted hover:text-text-body hover:bg-bg-muted transition-colors"
+        title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDark ? <SunIcon className="size-4" /> : <MoonIcon className="size-4" />}
+      </button>
+    );
+  }
 
   if (collapsed) {
     const Icon = themes[cycleIndex].icon;

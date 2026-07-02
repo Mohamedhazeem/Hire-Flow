@@ -96,11 +96,6 @@ export function JobListPage() {
 
   return (
     <div className="min-h-screen bg-bg-base">
-      <PageHeader
-        title="Browse Jobs"
-        description="Find your next opportunity"
-        icon={<BriefcaseIcon className="size-5" />}
-      />
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <JobSearchBar />
@@ -137,6 +132,15 @@ export function JobListPage() {
               onChange={setParam}
               labels={FILTER_LABELS}
             />
+            {hasFilters && (
+              <button
+                type="button"
+                onClick={() => router.push("/jobs")}
+                className="bg-error/90 min-w-20 text-center font-bold text-text-inverse  px-2.5 py-2.5 text-sm  hover:text-text-body border border-border-subtle rounded-lg transition-colors"
+              >
+                Clear
+              </button>
+            )}
           </div>
         </div>
 
@@ -171,15 +175,6 @@ export function JobListPage() {
                   ? "No jobs found matching your criteria"
                   : "No jobs available right now"}
               </p>
-              {hasFilters && (
-                <button
-                  type="button"
-                  onClick={() => router.push("/jobs")}
-                  className="inline-flex items-center gap-1.5 mt-3 text-sm text-brand hover:underline"
-                >
-                  <XIcon className="size-3.5" /> Clear filters
-                </button>
-              )}
               {!hasFilters && (
                 <p className="text-sm text-text-muted mt-1">
                   Check back later for new opportunities
@@ -212,7 +207,9 @@ export function JobListPage() {
                     salaryCurrency={job.salaryCurrency}
                     skills={job.skills}
                     experienceLevel={job.experienceLevel}
-                    applicationDeadline={job.applicationDeadline ? job.applicationDeadline.toString() : null}
+                    applicationDeadline={
+                      job.applicationDeadline ? job.applicationDeadline.toString() : null
+                    }
                     createdAt={job.createdAt.toString()}
                   />
                 </motion.div>

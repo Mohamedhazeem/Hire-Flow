@@ -11,6 +11,7 @@ export function JobSearchBar() {
   const deferredValue = useDeferredValue(value);
   const [, startTransition] = useTransition();
   const mountedRef = useRef(false);
+  const searchParamsString = sp.toString();
 
   useEffect(() => {
     mountedRef.current = true;
@@ -20,7 +21,7 @@ export function JobSearchBar() {
     if (!mountedRef.current) return;
     const timer = setTimeout(() => {
       startTransition(() => {
-        const np = new URLSearchParams(sp.toString());
+        const np = new URLSearchParams(searchParamsString);
         if (deferredValue) np.set("search", deferredValue);
         else np.delete("search");
         np.delete("page");
@@ -28,7 +29,7 @@ export function JobSearchBar() {
       });
     }, 400);
     return () => clearTimeout(timer);
-  }, [deferredValue, router, sp]);
+  }, [deferredValue, router, searchParamsString]);
 
   return (
     <div className="relative flex-1 min-w-0">

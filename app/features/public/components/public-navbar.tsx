@@ -26,7 +26,7 @@ export function PublicNavbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md border-b border-border-subtle">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+      <div className="mx-auto px-4 md:px-6 lg:px-8 h-14 flex items-center  gap-4">
         <Link href="/" className="text-lg font-bold text-text-heading shrink-0">
           HireFlow
         </Link>
@@ -35,15 +35,16 @@ export function PublicNavbar() {
           <NavLink href="/jobs" icon={<BriefcaseIcon className="size-4" />} label="Browse Jobs" />
         </nav>
 
-        <div className="flex items-center gap-2 ml-auto">
-
-          <div className="hidden lg:flex items-center gap-2">
-            <ThemeToggle collapsed={false} />
-            {user ? (
-              <AccountPopover />
-            ) : (
+        <div className="flex items-center gap-1 ml-auto">
+          <div className="hidden lg:flex items-center gap-1">{user ? <AccountPopover /> : (
               <>
-                <NavLink href="/login" icon={<LogInIcon className="size-4" />} label="Log in" />
+                <Link
+                  href="/login"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-sm text-text-muted hover:text-text-body rounded-md hover:bg-bg-muted transition-colors"
+                >
+                  <LogInIcon className="size-4" />
+                  Log in
+                </Link>
                 <Link
                   href="/register"
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand/90 rounded-lg transition-colors"
@@ -54,6 +55,8 @@ export function PublicNavbar() {
               </>
             )}
           </div>
+
+          <ThemeToggle variant="icon" />
 
           <button
             type="button"
@@ -70,8 +73,20 @@ export function PublicNavbar() {
         {menuOpen && (
           <MobileNavMenu
             key={pathname}
-            user={user ? { name: user.name, email: user.email, image: user.image, role: (user as { role?: string }).role } : undefined}
-            signOut={() => { signOut(); setMenuOpen(false); }}
+            user={
+              user
+                ? {
+                    name: user.name,
+                    email: user.email,
+                    image: user.image,
+                    role: (user as { role?: string }).role,
+                  }
+                : undefined
+            }
+            signOut={() => {
+              signOut();
+              setMenuOpen(false);
+            }}
             onLinkClick={() => setMenuOpen(false)}
           />
         )}
