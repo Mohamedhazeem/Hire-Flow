@@ -7,17 +7,15 @@ import { JobSearchBar } from "@/app/features/jobs/components/job-search-bar";
 
 export function HeroSearch() {
   return (
-    <section className="relative min-h-[80vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen sm:min-h-[85vh] flex items-center justify-center overflow-hidden py-16 sm:py-0">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1521737711867-e3b97375f3f9?w=1200&q=80")',
+            'url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80")',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-bg-page via-transparent to-transparent" />
-
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/70" />
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,8 +47,8 @@ export function HeroSearch() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base sm:text-lg text-white/70 mt-4 max-w-2xl mx-auto"
         >
-          The modern hiring platform connecting talented professionals with
-          forward-thinking companies. No gatekeeping, just opportunity.
+          The modern hiring platform connecting talented professionals with forward-thinking
+          companies. No gatekeeping, just opportunity.
         </motion.p>
 
         <motion.div
@@ -77,7 +75,7 @@ export function HeroSearch() {
           </Link>
           <Link
             href="/register"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white border border-white/30 hover:border-white/50 rounded-xl transition-all hover:scale-[1.03] active:scale-[0.97]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold text-white bg-brand hover:bg-brand/90 rounded-xl transition-all hover:scale-[1.03] active:scale-[0.97]"
           >
             Sign Up Free
           </Link>

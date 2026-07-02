@@ -33,14 +33,16 @@ export function ThemeToggle({ collapsed, variant }: { collapsed?: boolean; varia
   const cycleIndex = (themes.findIndex((t) => t.value === theme) + 1) % themes.length;
 
   if (variant === "icon") {
-    const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
     return (
       <button
         onClick={() => setTheme(isDark ? "light" : "dark")}
         className="flex items-center justify-center size-9 rounded-md text-text-muted hover:text-text-body hover:bg-bg-muted transition-colors"
         title={isDark ? "Switch to light mode" : "Switch to dark mode"}
       >
-        {isDark ? <SunIcon className="size-4" /> : <MoonIcon className="size-4" />}
+        {isDark ? <SunIcon className="size-5" /> : <MoonIcon className="size-5" />}
       </button>
     );
   }

@@ -25,29 +25,31 @@ export function PublicNavbar() {
   const user = session?.user;
 
   return (
-    <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md border-b border-border-subtle">
+    <header className="sticky top-0 z-50 bg-bg-page/75 backdrop-blur-md border-b border-border-subtle">
       <div className="mx-auto px-4 md:px-6 lg:px-8 h-14 flex items-center  gap-4">
         <Link href="/" className="text-lg font-bold text-text-heading shrink-0">
           HireFlow
         </Link>
-
         <nav className="hidden lg:flex items-center gap-1">
           <NavLink href="/jobs" icon={<BriefcaseIcon className="size-4" />} label="Browse Jobs" />
         </nav>
 
         <div className="flex items-center gap-1 ml-auto">
-          <div className="hidden lg:flex items-center gap-1">{user ? <AccountPopover /> : (
+          <div className="hidden lg:flex items-center gap-1">
+            {user ? (
+              <AccountPopover />
+            ) : (
               <>
                 <Link
                   href="/login"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-sm text-text-muted hover:text-text-body rounded-md hover:bg-bg-muted transition-colors"
+                  className="w-28 inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand/90 rounded-lg transition-colors"
                 >
                   <LogInIcon className="size-4" />
                   Log in
                 </Link>
                 <Link
                   href="/register"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand/90 rounded-lg transition-colors"
+                  className="w-28 inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-brand hover:bg-brand/90 rounded-lg transition-colors"
                 >
                   <UserPlusIcon className="size-4" />
                   <span className="hidden sm:inline">Sign Up</span>
@@ -99,7 +101,7 @@ function NavLink({ href, icon, label }: { href: string; icon: React.ReactNode; l
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-1.5 px-3 py-2 text-sm text-text-muted hover:text-text-body rounded-md hover:bg-bg-muted transition-colors"
+      className="inline-flex items-center gap-1.5 px-3 py-2 text-sm text-text-heading hover:text-text-body rounded-md hover:bg-bg-muted transition-colors"
     >
       {icon}
       {label}

@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-search-bar.tsx": {
-    "mtime": 1783003998.8354537,
-    "ast_hash": "d41b0ec3aefef5857de54c26a583f118",
+    "mtime": 1783005048.4612064,
+    "ast_hash": "d061f638c0a58508b2ca44f968564a3a",
     "semantic_hash": ""
   },
   "app/features/jobs/hooks/use-apply-job.ts": {
@@ -1060,8 +1060,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/hero-search.tsx": {
-    "mtime": 1782882291.2733579,
-    "ast_hash": "116af61270b91ac70eb65f627ecdf1b4",
+    "mtime": 1783005179.2763014,
+    "ast_hash": "c0c8921c74e57d78442101df006da031",
     "semantic_hash": ""
   },
   "app/features/public/components/mobile-nav-menu.tsx": {
