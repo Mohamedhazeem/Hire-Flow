@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useDeferredValue, useTransition } from "react";
+import { useState, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SearchIcon, XIcon } from "lucide-react";
 
@@ -8,49 +8,44 @@ export function JobSearchBar() {
   const router = useRouter();
   const sp = useSearchParams();
   const [value, setValue] = useState(sp.get("search") ?? "");
-  const deferredValue = useDeferredValue(value);
-  const [, startTransition] = useTransition();
-  const mountedRef = useRef(false);
-  const searchParamsString = sp.toString();
 
-  useEffect(() => {
-    mountedRef.current = true;
-  }, []);
+  const navigate = useCallback(
+    (searchValue: string) => {
+      const np = new URLSearchParams(sp.toString());
+      if (searchValue) np.set("search", searchValue);
+      else np.delete("search");
+      np.delete("page");
+      router.push(`/jobs?${np.toString()}`);
+    },
+    [router, sp],
+  );
 
-  useEffect(() => {
-    if (!mountedRef.current) return;
-    const timer = setTimeout(() => {
-      startTransition(() => {
-        const np = new URLSearchParams(searchParamsString);
-        if (deferredValue) np.set("search", deferredValue);
-        else np.delete("search");
-        np.delete("page");
-        router.push(`/jobs?${np.toString()}`);
-      });
-    }, 400);
-    return () => clearTimeout(timer);
-  }, [deferredValue, router, searchParamsString]);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (value) navigate(value);
+  };
 
   return (
-    <div className="relative flex-1 min-w-0">
+    <form onSubmit={handleSubmit} className="relative flex-1 min-w-0">
       <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
       <input
-        type="text"
+        type="search"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        enterKeyHint="search"
         placeholder="Search jobs..."
-        className="w-full pl-10 pr-8 py-2.5 text-sm bg-bg-surface border border-border-subtle rounded-lg text-text-body placeholder:text-text-muted focus:outline-none focus:border-brand/50 transition-colors"
+        className="w-full pl-10 pr-8 py-2.5 text-sm bg-bg-surface border border-border-subtle rounded-lg text-text-body placeholder:text-text-muted focus:outline-none focus:border-brand/50 transition-colors [&::-webkit-search-cancel-button]:hidden"
       />
       {value && (
         <button
           type="button"
-          onClick={() => setValue("")}
+          onClick={() => navigate("")}
           aria-label="Clear search"
           className="absolute right-2 top-1/2 -translate-y-1/2 size-5 flex items-center justify-center text-text-muted hover:text-text-body"
         >
           <XIcon className="size-3.5" />
         </button>
       )}
-    </div>
+    </form>
   );
 }
