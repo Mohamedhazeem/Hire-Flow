@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-05)
 
 ## Corpus Check
-- 457 files · ~170,544 words
+- 457 files · ~170,594 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `78e8d32b`
+- Built from commit: `a00e6bc7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -187,6 +187,8 @@
 10. `Phase 3: User (Job Seeker)` - 34 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `RootLayout()` --calls--> `cn()`  [EXTRACTED]
+  app/layout.tsx → lib/utils.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
   app/api/admin/team/[id]/route.ts → lib/api-response.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
@@ -195,8 +197,6 @@
   app/api/notifications/route.ts → lib/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
   app/api/recruiter/applications/[applicationId]/detail/route.ts → lib/api-response.ts
-- `handleDELETE()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/invite/[id]/route.ts → lib/api-response.ts
 
 ## Import Cycles
 - None detected.
@@ -776,7 +776,7 @@ Cohesion: 0.67
 Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter Behavioral Tests
 
 ## Knowledge Gaps
-- **1529 isolated node(s):** `QueryKeyShape`, `DEFAULT_QUERY_OPTIONS`, `{ useSession, signIn, signUp, signOut }`, `$schema`, `plugin` (+1524 more)
+- **1529 isolated node(s):** `inter`, `geistSans`, `geistMono`, `metadata`, `pool` (+1524 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -784,16 +784,16 @@ Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 40` to `Community 89`, `Community 66`, `Community 34`, `Community 67`, `Community 38`, `Community 74`, `Community 75`, `Community 28`, `Community 49`, `Community 18`, `Community 51`, `Community 30`, `Community 55`, `Community 23`, `Community 88`, `Community 25`, `Community 92`, `Community 94`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 129` to `Community 17`, `Community 19`, `Community 21`, `Community 22`, `Community 24`, `Community 26`, `Community 28`, `Community 29`, `Community 33`, `Community 39`, `Community 43`, `Community 54`, `Community 55`, `Community 64`, `Community 86`, `Community 87`, `Community 95`, `Community 109`, `Community 112`, `Community 117`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `apiClient()` connect `Community 37` to `Community 18`, `Community 19`, `Community 23`, `Community 28`, `Community 33`, `Community 34`, `Community 42`, `Community 51`, `Community 65`, `Community 69`, `Community 70`, `Community 79`, `Community 82`, `Community 86`, `Community 93`, `Community 94`, `Community 96`, `Community 103`, `Community 104`, `Community 107`, `Community 113`, `Community 125`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `ok()` connect `Community 17` to `Community 129`, `Community 43`, `Community 109`, `Community 112`, `Community 83`, `Community 21`, `Community 22`, `Community 87`, `Community 117`, `Community 26`, `Community 95`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 28 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 28 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 28 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 28 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `QueryKeyShape`, `DEFAULT_QUERY_OPTIONS`, `{ useSession, signIn, signUp, signOut }` to the rest of the system?**
+- **What connects `inter`, `geistSans`, `geistMono` to the rest of the system?**
   _1529 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
