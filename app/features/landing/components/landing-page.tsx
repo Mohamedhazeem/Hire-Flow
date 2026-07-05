@@ -6,7 +6,7 @@ import { HowItWorks } from "./how-it-works";
 import { Testimonials } from "./testimonials";
 import { EmployerCTA } from "@/app/features/public/components/employer-cta";
 
-export function LandingPage() {
+export async function LandingPage() {
   return (
     <>
       <HeroSearch />

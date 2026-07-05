@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
@@ -52,26 +53,43 @@ export function JobCard({
       ? `${salaryCurrency}${salaryMin?.toLocaleString() ?? ""} - ${salaryCurrency}${salaryMax?.toLocaleString() ?? ""}`
       : null;
 
-  const [now] = useState(() => Date.now());
-  const daysAgo = Math.floor(
-    (now - new Date(createdAt).getTime()) / 86400000,
+  const [now] = useState(() =>
+    typeof window !== "undefined" ? Date.now() : 0,
   );
+
+  const daysAgo = now
+    ? Math.floor((now - new Date(createdAt).getTime()) / 86400000)
+    : 0;
   const isExpired =
+    now != null &&
     applicationDeadline != null &&
     new Date(applicationDeadline).getTime() < now;
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={() => router.push(`/jobs/${id}`)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          router.push(`/jobs/${id}`);
+        }
+      }}
       className="w-full text-left rounded-xl border border-border-subtle bg-bg-surface p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer"
     >
       <div className="flex items-start gap-4 min-w-0">
         <div className="size-11 rounded-lg bg-brand/10 flex items-center justify-center text-brand shrink-0 text-lg font-bold">
           {companyLogo ? (
-            <Image src={companyLogo} alt="" width={28} height={28} className="size-7 object-contain" />
+            <Image
+              src={companyLogo}
+              alt=""
+              width={28}
+              height={28}
+              className="size-7 object-contain"
+            />
           ) : (
-            companyName[0]?.toUpperCase() ?? "?"
+            (companyName[0]?.toUpperCase() ?? "?")
           )}
         </div>
         <div className="min-w-0 flex-1">
@@ -102,7 +120,11 @@ export function JobCard({
         </span>
         <span className="inline-flex items-center gap-1 text-xs text-text-muted bg-bg-muted px-2 py-1 rounded-md">
           <ClockIcon className="size-3" />
-          {daysAgo === 0 ? "Today" : daysAgo === 1 ? "1d ago" : `${daysAgo}d ago`}
+          {daysAgo === 0
+            ? "Today"
+            : daysAgo === 1
+              ? "1d ago"
+              : `${daysAgo}d ago`}
         </span>
       </div>
 
@@ -111,16 +133,20 @@ export function JobCard({
       )}
 
       <div className="flex items-center gap-1.5 mt-2">
-        <span className={cn(
-          "text-xs font-medium px-2 py-0.5 rounded-full",
-          "bg-bg-muted text-text-muted border border-border-subtle",
-        )}>
+        <span
+          className={cn(
+            "text-xs font-medium px-2 py-0.5 rounded-full",
+            "bg-bg-muted text-text-muted border border-border-subtle",
+          )}
+        >
           {experienceLevel}
         </span>
-        <span className={cn(
-          "text-xs font-medium px-2 py-0.5 rounded-full",
-          "bg-bg-muted text-text-muted border border-border-subtle",
-        )}>
+        <span
+          className={cn(
+            "text-xs font-medium px-2 py-0.5 rounded-full",
+            "bg-bg-muted text-text-muted border border-border-subtle",
+          )}
+        >
           {employmentType.replace("_", " ")}
         </span>
       </div>
@@ -136,10 +162,12 @@ export function JobCard({
             </span>
           ))}
           {skills.length > 4 && (
-            <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>
+            <span className="text-[11px] text-text-muted">
+              +{skills.length - 4}
+            </span>
           )}
         </div>
       )}
-    </button>
+    </div>
   );
 }

@@ -229,12 +229,15 @@ async function main() {
           salaryMin: 60_000 + i * 10_000,
           salaryMax: 100_000 + i * 15_000,
           salaryCurrency: "USD",
+          status: "active",
           isActive: true,
         },
       });
     }
 
-    logger.server.info(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
+    logger.server.info(
+      `  ✔ Recruiter "${rec.name}" + company + 5 jobs created`,
+    );
   }
 
   // ── 3. Users + Profiles + Resumes ────────────────────────────────────────────
@@ -340,7 +343,9 @@ async function main() {
 
   logger.server.info("  ✔ Applications created");
   logger.server.info("\n✅  Seed complete.");
-  logger.server.info(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
+  logger.server.info(
+    `\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`,
+  );
   logger.server.info(`   Admin (super) → ${ADMIN.email}`);
   RECRUITERS.forEach((r) => logger.server.info(`   Recruiter  → ${r.email}`));
   USERS.forEach((u) => logger.server.info(`   User       → ${u.email}`));
