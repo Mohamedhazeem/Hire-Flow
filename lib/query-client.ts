@@ -15,10 +15,7 @@ async function defaultQueryFn({ queryKey }: { queryKey: QueryKey }) {
   try {
     return await apiClient(path, { params });
   } catch (error) {
-    if (
-      error instanceof UnauthorizedError ||
-      error instanceof ForbiddenError
-    ) {
+    if (error instanceof UnauthorizedError || error instanceof ForbiddenError) {
       window.location.href = "/login";
     }
     throw error;
