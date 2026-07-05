@@ -1,7 +1,7 @@
-# Graph Report - hire-flow-next  (2026-07-05)
+# Graph Report - hire-flow-next  (2026-07-02)
 
 ## Corpus Check
-- 457 files · ~170,544 words
+- 457 files · ~170,557 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `78e8d32b`
+- Built from commit: `0e8fc7a1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -191,12 +191,12 @@
   app/api/admin/team/[id]/route.ts → lib/api-response.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
   app/api/admin/users/[id]/route.ts → lib/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/jobs/[id]/route.ts → lib/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/jobs/route.ts → lib/api-response.ts
 - `handlePATCH()` --calls--> `ok()`  [EXTRACTED]
   app/api/notifications/route.ts → lib/api-response.ts
-- `handleGET()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/applications/[applicationId]/detail/route.ts → lib/api-response.ts
-- `handleDELETE()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/invite/[id]/route.ts → lib/api-response.ts
 
 ## Import Cycles
 - None detected.
@@ -273,7 +273,7 @@ Nodes (7): Authentication & Sessions, Authorization & Data Boundaries, Data Inte
 
 ### Community 17 - "Community 17"
 Cohesion: 0.06
-Nodes (39): GET, handleGET(), DELETE, handleDELETE(), handlePATCH(), PATCH, GET, handleGET() (+31 more)
+Nodes (59): requireRole(), ResolvedSession, GET, handleGET(), DELETE, handleDELETE(), handlePATCH(), PATCH (+51 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.06
@@ -288,8 +288,8 @@ Cohesion: 0.04
 Nodes (48): Active Global Context Snapshot, Admin Applicant Detail View (cross-phase), ApplicationStatusChange (Phase 3), Auth-Aware Navbar & Redirect (Phase 4), Completed Steps, Created File Paths (Grouped by Phase), Hire Flow Next - Project Manifest, Job Visibility Dual-Gate (Phase 4) (+40 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.09
-Nodes (22): handlePOST(), POST, DELETE, handleDELETE(), GET, handlePOST(), POST, DELETE (+14 more)
+Cohesion: 0.08
+Nodes (29): handlePOST(), POST, DELETE, handleDELETE(), GET, handleGET(), GET, handleGET() (+21 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.08
@@ -309,7 +309,7 @@ Nodes (27): NotificationDropdownProps, notificationIconMap, NotificationItem, An
 
 ### Community 26 - "Community 26"
 Cohesion: 0.08
-Nodes (28): applyAiSuggestions(), saveResumeBuilder(), ResolvedSession, DELETE, handleDELETE(), DELETE, handleDELETE(), GET (+20 more)
+Nodes (25): applyAiSuggestions(), saveResumeBuilder(), DELETE, handleDELETE(), DELETE, handleDELETE(), GET, handleGET() (+17 more)
 
 ### Community 27 - "Community 27"
 Cohesion: 0.08
@@ -340,8 +340,8 @@ Cohesion: 0.08
 Nodes (26): bulkInviteAdmins(), BulkInviteResult, metadata, InviteAdminForm(), Tab, BulkEmailsInput, BulkEmailsSchema, AdminUserDetail (+18 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.10
-Nodes (26): EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), STATUS_BADGE, WORK_MODE_LABELS (+18 more)
+Cohesion: 0.07
+Nodes (38): STATUS_DOT_COLORS, STATUS_OPTIONS, ApplicantTableToolbar(), ApplicantTableToolbarProps, EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS (+30 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.06
@@ -364,8 +364,8 @@ Cohesion: 0.12
 Nodes (18): { POST, GET }, ADDITIONAL_HIDDEN_PREFIXES, AUTH_PAGES, HIDDEN_ROUTE_PREFIXES, PROTECTED_ROUTES, PUBLIC_CONTENT_PATHS, auth, getSession() (+10 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.14
-Nodes (25): STATUS_DOT_COLORS, STATUS_OPTIONS, ApplicantTableToolbar(), ApplicantTableToolbarProps, cn(), Checkbox(), DataTable(), DataTableProps (+17 more)
+Cohesion: 0.28
+Nodes (13): cn(), Checkbox(), DataTable(), DataTableProps, DialogOverlay(), Table(), TableBody(), TableCaption() (+5 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.07
@@ -720,8 +720,8 @@ Cohesion: 0.33
 Nodes (5): name, prisma, seed, private, version
 
 ### Community 129 - "Community 129"
-Cohesion: 0.08
-Nodes (29): requireRole(), DELETE, GET, handleDELETE(), handleGET(), DELETE, handleDELETE(), GET (+21 more)
+Cohesion: 0.40
+Nodes (5): DELETE, GET, handleDELETE(), handleGET(), getUserById()
 
 ### Community 130 - "Community 130"
 Cohesion: 0.33
@@ -776,7 +776,7 @@ Cohesion: 0.67
 Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter Behavioral Tests
 
 ## Knowledge Gaps
-- **1529 isolated node(s):** `QueryKeyShape`, `DEFAULT_QUERY_OPTIONS`, `{ useSession, signIn, signUp, signOut }`, `$schema`, `plugin` (+1524 more)
+- **1529 isolated node(s):** `$schema`, `plugin`, `snapshot`, `@kilocode/plugin`, `AcceptInviteClientProps` (+1524 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -784,16 +784,16 @@ Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 40` to `Community 89`, `Community 66`, `Community 34`, `Community 67`, `Community 38`, `Community 74`, `Community 75`, `Community 28`, `Community 49`, `Community 18`, `Community 51`, `Community 30`, `Community 55`, `Community 23`, `Community 88`, `Community 25`, `Community 92`, `Community 94`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 129` to `Community 17`, `Community 19`, `Community 21`, `Community 22`, `Community 24`, `Community 26`, `Community 28`, `Community 29`, `Community 33`, `Community 39`, `Community 43`, `Community 54`, `Community 55`, `Community 64`, `Community 86`, `Community 87`, `Community 95`, `Community 109`, `Community 112`, `Community 117`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 17` to `Community 129`, `Community 19`, `Community 21`, `Community 22`, `Community 24`, `Community 26`, `Community 28`, `Community 29`, `Community 33`, `Community 39`, `Community 43`, `Community 54`, `Community 55`, `Community 64`, `Community 86`, `Community 87`, `Community 95`, `Community 109`, `Community 112`, `Community 117`?**
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Why does `apiClient()` connect `Community 37` to `Community 18`, `Community 19`, `Community 23`, `Community 28`, `Community 33`, `Community 34`, `Community 42`, `Community 51`, `Community 65`, `Community 69`, `Community 70`, `Community 79`, `Community 82`, `Community 86`, `Community 93`, `Community 94`, `Community 96`, `Community 103`, `Community 104`, `Community 107`, `Community 113`, `Community 125`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 28 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 28 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 28 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 28 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `QueryKeyShape`, `DEFAULT_QUERY_OPTIONS`, `{ useSession, signIn, signUp, signOut }` to the rest of the system?**
+- **What connects `$schema`, `plugin`, `snapshot` to the rest of the system?**
   _1529 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

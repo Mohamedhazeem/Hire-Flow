@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "app/(public)/layout.tsx": {
-    "mtime": 1783225266.3165627,
-    "ast_hash": "6c2b72cd43c042cc56ae1b1d49753867",
+    "mtime": 1782886339.9159234,
+    "ast_hash": "56afe949ebc6d0b4f8f3a5fdafb544f0",
     "semantic_hash": ""
   },
   "app/(public)/page.tsx": {
@@ -845,8 +845,8 @@
     "semantic_hash": ""
   },
   "app/features/auth/libs/auth-client.ts": {
-    "mtime": 1783225726.512483,
-    "ast_hash": "088a90eb6afad3f915ab956cc10cb780",
+    "mtime": 1782134827.4701426,
+    "ast_hash": "d6e202c52aeb5708c4691c408ce4703e",
     "semantic_hash": ""
   },
   "app/features/auth/libs/auth.ts": {
@@ -1905,8 +1905,8 @@
     "semantic_hash": ""
   },
   "lib/query-client.ts": {
-    "mtime": 1783225730.3191516,
-    "ast_hash": "cb25f927e06058ba2b3ec92427c7943f",
+    "mtime": 1782147086.2381084,
+    "ast_hash": "2b95daaebe3e688be2f2433cbf6e0338",
     "semantic_hash": ""
   },
   "lib/rate-limiter.ts": {
