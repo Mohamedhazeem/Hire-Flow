@@ -2,11 +2,9 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { AdminBanUserSchema } from "@/app/features/admin/schema/admin.schema";
-import { prisma } from "@/lib/prisma";
-import { auth } from "@/app/features/auth/libs/auth";
-import { sendEmail } from "@/app/features/auth/libs/email";
-import { ValidationError, NotFoundError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { userAdminService } from "@/lib/services/user-admin-service";
 
 async function handlePOST(
   request: NextRequest,
@@ -15,10 +13,6 @@ async function handlePOST(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
-  if (adminUser.id === id) {
-    throw new ValidationError("You cannot ban yourself");
-  }
-
   const body = await request.json().catch(() => ({}));
   const input = AdminBanUserSchema.safeParse(body);
 
@@ -26,40 +20,15 @@ async function handlePOST(
     throw new ValidationError("Invalid ban parameters");
   }
 
-  const targetUser = await prisma.user.findUnique({
-    where: { id },
-    select: { email: true, name: true },
-  });
+  const result = await userAdminService.banUser(
+    adminUser.id,
+    id,
+    input.data.banReason,
+    input.data.banExpiresIn,
+    request.headers,
+  );
 
-  if (!targetUser) {
-    throw new NotFoundError("User not found");
-  }
-
-  await auth.api.banUser({
-    body: {
-      userId: id,
-      banReason: input.data.banReason,
-      banExpiresIn: input.data.banExpiresIn,
-    },
-    headers: request.headers,
-  });
-
-  const expiresInDays = input.data.banExpiresIn
-    ? Math.ceil(input.data.banExpiresIn / 86400)
-    : undefined;
-
-  await sendEmail({
-    to: targetUser.email,
-    subject: "Your HireFlow account has been suspended",
-    type: "ban-notification",
-    invitedByName: adminUser.name ?? adminUser.email,
-    banDetails: {
-      reason: input.data.banReason,
-      expiresInDays,
-    },
-  });
-
-  return ok({ banned: true });
+  return ok(result);
 }
 
 export const POST = withErrorHandler(handlePOST);

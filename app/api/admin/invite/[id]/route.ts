@@ -1,34 +1,13 @@
-import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
-import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { withErrorHandler } from "@/lib/api-wrapper";
-import { NotFoundError, ValidationError, ForbiddenError } from "@/lib/api-error";
+import { ForbiddenError } from "@/lib/api-error";
+import { createInviteCancelHandler } from "@/lib/handlers/invite";
 
-async function handleDELETE(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
-  const session = await requireRole(["admin", "super_admin"]);
-  const { id } = await params;
-
-  const invite = await prisma.adminInvite.findUnique({ where: { id } });
-
-  if (!invite) {
-    throw new NotFoundError("Invite not found");
-  }
-
-  if (invite.acceptedAt) {
-    throw new ValidationError("Cannot cancel an already accepted invite");
-  }
-
-  if (session.role !== "super_admin" && invite.invitedById !== session.id) {
-    throw new ForbiddenError("You can only cancel your own invites");
-  }
-
-  await prisma.adminInvite.delete({ where: { id } });
-
-  return ok({ cancelled: true });
-}
-
-export const DELETE = withErrorHandler(handleDELETE);
+export const { DELETE } = createInviteCancelHandler(["admin", "super_admin"], {
+  findInvite: (id) => prisma.adminInvite.findUnique({ where: { id } }),
+  deleteInvite: (id) => prisma.adminInvite.delete({ where: { id } }).then(() => undefined),
+  ownershipCheck: (invite, session) => {
+    if (session.role !== "super_admin" && invite.invitedById !== session.id) {
+      throw new ForbiddenError("You can only cancel your own invites");
+    }
+  },
+});

@@ -1,9 +1,8 @@
 import { NextRequest } from "next/server";
 import { ok, fail } from "@/lib/api-response";
-import { prisma } from "@/lib/prisma";
 import { AdminAcceptInviteSchema } from "@/app/features/admin/schema/admin.schema";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { NotFoundError } from "@/lib/api-error";
+import { inviteService } from "@/lib/services/invite-service";
 
 async function handlePOST(request: NextRequest) {
   const body = await request.json().catch(() => ({}));
@@ -13,32 +12,8 @@ async function handlePOST(request: NextRequest) {
     return fail("Invalid token", 400);
   }
 
-  const invite = await prisma.adminInvite.findUnique({
-    where: { token: input.data.token },
-  });
-
-  if (!invite || invite.acceptedAt) {
-    throw new NotFoundError("Invalid or expired invitation token");
-  }
-
-  const existingAdminCount = await prisma.user.count({
-    where: { role: { in: ["admin", "super_admin"] } },
-  });
-
-  const newRole = existingAdminCount === 0 ? "super_admin" : "admin";
-
-  await prisma.$transaction([
-    prisma.user.update({
-      where: { email: invite.email },
-      data: { role: newRole },
-    }),
-    prisma.adminInvite.update({
-      where: { id: invite.id },
-      data: { acceptedAt: new Date() },
-    }),
-  ]);
-
-  return ok({ accepted: true, role: newRole });
+  const result = await inviteService.acceptAdminInvite(input.data.token);
+  return ok(result);
 }
 
 export const POST = withErrorHandler(handlePOST);

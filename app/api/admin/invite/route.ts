@@ -1,26 +1,12 @@
 import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { listAdminInvites } from "@/app/features/admin/queries/invite-queries";
 
 async function handleGET() {
   await requireRole(["admin", "super_admin"]);
-
-  const [invites, teamMembers] = await Promise.all([
-    prisma.adminInvite.findMany({
-      orderBy: { createdAt: "desc" },
-      include: {
-        invitedBy: { select: { name: true, email: true } },
-      },
-    }),
-    prisma.user.findMany({
-      where: { role: { in: ["admin", "super_admin"] } },
-      select: { id: true, name: true, email: true, role: true, createdAt: true },
-      orderBy: { createdAt: "desc" },
-    }),
-  ]);
-
-  return ok({ invites, teamMembers });
+  const data = await listAdminInvites();
+  return ok(data);
 }
 
 export const GET = withErrorHandler(handleGET);
