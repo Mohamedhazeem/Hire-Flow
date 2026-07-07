@@ -16,9 +16,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 function fmtSalary(s: number | null, m: number | null, c: string) {
-  if (s != null && m != null) return `${c}${s.toLocaleString()} - ${m.toLocaleString()}`;
-  if (s != null) return `${c}${s.toLocaleString()}+`;
-  if (m != null) return `Up to ${c}${m.toLocaleString()}`;
+  if (s != null && m != null) return `${c}${s.toLocaleString("en-US")} - ${m.toLocaleString("en-US")}`;
+  if (s != null) return `${c}${s.toLocaleString("en-US")}+`;
+  if (m != null) return `Up to ${c}${m.toLocaleString("en-US")}`;
   return null;
 }
 

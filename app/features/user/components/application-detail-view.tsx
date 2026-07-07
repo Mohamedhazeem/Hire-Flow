@@ -60,7 +60,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
   const workMode = String(d.jobWorkMode ?? "");
   const salaryMin = d.jobSalaryMin as number | null;
   const salaryMax = d.jobSalaryMax as number | null;
-  const salaryText = salaryMin != null || salaryMax != null ? `${String(d.jobSalaryCurrency ?? "USD")}${salaryMin?.toLocaleString() ?? ""} - ${String(d.jobSalaryCurrency ?? "USD")}${salaryMax?.toLocaleString() ?? ""}` : null;
+  const salaryText = salaryMin != null || salaryMax != null ? `${String(d.jobSalaryCurrency ?? "USD")}${salaryMin?.toLocaleString("en-US") ?? ""} - ${String(d.jobSalaryCurrency ?? "USD")}${salaryMax?.toLocaleString("en-US") ?? ""}` : null;
   const status = String(d.status ?? "");
   const statusChanges = (d.statusChanges ?? []) as Array<Record<string, unknown>>;
   const timeline = statusChanges.map((sc) => ({ id: sc.id as string, fromStatus: sc.fromStatus as string | null, toStatus: sc.toStatus as string, createdAt: sc.createdAt as string }));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -12,6 +12,16 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
+
+const hydrator = {
+  subscribe: (cb: () => void) => {
+    if (typeof window === "undefined") return () => {};
+    cb();
+    return () => {};
+  },
+  getSnapshot: () => (typeof window !== "undefined" ? "client" : "server"),
+  getServerSnapshot: () => "server",
+};
 
 export type JobCardProps = {
   id: string;
@@ -48,22 +58,26 @@ export function JobCard({
 }: JobCardProps) {
   const router = useRouter();
 
-  const salaryText =
-    salaryMin != null || salaryMax != null
-      ? `${salaryCurrency}${salaryMin?.toLocaleString() ?? ""} - ${salaryCurrency}${salaryMax?.toLocaleString() ?? ""}`
-      : null;
-
-  const [now] = useState(() =>
-    typeof window !== "undefined" ? Date.now() : 0,
+  const hydrated = useSyncExternalStore(
+    hydrator.subscribe,
+    hydrator.getSnapshot,
+    hydrator.getServerSnapshot,
   );
 
-  const daysAgo = now
-    ? Math.floor((now - new Date(createdAt).getTime()) / 86400000)
-    : 0;
-  const isExpired =
-    now != null &&
-    applicationDeadline != null &&
-    new Date(applicationDeadline).getTime() < now;
+  const fmt = (n: number) =>
+    hydrated === "client"
+      ? n.toLocaleString()
+      : n.toLocaleString("en-US");
+
+  const salaryText =
+    salaryMin != null || salaryMax != null
+      ? `${salaryCurrency}${salaryMin != null ? fmt(salaryMin) : ""} - ${salaryCurrency}${salaryMax != null ? fmt(salaryMax) : ""}`
+      : null;
+
+  const [now] = useState(() => Date.now());
+
+  const daysAgo = Math.floor((now - new Date(createdAt).getTime()) / 86400000);
+  const isExpired = applicationDeadline != null && new Date(applicationDeadline).getTime() < now;
 
   return (
     <div
@@ -120,17 +134,11 @@ export function JobCard({
         </span>
         <span className="inline-flex items-center gap-1 text-xs text-text-muted bg-bg-muted px-2 py-1 rounded-md">
           <ClockIcon className="size-3" />
-          {daysAgo === 0
-            ? "Today"
-            : daysAgo === 1
-              ? "1d ago"
-              : `${daysAgo}d ago`}
+          {daysAgo === 0 ? "Today" : daysAgo === 1 ? "1d ago" : `${daysAgo}d ago`}
         </span>
       </div>
 
-      {salaryText && (
-        <p className="text-sm font-medium text-text-body mt-2">{salaryText}</p>
-      )}
+      {salaryText && <p className="text-sm font-medium text-text-body mt-2">{salaryText}</p>}
 
       <div className="flex items-center gap-1.5 mt-2">
         <span
@@ -154,17 +162,12 @@ export function JobCard({
       {skills.length > 0 && (
         <div className="flex flex-wrap gap-1 mt-2 overflow-hidden max-h-6">
           {skills.slice(0, 4).map((s) => (
-            <span
-              key={s}
-              className="text-[11px] text-text-muted bg-bg-muted px-1.5 py-0.5 rounded"
-            >
+            <span key={s} className="text-[11px] text-text-muted bg-bg-muted px-1.5 py-0.5 rounded">
               {s}
             </span>
           ))}
           {skills.length > 4 && (
-            <span className="text-[11px] text-text-muted">
-              +{skills.length - 4}
-            </span>
+            <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>
           )}
         </div>
       )}

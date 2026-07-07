@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import type { Theme } from "@/stores/ui-store";
-
+import { useUIStore } from "@/stores/ui-store";
 const UI_STORAGE_KEY = "hireflow-ui";
 
 function getPersistedTheme(): Theme {
@@ -28,31 +28,22 @@ function applyTheme(theme: Theme) {
     root.classList.toggle("dark", prefersDark);
   }
 }
-
-/**
- * Applies the persisted theme to <html> on every page,
- * including auth pages where ThemeToggle is not mounted.
- */
 export function ThemeInitializer({ children }: { children: React.ReactNode }) {
-  const applied = useRef(false);
+  const theme = useUIStore((state) => state.theme);
 
   useEffect(() => {
-    if (applied.current) return;
-    applied.current = true;
-
-    const theme = getPersistedTheme();
     applyTheme(theme);
 
-    // Listen for system preference changes when theme is "system"
-    if (theme === "system") {
-      const mq = window.matchMedia("(prefers-color-scheme: dark)");
-      const handler = () => applyTheme("system");
-      mq.addEventListener("change", handler);
-      return () => mq.removeEventListener("change", handler);
-    }
-  }, []);
+    if (theme !== "system") return;
 
-  // Re-apply whenever the store's theme value changes (cross-tab sync)
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = () => applyTheme("system");
+
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, [theme]);
+
   useEffect(() => {
     function onStorage(e: StorageEvent) {
       if (e.key === UI_STORAGE_KEY) {

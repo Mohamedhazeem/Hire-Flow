@@ -291,7 +291,9 @@ async function main() {
       });
     }
 
-    logger.server.info(`  ✔ User "${usr.name}" + profile + 2 resumes created`);
+    logger.server.info(
+      `✔ User "${usr.name}" + profile ${profile.headline} + 2 resumes created`,
+    );
   }
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────

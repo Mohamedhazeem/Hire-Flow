@@ -1,11 +1,11 @@
 # Graph Report - hire-flow-next  (2026-07-07)
 
 ## Corpus Check
-- 457 files · ~170,596 words
+- 457 files · ~170,695 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2848 nodes · 5125 edges · 177 communities (163 shown, 14 thin omitted)
+- 2848 nodes · 5125 edges · 178 communities (164 shown, 14 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 83 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -84,6 +84,7 @@
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 68|Community 68]]
+- [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 72|Community 72]]
@@ -212,7 +213,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (177 total, 14 thin omitted)
+## Communities (178 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.03
@@ -363,8 +364,8 @@ Cohesion: 0.17
 Nodes (16): LoginActionInput, LoginActionSchema, SignInSchema, ActionResult, AuthRedirectTargetType, AuthType, ForgotPasswordType, LoginInputType (+8 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.08
-Nodes (20): apiClient(), ApiResponse, DEFAULT_QUERY_OPTIONS, defaultQueryFn(), getQueryClient(), makeQueryClient(), QueryKeyShape, ThreadItem (+12 more)
+Cohesion: 0.10
+Nodes (17): apiClient(), ApiResponse, DEFAULT_QUERY_OPTIONS, defaultQueryFn(), getQueryClient(), makeQueryClient(), QueryKeyShape, ThreadItem (+9 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.14
@@ -489,6 +490,10 @@ Nodes (12): ActivityPanel(), AppRow, statConfig, Stats, ApplicationHeader(), Pro
 ### Community 68 - "Community 68"
 Cohesion: 0.11
 Nodes (18): `app/api/recruiter/applications/bulk/status/route.ts` — New bulk API route, `app/features/recruiter/components/applicant-detail-page.tsx` — No change, `app/features/recruiter/components/applicants-table.tsx` — Add selection + bulk action bar, `app/features/recruiter/components/application-dialogs.tsx` — Add BulkRejectDialog, `app/features/recruiter/hooks/use-applications.ts` — Add bulk mutation hook, `app/features/recruiter/schema/application.schema.ts` — Add bulk schemas, Checklist, `components/ui/data-table.tsx` — Add optional row selection (+10 more)
+
+### Community 69 - "Community 69"
+Cohesion: 0.21
+Nodes (7): AdminMessagesPage(), config, AdminThreadView(), ThreadItem, ThreadLastMessage, ThreadUser, useAdminThreads()
 
 ### Community 70 - "Community 70"
 Cohesion: 0.29
@@ -627,8 +632,8 @@ Cohesion: 0.16
 Nodes (12): metadata, metadata, emptyEducation, emptyExperience, Props, ResumeBuilderForm(), useUpdateBuilderData(), BuilderEducationInput (+4 more)
 
 ### Community 104 - "Community 104"
-Cohesion: 0.15
-Nodes (14): AdminMessagesPage(), config, AdminThreadView(), config, hooks, Props, MessageItem, MessagesResponse (+6 more)
+Cohesion: 0.23
+Nodes (10): config, hooks, Props, MessageItem, MessagesResponse, SendMessagePayload, useAdminMessages(), useDeleteMessage() (+2 more)
 
 ### Community 105 - "Community 105"
 Cohesion: 0.21
@@ -846,7 +851,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.042) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 129` to `Community 103`, `Community 43`, `Community 171`, `Community 109`, `Community 112`, `Community 17`, `Community 21`, `Community 22`, `Community 87`, `Community 54`, `Community 55`, `Community 26`, `Community 28`, `Community 29`, `Community 95`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `apiClient()` connect `Community 37` to `Community 18`, `Community 19`, `Community 23`, `Community 33`, `Community 34`, `Community 42`, `Community 51`, `Community 65`, `Community 66`, `Community 67`, `Community 70`, `Community 74`, `Community 75`, `Community 79`, `Community 82`, `Community 86`, `Community 93`, `Community 94`, `Community 96`, `Community 104`, `Community 107`, `Community 113`, `Community 125`?**
+- **Why does `apiClient()` connect `Community 37` to `Community 18`, `Community 19`, `Community 23`, `Community 33`, `Community 34`, `Community 42`, `Community 51`, `Community 65`, `Community 66`, `Community 67`, `Community 69`, `Community 70`, `Community 74`, `Community 75`, `Community 79`, `Community 82`, `Community 86`, `Community 93`, `Community 94`, `Community 96`, `Community 104`, `Community 107`, `Community 113`, `Community 125`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Are the 28 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 28 INFERRED edges - model-reasoned connections that need verification._

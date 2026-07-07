@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { cn } from "@/lib/utils";
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -41,28 +40,30 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{
-              var e=localStorage.getItem("hireflow-ui");
-              var isDark=false;
-              if(e){
-                var t=JSON.parse(e).state||{};
-                if(t.theme==="dark") isDark=true;
-                else if(t.theme!=="light") isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
-              }else{
-                isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
-              }
-              if(isDark) document.documentElement.classList.add("dark");
-              else document.documentElement.classList.remove("dark");
-            }catch(err){}})()`,
+        var e=localStorage.getItem("hireflow-ui");
+        var isDark=false;
+        if(e){
+          var t=JSON.parse(e).state||{};
+          if(t.theme==="dark") isDark=true;
+          else if(t.theme!=="light")
+            isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }else{
+          isDark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+        }
+
+        if(isDark)
+          document.documentElement.classList.add("dark");
+        else
+          document.documentElement.classList.remove("dark");
+      }catch(e){}})();`,
           }}
         />
       </head>
 
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col bg-background">
         <Providers>{children}</Providers>
       </body>
     </html>
