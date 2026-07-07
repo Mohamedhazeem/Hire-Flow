@@ -1,9 +1,8 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { prisma } from "@/lib/prisma";
 import { checkRateLimit } from "@/lib/rate-limiter";
-import { NotFoundError } from "@/lib/api-error";
+import { jobService } from "@/lib/services/job-service";
 
 async function handlePOST(
   _request: NextRequest,
@@ -11,21 +10,10 @@ async function handlePOST(
 ) {
   const { id } = await params;
 
-  const job = await prisma.job.findUnique({
-    where: { id },
-    select: { id: true },
-  });
-
-  if (!job) throw new NotFoundError("Job not found");
-
   checkRateLimit(`view:${id}`, { max: 100, windowMs: 60000 });
 
-  await prisma.job.update({
-    where: { id },
-    data: { viewCount: { increment: 1 } },
-  });
-
-  return ok({ success: true });
+  const result = await jobService.incrementView(id);
+  return ok(result);
 }
 
 export const POST = withErrorHandler(handlePOST);
