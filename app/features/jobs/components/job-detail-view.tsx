@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { motion } from "motion/react";
 import { apiClient } from "@/lib/api-client";
+import { hydrator } from "@/lib/hydration";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ApplyModal } from "./apply-modal";
 import { CompanyPreviewCard } from "@/components/shared/company-preview-card";
@@ -15,13 +16,6 @@ import { MapPinIcon, BriefcaseIcon, ArrowLeftIcon, AlertCircleIcon } from "lucid
 import Link from "next/link";
 import Image from "next/image";
 
-function fmtSalary(s: number | null, m: number | null, c: string) {
-  if (s != null && m != null) return `${c}${s.toLocaleString("en-US")} - ${m.toLocaleString("en-US")}`;
-  if (s != null) return `${c}${s.toLocaleString("en-US")}+`;
-  if (m != null) return `Up to ${c}${m.toLocaleString("en-US")}`;
-  return null;
-}
-
 export function JobDetailView({ jobId }: { jobId?: string }) {
   const params = useParams();
   const rawId = jobId ?? params.id;
@@ -29,6 +23,14 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
   const { data: session } = useSession();
   const [showApply, setShowApply] = useState(false);
   const [now] = useState(() => Date.now());
+  const hydrated = useSyncExternalStore(
+    hydrator.subscribe,
+    hydrator.getSnapshot,
+    hydrator.getServerSnapshot,
+  );
+
+  const fmt = (n: number) =>
+    hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US");
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["job", id],
@@ -138,7 +140,11 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
 
       {data.salaryMin != null || data.salaryMax != null ? (
         <p className="text-lg font-semibold text-text-heading mb-4">
-          {fmtSalary(data.salaryMin, data.salaryMax, data.salaryCurrency ?? "USD")}
+          {data.salaryMin != null && data.salaryMax != null
+            ? `${data.salaryCurrency ?? "USD"}${fmt(data.salaryMin)} - ${fmt(data.salaryMax)}`
+            : data.salaryMin != null
+              ? `${data.salaryCurrency ?? "USD"}${fmt(data.salaryMin)}+`
+              : `Up to ${data.salaryCurrency ?? "USD"}${fmt(data.salaryMax!)}`}
         </p>
       ) : null}
 

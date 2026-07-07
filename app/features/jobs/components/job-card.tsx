@@ -11,17 +11,8 @@ import {
   TimerOffIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { hydrator } from "@/lib/hydration";
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
-
-const hydrator = {
-  subscribe: (cb: () => void) => {
-    if (typeof window === "undefined") return () => {};
-    cb();
-    return () => {};
-  },
-  getSnapshot: () => (typeof window !== "undefined" ? "client" : "server"),
-  getServerSnapshot: () => "server",
-};
 
 export type JobCardProps = {
   id: string;

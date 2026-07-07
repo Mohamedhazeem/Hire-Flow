@@ -4,13 +4,14 @@ import { apiClient } from "@/lib/api-client";
 type ToggleResponse = { bookmarked: boolean; id: string };
 type CheckResponse = { bookmarked: boolean };
 
-export function useBookmarkedIds() {
+export function useBookmarkedIds(enabled?: boolean) {
   return useQuery<string[]>({
     queryKey: ["user", "bookmarks", "ids"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/bookmarks") as { data: Array<{ jobId: string }> };
+      const res = (await apiClient("/api/user/bookmarks")) as { data: Array<{ jobId: string }> };
       return res.data.map((b) => b.jobId);
     },
+    enabled,
     staleTime: 30_000,
   });
 }
@@ -19,7 +20,9 @@ export function useBookmarkedJobs() {
   return useQuery({
     queryKey: ["user", "bookmarks", "jobs"],
     queryFn: async () => {
-      const res = await apiClient("/api/user/bookmarks") as { data: Array<Record<string, unknown>> };
+      const res = (await apiClient("/api/user/bookmarks")) as {
+        data: Array<Record<string, unknown>>;
+      };
       return res.data;
     },
     staleTime: 30_000,

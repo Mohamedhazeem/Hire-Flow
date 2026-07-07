@@ -15,7 +15,7 @@ type SaveJobButtonProps = {
 export function SaveJobButton({ jobId, size = "sm" }: SaveJobButtonProps) {
   const router = useRouter();
   const { data: session } = useSession();
-  const { data: bookmarkedIds = [], isLoading: idsLoading } = useBookmarkedIds();
+  const { data: bookmarkedIds = [], isLoading: idsLoading } = useBookmarkedIds(!!session?.user);
   const { mutate: toggle, isPending: toggling } = useToggleBookmark();
 
   const isBookmarked = bookmarkedIds.includes(jobId);
@@ -51,19 +51,14 @@ export function SaveJobButton({ jobId, size = "sm" }: SaveJobButtonProps) {
       className={cn(
         "inline-flex items-center justify-center rounded-lg shrink-0 transition-colors",
         sizeClass,
-        isBookmarked
-          ? "text-brand hover:text-brand/80"
-          : "text-text-muted hover:text-brand",
+        isBookmarked ? "text-brand hover:text-brand/80" : "text-text-muted hover:text-brand",
         "disabled:opacity-50 disabled:cursor-not-allowed",
       )}
     >
       {toggling ? (
         <Loader2Icon className={cn(iconSize, "animate-spin")} />
       ) : (
-        <BookmarkIcon
-          className={iconSize}
-          fill={isBookmarked ? "currentColor" : "none"}
-        />
+        <BookmarkIcon className={iconSize} fill={isBookmarked ? "currentColor" : "none"} />
       )}
     </button>
   );

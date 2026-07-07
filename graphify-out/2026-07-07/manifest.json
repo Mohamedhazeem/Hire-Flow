@@ -1820,8 +1820,8 @@
     "semantic_hash": ""
   },
   "components/ui/theme-initializer.tsx": {
-    "mtime": 1783391866.3182933,
-    "ast_hash": "0de074110eaeaf1fda720e21fcf37bea",
+    "mtime": 1783393656.5364132,
+    "ast_hash": "86e8a841448fc6d443db24ed5dad1d6e",
     "semantic_hash": ""
   },
   "components/ui/theme-toggle.tsx": {

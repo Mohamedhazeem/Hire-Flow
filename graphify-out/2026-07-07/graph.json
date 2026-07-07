@@ -810,7 +810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_admin_messages_page_tsx_messages_page",
-      "community": 69,
+      "community": 104,
       "norm_label": "page.tsx"
     },
     {
@@ -820,7 +820,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "app_roles_admin_messages_page_tsx_messages_page_page",
-      "community": 69,
+      "community": 104,
       "norm_label": "page()"
     },
     {
@@ -4170,7 +4170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_message_page",
-      "community": 69,
+      "community": 104,
       "norm_label": "admin-message-page.tsx"
     },
     {
@@ -4180,7 +4180,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_admin_message_page_config",
-      "community": 69,
+      "community": 104,
       "norm_label": "config"
     },
     {
@@ -4190,7 +4190,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_admin_message_page_adminmessagespage",
-      "community": 69,
+      "community": 104,
       "norm_label": "adminmessagespage()"
     },
     {
@@ -4290,7 +4290,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "components_admin_thread_view_adminthreadview",
-      "community": 69,
+      "community": 104,
       "norm_label": "adminthreadview()"
     },
     {
@@ -4810,7 +4810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "messages_use_admin_threads",
-      "community": 69,
+      "community": 37,
       "norm_label": "use-admin-threads.ts"
     },
     {
@@ -4820,7 +4820,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "messages_use_admin_threads_threaduser",
-      "community": 69,
+      "community": 37,
       "norm_label": "threaduser"
     },
     {
@@ -4830,7 +4830,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "messages_use_admin_threads_threadlastmessage",
-      "community": 69,
+      "community": 37,
       "norm_label": "threadlastmessage"
     },
     {
@@ -4840,7 +4840,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "messages_use_admin_threads_threaditem",
-      "community": 69,
+      "community": 37,
       "norm_label": "threaditem"
     },
     {
@@ -4850,7 +4850,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "messages_use_admin_threads_useadminthreads",
-      "community": 69,
+      "community": 104,
       "norm_label": "useadminthreads()"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "messages_use_admin_threads_useinvalidatethreads",
-      "community": 69,
+      "community": 37,
       "norm_label": "useinvalidatethreads()"
     },
     {
@@ -14787,7 +14787,7 @@
       "label": "ThemeInitializer()",
       "file_type": "code",
       "source_file": "components/ui/theme-initializer.tsx",
-      "source_location": "L36",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "ui_theme_initializer_themeinitializer",
       "community": 119,
@@ -49907,9 +49907,9 @@
       "source_file": "app/features/jobs/components/job-card.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_job_card",
-      "target": "components_job_card_hydrator",
-      "confidence_score": 1.0
+      "target": "components_job_card_hydrator"
     },
     {
       "relation": "contains",
@@ -68971,9 +68971,9 @@
       "source_file": "components/ui/theme-initializer.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_theme_initializer",
-      "target": "stores_ui_store_useuistore",
-      "confidence_score": 1.0
+      "target": "stores_ui_store_useuistore"
     },
     {
       "relation": "contains",
