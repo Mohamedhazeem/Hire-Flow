@@ -17,6 +17,7 @@ export default async function AdminRecruiterDetailPage({ params }: Props) {
       id: true,
       name: true,
       email: true,
+      image: true,
       role: true,
       banned: true,
       banReason: true,
@@ -27,7 +28,7 @@ export default async function AdminRecruiterDetailPage({ params }: Props) {
         select: {
           role: true,
           company: {
-            select: { id: true, name: true },
+            select: { id: true, name: true, logoUrl: true },
           },
         },
       },
@@ -57,14 +58,22 @@ export default async function AdminRecruiterDetailPage({ params }: Props) {
     : [];
 
   const serialized = {
-    ...user,
-    createdAt: user.createdAt.toISOString(),
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    image: user.image,
+    role: user.role,
+    banned: user.banned,
+    banReason: user.banReason,
     banExpiresAt: user.banExpiresAt?.toISOString() ?? null,
+    emailVerified: user.emailVerified,
+    createdAt: user.createdAt.toISOString(),
     companyMembership: user.companyMembership
       ? {
           role: user.companyMembership.role,
           companyName: user.companyMembership.company.name,
           companyId: user.companyMembership.company.id,
+          companyLogo: user.companyMembership.company.logoUrl,
         }
       : null,
     jobs: jobs.map((j) => ({

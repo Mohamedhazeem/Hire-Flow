@@ -790,8 +790,8 @@
     "semantic_hash": ""
   },
   "app/features/auth/components/auth-layout.tsx": {
-    "mtime": 1782626576.5704682,
-    "ast_hash": "9aadd5852f85fa9a2cc35967f496b936",
+    "mtime": 1783409388.5000324,
+    "ast_hash": "acb0401797e3991ec93e7de2e3ae50e0",
     "semantic_hash": ""
   },
   "app/features/auth/components/email/reset-password-email.tsx": {
@@ -2312,6 +2312,41 @@
   "lib/hydration.ts": {
     "mtime": 1783407493.3128033,
     "ast_hash": "af9cca4a43665d574f0cd01de4c0bdcf",
+    "semantic_hash": ""
+  },
+  "app/features/auth/components/auth-background.tsx": {
+    "mtime": 1783408524.9109192,
+    "ast_hash": "ed1055089e94ce145ea0b689dcd7f27e",
+    "semantic_hash": ""
+  },
+  "app/features/auth/components/auth-card.tsx": {
+    "mtime": 1783409376.189545,
+    "ast_hash": "fbbc96bce1dd6786e858ae96ec87c0d8",
+    "semantic_hash": ""
+  },
+  "app/features/particles/dust-particle.tsx": {
+    "mtime": 1783409209.4674654,
+    "ast_hash": "9d1c96edd8d60f0bb959ee1dfb8499ac",
+    "semantic_hash": ""
+  },
+  "app/features/particles/hash.ts": {
+    "mtime": 1783408423.2734382,
+    "ast_hash": "c22177f730d1560cfbb3271e454ea8bb",
+    "semantic_hash": ""
+  },
+  "app/features/particles/particle-config.ts": {
+    "mtime": 1783409144.6849349,
+    "ast_hash": "26938d06bca9d0bdb8a10893e2aa8600",
+    "semantic_hash": ""
+  },
+  "app/features/particles/particle-types.ts": {
+    "mtime": 1783409131.140575,
+    "ast_hash": "cf8ff01bbdce3f304b036526e086eb67",
+    "semantic_hash": ""
+  },
+  "app/features/particles/particle-varient.ts": {
+    "mtime": 1783409354.3748007,
+    "ast_hash": "cdfce53720f0d8e13cd72ba410e683c7",
     "semantic_hash": ""
   }
 }
