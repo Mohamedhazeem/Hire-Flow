@@ -2439,11 +2439,6 @@
     "ast_hash": "5546874e486e6d1c625a589896adf983",
     "semantic_hash": ""
   },
-  ".kilo/plans/1783392165444-solid-principles-refactor.md": {
-    "mtime": 1783438119.0612655,
-    "ast_hash": "ca78a773850bee30a55e9e0a26f3bb23",
-    "semantic_hash": ""
-  },
   "app/features/admin/queries/invite-queries.ts": {
     "mtime": 1783438645.3751721,
     "ast_hash": "2d47d7e481b8d6d4140e9da32ee35056",
@@ -2517,11 +2512,6 @@
   "lib/services/user-service.ts": {
     "mtime": 1783439427.7816355,
     "ast_hash": "624168a33e832a2d9782a3ef674a0486",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1783392165444-db-swap-readiness.md": {
-    "mtime": 1783440622.9887302,
-    "ast_hash": "d73ca63ca91439165de29cb47d90e634",
     "semantic_hash": ""
   }
 }
