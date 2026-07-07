@@ -10,6 +10,7 @@ import {
   useDeleteUser,
 } from "@/app/features/admin/hooks/use-admin-users";
 import { BanDialog } from "@/app/features/admin/components/ban-dialog";
+import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -171,18 +172,14 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
 
   const handleRevokeSessions = useCallback(
     (userId: string) => {
-      if (confirm("Revoke all sessions for this user?")) {
-        revokeSessions.mutate(userId);
-      }
+      revokeSessions.mutate(userId);
     },
     [revokeSessions],
   );
 
-  const handleDelete = useCallback(
-    (userId: string, userName: string) => {
-      if (confirm(`Delete user "${userName}"? This cannot be undone.`)) {
-        deleteUser.mutate(userId);
-      }
+  const handleDeleteUser = useCallback(
+    (userId: string) => {
+      deleteUser.mutate(userId);
     },
     [deleteUser],
   );
@@ -257,22 +254,34 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
             banReason={row.banReason}
           />
           <div className="hidden sm:inline text-text-muted">|</div>
-          <ActionButton
-            icon={<LogOut className="size-4" />}
-            label="Revoke"
-            onClick={() => handleRevokeSessions(row.id)}
-            disabled={revokeSessions.isPending}
-            title="Revoke sessions"
-          />
+          <ConfirmActionButton
+            action={() => handleRevokeSessions(row.id)}
+            isPending={revokeSessions.isPending}
+            title="Revoke Sessions"
+            description="This will sign the user out of all devices. They will need to log in again."
+            confirmLabel="Revoke All Sessions"
+            variant="ghost"
+            size="sm"
+            dialogVariant="warning"
+          >
+            <LogOut className="size-4 sm:mr-1" />
+            <span className="hidden sm:inline">Revoke</span>
+          </ConfirmActionButton>
           <div className="hidden sm:inline text-text-muted">|</div>
-          <ActionButton
-            icon={<Trash2 className="size-4" />}
-            label="Delete"
-            onClick={() => handleDelete(row.id, row.name)}
-            disabled={deleteUser.isPending}
-            title="Delete user"
-            color="error"
-          />
+          <ConfirmActionButton
+            action={() => handleDeleteUser(row.id)}
+            isPending={deleteUser.isPending}
+            title={`Delete ${row.name}`}
+            description="This will permanently delete the user account and all associated data. This action cannot be undone."
+            confirmLabel="Delete User"
+            variant="ghost"
+            size="sm"
+            dialogVariant="destructive"
+            className="h-8 px-2 text-xs text-error hover:text-error"
+          >
+            <Trash2 className="size-4 sm:mr-1" />
+            <span className="hidden sm:inline">Delete</span>
+          </ConfirmActionButton>
         </div>
       ),
     },
