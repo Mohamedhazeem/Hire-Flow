@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783412217.4241698,
-    "ast_hash": "8b41325cf085d94a97ed9f47473a6b4f",
+    "mtime": 1783430369.2854235,
+    "ast_hash": "30ce8b6983ac914438ac4c20697d8ab1",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {

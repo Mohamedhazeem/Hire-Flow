@@ -91,6 +91,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "title",
       header: "Title",
+      align: "center",
       cell: (row) => (
         <span className="font-medium text-text-heading max-w-xs truncate block">{row.title}</span>
       ),
@@ -98,11 +99,13 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "company",
       header: "Company",
+      align: "center",
       cell: (row) => <span className="text-text-body">{row.companyName ?? "—"}</span>,
     },
     {
       key: "recruiter",
       header: "Recruiter",
+      align: "center",
       cell: (row) => (
         <span className="text-text-body">{row.recruiterName ?? row.recruiterEmail}</span>
       ),
@@ -110,6 +113,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "status",
       header: "Status",
+      align: "center",
       cell: (row) => (
         <Badge variant={row.isActive ? "default" : "secondary"}>
           {row.isActive ? "Active" : "Inactive"}
@@ -119,7 +123,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "applications",
       header: "Apps",
-      className: "text-center",
+      align: "center",
       cell: (row) => (
         <span className="text-text-body text-center block">{row.applicationCount}</span>
       ),
@@ -127,17 +131,19 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "views",
       header: "Views",
-      className: "text-center",
+      align: "center",
       cell: (row) => <span className="text-text-body text-center block">{row.viewCount}</span>,
     },
     {
       key: "workMode",
       header: "Mode",
+      align: "center",
       cell: (row) => <span className="text-text-body capitalize">{row.workMode}</span>,
     },
     {
       key: "employmentType",
       header: "Type",
+      align: "center",
       cell: (row) => (
         <span className="text-text-body capitalize">{row.employmentType.replace(/_/g, " ")}</span>
       ),
@@ -145,6 +151,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "createdAt",
       header: "Created",
+      align: "center",
       cell: (row) => (
         <span className="text-text-muted text-xs whitespace-nowrap">
           {new Date(row.createdAt).toLocaleDateString()}
@@ -154,7 +161,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
     {
       key: "actions",
       header: "Actions",
-      className: "text-right",
+      align: "center",
       cell: (row) => (
         <div className="flex items-center justify-end gap-1">
           <Button

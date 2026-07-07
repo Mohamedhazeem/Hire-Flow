@@ -1,6 +1,4 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -44,7 +42,12 @@ export function ApplicantTableToolbar({
           className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
         />
       </div>
-      <Select value={status} onValueChange={(v: string | null) => { if (v !== null) onStatusChange(v); }}>
+      <Select
+        value={status}
+        onValueChange={(v: string | null) => {
+          if (v !== null) onStatusChange(v);
+        }}
+      >
         <SelectTrigger className="w-full sm:w-36">
           <SelectValue>
             {STATUS_OPTIONS.find((o) => o.value === status)?.label ?? "All Status"}
@@ -54,7 +57,9 @@ export function ApplicantTableToolbar({
           {STATUS_OPTIONS.map((opt) => (
             <SelectItem key={opt.value} value={opt.value}>
               <span className="flex items-center gap-2">
-                <span className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")} />
+                <span
+                  className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")}
+                />
                 {opt.label}
               </span>
             </SelectItem>

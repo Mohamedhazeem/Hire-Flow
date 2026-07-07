@@ -8597,7 +8597,7 @@
       "label": "ApplicantTableToolbarProps",
       "file_type": "code",
       "source_file": "app/features/recruiter/components/applicant-table-toolbar.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "components_applicant_table_toolbar_applicanttabletoolbarprops",
       "community": 40,
@@ -8607,7 +8607,7 @@
       "label": "ApplicantTableToolbar()",
       "file_type": "code",
       "source_file": "app/features/recruiter/components/applicant-table-toolbar.tsx",
-      "source_location": "L25",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "components_applicant_table_toolbar_applicanttabletoolbar",
       "community": 40,
@@ -45538,9 +45538,9 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_people_table",
-      "target": "shared_confirm_action_button",
-      "confidence_score": 1.0
+      "target": "shared_confirm_action_button"
     },
     {
       "relation": "imports",
@@ -45549,9 +45549,9 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_people_table",
-      "target": "shared_confirm_action_button_confirmactionbutton",
-      "confidence_score": 1.0
+      "target": "shared_confirm_action_button_confirmactionbutton"
     },
     {
       "relation": "imports_from",
@@ -84355,5 +84355,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4c590180ea53ecca9969bd210ee69f9a66101475"
+  "built_at_commit": "ae4762adeac0298da1b9ddcc806ef66419c94481"
 }

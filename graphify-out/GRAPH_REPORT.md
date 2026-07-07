@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-07)
 
 ## Corpus Check
-- 475 files · ~172,307 words
+- 475 files · ~172,320 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4c590180`
+- Built from commit: `ae4762ad`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

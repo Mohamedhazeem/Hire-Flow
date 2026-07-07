@@ -48,12 +48,7 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
 
   if (currentlyBanned) {
     return (
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={handleUnban}
-        disabled={unbanUser.isPending}
-      >
+      <Button variant="ghost" size="sm" onClick={handleUnban} disabled={unbanUser.isPending}>
         <RotateCcw className="size-4 sm:mr-1" />
         <span className="hidden sm:inline">Unban</span>
       </Button>
@@ -62,7 +57,14 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={<Button variant="destructive" size="sm"><Ban className="size-4 sm:mr-1" /><span className="hidden sm:inline">Ban</span></Button>} />
+      <DialogTrigger
+        render={
+          <Button variant="destructive" size="sm">
+            <Ban className="size-4 sm:mr-1" />
+            <span className="hidden sm:inline">Ban</span>
+          </Button>
+        }
+      />
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Ban {userName}</DialogTitle>
@@ -72,7 +74,9 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
         </DialogHeader>
         <div className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="reason" className="text-sm font-medium">Reason (optional)</label>
+            <label htmlFor="reason" className="text-sm font-medium">
+              Reason (optional)
+            </label>
             <Input
               id="reason"
               placeholder="e.g. Violation of terms"
@@ -81,7 +85,9 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="expires" className="text-sm font-medium">Auto-unban after (days, optional)</label>
+            <label htmlFor="expires" className="text-sm font-medium">
+              Auto-unban after (days, optional)
+            </label>
             <Input
               id="expires"
               type="number"
@@ -91,11 +97,7 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
               onChange={(e) => setExpiresInDays(e.target.value)}
             />
           </div>
-          {banReason && (
-            <p className="text-xs text-text-muted">
-              Previous ban reason: {banReason}
-            </p>
-          )}
+          {banReason && <p className="text-xs text-text-muted">Previous ban reason: {banReason}</p>}
         </div>
         <DialogFooter>
           <Button variant="outline" onClick={() => setOpen(false)}>
