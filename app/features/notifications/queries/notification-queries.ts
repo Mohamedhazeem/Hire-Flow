@@ -43,3 +43,14 @@ export async function getUnreadCount(userId: string): Promise<number> {
     where: { userId, read: false },
   });
 }
+
+export async function markNotificationsRead(ids: string[], userId: string) {
+  const result = await prisma.notification.updateMany({
+    where: {
+      id: { in: ids },
+      userId,
+    },
+    data: { read: true },
+  });
+  return { updated: result.count };
+}

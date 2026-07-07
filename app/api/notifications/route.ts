@@ -6,9 +6,9 @@ import { withErrorHandler } from "@/lib/api-wrapper";
 import {
   listNotifications,
   getUnreadCount,
+  markNotificationsRead,
 } from "@/app/features/notifications/queries/notification-queries";
 import { MarkNotificationsReadSchema } from "@/app/features/notifications/schema/notification.schema";
-import { prisma } from "@/lib/prisma";
 
 async function handleGET(request: NextRequest) {
   const session = await auth.api.getSession({ headers: request.headers });
@@ -43,15 +43,9 @@ async function handlePATCH(request: NextRequest) {
     throw new ValidationError(input.error.issues.map((e) => e.message).join("; "));
   }
 
-  const result = await prisma.notification.updateMany({
-    where: {
-      id: { in: input.data.ids },
-      userId: session.user.id,
-    },
-    data: { read: true },
-  });
+  const result = await markNotificationsRead(input.data.ids, session.user.id);
 
-  return ok({ updated: result.count });
+  return ok(result);
 }
 
 export const GET = withErrorHandler(handleGET);
