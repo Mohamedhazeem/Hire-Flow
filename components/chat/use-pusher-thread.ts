@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { getPusherClient } from "@/lib/pusher-client";
 import type { MessageItem } from "@/components/chat/message-item";
+import { isValidThreadId } from "@/lib/thread-utils";
 
 export function usePusherThread(
   threadId: string,
@@ -13,7 +14,7 @@ export function usePusherThread(
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    if (!threadId.includes("_") || !currentUserId) return;
+    if (!isValidThreadId(threadId) || !currentUserId) return;
     const pusher = getPusherClient();
     if (!pusher) return;
     const channel = pusher.subscribe(`private-thread-${threadId}`);

@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { ValidationError, NotFoundError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { isValidThreadId, participatesInThread } from "@/lib/thread-utils";
 
 async function handleDELETE(
   _request: NextRequest,
@@ -12,12 +13,11 @@ async function handleDELETE(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId, messageId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  if (!threadId.includes(adminUser.id)) {
+  if (!participatesInThread(threadId, adminUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 

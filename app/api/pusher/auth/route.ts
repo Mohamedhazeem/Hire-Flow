@@ -1,5 +1,6 @@
 import { auth } from "@/app/features/auth/libs/auth";
 import { NextResponse } from "next/server";
+import { participatesInThread, isValidThreadId } from "@/lib/thread-utils";
 
 export async function POST(request: Request) {
   const session = await auth.api.getSession({ headers: request.headers });
@@ -18,11 +19,10 @@ export async function POST(request: Request) {
 
   if (channelName.startsWith("private-thread-")) {
     const threadId = channelName.slice("private-thread-".length);
-    const parts = threadId.split("_");
-    if (parts.length !== 2 || !parts[0] || !parts[1]) {
+    if (!isValidThreadId(threadId)) {
       return new Response("Invalid channel name", { status: 403 });
     }
-    if (session.user.id !== parts[0] && session.user.id !== parts[1]) {
+    if (!participatesInThread(threadId, session.user.id)) {
       return new Response("Not a participant in this thread", { status: 403 });
     }
   }

@@ -10,18 +10,10 @@ import { usePresenceStore } from "@/features/messages/stores/presence-store";
 import { formatFileSize } from "@/components/chat/message-bubble";
 import { usePusherThread } from "./use-pusher-thread";
 import type { ThreadViewHooks, ThreadViewConfig } from "./shared-thread-view";
+import { getOtherUserId, isValidThreadId } from "@/lib/thread-utils";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif", "application/pdf"];
-
-function getOtherUserId(threadId: string, userId: string): string | null {
-  if (!threadId.includes(userId)) return null;
-  return threadId.startsWith(userId + "_")
-    ? threadId.slice(userId.length + 1)
-    : threadId.endsWith("_" + userId)
-      ? threadId.slice(0, threadId.length - userId.length - 1)
-      : null;
-}
 
 export function useThreadView(threadId: string, hooks: ThreadViewHooks, config: ThreadViewConfig, chatNameOverride?: string) {
   const router = useRouter();

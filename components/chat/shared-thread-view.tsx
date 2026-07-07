@@ -5,6 +5,7 @@ import { ChatHeader } from "@/components/chat/chat-header";
 import { ChatInputArea } from "@/components/chat/chat-input-area";
 import { ChatMessageList } from "@/components/chat/chat-message-list";
 import { useThreadView } from "@/components/chat/use-thread-view";
+import { isValidThreadId } from "@/lib/thread-utils";
 
 export type ThreadViewHooks = {
   useMessages: (threadId: string) => {
@@ -38,7 +39,7 @@ type Props = {
 export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOverride }: Props) {
   const view = useThreadView(threadId, hooks, config, chatNameOverride);
 
-  if (!threadId.includes("_")) {
+  if (!isValidThreadId(threadId)) {
     return (
       <div className="flex h-full items-center justify-center">
         <p className="text-text-muted text-sm">Invalid thread identifier.</p>

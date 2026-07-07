@@ -2,11 +2,7 @@ import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
-
-function getOtherUserId(threadId: string, userId: string): string {
-  const parts = threadId.split("_");
-  return parts[0] === userId ? parts[1] : parts[0];
-}
+import { getOtherUserId } from "@/lib/thread-utils";
 
 async function handleGET() {
   const currentUser = await requireRole(["recruiter", "user"]);

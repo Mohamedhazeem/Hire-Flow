@@ -10,6 +10,7 @@ import { withErrorHandler } from "@/lib/api-wrapper";
 import { verifyRecruiterApplicantRelationship } from "@/app/features/recruiter/libs/verify-recruiter-applicant-relationship";
 import { checkMessageRateLimit } from "@/app/features/recruiter/libs/rate-limit-message";
 import { createNotification } from "@/lib/notifications";
+import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
 
 const SendMessageSchema = z
   .object({
@@ -35,12 +36,6 @@ const messageSelect = {
   read: true,
 } as const;
 
-function getOtherUserId(threadId: string, userId: string): string | null {
-  const parts = threadId.split("_");
-  if (parts.length !== 2) return null;
-  return parts[0] === userId ? parts[1] : parts[0];
-}
-
 async function handleGET(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
@@ -51,11 +46,10 @@ async function handleGET(
   const cursor = searchParams.get("cursor") ?? undefined;
   const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
-  if (!threadId.includes(currentUser.id)) {
+  if (!participatesInThread(threadId, currentUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 
@@ -96,8 +90,7 @@ async function handlePOST(
   const currentUser = await requireRole(["recruiter", "user"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
 
@@ -162,12 +155,11 @@ async function handleDELETE(
   const currentUser = await requireRole(["recruiter", "user"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  if (!threadId.includes(currentUser.id)) {
+  if (!participatesInThread(threadId, currentUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 

@@ -9,6 +9,7 @@ import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
 import { checkMessageRateLimit } from "@/app/features/recruiter/libs/rate-limit-message";
 import { createNotification } from "@/lib/notifications";
+import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
 
 const SendMessageSchema = z
   .object({
@@ -34,12 +35,6 @@ const messageSelect = {
   read: true,
 } as const;
 
-function getOtherUserId(threadId: string, userId: string): string | null {
-  const parts = threadId.split("_");
-  if (parts.length !== 2) return null;
-  return parts[0] === userId ? parts[1] : parts[0];
-}
-
 async function handleGET(
   request: NextRequest,
   { params }: { params: Promise<{ threadId: string }> },
@@ -50,11 +45,10 @@ async function handleGET(
   const cursor = searchParams.get("cursor") ?? undefined;
   const limit = searchParams.get("limit") ? Number(searchParams.get("limit")) : 30;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
-  if (!threadId.includes(adminUser.id)) {
+  if (!participatesInThread(threadId, adminUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 
@@ -89,8 +83,7 @@ async function handlePOST(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
 
@@ -151,12 +144,11 @@ async function handleDELETE(
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { threadId } = await params;
 
-  const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+  if (!isValidThreadId(threadId)) {
     throw new ValidationError("Invalid thread ID format");
   }
 
-  if (!threadId.includes(adminUser.id)) {
+  if (!participatesInThread(threadId, adminUser.id)) {
     throw new ValidationError("You are not a participant in this thread");
   }
 

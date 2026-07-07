@@ -125,7 +125,7 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
   }, [router, config.basePath]);
 
   return (
-    <div className="flex flex-1 min-h-0 overflow-hidden -m-4 md:-m-6 lg:-m-8">
+    <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 md:-mx-6 lg:-mx-8">
       <div
         className={cn(
           "flex-1 flex flex-col min-h-0 lg:flex-none",

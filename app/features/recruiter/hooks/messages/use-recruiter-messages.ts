@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { ApiResponse } from "@/lib/api-response";
+import { isValidThreadId } from "@/lib/thread-utils";
 
 export type MessageItem = {
   id: string;
@@ -54,7 +55,7 @@ export function useRecruiterMessages(threadId: string) {
       lastPage.data.meta.hasNextPage
         ? lastPage.data.meta.nextCursor
         : undefined,
-    enabled: threadId.includes("_"),
+    enabled: isValidThreadId(threadId),
   });
 }
 
