@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-07-07)
 
 ## Corpus Check
-- 500 files · ~174,960 words
+- 500 files · ~175,967 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2961 nodes · 5441 edges · 179 communities (161 shown, 18 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.8)
+- 2946 nodes · 5343 edges · 177 communities (159 shown, 18 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 60 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `01213ae2`
+- Built from commit: `d1a8fbf6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -180,41 +180,39 @@
 - [[_COMMUNITY_Community 170|Community 170]]
 - [[_COMMUNITY_Community 171|Community 171]]
 - [[_COMMUNITY_Community 172|Community 172]]
-- [[_COMMUNITY_Community 173|Community 173]]
-- [[_COMMUNITY_Community 174|Community 174]]
 - [[_COMMUNITY_Community 175|Community 175]]
 - [[_COMMUNITY_Community 176|Community 176]]
 - [[_COMMUNITY_Community 177|Community 177]]
 - [[_COMMUNITY_Community 178|Community 178]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `requireRole()` - 126 edges
-2. `ok()` - 109 edges
+1. `requireRole()` - 118 edges
+2. `ok()` - 99 edges
 3. `cn()` - 99 edges
-4. `withErrorHandler()` - 60 edges
-5. `Phase 2: Recruiter` - 59 edges
-6. `ValidationError` - 50 edges
+4. `Phase 2: Recruiter` - 59 edges
+5. `withErrorHandler()` - 55 edges
+6. `ValidationError` - 48 edges
 7. `apiClient()` - 41 edges
 8. `Button()` - 40 edges
-9. `NotFoundError` - 39 edges
+9. `NotFoundError` - 36 edges
 10. `Phase 3: User (Job Seeker)` - 34 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
+  app/api/recruiter/jobs/[id]/route.ts → lib/api-response.ts
+- `handleDELETE()` --calls--> `ok()`  [INFERRED]
   app/api/admin/jobs/[id]/route.ts → lib/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
-  app/api/jobs/[id]/route.ts → lib/api-response.ts
-- `handleGET()` --calls--> `ok()`  [INFERRED]
   app/api/jobs/route.ts → lib/api-response.ts
-- `handlePOST()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/invite/accept/route.ts → lib/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/invite/route.ts → lib/api-response.ts
+  app/api/recruiter/jobs/[id]/analytics/route.ts → lib/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/recruiter/messages/search/route.ts → lib/api-response.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (179 total, 18 thin omitted)
+## Communities (177 total, 18 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.03
@@ -285,56 +283,56 @@ Cohesion: 0.29
 Nodes (7): Authentication & Sessions, Authorization & Data Boundaries, Data Integrity, Input & Injection, Real-time & External Services, Security Audit Checklist (Manual), SEO & Public Access
 
 ### Community 18 - "Community 18"
-Cohesion: 0.05
-Nodes (56): Props, metadata, metadata, CHART_TOOLTIP_STYLE, DistributionBarChart(), DistributionBarChartProps, FunnelChart(), FunnelChartProps (+48 more)
+Cohesion: 0.06
+Nodes (43): Props, metadata, metadata, CHART_TOOLTIP_STYLE, DistributionBarChart(), DistributionBarChartProps, FunnelChart(), FunnelChartProps (+35 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.06
-Nodes (40): saveResumeBuilder(), metadata, metadata, AiSuggestionsPanel(), AiSuggestionsPanelProps, priorityColors, scoreColor(), typeLabels (+32 more)
+Cohesion: 0.11
+Nodes (25): AiSuggestionsPanel(), AiSuggestionsPanelProps, priorityColors, scoreColor(), typeLabels, formatDate(), formatSize(), ResumeCard() (+17 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.04
 Nodes (48): Active Global Context Snapshot, Admin Applicant Detail View (cross-phase), ApplicationStatusChange (Phase 3), Auth-Aware Navbar & Redirect (Phase 4), Completed Steps, Created File Paths (Grouped by Phase), Hire Flow Next - Project Manifest, Job Visibility Dual-Gate (Phase 4) (+40 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.13
-Nodes (15): BulkInviteResult, metadata, InviteRecruiterForm(), Tab, RecruiterTeamList(), BulkEmailsInput, BulkEmailsSchema, RecruiterAcceptInviteInput (+7 more)
+Cohesion: 0.26
+Nodes (10): bulkInviteRecruiters(), BulkInviteResult, Tab, RecruiterAcceptInviteInput, RecruiterBulkInviteFormInput, RecruiterBulkInviteFormSchema, RecruiterBulkInviteInput, RecruiterBulkInviteSchema (+2 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.11
-Nodes (27): GET, DELETE, GET, handleDELETE(), handleGET(), handlePOST(), POST, ConflictError (+19 more)
+Nodes (27): DELETE, GET, handleDELETE(), handleGET(), handlePOST(), POST, ConflictError, createNotification() (+19 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.15
-Nodes (19): ApplicantDetailDialogsProps, ApplicantsTableDialogsProps, ConfirmStatusDialogProps, InterviewFormData, OfferFormData, RejectDialog(), RejectDialogProps, RejectFormData (+11 more)
+Cohesion: 0.14
+Nodes (19): ApplicantDetailDialogsProps, ApplicantsTableDialogs(), ApplicantsTableDialogsProps, ConfirmStatusDialogProps, InterviewFormData, OfferFormData, RejectDialog(), RejectDialogProps (+11 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.13
 Nodes (13): geistMono, geistSans, inter, metadata, RootLayout(), Providers(), MobileMenuButton(), RoleLayoutClientProps (+5 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.15
-Nodes (15): BulkInviteResult, Tab, AdminAcceptInviteInput, AdminAcceptInviteSchema, AdminBanUserSchema, AdminBulkInviteFormInput, AdminBulkInviteFormSchema, AdminBulkInviteInput (+7 more)
+Cohesion: 0.14
+Nodes (17): bulkInviteAdmins(), BulkInviteResult, Tab, BulkEmailsInput, BulkEmailsSchema, AdminAcceptInviteInput, AdminBanUserSchema, AdminBulkInviteFormInput (+9 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.10
-Nodes (26): inviteAdmin(), inviteRecruiter(), SocialProvider, { POST, GET }, DELETE, DELETE, POST, GET (+18 more)
+Nodes (26): saveResumeBuilder(), DELETE, handleDELETE(), DELETE, DELETE, handleDELETE(), DELETE, DELETE (+18 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.16
-Nodes (11): config, RecruiterMessagesPage(), config, hooks, Props, RecruiterThreadView(), useDeleteRecruiterMessage, useDeleteRecruiterThread (+3 more)
+Cohesion: 0.13
+Nodes (12): AdminUserProfileView(), AdminUserProfileViewProps, App, useAdminUserApplications(), ApplicantProfileCard(), ApplicantProfileCardProps, IconBox(), IconBoxProps (+4 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.13
-Nodes (20): upsertProfile(), emptyExperience, ExperienceListEditor(), Props, ProfileForm(), Props, WORK_MODE_OPTIONS, emptyLink (+12 more)
+Cohesion: 0.11
+Nodes (22): upsertProfile(), ChatInputAreaProps, emptyExperience, ExperienceListEditor(), Props, ProfileForm(), Props, WORK_MODE_OPTIONS (+14 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.09
-Nodes (26): metadata, Props, metadata, Props, AdminApplicantDetailRoute(), AdminApplicantDetailPage(), AdminApplicantDetailPageProps, ApplicantDetailDialogs() (+18 more)
+Cohesion: 0.17
+Nodes (11): metadata, Props, ApplicantDetailDialogs(), ApplicantDetailPage(), ApplicantDetailPageProps, ApplicantDetailSkeleton(), useApplicantDetail(), useTransitionStatusWithRefresh() (+3 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.09
-Nodes (18): metadata, ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTable(), PeopleTableProps, ROLE_OPTIONS (+10 more)
+Cohesion: 0.12
+Nodes (14): ActionButton(), ActionButtonProps, capitalizeLabel(), formatLabel(), PeopleTable(), PeopleTableProps, ROLE_OPTIONS, UserRow (+6 more)
 
 ### Community 31 - "Community 31"
 Cohesion: 0.05
@@ -349,44 +347,44 @@ Cohesion: 0.10
 Nodes (19): Coverage: 100% of 113 files (58 routes, 27 hooks, 13 queries, 15 schemas), Every Route File Accounted For (58/58), Final File Inventory, Implementation Order, Modified Files (35), New Files (18), Phase 1: Message Route Handler Factory, Phase 2: Invite Cancel Route Factory (+11 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.10
-Nodes (22): metadata, EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), STATUS_BADGE (+14 more)
+Cohesion: 0.08
+Nodes (30): EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), STATUS_BADGE, WORK_MODE_LABELS (+22 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.18
-Nodes (10): button, buttonContainer, container, fallbackLink, heading, main, paragraph, ResetPasswordEmail() (+2 more)
+Cohesion: 0.06
+Nodes (32): AdminInviteEmail(), AdminInviteEmailProps, button, buttonContainer, container, fallbackLink, heading, main (+24 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.19
-Nodes (13): ChatInputArea(), ChatInputAreaProps, ChatMessageList(), ChatMessageListProps, AttachmentPreview(), AttachmentPreviewProps, fileIcon(), formatDateSeparator() (+5 more)
+Cohesion: 0.20
+Nodes (12): ChatInputArea(), ChatMessageList(), ChatMessageListProps, AttachmentPreview(), AttachmentPreviewProps, fileIcon(), formatDateSeparator(), formatFileSize() (+4 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.28
-Nodes (5): AcceptInviteClient(), AcceptInviteClientProps, metadata, Props, authClient
+Cohesion: 0.17
+Nodes (9): AcceptInviteClient(), AcceptInviteClientProps, metadata, Props, AuthCard(), Props, AuthLayout(), Props (+1 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.16
-Nodes (22): BanDialog(), BanDialogProps, BulkRejectDialogProps, RevertDialogProps, useBanUser(), useUnbanUser(), ConfirmDialogProps, VARIANT_BUTTON (+14 more)
+Cohesion: 0.19
+Nodes (16): BanDialog(), BanDialogProps, BulkRejectDialogProps, RevertDialogProps, useBanUser(), useUnbanUser(), PdfViewer, ResumePreviewDialogProps (+8 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.23
-Nodes (9): ADDITIONAL_HIDDEN_PREFIXES, AUTH_PAGES, HIDDEN_ROUTE_PREFIXES, PROTECTED_ROUTES, PUBLIC_CONTENT_PATHS, config, proxy(), getRedirectPath() (+1 more)
+Cohesion: 0.28
+Nodes (7): ADDITIONAL_HIDDEN_PREFIXES, AUTH_PAGES, HIDDEN_ROUTE_PREFIXES, PROTECTED_ROUTES, PUBLIC_CONTENT_PATHS, config, proxy()
 
 ### Community 40 - "Community 40"
-Cohesion: 0.12
-Nodes (28): AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, ApplicantTableFeedback(), FeedbackProps, ApplicantTableToolbarProps, cn(), Checkbox() (+20 more)
+Cohesion: 0.15
+Nodes (24): ApplicantTableFeedback(), FeedbackProps, ApplicantTableToolbar(), ApplicantTableToolbarProps, cn(), Checkbox(), DataTable(), DataTableProps (+16 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.07
 Nodes (29): 1. Statistics API — `app/api/user/applications/stats/route.ts`, 2. Dashboard Activity Panel — `app/features/user/components/activity-panel.tsx` (≤150 lines), 3. Dashboard Page — `app/(roles)/user/page.tsx` (≤150 lines), 4. Application Queries — `app/features/user/queries/user-application-queries.ts`, 5. Applications Page — `app/features/user/components/applications-page.tsx` (≤150 lines), 6. Application Detail View — Split into ≤150-line components, 7. Sidebar — `app/features/user/components/user-sidebar.tsx`, 8. Back-link Path Updates (+21 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.23
-Nodes (13): config, hooks, Props, createUseDeleteMessage(), createUseDeleteThread(), createUseMessages(), createUseSendMessage(), MessagesResponse (+5 more)
+Cohesion: 0.14
+Nodes (20): ThreadViewConfig, config, hooks, Props, config, hooks, Props, createUseDeleteMessage() (+12 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.07
-Nodes (23): GET, handleGET(), GET(), Props, GET, handleGET(), AdminUserDetailPage(), adapter (+15 more)
+Cohesion: 0.23
+Nodes (9): GET, handleGET(), getUserApplicationStats(), listUserApplications(), UserApplicationDetail, UserApplicationListResult, UserApplicationRow, GET (+1 more)
 
 ### Community 44 - "Community 44"
 Cohesion: 0.08
@@ -413,8 +411,8 @@ Cohesion: 0.11
 Nodes (15): CareerResourcesPage(), InterviewChecklistSection(), items, sectionVariants, ResourceHero(), ResourcesCTA(), ResumeTipsSection(), sectionVariants (+7 more)
 
 ### Community 50 - "Community 50"
-Cohesion: 0.10
-Nodes (17): metadata, Props, ApplicantTableColumnsProps, createApplicantTableColumns(), ApplicantTablePagination(), ApplicantTablePaginationProps, ApplicantTableToolbar(), ApplicantsTable() (+9 more)
+Cohesion: 0.15
+Nodes (7): metadata, metadata, Props, metadata, PageHeader(), PageHeaderProps, metadata
 
 ### Community 51 - "Community 51"
 Cohesion: 0.14
@@ -429,12 +427,12 @@ Cohesion: 0.09
 Nodes (22): 1. `app/features/public/hooks/use-sign-out.ts` (~12 lines), 1. `app/layout.tsx` — add PublicNavbar, 2. `app/features/auth/actions/login-action.ts` — accept returnUrl, 2. `components/shared/avatar-fallback.tsx` (~25 lines), 3. `app/features/auth/utils/getRedirectPath.ts` — support returnUrl, 3. `app/features/public/components/account-popover.tsx` (~110 lines), 4. `app/features/auth/components/login-form.tsx` — read returnUrl from searchParams, 4. `app/features/public/components/public-navbar.tsx` (~150 lines) (+14 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.11
-Nodes (10): inter, metadata, newFunction(), NotFound(), JobDetailPage(), EditJobPage(), EditBuilderPage(), ErrorPage() (+2 more)
+Cohesion: 0.12
+Nodes (9): inter, metadata, newFunction(), NotFound(), EditJobPage(), EditBuilderPage(), ErrorPage(), ErrorPageType (+1 more)
 
 ### Community 55 - "Community 55"
-Cohesion: 0.29
-Nodes (6): RecruiterDashboard(), DashboardData, getRecruiterDashboardStats(), RecentApplication, metadata, RecruiterPage()
+Cohesion: 0.14
+Nodes (11): metadata, metadata, AdminTeamList(), ApplicationActions(), Props, InviteAdminForm(), InviteRecruiterForm(), RecruiterTeamList() (+3 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.09
@@ -445,8 +443,8 @@ Cohesion: 0.09
 Nodes (21): 1. One-Time Bulk Action Constraint (per session), 2. Revert Mechanism (per-row), 3. Color-Coded Status Filter Tags, 4. Visual Feedback on Bulk Actions, 5. One-Time Constraint on Single (Inline) Actions Too, `app/api/recruiter/applications/[applicationId]/revert/route.ts` (NEW), `app/features/recruiter/components/applicants-table.tsx`, `app/features/recruiter/components/revert-dialog.tsx` (NEW) (+13 more)
 
 ### Community 58 - "Community 58"
-Cohesion: 0.10
-Nodes (17): CATEGORY_ICONS, CategoryStrip(), EmployerCTA(), FeaturedCompanies(), columns, Footer(), socials, HowItWorks() (+9 more)
+Cohesion: 0.06
+Nodes (30): metadata, CATEGORY_ICONS, CategoryStrip(), EmployerCTA(), FeaturedCompanies(), FilterSelect(), FilterSelectProps, columns (+22 more)
 
 ### Community 59 - "Community 59"
 Cohesion: 0.10
@@ -457,8 +455,8 @@ Cohesion: 0.10
 Nodes (20): compilerOptions, allowJs, esModuleInterop, forceConsistentCasingInFileNames, incremental, isolatedModules, jsx, lib (+12 more)
 
 ### Community 61 - "Community 61"
-Cohesion: 0.13
-Nodes (15): GET, handleGET(), generateMetadata(), FeaturedJobs(), FeaturedJobsGrid(), JobDetailView(), buildJobJsonLd(), ALLOWED_SORT_FIELDS (+7 more)
+Cohesion: 0.18
+Nodes (11): GET, handleGET(), FeaturedJobs(), FeaturedJobsGrid(), ALLOWED_SORT_FIELDS, ALLOWED_SORT_ORDERS, listPublicJobs(), PublicJobDetail (+3 more)
 
 ### Community 62 - "Community 62"
 Cohesion: 0.10
@@ -469,32 +467,32 @@ Cohesion: 0.10
 Nodes (19): 1. `app/features/jobs/components/job-search-bar.tsx`, 2. `app/features/jobs/components/filter-select.tsx`, 3. `lib/job-categories.ts`, 4. `job-list-page.tsx` (modified), 5. `public-job-queries.ts` (modified), 6. `app/api/jobs/route.ts` (modified), Architecture, Component Specifications (+11 more)
 
 ### Community 64 - "Community 64"
-Cohesion: 0.13
-Nodes (21): listJobs(), listJobs(), buildCursorMeta(), buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams, OffsetPaginationMeta, OffsetPaginationParams (+13 more)
+Cohesion: 0.36
+Nodes (8): listJobs(), listJobs(), buildOffsetMeta(), parseOffsetParams(), listApplicants(), AdminJobListResult, AdminJobRow, listUsers()
 
 ### Community 65 - "Community 65"
-Cohesion: 0.13
-Nodes (13): metadata, FilterSelect(), FilterSelectProps, HeroSearch(), cardVariants, containerVariants, EMPLOYMENT_TYPES, EXPERIENCE_LEVELS (+5 more)
+Cohesion: 0.17
+Nodes (12): metadata, Props, AdminApplicantDetailRoute(), AdminApplicantDetailPage(), AdminApplicantDetailPageProps, useAdminApplicantDetail(), ApplicantResumeCard(), ApplicantResumeCardProps (+4 more)
 
 ### Community 66 - "Community 66"
-Cohesion: 0.16
-Nodes (14): NotificationDropdownProps, notificationIconMap, NotificationItem, FilterButtonProps, DateRangePicker(), DateRangePickerProps, DateRangeValue, parseDate() (+6 more)
+Cohesion: 0.14
+Nodes (15): NotificationDropdownProps, notificationIconMap, NotificationItem, FilterButton(), FilterButtonProps, DateRangePicker(), DateRangePickerProps, DateRangeValue (+7 more)
 
 ### Community 67 - "Community 67"
-Cohesion: 0.20
-Nodes (9): adapter, ADMIN, JOB_TEMPLATES, main(), pool, prisma, RECRUITERS, upsertCredentialAccount() (+1 more)
+Cohesion: 0.08
+Nodes (19): realPusher, adapter, ADMIN, JOB_TEMPLATES, main(), pool, prisma, RECRUITERS (+11 more)
 
 ### Community 68 - "Community 68"
 Cohesion: 0.11
 Nodes (18): `app/api/recruiter/applications/bulk/status/route.ts` — New bulk API route, `app/features/recruiter/components/applicant-detail-page.tsx` — No change, `app/features/recruiter/components/applicants-table.tsx` — Add selection + bulk action bar, `app/features/recruiter/components/application-dialogs.tsx` — Add BulkRejectDialog, `app/features/recruiter/hooks/use-applications.ts` — Add bulk mutation hook, `app/features/recruiter/schema/application.schema.ts` — Add bulk schemas, Checklist, `components/ui/data-table.tsx` — Add optional row selection (+10 more)
 
 ### Community 69 - "Community 69"
-Cohesion: 0.19
-Nodes (9): MessagesPageConfig, Props, ThreadListItem(), ThreadListItemData, AdminMessagesPage(), config, AdminThreadView(), useAdminThreads (+1 more)
+Cohesion: 0.16
+Nodes (11): AdminMessagesPage(), config, AdminThreadView(), config, hooks, Props, useAdminMessages, useDeleteMessage (+3 more)
 
 ### Community 70 - "Community 70"
-Cohesion: 0.20
-Nodes (14): POST(), ChatHeader(), ChatHeaderProps, MessageItem, Props, SharedThreadView(), ThreadViewConfig, ThreadViewHooks (+6 more)
+Cohesion: 0.15
+Nodes (17): POST(), ChatHeader(), ChatHeaderProps, MessageItem, Props, SharedThreadView(), ThreadViewHooks, usePusherThread() (+9 more)
 
 ### Community 71 - "Community 71"
 Cohesion: 0.11
@@ -513,8 +511,8 @@ Cohesion: 0.16
 Nodes (12): NotificationDropdown(), notificationIconMap, NotificationItem, NotificationsPage(), NotificationsPageProps, Channel, NotificationItem, NotificationsResponse (+4 more)
 
 ### Community 75 - "Community 75"
-Cohesion: 0.08
-Nodes (18): metadata, ApplicationActions(), Props, ApplicationDetailView(), ApplicationHeader(), Props, ApplicationResumeSection(), Props (+10 more)
+Cohesion: 0.18
+Nodes (7): Props, StatusChange, Props, STATUS_COLORS, STATUS_ICONS, StatusTimeline(), StatusTimelineEntry
 
 ### Community 76 - "Community 76"
 Cohesion: 0.12
@@ -529,12 +527,12 @@ Cohesion: 0.12
 Nodes (16): Changed files, Design, Edge cases handled, Goal, Implementation steps, Key rules, Online Presence — Green Dot + "Online" Label in Messages, Step 1 — Extend Pusher auth handler for presence channels (+8 more)
 
 ### Community 79 - "Community 79"
-Cohesion: 0.18
-Nodes (16): useApplicantsTable(), useApplicants(), useBulkTransitionStatus(), useRevertStatus(), ApplicationStatusSchema, baseTransitionSchema, BulkStatusTransitionInput, BulkStatusTransitionSchema (+8 more)
+Cohesion: 0.06
+Nodes (49): ApplicantTableColumnsProps, createApplicantTableColumns(), BULK_ACTION_LABELS, BulkActionDef, NEXT_ACTIONS, STATUS_DOT_COLORS, STATUS_OPTIONS, ApplicantTablePagination() (+41 more)
 
 ### Community 80 - "Community 80"
-Cohesion: 0.14
-Nodes (20): AdminInvite, AdminTeamMember, hooks, createInviteHooks(), InviteListItem, hooks, RecruiterInvite, RecruiterTeamMember (+12 more)
+Cohesion: 0.16
+Nodes (19): AdminInvite, AdminTeamMember, hooks, createInviteHooks(), InviteListItem, hooks, RecruiterInvite, RecruiterTeamMember (+11 more)
 
 ### Community 81 - "Community 81"
 Cohesion: 0.12
@@ -565,12 +563,12 @@ Cohesion: 0.19
 Nodes (11): GET, handleGET(), GET, handleGET(), AdminApplicantDetailResponse, AdminUserApplicationsResponse, DeletedResume, getAdminApplicantDetail() (+3 more)
 
 ### Community 88 - "Community 88"
-Cohesion: 0.25
-Nodes (5): JobDetail(), JobDetailProps, STATUS_BADGE, TABS, PageProps
+Cohesion: 0.10
+Nodes (15): JobDetailPage(), metadata, ApplicationsPage(), AppRow, STATUSES, ApplyModal(), ApplyModalProps, ResumeOption (+7 more)
 
 ### Community 89 - "Community 89"
-Cohesion: 0.29
-Nodes (8): CreateMessageData, IMessageRepository, MessageIdOnly, MessageRow, MessageWithCreatedAt, messageRepository, messageSelect, threadRepository
+Cohesion: 0.17
+Nodes (12): metadata, emptyEducation, emptyExperience, Props, ResumeBuilderForm(), useUpdateBuilderData(), BuilderEducationInput, BuilderEducationSchema (+4 more)
 
 ### Community 90 - "Community 90"
 Cohesion: 0.14
@@ -581,24 +579,24 @@ Cohesion: 0.14
 Nodes (13): 1. `app/features/recruiter/libs/csv-builder.ts`, 2. `app/features/recruiter/queries/export-queries.ts`, 3. `app/api/recruiter/jobs/[id]/applicants/export/route.ts`, 4. `app/features/recruiter/components/applicants-table.tsx`, CSV Column Order, Design Decisions, Edge Cases Covered, Files to Create (3) (+5 more)
 
 ### Community 92 - "Community 92"
-Cohesion: 0.11
-Nodes (16): AuthCard(), Props, AuthLayout(), Props, FormButton(), FormButtonProps, FormInput(), FormInputProps (+8 more)
+Cohesion: 0.10
+Nodes (18): socialSignInAction(), FormButton(), FormButtonProps, FormInput(), FormInputProps, LoginForm(), LoginFormProps, SignInInput (+10 more)
 
 ### Community 93 - "Community 93"
-Cohesion: 0.28
-Nodes (7): BULK_ACTION_LABELS, BulkActionDef, NEXT_ACTIONS, STATUS_DOT_COLORS, STATUS_OPTIONS, addActionedIds(), getBulkActions()
+Cohesion: 0.21
+Nodes (7): metadata, ApplicationDetailView(), ApplicationResumeSection(), Props, ApplicationSections(), Props, ApplicationTimeline()
 
 ### Community 94 - "Community 94"
-Cohesion: 0.08
-Nodes (25): Props, AdminRecruiterProfileView(), AdminRecruiterProfileViewProps, CompanyJob, AdminUserProfileView(), AdminUserProfileViewProps, App, useAdminUserApplications() (+17 more)
+Cohesion: 0.13
+Nodes (14): Props, AdminRecruiterProfileView(), AdminRecruiterProfileViewProps, CompanyJob, AdminRecruiterDetailPage(), AccountCard(), AccountCardProps, formatDate() (+6 more)
 
 ### Community 95 - "Community 95"
-Cohesion: 0.10
-Nodes (21): POST, handlePOST(), POST, fail(), ERROR_STATUS_MAP, handleError(), ParamHandler, RouteContext (+13 more)
+Cohesion: 0.09
+Nodes (29): ResolvedSession, { DELETE }, GET, handleGET(), { DELETE }, GET, handleGET(), GET (+21 more)
 
 ### Community 96 - "Community 96"
-Cohesion: 0.10
-Nodes (20): metadata, metadata, AdminDashboard(), CHART_TOOLTIP_STYLE, WORKMODE_COLORS, AdminTeamList(), InviteAdminForm(), recentColumns (+12 more)
+Cohesion: 0.12
+Nodes (16): metadata, AdminDashboard(), CHART_TOOLTIP_STYLE, WORKMODE_COLORS, recentColumns, RecruiterDashboard(), RecruiterDashboardProps, useAdminDashboard() (+8 more)
 
 ### Community 97 - "Community 97"
 Cohesion: 0.22
@@ -621,48 +619,48 @@ Cohesion: 0.15
 Nodes (12): 1. `lib/thread-utils.ts` (NEW, ~8 lines), 2. `app/features/user/components/application-timeline.tsx` (REWRITE, ~30 lines), 3. `app/api/user/applications/[id]/route.ts` (MODIFY, ~7 lines added), 4. `components/shared/start-conversation-search.tsx` (MODIFY, ~3 lines changed), Context, Edge Cases Checklist, Files NOT Changed (no action needed), Files to Create/Modify (+4 more)
 
 ### Community 102 - "Community 102"
-Cohesion: 0.32
-Nodes (6): GET, handleGET(), AdminInviteListResponse, AdminInviteRow, AdminTeamMemberRow, listAdminInvites()
+Cohesion: 0.23
+Nodes (10): GET, handleGET(), AdminInviteListResponse, AdminInviteRow, AdminTeamMemberRow, listAdminInvites(), listRecruiterInvites(), RecruiterInviteListResponse (+2 more)
 
 ### Community 103 - "Community 103"
-Cohesion: 0.05
-Nodes (59): applyAiSuggestions(), bulkInviteAdmins(), bulkInviteRecruiters(), requireRole(), GET, handleGET(), GET, handleGET() (+51 more)
+Cohesion: 0.06
+Nodes (48): applyAiSuggestions(), inviteAdmin(), inviteRecruiter(), requireRole(), GET, handleGET(), handleDELETE(), DELETE (+40 more)
 
 ### Community 104 - "Community 104"
-Cohesion: 0.18
-Nodes (10): MobileNavMenu(), MobileUser, Props, PublicNavbar(), PublicNavbarSkeleton(), isHiddenRoute(), AvatarFallback(), Props (+2 more)
+Cohesion: 0.21
+Nodes (9): AccountPopover(), MobileNavMenu(), MobileUser, Props, PublicNavbar(), PublicNavbarSkeleton(), isHiddenRoute(), themes (+1 more)
 
 ### Community 105 - "Community 105"
-Cohesion: 0.17
-Nodes (10): ActivityPanel(), AppRow, statConfig, Stats, ApplyModal(), ApplyModalProps, ResumeOption, hydrator (+2 more)
+Cohesion: 0.14
+Nodes (12): ActivityPanel(), AppRow, statConfig, Stats, ApplicationHeader(), Props, ApplicationStatus, STATUS_MAP (+4 more)
 
 ### Community 106 - "Community 106"
-Cohesion: 0.21
-Nodes (13): AccountPopover(), adminLinks, LogoutButton(), recruiterLinks, userLinks, UserSidebar(), useSignOut(), getSidebarDisplayName() (+5 more)
+Cohesion: 0.23
+Nodes (12): adminLinks, AdminSidebar(), LogoutButton(), recruiterLinks, userLinks, useSignOut(), getSidebarDisplayName(), Sidebar() (+4 more)
 
 ### Community 107 - "Community 107"
 Cohesion: 0.29
-Nodes (4): metadata, ApplicationsPage(), AppRow, STATUSES
+Nodes (6): GET, handleGET(), GET, handleGET(), getJobAnalytics(), AnalyticsFilterSchema
 
 ### Community 108 - "Community 108"
 Cohesion: 0.18
 Nodes (10): 1. `app/features/recruiter/components/filters/analytics-filter-bar.tsx`, 2. `app/features/recruiter/components/recruiter-analytics-page.tsx`, 3. `app/features/recruiter/components/charts/distribution-bar-chart.tsx`, 4. `app/features/recruiter/components/per-job-analytics-page.tsx`, 5. `app/features/recruiter/components/charts/funnel-chart.tsx`, Analytics Page Layout Fix, Files to modify (5), Goal (+2 more)
 
 ### Community 109 - "Community 109"
-Cohesion: 0.40
-Nodes (3): AcceptInviteClient(), metadata, Props
+Cohesion: 0.15
+Nodes (13): AcceptInviteClient(), metadata, Props, ConfirmActionButtonProps, ConfirmDialog(), ConfirmDialogProps, ConfirmDialogVariant, VARIANT_BUTTON (+5 more)
 
 ### Community 110 - "Community 110"
-Cohesion: 0.40
-Nodes (4): socialSignInAction(), providers, SocialProvider, SocialSignInButtons()
+Cohesion: 0.33
+Nodes (4): POST, AdminAcceptInviteSchema, RecruiterAcceptInviteSchema, inviteService
 
 ### Community 111 - "Community 111"
-Cohesion: 0.07
-Nodes (30): ResolvedSession, { DELETE }, GET, handleGET(), { DELETE }, { DELETE }, { GET, POST, DELETE }, { GET } (+22 more)
+Cohesion: 0.09
+Nodes (24): createMessageIdDeleteHandler(), createThreadIdMessageHandlers(), createThreadListHandler(), MessageIdHandlerOptions, ThreadIdHandlerOptions, ThreadListHandlerOptions, VerifyRelation, checkMessageRateLimit() (+16 more)
 
 ### Community 112 - "Community 112"
-Cohesion: 0.40
-Nodes (4): ApplicantDetailResponse, DeletedResume, ResumeInfo, STATUS_LABELS
+Cohesion: 0.29
+Nodes (6): buildCursorMeta(), CursorPaginationMeta, CursorPaginationParams, OffsetPaginationMeta, OffsetPaginationParams, parseCursorParams()
 
 ### Community 113 - "Community 113"
 Cohesion: 0.18
@@ -685,12 +683,12 @@ Cohesion: 0.19
 Nodes (10): AuthBackground(), DustParticle(), Props, createDurationJitter(), particles, ParticleAnimation, ParticleAppearance, ParticleConfig (+2 more)
 
 ### Community 118 - "Community 118"
-Cohesion: 0.20
-Nodes (12): MessagesPageLayout(), Props, ThreadListPanel(), getPusherClient(), computeThreadId(), SearchResult, StartConversationSearch(), StartConversationSearchProps (+4 more)
+Cohesion: 0.11
+Nodes (21): MessagesPageConfig, MessagesPageLayout(), Props, ThreadListPanel(), Props, ThreadListItem(), ThreadListItemData, config (+13 more)
 
 ### Community 119 - "Community 119"
 Cohesion: 0.19
-Nodes (10): AdminLayoutClient(), AdminLayout(), AdminSidebar(), RecruiterSidebar(), RoleLayoutClient(), RecruiterLayout(), RecruiterLayoutClient(), UserLayout() (+2 more)
+Nodes (10): AdminLayoutClient(), AdminLayout(), RecruiterSidebar(), UserSidebar(), RoleLayoutClient(), RecruiterLayout(), RecruiterLayoutClient(), UserLayout() (+2 more)
 
 ### Community 120 - "Community 120"
 Cohesion: 0.36
@@ -713,8 +711,8 @@ Cohesion: 0.29
 Nodes (6): Overview, Phase 5 — Component Tests (RTL), Regression Testing, Testing Environments, Testing Stack, Testing Strategy
 
 ### Community 125 - "Community 125"
-Cohesion: 0.18
-Nodes (10): config, UserMessagesPage(), config, hooks, Props, UserThreadView(), useDeleteUserMessage, useSendUserMessage (+2 more)
+Cohesion: 0.40
+Nodes (4): AvatarFallback(), Props, ProfileHeader(), ProfileHeaderProps
 
 ### Community 126 - "Community 126"
 Cohesion: 0.40
@@ -729,8 +727,8 @@ Cohesion: 0.33
 Nodes (5): name, prisma, seed, private, version
 
 ### Community 129 - "Community 129"
-Cohesion: 0.23
-Nodes (14): loginAction(), LoginActionInput, LoginActionSchema, logOutAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), validateWithZod() (+6 more)
+Cohesion: 0.24
+Nodes (7): logOutAction(), SocialProvider, { POST, GET }, auth, UserStatusResult, logger, LogMethods
 
 ### Community 130 - "Community 130"
 Cohesion: 0.33
@@ -789,36 +787,28 @@ Cohesion: 0.23
 Nodes (9): GET, handleGET(), handlePOST(), POST, GET, handleGET(), BookmarkJob, checkBookmark() (+1 more)
 
 ### Community 167 - "Community 167"
-Cohesion: 0.60
-Nodes (4): AdminJobsTable(), useAdminJobs(), useDeleteJob(), useToggleJobStatus()
+Cohesion: 0.26
+Nodes (9): metadata, AdminJobsTable(), AdminJobsTableProps, EMPLOYMENT_TYPE_LABELS, WORK_MODE_LABELS, useAdminJobs(), useDeleteJob(), useToggleJobStatus() (+1 more)
 
 ### Community 168 - "Community 168"
-Cohesion: 0.18
-Nodes (10): AdminInviteEmail(), AdminInviteEmailProps, button, buttonContainer, container, fallbackLink, heading, main (+2 more)
+Cohesion: 0.50
+Nodes (3): generateMetadata(), JobDetailView(), buildJobJsonLd()
 
 ### Community 169 - "Community 169"
-Cohesion: 0.19
-Nodes (12): ResetPasswordSchema, ActionResult, AuthRedirectTargetType, AuthType, ForgotPasswordType, LoginInputType, RegisterInputType, ResetPasswordType (+4 more)
+Cohesion: 0.14
+Nodes (25): loginAction(), LoginActionInput, LoginActionSchema, registerAction(), requestPasswordResetAction(), resetPasswordAction(), validateWithZod(), ValidatorResult (+17 more)
 
 ### Community 170 - "Community 170"
-Cohesion: 0.18
-Nodes (10): button, buttonContainer, container, fallbackLink, heading, main, paragraph, RecruiterInviteEmail() (+2 more)
+Cohesion: 0.50
+Nodes (3): GET, handleGET(), jobRepository
 
 ### Community 171 - "Community 171"
 Cohesion: 0.24
 Nodes (7): handlePOST(), POST, AIProvider, callAI(), PROVIDER_CONFIG, ProviderConfig, ApiError
 
 ### Community 172 - "Community 172"
-Cohesion: 0.11
-Nodes (15): DELETE, handleDELETE(), GET, handleGET(), PATCH, checkRateLimit(), DEFAULT_CONFIG, RateLimitConfig (+7 more)
-
-### Community 173 - "Community 173"
-Cohesion: 0.40
-Nodes (3): adapter, pool, prisma
-
-### Community 174 - "Community 174"
-Cohesion: 0.40
-Nodes (3): adapter, pool, prisma
+Cohesion: 0.16
+Nodes (7): TooManyRequestsError, checkRateLimit(), DEFAULT_CONFIG, RateLimitConfig, stores, handlePOST(), POST
 
 ### Community 175 - "Community 175"
 Cohesion: 0.17
@@ -829,24 +819,24 @@ Cohesion: 0.40
 Nodes (5): DEFAULT_QUERY_OPTIONS, defaultQueryFn(), getQueryClient(), makeQueryClient(), QueryKeyShape
 
 ## Knowledge Gaps
-- **1558 isolated node(s):** `{ DELETE }`, `POST`, `GET`, `DELETE`, `PATCH` (+1553 more)
+- **1551 isolated node(s):** `GET`, `POST`, `PATCH`, `POST`, `{ DELETE }` (+1546 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 40` to `Community 18`, `Community 24`, `Community 28`, `Community 30`, `Community 36`, `Community 38`, `Community 49`, `Community 50`, `Community 51`, `Community 66`, `Community 69`, `Community 74`, `Community 75`, `Community 88`, `Community 94`, `Community 96`, `Community 106`, `Community 117`, `Community 118`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 103` to `Community 102`, `Community 171`, `Community 172`, `Community 43`, `Community 111`, `Community 19`, `Community 55`, `Community 86`, `Community 87`, `Community 22`, `Community 54`, `Community 26`, `Community 155`, `Community 28`, `Community 29`, `Community 94`, `Community 95`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Button()` connect `Community 38` to `Community 96`, `Community 34`, `Community 66`, `Community 37`, `Community 40`, `Community 109`, `Community 92`, `Community 50`, `Community 19`, `Community 94`, `Community 21`, `Community 86`, `Community 23`, `Community 25`, `Community 28`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
-  _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 22 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
-  _`ok()` has 22 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `{ DELETE }`, `POST`, `GET` to the rest of the system?**
-  _1558 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `cn()` connect `Community 40` to `Community 18`, `Community 24`, `Community 27`, `Community 28`, `Community 30`, `Community 34`, `Community 36`, `Community 38`, `Community 49`, `Community 50`, `Community 51`, `Community 55`, `Community 66`, `Community 70`, `Community 74`, `Community 75`, `Community 79`, `Community 88`, `Community 89`, `Community 94`, `Community 96`, `Community 105`, `Community 106`, `Community 109`, `Community 117`, `Community 118`?**
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 103` to `Community 21`, `Community 22`, `Community 25`, `Community 26`, `Community 155`, `Community 28`, `Community 34`, `Community 169`, `Community 170`, `Community 171`, `Community 43`, `Community 54`, `Community 65`, `Community 86`, `Community 87`, `Community 89`, `Community 94`, `Community 95`, `Community 96`, `Community 102`, `Community 107`, `Community 111`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 109` to `Community 19`, `Community 21`, `Community 23`, `Community 25`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 34`, `Community 37`, `Community 38`, `Community 167`, `Community 40`, `Community 65`, `Community 66`, `Community 79`, `Community 86`, `Community 89`, `Community 92`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Are the 19 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
+  _`requireRole()` has 19 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 17 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
+  _`ok()` has 17 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `GET`, `POST`, `PATCH` to the rest of the system?**
+  _1551 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

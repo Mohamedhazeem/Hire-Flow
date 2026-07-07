@@ -142,3 +142,18 @@ export async function getUserApplicationDetail(
     })),
   };
 }
+
+export async function getUserApplicationStats(userId: string) {
+  const activeStatuses = ["applied", "reviewing", "shortlisted"];
+  const interviewStatus = "interview_scheduled";
+  const offerStatuses = ["offered", "hired"];
+
+  const [total, active, interviews, offers] = await Promise.all([
+    prisma.application.count({ where: { userId } }),
+    prisma.application.count({ where: { userId, status: { in: activeStatuses } } }),
+    prisma.application.count({ where: { userId, status: interviewStatus } }),
+    prisma.application.count({ where: { userId, status: { in: offerStatuses } } }),
+  ]);
+
+  return { total, active, interviews, offers };
+}

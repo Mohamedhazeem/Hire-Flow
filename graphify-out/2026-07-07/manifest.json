@@ -2495,8 +2495,8 @@
     "semantic_hash": ""
   },
   "lib/services/application-service.ts": {
-    "mtime": 1783439406.2908053,
-    "ast_hash": "d4bfde0db64cfee1b1fc829d263e384c",
+    "mtime": 1783440131.5150666,
+    "ast_hash": "ae3307a601bf3b90d4c343baa46692d9",
     "semantic_hash": ""
   },
   "lib/services/invite-service.ts": {
@@ -2517,6 +2517,11 @@
   "lib/services/user-service.ts": {
     "mtime": 1783439427.7816355,
     "ast_hash": "624168a33e832a2d9782a3ef674a0486",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1783392165444-db-swap-readiness.md": {
+    "mtime": 1783440542.9952161,
+    "ast_hash": "ee28104c6d7ca662176b263876231ded",
     "semantic_hash": ""
   }
 }
