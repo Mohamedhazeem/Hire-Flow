@@ -15,6 +15,8 @@ import {
   ExternalLinkIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { IconBox } from "@/components/shared/icon-box";
+import { cn } from "@/lib/utils";
 
 type CompanyJob = {
   id: string;
@@ -47,6 +49,42 @@ type AdminRecruiterProfileViewProps = {
     jobs: CompanyJob[];
   };
 };
+
+function SectionCard({
+  title,
+  count,
+  countLabel,
+  children,
+  className,
+}: {
+  title: string;
+  count?: number;
+  countLabel?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl border border-border-subtle bg-bg-surface overflow-hidden transition-shadow duration-200 hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)]",
+        className,
+      )}
+    >
+      <div className="flex items-center justify-between px-6 py-3.5 bg-bg-elevated/60 border-b border-border-subtle">
+        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
+          {title}
+        </h2>
+        {count != null && (
+          <span className="text-xs text-text-muted">
+            {count} {countLabel ?? ""}
+          </span>
+        )}
+      </div>
+      <div className="border-t border-border-subtle/40" />
+      <div className="p-6">{children}</div>
+    </div>
+  );
+}
 
 function JobStatusBadge({ status, isActive }: { status: string; isActive: boolean }) {
   if (!isActive) return <Badge variant="destructive">Disabled</Badge>;
@@ -108,10 +146,7 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-1 space-y-6">
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Account
-            </h2>
+          <SectionCard title="Account">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MailIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
@@ -162,13 +197,10 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                 </div>
               </div>
             </div>
-          </div>
+          </SectionCard>
 
           {user.companyMembership && (
-            <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-              <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-                Company
-              </h2>
+            <SectionCard title="Company">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   {user.companyMembership.companyLogo ? (
@@ -180,9 +212,9 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                       className="rounded-lg object-contain size-10 shrink-0"
                     />
                   ) : (
-                    <div className="size-10 rounded-lg bg-bg-elevated flex items-center justify-center text-text-muted shrink-0">
+                    <IconBox>
                       <Building2Icon className="size-5" />
-                    </div>
+                    </IconBox>
                   )}
                   <div className="min-w-0">
                     <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
@@ -197,7 +229,9 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <ShieldCheckIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                  <IconBox>
+                    <ShieldCheckIcon className="size-5" />
+                  </IconBox>
                   <div>
                     <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                       Member Role
@@ -208,22 +242,14 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                   </div>
                 </div>
               </div>
-            </div>
+            </SectionCard>
           )}
         </div>
 
         <div className="lg:col-span-2 space-y-6">
           {user.companyMembership && user.jobs.length > 0 && (
-            <div className="rounded-2xl border border-border-subtle bg-bg-surface overflow-hidden">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
-                <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
-                  Company Jobs
-                </h2>
-                <span className="text-xs text-text-muted">
-                  {user.jobs.length} job{user.jobs.length !== 1 ? "s" : ""}
-                </span>
-              </div>
-              <div className="overflow-x-auto">
+            <SectionCard title="Company Jobs" count={user.jobs.length} countLabel="jobs">
+              <div className="overflow-x-auto -mx-6 -my-6">
                 <table className="w-full text-center">
                   <thead>
                     <tr className="border-b border-border-subtle bg-bg-elevated/50">
@@ -272,10 +298,10 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                               )}
                             </div>
                           </td>
-                          <td className="px-4 py-3  text-sm text-text-body">
+                          <td className="px-4 py-3 text-sm text-text-body">
                             {job.applicationCount}
                           </td>
-                          <td className="px-4 py-3  text-sm text-text-muted">
+                          <td className="px-4 py-3 text-sm text-text-muted">
                             {deadline
                               ? new Date(deadline).toLocaleDateString("en-US", {
                                   month: "short",
@@ -298,7 +324,7 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                   </tbody>
                 </table>
               </div>
-            </div>
+            </SectionCard>
           )}
 
           {user.companyMembership && user.jobs.length === 0 && (

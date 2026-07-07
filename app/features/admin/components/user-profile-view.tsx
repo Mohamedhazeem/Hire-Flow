@@ -25,6 +25,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { ResumePreviewDialog } from "@/components/shared/resume-preview-dialog";
 import { useAdminUserApplications } from "@/app/features/admin/hooks/use-admin-users";
+import { cn } from "@/lib/utils";
+import { IconBox } from "@/components/shared/icon-box";
 
 type AdminUserProfileViewProps = {
   user: {
@@ -58,6 +60,42 @@ type AdminUserProfileViewProps = {
     }[];
   };
 };
+
+function SectionCard({
+  title,
+  count,
+  countLabel,
+  children,
+  className,
+}: {
+  title: string;
+  count?: number;
+  countLabel?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl border border-border-subtle bg-bg-surface overflow-hidden transition-shadow duration-200 hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)]",
+        className,
+      )}
+    >
+      <div className="flex items-center justify-between px-6 py-3.5 bg-bg-elevated/60 border-b border-border-subtle">
+        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
+          {title}
+        </h2>
+        {count != null && (
+          <span className="text-xs text-text-muted">
+            {count} {countLabel ?? ""}
+          </span>
+        )}
+      </div>
+      <div className="border-t border-border-subtle/40" />
+      <div className="p-6">{children}</div>
+    </div>
+  );
+}
 
 export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
   const router = useRouter();
@@ -144,13 +182,12 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-1 space-y-6">
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Account
-            </h2>
+          <SectionCard title="Account">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MailIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <MailIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
                 <div className="min-w-0">
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Email
@@ -159,7 +196,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <BadgeCheckIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <BadgeCheckIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
                 <div>
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Verified
@@ -174,7 +213,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <CalendarIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <CalendarIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
                 <div>
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Member Since
@@ -189,7 +230,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <UserIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <UserIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
                 <div>
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Role
@@ -198,21 +241,21 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               </div>
             </div>
-          </div>
+          </SectionCard>
 
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-              Profile
-            </h2>
+          <SectionCard title="Profile">
             <div className="space-y-4">
               {profile?.headline && (
-                <p className="text-sm text-text-body font-medium">{profile.headline}</p>
+                <p className="text-lg text-text-body font-medium">{profile.headline}</p>
               )}
               {profile?.bio && (
                 <p className="text-sm text-text-muted leading-relaxed">{profile.bio}</p>
               )}
               <div className="flex items-start gap-3">
-                <MapPinIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <MapPinIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
+
                 <div>
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Location
@@ -223,7 +266,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <GraduationCapIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                <IconBox>
+                  <GraduationCapIcon className="size-5 shrink-0 text-text-muted mt-0.5" />
+                </IconBox>
                 <div>
                   <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
                     Expected CTC
@@ -246,7 +291,7 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                     {profile.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="inline-flex items-center rounded-radius-full bg-brand/10 text-brand border border-brand/20 px-2.5 py-0.5 text-xs font-medium"
+                        className="inline-flex items-center rounded-full bg-brand/10 text-brand border border-brand/20 px-2.5 py-0.5 text-xs font-medium"
                       >
                         {skill}
                       </span>
@@ -255,13 +300,10 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </div>
               )}
             </div>
-          </div>
+          </SectionCard>
 
           {experiencesArray && experiencesArray.length > 0 && (
-            <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-              <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-                Experience
-              </h2>
+            <SectionCard title="Experience" count={experiencesArray.length} countLabel="entries">
               <div className="space-y-3">
                 {experiencesArray.map((item, i) => {
                   const exp = item as {
@@ -285,16 +327,13 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                   );
                 })}
               </div>
-            </div>
+            </SectionCard>
           )}
         </div>
 
         <div className="lg:col-span-2 space-y-6">
           {user.resumes.length > 0 && (
-            <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-              <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
-                Resumes
-              </h2>
+            <SectionCard title="Resumes" count={user.resumes.length} countLabel="files">
               <div className="space-y-3">
                 {user.resumes.map((resume) => (
                   <div
@@ -366,30 +405,23 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                   {downloadError}
                 </div>
               )}
-            </div>
+            </SectionCard>
           )}
 
-          <div className="rounded-2xl border border-border-subtle bg-bg-surface overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border-subtle">
-              <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
-                Applications
-              </h2>
-              {appsData?.data?.applications && (
-                <span className="text-xs text-text-muted">
-                  {appsData.data.applications.length} application
-                  {appsData.data.applications.length !== 1 ? "s" : ""}
-                </span>
-              )}
-            </div>
+          <SectionCard
+            title="Applications"
+            count={appsData?.data?.applications?.length}
+            countLabel="applications"
+          >
             {appsLoading ? (
-              <div className="p-6 space-y-3">
+              <div className="space-y-3">
                 <Skeleton className="h-10 w-full rounded-lg" />
                 <Skeleton className="h-10 w-full rounded-lg" />
                 <Skeleton className="h-10 w-full rounded-lg" />
               </div>
             ) : appsData?.data?.applications && appsData.data.applications.length > 0 ? (
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-6 -my-6">
+                <table className="w-full text-center">
                   <thead>
                     <tr className="border-b border-border-subtle bg-bg-elevated/50">
                       <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">
@@ -442,12 +474,12 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 </table>
               </div>
             ) : (
-              <div className="flex flex-col items-center gap-2 py-10 text-center">
+              <div className="flex flex-col items-center gap-2 py-6 text-center">
                 <BriefcaseIcon className="size-8 text-text-muted" />
                 <p className="text-sm text-text-muted">No applications found.</p>
               </div>
             )}
-          </div>
+          </SectionCard>
         </div>
       </div>
 
