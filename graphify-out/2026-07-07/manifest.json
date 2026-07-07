@@ -905,13 +905,13 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-card.tsx": {
-    "mtime": 1783393109.0651803,
-    "ast_hash": "4a1d5899e712c400ba1083513e334437",
+    "mtime": 1783407505.3947372,
+    "ast_hash": "813ead0492394c5e5ff8546762f6fdee",
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-detail-view.tsx": {
-    "mtime": 1783392221.4565597,
-    "ast_hash": "bd3a28a22a931dbfe0bb1aafb1a8a0f7",
+    "mtime": 1783407530.081314,
+    "ast_hash": "e72474d5b34f121e0530c8bff6b6defb",
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-list-page.tsx": {
@@ -1500,8 +1500,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/save-job-button.tsx": {
-    "mtime": 1782826735.686234,
-    "ast_hash": "ab6862b721fbf0b777344bceb4fa07d7",
+    "mtime": 1783394194.3575082,
+    "ast_hash": "927c22cb309ae55e564081713a513618",
     "semantic_hash": ""
   },
   "app/features/user/components/saved-jobs-page.tsx": {
@@ -1555,8 +1555,8 @@
     "semantic_hash": ""
   },
   "app/features/user/hooks/use-saved-jobs.ts": {
-    "mtime": 1783000387.5996137,
-    "ast_hash": "aaf6d13fcefe57785c82f734047c7ecc",
+    "mtime": 1783394062.9816835,
+    "ast_hash": "a42756c18ab496e133ad01669d1b8243",
     "semantic_hash": ""
   },
   "app/features/user/queries/user-application-queries.ts": {
@@ -2307,6 +2307,11 @@
   "prisma/migrations/20260702081558_user/migration.sql": {
     "mtime": 1782980158.5807939,
     "ast_hash": "099d2fdc380e3874c3d6768a15cfe076",
+    "semantic_hash": ""
+  },
+  "lib/hydration.ts": {
+    "mtime": 1783407493.3128033,
+    "ast_hash": "af9cca4a43665d574f0cd01de4c0bdcf",
     "semantic_hash": ""
   }
 }
