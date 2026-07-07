@@ -97,6 +97,8 @@ function JobStatusBadge({ status, isActive }: { status: string; isActive: boolea
 export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewProps) {
   const router = useRouter();
   const [now] = useState(() => Date.now());
+  const [showAllJobs, setShowAllJobs] = useState(false);
+  const INITIAL_JOB_COUNT = 10;
 
   const initials = user.name
     .trim()
@@ -145,7 +147,7 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-6 lg:self-start">
           <SectionCard title="Account">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -249,37 +251,26 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
         <div className="lg:col-span-2 space-y-6">
           {user.companyMembership && user.jobs.length > 0 && (
             <SectionCard title="Company Jobs" count={user.jobs.length} countLabel="jobs">
-              <div className="overflow-x-auto -mx-6 -my-6">
+              <div className="overflow-x-auto -mx-6 -mb-6 -mt-6">
                 <table className="w-full text-center">
                   <thead>
                     <tr className="border-b border-border-subtle bg-bg-elevated/50">
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">
-                        Title
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">
-                        Status
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">
-                        Applicants
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">
-                        Deadline
-                      </th>
+                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">Title</th>
+                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">Status</th>
+                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">Applicants</th>
+                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">Deadline</th>
                       <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3" />
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border-subtle">
-                    {user.jobs.map((job) => {
+                    {(showAllJobs ? user.jobs : user.jobs.slice(0, INITIAL_JOB_COUNT)).map((job) => {
                       const deadline = job.applicationDeadline
                         ? new Date(job.applicationDeadline).getTime()
                         : null;
                       const expired = deadline !== null && deadline < now;
 
                       return (
-                        <tr
-                          key={job.id}
-                          className="hover:bg-bg-elevated/50 transition-colors text-center"
-                        >
+                        <tr key={job.id} className="hover:bg-bg-elevated/50 transition-colors text-center">
                           <td className="px-6 py-3">
                             <Link
                               href={`/admin/jobs/${job.id}`}
@@ -298,9 +289,7 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                               )}
                             </div>
                           </td>
-                          <td className="px-4 py-3 text-sm text-text-body">
-                            {job.applicationCount}
-                          </td>
+                          <td className="px-4 py-3 text-sm text-text-body">{job.applicationCount}</td>
                           <td className="px-4 py-3 text-sm text-text-muted">
                             {deadline
                               ? new Date(deadline).toLocaleDateString("en-US", {
@@ -324,6 +313,13 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
                   </tbody>
                 </table>
               </div>
+              {!showAllJobs && user.jobs.length > INITIAL_JOB_COUNT && (
+                <div className="flex justify-center mt-4">
+                  <Button variant="ghost" size="sm" onClick={() => setShowAllJobs(true)}>
+                    Show all {user.jobs.length} jobs
+                  </Button>
+                </div>
+              )}
             </SectionCard>
           )}
 

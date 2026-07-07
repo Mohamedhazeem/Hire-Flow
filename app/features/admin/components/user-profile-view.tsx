@@ -104,6 +104,8 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
     label: string;
   } | null>(null);
   const [downloadError, setDownloadError] = useState<string | null>(null);
+  const [showAllApps, setShowAllApps] = useState(false);
+  const INITIAL_APP_COUNT = 10;
 
   const handleDownload = useCallback(async (fileUrl: string) => {
     try {
@@ -133,6 +135,8 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
       : null;
 
   const { data: appsData, isLoading: appsLoading } = useAdminUserApplications(user.id);
+  const apps = appsData?.data?.applications ?? [];
+  const displayedApps = showAllApps ? apps : apps.slice(0, INITIAL_APP_COUNT);
 
   const initials = user.name
     .trim()
@@ -181,7 +185,7 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-6 lg:self-start">
           <SectionCard title="Account">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -410,7 +414,7 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
 
           <SectionCard
             title="Applications"
-            count={appsData?.data?.applications?.length}
+            count={apps.length}
             countLabel="applications"
           >
             {appsLoading ? (
@@ -419,60 +423,60 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                 <Skeleton className="h-10 w-full rounded-lg" />
                 <Skeleton className="h-10 w-full rounded-lg" />
               </div>
-            ) : appsData?.data?.applications && appsData.data.applications.length > 0 ? (
-              <div className="overflow-x-auto -mx-6 -my-6">
-                <table className="w-full text-center">
-                  <thead>
-                    <tr className="border-b border-border-subtle bg-bg-elevated/50">
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">
-                        Job
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">
-                        Status
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">
-                        Applied
-                      </th>
-                      <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3" />
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border-subtle">
-                    {appsData.data.applications.map((app) => (
-                      <tr
-                        key={app.id}
-                        className="hover:bg-bg-elevated/50 transition-colors text-center"
-                      >
-                        <td className="px-6 py-3">
-                          <Link
-                            href={`/admin/applications/${app.id}`}
-                            className="text-sm font-medium text-text-heading hover:text-brand truncate block max-w-60"
-                          >
-                            {app.jobTitle}
-                          </Link>
-                        </td>
-                        <td className="px-4 py-3">
-                          <StatusBadge status={app.status} />
-                        </td>
-                        <td className="px-4 py-3 text-sm text-text-muted">
-                          {new Date(app.appliedAt).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                            year: "numeric",
-                          })}
-                        </td>
-                        <td className="px-6 py-3">
-                          <Link
-                            href={`/admin/applications/${app.id}`}
-                            className="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline"
-                          >
-                            View <ExternalLinkIcon className="size-3" />
-                          </Link>
-                        </td>
+            ) : apps.length > 0 ? (
+              <>
+                <div className="overflow-x-auto -mx-6 -mb-6 -mt-6">
+                  <table className="w-full text-center">
+                    <thead>
+                      <tr className="border-b border-border-subtle bg-bg-elevated/50">
+                        <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">Job</th>
+                        <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">Status</th>
+                        <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-4 py-3">Applied</th>
+                        <th className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3" />
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody className="divide-y divide-border-subtle">
+                      {displayedApps.map((app) => (
+                        <tr key={app.id} className="hover:bg-bg-elevated/50 transition-colors text-center">
+                          <td className="px-6 py-3">
+                            <Link
+                              href={`/admin/applications/${app.id}`}
+                              className="text-sm font-medium text-text-heading hover:text-brand truncate block max-w-60"
+                            >
+                              {app.jobTitle}
+                            </Link>
+                          </td>
+                          <td className="px-4 py-3">
+                            <StatusBadge status={app.status} />
+                          </td>
+                          <td className="px-4 py-3 text-sm text-text-muted">
+                            {new Date(app.appliedAt).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                            })}
+                          </td>
+                          <td className="px-6 py-3">
+                            <Link
+                              href={`/admin/applications/${app.id}`}
+                              className="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline"
+                            >
+                              View <ExternalLinkIcon className="size-3" />
+                            </Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {!showAllApps && apps.length > INITIAL_APP_COUNT && (
+                  <div className="flex justify-center mt-4">
+                    <Button variant="ghost" size="sm" onClick={() => setShowAllApps(true)}>
+                      Show all {apps.length} applications
+                    </Button>
+                  </div>
+                )}
+              </>
             ) : (
               <div className="flex flex-col items-center gap-2 py-6 text-center">
                 <BriefcaseIcon className="size-8 text-text-muted" />
