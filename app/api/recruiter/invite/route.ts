@@ -2,6 +2,7 @@ import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api-wrapper";
+import { listRecruiterInvites } from "@/app/features/recruiter/queries/invite-queries";
 
 async function handleGET() {
   const session = await requireRole(["recruiter"]);
@@ -15,27 +16,8 @@ async function handleGET() {
       })
     ).id;
 
-  const [invites, teamMembers] = await Promise.all([
-    prisma.recruiterInvite.findMany({
-      where: { companyId },
-      orderBy: { createdAt: "desc" },
-      include: {
-        invitedBy: { select: { name: true, email: true } },
-      },
-    }),
-    prisma.companyTeamMember.findMany({
-      where: { companyId },
-      select: {
-        id: true,
-        role: true,
-        user: { select: { id: true, name: true, email: true } },
-        createdAt: true,
-      },
-      orderBy: { createdAt: "desc" },
-    }),
-  ]);
-
-  return ok({ invites, teamMembers });
+  const data = await listRecruiterInvites(companyId);
+  return ok(data);
 }
 
 export const GET = withErrorHandler(handleGET);

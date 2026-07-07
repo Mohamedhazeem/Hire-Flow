@@ -8,7 +8,7 @@ import {
 import { listJobs } from "@/app/features/recruiter/queries/job-queries";
 import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { prisma } from "@/lib/prisma";
+import { jobService } from "@/lib/services/job-service";
 
 async function handleGET(request: NextRequest) {
   const session = await requireRole(["recruiter"]);
@@ -47,32 +47,8 @@ async function handlePOST(request: NextRequest) {
     throw new ValidationError("Invalid job data");
   }
 
-  const deadline = parsed.data.applicationDeadline
-    ? new Date(parsed.data.applicationDeadline)
-    : undefined;
-
-  const job = await prisma.job.create({
-    data: {
-      recruiterId: session.id,
-      companyId,
-      title: parsed.data.title,
-      description: parsed.data.description,
-      locations: parsed.data.locations,
-      workMode: parsed.data.workMode,
-      employmentType: parsed.data.employmentType,
-      timezone: parsed.data.timezone || null,
-      skills: parsed.data.skills,
-      tags: parsed.data.tags,
-      experienceLevel: parsed.data.experienceLevel,
-      salaryMin: parsed.data.salaryMin ?? null,
-      salaryMax: parsed.data.salaryMax ?? null,
-      salaryCurrency: parsed.data.salaryCurrency,
-      applicationDeadline: deadline ?? null,
-      status: "draft",
-    },
-  });
-
-  return ok({ job }, 201);
+  const result = await jobService.recruiterCreateJob(companyId, session.id, parsed.data);
+  return ok(result, 201);
 }
 
 export const GET = withErrorHandler(handleGET);

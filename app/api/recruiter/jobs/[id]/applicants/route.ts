@@ -5,7 +5,7 @@ import { ListApplicantsParamsSchema } from "@/app/features/recruiter/schema/appl
 import { listApplicants } from "@/app/features/recruiter/queries/application-queries";
 import { ValidationError, NotFoundError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { prisma } from "@/lib/prisma";
+import { jobRepository } from "@/lib/repositories/job-repository";
 
 async function handleGET(
   request: NextRequest,
@@ -17,11 +17,7 @@ async function handleGET(
 
   const jobId = (await params).id;
 
-  const job = await prisma.job.findUnique({
-    where: { id: jobId },
-    select: { id: true, companyId: true },
-  });
-
+  const job = await jobRepository.findOwnedBy(jobId, companyId);
   if (!job || job.companyId !== companyId) {
     throw new NotFoundError("Job not found");
   }

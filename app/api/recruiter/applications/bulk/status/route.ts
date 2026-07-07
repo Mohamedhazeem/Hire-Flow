@@ -3,12 +3,10 @@ import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import {
   BulkStatusTransitionSchema,
-  ALLOWED_TRANSITIONS,
 } from "@/app/features/recruiter/schema/application.schema";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api-error";
 import { withErrorHandler } from "@/lib/api-wrapper";
-import { prisma } from "@/lib/prisma";
-import { createNotificationsBulk } from "@/lib/notifications";
+import { applicationService } from "@/lib/services/application-service";
 
 async function handlePOST(request: NextRequest) {
   const session = await requireRole(["recruiter"]);
@@ -22,75 +20,7 @@ async function handlePOST(request: NextRequest) {
     throw new ValidationError(parsed.error.issues.map((i) => i.message).join(", "));
   }
 
-  const { applicationIds, status, rejectionReason, email } = parsed.data;
-
-  const result = await prisma.$transaction(async (tx) => {
-    const applications = await tx.application.findMany({
-      where: {
-        id: { in: applicationIds },
-        job: { companyId },
-      },
-      select: {
-        id: true,
-        userId: true,
-        jobId: true,
-        status: true,
-        user: { select: { email: true } },
-      },
-    });
-
-    if (applications.length !== applicationIds.length) {
-      throw new NotFoundError(
-        `${applications.length} of ${applicationIds.length} applications found. Some applications do not exist or do not belong to your company.`,
-      );
-    }
-
-    for (const app of applications) {
-      const allowedTransitions = ALLOWED_TRANSITIONS[app.status];
-      if (!allowedTransitions || !allowedTransitions.includes(status)) {
-        throw new ValidationError(
-          `Application ${app.id}: cannot transition from "${app.status}" to "${status}"`,
-        );
-      }
-    }
-
-    const updateData: Record<string, unknown> = { status };
-    if (status === "rejected" && rejectionReason) {
-      updateData.rejectionReason = rejectionReason;
-    }
-
-    await tx.application.updateMany({
-      where: { id: { in: applicationIds } },
-      data: updateData,
-    });
-
-    await tx.applicationStatusChange.createMany({
-      data: applications.map((a) => ({
-        applicationId: a.id,
-        fromStatus: a.status,
-        toStatus: status,
-        changedById: session.id,
-        note: status === "rejected" ? (rejectionReason ?? null) : null,
-      })),
-    });
-
-    void createNotificationsBulk(
-      applications.map((a) => ({
-        userId: a.userId,
-        type: "application_status",
-        data: {
-          applicationId: a.id,
-          jobId: a.jobId,
-          previousStatus: a.status,
-          newStatus: status,
-          updatedBy: session.id,
-          pendingEmail: email,
-        },
-      })),
-    );
-
-    return { count: applications.length, status };
-  });
+  const result = await applicationService.bulkTransitionStatus(companyId, session.id, parsed.data);
 
   return ok(result);
 }
