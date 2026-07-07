@@ -239,7 +239,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
           <ActionButton
             icon={<EyeIcon className="size-4" />}
             label="Profile"
-            onClick={() => router.push(`/admin/users/${row.id}`)}
+            onClick={() => router.push(role === "recruiter" ? `/admin/recruiters/${row.id}` : `/admin/users/${row.id}`)}
             title={`View ${row.name}'s profile`}
           />
           <div className="hidden sm:inline text-text-muted">|</div>

@@ -137,7 +137,7 @@ export function SignUpForm() {
           or continue with
         </p>
       </div>
-      <SocialSignInButtons />
+      <SocialSignInButtons isVertical />
       <div className="text-center">
         <p className="text-text-muted text-sm">
           Already have an account?{" "}

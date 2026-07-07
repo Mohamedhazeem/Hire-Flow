@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "react-pdf/dist/esm/Page/TextLayer.css";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,10 +14,7 @@ import {
   AlertCircleIcon,
 } from "lucide-react";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
+const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false });
 
 type ResumePreviewDialogProps = {
   open: boolean;
@@ -54,7 +49,6 @@ export function ResumePreviewDialog({
       setLoadError(false);
       setPdfLoadErrorMessage(null);
       setImgError(false);
-      setPageRenderError(false);
       setPageRenderError(false);
     }
   }
@@ -157,20 +151,14 @@ export function ResumePreviewDialog({
                   </Button>
                 </div>
               ) : (
-                <Document
-                  file={downloadUrl}
+                <PdfViewer
+                  downloadUrl={downloadUrl}
+                  pageNumber={pageNumber}
                   onLoadSuccess={handlePdfLoadSuccess}
                   onLoadError={handlePdfLoadError}
-                >
-                  <Page
-                    pageNumber={pageNumber}
-                    width={Math.min(
-                      800,
-                      typeof window !== "undefined" ? window.innerWidth - 48 : 800,
-                    )}
-                    onRenderError={() => setPageRenderError(true)}
-                  />
-                </Document>
+                  onRenderError={() => setPageRenderError(true)}
+                  onPageChange={setPageNumber}
+                />
               )}
 
               {numPages && numPages > 1 && !loadError && !pageRenderError && (

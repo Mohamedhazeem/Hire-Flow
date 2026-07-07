@@ -14,11 +14,11 @@ import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 
 const adminLinks: SidebarLink[] = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
-  { href: "/admin/messages", label: "Messages", icon: MessageSquareTextIcon },
-  { href: "/admin/users", label: "Users", icon: UsersIcon },
-  { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
-  { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
   { href: "/admin/team", label: "Team", icon: ShieldIcon },
+  { href: "/admin/messages", label: "Messages", icon: MessageSquareTextIcon },
+  { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
+  { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
+  { href: "/admin/users", label: "Users", icon: UsersIcon },
 ];
 
 export function AdminSidebar() {
@@ -26,7 +26,11 @@ export function AdminSidebar() {
   const signOut = useSignOut();
 
   const sidebarUser: SidebarUser | undefined = session?.user
-    ? { name: session.user.name, image: session.user.image, role: (session.user as { role?: string }).role ?? "user" }
+    ? {
+        name: session.user.name,
+        image: session.user.image,
+        role: (session.user as { role?: string }).role ?? "user",
+      }
     : undefined;
 
   return (
