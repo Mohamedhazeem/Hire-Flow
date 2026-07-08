@@ -8,7 +8,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { STATUS_OPTIONS, STATUS_DOT_COLORS } from "./applicant-table-constants";
+import { STATUS_OPTIONS, STATUS_DOT_COLORS } from "../utils/applicant-table-constants";
 import { SearchIcon, DownloadIcon } from "lucide-react";
 
 type ApplicantTableToolbarProps = {

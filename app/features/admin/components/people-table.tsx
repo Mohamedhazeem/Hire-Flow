@@ -9,7 +9,7 @@ import {
   useDeleteUser,
 } from "@/app/features/admin/hooks/use-admin-users";
 import { createPeopleTableColumns } from "./people-table-columns";
-import { parseUsersResponse } from "./admin-user-types";
+import { parseUsersResponse } from "../schema/admin-user-types";
 import { PeopleTableToolbar } from "@/components/shared/people-table-toolbar";
 import { PeopleTablePagination } from "@/components/shared/people-table-pagination";
 import { DataTable } from "@/components/ui/data-table";
@@ -57,10 +57,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     [revokeSessions],
   );
 
-  const handleDeleteUser = useCallback(
-    (userId: string) => deleteUser.mutate(userId),
-    [deleteUser],
-  );
+  const handleDeleteUser = useCallback((userId: string) => deleteUser.mutate(userId), [deleteUser]);
 
   const handleViewProfile = useCallback(
     (userId: string) => {

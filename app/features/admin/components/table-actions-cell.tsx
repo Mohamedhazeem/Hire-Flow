@@ -5,7 +5,7 @@ import { ActionButton } from "@/components/shared/action-button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { BanDialog } from "@/app/features/admin/components/ban-dialog";
 import { UnbanButton } from "@/app/features/admin/components/unban-button";
-import type { UserRow } from "./admin-user-types";
+import type { UserRow } from "../schema/admin-user-types";
 
 type TableActionsCellProps = {
   row: UserRow;

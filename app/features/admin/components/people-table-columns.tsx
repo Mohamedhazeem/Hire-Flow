@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import type { ColumnDef } from "@/components/ui/data-table";
 import { TableActionsCell } from "./table-actions-cell";
-import type { UserRow } from "./admin-user-types";
+import type { UserRow } from "../schema/admin-user-types";
 
 function formatDate(dateString: string): string {
   try {

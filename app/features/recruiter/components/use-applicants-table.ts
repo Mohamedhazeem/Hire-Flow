@@ -7,11 +7,14 @@ import {
   useBulkTransitionStatus,
   useRevertStatus,
 } from "@/app/features/recruiter/hooks/use-applications";
-import type { ListApplicantsParams, BulkStatusTransitionInput } from "@/app/features/recruiter/schema/application.schema";
+import type {
+  ListApplicantsParams,
+  BulkStatusTransitionInput,
+} from "@/app/features/recruiter/schema/application.schema";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 import { useSession } from "@/app/features/auth/libs/auth-client";
-import { BULK_ACTION_LABELS } from "./applicant-table-constants";
-import { addActionedIds } from "./applicant-table-utils";
+import { BULK_ACTION_LABELS } from "../utils/applicant-table-constants";
+import { addActionedIds } from "../utils/applicant-table-utils";
 
 export function useApplicantsTable(jobId: string) {
   const router = useRouter();
@@ -23,18 +26,26 @@ export function useApplicantsTable(jobId: string) {
   const status = searchParams.get("status") ?? "all";
 
   const [searchInput, setSearchInput] = useState(search);
-  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({ type: "", applicant: null });
+  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({
+    type: "",
+    applicant: null,
+  });
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [bulkDialog, setBulkDialog] = useState<string>("");
   const [actionedIds, setActionedIds] = useState<Set<string>>(new Set());
-  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(
+    null,
+  );
   const [revertTarget, setRevertTarget] = useState<ApplicantRow | null>(null);
   const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bulkTransition = useBulkTransitionStatus();
   const revertTransition = useRevertStatus();
 
   const params: ListApplicantsParams = {
-    page, pageSize: 20, sortBy: "appliedAt", sortOrder: "desc",
+    page,
+    pageSize: 20,
+    sortBy: "appliedAt",
+    sortOrder: "desc",
     search: search || undefined,
     status: status === "all" ? undefined : (status as ListApplicantsParams["status"]),
   };
@@ -60,7 +71,12 @@ export function useApplicantsTable(jobId: string) {
     [applicants, selectedIds, actionedIds],
   );
 
-  useEffect(() => () => { if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current); }, []);
+  useEffect(
+    () => () => {
+      if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+    },
+    [],
+  );
 
   const showFeedback = useCallback((type: "success" | "error", message: string) => {
     setFeedback({ type, message });
@@ -70,16 +86,28 @@ export function useApplicantsTable(jobId: string) {
 
   const handleBulkAction = useCallback(
     (targetStatus: string) => {
-      if (targetStatus === "rejected") { setBulkDialog("reject"); return; }
+      if (targetStatus === "rejected") {
+        setBulkDialog("reject");
+        return;
+      }
       const ids = [...selectedIds].filter((id) => !actionedIds.has(id));
       bulkTransition.mutate(
-        { applicationIds: ids, status: targetStatus as BulkStatusTransitionInput["status"], email: false },
+        {
+          applicationIds: ids,
+          status: targetStatus as BulkStatusTransitionInput["status"],
+          email: false,
+        },
         {
           onSuccess: () => {
-            showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`);
-            setActionedIds((prev) => addActionedIds(prev, ids)); setSelectedIds(new Set());
+            showFeedback(
+              "success",
+              `${ids.length} applicant${ids.length > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`,
+            );
+            setActionedIds((prev) => addActionedIds(prev, ids));
+            setSelectedIds(new Set());
           },
-          onError: (error: Error) => showFeedback("error", (error as { message?: string }).message ?? "Bulk action failed"),
+          onError: (error: Error) =>
+            showFeedback("error", (error as { message?: string }).message ?? "Bulk action failed"),
         },
       );
     },
@@ -94,9 +122,15 @@ export function useApplicantsTable(jobId: string) {
         {
           onSuccess: () => {
             showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} rejected`);
-            setActionedIds((prev) => addActionedIds(prev, ids)); setSelectedIds(new Set()); setBulkDialog("");
+            setActionedIds((prev) => addActionedIds(prev, ids));
+            setSelectedIds(new Set());
+            setBulkDialog("");
           },
-          onError: (error: Error) => showFeedback("error", (error as { message?: string }).message ?? "Bulk rejection failed"),
+          onError: (error: Error) =>
+            showFeedback(
+              "error",
+              (error as { message?: string }).message ?? "Bulk rejection failed",
+            ),
         },
       );
     },
@@ -105,22 +139,54 @@ export function useApplicantsTable(jobId: string) {
 
   const handleRevert = useCallback(
     (applicantId: string) => {
-      revertTransition.mutate({ applicationId: applicantId }, {
-        onSuccess: () => { setActionedIds((prev) => { const n = new Set(prev); n.delete(applicantId); return n; }); showFeedback("success", "Applicant reverted to previous status"); },
-        onError: (error: Error) => showFeedback("error", (error as { message?: string }).message ?? "Revert failed"),
-      });
+      revertTransition.mutate(
+        { applicationId: applicantId },
+        {
+          onSuccess: () => {
+            setActionedIds((prev) => {
+              const n = new Set(prev);
+              n.delete(applicantId);
+              return n;
+            });
+            showFeedback("success", "Applicant reverted to previous status");
+          },
+          onError: (error: Error) =>
+            showFeedback("error", (error as { message?: string }).message ?? "Revert failed"),
+        },
+      );
     },
     [revertTransition, showFeedback],
   );
 
   return {
-    recruiterId, page, search, status, searchInput, setSearchInput,
-    dialog, setDialog, selectedIds, setSelectedIds, bulkDialog, setBulkDialog,
-    actionedIds, feedback, setFeedback, revertTarget, setRevertTarget,
-    bulkTransition, revertTransition,
-    responseData, applicants, isLoading, isError,
-    selectedRows, updateParams,
-    handleBulkAction, handleBulkRejectConfirm, handleRevert,
+    recruiterId,
+    page,
+    search,
+    status,
+    searchInput,
+    setSearchInput,
+    dialog,
+    setDialog,
+    selectedIds,
+    setSelectedIds,
+    bulkDialog,
+    setBulkDialog,
+    actionedIds,
+    feedback,
+    setFeedback,
+    revertTarget,
+    setRevertTarget,
+    bulkTransition,
+    revertTransition,
+    responseData,
+    applicants,
+    isLoading,
+    isError,
+    selectedRows,
+    updateParams,
+    handleBulkAction,
+    handleBulkRejectConfirm,
+    handleRevert,
     searchParams,
   };
 }

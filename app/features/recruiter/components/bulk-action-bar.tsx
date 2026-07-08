@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { RotateCcwIcon } from "lucide-react";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
-import type { BulkActionDef } from "./applicant-table-constants";
+import type { BulkActionDef } from "../utils/applicant-table-constants";
 
 type BulkActionBarProps = {
   selectedIds: Set<string>;
