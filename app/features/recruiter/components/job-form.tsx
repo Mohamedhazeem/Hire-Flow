@@ -1,6 +1,6 @@
 "use client";
 
-import { Resolver, useForm, useWatch } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { JobCreateSchema, type JobFormInput } from "@/app/features/recruiter/schema/job.schema";
@@ -8,21 +8,11 @@ import { useCreateJob, useUpdateJob } from "@/app/features/recruiter/hooks/use-r
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { ArrowLeftIcon, Loader2Icon } from "lucide-react";
 import Link from "next/link";
-
-type JobFormProps = {
-  mode: "create" | "edit";
-  jobId?: string;
-  defaultValues?: Partial<JobFormInput>;
-};
+import { FormField } from "@/components/shared/form-field";
+import { CommaInput } from "@/components/shared/comma-input";
 
 const WORK_MODE_OPTIONS = [
   { value: "remote", label: "Remote" },
@@ -38,57 +28,25 @@ const EMPLOYMENT_TYPE_OPTIONS = [
   { value: "freelance", label: "Freelance" },
 ];
 
-function toArray(value: unknown): string[] {
-  if (Array.isArray(value)) return value;
-  if (typeof value === "string")
-    return value
-      ? value
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean)
-      : [];
-  return [];
-}
+type JobFormProps = { mode: "create" | "edit"; jobId?: string; defaultValues?: Partial<JobFormInput> };
 
 export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
   const router = useRouter();
   const createJob = useCreateJob();
   const updateJob = useUpdateJob();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    control,
-    formState: { errors, isSubmitting },
-  } = useForm<JobFormInput>({
-    resolver: zodResolver(JobCreateSchema) as Resolver<JobFormInput>,
+  const { register, handleSubmit, setValue, control, formState: { errors, isSubmitting } } = useForm<JobFormInput>({
+    resolver: zodResolver(JobCreateSchema),
     defaultValues: {
-      title: "",
-      description: "",
-      locations: [],
-      workMode: "remote",
-      employmentType: "full_time",
-      timezone: "",
-      skills: [],
-      tags: [],
-      experienceLevel: "",
-      salaryMin: undefined,
-      salaryMax: undefined,
-      salaryCurrency: "USD",
-      applicationDeadline: "",
-      ...defaultValues,
+      title: "", description: "", locations: [], workMode: "remote",
+      employmentType: "full_time", timezone: "", skills: [], tags: [],
+      experienceLevel: "", salaryMin: undefined, salaryMax: undefined,
+      salaryCurrency: "USD", applicationDeadline: "", ...defaultValues,
     },
   });
 
   const workMode = useWatch({ control, name: "workMode" });
   const employmentType = useWatch({ control, name: "employmentType" });
-  const locations = useWatch({ control, name: "locations" });
-  const skills = useWatch({ control, name: "skills" });
-  const tags = useWatch({ control, name: "tags" });
-  const locationsStr = (locations as string[] | undefined)?.join(", ") ?? "";
-  const skillsStr = (skills as string[] | undefined)?.join(", ") ?? "";
-  const tagsStr = (tags as string[] | undefined)?.join(", ") ?? "";
 
   const onSubmit = async (data: JobFormInput) => {
     if (mode === "create") {
@@ -103,182 +61,86 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl">
       <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">Title *</label>
+        <FormField label="Title" required error={errors.title}>
           <Input {...register("title")} placeholder="Senior Frontend Engineer" />
-          {errors.title && <p className="text-sm text-destructive mt-1">{errors.title.message}</p>}
-        </div>
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">Description *</label>
-          <Textarea
-            {...register("description")}
-            placeholder="Describe the role, responsibilities, and qualifications..."
-            rows={6}
-          />
-          {errors.description && (
-            <p className="text-sm text-destructive mt-1">{errors.description.message}</p>
-          )}
-        </div>
+        <FormField label="Description" required error={errors.description}>
+          <Textarea {...register("description")} placeholder="Describe the role, responsibilities, and qualifications..." rows={6} />
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Locations (comma-separated) *
-          </label>
-          <Input
-            value={locationsStr}
-            onChange={(e) =>
-              setValue(
-                "locations",
-                e.target.value
-                  .split(",")
-                  .map((s) => s.trim())
-                  .filter(Boolean),
-                {
-                  shouldValidate: true,
-                },
-              )
-            }
-            placeholder="New York, London, Remote"
-          />
-          {errors.locations && (
-            <p className="text-sm text-destructive mt-1">
-              {errors.locations.message ?? "At least one location is required"}
-            </p>
-          )}
-        </div>
+        <FormField label="Locations (comma-separated)" required error={errors.locations}>
+          <CommaInput control={control} name="locations" placeholder="New York, London, Remote" />
+        </FormField>
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-text-heading mb-1">Work Mode *</label>
-            <Select
-              value={workMode}
-              onValueChange={(v) =>
-                setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })
-              }
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue>
-                  {WORK_MODE_OPTIONS.find((o) => o.value === workMode)?.label ?? workMode}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                {WORK_MODE_OPTIONS.map((opt) => (
-                  <SelectItem key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <FormField label="Work Mode" required>
+              <Select value={workMode} onValueChange={(v) => setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })}>
+                <SelectTrigger className="w-full">
+                  <SelectValue>{WORK_MODE_OPTIONS.find((o) => o.value === workMode)?.label ?? workMode}</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {WORK_MODE_OPTIONS.map((opt) => (<SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>))}
+                </SelectContent>
+              </Select>
+            </FormField>
           </div>
-
           <div className="flex-1">
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Employment Type *
-            </label>
-            <Select
-              value={employmentType}
-              onValueChange={(v) =>
-                setValue("employmentType", v as JobFormInput["employmentType"], {
-                  shouldValidate: true,
-                })
-              }
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue>
-                  {EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ??
-                    employmentType}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                {EMPLOYMENT_TYPE_OPTIONS.map((opt) => (
-                  <SelectItem key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <FormField label="Employment Type" required>
+              <Select value={employmentType} onValueChange={(v) => setValue("employmentType", v as JobFormInput["employmentType"], { shouldValidate: true })}>
+                <SelectTrigger className="w-full">
+                  <SelectValue>{EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ?? employmentType}</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {EMPLOYMENT_TYPE_OPTIONS.map((opt) => (<SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>))}
+                </SelectContent>
+              </Select>
+            </FormField>
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">Timezone</label>
+        <FormField label="Timezone">
           <Input {...register("timezone")} placeholder="EST / GMT-5" />
-        </div>
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Skills (comma-separated)
-          </label>
-          <Input
-            value={skillsStr}
-            onChange={(e) => setValue("skills", toArray(e.target.value), { shouldValidate: true })}
-            placeholder="React, TypeScript, Node.js"
-          />
-        </div>
+        <FormField label="Skills (comma-separated)">
+          <CommaInput control={control} name="skills" placeholder="React, TypeScript, Node.js" />
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Tags (comma-separated)
-          </label>
-          <Input
-            value={tagsStr}
-            onChange={(e) => setValue("tags", toArray(e.target.value), { shouldValidate: true })}
-            placeholder="engineering, frontend, senior"
-          />
-        </div>
+        <FormField label="Tags (comma-separated)">
+          <CommaInput control={control} name="tags" placeholder="engineering, frontend, senior" />
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Experience Level *
-          </label>
+        <FormField label="Experience Level" required error={errors.experienceLevel}>
           <Input {...register("experienceLevel")} placeholder="Senior, Lead, 5+ years" />
-          {errors.experienceLevel && (
-            <p className="text-sm text-destructive mt-1">{errors.experienceLevel.message}</p>
-          )}
-        </div>
+        </FormField>
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-text-heading mb-1">Salary Min</label>
-            <Input
-              type="number"
-              {...register("salaryMin", { valueAsNumber: true })}
-              placeholder="80000"
-            />
+            <FormField label="Salary Min">
+              <Input type="number" {...register("salaryMin", { valueAsNumber: true })} placeholder="80000" />
+            </FormField>
           </div>
           <div className="flex-1">
-            <label className="block text-sm font-medium text-text-heading mb-1">Salary Max</label>
-            <Input
-              type="number"
-              {...register("salaryMax", { valueAsNumber: true })}
-              placeholder="120000"
-            />
+            <FormField label="Salary Max">
+              <Input type="number" {...register("salaryMax", { valueAsNumber: true })} placeholder="120000" />
+            </FormField>
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Salary Currency
-          </label>
+        <FormField label="Salary Currency">
           <Input {...register("salaryCurrency")} placeholder="USD" />
-        </div>
+        </FormField>
 
-        <div>
-          <label className="block text-sm font-medium text-text-heading mb-1">
-            Application Deadline
-          </label>
+        <FormField label="Application Deadline">
           <Input type="date" {...register("applicationDeadline")} />
-        </div>
+        </FormField>
       </div>
 
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center">
-        <Link
-          href={mode === "edit" && jobId ? `/recruiter/jobs/${jobId}` : "/recruiter/jobs"}
-          className="inline-flex items-center justify-center rounded-md border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-9 gap-1.5 px-2.5 text-sm font-medium whitespace-nowrap transition-all"
-        >
-          <ArrowLeftIcon className="size-4" />
-          Cancel
+        <Link href={mode === "edit" && jobId ? `/recruiter/jobs/${jobId}` : "/recruiter/jobs"} className="inline-flex items-center justify-center rounded-md border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-9 gap-1.5 px-2.5 text-sm font-medium whitespace-nowrap transition-all">
+          <ArrowLeftIcon className="size-4" /> Cancel
         </Link>
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting && <Loader2Icon className="size-4 animate-spin" />}

@@ -5,32 +5,22 @@ import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import type { ApiResponse } from "@/lib/api-response";
 import { PageHeader } from "@/components/layout/page-header";
-import { StatCard } from "@/components/ui/stat-card";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
-import { BarChart3Icon, BriefcaseIcon, FileTextIcon, TrendingUpIcon, ClockIcon } from "lucide-react";
+import { BarChart3Icon, FileTextIcon, BriefcaseIcon, TrendingUpIcon, ClockIcon } from "lucide-react";
 import { TrendChart } from "./charts/trend-chart";
 import { DistributionBarChart } from "./charts/distribution-bar-chart";
 import { FunnelChart } from "./charts/funnel-chart";
 import { AnalyticsFilterBar } from "./filters/analytics-filter-bar";
+import { AnalyticsStatRow } from "@/components/shared/analytics-stat-row";
 import { CHART_COLORS } from "../schema/analytics.schema";
 import type { AnalyticsFilter, AnalyticsResponse, JobBreakdownRow } from "../schema/analytics.schema";
 
 function filterFromParams(params: URLSearchParams): AnalyticsFilter {
   const f: AnalyticsFilter = {};
-  const jobId = params.get("jobId");
-  const dateFrom = params.get("dateFrom");
-  const dateTo = params.get("dateTo");
-  const status = params.get("status");
-  const workMode = params.get("workMode");
-  const employmentType = params.get("employmentType");
-  const location = params.get("location");
-  if (jobId) f.jobId = jobId;
-  if (dateFrom) f.dateFrom = dateFrom;
-  if (dateTo) f.dateTo = dateTo;
-  if (status) f.status = status;
-  if (workMode) f.workMode = workMode;
-  if (employmentType) f.employmentType = employmentType;
-  if (location) f.location = location;
+  for (const key of ["jobId", "dateFrom", "dateTo", "status", "workMode", "employmentType", "location"] as const) {
+    const v = params.get(key);
+    if (v) (f as Record<string, string>)[key] = v;
+  }
   return f;
 }
 
@@ -38,71 +28,28 @@ function statusBarData(data: AnalyticsResponse) {
   const statusMap = new Map(data.applicationsByStatus.map((s) => [s.stage, s.count]));
   return (Object.entries(CHART_COLORS) as Array<[string, string]>)
     .filter(([key]) => statusMap.has(key))
-    .map(([key, color]) => ({
-      label: key.replace(/_/g, " "),
-      value: statusMap.get(key) ?? 0,
-      color,
-    }));
+    .map(([key, color]) => ({ label: key.replace(/_/g, " "), value: statusMap.get(key) ?? 0, color }));
 }
 
 function workModeBarData(data: AnalyticsResponse) {
   return data.applicationsByWorkMode.map((w) => ({
-    label: w.workMode.charAt(0).toUpperCase() + w.workMode.slice(1),
-    value: w.count,
+    label: w.workMode.charAt(0).toUpperCase() + w.workMode.slice(1), value: w.count,
   }));
 }
 
 function employmentTypeBarData(data: AnalyticsResponse) {
   return data.applicationsByEmploymentType.map((e) => ({
-    label: e.employmentType.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-    value: e.count,
+    label: e.employmentType.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()), value: e.count,
   }));
 }
 
 const jobBreakdownColumns: ColumnDef<JobBreakdownRow>[] = [
-  {
-    key: "title",
-    header: "Job Title",
-    cell: (row) => <span className="font-medium text-text-heading text-sm">{row.title}</span>,
-  },
-  {
-    key: "totalApplications",
-    header: "Applications",
-    align: "center",
-    cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.totalApplications}</span>,
-  },
-  {
-    key: "hired",
-    header: "Hired",
-    align: "center",
-    cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.hired}</span>,
-  },
-  {
-    key: "conversionRate",
-    header: "Conv. %",
-    align: "center",
-    cell: (row) => (
-      <span className="text-text-body text-sm tabular-nums">
-        {row.conversionRate.toFixed(1)}%
-      </span>
-    ),
-  },
-  {
-    key: "avgFulfillmentDays",
-    header: "Avg Days",
-    align: "center",
-    cell: (row) => (
-      <span className="text-text-body text-sm tabular-nums">
-        {row.avgFulfillmentDays !== null ? `${row.avgFulfillmentDays}` : "—"}
-      </span>
-    ),
-  },
-  {
-    key: "viewCount",
-    header: "Views",
-    align: "center",
-    cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.viewCount}</span>,
-  },
+  { key: "title", header: "Job Title", cell: (row) => <span className="font-medium text-text-heading text-sm">{row.title}</span> },
+  { key: "totalApplications", header: "Applications", align: "center", cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.totalApplications}</span> },
+  { key: "hired", header: "Hired", align: "center", cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.hired}</span> },
+  { key: "conversionRate", header: "Conv. %", align: "center", cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.conversionRate.toFixed(1)}%</span> },
+  { key: "avgFulfillmentDays", header: "Avg Days", align: "center", cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.avgFulfillmentDays !== null ? `${row.avgFulfillmentDays}` : "—"}</span> },
+  { key: "viewCount", header: "Views", align: "center", cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.viewCount}</span> },
 ];
 
 export function RecruiterAnalyticsPage() {
@@ -113,13 +60,7 @@ export function RecruiterAnalyticsPage() {
     queryKey: ["recruiter", "analytics", filter],
     queryFn: async () => {
       const params: Record<string, string> = {};
-      if (filter.jobId) params.jobId = filter.jobId;
-      if (filter.dateFrom) params.dateFrom = filter.dateFrom;
-      if (filter.dateTo) params.dateTo = filter.dateTo;
-      if (filter.status) params.status = filter.status;
-      if (filter.workMode) params.workMode = filter.workMode;
-      if (filter.employmentType) params.employmentType = filter.employmentType;
-      if (filter.location) params.location = filter.location;
+      for (const [k, v] of Object.entries(filter)) { if (v) params[k] = v; }
       const res = await apiClient<ApiResponse<AnalyticsResponse>>("/api/recruiter/analytics", { params });
       return res.data;
     },
@@ -165,89 +106,31 @@ export function RecruiterAnalyticsPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader
-        title="Analytics"
-        description="Company-wide recruiting metrics and insights"
-        icon={<BarChart3Icon className="size-5" />}
-      />
-
+      <PageHeader title="Analytics" description="Company-wide recruiting metrics and insights" icon={<BarChart3Icon className="size-5" />} />
       <AnalyticsFilterBar jobOptions={jobOptions} showJobFilter />
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <StatCard
-          title="Total Applications"
-          value={data.summary.totalApplications}
-          icon={<FileTextIcon className="size-5" />}
-          gradient="from-purple-500/10 via-purple-500/5 to-transparent"
-        />
-        <StatCard
-          title="Active Jobs"
-          value={data.summary.totalJobs}
-          icon={<BriefcaseIcon className="size-5" />}
-          gradient="from-emerald-500/10 via-emerald-500/5 to-transparent"
-        />
-        <StatCard
-          title="Conversion Rate"
-          value={`${data.summary.conversionRate.toFixed(1)}%`}
-          icon={<TrendingUpIcon className="size-5" />}
-          gradient="from-blue-500/10 via-blue-500/5 to-transparent"
-        />
-        <StatCard
-          title="Avg Fulfillment"
-          value={data.summary.avgFulfillmentDays !== null ? `${data.summary.avgFulfillmentDays}d` : "—"}
-          icon={<ClockIcon className="size-5" />}
-          description={data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet"}
-          gradient="from-amber-500/10 via-amber-500/5 to-transparent"
-        />
+      <AnalyticsStatRow items={[
+        { title: "Total Applications", value: data.summary.totalApplications, icon: <FileTextIcon className="size-5" />, gradient: "from-purple-500/10 via-purple-500/5 to-transparent" },
+        { title: "Active Jobs", value: data.summary.totalJobs, icon: <BriefcaseIcon className="size-5" />, gradient: "from-emerald-500/10 via-emerald-500/5 to-transparent" },
+        { title: "Conversion Rate", value: `${data.summary.conversionRate.toFixed(1)}%`, icon: <TrendingUpIcon className="size-5" />, gradient: "from-blue-500/10 via-blue-500/5 to-transparent" },
+        { title: "Avg Fulfillment", value: data.summary.avgFulfillmentDays !== null ? `${data.summary.avgFulfillmentDays}d` : "—", icon: <ClockIcon className="size-5" />, description: data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet", gradient: "from-amber-500/10 via-amber-500/5 to-transparent" },
+      ]} />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+        <TrendChart data={data.applicationTrend} color="#3b82f6" title="Applications Trend"
+          subtitle={`${data.dateRange.from} to ${data.dateRange.to}`} gradientId="appTrendGradient" emptyMessage="No applications in this period" />
+        <DistributionBarChart data={statusBarData(data)}
+          colorMap={Object.fromEntries((Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [k.replace(/_/g, " "), v]))}
+          title="Applications by Status" emptyMessage="No applications yet" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
-        <TrendChart
-          data={data.applicationTrend}
-          color="#3b82f6"
-          title="Applications Trend"
-          subtitle={`${data.dateRange.from} to ${data.dateRange.to}`}
-          gradientId="appTrendGradient"
-          emptyMessage="No applications in this period"
-        />
-        <DistributionBarChart
-          data={statusBarData(data)}
-          colorMap={Object.fromEntries(
-            (Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [k.replace(/_/g, " "), v]),
-          )}
-          title="Applications by Status"
-          emptyMessage="No applications yet"
-        />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
-        <FunnelChart
-          current={data.funnelCurrent}
-          historical={data.funnelHistorical}
-          emptyMessage="No pipeline data available"
-        />
+        <FunnelChart current={data.funnelCurrent} historical={data.funnelHistorical} emptyMessage="No pipeline data available" />
         <div className="flex flex-col gap-3">
-          <DistributionBarChart
-            data={workModeBarData(data)}
-            colorMap={{
-              Remote: "#22c55e",
-              Hybrid: "#a855f7",
-              Onsite: "#f97316",
-            }}
-            title="Applications by Work Mode"
-            emptyMessage="No applications yet"
-          />
-          <DistributionBarChart
-            data={employmentTypeBarData(data)}
-            colorMap={{
-              "Full Time": "#3b82f6",
-              "Part Time": "#f59e0b",
-              Contract: "#a855f7",
-              Internship: "#06b6d4",
-            }}
-            title="Applications by Employment Type"
-            emptyMessage="No applications yet"
-          />
+          <DistributionBarChart data={workModeBarData(data)} colorMap={{ Remote: "#22c55e", Hybrid: "#a855f7", Onsite: "#f97316" }}
+            title="Applications by Work Mode" emptyMessage="No applications yet" />
+          <DistributionBarChart data={employmentTypeBarData(data)} colorMap={{ "Full Time": "#3b82f6", "Part Time": "#f59e0b", Contract: "#a855f7", Internship: "#06b6d4" }}
+            title="Applications by Employment Type" emptyMessage="No applications yet" />
         </div>
       </div>
 
@@ -257,11 +140,7 @@ export function RecruiterAnalyticsPage() {
             <h2 className="text-base font-semibold text-text-heading">Per-Job Breakdown</h2>
             <p className="text-[11px] text-text-muted mt-0.5">Metrics across all your job postings</p>
           </div>
-          <DataTable
-            columns={jobBreakdownColumns}
-            data={data.jobBreakdown}
-            emptyMessage="No jobs found"
-          />
+          <DataTable columns={jobBreakdownColumns} data={data.jobBreakdown} emptyMessage="No jobs found" />
         </div>
       )}
     </div>

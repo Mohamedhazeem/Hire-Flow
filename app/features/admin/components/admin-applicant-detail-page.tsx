@@ -15,19 +15,7 @@ import { ApplicantProfileCard } from "@/components/shared/applicant-profile-card
 import { ApplicantResumeCard } from "@/components/shared/applicant-resume-card";
 import { RecentMessagesCard } from "@/components/shared/recent-messages-card";
 import { ApplicantDetailSkeleton } from "@/app/features/recruiter/components/applicant-detail-skeleton";
-
-async function downloadFile(fileUrl: string, onError: (msg: string) => void) {
-  try {
-    const res = await fetch(`/api/files/download?path=${encodeURIComponent(fileUrl)}`);
-    if (!res.ok) { onError("File unavailable — removed by applicant"); return; }
-    const ct = res.headers.get("content-type") ?? "";
-    if (!ct || ct.startsWith("text/html")) { onError("Server returned an unexpected response"); return; }
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a"); a.href = url; a.download = fileUrl.split("/").pop() ?? "resume"; a.click();
-    URL.revokeObjectURL(url);
-  } catch { onError("Download failed. Please try again."); }
-}
+import { downloadResume } from "@/lib/download-resume";
 
 type AdminApplicantDetailPageProps = { applicationId: string };
 
@@ -38,7 +26,7 @@ export function AdminApplicantDetailPage({ applicationId }: AdminApplicantDetail
   const [downloadError, setDownloadError] = useState<string | null>(null);
 
   const showDownloadError = useCallback((msg: string) => { setDownloadError(msg); setTimeout(() => setDownloadError(null), 5000); }, []);
-  const handleDownload = useCallback((fileUrl: string) => downloadFile(fileUrl, showDownloadError), [showDownloadError]);
+  const handleDownload = useCallback((fileUrl: string) => downloadResume(fileUrl, showDownloadError), [showDownloadError]);
 
   if (isLoading) return <ApplicantDetailSkeleton />;
 

@@ -71,7 +71,7 @@ export function ChatHeader({
                 type="button"
                 onClick={onConfirmDelete}
                 disabled={isDeletingThread}
-                className="text-sm text-white bg-gradient-to-r from-error to-error/80 px-3 py-1.5 rounded-lg disabled:opacity-50 flex items-center justify-center min-w-16 font-medium shadow-sm"
+                className="text-sm text-white bg-linear-to-r from-error to-error/80 px-3 py-1.5 rounded-lg disabled:opacity-50 flex items-center justify-center min-w-16 font-medium shadow-sm"
               >
                 {isDeletingThread ? <Loader2Icon className="size-4 animate-spin" /> : "Delete"}
               </button>
