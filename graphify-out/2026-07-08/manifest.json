@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783492247.6441703,
-    "ast_hash": "61e230dfcdd4b4b18e9b442c0c1b061c",
+    "mtime": 1783492483.236238,
+    "ast_hash": "062640874df2e0b89466bab0e5f6afbb",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {
@@ -2512,6 +2512,41 @@
   "lib/services/user-service.ts": {
     "mtime": 1783486955.1595254,
     "ast_hash": "8dc757e84a76efffd28e532a9022b916",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/admin-user-types.ts": {
+    "mtime": 1783492457.406508,
+    "ast_hash": "439f2a0319334815a82c860fc19e1b5e",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/people-table-columns.tsx": {
+    "mtime": 1783492474.7621694,
+    "ast_hash": "461a9d39b4c2d3f37cd6e205f7ceb4e0",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/table-actions-cell.tsx": {
+    "mtime": 1783492644.2858908,
+    "ast_hash": "592434ae965aa5b9e9f5c763a869a789",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/unban-button.tsx": {
+    "mtime": 1783492461.9374144,
+    "ast_hash": "97dd5b6f9c1c3483c206b044d9020e55",
+    "semantic_hash": ""
+  },
+  "components/shared/action-button.tsx": {
+    "mtime": 1783492367.726421,
+    "ast_hash": "3ddb125635a89e505ed23f4a3259ba19",
+    "semantic_hash": ""
+  },
+  "components/shared/people-table-pagination.tsx": {
+    "mtime": 1783492394.6220677,
+    "ast_hash": "34006235daf2dd06d0ceaa04b0f5e47a",
+    "semantic_hash": ""
+  },
+  "components/shared/people-table-toolbar.tsx": {
+    "mtime": 1783492386.435929,
+    "ast_hash": "aa51bc02a0309d988d4607089955b687",
     "semantic_hash": ""
   }
 }

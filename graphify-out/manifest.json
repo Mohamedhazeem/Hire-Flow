@@ -640,13 +640,13 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1782395661.504923,
-    "ast_hash": "251052b0657199faa4b0906a00a7306a",
+    "mtime": 1783493116.3783488,
+    "ast_hash": "86e840f576aa77ffb43e947698e28b24",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
-    "mtime": 1783431623.1178,
-    "ast_hash": "a84247ffd7a2797669feb6b87a03d111",
+    "mtime": 1783493447.105193,
+    "ast_hash": "6a667f4280ca1a3e93ba2281b55650cc",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-message-page.tsx": {
@@ -685,8 +685,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-admin-form.tsx": {
-    "mtime": 1782482395.907833,
-    "ast_hash": "f5ce7e2e9d9b8d9168cc1ffe5e3474eb",
+    "mtime": 1783493000.5831218,
+    "ast_hash": "0a215c2d7a3f198df2f34b23358465d7",
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
@@ -2547,6 +2547,56 @@
   "components/shared/people-table-toolbar.tsx": {
     "mtime": 1783492386.435929,
     "ast_hash": "aa51bc02a0309d988d4607089955b687",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/invite-bulk-form.tsx": {
+    "mtime": 1783492995.7118194,
+    "ast_hash": "e64829e0489f64cb735dabb144d1071f",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/invite-single-form.tsx": {
+    "mtime": 1783492986.9376957,
+    "ast_hash": "d81c6f69d598a8ed30011efec387c85a",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/job-table-actions-cell.tsx": {
+    "mtime": 1783493017.8938043,
+    "ast_hash": "f5964e51e1f8842c75c9e44cfd7d4e31",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/job-table-columns.tsx": {
+    "mtime": 1783493077.6535914,
+    "ast_hash": "bf47c375a10c029a9bd6cd2483e31f0b",
+    "semantic_hash": ""
+  },
+  "app/features/admin/components/job-table-toolbar.tsx": {
+    "mtime": 1783493431.9484353,
+    "ast_hash": "cfae5426dbbedd088afdcfe7d162c13b",
+    "semantic_hash": ""
+  },
+  "components/shared/chart-card.tsx": {
+    "mtime": 1783493040.446297,
+    "ast_hash": "52f074af6292a039b18ce0e7619d3590",
+    "semantic_hash": ""
+  },
+  "components/shared/dashboard-error.tsx": {
+    "mtime": 1783493049.0640194,
+    "ast_hash": "5e42cfb6e3fe3cefcc62d87228a7cd7a",
+    "semantic_hash": ""
+  },
+  "components/shared/dashboard-loading.tsx": {
+    "mtime": 1783493044.2152987,
+    "ast_hash": "af3cf3eada3df365c2a2d4a65eb446eb",
+    "semantic_hash": ""
+  },
+  "components/shared/tab-switcher.tsx": {
+    "mtime": 1783492980.8570914,
+    "ast_hash": "f91fe3500eb0d2164aba4c99845d5f5f",
+    "semantic_hash": ""
+  },
+  "components/shared/workmode-bar-chart.tsx": {
+    "mtime": 1783493103.0429056,
+    "ast_hash": "b3fd81d31203e3e93a2507205eb4c816",
     "semantic_hash": ""
   }
 }
