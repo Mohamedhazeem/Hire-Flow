@@ -188,7 +188,7 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     (targetUserId: string) => {
       const adminId = (session?.user as { id?: string })?.id;
       if (!adminId) return;
-      router.push(`/admin/messages/${computeChatThreadId(adminId, targetUserId)}`);
+      router.push(`/admin/messages?thread=${computeChatThreadId(adminId, targetUserId)}`, { scroll: false });
     },
     [router, session],
   );
