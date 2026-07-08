@@ -5,7 +5,7 @@ import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api-error"
 import { RoleSchema } from "@/app/features/auth/schema/role.schema";
 
 export const userAdminService = {
-  async banUser(adminId: string, targetId: string, banReason?: string, banExpiresIn?: number, headers?: Headers) {
+  async banUser(adminId: string, targetId: string, banReason?: string, banExpiresIn?: number) {
     if (adminId === targetId) {
       throw new ValidationError("You cannot ban yourself");
     }
@@ -19,13 +19,17 @@ export const userAdminService = {
       throw new NotFoundError("User not found");
     }
 
-    await auth.api.banUser({
-      body: {
-        userId: targetId,
-        banReason,
-        banExpiresIn,
+    await prisma.user.update({
+      where: { id: targetId },
+      data: {
+        banned: true,
+        banReason: banReason ?? "No reason",
+        banExpiresAt: banExpiresIn ? new Date(Date.now() + banExpiresIn * 1000) : null,
       },
-      headers: headers as unknown as Headers,
+    });
+
+    await prisma.session.deleteMany({
+      where: { userId: targetId },
     });
 
     const expiresInDays = banExpiresIn
@@ -49,6 +53,20 @@ export const userAdminService = {
     });
 
     return { banned: true };
+  },
+
+  async unbanUser(targetId: string) {
+    const user = await prisma.user.findUnique({ where: { id: targetId }, select: { id: true, banned: true } });
+    if (!user) {
+      throw new NotFoundError("User not found");
+    }
+
+    await prisma.user.update({
+      where: { id: targetId },
+      data: { banned: false, banReason: null, banExpiresAt: null },
+    });
+
+    return { unbanned: true };
   },
 
   async setRole(targetId: string, role: string, headers: Headers) {

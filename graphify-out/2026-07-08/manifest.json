@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/users/page.tsx": {
-    "mtime": 1782573079.159704,
-    "ast_hash": "7c084eb13a74ab1ed6eb29b9a6140ecd",
+    "mtime": 1783489222.364324,
+    "ast_hash": "1ddb8ef7380f6daa5be226fee27869dd",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/analytics/page.tsx": {
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783430369.2854235,
-    "ast_hash": "30ce8b6983ac914438ac4c20697d8ab1",
+    "mtime": 1783488932.9689212,
+    "ast_hash": "2f2469c44f2ab2e30e268c9bfd488983",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {
@@ -1615,8 +1615,8 @@
     "semantic_hash": ""
   },
   "components/chat/chat-header.tsx": {
-    "mtime": 1782745922.5828874,
-    "ast_hash": "42b056ef521f01cb8d9bdd391ab15d86",
+    "mtime": 1783490024.2871094,
+    "ast_hash": "ce5d3da6c44b511df43430e2be6cafa7",
     "semantic_hash": ""
   },
   "components/chat/chat-input-area.tsx": {
@@ -1625,8 +1625,8 @@
     "semantic_hash": ""
   },
   "components/chat/chat-message-list.tsx": {
-    "mtime": 1782745939.0876167,
-    "ast_hash": "edc204fa1bcbe58e98b8a4acd8a5864c",
+    "mtime": 1783489849.9484775,
+    "ast_hash": "aaceb0decea2329e203ca16612483eba",
     "semantic_hash": ""
   },
   "components/chat/message-bubble.tsx": {
@@ -1675,8 +1675,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1782577004.1705134,
-    "ast_hash": "905a3ad18856eb2900083a14b6a4f1c9",
+    "mtime": 1783488413.9540458,
+    "ast_hash": "309f88e9231d2da62e8543c864b9da9a",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
@@ -2400,118 +2400,118 @@
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-messages.ts": {
-    "mtime": 1783434741.3972359,
-    "ast_hash": "01568841c256f1d998fc52432bc4fd78",
+    "mtime": 1783486954.7005363,
+    "ast_hash": "9023145a1fe1e63f1534a92b140198e2",
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-threads.ts": {
-    "mtime": 1783434746.525156,
-    "ast_hash": "b6720b7494baf1fb860a6ee3a732c1f7",
+    "mtime": 1783486954.7035348,
+    "ast_hash": "4ad497b40952a564b0451de660c28b16",
     "semantic_hash": ""
   },
   "lib/rate-limit.ts": {
-    "mtime": 1783434824.745916,
-    "ast_hash": "6e6b2c11a528ffb24d535f47fed2d051",
+    "mtime": 1783486955.1125264,
+    "ast_hash": "b868d4c2b56174507f69926343bbd529",
     "semantic_hash": ""
   },
   "lib/repositories/index.ts": {
-    "mtime": 1783435236.4688382,
-    "ast_hash": "6a428bbc71729a55a3632beb02015239",
+    "mtime": 1783486955.1225264,
+    "ast_hash": "12c87cb1ac4a91fc94c4eb8394e297bc",
     "semantic_hash": ""
   },
   "lib/repositories/interfaces.ts": {
-    "mtime": 1783435256.9931197,
-    "ast_hash": "8e77838c6657fba75cc13a4d06639d23",
+    "mtime": 1783486955.1255274,
+    "ast_hash": "9cf4fa0fd61feeb83ae3824f492d16bc",
     "semantic_hash": ""
   },
   "lib/repositories/message-repository.ts": {
-    "mtime": 1783435235.9966094,
-    "ast_hash": "9cbbd57e4e7d5ce0f135ed7647460d02",
+    "mtime": 1783486955.1295295,
+    "ast_hash": "e3e9ffd3baa3ea212893463f7853415d",
     "semantic_hash": ""
   },
   "lib/repositories/thread-repository.ts": {
-    "mtime": 1783434832.42599,
-    "ast_hash": "230e24cffec4674a26d9242d7b25cec1",
+    "mtime": 1783486955.139528,
+    "ast_hash": "5788261d68d2c97c7737e369e25f78b4",
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1783434927.0521555,
-    "ast_hash": "5546874e486e6d1c625a589896adf983",
+    "mtime": 1783486955.1535256,
+    "ast_hash": "437aa173d22b5f803ce92e385dd7d85a",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
-    "mtime": 1783438645.3751721,
-    "ast_hash": "2d47d7e481b8d6d4140e9da32ee35056",
+    "mtime": 1783486954.6719983,
+    "ast_hash": "487fd33c744dbd73b288241d2c03b5e4",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/invite-queries.ts": {
-    "mtime": 1783438646.157151,
-    "ast_hash": "f9d7b1ac88162d264b44cf9ec06230a4",
+    "mtime": 1783486954.684011,
+    "ast_hash": "f7e2a59ed35987703df85ac1461f4ded",
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-invites.ts": {
-    "mtime": 1783438833.2353,
-    "ast_hash": "272650899f1b87efcce33c3f224204e3",
+    "mtime": 1783486954.6965363,
+    "ast_hash": "e4f47d77b33012c037a46553def3874b",
     "semantic_hash": ""
   },
   "app/features/user/queries/bookmark-queries.ts": {
-    "mtime": 1783438515.009148,
-    "ast_hash": "defbb668ed52b6b5334f47228aa2e212",
+    "mtime": 1783486954.7145357,
+    "ast_hash": "aa5ecfa07359b5a1851b1e84d2c8be1b",
     "semantic_hash": ""
   },
   "app/features/user/queries/profile-queries.ts": {
-    "mtime": 1783438517.0437956,
-    "ast_hash": "1fb4863ed5e935dabde7a22dd6bc9a67",
+    "mtime": 1783486954.717535,
+    "ast_hash": "d35b0eb0b3b9980182ac6c7e73296b16",
     "semantic_hash": ""
   },
   "lib/handlers/invite.ts": {
-    "mtime": 1783438437.5436952,
-    "ast_hash": "2eb2974a894b1c9038089dc943b45d7e",
+    "mtime": 1783486955.104528,
+    "ast_hash": "8a172ebb377b551da01b658adc7d4345",
     "semantic_hash": ""
   },
   "lib/handlers/messages.ts": {
-    "mtime": 1783438345.2511752,
-    "ast_hash": "84516492927169f9a78f78fd337b4fde",
+    "mtime": 1783486955.1105266,
+    "ast_hash": "2036ccea7370cd03dc4779642c26b399",
     "semantic_hash": ""
   },
   "lib/repositories/application-repository.ts": {
-    "mtime": 1783439382.4388063,
-    "ast_hash": "e1ab674ceb0459a09a5302f94bcb5cf5",
+    "mtime": 1783486955.1205275,
+    "ast_hash": "9116397ea9f3a5778774336fc3bdb974",
     "semantic_hash": ""
   },
   "lib/repositories/job-repository.ts": {
-    "mtime": 1783439412.5989296,
-    "ast_hash": "0b0f8c59d656082f80ae4de93f8855ae",
+    "mtime": 1783486955.1265266,
+    "ast_hash": "ec5072319e9dff246fa1413f7905bb9b",
     "semantic_hash": ""
   },
   "lib/repositories/resume-repository.ts": {
-    "mtime": 1783439385.559479,
-    "ast_hash": "5a2a2951068b7716c78399bac1629612",
+    "mtime": 1783486955.1375268,
+    "ast_hash": "61f0a7bbf42abca23d8093b22bf10f63",
     "semantic_hash": ""
   },
   "lib/services/application-service.ts": {
-    "mtime": 1783440131.5150666,
-    "ast_hash": "ae3307a601bf3b90d4c343baa46692d9",
+    "mtime": 1783486955.1435325,
+    "ast_hash": "7182ad2ebf3628ff1f79f19f732ccc04",
     "semantic_hash": ""
   },
   "lib/services/invite-service.ts": {
-    "mtime": 1783438502.5812125,
-    "ast_hash": "2fccd181ab1b0d2b08276a1d1d8a1f66",
+    "mtime": 1783486955.1465292,
+    "ast_hash": "2296743363382d633dc19d3b7326160d",
     "semantic_hash": ""
   },
   "lib/services/job-service.ts": {
-    "mtime": 1783438689.8111708,
-    "ast_hash": "65e45e5a6d8922e41060405b6932ea4f",
+    "mtime": 1783486955.150528,
+    "ast_hash": "2ec7275c94761659464abadddb5bbf73",
     "semantic_hash": ""
   },
   "lib/services/user-admin-service.ts": {
-    "mtime": 1783438498.170065,
-    "ast_hash": "80aa5f3320b9fd2f81e15ccaa6557799",
+    "mtime": 1783486955.1565306,
+    "ast_hash": "701c76d106d3f2e8846f110819a0843c",
     "semantic_hash": ""
   },
   "lib/services/user-service.ts": {
-    "mtime": 1783439427.7816355,
-    "ast_hash": "624168a33e832a2d9782a3ef674a0486",
+    "mtime": 1783486955.1595254,
+    "ast_hash": "8dc757e84a76efffd28e532a9022b916",
     "semantic_hash": ""
   }
 }

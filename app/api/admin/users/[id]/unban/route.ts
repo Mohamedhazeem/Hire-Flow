@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { auth } from "@/app/features/auth/libs/auth";
+import { userAdminService } from "@/lib/services/user-admin-service";
 import { withErrorHandler } from "@/lib/api-wrapper";
 
 async function handlePOST(
@@ -11,12 +11,9 @@ async function handlePOST(
   await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
-  await auth.api.unbanUser({
-    body: { userId: id },
-    headers: request.headers,
-  });
+  const result = await userAdminService.unbanUser(id);
 
-  return ok({ unbanned: true });
+  return ok(result);
 }
 
 export const POST = withErrorHandler(handlePOST);

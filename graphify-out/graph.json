@@ -710,7 +710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_admin_jobs_page_tsx_jobs_page",
-      "community": 17,
+      "community": 96,
       "norm_label": "page.tsx"
     },
     {
@@ -720,7 +720,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_roles_admin_jobs_page_tsx_jobs_page_metadata",
-      "community": 17,
+      "community": 96,
       "norm_label": "metadata"
     },
     {
@@ -730,7 +730,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "jobs_page_adminjobspage",
-      "community": 17,
+      "community": 96,
       "norm_label": "adminjobspage()"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_admin_recruiters_id_page_tsx_id_page",
-      "community": 43,
+      "community": 94,
       "norm_label": "page.tsx"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "app_roles_admin_recruiters_id_page_tsx_id_page_props",
-      "community": 43,
+      "community": 94,
       "norm_label": "props"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "recruiters_page",
-      "community": 17,
+      "community": 30,
       "norm_label": "page.tsx"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "recruiters_page_metadata",
-      "community": 17,
+      "community": 30,
       "norm_label": "metadata"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "recruiters_page_adminrecruiterspage",
-      "community": 17,
+      "community": 30,
       "norm_label": "adminrecruiterspage()"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_recruiter_applicants_applicationid_page_tsx_applicationid_page",
-      "community": 29,
+      "community": 65,
       "norm_label": "page.tsx"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_roles_recruiter_applicants_applicationid_page_tsx_applicationid_page_metadata",
-      "community": 29,
+      "community": 65,
       "norm_label": "metadata"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_roles_recruiter_applicants_applicationid_page_tsx_applicationid_page_props",
-      "community": 29,
+      "community": 65,
       "norm_label": "props"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "applicationid_page_applicantdetailroute",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicantdetailroute()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "applicants_page",
-      "community": 79,
+      "community": 167,
       "norm_label": "page.tsx"
     },
     {
@@ -1180,7 +1180,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "applicants_page_metadata",
-      "community": 79,
+      "community": 167,
       "norm_label": "metadata"
     },
     {
@@ -1190,7 +1190,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "applicants_page_props",
-      "community": 79,
+      "community": 167,
       "norm_label": "props"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "applicants_page_applicantspage",
-      "community": 79,
+      "community": 167,
       "norm_label": "applicantspage()"
     },
     {
@@ -1290,7 +1290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "new_page",
-      "community": 17,
+      "community": 34,
       "norm_label": "page.tsx"
     },
     {
@@ -1300,7 +1300,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "new_page_metadata",
-      "community": 17,
+      "community": 34,
       "norm_label": "metadata"
     },
     {
@@ -1310,7 +1310,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "new_page_createjobpage",
-      "community": 17,
+      "community": 34,
       "norm_label": "createjobpage()"
     },
     {
@@ -1320,7 +1320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_roles_recruiter_jobs_page_tsx_jobs_page",
-      "community": 17,
+      "community": 34,
       "norm_label": "page.tsx"
     },
     {
@@ -1330,7 +1330,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_roles_recruiter_jobs_page_tsx_jobs_page_metadata",
-      "community": 17,
+      "community": 34,
       "norm_label": "metadata"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "jobs_page_createjobbutton",
-      "community": 17,
+      "community": 34,
       "norm_label": "createjobbutton()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "jobs_page_recruiterjobspage",
-      "community": 17,
+      "community": 34,
       "norm_label": "recruiterjobspage()"
     },
     {
@@ -1770,7 +1770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "builder_page",
-      "community": 17,
+      "community": 96,
       "norm_label": "page.tsx"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "builder_page_metadata",
-      "community": 17,
+      "community": 96,
       "norm_label": "metadata"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "builder_page_builderpage",
-      "community": 17,
+      "community": 96,
       "norm_label": "builderpage()"
     },
     {
@@ -1930,7 +1930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_admin_invite_id_route_ts_id_route",
-      "community": 26,
+      "community": 40,
       "norm_label": "route.ts"
     },
     {
@@ -1940,7 +1940,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_admin_invite_id_route_ts_id_route_delete",
-      "community": 26,
+      "community": 40,
       "norm_label": "{ delete }"
     },
     {
@@ -2257,7 +2257,7 @@
       "label": "POST",
       "file_type": "code",
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L34",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "ban_route_post",
       "community": 26,
@@ -2400,7 +2400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "unban_route",
-      "community": 103,
+      "community": 26,
       "norm_label": "route.ts"
     },
     {
@@ -2417,10 +2417,10 @@
       "label": "POST",
       "file_type": "code",
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L22",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "unban_route_post",
-      "community": 103,
+      "community": 26,
       "norm_label": "post"
     },
     {
@@ -2590,7 +2590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "view_route",
-      "community": 172,
+      "community": 55,
       "norm_label": "route.ts"
     },
     {
@@ -2600,7 +2600,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "view_route_handlepost",
-      "community": 172,
+      "community": 55,
       "norm_label": "handlepost()"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "view_route_post",
-      "community": 172,
+      "community": 55,
       "norm_label": "post"
     },
     {
@@ -2780,7 +2780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_recruiter_applications_applicationid_profile_route_ts_profile_route",
-      "community": 103,
+      "community": 22,
       "norm_label": "route.ts"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "profile_route_handleget",
-      "community": 103,
+      "community": 22,
       "norm_label": "handleget()"
     },
     {
@@ -2800,7 +2800,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_api_recruiter_applications_applicationid_profile_route_ts_profile_route_get",
-      "community": 103,
+      "community": 22,
       "norm_label": "get"
     },
     {
@@ -2900,7 +2900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_id_route_ts_id_route",
-      "community": 26,
+      "community": 40,
       "norm_label": "route.ts"
     },
     {
@@ -2910,7 +2910,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_id_route_ts_id_route_delete",
-      "community": 26,
+      "community": 40,
       "norm_label": "{ delete }"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route",
-      "community": 27,
+      "community": 89,
       "norm_label": "route.ts"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "community": 27,
+      "community": 89,
       "norm_label": "handleget()"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_get",
-      "community": 27,
+      "community": 89,
       "norm_label": "get"
     },
     {
@@ -3010,7 +3010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "export_route",
-      "community": 26,
+      "community": 103,
       "norm_label": "route.ts"
     },
     {
@@ -3020,7 +3020,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "export_route_handleget",
-      "community": 26,
+      "community": 103,
       "norm_label": "handleget()"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "export_route_get",
-      "community": 26,
+      "community": 103,
       "norm_label": "get"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "applicants_route",
-      "community": 27,
+      "community": 26,
       "norm_label": "route.ts"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "applicants_route_handleget",
-      "community": 27,
+      "community": 26,
       "norm_label": "handleget()"
     },
     {
@@ -3060,7 +3060,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "applicants_route_get",
-      "community": 27,
+      "community": 26,
       "norm_label": "get"
     },
     {
@@ -3560,7 +3560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route",
-      "community": 27,
+      "community": 103,
       "norm_label": "route.ts"
     },
     {
@@ -3570,7 +3570,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route_get",
-      "community": 27,
+      "community": 103,
       "norm_label": "get()"
     },
     {
@@ -3900,7 +3900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_admin_jobs_table",
-      "community": 34,
+      "community": 105,
       "norm_label": "admin-jobs-table.tsx"
     },
     {
@@ -3910,7 +3910,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "components_admin_jobs_table_work_mode_labels",
-      "community": 34,
+      "community": 105,
       "norm_label": "work_mode_labels"
     },
     {
@@ -3920,7 +3920,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_admin_jobs_table_employment_type_labels",
-      "community": 34,
+      "community": 105,
       "norm_label": "employment_type_labels"
     },
     {
@@ -3930,7 +3930,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_admin_jobs_table_adminjobstableprops",
-      "community": 34,
+      "community": 105,
       "norm_label": "adminjobstableprops"
     },
     {
@@ -4470,7 +4470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_recruiter_profile_view",
-      "community": 43,
+      "community": 94,
       "norm_label": "recruiter-profile-view.tsx"
     },
     {
@@ -4480,7 +4480,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_companyjob",
-      "community": 43,
+      "community": 94,
       "norm_label": "companyjob"
     },
     {
@@ -4490,7 +4490,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_adminrecruiterprofileviewprops",
-      "community": 43,
+      "community": 94,
       "norm_label": "adminrecruiterprofileviewprops"
     },
     {
@@ -4500,7 +4500,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_jobstatusbadge",
-      "community": 43,
+      "community": 94,
       "norm_label": "jobstatusbadge()"
     },
     {
@@ -4510,7 +4510,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_fmtdate",
-      "community": 43,
+      "community": 94,
       "norm_label": "fmtdate()"
     },
     {
@@ -4520,7 +4520,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_companyjobstable",
-      "community": 43,
+      "community": 94,
       "norm_label": "companyjobstable()"
     },
     {
@@ -4530,7 +4530,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "components_recruiter_profile_view_adminrecruiterprofileview",
-      "community": 43,
+      "community": 94,
       "norm_label": "adminrecruiterprofileview()"
     },
     {
@@ -6680,7 +6680,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_job_search_bar",
-      "community": 58,
+      "community": 17,
       "norm_label": "job-search-bar.tsx"
     },
     {
@@ -6690,7 +6690,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_job_search_bar_jobsearchbar",
-      "community": 58,
+      "community": 17,
       "norm_label": "jobsearchbar()"
     },
     {
@@ -6720,7 +6720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_public_job_queries",
-      "community": 175,
+      "community": 111,
       "norm_label": "public-job-queries.ts"
     },
     {
@@ -6730,7 +6730,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "queries_public_job_queries_publicjobrow",
-      "community": 175,
+      "community": 111,
       "norm_label": "publicjobrow"
     },
     {
@@ -6740,7 +6740,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "queries_public_job_queries_publicjobdetail",
-      "community": 175,
+      "community": 111,
       "norm_label": "publicjobdetail"
     },
     {
@@ -6750,7 +6750,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "queries_public_job_queries_publicjoblistresult",
-      "community": 175,
+      "community": 111,
       "norm_label": "publicjoblistresult"
     },
     {
@@ -6760,7 +6760,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "queries_public_job_queries_publicjoblistparams",
-      "community": 175,
+      "community": 111,
       "norm_label": "publicjoblistparams"
     },
     {
@@ -6770,7 +6770,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "queries_public_job_queries_allowed_sort_fields",
-      "community": 175,
+      "community": 111,
       "norm_label": "allowed_sort_fields"
     },
     {
@@ -6780,7 +6780,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "queries_public_job_queries_allowed_sort_orders",
-      "community": 175,
+      "community": 111,
       "norm_label": "allowed_sort_orders"
     },
     {
@@ -6860,7 +6860,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_featured_jobs_grid_featuredjobsgrid",
-      "community": 61,
+      "community": 111,
       "norm_label": "featuredjobsgrid()"
     },
     {
@@ -6870,7 +6870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_featured_jobs",
-      "community": 61,
+      "community": 111,
       "norm_label": "featured-jobs.tsx"
     },
     {
@@ -6880,7 +6880,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_featured_jobs_tocardprops",
-      "community": 61,
+      "community": 111,
       "norm_label": "tocardprops()"
     },
     {
@@ -8100,7 +8100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_detail_page",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicant-detail-page.tsx"
     },
     {
@@ -8110,7 +8110,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_applicant_detail_page_applicantdetailpageprops",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicantdetailpageprops"
     },
     {
@@ -8120,7 +8120,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "components_applicant_detail_page_downloadfile",
-      "community": 29,
+      "community": 65,
       "norm_label": "downloadfile()"
     },
     {
@@ -8130,7 +8130,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_applicant_detail_page_applicantdetailpage",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicantdetailpage()"
     },
     {
@@ -8140,7 +8140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_detail_skeleton",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicant-detail-skeleton.tsx"
     },
     {
@@ -8150,7 +8150,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_applicant_detail_skeleton_applicantdetailskeleton",
-      "community": 29,
+      "community": 65,
       "norm_label": "applicantdetailskeleton()"
     },
     {
@@ -8160,7 +8160,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_columns",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicant-table-columns.tsx"
     },
     {
@@ -8170,7 +8170,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "components_applicant_table_columns_applicanttablecolumnsprops",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicanttablecolumnsprops"
     },
     {
@@ -8180,7 +8180,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_applicant_table_columns_createapplicanttablecolumns",
-      "community": 79,
+      "community": 33,
       "norm_label": "createapplicanttablecolumns()"
     },
     {
@@ -8190,7 +8190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_constants",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicant-table-constants.ts"
     },
     {
@@ -8200,7 +8200,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_applicant_table_constants_status_options",
-      "community": 79,
+      "community": 33,
       "norm_label": "status_options"
     },
     {
@@ -8210,7 +8210,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_applicant_table_constants_next_actions",
-      "community": 79,
+      "community": 65,
       "norm_label": "next_actions"
     },
     {
@@ -8220,7 +8220,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_applicant_table_constants_bulkactiondef",
-      "community": 79,
+      "community": 33,
       "norm_label": "bulkactiondef"
     },
     {
@@ -8230,7 +8230,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "components_applicant_table_constants_status_dot_colors",
-      "community": 79,
+      "community": 33,
       "norm_label": "status_dot_colors"
     },
     {
@@ -8240,7 +8240,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "components_applicant_table_constants_bulk_action_labels",
-      "community": 79,
+      "community": 33,
       "norm_label": "bulk_action_labels"
     },
     {
@@ -8250,7 +8250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_feedback",
-      "community": 66,
+      "community": 38,
       "norm_label": "applicant-table-feedback.tsx"
     },
     {
@@ -8260,7 +8260,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_applicant_table_feedback_feedbackprops",
-      "community": 66,
+      "community": 38,
       "norm_label": "feedbackprops"
     },
     {
@@ -8270,7 +8270,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_applicant_table_feedback_applicanttablefeedback",
-      "community": 66,
+      "community": 38,
       "norm_label": "applicanttablefeedback()"
     },
     {
@@ -8280,7 +8280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_pagination",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicant-table-pagination.tsx"
     },
     {
@@ -8290,7 +8290,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_applicant_table_pagination_applicanttablepaginationprops",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicanttablepaginationprops"
     },
     {
@@ -8300,7 +8300,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_applicant_table_pagination_applicanttablepagination",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicanttablepagination()"
     },
     {
@@ -8310,7 +8310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_toolbar",
-      "community": 34,
+      "community": 29,
       "norm_label": "applicant-table-toolbar.tsx"
     },
     {
@@ -8320,7 +8320,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "components_applicant_table_toolbar_applicanttabletoolbarprops",
-      "community": 34,
+      "community": 29,
       "norm_label": "applicanttabletoolbarprops"
     },
     {
@@ -8330,7 +8330,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "components_applicant_table_toolbar_applicanttabletoolbar",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicanttabletoolbar()"
     },
     {
@@ -8340,7 +8340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicant_table_utils",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicant-table-utils.ts"
     },
     {
@@ -8350,7 +8350,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_applicant_table_utils_addactionedids",
-      "community": 79,
+      "community": 33,
       "norm_label": "addactionedids()"
     },
     {
@@ -8360,7 +8360,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_applicant_table_utils_getbulkactions",
-      "community": 79,
+      "community": 33,
       "norm_label": "getbulkactions()"
     },
     {
@@ -8400,7 +8400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_applicants_table",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicants-table.tsx"
     },
     {
@@ -8410,7 +8410,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "components_applicants_table_applicantstableprops",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicantstableprops"
     },
     {
@@ -8420,7 +8420,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_applicants_table_applicantstable",
-      "community": 79,
+      "community": 167,
       "norm_label": "applicantstable()"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_bulk_action_bar",
-      "community": 79,
+      "community": 33,
       "norm_label": "bulk-action-bar.tsx"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_bulk_action_bar_bulkactionbarprops",
-      "community": 79,
+      "community": 33,
       "norm_label": "bulkactionbarprops"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_bulk_action_bar_bulkactionbar",
-      "community": 79,
+      "community": 33,
       "norm_label": "bulkactionbar()"
     },
     {
@@ -8910,7 +8910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "filters_analytics_filter_bar",
-      "community": 33,
+      "community": 66,
       "norm_label": "analytics-filter-bar.tsx"
     },
     {
@@ -8920,7 +8920,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "filters_analytics_filter_bar_analyticsfilterbarprops",
-      "community": 33,
+      "community": 66,
       "norm_label": "analyticsfilterbarprops"
     },
     {
@@ -8930,7 +8930,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "filters_analytics_filter_bar_analyticsfilterbar",
-      "community": 33,
+      "community": 66,
       "norm_label": "analyticsfilterbar()"
     },
     {
@@ -8940,7 +8940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "filters_desktop_filters",
-      "community": 33,
+      "community": 66,
       "norm_label": "desktop-filters.tsx"
     },
     {
@@ -8950,7 +8950,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "filters_desktop_filters_desktopfiltersprops",
-      "community": 33,
+      "community": 66,
       "norm_label": "desktopfiltersprops"
     },
     {
@@ -8960,7 +8960,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "filters_desktop_filters_itemcls",
-      "community": 33,
+      "community": 66,
       "norm_label": "itemcls()"
     },
     {
@@ -8970,7 +8970,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "filters_desktop_filters_desktopfilters",
-      "community": 33,
+      "community": 66,
       "norm_label": "desktopfilters()"
     },
     {
@@ -9010,7 +9010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "filters_filter_options",
-      "community": 33,
+      "community": 66,
       "norm_label": "filter-options.tsx"
     },
     {
@@ -9020,7 +9020,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "filters_filter_options_work_mode_options",
-      "community": 33,
+      "community": 66,
       "norm_label": "work_mode_options"
     },
     {
@@ -9030,7 +9030,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "filters_filter_options_employment_type_options",
-      "community": 33,
+      "community": 66,
       "norm_label": "employment_type_options"
     },
     {
@@ -9040,7 +9040,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "filters_filter_options_getstatusoptions",
-      "community": 33,
+      "community": 66,
       "norm_label": "getstatusoptions()"
     },
     {
@@ -9050,7 +9050,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "filters_filter_options_statusdot",
-      "community": 33,
+      "community": 66,
       "norm_label": "statusdot()"
     },
     {
@@ -9060,7 +9060,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "filters_mobile_filters",
-      "community": 33,
+      "community": 66,
       "norm_label": "mobile-filters.tsx"
     },
     {
@@ -9070,7 +9070,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "filters_mobile_filters_mobilefiltersprops",
-      "community": 33,
+      "community": 66,
       "norm_label": "mobilefiltersprops"
     },
     {
@@ -9080,7 +9080,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "filters_mobile_filters_mobilefilters",
-      "community": 33,
+      "community": 66,
       "norm_label": "mobilefilters()"
     },
     {
@@ -9620,7 +9620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_use_applicants_table",
-      "community": 79,
+      "community": 43,
       "norm_label": "use-applicants-table.ts"
     },
     {
@@ -9630,7 +9630,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_use_applicants_table_useapplicantstable",
-      "community": 79,
+      "community": 43,
       "norm_label": "useapplicantstable()"
     },
     {
@@ -9770,7 +9770,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "hooks_use_applicant_detail_useapplicantdetail",
-      "community": 29,
+      "community": 65,
       "norm_label": "useapplicantdetail()"
     },
     {
@@ -9780,7 +9780,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "hooks_use_applicant_detail_usetransitionstatuswithrefresh",
-      "community": 29,
+      "community": 65,
       "norm_label": "usetransitionstatuswithrefresh()"
     },
     {
@@ -9790,7 +9790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_applications",
-      "community": 79,
+      "community": 43,
       "norm_label": "use-applications.ts"
     },
     {
@@ -9800,7 +9800,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "hooks_use_applications_useapplicants",
-      "community": 79,
+      "community": 43,
       "norm_label": "useapplicants()"
     },
     {
@@ -9820,7 +9820,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "hooks_use_applications_usebulktransitionstatus",
-      "community": 79,
+      "community": 43,
       "norm_label": "usebulktransitionstatus()"
     },
     {
@@ -9830,7 +9830,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "hooks_use_applications_userevertstatus",
-      "community": 79,
+      "community": 43,
       "norm_label": "userevertstatus()"
     },
     {
@@ -10190,7 +10190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_application_queries",
-      "community": 79,
+      "community": 33,
       "norm_label": "application-queries.ts"
     },
     {
@@ -10200,7 +10200,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "queries_application_queries_applicantrow",
-      "community": 79,
+      "community": 33,
       "norm_label": "applicantrow"
     },
     {
@@ -10210,7 +10210,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "queries_application_queries_applicantlistresult",
-      "community": 79,
+      "community": 43,
       "norm_label": "applicantlistresult"
     },
     {
@@ -10330,7 +10330,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "queries_export_queries_exportapplicantsascsv",
-      "community": 26,
+      "community": 103,
       "norm_label": "exportapplicantsascsv()"
     },
     {
@@ -10340,7 +10340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "community": 27,
+      "community": 89,
       "norm_label": "invite-queries.ts"
     },
     {
@@ -10350,7 +10350,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinviterow",
-      "community": 27,
+      "community": 89,
       "norm_label": "recruiterinviterow"
     },
     {
@@ -10360,7 +10360,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterteammemberrow",
-      "community": 27,
+      "community": 89,
       "norm_label": "recruiterteammemberrow"
     },
     {
@@ -10370,7 +10370,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinvitelistresponse",
-      "community": 27,
+      "community": 89,
       "norm_label": "recruiterinvitelistresponse"
     },
     {
@@ -10380,7 +10380,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "queries_invite_queries_listrecruiterinvites",
-      "community": 27,
+      "community": 89,
       "norm_label": "listrecruiterinvites()"
     },
     {
@@ -10590,7 +10590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schema_application_schema",
-      "community": 79,
+      "community": 43,
       "norm_label": "application.schema.ts"
     },
     {
@@ -10600,7 +10600,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "schema_application_schema_application_statuses",
-      "community": 33,
+      "community": 66,
       "norm_label": "application_statuses"
     },
     {
@@ -10610,7 +10610,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "schema_application_schema_applicationstatusschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "applicationstatusschema"
     },
     {
@@ -10630,7 +10630,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "schema_application_schema_transitionstatusschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "transitionstatusschema"
     },
     {
@@ -10640,7 +10640,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "schema_application_schema_listapplicantsparamsschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "listapplicantsparamsschema"
     },
     {
@@ -10650,7 +10650,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "schema_application_schema_listapplicantsparams",
-      "community": 79,
+      "community": 43,
       "norm_label": "listapplicantsparams"
     },
     {
@@ -10660,7 +10660,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "schema_application_schema_basetransitionschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "basetransitionschema"
     },
     {
@@ -10670,7 +10670,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "schema_application_schema_scheduleinterviewschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "scheduleinterviewschema"
     },
     {
@@ -10680,7 +10680,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "schema_application_schema_sendofferschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "sendofferschema"
     },
     {
@@ -10690,7 +10690,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "schema_application_schema_rejectschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "rejectschema"
     },
     {
@@ -10700,7 +10700,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "schema_application_schema_statustransitionschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "statustransitionschema"
     },
     {
@@ -10710,7 +10710,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "schema_application_schema_statustransitioninput",
-      "community": 79,
+      "community": 43,
       "norm_label": "statustransitioninput"
     },
     {
@@ -10720,7 +10720,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "schema_application_schema_bulkstatustransitionschema",
-      "community": 79,
+      "community": 43,
       "norm_label": "bulkstatustransitionschema"
     },
     {
@@ -10730,7 +10730,7 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "schema_application_schema_bulkstatustransitioninput",
-      "community": 79,
+      "community": 43,
       "norm_label": "bulkstatustransitioninput"
     },
     {
@@ -10970,7 +10970,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "api_require_role_resolvedsession",
-      "community": 26,
+      "community": 40,
       "norm_label": "resolvedsession"
     },
     {
@@ -11190,7 +11190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "actions_upsert_profile",
-      "community": 103,
+      "community": 26,
       "norm_label": "upsert-profile.ts"
     },
     {
@@ -12370,7 +12370,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_profile_queries",
-      "community": 27,
+      "community": 103,
       "norm_label": "profile-queries.ts"
     },
     {
@@ -12380,7 +12380,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_profile_queries_profileoutput",
-      "community": 27,
+      "community": 103,
       "norm_label": "profileoutput"
     },
     {
@@ -12390,7 +12390,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "queries_profile_queries_getuserprofile",
-      "community": 27,
+      "community": 103,
       "norm_label": "getuserprofile()"
     },
     {
@@ -12880,7 +12880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_sitemap",
-      "community": 27,
+      "community": 22,
       "norm_label": "sitemap.ts"
     },
     {
@@ -12890,7 +12890,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "app_sitemap_sitemap",
-      "community": 27,
+      "community": 22,
       "norm_label": "sitemap()"
     },
     {
@@ -13127,7 +13127,7 @@
       "label": "ChatHeaderProps",
       "file_type": "code",
       "source_file": "components/chat/chat-header.tsx",
-      "source_location": "L9",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "chat_chat_header_chatheaderprops",
       "community": 36,
@@ -13137,7 +13137,7 @@
       "label": "ChatHeader()",
       "file_type": "code",
       "source_file": "components/chat/chat-header.tsx",
-      "source_location": "L22",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "chat_chat_header_chatheader",
       "community": 36,
@@ -13187,7 +13187,7 @@
       "label": "ChatMessageListProps",
       "file_type": "code",
       "source_file": "components/chat/chat-message-list.tsx",
-      "source_location": "L12",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "chat_chat_message_list_chatmessagelistprops",
       "community": 36,
@@ -13197,7 +13197,7 @@
       "label": "ChatMessageList()",
       "file_type": "code",
       "source_file": "components/chat/chat-message-list.tsx",
-      "source_location": "L25",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "chat_chat_message_list_chatmessagelist",
       "community": 36,
@@ -13207,7 +13207,7 @@
       "label": "SkeletonMessages()",
       "file_type": "code",
       "source_file": "components/chat/chat-message-list.tsx",
-      "source_location": "L97",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "chat_chat_message_list_skeletonmessages",
       "community": 36,
@@ -13560,7 +13560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "layout_page_header",
-      "community": 17,
+      "community": 96,
       "norm_label": "page-header.tsx"
     },
     {
@@ -13570,7 +13570,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "layout_page_header_pageheaderprops",
-      "community": 17,
+      "community": 96,
       "norm_label": "pageheaderprops"
     },
     {
@@ -13580,7 +13580,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "layout_page_header_pageheader",
-      "community": 17,
+      "community": 96,
       "norm_label": "pageheader()"
     },
     {
@@ -13750,7 +13750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_applicant_resume_card",
-      "community": 89,
+      "community": 65,
       "norm_label": "applicant-resume-card.tsx"
     },
     {
@@ -13760,7 +13760,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "shared_applicant_resume_card_resumeinfo",
-      "community": 89,
+      "community": 65,
       "norm_label": "resumeinfo"
     },
     {
@@ -13770,7 +13770,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "shared_applicant_resume_card_applicantresumecardprops",
-      "community": 89,
+      "community": 65,
       "norm_label": "applicantresumecardprops"
     },
     {
@@ -13780,7 +13780,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "shared_applicant_resume_card_renderresumesourcebadge",
-      "community": 89,
+      "community": 65,
       "norm_label": "renderresumesourcebadge()"
     },
     {
@@ -13790,7 +13790,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "shared_applicant_resume_card_ispreviewabletype",
-      "community": 89,
+      "community": 65,
       "norm_label": "ispreviewabletype()"
     },
     {
@@ -13800,7 +13800,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "shared_applicant_resume_card_applicantresumecard",
-      "community": 89,
+      "community": 65,
       "norm_label": "applicantresumecard()"
     },
     {
@@ -13860,7 +13860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_company_card",
-      "community": 55,
+      "community": 94,
       "norm_label": "company-card.tsx"
     },
     {
@@ -13870,7 +13870,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "shared_company_card_companycardprops",
-      "community": 55,
+      "community": 94,
       "norm_label": "companycardprops"
     },
     {
@@ -13880,7 +13880,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "shared_company_card_companycard",
-      "community": 55,
+      "community": 94,
       "norm_label": "companycard()"
     },
     {
@@ -14020,7 +14020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_data_table_section",
-      "community": 55,
+      "community": 94,
       "norm_label": "data-table-section.tsx"
     },
     {
@@ -14030,7 +14030,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "shared_data_table_section_datatablesectionprops",
-      "community": 55,
+      "community": 94,
       "norm_label": "datatablesectionprops"
     },
     {
@@ -14040,7 +14040,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "shared_data_table_section_datatablesection",
-      "community": 55,
+      "community": 94,
       "norm_label": "datatablesection()"
     },
     {
@@ -14170,7 +14170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_profile_header",
-      "community": 43,
+      "community": 94,
       "norm_label": "profile-header.tsx"
     },
     {
@@ -14180,7 +14180,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "shared_profile_header_profileheaderprops",
-      "community": 43,
+      "community": 94,
       "norm_label": "profileheaderprops"
     },
     {
@@ -14190,7 +14190,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "shared_profile_header_profileheader",
-      "community": 43,
+      "community": 94,
       "norm_label": "profileheader()"
     },
     {
@@ -14280,7 +14280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_section_card",
-      "community": 55,
+      "community": 94,
       "norm_label": "section-card.tsx"
     },
     {
@@ -14290,7 +14290,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "shared_section_card_sectioncardprops",
-      "community": 55,
+      "community": 94,
       "norm_label": "sectioncardprops"
     },
     {
@@ -14300,7 +14300,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "shared_section_card_sectioncard",
-      "community": 55,
+      "community": 94,
       "norm_label": "sectioncard()"
     },
     {
@@ -14310,7 +14310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "shared_show_more_toggle",
-      "community": 55,
+      "community": 94,
       "norm_label": "show-more-toggle.tsx"
     },
     {
@@ -14320,7 +14320,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "shared_show_more_toggle_showmoretoggleprops",
-      "community": 55,
+      "community": 94,
       "norm_label": "showmoretoggleprops"
     },
     {
@@ -14330,7 +14330,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "shared_show_more_toggle_showmoretoggle",
-      "community": 55,
+      "community": 94,
       "norm_label": "showmoretoggle()"
     },
     {
@@ -14470,7 +14470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_badge",
-      "community": 96,
+      "community": 105,
       "norm_label": "badge.tsx"
     },
     {
@@ -14480,7 +14480,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_badge_badgevariants",
-      "community": 96,
+      "community": 105,
       "norm_label": "badgevariants"
     },
     {
@@ -14490,7 +14490,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_badge_badge",
-      "community": 96,
+      "community": 105,
       "norm_label": "badge()"
     },
     {
@@ -14530,7 +14530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_checkbox",
-      "community": 66,
+      "community": 29,
       "norm_label": "checkbox.tsx"
     },
     {
@@ -14540,7 +14540,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_checkbox_checkbox",
-      "community": 66,
+      "community": 29,
       "norm_label": "checkbox()"
     },
     {
@@ -14550,7 +14550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_data_table",
-      "community": 66,
+      "community": 29,
       "norm_label": "data-table.tsx"
     },
     {
@@ -14570,7 +14570,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "ui_data_table_datatableprops",
-      "community": 66,
+      "community": 29,
       "norm_label": "datatableprops"
     },
     {
@@ -14580,7 +14580,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_data_table_datatable",
-      "community": 96,
+      "community": 29,
       "norm_label": "datatable()"
     },
     {
@@ -14690,7 +14690,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "ui_dialog_dialogoverlay",
-      "community": 38,
+      "community": 29,
       "norm_label": "dialogoverlay()"
     },
     {
@@ -14750,7 +14750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input",
-      "community": 34,
+      "community": 28,
       "norm_label": "input.tsx"
     },
     {
@@ -14760,7 +14760,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_input_input",
-      "community": 34,
+      "community": 28,
       "norm_label": "input()"
     },
     {
@@ -14840,7 +14840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_select",
-      "community": 34,
+      "community": 29,
       "norm_label": "select.tsx"
     },
     {
@@ -14850,7 +14850,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_select_selectgroup",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectgroup()"
     },
     {
@@ -14860,7 +14860,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "ui_select_selectvalue",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectvalue()"
     },
     {
@@ -14870,7 +14870,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "ui_select_selecttrigger",
-      "community": 34,
+      "community": 29,
       "norm_label": "selecttrigger()"
     },
     {
@@ -14890,7 +14890,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "ui_select_selectlabel",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectlabel()"
     },
     {
@@ -14900,7 +14900,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "ui_select_selectitem",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectitem()"
     },
     {
@@ -14910,7 +14910,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "ui_select_selectseparator",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectseparator()"
     },
     {
@@ -14920,7 +14920,7 @@
       "source_location": "L143",
       "_origin": "ast",
       "id": "ui_select_selectscrollupbutton",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectscrollupbutton()"
     },
     {
@@ -14930,7 +14930,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "ui_select_selectscrolldownbutton",
-      "community": 34,
+      "community": 29,
       "norm_label": "selectscrolldownbutton()"
     },
     {
@@ -15050,7 +15050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_table",
-      "community": 66,
+      "community": 29,
       "norm_label": "table.tsx"
     },
     {
@@ -15060,7 +15060,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_table_table",
-      "community": 66,
+      "community": 29,
       "norm_label": "table()"
     },
     {
@@ -15070,7 +15070,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "ui_table_tableheader",
-      "community": 66,
+      "community": 29,
       "norm_label": "tableheader()"
     },
     {
@@ -15080,7 +15080,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_table_tablebody",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablebody()"
     },
     {
@@ -15090,7 +15090,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "ui_table_tablefooter",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablefooter()"
     },
     {
@@ -15100,7 +15100,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "ui_table_tablerow",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablerow()"
     },
     {
@@ -15110,7 +15110,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "ui_table_tablehead",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablehead()"
     },
     {
@@ -15120,7 +15120,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "ui_table_tablecell",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablecell()"
     },
     {
@@ -15130,7 +15130,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "ui_table_tablecaption",
-      "community": 66,
+      "community": 29,
       "norm_label": "tablecaption()"
     },
     {
@@ -15140,7 +15140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_textarea",
-      "community": 66,
+      "community": 28,
       "norm_label": "textarea.tsx"
     },
     {
@@ -15150,7 +15150,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_textarea_textarea",
-      "community": 66,
+      "community": 28,
       "norm_label": "textarea()"
     },
     {
@@ -15510,7 +15510,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "lib_api_error_toomanyrequestserror",
-      "community": 172,
+      "community": 70,
       "norm_label": "toomanyrequestserror"
     },
     {
@@ -15520,7 +15520,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "lib_api_error_toomanyrequestserror_constructor",
-      "community": 172,
+      "community": 70,
       "norm_label": ".constructor()"
     },
     {
@@ -15530,7 +15530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_api_response",
-      "community": 70,
+      "community": 40,
       "norm_label": "api-response.ts"
     },
     {
@@ -15670,7 +15670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "handlers_invite",
-      "community": 26,
+      "community": 40,
       "norm_label": "invite.ts"
     },
     {
@@ -15680,7 +15680,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "handlers_invite_invitecanceloptions",
-      "community": 26,
+      "community": 40,
       "norm_label": "invitecanceloptions"
     },
     {
@@ -15690,7 +15690,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "handlers_invite_createinvitecancelhandler",
-      "community": 26,
+      "community": 40,
       "norm_label": "createinvitecancelhandler()"
     },
     {
@@ -15780,7 +15780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_hydration",
-      "community": 61,
+      "community": 175,
       "norm_label": "hydration.ts"
     },
     {
@@ -15790,7 +15790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_hydration_hydrator",
-      "community": 61,
+      "community": 175,
       "norm_label": "hydrator"
     },
     {
@@ -15970,7 +15970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_prisma",
-      "community": 27,
+      "community": 22,
       "norm_label": "prisma.ts"
     },
     {
@@ -15980,7 +15980,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "lib_prisma_globalforprisma",
-      "community": 27,
+      "community": 22,
       "norm_label": "globalforprisma"
     },
     {
@@ -15990,7 +15990,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_prisma_pool",
-      "community": 27,
+      "community": 22,
       "norm_label": "pool"
     },
     {
@@ -16000,7 +16000,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_prisma_adapter",
-      "community": 27,
+      "community": 22,
       "norm_label": "adapter"
     },
     {
@@ -16150,7 +16150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_rate_limiter",
-      "community": 172,
+      "community": 55,
       "norm_label": "rate-limiter.ts"
     },
     {
@@ -16160,7 +16160,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "lib_rate_limiter_stores",
-      "community": 172,
+      "community": 55,
       "norm_label": "stores"
     },
     {
@@ -16170,7 +16170,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_rate_limiter_ratelimitconfig",
-      "community": 172,
+      "community": 55,
       "norm_label": "ratelimitconfig"
     },
     {
@@ -16180,7 +16180,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "lib_rate_limiter_default_config",
-      "community": 172,
+      "community": 55,
       "norm_label": "default_config"
     },
     {
@@ -16190,7 +16190,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "lib_rate_limiter_checkratelimit",
-      "community": 172,
+      "community": 55,
       "norm_label": "checkratelimit()"
     },
     {
@@ -16200,7 +16200,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "lib_rate_limiter_pruneratelimitstores",
-      "community": 172,
+      "community": 55,
       "norm_label": "pruneratelimitstores()"
     },
     {
@@ -16300,7 +16300,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "repositories_job_repository",
-      "community": 27,
+      "community": 26,
       "norm_label": "job-repository.ts"
     },
     {
@@ -16310,7 +16310,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "repositories_job_repository_jobrepository",
-      "community": 27,
+      "community": 26,
       "norm_label": "jobrepository"
     },
     {
@@ -16740,7 +16740,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "lib_utils_cn",
-      "community": 66,
+      "community": 29,
       "norm_label": "cn()"
     },
     {
@@ -25230,7 +25230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "implementation_implementation_tasks",
-      "community": 11,
+      "community": 168,
       "norm_label": "implementation-tasks.md"
     },
     {
@@ -25240,7 +25240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "implementation_implementation_tasks_implementation_tasks",
-      "community": 11,
+      "community": 168,
       "norm_label": "implementation tasks"
     },
     {
@@ -33400,9 +33400,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "handlers_invite",
-      "confidence_score": 1.0
+      "target": "handlers_invite"
     },
     {
       "relation": "imports",
@@ -33411,9 +33411,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "imports_from",
@@ -33651,9 +33651,9 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_accept_route_ts_accept_route",
-      "target": "services_invite_service",
-      "confidence_score": 1.0
+      "target": "services_invite_service"
     },
     {
       "relation": "imports",
@@ -33662,9 +33662,9 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_accept_route_ts_accept_route",
-      "target": "services_invite_service_inviteservice",
-      "confidence_score": 1.0
+      "target": "services_invite_service_inviteservice"
     },
     {
       "relation": "calls",
@@ -33792,9 +33792,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route",
-      "target": "queries_invite_queries_listadmininvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listadmininvites"
     },
     {
       "relation": "calls",
@@ -33825,9 +33825,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route_handleget",
-      "target": "queries_invite_queries_listadmininvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listadmininvites"
     },
     {
       "relation": "imports_from",
@@ -33986,9 +33986,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "services_job_service",
-      "confidence_score": 1.0
+      "target": "services_job_service"
     },
     {
       "relation": "imports",
@@ -33997,9 +33997,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "calls",
@@ -34236,9 +34236,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_threadid_messageid_route_ts_messageid_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -34247,9 +34247,9 @@
       "source_file": "app/api/admin/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_threadid_messageid_route_ts_messageid_route",
-      "target": "handlers_messages_createmessageiddeletehandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createmessageiddeletehandler"
     },
     {
       "relation": "imports_from",
@@ -34400,9 +34400,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_threadid_route_ts_threadid_route",
-      "target": "app_api_admin_messages_threadid_route_ts_threadid_route_get_post_delete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_messages_threadid_route_ts_threadid_route_get_post_delete"
     },
     {
       "relation": "imports_from",
@@ -34411,9 +34411,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_threadid_route_ts_threadid_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -34422,9 +34422,9 @@
       "source_file": "app/api/admin/messages/[threadId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_threadid_route_ts_threadid_route",
-      "target": "handlers_messages_createthreadidmessagehandlers",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadidmessagehandlers"
     },
     {
       "relation": "imports_from",
@@ -34902,9 +34902,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "services_user_admin_service",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service"
     },
     {
       "relation": "imports",
@@ -34913,9 +34913,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "services_user_admin_service_useradminservice",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service_useradminservice"
     },
     {
       "relation": "calls",
@@ -34978,9 +34978,9 @@
       "source_file": "app/api/admin/threads/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_threads_route_ts_threads_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -34989,9 +34989,9 @@
       "source_file": "app/api/admin/threads/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_threads_route_ts_threads_route",
-      "target": "handlers_messages_createthreadlisthandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadlisthandler"
     },
     {
       "relation": "imports_from",
@@ -35414,9 +35414,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "services_user_admin_service",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service"
     },
     {
       "relation": "imports",
@@ -35425,9 +35425,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "services_user_admin_service_useradminservice",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service_useradminservice"
     },
     {
       "relation": "calls",
@@ -35621,9 +35621,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "services_user_admin_service",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service"
     },
     {
       "relation": "imports",
@@ -35632,9 +35632,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "services_user_admin_service_useradminservice",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service_useradminservice"
     },
     {
       "relation": "calls",
@@ -36188,6 +36188,28 @@
       "confidence_score": 1.0,
       "source": "unban_route",
       "target": "libs_auth_auth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "unban_route",
+      "target": "services_user_admin_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "unban_route",
+      "target": "services_user_admin_service_useradminservice",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -36823,9 +36845,9 @@
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "apply_route",
-      "target": "services_application_service",
-      "confidence_score": 1.0
+      "target": "services_application_service"
     },
     {
       "relation": "imports",
@@ -36834,9 +36856,9 @@
       "source_file": "app/api/jobs/[id]/apply/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "apply_route",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "calls",
@@ -37129,9 +37151,9 @@
       "source_file": "app/api/jobs/[id]/view/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "view_route",
-      "target": "services_job_service",
-      "confidence_score": 1.0
+      "target": "services_job_service"
     },
     {
       "relation": "imports",
@@ -37140,9 +37162,9 @@
       "source_file": "app/api/jobs/[id]/view/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "view_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "contains",
@@ -37484,9 +37506,9 @@
       "source_file": "app/api/notifications/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "notifications_route",
-      "target": "queries_notification_queries_marknotificationsread",
-      "confidence_score": 1.0
+      "target": "queries_notification_queries_marknotificationsread"
     },
     {
       "relation": "imports_from",
@@ -37561,9 +37583,9 @@
       "source_file": "app/api/notifications/route.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "notifications_route_handlepatch",
-      "target": "queries_notification_queries_marknotificationsread",
-      "confidence_score": 1.0
+      "target": "queries_notification_queries_marknotificationsread"
     },
     {
       "relation": "contains",
@@ -38137,9 +38159,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_profile_route_ts_profile_route",
-      "target": "services_application_service",
-      "confidence_score": 1.0
+      "target": "services_application_service"
     },
     {
       "relation": "imports",
@@ -38148,9 +38170,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_profile_route_ts_profile_route",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "calls",
@@ -38333,9 +38355,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "services_application_service",
-      "confidence_score": 1.0
+      "target": "services_application_service"
     },
     {
       "relation": "imports",
@@ -38344,9 +38366,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "calls",
@@ -38586,9 +38608,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "services_application_service",
-      "confidence_score": 1.0
+      "target": "services_application_service"
     },
     {
       "relation": "imports",
@@ -38597,9 +38619,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "contains",
@@ -38837,9 +38859,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "services_application_service",
-      "confidence_score": 1.0
+      "target": "services_application_service"
     },
     {
       "relation": "imports",
@@ -38848,9 +38870,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "contains",
@@ -38944,9 +38966,9 @@
       "source_file": "app/api/recruiter/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "handlers_invite",
-      "confidence_score": 1.0
+      "target": "handlers_invite"
     },
     {
       "relation": "imports",
@@ -38955,9 +38977,9 @@
       "source_file": "app/api/recruiter/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "imports_from",
@@ -39184,9 +39206,9 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "target": "services_invite_service",
-      "confidence_score": 1.0
+      "target": "services_invite_service"
     },
     {
       "relation": "imports",
@@ -39195,9 +39217,9 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "target": "services_invite_service_inviteservice",
-      "confidence_score": 1.0
+      "target": "services_invite_service_inviteservice"
     },
     {
       "relation": "calls",
@@ -39325,9 +39347,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "queries_invite_queries_listrecruiterinvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listrecruiterinvites"
     },
     {
       "relation": "calls",
@@ -39358,9 +39380,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "target": "queries_invite_queries_listrecruiterinvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listrecruiterinvites"
     },
     {
       "relation": "imports_from",
@@ -39858,9 +39880,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applicants_route",
-      "target": "repositories_job_repository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository"
     },
     {
       "relation": "imports",
@@ -39869,9 +39891,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applicants_route",
-      "target": "repositories_job_repository_jobrepository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository_jobrepository"
     },
     {
       "relation": "imports_from",
@@ -40149,9 +40171,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "services_job_service",
-      "confidence_score": 1.0
+      "target": "services_job_service"
     },
     {
       "relation": "imports",
@@ -40160,9 +40182,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "calls",
@@ -40391,9 +40413,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "services_job_service",
-      "confidence_score": 1.0
+      "target": "services_job_service"
     },
     {
       "relation": "imports",
@@ -40402,9 +40424,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "contains",
@@ -40627,9 +40649,9 @@
       "source_file": "app/api/recruiter/jobs/route.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_route_ts_jobs_route",
-      "target": "services_job_service",
-      "confidence_score": 1.0
+      "target": "services_job_service"
     },
     {
       "relation": "imports",
@@ -40638,9 +40660,9 @@
       "source_file": "app/api/recruiter/jobs/route.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_route_ts_jobs_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "calls",
@@ -40725,9 +40747,9 @@
       "source_file": "app/api/recruiter/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_threadid_messageid_route_ts_messageid_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -40736,9 +40758,9 @@
       "source_file": "app/api/recruiter/messages/[threadId]/[messageId]/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_threadid_messageid_route_ts_messageid_route",
-      "target": "handlers_messages_createmessageiddeletehandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createmessageiddeletehandler"
     },
     {
       "relation": "imports_from",
@@ -40889,9 +40911,9 @@
       "source_file": "app/api/recruiter/messages/[threadId]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_threadid_route_ts_threadid_route",
-      "target": "app_api_recruiter_messages_threadid_route_ts_threadid_route_get_post_delete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_messages_threadid_route_ts_threadid_route_get_post_delete"
     },
     {
       "relation": "imports_from",
@@ -40900,9 +40922,9 @@
       "source_file": "app/api/recruiter/messages/[threadId]/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_threadid_route_ts_threadid_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -40911,9 +40933,9 @@
       "source_file": "app/api/recruiter/messages/[threadId]/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_threadid_route_ts_threadid_route",
-      "target": "handlers_messages_createthreadidmessagehandlers",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadidmessagehandlers"
     },
     {
       "relation": "imports_from",
@@ -41413,9 +41435,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "services_user_admin_service",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service"
     },
     {
       "relation": "imports",
@@ -41424,9 +41446,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "services_user_admin_service_useradminservice",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service_useradminservice"
     },
     {
       "relation": "calls",
@@ -41489,9 +41511,9 @@
       "source_file": "app/api/recruiter/threads/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_threads_route_ts_threads_route",
-      "target": "handlers_messages",
-      "confidence_score": 1.0
+      "target": "handlers_messages"
     },
     {
       "relation": "imports",
@@ -41500,9 +41522,9 @@
       "source_file": "app/api/recruiter/threads/route.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_threads_route_ts_threads_route",
-      "target": "handlers_messages_createthreadlisthandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadlisthandler"
     },
     {
       "relation": "imports_from",
@@ -41978,9 +42000,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_applications_id_route_ts_id_route",
-      "target": "services_user_service",
-      "confidence_score": 1.0
+      "target": "services_user_service"
     },
     {
       "relation": "imports",
@@ -41989,9 +42011,9 @@
       "source_file": "app/api/user/applications/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_applications_id_route_ts_id_route",
-      "target": "services_user_service_userservice",
-      "confidence_score": 1.0
+      "target": "services_user_service_userservice"
     },
     {
       "relation": "calls",
@@ -42295,9 +42317,9 @@
       "source_file": "app/api/user/applications/stats/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stats_route",
-      "target": "queries_user_application_queries_getuserapplicationstats",
-      "confidence_score": 1.0
+      "target": "queries_user_application_queries_getuserapplicationstats"
     },
     {
       "relation": "contains",
@@ -42348,9 +42370,9 @@
       "source_file": "app/api/user/applications/stats/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stats_route_handleget",
-      "target": "queries_user_application_queries_getuserapplicationstats",
-      "confidence_score": 1.0
+      "target": "queries_user_application_queries_getuserapplicationstats"
     },
     {
       "relation": "imports_from",
@@ -42456,9 +42478,9 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobid_route",
-      "target": "queries_bookmark_queries",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries"
     },
     {
       "relation": "imports",
@@ -42467,9 +42489,9 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobid_route",
-      "target": "queries_bookmark_queries_checkbookmark",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_checkbookmark"
     },
     {
       "relation": "calls",
@@ -42500,9 +42522,9 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobid_route_handleget",
-      "target": "queries_bookmark_queries_checkbookmark",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_checkbookmark"
     },
     {
       "relation": "imports_from",
@@ -42650,9 +42672,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bookmarks_route",
-      "target": "queries_bookmark_queries",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries"
     },
     {
       "relation": "imports",
@@ -42661,9 +42683,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bookmarks_route",
-      "target": "queries_bookmark_queries_listuserbookmarks",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_listuserbookmarks"
     },
     {
       "relation": "imports_from",
@@ -42672,9 +42694,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bookmarks_route",
-      "target": "services_user_service",
-      "confidence_score": 1.0
+      "target": "services_user_service"
     },
     {
       "relation": "imports",
@@ -42683,9 +42705,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bookmarks_route",
-      "target": "services_user_service_userservice",
-      "confidence_score": 1.0
+      "target": "services_user_service_userservice"
     },
     {
       "relation": "calls",
@@ -42716,9 +42738,9 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "bookmarks_route_handleget",
-      "target": "queries_bookmark_queries_listuserbookmarks",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_listuserbookmarks"
     },
     {
       "relation": "calls",
@@ -42814,9 +42836,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_profile_route_ts_profile_route",
-      "target": "queries_profile_queries",
-      "confidence_score": 1.0
+      "target": "queries_profile_queries"
     },
     {
       "relation": "imports",
@@ -42825,9 +42847,9 @@
       "source_file": "app/api/user/profile/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_user_profile_route_ts_profile_route",
-      "target": "queries_profile_queries_getuserprofile",
-      "confidence_score": 1.0
+      "target": "queries_profile_queries_getuserprofile"
     },
     {
       "relation": "calls",
@@ -47021,9 +47043,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages"
     },
     {
       "relation": "imports",
@@ -47032,9 +47054,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages_createusedeletemessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletemessage"
     },
     {
       "relation": "imports",
@@ -47043,9 +47065,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages_createusedeletethread",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletethread"
     },
     {
       "relation": "imports",
@@ -47054,9 +47076,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages_createusemessages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusemessages"
     },
     {
       "relation": "imports",
@@ -47065,9 +47087,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages_createusesendmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusesendmessage"
     },
     {
       "relation": "re_exports",
@@ -47076,9 +47098,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-messages.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_messages",
-      "target": "hooks_use_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_sendmessagepayload"
     },
     {
       "relation": "imports_from",
@@ -47204,9 +47226,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads"
     },
     {
       "relation": "imports",
@@ -47215,9 +47237,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads_createuseinvalidatethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createuseinvalidatethreads"
     },
     {
       "relation": "imports",
@@ -47226,9 +47248,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads_createusethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createusethreads"
     },
     {
       "relation": "re_exports",
@@ -47237,9 +47259,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads_threaditem",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaditem"
     },
     {
       "relation": "re_exports",
@@ -47248,9 +47270,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads_threadlastmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threadlastmessage"
     },
     {
       "relation": "re_exports",
@@ -47259,9 +47281,9 @@
       "source_file": "app/features/admin/hooks/messages/use-admin-threads.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_admin_threads",
-      "target": "hooks_use_threads_threaduser",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaduser"
     },
     {
       "relation": "imports_from",
@@ -47418,9 +47440,9 @@
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_invites",
-      "target": "hooks_use_admin_invites_hooks",
-      "confidence_score": 1.0
+      "target": "hooks_use_admin_invites_hooks"
     },
     {
       "relation": "imports_from",
@@ -47429,9 +47451,9 @@
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_invites",
-      "target": "hooks_use_invites",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites"
     },
     {
       "relation": "imports",
@@ -47440,9 +47462,9 @@
       "source_file": "app/features/admin/hooks/use-admin-invites.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_admin_invites",
-      "target": "hooks_use_invites_createinvitehooks",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites_createinvitehooks"
     },
     {
       "relation": "imports_from",
@@ -47980,9 +48002,9 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -47990,9 +48012,9 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_admininvitelistresponse",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_admininvitelistresponse"
     },
     {
       "relation": "contains",
@@ -48000,9 +48022,9 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_admininviterow",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_admininviterow"
     },
     {
       "relation": "contains",
@@ -48010,9 +48032,9 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_adminteammemberrow",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_adminteammemberrow"
     },
     {
       "relation": "contains",
@@ -48020,9 +48042,9 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_listadmininvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listadmininvites"
     },
     {
       "relation": "contains",
@@ -48511,9 +48533,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "schema_admin_schema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema"
     },
     {
       "relation": "imports",
@@ -48522,9 +48544,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "schema_admin_schema_admintogglejobstatusschema",
-      "confidence_score": 1.0
+      "target": "schema_admin_schema_admintogglejobstatusschema"
     },
     {
       "relation": "contains",
@@ -50900,9 +50922,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "libs_auth",
-      "confidence_score": 1.0
+      "target": "libs_auth"
     },
     {
       "relation": "imports_from",
@@ -50944,9 +50966,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "libs_auth_auth",
-      "confidence_score": 1.0
+      "target": "libs_auth_auth"
     },
     {
       "relation": "imports",
@@ -51117,9 +51139,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "libs_email",
-      "confidence_score": 1.0
+      "target": "libs_email"
     },
     {
       "relation": "imports",
@@ -51161,9 +51183,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "libs_email_sendemail",
-      "confidence_score": 1.0
+      "target": "libs_email_sendemail"
     },
     {
       "relation": "imports_from",
@@ -51666,9 +51688,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "schema_role_schema",
-      "confidence_score": 1.0
+      "target": "schema_role_schema"
     },
     {
       "relation": "imports_from",
@@ -51721,9 +51743,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "schema_role_schema_roleschema",
-      "confidence_score": 1.0
+      "target": "schema_role_schema_roleschema"
     },
     {
       "relation": "imports",
@@ -53873,9 +53895,9 @@
       "source_file": "app/features/notifications/queries/notification-queries.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_notification_queries",
-      "target": "queries_notification_queries_marknotificationsread",
-      "confidence_score": 1.0
+      "target": "queries_notification_queries_marknotificationsread"
     },
     {
       "relation": "contains",
@@ -61044,9 +61066,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages"
     },
     {
       "relation": "imports",
@@ -61055,9 +61077,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages_createusedeletemessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletemessage"
     },
     {
       "relation": "imports",
@@ -61066,9 +61088,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages_createusedeletethread",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletethread"
     },
     {
       "relation": "imports",
@@ -61077,9 +61099,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages_createusemessages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusemessages"
     },
     {
       "relation": "imports",
@@ -61088,9 +61110,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages_createusesendmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusesendmessage"
     },
     {
       "relation": "re_exports",
@@ -61099,9 +61121,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_messages",
-      "target": "hooks_use_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_sendmessagepayload"
     },
     {
       "relation": "imports_from",
@@ -61227,9 +61249,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads"
     },
     {
       "relation": "imports",
@@ -61238,9 +61260,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads_createuseinvalidatethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createuseinvalidatethreads"
     },
     {
       "relation": "imports",
@@ -61249,9 +61271,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads_createusethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createusethreads"
     },
     {
       "relation": "re_exports",
@@ -61260,9 +61282,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads_threaditem",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaditem"
     },
     {
       "relation": "re_exports",
@@ -61271,9 +61293,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads_threadlastmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threadlastmessage"
     },
     {
       "relation": "re_exports",
@@ -61282,9 +61304,9 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_recruiter_threads",
-      "target": "hooks_use_threads_threaduser",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaduser"
     },
     {
       "relation": "imports_from",
@@ -61754,9 +61776,9 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_recruiter_invites",
-      "target": "hooks_use_invites",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites"
     },
     {
       "relation": "imports",
@@ -61765,9 +61787,9 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_recruiter_invites",
-      "target": "hooks_use_invites_createinvitehooks",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites_createinvitehooks"
     },
     {
       "relation": "contains",
@@ -61775,9 +61797,9 @@
       "source_file": "app/features/recruiter/hooks/use-recruiter-invites.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_recruiter_invites",
-      "target": "hooks_use_recruiter_invites_hooks",
-      "confidence_score": 1.0
+      "target": "hooks_use_recruiter_invites_hooks"
     },
     {
       "relation": "contains",
@@ -62604,9 +62626,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "queries_application_queries",
-      "confidence_score": 1.0
+      "target": "queries_application_queries"
     },
     {
       "relation": "calls",
@@ -62637,9 +62659,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "queries_application_queries_getapplicationbyid",
-      "confidence_score": 1.0
+      "target": "queries_application_queries_getapplicationbyid"
     },
     {
       "relation": "imports_from",
@@ -62761,9 +62783,9 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -62771,9 +62793,9 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_listrecruiterinvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listrecruiterinvites"
     },
     {
       "relation": "contains",
@@ -62781,9 +62803,9 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_recruiterinvitelistresponse",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_recruiterinvitelistresponse"
     },
     {
       "relation": "contains",
@@ -62791,9 +62813,9 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_recruiterinviterow",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_recruiterinviterow"
     },
     {
       "relation": "contains",
@@ -62801,9 +62823,9 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "queries_invite_queries_recruiterteammemberrow",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_recruiterteammemberrow"
     },
     {
       "relation": "contains",
@@ -63242,9 +63264,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "schema_application_schema",
-      "confidence_score": 1.0
+      "target": "schema_application_schema"
     },
     {
       "relation": "imports",
@@ -63253,9 +63275,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "schema_application_schema_allowed_transitions",
-      "confidence_score": 1.0
+      "target": "schema_application_schema_allowed_transitions"
     },
     {
       "relation": "contains",
@@ -63573,9 +63595,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports_from",
@@ -63584,9 +63606,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "api_require_role",
-      "confidence_score": 1.0
+      "target": "api_require_role"
     },
     {
       "relation": "imports",
@@ -63595,9 +63617,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "api_require_role_resolvedsession",
-      "confidence_score": 1.0
+      "target": "api_require_role_resolvedsession"
     },
     {
       "relation": "imports",
@@ -63672,9 +63694,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -63683,9 +63705,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -63693,9 +63715,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "hooks_use_invites_createinvitehooks",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites_createinvitehooks"
     },
     {
       "relation": "contains",
@@ -63703,9 +63725,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "hooks_use_invites_invitelistitem",
-      "confidence_score": 1.0
+      "target": "hooks_use_invites_invitelistitem"
     },
     {
       "relation": "imports_from",
@@ -63714,9 +63736,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "lib_api_client",
-      "confidence_score": 1.0
+      "target": "lib_api_client"
     },
     {
       "relation": "imports",
@@ -63725,9 +63747,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
+      "target": "lib_api_client_apiclient"
     },
     {
       "relation": "imports_from",
@@ -63736,9 +63758,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -63747,9 +63769,9 @@
       "source_file": "app/features/shared/hooks/use-invites.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_invites",
-      "target": "lib_api_response_apiresponse",
-      "confidence_score": 1.0
+      "target": "lib_api_response_apiresponse"
     },
     {
       "relation": "re_exports",
@@ -63758,9 +63780,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "chat_message_item",
-      "confidence_score": 1.0
+      "target": "chat_message_item"
     },
     {
       "relation": "imports",
@@ -63769,9 +63791,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "chat_message_item_messageitem",
-      "confidence_score": 1.0
+      "target": "chat_message_item_messageitem"
     },
     {
       "relation": "contains",
@@ -63779,9 +63801,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_createusedeletemessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletemessage"
     },
     {
       "relation": "contains",
@@ -63789,9 +63811,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_createusedeletethread",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletethread"
     },
     {
       "relation": "contains",
@@ -63799,9 +63821,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_createusemessages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusemessages"
     },
     {
       "relation": "contains",
@@ -63809,9 +63831,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_createusesendmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusesendmessage"
     },
     {
       "relation": "contains",
@@ -63819,9 +63841,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_messagesresponse",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_messagesresponse"
     },
     {
       "relation": "contains",
@@ -63829,9 +63851,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "hooks_use_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_sendmessagepayload"
     },
     {
       "relation": "imports_from",
@@ -63840,9 +63862,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_api_client",
-      "confidence_score": 1.0
+      "target": "lib_api_client"
     },
     {
       "relation": "imports",
@@ -63851,9 +63873,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
+      "target": "lib_api_client_apiclient"
     },
     {
       "relation": "imports_from",
@@ -63862,9 +63884,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -63873,9 +63895,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_api_response_apiresponse",
-      "confidence_score": 1.0
+      "target": "lib_api_response_apiresponse"
     },
     {
       "relation": "imports_from",
@@ -63884,9 +63906,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_thread_utils",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils"
     },
     {
       "relation": "imports",
@@ -63895,9 +63917,9 @@
       "source_file": "app/features/shared/hooks/use-messages.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_messages",
-      "target": "lib_thread_utils_isvalidthreadid",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils_isvalidthreadid"
     },
     {
       "relation": "re_exports",
@@ -63906,9 +63928,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_messages",
-      "target": "hooks_use_messages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages"
     },
     {
       "relation": "re_exports",
@@ -63917,9 +63939,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_messages",
-      "target": "hooks_use_messages_sendmessagepayload",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_sendmessagepayload"
     },
     {
       "relation": "imports",
@@ -63928,9 +63950,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_messages",
-      "target": "hooks_use_messages_createusemessages",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusemessages"
     },
     {
       "relation": "imports",
@@ -63939,9 +63961,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_messages",
-      "target": "hooks_use_messages_createusesendmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusesendmessage"
     },
     {
       "relation": "imports",
@@ -63950,9 +63972,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_messages",
-      "target": "hooks_use_messages_createusedeletemessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_messages_createusedeletemessage"
     },
     {
       "relation": "contains",
@@ -63960,9 +63982,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "hooks_use_threads_createuseinvalidatethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createuseinvalidatethreads"
     },
     {
       "relation": "contains",
@@ -63970,9 +63992,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "hooks_use_threads_createusethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createusethreads"
     },
     {
       "relation": "contains",
@@ -63980,9 +64002,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "hooks_use_threads_threaditem",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaditem"
     },
     {
       "relation": "contains",
@@ -63990,9 +64012,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "hooks_use_threads_threadlastmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threadlastmessage"
     },
     {
       "relation": "contains",
@@ -64000,9 +64022,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "hooks_use_threads_threaduser",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaduser"
     },
     {
       "relation": "imports_from",
@@ -64011,9 +64033,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "lib_api_client",
-      "confidence_score": 1.0
+      "target": "lib_api_client"
     },
     {
       "relation": "imports",
@@ -64022,9 +64044,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "lib_api_client_apiclient",
-      "confidence_score": 1.0
+      "target": "lib_api_client_apiclient"
     },
     {
       "relation": "imports_from",
@@ -64033,9 +64055,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports",
@@ -64044,9 +64066,9 @@
       "source_file": "app/features/shared/hooks/use-threads.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_use_threads",
-      "target": "lib_api_response_apiresponse",
-      "confidence_score": 1.0
+      "target": "lib_api_response_apiresponse"
     },
     {
       "relation": "re_exports",
@@ -64055,9 +64077,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads"
     },
     {
       "relation": "re_exports",
@@ -64066,9 +64088,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads_threaduser",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaduser"
     },
     {
       "relation": "re_exports",
@@ -64077,9 +64099,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads_threadlastmessage",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threadlastmessage"
     },
     {
       "relation": "re_exports",
@@ -64088,9 +64110,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads_threaditem",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_threaditem"
     },
     {
       "relation": "imports",
@@ -64099,9 +64121,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads_createusethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createusethreads"
     },
     {
       "relation": "imports",
@@ -64110,9 +64132,9 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "messages_use_user_threads",
-      "target": "hooks_use_threads_createuseinvalidatethreads",
-      "confidence_score": 1.0
+      "target": "hooks_use_threads_createuseinvalidatethreads"
     },
     {
       "relation": "contains",
@@ -67268,9 +67290,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -67278,9 +67300,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "queries_bookmark_queries_bookmarkjob",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_bookmarkjob"
     },
     {
       "relation": "contains",
@@ -67288,9 +67310,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "queries_bookmark_queries_checkbookmark",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_checkbookmark"
     },
     {
       "relation": "contains",
@@ -67298,9 +67320,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "queries_bookmark_queries_listuserbookmarks",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_listuserbookmarks"
     },
     {
       "relation": "imports_from",
@@ -67309,9 +67331,9 @@
       "source_file": "app/features/user/queries/profile-queries.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_profile_queries",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -67319,9 +67341,9 @@
       "source_file": "app/features/user/queries/profile-queries.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_profile_queries",
-      "target": "queries_profile_queries_getuserprofile",
-      "confidence_score": 1.0
+      "target": "queries_profile_queries_getuserprofile"
     },
     {
       "relation": "contains",
@@ -67329,9 +67351,9 @@
       "source_file": "app/features/user/queries/profile-queries.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_profile_queries",
-      "target": "queries_profile_queries_profileoutput",
-      "confidence_score": 1.0
+      "target": "queries_profile_queries_profileoutput"
     },
     {
       "relation": "imports_from",
@@ -67393,9 +67415,9 @@
       "source_file": "app/features/user/queries/user-application-queries.ts",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_user_application_queries",
-      "target": "queries_user_application_queries_getuserapplicationstats",
-      "confidence_score": 1.0
+      "target": "queries_user_application_queries_getuserapplicationstats"
     },
     {
       "relation": "contains",
@@ -72917,9 +72939,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "contains",
@@ -73020,9 +73042,9 @@
       "source_file": "lib/rate-limit.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_rate_limit",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73042,9 +73064,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73053,9 +73075,9 @@
       "source_file": "lib/services/invite-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_invite_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73064,9 +73086,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73075,9 +73097,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73086,9 +73108,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "imports_from",
@@ -73097,9 +73119,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_api_error",
-      "confidence_score": 1.0
+      "target": "lib_api_error"
     },
     {
       "relation": "method",
@@ -73193,9 +73215,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "lib_api_error_forbiddenerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_forbiddenerror"
     },
     {
       "relation": "imports",
@@ -73204,9 +73226,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "lib_api_error_forbiddenerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_forbiddenerror"
     },
     {
       "relation": "imports",
@@ -73215,9 +73237,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "method",
@@ -73247,9 +73269,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73258,9 +73280,9 @@
       "source_file": "lib/services/invite-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_invite_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73269,9 +73291,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73280,9 +73302,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73291,9 +73313,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73302,9 +73324,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_api_error_notfounderror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_notfounderror"
     },
     {
       "relation": "imports",
@@ -73313,9 +73335,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "method",
@@ -73345,9 +73367,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports",
@@ -73356,9 +73378,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports",
@@ -73367,9 +73389,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports",
@@ -73378,9 +73400,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "imports",
@@ -73389,9 +73411,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_api_error_validationerror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_validationerror"
     },
     {
       "relation": "method",
@@ -73421,9 +73443,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_api_error_conflicterror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_conflicterror"
     },
     {
       "relation": "method",
@@ -73453,9 +73475,9 @@
       "source_file": "lib/rate-limit.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_rate_limit",
-      "target": "lib_api_error_toomanyrequestserror",
-      "confidence_score": 1.0
+      "target": "lib_api_error_toomanyrequestserror"
     },
     {
       "relation": "imports",
@@ -73475,9 +73497,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "imports_from",
@@ -73486,9 +73508,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "lib_api_response",
-      "confidence_score": 1.0
+      "target": "lib_api_response"
     },
     {
       "relation": "contains",
@@ -73538,9 +73560,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -73549,9 +73571,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "lib_api_response_ok",
-      "confidence_score": 1.0
+      "target": "lib_api_response_ok"
     },
     {
       "relation": "imports",
@@ -73582,9 +73604,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_wrapper",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper"
     },
     {
       "relation": "imports_from",
@@ -73593,9 +73615,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "lib_api_wrapper",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper"
     },
     {
       "relation": "contains",
@@ -73686,9 +73708,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "calls",
@@ -73708,9 +73730,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "lib_api_wrapper_witherrorhandler",
-      "confidence_score": 1.0
+      "target": "lib_api_wrapper_witherrorhandler"
     },
     {
       "relation": "calls",
@@ -73771,9 +73793,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "contains",
@@ -73781,9 +73803,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "handlers_invite_invitecanceloptions",
-      "confidence_score": 1.0
+      "target": "handlers_invite_invitecanceloptions"
     },
     {
       "relation": "contains",
@@ -73791,9 +73813,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_createmessageiddeletehandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createmessageiddeletehandler"
     },
     {
       "relation": "contains",
@@ -73801,9 +73823,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_createthreadidmessagehandlers",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadidmessagehandlers"
     },
     {
       "relation": "contains",
@@ -73811,9 +73833,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_createthreadlisthandler",
-      "confidence_score": 1.0
+      "target": "handlers_messages_createthreadlisthandler"
     },
     {
       "relation": "contains",
@@ -73821,9 +73843,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_messageidhandleroptions",
-      "confidence_score": 1.0
+      "target": "handlers_messages_messageidhandleroptions"
     },
     {
       "relation": "contains",
@@ -73831,9 +73853,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_threadidhandleroptions",
-      "confidence_score": 1.0
+      "target": "handlers_messages_threadidhandleroptions"
     },
     {
       "relation": "contains",
@@ -73841,9 +73863,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_threadlisthandleroptions",
-      "confidence_score": 1.0
+      "target": "handlers_messages_threadlisthandleroptions"
     },
     {
       "relation": "contains",
@@ -73851,9 +73873,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "handlers_messages_verifyrelation",
-      "confidence_score": 1.0
+      "target": "handlers_messages_verifyrelation"
     },
     {
       "relation": "imports_from",
@@ -73862,9 +73884,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "services_message_service",
-      "confidence_score": 1.0
+      "target": "services_message_service"
     },
     {
       "relation": "imports",
@@ -73873,9 +73895,9 @@
       "source_file": "lib/handlers/messages.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_messages",
-      "target": "services_message_service_messageservice",
-      "confidence_score": 1.0
+      "target": "services_message_service_messageservice"
     },
     {
       "relation": "contains",
@@ -73976,9 +73998,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_notifications",
-      "confidence_score": 1.0
+      "target": "lib_notifications"
     },
     {
       "relation": "imports_from",
@@ -73987,9 +74009,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_notifications",
-      "confidence_score": 1.0
+      "target": "lib_notifications"
     },
     {
       "relation": "imports_from",
@@ -73998,9 +74020,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_notifications",
-      "confidence_score": 1.0
+      "target": "lib_notifications"
     },
     {
       "relation": "imports",
@@ -74009,9 +74031,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_notifications_createnotification",
-      "confidence_score": 1.0
+      "target": "lib_notifications_createnotification"
     },
     {
       "relation": "imports",
@@ -74020,9 +74042,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_notifications_createnotification",
-      "confidence_score": 1.0
+      "target": "lib_notifications_createnotification"
     },
     {
       "relation": "imports",
@@ -74031,9 +74053,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_notifications_createnotification",
-      "confidence_score": 1.0
+      "target": "lib_notifications_createnotification"
     },
     {
       "relation": "calls",
@@ -74053,9 +74075,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_notifications_createnotificationsbulk",
-      "confidence_score": 1.0
+      "target": "lib_notifications_createnotificationsbulk"
     },
     {
       "relation": "imports",
@@ -74064,9 +74086,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_notifications_triggerforcompany",
-      "confidence_score": 1.0
+      "target": "lib_notifications_triggerforcompany"
     },
     {
       "relation": "contains",
@@ -74155,9 +74177,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_pagination",
-      "confidence_score": 1.0
+      "target": "lib_pagination"
     },
     {
       "relation": "imports",
@@ -74166,9 +74188,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_pagination_parsecursorparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsecursorparams"
     },
     {
       "relation": "imports",
@@ -74177,9 +74199,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_pagination_buildcursormeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildcursormeta"
     },
     {
       "relation": "contains",
@@ -74240,9 +74262,9 @@
       "source_file": "lib/rate-limit.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_rate_limit",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74251,9 +74273,9 @@
       "source_file": "lib/repositories/application-repository.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_application_repository",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74262,9 +74284,9 @@
       "source_file": "lib/repositories/job-repository.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_job_repository",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74273,9 +74295,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74284,9 +74306,9 @@
       "source_file": "lib/repositories/resume-repository.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_resume_repository",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74295,9 +74317,9 @@
       "source_file": "lib/repositories/thread-repository.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_thread_repository",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74306,9 +74328,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74317,9 +74339,9 @@
       "source_file": "lib/services/invite-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_invite_service",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74328,9 +74350,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -74339,9 +74361,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -74434,9 +74456,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_pusher",
-      "confidence_score": 1.0
+      "target": "lib_pusher"
     },
     {
       "relation": "contains",
@@ -74505,9 +74527,9 @@
       "source_file": "lib/rate-limit.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_rate_limit",
-      "target": "lib_rate_limit_checkmessageratelimit",
-      "confidence_score": 1.0
+      "target": "lib_rate_limit_checkmessageratelimit"
     },
     {
       "relation": "imports_from",
@@ -74516,9 +74538,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_rate_limit",
-      "confidence_score": 1.0
+      "target": "lib_rate_limit"
     },
     {
       "relation": "imports",
@@ -74527,9 +74549,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_rate_limit_checkmessageratelimit",
-      "confidence_score": 1.0
+      "target": "lib_rate_limit_checkmessageratelimit"
     },
     {
       "relation": "contains",
@@ -74587,9 +74609,9 @@
       "source_file": "lib/repositories/application-repository.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_application_repository",
-      "target": "repositories_application_repository_applicationrepository",
-      "confidence_score": 1.0
+      "target": "repositories_application_repository_applicationrepository"
     },
     {
       "relation": "imports_from",
@@ -74598,9 +74620,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_application_repository",
-      "confidence_score": 1.0
+      "target": "repositories_application_repository"
     },
     {
       "relation": "imports_from",
@@ -74609,9 +74631,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "repositories_application_repository",
-      "confidence_score": 1.0
+      "target": "repositories_application_repository"
     },
     {
       "relation": "imports",
@@ -74620,9 +74642,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_application_repository_applicationrepository",
-      "confidence_score": 1.0
+      "target": "repositories_application_repository_applicationrepository"
     },
     {
       "relation": "imports",
@@ -74631,9 +74653,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "repositories_application_repository_applicationrepository",
-      "confidence_score": 1.0
+      "target": "repositories_application_repository_applicationrepository"
     },
     {
       "relation": "re_exports",
@@ -74642,9 +74664,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_interfaces",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces"
     },
     {
       "relation": "re_exports",
@@ -74653,9 +74675,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_interfaces_createmessagedata",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_createmessagedata"
     },
     {
       "relation": "re_exports",
@@ -74664,9 +74686,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_interfaces_imessagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_imessagerepository"
     },
     {
       "relation": "re_exports",
@@ -74675,9 +74697,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_message_repository",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository"
     },
     {
       "relation": "re_exports",
@@ -74686,9 +74708,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_message_repository_messagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository_messagerepository"
     },
     {
       "relation": "re_exports",
@@ -74697,9 +74719,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_message_repository_messageselect",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository_messageselect"
     },
     {
       "relation": "re_exports",
@@ -74708,9 +74730,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_thread_repository",
-      "confidence_score": 1.0
+      "target": "repositories_thread_repository"
     },
     {
       "relation": "re_exports",
@@ -74719,9 +74741,9 @@
       "source_file": "lib/repositories/index.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_index",
-      "target": "repositories_thread_repository_threadrepository",
-      "confidence_score": 1.0
+      "target": "repositories_thread_repository_threadrepository"
     },
     {
       "relation": "contains",
@@ -74729,9 +74751,9 @@
       "source_file": "lib/repositories/interfaces.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_interfaces",
-      "target": "repositories_interfaces_createmessagedata",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_createmessagedata"
     },
     {
       "relation": "contains",
@@ -74739,9 +74761,9 @@
       "source_file": "lib/repositories/interfaces.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_interfaces",
-      "target": "repositories_interfaces_imessagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_imessagerepository"
     },
     {
       "relation": "contains",
@@ -74749,9 +74771,9 @@
       "source_file": "lib/repositories/interfaces.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_interfaces",
-      "target": "repositories_interfaces_messageidonly",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_messageidonly"
     },
     {
       "relation": "contains",
@@ -74759,9 +74781,9 @@
       "source_file": "lib/repositories/interfaces.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_interfaces",
-      "target": "repositories_interfaces_messagerow",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_messagerow"
     },
     {
       "relation": "contains",
@@ -74769,9 +74791,9 @@
       "source_file": "lib/repositories/interfaces.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_interfaces",
-      "target": "repositories_interfaces_messagewithcreatedat",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_messagewithcreatedat"
     },
     {
       "relation": "imports_from",
@@ -74780,9 +74802,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "repositories_interfaces",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces"
     },
     {
       "relation": "imports",
@@ -74791,9 +74813,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "repositories_interfaces_createmessagedata",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_createmessagedata"
     },
     {
       "relation": "imports",
@@ -74802,9 +74824,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "repositories_interfaces_imessagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_interfaces_imessagerepository"
     },
     {
       "relation": "contains",
@@ -74812,9 +74834,9 @@
       "source_file": "lib/repositories/job-repository.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_job_repository",
-      "target": "repositories_job_repository_jobrepository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository_jobrepository"
     },
     {
       "relation": "imports_from",
@@ -74823,9 +74845,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_job_repository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository"
     },
     {
       "relation": "imports_from",
@@ -74834,9 +74856,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "repositories_job_repository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository"
     },
     {
       "relation": "imports",
@@ -74845,9 +74867,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_job_repository_jobrepository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository_jobrepository"
     },
     {
       "relation": "imports",
@@ -74856,9 +74878,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "repositories_job_repository_jobrepository",
-      "confidence_score": 1.0
+      "target": "repositories_job_repository_jobrepository"
     },
     {
       "relation": "contains",
@@ -74866,9 +74888,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "repositories_message_repository_messagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository_messagerepository"
     },
     {
       "relation": "contains",
@@ -74876,9 +74898,9 @@
       "source_file": "lib/repositories/message-repository.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_message_repository",
-      "target": "repositories_message_repository_messageselect",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository_messageselect"
     },
     {
       "relation": "imports_from",
@@ -74887,9 +74909,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "repositories_message_repository",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository"
     },
     {
       "relation": "imports",
@@ -74898,9 +74920,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "repositories_message_repository_messagerepository",
-      "confidence_score": 1.0
+      "target": "repositories_message_repository_messagerepository"
     },
     {
       "relation": "contains",
@@ -74908,9 +74930,9 @@
       "source_file": "lib/repositories/resume-repository.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_resume_repository",
-      "target": "repositories_resume_repository_resumerepository",
-      "confidence_score": 1.0
+      "target": "repositories_resume_repository_resumerepository"
     },
     {
       "relation": "imports_from",
@@ -74919,9 +74941,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_resume_repository",
-      "confidence_score": 1.0
+      "target": "repositories_resume_repository"
     },
     {
       "relation": "imports",
@@ -74930,9 +74952,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "repositories_resume_repository_resumerepository",
-      "confidence_score": 1.0
+      "target": "repositories_resume_repository_resumerepository"
     },
     {
       "relation": "contains",
@@ -74940,9 +74962,9 @@
       "source_file": "lib/repositories/thread-repository.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "repositories_thread_repository",
-      "target": "repositories_thread_repository_threadrepository",
-      "confidence_score": 1.0
+      "target": "repositories_thread_repository_threadrepository"
     },
     {
       "relation": "imports_from",
@@ -74951,9 +74973,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "repositories_thread_repository",
-      "confidence_score": 1.0
+      "target": "repositories_thread_repository"
     },
     {
       "relation": "imports",
@@ -74962,9 +74984,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "repositories_thread_repository_threadrepository",
-      "confidence_score": 1.0
+      "target": "repositories_thread_repository_threadrepository"
     },
     {
       "relation": "contains",
@@ -75065,9 +75087,9 @@
       "source_file": "lib/services/application-service.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_application_service",
-      "target": "services_application_service_applicationservice",
-      "confidence_score": 1.0
+      "target": "services_application_service_applicationservice"
     },
     {
       "relation": "contains",
@@ -75075,9 +75097,9 @@
       "source_file": "lib/services/invite-service.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_invite_service",
-      "target": "services_invite_service_inviteservice",
-      "confidence_score": 1.0
+      "target": "services_invite_service_inviteservice"
     },
     {
       "relation": "contains",
@@ -75085,9 +75107,9 @@
       "source_file": "lib/services/job-service.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_job_service",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "imports_from",
@@ -75096,9 +75118,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_thread_utils",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils"
     },
     {
       "relation": "imports",
@@ -75107,9 +75129,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_thread_utils_getotheruserid",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils_getotheruserid"
     },
     {
       "relation": "imports",
@@ -75118,9 +75140,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_thread_utils_isvalidthreadid",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils_isvalidthreadid"
     },
     {
       "relation": "imports",
@@ -75129,9 +75151,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "lib_thread_utils_participatesinthread",
-      "confidence_score": 1.0
+      "target": "lib_thread_utils_participatesinthread"
     },
     {
       "relation": "contains",
@@ -75139,9 +75161,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "services_message_service_getmessagesparams",
-      "confidence_score": 1.0
+      "target": "services_message_service_getmessagesparams"
     },
     {
       "relation": "contains",
@@ -75149,9 +75171,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "services_message_service_getsendmessageschema",
-      "confidence_score": 1.0
+      "target": "services_message_service_getsendmessageschema"
     },
     {
       "relation": "contains",
@@ -75159,9 +75181,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "services_message_service_messageservice",
-      "confidence_score": 1.0
+      "target": "services_message_service_messageservice"
     },
     {
       "relation": "contains",
@@ -75169,9 +75191,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "services_message_service_sendmessageschema",
-      "confidence_score": 1.0
+      "target": "services_message_service_sendmessageschema"
     },
     {
       "relation": "contains",
@@ -75179,9 +75201,9 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_message_service",
-      "target": "services_message_service_verifyrelation",
-      "confidence_score": 1.0
+      "target": "services_message_service_verifyrelation"
     },
     {
       "relation": "contains",
@@ -75189,9 +75211,9 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_admin_service",
-      "target": "services_user_admin_service_useradminservice",
-      "confidence_score": 1.0
+      "target": "services_user_admin_service_useradminservice"
     },
     {
       "relation": "contains",
@@ -75199,9 +75221,9 @@
       "source_file": "lib/services/user-service.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_user_service",
-      "target": "services_user_service_userservice",
-      "confidence_score": 1.0
+      "target": "services_user_service_userservice"
     },
     {
       "relation": "contains",
@@ -87397,5 +87419,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0d2f3333f98c63a72696c3b7a9bfae6eaa5bbaba"
+  "built_at_commit": "09a207ba8b267d9ce99e6df425d35809c9066976"
 }

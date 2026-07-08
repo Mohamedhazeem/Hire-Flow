@@ -25,7 +25,6 @@ async function handlePOST(
     id,
     input.data.banReason,
     input.data.banExpiresIn,
-    request.headers,
   );
 
   return ok(result);

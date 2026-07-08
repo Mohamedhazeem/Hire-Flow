@@ -188,7 +188,9 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     (targetUserId: string) => {
       const adminId = (session?.user as { id?: string })?.id;
       if (!adminId) return;
-      router.push(`/admin/messages?thread=${computeChatThreadId(adminId, targetUserId)}`, { scroll: false });
+      router.push(`/admin/messages?thread=${computeChatThreadId(adminId, targetUserId)}`, {
+        scroll: false,
+      });
     },
     [router, session],
   );
@@ -236,7 +238,11 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
           <ActionButton
             icon={<EyeIcon className="size-4" />}
             label="Profile"
-            onClick={() => router.push(role === "recruiter" ? `/admin/recruiters/${row.id}` : `/admin/users/${row.id}`)}
+            onClick={() =>
+              router.push(
+                role === "recruiter" ? `/admin/recruiters/${row.id}` : `/admin/users/${row.id}`,
+              )
+            }
             title={`View ${row.name}'s profile`}
           />
           <div className="hidden sm:inline text-text-muted">|</div>

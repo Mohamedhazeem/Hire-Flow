@@ -48,10 +48,37 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
 
   if (currentlyBanned) {
     return (
-      <Button variant="ghost" size="sm" onClick={handleUnban} disabled={unbanUser.isPending}>
-        <RotateCcw className="size-4 sm:mr-1" />
-        <span className="hidden sm:inline">Unban</span>
-      </Button>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger
+          render={
+            <Button className={"bg-success/80 hover:bg-success"} size="sm">
+              <RotateCcw className="size-4 sm:mr-1" />
+              <span className="hidden sm:inline">Unban</span>
+            </Button>
+          }
+        />
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Unban {userName}</DialogTitle>
+            <DialogDescription>
+              This will restore the user&apos;s access to the platform.
+            </DialogDescription>
+          </DialogHeader>
+          {banReason && (
+            <p className="text-sm text-text-muted">
+              Previous ban reason: <span className="font-medium">{banReason}</span>
+            </p>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={handleUnban} disabled={unbanUser.isPending}>
+              {unbanUser.isPending ? "Unbanning..." : "Unban User"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     );
   }
 
