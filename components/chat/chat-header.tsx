@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  ArrowLeftIcon,
-  Trash2Icon,
-  Loader2Icon,
-} from "lucide-react";
+import { ArrowLeftIcon, Trash2Icon, Loader2Icon } from "lucide-react";
 
 type ChatHeaderProps = {
   chatName: string;
@@ -44,7 +40,7 @@ export function ChatHeader({
             <ArrowLeftIcon className="size-4" />
           </button>
         )}
-        <div className="size-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center shrink-0 shadow-brand">
+        <div className="size-10 rounded-xl bg-linear-to-br from-brand to-brand-dark flex items-center justify-center shrink-0">
           <span className="text-sm font-bold text-brand-foreground">
             {chatName ? chatName.charAt(0).toUpperCase() : "?"}
           </span>
@@ -77,11 +73,7 @@ export function ChatHeader({
                 disabled={isDeletingThread}
                 className="text-sm text-white bg-gradient-to-r from-error to-error/80 px-3 py-1.5 rounded-lg disabled:opacity-50 flex items-center justify-center min-w-16 font-medium shadow-sm"
               >
-                {isDeletingThread ? (
-                  <Loader2Icon className="size-4 animate-spin" />
-                ) : (
-                  "Delete"
-                )}
+                {isDeletingThread ? <Loader2Icon className="size-4 animate-spin" /> : "Delete"}
               </button>
             </div>
           ) : (

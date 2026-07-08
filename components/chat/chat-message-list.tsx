@@ -1,11 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-  MessageBubble,
-  formatDateSeparator,
-  getDayKey,
-} from "@/components/chat/message-bubble";
+import { MessageBubble, formatDateSeparator, getDayKey } from "@/components/chat/message-bubble";
 import type { MessageItem } from "@/components/chat/message-item";
 import { Loader2Icon } from "lucide-react";
 
@@ -38,7 +34,7 @@ export function ChatMessageList({
     <div
       ref={scrollRef}
       onScroll={onScroll}
-      className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-5 pb-4 space-y-1 bg-bg-page/40 lg:mx-3 lg:rounded-2xl"
+      className="flex-1 min-h-0 overflow-y-auto px-3 lg:px-5 pb-4 space-y-1 bg-bg-page/40 lg:mr-1"
     >
       {isFetchingNextPage && (
         <div className="flex justify-center py-3">
@@ -99,7 +95,9 @@ function SkeletonMessages() {
     <div className="space-y-3 p-4">
       {Array.from({ length: 6 }).map((_, i) => (
         <div key={i} className={cn("flex", i % 2 === 0 ? "justify-end" : "justify-start")}>
-          <div className={cn("h-10 rounded-2xl bg-muted animate-pulse", i % 2 === 0 ? "w-48" : "w-64")} />
+          <div
+            className={cn("h-10 rounded-2xl bg-muted animate-pulse", i % 2 === 0 ? "w-48" : "w-64")}
+          />
         </div>
       ))}
     </div>
