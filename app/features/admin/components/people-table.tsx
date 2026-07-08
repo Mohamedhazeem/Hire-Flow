@@ -8,6 +8,7 @@ import {
   useAdminUsers,
   useRevokeUserSessions,
   useDeleteUser,
+  useUnbanUser,
 } from "@/app/features/admin/hooks/use-admin-users";
 import { BanDialog } from "@/app/features/admin/components/ban-dialog";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
@@ -30,6 +31,7 @@ import {
   LogOut,
   MessageSquareTextIcon,
   EyeIcon,
+  RotateCcw,
 } from "lucide-react";
 
 function computeChatThreadId(idA: string, idB: string): string {
@@ -131,6 +133,32 @@ type UsersApiResponse = {
     pageSize: number;
   };
 };
+
+function UnbanButton({ userId, userName, banReason }: { userId: string; userName: string; banReason?: string | null }) {
+  const unbanUser = useUnbanUser();
+  const handleUnban = useCallback(() => unbanUser.mutate(userId), [unbanUser, userId]);
+
+  return (
+    <ConfirmActionButton
+      action={handleUnban}
+      isPending={unbanUser.isPending}
+      title={`Unban ${userName}`}
+      description={
+        banReason
+          ? `This will restore ${userName}'s access. Previous ban reason: ${banReason}`
+          : `This will restore ${userName}'s access to the platform.`
+      }
+      confirmLabel="Unban User"
+      dialogVariant="warning"
+      variant="ghost"
+      size="sm"
+      className="bg-success/80 hover:bg-success"
+    >
+      <RotateCcw className="size-4 sm:mr-1" />
+      <span className="hidden sm:inline">Unban</span>
+    </ConfirmActionButton>
+  );
+}
 
 export function PeopleTable({ roleFilter }: PeopleTableProps) {
   const router = useRouter();
@@ -253,12 +281,15 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
             title={`Chat with ${row.name}`}
           />
           <div className="hidden sm:inline text-text-muted">|</div>
-          <BanDialog
-            userId={row.id}
-            userName={row.name}
-            currentlyBanned={row.banned}
-            banReason={row.banReason}
-          />
+          {row.banned ? (
+            <UnbanButton userId={row.id} userName={row.name} banReason={row.banReason} />
+          ) : (
+              <BanDialog
+                userId={row.id}
+                userName={row.name}
+                banReason={row.banReason}
+              />
+          )}
           <div className="hidden sm:inline text-text-muted">|</div>
           <ConfirmActionButton
             action={() => handleRevokeSessions(row.id)}

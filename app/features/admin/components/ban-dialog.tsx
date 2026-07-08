@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useBanUser, useUnbanUser } from "@/app/features/admin/hooks/use-admin-users";
+import { useBanUser } from "@/app/features/admin/hooks/use-admin-users";
 import {
   Dialog,
   DialogContent,
@@ -14,21 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-import { Ban, RotateCcw } from "lucide-react";
+import { Ban } from "lucide-react";
 
 type BanDialogProps = {
   userId: string;
   userName: string;
-  currentlyBanned: boolean;
   banReason?: string | null;
 };
 
-export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanDialogProps) {
+export function BanDialog({ userId, userName, banReason }: BanDialogProps) {
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState("");
   const [expiresInDays, setExpiresInDays] = useState("");
   const banUser = useBanUser();
-  const unbanUser = useUnbanUser();
 
   const handleBan = async () => {
     await banUser.mutateAsync({
@@ -40,47 +38,6 @@ export function BanDialog({ userId, userName, currentlyBanned, banReason }: BanD
     setReason("");
     setExpiresInDays("");
   };
-
-  const handleUnban = async () => {
-    await unbanUser.mutateAsync(userId);
-    setOpen(false);
-  };
-
-  if (currentlyBanned) {
-    return (
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger
-          render={
-            <Button className={"bg-success/80 hover:bg-success"} size="sm">
-              <RotateCcw className="size-4 sm:mr-1" />
-              <span className="hidden sm:inline">Unban</span>
-            </Button>
-          }
-        />
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Unban {userName}</DialogTitle>
-            <DialogDescription>
-              This will restore the user&apos;s access to the platform.
-            </DialogDescription>
-          </DialogHeader>
-          {banReason && (
-            <p className="text-sm text-text-muted">
-              Previous ban reason: <span className="font-medium">{banReason}</span>
-            </p>
-          )}
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setOpen(false)}>
-              Cancel
-            </Button>
-            <Button onClick={handleUnban} disabled={unbanUser.isPending}>
-              {unbanUser.isPending ? "Unbanning..." : "Unban User"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    );
-  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

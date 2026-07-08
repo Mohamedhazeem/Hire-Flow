@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/ban-dialog.tsx": {
-    "mtime": 1783430919.1216714,
-    "ast_hash": "308d427e5bf45a2b1cdae848f2dc9696",
+    "mtime": 1783491738.5901644,
+    "ast_hash": "2a8f5d1f350271014cf98f857bb93d77",
     "semantic_hash": ""
   },
   "app/features/admin/components/email/admin-invite-email.tsx": {
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783488932.9689212,
-    "ast_hash": "2f2469c44f2ab2e30e268c9bfd488983",
+    "mtime": 1783492115.937602,
+    "ast_hash": "74d26e59a64a5e9584f34716e038dd58",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {
