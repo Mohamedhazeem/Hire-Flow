@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-07-08)
 
 ## Corpus Check
-- 524 files · ~172,927 words
+- 524 files · ~172,952 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3017 nodes · 5706 edges · 186 communities (170 shown, 16 thin omitted)
+- 3017 nodes · 5706 edges · 187 communities (171 shown, 16 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `19d9ed2d`
+- Built from commit: `7c3453b0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -193,6 +193,7 @@
 - [[_COMMUNITY_Community 183|Community 183]]
 - [[_COMMUNITY_Community 184|Community 184]]
 - [[_COMMUNITY_Community 185|Community 185]]
+- [[_COMMUNITY_Community 186|Community 186]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `requireRole()` - 131 edges
@@ -221,7 +222,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (186 total, 16 thin omitted)
+## Communities (187 total, 16 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.03
@@ -336,12 +337,12 @@ Cohesion: 0.29
 Nodes (6): GET, handleGET(), AdminInviteListResponse, AdminInviteRow, AdminTeamMemberRow, listAdminInvites()
 
 ### Community 28 - "Community 28"
-Cohesion: 0.13
-Nodes (19): upsertProfile(), emptyExperience, ExperienceListEditor(), Props, Props, WORK_MODE_OPTIONS, emptyLink, PLATFORMS (+11 more)
+Cohesion: 0.15
+Nodes (17): upsertProfile(), emptyExperience, ExperienceListEditor(), Props, Props, WORK_MODE_OPTIONS, emptyLink, PLATFORMS (+9 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.17
-Nodes (18): computeThreadId(), cn(), JobDetailTabs(), JobDetailTabsProps, Tab, SearchResult, StartConversationSearch(), StartConversationSearchProps (+10 more)
+Cohesion: 0.18
+Nodes (19): cn(), JobDetailTabs(), JobDetailTabsProps, Tab, Checkbox(), DataTableProps, SelectGroup(), SelectLabel() (+11 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.11
@@ -360,24 +361,24 @@ Cohesion: 0.15
 Nodes (12): logOutAction(), SocialProvider, socialSignInAction(), { POST, GET }, ProfileForm(), auth, UserStatusResult, metadata (+4 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.10
-Nodes (27): EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, createRecruiterJobColumns(), EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), WORK_MODE_LABELS (+19 more)
+Cohesion: 0.15
+Nodes (18): createRecruiterJobColumns(), EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), WORK_MODE_LABELS, useDeleteJob(), useRecruiterJobs(), useToggleJobStatus(), RecruiterJobDetail (+10 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.08
 Nodes (31): ResolvedSession, { DELETE }, GET, handleGET(), { DELETE }, GET, handleGET(), GET (+23 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.15
-Nodes (16): ChatHeader(), ChatHeaderProps, ChatInputArea(), ChatInputAreaProps, ChatMessageList(), ChatMessageListProps, AttachmentPreview(), AttachmentPreviewProps (+8 more)
+Cohesion: 0.19
+Nodes (13): ChatInputArea(), ChatInputAreaProps, ChatMessageList(), ChatMessageListProps, AttachmentPreview(), AttachmentPreviewProps, fileIcon(), formatDateSeparator() (+5 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.18
 Nodes (10): Props, metadata, CHART_TOOLTIP_STYLE, DistributionBarChart(), DistributionBarChartProps, filterFromParams(), PerJobAnalyticsPage(), PerJobAnalyticsPageProps (+2 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.08
-Nodes (43): ApplicantDetailDialogsProps, FeedbackProps, ApplicantsTableDialogs(), ApplicantsTableDialogsProps, ConfirmStatusDialogProps, InterviewFormData, OfferFormData, RejectDialog() (+35 more)
+Cohesion: 0.12
+Nodes (26): FeedbackProps, BanDialogProps, BulkRejectDialog(), BulkRejectDialogProps, RevertConfirmDialog(), RevertDialogProps, ConfirmActionButtonProps, ConfirmDialog() (+18 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.23
@@ -444,8 +445,8 @@ Cohesion: 0.12
 Nodes (9): inter, metadata, newFunction(), NotFound(), JobDetailPage(), EditJobPage(), ErrorPage(), ErrorPageType (+1 more)
 
 ### Community 55 - "Community 55"
-Cohesion: 0.14
-Nodes (19): ApplicantTableToolbarProps, EMPLOYMENT_TYPE_LABELS, JobTableToolbar(), JobTableToolbarProps, WORK_MODE_LABELS, capitalizeLabel(), formatLabel(), PeopleTableToolbar() (+11 more)
+Cohesion: 0.09
+Nodes (29): ApplicantTableToolbarProps, EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, EMPLOYMENT_TYPE_LABELS, JobTableToolbar(), JobTableToolbarProps (+21 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.09
@@ -492,8 +493,8 @@ Cohesion: 0.21
 Nodes (13): AnalyticsFilterBar(), AnalyticsFilterBarProps, DesktopFilters(), DesktopFiltersProps, itemCls(), FilterButton(), EMPLOYMENT_TYPE_OPTIONS, getStatusOptions() (+5 more)
 
 ### Community 67 - "Community 67"
-Cohesion: 0.14
-Nodes (20): SharedThreadView(), ThreadViewConfig, ThreadViewHooks, config, hooks, Props, config, hooks (+12 more)
+Cohesion: 0.17
+Nodes (18): MessageItem, createUseDeleteMessage(), createUseDeleteThread(), createUseMessages(), createUseSendMessage(), MessagesResponse, SendMessagePayload, isValidThreadId() (+10 more)
 
 ### Community 68 - "Community 68"
 Cohesion: 0.11
@@ -648,7 +649,7 @@ Cohesion: 0.29
 Nodes (5): ActivityPanel(), AppRow, statConfig, Stats, metadata
 
 ### Community 106 - "Community 106"
-Cohesion: 0.22
+Cohesion: 0.23
 Nodes (12): adminLinks, LogoutButton(), recruiterLinks, userLinks, UserSidebar(), useSignOut(), getSidebarDisplayName(), Sidebar() (+4 more)
 
 ### Community 107 - "Community 107"
@@ -800,8 +801,8 @@ Cohesion: 0.29
 Nodes (5): JobDetail(), JobDetailProps, STATUS_BADGE, TABS, PageProps
 
 ### Community 167 - "Community 167"
-Cohesion: 0.20
-Nodes (11): MessageItem, config, hooks, Props, createUseDeleteThread(), createUseSendMessage(), MessagesResponse, useDeleteRecruiterMessage (+3 more)
+Cohesion: 0.14
+Nodes (16): ChatHeader(), ChatHeaderProps, Props, SharedThreadView(), ThreadViewConfig, ThreadViewHooks, config, hooks (+8 more)
 
 ### Community 168 - "Community 168"
 Cohesion: 0.09
@@ -852,8 +853,8 @@ Cohesion: 0.29
 Nodes (6): FunnelChart(), FunnelChartProps, FunnelRow(), FunnelStage, CHART_COLORS, FUNNEL_STAGE_ORDER
 
 ### Community 180 - "Community 180"
-Cohesion: 0.18
-Nodes (10): button, buttonContainer, container, fallbackLink, heading, main, paragraph, separatorText (+2 more)
+Cohesion: 0.16
+Nodes (17): ApplicantDetailDialogsProps, ApplicantsTableDialogs(), ApplicantsTableDialogsProps, ConfirmStatusDialogProps, InterviewFormData, OfferFormData, RejectDialog(), RejectDialogProps (+9 more)
 
 ### Community 181 - "Community 181"
 Cohesion: 0.40
@@ -871,8 +872,12 @@ Nodes (12): apiClient(), DEFAULT_QUERY_OPTIONS, defaultQueryFn(), getQueryClient
 Cohesion: 0.32
 Nodes (5): MessagesPageConfig, AdminMessagesPage(), config, AdminThreadView(), useAdminThreads
 
+### Community 186 - "Community 186"
+Cohesion: 0.18
+Nodes (10): button, buttonContainer, container, fallbackLink, heading, main, paragraph, RecruiterInviteEmail() (+2 more)
+
 ## Knowledge Gaps
-- **1566 isolated node(s):** `$schema`, `plugin`, `snapshot`, `@kilocode/plugin`, `AcceptInviteClientProps` (+1561 more)
+- **1566 isolated node(s):** `AdminApplicantDetailPageProps`, `ApplicantActionsSectionProps`, `ApplicantDetailPageProps`, `STATUS_BADGE`, `TABS` (+1561 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -880,16 +885,16 @@ Nodes (5): MessagesPageConfig, AdminMessagesPage(), config, AdminThreadView(), u
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 29` to `Community 155`, `Community 28`, `Community 30`, `Community 36`, `Community 37`, `Community 38`, `Community 168`, `Community 42`, `Community 43`, `Community 171`, `Community 177`, `Community 49`, `Community 179`, `Community 51`, `Community 55`, `Community 66`, `Community 74`, `Community 79`, `Community 80`, `Community 93`, `Community 94`, `Community 96`, `Community 97`, `Community 106`, `Community 112`, `Community 117`, `Community 118`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 38` to `Community 19`, `Community 21`, `Community 28`, `Community 29`, `Community 30`, `Community 34`, `Community 170`, `Community 43`, `Community 180`, `Community 182`, `Community 55`, `Community 65`, `Community 74`, `Community 80`, `Community 82`, `Community 88`, `Community 92`, `Community 97`, `Community 113`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 103` to `Community 21`, `Community 22`, `Community 26`, `Community 27`, `Community 28`, `Community 35`, `Community 40`, `Community 169`, `Community 170`, `Community 172`, `Community 64`, `Community 65`, `Community 70`, `Community 82`, `Community 87`, `Community 88`, `Community 89`, `Community 94`, `Community 107`, `Community 125`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `Button()` connect `Community 38` to `Community 65`, `Community 34`, `Community 97`, `Community 170`, `Community 43`, `Community 74`, `Community 92`, `Community 80`, `Community 113`, `Community 82`, `Community 19`, `Community 21`, `Community 182`, `Community 55`, `Community 88`, `Community 28`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 22 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 22 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `$schema`, `plugin`, `snapshot` to the rest of the system?**
+- **What connects `AdminApplicantDetailPageProps`, `ApplicantActionsSectionProps`, `ApplicantDetailPageProps` to the rest of the system?**
   _1566 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

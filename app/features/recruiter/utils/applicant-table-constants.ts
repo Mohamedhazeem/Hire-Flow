@@ -11,7 +11,7 @@ export const STATUS_OPTIONS = [
   { value: "rejected", label: "Rejected" },
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 export const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
   applied: [
     { label: "Start Review", status: "reviewing" },

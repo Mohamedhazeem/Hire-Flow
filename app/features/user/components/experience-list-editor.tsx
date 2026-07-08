@@ -61,7 +61,7 @@ export function ExperienceListEditor({ form }: Props) {
 
       {fields.length === 0 && (
         <p className="text-sm text-text-muted py-2">
-          No experience added yet. Click "Add" to include your work history.
+          No experience added yet. Click &quot;Add&quot; to include your work history.
         </p>
       )}
 
@@ -90,14 +90,21 @@ export function ExperienceListEditor({ form }: Props) {
                 <label className="text-xs text-text-muted">Company *</label>
                 <Input placeholder="Acme Inc." {...form.register(`experiences.${index}.company`)} />
                 {form.formState.errors.experiences?.[index]?.company && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.company?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.company?.message}
+                  </p>
                 )}
               </div>
               <div className="space-y-1">
                 <label className="text-xs text-text-muted">Title *</label>
-                <Input placeholder="Software Engineer" {...form.register(`experiences.${index}.title`)} />
+                <Input
+                  placeholder="Software Engineer"
+                  {...form.register(`experiences.${index}.title`)}
+                />
                 {form.formState.errors.experiences?.[index]?.title && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.title?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.title?.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -107,7 +114,9 @@ export function ExperienceListEditor({ form }: Props) {
                 <label className="text-xs text-text-muted">Start Date *</label>
                 <Input type="date" {...form.register(`experiences.${index}.startDate`)} />
                 {form.formState.errors.experiences?.[index]?.startDate && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.startDate?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.startDate?.message}
+                  </p>
                 )}
               </div>
               <div className="space-y-1">
@@ -142,7 +151,9 @@ export function ExperienceListEditor({ form }: Props) {
                 {...form.register(`experiences.${index}.description`)}
               />
               {form.formState.errors.experiences?.[index]?.description && (
-                <p className="text-xs text-error">{form.formState.errors.experiences[index]!.description?.message}</p>
+                <p className="text-xs text-error">
+                  {form.formState.errors.experiences[index]!.description?.message}
+                </p>
               )}
             </div>
           </div>
