@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePresenceStore } from "@/features/messages/stores/presence-store";
-import { getPusherClient } from "@/lib/pusher-client";
+import { getPusherClient } from "@/lib/pusher/pusher-client";
 
 export function useOwnPresence(userId: string | undefined) {
   useEffect(() => {
@@ -17,9 +17,7 @@ export function useOwnPresence(userId: string | undefined) {
   }, [userId]);
 }
 
-export function useThreadPresence(
-  threads: Array<{ user: { id: string } }> | undefined,
-) {
+export function useThreadPresence(threads: Array<{ user: { id: string } }> | undefined) {
   const subscribeToUser = usePresenceStore((s) => s.subscribeToUser);
   const unsubscribeFromUser = usePresenceStore((s) => s.unsubscribeFromUser);
 

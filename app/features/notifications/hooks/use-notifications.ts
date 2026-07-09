@@ -6,7 +6,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useInfiniteQuery, useMutation } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api/api-client";
 import type { ApiResponse } from "@/lib/api/api-response";
-import { getPusherClient } from "@/lib/pusher-client";
+import { getPusherClient } from "@/lib/pusher/pusher-client";
 
 type Channel = ReturnType<NonNullable<ReturnType<typeof getPusherClient>>["subscribe"]>;
 

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { pusher } from "@/lib/pusher";
+import { pusher } from "@/lib/pusher/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
 import { createNotification } from "@/lib/notifications";

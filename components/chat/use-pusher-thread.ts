@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { getPusherClient } from "@/lib/pusher-client";
+import { getPusherClient } from "@/lib/pusher/pusher-client";
 import type { MessageItem } from "@/components/chat/message-item";
 import { isValidThreadId } from "@/lib/thread-utils";
 
@@ -29,11 +29,17 @@ export function usePusherThread(
         if (existingIds.has(data.message.id)) return old;
         const np = [...d.pages];
         const li = np.length - 1;
-        np[li] = { ...np[li], data: { ...np[li].data, messages: [...np[li].data.messages, data.message] } };
+        np[li] = {
+          ...np[li],
+          data: { ...np[li].data, messages: [...np[li].data.messages, data.message] },
+        };
         return { ...d, pages: np };
       });
     });
 
-    return () => { channel.unbind_all(); pusher.unsubscribe(`private-thread-${threadId}`); };
+    return () => {
+      channel.unbind_all();
+      pusher.unsubscribe(`private-thread-${threadId}`);
+    };
   }, [threadId, currentUserId, queryClient, queryKey]);
 }

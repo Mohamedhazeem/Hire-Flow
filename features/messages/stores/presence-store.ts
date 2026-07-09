@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import { getPusherClient } from "@/lib/pusher-client";
+import { getPusherClient } from "@/lib/pusher/pusher-client";
 
 type PresenceState = {
   onlineUserIds: Set<string>;
@@ -25,16 +25,19 @@ export const usePresenceStore = create<PresenceState>((set, get) => ({
     if (!pusher) return;
     const channel = pusher.subscribe(channelName);
 
-    channel.bind("pusher:subscription_succeeded", (members: { members: Record<string, unknown> }) => {
-      const memberIds = Object.keys(members.members);
-      set((s) => {
-        const next = new Set(s.onlineUserIds);
-        for (const id of memberIds) {
-          if (id !== userId) next.add(id);
-        }
-        return { onlineUserIds: next };
-      });
-    });
+    channel.bind(
+      "pusher:subscription_succeeded",
+      (members: { members: Record<string, unknown> }) => {
+        const memberIds = Object.keys(members.members);
+        set((s) => {
+          const next = new Set(s.onlineUserIds);
+          for (const id of memberIds) {
+            if (id !== userId) next.add(id);
+          }
+          return { onlineUserIds: next };
+        });
+      },
+    );
 
     channel.bind("pusher:member_added", (member: { id: string }) => {
       if (member.id === userId) return;

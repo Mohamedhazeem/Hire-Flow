@@ -35,7 +35,7 @@ export async function POST(request: Request) {
   }
 
   // Lazy-import pusher so the auth route still works when Pusher is not configured
-  const { pusher } = await import("@/lib/pusher");
+  const { pusher } = await import("@/lib/pusher/pusher");
   if (!pusher) {
     return NextResponse.json({ auth: "" }, { status: 200 });
   }

@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { pusher } from "@/lib/pusher";
+import { pusher } from "@/lib/pusher/pusher";
 
 type NotificationInput = {
   userId: string;
@@ -7,7 +7,11 @@ type NotificationInput = {
   data: Record<string, unknown>;
 };
 
-export async function createNotification(userId: string, type: string, data: Record<string, unknown>) {
+export async function createNotification(
+  userId: string,
+  type: string,
+  data: Record<string, unknown>,
+) {
   const notification = await prisma.notification.create({
     data: { userId, type, data } as never,
   });
@@ -57,7 +61,5 @@ export async function triggerForCompany(
 
   if (members.length === 0) return [];
 
-  return createNotificationsBulk(
-    members.map((m) => ({ userId: m.userId, type, data })),
-  );
+  return createNotificationsBulk(members.map((m) => ({ userId: m.userId, type, data })));
 }
