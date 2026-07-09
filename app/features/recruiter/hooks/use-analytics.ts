@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
-import type { ApiResponse } from "@/lib/api-response";
+import { apiClient } from "@/lib/api/api-client";
+import type { ApiResponse } from "@/lib/api/api-response";
 import type { AnalyticsFilter, AnalyticsResponse } from "../schema/analytics.schema";
 
 function filterToParams(filter: AnalyticsFilter): Record<string, string> {
@@ -31,9 +31,12 @@ export function useJobAnalytics(jobId: string, filter: AnalyticsFilter) {
   return useQuery<AnalyticsResponse>({
     queryKey: ["recruiter", "analytics", jobId, filter],
     queryFn: async () => {
-      const res = await apiClient<ApiResponse<AnalyticsResponse>>(`/api/recruiter/jobs/${jobId}/analytics`, {
-        params: filterToParams(filter),
-      });
+      const res = await apiClient<ApiResponse<AnalyticsResponse>>(
+        `/api/recruiter/jobs/${jobId}/analytics`,
+        {
+          params: filterToParams(filter),
+        },
+      );
       return res.data;
     },
     enabled: !!jobId,

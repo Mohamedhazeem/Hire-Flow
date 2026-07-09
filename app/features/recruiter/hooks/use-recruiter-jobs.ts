@@ -1,14 +1,13 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import type { JobListParams, JobFormInput } from "@/app/features/recruiter/schema/job.schema";
 import type { RecruiterJobListResult } from "@/app/features/recruiter/queries/job-queries";
-import type { ApiResponse } from "@/lib/api-response";
+import type { ApiResponse } from "@/lib/api/api-response";
 
 export function useRecruiterJobs(params: JobListParams) {
   return useQuery<ApiResponse<RecruiterJobListResult>>({
     queryKey: ["recruiter", "jobs", params],
-    queryFn: () =>
-      apiClient(`/api/recruiter/jobs`, { params: params as Record<string, unknown> }),
+    queryFn: () => apiClient(`/api/recruiter/jobs`, { params: params as Record<string, unknown> }),
   });
 }
 

@@ -1,10 +1,10 @@
 import { z } from "zod";
 import { pusher } from "@/lib/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
-import { ValidationError, NotFoundError } from "@/lib/api-error";
+import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
 import { createNotification } from "@/lib/notifications";
 import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
-import { checkMessageRateLimit } from "@/lib/rate-limit";
+import { countRecentMessages } from "@/lib/repositories/rate-limit-repository";
 import { messageRepository } from "@/lib/repositories/message-repository";
 import { threadRepository } from "@/lib/repositories/thread-repository";
 
@@ -52,9 +52,7 @@ export const messageService = {
 
     const { items, meta } = buildCursorMeta(messages, limit);
 
-    const unreadIds = items
-      .filter((m) => m.senderId !== userId && !m.read)
-      .map((m) => m.id);
+    const unreadIds = items.filter((m) => m.senderId !== userId && !m.read).map((m) => m.id);
     if (unreadIds.length > 0) {
       void messageRepository.markAsRead(unreadIds);
     }
@@ -71,7 +69,15 @@ export const messageService = {
     requireValidUrl?: boolean;
     verifyRelation?: VerifyRelation;
   }) {
-    const { threadId, senderId, senderName, senderRole, body, requireValidUrl = false, verifyRelation } = params;
+    const {
+      threadId,
+      senderId,
+      senderName,
+      senderRole,
+      body,
+      requireValidUrl = false,
+      verifyRelation,
+    } = params;
 
     if (!isValidThreadId(threadId)) {
       throw new ValidationError("Invalid thread ID format");
@@ -83,7 +89,12 @@ export const messageService = {
       throw new ValidationError("You are not a participant in this thread");
     }
 
-    await checkMessageRateLimit(senderId, otherUserId);
+    const recentCount = await countRecentMessages(senderId, otherUserId);
+    if (recentCount >= 200) {
+      throw new TooManyRequestsError(
+        "Message limit reached. You can send up to 20 messages per hour.",
+      );
+    }
 
     if (senderRole === "recruiter" && verifyRelation) {
       await verifyRelation(senderId, otherUserId);

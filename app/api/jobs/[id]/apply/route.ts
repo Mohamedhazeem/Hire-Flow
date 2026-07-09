@@ -1,17 +1,14 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
-import { ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ok } from "@/lib/api/api-response";
+import { ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { ApplySchema } from "@/app/features/jobs/schema/application-submit.schema";
-import { checkRateLimit } from "@/lib/rate-limiter";
+import { checkRateLimit } from "@/lib/rate-limit";
 import { revalidatePath } from "next/cache";
 import { applicationService } from "@/lib/services/application-service";
 
-async function handlePOST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePOST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
   const { id: jobId } = await params;
 
@@ -23,12 +20,7 @@ async function handlePOST(
     throw new ValidationError(parsed.error.issues[0]?.message ?? "Invalid request");
   }
 
-  const result = await applicationService.applyToJob(
-    jobId,
-    session.id,
-    session.name,
-    parsed.data,
-  );
+  const result = await applicationService.applyToJob(jobId, session.id, session.name, parsed.data);
 
   revalidatePath("/jobs");
   revalidatePath("/user/applications");

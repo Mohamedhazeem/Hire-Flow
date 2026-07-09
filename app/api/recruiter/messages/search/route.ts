@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 
 async function handleGET(request: NextRequest) {
   const recruiter = await requireRole(["recruiter"]);

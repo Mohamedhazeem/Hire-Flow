@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { jobService } from "@/lib/services/job-service";
 
 async function handleDELETE(
@@ -14,10 +14,7 @@ async function handleDELETE(
   return ok(result);
 }
 
-async function handlePATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 

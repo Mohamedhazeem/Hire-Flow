@@ -1,11 +1,9 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import {
-  BulkStatusTransitionSchema,
-} from "@/app/features/recruiter/schema/application.schema";
-import { ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { BulkStatusTransitionSchema } from "@/app/features/recruiter/schema/application.schema";
+import { ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { applicationService } from "@/lib/services/application-service";
 
 async function handlePOST(request: NextRequest) {

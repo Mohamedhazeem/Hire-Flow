@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   Loader2Icon,
@@ -42,10 +42,13 @@ export function ApplyModal({ jobId, onClose }: ApplyModalProps) {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await apiClient<{ data: { id: string; status: string } }>(`/api/jobs/${jobId}/apply`, {
-        method: "POST",
-        body: { resumeId: selectedResumeId, coverLetter: coverLetter || undefined },
-      });
+      const res = await apiClient<{ data: { id: string; status: string } }>(
+        `/api/jobs/${jobId}/apply`,
+        {
+          method: "POST",
+          body: { resumeId: selectedResumeId, coverLetter: coverLetter || undefined },
+        },
+      );
       return res.data;
     },
     onSuccess: () => {

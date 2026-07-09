@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { CompanyProfileSchema } from "@/app/features/recruiter/schema/company.schema";
-import { ForbiddenError, ValidationError } from "@/lib/api-error";
+import { ForbiddenError, ValidationError } from "@/lib/api/api-error";
 import { revalidatePath } from "next/cache";
 import type { CompanyProfileInput } from "@/app/features/recruiter/schema/company.schema";
 

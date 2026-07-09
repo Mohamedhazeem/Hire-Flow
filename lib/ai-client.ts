@@ -1,4 +1,4 @@
-import { ApiError } from "./api-error";
+import { ApiError } from "./api/api-error";
 
 type AIProvider = "anthropic" | "openai" | "google";
 
@@ -92,10 +92,7 @@ export async function callAI(
     } catch {
       detail = res.statusText;
     }
-    throw new ApiError(
-      `${provider} API error (${res.status}): ${detail}`,
-      502,
-    );
+    throw new ApiError(`${provider} API error (${res.status}): ${detail}`, 502);
   }
 
   const data = await res.json();

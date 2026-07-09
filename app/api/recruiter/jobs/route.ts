@@ -1,13 +1,13 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import {
   RecruiterListJobsParamsSchema,
   JobCreateSchema,
 } from "@/app/features/recruiter/schema/job.schema";
 import { listJobs } from "@/app/features/recruiter/queries/job-queries";
-import { ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { jobService } from "@/lib/services/job-service";
 
 async function handleGET(request: NextRequest) {

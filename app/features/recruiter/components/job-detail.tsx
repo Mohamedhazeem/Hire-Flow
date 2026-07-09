@@ -2,18 +2,21 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { RecruiterJobDetail } from "@/app/features/recruiter/queries/job-queries";
-import type { ApiResponse } from "@/lib/api-response";
+import type { ApiResponse } from "@/lib/api/api-response";
 import { ArrowLeftIcon, PencilIcon, UsersIcon, BarChart3Icon } from "lucide-react";
 import Link from "next/link";
 import { JobDetailTabs } from "@/components/shared/job-detail-tabs";
 import { JobMetaGrid } from "@/components/shared/job-meta-grid";
 import { SectionCard } from "@/components/shared/section-card";
 
-const STATUS_BADGE: Record<string, { variant: "default" | "secondary" | "outline"; label: string }> = {
+const STATUS_BADGE: Record<
+  string,
+  { variant: "default" | "secondary" | "outline"; label: string }
+> = {
   draft: { variant: "secondary", label: "Draft" },
   active: { variant: "default", label: "Active" },
   archived: { variant: "outline", label: "Archived" },
@@ -54,19 +57,27 @@ export function JobDetail({ jobId }: JobDetailProps) {
     return (
       <div className="text-destructive text-sm py-8 text-center">
         Failed to load job details.{" "}
-        <button onClick={() => router.push("/recruiter/jobs")} className="text-brand underline">Back to jobs</button>
+        <button onClick={() => router.push("/recruiter/jobs")} className="text-brand underline">
+          Back to jobs
+        </button>
       </div>
     );
   }
 
   const job = data.data.job;
-  const statusConfig = STATUS_BADGE[job.status] ?? { variant: "secondary" as const, label: job.status };
+  const statusConfig = STATUS_BADGE[job.status] ?? {
+    variant: "secondary" as const,
+    label: job.status,
+  };
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/recruiter/jobs" className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all">
+          <Link
+            href="/recruiter/jobs"
+            className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all"
+          >
             <ArrowLeftIcon className="size-5" />
           </Link>
           <div>
@@ -77,7 +88,10 @@ export function JobDetail({ jobId }: JobDetailProps) {
           </div>
         </div>
         {job.status !== "archived" && (
-          <Link href={`/recruiter/jobs/${job.id}/edit`} className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-8 gap-1 px-2.5 text-sm font-medium whitespace-nowrap transition-all">
+          <Link
+            href={`/recruiter/jobs/${job.id}/edit`}
+            className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-8 gap-1 px-2.5 text-sm font-medium whitespace-nowrap transition-all"
+          >
             <PencilIcon className="size-4" /> Edit
           </Link>
         )}
@@ -88,18 +102,24 @@ export function JobDetail({ jobId }: JobDetailProps) {
       <JobMetaGrid job={job} />
 
       <SectionCard title="Description">
-        <p className="text-sm text-text-body whitespace-pre-wrap leading-relaxed">{job.description}</p>
+        <p className="text-sm text-text-body whitespace-pre-wrap leading-relaxed">
+          {job.description}
+        </p>
       </SectionCard>
 
       <SectionCard title="Applicants" count={job.applicationCount} countLabel="applicants">
         {job.applicationCount > 0 ? (
           <p className="text-sm text-text-muted">
-            {job.applicationCount} applicant{job.applicationCount !== 1 ? "s" : ""} have applied to this position.
+            {job.applicationCount} applicant{job.applicationCount !== 1 ? "s" : ""} have applied to
+            this position.
           </p>
         ) : (
           <p className="text-sm text-text-muted">No applicants yet for this position.</p>
         )}
-        <Link href={`/recruiter/jobs/${job.id}/applicants`} className="inline-flex items-center gap-1 text-xs text-brand hover:underline mt-2">
+        <Link
+          href={`/recruiter/jobs/${job.id}/applicants`}
+          className="inline-flex items-center gap-1 text-xs text-brand hover:underline mt-2"
+        >
           <UsersIcon className="size-3.5" /> View All
         </Link>
       </SectionCard>

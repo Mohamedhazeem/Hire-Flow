@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 
 type ToggleResponse = { bookmarked: boolean; id: string };
 type CheckResponse = { bookmarked: boolean };

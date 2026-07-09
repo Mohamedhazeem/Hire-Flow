@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { sendEmail } from "@/app/features/auth/libs/email";
 import { RecruiterBulkInviteSchema } from "@/app/features/recruiter/schema/team.schema";
-import { ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api/api-error";
 import { revalidatePath } from "next/cache";
 import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";

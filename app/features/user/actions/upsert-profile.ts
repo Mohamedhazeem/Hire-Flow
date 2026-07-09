@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { ProfileSchema } from "@/app/features/user/schema/profile.schema";
-import { ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api/api-error";
 import { revalidatePath } from "next/cache";
 import type { ProfileInput } from "@/app/features/user/schema/profile.schema";
 

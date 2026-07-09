@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api/api-error";
 import { createInviteCancelHandler } from "@/lib/handlers/invite";
 
 export const { DELETE } = createInviteCancelHandler(["recruiter"], {

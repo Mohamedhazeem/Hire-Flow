@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
-import type { ApiResponse } from "@/lib/api-response";
+import { apiClient } from "@/lib/api/api-client";
+import type { ApiResponse } from "@/lib/api/api-response";
 
 export type InviteListItem = {
   id: string;

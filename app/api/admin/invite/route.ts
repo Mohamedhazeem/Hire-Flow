@@ -1,6 +1,6 @@
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { listAdminInvites } from "@/app/features/admin/queries/invite-queries";
 
 async function handleGET() {

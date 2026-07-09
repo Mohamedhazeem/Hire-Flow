@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
+import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 import { createNotification } from "@/lib/notifications";
 import { applicationRepository } from "@/lib/repositories/application-repository";
 
@@ -11,7 +11,9 @@ export const userService = {
     }
 
     if (application.status !== "applied" && application.status !== "reviewing") {
-      throw new ValidationError("Can only withdraw applications that are in 'applied' or 'reviewing' status");
+      throw new ValidationError(
+        "Can only withdraw applications that are in 'applied' or 'reviewing' status",
+      );
     }
 
     const { jobId } = application;

@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { AnalyticsFilterSchema } from "@/app/features/recruiter/schema/analytics.schema";
 import { getAnalytics } from "@/app/features/recruiter/queries/analytics-queries";
 

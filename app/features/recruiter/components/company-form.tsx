@@ -11,7 +11,7 @@ import { upsertCompany } from "@/app/features/recruiter/actions/upsert-company";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { Building2, Globe, Upload, CheckCircle2, AlertCircle, Eye } from "lucide-react";
 import Image from "next/image";
 
@@ -111,9 +111,7 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
 
           <div className="space-y-1">
             <span className="text-sm font-medium text-text-heading">Description</span>
-            <p className="text-text-body whitespace-pre-wrap">
-              {defaultValues.description || "—"}
-            </p>
+            <p className="text-text-body whitespace-pre-wrap">{defaultValues.description || "—"}</p>
           </div>
 
           {defaultValues.logoUrl && (

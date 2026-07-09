@@ -1,5 +1,14 @@
 import prisma from "@/lib/prisma";
-import type { AnalyticsFilter, AnalyticsResponse, TrendPoint, FunnelStage, FunnelHistorical, StageConversion, SummaryStats, JobBreakdownRow } from "../schema/analytics.schema";
+import type {
+  AnalyticsFilter,
+  AnalyticsResponse,
+  TrendPoint,
+  FunnelStage,
+  FunnelHistorical,
+  StageConversion,
+  SummaryStats,
+  JobBreakdownRow,
+} from "../schema/analytics.schema";
 import { FUNNEL_STAGE_ORDER } from "../schema/analytics.schema";
 
 function defaultDateRange(): { dateFrom: string; dateTo: string } {
@@ -15,7 +24,11 @@ function defaultDateRange(): { dateFrom: string; dateTo: string } {
 type RawTrendRow = { date: string; count: bigint };
 type RawCountRow = { count: bigint };
 
-function buildWhereClauses(companyId: string, filter: AnalyticsFilter, tableAliases: { application: string; job: string }): string[] {
+function buildWhereClauses(
+  companyId: string,
+  filter: AnalyticsFilter,
+  tableAliases: { application: string; job: string },
+): string[] {
   const clauses: string[] = [];
   clauses.push(`${tableAliases.job}."companyId" = '${companyId}'`);
 
@@ -27,28 +40,40 @@ function buildWhereClauses(companyId: string, filter: AnalyticsFilter, tableAlia
   clauses.push(`${tableAliases.application}."appliedAt" <= '${to}T23:59:59Z'`);
 
   if (filter.status) {
-    const statuses = filter.status.split(",").map((s) => `'${s.trim()}'`).filter(Boolean);
+    const statuses = filter.status
+      .split(",")
+      .map((s) => `'${s.trim()}'`)
+      .filter(Boolean);
     if (statuses.length > 0) {
       clauses.push(`${tableAliases.application}."status" IN (${statuses.join(",")})`);
     }
   }
 
   if (filter.workMode) {
-    const modes = filter.workMode.split(",").map((m) => `'${m.trim()}'`).filter(Boolean);
+    const modes = filter.workMode
+      .split(",")
+      .map((m) => `'${m.trim()}'`)
+      .filter(Boolean);
     if (modes.length > 0) {
       clauses.push(`${tableAliases.job}."workMode" IN (${modes.join(",")})`);
     }
   }
 
   if (filter.employmentType) {
-    const types = filter.employmentType.split(",").map((t) => `'${t.trim()}'`).filter(Boolean);
+    const types = filter.employmentType
+      .split(",")
+      .map((t) => `'${t.trim()}'`)
+      .filter(Boolean);
     if (types.length > 0) {
       clauses.push(`${tableAliases.job}."employmentType" IN (${types.join(",")})`);
     }
   }
 
   if (filter.location) {
-    const locs = filter.location.split(",").map((l) => `'${l.trim()}'`).filter(Boolean);
+    const locs = filter.location
+      .split(",")
+      .map((l) => `'${l.trim()}'`)
+      .filter(Boolean);
     if (locs.length > 0) {
       clauses.push(`(${tableAliases.job}."locations" && ARRAY[${locs.join(",")}]::text[])`);
     }
@@ -71,7 +96,10 @@ function buildJobBreakdownSQL(companyId: string, filter: AnalyticsFilter): strin
   const joinClauses = clauses.filter((c) => !c.includes(`j."companyId"`));
   const joinSQL = joinClauses.length > 0 ? " AND " + joinClauses.join(" AND ") : "";
   const cleanJoinSQL = filter.jobId
-    ? joinSQL.replace(`a."jobId" = '${filter.jobId}'`, "").replace(" AND  AND ", " AND ").replace(/^ AND /, "")
+    ? joinSQL
+        .replace(`a."jobId" = '${filter.jobId}'`, "")
+        .replace(" AND  AND ", " AND ")
+        .replace(/^ AND /, "")
     : joinSQL;
   return `
     SELECT
@@ -89,14 +117,25 @@ function buildJobBreakdownSQL(companyId: string, filter: AnalyticsFilter): strin
   `;
 }
 
-export async function getAnalytics(companyId: string, filter: AnalyticsFilter): Promise<AnalyticsResponse> {
+export async function getAnalytics(
+  companyId: string,
+  filter: AnalyticsFilter,
+): Promise<AnalyticsResponse> {
   const defaults = defaultDateRange();
   const from = filter.dateFrom ?? defaults.dateFrom;
   const to = filter.dateTo ?? defaults.dateTo;
 
   const [
-    summaryResult, trendRaw, statusRaw, workModeRaw, employmentTypeRaw,
-    topJobsRaw, funnelHistoricalRaw, conversionsRaw, jobBreakdownRaw, fulfillmentRaw,
+    summaryResult,
+    trendRaw,
+    statusRaw,
+    workModeRaw,
+    employmentTypeRaw,
+    topJobsRaw,
+    funnelHistoricalRaw,
+    conversionsRaw,
+    jobBreakdownRaw,
+    fulfillmentRaw,
   ] = await (async () => {
     // Run each query independently so we can identify which one fails
     const r1 = prisma.$queryRawUnsafe<RawCountRow[]>(
@@ -123,9 +162,15 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
     const r8 = prisma.$queryRawUnsafe<Array<{ fromStage: string; toStage: string; count: bigint }>>(
       `SELECT asc_ref."fromStatus" AS "fromStage", asc_ref."toStatus" AS "toStage", COUNT(*)::BIGINT AS count FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} GROUP BY asc_ref."fromStatus", asc_ref."toStatus" ORDER BY count DESC`,
     );
-    const r9 = prisma.$queryRawUnsafe<Array<{ jobId: string; title: string; totalApplications: bigint; hired: bigint; viewCount: bigint }>>(
-      buildJobBreakdownSQL(companyId, filter),
-    );
+    const r9 = prisma.$queryRawUnsafe<
+      Array<{
+        jobId: string;
+        title: string;
+        totalApplications: bigint;
+        hired: bigint;
+        viewCount: bigint;
+      }>
+    >(buildJobBreakdownSQL(companyId, filter));
     const r10 = prisma.$queryRawUnsafe<Array<{ avg: string | null }>>(
       `SELECT AVG(EXTRACT(EPOCH FROM (a."updatedAt" - a."appliedAt")) / 86400)::TEXT AS avg FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} AND a."status" = 'hired'`,
     );
@@ -134,9 +179,13 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
   })();
 
   const totalApplications = Number(summaryResult[0]?.count ?? 0);
-  const hiredCount = Number((await prisma.$queryRawUnsafe<RawCountRow[]>(
-    `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} AND a."status" = 'hired'`,
-  ))[0]?.count ?? 0);
+  const hiredCount = Number(
+    (
+      await prisma.$queryRawUnsafe<RawCountRow[]>(
+        `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL(companyId, filter)} AND a."status" = 'hired'`,
+      )
+    )[0]?.count ?? 0,
+  );
 
   const totalJobs = await prisma.job.count({
     where: {
@@ -154,7 +203,8 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
     totalJobs,
     totalHired: hiredCount,
     conversionRate: totalApplications > 0 ? (hiredCount / totalApplications) * 100 : 0,
-    avgFulfillmentDays: avgFulfillmentDays !== null ? Math.round(avgFulfillmentDays * 10) / 10 : null,
+    avgFulfillmentDays:
+      avgFulfillmentDays !== null ? Math.round(avgFulfillmentDays * 10) / 10 : null,
     totalViews,
   };
 
@@ -189,7 +239,9 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
     count: Number(r.count),
   }));
 
-  const historicalMap = new Map(funnelHistoricalRaw.map((r) => [r.stage, Number(r.uniqueApplications)]));
+  const historicalMap = new Map(
+    funnelHistoricalRaw.map((r) => [r.stage, Number(r.uniqueApplications)]),
+  );
   const funnelHistorical: FunnelHistorical[] = FUNNEL_STAGE_ORDER.map((stage) => ({
     stage,
     uniqueApplications: historicalMap.get(stage) ?? 0,
@@ -206,7 +258,8 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
     title: r.title,
     totalApplications: Number(r.totalApplications),
     hired: Number(r.hired),
-    conversionRate: Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
+    conversionRate:
+      Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
     avgFulfillmentDays: null,
     viewCount: Number(r.viewCount),
   }));
@@ -226,14 +279,18 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
   };
 }
 
-export async function getJobAnalytics(companyId: string, jobId: string, filter: AnalyticsFilter): Promise<AnalyticsResponse> {
+export async function getJobAnalytics(
+  companyId: string,
+  jobId: string,
+  filter: AnalyticsFilter,
+): Promise<AnalyticsResponse> {
   const job = await prisma.job.findUnique({
     where: { id: jobId },
     select: { id: true, companyId: true },
   });
 
   if (!job || job.companyId !== companyId) {
-    const { NotFoundError } = await import("@/lib/api-error");
+    const { NotFoundError } = await import("@/lib/api/api-error");
     throw new NotFoundError("Job not found");
   }
 

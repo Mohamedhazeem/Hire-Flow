@@ -1,8 +1,8 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import type { AdminListJobsParams } from "@/app/features/admin/schema/admin.schema";
 import type { AdminJobListResult } from "@/app/features/admin/queries/job-queries";
-import { ApiResponse } from "@/lib/api-response";
+import { ApiResponse } from "@/lib/api/api-response";
 
 export function useAdminJobs(params: AdminListJobsParams) {
   return useQuery<ApiResponse<AdminJobListResult>>({

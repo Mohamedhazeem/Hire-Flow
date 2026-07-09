@@ -1,14 +1,19 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { applyAiSuggestions as applyAiSuggestionsAction } from "@/app/features/user/actions/apply-ai-suggestions";
-import type { EnhancementsResponse, ResumeSuggestion } from "@/app/features/user/schema/resume-ai.schema";
+import type {
+  EnhancementsResponse,
+  ResumeSuggestion,
+} from "@/app/features/user/schema/resume-ai.schema";
 
 export function useAiResumeEnhance(resumeId: string) {
   return useMutation({
     mutationFn: async (): Promise<EnhancementsResponse | null> =>
-      apiClient<{ data: EnhancementsResponse | null }>(`/api/user/resumes/${resumeId}/ai-enhance`, { method: "POST" }).then((r) => r.data),
+      apiClient<{ data: EnhancementsResponse | null }>(`/api/user/resumes/${resumeId}/ai-enhance`, {
+        method: "POST",
+      }).then((r) => r.data),
   });
 }
 

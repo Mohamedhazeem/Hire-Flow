@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
@@ -80,7 +80,8 @@ export function AcceptInviteClient({ token, email }: { token: string; email: str
             ) : (
               <div className="space-y-3">
                 <p className="text-sm text-text-muted">
-                  You need an account with the email <strong>{email}</strong> to accept this invitation.
+                  You need an account with the email <strong>{email}</strong> to accept this
+                  invitation.
                 </p>
                 <Button onClick={handleSignUpRedirect} variant="default" className="w-full">
                   Create Account

@@ -4,7 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { motion } from "motion/react";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { hydrator } from "@/lib/hydration";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ApplyModal } from "./apply-modal";

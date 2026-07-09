@@ -1,14 +1,11 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 
-async function handlePATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
   const { id } = await params;
 

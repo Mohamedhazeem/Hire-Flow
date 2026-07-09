@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { NotFoundError } from "@/lib/api-error";
+import { NotFoundError } from "@/lib/api/api-error";
 
 type ResumeInfo = {
   id: string;
@@ -43,7 +43,10 @@ export type ApplicantDetailResponse = {
       socialLinks: unknown;
     } | null;
   };
-  applicantResume: (ResumeInfo & { source: "application" | "current_profile" }) | DeletedResume | null;
+  applicantResume:
+    | (ResumeInfo & { source: "application" | "current_profile" })
+    | DeletedResume
+    | null;
   statusTimeline: {
     id: string;
     type: "application_submitted" | "status_change";
@@ -95,37 +98,37 @@ export async function getApplicantDetail(
       appliedAt: true,
       updatedAt: true,
       resumeId: true,
-          user: {
+      user: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          profile: {
             select: {
-              id: true,
-              name: true,
-              email: true,
-              role: true,
-              profile: {
-                select: {
-                  headline: true,
-                  bio: true,
-                  skills: true,
-                  experiences: true,
-                  location: true,
-                  basePay: true,
-                  ctc: true,
-                  socialLinks: true,
-                },
-              },
-              resumes: {
-                select: {
-                  id: true,
-                  label: true,
-                  fileUrl: true,
-                  isPrimary: true,
-                  createdAt: true,
-                },
-                orderBy: { createdAt: "desc" },
-              },
+              headline: true,
+              bio: true,
+              skills: true,
+              experiences: true,
+              location: true,
+              basePay: true,
+              ctc: true,
+              socialLinks: true,
             },
           },
-          job: { select: { id: true, title: true } },
+          resumes: {
+            select: {
+              id: true,
+              label: true,
+              fileUrl: true,
+              isPrimary: true,
+              createdAt: true,
+            },
+            orderBy: { createdAt: "desc" },
+          },
+        },
+      },
+      job: { select: { id: true, title: true } },
     },
   });
 
@@ -135,7 +138,10 @@ export async function getApplicantDetail(
 
   const profileResumes = application.user.resumes ?? [];
 
-  let resolvedResume: (ResumeInfo & { source: "application" | "current_profile" }) | DeletedResume | null = null;
+  let resolvedResume:
+    | (ResumeInfo & { source: "application" | "current_profile" })
+    | DeletedResume
+    | null = null;
 
   if (application.resumeId) {
     const matched = profileResumes.find((r) => r.id === application.resumeId);
@@ -223,9 +229,7 @@ export async function getApplicantDetail(
       toStatus: "interview_scheduled",
       label: "Interview Scheduled",
       changedByName: null,
-      note: application.meetingLink
-        ? `Meeting link: ${application.meetingLink}`
-        : null,
+      note: application.meetingLink ? `Meeting link: ${application.meetingLink}` : null,
       createdAt: application.interviewDate.toISOString(),
       isUpcoming: true,
     });

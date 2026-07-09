@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { NotFoundError } from "@/lib/api-error";
+import { NotFoundError } from "@/lib/api/api-error";
 
 export const inviteService = {
   async acceptAdminInvite(token: string) {

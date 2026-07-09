@@ -1,8 +1,8 @@
 "use client";
 
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
-import { ApiResponse } from "@/lib/api-response";
+import { apiClient } from "@/lib/api/api-client";
+import { ApiResponse } from "@/lib/api/api-response";
 
 export type ThreadUser = {
   id: string;
@@ -26,22 +26,20 @@ export type ThreadItem = {
 };
 
 export function createUseThreads(queryKey: string, apiBasePath: string) {
-  return () => useQuery<ThreadItem[]>({
-    queryKey: [queryKey, "threads"],
-    queryFn: async () => {
-      const res = await apiClient<ApiResponse<ThreadItem[]>>(
-        `${apiBasePath}/threads`,
-      );
-      return res.data;
-    },
-    refetchInterval: 60_000,
-  });
+  return () =>
+    useQuery<ThreadItem[]>({
+      queryKey: [queryKey, "threads"],
+      queryFn: async () => {
+        const res = await apiClient<ApiResponse<ThreadItem[]>>(`${apiBasePath}/threads`);
+        return res.data;
+      },
+      refetchInterval: 60_000,
+    });
 }
 
 export function createUseInvalidateThreads(queryKey: string) {
   return () => {
     const queryClient = useQueryClient();
-    return () =>
-      queryClient.invalidateQueries({ queryKey: [queryKey, "threads"] });
+    return () => queryClient.invalidateQueries({ queryKey: [queryKey, "threads"] });
   };
 }

@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 import { Input } from "@/components/ui/input";
 import { SearchIcon, MessageSquareTextIcon, Building2Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -34,27 +34,30 @@ export function StartConversationSearch({
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleSearch = useCallback(async (value: string) => {
-    setQuery(value);
-    setSelectedIndex(-1);
+  const handleSearch = useCallback(
+    async (value: string) => {
+      setQuery(value);
+      setSelectedIndex(-1);
 
-    if (value.length < 1) {
-      setResults([]);
-      setIsOpen(false);
-      return;
-    }
+      if (value.length < 1) {
+        setResults([]);
+        setIsOpen(false);
+        return;
+      }
 
-    try {
-      const res = await apiClient<{ data: SearchResult[] }>(
-        `${searchEndpoint}?q=${encodeURIComponent(value)}`,
-      );
-      setResults(res.data);
-      setIsOpen(res.data.length > 0);
-    } catch {
-      setResults([]);
-      setIsOpen(false);
-    }
-  }, [searchEndpoint]);
+      try {
+        const res = await apiClient<{ data: SearchResult[] }>(
+          `${searchEndpoint}?q=${encodeURIComponent(value)}`,
+        );
+        setResults(res.data);
+        setIsOpen(res.data.length > 0);
+      } catch {
+        setResults([]);
+        setIsOpen(false);
+      }
+    },
+    [searchEndpoint],
+  );
 
   const navigateToThread = useCallback(
     (targetId: string) => {
@@ -106,7 +109,9 @@ export function StartConversationSearch({
           placeholder="Search by name or company..."
           value={query}
           onChange={(e) => handleSearch(e.target.value)}
-          onFocus={() => { if (results.length > 0) setIsOpen(true); }}
+          onFocus={() => {
+            if (results.length > 0) setIsOpen(true);
+          }}
           onKeyDown={handleKeyDown}
           className="pl-8"
         />

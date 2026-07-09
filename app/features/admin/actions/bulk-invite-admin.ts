@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { sendEmail } from "@/app/features/auth/libs/email";
 import { AdminBulkInviteSchema } from "@/app/features/admin/schema/admin.schema";
-import { ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api/api-error";
 import { revalidatePath } from "next/cache";
 import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";
@@ -79,7 +79,10 @@ export async function bulkInviteAdmins(formData: FormData): Promise<BulkInviteRe
       });
     } catch (err) {
       logger.server.error(`Failed to send admin invite email to ${invite.email}:`, err);
-      errors.push({ email: invite.email, error: err instanceof Error ? err.message : "Email send failed" });
+      errors.push({
+        email: invite.email,
+        error: err instanceof Error ? err.message : "Email send failed",
+      });
     }
   });
 

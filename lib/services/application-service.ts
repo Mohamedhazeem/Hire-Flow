@@ -1,4 +1,4 @@
-import { NotFoundError, ValidationError, ConflictError } from "@/lib/api-error";
+import { NotFoundError, ValidationError, ConflictError } from "@/lib/api/api-error";
 import { prisma } from "@/lib/prisma";
 import {
   createNotification,

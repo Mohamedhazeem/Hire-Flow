@@ -1,5 +1,5 @@
-import { ok } from "@/lib/api-response";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ok } from "@/lib/api/api-response";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { getUserApplicationStats } from "@/app/features/user/queries/user-application-queries";
 

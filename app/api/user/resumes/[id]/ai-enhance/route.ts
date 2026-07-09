@@ -1,16 +1,18 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { NotFoundError, ForbiddenError, TooManyRequestsError, ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import {
+  NotFoundError,
+  ForbiddenError,
+  TooManyRequestsError,
+  ValidationError,
+} from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { callAI } from "@/lib/ai-client";
 import { EnhancementsResponseSchema } from "@/app/features/user/schema/resume-ai.schema";
 
-async function handlePOST(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePOST(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
   const { id } = await params;
 
@@ -54,7 +56,11 @@ async function handlePOST(
       const textResult = await parser.getText();
       resumeText = textResult.text;
       await parser.destroy();
-    } else if (type.includes("wordprocessingml") || type.includes("docx") || type.includes("msword")) {
+    } else if (
+      type.includes("wordprocessingml") ||
+      type.includes("docx") ||
+      type.includes("msword")
+    ) {
       const mammoth = await import("mammoth");
       const result = await mammoth.extractRawText({ buffer });
       resumeText = result.value;
@@ -74,7 +80,7 @@ async function handlePOST(
     "2. Highlighting relevant skills for tech/non-tech roles.\n" +
     "3. ATS (Applicant Tracking System) optimization (proper formatting, keyword density, section clarity).\n" +
     "4. Grammar, clarity, and professional tone.\n\n" +
-    'Respond ONLY with valid JSON matching this schema:\n' +
+    "Respond ONLY with valid JSON matching this schema:\n" +
     '{ suggestions: [{ type: "bullet_improvement"|"skill_addition"|"section_expansion"|"ats_optimization"|"grammar", section: string, original?: string, suggestion: string, reasoning: string, priority: "high"|"medium"|"low" }], overallScore: number, keyStrengths: string[], improvementAreas: string[] }';
 
   const raw = await callAI(resumeText, systemPrompt, 2048);

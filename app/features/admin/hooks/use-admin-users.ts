@@ -1,11 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
-import type { AdminListUsersParams, AdminBanUserInput } from "@/app/features/admin/schema/admin.schema";
+import { apiClient } from "@/lib/api/api-client";
+import type {
+  AdminListUsersParams,
+  AdminBanUserInput,
+} from "@/app/features/admin/schema/admin.schema";
 import type {
   AdminUserListResult,
   AdminUserDetail,
 } from "@/app/features/admin/queries/user-queries";
-import type { ApiResponse } from "@/lib/api-response";
+import type { ApiResponse } from "@/lib/api/api-response";
 
 export function useAdminUsers(params: AdminListUsersParams) {
   return useQuery<AdminUserListResult>({
@@ -90,7 +93,18 @@ export function useRevokeUserSessions() {
 }
 
 export function useAdminUserApplications(userId: string) {
-  return useQuery<ApiResponse<{ applications: { id: string; jobId: string; jobTitle: string; status: string; appliedAt: string; updatedAt: string }[] }>>({
+  return useQuery<
+    ApiResponse<{
+      applications: {
+        id: string;
+        jobId: string;
+        jobTitle: string;
+        status: string;
+        appliedAt: string;
+        updatedAt: string;
+      }[];
+    }>
+  >({
     queryKey: ["admin", "user-applications", userId],
     queryFn: () => apiClient(`/api/admin/users/${userId}/applications`),
     enabled: !!userId,

@@ -1,4 +1,4 @@
-import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api-error";
+import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api/api-error";
 import { jobRepository } from "@/lib/repositories/job-repository";
 import { AdminToggleJobStatusSchema } from "@/app/features/admin/schema/admin.schema";
 
@@ -32,24 +32,26 @@ export const jobService = {
     return { deleted: true };
   },
 
-  async recruiterCreateJob(companyId: string, recruiterId: string, data: {
-    title: string;
-    description: string;
-    locations: string[];
-    workMode: string;
-    employmentType: string;
-    timezone?: string | null;
-    skills: string[];
-    tags: string[];
-    experienceLevel: string;
-    salaryMin?: number | null;
-    salaryMax?: number | null;
-    salaryCurrency: string;
-    applicationDeadline?: string | null;
-  }) {
-    const deadline = data.applicationDeadline
-      ? new Date(data.applicationDeadline)
-      : undefined;
+  async recruiterCreateJob(
+    companyId: string,
+    recruiterId: string,
+    data: {
+      title: string;
+      description: string;
+      locations: string[];
+      workMode: string;
+      employmentType: string;
+      timezone?: string | null;
+      skills: string[];
+      tags: string[];
+      experienceLevel: string;
+      salaryMin?: number | null;
+      salaryMax?: number | null;
+      salaryCurrency: string;
+      applicationDeadline?: string | null;
+    },
+  ) {
+    const deadline = data.applicationDeadline ? new Date(data.applicationDeadline) : undefined;
 
     const job = await jobRepository.create({
       recruiterId,
@@ -99,11 +101,15 @@ export const jobService = {
     if (data.skills !== undefined) updateData.skills = data.skills;
     if (data.tags !== undefined) updateData.tags = data.tags;
     if (data.experienceLevel !== undefined) updateData.experienceLevel = data.experienceLevel;
-    if (data.salaryMin !== undefined) updateData.salaryMin = (data.salaryMin as number | null) ?? null;
-    if (data.salaryMax !== undefined) updateData.salaryMax = (data.salaryMax as number | null) ?? null;
+    if (data.salaryMin !== undefined)
+      updateData.salaryMin = (data.salaryMin as number | null) ?? null;
+    if (data.salaryMax !== undefined)
+      updateData.salaryMax = (data.salaryMax as number | null) ?? null;
     if (data.salaryCurrency !== undefined) updateData.salaryCurrency = data.salaryCurrency;
     if (data.applicationDeadline !== undefined) {
-      updateData.applicationDeadline = data.applicationDeadline ? new Date(data.applicationDeadline as string) : undefined;
+      updateData.applicationDeadline = data.applicationDeadline
+        ? new Date(data.applicationDeadline as string)
+        : undefined;
     }
 
     const job = await jobRepository.update(jobId, updateData);

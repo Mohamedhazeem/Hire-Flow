@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole, type ResolvedSession } from "@/app/features/shared/api/require-role";
-import { withErrorHandler } from "@/lib/api-wrapper";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 
 type InviteCancelOptions = {
   findInvite: (id: string) => Promise<{ invitedById: string; acceptedAt: Date | null } | null>;

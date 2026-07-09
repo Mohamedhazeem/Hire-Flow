@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { ForbiddenError } from "@/lib/api-error";
+import { ForbiddenError } from "@/lib/api/api-error";
 
 export async function verifyRecruiterApplicantRelationship(
   recruiterId: string,
@@ -9,10 +9,7 @@ export async function verifyRecruiterApplicantRelationship(
     where: {
       userId: applicantId,
       job: {
-        OR: [
-          { recruiterId },
-          { company: { teamMembers: { some: { userId: recruiterId } } } },
-        ],
+        OR: [{ recruiterId }, { company: { teamMembers: { some: { userId: recruiterId } } } }],
       },
     },
     select: { id: true },

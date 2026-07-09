@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { readFile } from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
@@ -54,10 +54,7 @@ async function handleGET(request: NextRequest) {
 
   const stat = await import("fs/promises").then((m) => m.stat(resolvedPath));
   if (stat.size > MAX_FILE_SIZE_BYTES) {
-    return NextResponse.json(
-      { error: "File exceeds the 10 MB download limit" },
-      { status: 413 },
-    );
+    return NextResponse.json({ error: "File exceeds the 10 MB download limit" }, { status: 413 });
   }
 
   const ext = path.extname(resolvedPath).toLowerCase();

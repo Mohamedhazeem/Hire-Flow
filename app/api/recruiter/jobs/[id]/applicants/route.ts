@@ -1,16 +1,13 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { ListApplicantsParamsSchema } from "@/app/features/recruiter/schema/application.schema";
 import { listApplicants } from "@/app/features/recruiter/queries/application-queries";
-import { ValidationError, NotFoundError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ValidationError, NotFoundError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { jobRepository } from "@/lib/repositories/job-repository";
 
-async function handleGET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleGET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");

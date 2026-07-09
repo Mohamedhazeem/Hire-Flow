@@ -1,12 +1,8 @@
 "use client";
 
-import {
-  useInfiniteQuery,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
-import { ApiResponse } from "@/lib/api-response";
+import { useInfiniteQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiClient } from "@/lib/api/api-client";
+import { ApiResponse } from "@/lib/api/api-response";
 import { isValidThreadId } from "@/lib/thread-utils";
 import type { MessageItem } from "@/components/chat/message-item";
 
@@ -29,25 +25,23 @@ export type SendMessagePayload = {
 };
 
 export function createUseMessages(queryKey: string, apiBasePath: string) {
-  return (threadId: string) => useInfiniteQuery<ApiResponse<MessagesResponse>>({
-    queryKey: [queryKey, "messages", threadId],
-    refetchInterval: 60_000,
-    queryFn: async ({ pageParam }) => {
-      const cursor = pageParam as string | undefined;
-      const params: Record<string, unknown> = { limit: 30 };
-      if (cursor) params.cursor = cursor;
-      return apiClient<ApiResponse<MessagesResponse>>(
-        `${apiBasePath}/messages/${threadId}`,
-        { params },
-      );
-    },
-    initialPageParam: undefined as string | undefined,
-    getNextPageParam: (lastPage) =>
-      lastPage.data.meta.hasNextPage
-        ? lastPage.data.meta.nextCursor
-        : undefined,
-    enabled: isValidThreadId(threadId),
-  });
+  return (threadId: string) =>
+    useInfiniteQuery<ApiResponse<MessagesResponse>>({
+      queryKey: [queryKey, "messages", threadId],
+      refetchInterval: 60_000,
+      queryFn: async ({ pageParam }) => {
+        const cursor = pageParam as string | undefined;
+        const params: Record<string, unknown> = { limit: 30 };
+        if (cursor) params.cursor = cursor;
+        return apiClient<ApiResponse<MessagesResponse>>(`${apiBasePath}/messages/${threadId}`, {
+          params,
+        });
+      },
+      initialPageParam: undefined as string | undefined,
+      getNextPageParam: (lastPage) =>
+        lastPage.data.meta.hasNextPage ? lastPage.data.meta.nextCursor : undefined,
+      enabled: isValidThreadId(threadId),
+    });
 }
 
 export function createUseSendMessage(queryKey: string, apiBasePath: string) {
@@ -80,27 +74,20 @@ export function createUseDeleteMessage(queryKey: string, apiBasePath: string) {
           method: "DELETE",
         }),
       onSuccess: (_, messageId) => {
-        queryClient.setQueryData(
-          [queryKey, "messages", threadId],
-          (old: unknown) => {
-            const data = old as
-              | { pages: { data: { messages: { id: string }[] } }[] }
-              | undefined;
-            if (!data?.pages) return old;
-            return {
-              ...data,
-              pages: data.pages.map((page) => ({
-                ...page,
-                data: {
-                  ...page.data,
-                  messages: page.data.messages.filter(
-                    (m: { id: string }) => m.id !== messageId,
-                  ),
-                },
-              })),
-            };
-          },
-        );
+        queryClient.setQueryData([queryKey, "messages", threadId], (old: unknown) => {
+          const data = old as { pages: { data: { messages: { id: string }[] } }[] } | undefined;
+          if (!data?.pages) return old;
+          return {
+            ...data,
+            pages: data.pages.map((page) => ({
+              ...page,
+              data: {
+                ...page.data,
+                messages: page.data.messages.filter((m: { id: string }) => m.id !== messageId),
+              },
+            })),
+          };
+        });
         queryClient.invalidateQueries({
           queryKey: [queryKey, "messages", threadId],
         });

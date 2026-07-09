@@ -1,8 +1,8 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { auth } from "@/app/features/auth/libs/auth";
-import { UnauthorizedError, ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { UnauthorizedError, ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import {
   listNotifications,
   getUnreadCount,

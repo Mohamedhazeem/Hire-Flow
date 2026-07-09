@@ -1,5 +1,5 @@
 import { getSession } from "@/app/features/auth/libs/auth";
-import { UnauthorizedError, ForbiddenError } from "@/lib/api-error";
+import { UnauthorizedError, ForbiddenError } from "@/lib/api/api-error";
 import { prisma } from "@/lib/prisma";
 
 export type ResolvedSession = {

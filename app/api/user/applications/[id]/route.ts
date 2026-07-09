@@ -1,16 +1,13 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
-import { NotFoundError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ok } from "@/lib/api/api-response";
+import { NotFoundError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { revalidatePath } from "next/cache";
 import { getUserApplicationDetail } from "@/app/features/user/queries/user-application-queries";
 import { userService } from "@/lib/services/user-service";
 
-async function handleGET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
   const { id } = await params;
 

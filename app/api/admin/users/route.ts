@@ -1,10 +1,10 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { AdminListUsersParamsSchema } from "@/app/features/admin/schema/admin.schema";
 import { listUsers } from "@/app/features/admin/queries/user-queries";
-import { ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 
 async function handleGET(request: NextRequest) {
   await requireRole(["admin", "super_admin"]);

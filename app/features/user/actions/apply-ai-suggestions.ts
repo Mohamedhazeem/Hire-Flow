@@ -2,7 +2,7 @@
 
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api-error";
+import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api/api-error";
 import { ApplyAiSuggestionsSchema } from "@/app/features/user/schema/resume-ai.schema";
 import { revalidatePath } from "next/cache";
 import type { Prisma } from "@/app/generated/prisma/client";

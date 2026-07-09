@@ -1,16 +1,13 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { withErrorHandler } from "@/lib/api-wrapper";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 import { JobUpdateSchema } from "@/app/features/recruiter/schema/job.schema";
 import { getJobById } from "@/app/features/recruiter/queries/job-queries";
 import { jobService } from "@/lib/services/job-service";
 
-async function handleGET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");
@@ -25,10 +22,7 @@ async function handleGET(
   return ok({ job });
 }
 
-async function handlePATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");
@@ -41,14 +35,15 @@ async function handlePATCH(
     throw new ValidationError("Invalid job data");
   }
 
-  const result = await jobService.recruiterUpdateJob(id, companyId, parsed.data as Record<string, unknown>);
+  const result = await jobService.recruiterUpdateJob(
+    id,
+    companyId,
+    parsed.data as Record<string, unknown>,
+  );
   return ok(result);
 }
 
-async function handleDELETE(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleDELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");

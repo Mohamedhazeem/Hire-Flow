@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
-import { ok, fail } from "@/lib/api-response";
+import { ok, fail } from "@/lib/api/api-response";
 import { AdminAcceptInviteSchema } from "@/app/features/admin/schema/admin.schema";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { inviteService } from "@/lib/services/invite-service";
 
 async function handlePOST(request: NextRequest) {

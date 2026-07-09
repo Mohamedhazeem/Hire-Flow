@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { ForbiddenError } from "@/lib/api-error";
+import { ForbiddenError } from "@/lib/api/api-error";
 import { createInviteCancelHandler } from "@/lib/handlers/invite";
 
 export const { DELETE } = createInviteCancelHandler(["admin", "super_admin"], {

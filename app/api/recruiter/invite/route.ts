@@ -1,7 +1,7 @@
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { listRecruiterInvites } from "@/app/features/recruiter/queries/invite-queries";
 
 async function handleGET() {

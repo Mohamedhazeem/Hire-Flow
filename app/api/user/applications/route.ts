@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ok } from "@/lib/api/api-response";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { listUserApplications } from "@/app/features/user/queries/user-application-queries";
 
@@ -10,7 +10,9 @@ async function handleGET(request: NextRequest) {
 
   const params = {
     page: url.searchParams.get("page") ? Number(url.searchParams.get("page")) : undefined,
-    pageSize: url.searchParams.get("pageSize") ? Number(url.searchParams.get("pageSize")) : undefined,
+    pageSize: url.searchParams.get("pageSize")
+      ? Number(url.searchParams.get("pageSize"))
+      : undefined,
     status: url.searchParams.get("status") || undefined,
     search: url.searchParams.get("search") || undefined,
   };

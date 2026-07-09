@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/app/features/auth/libs/auth";
 import { sendEmail } from "@/app/features/auth/libs/email";
-import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api-error";
+import { ValidationError, NotFoundError, ForbiddenError } from "@/lib/api/api-error";
 import { RoleSchema } from "@/app/features/auth/schema/role.schema";
 
 export const userAdminService = {
@@ -32,9 +32,7 @@ export const userAdminService = {
       where: { userId: targetId },
     });
 
-    const expiresInDays = banExpiresIn
-      ? Math.ceil(banExpiresIn / 86400)
-      : undefined;
+    const expiresInDays = banExpiresIn ? Math.ceil(banExpiresIn / 86400) : undefined;
 
     const admin = await prisma.user.findUnique({
       where: { id: adminId },
@@ -56,7 +54,10 @@ export const userAdminService = {
   },
 
   async unbanUser(targetId: string) {
-    const user = await prisma.user.findUnique({ where: { id: targetId }, select: { id: true, banned: true } });
+    const user = await prisma.user.findUnique({
+      where: { id: targetId },
+      select: { id: true, banned: true },
+    });
     if (!user) {
       throw new NotFoundError("User not found");
     }
@@ -89,7 +90,10 @@ export const userAdminService = {
       throw new ValidationError("You cannot remove yourself from the admin team");
     }
 
-    const user = await prisma.user.findUnique({ where: { id: memberId }, select: { id: true, role: true } });
+    const user = await prisma.user.findUnique({
+      where: { id: memberId },
+      select: { id: true, role: true },
+    });
 
     if (!user || (user.role !== "admin" && user.role !== "super_admin")) {
       throw new NotFoundError("Admin not found");

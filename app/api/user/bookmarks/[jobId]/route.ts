@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { ok } from "@/lib/api/api-response";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { checkBookmark } from "@/app/features/user/queries/bookmark-queries";
 

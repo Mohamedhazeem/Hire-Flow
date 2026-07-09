@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { BuilderResumeSchema } from "@/app/features/user/schema/resume.schema";
-import { ValidationError } from "@/lib/api-error";
+import { ValidationError } from "@/lib/api/api-error";
 import { revalidatePath } from "next/cache";
 import type { BuilderResumeInput } from "@/app/features/user/schema/resume.schema";
 
@@ -19,7 +19,9 @@ export async function saveResumeBuilder(input: BuilderResumeInput) {
     where: { userId: session.id, deletedAt: null },
   });
   if (existingCount >= 5) {
-    throw new ValidationError("Resume limit reached (5). Please delete an existing resume before creating a new one.");
+    throw new ValidationError(
+      "Resume limit reached (5). Please delete an existing resume before creating a new one.",
+    );
   }
 
   const { label, summary, educations, experiences, skills } = parsed.data;

@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { messageService } from "@/lib/services/message-service";
 
 type VerifyRelation = (userId: string, otherUserId: string) => Promise<void>;

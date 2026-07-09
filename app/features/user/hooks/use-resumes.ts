@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiClient } from "@/lib/api-client";
+import { apiClient } from "@/lib/api/api-client";
 
 export type ResumeListItem = {
   id: string;
@@ -29,7 +29,10 @@ export function useUploadResume() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (formData: FormData) => {
-      const res = await apiClient<{ data: ResumeListItem }>("/api/user/resumes", { method: "POST", body: formData });
+      const res = await apiClient<{ data: ResumeListItem }>("/api/user/resumes", {
+        method: "POST",
+        body: formData,
+      });
       return res.data;
     },
     onSuccess: () => {
@@ -70,10 +73,13 @@ export function useUpdateBuilderData() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async ({ id, data }: { id: string; data: Record<string, unknown> }) => {
-      const res = await apiClient<{ data: ResumeListItem }>(`/api/user/resumes/${id}/builder-data`, {
-        method: "PATCH",
-        body: data,
-      });
+      const res = await apiClient<{ data: ResumeListItem }>(
+        `/api/user/resumes/${id}/builder-data`,
+        {
+          method: "PATCH",
+          body: data,
+        },
+      );
       return res.data;
     },
     onSuccess: () => {

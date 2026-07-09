@@ -1,15 +1,12 @@
 import { NextRequest } from "next/server";
-import { ok } from "@/lib/api-response";
+import { ok } from "@/lib/api/api-response";
 import { getUserById } from "@/app/features/admin/queries/user-queries";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { auth } from "@/app/features/auth/libs/auth";
-import { NotFoundError, ValidationError } from "@/lib/api-error";
-import { withErrorHandler } from "@/lib/api-wrapper";
+import { NotFoundError, ValidationError } from "@/lib/api/api-error";
+import { withErrorHandler } from "@/lib/api/api-wrapper";
 
-async function handleGET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
