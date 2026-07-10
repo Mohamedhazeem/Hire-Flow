@@ -1,7 +1,7 @@
 {
   ".kilo/agent-manager.json": {
-    "mtime": 1783659856.983141,
-    "ast_hash": "2961b953d8937b0eb7bbe29c412061c5",
+    "mtime": 1782457243.7863126,
+    "ast_hash": "59d79d9088d944a0b7689fae47b9beb5",
     "semantic_hash": ""
   },
   ".kilo/kilo.json": {
@@ -960,8 +960,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/landing-page.tsx": {
-    "mtime": 1783659561.266222,
-    "ast_hash": "6b64ae16aea4a628ec44fa904fc0973d",
+    "mtime": 1783226277.673085,
+    "ast_hash": "694f7e9eae40db169f8356babdb623e7",
     "semantic_hash": ""
   },
   "app/features/landing/components/stats-banner.tsx": {
@@ -1042,6 +1042,26 @@
   "app/features/public/components/career-resources/salary-faq-section.tsx": {
     "mtime": 1782885772.6267853,
     "ast_hash": "80c53dabaa7135bbe77165b1be419dd7",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/category-strip.tsx": {
+    "mtime": 1782882296.3458786,
+    "ast_hash": "13dac4035f40d287b308217322ae591b",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/employer-cta.tsx": {
+    "mtime": 1783007281.8530014,
+    "ast_hash": "87ed51042f6049211c48b4a8f65c0977",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/featured-companies.tsx": {
+    "mtime": 1782882317.2493947,
+    "ast_hash": "de86cc70223c354b084699e460c31bc3",
+    "semantic_hash": ""
+  },
+  "app/features/public/components/hero-search.tsx": {
+    "mtime": 1783006575.2388246,
+    "ast_hash": "86d120f708a686183bca5a479bc9f12d",
     "semantic_hash": ""
   },
   "app/features/public/components/mobile-nav-menu.tsx": {
@@ -2622,26 +2642,6 @@
   "lib/pusher/pusher.ts": {
     "mtime": 1783572106.1389184,
     "ast_hash": "cc7db53cb76f0f98676a75f634548627",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/category-strip.tsx": {
-    "mtime": 1782882296.3458786,
-    "ast_hash": "13dac4035f40d287b308217322ae591b",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/employer-cta.tsx": {
-    "mtime": 1783007281.8530014,
-    "ast_hash": "87ed51042f6049211c48b4a8f65c0977",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/featured-companies.tsx": {
-    "mtime": 1783659561.582741,
-    "ast_hash": "53452542f8c07b5bbe2721160b5b4469",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/hero-search.tsx": {
-    "mtime": 1783659245.1887436,
-    "ast_hash": "5710f3b2bfb97793273be24f9c0d1b1a",
     "semantic_hash": ""
   }
 }

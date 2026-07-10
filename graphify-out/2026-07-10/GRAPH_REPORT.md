@@ -1,11 +1,11 @@
-# Graph Report - hire-flow-next  (2026-07-10)
+# Graph Report - hire-flow-next  (2026-07-09)
 
 ## Corpus Check
 - 524 files · ~173,052 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3017 nodes · 5594 edges · 184 communities (166 shown, 18 thin omitted)
+- 3017 nodes · 5594 edges · 183 communities (165 shown, 18 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 69 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -184,7 +184,6 @@
 - [[_COMMUNITY_Community 174|Community 174]]
 - [[_COMMUNITY_Community 175|Community 175]]
 - [[_COMMUNITY_Community 176|Community 176]]
-- [[_COMMUNITY_Community 177|Community 177]]
 - [[_COMMUNITY_Community 180|Community 180]]
 - [[_COMMUNITY_Community 182|Community 182]]
 - [[_COMMUNITY_Community 183|Community 183]]
@@ -205,21 +204,21 @@
 10. `Phase 4: Public Job Routes & Home Page` - 30 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `handleDELETE()` --calls--> `ok()`  [INFERRED]
-  app/api/admin/users/[id]/route.ts → lib/api/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/jobs/[id]/route.ts → lib/api/api-response.ts
+- `handleGET()` --calls--> `ok()`  [INFERRED]
+  app/api/jobs/route.ts → lib/api/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
   app/api/recruiter/applications/[applicationId]/detail/route.ts → lib/api/api-response.ts
 - `handlePOST()` --calls--> `ok()`  [INFERRED]
   app/api/recruiter/invite/accept/route.ts → lib/api/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
   app/api/recruiter/invite/route.ts → lib/api/api-response.ts
-- `handleGET()` --calls--> `ok()`  [INFERRED]
-  app/api/recruiter/jobs/[id]/route.ts → lib/api/api-response.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (184 total, 18 thin omitted)
+## Communities (183 total, 18 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.03
@@ -318,8 +317,8 @@ Cohesion: 0.20
 Nodes (9): logOutAction(), SocialProvider, socialSignInAction(), { POST, GET }, auth, UserStatusResult, ForgotPasswordType, logger (+1 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.22
-Nodes (8): generateMetadata(), ApplyModal(), ApplyModalProps, ResumeOption, JobDetailView(), buildJobJsonLd(), hydrator, Skeleton()
+Cohesion: 0.13
+Nodes (13): generateMetadata(), ApplyModal(), ApplyModalProps, ResumeOption, JobDetail(), JobDetailProps, STATUS_BADGE, TABS (+5 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.21
@@ -362,8 +361,8 @@ Cohesion: 0.12
 Nodes (21): JobForm(), createRecruiterJobColumns(), EMPLOYMENT_TYPE_LABELS, RecruiterJobsTable(), WORK_MODE_LABELS, PageProps, useCreateJob(), useDeleteJob() (+13 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.08
-Nodes (27): applyAiSuggestions(), saveResumeBuilder(), ForbiddenError, NotFoundError, UnauthorizedError, ResolvedSession, { DELETE }, { DELETE } (+19 more)
+Cohesion: 0.10
+Nodes (22): applyAiSuggestions(), saveResumeBuilder(), ForbiddenError, NotFoundError, UnauthorizedError, ResolvedSession, { DELETE }, { DELETE } (+14 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.24
@@ -382,8 +381,8 @@ Cohesion: 0.22
 Nodes (10): ADDITIONAL_HIDDEN_PREFIXES, AUTH_PAGES, HIDDEN_ROUTE_PREFIXES, PROTECTED_ROUTES, PUBLIC_CONTENT_PATHS, getSession(), config, proxy() (+2 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.07
-Nodes (44): ok(), ERROR_STATUS_MAP, ParamHandler, RouteContext, SimpleHandler, withErrorHandler(), DELETE, handleDELETE() (+36 more)
+Cohesion: 0.09
+Nodes (27): ERROR_STATUS_MAP, ParamHandler, RouteContext, SimpleHandler, withErrorHandler(), GET, handleGET(), GET (+19 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.07
@@ -611,7 +610,7 @@ Nodes (8): BanNotificationEmail(), BanNotificationEmailProps, container, heading
 
 ### Community 97 - "Community 97"
 Cohesion: 0.29
-Nodes (5): JobDetail(), JobDetailProps, STATUS_BADGE, TABS, PageProps
+Nodes (6): GET, handleGET(), GET, handleGET(), getJobAnalytics(), AnalyticsFilterSchema
 
 ### Community 98 - "Community 98"
 Cohesion: 0.15
@@ -634,8 +633,8 @@ Cohesion: 0.13
 Nodes (10): realPusher, adapter, pool, prisma, adapter, pool, prisma, env (+2 more)
 
 ### Community 103 - "Community 103"
-Cohesion: 0.09
-Nodes (27): bulkInviteRecruiters(), inviteRecruiter(), upsertProfile(), requireRole(), DELETE, GET, handleDELETE(), handleGET() (+19 more)
+Cohesion: 0.06
+Nodes (48): bulkInviteRecruiters(), inviteRecruiter(), upsertProfile(), ok(), requireRole(), DELETE, handleDELETE(), handlePATCH() (+40 more)
 
 ### Community 104 - "Community 104"
 Cohesion: 0.05
@@ -829,10 +828,6 @@ Nodes (21): LoginActionInput, LoginActionSchema, disposableSet, emailSchema, For
 Cohesion: 0.21
 Nodes (12): config, UserMessagesPage(), UserThreadView(), createUseInvalidateThreads(), createUseThreads(), ThreadItem, ThreadLastMessage, ThreadUser (+4 more)
 
-### Community 177 - "Community 177"
-Cohesion: 0.40
-Nodes (5): DELETE, GET, handleDELETE(), handleGET(), getUserById()
-
 ### Community 180 - "Community 180"
 Cohesion: 0.14
 Nodes (19): ApplicantDetailDialogsProps, ApplicantsTableDialogs(), ApplicantsTableDialogsProps, ConfirmStatusDialogProps, InterviewFormData, OfferFormData, RejectDialog(), RejectDialogProps (+11 more)
@@ -861,9 +856,9 @@ Nodes (10): button, buttonContainer, container, fallbackLink, heading, main, par
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 29` to `Community 26`, `Community 28`, `Community 37`, `Community 38`, `Community 167`, `Community 168`, `Community 42`, `Community 43`, `Community 171`, `Community 49`, `Community 51`, `Community 182`, `Community 55`, `Community 61`, `Community 66`, `Community 74`, `Community 79`, `Community 80`, `Community 93`, `Community 97`, `Community 104`, `Community 105`, `Community 106`, `Community 117`, `Community 118`?**
+- **Why does `cn()` connect `Community 29` to `Community 24`, `Community 26`, `Community 28`, `Community 37`, `Community 38`, `Community 167`, `Community 168`, `Community 42`, `Community 43`, `Community 171`, `Community 49`, `Community 51`, `Community 182`, `Community 55`, `Community 61`, `Community 66`, `Community 74`, `Community 79`, `Community 80`, `Community 93`, `Community 104`, `Community 105`, `Community 106`, `Community 117`, `Community 118`?**
   _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 103` to `Community 21`, `Community 22`, `Community 27`, `Community 35`, `Community 39`, `Community 40`, `Community 169`, `Community 170`, `Community 177`, `Community 54`, `Community 64`, `Community 65`, `Community 70`, `Community 87`, `Community 88`, `Community 95`, `Community 105`, `Community 107`, `Community 111`, `Community 113`, `Community 125`?**
+- **Why does `requireRole()` connect `Community 103` to `Community 21`, `Community 22`, `Community 27`, `Community 35`, `Community 39`, `Community 40`, `Community 169`, `Community 170`, `Community 54`, `Community 64`, `Community 65`, `Community 70`, `Community 87`, `Community 88`, `Community 95`, `Community 97`, `Community 105`, `Community 107`, `Community 111`, `Community 113`, `Community 125`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `Button()` connect `Community 38` to `Community 19`, `Community 21`, `Community 28`, `Community 29`, `Community 34`, `Community 170`, `Community 43`, `Community 180`, `Community 55`, `Community 184`, `Community 61`, `Community 65`, `Community 74`, `Community 80`, `Community 82`, `Community 88`, `Community 92`, `Community 104`, `Community 105`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._

@@ -36,7 +36,7 @@ export function HeroSearch() {
         >
           Find Your Dream Job
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-light to-accent-light">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-light to-accent-light">
             or the Perfect Candidate
           </span>
         </motion.h1>
