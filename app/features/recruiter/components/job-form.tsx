@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm, useWatch } from "react-hook-form";
+import { useForm, useWatch, type Control, type FieldError } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { JobCreateSchema, type JobFormInput } from "@/app/features/recruiter/schema/job.schema";
@@ -36,7 +36,7 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
   const updateJob = useUpdateJob();
 
   const { register, handleSubmit, setValue, control, formState: { errors, isSubmitting } } = useForm<JobFormInput>({
-    resolver: zodResolver(JobCreateSchema),
+    resolver: zodResolver(JobCreateSchema) as never,
     defaultValues: {
       title: "", description: "", locations: [], workMode: "remote",
       employmentType: "full_time", timezone: "", skills: [], tags: [],
@@ -69,8 +69,8 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
           <Textarea {...register("description")} placeholder="Describe the role, responsibilities, and qualifications..." rows={6} />
         </FormField>
 
-        <FormField label="Locations (comma-separated)" required error={errors.locations}>
-          <CommaInput control={control} name="locations" placeholder="New York, London, Remote" />
+        <FormField label="Locations (comma-separated)" required error={errors.locations as FieldError | undefined}>
+          <CommaInput control={control as unknown as Control<JobFormInput>} name="locations" placeholder="New York, London, Remote" />
         </FormField>
 
         <div className="flex flex-col gap-4 sm:flex-row">
@@ -105,11 +105,11 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
         </FormField>
 
         <FormField label="Skills (comma-separated)">
-          <CommaInput control={control} name="skills" placeholder="React, TypeScript, Node.js" />
+          <CommaInput control={control as unknown as Control<JobFormInput>} name="skills" placeholder="React, TypeScript, Node.js" />
         </FormField>
 
         <FormField label="Tags (comma-separated)">
-          <CommaInput control={control} name="tags" placeholder="engineering, frontend, senior" />
+          <CommaInput control={control as unknown as Control<JobFormInput>} name="tags" placeholder="engineering, frontend, senior" />
         </FormField>
 
         <FormField label="Experience Level" required error={errors.experienceLevel}>

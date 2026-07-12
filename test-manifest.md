@@ -1,21 +1,21 @@
 # TEST-MANIFEST.md
-
-> **Last Updated:** 2026-07-02  
+ 
+> **Last Updated:** 2026-07-12  
 > **Current Phase:** 0  
 > **Current Block:** None  
 > **Source of truth:** `docs/testing/testing-strategy.md`
-
+ 
 ## Phase 0 — Infrastructure
-
-- [ ] 0.0 `vitest.config.ts`
-- [ ] 0.1 Test database (`hireflow_test`)
-- [ ] 0.2 `lib/test/global-setup.ts`
-- [ ] 0.3 `lib/test/test-db.ts`
-- [ ] 0.4 `lib/test/reset-db.ts`
-- [ ] 0.5 `lib/test/factories.ts`
-- [ ] 0.6 `lib/test/auth-fixtures.ts`
-- [ ] 0.7 `lib/test/mocks.ts`
-- [ ] 0.8 `package.json` scripts
+ 
+- [x] 0.0 `vitest.config.ts`
+- [x] 0.1 Test database (`hireflow_test`)
+- [x] 0.2 `test/global-setup.ts`
+- [x] 0.3 `test/test-db.ts`
+- [x] 0.4 `test/reset-db.ts`
+- [x] 0.5 `test/factories.ts`
+- [x] 0.6 `test/auth-fixtures.ts`
+- [x] 0.7 `test/mocks.ts`
+- [x] 0.8 `package.json` scripts
 
 ## Phase 1 — Input Validation & Schema Hardening
 

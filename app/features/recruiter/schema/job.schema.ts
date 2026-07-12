@@ -1,4 +1,4 @@
-import { z } from "zod/v4";
+import { z } from "zod";
 import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
 
 export const JobCreateSchema = z.object({
