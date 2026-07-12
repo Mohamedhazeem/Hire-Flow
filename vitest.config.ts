@@ -5,12 +5,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
-    environment: "node", // Default environment is node
+    environment: "node",
     globals: true,
     globalSetup: "./lib/test/global-setup.ts",
     setupFiles: ["./lib/test/vitest.setup.ts"],
     environmentMatchGlobs: [
-      // Component tests run in jsdom
       ["**/*.dom.test.tsx", "jsdom"],
       ["**/*.dom.test.ts", "jsdom"],
     ],

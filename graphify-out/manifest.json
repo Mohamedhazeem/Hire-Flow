@@ -1345,13 +1345,13 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/analytics.schema.ts": {
-    "mtime": 1782519660.6430938,
-    "ast_hash": "5bb85ab784655e1f23525e49c8623834",
+    "mtime": 1783845959.4891603,
+    "ast_hash": "269aa2f68a53ec798287bbae81047a12",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
-    "mtime": 1782801230.1119144,
-    "ast_hash": "5fa13fbdbe43f2b8087c80fbb51bb3ee",
+    "mtime": 1783846085.37309,
+    "ast_hash": "9bf8ea621bf8891c99722fe4c2eff404",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/company.schema.ts": {
@@ -1360,8 +1360,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/job.schema.ts": {
-    "mtime": 1783841820.415511,
-    "ast_hash": "99f2a33c4c73f5e7fda28e02ad419a45",
+    "mtime": 1783845702.299971,
+    "ast_hash": "002a1742acf1b41d50a17ef067cb974c",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/team.schema.ts": {
@@ -2180,8 +2180,8 @@
     "semantic_hash": ""
   },
   "docs/testing/testing-strategy.md": {
-    "mtime": 1782978657.8351414,
-    "ast_hash": "b8cd1e161d0f1d06e3a94a3b34d30f52",
+    "mtime": 1783842803.9422538,
+    "ast_hash": "87b96c7bf7478c57d7c7b0296ffc0c3c",
     "semantic_hash": ""
   },
   "legacy/hire_flow_prompts.md": {
@@ -2685,8 +2685,8 @@
     "semantic_hash": ""
   },
   "lib/test/global-setup.ts": {
-    "mtime": 1783841205.4759111,
-    "ast_hash": "c26dc0d3812ab3f3c35d7b00c12d4e3c",
+    "mtime": 1783844100.6784956,
+    "ast_hash": "b53f3a5950d38cb6dbf93b88222a97e1",
     "semantic_hash": ""
   },
   "lib/test/index.ts": {
@@ -2715,8 +2715,78 @@
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1783841316.3600578,
-    "ast_hash": "e47e9e5eed863f517e5e4d4a4d194848",
+    "mtime": 1783844093.4405773,
+    "ast_hash": "c3071e50ae77f6456112983a1826b2f4",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/admin/admin.schema.test.ts": {
+    "mtime": 1783843993.3432908,
+    "ast_hash": "9fa839fc926fef180de48c35c43bcb03",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/auth/auth.schema.test.ts": {
+    "mtime": 1783843990.1336336,
+    "ast_hash": "d758b3ef6aaef516e63bbfef858dcbfd",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/jobs/application-submit.schema.test.ts": {
+    "mtime": 1783843963.2532318,
+    "ast_hash": "39984bb95dc690ad9a8d90310169be57",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/notifications/notification.schema.test.ts": {
+    "mtime": 1783843994.8242295,
+    "ast_hash": "8f8ed28744fe20687bf60544a6e5f7b0",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/recruiter/analytics.schema.test.ts": {
+    "mtime": 1783843942.0838795,
+    "ast_hash": "1a801a3c960344506ebee1950820ba45",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/recruiter/application.schema.test.ts": {
+    "mtime": 1783844404.102595,
+    "ast_hash": "af63b6433264cf73400daa84347e7312",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/recruiter/company.schema.test.ts": {
+    "mtime": 1783844224.823528,
+    "ast_hash": "0109799642611778d122a2815b802e02",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/recruiter/job.schema.test.ts": {
+    "mtime": 1783843950.66783,
+    "ast_hash": "bb83c29b6e0104d324b62de41f4ab70a",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/recruiter/team.schema.test.ts": {
+    "mtime": 1783843960.4497411,
+    "ast_hash": "19eedc14affcbd7a12327cb28264017f",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/user/profile.schema.test.ts": {
+    "mtime": 1783844229.2048306,
+    "ast_hash": "53a503c5e5404b3c0a13451707f48c2f",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/user/resume-ai.schema.test.ts": {
+    "mtime": 1783843985.9557147,
+    "ast_hash": "6ca3cf9c0d6d89d20a3c75bbc3136ba5",
+    "semantic_hash": ""
+  },
+  "lib/test/schemas/user/resume.schema.test.ts": {
+    "mtime": 1783843975.6183972,
+    "ast_hash": "252359dca56ca73123da30011d7b39b5",
+    "semantic_hash": ""
+  },
+  "lib/test/security/analytics-queries.security.test.ts": {
+    "mtime": 1783843998.1514344,
+    "ast_hash": "81e39ebfd4b4794da8397f77ac5fab22",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1783842143038-phase1-testing-plan.md": {
+    "mtime": 1783843857.5550418,
+    "ast_hash": "4017038be20fd6603172fb0665c37e4a",
     "semantic_hash": ""
   }
 }

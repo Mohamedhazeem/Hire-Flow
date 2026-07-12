@@ -1,23 +1,26 @@
-import { z } from "zod/v4";
+import { z } from "zod";
+import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
 import { APPLICATION_STATUSES } from "./application.schema";
 
-export const AnalyticsFilterSchema = z.object({
-  jobId: z.string().optional(),
-  dateFrom: z.string().optional(),
-  dateTo: z.string().optional(),
-  status: z.string().optional(),
-  workMode: z.string().optional(),
-  employmentType: z.string().optional(),
-  location: z.string().optional(),
-}).refine(
-  (data) => {
-    if (data.dateFrom && data.dateTo) {
-      return data.dateFrom <= data.dateTo;
-    }
-    return true;
-  },
-  { message: "dateFrom must be before dateTo", path: ["dateFrom"] },
-);
+export const AnalyticsFilterSchema = z
+  .object({
+    jobId: z.uuid().optional(),
+    dateFrom: z.iso.date().optional(),
+    dateTo: z.iso.date().optional(),
+    status: z.enum(APPLICATION_STATUSES).optional(),
+    workMode: z.enum(Object.values(WorkMode) as [string, ...string[]]).optional(),
+    employmentType: z.enum(Object.values(EmploymentType) as [string, ...string[]]).optional(),
+    location: z.string().optional(),
+  })
+  .refine(
+    (data) => {
+      if (data.dateFrom && data.dateTo) {
+        return data.dateFrom <= data.dateTo;
+      }
+      return true;
+    },
+    { message: "dateFrom must be before dateTo", path: ["dateFrom"] },
+  );
 
 export type AnalyticsFilter = z.infer<typeof AnalyticsFilterSchema>;
 

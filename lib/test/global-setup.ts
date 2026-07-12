@@ -5,6 +5,9 @@
  *  1. Load `.env.test` into the main process environment.
  *  2. Remap DATABASE_URL_TEST → DATABASE_URL so `prisma migrate deploy` targets the test DB.
  *  3. Apply all pending migrations to `hireflow_test`.
+ *
+ * Note: This setup is optional — pure unit tests (schemas, security) run fine without DB.
+ * If the test DB is unavailable, this logs a warning and continues.
  */
 import { execSync } from "child_process";
 import dotenv from "dotenv";
@@ -17,17 +20,19 @@ export default async function globalSetup() {
     process.env.DATABASE_URL = process.env.DATABASE_URL_TEST;
   }
 
-  console.log("Database URL targeted for test migrations:", process.env.DATABASE_URL);
-  console.log("--- Global Setup Starting ---");
-
-  try {
-    console.log("Running Prisma migrations on the test database...");
-    execSync("npx prisma migrate deploy", { stdio: "inherit" });
-    console.log("Prisma migrations applied successfully.");
-  } catch (error) {
-    console.error("Error during test database migrations:", error);
-    throw error;
+  if (!process.env.DATABASE_URL) {
+    console.warn("No DATABASE_URL found — skipping test DB setup (unit tests only)");
+    return;
   }
 
-  console.log("--- Global Setup Completed ---");
+  try {
+    console.warn("--- Global Setup Starting ---");
+    console.warn("Running Prisma migrations on the test database...");
+    execSync("npx prisma migrate deploy", { stdio: "inherit" });
+    console.warn("Prisma migrations applied successfully.");
+    console.warn("--- Global Setup Completed ---");
+  } catch (error) {
+    console.warn("Test database unavailable — skipping migrations (unit tests can still run)");
+    console.warn(error);
+  }
 }

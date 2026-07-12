@@ -3,6 +3,7 @@
 ## Overview
 
 The application currently has zero automated tests. This strategy defines the testing approach, stack, and test plans to be implemented incrementally across phases. Tests are prioritized by risk — critical data integrity, security, and authorization paths are tested first.
+Always use clean architecture and solid principles.
 
 ## Testing Stack
 
