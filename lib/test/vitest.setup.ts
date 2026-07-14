@@ -58,6 +58,14 @@ vi.mock("@/lib/pusher/pusher", () => ({
   },
 }));
 
+// ── next/cache (revalidatePath / revalidateTag) ────────────────────────────
+// Server Actions call revalidatePath() which throws in test environment.
+vi.mock("next/cache", () => ({
+  revalidatePath: vi.fn(),
+  revalidateTag: vi.fn(),
+  unstable_cache: vi.fn((fn) => fn),
+}));
+
 // ── Resend ─────────────────────────────────────────────────────────────────
 // Prevents real emails from being sent. Per-test spying uses mockResend()
 // from lib/test/mocks.ts.

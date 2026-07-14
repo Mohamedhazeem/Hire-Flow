@@ -62,10 +62,10 @@ export const RejectSchema = baseTransitionSchema.extend({
 });
 
 export const StatusTransitionSchema = z.union([
-  ShortlistSchema,
+  RejectSchema,
   ScheduleInterviewSchema,
   SendOfferSchema,
-  RejectSchema,
+  ShortlistSchema,
 ]);
 
 export type StatusTransitionInput = z.infer<typeof StatusTransitionSchema>;
