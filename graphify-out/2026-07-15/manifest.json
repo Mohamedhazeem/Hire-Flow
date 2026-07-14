@@ -1370,7 +1370,7 @@
     "semantic_hash": ""
   },
   "app/features/shared/api/require-role.ts": {
-    "mtime": 1783572105.9151022,
+    "mtime": 1784050363.5208294,
     "ast_hash": "2a57a81ad99f38735aa41b6f68a0e4e5",
     "semantic_hash": ""
   },
@@ -1930,8 +1930,8 @@
     "semantic_hash": ""
   },
   "utils/env.ts": {
-    "mtime": 1783226048.0691905,
-    "ast_hash": "27d2be950feebf0bc91fb6b5c4a5302a",
+    "mtime": 1784049043.4494724,
+    "ast_hash": "b182ec239ec22ae1f5ec9cfc95fabd78",
     "semantic_hash": ""
   },
   "utils/format-string.ts": {
@@ -2650,13 +2650,13 @@
     "semantic_hash": ""
   },
   "lib/test/factories/application.factory.ts": {
-    "mtime": 1783842186.9936361,
-    "ast_hash": "b1473484d84e4a75e2202f32fee6d4b4",
+    "mtime": 1784050080.39716,
+    "ast_hash": "bb53b671dc035a07ee94f901fbc1d7e5",
     "semantic_hash": ""
   },
   "lib/test/factories/company.factory.ts": {
-    "mtime": 1783841266.815943,
-    "ast_hash": "0c573a1cee0dec0c34ef017e2ed72a5f",
+    "mtime": 1784050065.3790407,
+    "ast_hash": "312b3620bd5956bb97f74022b6d883d6",
     "semantic_hash": ""
   },
   "lib/test/factories/index.ts": {
@@ -2665,23 +2665,23 @@
     "semantic_hash": ""
   },
   "lib/test/factories/job.factory.ts": {
-    "mtime": 1783841271.6220672,
-    "ast_hash": "cf630dc5c95584aceef1e9a329decf55",
+    "mtime": 1784050077.9040432,
+    "ast_hash": "907d0441184212863e34464716200f9c",
     "semantic_hash": ""
   },
   "lib/test/factories/message.factory.ts": {
-    "mtime": 1783841283.3927715,
-    "ast_hash": "411f44a7a202c65700ed9f097c368e01",
+    "mtime": 1784050085.8149872,
+    "ast_hash": "84aaf64cc2e41949ef0be304a9ab5cd0",
     "semantic_hash": ""
   },
   "lib/test/factories/resume.factory.ts": {
-    "mtime": 1783842186.4132998,
-    "ast_hash": "416f153b3d02a94bdb951b07026350a5",
+    "mtime": 1784050083.4290082,
+    "ast_hash": "66e124f3756fa38f07259b899846a528",
     "semantic_hash": ""
   },
   "lib/test/factories/user.factory.ts": {
-    "mtime": 1783841259.619133,
-    "ast_hash": "615371df239d216faa884bb1467904c1",
+    "mtime": 1784050075.5356076,
+    "ast_hash": "6f965cccc93f2b8fd2b962bdab297ba7",
     "semantic_hash": ""
   },
   "lib/test/global-setup.ts": {
@@ -2700,8 +2700,8 @@
     "semantic_hash": ""
   },
   "lib/test/reset-db.ts": {
-    "mtime": 1783841245.227101,
-    "ast_hash": "5e38ce84925522603d9aa8ba255e8ec3",
+    "mtime": 1784050073.1225727,
+    "ast_hash": "8c6715bef5abb32c0bb6c5e094e46f5b",
     "semantic_hash": ""
   },
   "lib/test/test-db.ts": {
@@ -2884,9 +2884,19 @@
     "ast_hash": "3334ae2aaaeda614ac22202716bd9a16",
     "semantic_hash": ""
   },
-  ".kilo/plans/1783842143038-phase-2-unit-tests.md": {
-    "mtime": 1784045968.6082237,
-    "ast_hash": "f49a773361d55afdf84d338903652ff8",
+  "lib/test/integration/auth/auth.idor.test.ts": {
+    "mtime": 1784056067.9991362,
+    "ast_hash": "2e4c1bef92330cba913b3a599781617e",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/auth/auth.session.test.ts": {
+    "mtime": 1784050443.0270233,
+    "ast_hash": "c257a5650e394cb235302f70e1a343ee",
+    "semantic_hash": ""
+  },
+  "lib/test/shared-auth-mock.ts": {
+    "mtime": 1784050404.5543568,
+    "ast_hash": "c320b419da4a3525d64ad4aa81fb5cf5",
     "semantic_hash": ""
   }
 }
