@@ -570,8 +570,8 @@
     "semantic_hash": ""
   },
   "app/api/user/applications/[id]/route.ts": {
-    "mtime": 1783572105.823557,
-    "ast_hash": "34de130958d6e96e1e650df55e095bcd",
+    "mtime": 1784059323.4183686,
+    "ast_hash": "0bb8d352d2b2b4eb56c1e21ca36fdc70",
     "semantic_hash": ""
   },
   "app/api/user/applications/route.ts": {
@@ -610,8 +610,8 @@
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/route.ts": {
-    "mtime": 1783572105.8345978,
-    "ast_hash": "45993d45cb033bdcc897f9b013a8ff8b",
+    "mtime": 1784058016.385354,
+    "ast_hash": "66b7f3470918ab296175275bb541c8e1",
     "semantic_hash": ""
   },
   "app/api/user/resumes/route.ts": {
@@ -1350,8 +1350,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
-    "mtime": 1783846085.37309,
-    "ast_hash": "9bf8ea621bf8891c99722fe4c2eff404",
+    "mtime": 1784057451.267336,
+    "ast_hash": "88f493acbe694c90bc7bb71ab05bfdfe",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/company.schema.ts": {
@@ -2600,7 +2600,7 @@
     "semantic_hash": ""
   },
   "lib/api/api-wrapper.ts": {
-    "mtime": 1783572106.1309202,
+    "mtime": 1784058862.552663,
     "ast_hash": "97535c9273bc8f16ecc9fe40119f4bd7",
     "semantic_hash": ""
   },
@@ -2710,13 +2710,13 @@
     "semantic_hash": ""
   },
   "lib/test/vitest.setup.ts": {
-    "mtime": 1783841237.1439476,
-    "ast_hash": "b4f3cc185f171ed59f15fde3c35fcac3",
+    "mtime": 1784057607.469037,
+    "ast_hash": "619e1ca2af80f55a269df99ba47fbfae",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1783844093.4405773,
-    "ast_hash": "c3071e50ae77f6456112983a1826b2f4",
+    "mtime": 1784058234.0516505,
+    "ast_hash": "4b3c38463ee802948c65a5264985774f",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -2885,8 +2885,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/auth/auth.idor.test.ts": {
-    "mtime": 1784056067.9991362,
-    "ast_hash": "2e4c1bef92330cba913b3a599781617e",
+    "mtime": 1784060007.2928932,
+    "ast_hash": "4fd99e79936e94e06faabb2763028123",
     "semantic_hash": ""
   },
   "lib/test/integration/auth/auth.session.test.ts": {
@@ -2897,6 +2897,96 @@
   "lib/test/shared-auth-mock.ts": {
     "mtime": 1784050404.5543568,
     "ast_hash": "c320b419da4a3525d64ad4aa81fb5cf5",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/admin/ban.test.ts": {
+    "mtime": 1784059100.0008762,
+    "ast_hash": "15ea04dc40fc579d6f559f0bd5f41e9b",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/admin/role.test.ts": {
+    "mtime": 1784059228.1417603,
+    "ast_hash": "02edd13904819542f5df6521d9082309",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/admin/sessions.test.ts": {
+    "mtime": 1784059214.4775252,
+    "ast_hash": "8f5eb150a12bcd749d0e312221374295",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/analytics/analytics.test.ts": {
+    "mtime": 1784059359.5992713,
+    "ast_hash": "fa733136b642839d859afe5d9436036f",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/bulk-status.test.ts": {
+    "mtime": 1784058379.805044,
+    "ast_hash": "b6796c4ba1f5deb5d6fa37fed5c81abe",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/export.test.ts": {
+    "mtime": 1784058505.4574332,
+    "ast_hash": "f3c0abcfa41769a66a6be4630688a2d8",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/revert.test.ts": {
+    "mtime": 1784056932.9365323,
+    "ast_hash": "7e717d4dfb7769ce63f70b9bfac8444a",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/status.test.ts": {
+    "mtime": 1784057459.9696116,
+    "ast_hash": "8fa3c664c981e980e13eb21dda21b93c",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/withdraw.test.ts": {
+    "mtime": 1784057774.0524013,
+    "ast_hash": "ca60595dcaee66b34773c7d6611f8cf8",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/files/download.test.ts": {
+    "mtime": 1784058985.258535,
+    "ast_hash": "b5c9209164d6ae2da46064a0c53f7d69",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/helpers/index.ts": {
+    "mtime": 1784056883.144973,
+    "ast_hash": "23eea9db89f1f45c4db38b6589749b2a",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/jobs/apply.test.ts": {
+    "mtime": 1784060352.584547,
+    "ast_hash": "63378bec51cead4c8da83c4db1ea726e",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/jobs/public-job-queries.test.ts": {
+    "mtime": 1784056894.6213531,
+    "ast_hash": "4a9a14b59be2b3b811497c6f1acdcc58",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/notifications.test.ts": {
+    "mtime": 1784057047.7469292,
+    "ast_hash": "bd136f0a93e99708e33df7e3f8d721ef",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/upload.test.ts": {
+    "mtime": 1784057061.8461332,
+    "ast_hash": "ac19a551f07c9d5096d2e15cc2905475",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/user/bookmarks.test.ts": {
+    "mtime": 1784058625.8529813,
+    "ast_hash": "0a635862ad2ed7694e331e7a0cdf7d83",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/user/resumes.test.ts": {
+    "mtime": 1784058307.2988577,
+    "ast_hash": "9a00359f119e667ce02fa08aa65c6154",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/phase4-integration-tests.md": {
+    "mtime": 1784056625.63828,
+    "ast_hash": "eaa955d8e30c7a054fd51cb0d46df711",
     "semantic_hash": ""
   }
 }
