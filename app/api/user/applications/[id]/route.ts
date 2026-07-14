@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { NotFoundError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
@@ -28,7 +28,7 @@ async function handleDELETE(
 
   revalidatePath("/user/applications");
 
-  return ok(undefined, 204);
+  return new NextResponse(null, { status: 204 });
 }
 
 export const GET = withErrorHandler(handleGET);

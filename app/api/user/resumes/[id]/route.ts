@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
@@ -50,7 +50,7 @@ async function handleDELETE(
     data: { deletedAt: new Date() },
   });
 
-  return ok(undefined, 204);
+  return new NextResponse(null, { status: 204 });
 }
 
 export const PATCH = withErrorHandler(handlePATCH);
