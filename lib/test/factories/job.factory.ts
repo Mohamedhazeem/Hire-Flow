@@ -10,14 +10,14 @@
 import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
 import { WorkMode, EmploymentType } from "../../../app/generated/prisma/client";
-import { testDb } from "../test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function createTestJob(
   recruiterId: string,
   companyId: string,
   overrides?: Partial<Prisma.JobUncheckedCreateInput>
 ) {
-  return testDb.job.create({
+  return prisma.job.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
       recruiterId,

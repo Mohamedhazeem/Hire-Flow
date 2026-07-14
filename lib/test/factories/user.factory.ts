@@ -4,14 +4,14 @@
 import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
 import { Role } from "../../../app/generated/prisma/client";
-import { testDb } from "../test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function createTestUser(
   overrides?: Partial<Prisma.UserUncheckedCreateInput>
 ) {
   const email = overrides?.email ?? faker.internet.email();
 
-  return testDb.user.create({
+  return prisma.user.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
       name: overrides?.name ?? faker.person.fullName(),

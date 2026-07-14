@@ -8,14 +8,14 @@
  */
 import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
-import { testDb } from "../test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function createTestApplication(
   jobId: string,
   userId: string,
   overrides?: Partial<Prisma.ApplicationUncheckedCreateInput>
 ) {
-  return testDb.application.create({
+  return prisma.application.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
       jobId,

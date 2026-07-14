@@ -11,13 +11,13 @@
  */
 import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
-import { testDb } from "../test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function createTestMessage(
   threadId: string,
   overrides?: Partial<Prisma.MessageUncheckedCreateInput>
 ) {
-  return testDb.message.create({
+  return prisma.message.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
       threadId,

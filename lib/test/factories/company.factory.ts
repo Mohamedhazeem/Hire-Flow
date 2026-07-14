@@ -5,13 +5,13 @@
  */
 import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
-import { testDb } from "../test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function createTestCompany(
   recruiterId: string,
   overrides?: Partial<Prisma.CompanyUncheckedCreateInput>
 ) {
-  return testDb.company.create({
+  const company = await prisma.company.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
       recruiterId,
@@ -24,4 +24,10 @@ export async function createTestCompany(
       ...overrides,
     },
   });
+
+  await prisma.companyTeamMember.create({
+    data: { userId: recruiterId, companyId: company.id, role: "admin" },
+  });
+
+  return company;
 }

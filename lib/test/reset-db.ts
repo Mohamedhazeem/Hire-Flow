@@ -5,10 +5,10 @@
  * Tables are listed in child-first order to satisfy foreign key constraints
  * before CASCADE handles the rest.
  */
-import { testDb } from "./test-db";
+import { prisma } from "@/lib/prisma";
 
 export async function resetDb(): Promise<void> {
-  await testDb.$executeRaw`
+  await prisma.$executeRaw`
     TRUNCATE TABLE
       "admin_invite",
       "resume_enhancement_log",

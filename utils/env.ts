@@ -4,7 +4,7 @@ export const envSchema = z.object({
   DATABASE_URL: z.string(),
 
   NEXT_PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
-  NODE_ENV: z.enum(["development", "production"]).default("development"),
+  NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
 
   BETTER_AUTH_SECRET: z.string(),
   BETTER_AUTH_URL: z.url(),
