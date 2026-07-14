@@ -2710,8 +2710,8 @@
     "semantic_hash": ""
   },
   "lib/test/vitest.setup.ts": {
-    "mtime": 1784057607.469037,
-    "ast_hash": "619e1ca2af80f55a269df99ba47fbfae",
+    "mtime": 1784061647.178172,
+    "ast_hash": "fa7ed740230dae45521112d746851b7a",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
@@ -2982,6 +2982,31 @@
   "lib/test/integration/user/resumes.test.ts": {
     "mtime": 1784058307.2988577,
     "ast_hash": "9a00359f119e667ce02fa08aa65c6154",
+    "semantic_hash": ""
+  },
+  "lib/test/components/bulk-reject-dialog.dom.test.tsx": {
+    "mtime": 1784061256.7530472,
+    "ast_hash": "6579bac5a3ebe5dc7283cad63f9b3120",
+    "semantic_hash": ""
+  },
+  "lib/test/components/data-table.dom.test.tsx": {
+    "mtime": 1784061620.3630362,
+    "ast_hash": "bf265bc47e82ed5d1f5091e9fcd7b970",
+    "semantic_hash": ""
+  },
+  "lib/test/components/message-bubble.dom.test.tsx": {
+    "mtime": 1784061407.0363069,
+    "ast_hash": "d2ea3e69e65ddaf69cb411c39aa9b865",
+    "semantic_hash": ""
+  },
+  "lib/test/components/save-job-button.dom.test.tsx": {
+    "mtime": 1784061491.2546892,
+    "ast_hash": "ae5ebadb9cd57f7258fe6e0d625e10af",
+    "semantic_hash": ""
+  },
+  "lib/test/components/status-timeline.dom.test.tsx": {
+    "mtime": 1784061411.1386938,
+    "ast_hash": "ddc3e92c4c9082a81a65068a722850f2",
     "semantic_hash": ""
   }
 }

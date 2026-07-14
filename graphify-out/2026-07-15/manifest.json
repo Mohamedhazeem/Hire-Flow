@@ -2930,8 +2930,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/applications/revert.test.ts": {
-    "mtime": 1784056932.9365323,
-    "ast_hash": "7e717d4dfb7769ce63f70b9bfac8444a",
+    "mtime": 1784060613.509939,
+    "ast_hash": "202848d49efe4222bc5a7ef14aadde9a",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/status.test.ts": {
@@ -2982,11 +2982,6 @@
   "lib/test/integration/user/resumes.test.ts": {
     "mtime": 1784058307.2988577,
     "ast_hash": "9a00359f119e667ce02fa08aa65c6154",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/phase4-integration-tests.md": {
-    "mtime": 1784056625.63828,
-    "ast_hash": "eaa955d8e30c7a054fd51cb0d46df711",
     "semantic_hash": ""
   }
 }
