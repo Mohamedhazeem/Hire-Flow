@@ -30,7 +30,8 @@ describe("IDOR — Cross-Tenant Recruiter Isolation", () => {
     const { GET } = await import("@/app/api/recruiter/jobs/[id]/route");
     const req = new NextRequest(`http://localhost/api/recruiter/jobs/${jobB.id}`);
     const res = await GET(req, { params: Promise.resolve({ id: jobB.id }) });
-    expect(res.status).toBe(400);
+    // getJobById returns null for wrong company → NotFoundError → 404
+    expect(res.status).toBe(404);
   });
 
   it("recruiter A cannot access recruiter B's applicant detail", async () => {
@@ -61,7 +62,8 @@ describe("IDOR — Cross-Tenant Recruiter Isolation", () => {
       body: JSON.stringify({ status: "reviewing" }),
     });
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: appB.id }) });
-    expect(res.status).toBe(400);
+    // getApplicationById returns null for wrong company → NotFoundError → 404
+    expect(res.status).toBe(404);
   });
 
   it("recruiter A cannot list applicants for recruiter B's job", async () => {
