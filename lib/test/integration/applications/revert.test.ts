@@ -74,6 +74,7 @@ describe("Revert Status (Phase 4.6)", () => {
       method: "POST",
     });
     const res = await POST(req, { params: Promise.resolve({ applicationId: appB.id }) });
-    expect(res.status).toBe(400);
+    // findByApplicationIdWithCompany returns null for wrong company → NotFoundError → 404
+    expect(res.status).toBe(404);
   });
 });
