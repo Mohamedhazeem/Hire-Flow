@@ -52,6 +52,11 @@ export function pruneRateLimitStores(): void {
   }
 }
 
+// For testing only — resets all rate limit stores between test runs
+export function _resetRateLimitStores(): void {
+  stores.clear();
+}
+
 // Periodic cleanup every 10 minutes
 if (typeof setInterval !== "undefined") {
   setInterval(pruneRateLimitStores, 600000);

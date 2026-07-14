@@ -2340,8 +2340,8 @@
     "semantic_hash": ""
   },
   "lib/rate-limit.ts": {
-    "mtime": 1784046417.917692,
-    "ast_hash": "8bea8f56dc493aa02f7cf695bf954723",
+    "mtime": 1783572106.1399183,
+    "ast_hash": "e374a845b6639c88d0a2b24b30c3f06b",
     "semantic_hash": ""
   },
   "lib/repositories/index.ts": {
@@ -2755,8 +2755,8 @@
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/job.schema.test.ts": {
-    "mtime": 1784040384.7862747,
-    "ast_hash": "0c685374993758abc820e60a5ed2917f",
+    "mtime": 1783843950.66783,
+    "ast_hash": "bb83c29b6e0104d324b62de41f4ab70a",
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/team.schema.test.ts": {
@@ -2784,109 +2784,9 @@
     "ast_hash": "81e39ebfd4b4794da8397f77ac5fab22",
     "semantic_hash": ""
   },
-  "lib/test/unit/ai-client.test.ts": {
-    "mtime": 1784046274.9024673,
-    "ast_hash": "220acb80efc270eca8e968163f5b8473",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/api-error.test.ts": {
-    "mtime": 1784046065.457415,
-    "ast_hash": "da791a0e4b82f7124b4cc8957a5590e1",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/api-response.test.ts": {
-    "mtime": 1784046382.9075758,
-    "ast_hash": "03f3d5c6a0c6e15e44ab8dbb2df2ce3c",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/api-wrapper.test.ts": {
-    "mtime": 1784046383.7879677,
-    "ast_hash": "d8ad2055450f618d60289160106e3d66",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/applicant-table-utils.test.ts": {
-    "mtime": 1784046153.1741602,
-    "ast_hash": "fa9cba1b2599d862c23ccb60f23434b6",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/authError.test.ts": {
-    "mtime": 1784046158.7060235,
-    "ast_hash": "9c4c58558f5fb606f9c9f010c74e0fe5",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/batch-helpers.test.ts": {
-    "mtime": 1784046105.4249198,
-    "ast_hash": "8f26ee5acdb3ef682035cacf4bf04ea1",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/csv-builder.test.ts": {
-    "mtime": 1784046078.2567883,
-    "ast_hash": "6b04b0a713947c7ae11f58637395b492",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/format-string.test.ts": {
-    "mtime": 1784046179.1072676,
-    "ast_hash": "55b3ab604bf7ac7b9c76447fc0ada08f",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/format-time.test.ts": {
-    "mtime": 1784046088.6242766,
-    "ast_hash": "9cc1c392da7316b307efbf89f9a9b3e8",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/get-redirect-path.test.ts": {
-    "mtime": 1784046102.7747915,
-    "ast_hash": "019ee1fe4469560f2de7b1c397ccf3af",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/job-categories.test.ts": {
-    "mtime": 1784046090.394347,
-    "ast_hash": "ae52d59b5979a68ff360daa19bc75f84",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/pagination.test.ts": {
-    "mtime": 1784046149.8095455,
-    "ast_hash": "d35ea01aa183e5630a12cb762c2eec40",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/presence-store.test.ts": {
-    "mtime": 1784046296.8340592,
-    "ast_hash": "4cb747e32b24286620103e54204545fb",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/rate-limit-message.test.ts": {
-    "mtime": 1784046298.1364484,
-    "ast_hash": "877df84f5119b715a43540964faa2fda",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/rate-limit.test.ts": {
-    "mtime": 1784046242.7896745,
-    "ast_hash": "367e64d459766ee1f713c8b80e3dcdc8",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/require-role.test.ts": {
-    "mtime": 1784046300.7096944,
-    "ast_hash": "4c819cb6774d74125b94e9cfeb3697e0",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/routes.test.ts": {
-    "mtime": 1784046150.6900225,
-    "ast_hash": "1d37a6b5419d371aff765e26cd6f41b4",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/thread-utils.test.ts": {
-    "mtime": 1784046082.0934546,
-    "ast_hash": "47315add3e72a623fc36a81a32ab5bab",
-    "semantic_hash": ""
-  },
-  "lib/test/unit/validator.test.ts": {
-    "mtime": 1784046084.7265081,
-    "ast_hash": "3334ae2aaaeda614ac22202716bd9a16",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1783842143038-phase-2-unit-tests.md": {
-    "mtime": 1784045968.6082237,
-    "ast_hash": "f49a773361d55afdf84d338903652ff8",
+  ".kilo/plans/1783842143038-phase1-testing-plan.md": {
+    "mtime": 1783843857.5550418,
+    "ast_hash": "4017038be20fd6603172fb0665c37e4a",
     "semantic_hash": ""
   }
 }

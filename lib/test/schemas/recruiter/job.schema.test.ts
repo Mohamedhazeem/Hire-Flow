@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { JobCreateSchema, JobUpdateSchema, RecruiterListJobsParamsSchema } from "@/app/features/recruiter/schema/job.schema";
+import {
+  JobCreateSchema,
+  JobUpdateSchema,
+  RecruiterListJobsParamsSchema,
+} from "@/app/features/recruiter/schema/job.schema";
 
 const validCreate = {
   title: "Senior Frontend Engineer",
@@ -58,7 +62,11 @@ describe("JobCreateSchema", () => {
   });
 
   it("rejects salaryMin > salaryMax via refine", () => {
-    const result = JobCreateSchema.safeParse({ ...validCreate, salaryMin: 200000, salaryMax: 100000 });
+    const result = JobCreateSchema.safeParse({
+      ...validCreate,
+      salaryMin: 200000,
+      salaryMax: 100000,
+    });
     expect(result.success).toBe(false);
     if (!result.success) {
       expect(result.error.issues[0].path).toContain("salaryMin");
@@ -67,7 +75,11 @@ describe("JobCreateSchema", () => {
   });
 
   it("accepts salaryMin <= salaryMax", () => {
-    const result = JobCreateSchema.safeParse({ ...validCreate, salaryMin: 50000, salaryMax: 100000 });
+    const result = JobCreateSchema.safeParse({
+      ...validCreate,
+      salaryMin: 50000,
+      salaryMax: 100000,
+    });
     expect(result.success).toBe(true);
   });
 
@@ -83,12 +95,18 @@ describe("JobCreateSchema", () => {
   });
 
   it("accepts HTML entities in title (escaping is rendering concern)", () => {
-    const result = JobCreateSchema.safeParse({ ...validCreate, title: "<script>alert('xss')</script>" });
+    const result = JobCreateSchema.safeParse({
+      ...validCreate,
+      title: "<script>alert('xss')</script>",
+    });
     expect(result.success).toBe(true);
   });
 
   it("accepts markdown in description", () => {
-    const result = JobCreateSchema.safeParse({ ...validCreate, description: "# Hello\n\nThis is **bold**" });
+    const result = JobCreateSchema.safeParse({
+      ...validCreate,
+      description: "# Hello\n\nThis is **bold**",
+    });
     expect(result.success).toBe(true);
   });
 
