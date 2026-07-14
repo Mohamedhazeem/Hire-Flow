@@ -1,19 +1,13 @@
-/**
- * Vitest setupFiles — runs in EVERY worker process before each test file.
- *
- * Responsibilities:
- *  1. Augment Jest DOM matchers (toBeInTheDocument, toHaveValue, etc.).
- *  2. Re-load `.env.test` — workers are separate Node processes and don't
- *     inherit the main process environment automatically.
- *  3. Remap DATABASE_URL_TEST → DATABASE_URL so the Prisma client in workers
- *     targets the test database.
- *  4. Install global module mocks for Next.js APIs and external services so
- *     no test file ever hits real infrastructure by accident.
- */
 import "@testing-library/jest-dom";
-import { vi } from "vitest";
+import { vi, afterEach } from "vitest";
+import { cleanup } from "@testing-library/react";
 import dotenv from "dotenv";
 import path from "path";
+
+// Cleanup DOM after each test — prevents cross-file jsdom leaks in singleFork mode
+afterEach(() => {
+  cleanup();
+});
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
 
