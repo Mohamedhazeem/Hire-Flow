@@ -12,7 +12,7 @@
 >
 > **Status summary:** Phases 0–3 complete. Phase 4 complete, including the
 > granular edge-case blocks (U*, N2/N4–N6, S1–S5, A4, M*, C1/C2/C4).
-> Phase 5 has 5/16 component tests. Phases 6–7 complete. Phase 8 CI complete;
+> Phase 5 component tests complete (16/16). Phases 6–7 complete. Phase 8 CI complete;
 > coverage-threshold ratchet (8.2/8.3) pending.
  
 ## Phase 0 — Infrastructure
@@ -179,23 +179,23 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 
 ## Phase 5 — Component Tests
 
-_Files under `lib/test/components/**`. 5 of 16 implemented._
+_Files under `lib/test/components/**`. 16 of 16 implemented._
 - [x] `data-table.dom.test.tsx`
-- [ ] `applicants-table.dom.test.tsx`
+- [x] `applicants-table.dom.test.tsx`
 - [x] `bulk-reject-dialog.dom.test.tsx`
 - [x] `status-timeline.dom.test.tsx`
-- [ ] `resume-builder-form.dom.test.tsx`
-- [ ] `ai-suggestions-panel.dom.test.tsx`
-- [ ] `job-search-bar.dom.test.tsx`
+- [x] `resume-builder-form.dom.test.tsx`
+- [x] `ai-suggestions-panel.dom.test.tsx`
+- [x] `job-search-bar.dom.test.tsx`
 - [x] `save-job-button.dom.test.tsx`
-- [ ] `account-popover.dom.test.tsx`
-- [ ] `apply-modal.dom.test.tsx`
-- [ ] `chat-input-area.dom.test.tsx`
+- [x] `account-popover.dom.test.tsx`
+- [x] `apply-modal.dom.test.tsx`
+- [x] `chat-input-area.dom.test.tsx`
 - [x] `message-bubble.dom.test.tsx`
-- [ ] `shared-thread-view.dom.test.tsx`
-- [ ] `thread-list-item.dom.test.tsx`
-- [ ] `chat-header.dom.test.tsx`
-- [ ] `no-company-prompt.dom.test.tsx`
+- [x] `shared-thread-view.dom.test.tsx`
+- [x] `thread-list-item.dom.test.tsx`
+- [x] `chat-header.dom.test.tsx`
+- [x] `no-company-prompt.dom.test.tsx` (NoCompanyPrompt extracted to its own component)
 
 ## Phase 6 — E2E (Playwright)
 
