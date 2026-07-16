@@ -11,6 +11,7 @@ export async function resetDb(): Promise<void> {
   await prisma.$executeRaw`
     TRUNCATE TABLE
       "admin_invite",
+      "resume_enhancement_quota",
       "resume_enhancement_log",
       "application_status_change",
       "bookmark",

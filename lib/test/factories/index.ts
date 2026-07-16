@@ -10,3 +10,4 @@ export { createTestJob } from "./job.factory";
 export { createTestApplication } from "./application.factory";
 export { createTestResume } from "./resume.factory";
 export { createTestMessage } from "./message.factory";
+export { seedApplications, seedJobs } from "./seed-factories";
