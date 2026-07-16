@@ -245,8 +245,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/page.tsx": {
-    "mtime": 1782520604.800542,
-    "ast_hash": "f637f1a89f065421f8f7498862c67b8a",
+    "mtime": 1784232681.8009827,
+    "ast_hash": "646c7b2a5153a8b6cad486fc76960bc8",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/recruiter-layout-client.tsx": {
@@ -2205,8 +2205,8 @@
     "semantic_hash": ""
   },
   "test-manifest.md": {
-    "mtime": 1784232096.9773707,
-    "ast_hash": "5b51ffc0eee3c8115c1527e13cd80843",
+    "mtime": 1784233483.2411525,
+    "ast_hash": "decf29ed521c993fa0df999a9dea1dad",
     "semantic_hash": ""
   },
   "public/file.svg": {
@@ -3212,6 +3212,71 @@
   "lib/test/unit/search-query.test.ts": {
     "mtime": 1784232001.908703,
     "ast_hash": "42aa074bef575e9e90113ae0752897eb",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/no-company-prompt.tsx": {
+    "mtime": 1784232663.4802625,
+    "ast_hash": "5277353bc83cb9ac91d71b9ca5654f02",
+    "semantic_hash": ""
+  },
+  "lib/test/components/account-popover.dom.test.tsx": {
+    "mtime": 1784233053.1655717,
+    "ast_hash": "a02533fe82da4fd2eb0fa893c59c5fb3",
+    "semantic_hash": ""
+  },
+  "lib/test/components/ai-suggestions-panel.dom.test.tsx": {
+    "mtime": 1784232886.1273537,
+    "ast_hash": "ce50fa88ebc0e49fdfea4a60aae2eb95",
+    "semantic_hash": ""
+  },
+  "lib/test/components/applicants-table.dom.test.tsx": {
+    "mtime": 1784233335.7042801,
+    "ast_hash": "1e5d65715a25f9ff528ca9d06750308c",
+    "semantic_hash": ""
+  },
+  "lib/test/components/apply-modal.dom.test.tsx": {
+    "mtime": 1784233119.022495,
+    "ast_hash": "e374d15fbecf8296f4e0a097c236dc31",
+    "semantic_hash": ""
+  },
+  "lib/test/components/chat-header.dom.test.tsx": {
+    "mtime": 1784232707.3239026,
+    "ast_hash": "8f0ec396b01ed3f9551da32e94215700",
+    "semantic_hash": ""
+  },
+  "lib/test/components/chat-input-area.dom.test.tsx": {
+    "mtime": 1784232732.7230263,
+    "ast_hash": "f6276442bcef1392160517fb4b533f8e",
+    "semantic_hash": ""
+  },
+  "lib/test/components/job-search-bar.dom.test.tsx": {
+    "mtime": 1784232939.7193115,
+    "ast_hash": "606ee6cedbd9810f67e5be3784bb8d7f",
+    "semantic_hash": ""
+  },
+  "lib/test/components/no-company-prompt.dom.test.tsx": {
+    "mtime": 1784232785.433417,
+    "ast_hash": "43c35e00616285b8fb6dcfcb77c64bee",
+    "semantic_hash": ""
+  },
+  "lib/test/components/resume-builder-form.dom.test.tsx": {
+    "mtime": 1784233179.4912992,
+    "ast_hash": "05b53eeedc2a7edee3373ad80ef325b1",
+    "semantic_hash": ""
+  },
+  "lib/test/components/shared-thread-view.dom.test.tsx": {
+    "mtime": 1784233277.056052,
+    "ast_hash": "2d4f7f2091a1e930edb916118c8fce92",
+    "semantic_hash": ""
+  },
+  "lib/test/components/thread-list-item.dom.test.tsx": {
+    "mtime": 1784232962.4659417,
+    "ast_hash": "fa71e280fa301fa8e86a24e4c6f67bdd",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/phase-5-component-tests.md": {
+    "mtime": 1784232584.2597427,
+    "ast_hash": "07f01f3a23f1878ae6a48fbb1f27b487",
     "semantic_hash": ""
   }
 }
