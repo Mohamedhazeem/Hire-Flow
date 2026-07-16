@@ -2205,8 +2205,8 @@
     "semantic_hash": ""
   },
   "test-manifest.md": {
-    "mtime": 1783838662.7199113,
-    "ast_hash": "fff0faee0ecd674f05ac7f05aa3b88c3",
+    "mtime": 1784229082.16043,
+    "ast_hash": "fb5ba45cd9fca0bb4bee6a19800be17e",
     "semantic_hash": ""
   },
   "public/file.svg": {
@@ -2945,8 +2945,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/files/download.test.ts": {
-    "mtime": 1784058985.258535,
-    "ast_hash": "b5c9209164d6ae2da46064a0c53f7d69",
+    "mtime": 1784228462.2854104,
+    "ast_hash": "963f0bfc545457de06854803ec86cb19",
     "semantic_hash": ""
   },
   "lib/test/integration/helpers/index.ts": {
@@ -2970,8 +2970,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/upload.test.ts": {
-    "mtime": 1784057061.8461332,
-    "ast_hash": "ac19a551f07c9d5096d2e15cc2905475",
+    "mtime": 1784228439.9262447,
+    "ast_hash": "01109f78ce1b8680211de65bdc3302ea",
     "semantic_hash": ""
   },
   "lib/test/integration/user/bookmarks.test.ts": {
@@ -2980,8 +2980,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/user/resumes.test.ts": {
-    "mtime": 1784058307.2988577,
-    "ast_hash": "9a00359f119e667ce02fa08aa65c6154",
+    "mtime": 1784228540.23217,
+    "ast_hash": "073f9c87b2133a67f60767dd6ec2675b",
     "semantic_hash": ""
   },
   "lib/test/components/bulk-reject-dialog.dom.test.tsx": {
@@ -3187,6 +3187,16 @@
   ".github/workflows/test.yml": {
     "mtime": 1784227259.1292925,
     "ast_hash": "7adcf50dd2d67d50a168709be3a1e156",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/applications/race.test.ts": {
+    "mtime": 1784228771.5593176,
+    "ast_hash": "d93327f1305665d09a5c9c3bdffd0fba",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/upload-security.test.ts": {
+    "mtime": 1784228645.82542,
+    "ast_hash": "85258952a4a70bc6cc5ef2548767e3dc",
     "semantic_hash": ""
   }
 }
