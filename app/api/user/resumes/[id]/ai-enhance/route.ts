@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { randomUUID } from "node:crypto";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
@@ -12,6 +13,8 @@ import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { callAI } from "@/lib/ai-client";
 import { EnhancementsResponseSchema } from "@/app/features/user/schema/resume-ai.schema";
 
+const DAILY_ENHANCE_LIMIT = 5;
+
 async function handlePOST(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
   const { id } = await params;
@@ -20,14 +23,45 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
   if (!resume) throw new NotFoundError("Resume not found");
   if (resume.userId !== session.id) throw new ForbiddenError("You do not own this resume");
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const count = await prisma.resumeEnhancementLog.count({
-    where: { userId: session.id, createdAt: { gte: today } },
+  // Enforce the 5/day AI-enhance limit with a concurrency-safe guard.
+  // A per-(user, day) quota row is upserted, then incremented with a single
+  // atomic `UPDATE … WHERE used < 5 RETURNING` statement. Because the UPDATE
+  // itself is the gate, two concurrent requests cannot both pass: the second
+  // transaction's UPDATE finds `used` already at the limit and affects 0 rows,
+  // so it is rejected. This avoids the read-then-write TOCTOU race that a
+  // separate SELECT + INSERT would have.
+  const day = new Date().toISOString().slice(0, 10);
+
+  await prisma.$transaction(async (tx) => {
+    await tx.$executeRawUnsafe(
+      `INSERT INTO "resume_enhancement_quota" ("id", "userId", "day", "used")
+       VALUES ($1, $2, $3, 0)
+       ON CONFLICT ("userId", "day") DO NOTHING`,
+      randomUUID(),
+      session.id,
+      day,
+    );
+
+    const incremented = await tx.$queryRawUnsafe<Array<{ used: number }>>(
+      `UPDATE "resume_enhancement_quota"
+       SET "used" = "used" + 1
+       WHERE "userId" = $1 AND "day" = $2 AND "used" < $3
+       RETURNING "used"`,
+      session.id,
+      day,
+      DAILY_ENHANCE_LIMIT,
+    );
+
+    if (incremented.length === 0) {
+      throw new TooManyRequestsError(
+        `Daily limit reached (${DAILY_ENHANCE_LIMIT}/${DAILY_ENHANCE_LIMIT}). Try again tomorrow.`,
+      );
+    }
+
+    await tx.resumeEnhancementLog.create({
+      data: { userId: session.id, resumeId: id },
+    });
   });
-  if (count >= 5) {
-    throw new TooManyRequestsError("Daily limit reached (5/5). Try again tomorrow.");
-  }
 
   let resumeText = "";
   if (resume.builderData !== null) {
@@ -99,10 +133,6 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
   if (!validated.success) {
     throw new ValidationError("AI returned an unexpected format. Please try again.");
   }
-
-  await prisma.resumeEnhancementLog.create({
-    data: { userId: session.id, resumeId: id },
-  });
 
   return ok(validated.data);
 }
