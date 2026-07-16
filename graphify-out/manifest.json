@@ -2830,8 +2830,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/format-time.test.ts": {
-    "mtime": 1784046088.6242766,
-    "ast_hash": "9cc1c392da7316b307efbf89f9a9b3e8",
+    "mtime": 1784226935.3059683,
+    "ast_hash": "29659894c28f92c8796c535107ed25c3",
     "semantic_hash": ""
   },
   "lib/test/unit/get-redirect-path.test.ts": {
@@ -3185,13 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1784225172.5050309,
-    "ast_hash": "158deff049791660994aa672adf8329b",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md": {
-    "mtime": 1784219827.985066,
-    "ast_hash": "5c6b4d1ceb697fadaee567e644d82064",
+    "mtime": 1784227259.1292925,
+    "ast_hash": "7adcf50dd2d67d50a168709be3a1e156",
     "semantic_hash": ""
   }
 }
