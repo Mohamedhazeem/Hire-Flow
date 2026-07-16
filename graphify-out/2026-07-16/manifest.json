@@ -1945,8 +1945,8 @@
     "semantic_hash": ""
   },
   "utils/logger.ts": {
-    "mtime": 1781680434.088645,
-    "ast_hash": "292c8181978df6a601766542c456aa79",
+    "mtime": 1784222339.178756,
+    "ast_hash": "2414995f7ade19cf3fe25856649a40c9",
     "semantic_hash": ""
   },
   "utils/url.ts": {
@@ -2160,8 +2160,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1782895978.2839353,
-    "ast_hash": "8f0c7e8652ac390e2383119bfb7b0bf8",
+    "mtime": 1784216996.106809,
+    "ast_hash": "8ec79c030386a1581b2901415b0efe5e",
     "semantic_hash": ""
   },
   "docs/architecture/technical-design.md": {
@@ -2710,13 +2710,13 @@
     "semantic_hash": ""
   },
   "lib/test/vitest.setup.ts": {
-    "mtime": 1784061647.178172,
-    "ast_hash": "fa7ed740230dae45521112d746851b7a",
+    "mtime": 1784221732.703064,
+    "ast_hash": "69594453c0a3ee4cf26262ce1c96f2d5",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1784214512.8612318,
-    "ast_hash": "2391eb75d58d1f51dbd7cc1628c229ed",
+    "mtime": 1784223264.8101666,
+    "ast_hash": "a20e48cb29e46a2ed46280d7b86f0a43",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -3140,13 +3140,13 @@
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts": {
-    "mtime": 1784214482.1381826,
-    "ast_hash": "f83ad3eec330ae77936dce151e402c8e",
+    "mtime": 1784216487.4321811,
+    "ast_hash": "7703bf74d7f8bf9afb6b25566679a721",
     "semantic_hash": ""
   },
   "app/features/jobs/queries/public-job-queries.perf.test.ts": {
-    "mtime": 1784214851.866965,
-    "ast_hash": "0cf6f32a753528ede91fe9f2cd18c449",
+    "mtime": 1784215699.884074,
+    "ast_hash": "3f81942ff6228c9aec9fa9fca134fcf1",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/analytics-queries.perf.test.ts": {
@@ -3165,8 +3165,8 @@
     "semantic_hash": ""
   },
   "lib/test/factories/seed-factories.ts": {
-    "mtime": 1784214827.047466,
-    "ast_hash": "59b139619c7a2b8b08220e6c2a3af183",
+    "mtime": 1784215239.6450496,
+    "ast_hash": "37f731ef65aaf6dbf997b729d6c092e9",
     "semantic_hash": ""
   },
   "lib/test/perf.ts": {
@@ -3179,29 +3179,19 @@
     "ast_hash": "241417f138a8a3d86b77762c2a391fc2",
     "semantic_hash": ""
   },
-  ".kilo/plans/1784047875442-phase7-perf-stability-plan.md": {
-    "mtime": 1784212081.1187968,
-    "ast_hash": "7032b68ff3bad57a612ccdcc6809d40a",
-    "semantic_hash": ""
-  },
-  "plans/phase7-perf-stability-plan.md": {
-    "mtime": 1784211757.5189972,
-    "ast_hash": "64dbbf1d26fda21866ada911f4a526fc",
-    "semantic_hash": ""
-  },
   "prisma/migrations/20260716140000_phase7_quota/migration.sql": {
     "mtime": 1784213943.5600104,
     "ast_hash": "6592dfe844152f7d4b03c5a8a2f0c193",
     "semantic_hash": ""
   },
-  "tmp/check-db.js": {
-    "mtime": 1784214044.1330771,
-    "ast_hash": "ec89be094795db83c5b5f321f32e89ec",
+  ".github/workflows/test.yml": {
+    "mtime": 1784225172.5050309,
+    "ast_hash": "158deff049791660994aa672adf8329b",
     "semantic_hash": ""
   },
-  "tmp/check-plan.ts": {
-    "mtime": 1784214745.3094213,
-    "ast_hash": "8586ba57cde3b1659532639a4353decd",
+  ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md": {
+    "mtime": 1784219827.985066,
+    "ast_hash": "5c6b4d1ceb697fadaee567e644d82064",
     "semantic_hash": ""
   }
 }

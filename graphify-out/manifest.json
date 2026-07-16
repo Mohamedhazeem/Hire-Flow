@@ -1445,8 +1445,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/profile-form.tsx": {
-    "mtime": 1782748822.6041949,
-    "ast_hash": "fed45ad725b112fc28f2c3ca555bb2d7",
+    "mtime": 1784225744.8645835,
+    "ast_hash": "a2e9f341ef2cb4d39c8105d2d9df1bbb",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-builder-form.tsx": {
@@ -1945,8 +1945,8 @@
     "semantic_hash": ""
   },
   "utils/logger.ts": {
-    "mtime": 1781680434.088645,
-    "ast_hash": "292c8181978df6a601766542c456aa79",
+    "mtime": 1784222339.178756,
+    "ast_hash": "2414995f7ade19cf3fe25856649a40c9",
     "semantic_hash": ""
   },
   "utils/url.ts": {
@@ -2710,13 +2710,13 @@
     "semantic_hash": ""
   },
   "lib/test/vitest.setup.ts": {
-    "mtime": 1784061647.178172,
-    "ast_hash": "fa7ed740230dae45521112d746851b7a",
+    "mtime": 1784221732.703064,
+    "ast_hash": "69594453c0a3ee4cf26262ce1c96f2d5",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1784214512.8612318,
-    "ast_hash": "2391eb75d58d1f51dbd7cc1628c229ed",
+    "mtime": 1784223264.8101666,
+    "ast_hash": "a20e48cb29e46a2ed46280d7b86f0a43",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -2755,8 +2755,8 @@
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/job.schema.test.ts": {
-    "mtime": 1784040384.7862747,
-    "ast_hash": "0c685374993758abc820e60a5ed2917f",
+    "mtime": 1784226094.4868307,
+    "ast_hash": "05675ca87f37be6deb5f9bab9437f211",
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/team.schema.test.ts": {
@@ -2810,8 +2810,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/authError.test.ts": {
-    "mtime": 1784046158.7060235,
-    "ast_hash": "9c4c58558f5fb606f9c9f010c74e0fe5",
+    "mtime": 1784225839.751434,
+    "ast_hash": "82bda78e81fb00bdb54d1cec4f3496bd",
     "semantic_hash": ""
   },
   "lib/test/unit/batch-helpers.test.ts": {
@@ -2995,13 +2995,13 @@
     "semantic_hash": ""
   },
   "lib/test/components/message-bubble.dom.test.tsx": {
-    "mtime": 1784061407.0363069,
-    "ast_hash": "d2ea3e69e65ddaf69cb411c39aa9b865",
+    "mtime": 1784225437.8555558,
+    "ast_hash": "19a11980bb3c1874af55965ad511a9f8",
     "semantic_hash": ""
   },
   "lib/test/components/save-job-button.dom.test.tsx": {
-    "mtime": 1784061491.2546892,
-    "ast_hash": "ae5ebadb9cd57f7258fe6e0d625e10af",
+    "mtime": 1784225457.3095415,
+    "ast_hash": "c23fe1793b06d554a7ac4eb0ba61faaf",
     "semantic_hash": ""
   },
   "lib/test/components/status-timeline.dom.test.tsx": {
@@ -3030,8 +3030,8 @@
     "semantic_hash": ""
   },
   "e2e/pages/base-page.ts": {
-    "mtime": 1784200569.935175,
-    "ast_hash": "55ef3c0b459087f1491245e92ccdc708",
+    "mtime": 1784225692.2749484,
+    "ast_hash": "1ad56235fce528a39d00308584c9d251",
     "semantic_hash": ""
   },
   "e2e/pages/job-detail-page.ts": {
@@ -3179,19 +3179,19 @@
     "ast_hash": "241417f138a8a3d86b77762c2a391fc2",
     "semantic_hash": ""
   },
-  ".kilo/plans/1784047875442-phase7-perf-stability-plan.md": {
-    "mtime": 1784212081.1187968,
-    "ast_hash": "7032b68ff3bad57a612ccdcc6809d40a",
-    "semantic_hash": ""
-  },
-  "plans/phase7-perf-stability-plan.md": {
-    "mtime": 1784211757.5189972,
-    "ast_hash": "64dbbf1d26fda21866ada911f4a526fc",
-    "semantic_hash": ""
-  },
   "prisma/migrations/20260716140000_phase7_quota/migration.sql": {
     "mtime": 1784213943.5600104,
     "ast_hash": "6592dfe844152f7d4b03c5a8a2f0c193",
+    "semantic_hash": ""
+  },
+  ".github/workflows/test.yml": {
+    "mtime": 1784225172.5050309,
+    "ast_hash": "158deff049791660994aa672adf8329b",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md": {
+    "mtime": 1784219827.985066,
+    "ast_hash": "5c6b4d1ceb697fadaee567e644d82064",
     "semantic_hash": ""
   }
 }
