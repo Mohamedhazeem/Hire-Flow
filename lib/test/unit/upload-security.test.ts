@@ -41,12 +41,8 @@ describe("saveUpload security (U1/U2/U4)", () => {
     expect(result.size).toBe(5 * 1024 * 1024);
   });
 
-  it("U4: empty file (0 bytes) — KNOWN GAP: saveUpload does not reject empty files", async () => {
-    // Strategy U4 requires empty files to be rejected. saveUpload currently
-    // only enforces size limit + MIME allow-list, so a 0-byte PDF is stored.
-    // Documented as a known gap; route should add an empty-content guard.
+  it("U4: rejects an empty file (0 bytes) without storing it", async () => {
     const file = makeFile({ name: "empty.pdf", type: "application/pdf", size: 0 });
-    const result = await saveUpload(file);
-    expect(result.size).toBe(0);
+    await expect(saveUpload(file)).rejects.toThrow(/empty/i);
   });
 });

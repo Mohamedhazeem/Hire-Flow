@@ -22,6 +22,7 @@ export const auth = betterAuth({
         subject: "Reset your password",
         url,
         type: "reset",
+        userId: user.id,
       });
     },
     resetPasswordTokenExpiresIn: ms("5m") / 1000,
@@ -35,6 +36,7 @@ export const auth = betterAuth({
         subject: "Verify your email address",
         url,
         type: "verification",
+        userId: user.id,
       });
     },
   },

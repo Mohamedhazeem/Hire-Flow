@@ -26,6 +26,10 @@ export type UploadResult = {
  * Local-only — replace with S3/Blob in production.
  */
 export async function saveUpload(file: File): Promise<UploadResult> {
+  if (file.size === 0) {
+    throw new Error("File is empty.");
+  }
+
   if (file.size > MAX_FILE_SIZE_BYTES) {
     throw new Error(`File exceeds the 5 MB limit (received ${file.size} bytes).`);
   }

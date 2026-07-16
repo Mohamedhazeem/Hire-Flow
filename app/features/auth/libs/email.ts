@@ -1,5 +1,6 @@
 import { env } from "@/utils/env";
 import { Resend } from "resend";
+import { prisma } from "@/lib/prisma";
 import { VerificationEmail } from "../components/email/verfication-email";
 import { ResetPasswordEmail } from "../components/email/reset-password-email";
 import { AdminInviteEmail } from "@/app/features/admin/components/email/admin-invite-email";
@@ -22,9 +23,22 @@ interface SendEmailArgs {
     reason?: string | null;
     expiresInDays?: number | null;
   };
+  /** When set, the recipient user is checked for a ban before sending (M1). */
+  userId?: string;
 }
 
-export async function sendEmail({ to, subject, url, type, invitedByName, banDetails }: SendEmailArgs): Promise<void> {
+export async function sendEmail({ to, subject, url, type, invitedByName, banDetails, userId }: SendEmailArgs): Promise<void> {
+  if (userId) {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { banned: true },
+    });
+    if (user?.banned) {
+      logger.server.warn(`⚠️ [sendEmail] Skipping email to banned user <${to}> (userId: ${userId}).`);
+      return;
+    }
+  }
+
   if (!env.data?.RESEND_API_KEY) {
     logger.server.warn(
       `⚠️ [sendEmail] Missing RESEND_API_KEY. Email simulation to <${to}>:\nSubject: ${subject}\nBody: ${url}\n`,

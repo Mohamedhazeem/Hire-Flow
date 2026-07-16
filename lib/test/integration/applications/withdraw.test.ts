@@ -68,4 +68,25 @@ describe("Withdraw Application (Phase 4.13)", () => {
     const res = await DELETE(req, { params: Promise.resolve({ id: application.id }) });
     expect(res.status).toBe(404);
   });
+
+  it("A4: withdraw records an ApplicationStatusChange audit row (fromStatus -> withdrawn)", async () => {
+    const { user, application } = await seedUserWithApplication();
+    await prisma.application.update({ where: { id: application.id }, data: { status: "reviewing" } });
+    mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+
+    const { userService } = await import("@/lib/services/user-service");
+    await userService.withdrawApplication(application.id, user.id);
+
+    const deleted = await prisma.application.findUnique({ where: { id: application.id } });
+    expect(deleted).toBeNull();
+
+    // A4: the audit row persists after the (hard) delete. The applicationId
+    // FK is set null on delete (onDelete: SetNull), so we locate the withdraw
+    // audit by its actor + toStatus instead.
+    const withdrawChanges = await prisma.applicationStatusChange.findMany({
+      where: { changedById: user.id, toStatus: "withdrawn" },
+    });
+    expect(withdrawChanges).toHaveLength(1);
+    expect(withdrawChanges[0].fromStatus).toBe("reviewing");
+  });
 });

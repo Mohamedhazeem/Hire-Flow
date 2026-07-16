@@ -12,6 +12,16 @@ export async function createNotification(
   type: string,
   data: Record<string, unknown>,
 ) {
+  // N2: validate the recipient exists before creating a notification, so a
+  // bad userId fails fast with a clear error instead of an FK violation.
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { id: true },
+  });
+  if (!user) {
+    throw new Error(`Cannot create notification: user ${userId} does not exist.`);
+  }
+
   const notification = await prisma.notification.create({
     data: { userId, type, data } as never,
   });

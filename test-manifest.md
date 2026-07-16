@@ -125,17 +125,17 @@ _Files under `lib/test/integration/**`._
 - [x] U1 File type bypass (exe → pdf) — unit `upload-security.test.ts` (MIME allow-list)
 - [x] U2 File size >10MB → 413 — unit `upload-security.test.ts` (5 MB limit enforced in `saveUpload`)
 - [x] U3 Path traversal in download — `files/download.test.ts` (raw + encoded → 403)
-- [~] U4 Empty file upload — KNOWN GAP: `saveUpload` does not reject empty files; test documents current behavior
+- [x] U4 Empty file upload — `saveUpload` rejects 0-byte files (returns 422 via route)
 - [x] U5 Corrupted multipart → 400 — `upload.test.ts` (route catches `formData()` failure)
 - [x] U6 Concurrent multi-role downloads — `files/download.test.ts` (owner/recruiter/admin 200, stranger 403)
 
 ### Notification Permissions & Delivery
 - [x] N1 Cross-user notification isolation — `notifications.test.ts`
-- [ ] N2 Invalid userId in create
+- [x] N2 Invalid userId in create — `lib/notifications.ts` validates user exists
 - [x] N3 Mark-read ownership — `notifications.test.ts`
-- [ ] N4 triggerForCompany exclude self
-- [ ] N5 Empty company team
-- [ ] N6 Fire-and-forget
+- [x] N4 triggerForCompany excludes self — `lib/test/unit/notifications.test.ts`
+- [x] N5 Empty company team returns [] — `lib/test/unit/notifications.test.ts`
+- [x] N6 Fire-and-forget (Pusher failure non-blocking) — `lib/test/unit/notifications.test.ts`
 
 ### Search & Full-Text
 - [~] S1 Special chars in search — search-by-title covered; injection variants pending
@@ -157,7 +157,7 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 - [x] A1 Status change fromStatus match — `applications/status.test.ts`
 - [x] A2 Revert audit correctness — `applications/revert.test.ts`
 - [x] A3 Bulk status creates audit rows — `applications/bulk-status.test.ts`
-- [ ] A4 Withdraw creates audit
+- [x] A4 Withdraw creates audit — `applications/withdraw.test.ts` (schema `onDelete: SetNull` preserves row)
 - [x] A5 First status change (apply) — `jobs/apply.test.ts`
 
 ### Error Handling & Information Leakage
@@ -167,9 +167,9 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 - [x] E4 API wrapper consistency — `unit/api-wrapper.test.ts`
 
 ### Email & Notification Delivery
-- [ ] M1 Resend not called for banned
-- [ ] M2 Notification non-blocking
-- [ ] M3 Missing Pusher config
+- [x] M1 Resend not called for banned — `app/features/auth/libs/email.ts` (sendEmail skips banned userId)
+- [x] M2 Notification non-blocking — `lib/notifications.ts` (`void` trigger)
+- [x] M3 Missing Pusher config — `lib/pusher/pusher.ts` returns no-op Proxy
 
 ### Concurrent Operations & Race Conditions
 - [x] C1 Concurrent status transitions — `applications/race.test.ts` (loser → 409 ConflictError)

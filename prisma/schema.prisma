@@ -328,8 +328,8 @@ model Bookmark {
 // --------------- Application Status History ---------------
 model ApplicationStatusChange {
   id            String      @id @default(cuid())
-  applicationId String
-  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String?
+  application   Application? @relation(fields: [applicationId], references: [id], onDelete: SetNull)
   fromStatus    String
   toStatus      String
   changedById   String
