@@ -78,7 +78,7 @@ export async function callAI(
     headers[config.authHeader] = apiKey.startsWith("Bearer ") ? apiKey : `Bearer ${apiKey}`;
   }
 
-  let url = config.apiUrl;
+  let url = process.env[`${provider.toUpperCase()}_API_URL`] || config.apiUrl;
   if (provider === "google") {
     url += `?key=${apiKey}`;
   }
