@@ -3138,10 +3138,5 @@
     "mtime": 1784207494.8736982,
     "ast_hash": "f4fa6a5fa67596f4a88f24aa29f6e86b",
     "semantic_hash": ""
-  },
-  ".kilo/plans/1784047875442-phase6-e2e-playwright-plan.md": {
-    "mtime": 1784200350.8146996,
-    "ast_hash": "be8397ad87347e3ffc16e3355b3d7754",
-    "semantic_hash": ""
   }
 }

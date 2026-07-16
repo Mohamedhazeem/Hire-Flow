@@ -271,6 +271,8 @@ model Application {
 
   @@unique([jobId, userId])
   @@index([userId, status])
+  @@index([appliedAt])
+  @@index([jobId, appliedAt])
   @@map("application")
 }
 
@@ -349,6 +351,20 @@ model ResumeEnhancementLog {
 
   @@index([userId, createdAt])
   @@map("resume_enhancement_log")
+}
+
+// --------------- AI Resume Enhancement Daily Quota ---------------
+// Per-user, per-day counter used to enforce the 5/day AI-enhance limit.
+// The (userId, day) pair is unique so a SELECT … FOR UPDATE row lock can
+// serialize concurrent enhancement requests and prevent double-counting.
+model ResumeEnhancementQuota {
+  id       String @id @default(uuid())
+  userId   String
+  day      String
+  used     Int    @default(0)
+
+  @@unique([userId, day])
+  @@map("resume_enhancement_quota")
 }
 
 // --------------- Admin Invite ---------------
