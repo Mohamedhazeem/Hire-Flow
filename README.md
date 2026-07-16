@@ -279,12 +279,44 @@ Hire Flow Next uses a layered testing strategy matched to each layer of the stac
 | ----------- | ------------------------------- | ---------------------------------------------------------------------------------------------- |
 | Unit        | Vitest                          | Pure logic: rate limiter, CSV builder, pagination, Zod schemas, AI client fallback             |
 | Integration | Vitest + local Postgres test DB | API route handlers called directly, tenant isolation, transactions, audit trails               |
+| Performance | Vitest (`perf` project) + local Postgres | Scale budgets: analytics (PF1), applicant listing (PF2), CSV export (PF3), public job FTS search (PF4), resume AI-enhance quota race (PF5) |
 | Component   | React Testing Library           | Data table selection, bulk action logic, forms, AI suggestions panel                           |
 | End-to-End  | Playwright                      | Full role-based journeys (anonymous → user → recruiter → admin) with real Better Auth sessions |
 
 External services (Pusher, AI providers, Resend) are mocked at the module level — tests never make real network calls or incur API costs.
 
+### Test infrastructure (Phases 0–6)
+
+Tests are built incrementally per the [testing strategy](docs/testing/testing-strategy.md). Suites are colocated next to source as `*.test.ts` (unit), `*.test.ts` (integration, real Postgres), `*.perf.test.ts` (perf project), and `*.dom.test.tsx` (component).
+
+| Phase | Focus | Covers |
+| ----- | ----- | ------ |
+| 0 | Test infrastructure | `vitest.config.ts` (react + tsconfig-paths plugins), `lib/test/test-db.ts` (isolated Prisma client), `lib/test/reset-db.ts` (`RESTART IDENTITY CASCADE` truncation in dependency order), `lib/test/factories.ts` (`createTestUser`/`Company`/`Job`/`Application`/`Resume`/`Thread`), `lib/test/auth-fixtures.ts` (`mockSession`), `lib/test/mocks.ts` (`mockPusherTrigger`/`mockAiClient`/`mockResend`), `global-setup.ts` runs `prisma migrate deploy` |
+| 1 | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes |
+| 2 | Unit tests: pure logic | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts` |
+| 3 | Auth & authorization | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix |
+| 4 | Integration: API routes + real DB | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload); file upload/download edges, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions |
+| 5 | Component tests (RTL) | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt` |
+| 6 | End-to-end (Playwright) | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states |
+
+### Performance & stability tests (Phase 7)
+
+The `perf` Vitest project runs tests matching `*.perf.test.ts` against a **real** Postgres `hireflow_test` database (no data-layer mocks) with a 300s timeout. Helpers live in `lib/test/perf.ts` (`measure`, `assertWithin`, `assertMemoryWithin`) and seed factories in `lib/test/factories/seed-factories.ts`.
+
+| Test | File | What it asserts |
+| ---- | ---- | --------------- |
+| PF1 | `app/features/recruiter/queries/analytics-queries.perf.test.ts` | Analytics aggregation over a large dataset within budget |
+| PF2 | `app/features/recruiter/queries/application-queries.perf.test.ts` | Applicant listing/pagination at scale |
+| PF3 | `app/features/recruiter/queries/export-queries.perf.test.ts` | CSV export throughput |
+| PF4 | `app/features/jobs/queries/public-job-queries.perf.test.ts` | Public job FTS search (`search:"engineer"`) ≤ 1000ms using GIN indexes |
+| PF5 | `app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts` | Atomic daily quota (limit 5) survives concurrent requests — exactly 5 succeed |
+| RL1–RL5 | `lib/test/unit/rate-limit.test.ts` | Rate limiter: restart persistence, concurrent windows, `max:0` guard, etc. |
+
+Supporting infra: `Application` indexes (`@@index([appliedAt])`, `@@index([jobId, appliedAt])`) and GIN FTS indexes on `Job.title`/`Job.description`; a `ResumeEnhancementQuota` table backing PF5's atomic `UPDATE … WHERE used < $3 RETURNING`.
+
 ### Running tests
+
+`vitest.config.ts` defines two projects: `default` (5s timeout — unit, integration, component) and `perf` (300s timeout — `*.perf.test.ts` against a real Postgres test DB). By default `npm run test` runs the `default` project only; use `--project` to target one or both.
 
 ```bash
 # One-time: create local test database
@@ -293,17 +325,26 @@ createdb hireflow_test
 # Add to .env.test
 DATABASE_URL_TEST="postgresql://<user>:<password>@localhost:5432/hireflow_test"
 
-# Unit + integration + component tests
+# Default project: unit + integration + component
 npm run test
 npm run test:watch
 npm run test:coverage
+
+# Performance/safety project only (real Postgres, long timeout)
+npx vitest run --project perf
+
+# Both projects
+npx vitest run --project default --project perf
+
+# Apply migrations to the test database before the first run (global-setup also does this)
+npx prisma migrate deploy --schema prisma/schema.prisma
 
 # End-to-end (spins up a production build automatically)
 npm run test:e2e
 npm run test:e2e:ui   # interactive mode
 ```
 
-Coverage thresholds are enforced via `vitest.config.ts` and ratchet upward as suites mature. CI runs the full unit/integration suite against a Postgres service container on every pull request, with Playwright E2E running as a separate job.
+Coverage thresholds are enforced via `vitest.config.ts` and ratchet upward as suites mature (35% → 45% → 60% → 70% across phases). CI (`.github/workflows/test.yml`) runs the unit/integration suite against a Postgres 16 service container and Playwright E2E against the seeded test database on every pull request.
 
 ---
 
