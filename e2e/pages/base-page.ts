@@ -19,7 +19,7 @@ export abstract class BasePage {
   }
 
   protected getByRole(role: string, options?: { name?: string | RegExp }): Locator {
-    return this.page.getByRole(role as any, options);
+    return this.page.getByRole(role as unknown as Parameters<Page["getByRole"]>[0], options);
   }
 
   protected getByText(text: string | RegExp): Locator {

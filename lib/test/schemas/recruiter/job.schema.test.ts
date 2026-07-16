@@ -84,8 +84,10 @@ describe("JobCreateSchema", () => {
   });
 
   it("accepts salaryMin undefined with salaryMax set", () => {
-    const { salaryMin, ...rest } = validCreate;
-    const result = JobCreateSchema.safeParse(rest);
+    const result = JobCreateSchema.safeParse({
+      ...validCreate,
+      salaryMin: undefined,
+    });
     expect(result.success).toBe(true);
   });
 

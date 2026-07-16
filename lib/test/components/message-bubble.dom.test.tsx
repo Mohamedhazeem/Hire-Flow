@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import type { ReactElement } from "react";
 import {
   formatFileSize,
   fileIcon,
@@ -25,14 +26,14 @@ describe("formatFileSize", () => {
 
 describe("fileIcon", () => {
   it("returns ImageIcon for image mime types", () => {
-    const icon = fileIcon("image/png");
-    const html = render(icon as any).container.innerHTML;
+    const icon = fileIcon("image/png") as ReactElement;
+    const html = render(icon).container.innerHTML;
     expect(html).toContain("image");
   });
 
   it("returns FileTextIcon for PDF", () => {
-    const icon = fileIcon("application/pdf");
-    const html = render(icon as any).container.innerHTML;
+    const icon = fileIcon("application/pdf") as ReactElement;
+    const html = render(icon).container.innerHTML;
     expect(html).toContain("file-text");
   });
 

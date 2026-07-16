@@ -1,5 +1,5 @@
 import { afterEach, describe, it, expect, vi } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 const mockPush = vi.fn();
@@ -29,6 +29,15 @@ vi.mock("@/app/features/user/hooks/use-saved-jobs", () => ({
 
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
 
+type SessionResult = ReturnType<typeof useSession>;
+
+function mockSession(authenticated: boolean): SessionResult {
+  return {
+    data: authenticated ? { user: { id: "u1" } } : null,
+    isPending: false,
+  } as unknown as SessionResult;
+}
+
 describe("SaveJobButton", () => {
   afterEach(() => {
     vi.clearAllMocks();
@@ -36,7 +45,7 @@ describe("SaveJobButton", () => {
   });
 
   it("redirects to login when no session on click", async () => {
-    vi.mocked(useSession).mockReturnValue({ data: null, isPending: false } as any);
+    vi.mocked(useSession).mockReturnValue(mockSession(false));
     const user = userEvent.setup();
 
     render(<SaveJobButton jobId="job-1" />);
@@ -46,7 +55,7 @@ describe("SaveJobButton", () => {
   });
 
   it("shows not-bookmarked state when not in bookmarkedIds", () => {
-    vi.mocked(useSession).mockReturnValue({ data: { user: { id: "u1" } }, isPending: false } as any);
+    vi.mocked(useSession).mockReturnValue(mockSession(true));
     mockState.bookmarkedIds = [];
 
     const { container } = render(<SaveJobButton jobId="job-1" />);
@@ -55,7 +64,7 @@ describe("SaveJobButton", () => {
   });
 
   it("shows bookmarked state when in bookmarkedIds", () => {
-    vi.mocked(useSession).mockReturnValue({ data: { user: { id: "u1" } }, isPending: false } as any);
+    vi.mocked(useSession).mockReturnValue(mockSession(true));
     mockState.bookmarkedIds = ["job-1"];
 
     const { container } = render(<SaveJobButton jobId="job-1" />);
@@ -64,7 +73,7 @@ describe("SaveJobButton", () => {
   });
 
   it("calls toggle mutation on click when authenticated", async () => {
-    vi.mocked(useSession).mockReturnValue({ data: { user: { id: "u1" } }, isPending: false } as any);
+    vi.mocked(useSession).mockReturnValue(mockSession(true));
     mockState.bookmarkedIds = ["job-1"];
     const user = userEvent.setup();
 

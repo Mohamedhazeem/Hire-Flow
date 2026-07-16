@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProfileSchema, type ProfileInput } from "@/app/features/user/schema/profile.schema";
 import { upsertProfile } from "@/app/features/user/actions/upsert-profile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select } from "@/components/ui/select";
 import { ExperienceListEditor } from "./experience-list-editor";
 import { SocialLinksEditor } from "./social-links-editor";
 import {
@@ -53,7 +52,7 @@ export function ProfileForm({ defaultValues }: Props) {
     },
   });
 
-  const skills = form.watch("skills") ?? [];
+  const skills = useWatch({ control: form.control, name: "skills" });
 
   const addSkill = useCallback(() => {
     const trimmed = skillInput.trim();
@@ -68,10 +67,10 @@ export function ProfileForm({ defaultValues }: Props) {
       form.setValue(
         "skills",
         skills.filter((s) => s !== skill),
-        { shouldValidate: true }
+        { shouldValidate: true },
       );
     },
-    [skills, form]
+    [skills, form],
   );
 
   const onSubmit = async (data: ProfileInput) => {
