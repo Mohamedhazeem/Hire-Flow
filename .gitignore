@@ -49,3 +49,6 @@ next-env.d.ts
 /playwright-report
 /test-results
 /last-run.log
+
+# local test upload artifacts
+/public/uploads
