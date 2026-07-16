@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
+import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
 import {
   RecruiterListJobsParamsSchema,
   JobCreateSchema,
@@ -47,7 +48,13 @@ async function handlePOST(request: NextRequest) {
     throw new ValidationError("Invalid job data");
   }
 
-  const result = await jobService.recruiterCreateJob(companyId, session.id, parsed.data);
+  const serviceInput = {
+    ...parsed.data,
+    workMode: parsed.data.workMode ?? WorkMode.remote,
+    employmentType: parsed.data.employmentType ?? EmploymentType.full_time,
+  };
+
+  const result = await jobService.recruiterCreateJob(companyId, session.id, serviceInput);
   return ok(result, 201);
 }
 
