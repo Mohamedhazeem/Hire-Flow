@@ -3,7 +3,7 @@ name: Test
 on:
   pull_request:
   push:
-    branches: [master, testing]
+    branches: [master]
   workflow_dispatch:
 
 concurrency:
@@ -31,7 +31,7 @@ jobs:
   unit-integration:
     name: Lint + Unit/Integration Coverage
     runs-on: ubuntu-latest
-    # Runs on every PR and push (including pushes to master/testing).
+    # Runs on every PR and on pushes to master.
     # The `performance` job handles the master-push case separately.
     if: github.event_name == 'pull_request' || github.event_name == 'push'
     services:
