@@ -1,0 +1,163 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches: [master, testing]
+  schedule:
+    # Nightly performance suite (PF1-PF5) at 03:00 UTC
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DATABASE_URL_TEST: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
+  DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
+
+jobs:
+  # ── PR gate 1: lint + coverage (fast, fails first) ───────────────────────────
+  unit-integration:
+    name: Lint + Unit/Integration Coverage
+    runs-on: ubuntu-latest
+    # The nightly `performance` job runs from the same workflow but only on
+    # schedule/dispatch; this job runs on every PR and push.
+    if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: hireflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      E2E_BASE_URL: "http://localhost:3000"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint (source only)
+        # Tests are validated by the test runner; exclude lib/test from lint
+        # (it intentionally uses `any` for mocks and would otherwise fail
+        # the no-explicit-any rule).
+        run: npx eslint app lib components features --ignore-pattern "lib/test" --quiet
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+
+      - name: Run unit + integration tests with coverage
+        run: npx vitest run --project default --project dom --coverage
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
+          retention-days: 7
+
+  # ── PR gate 2: Playwright E2E (separate job, only after gate 1) ─────────────
+  e2e:
+    name: E2E (Playwright)
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+    needs: unit-integration
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: hireflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      E2E_BASE_URL: "http://localhost:3000"
+      E2E_AI_MOCK_PORT: "8787"
+      AI_PROVIDER: "anthropic"
+      ANTHROPIC_API_KEY: "e2e-stub"
+      ANTHROPIC_API_URL: "http://localhost:8787"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E
+        run: npm run test:e2e
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  # ── Nightly / manual: performance suite (PF1-PF5, RL1-RL5) ──────────────────
+  performance:
+    name: Performance (PF1-PF5)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: hireflow_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply migrations
+        run: npx prisma migrate deploy
+
+      - name: Run performance tests
+        run: npx vitest run --project perf
