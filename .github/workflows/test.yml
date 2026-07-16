@@ -13,6 +13,18 @@ concurrency:
 env:
   DATABASE_URL_TEST: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
   DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
+  # utils/env.ts validates the full env with zod (safeParse). If any required
+  # var is missing, env.data is undefined and the Prisma pg pool receives an
+  # undefined connection string, causing SASL "client password must be a
+  # string" errors. Provide safe CI stubs for all required (non-DB) vars.
+  BETTER_AUTH_SECRET: "ci-test-secret-not-used-for-real-auth"
+  BETTER_AUTH_URL: "http://localhost:3000"
+  NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+  NODE_ENV: "test"
+  GOOGLE_CLIENT_ID: "ci-google-client-id"
+  GOOGLE_CLIENT_SECRET: "ci-google-client-secret"
+  RESEND_API_KEY: "ci-resend-key"
+  EMAIL_FROM: "ci@example.com"
 
 jobs:
   # ── PR gate 1: lint + coverage (fast, fails first) ───────────────────────────

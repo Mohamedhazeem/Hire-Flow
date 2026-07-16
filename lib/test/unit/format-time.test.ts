@@ -31,6 +31,9 @@ describe("formatTime", () => {
   it("returns short date for older dates", () => {
     const oldDate = new Date("2025-12-25T10:00:00Z").toISOString();
     const result = formatTime(oldDate);
-    expect(result).toMatch(/\d{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/);
+    // Locale-agnostic: month + day in either order (e.g. "Dec 25" or "25 Dec")
+    expect(result).toMatch(
+      /(\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)|(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2})/,
+    );
   });
 });
