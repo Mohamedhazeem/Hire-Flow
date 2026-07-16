@@ -18,7 +18,7 @@ export function createLogger(scope: string): LogMethods {
   };
 
   // Browser log initialization guard
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && typeof localStorage !== "undefined") {
     const activeDebugs = localStorage.getItem("debug");
     if (activeDebugs) {
       debug.enable(activeDebugs);
