@@ -90,4 +90,30 @@ describe("User Resumes CRUD (Phase 4.7)", () => {
     expect(body.data).toHaveLength(1);
     expect(body.data[0].label).toBe("Active");
   });
+
+  it("C2: concurrent set-primary across two resumes leaves exactly one primary", async () => {
+    const user = await createTestUser({ role: Role.user });
+    const r1 = await createTestResume(user.id, { isPrimary: true });
+    const r2 = await createTestResume(user.id, { isPrimary: false });
+    mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+
+    const patchPrimary = async (id: string) => {
+      mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+      const { PATCH } = await import("@/app/api/user/resumes/[id]/route");
+      const req = new NextRequest(`http://localhost/api/user/resumes/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ action: "set-primary" }),
+      });
+      return PATCH(req, { params: Promise.resolve({ id }) });
+    };
+
+    const [res1, res2] = await Promise.all([patchPrimary(r2.id), patchPrimary(r1.id)]);
+    expect(res1.status).toBe(200);
+    expect(res2.status).toBe(200);
+
+    const primaries = await prisma.resume.count({
+      where: { userId: user.id, isPrimary: true, deletedAt: null },
+    });
+    expect(primaries).toBe(1);
+  });
 });

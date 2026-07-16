@@ -110,4 +110,66 @@ describe("File Download (Phase 4.14)", () => {
     const res = await GET(req);
     expect(res.status).toBe(404);
   });
+
+  it("U3: path traversal in filename is rejected (403)", async () => {
+    const user = await createTestUser({ role: Role.user });
+    mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+
+    const { GET } = await import("@/app/api/files/download/route");
+    const req = new NextRequest("http://localhost/api/files/download?path=/uploads/../../../../etc/passwd");
+    const res = await GET(req);
+    expect(res.status).toBe(403);
+  });
+
+  it("U3: encoded path traversal is rejected (403)", async () => {
+    const user = await createTestUser({ role: Role.user });
+    mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+
+    const { GET } = await import("@/app/api/files/download/route");
+    const req = new NextRequest(
+      `http://localhost/api/files/download?path=${encodeURIComponent("/uploads/..%2f..%2f..%2fetc%2fpasswd")}`,
+    );
+    const res = await GET(req);
+    expect(res.status).toBe(403);
+  });
+
+  it("U6: concurrent multi-role downloads respect the auth matrix", async () => {
+    const owner = await createTestUser({ role: Role.user });
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const admin = await createTestUser({ role: Role.admin });
+    const stranger = await createTestUser({ role: Role.user });
+
+    const filename = await createTestFileOnDisk();
+    cleanupFiles.push(filename);
+    await createTestResume(owner.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+
+    const { GET } = await import("@/app/api/files/download/route");
+    const url = `http://localhost/api/files/download?path=/uploads/${filename}`;
+
+    const [ownerRes, recruiterRes, adminRes, strangerRes] = await Promise.all([
+      (async () => {
+        mockGetSession.mockResolvedValue(mockSession("user", { id: owner.id }));
+        return GET(new NextRequest(url));
+      })(),
+      (async () => {
+        mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+        return GET(new NextRequest(url));
+      })(),
+      (async () => {
+        mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
+        return GET(new NextRequest(url));
+      })(),
+      (async () => {
+        mockGetSession.mockResolvedValue(mockSession("user", { id: stranger.id }));
+        return GET(new NextRequest(url));
+      })(),
+    ]);
+
+    // Owner, recruiter and admin may access the resume.
+    expect(ownerRes.status).toBe(200);
+    expect(recruiterRes.status).toBe(200);
+    expect(adminRes.status).toBe(200);
+    // Unrelated user (not the resume owner) is denied.
+    expect(strangerRes.status).toBe(403);
+  });
 });
