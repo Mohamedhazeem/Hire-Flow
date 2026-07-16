@@ -111,6 +111,74 @@ describe("Public Job Queries (Phase 4.2)", () => {
     expect(body.data.jobs[0].title).toContain("Frontend");
   });
 
+  it("S2: empty search returns all results (not none)", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, { title: "Alpha Engineer" });
+    await createTestJob(recruiter.id, company.id, { title: "Beta Engineer" });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?search=");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(2);
+    expect(body.data.total).toBe(2);
+  });
+
+  it("S2: all-punctuation search returns all results (query sanitizes to empty)", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, { title: "Alpha Engineer" });
+    await createTestJob(recruiter.id, company.id, { title: "Beta Engineer" });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest(
+      `http://localhost/api/jobs?search=${encodeURIComponent("&|!*()")}`,
+    );
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(2);
+  });
+
+  it("S3: very long search string does not crash and returns matches", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "Distinctive Frontend Engineer",
+    });
+
+    // Real term followed by thousands of characters — must be bounded, not error.
+    const longSearch = `Distinctive ${"x".repeat(5000)}`;
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest(
+      `http://localhost/api/jobs?search=${encodeURIComponent(longSearch)}`,
+    );
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(1);
+    expect(body.data.jobs[0].title).toContain("Distinctive");
+  });
+
+  it("S4: unicode search terms match unicode job titles", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, { title: "Ingeniería de Software" });
+    await createTestJob(recruiter.id, company.id, { title: "Plain English Job" });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest(
+      `http://localhost/api/jobs?search=${encodeURIComponent("Ingeniería")}`,
+    );
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(1);
+    expect(body.data.jobs[0].title).toContain("Ingeniería");
+  });
+
   it("single job detail returns job", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);

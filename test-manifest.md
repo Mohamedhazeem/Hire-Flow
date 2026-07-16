@@ -10,8 +10,8 @@
 >
 > **Legend:** `[x]` implemented · `[~]` partially covered / follow-up needed · `[ ]` not yet implemented.
 >
-> **Status summary:** Phases 0–3 complete. Phase 4 core routes complete; some
-> granular edge-case blocks (U*, N2/N4–N6, S2–S4, A4, M*, C1/C2/C4) pending.
+> **Status summary:** Phases 0–3 complete. Phase 4 complete, including the
+> granular edge-case blocks (U*, N2/N4–N6, S1–S5, A4, M*, C1/C2/C4).
 > Phase 5 has 5/16 component tests. Phases 6–7 complete. Phase 8 CI complete;
 > coverage-threshold ratchet (8.2/8.3) pending.
  
@@ -138,11 +138,11 @@ _Files under `lib/test/integration/**`._
 - [x] N6 Fire-and-forget (Pusher failure non-blocking) — `lib/test/unit/notifications.test.ts`
 
 ### Search & Full-Text
-- [~] S1 Special chars in search — search-by-title covered; injection variants pending
-- [ ] S2 Empty search → all results
-- [ ] S3 Very long search string
-- [ ] S4 Unicode search terms
-- [x] S5 SQL payloads in search — `security/analytics-queries.security.test.ts`
+- [x] S1 Special chars in search — `unit/search-query.test.ts` (splits on metachars, no token merge)
+- [x] S2 Empty search → all results — `unit/search-query.test.ts` + `jobs/public-job-queries.test.ts`
+- [x] S3 Very long search string — `unit/search-query.test.ts` (200 char / 20 token cap) + integration
+- [x] S4 Unicode search terms — `unit/search-query.test.ts` + `jobs/public-job-queries.test.ts`
+- [x] S5 SQL payloads in search — `security/analytics-queries.security.test.ts` + `unit/search-query.test.ts`
 
 ### Pagination Boundaries
 _All covered by unit `unit/pagination.test.ts` (2.3)._

@@ -70,6 +70,24 @@ export type PublicJobListParams = {
   sortOrder?: string;
 };
 
+const MAX_SEARCH_TOKENS = 20;
+const MAX_SEARCH_LENGTH = 200;
+
+export function formatSearchQuery(raw: string): string {
+  const trimmed = raw.trim();
+  if (!trimmed) return "";
+  const truncated = trimmed.slice(0, MAX_SEARCH_LENGTH);
+  // Split on any run of non-word characters (unicode-aware) so that
+  // punctuation-joined terms like "C++/Java" become separate tokens rather
+  // than being silently concatenated ("CJava"). This also strips every
+  // tsquery/SQL metacharacter as a side effect.
+  const tokens = truncated
+    .split(/[^\p{L}\p{N}_]+/u)
+    .filter(Boolean)
+    .slice(0, MAX_SEARCH_TOKENS);
+  return tokens.join(" | ");
+}
+
 const ALLOWED_SORT_FIELDS = new Set([
   "createdAt",
   "salaryMin",
@@ -91,11 +109,7 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   };
 
   if (params.search) {
-    const formattedQuery = params.search
-      .replace(/[^\w\s]/g, "")
-      .split(/\s+/)
-      .filter(Boolean)
-      .join(" | ");
+    const formattedQuery = formatSearchQuery(params.search);
     if (formattedQuery) {
       where.OR = [
         { title: { search: formattedQuery } },
