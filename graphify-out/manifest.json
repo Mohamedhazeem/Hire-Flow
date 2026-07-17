@@ -1830,8 +1830,8 @@
     "semantic_hash": ""
   },
   "lib/notifications.ts": {
-    "mtime": 1784229925.0986392,
-    "ast_hash": "d4630b792d6d9eba6123e5d6ca3df514",
+    "mtime": 1784249245.2083163,
+    "ast_hash": "8bb0f91d4f3fe4ce91d805bf44222f0a",
     "semantic_hash": ""
   },
   "lib/pagination.ts": {
@@ -2205,8 +2205,8 @@
     "semantic_hash": ""
   },
   "test-manifest.md": {
-    "mtime": 1784233483.2411525,
-    "ast_hash": "decf29ed521c993fa0df999a9dea1dad",
+    "mtime": 1784250481.2204604,
+    "ast_hash": "67d4c11d0c7a64ccf125bd843b4f6869",
     "semantic_hash": ""
   },
   "public/file.svg": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1783572106.1529193,
-    "ast_hash": "2909e471d4e7d60573ffda9989f3b29c",
+    "mtime": 1784249368.948458,
+    "ast_hash": "8edfb881c886dfc6eb3e5dce7b833e00",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
@@ -2420,8 +2420,8 @@
     "semantic_hash": ""
   },
   "lib/services/application-service.ts": {
-    "mtime": 1783572106.1489246,
-    "ast_hash": "4961ab1d2f497e68bc09ed3af0a56152",
+    "mtime": 1784249482.5203152,
+    "ast_hash": "3ec558c043364a70f51c766be8fb3323",
     "semantic_hash": ""
   },
   "lib/services/invite-service.ts": {
@@ -2440,8 +2440,8 @@
     "semantic_hash": ""
   },
   "lib/services/user-service.ts": {
-    "mtime": 1784229775.3124425,
-    "ast_hash": "5ca60d59ea84a4d9ec91c90325fc9dca",
+    "mtime": 1784249312.249807,
+    "ast_hash": "ccfa18d90914c44b15a67efbbd8cf4ac",
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table-columns.tsx": {
@@ -2715,8 +2715,8 @@
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1784223264.8101666,
-    "ast_hash": "a20e48cb29e46a2ed46280d7b86f0a43",
+    "mtime": 1784247879.0475397,
+    "ast_hash": "5ea8eea65bf11fb5bad410dbf416b9fe",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -3272,11 +3272,6 @@
   "lib/test/components/thread-list-item.dom.test.tsx": {
     "mtime": 1784232962.4659417,
     "ast_hash": "fa71e280fa301fa8e86a24e4c6f67bdd",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/phase-5-component-tests.md": {
-    "mtime": 1784232584.2597427,
-    "ast_hash": "07f01f3a23f1878ae6a48fbb1f27b487",
     "semantic_hash": ""
   }
 }
