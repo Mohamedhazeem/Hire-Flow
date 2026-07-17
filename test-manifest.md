@@ -13,7 +13,8 @@
 > **Status summary:** Phases 0–3 complete. Phase 4 complete, including the
 > granular edge-case blocks (U*, N2/N4–N6, S1–S5, A4, M*, C1/C2/C4).
 > Phase 5 component tests complete (16/16). Phases 6–7 complete. Phase 8 CI complete;
-> coverage-threshold ratchet (8.2/8.3) pending.
+> coverage thresholds ratcheted to the measured floor (8.1); raising to 60/70 (8.2/8.3)
+> deferred until more tests land.
  
 ## Phase 0 — Infrastructure
  
@@ -233,10 +234,14 @@ _All covered by `lib/test/unit/rate-limit.test.ts`._
 
 ## Phase 8 — CI & Coverage
 
-- [x] 8.1 Coverage thresholds set to measured floor (lines/statements 15, functions/branches 60)
-- [~] 8.2 Raise thresholds to 60% — pending (ratchet up in follow-up PRs)
-- [~] 8.3 Raise thresholds to 70% — pending
+- [x] 8.1 Coverage thresholds set to measured floor — lines/statements 22, functions 54, branches 67 (just below the measured ~24.5 / 57 / 70 for the CI command `--project default --project dom --coverage`, so coverage cannot regress)
+- [~] 8.2 Raise thresholds to 60% — deferred: requires substantial new tests (line coverage is ~24.5%); ratchet up in follow-up PRs as coverage grows
+- [~] 8.3 Raise thresholds to 70% — deferred: same rationale, after 8.2
 - [x] 8.4 `.github/workflows/test.yml` (unit-integration + e2e on master push & PRs; perf on master push / dispatch)
+
+_Note: fire-and-forget notification writes (`fireNotification`) now swallow+log
+their own rejections, so the coverage job no longer flakes on a background
+`Notification` FK error racing with `resetDb()`._
 
 ---
 

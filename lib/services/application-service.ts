@@ -4,6 +4,7 @@ import {
   createNotification,
   createNotificationsBulk,
   triggerForCompany,
+  fireNotification,
 } from "@/lib/notifications";
 import { getApplicationById } from "@/app/features/recruiter/queries/application-queries";
 import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application.schema";
@@ -79,13 +80,15 @@ export const applicationService = {
         null,
     });
 
-    void createNotification(application.userId, "application_status", {
-      applicationId: application.id,
-      jobId: application.jobId,
-      previousStatus: application.status,
-      newStatus: parsedStatus,
-      updatedBy: sessionId,
-    });
+    fireNotification(
+      createNotification(application.userId, "application_status", {
+        applicationId: application.id,
+        jobId: application.jobId,
+        previousStatus: application.status,
+        newStatus: parsedStatus,
+        updatedBy: sessionId,
+      }),
+    );
 
     return { success: true, status: parsedStatus };
   },
@@ -152,19 +155,21 @@ export const applicationService = {
         })),
       });
 
-      void createNotificationsBulk(
-        applications.map((a) => ({
-          userId: a.userId,
-          type: "application_status",
-          data: {
-            applicationId: a.id,
-            jobId: a.jobId,
-            previousStatus: a.status,
-            newStatus: status,
-            updatedBy: sessionId,
-            pendingEmail: email,
-          },
-        })),
+      fireNotification(
+        createNotificationsBulk(
+          applications.map((a) => ({
+            userId: a.userId,
+            type: "application_status",
+            data: {
+              applicationId: a.id,
+              jobId: a.jobId,
+              previousStatus: a.status,
+              newStatus: status,
+              updatedBy: sessionId,
+              pendingEmail: email,
+            },
+          })),
+        ),
       );
 
       return { count: applications.length, status };
@@ -216,14 +221,16 @@ export const applicationService = {
         },
       });
 
-      void createNotification(application.userId, "application_status", {
-        applicationId,
-        jobId: application.jobId,
-        previousStatus: application.status,
-        newStatus: revertToStatus,
-        updatedBy: sessionId,
-        note: "Reverted",
-      });
+      fireNotification(
+        createNotification(application.userId, "application_status", {
+          applicationId,
+          jobId: application.jobId,
+          previousStatus: application.status,
+          newStatus: revertToStatus,
+          updatedBy: sessionId,
+          note: "Reverted",
+        }),
+      );
 
       return revertToStatus;
     });

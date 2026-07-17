@@ -2,7 +2,7 @@ import { z } from "zod";
 import { pusher } from "@/lib/pusher/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
-import { createNotification } from "@/lib/notifications";
+import { createNotification, fireNotification } from "@/lib/notifications";
 import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
 import { countRecentMessages } from "@/lib/repositories/rate-limit-repository";
 import { messageRepository } from "@/lib/repositories/message-repository";
@@ -124,14 +124,16 @@ export const messageService = {
       senderId,
     });
 
-    void createNotification(otherUserId, "new_message", {
-      threadId,
-      senderId,
-      senderName,
-      preview: parsed.data.content.slice(0, 100),
-      fileUrl: parsed.data.fileUrl ?? null,
-      fileType: parsed.data.fileType ?? null,
-    });
+    fireNotification(
+      createNotification(otherUserId, "new_message", {
+        threadId,
+        senderId,
+        senderName,
+        preview: parsed.data.content.slice(0, 100),
+        fileUrl: parsed.data.fileUrl ?? null,
+        fileType: parsed.data.fileType ?? null,
+      }),
+    );
 
     return message;
   },

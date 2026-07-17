@@ -73,3 +73,19 @@ export async function triggerForCompany(
 
   return createNotificationsBulk(members.map((m) => ({ userId: m.userId, type, data })));
 }
+
+/**
+ * Fire-and-forget wrapper for notification side effects (M2: non-blocking).
+ *
+ * Notifications must never block or crash the request that triggers them, so
+ * callers intentionally do not await these. This helper guarantees the promise
+ * rejection is always handled: a failed background notification (e.g. the
+ * recipient was deleted between the request and the async write) is logged and
+ * swallowed instead of surfacing as an unhandled promise rejection.
+ */
+export function fireNotification(promise: Promise<unknown>): void {
+  void promise.catch((error) => {
+    console.error("[notifications] background notification failed:", error);
+  });
+}
+

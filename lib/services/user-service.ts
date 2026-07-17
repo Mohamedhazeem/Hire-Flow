@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NotFoundError, ValidationError } from "@/lib/api/api-error";
-import { createNotification } from "@/lib/notifications";
+import { createNotification, fireNotification } from "@/lib/notifications";
 import { applicationRepository } from "@/lib/repositories/application-repository";
 
 export const userService = {
@@ -39,12 +39,14 @@ export const userService = {
     ]);
 
     if (job) {
-      void createNotification(job.recruiterId, "application_status", {
-        applicationId,
-        jobId,
-        jobTitle: job.title,
-        status: "withdrawn",
-      });
+      fireNotification(
+        createNotification(job.recruiterId, "application_status", {
+          applicationId,
+          jobId,
+          jobTitle: job.title,
+          status: "withdrawn",
+        }),
+      );
     }
   },
 
