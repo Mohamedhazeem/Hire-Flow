@@ -496,6 +496,11 @@
     border-color: var(--color-border);
     @apply border-border outline-ring/50;
   }
+
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
   html {
     @apply font-sans bg-background;
     background-color: var(--color-bg-page);
