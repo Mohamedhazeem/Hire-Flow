@@ -6,7 +6,7 @@ import { AvatarFallback } from "@/components/shared/avatar-fallback";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
-import { LayoutDashboardIcon, LogOutIcon, UserIcon } from "lucide-react";
+import { LayoutDashboardIcon, LogOutIcon } from "lucide-react";
 
 export function AccountPopover() {
   const { data: session } = useSession();
@@ -35,46 +35,47 @@ export function AccountPopover() {
       <PopoverTrigger className="flex items-center gap-2 rounded-full outline-hidden focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2">
         <AvatarFallback name={user.name} image={user.image} size={36} />
       </PopoverTrigger>
-      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-64 p-0 overflow-hidden">
-        <div className="flex items-center gap-3 px-4 pt-4 pb-3 border-b border-border-subtle">
-          <AvatarFallback name={user.name} image={user.image} size={44} />
-          <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold text-text-heading truncate" title={user.name}>
+      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-72 p-1 overflow-hidden">
+        <div className="flex items-center gap-3 px-2 py-2.5">
+          <AvatarFallback name={user.name} image={user.image} size={100} />
+          <div className="min-w-0 flex-1 space-y-0.5">
+            <p className="text-sm font-semibold text-text-heading truncate leading-tight" title={user.name}>
               {user.name}
             </p>
-            <p className="text-xs text-text-muted truncate">{user.email}</p>
+            <p className="text-xs text-text-muted truncate leading-tight">{user.email}</p>
+            <span className="inline-flex items-center rounded-full border border-border-subtle px-1.5 py-0.5 text-[10px] font-medium text-text-muted leading-tight">
+              {roleLabel}
+            </span>
           </div>
         </div>
-        <div className="px-4 py-2">
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-text-muted bg-bg-muted px-2 py-0.5 rounded-full">
-            <UserIcon className="size-3" />
-            {roleLabel}
-          </span>
+
+        <div className="h-px bg-border-subtle mx-2" />
+
+        <Link
+          href={dashboardHref}
+          className="flex items-center gap-3 px-2 py-1.5 text-sm text-text-body rounded-md hover:bg-bg-muted transition-colors"
+        >
+          <LayoutDashboardIcon className="size-4 text-text-muted shrink-0" />
+          Go to Dashboard
+        </Link>
+
+        <div className="h-px bg-border-subtle mx-2" />
+
+        <div className="px-2 py-1.5 space-y-1">
+          <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Appearance</p>
+          <ThemeToggle collapsed={false} />
         </div>
-        <div className="border-t border-border-subtle px-1 py-1">
-          <Link
-            href={dashboardHref}
-            className="flex items-center gap-2 px-3 py-2 text-sm text-text-body hover:bg-bg-muted rounded-md transition-colors"
-          >
-            <LayoutDashboardIcon className="size-4 text-text-muted" />
-            Go to Dashboard
-          </Link>
-        </div>
-        <div className="border-t border-border-subtle px-1 py-1">
-          <div className="px-3 py-1.5">
-            <ThemeToggle collapsed={false} />
-          </div>
-        </div>
-        <div className="border-t border-border-subtle px-1 py-1">
-          <button
-            type="button"
-            onClick={signOut}
-            className="flex items-center gap-2 px-3 py-2 text-sm text-error/80 hover:bg-error/10 hover:text-error rounded-md transition-colors w-full"
-          >
-            <LogOutIcon className="size-4" />
-            Sign Out
-          </button>
-        </div>
+
+        <div className="h-px bg-border-subtle mx-2" />
+
+        <button
+          type="button"
+          onClick={signOut}
+          className="flex items-center gap-3 px-2 py-1.5 text-sm text-error/80 rounded-md hover:bg-error/10 hover:text-error transition-colors w-full"
+        >
+          <LogOutIcon className="size-4 shrink-0" />
+          Sign Out
+        </button>
       </PopoverContent>
     </Popover>
   );
