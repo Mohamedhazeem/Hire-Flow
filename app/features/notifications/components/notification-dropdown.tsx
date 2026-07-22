@@ -3,6 +3,7 @@
 import { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
+import { useQueryClient } from "@tanstack/react-query";
 import {
   useNotifications,
   useUnreadCount,
@@ -120,6 +121,7 @@ export function NotificationDropdown({
   messagesBasePath = "/admin/messages",
 }: NotificationDropdownProps) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
   const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
@@ -148,11 +150,32 @@ export function NotificationDropdown({
     (n: NotificationItem) => {
       if (!n.read) {
         markAsRead.mutate([n.id]);
+        queryClient.setQueryData(
+          ["notifications", "unread", userId],
+          (old: number | undefined) => Math.max(0, (old ?? 1) - 1),
+        );
+        queryClient.setQueryData(["notifications", userId], (old: unknown) => {
+          if (!old || typeof old !== "object") return old;
+          const data = old as {
+            pages: { notifications: NotificationItem[] }[];
+            pageParams: unknown[];
+          };
+          if (!data.pages?.length) return old;
+          return {
+            ...data,
+            pages: data.pages.map((page) => ({
+              ...page,
+              notifications: page.notifications.map((item) =>
+                item.id === n.id ? { ...item, read: true } : item,
+              ),
+            })),
+          };
+        });
       }
       const href = getNotificationHref(n, messagesBasePath);
       router.push(href);
     },
-    [markAsRead, messagesBasePath, router],
+    [markAsRead, messagesBasePath, router, queryClient, userId],
   );
 
   return (

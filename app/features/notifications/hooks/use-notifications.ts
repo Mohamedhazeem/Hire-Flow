@@ -107,6 +107,13 @@ export function useRealtimeNotifications(userId: string) {
         ["notifications", "unread", userId],
         (old: number | undefined) => (old ?? 0) + 1,
       );
+
+      if (n.type === "new_message") {
+        queryClient.invalidateQueries({
+          predicate: (query) =>
+            query.queryKey.length === 2 && query.queryKey[1] === "threads",
+        });
+      }
     });
 
     return () => {

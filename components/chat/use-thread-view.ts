@@ -50,6 +50,7 @@ export function useThreadView(
   const isAtBottomRef = useRef(true);
   const [confirmDeleteThread, setConfirmDeleteThread] = useState(false);
   const [deletingMessageIds, setDeletingMessageIds] = useState<Set<string>>(new Set());
+  const hasInvalidatedThreads = useRef(false);
 
   const otherUserId = currentUserId ? getOtherUserId(threadId, currentUserId) : null;
   const isOnline = usePresenceStore((s) => s.isOnline);
@@ -73,6 +74,13 @@ export function useThreadView(
   }, [otherUserId, subscribeToUser, unsubscribeFromUser]);
 
   usePusherThread(threadId, currentUserId, config.queryKey);
+
+  useEffect(() => {
+    if (data && !hasInvalidatedThreads.current) {
+      hasInvalidatedThreads.current = true;
+      queryClient.invalidateQueries({ queryKey: [config.queryKey, "threads"] });
+    }
+  }, [data, queryClient, config.queryKey]);
 
   const scrollToBottom = useCallback((behavior: ScrollBehavior = "instant") => {
     const el = scrollRef.current;
