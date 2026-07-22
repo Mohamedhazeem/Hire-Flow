@@ -565,8 +565,8 @@
     "semantic_hash": ""
   },
   "app/api/upload/route.ts": {
-    "mtime": 1784694676.4987915,
-    "ast_hash": "35bdad46b74f8b4d7e46b6dc85729e10",
+    "mtime": 1784696331.6144195,
+    "ast_hash": "bea77a3570b71236c4ed90eae907a170",
     "semantic_hash": ""
   },
   "app/api/user/applications/[id]/route.ts": {
@@ -1080,8 +1080,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/actions/upsert-company.ts": {
-    "mtime": 1783572105.880097,
-    "ast_hash": "8de3ca91a5a9f7e64a78b2f65f27d48b",
+    "mtime": 1784696398.5146005,
+    "ast_hash": "198d8b322c46dd2ad575b7ee414c7ed2",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/applicant-detail-dialogs.tsx": {
@@ -1160,8 +1160,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/company-form.tsx": {
-    "mtime": 1784694595.2430143,
-    "ast_hash": "22f10d1c17322e2eaab55902bae6db18",
+    "mtime": 1784696388.7286868,
+    "ast_hash": "163c746a8a0cfb7e3c2262d8190eb377",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/email/recruiter-invite-email.tsx": {
@@ -1855,8 +1855,8 @@
     "semantic_hash": ""
   },
   "lib/upload.ts": {
-    "mtime": 1784694659.3778176,
-    "ast_hash": "a619bd18e5dbb8dd82cc46dd55c9df03",
+    "mtime": 1784696322.5782967,
+    "ast_hash": "53264d4cdaa3d8ef5b47cd2fb8d619a5",
     "semantic_hash": ""
   },
   "lib/utils.ts": {
