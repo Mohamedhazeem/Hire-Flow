@@ -665,8 +665,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-thread-view.tsx": {
-    "mtime": 1782532012.8099458,
-    "ast_hash": "882c4cad15d4d6c941e20422c93a8b1c",
+    "mtime": 1784731411.3048515,
+    "ast_hash": "d429741a974724824ec1b9d3cc879028",
     "semantic_hash": ""
   },
   "app/features/admin/components/ban-dialog.tsx": {
@@ -1245,8 +1245,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-thread-view.tsx": {
-    "mtime": 1782532024.345277,
-    "ast_hash": "18c9a60aa471fc6538e2a4130329e168",
+    "mtime": 1784731416.1719418,
+    "ast_hash": "df8f0a3be39e3e936124557c092108b3",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/revert-dialog.tsx": {
@@ -1495,8 +1495,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
-    "mtime": 1784727951.2685237,
-    "ast_hash": "f5ec483e07e3e26547b089f7a199d008",
+    "mtime": 1784731421.1082244,
+    "ast_hash": "cfca8c233f7425b1e7ee7f7141d13d34",
     "semantic_hash": ""
   },
   "app/features/user/hooks/messages/use-user-messages.ts": {
@@ -1615,8 +1615,8 @@
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
-    "mtime": 1783433139.5652337,
-    "ast_hash": "f6d3893aaf9681d46b40171522fd1e15",
+    "mtime": 1784731382.4785695,
+    "ast_hash": "a5d2d1cf374b7c090fc3705e938ca0c2",
     "semantic_hash": ""
   },
   "components/chat/thread-list-item.tsx": {
@@ -1625,13 +1625,13 @@
     "semantic_hash": ""
   },
   "components/chat/use-pusher-thread.ts": {
-    "mtime": 1784731292.7308724,
-    "ast_hash": "075ad9d6b42a124f286dc41bef8fc40f",
+    "mtime": 1784731470.8281274,
+    "ast_hash": "14ce7e4d4b1dac9555f073368d690790",
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
-    "mtime": 1784713000.7863004,
-    "ast_hash": "0949d4a948d822957d082ace8f492e64",
+    "mtime": 1784731427.126892,
+    "ast_hash": "68ae787336ee39d56cb618aff5371aab",
     "semantic_hash": ""
   },
   "components/layout/mobile-menu-button.tsx": {
