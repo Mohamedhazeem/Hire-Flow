@@ -20,6 +20,10 @@ const SendMessageSchema = z
     message: "Message must contain text or a file attachment",
   });
 
+const AdminSendMessageSchema = SendMessageSchema.extend({
+  fileUrl: z.string().url().optional(),
+});
+
 export function getSendMessageSchema(requireValidUrl = false) {
   if (!requireValidUrl) return SendMessageSchema;
   return SendMessageSchema.extend({

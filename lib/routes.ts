@@ -30,7 +30,8 @@ const HIDDEN_ROUTE_PREFIXES = [
  *   - Invite pages (/admin-invite/*, /recruiter-invite/*)
  *   - Any route not listed as a public content path
  */
-export function isHiddenRoute(pathname: string): boolean {
+export function isHiddenRoute(pathname: string | null): boolean {
+  if (!pathname) return false;
   // Allow exact public content paths
   if (PUBLIC_CONTENT_PATHS.includes(pathname as typeof PUBLIC_CONTENT_PATHS[number])) {
     return false;

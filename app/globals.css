@@ -397,8 +397,8 @@
 
 .dark {
   /* BRAND */
-  --brand-default: hsl(238, 60%, 65%);
-  --brand-dark: hsl(237, 51%, 59%);
+  --brand-default: hsl(238, 60%, 55%);
+  --brand-dark: hsl(237, 51%, 42%);
   --brand-light: hsl(239, 78%, 73%);
   --brand-subtle: hsl(238, 60%, 65%);
   --brand-foreground: hsl(240, 6%, 10%);
