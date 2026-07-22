@@ -21,6 +21,9 @@ function formatLabel(value: string): string {
 
 const ROLE_OPTIONS = ["user", "recruiter", "admin"] as const;
 
+type SortBy = "createdAt" | "name";
+type SortOrder = "asc" | "desc";
+
 type PeopleTableToolbarProps = {
   search: string;
   onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -29,7 +32,16 @@ type PeopleTableToolbarProps = {
   onRoleFilter: (value: string | null) => void;
   banned: string;
   onBannedFilter: (value: string | null) => void;
+  sortBy: SortBy;
+  sortOrder: SortOrder;
+  onSortChange: (sortBy: SortBy, sortOrder: SortOrder) => void;
 };
+
+const SORT_OPTIONS = [
+  { value: "createdAt_desc", label: "Newest" },
+  { value: "name_asc", label: "Name A-Z" },
+  { value: "name_desc", label: "Name Z-A" },
+] as const;
 
 export function PeopleTableToolbar({
   search,
@@ -39,6 +51,9 @@ export function PeopleTableToolbar({
   onRoleFilter,
   banned,
   onBannedFilter,
+  sortBy,
+  sortOrder,
+  onSortChange,
 }: PeopleTableToolbarProps) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -76,6 +91,27 @@ export function PeopleTableToolbar({
           <SelectItem value="all">All</SelectItem>
           <SelectItem value="true">Banned</SelectItem>
           <SelectItem value="false">Active</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select
+        value={`${sortBy}_${sortOrder}`}
+        onValueChange={(value) => {
+          if (!value) return;
+          const [newSortBy, newSortOrder] = value.split("_") as [SortBy, SortOrder];
+          onSortChange(newSortBy, newSortOrder);
+        }}
+      >
+        <SelectTrigger className="w-full sm:w-36">
+          <SelectValue>
+            {SORT_OPTIONS.find((o) => o.value === `${sortBy}_${sortOrder}`)?.label}
+          </SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          {SORT_OPTIONS.map((opt) => (
+            <SelectItem key={opt.value} value={opt.value}>
+              {opt.label}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
     </div>

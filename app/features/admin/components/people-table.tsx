@@ -30,6 +30,8 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
   const [page, setPage] = useState(1);
   const [role, setRole] = useState<string | undefined>(roleFilter);
   const [banned, setBanned] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<"createdAt" | "name">("createdAt");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
 
   const { data, isLoading, isError, error } = useAdminUsers({
     page,
@@ -37,8 +39,8 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
     search: search || undefined,
     role: role as "user" | "recruiter" | "admin" | undefined,
     banned: banned as "true" | "false" | "all",
-    sortBy: "createdAt",
-    sortOrder: "desc",
+    sortBy,
+    sortOrder,
   });
 
   const revokeSessions = useRevokeUserSessions();
@@ -102,6 +104,13 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         banned={banned}
         onBannedFilter={(value) => {
           setBanned(value ?? "all");
+          resetPage();
+        }}
+        sortBy={sortBy}
+        sortOrder={sortOrder}
+        onSortChange={(newSortBy, newSortOrder) => {
+          setSortBy(newSortBy);
+          setSortOrder(newSortOrder);
           resetPage();
         }}
       />
