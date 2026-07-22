@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { apiClient } from "@/lib/api/api-client";
-import { Building2, Globe, Upload, CheckCircle2, AlertCircle, Eye } from "lucide-react";
+import { Building2, Globe, Upload, CheckCircle2, AlertCircle, Eye, Trash2 } from "lucide-react";
 import Image from "next/image";
 
 type CompanyFormProps = {
@@ -25,6 +25,7 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
   const [success, setSuccess] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const [removing, setRemoving] = useState(false);
 
   const form = useForm<CompanyProfileInput>({
     resolver: zodResolver(CompanyProfileSchema),
@@ -42,9 +43,31 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
     name: "logoUrl",
   });
 
+  /** Extract filename from a local /uploads/ URL */
+  const extractFilename = (url: string): string | null => {
+    if (!url.startsWith("/uploads/")) return null;
+    return url.replace("/uploads/", "");
+  };
+
+  /** Delete a previously uploaded file from disk (best-effort) */
+  const deletePreviousFile = async (url: string) => {
+    const filename = extractFilename(url);
+    if (!filename) return;
+    try {
+      await apiClient("/api/upload", {
+        method: "DELETE",
+        body: { filename },
+      });
+    } catch {
+      // Best-effort — don't block the user if cleanup fails
+    }
+  };
+
   const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    const previousUrl = form.getValues("logoUrl");
 
     setUploading(true);
     setUploadError(null);
@@ -61,11 +84,23 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
         shouldValidate: true,
         shouldDirty: true,
       });
+      // Clean up the previous file after successful upload
+      if (previousUrl) await deletePreviousFile(previousUrl);
     } catch (err) {
       setUploadError(err instanceof Error ? err.message : "Upload failed");
     } finally {
       setUploading(false);
       e.target.value = "";
+    }
+  };
+
+  const handleRemoveLogo = async () => {
+    const currentUrl = form.getValues("logoUrl");
+    form.setValue("logoUrl", "", { shouldValidate: true, shouldDirty: true });
+    if (currentUrl) {
+      setRemoving(true);
+      await deletePreviousFile(currentUrl);
+      setRemoving(false);
     }
   };
 
@@ -212,7 +247,7 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
             {/* Logo preview / placeholder */}
             {logoUrl ? (
-              <div className="relative w-fit">
+              <div className="group relative w-fit">
                 <Image
                   src={logoUrl}
                   alt="Company logo preview"
@@ -222,13 +257,16 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
                 />
                 <button
                   type="button"
-                  onClick={() =>
-                    form.setValue("logoUrl", "", { shouldValidate: true, shouldDirty: true })
-                  }
-                  className="absolute -top-1.5 -right-1.5 size-5 rounded-full bg-error text-white flex items-center justify-center text-[10px] hover:bg-error/90 transition-colors"
+                  onClick={handleRemoveLogo}
+                  disabled={removing}
+                  className="absolute inset-0 flex size-20 items-center justify-center rounded-lg bg-error/80 text-white opacity-0 transition-opacity group-hover:opacity-100 disabled:opacity-100"
                   aria-label="Remove logo"
                 >
-                  &times;
+                  {removing ? (
+                    <span className="text-xs">Removing...</span>
+                  ) : (
+                    <Trash2 className="size-5" />
+                  )}
                 </button>
               </div>
             ) : (

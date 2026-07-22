@@ -3,7 +3,7 @@ import { fail, ok } from "@/lib/api/api-response";
 import { UnauthorizedError, ValidationError } from "@/lib/api/api-error";
 import { getSession } from "@/app/features/auth/libs/auth";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
-import { saveUpload } from "@/lib/upload";
+import { saveUpload, deleteUpload } from "@/lib/upload";
 
 export const runtime = "nodejs"; // needs fs access
 
@@ -34,4 +34,21 @@ async function handlePOST(request: NextRequest) {
   }
 }
 
+async function handleDELETE(request: NextRequest) {
+  const session = await getSession();
+  if (!session?.user) {
+    throw new UnauthorizedError();
+  }
+
+  const { filename } = await request.json().catch(() => ({})) as { filename?: string };
+
+  if (!filename || typeof filename !== "string") {
+    throw new ValidationError("Missing filename in request body.");
+  }
+
+  const deleted = await deleteUpload(`/uploads/${filename}`);
+  return ok({ deleted });
+}
+
 export const POST = withErrorHandler(handlePOST);
+export const DELETE = withErrorHandler(handleDELETE);

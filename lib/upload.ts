@@ -1,4 +1,4 @@
-import { writeFile, mkdir } from "fs/promises";
+import { writeFile, mkdir, unlink } from "fs/promises";
 import path from "path";
 
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
@@ -83,4 +83,27 @@ export async function saveUpload(file: File): Promise<UploadResult> {
   validateFile(file);
   return saveLocal(file);
   // return saveVercelBlob(file); // production
+}
+
+/**
+ * Deletes a previously uploaded file by its public URL path.
+ * Only removes files stored locally under /uploads/.
+ * Returns true if deleted, false if not found.
+ */
+export async function deleteUpload(logoUrl: string): Promise<boolean> {
+  // Only delete local uploads — cloud files need their own cleanup
+  if (!logoUrl.startsWith("/uploads/")) return false;
+
+  const filename = logoUrl.replace("/uploads/", "");
+  // Prevent path traversal
+  if (filename.includes("..") || filename.includes("/")) return false;
+
+  const filePath = path.join(process.cwd(), "public", "uploads", filename);
+  try {
+    await unlink(filePath);
+    return true;
+  } catch {
+    // File already gone or permissions issue — not fatal
+    return false;
+  }
 }
