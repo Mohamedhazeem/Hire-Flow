@@ -8,6 +8,7 @@ import {
   useNotifications,
   useUnreadCount,
   useMarkAsRead,
+  useClearAllNotifications,
   useRealtimeNotifications,
 } from "@/app/features/notifications/hooks/use-notifications";
 import {
@@ -28,6 +29,7 @@ import {
   BanIcon,
   Loader2Icon,
   CheckIcon,
+  Trash2Icon,
   ExternalLinkIcon,
 } from "lucide-react";
 import { formatTime } from "@/utils/format-time";
@@ -128,6 +130,7 @@ export function NotificationDropdown({
     useNotifications(userId);
   const { data: unreadCount = 0 } = useUnreadCount(userId);
   const markAsRead = useMarkAsRead();
+  const clearAll = useClearAllNotifications();
 
   useRealtimeNotifications(userId);
 
@@ -203,21 +206,38 @@ export function NotificationDropdown({
           <PopoverTitle className="text-sm font-semibold text-text-heading">
             Notifications
           </PopoverTitle>
-          {unreadCount > 0 && (
-            <button
-              type="button"
-              onClick={handleMarkAllRead}
-              disabled={markAsRead.isPending}
-              className="flex items-center gap-1 text-xs font-medium text-brand hover:text-brand-dark transition-colors disabled:opacity-50"
-            >
-              {markAsRead.isPending ? (
-                <Loader2Icon className="size-3 animate-spin" />
-              ) : (
-                <CheckIcon className="size-3" />
-              )}
-              Mark all read
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {unreadCount > 0 && (
+              <button
+                type="button"
+                onClick={handleMarkAllRead}
+                disabled={markAsRead.isPending}
+                className="flex items-center gap-1 text-xs font-medium text-brand hover:text-brand-dark transition-colors disabled:opacity-50"
+              >
+                {markAsRead.isPending ? (
+                  <Loader2Icon className="size-3 animate-spin" />
+                ) : (
+                  <CheckIcon className="size-3" />
+                )}
+                Mark all read
+              </button>
+            )}
+            {allNotifications.length > 0 && (
+              <button
+                type="button"
+                onClick={() => clearAll.mutate()}
+                disabled={clearAll.isPending}
+                className="flex items-center gap-1 text-xs font-medium text-error hover:text-error/80 transition-colors disabled:opacity-50"
+              >
+                {clearAll.isPending ? (
+                  <Loader2Icon className="size-3 animate-spin" />
+                ) : (
+                  <Trash2Icon className="size-3" />
+                )}
+                Clear all
+              </button>
+            )}
+          </div>
         </PopoverHeader>
 
         <div

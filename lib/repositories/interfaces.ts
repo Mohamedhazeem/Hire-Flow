@@ -42,6 +42,8 @@ export interface IMessageRepository {
 
   deleteBySender(threadId: string, senderId: string): Promise<unknown>;
 
+  deleteByParticipant(threadId: string, userId: string): Promise<unknown>;
+
   findById(messageId: string): Promise<MessageIdOnly | null>;
 
   deleteById(messageId: string): Promise<unknown>;

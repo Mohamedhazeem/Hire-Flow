@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7a94d098`
+- Built from commit: `70f16b27`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -234,6 +234,8 @@
 10. `createTestUser()` - 33 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `RootLayout()` --calls--> `cn()`  [EXTRACTED]
+  app/layout.tsx → lib/utils.ts
 - `handlePOST()` --calls--> `saveUpload()`  [INFERRED]
   app/api/user/resumes/route.ts → lib/upload.ts
 - `handleDELETE()` --calls--> `ok()`  [INFERRED]
@@ -242,8 +244,6 @@
   app/api/admin/users/[id]/route.ts → lib/api/api-response.ts
 - `handleGET()` --calls--> `ok()`  [INFERRED]
   app/api/jobs/[id]/route.ts → lib/api/api-response.ts
-- `handleGET()` --calls--> `ok()`  [INFERRED]
-  app/api/jobs/route.ts → lib/api/api-response.ts
 
 ## Import Cycles
 - None detected.
@@ -939,7 +939,7 @@ Cohesion: 0.50
 Nodes (3): TabOption, TabSwitcher(), TabSwitcherProps
 
 ## Knowledge Gaps
-- **1648 isolated node(s):** `{ GET, POST, DELETE }`, `ADDITIONAL_HIDDEN_PREFIXES`, `PUBLIC_CONTENT_PATHS`, `HIDDEN_ROUTE_PREFIXES`, `SendMessageSchema` (+1643 more)
+- **1648 isolated node(s):** `inter`, `geistSans`, `geistMono`, `metadata`, `RoleLayoutClientProps` (+1643 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **33 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -947,16 +947,16 @@ Nodes (3): TabOption, TabSwitcher(), TabSwitcherProps
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 112` to `Community 18`, `Community 148`, `Community 149`, `Community 21`, `Community 29`, `Community 30`, `Community 38`, `Community 173`, `Community 49`, `Community 51`, `Community 182`, `Community 55`, `Community 61`, `Community 64`, `Community 208`, `Community 214`, `Community 215`, `Community 92`, `Community 94`, `Community 96`, `Community 105`, `Community 106`, `Community 117`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 125` to `Community 19`, `Community 21`, `Community 22`, `Community 24`, `Community 27`, `Community 28`, `Community 35`, `Community 37`, `Community 174`, `Community 54`, `Community 66`, `Community 74`, `Community 86`, `Community 87`, `Community 89`, `Community 93`, `Community 97`, `Community 107`, `Community 118`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `env` connect `Community 216` to `Community 97`, `Community 66`, `Community 67`, `Community 37`, `Community 102`, `Community 202`, `Community 171`, `Community 83`, `Community 25`, `Community 93`, `Community 94`, `Community 223`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 125` to `Community 19`, `Community 21`, `Community 22`, `Community 24`, `Community 27`, `Community 28`, `Community 35`, `Community 37`, `Community 174`, `Community 54`, `Community 66`, `Community 74`, `Community 86`, `Community 87`, `Community 89`, `Community 93`, `Community 97`, `Community 107`, `Community 118`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `{ GET, POST, DELETE }`, `ADDITIONAL_HIDDEN_PREFIXES`, `PUBLIC_CONTENT_PATHS` to the rest of the system?**
+- **What connects `inter`, `geistSans`, `geistMono` to the rest of the system?**
   _1648 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

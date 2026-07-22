@@ -7,6 +7,7 @@ import {
   listNotifications,
   getUnreadCount,
   markNotificationsRead,
+  deleteAllNotifications,
 } from "@/app/features/notifications/queries/notification-queries";
 import { MarkNotificationsReadSchema } from "@/app/features/notifications/schema/notification.schema";
 
@@ -48,5 +49,15 @@ async function handlePATCH(request: NextRequest) {
   return ok(result);
 }
 
+async function handleDELETE(request: NextRequest) {
+  const session = await auth.api.getSession({ headers: request.headers });
+  if (!session?.user) throw new UnauthorizedError();
+
+  const result = await deleteAllNotifications(session.user.id);
+
+  return ok(result);
+}
+
 export const GET = withErrorHandler(handleGET);
 export const PATCH = withErrorHandler(handlePATCH);
+export const DELETE = withErrorHandler(handleDELETE);

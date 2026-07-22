@@ -45,6 +45,15 @@ export const messageRepository: IMessageRepository = {
     });
   },
 
+  deleteByParticipant(threadId: string, userId: string) {
+    return prisma.message.deleteMany({
+      where: {
+        threadId,
+        OR: [{ senderId: userId }, { receiverId: userId }],
+      },
+    });
+  },
+
   findById(messageId: string) {
     return prisma.message.findUnique({
       where: { id: messageId },

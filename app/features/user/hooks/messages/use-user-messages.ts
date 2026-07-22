@@ -4,6 +4,7 @@ import {
   createUseMessages,
   createUseSendMessage,
   createUseDeleteMessage,
+  createUseDeleteThread,
 } from "@/app/features/shared/hooks/use-messages";
 
 export type { MessageItem, SendMessagePayload } from "@/app/features/shared/hooks/use-messages";
@@ -11,3 +12,4 @@ export type { MessageItem, SendMessagePayload } from "@/app/features/shared/hook
 export const useUserMessages = createUseMessages("user", "/api/recruiter");
 export const useSendUserMessage = createUseSendMessage("user", "/api/recruiter");
 export const useDeleteUserMessage = createUseDeleteMessage("user", "/api/recruiter");
+export const useDeleteUserThread = createUseDeleteThread("user", "/api/recruiter");

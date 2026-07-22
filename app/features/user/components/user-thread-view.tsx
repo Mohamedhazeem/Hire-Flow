@@ -5,6 +5,7 @@ import {
   useUserMessages,
   useSendUserMessage,
   useDeleteUserMessage,
+  useDeleteUserThread,
 } from "@/app/features/user/hooks/messages/use-user-messages";
 
 type Props = { threadId: string; onBack?: () => void };
@@ -13,6 +14,7 @@ const hooks: ThreadViewHooks = {
   useMessages: useUserMessages,
   useSendMessage: (threadId: string) => useSendUserMessage(threadId),
   useDeleteMessage: (threadId: string) => useDeleteUserMessage(threadId),
+  useDeleteThread: useDeleteUserThread,
 };
 
 const config: ThreadViewConfig = {

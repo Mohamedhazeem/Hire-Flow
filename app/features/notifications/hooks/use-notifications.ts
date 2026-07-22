@@ -73,6 +73,20 @@ export function useMarkAsRead() {
   });
 }
 
+export function useClearAllNotifications() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: () =>
+      apiClient("/api/notifications", {
+        method: "DELETE",
+      }),
+    onMutate: () => {
+      queryClient.removeQueries({ queryKey: ["notifications"] });
+    },
+  });
+}
+
 export function useRealtimeNotifications(userId: string) {
   const queryClient = useQueryClient();
   const channelRef = useRef<Channel | null>(null);

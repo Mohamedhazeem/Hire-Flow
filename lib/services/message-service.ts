@@ -145,7 +145,7 @@ export const messageService = {
     if (!participatesInThread(threadId, userId)) {
       throw new ValidationError("You are not a participant in this thread");
     }
-    await messageRepository.deleteBySender(threadId, userId);
+    await messageRepository.deleteByParticipant(threadId, userId);
   },
 
   async deleteSingleMessage(threadId: string, userId: string, messageId: string) {

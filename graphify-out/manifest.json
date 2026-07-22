@@ -1,7 +1,7 @@
 {
   ".kilo/agent-manager.json": {
-    "mtime": 1784646842.274578,
-    "ast_hash": "74e2e6fa3a132f4d0dd1e42b51c0553a",
+    "mtime": 1784711390.9064527,
+    "ast_hash": "2bda686cf6fbda02a8883fc5a38aa283",
     "semantic_hash": ""
   },
   ".kilo/kilo.json": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
-    "mtime": 1784707395.5165014,
-    "ast_hash": "e6f9e454e1ea978541e94e2245b3da21",
+    "mtime": 1784712967.4139898,
+    "ast_hash": "57c7846f0f7676e0b3518b0e32ba058e",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notifications-page.tsx": {
@@ -990,8 +990,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {
-    "mtime": 1783572105.8750958,
-    "ast_hash": "b87102cc71ad747b5c8bf3c7ede6f133",
+    "mtime": 1784727529.25903,
+    "ast_hash": "b662b3f2ae460535fb9f3f8bbccbb8a0",
     "semantic_hash": ""
   },
   "app/features/notifications/queries/notification-queries.ts": {
@@ -1625,13 +1625,13 @@
     "semantic_hash": ""
   },
   "components/chat/use-pusher-thread.ts": {
-    "mtime": 1783572105.943112,
-    "ast_hash": "a5cf4efce93e75a870b0a976cac093c6",
+    "mtime": 1784712947.1941972,
+    "ast_hash": "b4370150a0ed3b2e662705d2eb346146",
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
-    "mtime": 1783572105.945114,
-    "ast_hash": "66b946f47a04444732b80a14b9d1e085",
+    "mtime": 1784713000.7863004,
+    "ast_hash": "0949d4a948d822957d082ace8f492e64",
     "semantic_hash": ""
   },
   "components/layout/mobile-menu-button.tsx": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784704014.9442704,
-    "ast_hash": "c13f04e66f61a19a1f9133dd56fd2446",
+    "mtime": 1784712146.9006314,
+    "ast_hash": "856a8d369704004d1f06a93cc5ac123a",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {

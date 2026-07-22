@@ -54,3 +54,10 @@ export async function markNotificationsRead(ids: string[], userId: string) {
   });
   return { updated: result.count };
 }
+
+export async function deleteAllNotifications(userId: string) {
+  const result = await prisma.notification.deleteMany({
+    where: { userId },
+  });
+  return { deleted: result.count };
+}
