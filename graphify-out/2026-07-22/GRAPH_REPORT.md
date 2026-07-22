@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-22)
 
 ## Corpus Check
-- 650 files · ~208,119 words
+- 650 files · ~208,264 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cef1e577`
+- Built from commit: `0d1c4121`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -949,7 +949,7 @@ Cohesion: 0.50
 Nodes (3): CHART_TOOLTIP_STYLE, TrendChart(), TrendChartProps
 
 ## Knowledge Gaps
-- **1648 isolated node(s):** `ChatInputAreaProps`, `RoleLayoutClientProps`, `MessageRow`, `MessageWithCreatedAt`, `MessageIdOnly` (+1643 more)
+- **1648 isolated node(s):** `NotificationItem`, `notificationIconMap`, `NotificationDropdownProps`, `NotificationItem`, `notificationIconMap` (+1643 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **33 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -957,16 +957,16 @@ Nodes (3): CHART_TOOLTIP_STYLE, TrendChart(), TrendChartProps
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 112` to `Community 18`, `Community 149`, `Community 21`, `Community 23`, `Community 30`, `Community 38`, `Community 167`, `Community 42`, `Community 173`, `Community 175`, `Community 177`, `Community 49`, `Community 51`, `Community 182`, `Community 55`, `Community 61`, `Community 208`, `Community 86`, `Community 92`, `Community 93`, `Community 96`, `Community 102`, `Community 105`, `Community 106`, `Community 117`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
 - **Why does `env` connect `Community 216` to `Community 96`, `Community 97`, `Community 66`, `Community 67`, `Community 37`, `Community 102`, `Community 171`, `Community 83`, `Community 25`, `Community 26`, `Community 93`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 125` to `Community 97`, `Community 66`, `Community 35`, `Community 37`, `Community 74`, `Community 107`, `Community 80`, `Community 19`, `Community 22`, `Community 87`, `Community 24`, `Community 89`, `Community 218`, `Community 118`, `Community 28`, `Community 93`, `Community 222`, `Community 54`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `Button()` connect `Community 38` to `Community 18`, `Community 147`, `Community 19`, `Community 21`, `Community 27`, `Community 29`, `Community 30`, `Community 34`, `Community 42`, `Community 65`, `Community 66`, `Community 202`, `Community 75`, `Community 80`, `Community 93`, `Community 102`, `Community 105`, `Community 106`, `Community 111`, `Community 112`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `ChatInputAreaProps`, `RoleLayoutClientProps`, `MessageRow` to the rest of the system?**
+- **What connects `NotificationItem`, `notificationIconMap`, `NotificationDropdownProps` to the rest of the system?**
   _1648 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

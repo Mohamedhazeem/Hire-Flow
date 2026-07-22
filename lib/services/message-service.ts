@@ -3,6 +3,7 @@ import { pusher } from "@/lib/pusher/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
 import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
 import { createNotification, fireNotification } from "@/lib/notifications";
+import { markThreadNotificationsRead } from "@/app/features/notifications/queries/notification-queries";
 import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
 import { countRecentMessages } from "@/lib/repositories/rate-limit-repository";
 import { messageRepository } from "@/lib/repositories/message-repository";
@@ -55,6 +56,10 @@ export const messageService = {
     const unreadIds = items.filter((m) => m.senderId !== userId && !m.read).map((m) => m.id);
     if (unreadIds.length > 0) {
       void messageRepository.markAsRead(unreadIds);
+      // Also mark corresponding new_message notifications as read, so the
+      // notification dropdown doesn't keep showing an unread dot after the
+      // user has opened the thread and seen the messages.
+      void markThreadNotificationsRead(threadId, userId);
     }
 
     return { messages: items.reverse(), meta };

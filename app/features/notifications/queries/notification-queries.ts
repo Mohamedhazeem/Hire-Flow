@@ -55,6 +55,19 @@ export async function markNotificationsRead(ids: string[], userId: string) {
   return { updated: result.count };
 }
 
+/** Mark all unread `new_message` notifications for a given thread as read. */
+export async function markThreadNotificationsRead(threadId: string, userId: string) {
+  await prisma.notification.updateMany({
+    where: {
+      userId,
+      type: "new_message",
+      read: false,
+      data: { path: ["threadId"], equals: threadId },
+    },
+    data: { read: true },
+  });
+}
+
 export async function deleteAllNotifications(userId: string) {
   const result = await prisma.notification.deleteMany({
     where: { userId },

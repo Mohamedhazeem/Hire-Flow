@@ -71,8 +71,17 @@ export function usePusherThread(
       // Mark the new message as read on the server since the user is viewing
       // this thread — otherwise the notification handler's thread-list refetch
       // will return unread: true and overwrite our optimistic false above.
+      // After the fetch completes, re-invalidate the thread list so the
+      // refetch returns unread: false (message is now marked read on server).
       if (apiBasePath) {
-        fetch(`${apiBasePath}/messages/${threadId}?limit=1`).catch(() => {});
+        fetch(`${apiBasePath}/messages/${threadId}?limit=1`)
+          .then(() => {
+            queryClient.invalidateQueries({
+              predicate: (q) =>
+                q.queryKey.length === 2 && q.queryKey[1] === "threads",
+            });
+          })
+          .catch(() => {});
       }
     };
 

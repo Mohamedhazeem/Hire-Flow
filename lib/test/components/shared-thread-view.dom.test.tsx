@@ -45,6 +45,7 @@ import { SharedThreadView } from "@/components/chat/shared-thread-view";
 const config = {
   roleLabel: "Recruiter",
   queryKey: "messages",
+  apiBasePath: "/api/recruiter",
   returnPath: "/user/messages",
   emptyMessage: "No messages yet",
 };
