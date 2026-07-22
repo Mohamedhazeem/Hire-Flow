@@ -980,18 +980,18 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
-    "mtime": 1784728005.412657,
-    "ast_hash": "9ea875977616c435698741480080a0ed",
+    "mtime": 1784730726.5661378,
+    "ast_hash": "fb17534acbeef4650f425f70d0ef9a40",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notifications-page.tsx": {
-    "mtime": 1782809938.5776334,
-    "ast_hash": "7f1bacc2cbf65a7216f085996c929304",
+    "mtime": 1784730757.8059206,
+    "ast_hash": "22686007062dea9df91c28caacb4afe8",
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {
-    "mtime": 1784728022.6633158,
-    "ast_hash": "22a2542536688ac4497a13f9d695e691",
+    "mtime": 1784731030.8859625,
+    "ast_hash": "44b31f18a2cea2b850311c1d06481e01",
     "semantic_hash": ""
   },
   "app/features/notifications/queries/notification-queries.ts": {
@@ -1625,8 +1625,8 @@
     "semantic_hash": ""
   },
   "components/chat/use-pusher-thread.ts": {
-    "mtime": 1784728891.6049244,
-    "ast_hash": "2133e0368ef309d03cb533116aa16d74",
+    "mtime": 1784731292.7308724,
+    "ast_hash": "075ad9d6b42a124f286dc41bef8fc40f",
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {

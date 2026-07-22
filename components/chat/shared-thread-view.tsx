@@ -28,7 +28,11 @@ export type ThreadViewHooks = {
 };
 
 export type ThreadViewConfig = {
-  roleLabel: string; queryKey: string; returnPath: string; emptyMessage: string;
+  roleLabel: string;
+  queryKey: string;
+  apiBasePath: string;
+  returnPath: string;
+  emptyMessage: string;
 };
 
 type Props = {

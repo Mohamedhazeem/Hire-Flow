@@ -20,6 +20,7 @@ const hooks: ThreadViewHooks = {
 const config: ThreadViewConfig = {
   roleLabel: "Direct message",
   queryKey: "admin",
+  apiBasePath: "/api/admin",
   returnPath: "/admin/messages",
   emptyMessage: "No messages yet. Start the conversation.",
 };

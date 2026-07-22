@@ -11,6 +11,7 @@ export function usePusherThread(
   threadId: string,
   currentUserId: string | undefined,
   queryKey: string,
+  apiBasePath?: string,
 ) {
   const queryClient = useQueryClient();
 
@@ -55,7 +56,7 @@ export function usePusherThread(
                     content: msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
                     createdAt: msg.createdAt,
                     senderId: msg.senderId,
-                    unread: true,
+                    unread: false, // user is actively viewing this thread
                   },
                 }
               : t,
@@ -66,6 +67,13 @@ export function usePusherThread(
               new Date(a.lastMessage?.createdAt ?? 0).getTime(),
           );
       });
+
+      // Mark the new message as read on the server since the user is viewing
+      // this thread — otherwise the notification handler's thread-list refetch
+      // will return unread: true and overwrite our optimistic false above.
+      if (apiBasePath) {
+        fetch(`${apiBasePath}/messages/${threadId}?limit=1`).catch(() => {});
+      }
     };
 
     channel.bind("new-message", handler);
@@ -74,5 +82,5 @@ export function usePusherThread(
       channel.unbind("new-message", handler);
       pusher.unsubscribe(`private-thread-${threadId}`);
     };
-  }, [threadId, currentUserId, queryClient, queryKey]);
+  }, [threadId, currentUserId, queryClient, queryKey, apiBasePath]);
 }

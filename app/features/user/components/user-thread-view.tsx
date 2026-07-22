@@ -20,6 +20,7 @@ const hooks: ThreadViewHooks = {
 const config: ThreadViewConfig = {
   roleLabel: "Recruiter",
   queryKey: "user",
+  apiBasePath: "/api/recruiter",
   returnPath: "/user/messages",
   emptyMessage: "No messages yet. Wait for the recruiter to reach out.",
 };

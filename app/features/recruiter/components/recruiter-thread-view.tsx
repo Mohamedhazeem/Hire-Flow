@@ -20,6 +20,7 @@ const hooks: ThreadViewHooks = {
 const config: ThreadViewConfig = {
   roleLabel: "Direct message",
   queryKey: "recruiter",
+  apiBasePath: "/api/recruiter",
   returnPath: "/recruiter/messages",
   emptyMessage: "No messages yet. Start the conversation.",
 };

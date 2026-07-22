@@ -73,12 +73,15 @@ export function useThreadView(
     };
   }, [otherUserId, subscribeToUser, unsubscribeFromUser]);
 
-  usePusherThread(threadId, currentUserId, config.queryKey);
+  usePusherThread(threadId, currentUserId, config.queryKey, config.apiBasePath);
 
   useEffect(() => {
     if (data && !hasInvalidatedThreads.current) {
       hasInvalidatedThreads.current = true;
       queryClient.invalidateQueries({ queryKey: [config.queryKey, "threads"] });
+      // Invalidate notifications too: messages were just marked as read on
+      // the server, so the notification dropdown should reflect that.
+      queryClient.invalidateQueries({ queryKey: ["notifications"] });
     }
   }, [data, queryClient, config.queryKey]);
 
