@@ -206,50 +206,60 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
         </div>
 
         {/* Logo Upload */}
-        <div className="space-y-1">
+        <div className="space-y-2">
           <label className="text-sm font-medium text-text-heading">Company logo</label>
 
-          {logoUrl && (
-            <div className="relative w-fit">
-              <Image
-                src={logoUrl}
-                alt="Company logo preview"
-                width={80}
-                height={80}
-                className="size-20 rounded-lg border border-border-subtle object-cover"
-              />
-              <button
-                type="button"
-                onClick={() =>
-                  form.setValue("logoUrl", "", { shouldValidate: true, shouldDirty: true })
-                }
-                className="absolute -top-1.5 -right-1.5 size-5 rounded-full bg-error text-white flex items-center justify-center text-[10px] hover:bg-error/90 transition-colors"
-                aria-label="Remove logo"
-              >
-                &times;
-              </button>
-            </div>
-          )}
-
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-text-muted bg-bg-elevated border border-border-subtle hover:border-border hover:text-text-heading transition-colors size-9 sm:size-auto">
-              <Upload className="size-4 shrink-0" />
-              <span className="hidden sm:inline">{uploading ? "Uploading..." : "Upload logo"}</span>
-            </label>
-            <input
-              type="file"
-              accept="image/jpeg,image/png,image/webp,image/gif"
-              onChange={handleLogoUpload}
-              disabled={uploading}
-              className="hidden"
-              aria-label="Upload company logo"
-            />
-            {logoUrl && (
-              <span className="text-xs text-text-muted hidden sm:inline">
-                Logo uploaded &mdash; save to apply
-              </span>
+            {/* Logo preview / placeholder */}
+            {logoUrl ? (
+              <div className="relative w-fit">
+                <Image
+                  src={logoUrl}
+                  alt="Company logo preview"
+                  width={80}
+                  height={80}
+                  className="size-20 rounded-lg border border-border-subtle object-cover"
+                />
+                <button
+                  type="button"
+                  onClick={() =>
+                    form.setValue("logoUrl", "", { shouldValidate: true, shouldDirty: true })
+                  }
+                  className="absolute -top-1.5 -right-1.5 size-5 rounded-full bg-error text-white flex items-center justify-center text-[10px] hover:bg-error/90 transition-colors"
+                  aria-label="Remove logo"
+                >
+                  &times;
+                </button>
+              </div>
+            ) : (
+              <div className="flex size-20 items-center justify-center rounded-lg border-2 border-dashed border-border-subtle bg-bg-elevated/50">
+                <Building2 className="size-8 text-text-muted/40" />
+              </div>
             )}
-            {uploading && <span className="text-xs text-text-muted sm:hidden">Uploading...</span>}
+
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="company-logo-upload"
+                className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-text-muted bg-bg-elevated border border-border-subtle hover:border-border hover:text-text-heading transition-colors"
+              >
+                <Upload className="size-4 shrink-0" />
+                <span>{uploading ? "Uploading..." : "Upload logo"}</span>
+              </label>
+              <input
+                id="company-logo-upload"
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/gif"
+                onChange={handleLogoUpload}
+                disabled={uploading}
+                className="hidden"
+                aria-label="Upload company logo"
+              />
+              <span className="text-xs text-text-muted">
+                {logoUrl
+                  ? "Logo uploaded \u2014 save to apply"
+                  : "JPEG, PNG, WebP, or GIF. Max 5 MB."}
+              </span>
+            </div>
           </div>
 
           {uploadError && <p className="text-xs text-error">{uploadError}</p>}

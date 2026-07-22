@@ -1,8 +1,6 @@
-// TODO: Swap with S3/Vercel Blob in production.
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 
-const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
 const ALLOWED_MIME_TYPES = [
   "image/jpeg",
@@ -21,31 +19,30 @@ export type UploadResult = {
   mimeType: string;
 };
 
-/**
- * Saves a File object to /public/uploads and returns the public URL.
- * Local-only — replace with S3/Blob in production.
- */
-export async function saveUpload(file: File): Promise<UploadResult> {
+function validateFile(file: File): void {
   if (file.size === 0) {
     throw new Error("File is empty.");
   }
-
   if (file.size > MAX_FILE_SIZE_BYTES) {
     throw new Error(`File exceeds the 5 MB limit (received ${file.size} bytes).`);
   }
-
   if (!ALLOWED_MIME_TYPES.includes(file.type)) {
     throw new Error(`File type "${file.type}" is not allowed.`);
   }
+}
 
-  // Ensure upload directory exists
+function buildFilename(originalName: string): string {
+  const ext = path.extname(originalName).toLowerCase() || "";
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`;
+}
+
+// ── Local storage (default, dev / self-hosted) ──────────────────────
+async function saveLocal(file: File): Promise<UploadResult> {
+  const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
   await mkdir(UPLOAD_DIR, { recursive: true });
 
-  // Build a collision-resistant filename: <timestamp>-<random>.<ext>
-  const ext = path.extname(file.name).toLowerCase() || "";
-  const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`;
+  const filename = buildFilename(file.name);
   const destPath = path.join(UPLOAD_DIR, filename);
-
   const buffer = Buffer.from(await file.arrayBuffer());
   await writeFile(destPath, buffer);
 
@@ -55,4 +52,35 @@ export async function saveUpload(file: File): Promise<UploadResult> {
     size: file.size,
     mimeType: file.type,
   };
+}
+
+// ── Vercel Blob storage (production) ────────────────────────────────
+// Uncomment when deploying to Vercel with BLOB_READ_WRITE_TOKEN set.
+// import { put } from "@vercel/blob";
+//
+// async function saveVercelBlob(file: File): Promise<UploadResult> {
+//   const filename = buildFilename(file.name);
+//   const blob = await put(filename, file, {
+//     access: "public",
+//     token: process.env.BLOB_READ_WRITE_TOKEN,
+//   });
+//
+//   return {
+//     url: blob.url,
+//     filename,
+//     size: file.size,
+//     mimeType: file.type,
+//   };
+// }
+
+// ── Public API ──────────────────────────────────────────────────────
+/**
+ * Validates and saves a file, returning its public URL.
+ * Currently uses local fs storage. Swap saveLocal for saveVercelBlob
+ * (or another provider) when deploying to production.
+ */
+export async function saveUpload(file: File): Promise<UploadResult> {
+  validateFile(file);
+  return saveLocal(file);
+  // return saveVercelBlob(file); // production
 }

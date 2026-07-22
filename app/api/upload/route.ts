@@ -1,4 +1,3 @@
-// TODO: Swap with S3/Vercel Blob in production.
 import { NextRequest } from "next/server";
 import { fail, ok } from "@/lib/api/api-response";
 import { UnauthorizedError, ValidationError } from "@/lib/api/api-error";
@@ -25,9 +24,6 @@ async function handlePOST(request: NextRequest) {
   if (!(file instanceof File)) {
     throw new ValidationError('Missing "file" field in the form data.');
   }
-
-  // Simulate a brief processing delay (remove in production)
-  await new Promise((r) => setTimeout(r, 300));
 
   try {
     const result = await saveUpload(file);
