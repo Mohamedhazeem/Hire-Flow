@@ -6,14 +6,18 @@ export const threadRepository = {
       by: ["threadId"],
       where: {
         OR: [{ senderId: userId }, { receiverId: userId }],
+        NOT: { hiddenFor: { has: userId } },
       },
       _max: { createdAt: true },
     });
   },
 
-  findLatestMessages(threadIds: string[]) {
+  findLatestMessages(threadIds: string[], userId: string) {
     return prisma.message.findMany({
-      where: { threadId: { in: threadIds } },
+      where: {
+        threadId: { in: threadIds },
+        NOT: { hiddenFor: { has: userId } },
+      },
       orderBy: { createdAt: "desc" },
       distinct: ["threadId"],
       select: {

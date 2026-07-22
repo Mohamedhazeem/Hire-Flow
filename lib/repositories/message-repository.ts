@@ -14,9 +14,12 @@ export const messageSelect = {
 } as const;
 
 export const messageRepository: IMessageRepository = {
-  findByThreadId(threadId: string, take: number, cursor?: { id: string }) {
+  findByThreadId(threadId: string, take: number, userId: string, cursor?: { id: string }) {
     return prisma.message.findMany({
-      where: { threadId },
+      where: {
+        threadId,
+        NOT: { hiddenFor: { has: userId } },
+      },
       take,
       orderBy: { createdAt: "desc" },
       ...(cursor ? { cursor, skip: 1 } : {}),
@@ -45,11 +48,15 @@ export const messageRepository: IMessageRepository = {
     });
   },
 
-  deleteByParticipant(threadId: string, userId: string) {
-    return prisma.message.deleteMany({
+  hideForParticipant(threadId: string, userId: string) {
+    return prisma.message.updateMany({
       where: {
         threadId,
         OR: [{ senderId: userId }, { receiverId: userId }],
+        NOT: { hiddenFor: { has: userId } },
+      },
+      data: {
+        hiddenFor: { push: userId },
       },
     });
   },

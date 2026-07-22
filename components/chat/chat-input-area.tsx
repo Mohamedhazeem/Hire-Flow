@@ -91,6 +91,7 @@ export function ChatInputArea({
           onChange={(e) => onInputChange(e.target.value)}
           placeholder="Type a message..."
           maxLength={2000}
+          autoComplete="off"
           className="flex-1 rounded-2xl bg-bg-sunken border-border/40 focus-visible:ring-0 focus-visible:border-border-focus"
           disabled={isSending}
         />

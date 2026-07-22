@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { MobileMenuButton } from "@/components/layout/mobile-menu-button";
 import { NotificationDropdown } from "@/app/features/notifications/components/notification-dropdown";
+import { useSession } from "@/app/features/auth/libs/auth-client";
+import { useRealtimeNotifications } from "@/app/features/notifications/hooks/use-notifications";
 
 type RoleLayoutClientProps = {
   children: React.ReactNode;
@@ -18,10 +20,16 @@ export function RoleLayoutClient({
 }: RoleLayoutClientProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const { data: session } = useSession();
+  const userId = (session?.user as { id?: string })?.id;
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Always subscribe to real-time notifications so thread list invalidations
+  // from new_message notifications fire regardless of current page
+  useRealtimeNotifications(userId ?? "");
 
   const basePath = messagesBasePath.replace("/messages", "");
   const showNotification =

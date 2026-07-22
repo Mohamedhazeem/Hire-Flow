@@ -48,7 +48,7 @@ export const messageService = {
     const { take, cursor: cursorVal } = parseCursorParams({ cursor, limit });
     const prismaCursor = cursorVal ? { id: cursorVal } : undefined;
 
-    const messages = await messageRepository.findByThreadId(threadId, take, prismaCursor);
+    const messages = await messageRepository.findByThreadId(threadId, take, userId, prismaCursor);
 
     const { items, meta } = buildCursorMeta(messages, limit);
 
@@ -145,7 +145,7 @@ export const messageService = {
     if (!participatesInThread(threadId, userId)) {
       throw new ValidationError("You are not a participant in this thread");
     }
-    await messageRepository.deleteByParticipant(threadId, userId);
+    await messageRepository.hideForParticipant(threadId, userId);
   },
 
   async deleteSingleMessage(threadId: string, userId: string, messageId: string) {
@@ -179,7 +179,7 @@ export const messageService = {
       .sort((a, b) => (b._max.createdAt?.getTime() ?? 0) - (a._max.createdAt?.getTime() ?? 0))
       .map((t) => t.threadId);
 
-    const latestMessages = await threadRepository.findLatestMessages(threadIds);
+    const latestMessages = await threadRepository.findLatestMessages(threadIds, userId);
     const latestByThread = new Map(latestMessages.map((m) => [m.threadId, m]));
 
     const otherUserIds = threadIds

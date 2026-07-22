@@ -33,6 +33,7 @@ export interface IMessageRepository {
   findByThreadId(
     threadId: string,
     take: number,
+    userId: string,
     cursor?: { id: string },
   ): Promise<MessageRow[]>;
 
@@ -42,7 +43,7 @@ export interface IMessageRepository {
 
   deleteBySender(threadId: string, senderId: string): Promise<unknown>;
 
-  deleteByParticipant(threadId: string, userId: string): Promise<unknown>;
+  hideForParticipant(threadId: string, userId: string): Promise<unknown>;
 
   findById(messageId: string): Promise<MessageIdOnly | null>;
 

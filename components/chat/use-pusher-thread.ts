@@ -42,20 +42,29 @@ export function usePusherThread(
       queryClient.setQueryData([queryKey, "threads"], (old: unknown) => {
         if (!Array.isArray(old)) return old;
         const thread = old.find((t: ThreadItem) => t.threadId === threadId);
-        if (!thread) return old;
-        return old.map((t: ThreadItem) =>
-          t.threadId === threadId
-            ? {
-                ...t,
-                lastMessage: {
-                  content: msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
-                  createdAt: msg.createdAt,
-                  senderId: msg.senderId,
-                  unread: true,
-                },
-              }
-            : t,
-        );
+        if (!thread) {
+          queryClient.invalidateQueries({ queryKey: [queryKey, "threads"] });
+          return old;
+        }
+        return old
+          .map((t: ThreadItem) =>
+            t.threadId === threadId
+              ? {
+                  ...t,
+                  lastMessage: {
+                    content: msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
+                    createdAt: msg.createdAt,
+                    senderId: msg.senderId,
+                    unread: true,
+                  },
+                }
+              : t,
+          )
+          .sort(
+            (a, b) =>
+              new Date(b.lastMessage?.createdAt ?? 0).getTime() -
+              new Date(a.lastMessage?.createdAt ?? 0).getTime(),
+          );
       });
     });
 

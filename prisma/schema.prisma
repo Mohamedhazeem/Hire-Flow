@@ -290,6 +290,7 @@ model Message {
   fileSize   Int?
   fileType   String?
   read       Boolean  @default(false)
+  hiddenFor  String[] @default([])
   createdAt  DateTime @default(now())
 
   @@index([threadId, createdAt])
