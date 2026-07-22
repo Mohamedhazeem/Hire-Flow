@@ -370,8 +370,8 @@
     "semantic_hash": ""
   },
   "app/api/admin/messages/[threadId]/route.ts": {
-    "mtime": 1783572105.7690334,
-    "ast_hash": "acebe00447eec9f9dbec0ac5c0e56583",
+    "mtime": 1784706413.627413,
+    "ast_hash": "821ab2ffcf3d95a754e6a0944bde2910",
     "semantic_hash": ""
   },
   "app/api/admin/messages/search/route.ts": {
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783572105.8545558,
-    "ast_hash": "655a9fd00d6c2691fdb672ffeca96637",
+    "mtime": 1784701067.1361108,
+    "ast_hash": "4f4d24b90ce7e6f0e65910b04d5bb66e",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {
@@ -980,7 +980,7 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
-    "mtime": 1782809941.4874988,
+    "mtime": 1784707395.5165014,
     "ast_hash": "e6f9e454e1ea978541e94e2245b3da21",
     "semantic_hash": ""
   },
@@ -1055,8 +1055,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/public-navbar.tsx": {
-    "mtime": 1783006885.8044372,
-    "ast_hash": "05c7e1a013bc90a3125222644fb0cb58",
+    "mtime": 1784710699.0522668,
+    "ast_hash": "db08a3739a3d6be2f1e164ef13c7ef70",
     "semantic_hash": ""
   },
   "app/features/public/hooks/use-sign-out.ts": {
@@ -1560,8 +1560,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1783391955.0202076,
-    "ast_hash": "f448dc0c348e81d2a3692310e9105cce",
+    "mtime": 1784707103.0495462,
+    "ast_hash": "91b47648c247062f6ef3c4b8e1f919e9",
     "semantic_hash": ""
   },
   "app/providers.tsx": {
@@ -1645,13 +1645,13 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1784694766.8871405,
-    "ast_hash": "f90c8b7f004ec7819218f861ba33936f",
+    "mtime": 1784709385.91088,
+    "ast_hash": "021b4ac4dd3c69f6e78706539446f47e",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
-    "mtime": 1782487754.252489,
-    "ast_hash": "64b57b0f3baa190dac927b2efda78e41",
+    "mtime": 1784707756.2328222,
+    "ast_hash": "8160a0c061e09c3baddafac4703250db",
     "semantic_hash": ""
   },
   "components/shared/applicant-profile-card.tsx": {
@@ -1845,8 +1845,8 @@
     "semantic_hash": ""
   },
   "lib/routes.ts": {
-    "mtime": 1782886418.8400888,
-    "ast_hash": "cc0960158e81bc2133b015b587fdab5f",
+    "mtime": 1784707689.9711018,
+    "ast_hash": "2cb6cd3199ff07bfd4c785ee68e20d6a",
     "semantic_hash": ""
   },
   "lib/thread-utils.ts": {
@@ -1900,8 +1900,8 @@
     "semantic_hash": ""
   },
   "proxy.ts": {
-    "mtime": 1782878632.3283832,
-    "ast_hash": "64103d6dc9699cfbc56fda50045e6a07",
+    "mtime": 1784710990.3638687,
+    "ast_hash": "35881ab6b9f6bb04992aec20fc1757fc",
     "semantic_hash": ""
   },
   "scripts/demote-super-admin.ts": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784383173.4182916,
-    "ast_hash": "8edfb881c886dfc6eb3e5dce7b833e00",
+    "mtime": 1784704014.9442704,
+    "ast_hash": "c13f04e66f61a19a1f9133dd56fd2446",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
@@ -2470,8 +2470,8 @@
     "semantic_hash": ""
   },
   "components/shared/people-table-toolbar.tsx": {
-    "mtime": 1783572105.957338,
-    "ast_hash": "a4f757644a3daa14dbd313b2a9f09bd2",
+    "mtime": 1784701209.8025155,
+    "ast_hash": "1a66164d2a0d5bcd59f0d9c511dbec1e",
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-bulk-form.tsx": {
@@ -2570,8 +2570,8 @@
     "semantic_hash": ""
   },
   "components/shared/job-detail-tabs.tsx": {
-    "mtime": 1783572105.9536421,
-    "ast_hash": "472fb10ca9e892b5c58f3866f89649c2",
+    "mtime": 1784707773.9102266,
+    "ast_hash": "ba6502a3ec243320488301287d68996b",
     "semantic_hash": ""
   },
   "components/shared/job-meta-grid.tsx": {
