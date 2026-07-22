@@ -20,7 +20,7 @@ export function usePusherThread(
     if (!pusher) return;
     const channel = pusher.subscribe(`private-thread-${threadId}`);
 
-    channel.bind("new-message", (data: { message: MessageItem; senderId: string }) => {
+    const handler = (data: { message: MessageItem; senderId: string }) => {
       if (data.senderId === currentUserId) return;
       const msg = data.message;
 
@@ -66,10 +66,12 @@ export function usePusherThread(
               new Date(a.lastMessage?.createdAt ?? 0).getTime(),
           );
       });
-    });
+    };
+
+    channel.bind("new-message", handler);
 
     return () => {
-      channel.unbind_all();
+      channel.unbind("new-message", handler);
       pusher.unsubscribe(`private-thread-${threadId}`);
     };
   }, [threadId, currentUserId, queryClient, queryKey]);

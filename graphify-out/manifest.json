@@ -1590,8 +1590,8 @@
     "semantic_hash": ""
   },
   "components/chat/chat-input-area.tsx": {
-    "mtime": 1782745931.4265654,
-    "ast_hash": "258679e182cb96a17d82e4dbc8380b66",
+    "mtime": 1784730112.2938328,
+    "ast_hash": "b5cc48d367e82b8543f5c5db67437ca3",
     "semantic_hash": ""
   },
   "components/chat/chat-message-list.tsx": {
@@ -1625,8 +1625,8 @@
     "semantic_hash": ""
   },
   "components/chat/use-pusher-thread.ts": {
-    "mtime": 1784712947.1941972,
-    "ast_hash": "b4370150a0ed3b2e662705d2eb346146",
+    "mtime": 1784728891.6049244,
+    "ast_hash": "2133e0368ef309d03cb533116aa16d74",
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
@@ -1645,8 +1645,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1784709385.91088,
-    "ast_hash": "021b4ac4dd3c69f6e78706539446f47e",
+    "mtime": 1784728898.439802,
+    "ast_hash": "64819ce1dd256da9da6bb234890d6023",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
@@ -2350,23 +2350,23 @@
     "semantic_hash": ""
   },
   "lib/repositories/interfaces.ts": {
-    "mtime": 1784727923.2939653,
-    "ast_hash": "a30e8a1555d54f73de66289d4834786c",
+    "mtime": 1784728784.9927628,
+    "ast_hash": "1fcce507415afd154ae3b5ceca249668",
     "semantic_hash": ""
   },
   "lib/repositories/message-repository.ts": {
-    "mtime": 1784727927.576761,
-    "ast_hash": "158c8bebcce46ddc59dff753b2e1ac26",
+    "mtime": 1784728791.2836208,
+    "ast_hash": "d74cc81589d141daee6f8e80dea558e7",
     "semantic_hash": ""
   },
   "lib/repositories/thread-repository.ts": {
-    "mtime": 1783572106.147921,
-    "ast_hash": "5788261d68d2c97c7737e369e25f78b4",
+    "mtime": 1784728795.9135342,
+    "ast_hash": "a08136e2084f897ccf7e3247fb7ee1dc",
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784727931.7876427,
-    "ast_hash": "7f4c8a97777e26adad5d474d9a4d6186",
+    "mtime": 1784728807.9613533,
+    "ast_hash": "23437b58a81ee9b90a75a70ed2369a0c",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
@@ -2615,8 +2615,8 @@
     "semantic_hash": ""
   },
   "lib/pusher/pusher-client.ts": {
-    "mtime": 1783572106.1379216,
-    "ast_hash": "008532d6e342adab0a211c4be32d0726",
+    "mtime": 1784730423.9890885,
+    "ast_hash": "5fc6a56eb6da43cc6417f0a8647da80e",
     "semantic_hash": ""
   },
   "lib/pusher/pusher.ts": {

@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "app/api/notifications/route.ts": {
-    "mtime": 1783572105.7915585,
-    "ast_hash": "6e2ca4dca1fba5ac4390d09bf62b24ad",
+    "mtime": 1784728097.3149903,
+    "ast_hash": "dff3999f49fdb637cee0483ecb1a68f1",
     "semantic_hash": ""
   },
   "app/api/pusher/auth/route.ts": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
-    "mtime": 1784712967.4139898,
-    "ast_hash": "57c7846f0f7676e0b3518b0e32ba058e",
+    "mtime": 1784728005.412657,
+    "ast_hash": "9ea875977616c435698741480080a0ed",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notifications-page.tsx": {
@@ -990,13 +990,13 @@
     "semantic_hash": ""
   },
   "app/features/notifications/hooks/use-notifications.ts": {
-    "mtime": 1784727529.25903,
-    "ast_hash": "b662b3f2ae460535fb9f3f8bbccbb8a0",
+    "mtime": 1784728022.6633158,
+    "ast_hash": "22a2542536688ac4497a13f9d695e691",
     "semantic_hash": ""
   },
   "app/features/notifications/queries/notification-queries.ts": {
-    "mtime": 1783572105.8760967,
-    "ast_hash": "91d25764b7e722b75edcb5407e4b0b9b",
+    "mtime": 1784727962.2550046,
+    "ast_hash": "3627019b212baea23c0e063989f07602",
     "semantic_hash": ""
   },
   "app/features/notifications/schema/notification.schema.ts": {
@@ -1495,13 +1495,13 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
-    "mtime": 1782532033.2819731,
-    "ast_hash": "979579381cb4dd9554988565dfee4045",
+    "mtime": 1784727951.2685237,
+    "ast_hash": "f5ec483e07e3e26547b089f7a199d008",
     "semantic_hash": ""
   },
   "app/features/user/hooks/messages/use-user-messages.ts": {
-    "mtime": 1783572105.929097,
-    "ast_hash": "89bb614dbd1fa12be3c0a479b37230b9",
+    "mtime": 1784727939.1079595,
+    "ast_hash": "4c40f4d5a7b062428bafda57405e1b31",
     "semantic_hash": ""
   },
   "app/features/user/hooks/messages/use-user-threads.ts": {
@@ -2350,13 +2350,13 @@
     "semantic_hash": ""
   },
   "lib/repositories/interfaces.ts": {
-    "mtime": 1783572106.1429236,
-    "ast_hash": "9cf4fa0fd61feeb83ae3824f492d16bc",
+    "mtime": 1784727923.2939653,
+    "ast_hash": "a30e8a1555d54f73de66289d4834786c",
     "semantic_hash": ""
   },
   "lib/repositories/message-repository.ts": {
-    "mtime": 1783572106.144921,
-    "ast_hash": "e3e9ffd3baa3ea212893463f7853415d",
+    "mtime": 1784727927.576761,
+    "ast_hash": "158c8bebcce46ddc59dff753b2e1ac26",
     "semantic_hash": ""
   },
   "lib/repositories/thread-repository.ts": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784712146.9006314,
-    "ast_hash": "856a8d369704004d1f06a93cc5ac123a",
+    "mtime": 1784727931.7876427,
+    "ast_hash": "7f4c8a97777e26adad5d474d9a4d6186",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {

@@ -9,7 +9,6 @@ import {
   useUnreadCount,
   useMarkAsRead,
   useClearAllNotifications,
-  useRealtimeNotifications,
 } from "@/app/features/notifications/hooks/use-notifications";
 import {
   Popover,
@@ -132,7 +131,7 @@ export function NotificationDropdown({
   const markAsRead = useMarkAsRead();
   const clearAll = useClearAllNotifications();
 
-  useRealtimeNotifications(userId);
+  // Realtime notifications handled by RoleLayoutClient
 
   const allNotifications = useMemo(
     () =>

@@ -7,7 +7,6 @@ import {
   useNotifications,
   useUnreadCount,
   useMarkAsRead,
-  useRealtimeNotifications,
 } from "@/app/features/notifications/hooks/use-notifications";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
@@ -121,7 +120,6 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
   const markAsRead = useMarkAsRead();
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useRealtimeNotifications(userId);
 
   const allNotifications = useMemo(
     () =>

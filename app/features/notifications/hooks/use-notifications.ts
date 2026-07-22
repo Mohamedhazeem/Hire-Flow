@@ -99,7 +99,10 @@ export function useRealtimeNotifications(userId: string) {
     const channel = pusher.subscribe(`private-user-${userId}`);
     channelRef.current = channel;
 
-    channel.bind("new-notification", (data: { notification: NotificationItem }) => {
+    // Store a reference to the bound handler so cleanup can remove only this
+    // component's binding — never unbind_all(), which would destroy handlers
+    // added by other components sharing the same channel.
+    const handler = (data: { notification: NotificationItem }) => {
       const n = data.notification;
 
       queryClient.setQueryData(["notifications", userId], (old: unknown) => {
@@ -123,15 +126,34 @@ export function useRealtimeNotifications(userId: string) {
       );
 
       if (n.type === "new_message") {
+        const threadId = n.data.threadId as string;
+
+        // Invalidate thread list so the sidebar shows the updated preview
         queryClient.invalidateQueries({
           predicate: (query) =>
             query.queryKey.length === 2 && query.queryKey[1] === "threads",
         });
+
+        // Invalidate this specific thread's messages cache so clicking the
+        // thread triggers a refetch instead of showing stale data. This is
+        // needed because usePusherThread only runs when the thread view is
+        // open — if the user is on the thread list when the message arrives,
+        // the messages cache is never updated otherwise.
+        if (threadId) {
+          queryClient.invalidateQueries({
+            predicate: (query) =>
+              query.queryKey.length === 3 &&
+              query.queryKey[1] === "messages" &&
+              query.queryKey[2] === threadId,
+          });
+        }
       }
-    });
+    };
+
+    channel.bind("new-notification", handler);
 
     return () => {
-      channel.unbind_all();
+      channel.unbind("new-notification", handler);
       pusher.unsubscribe(`private-user-${userId}`);
       channelRef.current = null;
     };
