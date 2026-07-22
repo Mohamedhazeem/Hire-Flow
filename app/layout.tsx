@@ -41,6 +41,8 @@ export default function RootLayout({
     >
       <head>
         <script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(){try{
         var e=localStorage.getItem("hireflow-ui");

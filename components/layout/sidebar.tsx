@@ -176,8 +176,11 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
 
         <nav className="flex-1 p-2 space-y-1 overflow-y-auto">
           {links.map((link) => {
-            const isActive =
-              link.href === homeHref ? pathname === homeHref : pathname.startsWith(link.href);
+            const isActive = pathname
+              ? link.href === homeHref
+                ? pathname === homeHref
+                : pathname.startsWith(link.href)
+              : false;
 
             return (
               <Link

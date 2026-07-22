@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { MobileMenuButton } from "@/components/layout/mobile-menu-button";
 import { NotificationDropdown } from "@/app/features/notifications/components/notification-dropdown";
 
@@ -16,11 +17,19 @@ export function RoleLayoutClient({
   messagesBasePath = "/admin/messages",
 }: RoleLayoutClientProps) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const basePath = messagesBasePath.replace("/messages", "");
   const showNotification =
-    pathname === basePath ||
-    pathname === basePath + "/" ||
-    pathname.startsWith(messagesBasePath);
+    mounted &&
+    pathname &&
+    (pathname === basePath ||
+      pathname === basePath + "/" ||
+      pathname.startsWith(messagesBasePath));
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -28,7 +37,7 @@ export function RoleLayoutClient({
       <main className="flex flex-1 flex-col min-h-0 min-w-0 relative">
         <div className="flex items-center gap-2 px-4 pt-4 pb-2 lg:hidden">
           <MobileMenuButton />
-          {showNotification && (
+          {mounted && showNotification && (
             <div className="ml-auto flex items-center gap-1">
               <NotificationDropdown messagesBasePath={messagesBasePath} />
             </div>
@@ -36,7 +45,7 @@ export function RoleLayoutClient({
         </div>
         {/* bg-linear-to-r from-brand/5 via-brand/5 to-transparent */}
         <div className="hidden absolute right-0 lg:flex items-center  justify-end gap-2 px-6 pt-4 pb-1 shrink-0">
-          {showNotification && (
+          {mounted && showNotification && (
             <NotificationDropdown messagesBasePath={messagesBasePath} />
           )}
         </div>

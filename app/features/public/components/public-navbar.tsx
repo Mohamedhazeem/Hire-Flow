@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { AccountPopover } from "./account-popover";
@@ -18,7 +18,9 @@ export function PublicNavbar() {
   const { data: session, isPending } = useSession();
   const signOut = useSignOut();
   const [menuOpen, setMenuOpen] = useState(false);
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
 
+  if (!mounted) return null;
   if (isHiddenRoute(pathname)) return null;
   if (isPending) return <PublicNavbarSkeleton />;
 
