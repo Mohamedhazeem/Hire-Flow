@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table.tsx": {
-    "mtime": 1783572105.8545558,
-    "ast_hash": "655a9fd00d6c2691fdb672ffeca96637",
+    "mtime": 1784701067.1361108,
+    "ast_hash": "4f4d24b90ce7e6f0e65910b04d5bb66e",
     "semantic_hash": ""
   },
   "app/features/admin/components/user-profile-view.tsx": {
@@ -2470,8 +2470,8 @@
     "semantic_hash": ""
   },
   "components/shared/people-table-toolbar.tsx": {
-    "mtime": 1783572105.957338,
-    "ast_hash": "a4f757644a3daa14dbd313b2a9f09bd2",
+    "mtime": 1784701209.8025155,
+    "ast_hash": "1a66164d2a0d5bcd59f0d9c511dbec1e",
     "semantic_hash": ""
   },
   "app/features/admin/components/invite-bulk-form.tsx": {
