@@ -24,7 +24,9 @@ export function RoleLayoutClient({
   const userId = (session?.user as { id?: string })?.id;
 
   useEffect(() => {
-    setMounted(true);
+    const onFrame = () => setMounted(true);
+    const raf = window.requestAnimationFrame(onFrame);
+    return () => window.cancelAnimationFrame(raf);
   }, []);
 
   // Always subscribe to real-time notifications so thread list invalidations
