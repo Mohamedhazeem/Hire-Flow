@@ -3230,8 +3230,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/applicants-table.dom.test.tsx": {
-    "mtime": 1784823792.1415987,
-    "ast_hash": "f721115559f9971356b783779d7586c2",
+    "mtime": 1784824644.5601175,
+    "ast_hash": "d0941fb1495a8c0c38b8dcd04d3683da",
     "semantic_hash": ""
   },
   "lib/test/components/apply-modal.dom.test.tsx": {
@@ -3319,14 +3319,9 @@
     "ast_hash": "3e81cb2dd9ff134550918e68dccad18a",
     "semantic_hash": ""
   },
-  ".kilo/plans/2026-07-23_recruiter-job-detail-plan.md": {
-    "mtime": 1784823558.443759,
-    "ast_hash": "4e67149fe901e96489f32bf4ddc5e739",
-    "semantic_hash": ""
-  },
   "lib/test/components/job-detail.dom.test.tsx": {
-    "mtime": 1784824134.2939892,
-    "ast_hash": "cb09a90110553827ccdd83b24112f58d",
+    "mtime": 1784824675.8875496,
+    "ast_hash": "d34395ba802d4d08bcf20d5e845bc318",
     "semantic_hash": ""
   }
 }

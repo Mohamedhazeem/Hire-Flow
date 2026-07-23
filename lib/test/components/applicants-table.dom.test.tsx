@@ -55,8 +55,8 @@ function makeTable() {
 }
 
 vi.mock("@/app/features/recruiter/components/use-applicants-table", () => ({
-  useApplicantsTable: (...args: any[]) => {
-    capturedArgs = args;
+  useApplicantsTable: (...args: unknown[]) => {
+    capturedArgs = args as [string, number?];
     return makeTable();
   },
 }));

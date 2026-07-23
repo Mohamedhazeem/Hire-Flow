@@ -1,6 +1,5 @@
 import { afterEach, describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import type { ReactElement } from "react";
 
 const mockPush = vi.fn();
 vi.mock("next/navigation", () => ({
@@ -35,7 +34,7 @@ vi.mock("@/components/shared/section-card", () => ({
 }));
 
 vi.mock("@/components/shared/job-detail-tabs", () => ({
-  JobDetailTabs: ({ tabs, baseHref }: { tabs: Array<{ label: string }>; baseHref: string }) => (
+  JobDetailTabs: ({ tabs }: { tabs: Array<{ label: string }>; baseHref: string }) => (
     <div data-testid="job-detail-tabs">
       {tabs.map((t, i) => (
         <span key={i}>{t.label}</span>
