@@ -1525,8 +1525,8 @@
     "semantic_hash": ""
   },
   "app/features/user/hooks/use-saved-jobs.ts": {
-    "mtime": 1783572105.9351025,
-    "ast_hash": "457ff0a7d93d1b6ea5712c54f6e94c86",
+    "mtime": 1784807173.479842,
+    "ast_hash": "06bccd365a4c3f17ab28146f0457245a",
     "semantic_hash": ""
   },
   "app/features/user/queries/user-application-queries.ts": {
@@ -2440,8 +2440,8 @@
     "semantic_hash": ""
   },
   "lib/services/user-service.ts": {
-    "mtime": 1784789050.6868734,
-    "ast_hash": "ccfa18d90914c44b15a67efbbd8cf4ac",
+    "mtime": 1784807903.294155,
+    "ast_hash": "633c41dab3400e2ee5d69ec55ae62f2b",
     "semantic_hash": ""
   },
   "app/features/admin/components/people-table-columns.tsx": {
@@ -2975,8 +2975,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/user/bookmarks.test.ts": {
-    "mtime": 1784789050.9244447,
-    "ast_hash": "1c7e28aebd45db61d8ad9bf4e40ed354",
+    "mtime": 1784808028.3011243,
+    "ast_hash": "24b83367094811311a155b2cea8ea7a3",
     "semantic_hash": ""
   },
   "lib/test/integration/user/resumes.test.ts": {

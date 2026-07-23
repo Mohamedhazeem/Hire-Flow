@@ -84,6 +84,26 @@ describe("User Bookmarks (Phase 4.12)", () => {
     expect(body.data).toHaveLength(3);
   });
 
+  it("toggle deleted job returns 404 instead of crashing", async () => {
+    const user = await createTestUser({ role: Role.user });
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    const job = await createTestJob(recruiter.id, company.id);
+    await prisma.job.delete({ where: { id: job.id } });
+    mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
+
+    const { POST } = await import("@/app/api/user/bookmarks/route");
+    const req = new NextRequest("http://localhost/api/user/bookmarks", {
+      method: "POST",
+      body: JSON.stringify({ jobId: job.id }),
+    });
+    const res = await POST(req);
+    expect(res.status).toBe(404);
+
+    const body = await res.json();
+    expect(body.message).toBeDefined();
+  });
+
   it("concurrent toggle — @@unique prevents duplicates", async () => {
     const user = await createTestUser({ role: Role.user });
     const recruiter = await createTestUser({ role: Role.recruiter });

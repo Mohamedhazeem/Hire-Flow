@@ -60,6 +60,11 @@ export const userService = {
       return { bookmarked: false, id: existing.id };
     }
 
+    const job = await prisma.job.findUnique({ where: { id: jobId }, select: { id: true } });
+    if (!job) {
+      throw new NotFoundError("Job not found");
+    }
+
     const created = await prisma.bookmark.create({
       data: { userId, jobId },
     });
