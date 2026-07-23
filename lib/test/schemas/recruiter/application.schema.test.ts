@@ -10,7 +10,7 @@ import {
 
 describe("ApplicationStatusSchema", () => {
   it("accepts valid status strings", () => {
-    for (const s of ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected", "withdrawn"]) {
+    for (const s of ["applied", "invited", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected", "withdrawn"]) {
       expect(ApplicationStatusSchema.safeParse(s).success).toBe(true);
     }
   });

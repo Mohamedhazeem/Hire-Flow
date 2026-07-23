@@ -2,6 +2,7 @@ import { z } from "zod/v4";
 
 export const APPLICATION_STATUSES = [
   "applied",
+  "invited",
   "reviewing",
   "shortlisted",
   "interview_scheduled",
@@ -15,7 +16,8 @@ export const ApplicationStatusSchema = z.enum(APPLICATION_STATUSES);
 
 /** Status transition rules — maps current status → allowed next statuses */
 export const ALLOWED_TRANSITIONS: Record<string, string[]> = {
-  applied: ["reviewing", "rejected"],
+  applied: ["invited", "reviewing", "rejected"],
+  invited: ["reviewing", "rejected"],
   reviewing: ["shortlisted", "rejected"],
   shortlisted: ["interview_scheduled", "rejected"],
   interview_scheduled: ["offered", "rejected"],
@@ -44,6 +46,7 @@ export type ListApplicantsParams = z.infer<typeof ListApplicantsParamsSchema>;
 const baseTransitionSchema = z.object({
   status: ApplicationStatusSchema,
   updatedAt: z.iso.datetime({ offset: true }).optional(),
+  email: z.boolean().optional().default(false),
 });
 
 export const ShortlistSchema = baseTransitionSchema;

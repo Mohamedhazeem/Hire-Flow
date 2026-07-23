@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -12,9 +13,32 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2Icon } from "lucide-react";
+import { Loader2Icon, MailIcon } from "lucide-react";
 import { useTransitionStatus } from "@/app/features/recruiter/hooks/use-applications";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
+
+// ─── Shared email toggle ─────────────────────────────────────────────────────
+
+function EmailCheckbox({
+  checked,
+  onChange,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none pt-2">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="size-4 accent-brand"
+      />
+      <MailIcon className="size-4 text-text-muted" />
+      <span>Also send email notification</span>
+    </label>
+  );
+}
 
 // ─── Confirmation (Review + Shortlist) ──────────────────────────────────────
 
@@ -26,6 +50,7 @@ type ConfirmStatusDialogProps = {
 
 export function ReviewDialog({ open, onOpenChange, applicant }: ConfirmStatusDialogProps) {
   const transitionStatus = useTransitionStatus();
+  const [sendEmail, setSendEmail] = useState(false);
 
   const handleConfirm = () => {
     if (!applicant) return;
@@ -35,6 +60,7 @@ export function ReviewDialog({ open, onOpenChange, applicant }: ConfirmStatusDia
         data: {
           status: "reviewing",
           updatedAt: applicant.updatedAt.toISOString(),
+          email: sendEmail,
         },
       },
       { onSuccess: () => onOpenChange(false) },
@@ -47,10 +73,11 @@ export function ReviewDialog({ open, onOpenChange, applicant }: ConfirmStatusDia
         <DialogHeader>
           <DialogTitle>Start Review</DialogTitle>
           <DialogDescription>
-            Mark {applicant?.name ?? "this applicant"} as &quot;Reviewing&quot;. Their status
-            will be updated and they will be notified.
+            Mark {applicant?.name ?? "this applicant"} as &quot;Reviewing&quot;. They will be
+            notified in-app.
           </DialogDescription>
         </DialogHeader>
+        <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
         <div className="flex justify-end gap-2 pt-4">
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Cancel
@@ -69,6 +96,7 @@ export function ReviewDialog({ open, onOpenChange, applicant }: ConfirmStatusDia
 
 export function ShortlistDialog({ open, onOpenChange, applicant }: ConfirmStatusDialogProps) {
   const transitionStatus = useTransitionStatus();
+  const [sendEmail, setSendEmail] = useState(false);
 
   const handleConfirm = () => {
     if (!applicant) return;
@@ -78,6 +106,7 @@ export function ShortlistDialog({ open, onOpenChange, applicant }: ConfirmStatus
         data: {
           status: "shortlisted",
           updatedAt: applicant.updatedAt.toISOString(),
+          email: sendEmail,
         },
       },
       { onSuccess: () => onOpenChange(false) },
@@ -90,10 +119,11 @@ export function ShortlistDialog({ open, onOpenChange, applicant }: ConfirmStatus
         <DialogHeader>
           <DialogTitle>Shortlist Applicant</DialogTitle>
           <DialogDescription>
-            Move {applicant?.name ?? "this applicant"} to the shortlist. They will be notified of
-            the status change.
+            Move {applicant?.name ?? "this applicant"} to the shortlist. They will be notified
+            in-app.
           </DialogDescription>
         </DialogHeader>
+        <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
         <div className="flex justify-end gap-2 pt-4">
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Cancel
@@ -127,6 +157,7 @@ const TOMORROW_DEFAULT = formatDateForInput(new Date(Date.now() + 24 * 60 * 60 *
 type InterviewFormData = {
   interviewDate: string;
   meetingLink: string;
+  email: boolean;
 };
 
 export function ScheduleInterviewDialog({
@@ -144,6 +175,7 @@ export function ScheduleInterviewDialog({
     defaultValues: {
       interviewDate: TOMORROW_DEFAULT,
       meetingLink: "",
+      email: false,
     },
   });
 
@@ -157,6 +189,7 @@ export function ScheduleInterviewDialog({
           interviewDate: new Date(data.interviewDate).toISOString(),
           meetingLink: data.meetingLink || undefined,
           updatedAt: applicant.updatedAt.toISOString(),
+          email: data.email,
         },
       },
       { onSuccess: () => onOpenChange(false) },
@@ -193,6 +226,11 @@ export function ScheduleInterviewDialog({
               placeholder="https://meet.google.com/xxx"
             />
           </div>
+          <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
+            <input type="checkbox" className="size-4 accent-brand" {...register("email")} />
+            <MailIcon className="size-4 text-text-muted" />
+            <span>Also send email notification</span>
+          </label>
           <div className="flex justify-end gap-2 pt-2">
             <Button variant="outline" type="button" onClick={() => onOpenChange(false)}>
               Cancel
@@ -218,6 +256,7 @@ type SendOfferDialogProps = {
 
 type OfferFormData = {
   offerDetails: string;
+  email: boolean;
 };
 
 export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDialogProps) {
@@ -227,7 +266,9 @@ export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDial
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<OfferFormData>();
+  } = useForm<OfferFormData>({
+    defaultValues: { email: false },
+  });
 
   const onSubmit = (data: OfferFormData) => {
     if (!applicant) return;
@@ -238,6 +279,7 @@ export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDial
           status: "offered",
           offerDetails: data.offerDetails,
           updatedAt: applicant.updatedAt.toISOString(),
+          email: data.email,
         },
       },
       { onSuccess: () => onOpenChange(false) },
@@ -268,6 +310,11 @@ export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDial
               <p className="text-sm text-destructive mt-1">{errors.offerDetails.message}</p>
             )}
           </div>
+          <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
+            <input type="checkbox" className="size-4 accent-brand" {...register("email")} />
+            <MailIcon className="size-4 text-text-muted" />
+            <span>Also send email notification</span>
+          </label>
           <div className="flex justify-end gap-2 pt-2">
             <Button variant="outline" type="button" onClick={() => onOpenChange(false)}>
               Cancel
@@ -283,6 +330,98 @@ export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDial
   );
 }
 
+// ─── Hire Dialog ─────────────────────────────────────────────────────────────
+
+export function HireDialog({ open, onOpenChange, applicant }: ConfirmStatusDialogProps) {
+  const transitionStatus = useTransitionStatus();
+  const [sendEmail, setSendEmail] = useState(false);
+
+  const handleConfirm = () => {
+    if (!applicant) return;
+    transitionStatus.mutate(
+      {
+        applicationId: applicant.id,
+        data: {
+          status: "hired",
+          updatedAt: applicant.updatedAt.toISOString(),
+          email: sendEmail,
+        },
+      },
+      { onSuccess: () => onOpenChange(false) },
+    );
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Mark as Hired</DialogTitle>
+          <DialogDescription>
+            Confirm that {applicant?.name ?? "this applicant"} has been hired. They will be
+            notified in-app.
+          </DialogDescription>
+        </DialogHeader>
+        <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
+        <div className="flex justify-end gap-2 pt-4">
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Cancel
+          </Button>
+          <Button onClick={handleConfirm} disabled={transitionStatus.isPending}>
+            {transitionStatus.isPending && <Loader2Icon className="size-4 animate-spin" />}
+            Mark as Hired
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+// ─── Invite Dialog ───────────────────────────────────────────────────────────
+
+export function InviteDialog({ open, onOpenChange, applicant }: ConfirmStatusDialogProps) {
+  const transitionStatus = useTransitionStatus();
+  const [sendEmail, setSendEmail] = useState(false);
+
+  const handleConfirm = () => {
+    if (!applicant) return;
+    transitionStatus.mutate(
+      {
+        applicationId: applicant.id,
+        data: {
+          status: "invited",
+          updatedAt: applicant.updatedAt.toISOString(),
+          email: sendEmail,
+        },
+      },
+      { onSuccess: () => onOpenChange(false) },
+    );
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Invite Applicant</DialogTitle>
+          <DialogDescription>
+            Invite {applicant?.name ?? "this applicant"} to the next stage. They will be notified
+            in-app.
+          </DialogDescription>
+        </DialogHeader>
+        <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
+        <div className="flex justify-end gap-2 pt-4">
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Cancel
+          </Button>
+          <Button onClick={handleConfirm} disabled={transitionStatus.isPending}>
+            {transitionStatus.isPending && <Loader2Icon className="size-4 animate-spin" />}
+            Invite
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 // ─── Reject Dialog ──────────────────────────────────────────────────────────
 
 type RejectDialogProps = {
@@ -293,6 +432,7 @@ type RejectDialogProps = {
 
 type RejectFormData = {
   rejectionReason: string;
+  email: boolean;
 };
 
 export function RejectDialog({ open, onOpenChange, applicant }: RejectDialogProps) {
@@ -302,7 +442,9 @@ export function RejectDialog({ open, onOpenChange, applicant }: RejectDialogProp
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RejectFormData>();
+  } = useForm<RejectFormData>({
+    defaultValues: { email: false },
+  });
 
   const onSubmit = (data: RejectFormData) => {
     if (!applicant) return;
@@ -313,6 +455,7 @@ export function RejectDialog({ open, onOpenChange, applicant }: RejectDialogProp
           status: "rejected",
           rejectionReason: data.rejectionReason,
           updatedAt: applicant.updatedAt.toISOString(),
+          email: data.email,
         },
       },
       { onSuccess: () => onOpenChange(false) },
@@ -343,6 +486,11 @@ export function RejectDialog({ open, onOpenChange, applicant }: RejectDialogProp
               <p className="text-sm text-destructive mt-1">{errors.rejectionReason.message}</p>
             )}
           </div>
+          <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
+            <input type="checkbox" className="size-4 accent-brand" {...register("email")} />
+            <MailIcon className="size-4 text-text-muted" />
+            <span>Also send email notification</span>
+          </label>
           <div className="flex justify-end gap-2 pt-2">
             <Button variant="outline" type="button" onClick={() => onOpenChange(false)}>
               Cancel

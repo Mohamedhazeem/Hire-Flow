@@ -45,16 +45,15 @@ describe("getBulkActions", () => {
     expect(getBulkActions([])).toEqual([]);
   });
 
-  it("returns allowed transitions for a single applicant", () => {
+  it("returns all allowed transitions for a single applicant", () => {
     const apps = [makeApplicant("applied")];
     const actions = getBulkActions(apps);
     expect(actions.length).toBeGreaterThan(0);
-    expect(actions.map((a) => a.status)).toEqual(
-      expect.arrayContaining(["reviewing", "rejected"]),
-    );
+    const statuses = actions.map((a) => a.status);
+    expect(statuses).toEqual(expect.arrayContaining(["invited", "reviewing", "rejected"]));
   });
 
-  it("returns same transitions for two applicants with same status", () => {
+  it("returns all allowed transitions for two applicants with same status", () => {
     const apps = [makeApplicant("reviewing"), makeApplicant("reviewing")];
     const actions = getBulkActions(apps);
     expect(actions.map((a) => a.status)).toEqual(
@@ -62,24 +61,45 @@ describe("getBulkActions", () => {
     );
   });
 
-  it("returns intersection for applicants with different statuses", () => {
+  it("returns union (not intersection) for applicants with different statuses", () => {
     const apps = [makeApplicant("applied"), makeApplicant("reviewing")];
     const actions = getBulkActions(apps);
     const statuses = actions.map((a) => a.status);
-    expect(statuses).toContain("rejected");
-    expect(statuses).not.toContain("shortlisted");
+    expect(statuses).toEqual(expect.arrayContaining(["invited", "reviewing", "shortlisted", "rejected"]));
   });
 
-  it("returns empty intersection when no statuses overlap", () => {
+  it("marks action as disabled when not all applicants support it", () => {
+    const apps = [makeApplicant("applied"), makeApplicant("reviewing")];
+    const actions = getBulkActions(apps);
+    const invited = actions.find((a) => a.status === "invited")!;
+    const rejected = actions.find((a) => a.status === "rejected")!;
+    expect(invited.disabled).toBe(true);
+    expect(invited.count).toBe(1);
+    expect(rejected.disabled).toBe(false);
+    expect(rejected.count).toBe(2);
+  });
+
+  it("all buttons are enabled when all applicants share the same status", () => {
+    const apps = [makeApplicant("interview_scheduled"), makeApplicant("interview_scheduled")];
+    const actions = getBulkActions(apps);
+    for (const a of actions) {
+      expect(a.disabled).toBe(false);
+      expect(a.count).toBe(2);
+    }
+  });
+
+  it("returns empty for applicants in terminal states", () => {
     const apps = [makeApplicant("hired"), makeApplicant("rejected")];
     const actions = getBulkActions(apps);
     expect(actions).toEqual([]);
   });
 
-  it("applies BULK_ACTION_LABELS labels", () => {
+  it("applies BULK_ACTION_LABELS labels and includes count/disabled", () => {
     const apps = [makeApplicant("applied")];
     const actions = getBulkActions(apps);
     const rejected = actions.find((a) => a.status === "rejected");
     expect(rejected?.label).toBe("Reject");
+    expect(rejected).toHaveProperty("count");
+    expect(rejected).toHaveProperty("disabled");
   });
 });

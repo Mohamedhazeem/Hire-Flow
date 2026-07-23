@@ -66,9 +66,10 @@ export function BulkActionBar({
                 size="sm"
                 variant={action.status === "rejected" ? "destructive" : "default"}
                 onClick={() => onBulkAction(action.status)}
-                disabled={bulkTransitionPending}
+                disabled={action.disabled || bulkTransitionPending}
+                title={action.disabled ? `${action.count} of ${selectedIds.size} selected applicants support this action` : undefined}
               >
-                {action.label}
+                {action.label} {action.count < selectedIds.size && `(${action.count})`}
               </Button>
             ))
           )}

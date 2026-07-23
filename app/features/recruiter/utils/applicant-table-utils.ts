@@ -18,23 +18,40 @@ export function addActionedIds(prev: Set<string>, ids: string[]): Set<string> {
   return next;
 }
 
-/** Compute intersection of allowed bulk actions across all selected applicants */
+/** Pipeline order for rendering bulk action buttons */
+const PIPELINE_ORDER: Record<string, number> = {
+  invited: 0,
+  reviewing: 1,
+  shortlisted: 2,
+  interview_scheduled: 3,
+  offered: 4,
+  hired: 5,
+  rejected: 6,
+};
+
+/** Compute union of allowed bulk actions across all selected applicants */
 export function getBulkActions(selectedApplicants: ApplicantRow[]): BulkActionDef[] {
   if (selectedApplicants.length === 0) return [];
 
+  const total = selectedApplicants.length;
+
+  // Union: collect all unique allowed transitions
+  const unionSet = new Set<string>();
   const statusCounts: Record<string, number> = {};
   for (const a of selectedApplicants) {
-    statusCounts[a.status] = (statusCounts[a.status] ?? 0) + 1;
+    const allowed = ALLOWED_TRANSITIONS[a.status] ?? [];
+    for (const s of allowed) {
+      unionSet.add(s);
+      statusCounts[s] = (statusCounts[s] ?? 0) + 1;
+    }
   }
-  const uniqueStatuses = Object.keys(statusCounts);
 
-  const allAllowed = uniqueStatuses.map((s) => ALLOWED_TRANSITIONS[s] ?? []);
-  const intersection = allAllowed.reduce((acc, allowed) =>
-    acc.filter((s) => allowed.includes(s)),
-  );
-
-  return intersection.map((status) => ({
-    label: BULK_ACTION_LABELS[status] ?? status,
-    status,
-  }));
+  return [...unionSet]
+    .sort((a, b) => (PIPELINE_ORDER[a] ?? 99) - (PIPELINE_ORDER[b] ?? 99))
+    .map((status) => ({
+      label: BULK_ACTION_LABELS[status] ?? status,
+      status,
+      count: statusCounts[status] ?? 0,
+      disabled: (statusCounts[status] ?? 0) < total,
+    }));
 }

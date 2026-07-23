@@ -13,6 +13,7 @@ import type {
 } from "@/app/features/recruiter/schema/application.schema";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 import { useSession } from "@/app/features/auth/libs/auth-client";
+import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application.schema";
 import { BULK_ACTION_LABELS } from "../utils/applicant-table-constants";
 import { addActionedIds } from "../utils/applicant-table-utils";
 
@@ -90,10 +91,17 @@ export function useApplicantsTable(jobId: string) {
         setBulkDialog("reject");
         return;
       }
-      const ids = [...selectedIds].filter((id) => !actionedIds.has(id));
+      // Only include applicants whose current status allows this transition
+      const eligibleIds = selectedRows
+        .filter((a) => {
+          const allowed = ALLOWED_TRANSITIONS[a.status];
+          return allowed && allowed.includes(targetStatus);
+        })
+        .map((a) => a.id);
+      if (eligibleIds.length === 0) return;
       bulkTransition.mutate(
         {
-          applicationIds: ids,
+          applicationIds: eligibleIds,
           status: targetStatus as BulkStatusTransitionInput["status"],
           email: false,
         },
@@ -101,9 +109,9 @@ export function useApplicantsTable(jobId: string) {
           onSuccess: () => {
             showFeedback(
               "success",
-              `${ids.length} applicant${ids.length > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`,
+              `${eligibleIds.length} of ${selectedIds.size} applicant${selectedIds.size > 1 ? "s" : ""} moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"`,
             );
-            setActionedIds((prev) => addActionedIds(prev, ids));
+            setActionedIds((prev) => addActionedIds(prev, eligibleIds));
             setSelectedIds(new Set());
           },
           onError: (error: Error) =>
@@ -111,7 +119,7 @@ export function useApplicantsTable(jobId: string) {
         },
       );
     },
-    [selectedIds, actionedIds, bulkTransition, showFeedback],
+    [selectedIds, selectedRows, actionedIds, bulkTransition, showFeedback],
   );
 
   const handleBulkRejectConfirm = useCallback(

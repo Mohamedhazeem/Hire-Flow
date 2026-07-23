@@ -3,6 +3,7 @@ import type { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/applic
 export const STATUS_OPTIONS = [
   { value: "all", label: "All Status" },
   { value: "applied", label: "Applied" },
+  { value: "invited", label: "Invited" },
   { value: "reviewing", label: "Reviewing" },
   { value: "shortlisted", label: "Shortlisted" },
   { value: "interview_scheduled", label: "Interview" },
@@ -14,6 +15,11 @@ export const STATUS_OPTIONS = [
  
 export const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
   applied: [
+    { label: "Invite", status: "invited" },
+    { label: "Start Review", status: "reviewing" },
+    { label: "Reject", status: "rejected" },
+  ],
+  invited: [
     { label: "Start Review", status: "reviewing" },
     { label: "Reject", status: "rejected" },
   ],
@@ -37,11 +43,17 @@ export const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> =
   rejected: [],
 };
 
-export type BulkActionDef = { label: string; status: string };
+export type BulkActionDef = {
+  label: string;
+  status: string;
+  count: number;
+  disabled: boolean;
+};
 
 export const STATUS_DOT_COLORS: Record<string, string> = {
   all: "bg-muted",
   applied: "bg-brand",
+  invited: "bg-info/60",
   reviewing: "bg-info",
   shortlisted: "bg-accent",
   interview_scheduled: "bg-warning",
@@ -51,6 +63,7 @@ export const STATUS_DOT_COLORS: Record<string, string> = {
 };
 
 export const BULK_ACTION_LABELS: Record<string, string> = {
+  invited: "Invite",
   reviewing: "Start Review",
   shortlisted: "Shortlist",
   interview_scheduled: "Schedule Interview",

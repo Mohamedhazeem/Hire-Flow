@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { seedJobWithApplicant } from "@/lib/test/integration/helpers";
+import { mockResend } from "@/lib/test/mocks";
 
 describe("Application Status Transition (Phase 4.4)", () => {
   beforeEach(async () => {
@@ -34,6 +35,17 @@ describe("Application Status Transition (Phase 4.4)", () => {
     expect(changes).toHaveLength(1);
     expect(changes[0].fromStatus).toBe("applied");
     expect(changes[0].toStatus).toBe("reviewing");
+
+    // Notification was created for the applicant (fire-and-forget, poll until ready)
+    await vi.waitFor(async () => {
+      const notification = await prisma.notification.findFirst({
+        where: { userId: applicant.id, type: "application_status" },
+      });
+      expect(notification).not.toBeNull();
+      const notifData = notification?.data as Record<string, unknown> | undefined;
+      expect(notifData?.newStatus).toBe("reviewing");
+      expect(notifData?.applicationId).toBe(application.id);
+    }, { timeout: 5000, interval: 200 });
   });
 
   it("reviewing to shortlisted succeeds", async () => {
@@ -151,5 +163,97 @@ describe("Application Status Transition (Phase 4.4)", () => {
     });
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: appB.id }) });
     expect(res.status).toBe(404);
+  });
+
+  // ── Fix 5: invited status ──────────────────────────────────────────────
+
+  it("applied to invited succeeds", async () => {
+    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+
+    const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "invited" }),
+    });
+    const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
+    expect(res.status).toBe(200);
+
+    const updated = await prisma.application.findUnique({ where: { id: application.id } });
+    expect(updated?.status).toBe("invited");
+  });
+
+  it("invited to reviewing succeeds", async () => {
+    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
+    mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+
+    const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "reviewing" }),
+    });
+    const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
+    expect(res.status).toBe(200);
+
+    const updated = await prisma.application.findUnique({ where: { id: application.id } });
+    expect(updated?.status).toBe("reviewing");
+  });
+
+  it("invited to rejected succeeds", async () => {
+    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
+    mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+
+    const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "rejected", rejectionReason: "Not a fit" }),
+    });
+    const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
+    expect(res.status).toBe(200);
+
+    const updated = await prisma.application.findUnique({ where: { id: application.id } });
+    expect(updated?.status).toBe("rejected");
+  });
+
+  it("invited to shortlisted rejected (invalid transition)", async () => {
+    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
+    mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+
+    const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "shortlisted" }),
+    });
+    const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
+    expect(res.status).toBe(400);
+  });
+
+  // ── Fix 4: email wiring (single) ──────────────────────────────────────
+
+  it("transition with email=true calls sendEmail", async () => {
+    const emailSpy = mockResend();
+    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
+
+    const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "reviewing", email: true }),
+    });
+    const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
+    expect(res.status).toBe(200);
+
+    await vi.waitFor(() => {
+      expect(emailSpy).toHaveBeenCalledTimes(1);
+      expect(emailSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          to: applicant.email,
+          subject: expect.stringContaining("Application Status"),
+        }),
+      );
+    }, { timeout: 5000, interval: 200 });
   });
 });

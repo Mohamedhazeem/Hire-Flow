@@ -1,9 +1,12 @@
 "use client";
 
 import {
+  ReviewDialog,
+  InviteDialog,
   ShortlistDialog,
   ScheduleInterviewDialog,
   SendOfferDialog,
+  HireDialog,
   RejectDialog,
 } from "@/app/features/recruiter/components/application-dialogs";
 import { BulkRejectDialog } from "@/app/features/recruiter/components/bulk-reject-dialog";
@@ -39,6 +42,16 @@ export function ApplicantsTableDialogs({
 }: ApplicantsTableDialogsProps) {
   return (
     <>
+      <ReviewDialog
+        open={dialog.type === "review"}
+        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        applicant={dialog.applicant}
+      />
+      <InviteDialog
+        open={dialog.type === "invite"}
+        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        applicant={dialog.applicant}
+      />
       <ShortlistDialog
         open={dialog.type === "shortlist"}
         onOpenChange={(open) => { if (!open) onDialogClose(); }}
@@ -51,6 +64,11 @@ export function ApplicantsTableDialogs({
       />
       <SendOfferDialog
         open={dialog.type === "send_offer"}
+        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        applicant={dialog.applicant}
+      />
+      <HireDialog
+        open={dialog.type === "hire"}
         onOpenChange={(open) => { if (!open) onDialogClose(); }}
         applicant={dialog.applicant}
       />

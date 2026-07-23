@@ -6,6 +6,7 @@ import {
   triggerForCompany,
   fireNotification,
 } from "@/lib/notifications";
+import { sendEmail } from "@/app/features/auth/libs/email";
 import { getApplicationById } from "@/app/features/recruiter/queries/application-queries";
 import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application.schema";
 import { applicationRepository } from "@/lib/repositories/application-repository";
@@ -20,7 +21,7 @@ export const applicationService = {
     sessionName: string,
     body: Record<string, unknown>,
   ) {
-    const { status, updatedAt } = body;
+    const { status, updatedAt, email } = body;
     const parsedStatus = status as string;
 
     const application = await getApplicationById(applicationId, companyId);
@@ -90,6 +91,14 @@ export const applicationService = {
       }),
     );
 
+    if (email) {
+      await sendEmail({
+        to: application.applicantEmail,
+        subject: "Application Status Update",
+        type: "application_status",
+      });
+    }
+
     return { success: true, status: parsedStatus };
   },
 
@@ -105,8 +114,8 @@ export const applicationService = {
   ) {
     const { applicationIds, status, rejectionReason, email } = body;
 
-    const result = await prisma.$transaction(async (tx) => {
-      const applications = await tx.application.findMany({
+    const applications = await prisma.$transaction(async (tx) => {
+      const apps = await tx.application.findMany({
         where: {
           id: { in: applicationIds },
           job: { companyId },
@@ -120,13 +129,13 @@ export const applicationService = {
         },
       });
 
-      if (applications.length !== applicationIds.length) {
+      if (apps.length !== applicationIds.length) {
         throw new NotFoundError(
-          `${applications.length} of ${applicationIds.length} applications found. Some applications do not exist or do not belong to your company.`,
+          `${apps.length} of ${applicationIds.length} applications found. Some applications do not exist or do not belong to your company.`,
         );
       }
 
-      for (const app of applications) {
+      for (const app of apps) {
         const allowedTransitions = ALLOWED_TRANSITIONS[app.status];
         if (!allowedTransitions || !allowedTransitions.includes(status)) {
           throw new ValidationError(
@@ -146,7 +155,7 @@ export const applicationService = {
       });
 
       await tx.applicationStatusChange.createMany({
-        data: applications.map((a) => ({
+        data: apps.map((a) => ({
           applicationId: a.id,
           fromStatus: a.status,
           toStatus: status,
@@ -157,7 +166,7 @@ export const applicationService = {
 
       fireNotification(
         createNotificationsBulk(
-          applications.map((a) => ({
+          apps.map((a) => ({
             userId: a.userId,
             type: "application_status",
             data: {
@@ -172,10 +181,20 @@ export const applicationService = {
         ),
       );
 
-      return { count: applications.length, status };
+      return apps;
     });
 
-    return result;
+    if (email) {
+      for (const app of applications) {
+        await sendEmail({
+          to: app.user.email,
+          subject: "Application Status Update",
+          type: "application_status",
+        });
+      }
+    }
+
+    return { count: applications.length, status };
   },
 
   async revertStatus(applicationId: string, companyId: string, sessionId: string) {
