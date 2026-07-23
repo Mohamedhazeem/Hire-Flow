@@ -4,6 +4,21 @@
   <img src="public/images/Hire_Flow_Cover_1.png" alt="Hire Flow Cover" />
 </p>
 
+<p align="center">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" />
+  <img alt="React" src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+  <img alt="Prisma" src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+  <img alt="Tailwind" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+  <img alt="AI" src="https://img.shields.io/badge/AI-Multi%20Provider-8B5CF6?style=flat-square&logo=openai&logoColor=white" />
+  <img alt="Better Auth" src="https://img.shields.io/badge/Auth-Better%20Auth-6366F1?style=flat-square" />
+  <img alt="Pusher" src="https://img.shields.io/badge/Realtime-Pusher-300D4F?style=flat-square" />
+  <img alt="TanStack Query" src="https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white" />
+  <img alt="Zustand" src="https://img.shields.io/badge/Zustand-443E38?style=flat-square" />
+  <img alt="Zod" src="https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white" />
+</p>
+
 ### A full-stack, multi-tenant hiring platform built for scale
 
 Hire Flow is a production-grade job board and applicant tracking system (ATS) supporting three distinct user roles — **Admins**, **Recruiters**, and **Job Seekers** — with real-time messaging, AI-powered resume assistance, and a public-facing job marketplace with SEO built in from the ground up.
@@ -25,7 +40,7 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 | Validation      | Zod                                    | `^4.4.3`                         |
 | Data Fetching   | TanStack React Query                   | `^5.101.0`                       |
 | Client State    | Zustand                                | `^5.0.14`                        |
-| Forms           | React Hook Form (+ Hookform Resolvers) | `^7.78.0`                        |
+| Forms           | React Hook Form (+ Hookform Resolvers) | `^7.78.0` / `^5.4.0`            |
 | Realtime        | Pusher / pusher-js                     | `^5.3.4` / `^8.5.0`              |
 | Email           | Resend + React Email                   | `^6.12.4` / `^6.6.1`             |
 | Charts          | Recharts                               | `^3.8.1`                         |
@@ -77,6 +92,32 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 - Animated home page: hero search, category strip, featured jobs/companies, testimonials
 - Career resources hub (resume tips, interview checklist, salary FAQ)
 - **SEO-complete**: dynamic `sitemap.xml`, `robots.txt`, and JSON-LD `JobPosting` structured data
+
+---
+
+## 🤖 AI-Powered Features
+
+Hire Flow ships a production-grade AI layer that goes beyond a single API call — it's an **architected multi-provider system** built for reliability, cost control, and user experience.
+
+### Multi-Provider Abstraction
+
+A single `AI_PROVIDER` env var (`anthropic` | `openai` | `google`) switches between **Claude**, **GPT**, and **Gemini** under the hood — no code changes, no provider lock-in. If no API key is configured, every AI surface degrades gracefully with a user-facing message rather than crashing the page.
+
+### Resume Enhancement Engine
+
+Job seekers get an interactive AI assistant that:
+- **Analyses their resume** against the job market and suggests targeted improvements
+- **Scores ATS compatibility** (keyword density, section completeness, formatting)
+- **Returns per-suggestion controls** — apply or copy individual changes, never a blind rewrite
+- **Snapshots the resume** at enhancement time so the original is preserved
+
+### Rate-Limited Per-User Quota
+
+Each user gets **5 AI enhancements per day**, enforced by an **atomic PostgreSQL `UPDATE … WHERE used < $3 RETURNING`** query — quota races are impossible even under concurrent requests. The quota survives server restarts (DB-backed, not in-memory).
+
+### Graceful Degradation
+
+Every AI feature checks for key presence at runtime. If no provider key is configured, the UI shows _"AI features temporarily unavailable"_ — the rest of the app works perfectly. This pattern is enforced consistently across resume enhancement, ATS scoring, and any future AI surface.
 
 ---
 
@@ -211,17 +252,18 @@ Visit `http://localhost:3000`. Sign up as a job seeker directly, or promote your
 ```
 hire-flow-next/
 ├── app/
-│   ├── (public)/                # Marketing shell: home, jobs, job detail, privacy, terms
+│   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms
 │   ├── (auth)/                  # Login, register, verify-email, reset-password
 │   ├── (roles)/
 │   │   ├── admin/                # Admin dashboard, users, jobs, team, messages
 │   │   ├── recruiter/            # Recruiter dashboard, jobs, applicants, analytics
 │   │   └── user/                 # Job seeker dashboard, profile, resumes, applications
-│   ├── (resources)/              # Career resources hub
 │   ├── api/                      # REST route handlers (admin/recruiter/user/jobs/files)
 │   ├── features/                 # Feature-colocated components, hooks, queries, schemas
 │   │   ├── admin/
+│   │   ├── auth/
 │   │   ├── recruiter/
+│   │   ├── shared/
 │   │   ├── user/
 │   │   ├── jobs/
 │   │   ├── landing/
@@ -232,17 +274,29 @@ hire-flow-next/
 │   ├── layout.tsx
 │   └── providers.tsx
 ├── components/
-│   ├── ui/                      # Shared shadcn primitives (button, table, dialog, data-table…)
+│   ├── chat/                    # Chat header, thread list, message input
 │   ├── layout/                  # Page header, role layout client
-│   └── shared/                  # StatusTimeline, ConfirmActionButton, AvatarFallback…
-├── lib/                          # api-response, api-error, rate-limiter, notifications, ai-client, routes
+│   ├── shared/                  # StatusTimeline, ConfirmActionButton, AvatarFallback…
+│   └── ui/                      # Shared shadcn primitives (button, table, dialog, data-table…)
+├── lib/                          # Core utilities
+│   ├── api/                     # api-client, api-error, api-response, api-wrapper
+│   ├── handlers/                # Message & invite handlers
+│   ├── pusher/                  # Pusher server/client setup
+│   ├── repositories/            # Application, job, message repositories
+│   ├── services/                # Application, job, notification services
+│   └── test/                    # Factories, fixtures, mocks, reset-db
 ├── stores/                       # Zustand: ui-store, chat-store
+├── features/
+│   └── messages/                 # Presence store & realtime messaging
+├── utils/                        # env, format-string, etc.
+├── scripts/                      # promote-super-admin, demote-super-admin
+├── e2e/                          # Playwright spec files
 ├── prisma/
 │   ├── schema.prisma
 │   ├── seed.ts
 │   └── scripts/
 ├── proxy.ts                      # Auth & role-redirect middleware
-└── MANIFEST.md                   # Living build log & architecture record
+└── manifest.md                   # Living build log & architecture record
 ```
 
 ---
@@ -320,7 +374,7 @@ Supporting infra: `Application` indexes (`@@index([appliedAt])`, `@@index([jobId
 
 ### Running tests
 
-`vitest.config.ts` defines two projects: `default` (5s timeout — unit, integration, component) and `perf` (300s timeout — `*.perf.test.ts` against a real Postgres test DB). By default `npm run test` runs the `default` project only; use `--project` to target one or both.
+`vitest.config.ts` defines three projects: `default` (5s timeout — unit + integration), `dom` (5s timeout — component/RTL tests), and `perf` (300s timeout — `*.perf.test.ts` against a real Postgres test DB). By default `npm run test` runs all three; use `--project` to target a specific one.
 
 ```bash
 # One-time: create local test database
@@ -329,15 +383,18 @@ createdb hireflow_test
 # Add to .env.test
 DATABASE_URL_TEST="postgresql://<user>:<password>@localhost:5432/hireflow_test"
 
-# Default project: unit + integration + component
+# All projects (default + dom + perf)
 npm run test
 npm run test:watch
 npm run test:coverage
 
+# Component/DOM tests only
+npx vitest run --project dom
+
 # Performance/safety project only (real Postgres, long timeout)
 npx vitest run --project perf
 
-# Both projects
+# Specific combination
 npx vitest run --project default --project perf
 
 # Apply migrations to the test database before the first run (global-setup also does this)
@@ -348,7 +405,7 @@ npm run test:e2e
 npm run test:e2e:ui   # interactive mode
 ```
 
-Coverage thresholds are enforced via `vitest.config.ts` and ratchet upward as suites mature (35% → 45% → 60% → 70% across phases). CI (`.github/workflows/test.yml`) runs the unit/integration suite against a Postgres 16 service container and Playwright E2E against the seeded test database on every pull request.
+Coverage thresholds are enforced via `vitest.config.ts` (currently `lines: 22, functions: 54, statements: 22, branches: 67`) and ratchet upward as suites mature.
 
 ---
 
