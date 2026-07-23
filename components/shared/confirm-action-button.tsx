@@ -38,6 +38,7 @@ export function ConfirmActionButton({
   const [open, setOpen] = useState(false);
 
   const handleConfirm = useCallback(() => {
+    setOpen(false);
     action();
   }, [action]);
 

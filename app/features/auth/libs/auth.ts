@@ -3,6 +3,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import prisma from "../../../../lib/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins";
+import { adminAc, userAc } from "better-auth/plugins/admin/access";
 import { sendEmail } from "./email";
 import { env } from "@/utils/env";
 import ms from "ms";
@@ -87,7 +88,17 @@ export const auth = betterAuth({
     },
   },
 
-  plugins: [admin(), nextCookies()],
+  plugins: [
+    admin({
+      adminRoles: ["admin", "super_admin"],
+      roles: {
+        super_admin: adminAc,
+        admin: adminAc,
+        user: userAc,
+      },
+    }),
+    nextCookies(),
+  ],
 });
 
 export async function getSession() {

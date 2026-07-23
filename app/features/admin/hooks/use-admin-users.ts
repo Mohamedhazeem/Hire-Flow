@@ -89,6 +89,9 @@ export function useRevokeUserSessions() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });
     },
+    onError: (error: Error) => {
+      console.error("Failed to revoke sessions:", error.message);
+    },
   });
 }
 
