@@ -1400,33 +1400,33 @@
     "semantic_hash": ""
   },
   "app/features/user/components/application-actions.tsx": {
-    "mtime": 1782809922.9693332,
-    "ast_hash": "0a151db4613fa69272596d49f9d16326",
+    "mtime": 1784804897.3915968,
+    "ast_hash": "b5b7ae86c5a39204ef5d73b9c90901a4",
     "semantic_hash": ""
   },
   "app/features/user/components/application-detail-view.tsx": {
-    "mtime": 1783572105.926103,
-    "ast_hash": "9e5ce92e00a512e8ce0c0056ba5813b1",
+    "mtime": 1784804822.5427716,
+    "ast_hash": "81179982a8e7e8c87c25d11e456fd000",
     "semantic_hash": ""
   },
   "app/features/user/components/application-header.tsx": {
-    "mtime": 1782809912.8069797,
-    "ast_hash": "31bcedff3ff567466fe2525cd6b91f16",
+    "mtime": 1784804835.5719655,
+    "ast_hash": "afe227ea2026c2c20b11079bb89d7275",
     "semantic_hash": ""
   },
   "app/features/user/components/application-resume-section.tsx": {
-    "mtime": 1782809921.1245427,
-    "ast_hash": "3ec23666a2d2bd192872da38f699d1af",
+    "mtime": 1784804888.90168,
+    "ast_hash": "e679e8d133f416da4588a50fe1e747c7",
     "semantic_hash": ""
   },
   "app/features/user/components/application-sections.tsx": {
-    "mtime": 1782809918.4205568,
-    "ast_hash": "198570f1f1c8f85cdd0601df1d2b9ec3",
+    "mtime": 1784804879.8296936,
+    "ast_hash": "e0a342b67775cef5a81b0888ee5b651f",
     "semantic_hash": ""
   },
   "app/features/user/components/application-timeline.tsx": {
-    "mtime": 1782812060.6993334,
-    "ast_hash": "3f55be08e2cd76f921a333616801d0c3",
+    "mtime": 1784804846.2799919,
+    "ast_hash": "d4d9ccade535ecdaba10af8ffeb302f6",
     "semantic_hash": ""
   },
   "app/features/user/components/applications-page.tsx": {
@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1784803379.5046062,
-    "ast_hash": "fe221c652b5e33d664ea3998df85d047",
+    "mtime": 1784804689.3161252,
+    "ast_hash": "98c4659aba2675dd4d3b463b69af95e5",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/race.test.ts": {
@@ -3220,8 +3220,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/account-popover.dom.test.tsx": {
-    "mtime": 1784789050.698884,
-    "ast_hash": "446cafe18204944b181f243d5f99d88b",
+    "mtime": 1784804826.5486882,
+    "ast_hash": "b9c6fa6310fca39b8bbdc5b057bb696a",
     "semantic_hash": ""
   },
   "lib/test/components/ai-suggestions-panel.dom.test.tsx": {

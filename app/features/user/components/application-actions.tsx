@@ -27,6 +27,7 @@ export function ApplicationActions({ canWithdraw, isPending, error, onWithdraw }
           description="Are you sure you want to withdraw this application? You can re-apply later."
           confirmLabel="Yes, withdraw"
           variant="destructive"
+          className="w-full sm:w-auto"
         >
           <Trash2Icon className="size-4" /> Withdraw Application
         </ConfirmActionButton>

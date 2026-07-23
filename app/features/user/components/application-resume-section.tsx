@@ -1,15 +1,17 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { FileTextIcon } from "lucide-react";
 
 type Props = {
   builderData: Record<string, unknown> | null;
   resumeSnapshotUrl: string | null;
+  className?: string;
 };
 
-export function ApplicationResumeSection({ builderData, resumeSnapshotUrl }: Props) {
+export function ApplicationResumeSection({ builderData, resumeSnapshotUrl, className }: Props) {
   return (
-    <div className="bg-bg-surface border border-border-subtle rounded-xl p-5 mb-8">
+    <div className={cn("bg-bg-surface border border-border-subtle rounded-xl p-4 sm:p-5", className)}>
       <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4 flex items-center gap-2">
         <FileTextIcon className="size-4" />
         Resume Submitted

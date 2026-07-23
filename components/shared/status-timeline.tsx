@@ -29,7 +29,7 @@ type Props = {
 };
 
 const STATUS_ICONS: Record<string, React.ReactNode> = {
-  applied: <SendIcon className="size-4" />,
+  applied: null,
   reviewing: <SearchIcon className="size-4" />,
   shortlisted: <CheckCircle2Icon className="size-4" />,
   interview_scheduled: <CalendarIcon className="size-4" />,
@@ -85,9 +85,7 @@ function getColor(entry: StatusTimelineEntry): string {
 export function StatusTimeline({ entries, className }: Props) {
   if (entries.length === 0) {
     return (
-      <div className="text-sm text-text-muted py-6 text-center">
-        No status history available.
-      </div>
+      <div className="text-sm text-text-muted py-6 text-center">No status history available.</div>
     );
   }
 
@@ -110,15 +108,11 @@ export function StatusTimeline({ entries, className }: Props) {
               >
                 {getIcon(entry)}
               </div>
-              {!isLast && (
-                <div className="mt-1 w-px flex-1 bg-border-subtle" />
-              )}
+              {!isLast && <div className="mt-1 w-px flex-1 bg-border-subtle" />}
             </div>
             <div className={cn("min-w-0 flex-1 pt-0.5", upcoming && "opacity-50")}>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-sm font-medium text-text-heading">
-                  {entry.label}
-                </span>
+                <span className="text-sm font-medium text-text-heading">{entry.label}</span>
                 <span className="text-xs text-text-muted whitespace-nowrap">
                   {relativeTime(entry.createdAt)}
                 </span>
@@ -129,9 +123,7 @@ export function StatusTimeline({ entries, className }: Props) {
                 )}
               </div>
               {entry.changedByName && (
-                <p className="text-xs text-text-muted mt-0.5">
-                  by {entry.changedByName}
-                </p>
+                <p className="text-xs text-text-muted mt-0.5">by {entry.changedByName}</p>
               )}
               {entry.note && (
                 <p className="text-xs text-text-body mt-1 italic bg-bg-elevated rounded-md px-2 py-1 border border-border-subtle">

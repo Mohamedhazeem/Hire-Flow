@@ -43,7 +43,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
 
   if (isLoading)
     return (
-      <div className="max-w-3xl mx-auto px-4 md:px-6 py-8 space-y-4">
+      <div className="py-8 space-y-4">
         <Skeleton className="h-8 w-48" />
         <Skeleton className="h-4 w-72" />
         <Skeleton className="h-48 w-full rounded-xl" />
@@ -52,7 +52,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
 
   if (isError || !data)
     return (
-      <div className="max-w-3xl mx-auto px-4 md:px-6 py-16 text-center">
+      <div className="py-12 sm:py-16 text-center">
         <p className="text-text-muted">Application not found</p>
         <Link
           href="/user/applications"
@@ -82,6 +82,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
       ? `${String(d.jobSalaryCurrency ?? "USD")}${salaryMin?.toLocaleString("en-US") ?? ""} - ${String(d.jobSalaryCurrency ?? "USD")}${salaryMax?.toLocaleString("en-US") ?? ""}`
       : null;
   const status = String(d.status ?? "");
+  const appCreatedAt = d.createdAt as string | undefined;
   const statusChanges = (d.statusChanges ?? []) as Array<Record<string, unknown>>;
   const timeline = statusChanges.map((sc) => ({
     id: sc.id as string,
@@ -101,7 +102,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
   const offerDetails = d.offerDetails as string | null;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-6">
+    <div className="py-6 lg:py-8">
       <ApplicationHeader
         jobTitle={jobTitle}
         companyName={companyName}
@@ -112,16 +113,22 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
         status={status}
         jobActive={d.jobActive as boolean}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <ApplicationTimeline statusChanges={timeline} />
-        <ApplicationSections
-          rejectionReason={rejectionReason}
-          interviewDate={interviewDate}
-          meetingLink={meetingLink}
-          offerDetails={offerDetails}
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8">
+        <ApplicationTimeline statusChanges={timeline} createdAt={appCreatedAt} />
+        <div className="flex flex-col gap-4 md:gap-6 h-full">
+          <ApplicationSections
+            rejectionReason={rejectionReason}
+            interviewDate={interviewDate}
+            meetingLink={meetingLink}
+            offerDetails={offerDetails}
+          />
+          <ApplicationResumeSection
+            builderData={builderData}
+            resumeSnapshotUrl={resumeSnapshotUrl}
+            className="md:flex-1"
+          />
+        </div>
       </div>
-      <ApplicationResumeSection builderData={builderData} resumeSnapshotUrl={resumeSnapshotUrl} />
       <ApplicationActions
         canWithdraw={canWithdraw}
         isPending={wd.isPending}
