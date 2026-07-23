@@ -12,13 +12,18 @@ import { MenuIcon, XIcon, BriefcaseIcon, LogInIcon, UserPlusIcon } from "lucide-
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 import { isHiddenRoute } from "@/lib/routes";
+import Image from "next/image";
 
 export function PublicNavbar() {
   const pathname = usePathname();
   const { data: session, isPending } = useAutoRefreshSession();
   const signOut = useSignOut();
   const [menuOpen, setMenuOpen] = useState(false);
-  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   if (!mounted) return null;
   if (isHiddenRoute(pathname)) return null;
@@ -29,8 +34,20 @@ export function PublicNavbar() {
   return (
     <header className="sticky top-0 z-50 bg-bg-page/75 backdrop-blur-md border-b border-border-subtle">
       <div className="mx-auto px-4 md:px-6 lg:px-8 h-14 flex items-center  gap-4">
-        <Link href="/" className="text-lg font-bold text-text-heading shrink-0">
-          HireFlow
+        <Link
+          href="/"
+          className="text-lg font-semibold text-text-heading shrink-0 flex items-center gap-2 group"
+        >
+          <span className="inline-block size-10 items-center justify-center transition-transform duration-200 group-hover:scale-110">
+            <Image
+              src="/images/Hire-Flow-Logo-Photoroom.png"
+              alt="Hire Flow"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </span>
+          Hire Flow
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
           {!pathname.startsWith("/jobs") && (

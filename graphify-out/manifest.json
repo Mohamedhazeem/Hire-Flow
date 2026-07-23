@@ -1645,8 +1645,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1784789050.0059948,
-    "ast_hash": "64819ce1dd256da9da6bb234890d6023",
+    "mtime": 1784800217.881492,
+    "ast_hash": "5feb27a5d892df7bdac0f35e7e06e448",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
