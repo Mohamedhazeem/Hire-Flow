@@ -10,4 +10,6 @@ export type MessageItem = {
   fileType: string | null;
   createdAt: string;
   read: boolean;
+  deletedAt: string | null;
+  hiddenFor: string[];
 };

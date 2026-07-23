@@ -171,4 +171,38 @@ describe("MessageBubble", () => {
     );
     expect(container.querySelector(".animate-spin")).toBeInTheDocument();
   });
+
+  it("renders deleted placeholder for received deleted messages", () => {
+    render(
+      <MessageBubble
+        content="Original content"
+        fileUrl={null}
+        fileName={null}
+        fileSize={null}
+        fileType={null}
+        createdAt={new Date().toISOString()}
+        isOwn={false}
+        deletedAt={new Date().toISOString()}
+      />,
+    );
+    expect(screen.getByText("This message was deleted")).toBeInTheDocument();
+    expect(screen.queryByText("Original content")).not.toBeInTheDocument();
+  });
+
+  it("returns null for own deleted messages", () => {
+    const { container } = render(
+      <MessageBubble
+        content="My old content"
+        fileUrl={null}
+        fileName={null}
+        fileSize={null}
+        fileType={null}
+        createdAt={new Date().toISOString()}
+        isOwn={true}
+        deletedAt={new Date().toISOString()}
+      />,
+    );
+    expect(container.innerHTML).toBe("");
+    expect(screen.queryByText("My old content")).not.toBeInTheDocument();
+  });
 });

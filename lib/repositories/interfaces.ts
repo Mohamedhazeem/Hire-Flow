@@ -12,6 +12,7 @@ export type CreateMessageData = {
 export type MessageRow = {
   id: string;
   senderId: string;
+  receiverId: string;
   content: string;
   fileUrl: string | null;
   fileName: string | null;
@@ -19,6 +20,8 @@ export type MessageRow = {
   fileType: string | null;
   createdAt: Date;
   read: boolean;
+  deletedAt: Date | null;
+  hiddenFor: string[];
 };
 
 export type MessageWithCreatedAt = MessageRow;
@@ -26,6 +29,7 @@ export type MessageWithCreatedAt = MessageRow;
 export type MessageIdOnly = {
   id: string;
   senderId: string;
+  receiverId: string;
   threadId: string;
 };
 
@@ -46,6 +50,8 @@ export interface IMessageRepository {
   hideForParticipant(threadId: string, userId: string): Promise<unknown>;
 
   findById(messageId: string): Promise<MessageIdOnly | null>;
+
+  softDelete(messageId: string, userId: string): Promise<MessageRow>;
 
   deleteById(messageId: string): Promise<unknown>;
 }

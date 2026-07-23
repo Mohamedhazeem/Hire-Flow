@@ -4,6 +4,7 @@ import type { IMessageRepository, CreateMessageData } from "./interfaces";
 export const messageSelect = {
   id: true,
   senderId: true,
+  receiverId: true,
   content: true,
   fileUrl: true,
   fileName: true,
@@ -11,6 +12,8 @@ export const messageSelect = {
   fileType: true,
   createdAt: true,
   read: true,
+  deletedAt: true,
+  hiddenFor: true,
 } as const;
 
 export const messageRepository: IMessageRepository = {
@@ -64,7 +67,18 @@ export const messageRepository: IMessageRepository = {
   findById(messageId: string) {
     return prisma.message.findUnique({
       where: { id: messageId },
-      select: { id: true, senderId: true, threadId: true },
+      select: { id: true, senderId: true, receiverId: true, threadId: true },
+    });
+  },
+
+  async softDelete(messageId: string, userId: string) {
+    return prisma.message.update({
+      where: { id: messageId },
+      data: {
+        deletedAt: new Date(),
+        hiddenFor: { push: userId },
+      },
+      select: messageSelect,
     });
   },
 

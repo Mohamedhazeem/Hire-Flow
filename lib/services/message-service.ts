@@ -172,7 +172,15 @@ export const messageService = {
       throw new ValidationError("You can only delete your own messages");
     }
 
-    await messageRepository.deleteById(messageId);
+    // Soft-delete: set deletedAt and hide for sender so it no longer appears in their view.
+    await messageRepository.softDelete(messageId, userId);
+
+    // Notify the other participant in real time so they see the "deleted" placeholder.
+    void pusher.trigger(`private-thread-${threadId}`, "message-deleted", {
+      messageId,
+      threadId,
+      deletedBy: userId,
+    });
   },
 
   async getThreadList(userId: string) {

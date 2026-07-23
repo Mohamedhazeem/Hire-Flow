@@ -21,7 +21,7 @@ export function usePusherThread(
     if (!pusher) return;
     const channel = pusher.subscribe(`private-thread-${threadId}`);
 
-    const handler = (data: { message: MessageItem; senderId: string }) => {
+    const newMessageHandler = (data: { message: MessageItem; senderId: string }) => {
       if (data.senderId === currentUserId) return;
       const msg = data.message;
 
@@ -56,7 +56,7 @@ export function usePusherThread(
                     content: msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
                     createdAt: msg.createdAt,
                     senderId: msg.senderId,
-                    unread: false, // user is actively viewing this thread
+                    unread: false,
                   },
                 }
               : t,
@@ -68,11 +68,6 @@ export function usePusherThread(
           );
       });
 
-      // Mark the new message as read on the server since the user is viewing
-      // this thread — otherwise the notification handler's thread-list refetch
-      // will return unread: true and overwrite our optimistic false above.
-      // After the fetch completes, re-invalidate the thread list so the
-      // refetch returns unread: false (message is now marked read on server).
       if (apiBasePath) {
         fetch(`${apiBasePath}/messages/${threadId}?limit=1`)
           .then(() => {
@@ -85,10 +80,36 @@ export function usePusherThread(
       }
     };
 
-    channel.bind("new-message", handler);
+    const messageDeletedHandler = (data: { messageId: string; threadId: string; deletedBy: string }) => {
+      if (data.deletedBy === currentUserId) return;
+
+      queryClient.setQueryData([queryKey, "messages", threadId], (old: unknown) => {
+        if (!old || typeof old !== "object") return old;
+        const d = old as { pages: { data: { messages: MessageItem[] } }[] };
+        if (!d.pages?.length) return old;
+        return {
+          ...d,
+          pages: d.pages.map((page) => ({
+            ...page,
+            data: {
+              ...page.data,
+              messages: page.data.messages.map((m: MessageItem) =>
+                m.id === data.messageId
+                  ? { ...m, deletedAt: new Date().toISOString() }
+                  : m,
+              ),
+            },
+          })),
+        };
+      });
+    };
+
+    channel.bind("new-message", newMessageHandler);
+    channel.bind("message-deleted", messageDeletedHandler);
 
     return () => {
-      channel.unbind("new-message", handler);
+      channel.unbind("new-message", newMessageHandler);
+      channel.unbind("message-deleted", messageDeletedHandler);
       pusher.unsubscribe(`private-thread-${threadId}`);
     };
   }, [threadId, currentUserId, queryClient, queryKey, apiBasePath]);

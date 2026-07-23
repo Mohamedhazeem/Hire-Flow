@@ -109,6 +109,7 @@ type MessageBubbleProps = {
   fileType: string | null;
   createdAt: string;
   isOwn: boolean;
+  deletedAt?: string | null;
   onDelete?: () => void;
   isDeleting?: boolean;
 };
@@ -121,9 +122,23 @@ export function MessageBubble({
   fileType,
   createdAt,
   isOwn,
+  deletedAt,
   onDelete,
   isDeleting,
 }: MessageBubbleProps) {
+  if (deletedAt) {
+    if (isOwn) return null;
+    return (
+      <div className={cn("flex w-full", "justify-start")}>
+        <div className="max-w-[75%]">
+          <div className="rounded-2xl px-4 py-2.5 text-sm bg-bg-surface border border-border-subtle text-text-muted italic rounded-bl-md">
+            <p>This message was deleted</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={cn("flex w-full group", isOwn ? "justify-end" : "justify-start")}>
       <div className={cn("max-w-[75%] relative", isOwn ? "items-end" : "items-start")}>

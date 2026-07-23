@@ -76,6 +76,7 @@ export function ChatMessageList({
                     fileType={msg.fileType}
                     createdAt={msg.createdAt}
                     isOwn={msg.senderId === currentUserId}
+                    deletedAt={msg.deletedAt}
                     onDelete={() => onDeleteMessage(msg.id)}
                     isDeleting={deletingMessageIds.has(msg.id)}
                   />

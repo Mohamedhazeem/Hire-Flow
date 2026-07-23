@@ -29,6 +29,8 @@ export async function createTestMessage(
       fileSize: overrides?.fileSize ?? null,
       fileType: overrides?.fileType ?? null,
       read: overrides?.read ?? false,
+      hiddenFor: overrides?.hiddenFor ?? [],
+      deletedAt: overrides?.deletedAt ?? null,
       ...overrides,
     },
   });

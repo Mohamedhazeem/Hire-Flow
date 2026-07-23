@@ -91,6 +91,7 @@ export function createUseDeleteMessage(queryKey: string, apiBasePath: string) {
         queryClient.invalidateQueries({
           queryKey: [queryKey, "messages", threadId],
         });
+        queryClient.invalidateQueries({ queryKey: [queryKey, "threads"] });
       },
     });
   };
