@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/account-popover.tsx": {
-    "mtime": 1784797093.0700004,
-    "ast_hash": "a1944115dced0a48c36e455c035242b3",
+    "mtime": 1784797203.1148572,
+    "ast_hash": "a704c922e0df614cb05677b0dd246b6e",
     "semantic_hash": ""
   },
   "app/features/public/components/career-resources/career-resources-page.tsx": {
@@ -1645,8 +1645,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1784789050.0059948,
-    "ast_hash": "64819ce1dd256da9da6bb234890d6023",
+    "mtime": 1784800217.881492,
+    "ast_hash": "5feb27a5d892df7bdac0f35e7e06e448",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {

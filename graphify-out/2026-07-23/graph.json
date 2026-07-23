@@ -17,7 +17,7 @@
       "label": "ROLE_META",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "components_account_popover_role_meta",
       "community": 113,
@@ -27,7 +27,7 @@
       "label": "AccountPopover()",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L22",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "components_account_popover_accountpopover",
       "community": 148,
@@ -100531,5 +100531,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a45213f46179f69dedc2c0fb4a3764b0be18b527"
+  "built_at_commit": "6966863f1a34d4d7058a88f1c67aafc053e92e33"
 }
