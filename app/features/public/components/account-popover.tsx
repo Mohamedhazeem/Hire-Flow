@@ -5,7 +5,57 @@ import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 import { AvatarFallback } from "@/components/shared/avatar-fallback";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
-import { LayoutDashboardIcon, LogOutIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  BarChart3Icon,
+  BookmarkIcon,
+  BriefcaseIcon,
+  Building2Icon,
+  FileTextIcon,
+  LayoutDashboardIcon,
+  LogOutIcon,
+  MessageSquareTextIcon,
+  ShieldIcon,
+  UserCogIcon,
+  UserIcon,
+  UsersIcon,
+} from "lucide-react";
+
+type RoleLink = { href: string; label: string; icon: LucideIcon };
+
+const LINKS: Record<string, RoleLink[]> = {
+  super_admin: [
+    { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
+    { href: "/admin/team", label: "Team", icon: ShieldIcon },
+    { href: "/admin/messages", label: "Messages", icon: MessageSquareTextIcon },
+    { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
+    { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
+    { href: "/admin/users", label: "Users", icon: UsersIcon },
+  ],
+  admin: [
+    { href: "/admin", label: "Dashboard", icon: LayoutDashboardIcon },
+    { href: "/admin/team", label: "Team", icon: ShieldIcon },
+    { href: "/admin/messages", label: "Messages", icon: MessageSquareTextIcon },
+    { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
+    { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
+    { href: "/admin/users", label: "Users", icon: UsersIcon },
+  ],
+  recruiter: [
+    { href: "/recruiter", label: "Dashboard", icon: LayoutDashboardIcon },
+    { href: "/recruiter/company", label: "Company Profile", icon: Building2Icon },
+    { href: "/recruiter/team", label: "Team Members", icon: UsersIcon },
+    { href: "/recruiter/jobs", label: "Jobs", icon: BriefcaseIcon },
+    { href: "/recruiter/messages", label: "Messages", icon: MessageSquareTextIcon },
+    { href: "/recruiter/analytics", label: "Analytics", icon: BarChart3Icon },
+  ],
+  user: [
+    { href: "/user", label: "Dashboard", icon: LayoutDashboardIcon },
+    { href: "/user/profile", label: "Profile", icon: UserIcon },
+    { href: "/user/applications", label: "Applications", icon: FileTextIcon },
+    { href: "/user/messages", label: "Messages", icon: MessageSquareTextIcon },
+    { href: "/user/saved-jobs", label: "Saved Jobs", icon: BookmarkIcon },
+  ],
+};
 
 const ROLE_META: Record<string, { label: string; dot: string }> = {
   super_admin: { label: "Super Admin", dot: "bg-amber-500" },
@@ -14,7 +64,6 @@ const ROLE_META: Record<string, { label: string; dot: string }> = {
   user: { label: "User", dot: "bg-slate-400" },
 };
 
-// Unified menu-item style – used for buttons/links and the non‑interactive row
 const MENU_ITEM =
   "flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-bg-muted transition-colors w-full";
 
@@ -27,12 +76,7 @@ export function AccountPopover() {
 
   const role = (user as { role?: string })?.role ?? "user";
   const meta = ROLE_META[role] ?? ROLE_META.user;
-  const dashboardHref =
-    role === "admin" || role === "super_admin"
-      ? "/admin"
-      : role === "recruiter"
-        ? "/recruiter"
-        : "/user";
+  const links = LINKS[role] ?? LINKS.user;
 
   return (
     <Popover>
@@ -66,27 +110,31 @@ export function AccountPopover() {
 
         <div className="h-px bg-border-subtle mx-2 my-0.5" aria-hidden="true" />
 
-        {/* ── Menu Items ── */}
-        <div className="flex flex-col gap-1">
-          {/* Dashboard Link */}
-          <Link
-            href={dashboardHref}
-            className={`${MENU_ITEM} group hover:text-white hover:bg-brand/90`}
-          >
-            <LayoutDashboardIcon className="size-4 text-text-muted shrink-0 group-hover:text-white" />
-            Go to Dashboard
-          </Link>
-
-          {/* Sign Out Button */}
-          <button
-            type="button"
-            onClick={signOut}
-            className={`${MENU_ITEM} text-error hover:text-white hover:bg-error/90`}
-          >
-            <LogOutIcon className="size-4 shrink-0" />
-            Sign Out
-          </button>
+        {/* ── Role-specific links ── */}
+        <div className="flex flex-col">
+          {links.map(({ href, label, icon: Icon }, i) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${MENU_ITEM} group hover:text-white hover:bg-brand/90`}
+            >
+              <Icon className="size-4 text-text-muted shrink-0 group-hover:text-white" />
+              {label}
+            </Link>
+          ))}
         </div>
+
+        <div className="h-px bg-border-subtle mx-2 my-0.5" aria-hidden="true" />
+
+        {/* ── Sign Out ── */}
+        <button
+          type="button"
+          onClick={signOut}
+          className={`${MENU_ITEM} text-error hover:text-white hover:bg-error/90`}
+        >
+          <LogOutIcon className="size-4 shrink-0" />
+          Sign Out
+        </button>
       </PopoverContent>
     </Popover>
   );

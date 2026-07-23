@@ -1055,8 +1055,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/public-navbar.tsx": {
-    "mtime": 1784792037.2079506,
-    "ast_hash": "f74fa755563aa920cb1fe5e65e706378",
+    "mtime": 1784802696.50015,
+    "ast_hash": "f2d1714228c72ec5650d7c461f969c1b",
     "semantic_hash": ""
   },
   "app/features/public/hooks/use-sign-out.ts": {
@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1784789049.9034333,
-    "ast_hash": "2679d539c9644d8b876a1e5eb7efa445",
+    "mtime": 1784803379.5046062,
+    "ast_hash": "fe221c652b5e33d664ea3998df85d047",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/race.test.ts": {
@@ -3297,6 +3297,16 @@
   "app/features/auth/hooks/use-auto-refresh-session.ts": {
     "mtime": 1784794803.9556332,
     "ast_hash": "294ea6342ce718caf636b40970f41bb3",
+    "semantic_hash": ""
+  },
+  "public/images/Hire-Flow-Logo-Photoroom.png": {
+    "mtime": 1784800670.1293497,
+    "ast_hash": "67491833f035cb906a938041b8295098",
+    "semantic_hash": ""
+  },
+  "public/images/Hire-Flow-Logo-Transparent.png": {
+    "mtime": 1784800594.452526,
+    "ast_hash": "abb760dcc2c58a66c71a7cec0fcea316",
     "semantic_hash": ""
   }
 }

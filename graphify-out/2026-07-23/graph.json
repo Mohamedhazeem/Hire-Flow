@@ -4,14 +4,44 @@
   "graph": {},
   "nodes": [
     {
+      "label": "public-navbar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_public_navbar",
+      "community": 148,
+      "norm_label": "public-navbar.tsx"
+    },
+    {
+      "label": "PublicNavbar()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "components_public_navbar_publicnavbar",
+      "community": 148,
+      "norm_label": "publicnavbar()"
+    },
+    {
+      "label": "NavLink()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L121",
+      "_origin": "ast",
+      "id": "components_public_navbar_navlink",
+      "community": 148,
+      "norm_label": "navlink()"
+    },
+    {
       "label": "account-popover.tsx",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_account_popover",
       "community": 113,
-      "norm_label": "account-popover.tsx"
+      "norm_label": "account-popover.tsx",
+      "id": "components_account_popover"
     },
     {
       "label": "ROLE_META",
@@ -19,9 +49,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "components_account_popover_role_meta",
       "community": 113,
-      "norm_label": "role_meta"
+      "norm_label": "role_meta",
+      "id": "components_account_popover_role_meta"
     },
     {
       "label": "AccountPopover()",
@@ -29,9 +59,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "components_account_popover_accountpopover",
       "community": 148,
-      "norm_label": "accountpopover()"
+      "norm_label": "accountpopover()",
+      "id": "components_account_popover_accountpopover"
     },
     {
       "label": "use-auto-refresh-session.ts",
@@ -52,36 +82,6 @@
       "community": 148,
       "norm_label": "useautorefreshsession()",
       "id": "hooks_use_auto_refresh_session_useautorefreshsession"
-    },
-    {
-      "label": "public-navbar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 148,
-      "norm_label": "public-navbar.tsx",
-      "id": "components_public_navbar"
-    },
-    {
-      "label": "PublicNavbar()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 148,
-      "norm_label": "publicnavbar()",
-      "id": "components_public_navbar_publicnavbar"
-    },
-    {
-      "label": "NavLink()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L104",
-      "_origin": "ast",
-      "community": 148,
-      "norm_label": "navlink()",
-      "id": "components_public_navbar_navlink"
     },
     {
       "label": "README.md",
@@ -33756,6 +33756,246 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_mobile_nav_menu"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_mobile_nav_menu_mobilenavmenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_navlink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_publicnavbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_auto_refresh_session"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_sign_out"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "lib_routes"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "lib_routes_ishiddenroute"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "lib_routes_ishiddenroute"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar_publicnavbar"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/account-popover.tsx",
@@ -33897,17 +34137,6 @@
       "target": "ui_theme_toggle_themetoggle"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -33930,28 +34159,6 @@
       "target": "components_account_popover_accountpopover"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover_accountpopover"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_auto_refresh_session"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
@@ -33960,213 +34167,6 @@
       "confidence_score": 1.0,
       "source": "hooks_use_auto_refresh_session",
       "target": "hooks_use_auto_refresh_session_useautorefreshsession"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_mobile_nav_menu"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_mobile_nav_menu_mobilenavmenu"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L83",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_navlink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_publicnavbar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_skeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_sign_out"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "lib_routes"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "lib_routes_ishiddenroute"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "lib_routes_ishiddenroute"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar_publicnavbar"
     },
     {
       "relation": "contains",
@@ -100531,5 +100531,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6966863f1a34d4d7058a88f1c67aafc053e92e33"
+  "built_at_commit": "7609f7ae12cd6c9d41618b68bfba1417ac1d36a4"
 }

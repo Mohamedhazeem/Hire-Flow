@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/account-popover.tsx": {
-    "mtime": 1784797203.1148572,
-    "ast_hash": "a704c922e0df614cb05677b0dd246b6e",
+    "mtime": 1784804096.2381861,
+    "ast_hash": "75fdf51fd46be963b96bde1a3303fb42",
     "semantic_hash": ""
   },
   "app/features/public/components/career-resources/career-resources-page.tsx": {
@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1784789049.9034333,
-    "ast_hash": "2679d539c9644d8b876a1e5eb7efa445",
+    "mtime": 1784803379.5046062,
+    "ast_hash": "fe221c652b5e33d664ea3998df85d047",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/race.test.ts": {
