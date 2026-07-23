@@ -210,8 +210,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/jobs/[id]/page.tsx": {
-    "mtime": 1782490243.7240286,
-    "ast_hash": "bad683b4e1463050243ff5d2ee313ada",
+    "mtime": 1784823978.0275266,
+    "ast_hash": "2f8868bc3dee85ddb942ed31e69e838a",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/jobs/new/page.tsx": {
@@ -1125,8 +1125,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/applicants-table.tsx": {
-    "mtime": 1784823331.907688,
-    "ast_hash": "21b44b43543f47adf18fb8fd9e25b91e",
+    "mtime": 1784823906.771588,
+    "ast_hash": "2c0343807f3bf74c6d6d54192d9b5e52",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/application-dialogs.tsx": {
@@ -1200,8 +1200,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-detail.tsx": {
-    "mtime": 1783572105.8900967,
-    "ast_hash": "67d015559ad3682afb69f27e5020f5e8",
+    "mtime": 1784824098.9931202,
+    "ast_hash": "cbb92478dbb7a92b5a9c9c5b6e099271",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-form.tsx": {
@@ -1255,8 +1255,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/use-applicants-table.ts": {
-    "mtime": 1784823310.489504,
-    "ast_hash": "991caff7826013b27925a2dd48239ccc",
+    "mtime": 1784823899.7026372,
+    "ast_hash": "eb79c9a8876087dc192975d86738f4e7",
     "semantic_hash": ""
   },
   "app/features/recruiter/hooks/messages/use-recruiter-messages.ts": {
@@ -3230,8 +3230,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/applicants-table.dom.test.tsx": {
-    "mtime": 1784823586.3911858,
-    "ast_hash": "ff39386ba51de63b1acb8d33fe38aedf",
+    "mtime": 1784823792.1415987,
+    "ast_hash": "f721115559f9971356b783779d7586c2",
     "semantic_hash": ""
   },
   "lib/test/components/apply-modal.dom.test.tsx": {
@@ -3322,6 +3322,11 @@
   ".kilo/plans/2026-07-23_recruiter-job-detail-plan.md": {
     "mtime": 1784823558.443759,
     "ast_hash": "4e67149fe901e96489f32bf4ddc5e739",
+    "semantic_hash": ""
+  },
+  "lib/test/components/job-detail.dom.test.tsx": {
+    "mtime": 1784824134.2939892,
+    "ast_hash": "cb09a90110553827ccdd83b24112f58d",
     "semantic_hash": ""
   }
 }

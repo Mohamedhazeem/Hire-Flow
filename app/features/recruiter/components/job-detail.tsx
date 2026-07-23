@@ -7,11 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { RecruiterJobDetail } from "@/app/features/recruiter/queries/job-queries";
 import type { ApiResponse } from "@/lib/api/api-response";
-import { ArrowLeftIcon, PencilIcon, UsersIcon, BarChart3Icon } from "lucide-react";
+import { ArrowLeftIcon, PencilIcon, UsersIcon, BarChart3Icon, FileTextIcon } from "lucide-react";
 import Link from "next/link";
 import { JobDetailTabs } from "@/components/shared/job-detail-tabs";
 import { JobMetaGrid } from "@/components/shared/job-meta-grid";
 import { SectionCard } from "@/components/shared/section-card";
+import { ApplicantsTable } from "@/app/features/recruiter/components/applicants-table";
 
 const STATUS_BADGE: Record<
   string,
@@ -23,7 +24,7 @@ const STATUS_BADGE: Record<
 };
 
 const TABS = [
-  { href: "", label: "View Details", icon: ArrowLeftIcon },
+  { href: "", label: "View Details", icon: FileTextIcon },
   { href: "/applicants", label: "Applicants", icon: UsersIcon },
   { href: "/analytics", label: "Analytics", icon: BarChart3Icon },
 ];
@@ -107,22 +108,7 @@ export function JobDetail({ jobId }: JobDetailProps) {
         </p>
       </SectionCard>
 
-      <SectionCard title="Applicants" count={job.applicationCount} countLabel="applicants">
-        {job.applicationCount > 0 ? (
-          <p className="text-sm text-text-muted">
-            {job.applicationCount} applicant{job.applicationCount !== 1 ? "s" : ""} have applied to
-            this position.
-          </p>
-        ) : (
-          <p className="text-sm text-text-muted">No applicants yet for this position.</p>
-        )}
-        <Link
-          href={`/recruiter/jobs/${job.id}/applicants`}
-          className="inline-flex items-center gap-1 text-xs text-brand hover:underline mt-2"
-        >
-          <UsersIcon className="size-3.5" /> View All
-        </Link>
-      </SectionCard>
+      <ApplicantsTable jobId={job.id} pageSize={10} />
 
       <div className="flex items-center gap-4 text-xs text-text-muted">
         <span>Created: {new Date(job.createdAt).toLocaleDateString()}</span>

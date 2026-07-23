@@ -29,7 +29,7 @@ export default async function JobDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="pt-4 sm:pt-6 space-y-6">
       <JobDetail jobId={id} />
     </div>
   );

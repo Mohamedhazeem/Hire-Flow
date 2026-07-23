@@ -17,7 +17,7 @@ import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application
 import { BULK_ACTION_LABELS } from "../utils/applicant-table-constants";
 import { addActionedIds } from "../utils/applicant-table-utils";
 
-export function useApplicantsTable(jobId: string) {
+export function useApplicantsTable(jobId: string, pageSize = 20) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { data: session } = useSession();
@@ -45,7 +45,7 @@ export function useApplicantsTable(jobId: string) {
 
   const params: ListApplicantsParams = {
     page,
-    pageSize: 20,
+    pageSize,
     sortBy: "appliedAt",
     sortOrder: "desc",
     search: search || undefined,

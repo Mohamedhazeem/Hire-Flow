@@ -14,11 +14,11 @@ import { createApplicantTableColumns } from "./applicant-table-columns";
 import { useApplicantsTable } from "./use-applicants-table";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 
-type ApplicantsTableProps = { jobId: string };
+type ApplicantsTableProps = { jobId: string; pageSize?: number };
 
-export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
+export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
   const router = useRouter();
-  const table = useApplicantsTable(jobId);
+  const table = useApplicantsTable(jobId, pageSize);
 
   const bulkActions = useMemo(() => getBulkActions(table.selectedRows), [table.selectedRows]);
 

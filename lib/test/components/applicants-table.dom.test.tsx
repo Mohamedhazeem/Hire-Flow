@@ -18,6 +18,8 @@ const tableState = {
   actionedIds: new Set<string>(),
 };
 
+let capturedArgs: [string, number?] = ["", undefined];
+
 function makeTable() {
   return {
     recruiterId: "rec-1",
@@ -53,7 +55,10 @@ function makeTable() {
 }
 
 vi.mock("@/app/features/recruiter/components/use-applicants-table", () => ({
-  useApplicantsTable: () => makeTable(),
+  useApplicantsTable: (...args: any[]) => {
+    capturedArgs = args;
+    return makeTable();
+  },
 }));
 
 import { ApplicantsTable } from "@/app/features/recruiter/components/applicants-table";
@@ -101,5 +106,19 @@ describe("ApplicantsTable", () => {
     expect(screen.getByText("Also send email")).toBeInTheDocument();
     const checkbox = screen.getByLabelText(/Also send email/i);
     expect(checkbox).not.toBeChecked();
+  });
+
+  it("forwards pageSize to useApplicantsTable", () => {
+    capturedArgs = ["", undefined];
+    renderWithClient(<ApplicantsTable jobId="job-1" pageSize={10} />);
+    expect(capturedArgs[0]).toBe("job-1");
+    expect(capturedArgs[1]).toBe(10);
+  });
+
+  it("renders without pageSize prop (default behavior)", () => {
+    capturedArgs = ["", undefined];
+    renderWithClient(<ApplicantsTable jobId="job-1" />);
+    expect(capturedArgs[0]).toBe("job-1");
+    expect(capturedArgs[1]).toBeUndefined();
   });
 });
