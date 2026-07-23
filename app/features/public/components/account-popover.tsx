@@ -15,7 +15,8 @@ const ROLE_META: Record<string, { label: string; dot: string }> = {
   user: { label: "User", dot: "bg-slate-400" },
 };
 
-const BTN =
+// Unified menu-item style – used for buttons/links and the non‑interactive row
+const MENU_ITEM =
   "flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-bg-muted transition-colors w-full";
 
 export function AccountPopover() {
@@ -39,12 +40,21 @@ export function AccountPopover() {
       <PopoverTrigger className="rounded-full outline-hidden transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2">
         <AvatarFallback name={user.name} image={user.image} size={36} />
       </PopoverTrigger>
-      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-72 p-1.5 overflow-hidden">
+
+      <PopoverContent
+        side="bottom"
+        align="end"
+        sideOffset={8}
+        className="w-72 p-1.5 overflow-hidden"
+      >
         {/* ── User Info ── */}
-        <div className="flex items-center gap-3 px-3 py-2.5">
-          <AvatarFallback name={user.name} image={user.image} size={40} />
+        <div className="flex items-center gap-3 px-3 py-1.5">
+          <AvatarFallback name={user.name} image={user.image} size={80} />
           <div className="min-w-0 flex-1 space-y-0.5">
-            <p className="text-sm font-semibold text-text-heading truncate leading-tight" title={user.name}>
+            <p
+              className="text-sm font-semibold text-text-heading truncate leading-tight"
+              title={user.name}
+            >
               {user.name}
             </p>
             <p className="text-xs text-text-muted truncate leading-tight">{user.email}</p>
@@ -55,24 +65,33 @@ export function AccountPopover() {
           </div>
         </div>
 
-        <div className="h-px bg-border-subtle mx-2 my-1.5" aria-hidden="true" />
+        <div className="h-px bg-border-subtle mx-2 my-0.5" aria-hidden="true" />
 
-        {/* ── Action buttons ── */}
+        {/* ── Menu Items ── */}
         <div className="flex flex-col">
-          <Link href={dashboardHref} className={BTN}>
-            <LayoutDashboardIcon className="size-4 text-text-muted shrink-0" />
+          {/* Dashboard Link */}
+          <Link
+            href={dashboardHref}
+            className={`${MENU_ITEM} group hover:text-white hover:bg-brand/90`}
+          >
+            <LayoutDashboardIcon className="size-4 text-text-muted shrink-0 group-hover:text-white" />
             Go to Dashboard
           </Link>
 
-          <div className="flex items-center gap-3 px-3 py-2 text-sm w-full">
+          {/* Appearance Row – visual consistency, non‑interactive container */}
+          <div className={`${MENU_ITEM} cursor-default`}>
             <PaletteIcon className="size-4 text-text-muted shrink-0" />
-            <span>Appearance</span>
-            <div className="ml-auto">
-              <ThemeToggle collapsed={false} />
-            </div>
+            <ThemeToggle collapsed={false} />
+            {/* <div className="ml-auto">
+            </div> */}
           </div>
 
-          <button type="button" onClick={signOut} className={`${BTN} text-error/80 hover:text-error hover:bg-error/10`}>
+          {/* Sign Out Button */}
+          <button
+            type="button"
+            onClick={signOut}
+            className={`${MENU_ITEM} text-error/80 hover:text-error hover:bg-error/10`}
+          >
             <LogOutIcon className="size-4 shrink-0" />
             Sign Out
           </button>
