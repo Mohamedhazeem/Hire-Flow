@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { faker } from "@faker-js/faker";
+import { slugify } from "@/lib/slugify";
 
 export async function seedApplications(
   jobId: string,
@@ -69,13 +70,15 @@ export async function seedJobs(
       const hasKeyword = globalIndex % Math.round(1 / keywordRatio) === 0;
       const id = faker.string.uuid();
       jobIds.push(id);
+      const jobTitle = hasKeyword
+        ? `${keyword} ${faker.person.jobTitle()}`
+        : faker.person.jobTitle();
       return {
         id,
+        slug: slugify(jobTitle),
         recruiterId,
         companyId,
-        title: hasKeyword
-          ? `${keyword} ${faker.person.jobTitle()}`
-          : faker.person.jobTitle(),
+        title: jobTitle,
         description: hasKeyword
           ? `${keyword} ${faker.lorem.paragraphs(3)}`
           : faker.lorem.paragraphs(3),

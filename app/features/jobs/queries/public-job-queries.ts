@@ -3,6 +3,7 @@ import { buildOffsetMeta, parseOffsetParams } from "@/lib/pagination";
 
 export type PublicJobRow = {
   id: string;
+  slug: string | null;
   title: string;
   companyId: string;
   companyName: string;
@@ -21,6 +22,7 @@ export type PublicJobRow = {
 
 export type PublicJobDetail = {
   id: string;
+  slug: string | null;
   title: string;
   description: string;
   companyId: string;
@@ -143,13 +145,30 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
       skip,
       take,
       orderBy: { [sortBy]: sortOrder },
-      include: { company: { select: { name: true, logoUrl: true } } },
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        companyId: true,
+        company: { select: { name: true, logoUrl: true } },
+        locations: true,
+        workMode: true,
+        employmentType: true,
+        salaryMin: true,
+        salaryMax: true,
+        salaryCurrency: true,
+        skills: true,
+        experienceLevel: true,
+        applicationDeadline: true,
+        createdAt: true,
+      },
     }),
     prisma.job.count({ where }),
   ]);
 
   const rows: PublicJobRow[] = jobs.map((job) => ({
     id: job.id,
+    slug: job.slug,
     title: job.title,
     companyId: job.companyId,
     companyName: job.company.name ?? "Unknown",
@@ -169,9 +188,13 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   return { jobs: rows, ...buildOffsetMeta(total, page, pageSize) };
 }
 
-export async function getPublicJobById(id: string): Promise<PublicJobDetail | null> {
-  const job = await prisma.job.findUnique({
-    where: { id, isActive: true, status: "active" },
+export async function getPublicJobById(slugOrId: string): Promise<PublicJobDetail | null> {
+  const job = await prisma.job.findFirst({
+    where: {
+      OR: [{ slug: slugOrId }, { id: slugOrId }],
+      isActive: true,
+      status: "active",
+    },
     include: {
       company: { select: { name: true, logoUrl: true, website: true, description: true } },
       _count: { select: { applications: { where: { status: { not: "withdrawn" } } } } },
@@ -181,6 +204,7 @@ export async function getPublicJobById(id: string): Promise<PublicJobDetail | nu
   if (!job) return null;
   return {
     id: job.id,
+    slug: job.slug,
     title: job.title,
     description: job.description,
     companyId: job.companyId,

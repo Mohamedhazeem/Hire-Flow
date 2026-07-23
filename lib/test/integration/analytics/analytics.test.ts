@@ -36,10 +36,7 @@ describe("Analytics (Phase 4.15)", () => {
     const { GET } = await import("@/app/api/recruiter/jobs/[id]/analytics/route");
     const req = new NextRequest(`http://localhost/api/recruiter/jobs/${job.id}/analytics`);
     const res = await GET(req, { params: Promise.resolve({ id: job.id }) });
-    // Known bug: job analytics query builder drops AND in LEFT JOIN when jobId filter is set
-    // See analytics-queries.ts buildJobBreakdownSQL line 98-103 — SQL syntax error
-    // TODO: fix buildJobBreakdownSQL to not strip the leading AND
-    expect(res.status).toBe(500);
+    expect(res.status).toBe(200);
   });
 
   it("cross-company analytics blocked", async () => {

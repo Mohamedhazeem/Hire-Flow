@@ -98,6 +98,8 @@ export function ApplicantsTable({ jobId }: ApplicantsTableProps) {
         actionedIds={table.actionedIds}
         bulkActions={bulkActions}
         bulkTransitionPending={table.bulkTransition.isPending}
+        bulkEmail={table.bulkEmail}
+        onBulkEmailChange={table.setBulkEmail}
         onSelectAllPage={(ids) => table.setSelectedIds(new Set(ids))}
         onClear={() => table.setSelectedIds(new Set())}
         onBulkAction={table.handleBulkAction}

@@ -38,6 +38,7 @@ export function useApplicantsTable(jobId: string) {
     null,
   );
   const [revertTarget, setRevertTarget] = useState<ApplicantRow | null>(null);
+  const [bulkEmail, setBulkEmail] = useState(false);
   const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bulkTransition = useBulkTransitionStatus();
   const revertTransition = useRevertStatus();
@@ -103,7 +104,7 @@ export function useApplicantsTable(jobId: string) {
         {
           applicationIds: eligibleIds,
           status: targetStatus as BulkStatusTransitionInput["status"],
-          email: false,
+          email: bulkEmail,
         },
         {
           onSuccess: () => {
@@ -113,26 +114,28 @@ export function useApplicantsTable(jobId: string) {
             );
             setActionedIds((prev) => addActionedIds(prev, eligibleIds));
             setSelectedIds(new Set());
+            setBulkEmail(false);
           },
           onError: (error: Error) =>
             showFeedback("error", (error as { message?: string }).message ?? "Bulk action failed"),
         },
       );
     },
-    [selectedIds, selectedRows, actionedIds, bulkTransition, showFeedback],
+    [selectedIds, selectedRows, actionedIds, bulkTransition, showFeedback, bulkEmail],
   );
 
   const handleBulkRejectConfirm = useCallback(
     (rejectionReason: string) => {
       const ids = [...selectedIds].filter((id) => !actionedIds.has(id));
       bulkTransition.mutate(
-        { applicationIds: ids, status: "rejected", rejectionReason, email: false },
+        { applicationIds: ids, status: "rejected", rejectionReason, email: bulkEmail },
         {
           onSuccess: () => {
             showFeedback("success", `${ids.length} applicant${ids.length > 1 ? "s" : ""} rejected`);
             setActionedIds((prev) => addActionedIds(prev, ids));
             setSelectedIds(new Set());
             setBulkDialog("");
+            setBulkEmail(false);
           },
           onError: (error: Error) =>
             showFeedback(
@@ -142,7 +145,7 @@ export function useApplicantsTable(jobId: string) {
         },
       );
     },
-    [selectedIds, actionedIds, bulkTransition, showFeedback],
+    [selectedIds, actionedIds, bulkTransition, showFeedback, bulkEmail],
   );
 
   const handleRevert = useCallback(
@@ -196,5 +199,7 @@ export function useApplicantsTable(jobId: string) {
     handleBulkRejectConfirm,
     handleRevert,
     searchParams,
+    bulkEmail,
+    setBulkEmail,
   };
 }

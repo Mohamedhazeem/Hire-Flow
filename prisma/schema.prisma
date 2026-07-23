@@ -220,6 +220,7 @@ model RecruiterInvite {
 
 model Job {
   id                  String         @id @default(cuid())
+  slug                String?        @unique
   recruiterId         String
   recruiter           User           @relation("RecruiterJobs", fields: [recruiterId], references: [id], onDelete: Cascade)
   companyId           String

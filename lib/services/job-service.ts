@@ -1,5 +1,7 @@
 import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api/api-error";
 import { jobRepository } from "@/lib/repositories/job-repository";
+import { slugify, ensureUniqueSlug } from "@/lib/slugify";
+import { slugExists } from "@/lib/resolvers/job-resolver";
 import { AdminToggleJobStatusSchema } from "@/app/features/admin/schema/admin.schema";
 
 export const jobService = {
@@ -53,7 +55,11 @@ export const jobService = {
   ) {
     const deadline = data.applicationDeadline ? new Date(data.applicationDeadline) : undefined;
 
+    const baseSlug = slugify(data.title);
+    const slug = await ensureUniqueSlug(baseSlug, slugExists);
+
     const job = await jobRepository.create({
+      slug,
       recruiterId,
       companyId,
       title: data.title,

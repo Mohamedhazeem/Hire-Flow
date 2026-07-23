@@ -216,7 +216,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
           </button>
         ) : (
           <Link
-            href={`/login?returnUrl=${encodeURIComponent(`/jobs/${id}`)}`}
+            href={`/login?returnUrl=${encodeURIComponent(`/jobs/${data.slug ?? id}`)}`}
             className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-brand hover:bg-brand/90 rounded-lg transition-colors"
           >
             Log in to Apply

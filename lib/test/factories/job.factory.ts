@@ -11,18 +11,22 @@ import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
 import { WorkMode, EmploymentType } from "../../../app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
+import { slugify } from "@/lib/slugify";
 
 export async function createTestJob(
   recruiterId: string,
   companyId: string,
   overrides?: Partial<Prisma.JobUncheckedCreateInput>
 ) {
+  const title = overrides?.title ?? faker.person.jobTitle();
+  const slug = overrides?.slug ?? slugify(title);
   return prisma.job.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),
+      slug,
       recruiterId,
       companyId,
-      title: overrides?.title ?? faker.person.jobTitle(),
+      title,
       description: overrides?.description ?? faker.lorem.paragraphs(2),
       locations: overrides?.locations ?? [faker.location.city()],
       workMode: overrides?.workMode ?? WorkMode.remote,

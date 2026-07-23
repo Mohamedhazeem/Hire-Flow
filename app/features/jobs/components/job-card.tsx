@@ -16,6 +16,7 @@ import { SaveJobButton } from "@/app/features/user/components/save-job-button";
 
 export type JobCardProps = {
   id: string;
+  slug: string | null;
   title: string;
   companyName: string;
   companyLogo: string | null;
@@ -33,6 +34,7 @@ export type JobCardProps = {
 
 export function JobCard({
   id,
+  slug,
   title,
   companyName,
   companyLogo,
@@ -74,11 +76,11 @@ export function JobCard({
     <div
       role="button"
       tabIndex={0}
-      onClick={() => router.push(`/jobs/${id}`)}
+      onClick={() => router.push(`/jobs/${slug ?? id}`)}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          router.push(`/jobs/${id}`);
+          router.push(`/jobs/${slug ?? id}`);
         }
       }}
       className="w-full text-left rounded-xl border border-border-subtle bg-bg-surface p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer"

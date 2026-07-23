@@ -39,9 +39,17 @@ export const ACCOUNTS = {
 
 /** Known job IDs seeded by prisma/seed.ts (recruiter_1 / Acme Corp). */
 export const JOBS = {
+  /** DB ID for API calls that need raw IDs */
   acme_senior_engineer: "job_seed_recruiter_1_0",
   acme_product_manager: "job_seed_recruiter_1_1",
   acme_devops: "job_seed_recruiter_1_2",
+} as const;
+
+/** Known job slugs seeded by prisma/seed.ts. Used in public URL navigation. */
+export const JOB_SLUGS = {
+  acme_senior_engineer: "senior-software-engineer-acme-corp",
+  acme_product_manager: "product-manager-acme-corp",
+  acme_devops: "devops-engineer-acme-corp",
 } as const;
 
 /** Known application IDs seeded by prisma/seed.ts (eve / user_1). */

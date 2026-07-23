@@ -14,6 +14,8 @@ const tableState = {
   isLoading: false,
   isError: false,
   applicants: [] as Array<Record<string, unknown>>,
+  selectedIds: new Set<string>(),
+  actionedIds: new Set<string>(),
 };
 
 function makeTable() {
@@ -23,9 +25,9 @@ function makeTable() {
     isError: tableState.isError,
     applicants: tableState.applicants,
     selectedRows: [],
-    selectedIds: new Set<string>(),
+    selectedIds: tableState.selectedIds,
     setSelectedIds: vi.fn(),
-    actionedIds: new Set<string>(),
+    actionedIds: tableState.actionedIds,
     searchParams: new URLSearchParams(),
     searchInput: "",
     setSearchInput: vi.fn(),
@@ -45,6 +47,8 @@ function makeTable() {
     handleBulkAction: vi.fn(),
     handleBulkRejectConfirm: vi.fn(),
     handleRevert: vi.fn(),
+    bulkEmail: false,
+    setBulkEmail: vi.fn(),
   };
 }
 
@@ -85,5 +89,17 @@ describe("ApplicantsTable", () => {
     tableState.applicants = [];
     renderWithClient(<ApplicantsTable jobId="job-1" />);
     expect(screen.getByText("No applicants yet for this job.")).toBeInTheDocument();
+  });
+
+  it("renders bulk action bar with email checkbox when applicants are selected", () => {
+    tableState.applicants = [
+      { id: "a1", name: "Alice", email: "alice@example.com", appliedAt: new Date().toISOString(), status: "applied" },
+    ];
+    tableState.selectedIds = new Set(["a1"]);
+    renderWithClient(<ApplicantsTable jobId="job-1" />);
+    expect(screen.getByText(/1 selected/)).toBeInTheDocument();
+    expect(screen.getByText("Also send email")).toBeInTheDocument();
+    const checkbox = screen.getByLabelText(/Also send email/i);
+    expect(checkbox).not.toBeChecked();
   });
 });

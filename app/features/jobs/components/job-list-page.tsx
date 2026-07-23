@@ -196,6 +196,7 @@ export function JobListPage() {
                 <motion.div key={job.id} variants={cardVariants}>
                   <JobCard
                     id={job.id}
+                    slug={job.slug}
                     title={job.title}
                     companyName={job.companyName}
                     companyLogo={job.companyLogo}

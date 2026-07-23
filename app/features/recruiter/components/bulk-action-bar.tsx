@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { RotateCcwIcon } from "lucide-react";
+import { RotateCcwIcon, MailIcon } from "lucide-react";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 import type { BulkActionDef } from "../utils/applicant-table-constants";
 
@@ -12,6 +13,8 @@ type BulkActionBarProps = {
   actionedIds: Set<string>;
   bulkActions: BulkActionDef[];
   bulkTransitionPending: boolean;
+  bulkEmail: boolean;
+  onBulkEmailChange: (value: boolean) => void;
   onSelectAllPage: (ids: string[]) => void;
   onClear: () => void;
   onBulkAction: (targetStatus: string) => void;
@@ -24,6 +27,8 @@ export function BulkActionBar({
   actionedIds,
   bulkActions,
   bulkTransitionPending,
+  bulkEmail,
+  onBulkEmailChange,
   onSelectAllPage,
   onClear,
   onBulkAction,
@@ -55,6 +60,16 @@ export function BulkActionBar({
           </Button>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
+          <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={bulkEmail}
+              onChange={(e) => onBulkEmailChange(e.target.checked)}
+              className="size-4 accent-brand"
+            />
+            <MailIcon className="size-4 text-text-muted" />
+            <span className="hidden sm:inline">Also send email</span>
+          </label>
           {bulkActions.length === 0 ? (
             <span className="text-xs text-text-muted">
               No bulk actions available for this selection

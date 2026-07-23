@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { getPublicJobById } from "@/app/features/jobs/queries/public-job-queries";
 import { JobDetailView } from "@/app/features/jobs/components/job-detail-view";
 import type { Metadata } from "next";
@@ -45,6 +46,20 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default function JobDetailPage() {
-  return <JobDetailView />;
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function JobDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const job = await getPublicJobById(id);
+  if (!job) return <JobDetailView />;
+
+  // If accessed via CUID (id !== slug), 301 redirect to canonical slug URL
+  if (job.slug && id !== job.slug) {
+    redirect(`/jobs/${job.slug}`);
+  }
+
+  // Pass the resolved DB ID to the client component so API calls use the real ID
+  return <JobDetailView jobId={job.id} />;
 }

@@ -93,14 +93,12 @@ function whereSQL(companyId: string, filter: AnalyticsFilter): string {
 
 function buildJobBreakdownSQL(companyId: string, filter: AnalyticsFilter): string {
   const clauses = buildWhereClauses(companyId, filter, { application: "a", job: "j" });
-  const joinClauses = clauses.filter((c) => !c.includes(`j."companyId"`));
+  // For the LEFT JOIN condition, exclude companyId (already in WHERE) and
+  // jobId (redundant — the JOIN already matches on a."jobId" = j."id").
+  const joinClauses = clauses.filter(
+    (c) => !c.includes(`j."companyId"`) && !c.startsWith(`a."jobId" =`),
+  );
   const joinSQL = joinClauses.length > 0 ? " AND " + joinClauses.join(" AND ") : "";
-  const cleanJoinSQL = filter.jobId
-    ? joinSQL
-        .replace(`a."jobId" = '${filter.jobId}'`, "")
-        .replace(" AND  AND ", " AND ")
-        .replace(/^ AND /, "")
-    : joinSQL;
   return `
     SELECT
       j."id" AS "jobId",
@@ -109,7 +107,7 @@ function buildJobBreakdownSQL(companyId: string, filter: AnalyticsFilter): strin
       COUNT(DISTINCT CASE WHEN a."status" = 'hired' THEN a."id" END)::BIGINT AS hired,
       j."viewCount"::BIGINT AS "viewCount"
     FROM "job" j
-    LEFT JOIN "application" a ON a."jobId" = j."id" ${cleanJoinSQL}
+    LEFT JOIN "application" a ON a."jobId" = j."id" ${joinSQL}
     WHERE j."companyId" = '${companyId}'
     GROUP BY j."id", j."title", j."viewCount"
     ORDER BY "totalApplications" DESC

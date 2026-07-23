@@ -36,6 +36,11 @@ function userId(name: string) {
   return `seed_${name.toLowerCase().replace(/\s+/g, "_")}`;
 }
 
+function jobSlug(companyName: string, title: string): string {
+  const base = `${title.toLowerCase().replace(/[^\w\s-]+/g, "").replace(/\s+/g, "-")}-${companyName.toLowerCase().replace(/[^\w\s-]+/g, "").replace(/\s+/g, "-")}`;
+  return base.replace(/-+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+}
+
 async function upsertCredentialAccount(userId: string, passwordHash: string) {
   await prisma.account.upsert({
     where: { id: `acc_${userId}` },
@@ -211,11 +216,13 @@ async function main() {
     for (let i = 0; i < JOB_TEMPLATES.length; i++) {
       const tpl = JOB_TEMPLATES[i];
       const jobId = `job_${rec.id}_${i}`;
+      const slug = jobSlug(rec.company.name, tpl.title);
       await prisma.job.upsert({
         where: { id: jobId },
-        update: {},
+        update: { slug },
         create: {
           id: jobId,
+          slug,
           recruiterId: rec.id,
           companyId: company.id,
           title: tpl.title,
