@@ -6,7 +6,17 @@ import { AvatarFallback } from "@/components/shared/avatar-fallback";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
-import { LayoutDashboardIcon, LogOutIcon } from "lucide-react";
+import { LayoutDashboardIcon, LogOutIcon, PaletteIcon } from "lucide-react";
+
+const ROLE_META: Record<string, { label: string; dot: string }> = {
+  super_admin: { label: "Super Admin", dot: "bg-amber-500" },
+  admin: { label: "Admin", dot: "bg-emerald-500" },
+  recruiter: { label: "Recruiter", dot: "bg-blue-500" },
+  user: { label: "User", dot: "bg-slate-400" },
+};
+
+const BTN =
+  "flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-bg-muted transition-colors w-full";
 
 export function AccountPopover() {
   const { data: session } = useSession();
@@ -15,67 +25,58 @@ export function AccountPopover() {
 
   if (!user) return null;
 
-  const role = (user as { role?: string } | undefined)?.role ?? "user";
+  const role = (user as { role?: string })?.role ?? "user";
+  const meta = ROLE_META[role] ?? ROLE_META.user;
   const dashboardHref =
     role === "admin" || role === "super_admin"
       ? "/admin"
       : role === "recruiter"
         ? "/recruiter"
         : "/user";
-  const roleLabels: Record<string, string> = {
-    super_admin: "Super Admin",
-    admin: "Admin",
-    recruiter: "Recruiter",
-    user: "User",
-  };
-  const roleLabel = roleLabels[role] ?? "User";
 
   return (
     <Popover>
-      <PopoverTrigger className="flex items-center gap-2 rounded-full outline-hidden focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2">
+      <PopoverTrigger className="rounded-full outline-hidden transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2">
         <AvatarFallback name={user.name} image={user.image} size={36} />
       </PopoverTrigger>
-      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-72 p-1 overflow-hidden">
-        <div className="flex items-center gap-3 px-2 py-2.5">
-          <AvatarFallback name={user.name} image={user.image} size={100} />
+      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-72 p-1.5 overflow-hidden">
+        {/* ── User Info ── */}
+        <div className="flex items-center gap-3 px-3 py-2.5">
+          <AvatarFallback name={user.name} image={user.image} size={40} />
           <div className="min-w-0 flex-1 space-y-0.5">
             <p className="text-sm font-semibold text-text-heading truncate leading-tight" title={user.name}>
               {user.name}
             </p>
             <p className="text-xs text-text-muted truncate leading-tight">{user.email}</p>
-            <span className="inline-flex items-center rounded-full border border-border-subtle px-1.5 py-0.5 text-[10px] font-medium text-text-muted leading-tight">
-              {roleLabel}
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-text-muted">
+              <span className={`size-1.5 rounded-full ${meta.dot}`} aria-hidden="true" />
+              {meta.label}
             </span>
           </div>
         </div>
 
-        <div className="h-px bg-border-subtle mx-2" />
+        <div className="h-px bg-border-subtle mx-2 my-1.5" aria-hidden="true" />
 
-        <Link
-          href={dashboardHref}
-          className="flex items-center gap-3 px-2 py-1.5 text-sm text-text-body rounded-md hover:bg-bg-muted transition-colors"
-        >
-          <LayoutDashboardIcon className="size-4 text-text-muted shrink-0" />
-          Go to Dashboard
-        </Link>
+        {/* ── Action buttons ── */}
+        <div className="flex flex-col">
+          <Link href={dashboardHref} className={BTN}>
+            <LayoutDashboardIcon className="size-4 text-text-muted shrink-0" />
+            Go to Dashboard
+          </Link>
 
-        <div className="h-px bg-border-subtle mx-2" />
+          <div className="flex items-center gap-3 px-3 py-2 text-sm w-full">
+            <PaletteIcon className="size-4 text-text-muted shrink-0" />
+            <span>Appearance</span>
+            <div className="ml-auto">
+              <ThemeToggle collapsed={false} />
+            </div>
+          </div>
 
-        <div className="px-2 py-1.5 space-y-1">
-          <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Appearance</p>
-          <ThemeToggle collapsed={false} />
+          <button type="button" onClick={signOut} className={`${BTN} text-error/80 hover:text-error hover:bg-error/10`}>
+            <LogOutIcon className="size-4 shrink-0" />
+            Sign Out
+          </button>
         </div>
-
-        <div className="h-px bg-border-subtle mx-2" />
-
-        <button
-          type="button"
-          onClick={signOut}
-          className="flex items-center gap-3 px-2 py-1.5 text-sm text-error/80 rounded-md hover:bg-error/10 hover:text-error transition-colors w-full"
-        >
-          <LogOutIcon className="size-4 shrink-0" />
-          Sign Out
-        </button>
       </PopoverContent>
     </Popover>
   );

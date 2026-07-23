@@ -2,7 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { useSession } from "@/app/features/auth/libs/auth-client";
+import { useAutoRefreshSession } from "@/app/features/auth/hooks/use-auto-refresh-session";
 import { AccountPopover } from "./account-popover";
 import { MobileNavMenu } from "./mobile-nav-menu";
 import { PublicNavbarSkeleton } from "./public-navbar-skeleton";
@@ -15,7 +15,7 @@ import { isHiddenRoute } from "@/lib/routes";
 
 export function PublicNavbar() {
   const pathname = usePathname();
-  const { data: session, isPending } = useSession();
+  const { data: session, isPending } = useAutoRefreshSession();
   const signOut = useSignOut();
   const [menuOpen, setMenuOpen] = useState(false);
   const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
@@ -33,7 +33,9 @@ export function PublicNavbar() {
           HireFlow
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
-          <NavLink href="/jobs" icon={<BriefcaseIcon className="size-4" />} label="Browse Jobs" />
+          {!pathname.startsWith("/jobs") && (
+            <NavLink href="/jobs" icon={<BriefcaseIcon className="size-4" />} label="Browse Jobs" />
+          )}
         </nav>
 
         <div className="flex items-center gap-1 ml-auto">
