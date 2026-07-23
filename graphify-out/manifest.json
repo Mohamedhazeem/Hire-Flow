@@ -1430,8 +1430,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/applications-page.tsx": {
-    "mtime": 1783572105.927101,
-    "ast_hash": "bd993ea6af7311a84597b981be070e6d",
+    "mtime": 1784808644.2975905,
+    "ast_hash": "097ebee9383fe1c118c42480f8cb3f76",
     "semantic_hash": ""
   },
   "app/features/user/components/disabled-job-card.tsx": {

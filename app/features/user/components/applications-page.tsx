@@ -176,22 +176,22 @@ export function ApplicationsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border-subtle">
-                    <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
                       Job
                     </th>
-                    <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden sm:table-cell">
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden sm:table-cell">
                       Company
                     </th>
-                    <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
                       Status
                     </th>
-                    <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden md:table-cell">
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden md:table-cell">
                       Applied
                     </th>
-                    <th className="text-left font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden lg:table-cell">
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden lg:table-cell">
                       Updated
                     </th>
-                    <th className="text-right font-medium text-text-muted pb-3 whitespace-nowrap" />
+                    <th className="text-center font-medium text-text-muted pb-3 whitespace-nowrap" />
                   </tr>
                 </thead>
                 <tbody>
@@ -200,7 +200,7 @@ export function ApplicationsPage() {
                       key={app.id}
                       className="border-b border-border-subtle hover:bg-bg-muted/40 transition-colors"
                     >
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pr-4 text-center">
                         <Link
                           href={`/user/applications/${app.id}`}
                           className="font-medium text-text-heading hover:text-brand transition-colors"
@@ -208,8 +208,8 @@ export function ApplicationsPage() {
                           {app.jobTitle}
                         </Link>
                       </td>
-                      <td className="py-3 pr-4 hidden sm:table-cell">
-                        <div className="flex items-center gap-2">
+                      <td className="py-3 pr-4 hidden sm:table-cell text-center">
+                        <div className="flex items-center justify-center gap-2">
                           <div className="size-6 rounded-md bg-brand/10 flex items-center justify-center text-brand text-[10px] font-bold shrink-0">
                             {app.companyLogo ? (
                               <Image
@@ -226,19 +226,19 @@ export function ApplicationsPage() {
                           <span className="text-text-muted">{app.companyName}</span>
                         </div>
                       </td>
-                      <td className="py-3 pr-4">
+                      <td className="py-3 pr-4 text-center">
                         <StatusBadge status={app.status} />
                       </td>
-                      <td className="py-3 pr-4 text-text-muted hidden md:table-cell">
+                      <td className="py-3 pr-4 text-text-muted hidden md:table-cell text-center">
                         {new Date(app.appliedAt).toLocaleDateString()}
                       </td>
-                      <td className="py-3 pr-4 text-text-muted hidden lg:table-cell whitespace-nowrap">
+                      <td className="py-3 pr-4 text-text-muted hidden lg:table-cell whitespace-nowrap text-center capitalize">
                         {daysAgo(app.updatedAt)}
                       </td>
-                      <td className="py-3 text-right">
+                      <td className="py-3 text-center">
                         <Link
                           href={`/user/applications/${app.id}`}
-                          className="text-sm text-brand hover:underline"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-brand hover:bg-brand/90 px-3 py-1.5 rounded-lg transition-colors"
                         >
                           View
                         </Link>
