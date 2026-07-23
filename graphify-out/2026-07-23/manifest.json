@@ -1595,18 +1595,18 @@
     "semantic_hash": ""
   },
   "components/chat/chat-message-list.tsx": {
-    "mtime": 1783572105.942112,
-    "ast_hash": "d68072660e57082b7757880eea8ea4ab",
+    "mtime": 1784734869.2334318,
+    "ast_hash": "1f2625c911be44acf48e2f4086bfa224",
     "semantic_hash": ""
   },
   "components/chat/message-bubble.tsx": {
-    "mtime": 1782531385.0659025,
-    "ast_hash": "80269c4c4468c8e82ab1840e02276e32",
+    "mtime": 1784734859.753343,
+    "ast_hash": "451f10b9aa438b39efd27f34d0db8aab",
     "semantic_hash": ""
   },
   "components/chat/message-item.ts": {
-    "mtime": 1782531824.7284021,
-    "ast_hash": "f9a8345d429015a333c733f1cd00dfd9",
+    "mtime": 1784734780.120117,
+    "ast_hash": "d975734598565958f6c9ecd71028265f",
     "semantic_hash": ""
   },
   "components/chat/messages-page-layout.tsx": {
@@ -1625,8 +1625,8 @@
     "semantic_hash": ""
   },
   "components/chat/use-pusher-thread.ts": {
-    "mtime": 1784733246.2751422,
-    "ast_hash": "357385ac64d95c2a82760b02cd3a4d09",
+    "mtime": 1784734839.1822634,
+    "ast_hash": "4f9ade6f83c6415fa9d6b639d1a01c3d",
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
@@ -2330,8 +2330,8 @@
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-messages.ts": {
-    "mtime": 1783572105.9180963,
-    "ast_hash": "b6965e7229632e5912c184e953ffbe55",
+    "mtime": 1784734898.8739355,
+    "ast_hash": "a51e558b83cfbcdf03f73ff8179cc957",
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-threads.ts": {
@@ -2350,13 +2350,13 @@
     "semantic_hash": ""
   },
   "lib/repositories/interfaces.ts": {
-    "mtime": 1784728784.9927628,
-    "ast_hash": "1fcce507415afd154ae3b5ceca249668",
+    "mtime": 1784734814.73181,
+    "ast_hash": "155d6912b7adb85f6d682dc74808122e",
     "semantic_hash": ""
   },
   "lib/repositories/message-repository.ts": {
-    "mtime": 1784728791.2836208,
-    "ast_hash": "d74cc81589d141daee6f8e80dea558e7",
+    "mtime": 1784734811.1644907,
+    "ast_hash": "4efb593e225c23c7de6e043114bd6675",
     "semantic_hash": ""
   },
   "lib/repositories/thread-repository.ts": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784733467.0525503,
-    "ast_hash": "4592000e458adca944f367338b32ea43",
+    "mtime": 1784734829.8008597,
+    "ast_hash": "0c617194bd365965f3d3d33c6cff9f0a",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
@@ -2670,8 +2670,8 @@
     "semantic_hash": ""
   },
   "lib/test/factories/message.factory.ts": {
-    "mtime": 1784383173.4362898,
-    "ast_hash": "69a72b38e655b8f51002855d53cf86b4",
+    "mtime": 1784734904.6933677,
+    "ast_hash": "38117d921b25c55cf8950bb93ebca234",
     "semantic_hash": ""
   },
   "lib/test/factories/resume.factory.ts": {
@@ -2995,8 +2995,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/message-bubble.dom.test.tsx": {
-    "mtime": 1784383173.4272904,
-    "ast_hash": "c8e5046993b2252aa4265cb97ea6d2ed",
+    "mtime": 1784734916.6417117,
+    "ast_hash": "bea595805928baf061cbceaa32522df2",
     "semantic_hash": ""
   },
   "lib/test/components/save-job-button.dom.test.tsx": {
@@ -3277,6 +3277,21 @@
   ".kilo/setup-script.ps1": {
     "mtime": 1784384111.612394,
     "ast_hash": "32873d5df5551271162aade7aecb86d5",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/messages.test.ts": {
+    "mtime": 1784734953.8781292,
+    "ast_hash": "7bcca0628a81de60b62636a09c8af9e0",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260722153925_add_deleted_at_to_message/migration.sql": {
+    "mtime": 1784734765.1686523,
+    "ast_hash": "7289a3ea94bde8d1570e488460c3c527",
+    "semantic_hash": ""
+  },
+  "plans/1784711472507-individual-message-deletion.md": {
+    "mtime": 1784734394.6269379,
+    "ast_hash": "398141c607aefa29ea17615df870f0e5",
     "semantic_hash": ""
   }
 }
