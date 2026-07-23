@@ -82,7 +82,7 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
       ? `${String(d.jobSalaryCurrency ?? "USD")}${salaryMin?.toLocaleString("en-US") ?? ""} - ${String(d.jobSalaryCurrency ?? "USD")}${salaryMax?.toLocaleString("en-US") ?? ""}`
       : null;
   const status = String(d.status ?? "");
-  const appCreatedAt = d.createdAt as string | undefined;
+  const appCreatedAt = d.appliedAt as string | undefined;
   const statusChanges = (d.statusChanges ?? []) as Array<Record<string, unknown>>;
   const timeline = statusChanges.map((sc) => ({
     id: sc.id as string,

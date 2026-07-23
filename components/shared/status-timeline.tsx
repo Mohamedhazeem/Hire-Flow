@@ -97,7 +97,7 @@ export function StatusTimeline({ entries, className }: Props) {
         const upcoming = entry.isUpcoming;
 
         return (
-          <div key={entry.id} className="relative flex gap-4 pb-6 last:pb-0">
+          <div key={entry.id} className="relative flex items-start gap-3 pb-6 last:pb-0">
             <div className="flex flex-col items-center">
               <div
                 className={cn(
@@ -108,9 +108,9 @@ export function StatusTimeline({ entries, className }: Props) {
               >
                 {getIcon(entry)}
               </div>
-              {!isLast && <div className="mt-1 w-px flex-1 bg-border-subtle" />}
+              {!isLast && <div className="w-px flex-1 bg-border-subtle" />}
             </div>
-            <div className={cn("min-w-0 flex-1 pt-0.5", upcoming && "opacity-50")}>
+            <div className={cn("min-w-0 flex-1 pt-1", upcoming && "opacity-50")}>
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-sm font-medium text-text-heading">{entry.label}</span>
                 <span className="text-xs text-text-muted whitespace-nowrap">
