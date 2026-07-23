@@ -3,10 +3,9 @@
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 import { AvatarFallback } from "@/components/shared/avatar-fallback";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
-import { LayoutDashboardIcon, LogOutIcon, PaletteIcon } from "lucide-react";
+import { LayoutDashboardIcon, LogOutIcon } from "lucide-react";
 
 const ROLE_META: Record<string, { label: string; dot: string }> = {
   super_admin: { label: "Super Admin", dot: "bg-amber-500" },
@@ -68,7 +67,7 @@ export function AccountPopover() {
         <div className="h-px bg-border-subtle mx-2 my-0.5" aria-hidden="true" />
 
         {/* ── Menu Items ── */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-1">
           {/* Dashboard Link */}
           <Link
             href={dashboardHref}
@@ -78,19 +77,11 @@ export function AccountPopover() {
             Go to Dashboard
           </Link>
 
-          {/* Appearance Row – visual consistency, non‑interactive container */}
-          <div className={`${MENU_ITEM} cursor-default`}>
-            <PaletteIcon className="size-4 text-text-muted shrink-0" />
-            <ThemeToggle collapsed={false} />
-            {/* <div className="ml-auto">
-            </div> */}
-          </div>
-
           {/* Sign Out Button */}
           <button
             type="button"
             onClick={signOut}
-            className={`${MENU_ITEM} text-error/80 hover:text-error hover:bg-error/10`}
+            className={`${MENU_ITEM} text-error hover:text-white hover:bg-error/90`}
           >
             <LogOutIcon className="size-4 shrink-0" />
             Sign Out

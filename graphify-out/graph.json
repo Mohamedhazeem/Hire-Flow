@@ -4,26 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "use-auto-refresh-session.ts",
-      "file_type": "code",
-      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "hooks_use_auto_refresh_session",
-      "community": 148,
-      "norm_label": "use-auto-refresh-session.ts"
-    },
-    {
-      "label": "useAutoRefreshSession()",
-      "file_type": "code",
-      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "hooks_use_auto_refresh_session_useautorefreshsession",
-      "community": 148,
-      "norm_label": "useautorefreshsession()"
-    },
-    {
       "label": "account-popover.tsx",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
@@ -47,11 +27,31 @@
       "label": "AccountPopover()",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "components_account_popover_accountpopover",
       "community": 148,
       "norm_label": "accountpopover()"
+    },
+    {
+      "label": "use-auto-refresh-session.ts",
+      "file_type": "code",
+      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 148,
+      "norm_label": "use-auto-refresh-session.ts",
+      "id": "hooks_use_auto_refresh_session"
+    },
+    {
+      "label": "useAutoRefreshSession()",
+      "file_type": "code",
+      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 148,
+      "norm_label": "useautorefreshsession()",
+      "id": "hooks_use_auto_refresh_session_useautorefreshsession"
     },
     {
       "label": "public-navbar.tsx",
@@ -59,9 +59,9 @@
       "source_file": "app/features/public/components/public-navbar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_public_navbar",
       "community": 148,
-      "norm_label": "public-navbar.tsx"
+      "norm_label": "public-navbar.tsx",
+      "id": "components_public_navbar"
     },
     {
       "label": "PublicNavbar()",
@@ -69,9 +69,9 @@
       "source_file": "app/features/public/components/public-navbar.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "components_public_navbar_publicnavbar",
       "community": 148,
-      "norm_label": "publicnavbar()"
+      "norm_label": "publicnavbar()",
+      "id": "components_public_navbar_publicnavbar"
     },
     {
       "label": "NavLink()",
@@ -79,9 +79,9 @@
       "source_file": "app/features/public/components/public-navbar.tsx",
       "source_location": "L104",
       "_origin": "ast",
-      "id": "components_public_navbar_navlink",
       "community": 148,
-      "norm_label": "navlink()"
+      "norm_label": "navlink()",
+      "id": "components_public_navbar_navlink"
     },
     {
       "label": "README.md",
@@ -33756,49 +33756,6 @@
   ],
   "links": [
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_auto_refresh_session",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "hooks_use_auto_refresh_session",
-      "target": "hooks_use_auto_refresh_session_useautorefreshsession",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_public_navbar",
-      "target": "hooks_use_auto_refresh_session_useautorefreshsession",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "components_public_navbar_publicnavbar",
-      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/account-popover.tsx",
@@ -33814,9 +33771,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_account_popover",
-      "target": "components_account_popover_role_meta",
-      "confidence_score": 1.0
+      "target": "components_account_popover_role_meta"
     },
     {
       "relation": "imports_from",
@@ -33982,6 +33939,49 @@
       "confidence_score": 1.0,
       "source": "components_public_navbar",
       "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_auto_refresh_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/hooks/use-auto-refresh-session.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_auto_refresh_session",
+      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "components_public_navbar_publicnavbar",
+      "target": "hooks_use_auto_refresh_session_useautorefreshsession"
     },
     {
       "relation": "imports_from",
@@ -100531,5 +100531,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "897e322bcd916db2946360f4966c185d3a5b519a"
+  "built_at_commit": "a45213f46179f69dedc2c0fb4a3764b0be18b527"
 }
