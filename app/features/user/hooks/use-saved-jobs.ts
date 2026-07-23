@@ -48,7 +48,7 @@ export function useToggleBookmark() {
     mutationFn: async (jobId) => {
       return await apiClient<{ data: ToggleResponse }>("/api/user/bookmarks", {
         method: "POST",
-        body: JSON.stringify({ jobId }),
+        body: { jobId },
       });
     },
     onSuccess: () => {
