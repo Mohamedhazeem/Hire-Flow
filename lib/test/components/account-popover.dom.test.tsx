@@ -82,7 +82,7 @@ describe("AccountPopover", () => {
     expect(screen.getByText("Recruiter Rita")).toBeInTheDocument();
     expect(screen.getByText("rita@example.com")).toBeInTheDocument();
     expect(screen.getByText("Recruiter")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Go to Dashboard/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute(
       "href",
       "/recruiter",
     );
@@ -95,7 +95,7 @@ describe("AccountPopover", () => {
     const user = userEvent.setup();
     render(<AccountPopover />);
     await user.click(screen.getByRole("button"));
-    expect(screen.getByRole("link", { name: /Go to Dashboard/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute(
       "href",
       "/admin",
     );
