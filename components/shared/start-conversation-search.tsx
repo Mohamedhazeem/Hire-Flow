@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useSession } from "@/app/features/auth/libs/auth-client";
 import { apiClient } from "@/lib/api/api-client";
 import { Input } from "@/components/ui/input";
 import { SearchIcon, MessageSquareTextIcon, Building2Icon } from "lucide-react";
@@ -19,15 +17,15 @@ type SearchResult = {
 
 type StartConversationSearchProps = {
   searchEndpoint: string;
-  messagesBasePath: string;
+  currentUserId: string;
+  onSelectThread: (threadId: string) => void;
 };
 
 export function StartConversationSearch({
   searchEndpoint,
-  messagesBasePath,
+  currentUserId,
+  onSelectThread,
 }: StartConversationSearchProps) {
-  const router = useRouter();
-  const { data: session } = useSession();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -61,12 +59,11 @@ export function StartConversationSearch({
 
   const navigateToThread = useCallback(
     (targetId: string) => {
-      const currentUserId = (session?.user as { id?: string })?.id;
       if (!currentUserId) return;
       const threadId = computeThreadId(currentUserId, targetId);
-      router.push(`${messagesBasePath}?thread=${threadId}`, { scroll: false });
+      onSelectThread(threadId);
     },
-    [router, session, messagesBasePath],
+    [currentUserId, onSelectThread],
   );
 
   const handleKeyDown = useCallback(

@@ -48,6 +48,7 @@ async function handleGET(request: NextRequest) {
     name: a.user.name,
     email: a.user.email,
     role: a.user.role,
+    company: null,
   }));
 
   return ok(users);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -50,6 +50,8 @@ function ThreadListPanel({
   activeThreadId,
   basePath,
   searchEndpoint,
+  currentUserId,
+  onSelectThread,
   panelDescription,
   emptyListTitle,
   emptyListDescription,
@@ -60,6 +62,8 @@ function ThreadListPanel({
   activeThreadId: string | null;
   basePath: string;
   searchEndpoint?: string;
+  currentUserId: string;
+  onSelectThread: (threadId: string) => void;
   panelDescription: string;
   emptyListTitle: string;
   emptyListDescription: string;
@@ -77,7 +81,8 @@ function ThreadListPanel({
         <div className="shrink-0 px-4 pt-3 pb-2">
           <StartConversationSearch
             searchEndpoint={searchEndpoint}
-            messagesBasePath={basePath}
+            currentUserId={currentUserId}
+            onSelectThread={onSelectThread}
           />
         </div>
       )}
@@ -114,14 +119,32 @@ function ThreadListPanel({
 export function MessagesPageLayout({ config, threads, isLoading, ThreadViewComponent }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const activeThreadId = searchParams.get("thread");
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
 
+  const [activeThreadId, setActiveThreadId] = useState<string | null>(
+    () => searchParams.get("thread") ?? null,
+  );
+
+  // Sync with URL changes (browser back/forward)
+  useEffect(() => {
+    setActiveThreadId(searchParams.get("thread") ?? null);
+  }, [searchParams]);
+
   useOwnPresence(userId);
 
+  const handleSelectThread = useCallback(
+    (threadId: string) => {
+      if (threadId === activeThreadId) return;
+      setActiveThreadId(threadId);
+      router.replace(`${config.basePath}?thread=${threadId}`, { scroll: false });
+    },
+    [router, config.basePath, activeThreadId],
+  );
+
   const handleBack = useCallback(() => {
-    router.push(config.basePath, { scroll: false });
+    setActiveThreadId(null);
+    router.replace(config.basePath, { scroll: false });
   }, [router, config.basePath]);
 
   return (
@@ -139,6 +162,8 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
           activeThreadId={activeThreadId}
           basePath={config.basePath}
           searchEndpoint={config.searchEndpoint}
+          currentUserId={userId}
+          onSelectThread={handleSelectThread}
           panelDescription={config.panelDescription}
           emptyListTitle={config.emptyListTitle}
           emptyListDescription={config.emptyListDescription}
