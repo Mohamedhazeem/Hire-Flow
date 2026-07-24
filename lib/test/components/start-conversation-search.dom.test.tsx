@@ -9,7 +9,13 @@ vi.mock("@/lib/api/api-client", () => ({
 }));
 
 const testResults = [
-  { id: "u-2", name: "Alice Recruiter", email: "alice@example.com", role: "recruiter", company: { name: "Acme Corp" } },
+  {
+    id: "u-2",
+    name: "Alice Recruiter",
+    email: "alice@example.com",
+    role: "recruiter",
+    company: { name: "Acme Corp" },
+  },
   { id: "u-3", name: "Bob Applicant", email: "bob@example.com", role: "user", company: null },
 ];
 
@@ -79,7 +85,7 @@ describe("StartConversationSearch", () => {
   it("shows company info when company is non-null", async () => {
     mockApiClient.mockResolvedValue({ data: testResults });
     const user = userEvent.setup();
-    const { container } = render(<StartConversationSearch {...baseProps()} />);
+    render(<StartConversationSearch {...baseProps()} />);
     const input = screen.getByPlaceholderText("Search by name or company...");
     await user.type(input, "alice");
     expect(await screen.findByText("Acme Corp")).toBeInTheDocument();
