@@ -48,6 +48,7 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 | PDF/DOC Parsing | `pdf-parse`, `mammoth`, `react-pdf`    | `^2.4.5` / `^1.12.0` / `^10.4.1` |
 | Styling         | Tailwind CSS v4 + shadcn               | `^4` / `^4.11.0`                 |
 | Date Handling   | date-fns                               | `^4.4.0`                         |
+| File Storage    | Vercel Blob (provider abstraction)     | `^2.6.1`                         |
 | Tooling         | ESLint 9, tsx, cross-env               | —                                |
 
 ---
@@ -65,7 +66,7 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 
 ### 🏢 Recruiter
 
-- Company profile CRUD + team invite management
+- Company profile CRUD + team invite management + **company logo upload** (cloud storage)
 - Full job posting lifecycle (draft → active → archived)
 - **7-status applicant pipeline** with optimistic concurrency control
 - **Bulk actions**: mass status transitions, bulk rejection with shared reasoning, one-time action constraints
@@ -88,10 +89,12 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 
 - Full-text job search with advanced filtering (work mode, employment type, experience, industry)
 - **Dual-gate job visibility** — jobs only appear when both recruiter- and admin-level flags allow it
-- Job detail pages with view tracking (deduplicated per session) and company preview cards
+- Job detail pages with view tracking (deduplicated per session), company preview cards, and related content panels (company jobs + similar jobs)
 - Animated home page: hero search, category strip, featured jobs/companies, testimonials
 - Career resources hub (resume tips, interview checklist, salary FAQ)
+- **Dedicated pages**: About, Careers, Contact, Employers, Pricing, Press
 - **SEO-complete**: dynamic `sitemap.xml`, `robots.txt`, and JSON-LD `JobPosting` structured data
+- **Social links** in footer (LinkedIn, Twitter/X, GitHub) with `mailto:` fallback to contact email
 
 ---
 
@@ -135,6 +138,8 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 **Dual-Gate Job Visibility** — Every public-facing job query filters on **both** `status: "active"` (recruiter-controlled) **and** `isActive: true` (admin kill-switch). Missing either check would leak archived or platform-deactivated postings — this pattern is enforced consistently across listings, sitemap generation, and featured jobs.
 
+**Cloud Storage Provider Abstraction** — File uploads (resumes, logos) are abstracted behind a provider registry (`lib/upload.ts`). The `UPLOAD_PROVIDER` env var selects between `local` (dev) and `vercel-blob` (production). Switching providers requires no code changes — only env var updates. The provider registry pattern makes adding S3 or other backends trivial.
+
 **Middleware-Driven Redirects** — Rather than a single "role home" constant scattered across components, redirect logic lives centrally in `proxy.ts` middleware and shared auth hooks, keeping role-based routing consistent and easy to audit.
 
 **Null-Guarded Structured Data** — JSON-LD `JobPosting` markup is injected via Next.js `generateMetadata`, with every field (salary, location, employment type) individually null-checked so no fabricated data ever reaches search engines.
@@ -146,7 +151,8 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 - **4 completed phases** (Admin → Recruiter → User → Public), fully sequenced and documented
 - **3 distinct role-based dashboards** + 1 public marketplace
 - **7-stage** applicant status pipeline with full audit trail
-- **~150+ files** across API routes, feature modules, and shared components
+- **Cloud storage provider abstraction** (local dev ↔ Vercel Blob production)
+- ~150+ files across API routes, feature modules, and shared components
 - Real-time messaging across **3 role pairs** (admin↔user, recruiter↔applicant) via Pusher private channels
 
 ---
@@ -159,6 +165,7 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 - **PostgreSQL** database (local or hosted, e.g. Neon/Supabase)
 - (Optional) Pusher app credentials for realtime features
 - (Optional) An API key from Anthropic, OpenAI, or Google for AI resume suggestions
+- (Production) A Vercel Blob `BLOB_READ_WRITE_TOKEN` when using `UPLOAD_PROVIDER=vercel-blob`
 
 ### 1. Clone & install
 
@@ -218,6 +225,22 @@ ANTHROPIC_MODEL=claude-sonnet-4-20250514
 # Google (Gemini) — uncomment and fill to use instead
 # GEMINI_API_KEY=xxxxxxxxxxxx
 # GEMINI_MODEL=gemini-2.0-flash
+
+# Upload Storage Provider: "local" (dev) or "vercel-blob" (production)
+UPLOAD_PROVIDER=local
+
+# Vercel Blob — required when UPLOAD_PROVIDER=vercel-blob
+# Get this token from: Vercel Dashboard → Storage → Blob → Tokens
+BLOB_READ_WRITE_TOKEN=
+
+# Vercel Blob CDN host — used for image remotePatterns in next.config.ts
+NEXT_PUBLIC_BLOB_CDN_HOST=public.blob.vercel-storage.com
+
+# Social links (optional — unset values fall back to mailto:CONTACT_EMAIL)
+NEXT_PUBLIC_LINKEDIN_URL=
+NEXT_PUBLIC_TWITTER_URL=
+NEXT_PUBLIC_GITHUB_URL=
+NEXT_PUBLIC_CONTACT_EMAIL=
 ```
 
 ### 3. Set up the database
@@ -252,7 +275,7 @@ Visit `http://localhost:3000`. Sign up as a job seeker directly, or promote your
 ```
 hire-flow-next/
 ├── app/
-│   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms
+│   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms, about, careers, contact, pricing, press, employers
 │   ├── (auth)/                  # Login, register, verify-email, reset-password
 │   ├── (roles)/
 │   │   ├── admin/                # Admin dashboard, users, jobs, team, messages
@@ -284,6 +307,7 @@ hire-flow-next/
 │   ├── pusher/                  # Pusher server/client setup
 │   ├── repositories/            # Application, job, message repositories
 │   ├── services/                # Application, job, notification services
+│   ├── upload.ts                # Provider registry: local + Vercel Blob implementations
 │   └── test/                    # Factories, fixtures, mocks, reset-db
 ├── stores/                       # Zustand: ui-store, chat-store
 ├── features/
@@ -311,6 +335,7 @@ hire-flow-next/
 - **Prisma singleton + `@prisma/adapter-pg`** — connection reuse across serverless invocations
 - **Shared notification utility** — `lib/notifications.ts` performs the DB write and Pusher trigger atomically from a single call site
 - **Rate limiting as infrastructure, not an afterthought** — generic sliding-window limiter reused across apply/view/AI endpoints
+- **Upload provider abstraction** — `UPLOAD_PROVIDER` env var selects `local` or `vercel-blob`; the provider registry in `lib/upload.ts` dispatches `saveUpload`/`deleteUpload` to the correct implementation with zero code changes when switching
 
 ---
 
@@ -325,7 +350,7 @@ npx prisma migrate deploy && next build
 ```
 
 **Required environment variables in production:**
-`DATABASE_URL`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_APP_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `RESEND_API_KEY`, `EMAIL_FROM`, `PROMOTE_TO_SUPER_ADMINS`, `PUSHER_APP_ID`, `PUSHER_KEY`, `PUSHER_SECRET`, `PUSHER_CLUSTER`, `NEXT_PUBLIC_PUSHER_KEY`, `NEXT_PUBLIC_PUSHER_CLUSTER`, `AI_PROVIDER`, and the corresponding AI provider key/model (e.g. `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`)..
+`DATABASE_URL`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_APP_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `RESEND_API_KEY`, `EMAIL_FROM`, `PROMOTE_TO_SUPER_ADMINS`, `PUSHER_APP_ID`, `PUSHER_KEY`, `PUSHER_SECRET`, `PUSHER_CLUSTER`, `NEXT_PUBLIC_PUSHER_KEY`, `NEXT_PUBLIC_PUSHER_CLUSTER`, `AI_PROVIDER`, and the corresponding AI provider key/model (e.g. `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`), `UPLOAD_PROVIDER`, `BLOB_READ_WRITE_TOKEN`, `NEXT_PUBLIC_BLOB_CDN_HOST`, `NEXT_PUBLIC_LINKEDIN_URL`, `NEXT_PUBLIC_TWITTER_URL`, `NEXT_PUBLIC_GITHUB_URL`, and `NEXT_PUBLIC_CONTACT_EMAIL`.
 
 ---
 
@@ -341,7 +366,7 @@ Hire Flow uses a layered testing strategy matched to each layer of the stack:
 | Component   | React Testing Library                    | Data table selection, bulk action logic, forms, AI suggestions panel                                                                       |
 | End-to-End  | Playwright                               | Full role-based journeys (anonymous → user → recruiter → admin) with real Better Auth sessions                                             |
 
-External services (Pusher, AI providers, Resend) are mocked at the module level — tests never make real network calls or incur API costs.
+External services (Pusher, AI providers, Resend, Vercel Blob) are mocked at the module level — tests never make real network calls or incur API costs.
 
 ### Test infrastructure (Phases 0–6)
 
@@ -353,7 +378,7 @@ Tests are built incrementally per the [testing strategy](docs/testing/testing-st
 | 1     | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes                                                                                                                                                                                                                  |
 | 2     | Unit tests: pure logic              | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts`                                                                                                                                                     |
 | 3     | Auth & authorization                | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix                                                                                                                                                                                                                  |
-| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload); file upload/download edges, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions                         |
+| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions                         |
 | 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                   |
 | 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                         |
 
