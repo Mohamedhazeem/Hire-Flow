@@ -42,6 +42,12 @@ describe("isHiddenRoute", () => {
     expect(isHiddenRoute("/privacy")).toBe(false);
     expect(isHiddenRoute("/terms")).toBe(false);
     expect(isHiddenRoute("/unauthorized")).toBe(false);
+    expect(isHiddenRoute("/employers")).toBe(false);
+    expect(isHiddenRoute("/pricing")).toBe(false);
+    expect(isHiddenRoute("/about")).toBe(false);
+    expect(isHiddenRoute("/careers")).toBe(false);
+    expect(isHiddenRoute("/contact")).toBe(false);
+    expect(isHiddenRoute("/press")).toBe(false);
   });
 
   it("shows unknown routes that are not matched by any hidden prefix", () => {

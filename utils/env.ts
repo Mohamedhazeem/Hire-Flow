@@ -27,6 +27,11 @@ export const envSchema = z.object({
   NEXT_PUBLIC_PUSHER_KEY: z.string().optional(),
   NEXT_PUBLIC_PUSHER_CLUSTER: z.string().optional(),
 
+  NEXT_PUBLIC_LINKEDIN_URL: z.string().optional(),
+  NEXT_PUBLIC_TWITTER_URL: z.string().optional(),
+  NEXT_PUBLIC_GITHUB_URL: z.string().optional(),
+  NEXT_PUBLIC_CONTACT_EMAIL: z.string().optional(),
+
   AI_PROVIDER: z.enum(["anthropic", "openai", "google"]).default("anthropic"),
   ANTHROPIC_API_KEY: z.string().optional(),
   OPENAI_API_KEY: z.string().optional(),

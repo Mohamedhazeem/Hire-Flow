@@ -950,8 +950,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1782886414.3237026,
-    "ast_hash": "d38675389d5d300a1d007238aa817e5c",
+    "mtime": 1784876697.0133696,
+    "ast_hash": "d0bff7ffd2145642b3ac9d4740e327b8",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
@@ -1845,8 +1845,8 @@
     "semantic_hash": ""
   },
   "lib/routes.ts": {
-    "mtime": 1784789050.67624,
-    "ast_hash": "33c4be36c209bb606a5db87843c6151b",
+    "mtime": 1784876697.0232842,
+    "ast_hash": "73297e17cf0da02d16a59f07e281bf70",
     "semantic_hash": ""
   },
   "lib/thread-utils.ts": {
@@ -1930,8 +1930,8 @@
     "semantic_hash": ""
   },
   "utils/env.ts": {
-    "mtime": 1784789051.1641457,
-    "ast_hash": "4395b9645a8e5228ee6d488d095495f4",
+    "mtime": 1784876696.8084836,
+    "ast_hash": "379259aa2a504f99368493fa285e1a8c",
     "semantic_hash": ""
   },
   "utils/format-string.ts": {
@@ -2870,8 +2870,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/routes.test.ts": {
-    "mtime": 1784789051.0625782,
-    "ast_hash": "bb7aa6a5e41fe29ee740f72c46f29a03",
+    "mtime": 1784876697.019605,
+    "ast_hash": "345e24b0841a72ca8b3568b4887c360c",
     "semantic_hash": ""
   },
   "lib/test/unit/thread-utils.test.ts": {
@@ -3347,6 +3347,46 @@
   "lib/test/integration/jobs/related.test.ts": {
     "mtime": 1784870854.3610258,
     "ast_hash": "1248f19323c15afea9ab3e7e2fbfeb9e",
+    "semantic_hash": ""
+  },
+  "app/(public)/about/page.tsx": {
+    "mtime": 1784876674.5319445,
+    "ast_hash": "1b315b185d3a2e6c415dd1132bb32f5f",
+    "semantic_hash": ""
+  },
+  "app/(public)/careers/page.tsx": {
+    "mtime": 1784876674.5339441,
+    "ast_hash": "d1cc6f1776345fe2e0c4f1431281ab30",
+    "semantic_hash": ""
+  },
+  "app/(public)/contact/page.tsx": {
+    "mtime": 1784876674.563945,
+    "ast_hash": "dd0b097cf275fd7dfbfbd3fe1ff00614",
+    "semantic_hash": ""
+  },
+  "app/(public)/employers/page.tsx": {
+    "mtime": 1784876673.9070947,
+    "ast_hash": "ffacc77f62c0cb8bd45d06b9e5509f9f",
+    "semantic_hash": ""
+  },
+  "app/(public)/press/page.tsx": {
+    "mtime": 1784876674.563945,
+    "ast_hash": "bf146f719c5fb15b8ef0d3b676f4b046",
+    "semantic_hash": ""
+  },
+  "app/(public)/pricing/page.tsx": {
+    "mtime": 1784876674.1298635,
+    "ast_hash": "40cb3640d9c6edac6e9b24252d7a777c",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md": {
+    "mtime": 1784876269.8396132,
+    "ast_hash": "78f84b35ee74c8ffab9b419c1405e580",
+    "semantic_hash": ""
+  },
+  "plans/1784711472507-footer-pages-plan.md": {
+    "mtime": 1784876569.5446947,
+    "ast_hash": "234bc4e4c2f9972f817506a6a9b82bf5",
     "semantic_hash": ""
   }
 }

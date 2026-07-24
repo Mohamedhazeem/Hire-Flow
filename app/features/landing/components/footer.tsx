@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { HeartIcon, GlobeIcon, MessageCircleIcon, TerminalIcon } from "lucide-react";
+import { env } from "@/utils/env";
 
 const columns = [
   {
     title: "Product",
     links: [
       { label: "Browse Jobs", href: "/jobs" },
-      { label: "For Employers", href: "/#for-employers" },
-      { label: "Pricing", href: "#" },
-      { label: "About", href: "#" },
+      { label: "For Employers", href: "/employers" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "About", href: "/about" },
     ],
   },
   {
@@ -20,9 +21,9 @@ const columns = [
   {
     title: "Company",
     links: [
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Press", href: "#" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
+      { label: "Press", href: "/press" },
     ],
   },
   {
@@ -34,10 +35,27 @@ const columns = [
   },
 ];
 
+const linkedinUrl = env.data?.NEXT_PUBLIC_LINKEDIN_URL;
+const twitterUrl = env.data?.NEXT_PUBLIC_TWITTER_URL;
+const githubUrl = env.data?.NEXT_PUBLIC_GITHUB_URL;
+const contactEmail = env.data?.NEXT_PUBLIC_CONTACT_EMAIL;
+
 const socials = [
-  { icon: GlobeIcon, label: "LinkedIn", href: "#" },
-  { icon: MessageCircleIcon, label: "Twitter", href: "#" },
-  { icon: TerminalIcon, label: "GitHub", href: "#" },
+  {
+    icon: GlobeIcon,
+    label: "LinkedIn",
+    href: linkedinUrl || (contactEmail ? `mailto:${contactEmail}` : null),
+  },
+  {
+    icon: MessageCircleIcon,
+    label: "Twitter",
+    href: twitterUrl || (contactEmail ? `mailto:${contactEmail}` : null),
+  },
+  {
+    icon: TerminalIcon,
+    label: "GitHub",
+    href: githubUrl || (contactEmail ? `mailto:${contactEmail}` : null),
+  },
 ];
 
 export function Footer() {
@@ -73,16 +91,18 @@ export function Footer() {
             for job seekers.
           </p>
           <div className="flex items-center gap-3">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="size-8 flex items-center justify-center rounded-lg text-neutral-500 hover:text-white hover:bg-neutral-800 transition-all"
-              >
-                <s.icon className="size-4" />
-              </a>
-            ))}
+            {socials
+              .filter((s) => s.href !== null)
+              .map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href!}
+                  aria-label={s.label}
+                  className="size-8 flex items-center justify-center rounded-lg text-neutral-500 hover:text-white hover:bg-neutral-800 transition-all"
+                >
+                  <s.icon className="size-4" />
+                </a>
+              ))}
           </div>
         </div>
       </div>
