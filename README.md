@@ -498,7 +498,15 @@ Coverage thresholds are enforced via `vitest.config.ts` (currently `lines: 22, f
 
 ## 📄 License
 
-This project is available under the [MIT License](LICENSE).
+This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](LICENSE).
+
+- **View and Study** — free to use for personal learning, education, and non-commercial portfolio reference.
+- **Attribution** — you must give appropriate credit to **Mohamed Hazeem**, provide a link to the original repository, and indicate if changes were made.
+- **NonCommercial** — you may not use the material for commercial purposes.
+- **NoDerivatives** — you may not distribute modified versions of the material.
+- **No Misattribution** — you must not claim authorship of the original work or represent modified material as the original creation of Mohamed Hazeem.
+
+For commercial licensing inquiries, contact [a.mohamedhazeem@gmail.com](mailto:a.mohamedhazeem@gmail.com).
 
 ## 📬 Contact
 
