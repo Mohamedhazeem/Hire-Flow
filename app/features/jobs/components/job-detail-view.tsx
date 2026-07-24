@@ -19,6 +19,12 @@ import { MapPinIcon, BriefcaseIcon, ArrowLeftIcon, AlertCircleIcon } from "lucid
 import Link from "next/link";
 import Image from "next/image";
 
+function formatApplicantCount(count: number): string {
+  if (count > 100) return "100+ applicants";
+  if (count === 1) return "1 applicant";
+  return `${count} applicants`;
+}
+
 export function JobDetailView({ jobId }: { jobId?: string }) {
   const params = useParams();
   const rawId = jobId ?? params.id;
@@ -103,7 +109,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
         <ArrowLeftIcon className="size-4" /> Back to jobs
       </Link>
 
-      <div className="flex items-start gap-4 mb-6">
+        <div className="flex items-start gap-4 mb-6">
         <div className="size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
           {data.companyLogo ? (
             <Image
@@ -117,9 +123,14 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
             data.companyName.charAt(0).toUpperCase()
           )}
         </div>
-        <div className="min-w-0">
-          <h1 className="text-2xl sm:text-3xl font-bold text-text-heading">{data.title}</h1>
-          <p className="text-text-muted mt-1">{data.companyName}</p>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-3xl font-bold text-text-heading">{data.title}</h1>
+              <p className="text-text-muted mt-1">{data.companyName}</p>
+            </div>
+            <SaveJobButton jobId={data.id} size="md" />
+          </div>
         </div>
       </div>
 
@@ -225,7 +236,6 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       )}
 
       <div className="flex items-center gap-3 pt-6 border-t border-border-subtle">
-        <SaveJobButton jobId={data.id} size="md" />
         {session?.user ? (
           <button
             type="button"
@@ -244,7 +254,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
           </Link>
         )}
         <span className="text-xs text-text-muted">
-          {data.applicationCount} applicant{data.applicationCount !== 1 ? "s" : ""}
+          {formatApplicantCount(data.applicationCount)}
         </span>
       </div>
 
