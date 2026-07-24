@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-07-24)
 
 ## Corpus Check
-- 674 files · ~285,930 words
+- 674 files · ~285,925 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3481 nodes · 6553 edges · 225 communities (187 shown, 38 thin omitted)
+- 3481 nodes · 6553 edges · 224 communities (186 shown, 38 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 77 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1e5db8cd`
+- Built from commit: `bde8c42d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -162,7 +162,6 @@
 - [[_COMMUNITY_Community 146|Community 146]]
 - [[_COMMUNITY_Community 147|Community 147]]
 - [[_COMMUNITY_Community 148|Community 148]]
-- [[_COMMUNITY_Community 149|Community 149]]
 - [[_COMMUNITY_Community 150|Community 150]]
 - [[_COMMUNITY_Community 154|Community 154]]
 - [[_COMMUNITY_Community 155|Community 155]]
@@ -247,7 +246,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (225 total, 38 thin omitted)
+## Communities (224 total, 38 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.03
@@ -322,8 +321,8 @@ Cohesion: 0.11
 Nodes (15): metadata, FilterSelect(), FilterSelectProps, HeroSearch(), cardVariants, containerVariants, EMPLOYMENT_TYPES, EXPERIENCE_LEVELS (+7 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.10
-Nodes (29): AdminJobsTable(), AdminJobsTableProps, createJobTableColumns(), EMPLOYMENT_TYPE_LABELS, JobTableToolbar(), JobTableToolbarProps, WORK_MODE_LABELS, useAdminJobs() (+21 more)
+Cohesion: 0.08
+Nodes (39): AdminJobsTable(), AdminJobsTableProps, createJobTableColumns(), EMPLOYMENT_TYPE_LABELS, JobTableToolbar(), JobTableToolbarProps, WORK_MODE_LABELS, createRecruiterJobColumns() (+31 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.07
@@ -390,8 +389,8 @@ Cohesion: 0.09
 Nodes (21): MessagesPageConfig, MessagesPageLayout(), Props, ThreadListPanel(), Props, ThreadListItem(), ThreadListItemData, mockOwnPresence (+13 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.09
-Nodes (19): applyAiSuggestions(), handlePOST(), POST, ApiError, ConflictError, ForbiddenError, TooManyRequestsError, UnauthorizedError (+11 more)
+Cohesion: 0.07
+Nodes (28): applyAiSuggestions(), saveResumeBuilder(), handlePOST(), POST, ApiError, ConflictError, ForbiddenError, TooManyRequestsError (+20 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.29
@@ -410,8 +409,8 @@ Cohesion: 0.19
 Nodes (7): startAiMockServer(), AUTH_DIR, globalSetup(), ACCOUNTS, APPLICATIONS, JOB_SLUGS, JOBS
 
 ### Community 40 - "Community 40"
-Cohesion: 0.11
-Nodes (21): BanDialog(), createPeopleTableColumns(), PeopleTableActions, PeopleTable(), PeopleTableProps, TableActionsCell(), TableActionsCellProps, UnbanButton() (+13 more)
+Cohesion: 0.12
+Nodes (19): BanDialog(), createPeopleTableColumns(), PeopleTableActions, PeopleTable(), PeopleTableProps, TableActionsCell(), TableActionsCellProps, UnbanButton() (+11 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.07
@@ -518,8 +517,8 @@ Cohesion: 0.11
 Nodes (17): metadata, metadata, mockMutateAsync, mockPush, mockSaveResumeBuilder, emptyEducation, emptyExperience, Props (+9 more)
 
 ### Community 67 - "Community 67"
-Cohesion: 0.08
-Nodes (30): metadata, metadata, AdminTeamList(), columns, data, TestRow, InviteAdminForm(), InviteRecruiterForm() (+22 more)
+Cohesion: 0.09
+Nodes (22): metadata, metadata, AdminTeamList(), columns, data, TestRow, InviteAdminForm(), InviteRecruiterForm() (+14 more)
 
 ### Community 68 - "Community 68"
 Cohesion: 0.11
@@ -570,8 +569,8 @@ Cohesion: 0.22
 Nodes (14): loginAction(), LoginActionInput, LoginActionSchema, logOutAction(), registerAction(), requestPasswordResetAction(), resetPasswordAction(), validateWithZod() (+6 more)
 
 ### Community 80 - "Community 80"
-Cohesion: 0.11
-Nodes (17): ResolvedSession, { DELETE }, { DELETE }, { GET, POST, DELETE }, { GET }, { DELETE }, { DELETE }, { GET } (+9 more)
+Cohesion: 0.17
+Nodes (10): { DELETE }, { GET }, { DELETE }, { GET }, createMessageIdDeleteHandler(), createThreadListHandler(), MessageIdHandlerOptions, ThreadIdHandlerOptions (+2 more)
 
 ### Community 81 - "Community 81"
 Cohesion: 0.12
@@ -631,7 +630,7 @@ Nodes (9): metadata, ApplicationActions(), Props, ApplicationDetailView(), Appli
 
 ### Community 95 - "Community 95"
 Cohesion: 0.09
-Nodes (21): AdminRecruiterProfileViewProps, CompanyJob, AdminUserProfileView(), AdminUserProfileViewProps, App, useAdminUserApplications(), AccountCard(), AccountCardProps (+13 more)
+Nodes (23): AdminRecruiterProfileViewProps, CompanyJob, AdminUserProfileView(), AdminUserProfileViewProps, App, useAdminUserApplications(), AccountCard(), AccountCardProps (+15 more)
 
 ### Community 96 - "Community 96"
 Cohesion: 0.18
@@ -670,8 +669,8 @@ Cohesion: 0.40
 Nodes (5): 🤖 AI-Powered Features, Graceful Degradation, Multi-Provider Abstraction, Rate-Limited Per-User Quota, Resume Enhancement Engine
 
 ### Community 105 - "Community 105"
-Cohesion: 0.12
-Nodes (17): JobDetailProps, STATUS_BADGE, TABS, RecruiterJobDetail, InfoRow(), InfoRowProps, JobDetailTabs(), JobDetailTabsProps (+9 more)
+Cohesion: 0.13
+Nodes (15): JobDetailProps, STATUS_BADGE, TABS, RecruiterJobDetail, JobDetailTabs(), JobDetailTabsProps, Tab, chipList() (+7 more)
 
 ### Community 106 - "Community 106"
 Cohesion: 0.16
@@ -805,10 +804,6 @@ Nodes (10): GET, handleGET(), FeaturedJobs(), FeaturedJobsGrid(), FeaturedJobsGr
 Cohesion: 0.40
 Nodes (3): adapter, pool, prisma
 
-### Community 149 - "Community 149"
-Cohesion: 0.40
-Nodes (5): DELETE, GET, handleDELETE(), handleGET(), getUserById()
-
 ### Community 155 - "Community 155"
 Cohesion: 0.67
 Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter Behavioral Tests
@@ -838,8 +833,8 @@ Cohesion: 0.12
 Nodes (21): bulkInviteAdmins(), BulkInviteResult, TABS, InviteBulkForm(), AdminAcceptInviteInput, AdminAcceptInviteSchema, AdminBanUserInput, AdminBanUserSchema (+13 more)
 
 ### Community 173 - "Community 173"
-Cohesion: 0.08
-Nodes (24): NotFoundError, DELETE, handleDELETE(), handlePATCH(), PATCH, DELETE, GET, handleDELETE() (+16 more)
+Cohesion: 0.07
+Nodes (26): NotFoundError, DELETE, handleDELETE(), handlePATCH(), PATCH, DELETE, GET, handleDELETE() (+18 more)
 
 ### Community 174 - "Community 174"
 Cohesion: 0.26
@@ -883,7 +878,7 @@ Nodes (3): config, hooks, viewState
 
 ### Community 202 - "Community 202"
 Cohesion: 0.06
-Nodes (33): bulkInviteRecruiters(), saveResumeBuilder(), upgradeToRecruiter(), upsertProfile(), requireRole(), GET, handleGET(), DELETE (+25 more)
+Nodes (34): bulkInviteRecruiters(), upgradeToRecruiter(), upsertProfile(), requireRole(), DELETE, GET, handleDELETE(), handleGET() (+26 more)
 
 ### Community 203 - "Community 203"
 Cohesion: 0.40
@@ -914,7 +909,7 @@ Cohesion: 0.36
 Nodes (5): FeaturedCompanies(), FeaturedCompanyRow, listFeaturedCompanies(), CompanyPreviewCard(), CompanyPreviewCardProps
 
 ## Knowledge Gaps
-- **1705 isolated node(s):** `$schema`, `plugin`, `snapshot`, `@kilocode/plugin`, `AcceptInviteClientProps` (+1700 more)
+- **1705 isolated node(s):** `mockApiClient`, `testResults`, `$schema`, `plugin`, `snapshot` (+1700 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -922,16 +917,16 @@ Nodes (5): FeaturedCompanies(), FeaturedCompanyRow, listFeaturedCompanies(), Com
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 42` to `Community 18`, `Community 147`, `Community 25`, `Community 26`, `Community 27`, `Community 34`, `Community 38`, `Community 167`, `Community 40`, `Community 49`, `Community 178`, `Community 51`, `Community 182`, `Community 61`, `Community 66`, `Community 67`, `Community 70`, `Community 88`, `Community 94`, `Community 95`, `Community 102`, `Community 105`, `Community 110`, `Community 117`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **Why does `requireRole()` connect `Community 202` to `Community 66`, `Community 35`, `Community 195`, `Community 170`, `Community 74`, `Community 172`, `Community 173`, `Community 208`, `Community 80`, `Community 83`, `Community 149`, `Community 22`, `Community 87`, `Community 86`, `Community 118`, `Community 54`, `Community 93`, `Community 30`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 202` to `Community 66`, `Community 35`, `Community 195`, `Community 170`, `Community 74`, `Community 172`, `Community 173`, `Community 208`, `Community 80`, `Community 83`, `Community 22`, `Community 87`, `Community 86`, `Community 118`, `Community 54`, `Community 93`, `Community 30`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `Button()` connect `Community 38` to `Community 18`, `Community 21`, `Community 24`, `Community 28`, `Community 29`, `Community 40`, `Community 169`, `Community 42`, `Community 172`, `Community 178`, `Community 55`, `Community 65`, `Community 66`, `Community 67`, `Community 70`, `Community 75`, `Community 83`, `Community 88`, `Community 93`, `Community 95`, `Community 102`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `$schema`, `plugin`, `snapshot` to the rest of the system?**
+- **What connects `mockApiClient`, `testResults`, `$schema` to the rest of the system?**
   _1705 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
