@@ -3379,14 +3379,14 @@
     "ast_hash": "40cb3640d9c6edac6e9b24252d7a777c",
     "semantic_hash": ""
   },
-  "plans/1784711472507-footer-pages-plan.md": {
-    "mtime": 1784876569.5446947,
-    "ast_hash": "234bc4e4c2f9972f817506a6a9b82bf5",
+  ".kilo/plans/cloud-storage-vercel-blob-plan.md": {
+    "mtime": 1784880506.1185007,
+    "ast_hash": "e2863fa27988b1a3da7939061844022a",
     "semantic_hash": ""
   },
-  "plans/1784823231062-revised-vercel-blob-plan.md": {
-    "mtime": 1784878058.954196,
-    "ast_hash": "469e55ea89525b06e8dbf0c4614a21cd",
+  ".kilo/plans/footer-pages-plan.md": {
+    "mtime": 1784876569.5446947,
+    "ast_hash": "234bc4e4c2f9972f817506a6a9b82bf5",
     "semantic_hash": ""
   }
 }

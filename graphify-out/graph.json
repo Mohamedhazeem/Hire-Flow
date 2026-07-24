@@ -4,14 +4,334 @@
   "graph": {},
   "nodes": [
     {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 48,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "\ud83d\ude80 Hire Flow",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_hire_flow",
+      "community": 48,
+      "norm_label": "\ud83d\ude80 hire flow"
+    },
+    {
+      "label": "A full-stack, multi-tenant hiring platform built for scale",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale",
+      "community": 48,
+      "norm_label": "a full-stack, multi-tenant hiring platform built for scale"
+    },
+    {
+      "label": "\ud83e\uddf1 Tech Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "readme_tech_stack",
+      "community": 48,
+      "norm_label": "\ud83e\uddf1 tech stack"
+    },
+    {
+      "label": "\u2728 Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "readme_features",
+      "community": 212,
+      "norm_label": "\u2728 features"
+    },
+    {
+      "label": "\ud83d\udee1\ufe0f Admin",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "readme_admin",
+      "community": 212,
+      "norm_label": "\ud83d\udee1\ufe0f admin"
+    },
+    {
+      "label": "\ud83c\udfe2 Recruiter",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "readme_recruiter",
+      "community": 212,
+      "norm_label": "\ud83c\udfe2 recruiter"
+    },
+    {
+      "label": "\ud83d\udc64 Job Seeker (User)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "readme_job_seeker_user",
+      "community": 212,
+      "norm_label": "\ud83d\udc64 job seeker (user)"
+    },
+    {
+      "label": "\ud83c\udf0d Public",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "readme_public",
+      "community": 212,
+      "norm_label": "\ud83c\udf0d public"
+    },
+    {
+      "label": "\ud83e\udd16 AI-Powered Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "readme_ai_powered_features",
+      "community": 104,
+      "norm_label": "\ud83e\udd16 ai-powered features"
+    },
+    {
+      "label": "Multi-Provider Abstraction",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "readme_multi_provider_abstraction",
+      "community": 104,
+      "norm_label": "multi-provider abstraction"
+    },
+    {
+      "label": "Resume Enhancement Engine",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "readme_resume_enhancement_engine",
+      "community": 104,
+      "norm_label": "resume enhancement engine"
+    },
+    {
+      "label": "Rate-Limited Per-User Quota",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "readme_rate_limited_per_user_quota",
+      "community": 104,
+      "norm_label": "rate-limited per-user quota"
+    },
+    {
+      "label": "Graceful Degradation",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L121",
+      "_origin": "ast",
+      "id": "readme_graceful_degradation",
+      "community": 104,
+      "norm_label": "graceful degradation"
+    },
+    {
+      "label": "\ud83c\udfdb\ufe0f Architecture & Design Decisions",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "readme_architecture_design_decisions",
+      "community": 48,
+      "norm_label": "\ud83c\udfdb\ufe0f architecture & design decisions"
+    },
+    {
+      "label": "\ud83d\udcc8 Project Scale",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "readme_project_scale",
+      "community": 48,
+      "norm_label": "\ud83d\udcc8 project scale"
+    },
+    {
+      "label": "\ud83c\udfc1 Getting Started",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "readme_getting_started",
+      "community": 209,
+      "norm_label": "\ud83c\udfc1 getting started"
+    },
+    {
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L162",
+      "_origin": "ast",
+      "id": "readme_prerequisites",
+      "community": 209,
+      "norm_label": "prerequisites"
+    },
+    {
+      "label": "1. Clone & install",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L170",
+      "_origin": "ast",
+      "id": "readme_1_clone_install",
+      "community": 209,
+      "norm_label": "1. clone & install"
+    },
+    {
+      "label": "2. Configure environment variables",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "readme_2_configure_environment_variables",
+      "community": 209,
+      "norm_label": "2. configure environment variables"
+    },
+    {
+      "label": "3. Set up the database",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L246",
+      "_origin": "ast",
+      "id": "readme_3_set_up_the_database",
+      "community": 209,
+      "norm_label": "3. set up the database"
+    },
+    {
+      "label": "4. Promote a super admin",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L253",
+      "_origin": "ast",
+      "id": "readme_4_promote_a_super_admin",
+      "community": 209,
+      "norm_label": "4. promote a super admin"
+    },
+    {
+      "label": "5. Run the dev server",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L263",
+      "_origin": "ast",
+      "id": "readme_5_run_the_dev_server",
+      "community": 209,
+      "norm_label": "5. run the dev server"
+    },
+    {
+      "label": "\ud83d\udcc2 Project Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L273",
+      "_origin": "ast",
+      "id": "readme_project_structure",
+      "community": 48,
+      "norm_label": "\ud83d\udcc2 project structure"
+    },
+    {
+      "label": "\ud83e\udde9 Key Patterns",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L328",
+      "_origin": "ast",
+      "id": "readme_key_patterns",
+      "community": 48,
+      "norm_label": "\ud83e\udde9 key patterns"
+    },
+    {
+      "label": "\u2601\ufe0f Deployment",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L342",
+      "_origin": "ast",
+      "id": "readme_deployment",
+      "community": 48,
+      "norm_label": "\u2601\ufe0f deployment"
+    },
+    {
+      "label": "\ud83e\uddea Testing",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L357",
+      "_origin": "ast",
+      "id": "readme_testing",
+      "community": 213,
+      "norm_label": "\ud83e\uddea testing"
+    },
+    {
+      "label": "Test infrastructure (Phases 0\u20136)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L371",
+      "_origin": "ast",
+      "id": "readme_test_infrastructure_phases_0_6",
+      "community": 213,
+      "norm_label": "test infrastructure (phases 0\u20136)"
+    },
+    {
+      "label": "Performance & stability tests (Phase 7)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L385",
+      "_origin": "ast",
+      "id": "readme_performance_stability_tests_phase_7",
+      "community": 213,
+      "norm_label": "performance & stability tests (phase 7)"
+    },
+    {
+      "label": "Running tests",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L400",
+      "_origin": "ast",
+      "id": "readme_running_tests",
+      "community": 213,
+      "norm_label": "running tests"
+    },
+    {
+      "label": "\ud83d\udcc4 License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L437",
+      "_origin": "ast",
+      "id": "readme_license",
+      "community": 48,
+      "norm_label": "\ud83d\udcc4 license"
+    },
+    {
+      "label": "\ud83d\udcec Contact",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L441",
+      "_origin": "ast",
+      "id": "readme_contact",
+      "community": 48,
+      "norm_label": "\ud83d\udcec contact"
+    },
+    {
       "label": "cloud-storage-vercel-blob-plan.md",
       "file_type": "document",
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan",
       "community": 37,
-      "norm_label": "cloud-storage-vercel-blob-plan.md"
+      "norm_label": "cloud-storage-vercel-blob-plan.md",
+      "id": "plans_cloud_storage_vercel_blob_plan"
     },
     {
       "label": "Revised Plan: Vercel Blob Storage + API Cleanup",
@@ -19,9 +339,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
       "community": 37,
-      "norm_label": "revised plan: vercel blob storage + api cleanup"
+      "norm_label": "revised plan: vercel blob storage + api cleanup",
+      "id": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup"
     },
     {
       "label": "Scope",
@@ -29,9 +349,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scope",
       "community": 37,
-      "norm_label": "scope"
+      "norm_label": "scope",
+      "id": "plans_cloud_storage_vercel_blob_plan_scope"
     },
     {
       "label": "Env vars",
@@ -39,9 +359,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_env_vars",
       "community": 37,
-      "norm_label": "env vars"
+      "norm_label": "env vars",
+      "id": "plans_cloud_storage_vercel_blob_plan_env_vars"
     },
     {
       "label": "File changes (implementation order)",
@@ -49,9 +369,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
       "community": 37,
-      "norm_label": "file changes (implementation order)"
+      "norm_label": "file changes (implementation order)",
+      "id": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order"
     },
     {
       "label": "1. `lib/upload.ts` \u2014 provider abstraction",
@@ -59,9 +379,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_1_lib_upload_ts_provider_abstraction",
       "community": 37,
-      "norm_label": "1. `lib/upload.ts` \u2014 provider abstraction"
+      "norm_label": "1. `lib/upload.ts` \u2014 provider abstraction",
+      "id": "plans_cloud_storage_vercel_blob_plan_1_lib_upload_ts_provider_abstraction"
     },
     {
       "label": "2. `app/api/upload/route.ts` \u2014 access param + DELETE contract",
@@ -69,9 +389,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_2_app_api_upload_route_ts_access_param_delete_contract",
       "community": 37,
-      "norm_label": "2. `app/api/upload/route.ts` \u2014 access param + delete contract"
+      "norm_label": "2. `app/api/upload/route.ts` \u2014 access param + delete contract",
+      "id": "plans_cloud_storage_vercel_blob_plan_2_app_api_upload_route_ts_access_param_delete_contract"
     },
     {
       "label": "3. `app/api/user/resumes/route.ts` \u2014 private access",
@@ -79,9 +399,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L64",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_3_app_api_user_resumes_route_ts_private_access",
       "community": 37,
-      "norm_label": "3. `app/api/user/resumes/route.ts` \u2014 private access"
+      "norm_label": "3. `app/api/user/resumes/route.ts` \u2014 private access",
+      "id": "plans_cloud_storage_vercel_blob_plan_3_app_api_user_resumes_route_ts_private_access"
     },
     {
       "label": "4. `app/api/files/download/route.ts` \u2014 dual-mode with streaming",
@@ -89,9 +409,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L68",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_4_app_api_files_download_route_ts_dual_mode_with_streaming",
       "community": 37,
-      "norm_label": "4. `app/api/files/download/route.ts` \u2014 dual-mode with streaming"
+      "norm_label": "4. `app/api/files/download/route.ts` \u2014 dual-mode with streaming",
+      "id": "plans_cloud_storage_vercel_blob_plan_4_app_api_files_download_route_ts_dual_mode_with_streaming"
     },
     {
       "label": "5. `app/api/user/resumes/[id]/ai-enhance/route.ts` \u2014 CREATE",
@@ -99,9 +419,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_5_app_api_user_resumes_id_ai_enhance_route_ts_create",
       "community": 37,
-      "norm_label": "5. `app/api/user/resumes/[id]/ai-enhance/route.ts` \u2014 create"
+      "norm_label": "5. `app/api/user/resumes/[id]/ai-enhance/route.ts` \u2014 create",
+      "id": "plans_cloud_storage_vercel_blob_plan_5_app_api_user_resumes_id_ai_enhance_route_ts_create"
     },
     {
       "label": "6. `components/chat/use-thread-view.ts` \u2014 apiClient",
@@ -109,9 +429,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L88",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_6_components_chat_use_thread_view_ts_apiclient",
       "community": 37,
-      "norm_label": "6. `components/chat/use-thread-view.ts` \u2014 apiclient"
+      "norm_label": "6. `components/chat/use-thread-view.ts` \u2014 apiclient",
+      "id": "plans_cloud_storage_vercel_blob_plan_6_components_chat_use_thread_view_ts_apiclient"
     },
     {
       "label": "7. `app/features/recruiter/components/company-form.tsx` \u2014 DELETE call",
@@ -119,9 +439,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L92",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_7_app_features_recruiter_components_company_form_tsx_delete_call",
       "community": 37,
-      "norm_label": "7. `app/features/recruiter/components/company-form.tsx` \u2014 delete call"
+      "norm_label": "7. `app/features/recruiter/components/company-form.tsx` \u2014 delete call",
+      "id": "plans_cloud_storage_vercel_blob_plan_7_app_features_recruiter_components_company_form_tsx_delete_call"
     },
     {
       "label": "8. `next.config.ts` \u2014 remotePatterns",
@@ -129,9 +449,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L97",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_8_next_config_ts_remotepatterns",
       "community": 37,
-      "norm_label": "8. `next.config.ts` \u2014 remotepatterns"
+      "norm_label": "8. `next.config.ts` \u2014 remotepatterns",
+      "id": "plans_cloud_storage_vercel_blob_plan_8_next_config_ts_remotepatterns"
     },
     {
       "label": "9. `package.json`",
@@ -139,9 +459,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L102",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_9_package_json",
       "community": 37,
-      "norm_label": "9. `package.json`"
+      "norm_label": "9. `package.json`",
+      "id": "plans_cloud_storage_vercel_blob_plan_9_package_json"
     },
     {
       "label": "Deployment ordering",
@@ -149,9 +469,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L108",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_deployment_ordering",
       "community": 37,
-      "norm_label": "deployment ordering"
+      "norm_label": "deployment ordering",
+      "id": "plans_cloud_storage_vercel_blob_plan_deployment_ordering"
     },
     {
       "label": "Edge cases \u2014 storage swap analysis",
@@ -159,9 +479,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L119",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
       "community": 37,
-      "norm_label": "edge cases \u2014 storage swap analysis"
+      "norm_label": "edge cases \u2014 storage swap analysis",
+      "id": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis"
     },
     {
       "label": "Scenario: swap from local \u2192 blob mid-deployment",
@@ -169,9 +489,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L121",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_local_blob_mid_deployment",
       "community": 37,
-      "norm_label": "scenario: swap from local \u2192 blob mid-deployment"
+      "norm_label": "scenario: swap from local \u2192 blob mid-deployment",
+      "id": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_local_blob_mid_deployment"
     },
     {
       "label": "Scenario: swap from blob \u2192 local",
@@ -179,9 +499,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L130",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_blob_local",
       "community": 37,
-      "norm_label": "scenario: swap from blob \u2192 local"
+      "norm_label": "scenario: swap from blob \u2192 local",
+      "id": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_blob_local"
     },
     {
       "label": "Scenario: custom Vercel Blob CDN domain (Enterprise)",
@@ -189,9 +509,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L137",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scenario_custom_vercel_blob_cdn_domain_enterprise",
       "community": 37,
-      "norm_label": "scenario: custom vercel blob cdn domain (enterprise)"
+      "norm_label": "scenario: custom vercel blob cdn domain (enterprise)",
+      "id": "plans_cloud_storage_vercel_blob_plan_scenario_custom_vercel_blob_cdn_domain_enterprise"
     },
     {
       "label": "Scenario: S3 added later",
@@ -199,9 +519,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L142",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scenario_s3_added_later",
       "community": 37,
-      "norm_label": "scenario: s3 added later"
+      "norm_label": "scenario: s3 added later",
+      "id": "plans_cloud_storage_vercel_blob_plan_scenario_s3_added_later"
     },
     {
       "label": "Scenario: `BLOB_READ_WRITE_TOKEN` missing when provider = vercel-blob",
@@ -209,9 +529,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L147",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_scenario_blob_read_write_token_missing_when_provider_vercel_blob",
       "community": 37,
-      "norm_label": "scenario: `blob_read_write_token` missing when provider = vercel-blob"
+      "norm_label": "scenario: `blob_read_write_token` missing when provider = vercel-blob",
+      "id": "plans_cloud_storage_vercel_blob_plan_scenario_blob_read_write_token_missing_when_provider_vercel_blob"
     },
     {
       "label": "Critical constraints",
@@ -219,9 +539,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L154",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_critical_constraints",
       "community": 37,
-      "norm_label": "critical constraints"
+      "norm_label": "critical constraints",
+      "id": "plans_cloud_storage_vercel_blob_plan_critical_constraints"
     },
     {
       "label": "Tests",
@@ -229,9 +549,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L163",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_tests",
       "community": 37,
-      "norm_label": "tests"
+      "norm_label": "tests",
+      "id": "plans_cloud_storage_vercel_blob_plan_tests"
     },
     {
       "label": "New: `lib/test/unit/upload-provider.test.ts`",
@@ -239,9 +559,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L165",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_new_lib_test_unit_upload_provider_test_ts",
       "community": 37,
-      "norm_label": "new: `lib/test/unit/upload-provider.test.ts`"
+      "norm_label": "new: `lib/test/unit/upload-provider.test.ts`",
+      "id": "plans_cloud_storage_vercel_blob_plan_new_lib_test_unit_upload_provider_test_ts"
     },
     {
       "label": "New tests added to existing `lib/test/integration/upload.test.ts`",
@@ -249,9 +569,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L187",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_upload_test_ts",
       "community": 37,
-      "norm_label": "new tests added to existing `lib/test/integration/upload.test.ts`"
+      "norm_label": "new tests added to existing `lib/test/integration/upload.test.ts`",
+      "id": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_upload_test_ts"
     },
     {
       "label": "New tests added to existing `lib/test/integration/files/download.test.ts`",
@@ -259,9 +579,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L200",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_files_download_test_ts",
       "community": 37,
-      "norm_label": "new tests added to existing `lib/test/integration/files/download.test.ts`"
+      "norm_label": "new tests added to existing `lib/test/integration/files/download.test.ts`",
+      "id": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_files_download_test_ts"
     },
     {
       "label": "Modified: `lib/test/unit/upload-security.test.ts`",
@@ -269,9 +589,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L212",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_unit_upload_security_test_ts",
       "community": 37,
-      "norm_label": "modified: `lib/test/unit/upload-security.test.ts`"
+      "norm_label": "modified: `lib/test/unit/upload-security.test.ts`",
+      "id": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_unit_upload_security_test_ts"
     },
     {
       "label": "Modified: `lib/test/integration/upload.test.ts`",
@@ -279,9 +599,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L220",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_integration_upload_test_ts",
       "community": 37,
-      "norm_label": "modified: `lib/test/integration/upload.test.ts`"
+      "norm_label": "modified: `lib/test/integration/upload.test.ts`",
+      "id": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_integration_upload_test_ts"
     },
     {
       "label": "`.env.test` change",
@@ -289,9 +609,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L227",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_env_test_change",
       "community": 37,
-      "norm_label": "`.env.test` change"
+      "norm_label": "`.env.test` change",
+      "id": "plans_cloud_storage_vercel_blob_plan_env_test_change"
     },
     {
       "label": "Migration \u2014 existing local files",
@@ -299,9 +619,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L237",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_migration_existing_local_files",
       "community": 37,
-      "norm_label": "migration \u2014 existing local files"
+      "norm_label": "migration \u2014 existing local files",
+      "id": "plans_cloud_storage_vercel_blob_plan_migration_existing_local_files"
     },
     {
       "label": "Backward compatibility",
@@ -309,9 +629,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L252",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_backward_compatibility",
       "community": 37,
-      "norm_label": "backward compatibility"
+      "norm_label": "backward compatibility",
+      "id": "plans_cloud_storage_vercel_blob_plan_backward_compatibility"
     },
     {
       "label": "Validation",
@@ -319,9 +639,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L264",
       "_origin": "ast",
-      "id": "plans_cloud_storage_vercel_blob_plan_validation",
       "community": 37,
-      "norm_label": "validation"
+      "norm_label": "validation",
+      "id": "plans_cloud_storage_vercel_blob_plan_validation"
     },
     {
       "label": "footer-pages-plan.md",
@@ -329,9 +649,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan",
       "community": 64,
-      "norm_label": "footer-pages-plan.md"
+      "norm_label": "footer-pages-plan.md",
+      "id": "plans_footer_pages_plan"
     },
     {
       "label": "Plan: Footer Pages, Social Links & For Employers Fix",
@@ -339,9 +659,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
       "community": 64,
-      "norm_label": "plan: footer pages, social links & for employers fix"
+      "norm_label": "plan: footer pages, social links & for employers fix",
+      "id": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix"
     },
     {
       "label": "Bug Fix \u2014 For Employers Link",
@@ -349,9 +669,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_bug_fix_for_employers_link",
       "community": 64,
-      "norm_label": "bug fix \u2014 for employers link"
+      "norm_label": "bug fix \u2014 for employers link",
+      "id": "plans_footer_pages_plan_bug_fix_for_employers_link"
     },
     {
       "label": "Files",
@@ -359,9 +679,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_files",
       "community": 64,
-      "norm_label": "files"
+      "norm_label": "files",
+      "id": "plans_footer_pages_plan_files"
     },
     {
       "label": "New Static Pages (5)",
@@ -369,9 +689,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_new_static_pages_5",
       "community": 64,
-      "norm_label": "new static pages (5)"
+      "norm_label": "new static pages (5)",
+      "id": "plans_footer_pages_plan_new_static_pages_5"
     },
     {
       "label": "Env Vars \u2014 Social Links & Contact Email",
@@ -379,9 +699,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_env_vars_social_links_contact_email",
       "community": 64,
-      "norm_label": "env vars \u2014 social links & contact email"
+      "norm_label": "env vars \u2014 social links & contact email",
+      "id": "plans_footer_pages_plan_env_vars_social_links_contact_email"
     },
     {
       "label": "Footer Changes \u2014 Social Icons",
@@ -389,9 +709,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_footer_changes_social_icons",
       "community": 64,
-      "norm_label": "footer changes \u2014 social icons"
+      "norm_label": "footer changes \u2014 social icons",
+      "id": "plans_footer_pages_plan_footer_changes_social_icons"
     },
     {
       "label": "Route Config",
@@ -399,9 +719,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L82",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_route_config",
       "community": 64,
-      "norm_label": "route config"
+      "norm_label": "route config",
+      "id": "plans_footer_pages_plan_route_config"
     },
     {
       "label": "Tests",
@@ -409,9 +729,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L92",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_tests",
       "community": 64,
-      "norm_label": "tests"
+      "norm_label": "tests",
+      "id": "plans_footer_pages_plan_tests"
     },
     {
       "label": "Execution Order",
@@ -419,9 +739,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L100",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_execution_order",
       "community": 64,
-      "norm_label": "execution order"
+      "norm_label": "execution order",
+      "id": "plans_footer_pages_plan_execution_order"
     },
     {
       "label": "Validation",
@@ -429,9 +749,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L109",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_validation",
       "community": 64,
-      "norm_label": "validation"
+      "norm_label": "validation",
+      "id": "plans_footer_pages_plan_validation"
     },
     {
       "label": "Constraints",
@@ -439,9 +759,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L117",
       "_origin": "ast",
-      "id": "plans_footer_pages_plan_constraints",
       "community": 64,
-      "norm_label": "constraints"
+      "norm_label": "constraints",
+      "id": "plans_footer_pages_plan_constraints"
     },
     {
       "label": "kilo.json",
@@ -29664,326 +29984,6 @@
       "id": "claude"
     },
     {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "readme.md",
-      "id": "readme"
-    },
-    {
-      "label": "\ud83d\ude80 Hire Flow",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83d\ude80 hire flow",
-      "id": "readme_hire_flow"
-    },
-    {
-      "label": "A full-stack, multi-tenant hiring platform built for scale",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "a full-stack, multi-tenant hiring platform built for scale",
-      "id": "readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale"
-    },
-    {
-      "label": "\ud83e\uddf1 Tech Stack",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83e\uddf1 tech stack",
-      "id": "readme_tech_stack"
-    },
-    {
-      "label": "\u2728 Features",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 212,
-      "norm_label": "\u2728 features",
-      "id": "readme_features"
-    },
-    {
-      "label": "\ud83d\udee1\ufe0f Admin",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 212,
-      "norm_label": "\ud83d\udee1\ufe0f admin",
-      "id": "readme_admin"
-    },
-    {
-      "label": "\ud83c\udfe2 Recruiter",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L66",
-      "_origin": "ast",
-      "community": 212,
-      "norm_label": "\ud83c\udfe2 recruiter",
-      "id": "readme_recruiter"
-    },
-    {
-      "label": "\ud83d\udc64 Job Seeker (User)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L78",
-      "_origin": "ast",
-      "community": 212,
-      "norm_label": "\ud83d\udc64 job seeker (user)",
-      "id": "readme_job_seeker_user"
-    },
-    {
-      "label": "\ud83c\udf0d Public",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L87",
-      "_origin": "ast",
-      "community": 212,
-      "norm_label": "\ud83c\udf0d public",
-      "id": "readme_public"
-    },
-    {
-      "label": "\ud83e\udd16 AI-Powered Features",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L98",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "\ud83e\udd16 ai-powered features",
-      "id": "readme_ai_powered_features"
-    },
-    {
-      "label": "Multi-Provider Abstraction",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L102",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "multi-provider abstraction",
-      "id": "readme_multi_provider_abstraction"
-    },
-    {
-      "label": "Resume Enhancement Engine",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L106",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "resume enhancement engine",
-      "id": "readme_resume_enhancement_engine"
-    },
-    {
-      "label": "Rate-Limited Per-User Quota",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L114",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "rate-limited per-user quota",
-      "id": "readme_rate_limited_per_user_quota"
-    },
-    {
-      "label": "Graceful Degradation",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L118",
-      "_origin": "ast",
-      "community": 104,
-      "norm_label": "graceful degradation",
-      "id": "readme_graceful_degradation"
-    },
-    {
-      "label": "\ud83c\udfdb\ufe0f Architecture & Design Decisions",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L124",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83c\udfdb\ufe0f architecture & design decisions",
-      "id": "readme_architecture_design_decisions"
-    },
-    {
-      "label": "\ud83d\udcc8 Project Scale",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L144",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83d\udcc8 project scale",
-      "id": "readme_project_scale"
-    },
-    {
-      "label": "\ud83c\udfc1 Getting Started",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L154",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "\ud83c\udfc1 getting started",
-      "id": "readme_getting_started"
-    },
-    {
-      "label": "Prerequisites",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L156",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "prerequisites",
-      "id": "readme_prerequisites"
-    },
-    {
-      "label": "1. Clone & install",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L163",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "1. clone & install",
-      "id": "readme_1_clone_install"
-    },
-    {
-      "label": "2. Configure environment variables",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L171",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "2. configure environment variables",
-      "id": "readme_2_configure_environment_variables"
-    },
-    {
-      "label": "3. Set up the database",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L223",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "3. set up the database",
-      "id": "readme_3_set_up_the_database"
-    },
-    {
-      "label": "4. Promote a super admin",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L230",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "4. promote a super admin",
-      "id": "readme_4_promote_a_super_admin"
-    },
-    {
-      "label": "5. Run the dev server",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L240",
-      "_origin": "ast",
-      "community": 209,
-      "norm_label": "5. run the dev server",
-      "id": "readme_5_run_the_dev_server"
-    },
-    {
-      "label": "\ud83d\udcc2 Project Structure",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L250",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83d\udcc2 project structure",
-      "id": "readme_project_structure"
-    },
-    {
-      "label": "\ud83e\udde9 Key Patterns",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L304",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83e\udde9 key patterns",
-      "id": "readme_key_patterns"
-    },
-    {
-      "label": "\u2601\ufe0f Deployment",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L317",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\u2601\ufe0f deployment",
-      "id": "readme_deployment"
-    },
-    {
-      "label": "\ud83e\uddea Testing",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L332",
-      "_origin": "ast",
-      "community": 213,
-      "norm_label": "\ud83e\uddea testing",
-      "id": "readme_testing"
-    },
-    {
-      "label": "Test infrastructure (Phases 0\u20136)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L346",
-      "_origin": "ast",
-      "community": 213,
-      "norm_label": "test infrastructure (phases 0\u20136)",
-      "id": "readme_test_infrastructure_phases_0_6"
-    },
-    {
-      "label": "Performance & stability tests (Phase 7)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L360",
-      "_origin": "ast",
-      "community": 213,
-      "norm_label": "performance & stability tests (phase 7)",
-      "id": "readme_performance_stability_tests_phase_7"
-    },
-    {
-      "label": "Running tests",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L375",
-      "_origin": "ast",
-      "community": 213,
-      "norm_label": "running tests",
-      "id": "readme_running_tests"
-    },
-    {
-      "label": "\ud83d\udcc4 License",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L412",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83d\udcc4 license",
-      "id": "readme_license"
-    },
-    {
-      "label": "\ud83d\udcec Contact",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L416",
-      "_origin": "ast",
-      "community": 48,
-      "norm_label": "\ud83d\udcec contact",
-      "id": "readme_contact"
-    },
-    {
       "label": "technical-design.md",
       "file_type": "document",
       "source_file": "docs/architecture/technical-design.md",
@@ -35028,12 +35028,332 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme",
+      "target": "readme_hire_flow"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L290",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme",
+      "target": "testing_testing_strategy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_ai_powered_features"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_architecture_design_decisions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L359",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_contact"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L263",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_deployment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_features"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_getting_started"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L250",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_key_patterns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_license"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_project_scale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L209",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_project_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_tech_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_hire_flow",
+      "target": "readme_testing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_features",
+      "target": "readme_admin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_features",
+      "target": "readme_job_seeker_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_features",
+      "target": "readme_public"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_features",
+      "target": "readme_recruiter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_ai_powered_features",
+      "target": "readme_graceful_degradation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_ai_powered_features",
+      "target": "readme_multi_provider_abstraction"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_ai_powered_features",
+      "target": "readme_rate_limited_per_user_quota"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_ai_powered_features",
+      "target": "readme_resume_enhancement_engine"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_1_clone_install"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_2_configure_environment_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_3_set_up_the_database"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_4_promote_a_super_admin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_5_run_the_dev_server"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_getting_started",
+      "target": "readme_prerequisites"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L302",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_testing",
+      "target": "readme_performance_stability_tests_phase_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L287",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_testing",
+      "target": "readme_running_tests"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_testing",
+      "target": "readme_test_infrastructure_phases_0_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan",
-      "target": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup"
     },
     {
       "relation": "contains",
@@ -35041,9 +35361,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L252",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_backward_compatibility",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_backward_compatibility"
     },
     {
       "relation": "contains",
@@ -35051,9 +35371,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_critical_constraints",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_critical_constraints"
     },
     {
       "relation": "contains",
@@ -35061,9 +35381,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_deployment_ordering",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_deployment_ordering"
     },
     {
       "relation": "contains",
@@ -35071,9 +35391,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis"
     },
     {
       "relation": "contains",
@@ -35081,9 +35401,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_env_vars",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_env_vars"
     },
     {
       "relation": "contains",
@@ -35091,9 +35411,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order"
     },
     {
       "relation": "contains",
@@ -35101,9 +35421,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L237",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_migration_existing_local_files",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_migration_existing_local_files"
     },
     {
       "relation": "contains",
@@ -35111,9 +35431,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_scope",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scope"
     },
     {
       "relation": "contains",
@@ -35121,9 +35441,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_tests",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_tests"
     },
     {
       "relation": "contains",
@@ -35131,9 +35451,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L264",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_revised_plan_vercel_blob_storage_api_cleanup",
-      "target": "plans_cloud_storage_vercel_blob_plan_validation",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_validation"
     },
     {
       "relation": "contains",
@@ -35141,9 +35461,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_1_lib_upload_ts_provider_abstraction",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_1_lib_upload_ts_provider_abstraction"
     },
     {
       "relation": "contains",
@@ -35151,9 +35471,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_2_app_api_upload_route_ts_access_param_delete_contract",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_2_app_api_upload_route_ts_access_param_delete_contract"
     },
     {
       "relation": "contains",
@@ -35161,9 +35481,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_3_app_api_user_resumes_route_ts_private_access",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_3_app_api_user_resumes_route_ts_private_access"
     },
     {
       "relation": "contains",
@@ -35171,9 +35491,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_4_app_api_files_download_route_ts_dual_mode_with_streaming",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_4_app_api_files_download_route_ts_dual_mode_with_streaming"
     },
     {
       "relation": "contains",
@@ -35181,9 +35501,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_5_app_api_user_resumes_id_ai_enhance_route_ts_create",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_5_app_api_user_resumes_id_ai_enhance_route_ts_create"
     },
     {
       "relation": "contains",
@@ -35191,9 +35511,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_6_components_chat_use_thread_view_ts_apiclient",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_6_components_chat_use_thread_view_ts_apiclient"
     },
     {
       "relation": "contains",
@@ -35201,9 +35521,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_7_app_features_recruiter_components_company_form_tsx_delete_call",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_7_app_features_recruiter_components_company_form_tsx_delete_call"
     },
     {
       "relation": "contains",
@@ -35211,9 +35531,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_8_next_config_ts_remotepatterns",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_8_next_config_ts_remotepatterns"
     },
     {
       "relation": "contains",
@@ -35221,9 +35541,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_file_changes_implementation_order",
-      "target": "plans_cloud_storage_vercel_blob_plan_9_package_json",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_9_package_json"
     },
     {
       "relation": "contains",
@@ -35231,9 +35551,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "target": "plans_cloud_storage_vercel_blob_plan_scenario_blob_read_write_token_missing_when_provider_vercel_blob",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scenario_blob_read_write_token_missing_when_provider_vercel_blob"
     },
     {
       "relation": "contains",
@@ -35241,9 +35561,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "target": "plans_cloud_storage_vercel_blob_plan_scenario_custom_vercel_blob_cdn_domain_enterprise",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scenario_custom_vercel_blob_cdn_domain_enterprise"
     },
     {
       "relation": "contains",
@@ -35251,9 +35571,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "target": "plans_cloud_storage_vercel_blob_plan_scenario_s3_added_later",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scenario_s3_added_later"
     },
     {
       "relation": "contains",
@@ -35261,9 +35581,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "target": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_blob_local",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_blob_local"
     },
     {
       "relation": "contains",
@@ -35271,9 +35591,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_edge_cases_storage_swap_analysis",
-      "target": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_local_blob_mid_deployment",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_scenario_swap_from_local_blob_mid_deployment"
     },
     {
       "relation": "contains",
@@ -35281,9 +35601,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_env_test_change",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_env_test_change"
     },
     {
       "relation": "contains",
@@ -35291,9 +35611,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L220",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_integration_upload_test_ts",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_integration_upload_test_ts"
     },
     {
       "relation": "contains",
@@ -35301,9 +35621,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_unit_upload_security_test_ts",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_modified_lib_test_unit_upload_security_test_ts"
     },
     {
       "relation": "contains",
@@ -35311,9 +35631,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_new_lib_test_unit_upload_provider_test_ts",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_new_lib_test_unit_upload_provider_test_ts"
     },
     {
       "relation": "contains",
@@ -35321,9 +35641,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_files_download_test_ts",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_files_download_test_ts"
     },
     {
       "relation": "contains",
@@ -35331,9 +35651,9 @@
       "source_file": ".kilo/plans/cloud-storage-vercel-blob-plan.md",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_cloud_storage_vercel_blob_plan_tests",
-      "target": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_upload_test_ts",
-      "confidence_score": 1.0
+      "target": "plans_cloud_storage_vercel_blob_plan_new_tests_added_to_existing_lib_test_integration_upload_test_ts"
     },
     {
       "relation": "contains",
@@ -35341,9 +35661,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan",
-      "target": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix"
     },
     {
       "relation": "contains",
@@ -35351,9 +35671,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_bug_fix_for_employers_link",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_bug_fix_for_employers_link"
     },
     {
       "relation": "contains",
@@ -35361,9 +35681,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_constraints",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_constraints"
     },
     {
       "relation": "contains",
@@ -35371,9 +35691,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_env_vars_social_links_contact_email",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_env_vars_social_links_contact_email"
     },
     {
       "relation": "contains",
@@ -35381,9 +35701,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_execution_order",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_execution_order"
     },
     {
       "relation": "contains",
@@ -35391,9 +35711,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_footer_changes_social_icons",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_footer_changes_social_icons"
     },
     {
       "relation": "contains",
@@ -35401,9 +35721,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_new_static_pages_5",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_new_static_pages_5"
     },
     {
       "relation": "contains",
@@ -35411,9 +35731,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_route_config",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_route_config"
     },
     {
       "relation": "contains",
@@ -35421,9 +35741,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_tests",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_tests"
     },
     {
       "relation": "contains",
@@ -35431,9 +35751,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
-      "target": "plans_footer_pages_plan_validation",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_validation"
     },
     {
       "relation": "contains",
@@ -35441,9 +35761,9 @@
       "source_file": ".kilo/plans/footer-pages-plan.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_footer_pages_plan_bug_fix_for_employers_link",
-      "target": "plans_footer_pages_plan_files",
-      "confidence_score": 1.0
+      "target": "plans_footer_pages_plan_files"
     },
     {
       "relation": "contains",
@@ -99025,326 +99345,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme",
-      "target": "readme_hire_flow"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L290",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme",
-      "target": "testing_testing_strategy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L98",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_ai_powered_features"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L83",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_architecture_design_decisions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L359",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_contact"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L263",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_deployment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_features"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L113",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_getting_started"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L250",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_key_patterns"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L355",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_license"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L103",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_project_scale"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L209",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_project_structure"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_tech_stack"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L278",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_hire_flow",
-      "target": "readme_testing"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_features",
-      "target": "readme_admin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_features",
-      "target": "readme_job_seeker_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_features",
-      "target": "readme_public"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_features",
-      "target": "readme_recruiter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L118",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_ai_powered_features",
-      "target": "readme_graceful_degradation"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L102",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_ai_powered_features",
-      "target": "readme_multi_provider_abstraction"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_ai_powered_features",
-      "target": "readme_rate_limited_per_user_quota"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L106",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_ai_powered_features",
-      "target": "readme_resume_enhancement_engine"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L118",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_1_clone_install"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L126",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_2_configure_environment_variables"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L178",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_3_set_up_the_database"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L185",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_4_promote_a_super_admin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L195",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_5_run_the_dev_server"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L111",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_getting_started",
-      "target": "readme_prerequisites"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L302",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_testing",
-      "target": "readme_performance_stability_tests_phase_7"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L287",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_testing",
-      "target": "readme_running_tests"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L288",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_testing",
-      "target": "readme_test_infrastructure_phases_0_6"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "docs/architecture/technical-design.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -104254,5 +104254,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9e4088ec57a84f828f11d4a91644a06c77341c8b"
+  "built_at_commit": "6bef585604bc939491f1f7d2c303bab6283bc010"
 }
