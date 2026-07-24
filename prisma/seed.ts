@@ -37,8 +37,17 @@ function userId(name: string) {
 }
 
 function jobSlug(companyName: string, title: string): string {
-  const base = `${title.toLowerCase().replace(/[^\w\s-]+/g, "").replace(/\s+/g, "-")}-${companyName.toLowerCase().replace(/[^\w\s-]+/g, "").replace(/\s+/g, "-")}`;
-  return base.replace(/-+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+  const base = `${title
+    .toLowerCase()
+    .replace(/[^\w\s-]+/g, "")
+    .replace(/\s+/g, "-")}-${companyName
+    .toLowerCase()
+    .replace(/[^\w\s-]+/g, "")
+    .replace(/\s+/g, "-")}`;
+  return base
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
 }
 
 async function upsertCredentialAccount(userId: string, passwordHash: string) {
@@ -61,6 +70,12 @@ const ADMIN = {
   id: userId("admin"),
   name: "Alice Admin",
   email: "admin@hireflow.dev",
+};
+
+const ADMIN_USER = {
+  id: userId("admin_user"),
+  name: "Diana Admin",
+  email: "admin-user@hireflow.dev",
 };
 
 const RECRUITERS = [
@@ -155,7 +170,7 @@ async function main() {
 
   const passwordHash = await hashPassword(SEED_PASSWORD);
 
-  logger.server.info("🌱  Seeding database…");
+  logger.server.info("🌱Seeding database…");
 
   // ── 1. Admin user ────────────────────────────────────────────────────────────
   await prisma.user.upsert({
@@ -171,6 +186,22 @@ async function main() {
   });
 
   await upsertCredentialAccount(ADMIN.id, passwordHash);
+  logger.server.info("✔ Admin (super) created");
+
+  // ── 1b. Admin user ──────────────────────────────────────────────────
+  await prisma.user.upsert({
+    where: { email: ADMIN_USER.email },
+    update: {},
+    create: {
+      id: ADMIN_USER.id,
+      name: ADMIN_USER.name,
+      email: ADMIN_USER.email,
+      emailVerified: true,
+      role: "admin",
+    },
+  });
+
+  await upsertCredentialAccount(ADMIN_USER.id, passwordHash);
   logger.server.info("  ✔ Admin created");
 
   // ── 2. Recruiters + Companies + Jobs ─────────────────────────────────────────
@@ -242,9 +273,7 @@ async function main() {
       });
     }
 
-    logger.server.info(
-      `  ✔ Recruiter "${rec.name}" + company + 5 jobs created`,
-    );
+    logger.server.info(`  ✔ Recruiter "${rec.name}" + company + 5 jobs created`);
   }
 
   // ── 3. Users + Profiles + Resumes ────────────────────────────────────────────
@@ -298,9 +327,7 @@ async function main() {
       });
     }
 
-    logger.server.info(
-      `✔ User "${usr.name}" + profile ${profile.headline} + 2 resumes created`,
-    );
+    logger.server.info(`✔ User "${usr.name}" + profile ${profile.headline} + 2 resumes created`);
   }
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────
@@ -351,18 +378,17 @@ async function main() {
   }
 
   logger.server.info("  ✔ Applications created");
-  logger.server.info("\n✅  Seed complete.");
-  logger.server.info(
-    `\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`,
-  );
-  logger.server.info(`   Admin (super) → ${ADMIN.email}`);
+  logger.server.info("\n✅Seed complete.");
+  logger.server.info(`\n📋  Seed credentials (all accounts use password: ${SEED_PASSWORD})`);
+  logger.server.info(`Admin (super) → ${ADMIN.email}`);
+  logger.server.info(`Admin→ ${ADMIN_USER.email}`);
   RECRUITERS.forEach((r) => logger.server.info(`   Recruiter  → ${r.email}`));
   USERS.forEach((u) => logger.server.info(`   User       → ${u.email}`));
 }
 
 main()
   .catch((e) => {
-    logger.server.error("❌  Seed failed:", e);
+    logger.server.error("❌ Seed failed:", e);
     process.exit(1);
   })
   .finally(async () => {
