@@ -72,6 +72,23 @@ export type PublicJobListParams = {
   sortOrder?: string;
 };
 
+export type CompactJobRow = {
+  id: string;
+  slug: string | null;
+  title: string;
+  companyName: string;
+  companyLogo: string | null;
+  locations: string[];
+  workMode: string;
+  employmentType: string;
+  salaryMin: number | null;
+  salaryMax: number | null;
+  salaryCurrency: string;
+  experienceLevel: string;
+  applicationDeadline: Date | null;
+  createdAt: Date;
+};
+
 const MAX_SEARCH_TOKENS = 20;
 const MAX_SEARCH_LENGTH = 200;
 
@@ -229,4 +246,109 @@ export async function getPublicJobById(slugOrId: string): Promise<PublicJobDetai
     viewCount: job.viewCount,
     createdAt: job.createdAt,
   };
+}
+
+export async function listCompanyJobs(companyId: string, excludeJobId: string, limit = 5): Promise<CompactJobRow[]> {
+  const jobs = await prisma.job.findMany({
+    where: {
+      companyId,
+      id: { not: excludeJobId },
+      status: "active",
+      isActive: true,
+    },
+    orderBy: { createdAt: "desc" },
+    take: limit,
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      company: { select: { name: true, logoUrl: true } },
+      locations: true,
+      workMode: true,
+      employmentType: true,
+      salaryMin: true,
+      salaryMax: true,
+      salaryCurrency: true,
+      experienceLevel: true,
+      applicationDeadline: true,
+      createdAt: true,
+    },
+  });
+
+  return jobs.map((job) => ({
+    id: job.id,
+    slug: job.slug,
+    title: job.title,
+    companyName: job.company.name ?? "Unknown",
+    companyLogo: job.company.logoUrl,
+    locations: job.locations,
+    workMode: job.workMode,
+    employmentType: job.employmentType,
+    salaryMin: job.salaryMin,
+    salaryMax: job.salaryMax,
+    salaryCurrency: job.salaryCurrency,
+    experienceLevel: job.experienceLevel,
+    applicationDeadline: job.applicationDeadline,
+    createdAt: job.createdAt,
+  }));
+}
+
+export async function listSimilarJobs(
+  currentJob: { id: string; companyId: string; skills: string[]; workMode: string; experienceLevel: string },
+  limit = 5,
+): Promise<CompactJobRow[]> {
+  const where: Record<string, unknown> = {
+    id: { not: currentJob.id },
+    companyId: { not: currentJob.companyId },
+    status: "active",
+    isActive: true,
+  };
+
+  const hasSkills = currentJob.skills.length > 0;
+  const or: Record<string, unknown>[] = [];
+  if (hasSkills) or.push({ skills: { hasSome: currentJob.skills } });
+  if (currentJob.workMode) or.push({ workMode: currentJob.workMode });
+  if (currentJob.experienceLevel) or.push({ experienceLevel: currentJob.experienceLevel });
+
+  if (or.length > 0) {
+    where.OR = or;
+  }
+
+  const jobs = await prisma.job.findMany({
+    where,
+    orderBy: { createdAt: "desc" },
+    take: limit,
+    select: {
+      id: true,
+      slug: true,
+      title: true,
+      company: { select: { name: true, logoUrl: true } },
+      locations: true,
+      workMode: true,
+      employmentType: true,
+      salaryMin: true,
+      salaryMax: true,
+      salaryCurrency: true,
+      experienceLevel: true,
+      applicationDeadline: true,
+      createdAt: true,
+    },
+  });
+
+  return jobs.map((job) => ({
+    id: job.id,
+    slug: job.slug,
+    title: job.title,
+    companyName: job.company.name ?? "Unknown",
+    companyLogo: job.company.logoUrl,
+    locations: job.locations,
+    workMode: job.workMode,
+    employmentType: job.employmentType,
+    salaryMin: job.salaryMin,
+    salaryMax: job.salaryMax,
+    salaryCurrency: job.salaryCurrency,
+    experienceLevel: job.experienceLevel,
+    applicationDeadline: job.applicationDeadline,
+    createdAt: job.createdAt,
+  }));
 }

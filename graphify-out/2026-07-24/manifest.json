@@ -1895,8 +1895,8 @@
     "semantic_hash": ""
   },
   "prisma/seed.ts": {
-    "mtime": 1784822475.761296,
-    "ast_hash": "f8490c10569df8205ad0ae1ebda54015",
+    "mtime": 1784863024.439735,
+    "ast_hash": "9181c32cb13d2294d44c5060a5a0f706",
     "semantic_hash": ""
   },
   "proxy.ts": {

@@ -10,8 +10,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ApplyModal } from "./apply-modal";
 import { CompanyPreviewCard } from "@/components/shared/company-preview-card";
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
+import { CompanyJobsPanel } from "./company-jobs-panel";
+import { SimilarJobsPanel } from "./similar-jobs-panel";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import type { PublicJobDetail } from "@/app/features/jobs/queries/public-job-queries";
+import type { CompactJobRow } from "@/app/features/jobs/queries/public-job-queries";
 import { MapPinIcon, BriefcaseIcon, ArrowLeftIcon, AlertCircleIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -38,6 +41,14 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
     enabled: !!id,
   });
 
+  const { data: related, isLoading: relatedLoading, isError: relatedError } = useQuery({
+    queryKey: ["job-related", id],
+    queryFn: async () =>
+      (await apiClient<{ data: { companyJobs: CompactJobRow[]; similarJobs: CompactJobRow[] } }>(`/api/jobs/${id}/related`)).data,
+    enabled: !!id,
+    staleTime: 120_000,
+  });
+
   useEffect(() => {
     if (!id) return;
     const c = new AbortController();
@@ -47,10 +58,18 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
 
   if (isLoading) {
     return (
-      <div className="max-w-3xl mx-auto px-4 md:px-6 py-8 space-y-4">
-        <Skeleton className="h-8 w-48" />
-        <Skeleton className="h-4 w-72" />
-        <Skeleton className="h-48 w-full rounded-xl" />
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 space-y-4">
+        <div className="max-w-3xl space-y-4">
+          <Skeleton className="h-8 w-48" />
+          <Skeleton className="h-4 w-72" />
+          <Skeleton className="h-48 w-full rounded-xl" />
+        </div>
+        <div className="hidden lg:block lg:w-80">
+          <Skeleton className="h-40 w-full rounded-xl" />
+        </div>
+        <div className="max-w-3xl">
+          <Skeleton className="h-32 w-full rounded-xl" />
+        </div>
       </div>
     );
   }
@@ -64,17 +83,19 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       </div>
     );
   }
+
+  const hasCompanyJobs = !relatedError && (related?.companyJobs?.length ?? 0) > 0;
+  const hasSimilarJobs = !relatedError && (related?.similarJobs?.length ?? 0) > 0;
+  const showPanels = hasCompanyJobs || hasSimilarJobs;
+  const containerWidth = showPanels ? "max-w-6xl" : "max-w-3xl";
+
   const dl = data.applicationDeadline ? new Date(data.applicationDeadline).getTime() : null;
   const ds = dl !== null && dl - now < 7 * 86400000 && dl > now;
   const dp = dl !== null && dl < now;
   const ii = !data.isActive || data.status !== "active";
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-6"
-    >
+  const mainContent = (
+    <div>
       <Link
         href="/jobs"
         className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text-body mb-6 transition-colors"
@@ -194,7 +215,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
             {data.tags.map((t) => (
               <span
                 key={t}
-                className="text-xs bg-bg-muted text-text-muted px-2.5 py-1 rounded-full"
+                className="text-xs bg-accent/5 text-accent border border-accent/10 px-2.5 py-1 rounded-full"
               >
                 {t}
               </span>
@@ -228,6 +249,43 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       </div>
 
       {showApply && <ApplyModal jobId={data.id} onClose={() => setShowApply(false)} />}
+    </div>
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className={`${containerWidth} mx-auto px-4 md:px-6 lg:px-8 py-6`}
+    >
+      <div className={hasCompanyJobs ? "lg:grid lg:grid-cols-[1fr_320px] lg:gap-8" : ""}>
+        <div className={hasCompanyJobs ? "" : "max-w-3xl"}>
+          {mainContent}
+        </div>
+
+        {hasCompanyJobs && (
+          <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
+            <CompanyJobsPanel
+              companyName={data.companyName}
+              companyId={data.companyId}
+              jobs={related!.companyJobs}
+            />
+          </div>
+        )}
+      </div>
+
+      {relatedLoading && showPanels && (
+        <div className="mt-8">
+          <Skeleton className="h-32 w-full rounded-xl" />
+        </div>
+      )}
+
+      {!relatedLoading && !relatedError && hasSimilarJobs && (
+        <>
+          <hr className="my-8 border-border-subtle" />
+          <SimilarJobsPanel jobs={related!.similarJobs} />
+        </>
+      )}
     </motion.div>
   );
 }
