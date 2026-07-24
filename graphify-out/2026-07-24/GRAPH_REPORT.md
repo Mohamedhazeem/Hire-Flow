@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-24)
 
 ## Corpus Check
-- 669 files · ~282,195 words
+- 669 files · ~282,436 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9e4088ec`
+- Built from commit: `6bef5856`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -934,7 +934,7 @@ Cohesion: 0.09
 Nodes (31): geistMono, geistSans, inter, metadata, RootLayout(), ApplicantTableFeedback(), FeedbackProps, ApplicationResumeSection() (+23 more)
 
 ## Knowledge Gaps
-- **1731 isolated node(s):** `Scope`, `Env vars`, `1. `lib/upload.ts` — provider abstraction`, `2. `app/api/upload/route.ts` — access param + DELETE contract`, `3. `app/api/user/resumes/route.ts` — private access` (+1726 more)
+- **1731 isolated node(s):** `A full-stack, multi-tenant hiring platform built for scale`, `🧱 Tech Stack`, `🛡️ Admin`, `🏢 Recruiter`, `👤 Job Seeker (User)` (+1726 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -942,16 +942,16 @@ Nodes (31): geistMono, geistSans, inter, metadata, RootLayout(), ApplicantTableF
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 218` to `Community 18`, `Community 23`, `Community 25`, `Community 26`, `Community 27`, `Community 34`, `Community 38`, `Community 168`, `Community 42`, `Community 172`, `Community 49`, `Community 50`, `Community 51`, `Community 182`, `Community 55`, `Community 61`, `Community 67`, `Community 70`, `Community 88`, `Community 95`, `Community 106`, `Community 110`, `Community 117`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 30` to `Community 147`, `Community 21`, `Community 22`, `Community 149`, `Community 35`, `Community 169`, `Community 170`, `Community 172`, `Community 173`, `Community 65`, `Community 74`, `Community 208`, `Community 80`, `Community 83`, `Community 87`, `Community 89`, `Community 95`, `Community 107`, `Community 118`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **Why does `env` connect `Community 169` to `Community 34`, `Community 35`, `Community 102`, `Community 83`, `Community 180`, `Community 214`, `Community 216`, `Community 26`, `Community 92`, `Community 93`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Scope`, `Env vars`, `1. `lib/upload.ts` — provider abstraction` to the rest of the system?**
+- **What connects `A full-stack, multi-tenant hiring platform built for scale`, `🧱 Tech Stack`, `🛡️ Admin` to the rest of the system?**
   _1731 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
