@@ -1,7 +1,7 @@
 # 🚀 Hire Flow
 
 <p align="center">
-  <img src="public/images/Hire_Flow_Cover_1.png" alt="Hire Flow Cover" />
+  <img src="https://raw.githubusercontent.com/Mohamedhazeem/hire-flow-next/master/public/images/Hire_Flow_Cover_1.png" alt="Hire Flow Cover" />
 </p>
 
 <p align="center">
@@ -25,6 +25,8 @@ Hire Flow is a production-grade job board and applicant tracking system (ATS) su
 
 Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this project demonstrates end-to-end product thinking: tenant isolation, rate limiting, optimistic concurrency, audit trails, and agent-assisted development workflows.
 
+Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on production-grade architecture, developer experience, and pragmatic feature scoping.
+
 ---
 
 ## 🧱 Tech Stack
@@ -40,7 +42,7 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 | Validation      | Zod                                    | `^4.4.3`                         |
 | Data Fetching   | TanStack React Query                   | `^5.101.0`                       |
 | Client State    | Zustand                                | `^5.0.14`                        |
-| Forms           | React Hook Form (+ Hookform Resolvers) | `^7.78.0` / `^5.4.0`            |
+| Forms           | React Hook Form (+ Hookform Resolvers) | `^7.78.0` / `^5.4.0`             |
 | Realtime        | Pusher / pusher-js                     | `^5.3.4` / `^8.5.0`              |
 | Email           | Resend + React Email                   | `^6.12.4` / `^6.6.1`             |
 | Charts          | Recharts                               | `^3.8.1`                         |
@@ -98,6 +100,21 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 
 ---
 
+## ⏭️ Strategic Omissions (By Design)
+
+Hire Flow intentionally avoids legacy enterprise bloat to keep infrastructure costs under **$50/month** and the user experience fast.
+
+| Feature                             | Status       | Rationale                                                                                                                                                                                                                             |
+| ----------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Email forwarding (IMAP/SMTP sync)   | ❌ Not built | Syncing external inboxes requires complex webhooks and \$5/user/month Google API fees. All communication stays native in-app (Pusher real-time), ensuring recruiters never miss context and candidates have a single source of truth. |
+| Google / Outlook Calendar sync      | ❌ Not built | Two-way calendar APIs are brittle and require OAuth token refresh cycles. We store `interviewDate` and `meetingLink` as data fields — recruiters paste their own meeting links, keeping scheduling simple and bug-free.               |
+| External job board syndication      | ❌ Not built | Posting to LinkedIn / Indeed requires paid API access and strict content policy compliance. Hire Flow is a standalone marketplace — we drive traffic directly to your job posts, not through aggregators.                             |
+| OCR for scanned/ handwritten images | ❌ Not built | Text extraction from digital PDFs and DOCX (via `pdf-parse`/`mammoth`) is already wired into the AI enhancement pipeline — scanned image OCR requires a separate ML layer that adds cost for minimal real-world gain.                 |
+
+**The trade-off:** You get ~90% of the value of enterprise ATS tools (Greenhouse, Lever) for ~10% of the operational cost, with zero vendor lock-in.
+
+---
+
 ## 🤖 AI-Powered Features
 
 Hire Flow ships a production-grade AI layer that goes beyond a single API call — it's an **architected multi-provider system** built for reliability, cost control, and user experience.
@@ -109,6 +126,7 @@ A single `AI_PROVIDER` env var (`anthropic` | `openai` | `google`) switches betw
 ### Resume Enhancement Engine
 
 Job seekers get an interactive AI assistant that:
+
 - **Analyses their resume** against the job market and suggests targeted improvements
 - **Scores ATS compatibility** (keyword density, section completeness, formatting)
 - **Returns per-suggestion controls** — apply or copy individual changes, never a blind rewrite
@@ -146,13 +164,57 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 ---
 
+## 📡 Core API Endpoints
+
+The following REST endpoints are available under `/api/`. All routes use Zod validation, centralized error handling (`lib/api-error.ts`), and `requireRole([...])` guards.
+
+| Method   | Endpoint                                           | Role          | Purpose                                                         |
+| -------- | -------------------------------------------------- | ------------- | --------------------------------------------------------------- |
+| `GET`    | `/api/recruiter/jobs`                              | recruiter     | List company jobs (paginated, filterable)                       |
+| `POST`   | `/api/recruiter/jobs`                              | recruiter     | Create a job posting                                            |
+| `PATCH`  | `/api/recruiter/jobs/[id]`                         | recruiter     | Update job fields or toggle status                              |
+| `DELETE` | `/api/recruiter/jobs/[id]`                         | recruiter     | Soft-delete (active/archived) or hard-delete (draft)            |
+| `GET`    | `/api/recruiter/jobs/[jobId]/applicants`           | recruiter     | List applicants for a job (paginated, filterable)               |
+| `POST`   | `/api/recruiter/applicants/[applicationId]/status` | recruiter     | Transition a single applicant through the pipeline              |
+| `POST`   | `/api/recruiter/applicants/bulk-status`            | recruiter     | Atomic bulk status transition                                   |
+| `GET`    | `/api/recruiter/applicants/[applicationId]`        | recruiter     | Full applicant detail (profile, timeline, resume)               |
+| `GET`    | `/api/recruiter/export/applicants`                 | recruiter     | Stream RFC 4180 CSV of filtered applicants                      |
+| `GET`    | `/api/recruiter/analytics/jobs`                    | recruiter     | Cross-job analytics with date range / status filters            |
+| `GET`    | `/api/recruiter/analytics/jobs/[jobId]`            | recruiter     | Per-job pipeline funnel and trend data                          |
+| `POST`   | `/api/upload`                                      | authenticated | Upload a file (resume, logo, message attachment)                |
+| `DELETE` | `/api/upload`                                      | authenticated | Delete a file by URL or filename                                |
+| `GET`    | `/api/files/download/[id]`                         | authenticated | Stream file download (local or Vercel Blob)                     |
+| `POST`   | `/api/user/resumes`                                | user          | Upload a new resume file                                        |
+| `GET`    | `/api/user/resumes`                                | user          | List own resumes (non-deleted)                                  |
+| `POST`   | `/api/user/resumes/[id]/ai-enhance`                | user          | AI resume suggestions (rate-limited, 5/day)                     |
+| `POST`   | `/api/user/applications`                           | user          | Submit a job application (with resume snapshot)                 |
+| `GET`    | `/api/user/applications`                           | user          | List own applications (filterable, searchable)                  |
+| `POST`   | `/api/user/applications/[id]/withdraw`             | user          | Withdraw an application (only `applied` / `reviewing`)          |
+| `POST`   | `/api/user/bookmarks/[jobId]/toggle`               | user          | Toggle a saved job bookmark                                     |
+| `GET`    | `/api/public/jobs`                                 | public        | Full-text job search with filters                               |
+| `GET`    | `/api/public/jobs/[slug]`                          | public        | Job detail with company preview                                 |
+| `GET`    | `/api/admin/users`                                 | admin         | List all users (paginated, filterable)                          |
+| `POST`   | `/api/admin/users/[id]/ban`                        | admin         | Ban a user (revokes all sessions)                               |
+| `POST`   | `/api/admin/users/[id]/unban`                      | admin         | Unban a user                                                    |
+| `GET`    | `/api/admin/users/[id]/sessions`                   | admin         | List active sessions for a user                                 |
+| `POST`   | `/api/admin/users/[id]/revoke-sessions`            | admin         | Bulk-revoke all sessions for a user                             |
+| `PATCH`  | `/api/admin/users/[id]/role`                       | admin         | Change a user's role                                            |
+| `GET`    | `/api/admin/recruiters`                            | admin         | List all recruiters with company affiliation                    |
+| `POST`   | `/api/admin/jobs/[id]/toggle-active`               | admin         | Admin kill-switch (overrides recruiter status)                  |
+| `GET`    | `/api/admin/analytics`                             | admin         | Platform-wide aggregates (users, jobs, applications, companies) |
+| `GET`    | `/api/jobs/[slug]`                                 | public        | Job detail for SEO (JSON-LD enriched)                           |
+
+All endpoints accept and return JSON. Errors follow a consistent `{ error: string, code?: string }` shape.
+
+---
+
 ## 📈 Project Scale
 
 - **4 completed phases** (Admin → Recruiter → User → Public), fully sequenced and documented
 - **3 distinct role-based dashboards** + 1 public marketplace
 - **7-stage** applicant status pipeline with full audit trail
 - **Cloud storage provider abstraction** (local dev ↔ Vercel Blob production)
-- ~150+ files across API routes, feature modules, and shared components
+- **600+** TypeScript/React files across API routes, feature modules, and shared components
 - Real-time messaging across **3 role pairs** (admin↔user, recruiter↔applicant) via Pusher private channels
 
 ---
@@ -170,7 +232,7 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/<your-username>/hire-flow-next.git
+git clone https://github.com/Mohamedhazeem/hire-flow-next.git
 cd hire-flow-next
 npm install
 ```
@@ -252,7 +314,7 @@ npm run seed
 
 ### 4. Promote a super admin
 
-The seed script (or your own signup) creates a regular user. To grant admin privileges to any email listed in `PROMOTE_TO_SUPER_ADMINS`:
+The seed script creates demo users. To promote your own signed-up email to Super Admin, add it to `PROMOTE_TO_SUPER_ADMINS` in `.env` before running:
 
 ```bash
 npm run promote
@@ -372,15 +434,15 @@ External services (Pusher, AI providers, Resend, Vercel Blob) are mocked at the 
 
 Tests are built incrementally per the [testing strategy](docs/testing/testing-strategy.md). Suites are colocated next to source as `*.test.ts` (unit), `*.test.ts` (integration, real Postgres), `*.perf.test.ts` (perf project), and `*.dom.test.tsx` (component).
 
-| Phase | Focus                               | Covers                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ----- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | Test infrastructure                 | `vitest.config.ts` (react + tsconfig-paths plugins), `lib/test/test-db.ts` (isolated Prisma client), `lib/test/reset-db.ts` (`RESTART IDENTITY CASCADE` truncation in dependency order), `lib/test/factories.ts` (`createTestUser`/`Company`/`Job`/`Application`/`Resume`/`Thread`), `lib/test/auth-fixtures.ts` (`mockSession`), `lib/test/mocks.ts` (`mockPusherTrigger`/`mockAiClient`/`mockResend`), `global-setup.ts` runs `prisma migrate deploy` |
-| 1     | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes                                                                                                                                                                                                                  |
-| 2     | Unit tests: pure logic              | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts`                                                                                                                                                     |
-| 3     | Auth & authorization                | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix                                                                                                                                                                                                                  |
-| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions                         |
-| 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                   |
-| 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                         |
+| Phase | Focus                               | Covers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0     | Test infrastructure                 | `vitest.config.ts` (react + tsconfig-paths plugins), `lib/test/test-db.ts` (isolated Prisma client), `lib/test/reset-db.ts` (`RESTART IDENTITY CASCADE` truncation in dependency order), `lib/test/factories.ts` (`createTestUser`/`Company`/`Job`/`Application`/`Resume`/`Thread`), `lib/test/auth-fixtures.ts` (`mockSession`), `lib/test/mocks.ts` (`mockPusherTrigger`/`mockAiClient`/`mockResend`), `global-setup.ts` runs `prisma migrate deploy`                                          |
+| 1     | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes                                                                                                                                                                                                                                                           |
+| 2     | Unit tests: pure logic              | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts`                                                                                                                                                                                              |
+| 3     | Auth & authorization                | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix                                                                                                                                                                                                                                                           |
+| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions |
+| 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                                                            |
+| 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                                                                  |
 
 ### Performance & stability tests (Phase 7)
 
