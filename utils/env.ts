@@ -32,6 +32,10 @@ export const envSchema = z.object({
   NEXT_PUBLIC_GITHUB_URL: z.string().optional(),
   NEXT_PUBLIC_CONTACT_EMAIL: z.string().optional(),
 
+  UPLOAD_PROVIDER: z.enum(["local", "vercel-blob"]).default("local"),
+  BLOB_READ_WRITE_TOKEN: z.string().optional(),
+  NEXT_PUBLIC_BLOB_CDN_HOST: z.string().default("public.blob.vercel-storage.com"),
+
   AI_PROVIDER: z.enum(["anthropic", "openai", "google"]).default("anthropic"),
   ANTHROPIC_API_KEY: z.string().optional(),
   OPENAI_API_KEY: z.string().optional(),

@@ -156,12 +156,7 @@ export function useThreadView(
         try {
           const fd = new FormData();
           fd.append("file", selectedFile);
-          const res = await fetch("/api/upload", { method: "POST", body: fd });
-          if (!res.ok) {
-            const err = await res.json().catch(() => ({}));
-            throw new Error(err.message ?? "Upload failed");
-          }
-          const d = await res.json();
+          const d = await apiClient<{ data: { url: string; filename: string; size: number; mimeType: string } }>("/api/upload", { method: "POST", body: fd });
           fp = {
             fileUrl: d.data.url,
             fileName: d.data.filename,

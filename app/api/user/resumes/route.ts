@@ -65,7 +65,7 @@ async function handlePOST(request: NextRequest) {
   }
 
   const { saveUpload } = await import("@/lib/upload");
-  const uploadResult = await saveUpload(file);
+  const uploadResult = await saveUpload(file, "private");
 
   const resume = await prisma.resume.create({
     data: {

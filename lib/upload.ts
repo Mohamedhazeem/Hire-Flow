@@ -1,7 +1,8 @@
 import { writeFile, mkdir, unlink } from "fs/promises";
 import path from "path";
+import { env } from "@/utils/env";
 
-const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
+const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
 const ALLOWED_MIME_TYPES = [
   "image/jpeg",
   "image/png",
@@ -12,11 +13,20 @@ const ALLOWED_MIME_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
-export type UploadResult = {
+type AccessMode = "public" | "private";
+
+type UploadResult = {
   url: string;
   filename: string;
   size: number;
   mimeType: string;
+};
+
+type UploadProvider = {
+  name: string;
+  canHandle: (url: string) => boolean;
+  save: (file: File, access?: AccessMode) => Promise<UploadResult>;
+  del: (url: string) => Promise<boolean>;
 };
 
 function validateFile(file: File): void {
@@ -36,74 +46,124 @@ function buildFilename(originalName: string): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`;
 }
 
-// ── Local storage (default, dev / self-hosted) ──────────────────────
-async function saveLocal(file: File): Promise<UploadResult> {
-  const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
-  await mkdir(UPLOAD_DIR, { recursive: true });
-
-  const filename = buildFilename(file.name);
-  const destPath = path.join(UPLOAD_DIR, filename);
-  const buffer = Buffer.from(await file.arrayBuffer());
-  await writeFile(destPath, buffer);
-
-  return {
-    url: `/uploads/${filename}`,
-    filename,
-    size: file.size,
-    mimeType: file.type,
-  };
+function getProviderName(): string {
+  return process.env.UPLOAD_PROVIDER ?? env.data?.UPLOAD_PROVIDER ?? "local";
 }
 
-// ── Vercel Blob storage (production) ────────────────────────────────
-// Uncomment when deploying to Vercel with BLOB_READ_WRITE_TOKEN set.
-// import { put } from "@vercel/blob";
-//
-// async function saveVercelBlob(file: File): Promise<UploadResult> {
-//   const filename = buildFilename(file.name);
-//   const blob = await put(filename, file, {
-//     access: "public",
-//     token: process.env.BLOB_READ_WRITE_TOKEN,
-//   });
-//
-//   return {
-//     url: blob.url,
-//     filename,
-//     size: file.size,
-//     mimeType: file.type,
-//   };
-// }
+// ── Local provider ───────────────────────────────────────────
+const localProvider: UploadProvider = {
+  name: "local",
+  canHandle: (url) => url.startsWith("/uploads/"),
+  save: async (file) => {
+    const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
+    await mkdir(UPLOAD_DIR, { recursive: true });
 
-// ── Public API ──────────────────────────────────────────────────────
-/**
- * Validates and saves a file, returning its public URL.
- * Currently uses local fs storage. Swap saveLocal for saveVercelBlob
- * (or another provider) when deploying to production.
- */
-export async function saveUpload(file: File): Promise<UploadResult> {
-  validateFile(file);
-  return saveLocal(file);
-  // return saveVercelBlob(file); // production
-}
+    const filename = buildFilename(file.name);
+    const destPath = path.join(UPLOAD_DIR, filename);
+    const buffer = Buffer.from(await file.arrayBuffer());
+    await writeFile(destPath, buffer);
 
-/**
- * Deletes a previously uploaded file by its public URL path.
- * Only removes files stored locally under /uploads/.
- * Returns true if deleted, false if not found.
- */
-export async function deleteUpload(logoUrl: string): Promise<boolean> {
-  // Only delete local uploads — cloud files need their own cleanup
-  if (!logoUrl.startsWith("/uploads/")) return false;
+    return {
+      url: `/uploads/${filename}`,
+      filename,
+      size: file.size,
+      mimeType: file.type,
+    };
+  },
+  del: async (url) => {
+    const filename = url.replace("/uploads/", "");
+    if (filename.includes("..") || filename.includes("/")) return false;
 
-  const filename = logoUrl.replace("/uploads/", "");
-  // Prevent path traversal
-  if (filename.includes("..") || filename.includes("/")) return false;
+    const filePath = path.join(process.cwd(), "public", "uploads", filename);
+    try {
+      await unlink(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  },
+};
 
-  const filePath = path.join(process.cwd(), "public", "uploads", filename);
-  try {
-    await unlink(filePath);
-    return true;
-  } catch {
-    // File already gone or permissions issue — not fatal
-    return false;
+// ── Vercel Blob provider (lazy import) ───────────────────────
+let blobModule: typeof import("@vercel/blob") | null = null;
+let blobToken: string | undefined;
+
+async function getBlobModule(): Promise<typeof import("@vercel/blob")> {
+  if (!blobModule) {
+    blobModule = await import("@vercel/blob");
   }
+  return blobModule;
+}
+
+function ensureBlobToken(): string {
+  if (!blobToken) {
+    blobToken = process.env.BLOB_READ_WRITE_TOKEN || env.data?.BLOB_READ_WRITE_TOKEN;
+  }
+  if (!blobToken) {
+    throw new Error("BLOB_READ_WRITE_TOKEN required when UPLOAD_PROVIDER=vercel-blob");
+  }
+  return blobToken;
+}
+
+const blobCdnHost = env.data?.NEXT_PUBLIC_BLOB_CDN_HOST ?? "public.blob.vercel-storage.com";
+
+const blobProvider: UploadProvider = {
+  name: "vercel-blob",
+  canHandle: (url) => url.includes(blobCdnHost),
+  save: async (file, access) => {
+    const token = ensureBlobToken();
+    const { put } = await getBlobModule();
+    const filename = buildFilename(file.name);
+    const blob = await put(filename, file, {
+      access: access ?? "public",
+      token,
+    });
+
+    return {
+      url: blob.url,
+      filename,
+      size: file.size,
+      mimeType: file.type,
+    };
+  },
+  del: async (url) => {
+    try {
+      const token = ensureBlobToken();
+      const { del } = await getBlobModule();
+      await del(url, { token });
+      return true;
+    } catch {
+      return false;
+    }
+  },
+};
+
+const providers: UploadProvider[] = [localProvider, blobProvider];
+
+// ── Public API ───────────────────────────────────────────────
+export async function saveUpload(file: File, access?: AccessMode): Promise<UploadResult> {
+  validateFile(file);
+
+  const providerName = getProviderName();
+  const provider = providers.find((p) => p.name === providerName);
+
+  if (!provider) {
+    throw new Error(
+      `Unknown upload provider: "${providerName}". Supported: ${providers.map((p) => p.name).join(", ")}`,
+    );
+  }
+
+  return provider.save(file, access);
+}
+
+export async function deleteUpload(url: string): Promise<boolean> {
+  if (!url) return false;
+
+  for (const provider of providers) {
+    if (provider.canHandle(url)) {
+      return provider.del(url);
+    }
+  }
+
+  return false;
 }

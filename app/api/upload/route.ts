@@ -5,7 +5,7 @@ import { getSession } from "@/app/features/auth/libs/auth";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { saveUpload, deleteUpload } from "@/lib/upload";
 
-export const runtime = "nodejs"; // needs fs access
+export const runtime = "nodejs";
 
 async function handlePOST(request: NextRequest) {
   const session = await getSession();
@@ -26,7 +26,7 @@ async function handlePOST(request: NextRequest) {
   }
 
   try {
-    const result = await saveUpload(file);
+    const result = await saveUpload(file, "public");
     return ok(result, 201);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Upload failed.";
@@ -40,13 +40,14 @@ async function handleDELETE(request: NextRequest) {
     throw new UnauthorizedError();
   }
 
-  const { filename } = await request.json().catch(() => ({})) as { filename?: string };
+  const body = await request.json().catch(() => ({})) as { url?: string; filename?: string };
+  const url = body.url ?? (body.filename ? `/uploads/${body.filename}` : null);
 
-  if (!filename || typeof filename !== "string") {
-    throw new ValidationError("Missing filename in request body.");
+  if (!url) {
+    throw new ValidationError("Missing 'url' in request body.");
   }
 
-  const deleted = await deleteUpload(`/uploads/${filename}`);
+  const deleted = await deleteUpload(url);
   return ok({ deleted });
 }
 

@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.pravatar.cc",
       },
+      {
+        protocol: "https",
+        hostname: process.env.NEXT_PUBLIC_BLOB_CDN_HOST || "public.blob.vercel-storage.com",
+      },
     ],
   },
 };

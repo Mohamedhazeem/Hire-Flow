@@ -43,20 +43,13 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
     name: "logoUrl",
   });
 
-  /** Extract filename from a local /uploads/ URL */
-  const extractFilename = (url: string): string | null => {
-    if (!url.startsWith("/uploads/")) return null;
-    return url.replace("/uploads/", "");
-  };
-
   /** Delete a previously uploaded file from disk (best-effort) */
   const deletePreviousFile = async (url: string) => {
-    const filename = extractFilename(url);
-    if (!filename) return;
+    if (!url) return;
     try {
       await apiClient("/api/upload", {
         method: "DELETE",
-        body: { filename },
+        body: { url },
       });
     } catch {
       // Best-effort — don't block the user if cleanup fails
