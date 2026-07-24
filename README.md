@@ -19,13 +19,13 @@
   <img alt="Zod" src="https://img.shields.io/badge/Zod-3E67B1?style=flat-square&logo=zod&logoColor=white" />
 </p>
 
-### A full-stack, multi-tenant hiring platform built for scale
+## About
 
 Hire Flow is a production-grade job board and applicant tracking system (ATS) supporting three distinct user roles — **Admins**, **Recruiters**, and **Job Seekers** — with real-time messaging, AI-powered resume assistance, and a public-facing job marketplace with SEO built in from the ground up.
 
 Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this project demonstrates end-to-end product thinking: tenant isolation, rate limiting, optimistic concurrency, audit trails, and agent-assisted development workflows.
 
-Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on production-grade architecture, developer experience, and pragmatic feature scoping.
+Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on production-grade architecture, scalable systems, AI Integration and pragmatic feature scoping.
 
 ---
 

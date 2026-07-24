@@ -47,5 +47,6 @@ export const config = {
     "/register",
     "/reset-password",
     "/verify-email",
+    "/become-employer",
   ],
 };

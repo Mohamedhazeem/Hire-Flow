@@ -48,6 +48,7 @@ describe("isHiddenRoute", () => {
     expect(isHiddenRoute("/careers")).toBe(false);
     expect(isHiddenRoute("/contact")).toBe(false);
     expect(isHiddenRoute("/press")).toBe(false);
+    expect(isHiddenRoute("/become-employer")).toBe(false);
   });
 
   it("shows unknown routes that are not matched by any hidden prefix", () => {

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, UserPlusIcon } from "lucide-react";
+import { getSession } from "@/app/features/auth/libs/auth";
 
 export const metadata = {
   title: "For Employers",
@@ -34,7 +35,11 @@ const sections = [
   },
 ];
 
-export default function EmployersPage() {
+export default async function EmployersPage() {
+  const session = await getSession();
+  const role = session?.user?.role;
+  const showCta = !session || (role !== "recruiter");
+
   return (
     <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
       <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">
@@ -53,21 +58,24 @@ export default function EmployersPage() {
         ))}
       </div>
 
-      <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-        <a
-          href="/register"
-          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-brand hover:bg-brand-dark rounded-xl transition-all hover:scale-[1.03] active:scale-[0.97]"
-        >
-          Request Recruiter Access
-          <ArrowRightIcon className="size-4" />
-        </a>
-        <Link
-          href="/pricing"
-          className="text-sm text-text-muted hover:text-text-heading transition-colors"
-        >
-          View pricing
-        </Link>
-      </div>
+      {showCta && (
+        <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
+          <a
+            href="/become-employer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-brand hover:bg-brand-dark rounded-xl transition-all hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <UserPlusIcon className="size-4" />
+            Register as Employer
+            <ArrowRightIcon className="size-4" />
+          </a>
+          <Link
+            href="/pricing"
+            className="text-sm text-text-muted hover:text-text-heading transition-colors"
+          >
+            View pricing
+          </Link>
+        </div>
+      )}
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
         This is a placeholder employers page. It must be reviewed and updated with

@@ -8,7 +8,7 @@ export const PROTECTED_ROUTES = ["/admin", "/recruiter", "/user"] as const;
 
 export const ADDITIONAL_HIDDEN_PREFIXES = ["/admin-invite", "/recruiter-invite"] as const;
 
-export const PUBLIC_CONTENT_PATHS = ["/", "/jobs", "/resources", "/privacy", "/terms", "/unauthorized", "/employers", "/pricing", "/about", "/careers", "/contact", "/press"] as const;
+export const PUBLIC_CONTENT_PATHS = ["/", "/jobs", "/resources", "/privacy", "/terms", "/unauthorized", "/employers", "/pricing", "/about", "/careers", "/contact", "/press", "/become-employer"] as const;
 
 /** All prefix-based route patterns where the navbar is hidden */
 const HIDDEN_ROUTE_PREFIXES = [

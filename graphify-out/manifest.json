@@ -1845,8 +1845,8 @@
     "semantic_hash": ""
   },
   "lib/routes.ts": {
-    "mtime": 1784876697.0232842,
-    "ast_hash": "73297e17cf0da02d16a59f07e281bf70",
+    "mtime": 1784899287.0715022,
+    "ast_hash": "ee5cd1deb11bd752b1273a169aee3b78",
     "semantic_hash": ""
   },
   "lib/thread-utils.ts": {
@@ -1900,8 +1900,8 @@
     "semantic_hash": ""
   },
   "proxy.ts": {
-    "mtime": 1784710990.3638687,
-    "ast_hash": "35881ab6b9f6bb04992aec20fc1757fc",
+    "mtime": 1784899287.4004955,
+    "ast_hash": "a54b7807b81b8e7543817ec561f9fd7a",
     "semantic_hash": ""
   },
   "scripts/demote-super-admin.ts": {
@@ -2160,8 +2160,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784892722.614497,
-    "ast_hash": "3fb6c07f0f78fc8236b79dc97cb2f319",
+    "mtime": 1784898203.1440177,
+    "ast_hash": "5324c82e7b342090428067cdb569fb8a",
     "semantic_hash": ""
   },
   "docs/architecture/technical-design.md": {
@@ -2870,8 +2870,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/routes.test.ts": {
-    "mtime": 1784876697.019605,
-    "ast_hash": "345e24b0841a72ca8b3568b4887c360c",
+    "mtime": 1784899422.239972,
+    "ast_hash": "b09aff29a5040c3360d7ac31d2728aec",
     "semantic_hash": ""
   },
   "lib/test/unit/thread-utils.test.ts": {
@@ -3365,8 +3365,8 @@
     "semantic_hash": ""
   },
   "app/(public)/employers/page.tsx": {
-    "mtime": 1784876673.9070947,
-    "ast_hash": "ffacc77f62c0cb8bd45d06b9e5509f9f",
+    "mtime": 1784899287.7515004,
+    "ast_hash": "91dc4fd0d51005cd1af84a79d9f3108a",
     "semantic_hash": ""
   },
   "app/(public)/press/page.tsx": {
@@ -3387,6 +3387,21 @@
   ".kilo/plans/footer-pages-plan.md": {
     "mtime": 1784876569.5446947,
     "ast_hash": "234bc4e4c2f9972f817506a6a9b82bf5",
+    "semantic_hash": ""
+  },
+  "app/(public)/become-employer/page.tsx": {
+    "mtime": 1784899276.4497755,
+    "ast_hash": "030d8f63b3da5dce340b6c1161b54ac7",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/actions/upgrade-to-recruiter.ts": {
+    "mtime": 1784899236.4025319,
+    "ast_hash": "9c1dfaa462a43c4bd3cf2af46e791d55",
+    "semantic_hash": ""
+  },
+  "app/features/recruiter/components/upgrade-to-recruiter-form.tsx": {
+    "mtime": 1784899238.2608273,
+    "ast_hash": "6b734021006e27d52221ead8c23a0589",
     "semantic_hash": ""
   }
 }
