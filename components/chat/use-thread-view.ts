@@ -82,6 +82,7 @@ export function useThreadView(
       // Invalidate notifications too: messages were just marked as read on
       // the server, so the notification dropdown should reflect that.
       queryClient.invalidateQueries({ queryKey: ["notifications"] });
+      queryClient.invalidateQueries({ queryKey: ["messages", "unread-count"] });
     }
   }, [data, queryClient, config.queryKey]);
 

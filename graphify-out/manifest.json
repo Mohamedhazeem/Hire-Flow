@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/account-popover.tsx": {
-    "mtime": 1784804096.2381861,
-    "ast_hash": "75fdf51fd46be963b96bde1a3303fb42",
+    "mtime": 1784905985.8511107,
+    "ast_hash": "15dea62d554418b9710fa3485835d57c",
     "semantic_hash": ""
   },
   "app/features/public/components/career-resources/career-resources-page.tsx": {
@@ -1630,8 +1630,8 @@
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
-    "mtime": 1784879068.6085074,
-    "ast_hash": "f52e94ca936bf343726a423343faac4c",
+    "mtime": 1784905966.022745,
+    "ast_hash": "dfeaa128f9240013e4bf17a3da0f934e",
     "semantic_hash": ""
   },
   "components/layout/mobile-menu-button.tsx": {
@@ -2365,8 +2365,8 @@
     "semantic_hash": ""
   },
   "lib/services/message-service.ts": {
-    "mtime": 1784789050.6822371,
-    "ast_hash": "0c617194bd365965f3d3d33c6cff9f0a",
+    "mtime": 1784905960.5967069,
+    "ast_hash": "0b0b3352923ea2285fc2d28d06161ceb",
     "semantic_hash": ""
   },
   "app/features/admin/queries/invite-queries.ts": {
@@ -3220,8 +3220,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/account-popover.dom.test.tsx": {
-    "mtime": 1784804826.5486882,
-    "ast_hash": "b9c6fa6310fca39b8bbdc5b057bb696a",
+    "mtime": 1784906097.9147675,
+    "ast_hash": "59676b61e204b78b6070cf57ceb32780",
     "semantic_hash": ""
   },
   "lib/test/components/ai-suggestions-panel.dom.test.tsx": {
@@ -3412,6 +3412,36 @@
   "lib/test/components/start-conversation-search.dom.test.tsx": {
     "mtime": 1784904549.751377,
     "ast_hash": "437bcecd58d7e660522c62cbaea12037",
+    "semantic_hash": ""
+  },
+  "app/features/messages/actions/get-unread-message-count.ts": {
+    "mtime": 1784905940.9954884,
+    "ast_hash": "8c41b3e98717578de5fcd3609364d44c",
+    "semantic_hash": ""
+  },
+  "app/features/public/hooks/use-unread-message-count.ts": {
+    "mtime": 1784906595.196269,
+    "ast_hash": "53a627dd09d0e03a21aef463cf63e5e5",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/messages/get-unread-message-count.test.ts": {
+    "mtime": 1784906066.8425245,
+    "ast_hash": "dec8d2b1bfc6ceb3f509f59901d23ece",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/messages/message-service-pusher.test.ts": {
+    "mtime": 1784906632.802602,
+    "ast_hash": "a1a68073f165189a1a874077ef4f55ce",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/messages/use-unread-message-count.dom.test.tsx": {
+    "mtime": 1784906509.142608,
+    "ast_hash": "201db6c404c2a78fe49c76ecbb8e7ad1",
+    "semantic_hash": ""
+  },
+  "lib/test/plan-message-badge.md": {
+    "mtime": 1784905611.007825,
+    "ast_hash": "ac64479a3b067925a283ee06fea2475e",
     "semantic_hash": ""
   }
 }

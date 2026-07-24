@@ -60,6 +60,8 @@ export const messageService = {
       // notification dropdown doesn't keep showing an unread dot after the
       // user has opened the thread and seen the messages.
       void markThreadNotificationsRead(threadId, userId);
+      // Broadcast so the badge updates in real time across devices.
+      void pusher.trigger(`private-user-${userId}`, "message-unread-update", {});
     }
 
     return { messages: items.reverse(), meta };
@@ -128,6 +130,9 @@ export const messageService = {
       message: { ...message, createdAt: (message.createdAt as Date).toISOString() },
       senderId,
     });
+
+    // Broadcast unread increment so the receiver's AccountPopover badge updates in real time.
+    void pusher.trigger(`private-user-${message.receiverId}`, "message-unread-increment", {});
 
     fireNotification(
       createNotification(otherUserId, "new_message", {

@@ -2,6 +2,7 @@
 
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
+import { useUnreadMessageCount } from "@/app/features/public/hooks/use-unread-message-count";
 import { AvatarFallback } from "@/components/shared/avatar-fallback";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
@@ -71,6 +72,8 @@ export function AccountPopover() {
   const { data: session } = useSession();
   const signOut = useSignOut();
   const user = session?.user;
+  const userId = (user as { id?: string })?.id;
+  const { data: unreadCount = 0 } = useUnreadMessageCount(userId);
 
   if (!user) return null;
 
@@ -120,6 +123,11 @@ export function AccountPopover() {
             >
               <Icon className="size-4 text-text-muted shrink-0 group-hover:text-white" />
               {label}
+              {href.includes("/messages") && unreadCount > 0 && (
+                <span className="ml-auto size-5 rounded-full bg-error text-[10px] font-bold text-white flex items-center justify-center leading-none">
+                  {unreadCount > 99 ? "99+" : unreadCount}
+                </span>
+              )}
             </Link>
           ))}
         </div>
