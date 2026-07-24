@@ -46,7 +46,7 @@ const sectionVariants = {
 
 export function ResumeTipsSection() {
   return (
-    <section className="border-t border-border-subtle py-16 sm:py-20">
+    <section className="border-t border-border-subtle py-20 sm:py-24">
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial="hidden"

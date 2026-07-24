@@ -910,8 +910,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-detail-view.tsx": {
-    "mtime": 1784822790.3586118,
-    "ast_hash": "d8168ffa8d664d87f72f6630530e4868",
+    "mtime": 1784873835.8264768,
+    "ast_hash": "3ca65019fb54ce297ce8aa630640a5e0",
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-list-page.tsx": {
@@ -930,8 +930,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/queries/public-job-queries.ts": {
-    "mtime": 1784822732.9282334,
-    "ast_hash": "03fc2fbe6387ebb4539056b58529018c",
+    "mtime": 1784870155.4053767,
+    "ast_hash": "355148a8ab75ff444e25b301bc51a7d2",
     "semantic_hash": ""
   },
   "app/features/jobs/schema/application-submit.schema.ts": {
@@ -3322,6 +3322,31 @@
   "lib/test/components/job-detail.dom.test.tsx": {
     "mtime": 1784824675.8875496,
     "ast_hash": "d34395ba802d4d08bcf20d5e845bc318",
+    "semantic_hash": ""
+  },
+  "app/api/jobs/[id]/related/route.ts": {
+    "mtime": 1784870864.291079,
+    "ast_hash": "75cad946b67d0047e166b1008da9cc01",
+    "semantic_hash": ""
+  },
+  "app/features/jobs/components/compact-job-card.tsx": {
+    "mtime": 1784870588.6332214,
+    "ast_hash": "fcfb311a412a2dea9ff734a2b1137090",
+    "semantic_hash": ""
+  },
+  "app/features/jobs/components/company-jobs-panel.tsx": {
+    "mtime": 1784870265.8126385,
+    "ast_hash": "6ceb2d5390d9850f621ec1dac6976f99",
+    "semantic_hash": ""
+  },
+  "app/features/jobs/components/similar-jobs-panel.tsx": {
+    "mtime": 1784870281.0764267,
+    "ast_hash": "530406bfc6cc66ab02ba57519df653e1",
+    "semantic_hash": ""
+  },
+  "lib/test/integration/jobs/related.test.ts": {
+    "mtime": 1784870854.3610258,
+    "ast_hash": "1248f19323c15afea9ab3e7e2fbfeb9e",
     "semantic_hash": ""
   }
 }

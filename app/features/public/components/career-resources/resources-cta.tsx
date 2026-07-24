@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "lucide-react";
 
 export function ResourcesCTA() {
   return (
-    <section className="bg-brand/5 border-y border-border-subtle py-16 sm:py-20">
+    <section className="bg-brand/5 border-y border-border-subtle py-20 sm:py-24">
       <div className="max-w-xl mx-auto px-4 md:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

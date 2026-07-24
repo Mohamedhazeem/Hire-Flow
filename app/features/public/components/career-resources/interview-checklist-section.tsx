@@ -20,7 +20,7 @@ const sectionVariants = {
 
 export function InterviewChecklistSection() {
   return (
-    <section className="bg-bg-surface border-y border-border-subtle py-16 sm:py-20">
+    <section className="bg-bg-surface border-y border-border-subtle py-20 sm:py-24">
       <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial="hidden"
