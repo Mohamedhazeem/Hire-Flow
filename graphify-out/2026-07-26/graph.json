@@ -4,14 +4,124 @@
   "graph": {},
   "nodes": [
     {
+      "label": "account-popover.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_account_popover",
+      "community": 177,
+      "norm_label": "account-popover.tsx"
+    },
+    {
+      "label": "RoleLink",
+      "file_type": "code",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "components_account_popover_rolelink",
+      "community": 177,
+      "norm_label": "rolelink"
+    },
+    {
+      "label": "LINKS",
+      "file_type": "code",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "components_account_popover_links",
+      "community": 177,
+      "norm_label": "links"
+    },
+    {
+      "label": "ROLE_META",
+      "file_type": "code",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "components_account_popover_role_meta",
+      "community": 177,
+      "norm_label": "role_meta"
+    },
+    {
+      "label": "AccountPopover()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "components_account_popover_accountpopover",
+      "community": 177,
+      "norm_label": "accountpopover()"
+    },
+    {
+      "label": "recruiter-sidebar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_recruiter_sidebar",
+      "community": 26,
+      "norm_label": "recruiter-sidebar.tsx"
+    },
+    {
+      "label": "recruiterLinks",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "components_recruiter_sidebar_recruiterlinks",
+      "community": 26,
+      "norm_label": "recruiterlinks"
+    },
+    {
+      "label": "RecruiterSidebar()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "components_recruiter_sidebar_recruitersidebar",
+      "community": 26,
+      "norm_label": "recruitersidebar()"
+    },
+    {
+      "label": "user-sidebar.tsx",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_user_sidebar",
+      "community": 26,
+      "norm_label": "user-sidebar.tsx"
+    },
+    {
+      "label": "userLinks",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "components_user_sidebar_userlinks",
+      "community": 26,
+      "norm_label": "userlinks"
+    },
+    {
+      "label": "UserSidebar()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "components_user_sidebar_usersidebar",
+      "community": 26,
+      "norm_label": "usersidebar()"
+    },
+    {
       "label": "next.config.ts",
       "file_type": "code",
       "source_file": "next.config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "next_config",
       "community": 156,
-      "norm_label": "next.config.ts"
+      "norm_label": "next.config.ts",
+      "id": "next_config"
     },
     {
       "label": "nextConfig",
@@ -19,9 +129,9 @@
       "source_file": "next.config.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "next_config_nextconfig",
       "community": 156,
-      "norm_label": "nextconfig"
+      "norm_label": "nextconfig",
+      "id": "next_config_nextconfig"
     },
     {
       "label": "seed.ts",
@@ -29,9 +139,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "prisma_seed",
       "community": 92,
-      "norm_label": "seed.ts"
+      "norm_label": "seed.ts",
+      "id": "prisma_seed"
     },
     {
       "label": "pool",
@@ -39,9 +149,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "prisma_seed_pool",
       "community": 92,
-      "norm_label": "pool"
+      "norm_label": "pool",
+      "id": "prisma_seed_pool"
     },
     {
       "label": "adapter",
@@ -49,9 +159,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "id": "prisma_seed_adapter",
       "community": 92,
-      "norm_label": "adapter"
+      "norm_label": "adapter",
+      "id": "prisma_seed_adapter"
     },
     {
       "label": "prisma",
@@ -59,9 +169,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "prisma_seed_prisma",
       "community": 92,
-      "norm_label": "prisma"
+      "norm_label": "prisma",
+      "id": "prisma_seed_prisma"
     },
     {
       "label": "userId()",
@@ -69,9 +179,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "prisma_seed_userid",
       "community": 92,
-      "norm_label": "userid()"
+      "norm_label": "userid()",
+      "id": "prisma_seed_userid"
     },
     {
       "label": "jobSlug()",
@@ -79,9 +189,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "prisma_seed_jobslug",
       "community": 92,
-      "norm_label": "jobslug()"
+      "norm_label": "jobslug()",
+      "id": "prisma_seed_jobslug"
     },
     {
       "label": "upsertCredentialAccount()",
@@ -89,9 +199,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "prisma_seed_upsertcredentialaccount",
       "community": 92,
-      "norm_label": "upsertcredentialaccount()"
+      "norm_label": "upsertcredentialaccount()",
+      "id": "prisma_seed_upsertcredentialaccount"
     },
     {
       "label": "avatarUrl()",
@@ -99,9 +209,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "prisma_seed_avatarurl",
       "community": 92,
-      "norm_label": "avatarurl()"
+      "norm_label": "avatarurl()",
+      "id": "prisma_seed_avatarurl"
     },
     {
       "label": "companyLogoUrl()",
@@ -109,9 +219,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "id": "prisma_seed_companylogourl",
       "community": 92,
-      "norm_label": "companylogourl()"
+      "norm_label": "companylogourl()",
+      "id": "prisma_seed_companylogourl"
     },
     {
       "label": "ADMIN",
@@ -119,9 +229,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L82",
       "_origin": "ast",
-      "id": "prisma_seed_admin",
       "community": 92,
-      "norm_label": "admin"
+      "norm_label": "admin",
+      "id": "prisma_seed_admin"
     },
     {
       "label": "ADMIN_USER",
@@ -129,9 +239,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L88",
       "_origin": "ast",
-      "id": "prisma_seed_admin_user",
       "community": 92,
-      "norm_label": "admin_user"
+      "norm_label": "admin_user",
+      "id": "prisma_seed_admin_user"
     },
     {
       "label": "RECRUITERS",
@@ -139,9 +249,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L94",
       "_origin": "ast",
-      "id": "prisma_seed_recruiters",
       "community": 92,
-      "norm_label": "recruiters"
+      "norm_label": "recruiters",
+      "id": "prisma_seed_recruiters"
     },
     {
       "label": "USERS",
@@ -149,9 +259,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L117",
       "_origin": "ast",
-      "id": "prisma_seed_users",
       "community": 92,
-      "norm_label": "users"
+      "norm_label": "users",
+      "id": "prisma_seed_users"
     },
     {
       "label": "JOB_TEMPLATES",
@@ -159,9 +269,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L141",
       "_origin": "ast",
-      "id": "prisma_seed_job_templates",
       "community": 92,
-      "norm_label": "job_templates"
+      "norm_label": "job_templates",
+      "id": "prisma_seed_job_templates"
     },
     {
       "label": "main()",
@@ -169,9 +279,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L176",
       "_origin": "ast",
-      "id": "prisma_seed_main",
       "community": 92,
-      "norm_label": "main()"
+      "norm_label": "main()",
+      "id": "prisma_seed_main"
     },
     {
       "label": "kilo.json",
@@ -8534,56 +8644,6 @@
       "id": "particles_particle_varient_particlevariants"
     },
     {
-      "label": "account-popover.tsx",
-      "file_type": "code",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 177,
-      "norm_label": "account-popover.tsx",
-      "id": "components_account_popover"
-    },
-    {
-      "label": "RoleLink",
-      "file_type": "code",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 177,
-      "norm_label": "rolelink",
-      "id": "components_account_popover_rolelink"
-    },
-    {
-      "label": "LINKS",
-      "file_type": "code",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 177,
-      "norm_label": "links",
-      "id": "components_account_popover_links"
-    },
-    {
-      "label": "ROLE_META",
-      "file_type": "code",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L61",
-      "_origin": "ast",
-      "community": 177,
-      "norm_label": "role_meta",
-      "id": "components_account_popover_role_meta"
-    },
-    {
-      "label": "AccountPopover()",
-      "file_type": "code",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L71",
-      "_origin": "ast",
-      "community": 177,
-      "norm_label": "accountpopover()",
-      "id": "components_account_popover_accountpopover"
-    },
-    {
       "label": "career-resources-page.tsx",
       "file_type": "code",
       "source_file": "app/features/public/components/career-resources/career-resources-page.tsx",
@@ -10452,36 +10512,6 @@
       "community": 111,
       "norm_label": "recruitermessagespage()",
       "id": "components_recruiter_messages_page_recruitermessagespage"
-    },
-    {
-      "label": "recruiter-sidebar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "recruiter-sidebar.tsx",
-      "id": "components_recruiter_sidebar"
-    },
-    {
-      "label": "recruiterLinks",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "recruiterlinks",
-      "id": "components_recruiter_sidebar_recruiterlinks"
-    },
-    {
-      "label": "RecruiterSidebar()",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "recruitersidebar()",
-      "id": "components_recruiter_sidebar_recruitersidebar"
     },
     {
       "label": "recruiter-team-list.tsx",
@@ -13092,36 +13122,6 @@
       "community": 148,
       "norm_label": "usermessagespage()",
       "id": "components_user_messages_page_usermessagespage"
-    },
-    {
-      "label": "user-sidebar.tsx",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "user-sidebar.tsx",
-      "id": "components_user_sidebar"
-    },
-    {
-      "label": "userLinks",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "userlinks",
-      "id": "components_user_sidebar_userlinks"
-    },
-    {
-      "label": "UserSidebar()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 26,
-      "norm_label": "usersidebar()",
-      "id": "components_user_sidebar_usersidebar"
     },
     {
       "label": "user-thread-view.tsx",
@@ -35228,6 +35228,515 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "components_account_popover_links"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "components_account_popover_role_meta"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "components_account_popover_rolelink"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "hooks_use_sign_out"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "hooks_use_unread_message_count"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "hooks_use_unread_message_count_useunreadmessagecount"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "shared_avatar_fallback"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "shared_avatar_fallback_avatarfallback"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_popover_popover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_popover_popovercontent"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_popover_popovertrigger"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_theme_toggle"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover",
+      "target": "ui_theme_toggle_themetoggle"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/account-popover.dom.test.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover_dom_test",
+      "target": "components_account_popover"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "components_account_popover_accountpopover",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/public/components/account-popover.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "components_account_popover_accountpopover",
+      "target": "hooks_use_unread_message_count_useunreadmessagecount"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/account-popover.dom.test.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_account_popover_dom_test",
+      "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/public-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_public_navbar",
+      "target": "components_account_popover_accountpopover"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "components_recruiter_sidebar_recruiterlinks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "components_recruiter_sidebar_recruitersidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "hooks_use_sign_out"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "layout_sidebar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "layout_sidebar_sidebar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "layout_sidebar_sidebarlink"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "layout_sidebar_sidebaruser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_sidebar",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_recruiter_layout_client",
+      "target": "components_recruiter_sidebar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "components_recruiter_sidebar_recruitersidebar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_recruiter_layout_client",
+      "target": "components_recruiter_sidebar_recruitersidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "components_user_sidebar_userlinks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "components_user_sidebar_usersidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "hooks_use_sign_out"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "layout_sidebar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "layout_sidebar_sidebar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "layout_sidebar_sidebarlink"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "layout_sidebar_sidebaruser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_user_sidebar",
+      "target": "libs_auth_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/user-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_user_layout_client",
+      "target": "components_user_sidebar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/user/components/user-sidebar.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "components_user_sidebar_usersidebar",
+      "target": "hooks_use_sign_out_usesignout"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/user-layout-client.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_user_layout_client",
+      "target": "components_user_sidebar_usersidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "next.config.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -35271,9 +35780,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prisma_seed",
-      "target": "prisma_seed_avatarurl",
-      "confidence_score": 1.0
+      "target": "prisma_seed_avatarurl"
     },
     {
       "relation": "contains",
@@ -35281,9 +35790,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prisma_seed",
-      "target": "prisma_seed_companylogourl",
-      "confidence_score": 1.0
+      "target": "prisma_seed_companylogourl"
     },
     {
       "relation": "contains",
@@ -35448,9 +35957,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prisma_seed_main",
-      "target": "prisma_seed_avatarurl",
-      "confidence_score": 1.0
+      "target": "prisma_seed_avatarurl"
     },
     {
       "relation": "calls",
@@ -35459,9 +35968,9 @@
       "source_file": "prisma/seed.ts",
       "source_location": "L246",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "prisma_seed_main",
-      "target": "prisma_seed_companylogourl",
-      "confidence_score": 1.0
+      "target": "prisma_seed_companylogourl"
     },
     {
       "relation": "contains",
@@ -38597,28 +39106,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_recruiter_layout_client",
-      "target": "components_recruiter_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_recruiter_layout_client",
-      "target": "components_recruiter_sidebar_recruitersidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/recruiter-layout-client.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -39469,28 +39956,6 @@
       "confidence_score": 1.0,
       "source": "saved_jobs_page",
       "target": "saved_jobs_page_usersavedjobspage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/user-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_user_layout_client",
-      "target": "components_user_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/user-layout-client.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_user_layout_client",
-      "target": "components_user_sidebar_usersidebar"
     },
     {
       "relation": "imports_from",
@@ -57550,17 +58015,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "lib/test/components/account-popover.dom.test.tsx",
       "source_location": "L12",
       "weight": 1.0,
@@ -57638,17 +58092,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/recruiter-team-list.tsx",
       "source_location": "L12",
       "weight": 1.0,
@@ -57687,17 +58130,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_use_applicants_table",
-      "target": "libs_auth_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
       "target": "libs_auth_client"
     },
     {
@@ -62171,244 +62603,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "components_account_popover_accountpopover"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "components_account_popover_links"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "components_account_popover_role_meta"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "components_account_popover_rolelink"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "hooks_use_sign_out"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "hooks_use_unread_message_count"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "hooks_use_unread_message_count_useunreadmessagecount"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "shared_avatar_fallback"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "shared_avatar_fallback_avatarfallback"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_popover"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_popover_popover"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_popover_popovercontent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_popover_popovertrigger"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_theme_toggle"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover",
-      "target": "ui_theme_toggle_themetoggle"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/account-popover.dom.test.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover_dom_test",
-      "target": "components_account_popover"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "components_account_popover_accountpopover",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/public/components/account-popover.tsx",
-      "source_location": "L82",
-      "weight": 1.0,
-      "source": "components_account_popover_accountpopover",
-      "target": "hooks_use_unread_message_count_useunreadmessagecount"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/account-popover.dom.test.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_account_popover_dom_test",
-      "target": "components_account_popover_accountpopover"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/components/public-navbar.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_public_navbar",
-      "target": "components_account_popover_accountpopover"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/career-resources/career-resources-page.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -62937,28 +63131,6 @@
       "target": "lib_routes_ishiddenroute"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "hooks_use_sign_out"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "hooks_use_sign_out"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/hooks/use-sign-out.ts",
@@ -62966,50 +63138,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "hooks_use_sign_out",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "components_recruiter_sidebar_recruitersidebar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "hooks_use_sign_out_usesignout"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "components_user_sidebar_usersidebar",
       "target": "hooks_use_sign_out_usesignout"
     },
     {
@@ -68989,70 +69117,6 @@
       "weight": 1.0,
       "source": "components_recruiter_messages_page_recruitermessagespage",
       "target": "messages_use_recruiter_threads_userecruiterthreads"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "components_recruiter_sidebar_recruiterlinks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "components_recruiter_sidebar_recruitersidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "layout_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "layout_sidebar_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "layout_sidebar_sidebarlink"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_sidebar",
-      "target": "layout_sidebar_sidebaruser"
     },
     {
       "relation": "contains",
@@ -75969,70 +76033,6 @@
       "weight": 1.0,
       "source": "components_user_messages_page_usermessagespage",
       "target": "messages_use_user_threads_useuserthreads"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "components_user_sidebar_userlinks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "components_user_sidebar_usersidebar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "layout_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "layout_sidebar_sidebar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "layout_sidebar_sidebarlink"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/user-sidebar.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_user_sidebar",
-      "target": "layout_sidebar_sidebaruser"
     },
     {
       "relation": "imports_from",
@@ -104993,5 +104993,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6f361f665b5f3215f6388c1676c19646cd684dac"
+  "built_at_commit": "6d8c1411a1690e9f29278b44de4b70c742777932"
 }

@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "app/features/public/components/account-popover.tsx": {
-    "mtime": 1784906918.080558,
-    "ast_hash": "b91d90bd5ed5fbeb76a6f5def028e966",
+    "mtime": 1785048614.1644022,
+    "ast_hash": "e6302be03aa044421697ece47ff3aeff",
     "semantic_hash": ""
   },
   "app/features/public/components/career-resources/career-resources-page.tsx": {
@@ -1235,8 +1235,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-sidebar.tsx": {
-    "mtime": 1782877443.3027666,
-    "ast_hash": "5a02a71abe789b6ad580acafcf34e6a5",
+    "mtime": 1785048592.072049,
+    "ast_hash": "216d2a20d0eb2ddb372ad119ae0222cb",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-team-list.tsx": {
@@ -1455,8 +1455,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/resume-card.tsx": {
-    "mtime": 1783000525.804937,
-    "ast_hash": "5d3fe08ca9902c0c6a50850ac089c32a",
+    "mtime": 1785049261.9338355,
+    "ast_hash": "e7243dc4aa94f08769570fe679812299",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-list.tsx": {
@@ -1490,8 +1490,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-sidebar.tsx": {
-    "mtime": 1782877426.257655,
-    "ast_hash": "271b8bdfbae981488fe18addfb04cfc7",
+    "mtime": 1785048405.4168477,
+    "ast_hash": "f5620939eca5abeadd2c0f6f626787b9",
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
@@ -1815,8 +1815,8 @@
     "semantic_hash": ""
   },
   "lib/ai-client.ts": {
-    "mtime": 1784789050.650517,
-    "ast_hash": "ddfb9ca28109bfa0533d203bc98e243e",
+    "mtime": 1785049071.618357,
+    "ast_hash": "a06c70bc249da194418d2d7d2c867561",
     "semantic_hash": ""
   },
   "lib/batch-helpers.ts": {

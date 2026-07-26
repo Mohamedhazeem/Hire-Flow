@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6d8c1411`
+- Built from commit: `83191435`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -935,7 +935,7 @@ Cohesion: 0.40
 Nodes (4): DataTableSection(), DataTableSectionProps, ShowMoreToggle(), ShowMoreToggleProps
 
 ## Knowledge Gaps
-- **1730 isolated node(s):** `RoleLink`, `LINKS`, `ROLE_META`, `recruiterLinks`, `userLinks` (+1725 more)
+- **1730 isolated node(s):** `ResumeCardProps`, `AIProvider`, `ProviderConfig`, `PROVIDER_CONFIG`, `RoleLink` (+1725 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **39 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -943,16 +943,16 @@ Nodes (4): DataTableSection(), DataTableSectionProps, ShowMoreToggle(), ShowMore
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 42` to `Community 140`, `Community 18`, `Community 147`, `Community 149`, `Community 21`, `Community 25`, `Community 26`, `Community 27`, `Community 34`, `Community 38`, `Community 40`, `Community 170`, `Community 49`, `Community 51`, `Community 182`, `Community 58`, `Community 61`, `Community 67`, `Community 199`, `Community 80`, `Community 88`, `Community 95`, `Community 96`, `Community 102`, `Community 105`, `Community 117`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 173` to `Community 65`, `Community 35`, `Community 36`, `Community 195`, `Community 202`, `Community 74`, `Community 172`, `Community 140`, `Community 83`, `Community 19`, `Community 179`, `Community 22`, `Community 87`, `Community 118`, `Community 89`, `Community 93`, `Community 30`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `ok()` connect `Community 30` to `Community 35`, `Community 195`, `Community 202`, `Community 173`, `Community 50`, `Community 147`, `Community 19`, `Community 22`, `Community 87`, `Community 118`, `Community 89`, `Community 214`, `Community 94`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `env` connect `Community 208` to `Community 35`, `Community 36`, `Community 202`, `Community 172`, `Community 173`, `Community 92`, `Community 112`, `Community 19`, `Community 180`, `Community 83`, `Community 149`, `Community 183`, `Community 55`, `Community 28`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `RoleLink`, `LINKS`, `ROLE_META` to the rest of the system?**
+- **What connects `ResumeCardProps`, `AIProvider`, `ProviderConfig` to the rest of the system?**
   _1730 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

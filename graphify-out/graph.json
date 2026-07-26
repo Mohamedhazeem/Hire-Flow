@@ -4,14 +4,124 @@
   "graph": {},
   "nodes": [
     {
+      "label": "resume-card.tsx",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_resume_card",
+      "community": 65,
+      "norm_label": "resume-card.tsx"
+    },
+    {
+      "label": "ResumeCardProps",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "components_resume_card_resumecardprops",
+      "community": 65,
+      "norm_label": "resumecardprops"
+    },
+    {
+      "label": "AiErrorBanner()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "components_resume_card_aierrorbanner",
+      "community": 65,
+      "norm_label": "aierrorbanner()"
+    },
+    {
+      "label": "formatSize()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "components_resume_card_formatsize",
+      "community": 65,
+      "norm_label": "formatsize()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "components_resume_card_formatdate",
+      "community": 65,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "ResumeCard()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "components_resume_card_resumecard",
+      "community": 65,
+      "norm_label": "resumecard()"
+    },
+    {
+      "label": "ai-client.ts",
+      "file_type": "code",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_ai_client",
+      "community": 35,
+      "norm_label": "ai-client.ts"
+    },
+    {
+      "label": "AIProvider",
+      "file_type": "code",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "lib_ai_client_aiprovider",
+      "community": 35,
+      "norm_label": "aiprovider"
+    },
+    {
+      "label": "ProviderConfig",
+      "file_type": "code",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "lib_ai_client_providerconfig",
+      "community": 35,
+      "norm_label": "providerconfig"
+    },
+    {
+      "label": "PROVIDER_CONFIG",
+      "file_type": "code",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "lib_ai_client_provider_config",
+      "community": 35,
+      "norm_label": "provider_config"
+    },
+    {
+      "label": "callAI()",
+      "file_type": "code",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "lib_ai_client_callai",
+      "community": 35,
+      "norm_label": "callai()"
+    },
+    {
       "label": "account-popover.tsx",
       "file_type": "code",
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_account_popover",
       "community": 177,
-      "norm_label": "account-popover.tsx"
+      "norm_label": "account-popover.tsx",
+      "id": "components_account_popover"
     },
     {
       "label": "RoleLink",
@@ -19,9 +129,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "components_account_popover_rolelink",
       "community": 177,
-      "norm_label": "rolelink"
+      "norm_label": "rolelink",
+      "id": "components_account_popover_rolelink"
     },
     {
       "label": "LINKS",
@@ -29,9 +139,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "components_account_popover_links",
       "community": 177,
-      "norm_label": "links"
+      "norm_label": "links",
+      "id": "components_account_popover_links"
     },
     {
       "label": "ROLE_META",
@@ -39,9 +149,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "components_account_popover_role_meta",
       "community": 177,
-      "norm_label": "role_meta"
+      "norm_label": "role_meta",
+      "id": "components_account_popover_role_meta"
     },
     {
       "label": "AccountPopover()",
@@ -49,9 +159,9 @@
       "source_file": "app/features/public/components/account-popover.tsx",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "components_account_popover_accountpopover",
       "community": 177,
-      "norm_label": "accountpopover()"
+      "norm_label": "accountpopover()",
+      "id": "components_account_popover_accountpopover"
     },
     {
       "label": "recruiter-sidebar.tsx",
@@ -59,9 +169,9 @@
       "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_recruiter_sidebar",
       "community": 26,
-      "norm_label": "recruiter-sidebar.tsx"
+      "norm_label": "recruiter-sidebar.tsx",
+      "id": "components_recruiter_sidebar"
     },
     {
       "label": "recruiterLinks",
@@ -69,9 +179,9 @@
       "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_recruiter_sidebar_recruiterlinks",
       "community": 26,
-      "norm_label": "recruiterlinks"
+      "norm_label": "recruiterlinks",
+      "id": "components_recruiter_sidebar_recruiterlinks"
     },
     {
       "label": "RecruiterSidebar()",
@@ -79,9 +189,9 @@
       "source_file": "app/features/recruiter/components/recruiter-sidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "components_recruiter_sidebar_recruitersidebar",
       "community": 26,
-      "norm_label": "recruitersidebar()"
+      "norm_label": "recruitersidebar()",
+      "id": "components_recruiter_sidebar_recruitersidebar"
     },
     {
       "label": "user-sidebar.tsx",
@@ -89,9 +199,9 @@
       "source_file": "app/features/user/components/user-sidebar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_user_sidebar",
       "community": 26,
-      "norm_label": "user-sidebar.tsx"
+      "norm_label": "user-sidebar.tsx",
+      "id": "components_user_sidebar"
     },
     {
       "label": "userLinks",
@@ -99,9 +209,9 @@
       "source_file": "app/features/user/components/user-sidebar.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "components_user_sidebar_userlinks",
       "community": 26,
-      "norm_label": "userlinks"
+      "norm_label": "userlinks",
+      "id": "components_user_sidebar_userlinks"
     },
     {
       "label": "UserSidebar()",
@@ -109,9 +219,9 @@
       "source_file": "app/features/user/components/user-sidebar.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "components_user_sidebar_usersidebar",
       "community": 26,
-      "norm_label": "usersidebar()"
+      "norm_label": "usersidebar()",
+      "id": "components_user_sidebar_usersidebar"
     },
     {
       "label": "next.config.ts",
@@ -12874,66 +12984,6 @@
       "id": "components_resume_builder_form_resumebuilderform"
     },
     {
-      "label": "resume-card.tsx",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "resume-card.tsx",
-      "id": "components_resume_card"
-    },
-    {
-      "label": "ResumeCardProps",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "resumecardprops",
-      "id": "components_resume_card_resumecardprops"
-    },
-    {
-      "label": "AiErrorBanner()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "aierrorbanner()",
-      "id": "components_resume_card_aierrorbanner"
-    },
-    {
-      "label": "formatSize()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L53",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "formatsize()",
-      "id": "components_resume_card_formatsize"
-    },
-    {
-      "label": "formatDate()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L60",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "formatdate()",
-      "id": "components_resume_card_formatdate"
-    },
-    {
-      "label": "ResumeCard()",
-      "file_type": "code",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L69",
-      "_origin": "ast",
-      "community": 65,
-      "norm_label": "resumecard()",
-      "id": "components_resume_card_resumecard"
-    },
-    {
       "label": "resume-list.tsx",
       "file_type": "code",
       "source_file": "app/features/user/components/resume-list.tsx",
@@ -17882,56 +17932,6 @@
       "community": 149,
       "norm_label": "usethreadpresence()",
       "id": "stores_use_thread_presence_usethreadpresence"
-    },
-    {
-      "label": "ai-client.ts",
-      "file_type": "code",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "ai-client.ts",
-      "id": "lib_ai_client"
-    },
-    {
-      "label": "AIProvider",
-      "file_type": "code",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "aiprovider",
-      "id": "lib_ai_client_aiprovider"
-    },
-    {
-      "label": "ProviderConfig",
-      "file_type": "code",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "providerconfig",
-      "id": "lib_ai_client_providerconfig"
-    },
-    {
-      "label": "PROVIDER_CONFIG",
-      "file_type": "code",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "provider_config",
-      "id": "lib_ai_client_provider_config"
-    },
-    {
-      "label": "callAI()",
-      "file_type": "code",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L58",
-      "_origin": "ast",
-      "community": 35,
-      "norm_label": "callai()",
-      "id": "lib_ai_client_callai"
     },
     {
       "label": "api-client.ts",
@@ -35226,6 +35226,382 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_ai_suggestions_panel"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_ai_suggestions_panel_aisuggestionspanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_resume_card_aierrorbanner"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_resume_card_formatdate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_resume_card_formatsize"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_resume_card_resumecard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "components_resume_card_resumecardprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "hooks_use_ai_resume_enhance"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "hooks_use_ai_resume_enhance_useairesumeenhance"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "hooks_use_ai_resume_enhance_useapplyaisuggestions"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "hooks_use_resumes"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "hooks_use_resumes_resumelistitem"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "schema_resume_ai_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "schema_resume_ai_schema_enhancementsresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "schema_resume_ai_schema_resumesuggestion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "shared_confirm_action_button"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "shared_confirm_action_button_confirmactionbutton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "ui_button"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card",
+      "target": "ui_button_button"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-list.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_list",
+      "target": "components_resume_card"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card_resumecard",
+      "target": "components_resume_card_formatsize"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_card_resumecard",
+      "target": "components_resume_card_formatdate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "components_resume_card_resumecard",
+      "target": "hooks_use_ai_resume_enhance_useairesumeenhance"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/user/components/resume-card.tsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "components_resume_card_resumecard",
+      "target": "hooks_use_ai_resume_enhance_useapplyaisuggestions"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/resume-list.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resume_list",
+      "target": "components_resume_card_resumecard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_enhance_route",
+      "target": "lib_ai_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "api_api_error"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "api_api_error_apierror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "lib_ai_client_aiprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "lib_ai_client_callai"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "lib_ai_client_provider_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ai-client.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_ai_client",
+      "target": "lib_ai_client_providerconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/mocks.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_mocks",
+      "target": "lib_ai_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_enhance_route",
+      "target": "lib_ai_client_callai"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_enhance_route_handlepost",
+      "target": "lib_ai_client_callai"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/components/account-popover.tsx",
@@ -49352,28 +49728,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_enhance_route",
-      "target": "lib_ai_client"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_enhance_route",
-      "target": "lib_ai_client_callai"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -49423,17 +49777,6 @@
       "confidence_score": 1.0,
       "source": "ai_enhance_route_handlepost",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_enhance_route_handlepost",
-      "target": "lib_ai_client_callai"
     },
     {
       "relation": "imports_from",
@@ -73970,17 +74313,6 @@
       "target": "components_ai_suggestions_panel"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_ai_suggestions_panel"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -74000,17 +74332,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_ai_suggestions_panel_dom_test",
-      "target": "components_ai_suggestions_panel_aisuggestionspanel"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
       "target": "components_ai_suggestions_panel_aisuggestionspanel"
     },
     {
@@ -75094,254 +75415,6 @@
       "weight": 1.0,
       "source": "components_resume_builder_form_resumebuilderform",
       "target": "hooks_use_resumes_useupdatebuilderdata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_resume_card_aierrorbanner"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_resume_card_formatdate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_resume_card_formatsize"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_resume_card_resumecard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "components_resume_card_resumecardprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "hooks_use_ai_resume_enhance"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "hooks_use_ai_resume_enhance_useairesumeenhance"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "hooks_use_ai_resume_enhance_useapplyaisuggestions"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "hooks_use_resumes"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "hooks_use_resumes_resumelistitem"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "schema_resume_ai_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "schema_resume_ai_schema_enhancementsresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "schema_resume_ai_schema_resumesuggestion"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "shared_confirm_action_button"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "shared_confirm_action_button_confirmactionbutton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "ui_button"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card",
-      "target": "ui_button_button"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-list.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_list",
-      "target": "components_resume_card"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L113",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card_resumecard",
-      "target": "components_resume_card_formatsize"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L113",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_card_resumecard",
-      "target": "components_resume_card_formatdate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L74",
-      "weight": 1.0,
-      "source": "components_resume_card_resumecard",
-      "target": "hooks_use_ai_resume_enhance_useairesumeenhance"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/user/components/resume-card.tsx",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "components_resume_card_resumecard",
-      "target": "hooks_use_ai_resume_enhance_useapplyaisuggestions"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/resume-list.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resume_list",
-      "target": "components_resume_card_resumecard"
     },
     {
       "relation": "contains",
@@ -84437,79 +84510,6 @@
       "confidence_score": 1.0,
       "source": "stores_use_thread_presence",
       "target": "stores_use_thread_presence_usethreadpresence"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "api_api_error"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "api_api_error_apierror"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "lib_ai_client_aiprovider"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "lib_ai_client_callai"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "lib_ai_client_provider_config"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/ai-client.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_ai_client",
-      "target": "lib_ai_client_providerconfig"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/mocks.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "test_mocks",
-      "target": "lib_ai_client"
     },
     {
       "relation": "contains",
@@ -104993,5 +104993,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6d8c1411a1690e9f29278b44de4b70c742777932"
+  "built_at_commit": "831914356e25b3d24e093c4a692640a22fe1edba"
 }
