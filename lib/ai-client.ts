@@ -41,7 +41,7 @@ const PROVIDER_CONFIG: Record<AIProvider, ProviderConfig> = {
     },
   },
   google: {
-    apiUrl: `https://generativelanguage.googleapis.com/v1beta/models/${process.env.GEMINI_MODEL || "gemini-2.5-flash"}:generateContent`,
+    apiUrl: `https://generativelanguage.googleapis.com/v1beta/models/${process.env.GEMINI_MODEL || "gemini-3.6-flash"}:generateContent`,
     authHeader: "x-goog-api-key",
     buildBody: (sys, user, maxTokens) => ({
       system_instruction: { parts: [{ text: sys }] },

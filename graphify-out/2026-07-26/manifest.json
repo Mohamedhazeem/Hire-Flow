@@ -905,8 +905,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-card.tsx": {
-    "mtime": 1784822762.5833344,
-    "ast_hash": "8197cd6d64b59aa61d2f1d61b498f16b",
+    "mtime": 1785042946.2183876,
+    "ast_hash": "33c60348f77bde308965e56bce6e467c",
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-detail-view.tsx": {
@@ -1675,8 +1675,8 @@
     "semantic_hash": ""
   },
   "components/shared/company-preview-card.tsx": {
-    "mtime": 1782875793.22058,
-    "ast_hash": "c94e3715e5b15e3fe0bf43f62540b33e",
+    "mtime": 1785043349.2100837,
+    "ast_hash": "b594de7222ee26c1432b18e4c959b0d6",
     "semantic_hash": ""
   },
   "components/shared/confirm-action-button.tsx": {
@@ -1870,8 +1870,8 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1784879084.2526577,
-    "ast_hash": "babbf9c7fa097045f2f5dffd8b16c2c9",
+    "mtime": 1785042499.2617927,
+    "ast_hash": "4b7e6c06249ef03d43df27b29245c55f",
     "semantic_hash": ""
   },
   "package.json": {
@@ -1895,8 +1895,8 @@
     "semantic_hash": ""
   },
   "prisma/seed.ts": {
-    "mtime": 1784863024.439735,
-    "ast_hash": "9181c32cb13d2294d44c5060a5a0f706",
+    "mtime": 1785042484.6734912,
+    "ast_hash": "94252051244aeeeeb680895a971b5d9a",
     "semantic_hash": ""
   },
   "proxy.ts": {
@@ -3330,8 +3330,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/compact-job-card.tsx": {
-    "mtime": 1784870588.6332214,
-    "ast_hash": "fcfb311a412a2dea9ff734a2b1137090",
+    "mtime": 1785042953.641626,
+    "ast_hash": "918becea10a43f3cfae53f7a7f9518d1",
     "semantic_hash": ""
   },
   "app/features/jobs/components/company-jobs-panel.tsx": {
