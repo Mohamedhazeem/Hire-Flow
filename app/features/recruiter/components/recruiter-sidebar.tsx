@@ -16,8 +16,8 @@ const recruiterLinks: SidebarLink[] = [
   { href: "/recruiter", label: "Dashboard", icon: LayoutDashboardIcon },
   { href: "/recruiter/company", label: "Company Profile", icon: Building2Icon },
   { href: "/recruiter/team", label: "Team Members", icon: UsersIcon },
-  { href: "/recruiter/jobs", label: "Jobs", icon: BriefcaseIcon },
   { href: "/recruiter/messages", label: "Messages", icon: MessageSquareTextIcon },
+  { href: "/recruiter/jobs", label: "Jobs", icon: BriefcaseIcon },
   { href: "/recruiter/analytics", label: "Analytics", icon: BarChart3Icon },
 ];
 

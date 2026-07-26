@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   LayoutDashboardIcon,
@@ -6,6 +6,7 @@ import {
   FileTextIcon,
   MessageSquareTextIcon,
   BookmarkIcon,
+  ScrollTextIcon,
 } from "lucide-react";
 import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
 import { useSession } from "@/app/features/auth/libs/auth-client";
@@ -15,6 +16,7 @@ const userLinks: SidebarLink[] = [
   { href: "/user", label: "Dashboard", icon: LayoutDashboardIcon },
   { href: "/user/profile", label: "Profile", icon: UserIcon },
   { href: "/user/applications", label: "Applications", icon: FileTextIcon },
+  { href: "/user/resumes", label: "Resumes", icon: ScrollTextIcon },
   { href: "/user/messages", label: "Messages", icon: MessageSquareTextIcon },
   { href: "/user/saved-jobs", label: "Saved Jobs", icon: BookmarkIcon },
 ];
