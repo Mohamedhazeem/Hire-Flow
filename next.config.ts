@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: process.env.NEXT_PUBLIC_BLOB_CDN_HOST || "public.blob.vercel-storage.com",
       },
+      {
+        protocol: "https",
+        hostname: "api.dicebear.com",
+      },
     ],
   },
 };

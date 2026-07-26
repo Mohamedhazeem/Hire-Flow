@@ -64,6 +64,19 @@ async function upsertCredentialAccount(userId: string, passwordHash: string) {
   });
 }
 
+function avatarUrl(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = (hash * 31 + name.charCodeAt(i)) | 0;
+  }
+  const seed = Math.abs(hash) % 1000 + 1;
+  return `https://i.pravatar.cc/150?u=${seed}`;
+}
+
+function companyLogoUrl(name: string): string {
+  return `https://api.dicebear.com/9.x/shapes/svg?seed=${encodeURIComponent(name)}`;
+}
+
 // ─── Seed data ────────────────────────────────────────────────────────────────
 
 const ADMIN = {
@@ -182,6 +195,7 @@ async function main() {
       email: ADMIN.email,
       emailVerified: true,
       role: "super_admin",
+      image: avatarUrl(ADMIN.name),
     },
   });
 
@@ -198,6 +212,7 @@ async function main() {
       email: ADMIN_USER.email,
       emailVerified: true,
       role: "admin",
+      image: avatarUrl(ADMIN_USER.name),
     },
   });
 
@@ -215,6 +230,7 @@ async function main() {
         email: rec.email,
         emailVerified: true,
         role: "recruiter",
+        image: avatarUrl(rec.name),
       },
     });
 
@@ -227,6 +243,7 @@ async function main() {
         id: `comp_${rec.id}`,
         recruiterId: rec.id,
         name: rec.company.name,
+        logoUrl: companyLogoUrl(rec.company.name),
         description: rec.company.description,
         industry: rec.company.industry,
         website: `https://www.${rec.company.name.toLowerCase().replace(/\s+/g, "")}.example.com`,
@@ -287,6 +304,7 @@ async function main() {
         email: usr.email,
         emailVerified: true,
         role: "user",
+        image: avatarUrl(usr.name),
       },
     });
 
