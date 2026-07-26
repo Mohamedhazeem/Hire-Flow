@@ -1815,8 +1815,8 @@
     "semantic_hash": ""
   },
   "lib/ai-client.ts": {
-    "mtime": 1785049071.618357,
-    "ast_hash": "a06c70bc249da194418d2d7d2c867561",
+    "mtime": 1785049593.601024,
+    "ast_hash": "a1cd7b0fd88e5b9b9e012c6ae6c34e55",
     "semantic_hash": ""
   },
   "lib/batch-helpers.ts": {
