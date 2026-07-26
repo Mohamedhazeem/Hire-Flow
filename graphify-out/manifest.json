@@ -1675,8 +1675,8 @@
     "semantic_hash": ""
   },
   "components/shared/company-preview-card.tsx": {
-    "mtime": 1782875793.22058,
-    "ast_hash": "c94e3715e5b15e3fe0bf43f62540b33e",
+    "mtime": 1785043349.2100837,
+    "ast_hash": "b594de7222ee26c1432b18e4c959b0d6",
     "semantic_hash": ""
   },
   "components/shared/confirm-action-button.tsx": {
