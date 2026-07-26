@@ -102,7 +102,15 @@ export function ResumeCard({ resume, onSetPrimary, onDelete, onDownload, onEdit 
   };
 
   const handleApply = (suggestion: ResumeSuggestion) => {
-    applyMutation.mutate({ suggestions: [suggestion] });
+    applyMutation.mutate(
+      { suggestions: [suggestion] },
+      {
+        onError: (error) => {
+          setAiError(error instanceof Error ? error.message : "Failed to apply suggestion");
+          applyMutation.reset();
+        },
+      },
+    );
   };
 
   return (
