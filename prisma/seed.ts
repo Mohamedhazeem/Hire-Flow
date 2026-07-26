@@ -74,7 +74,7 @@ function avatarUrl(name: string): string {
 }
 
 function companyLogoUrl(name: string): string {
-  return `https://api.dicebear.com/9.x/shapes/svg?seed=${encodeURIComponent(name)}`;
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1e88e5&color=fff&size=128`;
 }
 
 // ─── Seed data ────────────────────────────────────────────────────────────────

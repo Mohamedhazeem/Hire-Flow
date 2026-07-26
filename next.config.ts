@@ -25,11 +25,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: process.env.NEXT_PUBLIC_BLOB_CDN_HOST || "public.blob.vercel-storage.com",
+        hostname: "ui-avatars.com",
       },
       {
         protocol: "https",
-        hostname: "api.dicebear.com",
+        hostname: process.env.NEXT_PUBLIC_BLOB_CDN_HOST || "public.blob.vercel-storage.com",
       },
     ],
   },
