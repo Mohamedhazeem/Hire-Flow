@@ -91,9 +91,9 @@ export function JobCard({
             <Image
               src={companyLogo}
               alt=""
-              width={28}
-              height={28}
-              className="size-7 object-contain"
+              width={44}
+              height={44}
+              className="size-full rounded-lg object-cover border border-white/10"
             />
           ) : (
             (companyName[0]?.toUpperCase() ?? "?")

@@ -25,7 +25,7 @@ export function CompanyPreviewCard({
       <div className="flex items-start gap-4">
         <div className="size-12 sm:size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
           {logo ? (
-            <Image src={logo} alt={`${name} logo`} width={36} height={36} className="size-9 object-contain" />
+            <Image src={logo} alt={`${name} logo`} width={56} height={56} className="size-full rounded-xl object-cover border border-white/10" />
           ) : (
             initial
           )}

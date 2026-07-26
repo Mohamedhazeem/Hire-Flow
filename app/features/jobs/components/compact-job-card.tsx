@@ -22,9 +22,9 @@ export function CompactJobCard({ job }: { job: CompactJobRow }) {
           <Image
             src={job.companyLogo}
             alt={`${job.companyName} logo`}
-            width={28}
-            height={28}
-            className="size-7 object-contain"
+            width={40}
+            height={40}
+            className="size-full rounded-lg object-cover border border-white/10"
           />
         ) : (
           job.companyName.charAt(0).toUpperCase()
