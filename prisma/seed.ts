@@ -322,9 +322,13 @@ async function main() {
         location: "San Francisco, CA",
         workMode: "remote",
         basePay: 80_000,
-        socialLinks: {
-          linkedin: `https://linkedin.com/in/${usr.name.toLowerCase().replace(/\s+/g, "")}`,
-        },
+        socialLinks: [
+          {
+            platform: "linkedin",
+            url: `https://linkedin.com/in/${usr.name.toLowerCase().replace(/\s+/g, "")}`,
+            label: "",
+          },
+        ],
       },
     });
 

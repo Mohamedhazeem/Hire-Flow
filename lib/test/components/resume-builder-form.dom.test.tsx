@@ -1,5 +1,5 @@
 import { afterEach, describe, it, expect, vi } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 const mockPush = vi.fn();
@@ -82,6 +82,78 @@ describe("ResumeBuilderForm", () => {
 
     rerender(<ResumeBuilderForm resumeId="r-1" />);
     expect(screen.getByRole("button", { name: "Update Resume" })).toBeInTheDocument();
+  });
+
+  it("includes skills in saveResumeBuilder on submit", async () => {
+    const user = userEvent.setup();
+    render(<ResumeBuilderForm />);
+
+    // Fill required fields
+    await user.type(screen.getByLabelText(/Resume Label/), "My Resume");
+    await user.type(screen.getByLabelText("Professional Summary"), "A summary");
+
+    // Add a skill
+    const skillInput = screen.getByPlaceholderText("Search or type a skill...");
+    await user.type(skillInput, "React");
+    await user.click(screen.getByRole("option", { name: "React" }));
+
+    // Submit
+    await user.click(screen.getByRole("button", { name: "Save Resume" }));
+
+    await waitFor(() => {
+      expect(mockSaveResumeBuilder).toHaveBeenCalledTimes(1);
+    });
+
+    const callArg = mockSaveResumeBuilder.mock.calls[0][0];
+    expect(callArg).toHaveProperty("skills");
+    expect(callArg.skills).toContain("React");
+  });
+
+  it("includes multiple skills in saveResumeBuilder on submit", async () => {
+    const user = userEvent.setup();
+    render(<ResumeBuilderForm />);
+
+    await user.type(screen.getByLabelText(/Resume Label/), "My Resume");
+    await user.type(screen.getByLabelText("Professional Summary"), "A summary");
+
+    const skillInput = screen.getByPlaceholderText("Search or type a skill...");
+    await user.type(skillInput, "React");
+    await user.click(screen.getByRole("option", { name: "React" }));
+
+    await user.type(skillInput, "TypeScript");
+    await user.click(screen.getByRole("option", { name: "TypeScript" }));
+
+    await user.click(screen.getByRole("button", { name: "Save Resume" }));
+
+    await waitFor(() => {
+      expect(mockSaveResumeBuilder).toHaveBeenCalledTimes(1);
+    });
+
+    const callArg = mockSaveResumeBuilder.mock.calls[0][0];
+    expect(callArg.skills).toContain("React");
+    expect(callArg.skills).toContain("TypeScript");
+  });
+
+  it("includes skills in updateBuilderData on edit submit", async () => {
+    const user = userEvent.setup();
+    render(<ResumeBuilderForm resumeId="r-1" />);
+
+    await user.type(screen.getByLabelText(/Resume Label/), "My Resume");
+
+    const skillInput = screen.getByPlaceholderText("Search or type a skill...");
+    await user.type(skillInput, "React");
+    await user.click(screen.getByRole("option", { name: "React" }));
+
+    await user.click(screen.getByRole("button", { name: "Update Resume" }));
+
+    await waitFor(() => {
+      expect(mockMutateAsync).toHaveBeenCalledTimes(1);
+    });
+
+    const callArg = mockMutateAsync.mock.calls[0][0];
+    expect(callArg).toHaveProperty("data");
+    expect(callArg.data).toHaveProperty("skills");
+    expect(callArg.data.skills).toContain("React");
   });
 
   it("navigates away when Cancel is clicked", async () => {

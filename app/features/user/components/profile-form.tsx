@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProfileSchema, type ProfileInput } from "@/app/features/user/schema/profile.schema";
@@ -34,6 +34,12 @@ type Props = {
 export function ProfileForm({ defaultValues }: Props) {
   const [serverError, setServerError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (!success) return;
+    const timer = setTimeout(() => setSuccess(false), 3000);
+    return () => clearTimeout(timer);
+  }, [success]);
 
   const form = useForm<ProfileInput>({
     resolver: zodResolver(ProfileSchema),

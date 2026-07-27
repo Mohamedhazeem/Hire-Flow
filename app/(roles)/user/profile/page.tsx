@@ -30,6 +30,21 @@ export default async function ProfilePage() {
     },
   });
 
+  type SocialLink = NonNullable<ProfileInput["socialLinks"]>[number];
+
+  const normalizeSocialLinks = (raw: unknown): ProfileInput["socialLinks"] => {
+    if (!raw) return [];
+    if (Array.isArray(raw)) return raw as ProfileInput["socialLinks"];
+    if (typeof raw === "object") {
+      return Object.entries(raw).map(([platform, url]) => ({
+        platform: platform as SocialLink["platform"],
+        url: String(url),
+        label: "",
+      }));
+    }
+    return [];
+  };
+
   const defaultValues: ProfileInput | undefined = profile
     ? {
         headline: profile.headline ?? "",
@@ -41,7 +56,7 @@ export default async function ProfilePage() {
         ctc: profile.ctc ?? null,
         ectc: profile.ectc ?? null,
         experiences: (profile.experiences ?? []) as ProfileInput["experiences"],
-        socialLinks: (profile.socialLinks ?? []) as ProfileInput["socialLinks"],
+        socialLinks: normalizeSocialLinks(profile.socialLinks),
       }
     : undefined;
 

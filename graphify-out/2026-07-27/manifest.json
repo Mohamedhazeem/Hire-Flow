@@ -1205,8 +1205,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-form.tsx": {
-    "mtime": 1784789049.9648552,
-    "ast_hash": "90818bfc857937d4bd8195b373fa5807",
+    "mtime": 1785165683.550357,
+    "ast_hash": "b96caae997c56e951cdccf7ede2cf5a9",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/per-job-analytics-page.tsx": {
@@ -1440,18 +1440,18 @@
     "semantic_hash": ""
   },
   "app/features/user/components/profile-form.tsx": {
-    "mtime": 1784789049.983535,
-    "ast_hash": "208319a1de6bcf3309fec64eba207144",
+    "mtime": 1785163485.3643587,
+    "ast_hash": "51deb943d033010cb4cd059be1fa06be",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-builder-form.tsx": {
-    "mtime": 1782796993.8591666,
-    "ast_hash": "b222a5ff2cf41804b209cf91b87bef0c",
+    "mtime": 1785163469.7948089,
+    "ast_hash": "e141b5a6172cc726b49147e6c30da2b8",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-card.tsx": {
-    "mtime": 1785161552.915117,
-    "ast_hash": "7f172e3f280fcc691d3d4cb66baceb69",
+    "mtime": 1785162235.7460709,
+    "ast_hash": "6e7e440f41ec74a4ab76887fc616997c",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-list.tsx": {
@@ -1870,8 +1870,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784879123.4726815,
-    "ast_hash": "aeb04f5fcbb8154948e16ab5f44848c3",
+    "mtime": 1785163196.8560538,
+    "ast_hash": "c6b1ad640a711de0e852c1f4808f4ae1",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -2160,8 +2160,8 @@
     "semantic_hash": ""
   },
   "docs/implementation/implementation-tasks.md": {
-    "mtime": 1782978657.8281431,
-    "ast_hash": "298f502b6487064c938808306f320c74",
+    "mtime": 1785166378.274089,
+    "ast_hash": "8ce49cb76f33d048a7ddca4e82fb3cb4",
     "semantic_hash": ""
   },
   "docs/specs/hire-flow-requirements.md": {
@@ -2700,8 +2700,8 @@
     "semantic_hash": ""
   },
   "lib/test/vitest.setup.ts": {
-    "mtime": 1784789051.0791063,
-    "ast_hash": "854ff760bf82f78cfda63e503734a070",
+    "mtime": 1785165911.917525,
+    "ast_hash": "06ff5adec15f9388edb90e84f204fc17",
     "semantic_hash": ""
   },
   "vitest.config.ts": {
@@ -3250,8 +3250,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/resume-builder-form.dom.test.tsx": {
-    "mtime": 1784789050.7438297,
-    "ast_hash": "7d446467c29b6a866f79e6d93ee7c8fd",
+    "mtime": 1785166854.4839203,
+    "ast_hash": "76acf8e3282f73886e09181a7f93951a",
     "semantic_hash": ""
   },
   "lib/test/components/shared-thread-view.dom.test.tsx": {
@@ -3445,8 +3445,38 @@
     "semantic_hash": ""
   },
   "plans/1785126715092-performance-optimization-plan.md": {
-    "mtime": 1785132262.1337419,
-    "ast_hash": "19fcf545fc65f0c027587d5c4fcb891b",
+    "mtime": 1785164596.9659603,
+    "ast_hash": "6461474271388255c0d1b9afa9f9d90a",
+    "semantic_hash": ""
+  },
+  "components/ui/autocomplete-input.tsx": {
+    "mtime": 1785165623.6442816,
+    "ast_hash": "032c482b50763792629cbda814c83d58",
+    "semantic_hash": ""
+  },
+  "components/ui/skill-input.tsx": {
+    "mtime": 1785165630.165629,
+    "ast_hash": "7888006c7adb8409c6c5082129b94ce7",
+    "semantic_hash": ""
+  },
+  "data/locations-database.ts": {
+    "mtime": 1785165644.36771,
+    "ast_hash": "68d28e97164b1449d9a3cd77c8ed3225",
+    "semantic_hash": ""
+  },
+  "data/skills-database.ts": {
+    "mtime": 1785163980.0680597,
+    "ast_hash": "de84c6eccd22545d6f8937fb836da6fe",
+    "semantic_hash": ""
+  },
+  "data/tags-database.ts": {
+    "mtime": 1785165636.8176315,
+    "ast_hash": "dd248b745bf79844ef7b51fd1a9860d9",
+    "semantic_hash": ""
+  },
+  "lib/test/components/profile-form.dom.test.tsx": {
+    "mtime": 1785166800.2446606,
+    "ast_hash": "6b811d0ebd133b088d12b02b1956a414",
     "semantic_hash": ""
   }
 }
