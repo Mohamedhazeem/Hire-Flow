@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/ai-enhance/route.ts": {
-    "mtime": 1784789049.91807,
-    "ast_hash": "7422baeb4801e6bda00b39ac48a97f9e",
+    "mtime": 1785052458.421072,
+    "ast_hash": "1a6eb1e538e35919937f8ffcc384aaf7",
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/builder-data/route.ts": {
@@ -950,8 +950,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1784876697.0133696,
-    "ast_hash": "d0bff7ffd2145642b3ac9d4740e327b8",
+    "mtime": 1785120281.9137166,
+    "ast_hash": "46f02d6eb024160d58d1b0d2219c6ed5",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
@@ -1375,8 +1375,8 @@
     "semantic_hash": ""
   },
   "app/features/user/actions/apply-ai-suggestions.ts": {
-    "mtime": 1783572105.921104,
-    "ast_hash": "71ce342ce0f8748313d19857c60abd45",
+    "mtime": 1785120324.7565382,
+    "ast_hash": "8326da73c96833fecc8ea24c07d0d489",
     "semantic_hash": ""
   },
   "app/features/user/actions/save-resume-builder.ts": {
@@ -1395,8 +1395,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/ai-suggestions-panel.tsx": {
-    "mtime": 1785050678.9852076,
-    "ast_hash": "f5c28284441498eeb6137433f7ed3f93",
+    "mtime": 1785121205.337576,
+    "ast_hash": "a736fe4b7988fcd17f94c928602e9aaa",
     "semantic_hash": ""
   },
   "app/features/user/components/application-actions.tsx": {
@@ -1455,8 +1455,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/resume-card.tsx": {
-    "mtime": 1785049261.9338355,
-    "ast_hash": "e7243dc4aa94f08769570fe679812299",
+    "mtime": 1785121153.7825792,
+    "ast_hash": "cfc60e955eaff4fa79fcd2bfe3354dc4",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-list.tsx": {
@@ -1540,8 +1540,8 @@
     "semantic_hash": ""
   },
   "app/features/user/schema/resume-ai.schema.ts": {
-    "mtime": 1782798021.129503,
-    "ast_hash": "d316e96bd797c05a897b4c0dab1ca535",
+    "mtime": 1785052441.0892746,
+    "ast_hash": "2492dfe940f1fae7483417c313f898cb",
     "semantic_hash": ""
   },
   "app/features/user/schema/resume.schema.ts": {
@@ -2042,11 +2042,6 @@
   ".kilo/plans/online-presence-plan.md": {
     "mtime": 1782534572.6654608,
     "ast_hash": "aca5acf9dfc187e1de451131fa4ab668",
-    "semantic_hash": ""
-  },
-  ".kilo/plans/phase-3-schema-migration.md": {
-    "mtime": 1782747981.652296,
-    "ast_hash": "15340bc18677605347b035b2781a8be8",
     "semantic_hash": ""
   },
   ".kilo/plans/realtime-admin-messaging.md": {
@@ -3140,8 +3135,8 @@
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts": {
-    "mtime": 1784789049.917083,
-    "ast_hash": "172fc8aa3f58e92b4cd81ae168c1e02a",
+    "mtime": 1785052565.0691257,
+    "ast_hash": "5f2d9d77403e9a1b5f1447bbc8d943ef",
     "semantic_hash": ""
   },
   "app/features/jobs/queries/public-job-queries.perf.test.ts": {
@@ -3225,8 +3220,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/ai-suggestions-panel.dom.test.tsx": {
-    "mtime": 1784789050.7047555,
-    "ast_hash": "032da4b63220cc6cf19d87b6df420bb9",
+    "mtime": 1785121234.4015918,
+    "ast_hash": "f93b48789a13ab09ec83cc46e086ed6b",
     "semantic_hash": ""
   },
   "lib/test/components/applicants-table.dom.test.tsx": {
@@ -3442,6 +3437,16 @@
   "lib/test/plan-message-badge.md": {
     "mtime": 1784905611.007825,
     "ast_hash": "ac64479a3b067925a283ee06fea2475e",
+    "semantic_hash": ""
+  },
+  "app/features/user/hooks/use-ai-suggestions-cache.ts": {
+    "mtime": 1785052961.39523,
+    "ast_hash": "8a66ce1b6c9d3b4445749e75218198ff",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/ai-suggestions-enhancements.md": {
+    "mtime": 1785121737.2645273,
+    "ast_hash": "3722ee279f6ec40b4feb66127e833b02",
     "semantic_hash": ""
   }
 }
