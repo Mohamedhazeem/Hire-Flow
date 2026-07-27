@@ -1570,7 +1570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "new_page",
-      "community": 102,
+      "community": 65,
       "norm_label": "page.tsx"
     },
     {
@@ -1580,7 +1580,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "new_page_metadata",
-      "community": 102,
+      "community": 65,
       "norm_label": "metadata"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "new_page_createjobpage",
-      "community": 102,
+      "community": 65,
       "norm_label": "createjobpage()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route",
-      "community": 202,
+      "community": 222,
       "norm_label": "route.ts"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route_handleget",
-      "community": 202,
+      "community": 222,
       "norm_label": "handleget()"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route_get",
-      "community": 202,
+      "community": 222,
       "norm_label": "get"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "auth_route",
-      "community": 103,
+      "community": 149,
       "norm_label": "route.ts"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "auth_route_post",
-      "community": 103,
+      "community": 149,
       "norm_label": "post()"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route",
-      "community": 241,
+      "community": 195,
       "norm_label": "route.ts"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "community": 241,
+      "community": 195,
       "norm_label": "handleget()"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_get",
-      "community": 241,
+      "community": 195,
       "norm_label": "get"
     },
     {
@@ -3910,7 +3910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route",
-      "community": 222,
+      "community": 195,
       "norm_label": "route.ts"
     },
     {
@@ -3920,7 +3920,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route_get",
-      "community": 222,
+      "community": 195,
       "norm_label": "get()"
     },
     {
@@ -4100,7 +4100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route",
-      "community": 30,
+      "community": 202,
       "norm_label": "route.ts"
     },
     {
@@ -4110,7 +4110,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route_handleget",
-      "community": 30,
+      "community": 202,
       "norm_label": "handleget()"
     },
     {
@@ -4120,7 +4120,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route_get",
-      "community": 30,
+      "community": 202,
       "norm_label": "get"
     },
     {
@@ -4720,7 +4720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_job_table_actions_cell",
-      "community": 18,
+      "community": 58,
       "norm_label": "job-table-actions-cell.tsx"
     },
     {
@@ -4730,7 +4730,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_job_table_actions_cell_jobtableactionscellprops",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactionscellprops"
     },
     {
@@ -4740,7 +4740,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_job_table_actions_cell_jobtableactionscell",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactionscell()"
     },
     {
@@ -4750,7 +4750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_job_table_columns",
-      "community": 18,
+      "community": 58,
       "norm_label": "job-table-columns.tsx"
     },
     {
@@ -4760,7 +4760,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_job_table_columns_jobtableactions",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactions"
     },
     {
@@ -5580,7 +5580,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "queries_job_queries_adminjobrow",
-      "community": 18,
+      "community": 58,
       "norm_label": "adminjobrow"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_unread_message_count",
-      "community": 229,
+      "community": 70,
       "norm_label": "use-unread-message-count.ts"
     },
     {
@@ -10210,7 +10210,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_recruiter_job_columns_createrecruiterjobcolumns",
-      "community": 58,
+      "community": 102,
       "norm_label": "createrecruiterjobcolumns()"
     },
     {
@@ -10220,7 +10220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table",
-      "community": 58,
+      "community": 102,
       "norm_label": "recruiter-jobs-table.tsx"
     },
     {
@@ -10230,7 +10230,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_work_mode_labels",
-      "community": 58,
+      "community": 102,
       "norm_label": "work_mode_labels"
     },
     {
@@ -10240,7 +10240,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_employment_type_labels",
-      "community": 58,
+      "community": 102,
       "norm_label": "employment_type_labels"
     },
     {
@@ -10250,7 +10250,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_recruiterjobstable",
-      "community": 58,
+      "community": 102,
       "norm_label": "recruiterjobstable()"
     },
     {
@@ -10720,7 +10720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs",
-      "community": 58,
+      "community": 102,
       "norm_label": "use-recruiter-jobs.ts"
     },
     {
@@ -10730,7 +10730,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_userecruiterjobs",
-      "community": 58,
+      "community": 102,
       "norm_label": "userecruiterjobs()"
     },
     {
@@ -10760,7 +10760,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_usedeletejob",
-      "community": 58,
+      "community": 102,
       "norm_label": "usedeletejob()"
     },
     {
@@ -10770,7 +10770,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_usetogglejobstatus",
-      "community": 58,
+      "community": 102,
       "norm_label": "usetogglejobstatus()"
     },
     {
@@ -11190,7 +11190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "community": 241,
+      "community": 195,
       "norm_label": "invite-queries.ts"
     },
     {
@@ -11200,7 +11200,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinviterow",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterinviterow"
     },
     {
@@ -11210,7 +11210,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterteammemberrow",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterteammemberrow"
     },
     {
@@ -11220,7 +11220,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinvitelistresponse",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterinvitelistresponse"
     },
     {
@@ -11230,7 +11230,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "queries_invite_queries_listrecruiterinvites",
-      "community": 241,
+      "community": 195,
       "norm_label": "listrecruiterinvites()"
     },
     {
@@ -11700,7 +11700,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "schema_job_schema_joblistparams",
-      "community": 58,
+      "community": 102,
       "norm_label": "joblistparams"
     },
     {
@@ -12980,7 +12980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_user_thread_view",
-      "community": 23,
+      "community": 103,
       "norm_label": "user-thread-view.tsx"
     },
     {
@@ -12990,7 +12990,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_user_thread_view_props",
-      "community": 23,
+      "community": 103,
       "norm_label": "props"
     },
     {
@@ -13000,7 +13000,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_user_thread_view_hooks",
-      "community": 23,
+      "community": 103,
       "norm_label": "hooks"
     },
     {
@@ -13010,7 +13010,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_user_thread_view_config",
-      "community": 23,
+      "community": 103,
       "norm_label": "config"
     },
     {
@@ -13050,7 +13050,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "messages_use_user_messages_usesendusermessage",
-      "community": 23,
+      "community": 103,
       "norm_label": "usesendusermessage"
     },
     {
@@ -13060,7 +13060,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "messages_use_user_messages_usedeleteusermessage",
-      "community": 23,
+      "community": 103,
       "norm_label": "usedeleteusermessage"
     },
     {
@@ -13070,7 +13070,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "messages_use_user_messages_usedeleteuserthread",
-      "community": 23,
+      "community": 103,
       "norm_label": "usedeleteuserthread"
     },
     {
@@ -13410,7 +13410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_profile_queries",
-      "community": 222,
+      "community": 195,
       "norm_label": "profile-queries.ts"
     },
     {
@@ -13420,7 +13420,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_profile_queries_profileoutput",
-      "community": 222,
+      "community": 195,
       "norm_label": "profileoutput"
     },
     {
@@ -13430,7 +13430,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "queries_profile_queries_getuserprofile",
-      "community": 222,
+      "community": 195,
       "norm_label": "getuserprofile()"
     },
     {
@@ -13900,7 +13900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_sitemap",
-      "community": 22,
+      "community": 195,
       "norm_label": "sitemap.ts"
     },
     {
@@ -13910,7 +13910,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "app_sitemap_sitemap",
-      "community": 22,
+      "community": 195,
       "norm_label": "sitemap()"
     },
     {
@@ -14360,7 +14360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "chat_messages_page_layout",
-      "community": 229,
+      "community": 70,
       "norm_label": "messages-page-layout.tsx"
     },
     {
@@ -14370,7 +14370,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "chat_messages_page_layout_messagespageconfig",
-      "community": 148,
+      "community": 211,
       "norm_label": "messagespageconfig"
     },
     {
@@ -14380,7 +14380,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "chat_messages_page_layout_props",
-      "community": 229,
+      "community": 70,
       "norm_label": "props"
     },
     {
@@ -14390,7 +14390,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "chat_messages_page_layout_threadlistskeleton",
-      "community": 229,
+      "community": 70,
       "norm_label": "threadlistskeleton()"
     },
     {
@@ -14400,7 +14400,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "chat_messages_page_layout_threadlistpanel",
-      "community": 229,
+      "community": 70,
       "norm_label": "threadlistpanel()"
     },
     {
@@ -14410,7 +14410,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "chat_messages_page_layout_messagespagelayout",
-      "community": 229,
+      "community": 70,
       "norm_label": "messagespagelayout()"
     },
     {
@@ -17840,7 +17840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stores_presence_store",
-      "community": 229,
+      "community": 70,
       "norm_label": "presence-store.ts"
     },
     {
@@ -17850,7 +17850,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "stores_presence_store_presencestate",
-      "community": 229,
+      "community": 70,
       "norm_label": "presencestate"
     },
     {
@@ -17860,7 +17860,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "stores_presence_store_usepresencestore",
-      "community": 229,
+      "community": 70,
       "norm_label": "usepresencestore"
     },
     {
@@ -17870,7 +17870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stores_use_thread_presence",
-      "community": 229,
+      "community": 70,
       "norm_label": "use-thread-presence.ts"
     },
     {
@@ -17880,7 +17880,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "stores_use_thread_presence_useownpresence",
-      "community": 229,
+      "community": 70,
       "norm_label": "useownpresence()"
     },
     {
@@ -17890,7 +17890,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "stores_use_thread_presence_usethreadpresence",
-      "community": 229,
+      "community": 70,
       "norm_label": "usethreadpresence()"
     },
     {
@@ -18650,7 +18650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_prisma",
-      "community": 22,
+      "community": 195,
       "norm_label": "prisma.ts"
     },
     {
@@ -18660,7 +18660,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "lib_prisma_globalforprisma",
-      "community": 22,
+      "community": 195,
       "norm_label": "globalforprisma"
     },
     {
@@ -18670,7 +18670,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_prisma_pool",
-      "community": 22,
+      "community": 195,
       "norm_label": "pool"
     },
     {
@@ -18680,7 +18680,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_prisma_adapter",
-      "community": 22,
+      "community": 195,
       "norm_label": "adapter"
     },
     {
@@ -18690,7 +18690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pusher_pusher_client",
-      "community": 229,
+      "community": 70,
       "norm_label": "pusher-client.ts"
     },
     {
@@ -18700,7 +18700,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "pusher_pusher_client_getpusherconfig",
-      "community": 229,
+      "community": 70,
       "norm_label": "getpusherconfig()"
     },
     {
@@ -18710,7 +18710,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "pusher_pusher_client_getpusherclient",
-      "community": 229,
+      "community": 70,
       "norm_label": "getpusherclient()"
     },
     {
@@ -21470,7 +21470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "unit_thread_utils_test",
-      "community": 103,
+      "community": 149,
       "norm_label": "thread-utils.test.ts"
     },
     {
@@ -21560,7 +21560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_thread_utils",
-      "community": 103,
+      "community": 149,
       "norm_label": "thread-utils.ts"
     },
     {
@@ -21570,7 +21570,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "lib_thread_utils_computethreadid",
-      "community": 103,
+      "community": 149,
       "norm_label": "computethreadid()"
     },
     {
@@ -21580,7 +21580,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "lib_thread_utils_getotheruserid",
-      "community": 103,
+      "community": 149,
       "norm_label": "getotheruserid()"
     },
     {
@@ -21590,7 +21590,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "lib_thread_utils_participatesinthread",
-      "community": 103,
+      "community": 149,
       "norm_label": "participatesinthread()"
     },
     {
@@ -21600,7 +21600,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "lib_thread_utils_parsethreadparticipants",
-      "community": 103,
+      "community": 149,
       "norm_label": "parsethreadparticipants()"
     },
     {
@@ -35537,9 +35537,9 @@
       "label": "Edge Cases",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L475",
+      "source_location": "L473",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_475",
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_473",
       "community": 223,
       "norm_label": "edge cases"
     },
@@ -35547,7 +35547,7 @@
       "label": "Space Complexity Note",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L484",
+      "source_location": "L482",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_space_complexity_note",
       "community": 223,
@@ -35557,9 +35557,9 @@
       "label": "Validation",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L487",
+      "source_location": "L485",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_validation_487",
+      "id": "plans_1785126715092_performance_optimization_plan_validation_485",
       "community": 223,
       "norm_label": "validation"
     },
@@ -35567,7 +35567,7 @@
       "label": "Phase 3: Validate and Extend Streaming CSV Export (Week 2-3)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L498",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
       "community": 233,
@@ -35577,7 +35577,7 @@
       "label": "Current State",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L502",
+      "source_location": "L500",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_current_state",
       "community": 233,
@@ -35587,7 +35587,7 @@
       "label": "Remaining Gaps to Address",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L513",
+      "source_location": "L511",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_remaining_gaps_to_address",
       "community": 233,
@@ -35597,9 +35597,9 @@
       "label": "Edge Cases",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L533",
+      "source_location": "L531",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_533",
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_531",
       "community": 233,
       "norm_label": "edge cases"
     },
@@ -35607,9 +35607,9 @@
       "label": "Validation",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L540",
+      "source_location": "L538",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_validation_540",
+      "id": "plans_1785126715092_performance_optimization_plan_validation_538",
       "community": 233,
       "norm_label": "validation"
     },
@@ -35617,7 +35617,7 @@
       "label": "Phase 4: AI Resume Enhancement \u2014 Resilience & Memory Hardening (Week 3-4)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L548",
+      "source_location": "L546",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
       "community": 218,
@@ -35627,9 +35627,9 @@
       "label": "Current State",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L552",
+      "source_location": "L550",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_current_state_552",
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_550",
       "community": 218,
       "norm_label": "current state"
     },
@@ -35637,7 +35637,7 @@
       "label": "Problems to Solve",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L555",
+      "source_location": "L553",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_problems_to_solve",
       "community": 218,
@@ -35647,7 +35647,7 @@
       "label": "Target Design",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L560",
+      "source_location": "L558",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_target_design",
       "community": 218,
@@ -35657,9 +35657,9 @@
       "label": "Tasks",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L565",
+      "source_location": "L563",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_tasks_565",
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_563",
       "community": 218,
       "norm_label": "tasks"
     },
@@ -35667,9 +35667,9 @@
       "label": "Edge Cases",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L645",
+      "source_location": "L643",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_645",
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_643",
       "community": 218,
       "norm_label": "edge cases"
     },
@@ -35677,7 +35677,7 @@
       "label": "Space Complexity",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L651",
+      "source_location": "L649",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_space_complexity",
       "community": 218,
@@ -35687,9 +35687,9 @@
       "label": "Validation",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L654",
+      "source_location": "L652",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_validation_654",
+      "id": "plans_1785126715092_performance_optimization_plan_validation_652",
       "community": 218,
       "norm_label": "validation"
     },
@@ -35697,7 +35697,7 @@
       "label": "Phase 5: Cursor-based Pagination (Week 4)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L662",
+      "source_location": "L660",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
       "community": 237,
@@ -35707,9 +35707,9 @@
       "label": "Current State",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L666",
+      "source_location": "L664",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_current_state_666",
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_664",
       "community": 237,
       "norm_label": "current state"
     },
@@ -35717,9 +35717,9 @@
       "label": "Tasks",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L673",
+      "source_location": "L671",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_tasks_673",
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_671",
       "community": 237,
       "norm_label": "tasks"
     },
@@ -35727,9 +35727,9 @@
       "label": "Edge Cases",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L739",
+      "source_location": "L737",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_739",
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_737",
       "community": 237,
       "norm_label": "edge cases"
     },
@@ -35737,9 +35737,9 @@
       "label": "Validation",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L747",
+      "source_location": "L745",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_validation_747",
+      "id": "plans_1785126715092_performance_optimization_plan_validation_745",
       "community": 237,
       "norm_label": "validation"
     },
@@ -35747,7 +35747,7 @@
       "label": "Phase 6: Cache-Control Headers on Public Routes (Cross-cutting, Week 4-5)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L757",
+      "source_location": "L755",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
       "community": 225,
@@ -35757,9 +35757,9 @@
       "label": "Current State",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L761",
+      "source_location": "L759",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_current_state_761",
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_759",
       "community": 225,
       "norm_label": "current state"
     },
@@ -35767,7 +35767,7 @@
       "label": "Feasibility Check",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L766",
+      "source_location": "L764",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_feasibility_check",
       "community": 225,
@@ -35777,9 +35777,9 @@
       "label": "Tasks",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L769",
+      "source_location": "L767",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_tasks_769",
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_767",
       "community": 225,
       "norm_label": "tasks"
     },
@@ -35787,9 +35787,9 @@
       "label": "Edge Cases",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L797",
+      "source_location": "L795",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_797",
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_795",
       "community": 225,
       "norm_label": "edge cases"
     },
@@ -35797,9 +35797,9 @@
       "label": "Validation",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L803",
+      "source_location": "L801",
       "_origin": "ast",
-      "id": "plans_1785126715092_performance_optimization_plan_validation_803",
+      "id": "plans_1785126715092_performance_optimization_plan_validation_801",
       "community": 225,
       "norm_label": "validation"
     },
@@ -35807,7 +35807,7 @@
       "label": "Cross-Cutting Concerns",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L814",
+      "source_location": "L812",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
       "community": 239,
@@ -35817,7 +35817,7 @@
       "label": "Testing Strategy",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L816",
+      "source_location": "L814",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_testing_strategy",
       "community": 239,
@@ -35827,7 +35827,7 @@
       "label": "Existing Perf Tests to leverage",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L825",
+      "source_location": "L823",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_existing_perf_tests_to_leverage",
       "community": 239,
@@ -35837,7 +35837,7 @@
       "label": "Open Questions",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L832",
+      "source_location": "L830",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_open_questions",
       "community": 239,
@@ -35847,7 +35847,7 @@
       "label": "Rollback Plan",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L848",
+      "source_location": "L846",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_rollback_plan",
       "community": 227,
@@ -35857,7 +35857,7 @@
       "label": "Execution Order",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L864",
+      "source_location": "L862",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_execution_order",
       "community": 227,
@@ -35867,7 +35867,7 @@
       "label": "Refinements Applied (2026-07-27 \u2014 Final Round)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L878",
+      "source_location": "L876",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
       "community": 232,
@@ -35877,7 +35877,7 @@
       "label": "Critical Fixes",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L882",
+      "source_location": "L880",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_critical_fixes",
       "community": 232,
@@ -35887,7 +35887,7 @@
       "label": "Moderate Fixes",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L889",
+      "source_location": "L887",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_moderate_fixes",
       "community": 232,
@@ -35897,7 +35897,7 @@
       "label": "Score Breakdown",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L900",
+      "source_location": "L896",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_score_breakdown",
       "community": 232,
@@ -35907,7 +35907,7 @@
       "label": "Remaining Items (acceptable for \u226590)",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L913",
+      "source_location": "L909",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90",
       "community": 232,
@@ -35917,7 +35917,7 @@
       "label": "Sign-Off Criteria",
       "file_type": "document",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L920",
+      "source_location": "L916",
       "_origin": "ast",
       "id": "plans_1785126715092_performance_optimization_plan_sign_off_criteria",
       "community": 227,
@@ -75699,9 +75699,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form"
+      "target": "components_profile_form",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -75710,9 +75710,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_profileform"
+      "target": "components_profile_form_profileform",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -82553,9 +82553,9 @@
       "source_file": "components/ui/autocomplete-input.tsx",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_autocomplete_input",
-      "target": "lib_utils"
+      "target": "lib_utils",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -82595,9 +82595,9 @@
       "source_file": "components/ui/autocomplete-input.tsx",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_autocomplete_input",
-      "target": "ui_badge"
+      "target": "ui_badge",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -87743,9 +87743,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "lib_prisma"
+      "target": "lib_prisma",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -87831,9 +87831,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "lib_prisma"
+      "target": "lib_prisma",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -89041,9 +89041,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_auth_fixtures"
+      "target": "test_auth_fixtures",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -89052,9 +89052,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_auth_fixtures"
+      "target": "test_auth_fixtures",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -89324,9 +89324,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_auth_fixtures_mocksession"
+      "target": "test_auth_fixtures_mocksession",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -89335,9 +89335,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_auth_fixtures_mocksession"
+      "target": "test_auth_fixtures_mocksession",
+      "confidence_score": 1.0
     },
     {
       "relation": "re_exports",
@@ -89738,9 +89738,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockpush"
+      "target": "components_profile_form_dom_test_mockpush",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -89748,9 +89748,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockupsertprofile"
+      "target": "components_profile_form_dom_test_mockupsertprofile",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -91286,9 +91286,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "factories_user_factory_createtestuser"
+      "target": "factories_user_factory_createtestuser",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -91297,9 +91297,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "factories_user_factory_createtestuser"
+      "target": "factories_user_factory_createtestuser",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -91571,9 +91571,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_index"
+      "target": "test_index",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -91582,9 +91582,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_index"
+      "target": "test_index",
+      "confidence_score": 1.0
     },
     {
       "relation": "re_exports",
@@ -92558,9 +92558,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_reset_db_resetdb"
+      "target": "test_reset_db_resetdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -92569,9 +92569,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_shared_auth_mock"
+      "target": "test_shared_auth_mock",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92580,9 +92580,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_shared_auth_mock_mockgetsession"
+      "target": "test_shared_auth_mock_mockgetsession",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92591,9 +92591,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_reset_db_resetdb"
+      "target": "test_reset_db_resetdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -92602,9 +92602,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_shared_auth_mock"
+      "target": "test_shared_auth_mock",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92613,9 +92613,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_shared_auth_mock_mockgetsession"
+      "target": "test_shared_auth_mock_mockgetsession",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106537,9 +106537,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106547,9 +106547,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L197",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106557,9 +106557,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L218",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106627,9 +106627,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L876",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round"
+      "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106657,9 +106657,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_finding"
+      "target": "plans_1785126715092_performance_optimization_plan_finding",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106667,9 +106667,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106677,9 +106677,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L28",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_validation"
+      "target": "plans_1785126715092_performance_optimization_plan_validation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106727,9 +106727,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L41",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_41"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_41",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106737,9 +106737,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L185",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_185"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_185",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106747,9 +106747,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L201",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_201"
+      "target": "plans_1785126715092_performance_optimization_plan_finding_201",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106757,9 +106757,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L206",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_206"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_206",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106767,9 +106767,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L211",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_211"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_211",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106777,9 +106777,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L253",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks"
+      "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106787,9 +106787,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L222",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_222"
+      "target": "plans_1785126715092_performance_optimization_plan_finding_222",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106797,9 +106797,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L225",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_225"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_225",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106807,9 +106807,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L258",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_258"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_258",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106825,10 +106825,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L475",
+      "source_location": "L473",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_475",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_473",
       "confidence_score": 1.0
     },
     {
@@ -106837,9 +106837,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L482",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note"
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106857,18 +106857,18 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L282",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_282"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_282",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L487",
+      "source_location": "L485",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_487",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_485",
       "confidence_score": 1.0
     },
     {
@@ -106885,10 +106885,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L533",
+      "source_location": "L531",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_533",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_531",
       "confidence_score": 1.0
     },
     {
@@ -106905,30 +106905,30 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L540",
+      "source_location": "L538",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_540",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_538",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L552",
+      "source_location": "L550",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_552",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_550",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L645",
+      "source_location": "L643",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_645",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_643",
       "confidence_score": 1.0
     },
     {
@@ -106947,9 +106947,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L649",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_space_complexity"
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106965,80 +106965,80 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L565",
+      "source_location": "L563",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_565",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_563",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L654",
+      "source_location": "L652",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_654",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_652",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L666",
+      "source_location": "L664",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_666",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_664",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L739",
+      "source_location": "L737",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_739",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_737",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L673",
+      "source_location": "L671",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_673",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_671",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L747",
+      "source_location": "L745",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_747",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_745",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L761",
+      "source_location": "L759",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_761",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_759",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L797",
+      "source_location": "L795",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_797",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_795",
       "confidence_score": 1.0
     },
     {
@@ -107055,20 +107055,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L769",
+      "source_location": "L767",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_769",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_767",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
-      "source_location": "L803",
+      "source_location": "L801",
       "weight": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_803",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_801",
       "confidence_score": 1.0
     },
     {
@@ -107087,9 +107087,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L830",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
-      "target": "plans_1785126715092_performance_optimization_plan_open_questions"
+      "target": "plans_1785126715092_performance_optimization_plan_open_questions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107107,9 +107107,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L880",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_critical_fixes"
+      "target": "plans_1785126715092_performance_optimization_plan_critical_fixes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107117,9 +107117,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L887",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes"
+      "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107127,9 +107127,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L909",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90"
+      "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107137,9 +107137,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L896",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_score_breakdown"
+      "target": "plans_1785126715092_performance_optimization_plan_score_breakdown",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107463,5 +107463,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3bd5f3a46dc377fc989914078d36714f8fe24372"
+  "built_at_commit": "2caee653fc27d08d55c573bfb0dbf554b532414d"
 }
