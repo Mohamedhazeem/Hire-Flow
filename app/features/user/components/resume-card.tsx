@@ -10,7 +10,6 @@ import {
   Trash2Icon,
   SparklesIcon,
   AlertCircle,
-  XIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
@@ -57,17 +56,18 @@ function AiErrorBanner({ message, onClose }: { message: string; onClose: () => v
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.2 }}
-      className="flex items-start gap-2 rounded-lg bg-error/5 border border-error/20 p-2.5"
+      className="flex flex-col items-center gap-4 rounded-lg bg-error/5 border border-error/20 px-6 py-6 sm:px-8 sm:py-8"
     >
-      <AlertCircle className="size-4 text-error shrink-0 mt-0.5" />
-      <p className="text-xs text-text-muted flex-1">{message}</p>
+      <AlertCircle className="size-8 sm:size-10 text-error shrink-0" />
+      <p className="text-sm sm:text-base text-center text-text-body max-w-md">
+        {message}
+      </p>
       <button
         type="button"
         onClick={onClose}
-        className="size-5 flex items-center justify-center rounded text-text-muted hover:text-text-body hover:bg-bg-muted transition-colors shrink-0"
-        aria-label="Dismiss error"
+        className="inline-flex items-center justify-center rounded-md bg-error/10 hover:bg-error/20 text-error text-xs sm:text-sm font-medium px-6 py-2 transition-colors"
       >
-        <XIcon className="size-3" />
+        CLOSE
       </button>
     </motion.div>
   );
