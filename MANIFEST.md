@@ -64,7 +64,7 @@
 - [x] Step 3.0b - Schema Migration (`deletedAt` on Resume, `resumeSnapshotUrl`/`resumeSnapshotBuilderData` on Application)
 - [x] Step 3.1 - User Profile (RHF + Zod, experience/social link editors, server action upsert, skills dedup)
 - [x] Step 3.2 - Resumes & In-App Builder (file upload PDF/DOC/DOCX <=10MB, structured JSON builder, set primary, soft-delete 60-day, 5-resume cap, self-download)
-- [x] Step 3.2a - AI-Powered Resume Assistance (multi-provider Claude/OpenAI/Gemini via lib/ai-client.ts, 5/day rate limit, suggestion panel with per-item apply/copy, ATS score)
+- [x] Step 3.2a - AI-Powered Resume Assistance (multi-provider Claude/OpenAI/Gemini via lib/ai-client.ts, 5/day rate limit, suggestion panel with per-suggestion copy, ATS score)
 - [x] Step 3.3 - Job Application Flow (REST POST, snapshot at apply time -- fileUrl/builderData frozen into Application, ApplicationStatusChange first row, rate limited 10/min, duplicate detection, triggerForCompany notification)
 - [x] Step 3.4 - User Activity Panel / My Applications (paginated/filterable list, status badges, search, distinct empty states, stats endpoint)
 - [x] Step 3.5 - Application Detail, Withdraw & Message Recruiter (status timeline via shared StatusTimeline, resume snapshot display, withdraw with status gate, thread-based messaging)
@@ -365,11 +365,11 @@
 
 ### Phase 3 - Step 3.2a (AI Resume Enhancement)
 
-- app/features/user/schema/resume-ai.schema.ts (ResumeSuggestionSchema: type/section/original/suggestion/reasoning/priority; EnhancementsResponseSchema: suggestions/overallScore/keyStrengths/improvementAreas; ApplyAiSuggestionsSchema)
-- app/api/user/resumes/[id]/ai-enhance/route.ts (POST - requireRole(["user"]), 5/day rate limit via ResumeEnhancementLog, calls callAI)
-- app/features/user/actions/apply-ai-suggestions.ts (server action: applies suggestions to builderData, rejects file-uploaded resumes)
-- app/features/user/components/ai-suggestions-panel.tsx (suggestions grouped by priority, score display, per-item apply/copy, sidebar panel)
-- app/features/user/hooks/use-ai-resume-enhance.ts (useMutation: useAiResumeEnhance, useApplyAiSuggestions)
+- app/features/user/schema/resume-ai.schema.ts (ResumeSuggestionSchema + EnhancementsResponseSchema: suggestions/overallScore/projectedScore/keyStrengths/improvementAreas)
+- app/api/user/resumes/[id]/ai-enhance/route.ts (POST - requireRole(["user"]), 5/day rate limit via ResumeEnhancementLog, calls callAI, clamps projectedScore)
+- app/features/user/components/ai-suggestions-panel.tsx (suggestions grouped by section/priority, ScoreGauge dual-score display, per-suggestion copy, sessionStorage-cached)
+- app/features/user/hooks/use-ai-resume-enhance.ts (useMutation: useAiResumeEnhance)
+- app/features/user/hooks/use-ai-suggestions-cache.ts (sessionStorage cache layer: djb2 hash, 30min TTL, SSR-safe)
 - lib/ai-client.ts (multi-provider: Anthropic/OpenAI/Google, configurable via AI_PROVIDER env, graceful fallback)
 
 ### Phase 3 - Step 3.3 (Job Application Flow)

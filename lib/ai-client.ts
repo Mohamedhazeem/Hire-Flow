@@ -83,7 +83,14 @@ export async function callAI(
     url += `?key=${apiKey}`;
   }
 
-  const res = await fetch(url, { method: "POST", headers, body: JSON.stringify(body) });
+  let res: Response;
+  try {
+    res = await fetch(url, { method: "POST", headers, body: JSON.stringify(body) });
+  } catch (err) {
+    const reason = err instanceof TypeError ? "network error" : "unreachable";
+    throw new ApiError(`${provider} API ${reason}: the AI service could not be reached. Check your network and API key.`, 502);
+  }
+
   if (!res.ok) {
     let detail = "";
     try {
@@ -95,6 +102,12 @@ export async function callAI(
     throw new ApiError(`${provider} API error (${res.status}): ${detail}`, 502);
   }
 
-  const data = await res.json();
+  let data: unknown;
+  try {
+    data = await res.json();
+  } catch {
+    throw new ApiError(`${provider} API returned an unparseable response.`, 502);
+  }
+
   return config.extractText(data);
 }

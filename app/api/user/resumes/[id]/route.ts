@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { NotFoundError, ForbiddenError, ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { deleteUpload } from "@/lib/upload";
 
 async function handlePATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
@@ -44,6 +45,10 @@ async function handleDELETE(
   const resume = await prisma.resume.findUnique({ where: { id } });
   if (!resume) throw new NotFoundError("Resume not found");
   if (resume.userId !== session.id) throw new ForbiddenError("You do not own this resume");
+
+  if (resume.fileUrl) {
+    await deleteUpload(resume.fileUrl);
+  }
 
   await prisma.resume.update({
     where: { id },

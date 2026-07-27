@@ -30,6 +30,7 @@ describe("PF5 — Concurrent AI enhancement rate limit", () => {
       JSON.stringify({
         suggestions: [],
         overallScore: 80,
+        projectedScore: 85,
         keyStrengths: [],
         improvementAreas: [],
       }),

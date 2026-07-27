@@ -8,22 +8,15 @@ import {
   CheckIcon,
   SparklesIcon,
   AlertCircle,
-  Loader2Icon,
   WandSparklesIcon,
   TrendingUpIcon,
   LightbulbIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import type {
-  ResumeSuggestion,
-  EnhancementsResponse,
-} from "@/app/features/user/schema/resume-ai.schema";
+import type { ResumeSuggestion, EnhancementsResponse } from "@/app/features/user/schema/resume-ai.schema";
 
 type AiSuggestionsPanelProps = {
   result: EnhancementsResponse;
   isBuilder: boolean;
-  isApplying: boolean;
-  onApply: (suggestion: ResumeSuggestion) => void;
   onClose: () => void;
 };
 
@@ -42,43 +35,47 @@ const typeLabels: Record<string, string> = {
 };
 
 function scoreConfig(score: number): { color: string; bg: string; ring: string; label: string } {
-  if (score < 40)
-    return { color: "text-white", bg: "bg-error", ring: "ring-error/20", label: "Needs Work" };
-  if (score < 60)
-    return { color: "text-white", bg: "bg-orange-500", ring: "ring-orange-500/20", label: "Fair" };
-  if (score < 75)
-    return { color: "text-white", bg: "bg-amber", ring: "ring-amber/20", label: "Good" };
-  if (score < 90)
-    return {
-      color: "text-white",
-      bg: "bg-emerald-500",
-      ring: "ring-emerald-500/20",
-      label: "Great",
-    };
+  if (score < 40) return { color: "text-white", bg: "bg-error", ring: "ring-error/20", label: "Needs Work" };
+  if (score < 60) return { color: "text-white", bg: "bg-orange-500", ring: "ring-orange-500/20", label: "Fair" };
+  if (score < 75) return { color: "text-white", bg: "bg-amber", ring: "ring-amber/20", label: "Good" };
+  if (score < 90) return { color: "text-white", bg: "bg-emerald-500", ring: "ring-emerald-500/20", label: "Great" };
   return { color: "text-white", bg: "bg-green", ring: "ring-green/20", label: "Excellent" };
 }
 
-function ScoreCircle({ score }: { score: number }) {
-  const cfg = scoreConfig(score);
+function ScoreGauge({ currentScore, projectedScore }: { currentScore: number; projectedScore: number }) {
+  const current = scoreConfig(currentScore);
+  const projected = scoreConfig(projectedScore);
+  const delta = projectedScore - currentScore;
+  const deltaLabel = delta >= 0 ? `+${delta}` : `${delta}`;
+  const deltaColor = delta > 0 ? "text-green" : delta < 0 ? "text-error" : "text-text-muted";
+
   return (
-    <div className="flex items-center gap-5">
-      <div
-        className={`relative size-24 rounded-full ${cfg.bg} ${cfg.ring} ring-4 flex items-center justify-center shrink-0`}
-      >
-        <div className="text-center">
-          <p className={`text-2xl font-bold tracking-tight ${cfg.color}`}>{score}</p>
-          <p className="text-[10px] font-medium text-white/70">/ 100</p>
+    <div className="flex items-center justify-center gap-3">
+      <div className="flex flex-col items-center gap-1">
+        <div className={`relative size-20 rounded-full ${current.bg} ${current.ring} ring-4 flex items-center justify-center shrink-0`}>
+          <div className="text-center">
+            <p className={`text-xl font-bold tracking-tight ${current.color}`}>{currentScore}</p>
+            <p className="text-[10px] font-medium text-white/70">/ 100</p>
+          </div>
         </div>
+        <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Current</p>
       </div>
-      <div className="space-y-1">
-        <p className="text-sm font-semibold text-text-heading">{cfg.label}</p>
-        <p className="text-xs text-text-muted leading-relaxed max-w-xs">
-          {score >= 80
-            ? "Strong resume with minor optimizations available."
-            : score >= 50
-              ? "Good foundation with several areas to improve."
-              : "Significant improvements recommended."}
-        </p>
+
+      <div className="flex flex-col items-center gap-1">
+        <div className={`flex items-center justify-center size-10 rounded-full ${delta > 0 ? "bg-green/10" : delta < 0 ? "bg-error/10" : "bg-bg-elevated"} border border-border-subtle`}>
+          <span className={`text-xs font-bold ${deltaColor}`}>{deltaLabel}</span>
+        </div>
+        <p className="text-[10px] font-medium text-text-muted">delta</p>
+      </div>
+
+      <div className="flex flex-col items-center gap-1">
+        <div className={`relative size-24 rounded-full ${projected.bg} ${projected.ring} ring-4 flex items-center justify-center shrink-0`}>
+          <div className="text-center">
+            <p className={`text-2xl font-bold tracking-tight ${projected.color}`}>{projectedScore}</p>
+            <p className="text-[10px] font-medium text-white/70">/ 100</p>
+          </div>
+        </div>
+        <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Projected</p>
       </div>
     </div>
   );
@@ -93,14 +90,8 @@ function CopyButton({ text }: { text: string }) {
       type="button"
       onClick={() => {
         navigator.clipboard.writeText(text).then(
-          () => {
-            setCopied(true);
-            setFailed(false);
-            setTimeout(() => setCopied(false), 2000);
-          },
-          () => {
-            setFailed(true);
-          },
+          () => { setCopied(true); setFailed(false); setTimeout(() => setCopied(false), 2000); },
+          () => { setFailed(true); },
         );
       }}
       className="inline-flex items-center gap-1.5 rounded-lg border border-border-subtle bg-bg-surface px-2.5 py-1.5 text-xs font-medium text-text-muted hover:border-brand/30 hover:text-text-heading hover:bg-brand/5 transition-all"
@@ -111,37 +102,21 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-function InfoChip({
-  children,
-  icon: Icon,
-  color,
-}: {
-  children: string;
-  icon: typeof LightbulbIcon;
-  color: "green" | "amber";
-}) {
+function InfoChip({ children, icon: Icon, color }: { children: string; icon: typeof LightbulbIcon; color: "green" | "amber" }) {
   const styles = {
     green: "bg-green/5 text-green border-green/15",
     amber: "bg-amber/5 text-amber border-amber/15",
   };
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full border ${styles[color]} px-3 py-1 text-xs font-medium`}
-    >
+    <span className={`inline-flex items-center gap-1.5 rounded-full border ${styles[color]} px-3 py-1 text-xs font-medium`}>
       <Icon className="size-3" />
       {children}
     </span>
   );
 }
 
-export function AiSuggestionsPanel({
-  result,
-  isBuilder,
-  isApplying,
-  onApply,
-  onClose,
-}: AiSuggestionsPanelProps) {
-  const { suggestions, overallScore, keyStrengths, improvementAreas } = result;
+export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestionsPanelProps) {
+  const { suggestions, overallScore, projectedScore, keyStrengths, improvementAreas } = result;
 
   const grouped: Record<string, ResumeSuggestion[]> = {};
   for (const s of suggestions) {
@@ -183,7 +158,7 @@ export function AiSuggestionsPanel({
         >
           <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border-subtle bg-bg-surface px-6 py-4">
             <div className="flex items-center gap-2.5">
-              <div className="size-8 rounded-lg bg-linear-to-br from-brand to-purple-500 flex items-center justify-center">
+              <div className="size-8 rounded-lg bg-gradient-to-br from-brand to-purple-500 flex items-center justify-center">
                 <WandSparklesIcon className="size-4 text-white" />
               </div>
               <div>
@@ -201,35 +176,31 @@ export function AiSuggestionsPanel({
           </div>
 
           <div className="px-6 py-5 space-y-5">
-            <ScoreCircle score={overallScore} />
+            <ScoreGauge currentScore={overallScore} projectedScore={projectedScore} />
 
             {keyStrengths.length > 0 && (
-              <div className="rounded-xl border border-green/15 bg-linear-to-r from-green/5 to-transparent p-4 space-y-3">
+              <div className="rounded-xl border border-green/15 bg-gradient-to-r from-green/5 to-transparent p-4 space-y-3">
                 <p className="text-xs font-semibold text-green uppercase tracking-wider flex items-center gap-1.5">
                   <TrendingUpIcon className="size-3.5" />
                   Key Strengths
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {keyStrengths.map((s, i) => (
-                    <InfoChip key={i} icon={CheckIcon} color="green">
-                      {s}
-                    </InfoChip>
+                    <InfoChip key={i} icon={CheckIcon} color="green">{s}</InfoChip>
                   ))}
                 </div>
               </div>
             )}
 
             {improvementAreas.length > 0 && (
-              <div className="rounded-xl border border-amber/15 bg-linear-to-r from-amber/5 to-transparent p-4 space-y-3">
+              <div className="rounded-xl border border-amber/15 bg-gradient-to-r from-amber/5 to-transparent p-4 space-y-3">
                 <p className="text-xs font-semibold text-amber uppercase tracking-wider flex items-center gap-1.5">
                   <LightbulbIcon className="size-3.5" />
                   Areas to Improve
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {improvementAreas.map((s, i) => (
-                    <InfoChip key={i} icon={SparklesIcon} color="amber">
-                      {s}
-                    </InfoChip>
+                    <InfoChip key={i} icon={SparklesIcon} color="amber">{s}</InfoChip>
                   ))}
                 </div>
               </div>
@@ -241,12 +212,8 @@ export function AiSuggestionsPanel({
                   <CheckIcon className="size-7 text-green" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text-heading">
-                    Your resume is well-optimized!
-                  </p>
-                  <p className="text-xs text-text-muted mt-1">
-                    No specific suggestions found at this time.
-                  </p>
+                  <p className="text-sm font-semibold text-text-heading">Your resume is well-optimized!</p>
+                  <p className="text-xs text-text-muted mt-1">No specific suggestions found at this time.</p>
                 </div>
               </div>
             ) : (
@@ -279,42 +246,20 @@ export function AiSuggestionsPanel({
                                   <span className="text-[10px] font-semibold text-text-muted uppercase tracking-wider">
                                     {typeLabels[s.type] ?? s.type}
                                   </span>
-                                  <span
-                                    className={`inline-flex items-center gap-1.5 rounded-full ${pc.bg} ${pc.text} border border-transparent px-2 py-0.5 text-[10px] font-medium`}
-                                  >
+                                  <span className={`inline-flex items-center gap-1.5 rounded-full ${pc.bg} ${pc.text} border border-transparent px-2 py-0.5 text-[10px] font-medium`}>
                                     <span className={`size-1.5 rounded-full ${pc.dot}`} />
                                     {s.priority}
                                   </span>
                                 </div>
                                 {s.original && (
                                   <div className="rounded-lg bg-error/5 border border-error/10 px-3 py-2">
-                                    <p className="text-xs text-text-muted line-through">
-                                      {s.original}
-                                    </p>
+                                    <p className="text-xs text-text-muted line-through">{s.original}</p>
                                   </div>
                                 )}
-                                <p className="text-sm font-medium text-text-heading">
-                                  {s.suggestion}
-                                </p>
-                                <p className="text-xs text-text-muted leading-relaxed">
-                                  {s.reasoning}
-                                </p>
-                                <div className="flex items-center gap-2 pt-1.5 border-t border-border-subtle">
+                                <p className="text-sm font-medium text-text-heading">{s.suggestion}</p>
+                                <p className="text-xs text-text-muted leading-relaxed">{s.reasoning}</p>
+                                <div className="flex pt-1.5 border-t border-border-subtle">
                                   <CopyButton text={s.suggestion} />
-                                  <Button
-                                    variant="outline"
-                                    size="xs"
-                                    className="gap-1 text-xs"
-                                    onClick={() => onApply(s)}
-                                    disabled={isApplying}
-                                  >
-                                    {isApplying ? (
-                                      <Loader2Icon className="size-3.5 animate-spin" />
-                                    ) : (
-                                      <WandSparklesIcon className="size-3.5" />
-                                    )}
-                                    {isApplying ? "Applying..." : "Apply"}
-                                  </Button>
                                 </div>
                               </motion.div>
                             );
@@ -331,8 +276,7 @@ export function AiSuggestionsPanel({
                 <AlertCircle className="size-4 text-amber shrink-0 mt-0.5" />
                 <p className="text-xs text-text-muted leading-relaxed">
                   This resume was uploaded as a file. To apply suggestions,{" "}
-                  <span className="font-medium text-text-heading">copy each change</span>, edit the
-                  file externally, and re-upload.
+                  <span className="font-medium text-text-heading">copy each change</span>, edit the file externally, and re-upload.
                 </p>
               </div>
             )}

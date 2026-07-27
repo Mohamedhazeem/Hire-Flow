@@ -114,8 +114,14 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
     "2. Highlighting relevant skills for tech/non-tech roles.\n" +
     "3. ATS (Applicant Tracking System) optimization (proper formatting, keyword density, section clarity).\n" +
     "4. Grammar, clarity, and professional tone.\n\n" +
+    "IMPORTANT — Write suggestions as clear, directly usable replacement text. For each suggestion:\n" +
+    "- Include the exact recommended replacement wording or text the user should paste in.\n" +
+    "- If a section is missing, provide the exact content to add (e.g. a full skills list, experience bullet, or education entry).\n" +
+    "- If an existing bullet or phrase needs improvement, include both the original and the improved version.\n" +
+    "- Keep suggestions scoped to a single actionable change — one bullet, one skill addition, one section.\n" +
+    "- Avoid vague advice like 'add more metrics' — instead write the actual metric-driven bullet.\n\n" +
     "Respond ONLY with valid JSON matching this schema:\n" +
-    '{ suggestions: [{ type: "bullet_improvement"|"skill_addition"|"section_expansion"|"ats_optimization"|"grammar", section: string, original?: string, suggestion: string, reasoning: string, priority: "high"|"medium"|"low" }], overallScore: number, keyStrengths: string[], improvementAreas: string[] }';
+    '{ suggestions: [{ type: "bullet_improvement"|"skill_addition"|"section_expansion"|"ats_optimization"|"grammar", section: string, original?: string, suggestion: string, reasoning: string, priority: "high"|"medium"|"low" }], overallScore: number, projectedScore: number, keyStrengths: string[], improvementAreas: string[] }';
 
   const raw = await callAI(resumeText, systemPrompt, 2048);
   if (raw === null) {
@@ -134,7 +140,10 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
     throw new ValidationError("AI returned an unexpected format. Please try again.");
   }
 
-  return ok(validated.data);
+  return ok({
+    ...validated.data,
+    projectedScore: Math.max(validated.data.projectedScore, validated.data.overallScore),
+  });
 }
 
 export const POST = withErrorHandler(handlePOST);

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useResumes, useSetPrimaryResume, useDeleteResume } from "@/app/features/user/hooks/use-resumes";
 import { ResumeCard } from "./resume-card";
@@ -27,6 +28,7 @@ async function downloadFile(fileUrl: string) {
 
 export function ResumeList() {
   const router = useRouter();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
   const { data: resumes, isLoading, isError } = useResumes();
   const setPrimaryMutation = useSetPrimaryResume();
   const deleteMutation = useDeleteResume();
@@ -84,8 +86,14 @@ export function ResumeList() {
             <ResumeCard
               key={resume.id}
               resume={resume}
+              isDeleting={deletingId === resume.id}
               onSetPrimary={(id) => setPrimaryMutation.mutate(id)}
-              onDelete={(id) => deleteMutation.mutate(id)}
+              onDelete={(id) => {
+                setDeletingId(id);
+                deleteMutation.mutate(id, {
+                  onSettled: () => setDeletingId(null),
+                });
+              }}
               onDownload={(fileUrl) => downloadFile(fileUrl)}
               onEdit={(id) => router.push(`/user/resumes/builder/${id}`)}
             />

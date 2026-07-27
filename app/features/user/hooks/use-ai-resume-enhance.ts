@@ -1,12 +1,8 @@
 "use client";
 
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api/api-client";
-import { applyAiSuggestions as applyAiSuggestionsAction } from "@/app/features/user/actions/apply-ai-suggestions";
-import type {
-  EnhancementsResponse,
-  ResumeSuggestion,
-} from "@/app/features/user/schema/resume-ai.schema";
+import type { EnhancementsResponse } from "@/app/features/user/schema/resume-ai.schema";
 
 export function useAiResumeEnhance(resumeId: string) {
   return useMutation({
@@ -14,16 +10,5 @@ export function useAiResumeEnhance(resumeId: string) {
       apiClient<{ data: EnhancementsResponse | null }>(`/api/user/resumes/${resumeId}/ai-enhance`, {
         method: "POST",
       }).then((r) => r.data),
-  });
-}
-
-export function useApplyAiSuggestions(resumeId: string) {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: (input: { suggestions: ResumeSuggestion[] }) =>
-      applyAiSuggestionsAction({ resumeId, suggestions: input.suggestions }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["user", "resumes"] });
-    },
   });
 }

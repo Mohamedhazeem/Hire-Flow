@@ -64,19 +64,25 @@ async function handlePOST(request: NextRequest) {
     throw new ValidationError("File exceeds the 5 MB limit.");
   }
 
-  const { saveUpload } = await import("@/lib/upload");
+  const { saveUpload, deleteUpload } = await import("@/lib/upload");
   const uploadResult = await saveUpload(file, "private");
 
-  const resume = await prisma.resume.create({
-    data: {
-      userId: session.id,
-      label: (formData.get("label") as string) || file.name,
-      fileUrl: uploadResult.url,
-      fileName: file.name,
-      fileSize: file.size,
-      fileType: file.type,
-    },
-  });
+  let resume;
+  try {
+    resume = await prisma.resume.create({
+      data: {
+        userId: session.id,
+        label: (formData.get("label") as string) || file.name,
+        fileUrl: uploadResult.url,
+        fileName: file.name,
+        fileSize: file.size,
+        fileType: file.type,
+      },
+    });
+  } catch (err) {
+    await deleteUpload(uploadResult.url);
+    throw err;
+  }
 
   return ok(resume, 201);
 }

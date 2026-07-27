@@ -15,10 +15,10 @@ import { useSignOut } from "@/app/features/public/hooks/use-sign-out";
 const userLinks: SidebarLink[] = [
   { href: "/user", label: "Dashboard", icon: LayoutDashboardIcon },
   { href: "/user/profile", label: "Profile", icon: UserIcon },
-  { href: "/user/applications", label: "Applications", icon: FileTextIcon },
   { href: "/user/resumes", label: "Resumes", icon: ScrollTextIcon },
-  { href: "/user/messages", label: "Messages", icon: MessageSquareTextIcon },
+  { href: "/user/applications", label: "Applications", icon: FileTextIcon },
   { href: "/user/saved-jobs", label: "Saved Jobs", icon: BookmarkIcon },
+  { href: "/user/messages", label: "Messages", icon: MessageSquareTextIcon },
 ];
 
 export function UserSidebar() {

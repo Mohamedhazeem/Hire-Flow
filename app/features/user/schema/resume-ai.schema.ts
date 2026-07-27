@@ -12,17 +12,9 @@ export const ResumeSuggestionSchema = z.object({
 export const EnhancementsResponseSchema = z.object({
   suggestions: z.array(ResumeSuggestionSchema),
   overallScore: z.number().min(0).max(100),
+  projectedScore: z.number().min(0).max(100),
   keyStrengths: z.array(z.string()),
   improvementAreas: z.array(z.string()),
-});
-
-export const AiEnhanceRequestSchema = z.object({
-  resumeId: z.string(),
-});
-
-export const ApplyAiSuggestionsSchema = z.object({
-  resumeId: z.string(),
-  suggestions: z.array(ResumeSuggestionSchema),
 });
 
 export type ResumeSuggestion = z.infer<typeof ResumeSuggestionSchema>;

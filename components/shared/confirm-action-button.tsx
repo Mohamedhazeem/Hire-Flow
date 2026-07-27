@@ -47,9 +47,9 @@ export function ConfirmActionButton({
       <Button
         variant={variant}
         size={size}
-        disabled={disabled}
+        disabled={disabled || isPending}
         className={className}
-        title={tooltip}
+        title={isPending ? "Deleting..." : tooltip}
         onClick={() => setOpen(true)}
       >
         {children}

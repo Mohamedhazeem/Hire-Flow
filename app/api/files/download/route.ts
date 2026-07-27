@@ -82,7 +82,7 @@ async function handleGET(request: NextRequest) {
 
   if (session.role === "user") {
     const resume = await prisma.resume.findFirst({
-      where: { userId: session.id, fileUrl: { contains: relativePath } },
+      where: { userId: session.id, fileUrl: { contains: relativePath }, deletedAt: null },
       select: { id: true },
     });
     if (!resume) {

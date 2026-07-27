@@ -44,5 +44,9 @@ export async function apiClient<T = unknown>(
     throw new ApiError(json.message ?? `Request failed with status ${res.status}`, res.status);
   }
 
+  if (res.status === 204) {
+    return undefined as T;
+  }
+
   return res.json() as Promise<T>;
 }

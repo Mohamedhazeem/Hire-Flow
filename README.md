@@ -81,8 +81,8 @@ Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on pr
 ### 👤 Job Seeker (User)
 
 - Rich profile builder: experience, social links, skills, salary expectations
-- **In-app resume builder** (structured JSON, not a generic text editor) + file upload (PDF/DOC/DOCX ≤10MB)
-- **AI-powered resume enhancement** — multi-provider (Anthropic/OpenAI/Gemini), suggestion-only output with per-item apply/copy, ATS scoring, rate-limited to 5/day
+- **In-app resume builder** (structured JSON, not a generic text editor) + file upload (PDF/DOC/DOCX ≤10MB) with automatic file cleanup on delete
+- **AI-powered resume enhancement** — multi-provider (Anthropic/OpenAI/Gemini), suggestion-only with per-suggestion copy, ATS scoring, rate-limited to 5/day
 - One-click apply with **resume snapshotting** (frozen at apply time, survives resume deletion)
 - Application tracking: filterable list, status timeline, withdraw flow, in-thread recruiter messaging
 - Bookmark/save jobs with graceful handling of jobs that later go inactive
@@ -129,7 +129,7 @@ Job seekers get an interactive AI assistant that:
 
 - **Analyses their resume** against the job market and suggests targeted improvements
 - **Scores ATS compatibility** (keyword density, section completeness, formatting)
-- **Returns per-suggestion controls** — apply or copy individual changes, never a blind rewrite
+- **Returns actionable suggestions** with per-suggestion copy, never a blind rewrite
 - **Snapshots the resume** at enhancement time so the original is preserved
 
 ### Rate-Limited Per-User Quota
@@ -156,7 +156,7 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 **Dual-Gate Job Visibility** — Every public-facing job query filters on **both** `status: "active"` (recruiter-controlled) **and** `isActive: true` (admin kill-switch). Missing either check would leak archived or platform-deactivated postings — this pattern is enforced consistently across listings, sitemap generation, and featured jobs.
 
-**Cloud Storage Provider Abstraction** — File uploads (resumes, logos) are abstracted behind a provider registry (`lib/upload.ts`). The `UPLOAD_PROVIDER` env var selects between `local` (dev) and `vercel-blob` (production). Switching providers requires no code changes — only env var updates. The provider registry pattern makes adding S3 or other backends trivial.
+**Cloud Storage Provider Abstraction** — File uploads (resumes, logos) are abstracted behind a provider registry (`lib/upload.ts`). The `UPLOAD_PROVIDER` env var selects between `local` (dev) and `vercel-blob` (production). Both `saveUpload` and `deleteUpload` dispatch to the correct implementation — file cleanup on resume delete or logo change automatically removes the remote file, preventing storage bloat. Switching providers requires no code changes.
 
 **Middleware-Driven Redirects** — Rather than a single "role home" constant scattered across components, redirect logic lives centrally in `proxy.ts` middleware and shared auth hooks, keeping role-based routing consistent and easy to audit.
 
@@ -186,6 +186,8 @@ The following REST endpoints are available under `/api/`. All routes use Zod val
 | `GET`    | `/api/files/download/[id]`                         | authenticated | Stream file download (local or Vercel Blob)                     |
 | `POST`   | `/api/user/resumes`                                | user          | Upload a new resume file                                        |
 | `GET`    | `/api/user/resumes`                                | user          | List own resumes (non-deleted)                                  |
+| `PATCH`  | `/api/user/resumes/[id]`                           | user          | Set resume as primary                                           |
+| `DELETE` | `/api/user/resumes/[id]`                           | user          | Soft-delete resume + remove uploaded file from storage          |
 | `POST`   | `/api/user/resumes/[id]/ai-enhance`                | user          | AI resume suggestions (rate-limited, 5/day)                     |
 | `POST`   | `/api/user/applications`                           | user          | Submit a job application (with resume snapshot)                 |
 | `GET`    | `/api/user/applications`                           | user          | List own applications (filterable, searchable)                  |

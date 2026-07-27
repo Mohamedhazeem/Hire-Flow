@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeartIcon, GlobeIcon, MessageCircleIcon, TerminalIcon } from "lucide-react";
+import { HeartIcon, LinkIcon, XIcon, GitBranchIcon } from "lucide-react";
 import { env } from "@/utils/env";
 
 const columns = [
@@ -42,17 +42,17 @@ const contactEmail = env.data?.NEXT_PUBLIC_CONTACT_EMAIL;
 
 const socials = [
   {
-    icon: GlobeIcon,
+    icon: LinkIcon,
     label: "LinkedIn",
     href: linkedinUrl || (contactEmail ? `mailto:${contactEmail}` : null),
   },
   {
-    icon: MessageCircleIcon,
+    icon: XIcon,
     label: "Twitter",
     href: twitterUrl || (contactEmail ? `mailto:${contactEmail}` : null),
   },
   {
-    icon: TerminalIcon,
+    icon: GitBranchIcon,
     label: "GitHub",
     href: githubUrl || (contactEmail ? `mailto:${contactEmail}` : null),
   },
