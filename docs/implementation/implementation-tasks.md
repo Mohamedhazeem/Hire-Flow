@@ -50,6 +50,12 @@ Each task below represents an atomic unit of implementation work, preserving the
 - **Approach:** Generic, role-agnostic components. StatusTimeline renders vertical timeline from `ApplicationStatusChange[]`. CompanyPreviewCard used by job details and featured companies.
 - **Completion:** Components reused across admin, recruiter, and user features
 
+### TASK-0.3.4 — AutocompleteInput Component & Tag/Location Data
+- **Goal:** Create generic `AutocompleteInput` component (cmdk-based, popup close on outside click) and curated tag/location suggestion databases
+- **Files:** `components/ui/autocomplete-input.tsx`, `data/tags-database.ts`, `data/locations-database.ts`
+- **Approach:** cmdk `Command` with conditionally-rendered `Command.List` controlled by `open` state. Click-outside handler sets `open=false`. Refactor `SkillInput` to wrap `AutocompleteInput` with `SKILLS_DATABASE`. Replace `CommaInput` in job form with `AutocompleteInput` using curated tag/location suggestions. Both free-text entry and suggestion selection supported.
+- **Completion:** `SkillInput`, tag input, and location input all use shared `AutocompleteInput` with consistent popup-close behavior.
+
 ### TASK-0.4.1 — Mock File Upload Provider
 - **Goal:** Implement file upload API endpoint for development
 - **Files:** `app/api/upload/route.ts`, `lib/upload.ts`
@@ -619,6 +625,48 @@ Each task below represents an atomic unit of implementation work, preserving the
 - **Files:** `app/api/user/profile/route.ts`, `app/features/user/hooks/use-profile.ts`
 - **Approach:** GET returns current profile. `useProfile()` hook.
 
+### TASK-3.1.5 — Recruiter & Admin Profile Pages (Enhanced)
+- **Goal:** Allow recruiters and admins to manage their own profiles, reusing the existing user profile form and upsert action.
+- **Files:**
+  - `app/features/user/actions/upsert-profile.ts` — relax role guard
+  - `app/features/user/schema/profile.schema.ts` — verify roles allowed in schema (no change needed)
+  - `app/(roles)/recruiter/profile/page.tsx` — thin page wrapper (new)
+  - `app/(roles)/admin/profile/page.tsx` — thin page wrapper (new)
+  - `app/features/recruiter/components/recruiter-sidebar.tsx` — add Profile link
+  - `app/features/admin/components/admin-sidebar.tsx` — add Profile link
+  - `lib/test/components/profile-form.dom.test.tsx` — component tests (new)
+- **Approach:**
+  1. **Role guard relaxation:** Change `requireRole(["user"])` → `requireRole(["user", "recruiter", "admin"])` in `upsert-profile.ts`. This is the only code change — the profile upsert logic, schema, and form are role-agnostic.
+  2. **Recruiter profile page:** Create `app/(roles)/recruiter/profile/page.tsx` — thin Server Component page metadata + `ProfilePageClient` that renders `<ProfileForm>` with `useProfile()` hook to load the current profile.
+  3. **Admin profile page:** Same pattern at `app/(roles)/admin/profile/page.tsx`.
+  4. **API profile route:** Update `app/api/user/profile/route.ts` guard from `["user"]` → `["user", "recruiter", "admin"]` so the `useProfile()` hook works for all roles.
+  5. **Sidebar links:** Add `{ href: "/recruiter/profile", label: "Profile", icon: UserIcon }` to `recruiterLinks` and `{ href: "/admin/profile", label: "Profile", icon: UserIcon }` to `adminLinks`.
+- **Edge cases:**
+  - **No profile exists**: `upsertProfile` uses `prisma.userProfile.upsert`, so creating a profile from scratch works for any authenticated user.
+  - **Role change (user→recruiter→admin)**: Profile is keyed by `userId`, so it survives role changes. A recruiter promoted from user retains their profile.
+  - **Recruiter with company vs without**: Profile is independent of company — no dependency.
+  - **Concurrent saves**: `upsert` is atomic; no race condition between form submit and re-fetch.
+  - **Unrelated fields**: Profile contains `skills`, `workMode`, `basePay`, `ctc`, `ectc` — all appropriate for non-user roles (a recruiter may search for jobs too).
+  - **Profile with 50 skills**: Schema cap of 50 skills affects all roles equally.
+- **Test cases (new `profile-form.dom.test.tsx`):**
+  1. **Renders all form sections** — headline, bio, location, skills, pay, experiences, social links
+  2. **Pre-fills from defaultValues** — existing profile loaded into form fields
+  3. **SkillInput interaction** — add a skill chip, remove a skill chip, no duplicate skills
+  4. **Adds/removes experience entries** — `useFieldArray` add/remove
+  5. **Adds/removes social links** — add platform URL, remove
+  6. **Calls upsertProfile on submit** — mock action, verify form data
+  7. **Shows success message** — after successful submission
+  8. **Shows server error** — when upsertProfile throws
+  9. **Submit disabled while submitting** — isSubmitting state
+  10. **Location autocomplete** — AutocompleteInput interaction for location (same pattern as SkillInput tests)
+  11. **Edge: Empty profile** — all fields empty, form submits successfully
+  12. **Edge: 50 skills cap** — verify maxItems behavior (if possible with available data)
+- **Performance:**
+  - No additional DB queries — reuses existing `useProfile()` hook with TanStack Query caching (stale time: 30s, cache time: 5min).
+  - Server action runs once on submit; optimistic update not needed (form is already controlled).
+- **Dependencies:** TASK-3.1.3 (ProfileForm), TASK-3.1.4 (useProfile hook), TASK-0.10.1 (requireRole)
+- **Completion:** Recruiters and admins can view and edit their own profiles from their dashboards. All 12+ test cases pass.
+
 ### TASK-3.2.1 — Resume Schema
 - **Goal:** Zod schemas for resume builder data
 - **Files:** `app/features/user/schema/resume.schema.ts`
@@ -827,6 +875,93 @@ Each task below represents an atomic unit of implementation work, preserving the
 - **Files:** `app/features/jobs/components/job-list-page.tsx`, `app/(public)/jobs/page.tsx`
 - **Approach:** Search bar, filters, paginated job cards, empty state for no results vs. no jobs at all.
 - **Completion:** Public job listings functional
+
+### TASK-4.1.7 — Skills Filter for Job Search (Enhanced)
+- **Goal:** Add skills-based filtering to public job listings and recruiter job listings, with a reusable `SkillFilter` component, backend query support, GIN index for performance, and comprehensive test coverage.
+- **Files:**
+  - `app/features/jobs/components/skill-filter.tsx` — new reusable filter component
+  - `app/features/jobs/queries/public-job-queries.ts` — update `PublicJobListParams`, `listPublicJobs`
+  - `app/features/jobs/components/job-list-page.tsx` — integrate SkillFilter
+  - `app/api/jobs/route.ts` — parse `skills` param from URL
+  - `app/features/recruiter/schema/job.schema.ts` — add `skills` to `RecruiterListJobsParamsSchema`
+  - `app/api/recruiter/jobs/route.ts` — parse `skills` param from URL
+  - `app/features/recruiter/queries/job-queries.ts` — update `listJobs` to accept/filter by skills
+  - `app/features/recruiter/components/recruiter-jobs-table.tsx` — integrate SkillFilter
+  - `prisma/migrations/XXXXX_add_skills_gin_index/migration.sql` — GIN index migration (new)
+  - `app/features/jobs/components/__tests__/skill-filter.dom.test.tsx` — component tests (new)
+  - `app/features/jobs/queries/__tests__/public-job-queries.test.ts` — query unit tests (new)
+- **Approach:**
+  **A) Data layer:**
+  1. **GIN index migration:** Create a migration that adds `CREATE INDEX IF NOT EXISTS idx_job_skills_gin ON "Job" USING GIN (skills)` on the `skills` array column. Prisma's `hasSome` filter maps to `?|` array overlap operator, which is indexable by GIN.
+  2. **Schema update:** Add `skills: z.array(z.string()).max(10).optional()` to `RecruiterListJobsParamsSchema` and add `skills?: string[]` to `PublicJobListParams`.
+  3. **Query update (`listPublicJobs`):** Accept `skills?: string[]` param. When non-empty, add `skills: { hasSome: params.skills }` to the `where` clause. This is Prisma's overlap operator matching any skill in the job's array against the filter array (OR semantics).
+  4. **Query update (`listJobs` — recruiter):** Same pattern — accept `skills?: string[]`, apply `hasSome` filter.
+  5. **API routes:** Parse `skills` from query string (`request.nextUrl.searchParams.getAll('skills')` or comma-separated single param). Pass as array to query functions.
+
+  **B) UI layer:**
+  1. **SkillFilter component:** Wraps `AutocompleteInput` from `components/ui/autocomplete-input.tsx` with `SKILLS_DATABASE`. Props: `value: string[]`, `onChange: (skills: string[]) => void`, `disabled?: boolean`, `maxItems?: number` (default 10). Renders as a single-line filter chip interface — selected skills appear as removable badges; clicking the input opens the cmdk popup for adding more skills. Uses `maxItems={10}` to cap filter size (practical UX limit). Click-outside close inherited from `AutocompleteInput`.
+  2. **URL serialization:** On the public job list page, skills are stored as a comma-separated `skills` URL param: `?skills=React,TypeScript`. The `JobListPage` parses this into an array via `sp.get("skills")?.split(",").filter(Boolean)` and passes it to the SkillFilter. When skills change, the callback joins the array and pushes to the URL: `setParam("skills", skills.join(","))`.
+  3. **Recruiter jobs table integration:** In `RecruiterJobsTable`, add a SkillFilter alongside existing mode/type/experience level filter dropdowns. Same URL param pattern (`?skills=React,TypeScript`). The `listJobs` query already uses `params.skills`.
+  4. **Visual integration:** The SkillFilter sits in the filter bar row alongside `FilterSelect` dropdowns. On mobile (`sm:`), it becomes full-width. The filter row gets a `min-w-0` wrapper for proper flex overflow.
+
+  **C) Performance optimizations:**
+  1. **GIN index** on `Job.skills` enables index-only scans for the `?|` overlap operator, critical when the jobs table grows beyond 10K rows. Without the index, PostgreSQL performs a sequential scan on every `hasSome` query.
+  2. **SKILLS_DATABASE is static** — imported as a constant, never fetched from an API. No network latency, no caching concerns.
+  3. **Debounced URL sync:** When the user types into the SkillFilter's cmdk input, we avoid pushing to the URL on every keystroke. Instead, the URL is only updated when a skill is **selected or removed** (badge click or `Enter` on suggested item). This keeps the URL clean and avoids excessive router pushes.
+  4. **TanStack Query key** for job listings already includes the skills param via the computed `params` object from URL search params. When skills change, the query key changes, triggering an automatic refetch — no additional invalidation needed.
+  5. **Query guard for empty arrays:** `if (!params.skills?.length)` skips adding the `hasSome` filter entirely, keeping the query plan simple when no skills filter is active.
+  6. **Parallel count query:** The existing `Promise.all([prisma.job.findMany(...), prisma.job.count(...)])` pattern already runs count and data fetches concurrently.
+
+- **Edge cases:**
+  - **Empty skills array**: No filter applied. Query runs unchanged.
+  - **Single skill**: Exact match via `hasSome(["React"])` — returns all jobs with "React" anywhere in their skills array.
+  - **Multiple skills**: OR semantics via `hasSome(["React", "TypeScript"])` — returns jobs matching at least one skill.
+  - **Skill with special characters** (e.g., "C++", "C#", "F#"): SKILLS_DATABASE stores these as-is. The `hasSome` filter operates on exact string comparison. The skill must exactly match the Job record's stored string. This is consistent with how `AutocompleteInput` and `SkillInput` already store skills — they must match the curated database or the free-text entry.
+  - **URL encoding/decoding**: Skills containing commas are not supported (the comma is used as the delimiter). The curated SKILLS_DATABASE has no entries containing commas. For free-text entries, the user would need to avoid commas — this is a known limitation documented in the component.
+  - **Max 10 skills filter cap**: The SkillFilter hides the "Add" option when `maxItems` is reached. Attempting to programmatically push beyond 10 is a no-op.
+  - **Duplicate skills in filter**: `AutocompleteInput` deduplicates case-insensitively — submitting "react" when "React" is already selected is a no-op.
+  - **Recruiter with zero jobs**: The `listJobs` query returns an empty list regardless of filter. The SkillFilter component gracefully hides (no data to show).
+  - **Public user with no matching jobs**: The existing empty-state messaging works — "No jobs found matching your criteria".
+  - **Skill filter + other filters interaction**: All filters are AND'd together (search AND workMode AND skills AND experienceLevel...). The skills filter is one additional AND clause.
+
+- **Test cases:**
+  **A) Backend query tests (`public-job-queries.test.ts`):**
+  1. **`listPublicJobs` without skills param** — returns all active jobs (unchanged behavior)
+  2. **`listPublicJobs` with empty skills array** — returns all active jobs (no filter applied)
+  3. **`listPublicJobs` with single matching skill** — returns only jobs containing that skill
+  4. **`listPublicJobs` with multiple skills (OR)** — returns jobs matching any of the skills
+  5. **`listPublicJobs` with skills that match no jobs** — returns empty list
+  6. **`listPublicJobs` with skills + search** — AND combination returns intersection
+  7. **`listPublicJobs` with skills + workMode** — AND combination returns correct intersection
+  8. **`listPublicJobs` with skills + employmentType** — AND combination correct
+  9. **`listPublicJobs` with skills + experienceLevel** — AND combination correct
+  10. **Prisma `hasSome` on empty Job.skills** — jobs with empty `skills: []` never match a `hasSome` filter (verifies no unintended matches)
+  11. **Case sensitivity** — `hasSome` is case-sensitive in PostgreSQL (text array). Verify "react" ≠ "React". The SKILLS_DATABASE uses title-case consistent with seed data; free-text entries are stored as typed.
+
+  **B) Component tests (`skill-filter.dom.test.tsx`):**
+  1. **Renders empty state** — no skills selected, input visible
+  2. **Shows skill badges** — pre-populated with skills, badges render with remove buttons
+  3. **Opens popup on input focus** — cmdk dropdown visible when user focuses input
+  4. **Selects skill via click** — clicking a suggestion adds it and calls onChange
+  5. **Removes skill via badge click** — clicking × on a badge removes it and calls onChange
+  6. **Free-text entry** — typing a non-suggested skill and pressing Enter adds it (allowCustom=true)
+  7. **Max items cap** — at maxItems, input is hidden or replaced with a "Max X skills" message
+  8. **Duplicate prevention** — trying to add an already-selected skill is a no-op
+  9. **Popup closes on outside click** — clicks outside the component close the cmdk dropdown
+  10. **Popup closes on skill select** — selecting a skill closes the dropdown
+  11. **Disabled state** — all interactions blocked when disabled={true}
+  12. **Keyboard navigation** — ArrowDown/ArrowUp moves through suggestions, Enter selects, Escape closes
+
+  **C) Integration tests (URL sync):**
+  1. **URL encodes skills correctly** — `?skills=React,TypeScript` after selecting two skills
+  2. **URL decodes skills on page load** — page parses `?skills=React,TypeScript` into two badges
+  3. **Clear button resets skills filter** — clicking "Clear" removes all URL params including `skills`
+  4. **Single skill URL** — `?skills=React` works correctly (single element array)
+  5. **No skills param** — no skills filter applied (default behavior)
+  6. **Skills filter + pagination** — changing skills resets page to 1
+
+- **Dependencies:** TASK-0.3.4 (AutocompleteInput), TASK-4.1.1 (public job queries), TASK-4.1.6 (job list page integration), TASK-2.3.1 (recruiter job schema), TASK-2.3.5 (recruiter jobs table)
+- **Completion:** Users can filter jobs by skills on the public listing page. Recruiters can filter their own jobs by skills. Both use the shared SkillFilter component with consistent UX. Backend has GIN-indexed `hasSome` query for performance. All 18+ test cases pass. TypeScript strict and ESLint clean.
 
 ### TASK-4.2.1 — View Tracking API
 - **Goal:** Endpoint for job view counting

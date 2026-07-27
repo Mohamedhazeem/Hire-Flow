@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProfileSchema, type ProfileInput } from "@/app/features/user/schema/profile.schema";
 import { upsertProfile } from "@/app/features/user/actions/upsert-profile";
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ExperienceListEditor } from "./experience-list-editor";
 import { SocialLinksEditor } from "./social-links-editor";
+import { SkillInput } from "@/components/ui/skill-input";
 import {
   UserIcon,
   FileText,
@@ -18,7 +19,6 @@ import {
   DollarSign,
   CheckCircle2,
   AlertCircle,
-  X,
 } from "lucide-react";
 
 const WORK_MODE_OPTIONS = [
@@ -34,7 +34,6 @@ type Props = {
 export function ProfileForm({ defaultValues }: Props) {
   const [serverError, setServerError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const [skillInput, setSkillInput] = useState("");
 
   const form = useForm<ProfileInput>({
     resolver: zodResolver(ProfileSchema),
@@ -51,27 +50,6 @@ export function ProfileForm({ defaultValues }: Props) {
       socialLinks: [],
     },
   });
-
-  const skills = useWatch({ control: form.control, name: "skills" });
-
-  const addSkill = useCallback(() => {
-    const trimmed = skillInput.trim();
-    if (trimmed && !skills.includes(trimmed)) {
-      form.setValue("skills", [...skills, trimmed], { shouldValidate: true });
-    }
-    setSkillInput("");
-  }, [skillInput, skills, form]);
-
-  const removeSkill = useCallback(
-    (skill: string) => {
-      form.setValue(
-        "skills",
-        skills.filter((s) => s !== skill),
-        { shouldValidate: true },
-      );
-    },
-    [skills, form],
-  );
 
   const onSubmit = async (data: ProfileInput) => {
     setServerError(null);
@@ -164,40 +142,11 @@ export function ProfileForm({ defaultValues }: Props) {
             <Wrench className="size-4" />
             Skills
           </label>
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="inline-flex items-center gap-1 rounded-full bg-brand/10 text-brand text-xs px-2.5 py-1"
-              >
-                {skill}
-                <button
-                  type="button"
-                  onClick={() => removeSkill(skill)}
-                  className="hover:text-error transition-colors"
-                  aria-label={`Remove ${skill}`}
-                >
-                  <X className="size-3" />
-                </button>
-              </span>
-            ))}
-          </div>
-          <div className="flex gap-2">
-            <Input
-              placeholder="Type a skill and press Enter"
-              value={skillInput}
-              onChange={(e) => setSkillInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  addSkill();
-                }
-              }}
-            />
-            <Button type="button" variant="outline" size="sm" onClick={addSkill}>
-              Add
-            </Button>
-          </div>
+          <SkillInput
+            value={form.watch("skills") ?? []}
+            onChange={(skills) => form.setValue("skills", skills, { shouldValidate: true })}
+            disabled={form.formState.isSubmitting}
+          />
           {form.formState.errors.skills && (
             <p className="text-xs text-error">{form.formState.errors.skills.message}</p>
           )}

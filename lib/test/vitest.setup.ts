@@ -4,6 +4,19 @@ import { cleanup } from "@testing-library/react";
 import dotenv from "dotenv";
 import path from "path";
 
+// cmdk uses ResizeObserver + scrollIntoView internally — polyfill for jsdom
+if (typeof ResizeObserver === "undefined") {
+  class ResizeObserverMock {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+  (globalThis as Record<string, unknown>).ResizeObserver = ResizeObserverMock;
+}
+if (typeof Element !== "undefined" && typeof Element.prototype.scrollIntoView !== "function") {
+  (Element.prototype as unknown as Record<string, unknown>).scrollIntoView = function () {};
+}
+
 // Cleanup DOM after each test — prevents cross-file jsdom leaks in singleFork mode
 afterEach(() => {
   cleanup();

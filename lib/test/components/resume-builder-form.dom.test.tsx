@@ -54,21 +54,26 @@ describe("ResumeBuilderForm", () => {
   it("adds and removes a skill chip", async () => {
     const user = userEvent.setup();
     render(<ResumeBuilderForm />);
-    const skillInput = screen.getByPlaceholderText("Type a skill and press Enter");
-    await user.type(skillInput, "TypeScript{Enter}");
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
+    const skillInput = screen.getByPlaceholderText("Search or type a skill...");
+    await user.type(skillInput, "TypeScript");
+    await user.click(screen.getByRole("option", { name: "TypeScript" }));
 
+    expect(screen.getByLabelText("Remove TypeScript")).toBeInTheDocument();
     await user.click(screen.getByLabelText("Remove TypeScript"));
-    expect(screen.queryByText("TypeScript")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Remove TypeScript")).not.toBeInTheDocument();
   });
 
   it("does not add duplicate skills", async () => {
     const user = userEvent.setup();
     render(<ResumeBuilderForm />);
-    const skillInput = screen.getByPlaceholderText("Type a skill and press Enter");
-    await user.type(skillInput, "React{Enter}");
-    await user.type(skillInput, "React{Enter}");
-    expect(screen.getAllByText("React")).toHaveLength(1);
+    const skillInput = screen.getByPlaceholderText("Search or type a skill...");
+    await user.type(skillInput, "React");
+    await user.click(screen.getByRole("option", { name: "React" }));
+
+    expect(screen.getByLabelText("Remove React")).toBeInTheDocument();
+    await user.clear(skillInput);
+    await user.type(skillInput, "React");
+    expect(screen.getByLabelText("Remove React")).toBeInTheDocument();
   });
 
   it("shows the Save label for a new resume and Update for an edit", () => {

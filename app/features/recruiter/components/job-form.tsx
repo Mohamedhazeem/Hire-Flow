@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm, useWatch, type Control, type FieldError } from "react-hook-form";
+import { useForm, useWatch, useController, type FieldError } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { JobCreateSchema, type JobFormInput } from "@/app/features/recruiter/schema/job.schema";
@@ -12,7 +12,10 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { ArrowLeftIcon, Loader2Icon } from "lucide-react";
 import Link from "next/link";
 import { FormField } from "@/components/shared/form-field";
-import { CommaInput } from "@/components/shared/comma-input";
+import { SkillInput } from "@/components/ui/skill-input";
+import { AutocompleteInput } from "@/components/ui/autocomplete-input";
+import { TAGS_DATABASE } from "@/data/tags-database";
+import { LOCATIONS_DATABASE } from "@/data/locations-database";
 
 const WORK_MODE_OPTIONS = [
   { value: "remote", label: "Remote" },
@@ -47,6 +50,9 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
 
   const workMode = useWatch({ control, name: "workMode" });
   const employmentType = useWatch({ control, name: "employmentType" });
+  const { field: skillsField } = useController({ control, name: "skills" });
+  const { field: locationsField } = useController({ control, name: "locations" });
+  const { field: tagsField } = useController({ control, name: "tags" });
 
   const onSubmit = async (data: JobFormInput) => {
     if (mode === "create") {
@@ -69,8 +75,13 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
           <Textarea {...register("description")} placeholder="Describe the role, responsibilities, and qualifications..." rows={6} />
         </FormField>
 
-        <FormField label="Locations (comma-separated)" required error={errors.locations as FieldError | undefined}>
-          <CommaInput control={control as unknown as Control<JobFormInput>} name="locations" placeholder="New York, London, Remote" />
+        <FormField label="Locations" required error={errors.locations as FieldError | undefined}>
+          <AutocompleteInput
+            value={locationsField.value}
+            onChange={locationsField.onChange}
+            suggestions={LOCATIONS_DATABASE}
+            placeholder="New York, London, Remote"
+          />
         </FormField>
 
         <div className="flex flex-col gap-4 sm:flex-row">
@@ -104,12 +115,17 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
           <Input {...register("timezone")} placeholder="EST / GMT-5" />
         </FormField>
 
-        <FormField label="Skills (comma-separated)">
-          <CommaInput control={control as unknown as Control<JobFormInput>} name="skills" placeholder="React, TypeScript, Node.js" />
+        <FormField label="Skills">
+          <SkillInput value={skillsField.value} onChange={skillsField.onChange} placeholder="Search or type skills..." />
         </FormField>
 
-        <FormField label="Tags (comma-separated)">
-          <CommaInput control={control as unknown as Control<JobFormInput>} name="tags" placeholder="engineering, frontend, senior" />
+        <FormField label="Tags">
+          <AutocompleteInput
+            value={tagsField.value}
+            onChange={tagsField.onChange}
+            suggestions={TAGS_DATABASE}
+            placeholder="engineering, frontend, senior"
+          />
         </FormField>
 
         <FormField label="Experience Level" required error={errors.experienceLevel}>

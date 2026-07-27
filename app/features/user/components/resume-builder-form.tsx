@@ -13,9 +13,9 @@ import { useUpdateBuilderData } from "@/app/features/user/hooks/use-resumes";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { SkillInput } from "@/components/ui/skill-input";
 import {
   SaveIcon,
-  XIcon,
   PlusIcon,
   Trash2Icon,
   GraduationCap,
@@ -49,7 +49,6 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
   const router = useRouter();
   const [serverError, setServerError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const [skillInput, setSkillInput] = useState("");
   const [presentYears, setPresentYears] = useState<Set<number>>(new Set());
 
   const isEdit = !!resumeId;
@@ -65,7 +64,6 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
       skills: [],
     },
   });
-  const [skills, setSkills] = useState<string[]>(form.getValues("skills") ?? []);
 
   const {
     fields: eduFields,
@@ -78,24 +76,6 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
     append: appendExp,
     remove: removeExp,
   } = useFieldArray({ control: form.control, name: "experiences" });
-
-  const addSkill = () => {
-    const current = form.getValues("skills") ?? [];
-    const trimmed = skillInput.trim();
-    if (trimmed && !current.includes(trimmed)) {
-      const next = [...current, trimmed];
-      form.setValue("skills", next, { shouldValidate: true });
-      setSkills(next);
-    }
-    setSkillInput("");
-  };
-
-  const removeSkill = (skill: string) => {
-    const current = form.getValues("skills") ?? [];
-    const next = current.filter((s) => s !== skill);
-    form.setValue("skills", next, { shouldValidate: true });
-    setSkills(next);
-  };
 
   const togglePresent = (index: number) => {
     const next = new Set(presentYears);
@@ -291,40 +271,11 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
             <Wrench className="size-4" />
             Skills
           </label>
-          <div className="flex flex-wrap gap-1.5 mb-2">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="inline-flex items-center gap-1 rounded-full bg-brand/10 text-brand text-xs px-2.5 py-1"
-              >
-                {skill}
-                <button
-                  type="button"
-                  onClick={() => removeSkill(skill)}
-                  className="hover:text-error transition-colors"
-                  aria-label={`Remove ${skill}`}
-                >
-                  <XIcon className="size-3" />
-                </button>
-              </span>
-            ))}
-          </div>
-          <div className="flex gap-2">
-            <Input
-              placeholder="Type a skill and press Enter"
-              value={skillInput}
-              onChange={(e) => setSkillInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  addSkill();
-                }
-              }}
-            />
-            <Button type="button" variant="outline" size="sm" onClick={addSkill}>
-              Add
-            </Button>
-          </div>
+          <SkillInput
+            value={form.watch("skills") ?? []}
+            onChange={(skills) => form.setValue("skills", skills, { shouldValidate: true })}
+            disabled={form.formState.isSubmitting}
+          />
         </div>
       </div>
 
