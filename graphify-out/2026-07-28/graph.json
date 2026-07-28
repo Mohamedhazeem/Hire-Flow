@@ -13467,7 +13467,7 @@
       "label": "checkBookmark()",
       "file_type": "code",
       "source_file": "app/features/user/queries/bookmark-queries.ts",
-      "source_location": "L112",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "queries_bookmark_queries_checkbookmark",
       "community": 224,
@@ -71828,9 +71828,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries_perf_test",
-      "target": "factories_application_factory_createtestapplication",
-      "confidence_score": 1.0
+      "target": "factories_application_factory_createtestapplication"
     },
     {
       "relation": "imports",
@@ -71883,9 +71883,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries_perf_test",
-      "target": "lib_prisma",
-      "confidence_score": 1.0
+      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -71948,9 +71948,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_bi_zero",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_bi_zero"
     },
     {
       "relation": "contains",
@@ -71968,9 +71968,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_clauseresult",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_clauseresult"
     },
     {
       "relation": "contains",
@@ -72008,9 +72008,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_joinclausefromwhere",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_joinclausefromwhere"
     },
     {
       "relation": "contains",
@@ -72018,9 +72018,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_rawconversionrow",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_rawconversionrow"
     },
     {
       "relation": "contains",
@@ -72028,9 +72028,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_rawfunnelrow",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_rawfunnelrow"
     },
     {
       "relation": "contains",
@@ -72038,9 +72038,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_rawjobbreakdownrow",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_rawjobbreakdownrow"
     },
     {
       "relation": "contains",
@@ -72058,9 +72058,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries",
-      "target": "queries_analytics_queries_reconstructfunnelorder",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_reconstructfunnelorder"
     },
     {
       "relation": "imports_from",
@@ -72201,9 +72201,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries_getanalytics",
-      "target": "queries_analytics_queries_buildwhereclauses",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_buildwhereclauses"
     },
     {
       "relation": "calls",
@@ -72212,9 +72212,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L234",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries_getanalytics",
-      "target": "queries_analytics_queries_reconstructfunnelorder",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_reconstructfunnelorder"
     },
     {
       "relation": "calls",
@@ -72223,9 +72223,9 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_analytics_queries_getanalytics",
-      "target": "queries_analytics_queries_joinclausefromwhere",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_joinclausefromwhere"
     },
     {
       "relation": "calls",
@@ -72355,9 +72355,9 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_application_queries",
-      "target": "lib_pagination_buildcursormeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildcursormeta"
     },
     {
       "relation": "imports",
@@ -72377,9 +72377,9 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_application_queries",
-      "target": "lib_pagination_parsecursorparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsecursorparams"
     },
     {
       "relation": "imports",
@@ -72388,9 +72388,9 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_application_queries",
-      "target": "lib_pagination_parsedualmodepagination",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsedualmodepagination"
     },
     {
       "relation": "imports",
@@ -72420,9 +72420,9 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_application_queries",
-      "target": "queries_application_queries_applicantcursorresult",
-      "confidence_score": 1.0
+      "target": "queries_application_queries_applicantcursorresult"
     },
     {
       "relation": "contains",
@@ -72440,9 +72440,9 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_application_queries",
-      "target": "queries_application_queries_applicantoffsetresult",
-      "confidence_score": 1.0
+      "target": "queries_application_queries_applicantoffsetresult"
     },
     {
       "relation": "contains",
@@ -77942,9 +77942,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "lib_pagination",
-      "confidence_score": 1.0
+      "target": "lib_pagination"
     },
     {
       "relation": "imports",
@@ -77953,9 +77953,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "lib_pagination_buildoffsetmeta",
-      "confidence_score": 1.0
+      "target": "lib_pagination_buildoffsetmeta"
     },
     {
       "relation": "imports",
@@ -77964,9 +77964,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "lib_pagination_parseoffsetparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parseoffsetparams"
     },
     {
       "relation": "imports_from",
@@ -77995,9 +77995,9 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "queries_bookmark_queries",
-      "target": "queries_bookmark_queries_bookmarklistresult",
-      "confidence_score": 1.0
+      "target": "queries_bookmark_queries_bookmarklistresult"
     },
     {
       "relation": "contains",
@@ -87694,9 +87694,9 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_pagination",
-      "target": "lib_pagination_dualmodepaginationparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_dualmodepaginationparams"
     },
     {
       "relation": "contains",
@@ -87704,9 +87704,9 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_pagination",
-      "target": "lib_pagination_dualmoderesult",
-      "confidence_score": 1.0
+      "target": "lib_pagination_dualmoderesult"
     },
     {
       "relation": "contains",
@@ -87744,9 +87744,9 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_pagination",
-      "target": "lib_pagination_parsedualmodepagination",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsedualmodepagination"
     },
     {
       "relation": "contains",
@@ -87787,9 +87787,9 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_pagination_parsedualmodepagination",
-      "target": "lib_pagination_parseoffsetparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parseoffsetparams"
     },
     {
       "relation": "imports",
@@ -87820,9 +87820,9 @@
       "source_file": "lib/pagination.ts",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_pagination_parsedualmodepagination",
-      "target": "lib_pagination_parsecursorparams",
-      "confidence_score": 1.0
+      "target": "lib_pagination_parsecursorparams"
     },
     {
       "relation": "imports",
@@ -102412,9 +102412,9 @@
       "source_file": "README.md",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_core_api_endpoints",
-      "target": "readme_admin_super_admin",
-      "confidence_score": 1.0
+      "target": "readme_admin_super_admin"
     },
     {
       "relation": "contains",
@@ -102422,9 +102422,9 @@
       "source_file": "README.md",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_core_api_endpoints",
-      "target": "readme_job_seeker_user_230",
-      "confidence_score": 1.0
+      "target": "readme_job_seeker_user_230"
     },
     {
       "relation": "contains",
@@ -102432,9 +102432,9 @@
       "source_file": "README.md",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_core_api_endpoints",
-      "target": "readme_public_249",
-      "confidence_score": 1.0
+      "target": "readme_public_249"
     },
     {
       "relation": "contains",
@@ -102442,9 +102442,9 @@
       "source_file": "README.md",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_core_api_endpoints",
-      "target": "readme_recruiter_200",
-      "confidence_score": 1.0
+      "target": "readme_recruiter_200"
     },
     {
       "relation": "contains",
@@ -102452,9 +102452,9 @@
       "source_file": "README.md",
       "source_location": "L259",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_core_api_endpoints",
-      "target": "readme_shared_infrastructure",
-      "confidence_score": 1.0
+      "target": "readme_shared_infrastructure"
     },
     {
       "relation": "contains",
@@ -107192,9 +107192,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_47",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_47"
     },
     {
       "relation": "contains",
@@ -107202,9 +107202,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_199",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_199"
     },
     {
       "relation": "contains",
@@ -107212,9 +107212,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_216",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_finding_216"
     },
     {
       "relation": "contains",
@@ -107222,9 +107222,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_222",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_222"
     },
     {
       "relation": "contains",
@@ -107232,9 +107232,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_228",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_228"
     },
     {
       "relation": "contains",
@@ -107252,9 +107252,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L240",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_240",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_finding_240"
     },
     {
       "relation": "contains",
@@ -107262,9 +107262,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L244",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_244",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_244"
     },
     {
       "relation": "contains",
@@ -107272,9 +107272,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L280",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_280",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_280"
     },
     {
       "relation": "contains",
@@ -107292,9 +107292,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L509",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_509",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_509"
     },
     {
       "relation": "contains",
@@ -107322,9 +107322,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L307",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_307",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_307"
     },
     {
       "relation": "contains",
@@ -107332,9 +107332,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L523",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_523",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_523"
     },
     {
       "relation": "contains",
@@ -107352,9 +107352,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L573",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_573",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_573"
     },
     {
       "relation": "contains",
@@ -107372,9 +107372,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L581",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_581",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_581"
     },
     {
       "relation": "contains",
@@ -107382,9 +107382,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L594",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_594",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_594"
     },
     {
       "relation": "contains",
@@ -107392,9 +107392,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L702",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_702",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_702"
     },
     {
       "relation": "contains",
@@ -107432,9 +107432,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L610",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_610",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_610"
     },
     {
       "relation": "contains",
@@ -107442,9 +107442,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L713",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_713",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_713"
     },
     {
       "relation": "contains",
@@ -107452,9 +107452,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L726",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_726",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_726"
     },
     {
       "relation": "contains",
@@ -107462,9 +107462,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L820",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_820",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_820"
     },
     {
       "relation": "contains",
@@ -107472,9 +107472,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L735",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_735",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_735"
     },
     {
       "relation": "contains",
@@ -107482,9 +107482,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L829",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_829",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_829"
     },
     {
       "relation": "contains",
@@ -107492,9 +107492,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L844",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_844",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_844"
     },
     {
       "relation": "contains",
@@ -107502,9 +107502,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L887",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_887",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_887"
     },
     {
       "relation": "contains",
@@ -107522,9 +107522,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L854",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_854",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_854"
     },
     {
       "relation": "contains",
@@ -107532,9 +107532,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L894",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_894",
-      "confidence_score": 1.0
+      "target": "plans_1785126715092_performance_optimization_plan_validation_894"
     },
     {
       "relation": "contains",

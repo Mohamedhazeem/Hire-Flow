@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   ".kilo/kilo.json": {
-    "mtime": 1782745608.1006334,
-    "ast_hash": "fab9c3fa96c160fd8c923c4d3f026f3e",
+    "mtime": 1785253478.441115,
+    "ast_hash": "e5436147907d50a1d5e339fe0339cdf4",
     "semantic_hash": ""
   },
   ".kilo/package.json": {
@@ -1320,8 +1320,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/analytics-queries.ts": {
-    "mtime": 1785210131.2554264,
-    "ast_hash": "02edd6f17ab846ee5d02a418107ab703",
+    "mtime": 1785252532.6048286,
+    "ast_hash": "c83812fff667847bf7b0e7ee647f5aec",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/application-queries.ts": {

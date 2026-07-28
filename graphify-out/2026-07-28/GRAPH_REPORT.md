@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-28)
 
 ## Corpus Check
-- 690 files · ~304,605 words
+- 690 files · ~304,592 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
