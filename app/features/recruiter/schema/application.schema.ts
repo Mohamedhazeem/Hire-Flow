@@ -33,9 +33,11 @@ export const TransitionStatusSchema = z.enum(APPLICATION_STATUSES);
 export const ListApplicantsParamsSchema = z.object({
   page: z.coerce.number().int().min(1).optional().default(1),
   pageSize: z.coerce.number().int().min(1).max(100).optional().default(20),
+  cursor: z.string().optional(),
+  limit: z.coerce.number().int().min(1).max(100).optional(),
   search: z.string().optional(),
   status: ApplicationStatusSchema.optional(),
-  sortBy: z.enum(["appliedAt", "updatedAt", "status", "name"]).optional().default("appliedAt"),
+  sortBy: z.enum(["appliedAt", "updatedAt", "status"]).optional().default("appliedAt"),
   sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
 });
 

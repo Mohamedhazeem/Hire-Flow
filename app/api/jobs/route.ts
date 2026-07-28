@@ -22,7 +22,9 @@ async function handleGET(request: NextRequest) {
   };
 
   const result = await listPublicJobs(params);
-  return ok(result);
+  const response = ok(result);
+  response.headers.set("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
+  return response;
 }
 
 export const GET = withErrorHandler(handleGET);

@@ -84,25 +84,31 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
     if (!resolved.ok) throw new ValidationError("Could not read resume file");
     const buffer = Buffer.from(await resolved.arrayBuffer());
     const type = resume.fileType.toLowerCase();
-    if (type.includes("pdf")) {
-      const { PDFParse } = await import("pdf-parse");
-      const parser = new PDFParse({ data: buffer });
-      const textResult = await parser.getText();
-      resumeText = textResult.text;
-      await parser.destroy();
-    } else if (
-      type.includes("wordprocessingml") ||
-      type.includes("docx") ||
-      type.includes("msword")
-    ) {
-      const mammoth = await import("mammoth");
-      const result = await mammoth.extractRawText({ buffer });
-      resumeText = result.value;
-    } else {
-      throw new ValidationError("File type not supported for AI analysis.");
-    }
-    if (!resumeText.trim()) {
-      resumeText = "No text content found. This resume may be a scanned image.";
+    try {
+      if (type.includes("pdf")) {
+        const { PDFParse } = await import("pdf-parse");
+        const parser = new PDFParse({ data: buffer });
+        const textResult = await parser.getText();
+        resumeText = textResult.text;
+        await parser.destroy();
+      } else if (
+        type.includes("wordprocessingml") ||
+        type.includes("docx") ||
+        type.includes("msword")
+      ) {
+        const mammoth = await import("mammoth");
+        const result = await mammoth.extractRawText({ buffer });
+        resumeText = result.value;
+      } else {
+        throw new ValidationError("File type not supported for AI analysis.");
+      }
+      if (!resumeText.trim()) {
+        resumeText = "No text content found. This resume may be a scanned image.";
+      }
+    } catch (err) {
+      if (err instanceof ValidationError) throw err;
+      resumeText =
+        "[Resume could not be parsed. Please enter builder mode for best results.]";
     }
   } else {
     resumeText = "No resume content available.";
@@ -123,9 +129,24 @@ async function handlePOST(_request: NextRequest, { params }: { params: Promise<{
     "Respond ONLY with valid JSON matching this schema:\n" +
     '{ suggestions: [{ type: "bullet_improvement"|"skill_addition"|"section_expansion"|"ats_optimization"|"grammar", section: string, original?: string, suggestion: string, reasoning: string, priority: "high"|"medium"|"low" }], overallScore: number, projectedScore: number, keyStrengths: string[], improvementAreas: string[] }';
 
-  const raw = await callAI(resumeText, systemPrompt, 2048);
+  let raw: string | null = null;
+  try {
+    raw = await callAI(resumeText, systemPrompt, 2048);
+  } catch {
+    // callAI throws ApiError on network/API failures — treat as graceful degradation
+  }
+
   if (raw === null) {
-    return ok(null, 503);
+    return ok(
+      {
+        suggestions: [],
+        overallScore: null,
+        projectedScore: null,
+        keyStrengths: ["Could not reach AI service."],
+        improvementAreas: ["Retry later."],
+      },
+      202,
+    );
   }
 
   let parsed: unknown;

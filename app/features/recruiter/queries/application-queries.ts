@@ -1,5 +1,11 @@
 import prisma from "@/lib/prisma";
-import { buildOffsetMeta, parseOffsetParams } from "@/lib/pagination";
+import {
+  buildCursorMeta,
+  buildOffsetMeta,
+  parseCursorParams,
+  parseDualModePagination,
+  parseOffsetParams,
+} from "@/lib/pagination";
 import type { ListApplicantsParams } from "../schema/application.schema";
 
 export type ApplicantRow = {
@@ -12,7 +18,14 @@ export type ApplicantRow = {
   updatedAt: Date;
 };
 
-export type ApplicantListResult = {
+export type ApplicantCursorResult = {
+  mode: "cursor";
+  items: ApplicantRow[];
+  meta: { nextCursor: string | null; hasNextPage: boolean };
+};
+
+export type ApplicantOffsetResult = {
+  mode: "offset";
   applicants: ApplicantRow[];
   page: number;
   pageSize: number;
@@ -22,16 +35,13 @@ export type ApplicantListResult = {
   hasPrevPage: boolean;
 };
 
+export type ApplicantListResult = ApplicantCursorResult | ApplicantOffsetResult;
+
 export async function listApplicants(
   jobId: string,
   companyId: string,
   params: ListApplicantsParams,
 ): Promise<ApplicantListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
-
   const where: Record<string, unknown> = {
     jobId,
     job: { companyId },
@@ -49,6 +59,49 @@ export async function listApplicants(
   if (params.status) {
     where.status = params.status;
   }
+
+  const { mode } = parseDualModePagination(
+    { page: params.page, pageSize: params.pageSize, cursor: params.cursor, limit: params.limit },
+    20,
+  );
+
+  if (mode === "cursor") {
+    const { take, cursor } = parseCursorParams(
+      { cursor: params.cursor, limit: params.limit },
+      20,
+    );
+    const rows = await prisma.application.findMany({
+      where,
+      take: take + 1,
+      ...(cursor ? { cursor: { id: cursor }, skip: 1 } : {}),
+      orderBy: { id: "desc" },
+      select: {
+        id: true,
+        userId: true,
+        status: true,
+        appliedAt: true,
+        updatedAt: true,
+        user: { select: { name: true, email: true } },
+      },
+    });
+
+    const items = rows.map((a) => ({
+      id: a.id,
+      userId: a.userId,
+      name: a.user.name,
+      email: a.user.email,
+      status: a.status,
+      appliedAt: a.appliedAt,
+      updatedAt: a.updatedAt,
+    }));
+
+    return { mode: "cursor", ...buildCursorMeta(items, take) };
+  }
+
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const orderBy: Record<string, string> = {};
   const sortBy = params.sortBy ?? "appliedAt";
@@ -72,7 +125,7 @@ export async function listApplicants(
     prisma.application.count({ where }),
   ]);
 
-  const applicants: ApplicantRow[] = applications.map((a) => ({
+  const applicants = applications.map((a) => ({
     id: a.id,
     userId: a.userId,
     name: a.user.name,
@@ -82,7 +135,11 @@ export async function listApplicants(
     updatedAt: a.updatedAt,
   }));
 
-  return { applicants, ...buildOffsetMeta(total, page, pageSize) };
+  return {
+    mode: "offset",
+    applicants,
+    ...buildOffsetMeta(total, page, pageSize),
+  };
 }
 
 export async function getApplicationById(

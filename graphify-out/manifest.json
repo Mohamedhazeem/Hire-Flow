@@ -440,8 +440,8 @@
     "semantic_hash": ""
   },
   "app/api/jobs/[id]/route.ts": {
-    "mtime": 1783572105.7875655,
-    "ast_hash": "98a9dcf3247fe7387b7ec445e2259757",
+    "mtime": 1785178363.5073926,
+    "ast_hash": "a288569f890895d215a8354d6d1e8463",
     "semantic_hash": ""
   },
   "app/api/jobs/[id]/view/route.ts": {
@@ -450,8 +450,8 @@
     "semantic_hash": ""
   },
   "app/api/jobs/route.ts": {
-    "mtime": 1783572105.7905595,
-    "ast_hash": "6169a8b26f23be38f3eec52735a4d87e",
+    "mtime": 1785178385.6545427,
+    "ast_hash": "7d6ba7eb655ad1e8f62cf67806fe1ac9",
     "semantic_hash": ""
   },
   "app/api/notifications/route.ts": {
@@ -515,13 +515,13 @@
     "semantic_hash": ""
   },
   "app/api/recruiter/jobs/[id]/applicants/export/route.ts": {
-    "mtime": 1783572105.8085582,
-    "ast_hash": "3c6a6bbdf2320369b3af0ed3503e1965",
+    "mtime": 1785178222.223153,
+    "ast_hash": "dd8c9e824ea3f6845e2d23a62a6ba82d",
     "semantic_hash": ""
   },
   "app/api/recruiter/jobs/[id]/applicants/route.ts": {
-    "mtime": 1783572105.8105538,
-    "ast_hash": "fdf40d09196af367593e4ff18417bbf7",
+    "mtime": 1785178344.6643507,
+    "ast_hash": "7fba874bae272d83ea4978b83d2fa026",
     "semantic_hash": ""
   },
   "app/api/recruiter/jobs/[id]/route.ts": {
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "app/api/user/bookmarks/route.ts": {
-    "mtime": 1783572105.828554,
-    "ast_hash": "c93e401cba1c5260295b5fef76e414e3",
+    "mtime": 1785177642.8576634,
+    "ast_hash": "aebe8fb734827d6487a94a19753254ec",
     "semantic_hash": ""
   },
   "app/api/user/profile/route.ts": {
@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/ai-enhance/route.ts": {
-    "mtime": 1785159354.5623333,
-    "ast_hash": "522c753793e22806f57b53505778b1e0",
+    "mtime": 1785178245.0264313,
+    "ast_hash": "122e619df274a88ccfa5d1026ea48e0e",
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/builder-data/route.ts": {
@@ -1320,13 +1320,13 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/analytics-queries.ts": {
-    "mtime": 1784821156.741012,
-    "ast_hash": "fdb1022007d33fbef7d6f1266671ed9e",
+    "mtime": 1785210131.2554264,
+    "ast_hash": "02edd6f17ab846ee5d02a418107ab703",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/application-queries.ts": {
-    "mtime": 1782491329.05373,
-    "ast_hash": "359ce4ce5720c9cbc56b691e9a9d26cd",
+    "mtime": 1785178320.3412116,
+    "ast_hash": "90d22614d76666365317f43b724ade5d",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/dashboard-queries.ts": {
@@ -1335,8 +1335,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/export-queries.ts": {
-    "mtime": 1782522612.4330606,
-    "ast_hash": "f37e44458da36e9293d3df2da56f3b2b",
+    "mtime": 1785178212.0515823,
+    "ast_hash": "2f5d0741830ff160043acdbddb8c33bc",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/job-queries.ts": {
@@ -1350,8 +1350,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
-    "mtime": 1784814569.5960033,
-    "ast_hash": "8d7e2bf3fd839b843a0505dec2abe0e2",
+    "mtime": 1785178302.0541675,
+    "ast_hash": "db7c0fa51a1616e9c2fdd352809f3a0c",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/company.schema.ts": {
@@ -1830,8 +1830,8 @@
     "semantic_hash": ""
   },
   "lib/pagination.ts": {
-    "mtime": 1782024377.4672716,
-    "ast_hash": "2ebfa931ea70c913add497558afd33f5",
+    "mtime": 1785178292.1808481,
+    "ast_hash": "b48f1ab87a04669273f8b4ff22774032",
     "semantic_hash": ""
   },
   "lib/prisma.ts": {
@@ -2150,8 +2150,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1785161660.0839984,
-    "ast_hash": "943e320b24876f67b0db35be170778ac",
+    "mtime": 1785179380.9186327,
+    "ast_hash": "320dba6caee5af90a6381579e937b91e",
     "semantic_hash": ""
   },
   "docs/architecture/technical-design.md": {
@@ -2375,8 +2375,8 @@
     "semantic_hash": ""
   },
   "app/features/user/queries/bookmark-queries.ts": {
-    "mtime": 1783572105.9360993,
-    "ast_hash": "aa5ecfa07359b5a1851b1e84d2c8be1b",
+    "mtime": 1785250090.3641293,
+    "ast_hash": "2039aaca1c8f416a0ca0eefec0fd35d8",
     "semantic_hash": ""
   },
   "app/features/user/queries/profile-queries.ts": {
@@ -3140,8 +3140,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/analytics-queries.perf.test.ts": {
-    "mtime": 1784789049.9688537,
-    "ast_hash": "28f23f9599e4d42288d1aa93f0788b52",
+    "mtime": 1785206988.0403602,
+    "ast_hash": "8ea7eb43016f6d6cb64ba8d62d36697b",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/application-queries.perf.test.ts": {
@@ -3165,8 +3165,8 @@
     "semantic_hash": ""
   },
   "prisma/migrations/20260716135851_phase7_perf_indexes/migration.sql": {
-    "mtime": 1784789051.1101065,
-    "ast_hash": "66f37a821b4c11e7f17547d999ec929c",
+    "mtime": 1785177795.7656107,
+    "ast_hash": "241417f138a8a3d86b77762c2a391fc2",
     "semantic_hash": ""
   },
   "prisma/migrations/20260716140000_phase7_quota/migration.sql": {
@@ -3315,8 +3315,8 @@
     "semantic_hash": ""
   },
   "app/api/jobs/[id]/related/route.ts": {
-    "mtime": 1784870864.291079,
-    "ast_hash": "75cad946b67d0047e166b1008da9cc01",
+    "mtime": 1785178374.0885448,
+    "ast_hash": "36e1e27928334d23d4bccbba25a423ab",
     "semantic_hash": ""
   },
   "app/features/jobs/components/compact-job-card.tsx": {
@@ -3445,8 +3445,8 @@
     "semantic_hash": ""
   },
   "plans/1785126715092-performance-optimization-plan.md": {
-    "mtime": 1785175480.6230175,
-    "ast_hash": "0a425ac95521e602d17c3b2e8d4aa787",
+    "mtime": 1785177412.6876693,
+    "ast_hash": "3a6be1f7a610ac2bcbaf4128d954d600",
     "semantic_hash": ""
   },
   "components/ui/autocomplete-input.tsx": {
@@ -3487,6 +3487,11 @@
   "lib/test/integration/resume/builder-skills-persistence.test.ts": {
     "mtime": 1785167276.2123523,
     "ast_hash": "516b11545b21d27ca305b7c8d9511cb9",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260728000000_add_perf_indexes/migration.sql": {
+    "mtime": 1785178117.2707715,
+    "ast_hash": "81f3951d933690cdd91282f243eba865",
     "semantic_hash": ""
   }
 }

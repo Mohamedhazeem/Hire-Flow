@@ -23,7 +23,9 @@ async function handleGET(_request: NextRequest, { params }: { params: Promise<{ 
     ),
   ]);
 
-  return ok({ companyJobs, similarJobs });
+  const response = ok({ companyJobs, similarJobs });
+  response.headers.set("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
+  return response;
 }
 
 export const GET = withErrorHandler(handleGET);

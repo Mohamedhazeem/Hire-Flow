@@ -5,9 +5,17 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { userService } from "@/lib/services/user-service";
 import { listUserBookmarks } from "@/app/features/user/queries/bookmark-queries";
 
-async function handleGET() {
+async function handleGET(request: NextRequest) {
   const session = await requireRole(["user"]);
-  const bookmarks = await listUserBookmarks(session.id);
+  const url = new URL(request.url);
+  const page = url.searchParams.get("page")
+    ? Number(url.searchParams.get("page"))
+    : undefined;
+  const pageSize = url.searchParams.get("pageSize")
+    ? Number(url.searchParams.get("pageSize"))
+    : undefined;
+
+  const bookmarks = await listUserBookmarks(session.id, page ? { page, pageSize } : undefined);
   return ok(bookmarks);
 }
 

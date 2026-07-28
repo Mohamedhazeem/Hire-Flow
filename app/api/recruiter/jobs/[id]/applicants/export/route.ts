@@ -25,7 +25,12 @@ async function handleGET(request: NextRequest, { params }: { params: Promise<{ i
   const search = request.nextUrl.searchParams.get("search") ?? undefined;
   const status = request.nextUrl.searchParams.get("status") ?? undefined;
 
-  const stream = await exportApplicantsAsCsv(jobId, companyId, { search, status });
+  const stream = await exportApplicantsAsCsv(
+    jobId,
+    companyId,
+    { search, status },
+    request.signal,
+  );
 
   const sanitizedTitle = job.title.replace(/[^a-zA-Z0-9_-]/g, "_");
   const dateStr = format(new Date(), "yyyy-MM-dd");

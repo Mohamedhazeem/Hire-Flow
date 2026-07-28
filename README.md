@@ -94,7 +94,7 @@ Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on pr
 - Job detail pages with view tracking (deduplicated per session), company preview cards, and related content panels (company jobs + similar jobs)
 - Animated home page: hero search, category strip, featured jobs/companies, testimonials
 - Career resources hub (resume tips, interview checklist, salary FAQ)
-- **Dedicated pages**: About, Careers, Contact, Employers, Pricing, Press
+- **Dedicated pages**: About, Careers, Contact, Employers, Pricing, Press, Become an Employer
 - **SEO-complete**: dynamic `sitemap.xml`, `robots.txt`, and JSON-LD `JobPosting` structured data
 - **Social links** in footer (LinkedIn, Twitter/X, GitHub) with `mailto:` fallback to contact email
 
@@ -166,53 +166,114 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 ## 📡 Core API Endpoints
 
-The following REST endpoints are available under `/api/`. All routes use Zod validation, centralized error handling (`lib/api-error.ts`), and `requireRole([...])` guards.
+All routes use Zod validation, centralized error handling (`lib/api-error.ts`), and `requireRole([...])` guards. Error responses follow `{ error: string, code?: string }`.
 
-| Method   | Endpoint                                           | Role          | Purpose                                                         |
-| -------- | -------------------------------------------------- | ------------- | --------------------------------------------------------------- |
-| `GET`    | `/api/recruiter/jobs`                              | recruiter     | List company jobs (paginated, filterable)                       |
-| `POST`   | `/api/recruiter/jobs`                              | recruiter     | Create a job posting                                            |
-| `PATCH`  | `/api/recruiter/jobs/[id]`                         | recruiter     | Update job fields or toggle status                              |
-| `DELETE` | `/api/recruiter/jobs/[id]`                         | recruiter     | Soft-delete (active/archived) or hard-delete (draft)            |
-| `GET`    | `/api/recruiter/jobs/[jobId]/applicants`           | recruiter     | List applicants for a job (paginated, filterable)               |
-| `POST`   | `/api/recruiter/applicants/[applicationId]/status` | recruiter     | Transition a single applicant through the pipeline              |
-| `POST`   | `/api/recruiter/applicants/bulk-status`            | recruiter     | Atomic bulk status transition                                   |
-| `GET`    | `/api/recruiter/applicants/[applicationId]`        | recruiter     | Full applicant detail (profile, timeline, resume)               |
-| `GET`    | `/api/recruiter/export/applicants`                 | recruiter     | Stream RFC 4180 CSV of filtered applicants                      |
-| `GET`    | `/api/recruiter/analytics/jobs`                    | recruiter     | Cross-job analytics with date range / status filters            |
-| `GET`    | `/api/recruiter/analytics/jobs/[jobId]`            | recruiter     | Per-job pipeline funnel and trend data                          |
-| `POST`   | `/api/upload`                                      | authenticated | Upload a file (resume, logo, message attachment)                |
-| `DELETE` | `/api/upload`                                      | authenticated | Delete a file by URL or filename                                |
-| `GET`    | `/api/files/download/[id]`                         | authenticated | Stream file download (local or Vercel Blob)                     |
-| `POST`   | `/api/user/resumes`                                | user          | Upload a new resume file                                        |
-| `GET`    | `/api/user/resumes`                                | user          | List own resumes (non-deleted)                                  |
-| `PATCH`  | `/api/user/resumes/[id]`                           | user          | Set resume as primary                                           |
-| `DELETE` | `/api/user/resumes/[id]`                           | user          | Soft-delete resume + remove uploaded file from storage          |
-| `POST`   | `/api/user/resumes/[id]/ai-enhance`                | user          | AI resume suggestions (rate-limited, 5/day)                     |
-| `POST`   | `/api/user/applications`                           | user          | Submit a job application (with resume snapshot)                 |
-| `GET`    | `/api/user/applications`                           | user          | List own applications (filterable, searchable)                  |
-| `POST`   | `/api/user/applications/[id]/withdraw`             | user          | Withdraw an application (only `applied` / `reviewing`)          |
-| `POST`   | `/api/user/bookmarks/[jobId]/toggle`               | user          | Toggle a saved job bookmark                                     |
-| `GET`    | `/api/public/jobs`                                 | public        | Full-text job search with filters                               |
-| `GET`    | `/api/public/jobs/[slug]`                          | public        | Job detail with company preview                                 |
-| `GET`    | `/api/admin/users`                                 | admin         | List all users (paginated, filterable)                          |
-| `POST`   | `/api/admin/users/[id]/ban`                        | admin         | Ban a user (revokes all sessions)                               |
-| `POST`   | `/api/admin/users/[id]/unban`                      | admin         | Unban a user                                                    |
-| `GET`    | `/api/admin/users/[id]/sessions`                   | admin         | List active sessions for a user                                 |
-| `POST`   | `/api/admin/users/[id]/revoke-sessions`            | admin         | Bulk-revoke all sessions for a user                             |
-| `PATCH`  | `/api/admin/users/[id]/role`                       | admin         | Change a user's role                                            |
-| `GET`    | `/api/admin/recruiters`                            | admin         | List all recruiters with company affiliation                    |
-| `POST`   | `/api/admin/jobs/[id]/toggle-active`               | admin         | Admin kill-switch (overrides recruiter status)                  |
-| `GET`    | `/api/admin/analytics`                             | admin         | Platform-wide aggregates (users, jobs, applications, companies) |
-| `GET`    | `/api/jobs/[slug]`                                 | public        | Job detail for SEO (JSON-LD enriched)                           |
+### Admin / Super Admin
 
-All endpoints accept and return JSON. Errors follow a consistent `{ error: string, code?: string }` shape.
+| Method   | Endpoint                                         | Purpose                                                |
+| -------- | ------------------------------------------------ | ------------------------------------------------------ |
+| `GET`    | `/api/admin/dashboard`                           | Platform-wide stats (users, jobs, applications)        |
+| `GET`    | `/api/admin/users`                               | List users (paginated, filterable)                     |
+| `GET`    | `/api/admin/users/[id]`                          | User detail                                            |
+| `DELETE` | `/api/admin/users/[id]`                          | Remove user                                            |
+| `POST`   | `/api/admin/users/[id]/ban`                      | Ban user + revoke all sessions                         |
+| `POST`   | `/api/admin/users/[id]/unban`                    | Unban user                                             |
+| `POST`   | `/api/admin/users/[id]/role`                     | Change user role                                       |
+| `GET`    | `/api/admin/users/[id]/sessions`                 | List active sessions                                   |
+| `DELETE` | `/api/admin/users/[id]/sessions`                 | Revoke all sessions                                    |
+| `GET`    | `/api/admin/users/[id]/applications`             | List user's applications                               |
+| `GET`    | `/api/admin/jobs`                                | List all jobs (paginated, filterable)                  |
+| `DELETE` | `/api/admin/jobs/[id]`                           | Remove job                                             |
+| `PATCH`  | `/api/admin/jobs/[id]`                           | Toggle `isActive` kill-switch                          |
+| `GET`    | `/api/admin/invite`                              | List pending invites & team members                    |
+| `DELETE` | `/api/admin/invite/[id]`                         | Cancel pending invite                                  |
+| `POST`   | `/api/admin/invite/accept`                       | Accept invite with token                               |
+| `DELETE` | `/api/admin/team/[id]`                           | Remove team member                                     |
+| `GET`    | `/api/admin/threads`                             | List message threads                                   |
+| `GET`    | `/api/admin/messages/[threadId]`                 | Get thread messages                                    |
+| `POST`   | `/api/admin/messages/[threadId]`                 | Send message                                           |
+| `DELETE` | `/api/admin/messages/[threadId]`                 | Delete thread                                          |
+| `DELETE` | `/api/admin/messages/[threadId]/[messageId]`     | Delete message                                         |
+| `GET`    | `/api/admin/messages/search`                     | Search users & recruiters                              |
+| `GET`    | `/api/admin/applications/[applicationId]/detail` | Read-only applicant detail (profile, timeline, resume) |
+
+### Recruiter
+
+| Method   | Endpoint                                              | Purpose                                              |
+| -------- | ----------------------------------------------------- | ---------------------------------------------------- |
+| `GET`    | `/api/recruiter/jobs`                                 | List company jobs (paginated, filterable)            |
+| `POST`   | `/api/recruiter/jobs`                                 | Create job posting                                   |
+| `GET`    | `/api/recruiter/jobs/[id]`                            | Job detail                                           |
+| `PATCH`  | `/api/recruiter/jobs/[id]`                            | Update job fields                                    |
+| `DELETE` | `/api/recruiter/jobs/[id]`                            | Soft-delete (active/archived) or hard-delete (draft) |
+| `PATCH`  | `/api/recruiter/jobs/[id]/toggle`                     | Toggle status (draft ↔ active ↔ archived)            |
+| `GET`    | `/api/recruiter/jobs/[id]/applicants`                 | List applicants (paginated, filterable)              |
+| `GET`    | `/api/recruiter/jobs/[id]/analytics`                  | Per-job pipeline funnel & trends                     |
+| `GET`    | `/api/recruiter/jobs/[id]/applicants/export`          | Stream RFC 4180 CSV of filtered applicants           |
+| `GET`    | `/api/recruiter/applications/[applicationId]/detail`  | Full applicant detail (profile, timeline, resume)    |
+| `GET`    | `/api/recruiter/applications/[applicationId]/profile` | Applicant profile for messaging                      |
+| `PATCH`  | `/api/recruiter/applications/[applicationId]/status`  | Transition applicant pipeline status                 |
+| `POST`   | `/api/recruiter/applications/[applicationId]/revert`  | Revert to previous status from audit trail           |
+| `POST`   | `/api/recruiter/applications/bulk/status`             | Atomic bulk status transition                        |
+| `GET`    | `/api/recruiter/analytics`                            | Cross-job analytics (date range, filters)            |
+| `GET`    | `/api/recruiter/threads`                              | List message threads                                 |
+| `GET`    | `/api/recruiter/messages/[threadId]`                  | Get thread messages                                  |
+| `POST`   | `/api/recruiter/messages/[threadId]`                  | Send message                                         |
+| `DELETE` | `/api/recruiter/messages/[threadId]`                  | Delete thread                                        |
+| `DELETE` | `/api/recruiter/messages/[threadId]/[messageId]`      | Delete message                                       |
+| `GET`    | `/api/recruiter/messages/search`                      | Search applicants                                    |
+| `GET`    | `/api/recruiter/invite`                               | List pending invites                                 |
+| `DELETE` | `/api/recruiter/invite/[id]`                          | Cancel pending invite                                |
+| `POST`   | `/api/recruiter/invite/accept`                        | Accept invite with token                             |
+| `DELETE` | `/api/recruiter/team/[id]`                            | Remove team member                                   |
+
+### Job Seeker (User)
+
+| Method   | Endpoint                              | Purpose                                                |
+| -------- | ------------------------------------- | ------------------------------------------------------ |
+| `GET`    | `/api/user/profile`                   | Get own profile                                        |
+| `GET`    | `/api/user/resumes`                   | List own non-deleted resumes                           |
+| `POST`   | `/api/user/resumes`                   | Upload resume (PDF/DOC/DOCX, ≤10MB)                    |
+| `PATCH`  | `/api/user/resumes/[id]`              | Set resume as primary                                  |
+| `DELETE` | `/api/user/resumes/[id]`              | Soft-delete resume + remove from storage               |
+| `PATCH`  | `/api/user/resumes/[id]/builder-data` | Update builder-structured JSON resume                  |
+| `POST`   | `/api/user/resumes/[id]/ai-enhance`   | AI resume suggestions (rate-limited, 5/day)            |
+| `GET`    | `/api/user/applications`              | List own applications (filterable, searchable)         |
+| `GET`    | `/api/user/applications/stats`        | Application counts (total, active, interviews, offers) |
+| `GET`    | `/api/user/applications/[id]`         | Application detail with timeline                       |
+| `DELETE` | `/api/user/applications/[id]`         | Withdraw (`applied` / `reviewing` only)                |
+| `GET`    | `/api/user/bookmarks`                 | List bookmarked jobs                                   |
+| `POST`   | `/api/user/bookmarks`                 | Toggle bookmark (create / delete)                      |
+| `GET`    | `/api/user/bookmarks/[jobId]`         | Check bookmark status                                  |
+
+### Public
+
+| Method | Endpoint                 | Purpose                                               |
+| ------ | ------------------------ | ----------------------------------------------------- |
+| `GET`  | `/api/jobs`              | Public job listing (search, filters, pagination)      |
+| `GET`  | `/api/jobs/[id]`         | Job detail (JSON-LD enriched)                         |
+| `POST` | `/api/jobs/[id]/view`    | Increment view count (rate-limited, session-dedupped) |
+| `POST` | `/api/jobs/[id]/apply`   | Submit application (auth required, rate-limited)      |
+| `GET`  | `/api/jobs/[id]/related` | Related jobs from same company & similar roles        |
+
+### Shared / Infrastructure
+
+| Method   | Endpoint              | Role          | Purpose                                   |
+| -------- | --------------------- | ------------- | ----------------------------------------- |
+| `POST`   | `/api/upload`         | authenticated | Upload a file (resume, logo, attachment)  |
+| `DELETE` | `/api/upload`         | authenticated | Delete a file by URL or filename          |
+| `GET`    | `/api/files/download` | authenticated | Stream file download (auth-guarded proxy) |
+| `GET`    | `/api/notifications`  | authenticated | List notifications                        |
+| `PATCH`  | `/api/notifications`  | authenticated | Mark notifications as read                |
+| `DELETE` | `/api/notifications`  | authenticated | Delete notification                       |
+| `POST`   | `/api/pusher/auth`    | authenticated | Pusher private channel authentication     |
+| `GET`    | `/api/users/[id]`     | any role      | Resolve user by ID (name, avatar)         |
 
 ---
 
 ## 📈 Project Scale
 
-- **4 completed phases** (Admin → Recruiter → User → Public), fully sequenced and documented
+- **5 completed phases** (Foundation → Admin → Recruiter → User → Public), fully sequenced and documented
 - **3 distinct role-based dashboards** + 1 public marketplace
 - **7-stage** applicant status pipeline with full audit trail
 - **Cloud storage provider abstraction** (local dev ↔ Vercel Blob production)
@@ -234,7 +295,7 @@ All endpoints accept and return JSON. Errors follow a consistent `{ error: strin
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/Mohamedhazeem/hire-flow-next.git
+git clone https://github.com/Mohamedhazeem/hire-flow.git
 cd hire-flow-next
 npm install
 ```
@@ -339,8 +400,8 @@ Visit `http://localhost:3000`. Sign up as a job seeker directly, or promote your
 ```
 hire-flow-next/
 ├── app/
-│   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms, about, careers, contact, pricing, press, employers
-│   ├── (auth)/                  # Login, register, verify-email, reset-password
+│   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms, about, careers, contact, pricing, press, employers, become-employer
+│   ├── (auth)/                  # Login, register, verify-email, reset-password, unauthorised, admin-invite, recruiter-invite
 │   ├── (roles)/
 │   │   ├── admin/                # Admin dashboard, users, jobs, team, messages
 │   │   ├── recruiter/            # Recruiter dashboard, jobs, applicants, analytics
