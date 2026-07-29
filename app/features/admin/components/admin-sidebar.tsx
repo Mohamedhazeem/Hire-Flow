@@ -7,7 +7,6 @@ import {
   UserCogIcon,
   ShieldIcon,
   MessageSquareTextIcon,
-  UserIcon,
 } from "lucide-react";
 import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
 import { useSession } from "@/app/features/auth/libs/auth-client";
@@ -20,7 +19,6 @@ const adminLinks: SidebarLink[] = [
   { href: "/admin/jobs", label: "Jobs", icon: BriefcaseIcon },
   { href: "/admin/recruiters", label: "Recruiters", icon: UserCogIcon },
   { href: "/admin/users", label: "Users", icon: UsersIcon },
-  { href: "/admin/profile", label: "Profile", icon: UserIcon },
 ];
 
 export function AdminSidebar() {
