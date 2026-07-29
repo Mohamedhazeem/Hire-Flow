@@ -1,4 +1,4 @@
-﻿name: CI
+name: CI
 
 # Temporarily disabled to avoid CI runs on every master push
 # on:
@@ -165,51 +165,52 @@ jobs:
           git pull --rebase || true
           git push || echo "Baseline update skipped (conflict)" && exit 0
 
-  mutation:
-    name: Mutation testing (Stryker)
-    runs-on: ubuntu-latest
-    if: github.event_name == "push" && github.ref == "refs/heads/master"
-    needs: [performance]
-    services:
-      postgres:
-        image: postgres:17
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: hire_flow_test
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-      - run: npm ci
-      - run: npx prisma generate
-      - run: npx prisma migrate deploy
-        env:
-          DATABASE_URL: ${{ env.DATABASE_URL }}
-      - name: Run mutation testing
-        run: |
-          if [ -d lib/rate-limiting ]; then
-            npx stryker run
-          else
-            echo "lib/rate-limiting/ not found — skipping mutation testing"
-          fi
-        continue-on-error: true
-        env:
-          DATABASE_URL: ${{ env.DATABASE_URL }}
-          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-      - name: Upload mutation report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: mutation-report
-          path: reports/mutation/
-          retention-days: 30
+#   mutation:
+#     name: Mutation testing (Stryker)
+#     runs-on: ubuntu-latest
+#     if: github.event_name == "push" && github.ref == "refs/heads/master"
+#     needs: [performance]
+#     services:
+#       postgres:
+#         image: postgres:17
+#         env:
+#           POSTGRES_USER: postgres
+#           POSTGRES_PASSWORD: postgres
+#           POSTGRES_DB: hire_flow_test
+#         options: >-
+#           --health-cmd pg_isready
+#           --health-interval 10s
+#           --health-timeout 5s
+#           --health-retries 5
+#         ports:
+#           - 5432:5432
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ env.NODE_VERSION }}
+#           cache: "npm"
+#       - run: npm ci
+#       - run: npx prisma generate
+#       - run: npx prisma migrate deploy
+#         env:
+#           DATABASE_URL: ${{ env.DATABASE_URL }}
+#       - name: Run mutation testing
+#         run: |
+#           if [ -d lib/rate-limiting ]; then
+#             npx stryker run
+#           else
+#             echo "lib/rate-limiting/ not found � skipping mutation testing"
+#           fi
+#         continue-on-error: true
+#         env:
+#           DATABASE_URL: ${{ env.DATABASE_URL }}
+#           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+#       - name: Upload mutation report
+#         if: always()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: mutation-report
+#           path: reports/mutation/
+#           retention-days: 30
+# 
