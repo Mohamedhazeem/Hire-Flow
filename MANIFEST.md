@@ -6,16 +6,16 @@
 
 ## Last Updated
 
-2026-07-01T11:55:00Z
+2026-07-29T13:00:00Z
 
 ---
 
 ## Overview
 
-- **Current Phase:** Phase 4
-- **Current Step:** Step 4.6 -- SEO (Metadata, Sitemap, Robots, JSON-LD) -- COMPLETE
-- **Next Step:** _(none -- all defined phases implemented)_
-- **Blockers:** Pre-existing `react-pdf` CSS import error in `resume-preview-dialog.tsx` blocks `next build` (unrelated to Phase 3/4). Prisma migration/`db push` cannot run locally -- `db.prisma.io:5432` unreachable.
+- **Current Phase:** Cross-Phase Enhancements (Rate Limiting + Skills Filter + Profile Extension)
+- **Current Step:** Rate Limiting lib/rate-limiting/ (13 production files, 80+ tests) — COMPLETE
+- **Next Step:** _(none — all defined implementation tasks complete)_
+- **Blockers:** Pre-existing `react-pdf` CSS import error in `resume-preview-dialog.tsx` blocks `next build` (unrelated). Prisma migration/`db push` cannot run locally — `db.prisma.io:5432` unreachable.
 
 ---
 
@@ -484,38 +484,102 @@
 - app/features/landing/components/footer.tsx (updated Legal column: Privacy Policy -> /privacy, Terms of Service -> /terms, removed Cookie Policy link)
 - lib/routes.ts (added /privacy, /terms to PUBLIC_CONTENT_PATHS)
 
+### Cross-Phase: Rate Limiting Architecture (lib/rate-limiting/)
+
+- lib/rate-limiting/types.ts (RateLimitEndpoint, CleanupConfig, FailStrategyConfig, PruneResult, EndpointLimit)
+- lib/rate-limiting/config.ts (validateConfig 20+ conditions, freezeConfig, immutability)
+- lib/rate-limiting/clock.ts (Clock interface + SystemClock)
+- lib/rate-limiting/repository.ts (RateLimitRepository + PrismaRateLimitRepository, batched DELETE with SKIP LOCKED)
+- lib/rate-limiting/rate-limiter.ts (RateLimiter + RateLimiterImpl, single clock capture)
+- lib/rate-limiting/middleware.ts (withRateLimit wrapper, fail strategy open/closed per endpoint)
+- lib/rate-limiting/di.ts (wiring: validateConfig + freezeConfig + singleton rateLimiter)
+- lib/rate-limiting/metrics.ts (OTel counters, histograms, gauges, spans)
+- lib/rate-limiting/telemetry.ts (AsyncLocalStorage trace context, enrichLog, generateRequestId)
+- lib/rate-limiting/request-context.ts (getSessionCache AsyncLocalStorage)
+- lib/rate-limiting/ip-hash.ts (HMAC-SHA256 IP hashing, extractIP with proxy trust)
+- lib/rate-limiting/cleanup.ts (startCleanup/stopCleanup with setInterval + unref)
+- lib/rate-limiting/repository.fake.ts (in-memory FakeRepository)
+- app/features/shared/api/require-role.ts (AsyncLocalStorage session cache fast-path)
+- Routes wired with withRateLimit:
+  - app/api/jobs/[id]/view/route.ts (jobs:view)
+  - app/api/jobs/[id]/apply/route.ts (jobs:apply)
+  - app/api/user/resumes/[id]/ai-enhance/route.ts (resumes:ai-enhance)
+  - app/api/user/resumes/route.ts (resumes:list, resumes:upload)
+  - app/api/user/profile/route.ts (profile:read)
+  - app/api/user/applications/route.ts (applications:list)
+  - app/api/user/bookmarks/route.ts, app/api/user/bookmarks/[jobId]/route.ts (bookmarks:list, bookmarks:toggle)
+  - app/api/notifications/route.ts (notifications:list)
+  - lib/handlers/messages.ts (messages:list, messages:send, messages:delete)
+- Old rate limiting deleted: lib/rate-limit.ts, lib/repositories/rate-limit-repository.ts, app/features/recruiter/libs/rate-limit-message.ts
+- Analytics-queries.ts refactored: $queryRawUnsafe -> Prisma.sql + Prisma.join()
+- docs/architecture/rate-limiting.md created
+- lib/test/unit/rate-limiting/ — 10 test files, 80 tests total
+- lib/test/unit/rate-limiting/repository.prisma.contract.test.ts — 8 real-DB contract tests
+
+### Cross-Phase: Skills Filter for Job Search (TASK-4.1.7)
+
+- app/features/jobs/components/skill-filter.tsx (new: wraps AutocompleteInput + SKILLS_DATABASE)
+- prisma/migrations/20260729000000_add_skills_gin_index/migration.sql (GIN index on Job.skills)
+- app/features/jobs/queries/public-job-queries.ts (PublicJobListParams gains skills: string[], listPublicJobs filters with hasSome)
+- app/api/jobs/route.ts (parses ?skills=React,TypeScript or multiple ?skills= params)
+- app/features/recruiter/schema/job.schema.ts (RecruiterListJobsParamsSchema gains skills: string[], max 10)
+- app/features/recruiter/queries/job-queries.ts (listJobs gains skills hasSome filter)
+- app/api/recruiter/jobs/route.ts (parses skills from query string)
+- app/features/jobs/components/job-list-page.tsx (SkillFilter added to filter bar, URL serialization comma-joined)
+- app/features/recruiter/components/recruiter-jobs-table.tsx (SkillFilter added, skills prop in params)
+- lib/test/integration/jobs/public-job-queries.test.ts (7 new skills filter tests: empty, single, OR, non-match, AND with search, empty skills array, case sensitivity)
+
+### Cross-Phase: Recruiter & Admin Profile Pages (TASK-3.1.5)
+
+- app/features/user/actions/upsert-profile.ts (role guard relaxed: user, recruiter, admin)
+- app/api/user/profile/route.ts (role guard relaxed: user, recruiter, admin)
+- app/(roles)/recruiter/profile/page.tsx (new: server component + ProfileForm)
+- app/(roles)/admin/profile/page.tsx (new: server component + ProfileForm)
+- app/features/recruiter/components/recruiter-sidebar.tsx (Profile link added)
+- app/features/admin/components/admin-sidebar.tsx (Profile link added)
+
 ---
 
 ## Key Architecture Decisions
 
 ### Resume Snapshot (Phase 3)
+
 At apply time, the user's current resume is frozen into Application fields:
+
 - fileUrl -> resumeSnapshotUrl (file ID stored separately)
 - builderData -> resumeSnapshotBuilderData (JSON frozen in)
-This survives resume soft-deletion. Recruiters always see the submitted version. Application detail page shows snapshot, not live resume.
+  This survives resume soft-deletion. Recruiters always see the submitted version. Application detail page shows snapshot, not live resume.
 
 ### ApplicationStatusChange (Phase 3)
+
 Both recruiter (Phase 2.6) and user (Phase 3.3) create the first status change row at apply time (fromStatus: null, toStatus: "applied"). The shared StatusTimeline component works unmodified for both sides.
 
 ### Multi-Provider AI (Phase 3)
+
 lib/ai-client.ts supports Anthropic/OpenAI/Google via AI_PROVIDER env var. Falls back to null if no API key is configured (UI shows graceful "AI features temporarily unavailable" message). Rate limit: 5 requests per user per day enforced via ResumeEnhancementLog DB table.
 
 ### Rate Limiting (Phase 3)
+
 lib/rate-limiter.ts provides a generic in-memory sliding-window rate limiter with configurable max/windowMs and periodic cleanup every 10 minutes. Used by: apply (10/min), job view (100/min). Throws TooManyRequestsError from lib/api-error.ts.
 
 ### Public Route Group (Phase 4)
+
 (public) route group provides Navbar + Footer shell without affecting auth/role routes. Auth pages ((auth)) and role pages ((roles)) don't inherit this shell, avoiding double-navbar issues.
 
 ### Job Visibility Dual-Gate (Phase 4)
+
 All public queries filter on both `status: "active"` (recruiter-controlled from Phase 2.3) AND `isActive: true` (admin kill-switch from Phase 1.4). Missing either filter silently leaks archived or admin-deactivated jobs. Applied in: listPublicJobs, sitemap dynamic entries, featured jobs.
 
 ### Auth-Aware Navbar & Redirect (Phase 4)
+
 No centralized `getRoleHomeRoute` in a single lib file -- redirect logic handled via middleware (proxy.ts) and auth hooks. User role lands on /jobs (the marketplace). Admin/recruiter roles land on their respective dashboards. AccountPopover is role-aware with no "Dashboard" entry for users.
 
 ### JSON-LD Structured Data (Phase 4)
+
 Injected via Next.js generateMetadata `other` object rather than raw script tags. All fields guarded by null checks -- no fabricated data. baseSalary only when salary data exists, jobLocation only when locations non-empty, employmentType only when non-null.
 
 ### Sitemap & Robots (Phase 4)
+
 Sitemap: static entries for /, /jobs, /resources, /privacy, /terms + dynamic entries from prisma.job.findMany with dual-gate filter, ordered by updatedAt desc. Zero jobs -> valid sitemap with static entries only. Robots: disallows all crawlers on /admin, /recruiter, /user, /api.
 
 ---
