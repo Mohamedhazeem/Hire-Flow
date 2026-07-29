@@ -88,15 +88,10 @@ export function DesktopFilters({
               onClick={() => onToggleMultiValue("status", opt.value)}
               className={itemCls(selected)}
             >
-              <div
-                className={cn(
-                  "flex size-4 shrink-0 items-center justify-center rounded border text-white transition-colors",
-                  selected ? "border-brand bg-brand" : "border-border-strong",
-                )}
-              >
-                {selected && <CheckIcon className="size-3" />}
-              </div>
-              <StatusDot status={opt.value} />
+              <StatusDot
+                status={opt.value}
+                className={cn(selected && "ring-2 ring-brand ring-offset-1")}
+              />
               <span className="truncate ml-2">{opt.label}</span>
             </button>
           );
