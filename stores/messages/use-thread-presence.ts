@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePresenceStore } from "@/features/messages/stores/presence-store";
+import { usePresenceStore } from "@/stores/messages/presence-store";
 import { getPusherClient } from "@/lib/pusher/pusher-client";
 
 export function useOwnPresence(userId: string | undefined) {

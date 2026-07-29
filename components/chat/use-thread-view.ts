@@ -5,12 +5,11 @@ import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { apiClient } from "@/lib/api/api-client";
 import { useQueryClient } from "@tanstack/react-query";
-import type { MessageItem } from "@/components/chat/message-item";
-import { usePresenceStore } from "@/features/messages/stores/presence-store";
+import { usePresenceStore } from "@/stores/messages/presence-store";
 import { formatFileSize } from "@/components/chat/message-bubble";
 import { usePusherThread } from "./use-pusher-thread";
 import type { ThreadViewHooks, ThreadViewConfig } from "./shared-thread-view";
-import { getOtherUserId, isValidThreadId } from "@/lib/thread-utils";
+import { getOtherUserId } from "@/lib/thread-utils";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ALLOWED_FILE_TYPES = [
@@ -157,7 +156,9 @@ export function useThreadView(
         try {
           const fd = new FormData();
           fd.append("file", selectedFile);
-          const d = await apiClient<{ data: { url: string; filename: string; size: number; mimeType: string } }>("/api/upload", { method: "POST", body: fd });
+          const d = await apiClient<{
+            data: { url: string; filename: string; size: number; mimeType: string };
+          }>("/api/upload", { method: "POST", body: fd });
           fp = {
             fileUrl: d.data.url,
             fileName: d.data.filename,

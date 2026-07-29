@@ -1605,8 +1605,8 @@
     "semantic_hash": ""
   },
   "components/chat/messages-page-layout.tsx": {
-    "mtime": 1785287261.3395386,
-    "ast_hash": "c245a59ea657ef16e4b015c013a30552",
+    "mtime": 1784901521.2860096,
+    "ast_hash": "a1a1e4b6800bf1eca89dbde3492f06e9",
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
@@ -1625,8 +1625,8 @@
     "semantic_hash": ""
   },
   "components/chat/use-thread-view.ts": {
-    "mtime": 1785287444.3803272,
-    "ast_hash": "b0e95fbe313641977ff147147081d6ba",
+    "mtime": 1784905966.022745,
+    "ast_hash": "dfeaa128f9240013e4bf17a3da0f934e",
     "semantic_hash": ""
   },
   "components/layout/mobile-menu-button.tsx": {
@@ -1797,6 +1797,16 @@
   "eslint.config.mjs": {
     "mtime": 1781852488.5949428,
     "ast_hash": "b263386b63d7c8fca52ba363e9997509",
+    "semantic_hash": ""
+  },
+  "features/messages/stores/presence-store.ts": {
+    "mtime": 1783572105.9623399,
+    "ast_hash": "c8cfca04b1c58b4f4c8d5fd39653a9be",
+    "semantic_hash": ""
+  },
+  "features/messages/stores/use-thread-presence.ts": {
+    "mtime": 1783572105.9633355,
+    "ast_hash": "397d98dc0be7f6f1948412a48d495960",
     "semantic_hash": ""
   },
   "lib/ai-client.ts": {
@@ -2830,8 +2840,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/presence-store.test.ts": {
-    "mtime": 1785287262.1370018,
-    "ast_hash": "0520d6cdd2df17d277e62cf08d91a9a1",
+    "mtime": 1784789051.0475523,
+    "ast_hash": "f3190534d6483b38561eca07dc8831bf",
     "semantic_hash": ""
   },
   "lib/test/unit/rate-limit-message.test.ts": {
@@ -3385,8 +3395,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/messages-page-layout.dom.test.tsx": {
-    "mtime": 1785287459.0072465,
-    "ast_hash": "943d50757180621c083a4d6eef8178d0",
+    "mtime": 1784903528.999625,
+    "ast_hash": "edf5907bf2ed43a68aa44f3823899024",
     "semantic_hash": ""
   },
   "lib/test/components/start-conversation-search.dom.test.tsx": {
@@ -3435,8 +3445,8 @@
     "semantic_hash": ""
   },
   "plans/1785126715092-performance-optimization-plan.md": {
-    "mtime": 1785254719.1616883,
-    "ast_hash": "6414411b93e4aa58446476402aaada3e",
+    "mtime": 1785177412.6876693,
+    "ast_hash": "3a6be1f7a610ac2bcbaf4128d954d600",
     "semantic_hash": ""
   },
   "components/ui/autocomplete-input.tsx": {
@@ -3482,16 +3492,6 @@
   "prisma/migrations/20260728000000_add_perf_indexes/migration.sql": {
     "mtime": 1785178117.2707715,
     "ast_hash": "81f3951d933690cdd91282f243eba865",
-    "semantic_hash": ""
-  },
-  "stores/messages/presence-store.ts": {
-    "mtime": 1783572105.9623399,
-    "ast_hash": "c8cfca04b1c58b4f4c8d5fd39653a9be",
-    "semantic_hash": ""
-  },
-  "stores/messages/use-thread-presence.ts": {
-    "mtime": 1785287261.7047832,
-    "ast_hash": "d6440a89d833aa2006c74b64d2775f4a",
     "semantic_hash": ""
   }
 }

@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 import { MessageSquareTextIcon } from "lucide-react";
 import { ThreadListItem, type ThreadListItemData } from "@/components/chat/thread-list-item";
 import { StartConversationSearch } from "@/components/shared/start-conversation-search";
-import { usePresenceStore } from "@/features/messages/stores/presence-store";
-import { useOwnPresence, useThreadPresence } from "@/features/messages/stores/use-thread-presence";
+import { usePresenceStore } from "@/stores/messages/presence-store";
+import { useOwnPresence, useThreadPresence } from "@/stores/messages/use-thread-presence";
 export type MessagesPageConfig = {
   queryKey: string;
   basePath: string;
