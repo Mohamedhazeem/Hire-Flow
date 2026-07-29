@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fb848c55`
+- Built from commit: `864089c1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1047,7 +1047,7 @@ Cohesion: 0.40
 Nodes (3): metadata, InviteRecruiterForm(), RecruiterTeamList()
 
 ## Knowledge Gaps
-- **1886 isolated node(s):** `name`, `version`, `private`, `dev`, `postinstall` (+1881 more)
+- **1886 isolated node(s):** `Last Updated`, `Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+1881 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1055,16 +1055,16 @@ Nodes (3): metadata, InviteRecruiterForm(), RecruiterTeamList()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 147` to `Community 18`, `Community 21`, `Community 23`, `Community 24`, `Community 26`, `Community 34`, `Community 38`, `Community 167`, `Community 40`, `Community 175`, `Community 49`, `Community 178`, `Community 51`, `Community 182`, `Community 58`, `Community 61`, `Community 67`, `Community 70`, `Community 74`, `Community 94`, `Community 95`, `Community 97`, `Community 238`, `Community 110`, `Community 112`, `Community 243`, `Community 245`, `Community 117`, `Community 125`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 30` to `Community 65`, `Community 35`, `Community 195`, `Community 88`, `Community 218`, `Community 42`, `Community 155`, `Community 80`, `Community 179`, `Community 54`, `Community 87`, `Community 22`, `Community 90`, `Community 27`, `Community 92`, `Community 93`, `Community 222`, `Community 95`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `getSession()` connect `Community 179` to `Community 227`, `Community 42`, `Community 173`, `Community 92`, `Community 241`, `Community 28`, `Community 30`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `env` connect `Community 169` to `Community 226`, `Community 35`, `Community 105`, `Community 42`, `Community 43`, `Community 173`, `Community 111`, `Community 80`, `Community 148`, `Community 55`, `Community 54`, `Community 118`, `Community 92`, `Community 125`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 19 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 19 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `name`, `version`, `private` to the rest of the system?**
+- **What connects `Last Updated`, `Overview`, `Phase 0: Foundation` to the rest of the system?**
   _1886 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
