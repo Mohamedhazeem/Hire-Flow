@@ -40,7 +40,7 @@ function makeTable() {
       totalPages: 1,
       total: tableState.applicants.length,
       hasPrevPage: false,
-      hasNextPage: false,`n      mode: "offset",
+      hasNextPage: false,
       mode: "offset",
     },
     dialog: { type: "", applicant: null },
