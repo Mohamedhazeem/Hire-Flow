@@ -1570,7 +1570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "new_page",
-      "community": 102,
+      "community": 65,
       "norm_label": "page.tsx"
     },
     {
@@ -1580,7 +1580,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "new_page_metadata",
-      "community": 102,
+      "community": 65,
       "norm_label": "metadata"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "new_page_createjobpage",
-      "community": 102,
+      "community": 65,
       "norm_label": "createjobpage()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route",
-      "community": 202,
+      "community": 222,
       "norm_label": "route.ts"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route_handleget",
-      "community": 202,
+      "community": 222,
       "norm_label": "handleget()"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_api_admin_jobs_route_ts_jobs_route_get",
-      "community": 202,
+      "community": 222,
       "norm_label": "get"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "auth_route",
-      "community": 103,
+      "community": 149,
       "norm_label": "route.ts"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "auth_route_post",
-      "community": 103,
+      "community": 149,
       "norm_label": "post()"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route",
-      "community": 241,
+      "community": 195,
       "norm_label": "route.ts"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "community": 241,
+      "community": 195,
       "norm_label": "handleget()"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_api_recruiter_invite_route_ts_invite_route_get",
-      "community": 241,
+      "community": 195,
       "norm_label": "get"
     },
     {
@@ -3910,7 +3910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route",
-      "community": 222,
+      "community": 195,
       "norm_label": "route.ts"
     },
     {
@@ -3920,7 +3920,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_api_user_profile_route_ts_profile_route_get",
-      "community": 222,
+      "community": 195,
       "norm_label": "get()"
     },
     {
@@ -4100,7 +4100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route",
-      "community": 30,
+      "community": 202,
       "norm_label": "route.ts"
     },
     {
@@ -4110,7 +4110,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route_handleget",
-      "community": 30,
+      "community": 202,
       "norm_label": "handleget()"
     },
     {
@@ -4120,7 +4120,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_api_users_id_route_ts_id_route_get",
-      "community": 30,
+      "community": 202,
       "norm_label": "get"
     },
     {
@@ -4720,7 +4720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_job_table_actions_cell",
-      "community": 18,
+      "community": 58,
       "norm_label": "job-table-actions-cell.tsx"
     },
     {
@@ -4730,7 +4730,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_job_table_actions_cell_jobtableactionscellprops",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactionscellprops"
     },
     {
@@ -4740,7 +4740,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_job_table_actions_cell_jobtableactionscell",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactionscell()"
     },
     {
@@ -4750,7 +4750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_job_table_columns",
-      "community": 18,
+      "community": 58,
       "norm_label": "job-table-columns.tsx"
     },
     {
@@ -4760,7 +4760,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_job_table_columns_jobtableactions",
-      "community": 18,
+      "community": 58,
       "norm_label": "jobtableactions"
     },
     {
@@ -5580,7 +5580,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "queries_job_queries_adminjobrow",
-      "community": 18,
+      "community": 58,
       "norm_label": "adminjobrow"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_unread_message_count",
-      "community": 229,
+      "community": 70,
       "norm_label": "use-unread-message-count.ts"
     },
     {
@@ -10210,7 +10210,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_recruiter_job_columns_createrecruiterjobcolumns",
-      "community": 58,
+      "community": 102,
       "norm_label": "createrecruiterjobcolumns()"
     },
     {
@@ -10220,7 +10220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table",
-      "community": 58,
+      "community": 102,
       "norm_label": "recruiter-jobs-table.tsx"
     },
     {
@@ -10230,7 +10230,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_work_mode_labels",
-      "community": 58,
+      "community": 102,
       "norm_label": "work_mode_labels"
     },
     {
@@ -10240,7 +10240,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_employment_type_labels",
-      "community": 58,
+      "community": 102,
       "norm_label": "employment_type_labels"
     },
     {
@@ -10250,7 +10250,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "components_recruiter_jobs_table_recruiterjobstable",
-      "community": 58,
+      "community": 102,
       "norm_label": "recruiterjobstable()"
     },
     {
@@ -10720,7 +10720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs",
-      "community": 58,
+      "community": 102,
       "norm_label": "use-recruiter-jobs.ts"
     },
     {
@@ -10730,7 +10730,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_userecruiterjobs",
-      "community": 58,
+      "community": 102,
       "norm_label": "userecruiterjobs()"
     },
     {
@@ -10760,7 +10760,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_usedeletejob",
-      "community": 58,
+      "community": 102,
       "norm_label": "usedeletejob()"
     },
     {
@@ -10770,7 +10770,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "hooks_use_recruiter_jobs_usetogglejobstatus",
-      "community": 58,
+      "community": 102,
       "norm_label": "usetogglejobstatus()"
     },
     {
@@ -11190,7 +11190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "community": 241,
+      "community": 195,
       "norm_label": "invite-queries.ts"
     },
     {
@@ -11200,7 +11200,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinviterow",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterinviterow"
     },
     {
@@ -11210,7 +11210,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterteammemberrow",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterteammemberrow"
     },
     {
@@ -11220,7 +11220,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "queries_invite_queries_recruiterinvitelistresponse",
-      "community": 241,
+      "community": 195,
       "norm_label": "recruiterinvitelistresponse"
     },
     {
@@ -11230,7 +11230,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "queries_invite_queries_listrecruiterinvites",
-      "community": 241,
+      "community": 195,
       "norm_label": "listrecruiterinvites()"
     },
     {
@@ -11700,7 +11700,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "schema_job_schema_joblistparams",
-      "community": 58,
+      "community": 102,
       "norm_label": "joblistparams"
     },
     {
@@ -12980,7 +12980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_user_thread_view",
-      "community": 23,
+      "community": 103,
       "norm_label": "user-thread-view.tsx"
     },
     {
@@ -12990,7 +12990,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_user_thread_view_props",
-      "community": 23,
+      "community": 103,
       "norm_label": "props"
     },
     {
@@ -13000,7 +13000,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_user_thread_view_hooks",
-      "community": 23,
+      "community": 103,
       "norm_label": "hooks"
     },
     {
@@ -13010,7 +13010,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_user_thread_view_config",
-      "community": 23,
+      "community": 103,
       "norm_label": "config"
     },
     {
@@ -13050,7 +13050,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "messages_use_user_messages_usesendusermessage",
-      "community": 23,
+      "community": 103,
       "norm_label": "usesendusermessage"
     },
     {
@@ -13060,7 +13060,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "messages_use_user_messages_usedeleteusermessage",
-      "community": 23,
+      "community": 103,
       "norm_label": "usedeleteusermessage"
     },
     {
@@ -13070,7 +13070,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "messages_use_user_messages_usedeleteuserthread",
-      "community": 23,
+      "community": 103,
       "norm_label": "usedeleteuserthread"
     },
     {
@@ -13410,7 +13410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "queries_profile_queries",
-      "community": 222,
+      "community": 195,
       "norm_label": "profile-queries.ts"
     },
     {
@@ -13420,7 +13420,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "queries_profile_queries_profileoutput",
-      "community": 222,
+      "community": 195,
       "norm_label": "profileoutput"
     },
     {
@@ -13430,7 +13430,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "queries_profile_queries_getuserprofile",
-      "community": 222,
+      "community": 195,
       "norm_label": "getuserprofile()"
     },
     {
@@ -13900,7 +13900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_sitemap",
-      "community": 22,
+      "community": 195,
       "norm_label": "sitemap.ts"
     },
     {
@@ -13910,7 +13910,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "app_sitemap_sitemap",
-      "community": 22,
+      "community": 195,
       "norm_label": "sitemap()"
     },
     {
@@ -14360,7 +14360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "chat_messages_page_layout",
-      "community": 229,
+      "community": 70,
       "norm_label": "messages-page-layout.tsx"
     },
     {
@@ -14370,7 +14370,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "chat_messages_page_layout_messagespageconfig",
-      "community": 148,
+      "community": 211,
       "norm_label": "messagespageconfig"
     },
     {
@@ -14380,7 +14380,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "chat_messages_page_layout_props",
-      "community": 229,
+      "community": 70,
       "norm_label": "props"
     },
     {
@@ -14390,7 +14390,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "chat_messages_page_layout_threadlistskeleton",
-      "community": 229,
+      "community": 70,
       "norm_label": "threadlistskeleton()"
     },
     {
@@ -14400,7 +14400,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "chat_messages_page_layout_threadlistpanel",
-      "community": 229,
+      "community": 70,
       "norm_label": "threadlistpanel()"
     },
     {
@@ -14410,7 +14410,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "chat_messages_page_layout_messagespagelayout",
-      "community": 229,
+      "community": 70,
       "norm_label": "messagespagelayout()"
     },
     {
@@ -17840,7 +17840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stores_presence_store",
-      "community": 229,
+      "community": 70,
       "norm_label": "presence-store.ts"
     },
     {
@@ -17850,7 +17850,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "stores_presence_store_presencestate",
-      "community": 229,
+      "community": 70,
       "norm_label": "presencestate"
     },
     {
@@ -17860,7 +17860,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "stores_presence_store_usepresencestore",
-      "community": 229,
+      "community": 70,
       "norm_label": "usepresencestore"
     },
     {
@@ -17870,7 +17870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "stores_use_thread_presence",
-      "community": 229,
+      "community": 70,
       "norm_label": "use-thread-presence.ts"
     },
     {
@@ -17880,7 +17880,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "stores_use_thread_presence_useownpresence",
-      "community": 229,
+      "community": 70,
       "norm_label": "useownpresence()"
     },
     {
@@ -17890,7 +17890,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "stores_use_thread_presence_usethreadpresence",
-      "community": 229,
+      "community": 70,
       "norm_label": "usethreadpresence()"
     },
     {
@@ -18650,7 +18650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_prisma",
-      "community": 22,
+      "community": 195,
       "norm_label": "prisma.ts"
     },
     {
@@ -18660,7 +18660,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "lib_prisma_globalforprisma",
-      "community": 22,
+      "community": 195,
       "norm_label": "globalforprisma"
     },
     {
@@ -18670,7 +18670,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_prisma_pool",
-      "community": 22,
+      "community": 195,
       "norm_label": "pool"
     },
     {
@@ -18680,7 +18680,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_prisma_adapter",
-      "community": 22,
+      "community": 195,
       "norm_label": "adapter"
     },
     {
@@ -18690,7 +18690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pusher_pusher_client",
-      "community": 229,
+      "community": 70,
       "norm_label": "pusher-client.ts"
     },
     {
@@ -18700,7 +18700,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "pusher_pusher_client_getpusherconfig",
-      "community": 229,
+      "community": 70,
       "norm_label": "getpusherconfig()"
     },
     {
@@ -18710,7 +18710,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "pusher_pusher_client_getpusherclient",
-      "community": 229,
+      "community": 70,
       "norm_label": "getpusherclient()"
     },
     {
@@ -21470,7 +21470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "unit_thread_utils_test",
-      "community": 103,
+      "community": 149,
       "norm_label": "thread-utils.test.ts"
     },
     {
@@ -21560,7 +21560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_thread_utils",
-      "community": 103,
+      "community": 149,
       "norm_label": "thread-utils.ts"
     },
     {
@@ -21570,7 +21570,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "lib_thread_utils_computethreadid",
-      "community": 103,
+      "community": 149,
       "norm_label": "computethreadid()"
     },
     {
@@ -21580,7 +21580,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "lib_thread_utils_getotheruserid",
-      "community": 103,
+      "community": 149,
       "norm_label": "getotheruserid()"
     },
     {
@@ -21590,7 +21590,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "lib_thread_utils_participatesinthread",
-      "community": 103,
+      "community": 149,
       "norm_label": "participatesinthread()"
     },
     {
@@ -21600,7 +21600,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "lib_thread_utils_parsethreadparticipants",
-      "community": 103,
+      "community": 149,
       "norm_label": "parsethreadparticipants()"
     },
     {
@@ -30444,496 +30444,6 @@
       "norm_label": "claude.md"
     },
     {
-      "label": "MANIFEST.md",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "manifest",
-      "community": 20,
-      "norm_label": "manifest.md"
-    },
-    {
-      "label": "Hire Flow Next - Project Manifest",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "manifest_hire_flow_next_project_manifest",
-      "community": 20,
-      "norm_label": "hire flow next - project manifest"
-    },
-    {
-      "label": "Last Updated",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "manifest_last_updated",
-      "community": 20,
-      "norm_label": "last updated"
-    },
-    {
-      "label": "Overview",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "manifest_overview",
-      "community": 20,
-      "norm_label": "overview"
-    },
-    {
-      "label": "Completed Steps",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "manifest_completed_steps",
-      "community": 20,
-      "norm_label": "completed steps"
-    },
-    {
-      "label": "Phase 0: Foundation",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "manifest_phase_0_foundation",
-      "community": 20,
-      "norm_label": "phase 0: foundation"
-    },
-    {
-      "label": "Phase 1: Admin",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "manifest_phase_1_admin",
-      "community": 20,
-      "norm_label": "phase 1: admin"
-    },
-    {
-      "label": "Phase 2: Recruiter",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "manifest_phase_2_recruiter",
-      "community": 20,
-      "norm_label": "phase 2: recruiter"
-    },
-    {
-      "label": "Phase 3: User",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L61",
-      "_origin": "ast",
-      "id": "manifest_phase_3_user",
-      "community": 20,
-      "norm_label": "phase 3: user"
-    },
-    {
-      "label": "Phase 4: Public Job Routes & Home Page",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "manifest_phase_4_public_job_routes_home_page",
-      "community": 20,
-      "norm_label": "phase 4: public job routes & home page"
-    },
-    {
-      "label": "Created File Paths (Grouped by Phase)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L85",
-      "_origin": "ast",
-      "id": "manifest_created_file_paths_grouped_by_phase",
-      "community": 20,
-      "norm_label": "created file paths (grouped by phase)"
-    },
-    {
-      "label": "Phase 0",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L87",
-      "_origin": "ast",
-      "id": "manifest_phase_0",
-      "community": 20,
-      "norm_label": "phase 0"
-    },
-    {
-      "label": "Phase 1",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L129",
-      "_origin": "ast",
-      "id": "manifest_phase_1",
-      "community": 20,
-      "norm_label": "phase 1"
-    },
-    {
-      "label": "Phase 2",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L181",
-      "_origin": "ast",
-      "id": "manifest_phase_2",
-      "community": 20,
-      "norm_label": "phase 2"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.5 Messaging)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L226",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_5_messaging",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.5 messaging)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.6 Applicant Detail View)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L250",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.6 applicant detail view)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.7 Bulk Actions)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L267",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_7_bulk_actions",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.7 bulk actions)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.8 Recruiter Analytics & Filters)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L278",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.8 recruiter analytics & filters)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.9 Recruiter Dashboard)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L296",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.9 recruiter dashboard)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.10 Notifications & Activity Feed)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L302",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.10 notifications & activity feed)"
-    },
-    {
-      "label": "Phase 2 (continued - Step 2.11 CSV Export)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L320",
-      "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_11_csv_export",
-      "community": 20,
-      "norm_label": "phase 2 (continued - step 2.11 csv export)"
-    },
-    {
-      "label": "Admin Applicant Detail View (cross-phase)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L327",
-      "_origin": "ast",
-      "id": "manifest_admin_applicant_detail_view_cross_phase",
-      "community": 20,
-      "norm_label": "admin applicant detail view (cross-phase)"
-    },
-    {
-      "label": "Phase 3 - Step 3.1 (User Profile)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L339",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_1_user_profile",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.1 (user profile)"
-    },
-    {
-      "label": "Phase 3 - Step 3.2 (Resumes & In-App Builder)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L350",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_2_resumes_in_app_builder",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.2 (resumes & in-app builder)"
-    },
-    {
-      "label": "Phase 3 - Step 3.2a (AI Resume Enhancement)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L366",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_2a_ai_resume_enhancement",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.2a (ai resume enhancement)"
-    },
-    {
-      "label": "Phase 3 - Step 3.3 (Job Application Flow)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L375",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_3_job_application_flow",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.3 (job application flow)"
-    },
-    {
-      "label": "Phase 3 - Step 3.4 (My Applications)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L383",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_4_my_applications",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.4 (my applications)"
-    },
-    {
-      "label": "Phase 3 - Step 3.5 (Application Detail, Withdraw & Message Recruiter)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L391",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.5 (application detail, withdraw & message recruiter)"
-    },
-    {
-      "label": "Phase 3 - Step 3.6 (Saved / Bookmarked Jobs)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L402",
-      "_origin": "ast",
-      "id": "manifest_phase_3_step_3_6_saved_bookmarked_jobs",
-      "community": 20,
-      "norm_label": "phase 3 - step 3.6 (saved / bookmarked jobs)"
-    },
-    {
-      "label": "Phase 3 - Supporting",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L412",
-      "_origin": "ast",
-      "id": "manifest_phase_3_supporting",
-      "community": 20,
-      "norm_label": "phase 3 - supporting"
-    },
-    {
-      "label": "Phase 4 - Steps 4.0-4.2 (Public Routes, Jobs, Details)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L417",
-      "_origin": "ast",
-      "id": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details",
-      "community": 20,
-      "norm_label": "phase 4 - steps 4.0-4.2 (public routes, jobs, details)"
-    },
-    {
-      "label": "Phase 4 - Step 4.3 (Auth-Aware Navbar & Redirect)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L444",
-      "_origin": "ast",
-      "id": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect",
-      "community": 20,
-      "norm_label": "phase 4 - step 4.3 (auth-aware navbar & redirect)"
-    },
-    {
-      "label": "Phase 4 - Step 4.4 (Home Page Composition)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L455",
-      "_origin": "ast",
-      "id": "manifest_phase_4_step_4_4_home_page_composition",
-      "community": 20,
-      "norm_label": "phase 4 - step 4.4 (home page composition)"
-    },
-    {
-      "label": "Phase 4 - Step 4.5 (Career Resources)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L465",
-      "_origin": "ast",
-      "id": "manifest_phase_4_step_4_5_career_resources",
-      "community": 20,
-      "norm_label": "phase 4 - step 4.5 (career resources)"
-    },
-    {
-      "label": "Phase 4 - Step 4.6 (SEO)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L476",
-      "_origin": "ast",
-      "id": "manifest_phase_4_step_4_6_seo",
-      "community": 20,
-      "norm_label": "phase 4 - step 4.6 (seo)"
-    },
-    {
-      "label": "Phase 4 - Supporting Changes",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L481",
-      "_origin": "ast",
-      "id": "manifest_phase_4_supporting_changes",
-      "community": 20,
-      "norm_label": "phase 4 - supporting changes"
-    },
-    {
-      "label": "Key Architecture Decisions",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L489",
-      "_origin": "ast",
-      "id": "manifest_key_architecture_decisions",
-      "community": 20,
-      "norm_label": "key architecture decisions"
-    },
-    {
-      "label": "Resume Snapshot (Phase 3)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L491",
-      "_origin": "ast",
-      "id": "manifest_resume_snapshot_phase_3",
-      "community": 20,
-      "norm_label": "resume snapshot (phase 3)"
-    },
-    {
-      "label": "ApplicationStatusChange (Phase 3)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L497",
-      "_origin": "ast",
-      "id": "manifest_applicationstatuschange_phase_3",
-      "community": 20,
-      "norm_label": "applicationstatuschange (phase 3)"
-    },
-    {
-      "label": "Multi-Provider AI (Phase 3)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L500",
-      "_origin": "ast",
-      "id": "manifest_multi_provider_ai_phase_3",
-      "community": 20,
-      "norm_label": "multi-provider ai (phase 3)"
-    },
-    {
-      "label": "Rate Limiting (Phase 3)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L503",
-      "_origin": "ast",
-      "id": "manifest_rate_limiting_phase_3",
-      "community": 20,
-      "norm_label": "rate limiting (phase 3)"
-    },
-    {
-      "label": "Public Route Group (Phase 4)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L506",
-      "_origin": "ast",
-      "id": "manifest_public_route_group_phase_4",
-      "community": 20,
-      "norm_label": "public route group (phase 4)"
-    },
-    {
-      "label": "Job Visibility Dual-Gate (Phase 4)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L509",
-      "_origin": "ast",
-      "id": "manifest_job_visibility_dual_gate_phase_4",
-      "community": 20,
-      "norm_label": "job visibility dual-gate (phase 4)"
-    },
-    {
-      "label": "Auth-Aware Navbar & Redirect (Phase 4)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L512",
-      "_origin": "ast",
-      "id": "manifest_auth_aware_navbar_redirect_phase_4",
-      "community": 20,
-      "norm_label": "auth-aware navbar & redirect (phase 4)"
-    },
-    {
-      "label": "JSON-LD Structured Data (Phase 4)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L515",
-      "_origin": "ast",
-      "id": "manifest_json_ld_structured_data_phase_4",
-      "community": 20,
-      "norm_label": "json-ld structured data (phase 4)"
-    },
-    {
-      "label": "Sitemap & Robots (Phase 4)",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L518",
-      "_origin": "ast",
-      "id": "manifest_sitemap_robots_phase_4",
-      "community": 20,
-      "norm_label": "sitemap & robots (phase 4)"
-    },
-    {
-      "label": "Active Global Context Snapshot",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L523",
-      "_origin": "ast",
-      "id": "manifest_active_global_context_snapshot",
-      "community": 20,
-      "norm_label": "active global context snapshot"
-    },
-    {
-      "label": "Known Issues / TODOs",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L537",
-      "_origin": "ast",
-      "id": "manifest_known_issues_todos",
-      "community": 20,
-      "norm_label": "known issues / todos"
-    },
-    {
-      "label": "Upcoming Dependencies",
-      "file_type": "document",
-      "source_file": "MANIFEST.md",
-      "source_location": "L552",
-      "_origin": "ast",
-      "id": "manifest_upcoming_dependencies",
-      "community": 20,
-      "norm_label": "upcoming dependencies"
-    },
-    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
@@ -35292,6 +34802,496 @@
       "id": "test_plan_message_badge_future_considerations_not_in_scope",
       "community": 66,
       "norm_label": "future considerations (not in scope)"
+    },
+    {
+      "label": "manifest.md",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "manifest",
+      "community": 20,
+      "norm_label": "manifest.md"
+    },
+    {
+      "label": "Hire Flow Next - Project Manifest",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "manifest_hire_flow_next_project_manifest",
+      "community": 20,
+      "norm_label": "hire flow next - project manifest"
+    },
+    {
+      "label": "Last Updated",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "manifest_last_updated",
+      "community": 20,
+      "norm_label": "last updated"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "manifest_overview",
+      "community": 20,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Completed Steps",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "manifest_completed_steps",
+      "community": 20,
+      "norm_label": "completed steps"
+    },
+    {
+      "label": "Phase 0: Foundation",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "manifest_phase_0_foundation",
+      "community": 20,
+      "norm_label": "phase 0: foundation"
+    },
+    {
+      "label": "Phase 1: Admin",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "manifest_phase_1_admin",
+      "community": 20,
+      "norm_label": "phase 1: admin"
+    },
+    {
+      "label": "Phase 2: Recruiter",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "manifest_phase_2_recruiter",
+      "community": 20,
+      "norm_label": "phase 2: recruiter"
+    },
+    {
+      "label": "Phase 3: User",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "manifest_phase_3_user",
+      "community": 20,
+      "norm_label": "phase 3: user"
+    },
+    {
+      "label": "Phase 4: Public Job Routes & Home Page",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "manifest_phase_4_public_job_routes_home_page",
+      "community": 20,
+      "norm_label": "phase 4: public job routes & home page"
+    },
+    {
+      "label": "Created File Paths (Grouped by Phase)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "manifest_created_file_paths_grouped_by_phase",
+      "community": 20,
+      "norm_label": "created file paths (grouped by phase)"
+    },
+    {
+      "label": "Phase 0",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "manifest_phase_0",
+      "community": 20,
+      "norm_label": "phase 0"
+    },
+    {
+      "label": "Phase 1",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L129",
+      "_origin": "ast",
+      "id": "manifest_phase_1",
+      "community": 20,
+      "norm_label": "phase 1"
+    },
+    {
+      "label": "Phase 2",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "manifest_phase_2",
+      "community": 20,
+      "norm_label": "phase 2"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.5 Messaging)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L226",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_5_messaging",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.5 messaging)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.6 Applicant Detail View)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L250",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.6 applicant detail view)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.7 Bulk Actions)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L267",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_7_bulk_actions",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.7 bulk actions)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.8 Recruiter Analytics & Filters)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L278",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.8 recruiter analytics & filters)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.9 Recruiter Dashboard)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L296",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.9 recruiter dashboard)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.10 Notifications & Activity Feed)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L302",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.10 notifications & activity feed)"
+    },
+    {
+      "label": "Phase 2 (continued - Step 2.11 CSV Export)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L320",
+      "_origin": "ast",
+      "id": "manifest_phase_2_continued_step_2_11_csv_export",
+      "community": 20,
+      "norm_label": "phase 2 (continued - step 2.11 csv export)"
+    },
+    {
+      "label": "Admin Applicant Detail View (cross-phase)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L327",
+      "_origin": "ast",
+      "id": "manifest_admin_applicant_detail_view_cross_phase",
+      "community": 20,
+      "norm_label": "admin applicant detail view (cross-phase)"
+    },
+    {
+      "label": "Phase 3 - Step 3.1 (User Profile)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L339",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_1_user_profile",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.1 (user profile)"
+    },
+    {
+      "label": "Phase 3 - Step 3.2 (Resumes & In-App Builder)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L350",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_2_resumes_in_app_builder",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.2 (resumes & in-app builder)"
+    },
+    {
+      "label": "Phase 3 - Step 3.2a (AI Resume Enhancement)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L366",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_2a_ai_resume_enhancement",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.2a (ai resume enhancement)"
+    },
+    {
+      "label": "Phase 3 - Step 3.3 (Job Application Flow)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L375",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_3_job_application_flow",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.3 (job application flow)"
+    },
+    {
+      "label": "Phase 3 - Step 3.4 (My Applications)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L383",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_4_my_applications",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.4 (my applications)"
+    },
+    {
+      "label": "Phase 3 - Step 3.5 (Application Detail, Withdraw & Message Recruiter)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L391",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.5 (application detail, withdraw & message recruiter)"
+    },
+    {
+      "label": "Phase 3 - Step 3.6 (Saved / Bookmarked Jobs)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L402",
+      "_origin": "ast",
+      "id": "manifest_phase_3_step_3_6_saved_bookmarked_jobs",
+      "community": 20,
+      "norm_label": "phase 3 - step 3.6 (saved / bookmarked jobs)"
+    },
+    {
+      "label": "Phase 3 - Supporting",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L412",
+      "_origin": "ast",
+      "id": "manifest_phase_3_supporting",
+      "community": 20,
+      "norm_label": "phase 3 - supporting"
+    },
+    {
+      "label": "Phase 4 - Steps 4.0-4.2 (Public Routes, Jobs, Details)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L417",
+      "_origin": "ast",
+      "id": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details",
+      "community": 20,
+      "norm_label": "phase 4 - steps 4.0-4.2 (public routes, jobs, details)"
+    },
+    {
+      "label": "Phase 4 - Step 4.3 (Auth-Aware Navbar & Redirect)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L444",
+      "_origin": "ast",
+      "id": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect",
+      "community": 20,
+      "norm_label": "phase 4 - step 4.3 (auth-aware navbar & redirect)"
+    },
+    {
+      "label": "Phase 4 - Step 4.4 (Home Page Composition)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L455",
+      "_origin": "ast",
+      "id": "manifest_phase_4_step_4_4_home_page_composition",
+      "community": 20,
+      "norm_label": "phase 4 - step 4.4 (home page composition)"
+    },
+    {
+      "label": "Phase 4 - Step 4.5 (Career Resources)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L465",
+      "_origin": "ast",
+      "id": "manifest_phase_4_step_4_5_career_resources",
+      "community": 20,
+      "norm_label": "phase 4 - step 4.5 (career resources)"
+    },
+    {
+      "label": "Phase 4 - Step 4.6 (SEO)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L476",
+      "_origin": "ast",
+      "id": "manifest_phase_4_step_4_6_seo",
+      "community": 20,
+      "norm_label": "phase 4 - step 4.6 (seo)"
+    },
+    {
+      "label": "Phase 4 - Supporting Changes",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L481",
+      "_origin": "ast",
+      "id": "manifest_phase_4_supporting_changes",
+      "community": 20,
+      "norm_label": "phase 4 - supporting changes"
+    },
+    {
+      "label": "Key Architecture Decisions",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L489",
+      "_origin": "ast",
+      "id": "manifest_key_architecture_decisions",
+      "community": 20,
+      "norm_label": "key architecture decisions"
+    },
+    {
+      "label": "Resume Snapshot (Phase 3)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L491",
+      "_origin": "ast",
+      "id": "manifest_resume_snapshot_phase_3",
+      "community": 20,
+      "norm_label": "resume snapshot (phase 3)"
+    },
+    {
+      "label": "ApplicationStatusChange (Phase 3)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L497",
+      "_origin": "ast",
+      "id": "manifest_applicationstatuschange_phase_3",
+      "community": 20,
+      "norm_label": "applicationstatuschange (phase 3)"
+    },
+    {
+      "label": "Multi-Provider AI (Phase 3)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L500",
+      "_origin": "ast",
+      "id": "manifest_multi_provider_ai_phase_3",
+      "community": 20,
+      "norm_label": "multi-provider ai (phase 3)"
+    },
+    {
+      "label": "Rate Limiting (Phase 3)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L503",
+      "_origin": "ast",
+      "id": "manifest_rate_limiting_phase_3",
+      "community": 20,
+      "norm_label": "rate limiting (phase 3)"
+    },
+    {
+      "label": "Public Route Group (Phase 4)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L506",
+      "_origin": "ast",
+      "id": "manifest_public_route_group_phase_4",
+      "community": 20,
+      "norm_label": "public route group (phase 4)"
+    },
+    {
+      "label": "Job Visibility Dual-Gate (Phase 4)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L509",
+      "_origin": "ast",
+      "id": "manifest_job_visibility_dual_gate_phase_4",
+      "community": 20,
+      "norm_label": "job visibility dual-gate (phase 4)"
+    },
+    {
+      "label": "Auth-Aware Navbar & Redirect (Phase 4)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L512",
+      "_origin": "ast",
+      "id": "manifest_auth_aware_navbar_redirect_phase_4",
+      "community": 20,
+      "norm_label": "auth-aware navbar & redirect (phase 4)"
+    },
+    {
+      "label": "JSON-LD Structured Data (Phase 4)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L515",
+      "_origin": "ast",
+      "id": "manifest_json_ld_structured_data_phase_4",
+      "community": 20,
+      "norm_label": "json-ld structured data (phase 4)"
+    },
+    {
+      "label": "Sitemap & Robots (Phase 4)",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L518",
+      "_origin": "ast",
+      "id": "manifest_sitemap_robots_phase_4",
+      "community": 20,
+      "norm_label": "sitemap & robots (phase 4)"
+    },
+    {
+      "label": "Active Global Context Snapshot",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L523",
+      "_origin": "ast",
+      "id": "manifest_active_global_context_snapshot",
+      "community": 20,
+      "norm_label": "active global context snapshot"
+    },
+    {
+      "label": "Known Issues / TODOs",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L537",
+      "_origin": "ast",
+      "id": "manifest_known_issues_todos",
+      "community": 20,
+      "norm_label": "known issues / todos"
+    },
+    {
+      "label": "Upcoming Dependencies",
+      "file_type": "document",
+      "source_file": "manifest.md",
+      "source_location": "L552",
+      "_origin": "ast",
+      "id": "manifest_upcoming_dependencies",
+      "community": 20,
+      "norm_label": "upcoming dependencies"
     },
     {
       "label": "1785126715092-performance-optimization-plan.md",
@@ -75699,9 +75699,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form"
+      "target": "components_profile_form",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -75710,9 +75710,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_profileform"
+      "target": "components_profile_form_profileform",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -82553,9 +82553,9 @@
       "source_file": "components/ui/autocomplete-input.tsx",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_autocomplete_input",
-      "target": "lib_utils"
+      "target": "lib_utils",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -82595,9 +82595,9 @@
       "source_file": "components/ui/autocomplete-input.tsx",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_autocomplete_input",
-      "target": "ui_badge"
+      "target": "ui_badge",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -87743,9 +87743,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "lib_prisma"
+      "target": "lib_prisma",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -87831,9 +87831,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "lib_prisma"
+      "target": "lib_prisma",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -89041,9 +89041,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_auth_fixtures"
+      "target": "test_auth_fixtures",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -89052,9 +89052,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_auth_fixtures"
+      "target": "test_auth_fixtures",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -89324,9 +89324,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_auth_fixtures_mocksession"
+      "target": "test_auth_fixtures_mocksession",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -89335,9 +89335,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_auth_fixtures_mocksession"
+      "target": "test_auth_fixtures_mocksession",
+      "confidence_score": 1.0
     },
     {
       "relation": "re_exports",
@@ -89738,9 +89738,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockpush"
+      "target": "components_profile_form_dom_test_mockpush",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -89748,9 +89748,9 @@
       "source_file": "lib/test/components/profile-form.dom.test.tsx",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockupsertprofile"
+      "target": "components_profile_form_dom_test_mockupsertprofile",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -91286,9 +91286,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "factories_user_factory_createtestuser"
+      "target": "factories_user_factory_createtestuser",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -91297,9 +91297,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "factories_user_factory_createtestuser"
+      "target": "factories_user_factory_createtestuser",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -91571,9 +91571,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_index"
+      "target": "test_index",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -91582,9 +91582,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_index"
+      "target": "test_index",
+      "confidence_score": 1.0
     },
     {
       "relation": "re_exports",
@@ -92558,9 +92558,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_reset_db_resetdb"
+      "target": "test_reset_db_resetdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -92569,9 +92569,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_shared_auth_mock"
+      "target": "test_shared_auth_mock",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92580,9 +92580,9 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "profile_skills_persistence_test",
-      "target": "test_shared_auth_mock_mockgetsession"
+      "target": "test_shared_auth_mock_mockgetsession",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92591,9 +92591,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_reset_db_resetdb"
+      "target": "test_reset_db_resetdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -92602,9 +92602,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_shared_auth_mock"
+      "target": "test_shared_auth_mock",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -92613,9 +92613,9 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "resume_builder_skills_persistence_test",
-      "target": "test_shared_auth_mock_mockgetsession"
+      "target": "test_shared_auth_mock_mockgetsession",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -101744,486 +101744,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest",
-      "target": "manifest_hire_flow_next_project_manifest"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L523",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_active_global_context_snapshot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_completed_steps"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L85",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_created_file_paths_grouped_by_phase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L489",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_key_architecture_decisions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L537",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_known_issues_todos"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_last_updated"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_overview"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L552",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_hire_flow_next_project_manifest",
-      "target": "manifest_upcoming_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_completed_steps",
-      "target": "manifest_phase_0_foundation"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_completed_steps",
-      "target": "manifest_phase_1_admin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_completed_steps",
-      "target": "manifest_phase_2_recruiter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_completed_steps",
-      "target": "manifest_phase_3_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L73",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_completed_steps",
-      "target": "manifest_phase_4_public_job_routes_home_page"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L327",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_admin_applicant_detail_view_cross_phase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_0"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L129",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_1"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L181",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L302",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_10_notifications_activity_feed"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L320",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_11_csv_export"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L226",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_5_messaging"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L250",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_6_applicant_detail_view"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L267",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_7_bulk_actions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L278",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L296",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_2_continued_step_2_9_recruiter_dashboard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L339",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_1_user_profile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L350",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_2_resumes_in_app_builder"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L366",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_2a_ai_resume_enhancement"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L375",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_3_job_application_flow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L383",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_4_my_applications"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L391",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L402",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_step_3_6_saved_bookmarked_jobs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L412",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_3_supporting"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L444",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L455",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_step_4_4_home_page_composition"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L465",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_step_4_5_career_resources"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L476",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_step_4_6_seo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L417",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L481",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_phase_4_supporting_changes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L497",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_applicationstatuschange_phase_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L512",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_auth_aware_navbar_redirect_phase_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L509",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_job_visibility_dual_gate_phase_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L515",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_json_ld_structured_data_phase_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L500",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_multi_provider_ai_phase_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L506",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_public_route_group_phase_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L503",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_rate_limiting_phase_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L491",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_resume_snapshot_phase_3"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "MANIFEST.md",
-      "source_location": "L518",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "manifest_key_architecture_decisions",
-      "target": "manifest_sitemap_robots_phase_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -106504,6 +106024,486 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest",
+      "target": "manifest_hire_flow_next_project_manifest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L523",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_active_global_context_snapshot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_completed_steps"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_created_file_paths_grouped_by_phase"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L489",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_key_architecture_decisions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L537",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_known_issues_todos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_last_updated"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L552",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_hire_flow_next_project_manifest",
+      "target": "manifest_upcoming_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_completed_steps",
+      "target": "manifest_phase_0_foundation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_completed_steps",
+      "target": "manifest_phase_1_admin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_completed_steps",
+      "target": "manifest_phase_2_recruiter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_completed_steps",
+      "target": "manifest_phase_3_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_completed_steps",
+      "target": "manifest_phase_4_public_job_routes_home_page"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_admin_applicant_detail_view_cross_phase"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_0"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L129",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L302",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_10_notifications_activity_feed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L320",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_11_csv_export"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L226",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_5_messaging"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L250",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_6_applicant_detail_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_7_bulk_actions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L296",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_2_continued_step_2_9_recruiter_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L339",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_1_user_profile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L350",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_2_resumes_in_app_builder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L366",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_2a_ai_resume_enhancement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L375",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_3_job_application_flow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L383",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_4_my_applications"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L391",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L402",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_step_3_6_saved_bookmarked_jobs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L412",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_3_supporting"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L444",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L455",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_step_4_4_home_page_composition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L465",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_step_4_5_career_resources"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L476",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_step_4_6_seo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L417",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L481",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_created_file_paths_grouped_by_phase",
+      "target": "manifest_phase_4_supporting_changes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L497",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_applicationstatuschange_phase_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L512",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_auth_aware_navbar_redirect_phase_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L509",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_job_visibility_dual_gate_phase_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L515",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_json_ld_structured_data_phase_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L500",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_multi_provider_ai_phase_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L506",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_public_route_group_phase_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L503",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_rate_limiting_phase_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L491",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_resume_snapshot_phase_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L518",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "manifest_key_architecture_decisions",
+      "target": "manifest_sitemap_robots_phase_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -106537,9 +106537,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106547,9 +106547,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L197",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106557,9 +106557,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L218",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5"
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106627,9 +106627,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L876",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
-      "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round"
+      "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106657,9 +106657,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_finding"
+      "target": "plans_1785126715092_performance_optimization_plan_finding",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106667,9 +106667,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106677,9 +106677,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L28",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
-      "target": "plans_1785126715092_performance_optimization_plan_validation"
+      "target": "plans_1785126715092_performance_optimization_plan_validation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106727,9 +106727,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L41",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_41"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_41",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106737,9 +106737,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L185",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_185"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_185",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106747,9 +106747,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L201",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_201"
+      "target": "plans_1785126715092_performance_optimization_plan_finding_201",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106757,9 +106757,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L206",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_206"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_206",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106767,9 +106767,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L211",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_211"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_211",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106777,9 +106777,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L253",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks"
+      "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106787,9 +106787,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L222",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_finding_222"
+      "target": "plans_1785126715092_performance_optimization_plan_finding_222",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106797,9 +106797,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L225",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_225"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_225",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106807,9 +106807,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L258",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_258"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_258",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106827,9 +106827,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L473",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_473"
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_473",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106837,9 +106837,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L482",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note"
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106857,9 +106857,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L282",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_282"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_282",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106867,9 +106867,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L485",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_485"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_485",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106887,9 +106887,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L531",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_531"
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_531",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106907,9 +106907,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L538",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_538"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_538",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106917,9 +106917,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L550",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_550"
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_550",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106927,9 +106927,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L643",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_643"
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_643",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106947,9 +106947,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L649",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_space_complexity"
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106967,9 +106967,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L563",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_563"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_563",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106977,9 +106977,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L652",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_652"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_652",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106987,9 +106987,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L664",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_664"
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_664",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -106997,9 +106997,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L737",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_737"
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_737",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107007,9 +107007,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L671",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_671"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_671",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107017,9 +107017,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L745",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_745"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_745",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107027,9 +107027,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L759",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_current_state_759"
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_759",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107037,9 +107037,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L795",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_795"
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_795",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107057,9 +107057,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L767",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_tasks_767"
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_767",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107067,9 +107067,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L801",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
-      "target": "plans_1785126715092_performance_optimization_plan_validation_801"
+      "target": "plans_1785126715092_performance_optimization_plan_validation_801",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107087,9 +107087,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L830",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
-      "target": "plans_1785126715092_performance_optimization_plan_open_questions"
+      "target": "plans_1785126715092_performance_optimization_plan_open_questions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107107,9 +107107,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L880",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_critical_fixes"
+      "target": "plans_1785126715092_performance_optimization_plan_critical_fixes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107117,9 +107117,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L887",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes"
+      "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107127,9 +107127,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L909",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90"
+      "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107137,9 +107137,9 @@
       "source_file": "plans/1785126715092-performance-optimization-plan.md",
       "source_location": "L896",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
-      "target": "plans_1785126715092_performance_optimization_plan_score_breakdown"
+      "target": "plans_1785126715092_performance_optimization_plan_score_breakdown",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -107463,5 +107463,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3bd5f3a46dc377fc989914078d36714f8fe24372"
+  "built_at_commit": "2caee653fc27d08d55c573bfb0dbf554b532414d"
 }
