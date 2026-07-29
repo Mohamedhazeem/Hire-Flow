@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-29)
 
 ## Corpus Check
-- 729 files · ~316,525 words
+- 729 files · ~316,557 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3956f65c`
+- Built from commit: `6ca0efbe`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1053,7 +1053,7 @@ Cohesion: 0.50
 Nodes (4): baselinePath, BenchmarkResult, readBaseline(), updateBaseline()
 
 ## Knowledge Gaps
-- **1904 isolated node(s):** `DesktopFiltersProps`, `metadata`, `Permissions`, `Conditions`, `Additional Terms` (+1899 more)
+- **1904 isolated node(s):** `WORKMODE_COLORS`, `EMPLOYMENT_TYPE_COLORS`, `DesktopFiltersProps`, `metadata`, `Permissions` (+1899 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1061,16 +1061,16 @@ Nodes (4): baselinePath, BenchmarkResult, readBaseline(), updateBaseline()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 29` to `Community 139`, `Community 140`, `Community 18`, `Community 23`, `Community 24`, `Community 26`, `Community 34`, `Community 38`, `Community 167`, `Community 170`, `Community 49`, `Community 51`, `Community 180`, `Community 182`, `Community 54`, `Community 61`, `Community 65`, `Community 194`, `Community 67`, `Community 90`, `Community 92`, `Community 94`, `Community 95`, `Community 97`, `Community 117`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 42` to `Community 225`, `Community 35`, `Community 105`, `Community 107`, `Community 173`, `Community 238`, `Community 239`, `Community 80`, `Community 112`, `Community 110`, `Community 19`, `Community 22`, `Community 87`, `Community 88`, `Community 218`, `Community 27`, `Community 93`, `Community 30`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `env` connect `Community 173` to `Community 97`, `Community 199`, `Community 105`, `Community 107`, `Community 43`, `Community 171`, `Community 147`, `Community 55`, `Community 22`, `Community 118`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `PageHeader()` connect `Community 54` to `Community 65`, `Community 34`, `Community 58`, `Community 69`, `Community 169`, `Community 107`, `Community 140`, `Community 141`, `Community 110`, `Community 17`, `Community 51`, `Community 218`, `Community 92`, `Community 29`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Are the 22 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 22 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 19 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 19 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `DesktopFiltersProps`, `metadata`, `Permissions` to the rest of the system?**
+- **What connects `WORKMODE_COLORS`, `EMPLOYMENT_TYPE_COLORS`, `DesktopFiltersProps` to the rest of the system?**
   _1904 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

@@ -4,14 +4,164 @@
   "graph": {},
   "nodes": [
     {
+      "label": "analytics.schema.ts",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "schema_analytics_schema",
+      "community": 86,
+      "norm_label": "analytics.schema.ts"
+    },
+    {
+      "label": "AnalyticsFilterSchema",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_analyticsfilterschema",
+      "community": 86,
+      "norm_label": "analyticsfilterschema"
+    },
+    {
+      "label": "AnalyticsFilter",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_analyticsfilter",
+      "community": 24,
+      "norm_label": "analyticsfilter"
+    },
+    {
+      "label": "TrendPoint",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_trendpoint",
+      "community": 86,
+      "norm_label": "trendpoint"
+    },
+    {
+      "label": "FunnelStage",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_funnelstage",
+      "community": 86,
+      "norm_label": "funnelstage"
+    },
+    {
+      "label": "FunnelHistorical",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_funnelhistorical",
+      "community": 86,
+      "norm_label": "funnelhistorical"
+    },
+    {
+      "label": "StageConversion",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_stageconversion",
+      "community": 86,
+      "norm_label": "stageconversion"
+    },
+    {
+      "label": "SummaryStats",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_summarystats",
+      "community": 86,
+      "norm_label": "summarystats"
+    },
+    {
+      "label": "JobBreakdownRow",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_jobbreakdownrow",
+      "community": 86,
+      "norm_label": "jobbreakdownrow"
+    },
+    {
+      "label": "AnalyticsResponse",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_analyticsresponse",
+      "community": 24,
+      "norm_label": "analyticsresponse"
+    },
+    {
+      "label": "FUNNEL_STAGE_ORDER",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_funnel_stage_order",
+      "community": 170,
+      "norm_label": "funnel_stage_order"
+    },
+    {
+      "label": "CHART_COLORS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_chart_colors",
+      "community": 170,
+      "norm_label": "chart_colors"
+    },
+    {
+      "label": "WORKMODE_COLORS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_workmode_colors",
+      "community": 86,
+      "norm_label": "workmode_colors"
+    },
+    {
+      "label": "EMPLOYMENT_TYPE_COLORS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "schema_analytics_schema_employment_type_colors",
+      "community": 86,
+      "norm_label": "employment_type_colors"
+    },
+    {
+      "label": "analytics.schema.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "recruiter_analytics_schema_test",
+      "community": 86,
+      "norm_label": "analytics.schema.test.ts"
+    },
+    {
       "label": "desktop-filters.tsx",
       "file_type": "code",
       "source_file": "app/features/recruiter/components/filters/desktop-filters.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "filters_desktop_filters",
       "community": 29,
-      "norm_label": "desktop-filters.tsx"
+      "norm_label": "desktop-filters.tsx",
+      "id": "filters_desktop_filters"
     },
     {
       "label": "DesktopFiltersProps",
@@ -19,9 +169,9 @@
       "source_file": "app/features/recruiter/components/filters/desktop-filters.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "filters_desktop_filters_desktopfiltersprops",
       "community": 29,
-      "norm_label": "desktopfiltersprops"
+      "norm_label": "desktopfiltersprops",
+      "id": "filters_desktop_filters_desktopfiltersprops"
     },
     {
       "label": "itemCls()",
@@ -29,9 +179,9 @@
       "source_file": "app/features/recruiter/components/filters/desktop-filters.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "filters_desktop_filters_itemcls",
       "community": 29,
-      "norm_label": "itemcls()"
+      "norm_label": "itemcls()",
+      "id": "filters_desktop_filters_itemcls"
     },
     {
       "label": "DesktopFilters()",
@@ -39,9 +189,9 @@
       "source_file": "app/features/recruiter/components/filters/desktop-filters.tsx",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "filters_desktop_filters_desktopfilters",
       "community": 29,
-      "norm_label": "desktopfilters()"
+      "norm_label": "desktopfilters()",
+      "id": "filters_desktop_filters_desktopfilters"
     },
     {
       "label": "filter-options.tsx",
@@ -49,9 +199,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "filters_filter_options",
       "community": 29,
-      "norm_label": "filter-options.tsx"
+      "norm_label": "filter-options.tsx",
+      "id": "filters_filter_options"
     },
     {
       "label": "WORK_MODE_OPTIONS",
@@ -59,9 +209,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "filters_filter_options_work_mode_options",
       "community": 29,
-      "norm_label": "work_mode_options"
+      "norm_label": "work_mode_options",
+      "id": "filters_filter_options_work_mode_options"
     },
     {
       "label": "EMPLOYMENT_TYPE_OPTIONS",
@@ -69,9 +219,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "filters_filter_options_employment_type_options",
       "community": 29,
-      "norm_label": "employment_type_options"
+      "norm_label": "employment_type_options",
+      "id": "filters_filter_options_employment_type_options"
     },
     {
       "label": "getStatusOptions()",
@@ -79,9 +229,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "filters_filter_options_getstatusoptions",
       "community": 29,
-      "norm_label": "getstatusoptions()"
+      "norm_label": "getstatusoptions()",
+      "id": "filters_filter_options_getstatusoptions"
     },
     {
       "label": "StatusDot()",
@@ -89,9 +239,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "filters_filter_options_statusdot",
       "community": 29,
-      "norm_label": "statusdot()"
+      "norm_label": "statusdot()",
+      "id": "filters_filter_options_statusdot"
     },
     {
       "label": "page.tsx",
@@ -13034,146 +13184,6 @@
       "id": "queries_job_queries_getjobbyid"
     },
     {
-      "label": "analytics.schema.ts",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "analytics.schema.ts",
-      "id": "schema_analytics_schema"
-    },
-    {
-      "label": "AnalyticsFilterSchema",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "analyticsfilterschema",
-      "id": "schema_analytics_schema_analyticsfilterschema"
-    },
-    {
-      "label": "AnalyticsFilter",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "analyticsfilter",
-      "id": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "label": "TrendPoint",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "trendpoint",
-      "id": "schema_analytics_schema_trendpoint"
-    },
-    {
-      "label": "FunnelStage",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "funnelstage",
-      "id": "schema_analytics_schema_funnelstage"
-    },
-    {
-      "label": "FunnelHistorical",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L37",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "funnelhistorical",
-      "id": "schema_analytics_schema_funnelhistorical"
-    },
-    {
-      "label": "StageConversion",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "stageconversion",
-      "id": "schema_analytics_schema_stageconversion"
-    },
-    {
-      "label": "SummaryStats",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "summarystats",
-      "id": "schema_analytics_schema_summarystats"
-    },
-    {
-      "label": "JobBreakdownRow",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "jobbreakdownrow",
-      "id": "schema_analytics_schema_jobbreakdownrow"
-    },
-    {
-      "label": "AnalyticsResponse",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L67",
-      "_origin": "ast",
-      "community": 24,
-      "norm_label": "analyticsresponse",
-      "id": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "label": "FUNNEL_STAGE_ORDER",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "community": 170,
-      "norm_label": "funnel_stage_order",
-      "id": "schema_analytics_schema_funnel_stage_order"
-    },
-    {
-      "label": "CHART_COLORS",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L83",
-      "_origin": "ast",
-      "community": 170,
-      "norm_label": "chart_colors",
-      "id": "schema_analytics_schema_chart_colors"
-    },
-    {
-      "label": "WORKMODE_COLORS",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L93",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "workmode_colors",
-      "id": "schema_analytics_schema_workmode_colors"
-    },
-    {
-      "label": "EMPLOYMENT_TYPE_COLORS",
-      "file_type": "code",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L99",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "employment_type_colors",
-      "id": "schema_analytics_schema_employment_type_colors"
-    },
-    {
       "label": "application.schema.ts",
       "file_type": "code",
       "source_file": "app/features/recruiter/schema/application.schema.ts",
@@ -23472,16 +23482,6 @@
       "community": 214,
       "norm_label": "notification.schema.test.ts",
       "id": "notifications_notification_schema_test"
-    },
-    {
-      "label": "analytics.schema.test.ts",
-      "file_type": "code",
-      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 86,
-      "norm_label": "analytics.schema.test.ts",
-      "id": "recruiter_analytics_schema_test"
     },
     {
       "label": "application.schema.test.ts",
@@ -38469,6 +38469,565 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/analytics/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_analytics_route_ts_analytics_route",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "charts_funnel_chart",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/charts/trend-chart.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "charts_trend_chart",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_per_job_analytics_page",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_analytics_page",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "filters_filter_options",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_analytics",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_analytics_schema_test",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_analyticsfilter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_analyticsfilterschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_analyticsresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_chart_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_employment_type_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_funnel_stage_order"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_funnelhistorical"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_funnelstage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_jobbreakdownrow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_stageconversion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_summarystats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_trendpoint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_analytics_schema_workmode_colors"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_application_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_analytics_schema",
+      "target": "schema_application_schema_application_statuses"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/security/analytics-queries.security.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "security_analytics_queries_security_test",
+      "target": "schema_analytics_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/analytics/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_analytics_route_ts_analytics_route",
+      "target": "schema_analytics_schema_analyticsfilterschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
+      "target": "schema_analytics_schema_analyticsfilterschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_analytics_schema_test",
+      "target": "schema_analytics_schema_analyticsfilterschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/security/analytics-queries.security.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "security_analytics_queries_security_test",
+      "target": "schema_analytics_schema_analyticsfilterschema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_per_job_analytics_page",
+      "target": "schema_analytics_schema_analyticsfilter"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_analytics_page",
+      "target": "schema_analytics_schema_analyticsfilter"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_analytics",
+      "target": "schema_analytics_schema_analyticsfilter"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_analyticsfilter"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/charts/trend-chart.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "charts_trend_chart",
+      "target": "schema_analytics_schema_trendpoint"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_trendpoint"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_funnelstage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_funnelhistorical"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_stageconversion"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_summarystats"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_analytics_page",
+      "target": "schema_analytics_schema_jobbreakdownrow"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_jobbreakdownrow"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_per_job_analytics_page",
+      "target": "schema_analytics_schema_analyticsresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_analytics_page",
+      "target": "schema_analytics_schema_analyticsresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_analytics",
+      "target": "schema_analytics_schema_analyticsresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_analyticsresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "charts_funnel_chart",
+      "target": "schema_analytics_schema_funnel_stage_order"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "schema_analytics_schema_funnel_stage_order"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "charts_funnel_chart",
+      "target": "schema_analytics_schema_chart_colors"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_per_job_analytics_page",
+      "target": "schema_analytics_schema_chart_colors"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_analytics_page",
+      "target": "schema_analytics_schema_chart_colors"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "filters_filter_options",
+      "target": "schema_analytics_schema_chart_colors"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/filters/analytics-filter-bar.tsx",
       "source_location": "L13",
       "weight": 1.0,
@@ -38696,31 +39255,9 @@
       "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "filters_filter_options",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "filters_filter_options",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/filters/filter-options.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "filters_filter_options",
-      "target": "schema_analytics_schema_chart_colors"
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports_from",
@@ -49983,28 +50520,6 @@
       "target": "queries_analytics_queries_getanalytics"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/analytics/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/analytics/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema_analyticsfilterschema"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -51460,28 +51975,6 @@
       "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
       "target": "queries_analytics_queries_getjobanalytics"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema_analyticsfilterschema"
     },
     {
       "relation": "calls",
@@ -72029,39 +72522,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "charts_funnel_chart",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "charts_funnel_chart",
-      "target": "schema_analytics_schema_chart_colors"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/charts/funnel-chart.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "charts_funnel_chart",
-      "target": "schema_analytics_schema_funnel_stage_order"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
       "source_location": "L8",
       "weight": 1.0,
@@ -72142,28 +72602,6 @@
       "confidence_score": 1.0,
       "source": "charts_trend_chart",
       "target": "charts_trend_chart_trendchartprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/charts/trend-chart.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "charts_trend_chart",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/charts/trend-chart.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "charts_trend_chart",
-      "target": "schema_analytics_schema_trendpoint"
     },
     {
       "relation": "imports_from",
@@ -73621,50 +74059,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_per_job_analytics_page",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_per_job_analytics_page",
-      "target": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_per_job_analytics_page",
-      "target": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_per_job_analytics_page",
-      "target": "schema_analytics_schema_chart_colors"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/per-job-analytics-page.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -73840,61 +74234,6 @@
       "confidence_score": 1.0,
       "source": "components_recruiter_analytics_page",
       "target": "layout_page_header_pageheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_analytics_page",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_analytics_page",
-      "target": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_analytics_page",
-      "target": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_analytics_page",
-      "target": "schema_analytics_schema_chart_colors"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-analytics-page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_analytics_page",
-      "target": "schema_analytics_schema_jobbreakdownrow"
     },
     {
       "relation": "imports_from",
@@ -75077,39 +75416,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hooks_use_analytics",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hooks_use_analytics",
-      "target": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/hooks/use-analytics.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hooks_use_analytics",
-      "target": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/hooks/use-applicant-detail.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -76072,116 +76378,6 @@
       "target": "queries_analytics_queries_wherefrom"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_funnel_stage_order"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_funnelhistorical"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_funnelstage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_jobbreakdownrow"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_stageconversion"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_summarystats"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "schema_analytics_schema_trendpoint"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -77026,202 +77222,6 @@
       "weight": 1.0,
       "source": "app_features_recruiter_queries_job_queries_ts_queries_job_queries_listjobs",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_analytics_schema_test",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_analyticsfilter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_analyticsfilterschema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_analyticsresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_chart_colors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L96",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_employment_type_colors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L78",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_funnel_stage_order"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_funnelhistorical"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_funnelstage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_jobbreakdownrow"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_stageconversion"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_summarystats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_trendpoint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L90",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_analytics_schema_workmode_colors"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_application_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/schema/analytics.schema.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_analytics_schema",
-      "target": "schema_application_schema_application_statuses"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/security/analytics-queries.security.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "security_analytics_queries_security_test",
-      "target": "schema_analytics_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/schemas/recruiter/analytics.schema.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_analytics_schema_test",
-      "target": "schema_analytics_schema_analyticsfilterschema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/security/analytics-queries.security.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "security_analytics_queries_security_test",
-      "target": "schema_analytics_schema_analyticsfilterschema"
     },
     {
       "relation": "imports_from",
@@ -113682,5 +113682,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3956f65c9c64693a10082589e7acafa5b2b0e298"
+  "built_at_commit": "6ca0efbea11be4187c6a19add77596d031843840"
 }

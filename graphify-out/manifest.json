@@ -1340,8 +1340,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/analytics.schema.ts": {
-    "mtime": 1785340827.2145789,
-    "ast_hash": "b431fd3e69e03b7e1a3fc1bdfcb7d0a8",
+    "mtime": 1785341043.1573029,
+    "ast_hash": "1b80a93a59097ca3403b3b33ee06f008",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
@@ -2135,8 +2135,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1785338369.8676682,
-    "ast_hash": "f9c4cc0d1fef75df88302349d49d4ce4",
+    "mtime": 1785341256.2405796,
+    "ast_hash": "67889f7834eba8305e300887e7817bd7",
     "semantic_hash": ""
   },
   "docs/architecture/technical-design.md": {
@@ -2705,8 +2705,8 @@
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/analytics.schema.test.ts": {
-    "mtime": 1785308984.3812869,
-    "ast_hash": "1a801a3c960344506ebee1950820ba45",
+    "mtime": 1785341056.8910081,
+    "ast_hash": "3063544bb2c774fdfa15793c9504c257",
     "semantic_hash": ""
   },
   "lib/test/schemas/recruiter/application.schema.test.ts": {

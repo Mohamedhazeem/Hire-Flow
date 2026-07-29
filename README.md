@@ -31,27 +31,27 @@ Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on pr
 
 ## 🧱 Tech Stack
 
-| Category        | Technology                             | Version                          |
-| --------------- | -------------------------------------- | -------------------------------- |
-| Framework       | Next.js                                | `16.2.7`                         |
-| UI Library      | React                                  | `19.2.4`                         |
-| Language        | TypeScript                             | `^5`                             |
-| ORM             | Prisma (+ `@prisma/adapter-pg`)        | `^7.8.0`                         |
-| Database Driver | `pg`                                   | `^8.21.0`                        |
-| Auth            | Better Auth (+ Prisma adapter)         | `^1.6.15`                        |
-| Validation      | Zod                                    | `^4.4.3`                         |
-| Data Fetching   | TanStack React Query                   | `^5.101.0`                       |
-| Client State    | Zustand                                | `^5.0.14`                        |
-| Forms           | React Hook Form (+ Hookform Resolvers) | `^7.78.0` / `^5.4.0`             |
-| Realtime        | Pusher / pusher-js                     | `^5.3.4` / `^8.5.0`              |
-| Email           | Resend + React Email                   | `^6.12.4` / `^6.6.1`             |
-| Charts          | Recharts                               | `^3.8.1`                         |
-| Animation       | Motion                                 | `^12.40.0`                       |
-| PDF/DOC Parsing | `pdf-parse`, `mammoth`, `react-pdf`    | `^2.4.5` / `^1.12.0` / `^10.4.1` |
-| Styling         | Tailwind CSS v4 + shadcn               | `^4` / `^4.11.0`                 |
-| Date Handling   | date-fns                               | `^4.4.0`                         |
-| File Storage    | Vercel Blob (provider abstraction)     | `^2.6.1`                         |
-| Tooling         | ESLint 9, Prettier, Vitest, Stryker Mutator, tsx, cross-env               | —                                |
+| Category        | Technology                                                  | Version                          |
+| --------------- | ----------------------------------------------------------- | -------------------------------- |
+| Framework       | Next.js                                                     | `16.2.7`                         |
+| UI Library      | React                                                       | `19.2.4`                         |
+| Language        | TypeScript                                                  | `^5`                             |
+| ORM             | Prisma (+ `@prisma/adapter-pg`)                             | `^7.8.0`                         |
+| Database Driver | `pg`                                                        | `^8.21.0`                        |
+| Auth            | Better Auth (+ Prisma adapter)                              | `^1.6.15`                        |
+| Validation      | Zod                                                         | `^4.4.3`                         |
+| Data Fetching   | TanStack React Query                                        | `^5.101.0`                       |
+| Client State    | Zustand                                                     | `^5.0.14`                        |
+| Forms           | React Hook Form (+ Hookform Resolvers)                      | `^7.78.0` / `^5.4.0`             |
+| Realtime        | Pusher / pusher-js                                          | `^5.3.4` / `^8.5.0`              |
+| Email           | Resend + React Email                                        | `^6.12.4` / `^6.6.1`             |
+| Charts          | Recharts                                                    | `^3.8.1`                         |
+| Animation       | Motion                                                      | `^12.40.0`                       |
+| PDF/DOC Parsing | `pdf-parse`, `mammoth`, `react-pdf`                         | `^2.4.5` / `^1.12.0` / `^10.4.1` |
+| Styling         | Tailwind CSS v4 + shadcn                                    | `^4` / `^4.11.0`                 |
+| Date Handling   | date-fns                                                    | `^4.4.0`                         |
+| File Storage    | Vercel Blob (provider abstraction)                          | `^2.6.1`                         |
+| Tooling         | ESLint 9, Prettier, Vitest, Stryker Mutator, tsx, cross-env | —                                |
 
 ---
 
@@ -73,7 +73,7 @@ Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on pr
 - **7-status applicant pipeline** with optimistic concurrency control
 - **Bulk actions**: mass status transitions, bulk rejection with shared reasoning, one-time action constraints
 - Applicant detail view: profile, timeline, resume, in-thread messaging, status controls
-- **Analytics suite**: conversion funnels, trend charts, filterable by date range/status/type/location
+- **Analytics suite**: conversion funnels, trend charts, filterable by date range/status/type/location; status filter supports multi-select with colored dot indicators
 - **CSV export**: RFC 4180-compliant, streamed via cursor-batched queries, 50K row cap
 - Real-time, rate-limited direct messaging with applicants
 - **App-wide rate limiting** — configurable sliding-window limiter with OpenTelemetry metrics, batched cleanup, per-endpoint fail strategy, and admin metrics endpoint
@@ -171,15 +171,15 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 Hire Flow enforces 6 quality gates in `.github/workflows/test.yml`:
 
-| Gate | Tool | When | Purpose |
-| ---- | ---- | ---- | ------- |
-| Typecheck | `tsc --noEmit` | Every PR | Fastest gate; catches type errors ESLint misses |
-| Lint | ESLint 9 | Every PR | Code quality, unused vars, react-hooks rules |
-| Format | Prettier | Every PR | Consistent formatting across 600+ files |
-| Tests + Coverage | Vitest (`default` + `dom` + `contract`) | Every PR | Unit, integration, contract tests with coverage ratchet |
-| E2E | Playwright | Every PR | Full role-based journeys with real auth |
-| Performance | Vitest `perf` + baseline compare | Master push | PF1–PF5 budgets + regression against `benchmark/baseline.json` |
-| Mutation | Stryker Mutator | Master push (commented out) | Surviving mutants across `lib/rate-limiting/` � **disabled until Stryker issues are resolved** |
+| Gate             | Tool                                    | When                        | Purpose                                                                                        |
+| ---------------- | --------------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------- |
+| Typecheck        | `tsc --noEmit`                          | Every PR                    | Fastest gate; catches type errors ESLint misses                                                |
+| Lint             | ESLint 9                                | Every PR                    | Code quality, unused vars, react-hooks rules                                                   |
+| Format           | Prettier                                | Every PR                    | Consistent formatting across 600+ files                                                        |
+| Tests + Coverage | Vitest (`default` + `dom` + `contract`) | Every PR                    | Unit, integration, contract tests with coverage ratchet                                        |
+| E2E              | Playwright                              | Every PR                    | Full role-based journeys with real auth                                                        |
+| Performance      | Vitest `perf` + baseline compare        | Master push                 | PF1–PF5 budgets + regression against `benchmark/baseline.json`                                 |
+| Mutation         | Stryker Mutator                         | Master push (commented out) | Surviving mutants across `lib/rate-limiting/` � **disabled until Stryker issues are resolved** |
 
 Supporting config: `.prettierrc`, `.prettierignore`, `vitest.config.ts` (4 projects: `default`, `dom`, `contract`, `perf`), `stryker.config.json` (vitest-runner, `break: null`), `scripts/compare-benchmark.ts`, `scripts/update-baseline.ts`, `lib/test/perf-teardown.ts`.
 
@@ -517,7 +517,7 @@ Hire Flow uses a layered testing strategy matched to each layer of the stack:
 | Integration | Vitest + local Postgres test DB          | API route handlers called directly, tenant isolation, transactions, audit trails                                                           |
 | Performance | Vitest (`perf` project) + local Postgres | Scale budgets: analytics (PF1), applicant listing (PF2), CSV export (PF3), public job FTS search (PF4), resume AI-enhance quota race (PF5) |
 | Component   | React Testing Library                    | Data table selection, bulk action logic, forms, AI suggestions panel                                                                       |
-| Mutation    | Stryker Mutator + Vitest (disabled)    | Surviving mutants across `lib/rate-limiting/` and shared APIs                                                                             |
+| Mutation    | Stryker Mutator + Vitest (disabled)      | Surviving mutants across `lib/rate-limiting/` and shared APIs                                                                              |
 | End-to-End  | Playwright                               | Full role-based journeys (anonymous → user → recruiter → admin) with real Better Auth sessions                                             |
 
 External services (Pusher, AI providers, Resend, Vercel Blob) are mocked at the module level — tests never make real network calls or incur API costs.
@@ -526,16 +526,16 @@ External services (Pusher, AI providers, Resend, Vercel Blob) are mocked at the 
 
 Tests are built incrementally per the [testing strategy](docs/testing/testing-strategy.md). Suites are colocated next to source as `*.test.ts` (unit), `*.test.ts` (integration, real Postgres), `*.perf.test.ts` (perf project), `*.dom.test.tsx` (component), and `*.contract.test.ts` (contract).
 
-| Phase | Focus                               | Covers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ----- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Phase | Focus                               | Covers                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0     | Test infrastructure                 | `vitest.config.ts` (react + tsconfig-paths plugins, `default`/`dom`/`contract`/`perf` projects), `lib/test/test-db.ts` (isolated Prisma client), `lib/test/reset-db.ts` (`RESTART IDENTITY CASCADE` truncation in dependency order), `lib/test/factories.ts` (`createTestUser`/`Company`/`Job`/`Application`/`Resume`/`Thread`), `lib/test/auth-fixtures.ts` (`mockSession`), `lib/test/mocks.ts` (`mockPusherTrigger`/`mockAiClient`/`mockResend`), `global-setup.ts` returns vitest v3 teardown for perf result publishing |
-| 1     | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes                                                                                                                                                                                                                                                           |
-| 2     | Unit tests: pure logic              | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts`                                                                                                                                                                                              |
-| 3     | Auth & authorization                | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix                                                                                                                                                                                                                                                           |
-| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions |
-| 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                                                            |
-| 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                                                                  |
-| 7     | CI quality gates                    | Typecheck (`tsc --noEmit`), ESLint, Prettier format check, contract tests (`*.contract.test.ts`), performance baseline regression (`benchmark/baseline.json` + `compare-benchmark.ts`), mutation testing (Stryker with vitest-runner) � **currently disabled in CI**                                                                                                                                                                                                                                                           |
+| 1     | Input validation & schema hardening | SQL-injection rejection for raw analytics query params (Zod UUID/ISO dates); edge cases for `profile`/`resume`/`application-submit`/`job`/`auth`/`admin` schemas; mass-assignment (over-posting) prevention on role/patch/apply routes                                                                                                                                                                                                                                                                                       |
+| 2     | Unit tests: pure logic              | `lib/rate-limiter.ts`, `csv-builder.ts` (RFC 4180 escaping), `lib/pagination.ts`, `api-error/api-response`, `lib/routes.ts`, `lib/job-categories.ts`, `rate-limit-message.ts`, `ai-client.ts`; Zod schema tests; `require-role.ts`, `validator.ts`, `presence-store.ts`, `applicant-table-utils.ts`                                                                                                                                                                                                                          |
+| 3     | Auth & authorization                | Session/token security (expired/malformed/missing → 401, cross-role → 403); IDOR protection for every resource (application, job, resume, profile, thread, message, notification, bookmark, admin actions); middleware redirect matrix                                                                                                                                                                                                                                                                                       |
+| 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions                             |
+| 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                                                                                        |
+| 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                                                                                              |
+| 7     | CI quality gates                    | Typecheck (`tsc --noEmit`), ESLint, Prettier format check, contract tests (`*.contract.test.ts`), performance baseline regression (`benchmark/baseline.json` + `compare-benchmark.ts`), mutation testing (Stryker with vitest-runner) � **currently disabled in CI**                                                                                                                                                                                                                                                         |
 
 ### Performance & stability tests (Phase 7)
 
@@ -556,10 +556,10 @@ Supporting infra: `Application` indexes (`@@index([appliedAt])`, `@@index([jobId
 
 The `contract` Vitest project runs `*.contract.test.ts` files to enforce shared behavioral guarantees across implementation variants:
 
-| Test     | File                                                              | What it asserts                                                               |
-| -------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Repo     | `lib/test/unit/rate-limiting/contract/repository-contract.ts`     | FakeRepository and PrismaRateLimitRepository behave identically               |
-| Prisma   | `lib/test/unit/rate-limiting/repository.prisma.contract.test.ts`  | Prisma-backed repository satisfies the contract against a real Postgres DB     |
+| Test   | File                                                             | What it asserts                                                            |
+| ------ | ---------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Repo   | `lib/test/unit/rate-limiting/contract/repository-contract.ts`    | FakeRepository and PrismaRateLimitRepository behave identically            |
+| Prisma | `lib/test/unit/rate-limiting/repository.prisma.contract.test.ts` | Prisma-backed repository satisfies the contract against a real Postgres DB |
 
 ### Mutation testing (Phase 7)
 
