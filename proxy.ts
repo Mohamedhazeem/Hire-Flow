@@ -11,7 +11,9 @@ export default async function proxy(request: NextRequest) {
   });
   const isAuthPage = AUTH_PAGES.includes(pathname as (typeof AUTH_PAGES)[number]);
 
-  const isProtectedRoute = PROTECTED_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}/`));
+  const isProtectedRoute = PROTECTED_ROUTES.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  );
   const isAdminRoute = pathname === "/admin" || pathname.startsWith("/admin/");
 
   // 1. SIGNED-IN USERS: Redirect if they touch auth pages OR the generic root

@@ -5,10 +5,12 @@ export function EmployerCTA() {
   return (
     <section id="for-employers" className="bg-neutral-900 dark:bg-neutral-950 py-16 sm:py-20">
       <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Hiring? Let&rsquo;s talk.</h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+          Hiring? Let&rsquo;s talk.
+        </h2>
         <p className="text-sm sm:text-base text-neutral-400 mt-4 max-w-xl mx-auto leading-relaxed">
-          HireFlow gives you access to a curated pool of top talent. Recruiter access is currently by invitation only
-          &mdash; reach out and we&rsquo;ll get you set up.
+          HireFlow gives you access to a curated pool of top talent. Recruiter access is currently
+          by invitation only &mdash; reach out and we&rsquo;ll get you set up.
         </p>
         <a
           href="/register"

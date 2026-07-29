@@ -195,13 +195,22 @@ export function validateConfig(): void {
   if (typeof proxy.trusted !== "boolean") throw new Error("proxy.trusted must be a boolean");
   const VALID_HEADERS = new Set(["x-real-ip", "x-forwarded-for", "cf-connecting-ip"]);
   if (!VALID_HEADERS.has(proxy.trustedHeader)) {
-    throw new Error(`trustedHeader "${proxy.trustedHeader}" must be one of: ${[...VALID_HEADERS].join(", ")}`);
+    throw new Error(
+      `trustedHeader "${proxy.trustedHeader}" must be one of: ${[...VALID_HEADERS].join(", ")}`,
+    );
   }
 
   // ── ipHashing ──
-  if (typeof ipHashing.enabled !== "boolean") throw new Error("ipHashing.enabled must be a boolean");
-  if (ipHashing.digestLength < 8 || ipHashing.digestLength > 64 || !Number.isInteger(ipHashing.digestLength)) {
-    throw new Error(`ipHashing.digestLength must be an integer between 8 and 64, got ${ipHashing.digestLength}`);
+  if (typeof ipHashing.enabled !== "boolean")
+    throw new Error("ipHashing.enabled must be a boolean");
+  if (
+    ipHashing.digestLength < 8 ||
+    ipHashing.digestLength > 64 ||
+    !Number.isInteger(ipHashing.digestLength)
+  ) {
+    throw new Error(
+      `ipHashing.digestLength must be an integer between 8 and 64, got ${ipHashing.digestLength}`,
+    );
   }
   const salt = process.env[ipHashing.saltEnvVar];
   if (ipHashing.enabled && process.env.NODE_ENV === "production" && !salt) {
@@ -223,7 +232,11 @@ export function validateConfig(): void {
   if (!["open", "closed"].includes(failStrategy.default)) {
     throw new Error('failStrategy.default must be "open" or "closed"');
   }
-  if (!Number.isInteger(failStrategy.statusCode) || failStrategy.statusCode < 400 || failStrategy.statusCode > 599) {
+  if (
+    !Number.isInteger(failStrategy.statusCode) ||
+    failStrategy.statusCode < 400 ||
+    failStrategy.statusCode > 599
+  ) {
     throw new Error("failStrategy.statusCode must be an integer between 400 and 599");
   }
 
@@ -236,7 +249,8 @@ export function validateConfig(): void {
   // ── Roles ──
   for (const [role, cfg] of Object.entries(roles)) {
     if (cfg.multiplier <= 0) throw new Error(`role "${role}" multiplier must be > 0`);
-    if (!Number.isFinite(cfg.multiplier)) throw new Error(`role "${role}" multiplier must be finite`);
+    if (!Number.isFinite(cfg.multiplier))
+      throw new Error(`role "${role}" multiplier must be finite`);
   }
 
   // ── Endpoints ──
@@ -256,7 +270,11 @@ export function validateConfig(): void {
   if (shadowMode && strategy === "memory") {
     throw new Error("shadowMode is not supported with memory strategy");
   }
-  if (proxy.trusted && process.env.NODE_ENV === "production" && !process.env.RATE_LIMIT_TRUSTED_PROXY) {
+  if (
+    proxy.trusted &&
+    process.env.NODE_ENV === "production" &&
+    !process.env.RATE_LIMIT_TRUSTED_PROXY
+  ) {
     console.warn(
       "proxy.trusted is true but RATE_LIMIT_TRUSTED_PROXY env var is not set. Ensure you are behind a trusted proxy.",
     );
@@ -304,7 +322,10 @@ export interface RateLimitRepository {
   increment(key: string, now: bigint, cutoff: bigint): Promise<{ count: number }>;
   deleteById(key: string): Promise<void>;
   deleteAllAppKeys(): Promise<void>;
-  pruneAppKeys(cutoff: bigint, options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult>;
+  pruneAppKeys(
+    cutoff: bigint,
+    options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult>;
 }
 
 export class PrismaRateLimitRepository implements RateLimitRepository {
@@ -332,7 +353,10 @@ export class PrismaRateLimitRepository implements RateLimitRepository {
   }
 
   // NEW: Batched pruning with time budget
-  async pruneAppKeys(cutoff: bigint, options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult> {
+  async pruneAppKeys(
+    cutoff: bigint,
+    options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult> {
     const start = Date.now();
     const batchSize = options?.batchSize ?? rateLimitConfig.cleanup.batchSize;
     const budgetMs = options?.budgetMs ?? rateLimitConfig.cleanup.budgetMs;
@@ -342,7 +366,12 @@ export class PrismaRateLimitRepository implements RateLimitRepository {
     while (true) {
       const elapsed = Date.now() - start;
       if (elapsed >= budgetMs) {
-        return { rowsDeleted: totalDeleted, batchesExecuted: batches, durationMs: elapsed, timedOut: true };
+        return {
+          rowsDeleted: totalDeleted,
+          batchesExecuted: batches,
+          durationMs: elapsed,
+          timedOut: true,
+        };
       }
 
       const result = await prisma.$executeRaw<number>(Prisma.sql`
@@ -401,7 +430,8 @@ export class RateLimiterImpl implements RateLimiter {
 
   async enforce(key: string, max: number, windowMs: number): Promise<void> {
     const result = await this.check(key, max, windowMs);
-    if (!result.allowed) throw new TooManyRequestsError("Rate limit exceeded. Please try again later.");
+    if (!result.allowed)
+      throw new TooManyRequestsError("Rate limit exceeded. Please try again later.");
   }
 
   async reset(key?: string): Promise<void> {
@@ -425,7 +455,10 @@ export class RateLimiterImpl implements RateLimiter {
 
 ```ts
 export function createWithRateLimit(rateLimiter: RateLimiter) {
-  return function withRateLimit(handler: SimpleHandler | ParamHandler, endpointKey: RateLimitEndpoint) {
+  return function withRateLimit(
+    handler: SimpleHandler | ParamHandler,
+    endpointKey: RateLimitEndpoint,
+  ) {
     return async (request: NextRequest, context?: RouteContext) => {
       // ── Early exit if disabled (unchanged)
 
@@ -457,7 +490,9 @@ export function createWithRateLimit(rateLimiter: RateLimiter) {
         }
         // failStrategy === 'open': allow request through
         return runWithSession(session, () =>
-          context ? (handler as ParamHandler)(request, context) : (handler as SimpleHandler)(request),
+          context
+            ? (handler as ParamHandler)(request, context)
+            : (handler as SimpleHandler)(request),
         );
       }
 
@@ -515,7 +550,11 @@ const activeKeysGauge = meter.createGauge("rate_limit.active_app_keys", {
 
 // ── Public API ──
 
-export function countRateLimitDecision(labels: { endpoint: string; role: string; decision: string }): void {
+export function countRateLimitDecision(labels: {
+  endpoint: string;
+  role: string;
+  decision: string;
+}): void {
   decisionCounter.add(1, labels);
 }
 
@@ -554,7 +593,11 @@ export function startCheckSpan(key: string, max: number) {
   });
 }
 
-export function endCheckSpan(span: ReturnType<typeof startCheckSpan>, allowed: boolean, durationMs: number): void {
+export function endCheckSpan(
+  span: ReturnType<typeof startCheckSpan>,
+  allowed: boolean,
+  durationMs: number,
+): void {
   span.setAttribute("allowed", allowed);
   span.setAttribute("duration_ms", durationMs);
   span.end();
@@ -688,7 +731,10 @@ export class FakeRepository implements RateLimitRepository {
     }
   }
 
-  async pruneAppKeys(cutoff: bigint, options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult> {
+  async pruneAppKeys(
+    cutoff: bigint,
+    options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult> {
     const start = Date.now();
     let deleted = 0;
     for (const [key, row] of this.store.entries()) {
@@ -697,7 +743,12 @@ export class FakeRepository implements RateLimitRepository {
         deleted++;
       }
     }
-    return { rowsDeleted: deleted, batchesExecuted: 1, durationMs: Date.now() - start, timedOut: false };
+    return {
+      rowsDeleted: deleted,
+      batchesExecuted: 1,
+      durationMs: Date.now() - start,
+      timedOut: false,
+    };
   }
 
   // Test helper
@@ -735,7 +786,11 @@ export function runRepositoryContractTests(
 
     // ── increment ──
     it("increment creates a new row and returns count 1", async () => {
-      const result = await repo.increment("app:test:key1", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const result = await repo.increment(
+        "app:test:key1",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(result.count).toBe(1);
     });
 
@@ -750,7 +805,11 @@ export function runRepositoryContractTests(
     it("increment resets count when window expired", async () => {
       await repo.increment("app:test:key3", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       clock.advance(61_000);
-      const result = await repo.increment("app:test:key3", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const result = await repo.increment(
+        "app:test:key3",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(result.count).toBe(1);
     });
 
@@ -774,8 +833,16 @@ export function runRepositoryContractTests(
       await repo.increment("app:test:a", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.increment("app:test:b", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.deleteById("app:test:a");
-      const a = await repo.increment("app:test:a", BigInt(clock.now()), BigInt(clock.now() - 60_000));
-      const b = await repo.increment("app:test:b", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const a = await repo.increment(
+        "app:test:a",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
+      const b = await repo.increment(
+        "app:test:b",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(a.count).toBe(1); // deleted → fresh start
       expect(b.count).toBe(2); // not deleted, incremented
     });
@@ -785,8 +852,16 @@ export function runRepositoryContractTests(
       await repo.increment("app:test:x", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.increment("other:key", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.deleteAllAppKeys();
-      const appKey = await repo.increment("app:test:x", BigInt(clock.now()), BigInt(clock.now() - 60_000));
-      const otherKey = await repo.increment("other:key", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const appKey = await repo.increment(
+        "app:test:x",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
+      const otherKey = await repo.increment(
+        "other:key",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(appKey.count).toBe(1); // deleted → fresh start
       expect(otherKey.count).toBe(2); // not deleted, incremented
     });
@@ -798,7 +873,11 @@ export function runRepositoryContractTests(
       const result = await repo.pruneAppKeys(BigInt(clock.now() - 86_400_000));
       expect(result.rowsDeleted).toBe(1);
       // Re-creating after prune should return count 1
-      const fresh = await repo.increment("app:test:old", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const fresh = await repo.increment(
+        "app:test:old",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(fresh.count).toBe(1);
     });
   });

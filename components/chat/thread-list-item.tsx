@@ -39,7 +39,9 @@ export function ThreadListItem({ thread, currentUserId, active, basePath, isOnli
     >
       <div className="relative shrink-0">
         <div className="size-10 rounded-xl bg-linear-to-br from-brand/15 to-brand/5 flex items-center justify-center">
-          <span className="text-sm font-bold text-brand">{thread.user.name.charAt(0).toUpperCase()}</span>
+          <span className="text-sm font-bold text-brand">
+            {thread.user.name.charAt(0).toUpperCase()}
+          </span>
         </div>
         {isOnline && (
           <div className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full bg-green-500 ring-2 ring-bg-surface" />
@@ -59,7 +61,12 @@ export function ThreadListItem({ thread, currentUserId, active, basePath, isOnli
             {thread.lastMessage ? formatTime(thread.lastMessage.createdAt) : ""}
           </span>
         </div>
-        <p className={cn("text-xs truncate mt-0.5", isUnread ? "font-medium text-text-body" : "text-text-muted")}>
+        <p
+          className={cn(
+            "text-xs truncate mt-0.5",
+            isUnread ? "font-medium text-text-body" : "text-text-muted",
+          )}
+        >
           {thread.lastMessage?.content || "No messages yet"}
         </p>
       </div>

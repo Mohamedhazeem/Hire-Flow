@@ -24,8 +24,14 @@ function CreateJobButton() {
 export default function RecruiterJobsPage() {
   return (
     <div className="space-y-6">
-      <PageHeader title="Jobs" description="Create and manage your job postings" actions={<CreateJobButton />} />
-      <Suspense fallback={<div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>}>
+      <PageHeader
+        title="Jobs"
+        description="Create and manage your job postings"
+        actions={<CreateJobButton />}
+      />
+      <Suspense
+        fallback={<div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>}
+      >
         <RecruiterJobsTable />
       </Suspense>
     </div>

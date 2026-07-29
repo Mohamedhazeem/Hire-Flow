@@ -64,13 +64,23 @@ type CompanyPreviewCardProps = {
   locations: string[];
 };
 
-export function CompanyPreviewCard({ name, logo, website, description, locations }: CompanyPreviewCardProps) {
+export function CompanyPreviewCard({
+  name,
+  logo,
+  website,
+  description,
+  locations,
+}: CompanyPreviewCardProps) {
   const initial = name.charAt(0).toUpperCase();
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 transition-colors hover:border-brand/20">
       <div className="flex items-start gap-4">
         <div className="size-12 sm:size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
-          {logo ? <Image src={logo} alt="" width={36} height={36} className="size-9 object-contain" /> : initial}
+          {logo ? (
+            <Image src={logo} alt="" width={36} height={36} className="size-9 object-contain" />
+          ) : (
+            initial
+          )}
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="text-base font-semibold text-text-heading truncate">{name}</h3>
@@ -82,7 +92,9 @@ export function CompanyPreviewCard({ name, logo, website, description, locations
           )}
         </div>
       </div>
-      {description && <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>}
+      {description && (
+        <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>
+      )}
       {website && (
         <a
           href={website}
@@ -180,11 +192,17 @@ d) **Anonymous CTA** — replace "Apply Now" button with conditional:
 ```tsx
 {
   session?.user ? (
-    <button onClick={() => setShowApply(true)} disabled={deadlinePassed || !d.isActive || d.status !== "active"}>
+    <button
+      onClick={() => setShowApply(true)}
+      disabled={deadlinePassed || !d.isActive || d.status !== "active"}
+    >
       Apply Now
     </button>
   ) : (
-    <Link href={`/login?returnUrl=${encodeURIComponent(`/jobs/${id}`)}`} className="... bg-brand hover:bg-brand/90 ...">
+    <Link
+      href={`/login?returnUrl=${encodeURIComponent(`/jobs/${id}`)}`}
+      className="... bg-brand hover:bg-brand/90 ..."
+    >
       Log in to Apply
     </Link>
   );
@@ -206,7 +224,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const job = await getPublicJobById(id);
   if (!job) return { title: "Job Not Found" };
-  return { title: `${job.title} at ${job.companyName}`, description: job.description?.slice(0, 160) };
+  return {
+    title: `${job.title} at ${job.companyName}`,
+    description: job.description?.slice(0, 160),
+  };
 }
 ```
 

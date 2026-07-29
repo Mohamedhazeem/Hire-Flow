@@ -190,7 +190,10 @@ export const BulkStatusTransitionSchema = z
     email: z.boolean().optional().default(false),
   })
   .superRefine((data, ctx) => {
-    if (data.status === "rejected" && (!data.rejectionReason || data.rejectionReason.trim().length === 0)) {
+    if (
+      data.status === "rejected" &&
+      (!data.rejectionReason || data.rejectionReason.trim().length === 0)
+    ) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "Rejection reason is required when rejecting",
@@ -259,7 +262,8 @@ setActionedIds((prev) => addActionedIds(prev, ids));
 const someSelected = enableSelection && data.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
 // AFTER
-const someSelected = enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
+const someSelected =
+  enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 ```
 
 ### Fix 9 — `totalPages` Fallback for Zero

@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useResumes, useSetPrimaryResume, useDeleteResume } from "@/app/features/user/hooks/use-resumes";
+import {
+  useResumes,
+  useSetPrimaryResume,
+  useDeleteResume,
+} from "@/app/features/user/hooks/use-resumes";
 import { ResumeCard } from "./resume-card";
 import { ResumeUploadButton } from "./resume-upload-button";
 import { Button } from "@/components/ui/button";
@@ -75,7 +79,9 @@ export function ResumeList() {
           </div>
           <div>
             <h3 className="text-base font-medium text-text-heading">No resumes yet</h3>
-            <p className="text-sm text-text-muted mt-1">Upload a file or build one from scratch to get started.</p>
+            <p className="text-sm text-text-muted mt-1">
+              Upload a file or build one from scratch to get started.
+            </p>
           </div>
         </div>
       ) : (

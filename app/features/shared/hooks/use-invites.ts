@@ -34,7 +34,8 @@ export function createInviteHooks<TTeamMember extends { id: string }>(
     const queryClient = useQueryClient();
 
     return useMutation({
-      mutationFn: (inviteId: string) => apiClient(`${apiBase}/invite/${inviteId}`, { method: "DELETE" }),
+      mutationFn: (inviteId: string) =>
+        apiClient(`${apiBase}/invite/${inviteId}`, { method: "DELETE" }),
       onMutate: async (inviteId) => {
         await queryClient.cancelQueries({ queryKey: [queryKeyBase, "invites"] });
 
@@ -64,7 +65,8 @@ export function createInviteHooks<TTeamMember extends { id: string }>(
     const queryClient = useQueryClient();
 
     return useMutation({
-      mutationFn: (memberId: string) => apiClient(`${apiBase}/team/${memberId}`, { method: "DELETE" }),
+      mutationFn: (memberId: string) =>
+        apiClient(`${apiBase}/team/${memberId}`, { method: "DELETE" }),
       onMutate: async (memberId) => {
         await queryClient.cancelQueries({ queryKey: [queryKeyBase, "invites"] });
 

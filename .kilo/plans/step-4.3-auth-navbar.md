@@ -235,7 +235,10 @@ Reference structure:
 Add optional `returnUrl` parameter:
 
 ```ts
-export function getRedirectPath(response: User | UserCredentials, returnUrl?: string): AuthRedirectTargetType {
+export function getRedirectPath(
+  response: User | UserCredentials,
+  returnUrl?: string,
+): AuthRedirectTargetType {
   if (returnUrl && returnUrl.startsWith("/") && !returnUrl.startsWith("//")) {
     return returnUrl as AuthRedirectTargetType;
   }

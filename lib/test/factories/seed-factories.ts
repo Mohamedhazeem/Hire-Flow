@@ -13,7 +13,15 @@ export async function seedApplications(
 ): Promise<string[]> {
   const {
     count,
-    statuses = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected"],
+    statuses = [
+      "applied",
+      "reviewing",
+      "shortlisted",
+      "interview_scheduled",
+      "offered",
+      "hired",
+      "rejected",
+    ],
     appliedAtSpreadDays = 365,
   } = config;
   const batchSize = 5000;
@@ -79,14 +87,18 @@ export async function seedJobs(
       const hasKeyword = globalIndex % Math.round(1 / keywordRatio) === 0;
       const id = faker.string.uuid();
       jobIds.push(id);
-      const jobTitle = hasKeyword ? `${keyword} ${faker.person.jobTitle()}` : faker.person.jobTitle();
+      const jobTitle = hasKeyword
+        ? `${keyword} ${faker.person.jobTitle()}`
+        : faker.person.jobTitle();
       return {
         id,
         slug: `${slugify(jobTitle)}-${globalIndex}`,
         recruiterId,
         companyId,
         title: jobTitle,
-        description: hasKeyword ? `${keyword} ${faker.lorem.paragraphs(3)}` : faker.lorem.paragraphs(3),
+        description: hasKeyword
+          ? `${keyword} ${faker.lorem.paragraphs(3)}`
+          : faker.lorem.paragraphs(3),
         locations: [faker.location.city()],
         workMode: "remote" as const,
         employmentType: "full_time" as const,

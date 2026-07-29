@@ -37,8 +37,15 @@ export function InviteSingleForm() {
           <label htmlFor="invite-email" className="text-sm font-medium text-text-heading">
             Invite admin by email
           </label>
-          <Input id="invite-email" type="email" placeholder="email@example.com" {...form.register("email")} />
-          {form.formState.errors.email && <p className="text-xs text-error">{form.formState.errors.email.message}</p>}
+          <Input
+            id="invite-email"
+            type="email"
+            placeholder="email@example.com"
+            {...form.register("email")}
+          />
+          {form.formState.errors.email && (
+            <p className="text-xs text-error">{form.formState.errors.email.message}</p>
+          )}
         </div>
         <Button type="submit" disabled={form.formState.isSubmitting} className="sm:w-auto">
           <UserPlus className="size-4" />

@@ -7,7 +7,10 @@ import {
 
 describe("AdminBanUserSchema", () => {
   it("accepts a valid ban input", () => {
-    const result = AdminBanUserSchema.safeParse({ banReason: "Policy violation", banExpiresIn: 86400 });
+    const result = AdminBanUserSchema.safeParse({
+      banReason: "Policy violation",
+      banExpiresIn: 86400,
+    });
     expect(result.success).toBe(true);
   });
 

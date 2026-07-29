@@ -68,7 +68,9 @@ describe("File Upload (Phase 4.17)", () => {
     const user = await createTestUser({ role: Role.user });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    vi.mocked(saveUploadMock).mockRejectedValueOnce(new Error('File type "application/octet-stream" is not allowed.'));
+    vi.mocked(saveUploadMock).mockRejectedValueOnce(
+      new Error('File type "application/octet-stream" is not allowed.'),
+    );
 
     const { POST } = await import("@/app/api/upload/route");
     const formData = new FormData();

@@ -31,7 +31,11 @@ export default async function ApplicantsPage({ params }: Props) {
           </Link>
         }
       />
-      <Suspense fallback={<div className="text-text-muted text-sm py-8 text-center">Loading applicants...</div>}>
+      <Suspense
+        fallback={
+          <div className="text-text-muted text-sm py-8 text-center">Loading applicants...</div>
+        }
+      >
         <ApplicantsTable jobId={jobId} />
       </Suspense>
     </div>

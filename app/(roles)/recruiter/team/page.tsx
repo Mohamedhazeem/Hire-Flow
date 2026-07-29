@@ -11,7 +11,10 @@ export const metadata = {
 export default function RecruiterTeamPage() {
   return (
     <div className="space-y-8">
-      <PageHeader title="Team Management" description="Invite new team members and manage your team" />
+      <PageHeader
+        title="Team Management"
+        description="Invite new team members and manage your team"
+      />
 
       <section className="space-y-4">
         <h2 className="text-lg font-semibold text-text-heading">Invite Team Member</h2>
@@ -20,7 +23,9 @@ export default function RecruiterTeamPage() {
 
       <section className="space-y-4">
         <h2 className="text-lg font-semibold text-text-heading">Current Team</h2>
-        <Suspense fallback={<div className="text-text-muted text-sm py-8 text-center">Loading team...</div>}>
+        <Suspense
+          fallback={<div className="text-text-muted text-sm py-8 text-center">Loading team...</div>}
+        >
           <RecruiterTeamList />
         </Suspense>
       </section>

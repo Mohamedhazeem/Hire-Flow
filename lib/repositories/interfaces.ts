@@ -34,7 +34,12 @@ export type MessageIdOnly = {
 };
 
 export interface IMessageRepository {
-  findByThreadId(threadId: string, take: number, userId: string, cursor?: { id: string }): Promise<MessageRow[]>;
+  findByThreadId(
+    threadId: string,
+    take: number,
+    userId: string,
+    cursor?: { id: string },
+  ): Promise<MessageRow[]>;
 
   create(data: CreateMessageData): Promise<MessageWithCreatedAt>;
 

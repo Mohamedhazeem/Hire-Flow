@@ -17,7 +17,13 @@ interface SendEmailArgs {
   to: string;
   subject: string;
   url?: string;
-  type: "verification" | "reset" | "admin-invite" | "ban-notification" | "recruiter-invite" | "application_status";
+  type:
+    | "verification"
+    | "reset"
+    | "admin-invite"
+    | "ban-notification"
+    | "recruiter-invite"
+    | "application_status";
   invitedByName?: string;
   banDetails?: {
     reason?: string | null;
@@ -42,7 +48,9 @@ export async function sendEmail({
       select: { banned: true },
     });
     if (user?.banned) {
-      logger.server.warn(`⚠️ [sendEmail] Skipping email to banned user <${to}> (userId: ${userId}).`);
+      logger.server.warn(
+        `⚠️ [sendEmail] Skipping email to banned user <${to}> (userId: ${userId}).`,
+      );
       return;
     }
   }
@@ -88,7 +96,11 @@ export async function sendEmail({
                         expiresInDays: banDetails?.expiresInDays,
                       }),
                     )
-                  : await render(React.createElement(emailComponent as typeof VerificationEmail, { url: url! }));
+                  : await render(
+                      React.createElement(emailComponent as typeof VerificationEmail, {
+                        url: url!,
+                      }),
+                    );
             })(),
     });
 

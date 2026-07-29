@@ -75,7 +75,15 @@ export const messageService = {
     requireValidUrl?: boolean;
     verifyRelation?: VerifyRelation;
   }) {
-    const { threadId, senderId, senderName, senderRole, body, requireValidUrl = false, verifyRelation } = params;
+    const {
+      threadId,
+      senderId,
+      senderName,
+      senderRole,
+      body,
+      requireValidUrl = false,
+      verifyRelation,
+    } = params;
 
     if (!isValidThreadId(threadId)) {
       throw new ValidationError("Invalid thread ID format");
@@ -94,7 +102,9 @@ export const messageService = {
     const schema = getSendMessageSchema(requireValidUrl);
     const parsed = schema.safeParse(body);
     if (!parsed.success) {
-      throw new ValidationError(parsed.error.issues.map((e) => e.message).join("; ") || "Invalid message");
+      throw new ValidationError(
+        parsed.error.issues.map((e) => e.message).join("; ") || "Invalid message",
+      );
     }
 
     const message = await messageRepository.create({
@@ -182,7 +192,9 @@ export const messageService = {
     const latestMessages = await threadRepository.findLatestMessages(threadIds, userId);
     const latestByThread = new Map(latestMessages.map((m) => [m.threadId, m]));
 
-    const otherUserIds = threadIds.map((id) => getOtherUserId(id, userId)).filter((id): id is string => id !== null);
+    const otherUserIds = threadIds
+      .map((id) => getOtherUserId(id, userId))
+      .filter((id): id is string => id !== null);
 
     const users = await threadRepository.findParticipants(otherUserIds);
     const userMap = new Map(users.map((u) => [u.id, u]));
@@ -207,7 +219,11 @@ export const messageService = {
             ? {
                 content:
                   latest.content ||
-                  (latest.fileUrl ? (latest.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
+                  (latest.fileUrl
+                    ? latest.fileType?.startsWith("image/")
+                      ? "📷 Photo"
+                      : "📎 File"
+                    : ""),
                 createdAt: latest.createdAt.toISOString(),
                 senderId: latest.senderId,
                 unread: latest.senderId !== userId && !latest.read,

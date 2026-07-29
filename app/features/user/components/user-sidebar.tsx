@@ -33,5 +33,13 @@ export function UserSidebar() {
       }
     : undefined;
 
-  return <Sidebar links={userLinks} roleLabel="Candidate" homeHref="/user" onSignOut={signOut} user={sidebarUser} />;
+  return (
+    <Sidebar
+      links={userLinks}
+      roleLabel="Candidate"
+      homeHref="/user"
+      onSignOut={signOut}
+      user={sidebarUser}
+    />
+  );
 }

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+﻿import { describe, it, expect, beforeEach, vi } from "vitest";
 import {
   resetDb,
   createTestUser,
@@ -7,7 +7,7 @@ import {
   seedApplications,
   createTestApplication,
 } from "@/lib/test";
-import { measure } from "@/lib/test/perf";
+import { measure, publishBenchmark } from "@/lib/test/perf";
 import { Role, WorkMode, EmploymentType } from "@/app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 
@@ -39,6 +39,14 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
         dateTo: new Date().toISOString().slice(0, 10),
       }),
     );
+
+    publishBenchmark({
+      suite: "PF1-analytics-50k",
+      meanMs: ms,
+      p50Ms: ms,
+      p95Ms: ms,
+      sampleCount: 1,
+    });
 
     expect(ms).toBeLessThanOrEqual(5000);
   });
@@ -102,8 +110,12 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
   it("applies employmentType filter correctly", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    const ftJob = await createTestJob(recruiter.id, company.id, { employmentType: EmploymentType.full_time });
-    const ptJob = await createTestJob(recruiter.id, company.id, { employmentType: EmploymentType.part_time });
+    const ftJob = await createTestJob(recruiter.id, company.id, {
+      employmentType: EmploymentType.full_time,
+    });
+    const ptJob = await createTestJob(recruiter.id, company.id, {
+      employmentType: EmploymentType.part_time,
+    });
     await seedApplications(ftJob.id, company.id, { count: 75, appliedAtSpreadDays: 30 });
     await seedApplications(ptJob.id, company.id, { count: 25, appliedAtSpreadDays: 30 });
 
@@ -189,6 +201,8 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
 
     expect(result.jobBreakdown).toHaveLength(2);
     expect(result.jobBreakdown.find((j) => j.title === "Alpha")?.totalApplications).toBe(0);
-    expect(result.jobBreakdown.find((j) => j.title === "Beta")?.totalApplications).toBeGreaterThan(0);
+    expect(result.jobBreakdown.find((j) => j.title === "Beta")?.totalApplications).toBeGreaterThan(
+      0,
+    );
   });
 });

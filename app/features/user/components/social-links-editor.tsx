@@ -33,7 +33,13 @@ export function SocialLinksEditor({ form }: Props) {
           <Link className="size-4" />
           Social Links
         </span>
-        <Button type="button" variant="outline" size="sm" onClick={() => append(emptyLink)} className="gap-1">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => append(emptyLink)}
+          className="gap-1"
+        >
           <Plus className="size-3.5" />
           Add
         </Button>
@@ -61,7 +67,11 @@ export function SocialLinksEditor({ form }: Props) {
                 </option>
               ))}
             </select>
-            <Input placeholder="https://..." className="flex-1 w-full" {...form.register(`socialLinks.${index}.url`)} />
+            <Input
+              placeholder="https://..."
+              className="flex-1 w-full"
+              {...form.register(`socialLinks.${index}.url`)}
+            />
             <Input
               placeholder="Label (optional)"
               className="w-full sm:w-28"

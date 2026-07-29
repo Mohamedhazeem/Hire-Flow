@@ -78,7 +78,10 @@ export function createMessageIdDeleteHandler(options: MessageIdHandlerOptions) {
   const { allowedRoles } = options;
 
   const handleDELETE = withRateLimit(
-    async (_request: NextRequest, { params }: { params: Promise<{ threadId: string; messageId: string }> }) => {
+    async (
+      _request: NextRequest,
+      { params }: { params: Promise<{ threadId: string; messageId: string }> },
+    ) => {
       const user = await requireRole(allowedRoles);
       const { threadId, messageId } = await params;
 

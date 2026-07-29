@@ -95,7 +95,10 @@ export async function listApplicants(
     return { mode: "cursor", ...buildCursorMeta(items, take) };
   }
 
-  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const orderBy: Record<string, string> = {};
   const sortBy = params.sortBy ?? "appliedAt";

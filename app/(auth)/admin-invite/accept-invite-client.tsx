@@ -14,7 +14,9 @@ type AcceptInviteClientProps = {
 
 export function AcceptInviteClient({ token, email }: AcceptInviteClientProps) {
   const router = useRouter();
-  const [status, setStatus] = useState<"loading" | "logged-out" | "accepting" | "accepted" | "error">("loading");
+  const [status, setStatus] = useState<
+    "loading" | "logged-out" | "accepting" | "accepted" | "error"
+  >("loading");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const acceptInvite = useCallback(async () => {
@@ -77,13 +79,19 @@ export function AcceptInviteClient({ token, email }: AcceptInviteClientProps) {
           </p>
           <div className="flex flex-col gap-3 pt-2">
             <Button
-              onClick={() => router.push(`/login?redirect=${encodeURIComponent(`/admin-invite?token=${token}`)}`)}
+              onClick={() =>
+                router.push(`/login?redirect=${encodeURIComponent(`/admin-invite?token=${token}`)}`)
+              }
             >
               Sign In
             </Button>
             <Button
               variant="outline"
-              onClick={() => router.push(`/register?redirect=${encodeURIComponent(`/admin-invite?token=${token}`)}`)}
+              onClick={() =>
+                router.push(
+                  `/register?redirect=${encodeURIComponent(`/admin-invite?token=${token}`)}`,
+                )
+              }
             >
               Create Account
             </Button>
@@ -108,7 +116,9 @@ export function AcceptInviteClient({ token, email }: AcceptInviteClientProps) {
       <AuthLayout title="Welcome to the Team!" subtitle="You are now an admin">
         <div className="flex flex-col items-center gap-4 py-4">
           <CheckCircle className="size-12 text-success" />
-          <p className="text-sm text-text-muted text-center">You now have admin access to the platform.</p>
+          <p className="text-sm text-text-muted text-center">
+            You now have admin access to the platform.
+          </p>
           <Button onClick={() => router.push("/admin")}>Go to Dashboard</Button>
         </div>
       </AuthLayout>

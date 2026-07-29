@@ -26,20 +26,20 @@ export default async function BecomeEmployerPage() {
 
       {role === Roles.ADMIN || role === Roles.SUPER_ADMIN ? (
         <div className="bg-warning/10 border border-warning/30 text-warning px-5 py-4 rounded-xl text-sm leading-relaxed">
-          Admin accounts cannot be converted to employer accounts. If you would like to hire on HireFlow, sign up with a
-          different email address as a job seeker and upgrade from there.
+          Admin accounts cannot be converted to employer accounts. If you would like to hire on
+          HireFlow, sign up with a different email address as a job seeker and upgrade from there.
         </div>
       ) : (
         <div className="space-y-6">
           <p className="text-sm text-text-body leading-relaxed">
-            Switch your account from job seeker to employer. You will gain access to the recruiter dashboard where you
-            can post jobs, manage applicants, and communicate with candidates.
+            Switch your account from job seeker to employer. You will gain access to the recruiter
+            dashboard where you can post jobs, manage applicants, and communicate with candidates.
           </p>
 
           <div className="bg-accent/5 border border-accent/10 rounded-xl px-5 py-4 text-sm text-text-body leading-relaxed">
-            <strong className="text-text-heading">Before you proceed:</strong> Once you upgrade, you will no longer be
-            able to apply to jobs or use job-seeker features on this account. Your existing applications, saved jobs,
-            and profile data will remain visible.
+            <strong className="text-text-heading">Before you proceed:</strong> Once you upgrade, you
+            will no longer be able to apply to jobs or use job-seeker features on this account. Your
+            existing applications, saved jobs, and profile data will remain visible.
           </div>
 
           <UpgradeToRecruiterForm />

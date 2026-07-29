@@ -25,7 +25,8 @@ vi.mock("@/lib/pusher/pusher-client", () => ({
   })),
 }));
 
-const { useUnreadMessageCount } = await import("@/app/features/public/hooks/use-unread-message-count");
+const { useUnreadMessageCount } =
+  await import("@/app/features/public/hooks/use-unread-message-count");
 
 function createWrapper() {
   const client = new QueryClient({

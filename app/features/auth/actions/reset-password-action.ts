@@ -74,7 +74,9 @@ export async function resetPasswordAction(data: unknown): Promise<ActionResult> 
       return {
         success: false,
         errors: {
-          form: ["Your email must be verified first. We have sent a new verification link to your inbox."],
+          form: [
+            "Your email must be verified first. We have sent a new verification link to your inbox.",
+          ],
         },
       };
     }

@@ -109,7 +109,9 @@ describe("Bulk Status Transition (Phase 4.5)", () => {
     const res = await POST(req);
     expect(res.status).toBe(404);
 
-    const allA = await prisma.application.findMany({ where: { id: { in: appsA.map((a) => a.id) } } });
+    const allA = await prisma.application.findMany({
+      where: { id: { in: appsA.map((a) => a.id) } },
+    });
     expect(allA.every((a) => a.status === "applied")).toBe(true);
   });
 

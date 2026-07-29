@@ -85,7 +85,10 @@ export const BulkStatusTransitionSchema = z
     email: z.boolean().optional().default(false),
   })
   .superRefine((data, ctx) => {
-    if (data.status === "rejected" && (!data.rejectionReason || data.rejectionReason.trim().length === 0)) {
+    if (
+      data.status === "rejected" &&
+      (!data.rejectionReason || data.rejectionReason.trim().length === 0)
+    ) {
       ctx.addIssue({
         code: "custom",
         message: "Rejection reason is required when rejecting",

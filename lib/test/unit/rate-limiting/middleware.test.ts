@@ -42,7 +42,13 @@ describe("createWithRateLimit", () => {
     mockRateLimiter = {
       check: vi
         .fn()
-        .mockResolvedValue({ allowed: true, limit: 10, remaining: 9, reset: 1000, retryAfter: 0 } as RateLimitResult),
+        .mockResolvedValue({
+          allowed: true,
+          limit: 10,
+          remaining: 9,
+          reset: 1000,
+          retryAfter: 0,
+        } as RateLimitResult),
       enforce: vi.fn().mockResolvedValue(undefined),
       reset: vi.fn().mockResolvedValue(undefined),
       prune: vi.fn().mockResolvedValue(undefined),
@@ -63,7 +69,13 @@ describe("createWithRateLimit", () => {
   it("returns 429 when rate limit is exceeded", async () => {
     mockRateLimiter.check = vi
       .fn()
-      .mockResolvedValue({ allowed: false, limit: 10, remaining: 0, reset: 2000, retryAfter: 10 } as RateLimitResult);
+      .mockResolvedValue({
+        allowed: false,
+        limit: 10,
+        remaining: 0,
+        reset: 2000,
+        retryAfter: 10,
+      } as RateLimitResult);
     const wrapped = withRateLimit(handler, "jobs:view");
     const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
     const response = await wrapped(request);
@@ -73,7 +85,13 @@ describe("createWithRateLimit", () => {
   it("includes rate limit headers on 429 response", async () => {
     mockRateLimiter.check = vi
       .fn()
-      .mockResolvedValue({ allowed: false, limit: 5, remaining: 0, reset: 2000, retryAfter: 10 } as RateLimitResult);
+      .mockResolvedValue({
+        allowed: false,
+        limit: 5,
+        remaining: 0,
+        reset: 2000,
+        retryAfter: 10,
+      } as RateLimitResult);
     const wrapped = withRateLimit(handler, "jobs:view");
     const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
     const response = await wrapped(request);
@@ -100,7 +118,13 @@ describe("createWithRateLimit", () => {
     (getSession as ReturnType<typeof vi.fn>).mockResolvedValue(null);
     mockRateLimiter.check = vi
       .fn()
-      .mockResolvedValue({ allowed: true, limit: 30, remaining: 29, reset: 1000, retryAfter: 0 } as RateLimitResult);
+      .mockResolvedValue({
+        allowed: true,
+        limit: 30,
+        remaining: 29,
+        reset: 1000,
+        retryAfter: 0,
+      } as RateLimitResult);
     const wrapped = withRateLimit(handler, "jobs:view");
     const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
     await wrapped(request);

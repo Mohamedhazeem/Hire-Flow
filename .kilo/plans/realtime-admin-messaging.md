@@ -185,7 +185,8 @@ import { NotificationDropdown } from "@/app/features/notifications/components/no
 <div className="flex items-center gap-2 px-4 pt-4 pb-2 lg:hidden">
   <MobileMenuButton />
   <div className="ml-auto">
-    <NotificationDropdown messagesBasePath="" /> {/* empty = not clickable in non-admin roles yet */}
+    <NotificationDropdown messagesBasePath="" />{" "}
+    {/* empty = not clickable in non-admin roles yet */}
   </div>
 </div>;
 ```

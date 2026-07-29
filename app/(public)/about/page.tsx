@@ -23,7 +23,8 @@ const sections = [
   },
   {
     title: "Contact",
-    content: "Have questions or feedback? Reach out at hello@hireflow.example — we read every message.",
+    content:
+      "Have questions or feedback? Reach out at hello@hireflow.example — we read every message.",
   },
 ];
 
@@ -43,7 +44,8 @@ export default function AboutPage() {
       </div>
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder about page. It must be reviewed and replaced with real company copy before any launch.
+        This is a placeholder about page. It must be reviewed and replaced with real company copy
+        before any launch.
       </p>
     </div>
   );

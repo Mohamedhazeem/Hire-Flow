@@ -10,7 +10,8 @@ const providers = [
     label: "Continue with Google",
     icon: FcGoogle,
     // Google brand styles
-    styles: "bg-bg-surface text-text-body border-border hover:bg-bg-elevated focus-visible:ring-brand/20",
+    styles:
+      "bg-bg-surface text-text-body border-border hover:bg-bg-elevated focus-visible:ring-brand/20",
     iconStyles: "text-white",
   },
 ];
@@ -38,7 +39,9 @@ export function SocialSignInButtons({ isVertical }: { isVertical?: boolean }) {
   return (
     <div className="space-y-4">
       {error ? (
-        <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">{error}</div>
+        <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
+          {error}
+        </div>
       ) : null}
       <div
         className={`w-full ${isVertical ? "flex flex-col gap-3" : "flex flex-row items-center justify-center gap-3"}`}

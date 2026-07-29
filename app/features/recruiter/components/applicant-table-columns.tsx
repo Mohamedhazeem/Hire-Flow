@@ -38,7 +38,9 @@ export function createApplicantTableColumns({
     {
       key: "name",
       header: "Name",
-      cell: (row) => <span className="font-medium text-text-heading max-w-xs truncate block">{row.name}</span>,
+      cell: (row) => (
+        <span className="font-medium text-text-heading max-w-xs truncate block">{row.name}</span>
+      ),
     },
     {
       key: "email",
@@ -64,7 +66,8 @@ export function createApplicantTableColumns({
       header: "Actions",
       className: "text-right",
       cell: (row) => {
-        const threadId = recruiterId && row.userId ? [recruiterId, row.userId].sort().join("_") : null;
+        const threadId =
+          recruiterId && row.userId ? [recruiterId, row.userId].sort().join("_") : null;
         const isActioned = actionedIds.has(row.id);
 
         function actionBtn(icon: React.ReactNode, title: string, onClick: () => void) {
@@ -77,28 +80,40 @@ export function createApplicantTableColumns({
 
         return (
           <div className="flex items-center justify-end gap-1">
-            {actionBtn(<EyeIcon className="size-4 text-text-muted hover:text-brand" />, "View Details", () =>
-              onViewDetails(row.id),
+            {actionBtn(
+              <EyeIcon className="size-4 text-text-muted hover:text-brand" />,
+              "View Details",
+              () => onViewDetails(row.id),
             )}
             {threadId &&
-              actionBtn(<MessageSquareTextIcon className="size-4 text-text-muted hover:text-brand" />, "Message", () =>
-                onNavigateToMessages(threadId),
+              actionBtn(
+                <MessageSquareTextIcon className="size-4 text-text-muted hover:text-brand" />,
+                "Message",
+                () => onNavigateToMessages(threadId),
               )}
             {isActioned ? (
-              actionBtn(<Undo2Icon className="size-4 text-warning" />, "Revert", () => onRevert(row))
+              actionBtn(<Undo2Icon className="size-4 text-warning" />, "Revert", () =>
+                onRevert(row),
+              )
             ) : (
               <>
                 {row.status === "applied" &&
-                  actionBtn(<UserPlusIcon className="size-4 text-accent" />, "Invite", () => onDialog("invite", row))}
+                  actionBtn(<UserPlusIcon className="size-4 text-accent" />, "Invite", () =>
+                    onDialog("invite", row),
+                  )}
                 {row.status === "applied" &&
-                  actionBtn(<PlayIcon className="size-4 text-accent" />, "Start Review", () => onDialog("review", row))}
+                  actionBtn(<PlayIcon className="size-4 text-accent" />, "Start Review", () =>
+                    onDialog("review", row),
+                  )}
                 {row.status === "reviewing" &&
                   actionBtn(<CheckCircle2Icon className="size-4 text-accent" />, "Shortlist", () =>
                     onDialog("shortlist", row),
                   )}
                 {row.status === "shortlisted" &&
-                  actionBtn(<CalendarIcon className="size-4 text-warning" />, "Schedule Interview", () =>
-                    onDialog("schedule_interview", row),
+                  actionBtn(
+                    <CalendarIcon className="size-4 text-warning" />,
+                    "Schedule Interview",
+                    () => onDialog("schedule_interview", row),
                   )}
                 {row.status === "interview_scheduled" &&
                   actionBtn(<SendIcon className="size-4 text-success" />, "Send Offer", () =>

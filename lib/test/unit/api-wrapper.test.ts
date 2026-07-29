@@ -61,9 +61,12 @@ describe("withErrorHandler", () => {
     const req = new Request("http://localhost/api/test");
     await wrapped(req as never);
 
-    expect(mockNextResponseJson).toHaveBeenCalledWith(expect.objectContaining({ error: "Validation failed" }), {
-      status: 422,
-    });
+    expect(mockNextResponseJson).toHaveBeenCalledWith(
+      expect.objectContaining({ error: "Validation failed" }),
+      {
+        status: 422,
+      },
+    );
   });
 
   it("catches UnauthorizedError and returns 401", async () => {

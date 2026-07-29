@@ -40,7 +40,10 @@ describe("Withdraw Application (Phase 4.13)", () => {
 
   it("withdraw from reviewing succeeds", async () => {
     const { user, application } = await seedUserWithApplication();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "reviewing" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "reviewing" },
+    });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
     const { userService } = await import("@/lib/services/user-service");
@@ -78,7 +81,10 @@ describe("Withdraw Application (Phase 4.13)", () => {
 
   it("A4: withdraw records an ApplicationStatusChange audit row (fromStatus -> withdrawn)", async () => {
     const { user, application } = await seedUserWithApplication();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "reviewing" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "reviewing" },
+    });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
     const { userService } = await import("@/lib/services/user-service");

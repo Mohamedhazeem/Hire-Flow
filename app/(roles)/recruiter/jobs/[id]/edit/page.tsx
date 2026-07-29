@@ -59,7 +59,9 @@ export default async function EditJobPage({ params }: PageProps) {
     salaryMin: job.salaryMin ?? undefined,
     salaryMax: job.salaryMax ?? undefined,
     salaryCurrency: job.salaryCurrency,
-    applicationDeadline: job.applicationDeadline ? job.applicationDeadline.toISOString().split("T")[0] : "",
+    applicationDeadline: job.applicationDeadline
+      ? job.applicationDeadline.toISOString().split("T")[0]
+      : "",
   };
 
   return (

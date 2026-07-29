@@ -27,7 +27,9 @@ export function PageHeader({ title, description, actions, icon, className }: Pag
           )}
           <div className="min-w-0">
             <h1 className="text-2xl sm:text-3xl font-bold text-text-heading">{title}</h1>
-            {description && <p className="text-sm text-text-muted mt-0.5 line-clamp-2">{description}</p>}
+            {description && (
+              <p className="text-sm text-text-muted mt-0.5 line-clamp-2">{description}</p>
+            )}
           </div>
         </div>
 

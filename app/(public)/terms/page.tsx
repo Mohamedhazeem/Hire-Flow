@@ -58,8 +58,8 @@ export default function TermsPage() {
       </div>
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        These are placeholder terms of service. They must be reviewed and replaced with legally-reviewed copy before any
-        real launch.
+        These are placeholder terms of service. They must be reviewed and replaced with
+        legally-reviewed copy before any real launch.
       </p>
     </div>
   );

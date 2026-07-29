@@ -511,7 +511,11 @@
       "stores_ui_store_useuistore"
     ],
     "16": ["admin_page", "admin_page_adminpage", "admin_page_metadata"],
-    "17": ["kilo_package", "kilo_package_dependencies", "kilo_package_dependencies_kilocode_plugin"],
+    "17": [
+      "kilo_package",
+      "kilo_package_dependencies",
+      "kilo_package_dependencies_kilocode_plugin"
+    ],
     "18": ["recruiter_page", "recruiter_page_metadata", "recruiter_page_recruiterpage"],
     "19": ["stores_chat_store", "stores_chat_store_chatstate", "stores_chat_store_usechatstore"],
     "20": ["app_page", "app_page_home"],

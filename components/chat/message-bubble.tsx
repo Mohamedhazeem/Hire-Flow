@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { FileIcon, FileTextIcon, ImageIcon, Loader2Icon, Trash2Icon, CheckCheckIcon } from "lucide-react";
+import {
+  FileIcon,
+  FileTextIcon,
+  ImageIcon,
+  Loader2Icon,
+  Trash2Icon,
+  CheckCheckIcon,
+} from "lucide-react";
 
 function formatFileSize(bytes: number) {
   if (bytes < 1024) return bytes + " B";
@@ -53,7 +60,12 @@ type AttachmentPreviewProps = {
   fileType: string | null;
 };
 
-export function AttachmentPreview({ fileUrl, fileName, fileSize, fileType }: AttachmentPreviewProps) {
+export function AttachmentPreview({
+  fileUrl,
+  fileName,
+  fileSize,
+  fileType,
+}: AttachmentPreviewProps) {
   if (fileType?.startsWith("image/")) {
     return (
       <a
@@ -146,13 +158,23 @@ export function MessageBubble({
         >
           {fileUrl && (
             <div className={cn("-mx-1 -mt-1 mb-1.5", isOwn ? "text-right" : "text-left")}>
-              <AttachmentPreview fileUrl={fileUrl} fileName={fileName} fileSize={fileSize} fileType={fileType} />
+              <AttachmentPreview
+                fileUrl={fileUrl}
+                fileName={fileName}
+                fileSize={fileSize}
+                fileType={fileType}
+              />
             </div>
           )}
           {content && <p className="whitespace-pre-wrap break-words">{content}</p>}
         </div>
 
-        <div className={cn("flex items-center gap-1 mt-0.5 px-1", isOwn ? "justify-end" : "justify-start")}>
+        <div
+          className={cn(
+            "flex items-center gap-1 mt-0.5 px-1",
+            isOwn ? "justify-end" : "justify-start",
+          )}
+        >
           <span className="text-[10px] text-text-muted">{formatTime(createdAt)}</span>
           {isOwn && <CheckCheckIcon className="size-3 text-text-muted" />}
           {isOwn && onDelete && !isDeleting && (

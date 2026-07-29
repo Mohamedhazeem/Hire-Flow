@@ -17,7 +17,11 @@ export function runRepositoryContractTests(
     });
 
     it("increment creates a new row and returns count 1", async () => {
-      const result = await repo.increment("app:test:key1", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const result = await repo.increment(
+        "app:test:key1",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(result.count).toBe(1);
     });
 
@@ -32,7 +36,11 @@ export function runRepositoryContractTests(
     it("increment resets count when window expired", async () => {
       await repo.increment("app:test:key3", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       clock.advance(61_000);
-      const result = await repo.increment("app:test:key3", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const result = await repo.increment(
+        "app:test:key3",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(result.count).toBe(1);
     });
 
@@ -53,8 +61,16 @@ export function runRepositoryContractTests(
       await repo.increment("app:test:a", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.increment("app:test:b", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.deleteById("app:test:a");
-      const a = await repo.increment("app:test:a", BigInt(clock.now()), BigInt(clock.now() - 60_000));
-      const b = await repo.increment("app:test:b", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const a = await repo.increment(
+        "app:test:a",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
+      const b = await repo.increment(
+        "app:test:b",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(a.count).toBe(1);
       expect(b.count).toBe(2);
     });
@@ -63,8 +79,16 @@ export function runRepositoryContractTests(
       await repo.increment("app:test:x", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.increment("other:key", BigInt(clock.now()), BigInt(clock.now() - 60_000));
       await repo.deleteAllAppKeys();
-      const appKey = await repo.increment("app:test:x", BigInt(clock.now()), BigInt(clock.now() - 60_000));
-      const otherKey = await repo.increment("other:key", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const appKey = await repo.increment(
+        "app:test:x",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
+      const otherKey = await repo.increment(
+        "other:key",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(appKey.count).toBe(1);
       expect(otherKey.count).toBe(2);
     });
@@ -74,7 +98,11 @@ export function runRepositoryContractTests(
       clock.advance(86_401_000);
       const result = await repo.pruneAppKeys(BigInt(clock.now() - 86_400_000));
       expect(result.rowsDeleted).toBe(1);
-      const fresh = await repo.increment("app:test:old", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const fresh = await repo.increment(
+        "app:test:old",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(fresh.count).toBe(1);
     });
 
@@ -83,7 +111,11 @@ export function runRepositoryContractTests(
       clock.advance(86_401_000);
       const result = await repo.pruneAppKeys(BigInt(clock.now() - 86_400_000));
       expect(result.rowsDeleted).toBe(1);
-      const fresh = await repo.increment("anon:test:old", BigInt(clock.now()), BigInt(clock.now() - 60_000));
+      const fresh = await repo.increment(
+        "anon:test:old",
+        BigInt(clock.now()),
+        BigInt(clock.now() - 60_000),
+      );
       expect(fresh.count).toBe(1);
     });
 

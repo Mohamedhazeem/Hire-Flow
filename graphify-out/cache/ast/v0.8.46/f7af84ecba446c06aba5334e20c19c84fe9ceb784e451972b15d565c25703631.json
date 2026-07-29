@@ -1,1 +1,431 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_introduce_ci_quality_gates_md", "label": "introduce-ci-quality-gates.md", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L1"}, {"id": "plans_introduce_ci_quality_gates_ci_quality_gates", "label": "CI Quality Gates", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L1"}, {"id": "plans_introduce_ci_quality_gates_current_gaps", "label": "Current Gaps", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L5"}, {"id": "plans_introduce_ci_quality_gates_proposed_ci_pipeline", "label": "Proposed CI Pipeline", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L22"}, {"id": "plans_introduce_ci_quality_gates_step_1_install_new_dependencies", "label": "Step 1: Install New Dependencies", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L48"}, {"id": "plans_introduce_ci_quality_gates_step_2_prettier_configure_one_time_migration", "label": "Step 2: Prettier \u2014 Configure + One-Time Migration", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L58"}, {"id": "plans_introduce_ci_quality_gates_step_3_type_check_script", "label": "Step 3: Type-Check Script", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L105"}, {"id": "plans_introduce_ci_quality_gates_step_4_vitest_contract_project", "label": "Step 4: Vitest `contract` Project", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L117"}, {"id": "plans_introduce_ci_quality_gates_step_5_stryker_mutation_testing", "label": "Step 5: Stryker \u2014 Mutation Testing", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L170"}, {"id": "plans_introduce_ci_quality_gates_step_6_benchmark_baseline_regression_check", "label": "Step 6: Benchmark Baseline \u2014 Regression Check", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L222"}, {"id": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "label": "Step 7: Update CI Workflow", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L312"}, {"id": "plans_introduce_ci_quality_gates_workflow_level_changes", "label": "Workflow-level changes", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L316"}, {"id": "plans_introduce_ci_quality_gates_job_1_gate_typecheck_new_fastest_runs_first", "label": "Job 1: `gate-typecheck` (NEW \u2014 fastest, runs first)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L338"}, {"id": "plans_introduce_ci_quality_gates_job_2_gate_lint_new_parallel_to_typecheck", "label": "Job 2: `gate-lint` (NEW \u2014 parallel to typecheck)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L358"}, {"id": "plans_introduce_ci_quality_gates_job_3_unit_integration_contract_modified_adds_contract_project", "label": "Job 3: `unit-integration-contract` (modified \u2014 adds contract project)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L378"}, {"id": "plans_introduce_ci_quality_gates_job_4_e2e_keeps_current", "label": "Job 4: `e2e` (keeps current)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L420"}, {"id": "plans_introduce_ci_quality_gates_job_5_performance_enhanced_adds_baseline_comparison_auto_update", "label": "Job 5: `performance` (enhanced \u2014 adds baseline comparison + auto-update)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L424"}, {"id": "plans_introduce_ci_quality_gates_job_6_mutation_new_master_push_only_informational_fire_and_forget", "label": "Job 6: `mutation` (NEW \u2014 master push only, informational, fire-and-forget)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L470"}, {"id": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx", "label": "Step 8: Helper Scripts (TypeScript \u2014 use tsx)", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L520"}, {"id": "plans_introduce_ci_quality_gates_scripts_compare_benchmark_ts", "label": "`scripts/compare-benchmark.ts`", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L524"}, {"id": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts", "label": "`scripts/update-baseline.ts`", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L533"}, {"id": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts_race_condition_awareness", "label": "`scripts/update-baseline.ts` \u2014 race-condition awareness", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L537"}, {"id": "plans_introduce_ci_quality_gates_step_9_update_eslint_ignores", "label": "Step 9: Update ESLint Ignores", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L550"}, {"id": "plans_introduce_ci_quality_gates_step_10_document_coverage_ratchet_policy", "label": "Step 10: Document Coverage Ratchet Policy", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L565"}, {"id": "plans_introduce_ci_quality_gates_step_11_update_package_json", "label": "Step 11: Update Package.json", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L580"}, {"id": "plans_introduce_ci_quality_gates_files_touched", "label": "Files Touched", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L596"}, {"id": "plans_introduce_ci_quality_gates_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L616"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_introduce_ci_quality_gates_md", "target": "plans_introduce_ci_quality_gates_ci_quality_gates", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_current_gaps", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L5", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_proposed_ci_pipeline", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L22", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_1_install_new_dependencies", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L48", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_2_prettier_configure_one_time_migration", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L58", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_3_type_check_script", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L105", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_4_vitest_contract_project", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L117", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_5_stryker_mutation_testing", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L170", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_6_benchmark_baseline_regression_check", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L222", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L312", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_workflow_level_changes", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L316", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_1_gate_typecheck_new_fastest_runs_first", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L338", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_2_gate_lint_new_parallel_to_typecheck", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L358", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_3_unit_integration_contract_modified_adds_contract_project", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L378", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_4_e2e_keeps_current", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L420", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_5_performance_enhanced_adds_baseline_comparison_auto_update", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L424", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow", "target": "plans_introduce_ci_quality_gates_job_6_mutation_new_master_push_only_informational_fire_and_forget", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L470", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L520", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx", "target": "plans_introduce_ci_quality_gates_scripts_compare_benchmark_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L524", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx", "target": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L533", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx", "target": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts_race_condition_awareness", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L537", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_9_update_eslint_ignores", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L550", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_10_document_coverage_ratchet_policy", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L565", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_step_11_update_package_json", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L580", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_files_touched", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L596", "weight": 1.0}, {"source": "plans_introduce_ci_quality_gates_ci_quality_gates", "target": "plans_introduce_ci_quality_gates_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/introduce-ci-quality-gates.md", "source_location": "L616", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_introduce_ci_quality_gates_md",
+      "label": "introduce-ci-quality-gates.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "label": "CI Quality Gates",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_current_gaps",
+      "label": "Current Gaps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_proposed_ci_pipeline",
+      "label": "Proposed CI Pipeline",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_1_install_new_dependencies",
+      "label": "Step 1: Install New Dependencies",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_2_prettier_configure_one_time_migration",
+      "label": "Step 2: Prettier \u2014 Configure + One-Time Migration",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L58"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_3_type_check_script",
+      "label": "Step 3: Type-Check Script",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L105"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_4_vitest_contract_project",
+      "label": "Step 4: Vitest `contract` Project",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L117"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_5_stryker_mutation_testing",
+      "label": "Step 5: Stryker \u2014 Mutation Testing",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L170"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_6_benchmark_baseline_regression_check",
+      "label": "Step 6: Benchmark Baseline \u2014 Regression Check",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L222"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "label": "Step 7: Update CI Workflow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L312"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_workflow_level_changes",
+      "label": "Workflow-level changes",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L316"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_1_gate_typecheck_new_fastest_runs_first",
+      "label": "Job 1: `gate-typecheck` (NEW \u2014 fastest, runs first)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L338"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_2_gate_lint_new_parallel_to_typecheck",
+      "label": "Job 2: `gate-lint` (NEW \u2014 parallel to typecheck)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L358"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_3_unit_integration_contract_modified_adds_contract_project",
+      "label": "Job 3: `unit-integration-contract` (modified \u2014 adds contract project)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L378"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_4_e2e_keeps_current",
+      "label": "Job 4: `e2e` (keeps current)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L420"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_5_performance_enhanced_adds_baseline_comparison_auto_update",
+      "label": "Job 5: `performance` (enhanced \u2014 adds baseline comparison + auto-update)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L424"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_job_6_mutation_new_master_push_only_informational_fire_and_forget",
+      "label": "Job 6: `mutation` (NEW \u2014 master push only, informational, fire-and-forget)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L470"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx",
+      "label": "Step 8: Helper Scripts (TypeScript \u2014 use tsx)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L520"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_scripts_compare_benchmark_ts",
+      "label": "`scripts/compare-benchmark.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L524"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts",
+      "label": "`scripts/update-baseline.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L533"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts_race_condition_awareness",
+      "label": "`scripts/update-baseline.ts` \u2014 race-condition awareness",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L537"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_9_update_eslint_ignores",
+      "label": "Step 9: Update ESLint Ignores",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L550"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_10_document_coverage_ratchet_policy",
+      "label": "Step 10: Document Coverage Ratchet Policy",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L565"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_step_11_update_package_json",
+      "label": "Step 11: Update Package.json",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L580"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_files_touched",
+      "label": "Files Touched",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L596"
+    },
+    {
+      "id": "plans_introduce_ci_quality_gates_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L616"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_introduce_ci_quality_gates_md",
+      "target": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_current_gaps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_proposed_ci_pipeline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_1_install_new_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_2_prettier_configure_one_time_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_3_type_check_script",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_4_vitest_contract_project",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_5_stryker_mutation_testing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_6_benchmark_baseline_regression_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_workflow_level_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L316",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_1_gate_typecheck_new_fastest_runs_first",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L338",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_2_gate_lint_new_parallel_to_typecheck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L358",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_3_unit_integration_contract_modified_adds_contract_project",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L378",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_4_e2e_keeps_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L420",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_5_performance_enhanced_adds_baseline_comparison_auto_update",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L424",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_7_update_ci_workflow",
+      "target": "plans_introduce_ci_quality_gates_job_6_mutation_new_master_push_only_informational_fire_and_forget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L470",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L520",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx",
+      "target": "plans_introduce_ci_quality_gates_scripts_compare_benchmark_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L524",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx",
+      "target": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L533",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_step_8_helper_scripts_typescript_use_tsx",
+      "target": "plans_introduce_ci_quality_gates_scripts_update_baseline_ts_race_condition_awareness",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L537",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_9_update_eslint_ignores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_10_document_coverage_ratchet_policy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L565",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_step_11_update_package_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L580",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_files_touched",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L596",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_introduce_ci_quality_gates_ci_quality_gates",
+      "target": "plans_introduce_ci_quality_gates_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/introduce-ci-quality-gates.md",
+      "source_location": "L616",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

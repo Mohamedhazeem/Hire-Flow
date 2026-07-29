@@ -25,7 +25,12 @@ function parseDate(str: string): Date | undefined {
   return isValid(parsed) ? parsed : undefined;
 }
 
-export function DateRangePicker({ value, onChange, placeholder = "Select dates...", className }: DateRangePickerProps) {
+export function DateRangePicker({
+  value,
+  onChange,
+  placeholder = "Select dates...",
+  className,
+}: DateRangePickerProps) {
   const [open, setOpen] = React.useState(false);
 
   const fromDate = value.from ? parseDate(value.from) : undefined;
@@ -142,7 +147,8 @@ export function DateRangePicker({ value, onChange, placeholder = "Select dates..
             button_next: cn(
               "inline-flex items-center justify-center size-7 rounded-md text-text-muted hover:text-text-body hover:bg-bg-elevated transition-colors [&>svg]:size-4",
             ),
-            weekday: "text-text-muted font-medium text-[0.65rem] uppercase tracking-wider w-[36px] text-center",
+            weekday:
+              "text-text-muted font-medium text-[0.65rem] uppercase tracking-wider w-[36px] text-center",
             weekdays: "flex",
             week: "flex w-full mt-1",
             day_button: cn(

@@ -35,7 +35,10 @@ async function handlePATCH(request: NextRequest, { params }: { params: Promise<{
   throw new ValidationError('Unknown action. Use "set-primary".');
 }
 
-async function handleDELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+async function handleDELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   const session = await requireRole(["user"]);
   const { id } = await params;
 

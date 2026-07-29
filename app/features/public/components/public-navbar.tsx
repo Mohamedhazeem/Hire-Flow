@@ -34,7 +34,10 @@ export function PublicNavbar() {
   return (
     <header className="sticky top-0 z-50 bg-bg-page/75 backdrop-blur-md border-b border-border-subtle">
       <div className="mx-auto px-4 md:px-6 lg:px-8 h-14 flex items-center  gap-4">
-        <Link href="/" className="text-lg font-semibold text-text-heading shrink-0 flex items-center gap-2 group">
+        <Link
+          href="/"
+          className="text-lg font-semibold text-text-heading shrink-0 flex items-center gap-2 group"
+        >
           <span className="inline-block size-10 items-center justify-center transition-transform duration-200 group-hover:scale-110">
             <Image
               src="/images/Hire-Flow-Logo-Photoroom.png"

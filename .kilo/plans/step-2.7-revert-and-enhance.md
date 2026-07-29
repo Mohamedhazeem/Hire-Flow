@@ -100,13 +100,18 @@ The "Select all" header checkbox: when disabled rows exist, "Select all" should 
 
 ```ts
 const [actionedIds, setActionedIds] = useState<Set<string>>(new Set());
-const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(
+  null,
+);
 ```
 
 **New derived data:**
 
 ```ts
-const actionedRows = useMemo(() => applicants.filter((a) => actionedIds.has(a.id)), [applicants, actionedIds]);
+const actionedRows = useMemo(
+  () => applicants.filter((a) => actionedIds.has(a.id)),
+  [applicants, actionedIds],
+);
 ```
 
 **Updated `handleBulkAction` onSuccess:**

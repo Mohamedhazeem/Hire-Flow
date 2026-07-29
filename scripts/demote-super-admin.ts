@@ -13,7 +13,9 @@ async function main() {
 
   if (emails.length === 0) {
     console.error("Usage: npx tsx scripts/demote-super-admin.ts <email1> <email2> ...");
-    console.error("Example: npx tsx scripts/demote-super-admin.ts admin@hireflow.dev bob@acmecorp.dev");
+    console.error(
+      "Example: npx tsx scripts/demote-super-admin.ts admin@hireflow.dev bob@acmecorp.dev",
+    );
     process.exit(1);
   }
 

@@ -1,4 +1,15 @@
-import { Body, Button, Container, Head, Heading, Html, Link, Preview, Section, Text } from "react-email";
+import {
+  Body,
+  Button,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Link,
+  Preview,
+  Section,
+  Text,
+} from "react-email";
 
 interface VerificationEmailProps {
   url: string;
@@ -13,8 +24,8 @@ export const VerificationEmail = ({ url }: VerificationEmailProps) => {
         <Container style={container}>
           <Heading style={heading}>Verify your email</Heading>
           <Text style={paragraph}>
-            Thank you for registering! Please click the button below to verify your email address and activate your
-            account.
+            Thank you for registering! Please click the button below to verify your email address
+            and activate your account.
           </Text>
           <Section style={buttonContainer}>
             {/* 1. Primary Action Button */}
@@ -31,7 +42,8 @@ export const VerificationEmail = ({ url }: VerificationEmailProps) => {
             </Link>
           </Section>
           <Text style={paragraph}>
-            This link will expire in 1 hour. If you did not create an account, you can safely ignore this email.
+            This link will expire in 1 hour. If you did not create an account, you can safely ignore
+            this email.
           </Text>
         </Container>
       </Body>

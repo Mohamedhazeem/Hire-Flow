@@ -1,6 +1,8 @@
 import { z } from "zod";
 
-type ValidatorResult<T> = { success: true; data: T } | { success: false; error: ReturnType<typeof z.flattenError> };
+type ValidatorResult<T> =
+  | { success: true; data: T }
+  | { success: false; error: ReturnType<typeof z.flattenError> };
 
 /**
  * Generic validator function that safely parses data with any Zod schema

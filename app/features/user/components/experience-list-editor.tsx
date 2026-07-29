@@ -47,7 +47,13 @@ export function ExperienceListEditor({ form }: Props) {
           <Briefcase className="size-4" />
           Experience
         </span>
-        <Button type="button" variant="outline" size="sm" onClick={() => append(emptyExperience)} className="gap-1">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => append(emptyExperience)}
+          className="gap-1"
+        >
           <Plus className="size-3.5" />
           Add
         </Button>
@@ -61,9 +67,14 @@ export function ExperienceListEditor({ form }: Props) {
 
       <div className="space-y-4">
         {fields.map((field, index) => (
-          <div key={field.id} className="rounded-lg border border-border-subtle bg-bg-elevated p-4 space-y-3">
+          <div
+            key={field.id}
+            className="rounded-lg border border-border-subtle bg-bg-elevated p-4 space-y-3"
+          >
             <div className="flex items-start justify-between gap-2">
-              <span className="text-xs font-medium text-text-muted uppercase tracking-wider">#{index + 1}</span>
+              <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
+                #{index + 1}
+              </span>
               <button
                 type="button"
                 onClick={() => remove(index)}
@@ -79,14 +90,21 @@ export function ExperienceListEditor({ form }: Props) {
                 <label className="text-xs text-text-muted">Company *</label>
                 <Input placeholder="Acme Inc." {...form.register(`experiences.${index}.company`)} />
                 {form.formState.errors.experiences?.[index]?.company && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.company?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.company?.message}
+                  </p>
                 )}
               </div>
               <div className="space-y-1">
                 <label className="text-xs text-text-muted">Title *</label>
-                <Input placeholder="Software Engineer" {...form.register(`experiences.${index}.title`)} />
+                <Input
+                  placeholder="Software Engineer"
+                  {...form.register(`experiences.${index}.title`)}
+                />
                 {form.formState.errors.experiences?.[index]?.title && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.title?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.title?.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -96,7 +114,9 @@ export function ExperienceListEditor({ form }: Props) {
                 <label className="text-xs text-text-muted">Start Date *</label>
                 <Input type="date" {...form.register(`experiences.${index}.startDate`)} />
                 {form.formState.errors.experiences?.[index]?.startDate && (
-                  <p className="text-xs text-error">{form.formState.errors.experiences[index]!.startDate?.message}</p>
+                  <p className="text-xs text-error">
+                    {form.formState.errors.experiences[index]!.startDate?.message}
+                  </p>
                 )}
               </div>
               <div className="space-y-1">
@@ -131,7 +151,9 @@ export function ExperienceListEditor({ form }: Props) {
                 {...form.register(`experiences.${index}.description`)}
               />
               {form.formState.errors.experiences?.[index]?.description && (
-                <p className="text-xs text-error">{form.formState.errors.experiences[index]!.description?.message}</p>
+                <p className="text-xs text-error">
+                  {form.formState.errors.experiences[index]!.description?.message}
+                </p>
               )}
             </div>
           </div>

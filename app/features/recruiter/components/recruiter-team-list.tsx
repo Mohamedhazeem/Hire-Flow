@@ -28,7 +28,9 @@ export function RecruiterTeamList() {
 
   if (isError) {
     return (
-      <div className="text-center py-8 text-error text-sm">{(error as Error)?.message ?? "Failed to load team"}</div>
+      <div className="text-center py-8 text-error text-sm">
+        {(error as Error)?.message ?? "Failed to load team"}
+      </div>
     );
   }
 
@@ -99,7 +101,11 @@ export function RecruiterTeamList() {
     {
       key: "createdAt",
       header: "Date",
-      cell: (row) => <span className="text-xs text-text-muted">{new Date(row.createdAt).toLocaleDateString()}</span>,
+      cell: (row) => (
+        <span className="text-xs text-text-muted">
+          {new Date(row.createdAt).toLocaleDateString()}
+        </span>
+      ),
     },
     {
       key: "actions",
@@ -151,5 +157,7 @@ export function RecruiterTeamList() {
     },
   ];
 
-  return <DataTable columns={columns} data={rows} emptyMessage="No team members or pending invites." />;
+  return (
+    <DataTable columns={columns} data={rows} emptyMessage="No team members or pending invites." />
+  );
 }

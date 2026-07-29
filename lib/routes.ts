@@ -25,7 +25,11 @@ export const PUBLIC_CONTENT_PATHS = [
 ] as const;
 
 /** All prefix-based route patterns where the navbar is hidden */
-const HIDDEN_ROUTE_PREFIXES = [...PROTECTED_ROUTES, ...AUTH_PAGES, ...ADDITIONAL_HIDDEN_PREFIXES] as const;
+const HIDDEN_ROUTE_PREFIXES = [
+  ...PROTECTED_ROUTES,
+  ...AUTH_PAGES,
+  ...ADDITIONAL_HIDDEN_PREFIXES,
+] as const;
 
 /**
  * Returns true if the PublicNavbar should NOT render for the given pathname.
@@ -53,5 +57,7 @@ export function isHiddenRoute(pathname: string | null): boolean {
   }
 
   // Hidden if it matches any hidden prefix
-  return HIDDEN_ROUTE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+  return HIDDEN_ROUTE_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  );
 }

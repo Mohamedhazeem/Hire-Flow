@@ -3,7 +3,11 @@
 import { useCallback, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
-import { useNotifications, useUnreadCount, useMarkAsRead } from "@/app/features/notifications/hooks/use-notifications";
+import {
+  useNotifications,
+  useUnreadCount,
+  useMarkAsRead,
+} from "@/app/features/notifications/hooks/use-notifications";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import {
@@ -104,17 +108,23 @@ type NotificationsPageProps = {
   messagesBasePath?: string;
 };
 
-export function NotificationsPage({ messagesBasePath = "/admin/messages" }: NotificationsPageProps) {
+export function NotificationsPage({
+  messagesBasePath = "/admin/messages",
+}: NotificationsPageProps) {
   const router = useRouter();
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
-  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useNotifications(userId);
+  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useNotifications(userId);
   const { data: unreadCount = 0 } = useUnreadCount(userId);
   const markAsRead = useMarkAsRead();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const allNotifications = useMemo(
-    () => data?.pages.flatMap((p) => (p as { notifications?: NotificationItem[] })?.notifications ?? []) ?? [],
+    () =>
+      data?.pages.flatMap(
+        (p) => (p as { notifications?: NotificationItem[] })?.notifications ?? [],
+      ) ?? [],
     [data?.pages],
   );
 
@@ -139,7 +149,11 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
   const handleScroll = useCallback(
     (e: React.UIEvent<HTMLDivElement>) => {
       const el = e.currentTarget;
-      if (el.scrollHeight - el.scrollTop - el.clientHeight < 120 && hasNextPage && !isFetchingNextPage) {
+      if (
+        el.scrollHeight - el.scrollTop - el.clientHeight < 120 &&
+        hasNextPage &&
+        !isFetchingNextPage
+      ) {
         fetchNextPage();
       }
     },
@@ -152,7 +166,9 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
         <div className="flex items-center gap-2">
           <BellIcon className="size-5 text-text-muted" />
           <h1 className="text-xl sm:text-2xl font-bold text-text-heading">Notifications</h1>
-          {unreadCount > 0 && <span className="text-xs text-text-muted font-medium">({unreadCount} unread)</span>}
+          {unreadCount > 0 && (
+            <span className="text-xs text-text-muted font-medium">({unreadCount} unread)</span>
+          )}
         </div>
         {unreadCount > 0 && (
           <button
@@ -182,7 +198,11 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
           </p>
         </div>
       ) : (
-        <div ref={scrollRef} className="flex-1 overflow-y-auto min-h-0 -mx-4 sm:-mx-0" onScroll={handleScroll}>
+        <div
+          ref={scrollRef}
+          className="flex-1 overflow-y-auto min-h-0 -mx-4 sm:-mx-0"
+          onScroll={handleScroll}
+        >
           <div className="space-y-1 px-4 sm:px-0">
             {allNotifications.map((n) => (
               <button

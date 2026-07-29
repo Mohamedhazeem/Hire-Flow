@@ -30,7 +30,8 @@ const sections = [
   },
   {
     title: "Get started",
-    content: "Ready to hire? Reach out to our team and we'll help you get set up with a recruiter account.",
+    content:
+      "Ready to hire? Reach out to our team and we'll help you get set up with a recruiter account.",
   },
 ];
 
@@ -63,14 +64,18 @@ export default async function EmployersPage() {
             Register as Employer
             <ArrowRightIcon className="size-4" />
           </a>
-          <Link href="/pricing" className="text-sm text-text-muted hover:text-text-heading transition-colors">
+          <Link
+            href="/pricing"
+            className="text-sm text-text-muted hover:text-text-heading transition-colors"
+          >
             View pricing
           </Link>
         </div>
       )}
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder employers page. It must be reviewed and updated with real copy before any launch.
+        This is a placeholder employers page. It must be reviewed and updated with real copy before
+        any launch.
       </p>
     </div>
   );

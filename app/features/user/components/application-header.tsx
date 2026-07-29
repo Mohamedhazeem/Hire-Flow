@@ -51,13 +51,19 @@ export function ApplicationHeader({
       <div className="flex items-start gap-4 mb-6">
         <div className="size-12 sm:size-14 lg:size-16 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold">
           {companyLogo ? (
-            <Image src={companyLogo} alt="" className="size-8 sm:size-10 lg:size-12 object-contain" />
+            <Image
+              src={companyLogo}
+              alt=""
+              className="size-8 sm:size-10 lg:size-12 object-contain"
+            />
           ) : (
             (companyName[0]?.toUpperCase() ?? "?")
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text-heading">{jobTitle}</h1>
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-text-heading">
+            {jobTitle}
+          </h1>
           <div className="flex items-center gap-2 mt-1">
             <span className="text-sm text-text-muted">{companyName}</span>
             <StatusBadge status={status} />

@@ -3,8 +3,14 @@
 import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AdminBulkInviteFormSchema, type AdminBulkInviteFormInput } from "@/app/features/admin/schema/admin.schema";
-import { bulkInviteAdmins, type BulkInviteResult } from "@/app/features/admin/actions/bulk-invite-admin";
+import {
+  AdminBulkInviteFormSchema,
+  type AdminBulkInviteFormInput,
+} from "@/app/features/admin/schema/admin.schema";
+import {
+  bulkInviteAdmins,
+  type BulkInviteResult,
+} from "@/app/features/admin/actions/bulk-invite-admin";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Users } from "lucide-react";
@@ -76,7 +82,9 @@ export function InviteBulkForm() {
 
       {result && (
         <div className="space-y-2 text-sm">
-          {result.sent > 0 && <p className="text-success">{result.sent} invitation(s) sent successfully.</p>}
+          {result.sent > 0 && (
+            <p className="text-success">{result.sent} invitation(s) sent successfully.</p>
+          )}
           {result.skipped.length > 0 && (
             <div>
               <p className="text-text-muted">Skipped ({result.skipped.length}):</p>

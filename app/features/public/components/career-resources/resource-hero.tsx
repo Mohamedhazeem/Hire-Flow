@@ -8,7 +8,11 @@ export function ResourceHero() {
     <section className="relative min-h-[calc(100vh-3.5rem)] flex items-center justify-center">
       <div className="absolute inset-0 bg-linear-to-b from-brand/5 via-transparent to-transparent" />
       <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center py-12">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="inline-flex items-center gap-2 text-xs font-medium text-brand bg-brand/10 rounded-full px-4 py-1.5 mb-4">
             <BookOpenIcon className="size-3.5" />
             Career Resources
@@ -17,8 +21,8 @@ export function ResourceHero() {
             Tips &amp; Tools for Your Job Search
           </h1>
           <p className="text-sm sm:text-base text-text-muted mt-4 max-w-xl mx-auto leading-relaxed">
-            Actionable advice on resumes, interviews, and salary negotiation &mdash; built from real recruiter and
-            hiring-manager experience.
+            Actionable advice on resumes, interviews, and salary negotiation &mdash; built from real
+            recruiter and hiring-manager experience.
           </p>
         </motion.div>
       </div>

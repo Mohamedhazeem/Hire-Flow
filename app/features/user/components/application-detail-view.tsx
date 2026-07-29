@@ -22,7 +22,9 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
   const { data, isLoading, isError } = useQuery({
     queryKey: ["user", "application", id],
     queryFn: async () => {
-      const res = await apiClient<{ data: Record<string, unknown> }>(`/api/user/applications/${id}`);
+      const res = await apiClient<{ data: Record<string, unknown> }>(
+        `/api/user/applications/${id}`,
+      );
       return res.data;
     },
     enabled: !!id,
@@ -52,7 +54,10 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
     return (
       <div className="py-12 sm:py-16 text-center">
         <p className="text-text-muted">Application not found</p>
-        <Link href="/user/applications" className="text-brand hover:underline text-sm mt-2 inline-block">
+        <Link
+          href="/user/applications"
+          className="text-brand hover:underline text-sm mt-2 inline-block"
+        >
           Back to my applications
         </Link>
       </div>
@@ -61,7 +66,9 @@ export function ApplicationDetailView({ applicationId: propId }: { applicationId
   const d = data as Record<string, unknown>;
   const jobTitle = String(d.jobTitle ?? (d.job as Record<string, unknown>)?.title ?? "");
   const companyName = String(
-    d.jobCompanyName ?? ((d.job as Record<string, unknown>)?.company as Record<string, unknown>)?.name ?? "",
+    d.jobCompanyName ??
+      ((d.job as Record<string, unknown>)?.company as Record<string, unknown>)?.name ??
+      "",
   );
   const companyLogo = (d.jobCompanyLogo ??
     ((d.job as Record<string, unknown>)?.company as Record<string, unknown>)?.logoUrl ??

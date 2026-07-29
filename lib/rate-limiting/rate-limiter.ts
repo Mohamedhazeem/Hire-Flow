@@ -26,7 +26,8 @@ export class RateLimiterImpl implements RateLimiter {
 
   async enforce(key: string, max: number, windowMs: number): Promise<void> {
     const result = await this.check(key, max, windowMs);
-    if (!result.allowed) throw new TooManyRequestsError("Rate limit exceeded. Please try again later.");
+    if (!result.allowed)
+      throw new TooManyRequestsError("Rate limit exceeded. Please try again later.");
   }
 
   async reset(key?: string): Promise<void> {

@@ -22,7 +22,10 @@ type PeopleTableActions = {
   deleteUserPending: boolean;
 };
 
-export function createPeopleTableColumns(role: string | undefined, actions: PeopleTableActions): ColumnDef<UserRow>[] {
+export function createPeopleTableColumns(
+  role: string | undefined,
+  actions: PeopleTableActions,
+): ColumnDef<UserRow>[] {
   return [
     {
       key: "name",
@@ -51,7 +54,9 @@ export function createPeopleTableColumns(role: string | undefined, actions: Peop
       align: "center",
       cell: (row) => (
         <div className="flex items-center justify-center gap-2">
-          <Badge variant={row.banned ? "destructive" : "secondary"}>{row.banned ? "Banned" : "Active"}</Badge>
+          <Badge variant={row.banned ? "destructive" : "secondary"}>
+            {row.banned ? "Banned" : "Active"}
+          </Badge>
           {!row.emailVerified && <Badge variant="outline">Unverified</Badge>}
         </div>
       ),

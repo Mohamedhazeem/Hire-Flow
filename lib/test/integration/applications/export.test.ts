@@ -42,7 +42,9 @@ describe("CSV Export (Phase 4.19)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { GET } = await import("@/app/api/recruiter/jobs/[id]/applicants/export/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/jobs/${job.id}/applicants/export?status=reviewing`);
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/jobs/${job.id}/applicants/export?status=reviewing`,
+    );
     const res = await GET(req, { params: Promise.resolve({ id: job.id }) });
     expect(res.status).toBe(200);
   });

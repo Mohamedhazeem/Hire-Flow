@@ -129,14 +129,18 @@ Same pattern but with `applicationId` from params, calls `getJobAnalytics()`.
 export function useAnalytics(filter: AnalyticsFilter) {
   return useQuery<AnalyticsResponse>({
     queryKey: ["recruiter", "analytics", filter],
-    queryFn: () => apiClient("/api/recruiter/analytics", { params: filter as Record<string, unknown> }),
+    queryFn: () =>
+      apiClient("/api/recruiter/analytics", { params: filter as Record<string, unknown> }),
   });
 }
 
 export function useJobAnalytics(jobId: string, filter: AnalyticsFilter) {
   return useQuery<AnalyticsResponse>({
     queryKey: ["recruiter", "analytics", jobId, filter],
-    queryFn: () => apiClient(`/api/recruiter/jobs/${jobId}/analytics`, { params: filter as Record<string, unknown> }),
+    queryFn: () =>
+      apiClient(`/api/recruiter/jobs/${jobId}/analytics`, {
+        params: filter as Record<string, unknown>,
+      }),
     enabled: !!jobId,
   });
 }
@@ -226,7 +230,9 @@ Add a tab/navigation bar above the job information that links to the three sub-r
     href={`/recruiter/jobs/${jobId}`}
     className={cn(
       "pb-3 text-sm font-medium border-b-2 transition-colors",
-      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+      isActive
+        ? "border-brand text-text-heading"
+        : "border-transparent text-text-muted hover:text-text-heading",
     )}
   >
     View Details
@@ -235,7 +241,9 @@ Add a tab/navigation bar above the job information that links to the three sub-r
     href={`/recruiter/jobs/${jobId}/applicants`}
     className={cn(
       "pb-3 text-sm font-medium border-b-2 transition-colors",
-      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+      isActive
+        ? "border-brand text-text-heading"
+        : "border-transparent text-text-muted hover:text-text-heading",
     )}
   >
     Applicants
@@ -244,7 +252,9 @@ Add a tab/navigation bar above the job information that links to the three sub-r
     href={`/recruiter/jobs/${jobId}/analytics`}
     className={cn(
       "pb-3 text-sm font-medium border-b-2 transition-colors",
-      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+      isActive
+        ? "border-brand text-text-heading"
+        : "border-transparent text-text-muted hover:text-text-heading",
     )}
   >
     Analytics
@@ -259,7 +269,10 @@ The `isActive` detection uses `usePathname()` from `next/navigation` to highligh
 **`app/(roles)/recruiter/analytics/page.tsx`** — simple server component:
 
 ```tsx
-export const metadata = { title: "Analytics | HireFlow", description: "Recruiter analytics and insights" };
+export const metadata = {
+  title: "Analytics | HireFlow",
+  description: "Recruiter analytics and insights",
+};
 export default function AnalyticsPage() {
   return <RecruiterAnalyticsPage />;
 }

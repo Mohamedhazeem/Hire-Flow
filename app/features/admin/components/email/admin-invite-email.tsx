@@ -1,4 +1,15 @@
-import { Body, Button, Container, Head, Heading, Html, Link, Preview, Section, Text } from "react-email";
+import {
+  Body,
+  Button,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Link,
+  Preview,
+  Section,
+  Text,
+} from "react-email";
 
 interface AdminInviteEmailProps {
   url: string;
@@ -14,9 +25,12 @@ export const AdminInviteEmail = ({ url, invitedByName }: AdminInviteEmailProps) 
         <Container style={container}>
           <Heading style={heading}>Admin Invitation</Heading>
           <Text style={paragraph}>
-            <strong>{invitedByName}</strong> has invited you to join the admin team on <strong>HireFlow</strong>.
+            <strong>{invitedByName}</strong> has invited you to join the admin team on{" "}
+            <strong>HireFlow</strong>.
           </Text>
-          <Text style={paragraph}>Click the button below to accept the invitation and gain admin access.</Text>
+          <Text style={paragraph}>
+            Click the button below to accept the invitation and gain admin access.
+          </Text>
           <Section style={buttonContainer}>
             <Button style={button} href={url}>
               Accept Invitation
@@ -27,8 +41,8 @@ export const AdminInviteEmail = ({ url, invitedByName }: AdminInviteEmailProps) 
             </Link>
           </Section>
           <Text style={paragraph}>
-            This invitation link is valid for one-time use. If you were not expecting this invitation, you can safely
-            ignore this email.
+            This invitation link is valid for one-time use. If you were not expecting this
+            invitation, you can safely ignore this email.
           </Text>
         </Container>
       </Body>

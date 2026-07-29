@@ -18,7 +18,9 @@ export default function ErrorPage({ errorTag, title, description, path, session 
         </span>
 
         <div className="space-y-4">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-text-heading">{title}</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-text-heading">
+            {title}
+          </h1>
           <p className="max-w-md text-sm leading-7 text-text-muted">{description}</p>
         </div>
         <BackButton path={path} message={session ? "Go Back to My Dashboard" : "Go Back"} />

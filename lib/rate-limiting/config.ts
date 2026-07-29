@@ -84,12 +84,21 @@ export function validateConfig(): void {
   if (typeof proxy.trusted !== "boolean") throw new Error("proxy.trusted must be a boolean");
   const VALID_HEADERS = new Set(["x-real-ip", "x-forwarded-for", "cf-connecting-ip"]);
   if (!VALID_HEADERS.has(proxy.trustedHeader)) {
-    throw new Error(`trustedHeader "${proxy.trustedHeader}" must be one of: ${[...VALID_HEADERS].join(", ")}`);
+    throw new Error(
+      `trustedHeader "${proxy.trustedHeader}" must be one of: ${[...VALID_HEADERS].join(", ")}`,
+    );
   }
 
-  if (typeof ipHashing.enabled !== "boolean") throw new Error("ipHashing.enabled must be a boolean");
-  if (ipHashing.digestLength < 8 || ipHashing.digestLength > 64 || !Number.isInteger(ipHashing.digestLength)) {
-    throw new Error(`ipHashing.digestLength must be an integer between 8 and 64, got ${ipHashing.digestLength}`);
+  if (typeof ipHashing.enabled !== "boolean")
+    throw new Error("ipHashing.enabled must be a boolean");
+  if (
+    ipHashing.digestLength < 8 ||
+    ipHashing.digestLength > 64 ||
+    !Number.isInteger(ipHashing.digestLength)
+  ) {
+    throw new Error(
+      `ipHashing.digestLength must be an integer between 8 and 64, got ${ipHashing.digestLength}`,
+    );
   }
   const salt = process.env[ipHashing.saltEnvVar];
   if (ipHashing.enabled && process.env.NODE_ENV === "production" && !salt) {
@@ -109,7 +118,11 @@ export function validateConfig(): void {
   if (!["open", "closed"].includes(failStrategy.default)) {
     throw new Error('failStrategy.default must be "open" or "closed"');
   }
-  if (!Number.isInteger(failStrategy.statusCode) || failStrategy.statusCode < 400 || failStrategy.statusCode > 599) {
+  if (
+    !Number.isInteger(failStrategy.statusCode) ||
+    failStrategy.statusCode < 400 ||
+    failStrategy.statusCode > 599
+  ) {
     throw new Error("failStrategy.statusCode must be an integer between 400 and 599");
   }
 
@@ -120,7 +133,8 @@ export function validateConfig(): void {
 
   for (const [role, cfg] of Object.entries(roles)) {
     if (cfg.multiplier <= 0) throw new Error(`role "${role}" multiplier must be > 0`);
-    if (!Number.isFinite(cfg.multiplier)) throw new Error(`role "${role}" multiplier must be finite`);
+    if (!Number.isFinite(cfg.multiplier))
+      throw new Error(`role "${role}" multiplier must be finite`);
   }
 
   for (const [key, ep] of Object.entries(endpoints)) {
@@ -139,7 +153,11 @@ export function validateConfig(): void {
   if (shadowMode && (strategy as string) === "memory") {
     throw new Error("shadowMode is not supported with memory strategy");
   }
-  if (proxy.trusted && process.env.NODE_ENV === "production" && !process.env.RATE_LIMIT_TRUSTED_PROXY) {
+  if (
+    proxy.trusted &&
+    process.env.NODE_ENV === "production" &&
+    !process.env.RATE_LIMIT_TRUSTED_PROXY
+  ) {
     console.warn(
       "proxy.trusted is true but RATE_LIMIT_TRUSTED_PROXY env var is not set. Ensure you are behind a trusted proxy.",
     );

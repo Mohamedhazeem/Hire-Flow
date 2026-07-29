@@ -63,11 +63,16 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">{col.title}</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">
+                {col.title}
+              </h4>
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-sm text-neutral-400 hover:text-white transition-colors">
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-400 hover:text-white transition-colors"
+                    >
                       {link.label}
                     </Link>
                   </li>

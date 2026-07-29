@@ -4,7 +4,10 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { userAdminService } from "@/lib/services/user-admin-service";
 
-async function handleDELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+async function handleDELETE(
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   const session = await requireRole(["super_admin"]);
   const { id } = await params;
 

@@ -6,7 +6,9 @@ test.describe("Journey 1: Anonymous Apply Redirect", () => {
     test.skip(test.info().project.name !== "anonymous", "only meaningful for anonymous project");
 
     await page.goto(`/jobs/${JOBS.acme_senior_engineer}`, { waitUntil: "domcontentloaded" });
-    await expect(page.getByRole("link", { name: "Log in to Apply" })).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByRole("link", { name: "Log in to Apply" })).toBeVisible({
+      timeout: 20_000,
+    });
 
     const href = await page.getByRole("link", { name: "Log in to Apply" }).getAttribute("href");
     expect(href).toContain("/login");
@@ -18,7 +20,9 @@ test.describe("Journey 1: Anonymous Apply Redirect", () => {
     test.skip(test.info().project.name !== "anonymous", "only meaningful for anonymous project");
 
     await page.goto(`/jobs/${JOBS.acme_senior_engineer}`, { waitUntil: "domcontentloaded" });
-    await expect(page.getByRole("link", { name: "Log in to Apply" })).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByRole("link", { name: "Log in to Apply" })).toBeVisible({
+      timeout: 20_000,
+    });
 
     await page.getByRole("link", { name: "Log in to Apply" }).click();
     await page.waitForURL(/\/login/, { timeout: 20_000 });

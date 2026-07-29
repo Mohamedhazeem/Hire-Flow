@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { JOB_CATEGORIES } from "@/lib/job-categories";
-import { BriefcaseIcon, MonitorIcon, HeartPulseIcon, BanknoteIcon, MegaphoneIcon, GlobeIcon } from "lucide-react";
+import {
+  BriefcaseIcon,
+  MonitorIcon,
+  HeartPulseIcon,
+  BanknoteIcon,
+  MegaphoneIcon,
+  GlobeIcon,
+} from "lucide-react";
 
 const CATEGORY_ICONS: Record<string, typeof BriefcaseIcon> = {
   Technology: MonitorIcon,
@@ -31,7 +38,9 @@ export function CategoryStrip() {
           <div className="flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-5 sm:gap-4 scrollbar-none">
             {JOB_CATEGORIES.map((cat) => {
               const params = new URLSearchParams(
-                "industry" in cat.filter ? { industry: cat.filter.industry! } : { workMode: cat.filter.workMode! },
+                "industry" in cat.filter
+                  ? { industry: cat.filter.industry! }
+                  : { workMode: cat.filter.workMode! },
               );
               const Icon = CATEGORY_ICONS[cat.label] ?? BriefcaseIcon;
 
@@ -52,7 +61,9 @@ export function CategoryStrip() {
                     <div className="size-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
                       <Icon className="size-5" />
                     </div>
-                    <span className="text-sm font-medium text-text-body whitespace-nowrap">{cat.label}</span>
+                    <span className="text-sm font-medium text-text-body whitespace-nowrap">
+                      {cat.label}
+                    </span>
                   </Link>
                 </motion.div>
               );

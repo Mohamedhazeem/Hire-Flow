@@ -5,7 +5,10 @@ import { withRateLimit } from "@/lib/rate-limiting/di";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { checkBookmark } from "@/app/features/user/queries/bookmark-queries";
 
-async function handleGET(_request: NextRequest, { params }: { params: Promise<{ jobId: string }> }) {
+async function handleGET(
+  _request: NextRequest,
+  { params }: { params: Promise<{ jobId: string }> },
+) {
   const session = await requireRole(["user"]);
   const { jobId } = await params;
 

@@ -4,7 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api/api-client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { BriefcaseIcon, FileTextIcon, CalendarCheckIcon, StarIcon, ExternalLinkIcon } from "lucide-react";
+import {
+  BriefcaseIcon,
+  FileTextIcon,
+  CalendarCheckIcon,
+  StarIcon,
+  ExternalLinkIcon,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -67,9 +73,12 @@ export function ActivityPanel() {
   } = useQuery({
     queryKey: ["user", "applications", "recent"],
     queryFn: async () => {
-      const res = await apiClient<{ data: { applications: AppRow[]; total: number } }>("/api/user/applications", {
-        params: { page: "1", pageSize: "5" },
-      });
+      const res = await apiClient<{ data: { applications: AppRow[]; total: number } }>(
+        "/api/user/applications",
+        {
+          params: { page: "1", pageSize: "5" },
+        },
+      );
       return res.data;
     },
   });
@@ -91,7 +100,10 @@ export function ActivityPanel() {
             ))
           : statsErr
             ? statConfig.map((s) => (
-                <div key={s.key} className="bg-bg-surface border border-border-subtle rounded-xl p-4">
+                <div
+                  key={s.key}
+                  className="bg-bg-surface border border-border-subtle rounded-xl p-4"
+                >
                   <div className="flex items-center gap-2 mb-1">
                     <div className="size-7 rounded-lg flex items-center justify-center bg-bg-muted text-text-muted">
                       {s.icon}
@@ -102,9 +114,16 @@ export function ActivityPanel() {
                 </div>
               ))
             : statConfig.map((s) => (
-                <div key={s.key} className="bg-bg-surface border border-border-subtle rounded-xl p-4">
+                <div
+                  key={s.key}
+                  className="bg-bg-surface border border-border-subtle rounded-xl p-4"
+                >
                   <div className="flex items-center gap-2 mb-1">
-                    <div className={`size-7 rounded-lg flex items-center justify-center ${s.color}`}>{s.icon}</div>
+                    <div
+                      className={`size-7 rounded-lg flex items-center justify-center ${s.color}`}
+                    >
+                      {s.icon}
+                    </div>
                     <span className="text-xs text-text-muted">{s.label}</span>
                   </div>
                   <p className="text-xl font-bold text-text-heading">{stats?.[s.key] ?? 0}</p>
@@ -152,7 +171,13 @@ export function ActivityPanel() {
               >
                 <div className="size-9 rounded-lg bg-brand/10 flex items-center justify-center text-brand text-xs font-bold shrink-0">
                   {app.companyLogo ? (
-                    <Image src={app.companyLogo} alt="" width={20} height={20} className="size-5 object-contain" />
+                    <Image
+                      src={app.companyLogo}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="size-5 object-contain"
+                    />
                   ) : (
                     (app.companyName[0]?.toUpperCase() ?? "?")
                   )}

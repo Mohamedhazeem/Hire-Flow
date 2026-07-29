@@ -2,7 +2,10 @@
 
 import { useAdminThreads } from "@/app/features/admin/hooks/messages/use-admin-threads";
 import { AdminThreadView } from "@/app/features/admin/components/admin-thread-view";
-import { MessagesPageLayout, type MessagesPageConfig } from "@/components/chat/messages-page-layout";
+import {
+  MessagesPageLayout,
+  type MessagesPageConfig,
+} from "@/components/chat/messages-page-layout";
 
 const config: MessagesPageConfig = {
   queryKey: "admin",
@@ -20,7 +23,9 @@ export default function AdminMessagesPage() {
   return (
     <MessagesPageLayout
       config={config}
-      threads={threads as import("@/components/chat/thread-list-item").ThreadListItemData[] | undefined}
+      threads={
+        threads as import("@/components/chat/thread-list-item").ThreadListItemData[] | undefined
+      }
       isLoading={isLoading}
       ThreadViewComponent={AdminThreadView}
     />

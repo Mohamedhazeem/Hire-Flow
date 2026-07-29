@@ -1,6 +1,10 @@
 "use client";
 
-import { SharedThreadView, type ThreadViewHooks, type ThreadViewConfig } from "@/components/chat/shared-thread-view";
+import {
+  SharedThreadView,
+  type ThreadViewHooks,
+  type ThreadViewConfig,
+} from "@/components/chat/shared-thread-view";
 import {
   useAdminMessages,
   useSendMessage,

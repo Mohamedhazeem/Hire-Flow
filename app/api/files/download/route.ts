@@ -40,7 +40,8 @@ async function handleGET(request: NextRequest) {
       session.role !== "recruiter" &&
       session.role !== "admin" &&
       session.role !== "super_admin";
-    const needsAuth = isResume || (session.role === "user" && rawPath.includes("blob.vercel-storage.com"));
+    const needsAuth =
+      isResume || (session.role === "user" && rawPath.includes("blob.vercel-storage.com"));
 
     // The upload route uses "public" for logos and "private" for resumes.
     // We infer privacy from the caller context rather than the URL.

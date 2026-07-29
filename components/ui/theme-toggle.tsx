@@ -34,7 +34,8 @@ export function ThemeToggle({ collapsed, variant }: { collapsed?: boolean; varia
 
   if (variant === "icon") {
     const isDark =
-      theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      theme === "dark" ||
+      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
     return (
       <button
         onClick={() => setTheme(isDark ? "light" : "dark")}
@@ -66,7 +67,9 @@ export function ThemeToggle({ collapsed, variant }: { collapsed?: boolean; varia
           key={value}
           onClick={() => setTheme(value)}
           className={`flex items-center justify-center gap-1.5 flex-1 px-2 py-1.5 rounded-md text-xs font-medium transition-colors ${
-            theme === value ? "bg-bg-surface text-text-heading shadow-xs" : "text-text-muted hover:text-text-heading"
+            theme === value
+              ? "bg-bg-surface text-text-heading shadow-xs"
+              : "text-text-muted hover:text-text-heading"
           }`}
           title={label}
         >

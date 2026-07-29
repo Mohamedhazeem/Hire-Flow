@@ -28,7 +28,10 @@ Recruiters can have threaded, persistent conversations with applicants, reusing 
 #### 1. `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`
 
 ```typescript
-export async function verifyRecruiterApplicantRelationship(recruiterId: string, applicantId: string): Promise<void> {
+export async function verifyRecruiterApplicantRelationship(
+  recruiterId: string,
+  applicantId: string,
+): Promise<void> {
   // Check applicant has ANY application to a job at a company where this recruiter
   // is a member (via CompanyTeamMember) or is the direct job poster (via Job.recruiterId)
   const application = await prisma.application.findFirst({

@@ -6,6 +6,7 @@ import { BriefcaseIcon } from "lucide-react";
 function toCardProps(j: PublicJobRow) {
   return {
     id: j.id,
+    slug: j.slug,
     title: j.title,
     companyName: j.companyName,
     companyLogo: j.companyLogo,
@@ -47,7 +48,10 @@ export async function FeaturedJobs() {
             <BriefcaseIcon className="size-8 text-text-muted mx-auto mb-3" />
             <p className="text-text-muted">No featured jobs right now</p>
             <p className="text-sm text-text-muted mt-1">Check back later or browse all listings</p>
-            <Link href="/jobs" className="inline-block mt-4 text-sm font-medium text-brand hover:underline">
+            <Link
+              href="/jobs"
+              className="inline-block mt-4 text-sm font-medium text-brand hover:underline"
+            >
               Browse all jobs &rarr;
             </Link>
           </div>

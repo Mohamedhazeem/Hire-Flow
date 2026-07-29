@@ -22,16 +22,23 @@ export function ApplicantProfileCard({
   skills,
   experiences,
 }: ApplicantProfileCardProps) {
-  const experiencesArray = experiences != null && Array.isArray(experiences) ? (experiences as unknown[]) : null;
+  const experiencesArray =
+    experiences != null && Array.isArray(experiences) ? (experiences as unknown[]) : null;
 
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Profile</h2>
+      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+        Profile
+      </h2>
       <div className="space-y-4">
         {headline && <p className="text-sm text-text-body font-medium">{headline}</p>}
         {bio && <p className="text-sm text-text-muted leading-relaxed">{bio}</p>}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <InfoRow icon={<MapPinIcon className="size-5" />} label="Location" value={location ?? "Not specified"} />
+          <InfoRow
+            icon={<MapPinIcon className="size-5" />}
+            label="Location"
+            value={location ?? "Not specified"}
+          />
           <InfoRow
             icon={<GraduationCapIcon className="size-5" />}
             label="Expected CTC"
@@ -46,7 +53,9 @@ export function ApplicantProfileCard({
         </div>
         {skills && skills.length > 0 && (
           <div>
-            <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">Skills</p>
+            <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">
+              Skills
+            </p>
             <div className="flex flex-wrap gap-1.5">
               {skills.map((skill, i) => (
                 <span
@@ -61,7 +70,9 @@ export function ApplicantProfileCard({
         )}
         {experiencesArray && experiencesArray.length > 0 && (
           <div>
-            <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">Experience</p>
+            <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">
+              Experience
+            </p>
             <div className="space-y-2">
               {experiencesArray.map((item, i) => {
                 const exp = item as {
@@ -71,7 +82,10 @@ export function ApplicantProfileCard({
                   endDate?: string;
                 };
                 return (
-                  <div key={i} className="text-sm text-text-body border-l-2 border-border-subtle pl-3">
+                  <div
+                    key={i}
+                    className="text-sm text-text-body border-l-2 border-border-subtle pl-3"
+                  >
                     {exp.title && <p className="font-medium">{exp.title}</p>}
                     {exp.company && <p className="text-text-muted text-xs">{exp.company}</p>}
                     {exp.startDate && (

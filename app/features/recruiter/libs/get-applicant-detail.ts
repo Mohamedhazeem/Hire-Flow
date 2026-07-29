@@ -43,7 +43,10 @@ export type ApplicantDetailResponse = {
       socialLinks: unknown;
     } | null;
   };
-  applicantResume: (ResumeInfo & { source: "application" | "current_profile" }) | DeletedResume | null;
+  applicantResume:
+    | (ResumeInfo & { source: "application" | "current_profile" })
+    | DeletedResume
+    | null;
   statusTimeline: {
     id: string;
     type: "application_submitted" | "status_change";
@@ -135,7 +138,10 @@ export async function getApplicantDetail(
 
   const profileResumes = application.user.resumes ?? [];
 
-  let resolvedResume: (ResumeInfo & { source: "application" | "current_profile" }) | DeletedResume | null = null;
+  let resolvedResume:
+    | (ResumeInfo & { source: "application" | "current_profile" })
+    | DeletedResume
+    | null = null;
 
   if (application.resumeId) {
     const matched = profileResumes.find((r) => r.id === application.resumeId);

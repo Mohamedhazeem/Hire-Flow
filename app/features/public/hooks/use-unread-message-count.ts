@@ -27,7 +27,10 @@ export function useUnreadMessageCount(userId: string | undefined) {
     channelRef.current = channel;
 
     const onIncrement = () => {
-      queryClient.setQueryData(["messages", "unread-count"], (old: number | undefined) => (old ?? 0) + 1);
+      queryClient.setQueryData(
+        ["messages", "unread-count"],
+        (old: number | undefined) => (old ?? 0) + 1,
+      );
     };
 
     const onUpdate = () => {

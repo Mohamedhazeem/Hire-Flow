@@ -12,7 +12,10 @@ import {
   TrendingUpIcon,
   LightbulbIcon,
 } from "lucide-react";
-import type { ResumeSuggestion, EnhancementsResponse } from "@/app/features/user/schema/resume-ai.schema";
+import type {
+  ResumeSuggestion,
+  EnhancementsResponse,
+} from "@/app/features/user/schema/resume-ai.schema";
 
 type AiSuggestionsPanelProps = {
   result: EnhancementsResponse;
@@ -35,14 +38,29 @@ const typeLabels: Record<string, string> = {
 };
 
 function scoreConfig(score: number): { color: string; bg: string; ring: string; label: string } {
-  if (score < 40) return { color: "text-white", bg: "bg-error", ring: "ring-error/20", label: "Needs Work" };
-  if (score < 60) return { color: "text-white", bg: "bg-orange-500", ring: "ring-orange-500/20", label: "Fair" };
-  if (score < 75) return { color: "text-white", bg: "bg-amber", ring: "ring-amber/20", label: "Good" };
-  if (score < 90) return { color: "text-white", bg: "bg-emerald-500", ring: "ring-emerald-500/20", label: "Great" };
+  if (score < 40)
+    return { color: "text-white", bg: "bg-error", ring: "ring-error/20", label: "Needs Work" };
+  if (score < 60)
+    return { color: "text-white", bg: "bg-orange-500", ring: "ring-orange-500/20", label: "Fair" };
+  if (score < 75)
+    return { color: "text-white", bg: "bg-amber", ring: "ring-amber/20", label: "Good" };
+  if (score < 90)
+    return {
+      color: "text-white",
+      bg: "bg-emerald-500",
+      ring: "ring-emerald-500/20",
+      label: "Great",
+    };
   return { color: "text-white", bg: "bg-green", ring: "ring-green/20", label: "Excellent" };
 }
 
-function ScoreGauge({ currentScore, projectedScore }: { currentScore: number; projectedScore: number }) {
+function ScoreGauge({
+  currentScore,
+  projectedScore,
+}: {
+  currentScore: number;
+  projectedScore: number;
+}) {
   const current = scoreConfig(currentScore);
   const projected = scoreConfig(projectedScore);
   const delta = projectedScore - currentScore;
@@ -77,11 +95,15 @@ function ScoreGauge({ currentScore, projectedScore }: { currentScore: number; pr
           className={`relative size-24 rounded-full ${projected.bg} ${projected.ring} ring-4 flex items-center justify-center shrink-0`}
         >
           <div className="text-center">
-            <p className={`text-2xl font-bold tracking-tight ${projected.color}`}>{projectedScore}</p>
+            <p className={`text-2xl font-bold tracking-tight ${projected.color}`}>
+              {projectedScore}
+            </p>
             <p className="text-[10px] font-medium text-white/70">/ 100</p>
           </div>
         </div>
-        <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Projected</p>
+        <p className="text-[10px] font-medium text-text-muted uppercase tracking-wider">
+          Projected
+        </p>
       </div>
     </div>
   );
@@ -236,8 +258,12 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                   <CheckIcon className="size-7 text-green" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text-heading">Your resume is well-optimized!</p>
-                  <p className="text-xs text-text-muted mt-1">No specific suggestions found at this time.</p>
+                  <p className="text-sm font-semibold text-text-heading">
+                    Your resume is well-optimized!
+                  </p>
+                  <p className="text-xs text-text-muted mt-1">
+                    No specific suggestions found at this time.
+                  </p>
                 </div>
               </div>
             ) : (
@@ -248,7 +274,8 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                     <div key={section}>
                       <h3 className="text-sm font-semibold text-text-heading mb-3 flex items-center gap-2">
                         <span className="size-1.5 rounded-full bg-brand" />
-                        {sectionNames[section] ?? section.charAt(0).toUpperCase() + section.slice(1)}
+                        {sectionNames[section] ??
+                          section.charAt(0).toUpperCase() + section.slice(1)}
                       </h3>
                       <div className="space-y-2.5">
                         {items
@@ -279,11 +306,17 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                                 </div>
                                 {s.original && (
                                   <div className="rounded-lg bg-error/5 border border-error/10 px-3 py-2">
-                                    <p className="text-xs text-text-muted line-through">{s.original}</p>
+                                    <p className="text-xs text-text-muted line-through">
+                                      {s.original}
+                                    </p>
                                   </div>
                                 )}
-                                <p className="text-sm font-medium text-text-heading">{s.suggestion}</p>
-                                <p className="text-xs text-text-muted leading-relaxed">{s.reasoning}</p>
+                                <p className="text-sm font-medium text-text-heading">
+                                  {s.suggestion}
+                                </p>
+                                <p className="text-xs text-text-muted leading-relaxed">
+                                  {s.reasoning}
+                                </p>
                                 <div className="flex pt-1.5 border-t border-border-subtle">
                                   <CopyButton text={s.suggestion} />
                                 </div>
@@ -302,8 +335,8 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                 <AlertCircle className="size-4 text-amber shrink-0 mt-0.5" />
                 <p className="text-xs text-text-muted leading-relaxed">
                   This resume was uploaded as a file. To apply suggestions,{" "}
-                  <span className="font-medium text-text-heading">copy each change</span>, edit the file externally, and
-                  re-upload.
+                  <span className="font-medium text-text-heading">copy each change</span>, edit the
+                  file externally, and re-upload.
                 </p>
               </div>
             )}

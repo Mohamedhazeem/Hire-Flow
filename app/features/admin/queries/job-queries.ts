@@ -29,7 +29,10 @@ export type AdminJobListResult = {
 };
 
 export async function listJobs(params: AdminListJobsParams): Promise<AdminJobListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const where: Record<string, unknown> = {};
 

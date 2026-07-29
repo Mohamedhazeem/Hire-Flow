@@ -23,5 +23,10 @@ export function getStatusOptions() {
 
 export function StatusDot({ status }: { status: string }) {
   const color = CHART_COLORS[status] ?? "#6b7280";
-  return <span className="inline-block size-2 rounded-full shrink-0" style={{ backgroundColor: color }} />;
+  return (
+    <span
+      className="inline-block size-2 rounded-full shrink-0"
+      style={{ backgroundColor: color }}
+    />
+  );
 }

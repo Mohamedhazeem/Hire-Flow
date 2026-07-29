@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, useEffect } from "react";
+import { useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -122,26 +122,18 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
 
-  const [activeThreadId, setActiveThreadId] = useState<string | null>(() => searchParams.get("thread") ?? null);
-
-  // Sync with URL changes (browser back/forward)
-  useEffect(() => {
-    setActiveThreadId(searchParams.get("thread") ?? null);
-  }, [searchParams]);
+  const activeThreadId = searchParams.get("thread");
 
   useOwnPresence(userId);
 
   const handleSelectThread = useCallback(
     (threadId: string) => {
-      if (threadId === activeThreadId) return;
-      setActiveThreadId(threadId);
       router.replace(`${config.basePath}?thread=${threadId}`, { scroll: false });
     },
-    [router, config.basePath, activeThreadId],
+    [router, config.basePath],
   );
 
   const handleBack = useCallback(() => {
-    setActiveThreadId(null);
     router.replace(config.basePath, { scroll: false });
   }, [router, config.basePath]);
 

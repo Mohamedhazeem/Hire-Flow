@@ -14,11 +14,20 @@ import { getSession } from "@/app/features/auth/libs/auth";
 import { ipHash } from "./ip-hash";
 import type { RateLimiter, RateLimitResult } from "./types";
 
-type RouteContext = { params: Promise<unknown> };
-type Handler = (request: NextRequest, context: RouteContext) => Promise<NextResponse>;
+type RouteContext<TParams extends Record<string, string> = Record<string, string>> = {
+  params: Promise<TParams>;
+};
+
+type SimpleHandler = (request: NextRequest) => Promise<NextResponse>;
+type ParamHandler<TParams extends Record<string, string>> = (
+  request: NextRequest,
+  context: RouteContext<TParams>,
+) => Promise<NextResponse>;
 
 function getEffectiveMax(role: string, baseMax: number): number {
-  const roleCfg = rateLimitConfig.roles[role as keyof typeof rateLimitConfig.roles] ?? rateLimitConfig.roles.anonymous;
+  const roleCfg =
+    rateLimitConfig.roles[role as keyof typeof rateLimitConfig.roles] ??
+    rateLimitConfig.roles.anonymous;
   return Math.round(baseMax * roleCfg.multiplier);
 }
 
@@ -53,12 +62,25 @@ function buildServiceUnavailableResponse(statusCode: number): NextResponse {
 }
 
 export function createWithRateLimit(rateLimiter: RateLimiter) {
-  return function withRateLimit(handler: Handler, endpointKey: RateLimitEndpoint) {
-    return async (request: NextRequest, context?: RouteContext): Promise<NextResponse> => {
+  function withRateLimit(handler: SimpleHandler, endpointKey: RateLimitEndpoint): SimpleHandler;
+  function withRateLimit<TParams extends Record<string, string>>(
+    handler: ParamHandler<TParams>,
+    endpointKey: RateLimitEndpoint,
+  ): ParamHandler<TParams>;
+  function withRateLimit(
+    handler: SimpleHandler | ParamHandler<Record<string, string>>,
+    endpointKey: RateLimitEndpoint,
+  ) {
+    return async (
+      request: NextRequest,
+      context?: RouteContext<Record<string, string>>,
+    ): Promise<NextResponse> => {
       const requestId = generateRequestId();
 
       const session = await getSession();
-      const user = session?.user as { id: string; name: string; email: string; role?: string } | undefined;
+      const user = session?.user as
+        | { id: string; name: string; email: string; role?: string }
+        | undefined;
       const role = user?.role ?? "anonymous";
 
       const baseSession = {
@@ -68,21 +90,28 @@ export function createWithRateLimit(rateLimiter: RateLimiter) {
         role,
       };
 
-      const runHandler = () => runWithTraceContext({ requestId }, () => handler(request, context!));
+      const runHandler = () =>
+        runWithTraceContext({ requestId }, () => {
+          if (context) {
+            return (handler as ParamHandler<Record<string, string>>)(request, context);
+          }
+          return (handler as SimpleHandler)(request);
+        });
 
-      return runWithSessionCache({ session: { ...baseSession } }, async () => {
+      const runRateLimit = async (): Promise<NextResponse> => {
         if (!rateLimitConfig.enabled) {
           return runHandler();
         }
 
         const ip = extractIP(request);
-        const actorKey = getActorKey(session ? { id: user!.id } : null, ip, role);
+        const actorKey = getActorKey(session && user ? { id: user.id } : null, ip, role);
         const endpointCfg = rateLimitConfig.endpoints[endpointKey] ?? rateLimitConfig.default;
         const effectiveMax = getEffectiveMax(role, endpointCfg.max);
         const dbKey = `app:${endpointKey}:${actorKey}`;
 
         const failStrategy =
-          (endpointCfg as { failStrategy?: "open" | "closed" }).failStrategy ?? rateLimitConfig.failStrategy.default;
+          (endpointCfg as { failStrategy?: "open" | "closed" }).failStrategy ??
+          rateLimitConfig.failStrategy.default;
 
         const start = performance.now();
         let result: RateLimitResult;
@@ -138,7 +167,18 @@ export function createWithRateLimit(rateLimiter: RateLimiter) {
         }
 
         return response;
+      };
+
+      if (user) {
+        return runWithSessionCache({ session: { ...baseSession } }, async () => {
+          return runRateLimit();
+        });
+      }
+
+      return runWithSessionCache({ session: null }, async () => {
+        return runRateLimit();
       });
     };
-  };
+  }
+  return withRateLimit;
 }

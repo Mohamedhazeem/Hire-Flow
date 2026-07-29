@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+﻿import { describe, it, expect, beforeEach, vi } from "vitest";
 import { resetDb, createTestUser, createTestCompany, seedJobs } from "@/lib/test";
-import { measure } from "@/lib/test/perf";
+import { measure, publishBenchmark } from "@/lib/test/perf";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 
@@ -20,7 +20,10 @@ describe("PF4 — Job listing 100K full-text search performance", () => {
     const indexes = await prisma.$queryRawUnsafe<Array<{ indexname: string }>>(
       `SELECT indexname FROM pg_indexes WHERE indexname LIKE 'job_%_fts_idx'`,
     );
-    expect(indexes.map((i) => i.indexname).sort()).toEqual(["job_description_fts_idx", "job_title_fts_idx"]);
+    expect(indexes.map((i) => i.indexname).sort()).toEqual([
+      "job_description_fts_idx",
+      "job_title_fts_idx",
+    ]);
 
     const { listPublicJobs } = await import("@/app/features/jobs/queries/public-job-queries");
 
@@ -30,7 +33,17 @@ describe("PF4 — Job listing 100K full-text search performance", () => {
     const warm = await listPublicJobs({ search: "engineer", page: 1, pageSize: 20 });
     expect(warm.total).toBeGreaterThan(0);
 
-    const { ms, result } = await measure(() => listPublicJobs({ search: "engineer", page: 1, pageSize: 20 }));
+    const { ms, result } = await measure(() =>
+      listPublicJobs({ search: "engineer", page: 1, pageSize: 20 }),
+    );
+
+    publishBenchmark({
+      suite: "PF4-fulltext-search-100k",
+      meanMs: ms,
+      p50Ms: ms,
+      p95Ms: ms,
+      sampleCount: 1,
+    });
 
     expect(result.total).toBeGreaterThan(0);
     // Generous budget: a warm GIN-backed query is single-digit ms; a missing

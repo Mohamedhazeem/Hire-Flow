@@ -44,7 +44,9 @@ type AdminRecruiterProfileViewProps = {
 function JobStatusBadge({ status, isActive }: { status: string; isActive: boolean }) {
   if (!isActive) return <Badge variant="destructive">Disabled</Badge>;
   return (
-    <Badge variant={status === "active" ? "default" : status === "archived" ? "secondary" : "outline"}>
+    <Badge
+      variant={status === "active" ? "default" : status === "archived" ? "secondary" : "outline"}
+    >
       {status === "draft" ? "Draft" : status.charAt(0).toUpperCase() + status.slice(1)}
     </Badge>
   );
@@ -60,7 +62,10 @@ function CompanyJobsTable({ jobs, now }: { jobs: CompanyJob[]; now: number }) {
       <thead>
         <tr className="border-b border-border-subtle bg-bg-elevated/50">
           {["Title", "Status", "Applicants", "Deadline", ""].map((h) => (
-            <th key={h} className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">
+            <th
+              key={h}
+              className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3"
+            >
               {h || "\u00A0"}
             </th>
           ))}
@@ -68,7 +73,9 @@ function CompanyJobsTable({ jobs, now }: { jobs: CompanyJob[]; now: number }) {
       </thead>
       <tbody className="divide-y divide-border-subtle">
         {jobs.map((job) => {
-          const deadline = job.applicationDeadline ? new Date(job.applicationDeadline).getTime() : null;
+          const deadline = job.applicationDeadline
+            ? new Date(job.applicationDeadline).getTime()
+            : null;
           const expired = deadline !== null && deadline < now;
           return (
             <tr key={job.id} className="hover:bg-bg-elevated/50 transition-colors text-center">
@@ -91,7 +98,9 @@ function CompanyJobsTable({ jobs, now }: { jobs: CompanyJob[]; now: number }) {
                 </div>
               </td>
               <td className="px-4 py-3 text-sm text-text-body">{job.applicationCount}</td>
-              <td className="px-4 py-3 text-sm text-text-muted">{deadline ? fmtDate(new Date(deadline)) : "\u2014"}</td>
+              <td className="px-4 py-3 text-sm text-text-muted">
+                {deadline ? fmtDate(new Date(deadline)) : "\u2014"}
+              </td>
               <td className="px-6 py-3">
                 <Link
                   href={`/admin/jobs/${job.id}`}

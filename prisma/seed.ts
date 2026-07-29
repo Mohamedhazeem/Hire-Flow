@@ -354,7 +354,14 @@ async function main() {
 
   // ── 4. Applications — each user applies to 3 jobs ────────────────────────────
   const allJobs = await prisma.job.findMany({ select: { id: true } });
-  const statuses = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired"] as const;
+  const statuses = [
+    "applied",
+    "reviewing",
+    "shortlisted",
+    "interview_scheduled",
+    "offered",
+    "hired",
+  ] as const;
 
   for (let u = 0; u < USERS.length; u++) {
     const usr = USERS[u];

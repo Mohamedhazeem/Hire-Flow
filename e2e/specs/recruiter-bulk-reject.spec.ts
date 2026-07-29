@@ -3,7 +3,10 @@ import { JOBS } from "../fixtures/accounts";
 
 test.describe("Journey 4: Recruiter Bulk Reject", () => {
   test("recruiter can see applicants page with bulk actions", async ({ page }) => {
-    test.skip(test.info().project.name !== "recruiter", "only runs for recruiter project with auth storageState");
+    test.skip(
+      test.info().project.name !== "recruiter",
+      "only runs for recruiter project with auth storageState",
+    );
 
     await page.goto(`/recruiter/jobs/${JOBS.acme_senior_engineer}/applicants`, {
       waitUntil: "domcontentloaded",

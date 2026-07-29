@@ -1,7 +1,13 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Search } from "lucide-react";
 
 function capitalizeLabel(value: string): string {
@@ -77,7 +83,9 @@ export function PeopleTableToolbar({
       )}
       <Select value={banned} onValueChange={onBannedFilter}>
         <SelectTrigger className="w-full sm:w-32">
-          <SelectValue>{banned === "all" ? "All" : banned === "true" ? "Banned" : "Active"}</SelectValue>
+          <SelectValue>
+            {banned === "all" ? "All" : banned === "true" ? "Banned" : "Active"}
+          </SelectValue>
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">All</SelectItem>
@@ -94,7 +102,9 @@ export function PeopleTableToolbar({
         }}
       >
         <SelectTrigger className="w-full sm:w-36">
-          <SelectValue>{SORT_OPTIONS.find((o) => o.value === `${sortBy}_${sortOrder}`)?.label}</SelectValue>
+          <SelectValue>
+            {SORT_OPTIONS.find((o) => o.value === `${sortBy}_${sortOrder}`)?.label}
+          </SelectValue>
         </SelectTrigger>
         <SelectContent>
           {SORT_OPTIONS.map((opt) => (

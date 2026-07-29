@@ -7,7 +7,10 @@ import { faker } from "@faker-js/faker";
 import type { Prisma } from "../../../app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 
-export async function createTestCompany(recruiterId: string, overrides?: Partial<Prisma.CompanyUncheckedCreateInput>) {
+export async function createTestCompany(
+  recruiterId: string,
+  overrides?: Partial<Prisma.CompanyUncheckedCreateInput>,
+) {
   const company = await prisma.company.create({
     data: {
       id: overrides?.id ?? faker.string.uuid(),

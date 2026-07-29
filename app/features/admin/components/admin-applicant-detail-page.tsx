@@ -105,12 +105,19 @@ export function AdminApplicantDetailPage({ applicationId }: AdminApplicantDetail
         </div>
         <div className="space-y-6">
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Timeline</h2>
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+              Timeline
+            </h2>
             <StatusTimeline entries={statusTimeline} />
           </div>
           <RecentMessagesCard
             messages={
-              recentMessages as unknown as { id: string; content: string; fileUrl: string | null; createdAt: string }[]
+              recentMessages as unknown as {
+                id: string;
+                content: string;
+                fileUrl: string | null;
+                createdAt: string;
+              }[]
             }
             threadId=""
             messagesBasePath=""

@@ -60,7 +60,10 @@ export default async function CompanyPage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Company Profile" description="Manage your company details visible to candidates" />
+      <PageHeader
+        title="Company Profile"
+        description="Manage your company details visible to candidates"
+      />
       <CompanyForm defaultValues={defaultValues} readOnly={!isOwner} />
     </div>
   );

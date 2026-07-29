@@ -10,7 +10,12 @@ type SkillFilterProps = {
   maxItems?: number;
 };
 
-export function SkillFilter({ value, onChange, disabled = false, maxItems = 10 }: SkillFilterProps) {
+export function SkillFilter({
+  value,
+  onChange,
+  disabled = false,
+  maxItems = 10,
+}: SkillFilterProps) {
   return (
     <AutocompleteInput
       value={value}

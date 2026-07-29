@@ -35,7 +35,9 @@ const handlePOST = withRateLimit(async (request: NextRequest) => {
     where: { userId: session.id, deletedAt: null },
   });
   if (existingCount >= 5) {
-    throw new ValidationError("Resume limit reached (5). Please delete an existing resume before uploading a new one.");
+    throw new ValidationError(
+      "Resume limit reached (5). Please delete an existing resume before uploading a new one.",
+    );
   }
 
   let formData: FormData;

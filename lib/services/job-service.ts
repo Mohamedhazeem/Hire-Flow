@@ -107,8 +107,10 @@ export const jobService = {
     if (data.skills !== undefined) updateData.skills = data.skills;
     if (data.tags !== undefined) updateData.tags = data.tags;
     if (data.experienceLevel !== undefined) updateData.experienceLevel = data.experienceLevel;
-    if (data.salaryMin !== undefined) updateData.salaryMin = (data.salaryMin as number | null) ?? null;
-    if (data.salaryMax !== undefined) updateData.salaryMax = (data.salaryMax as number | null) ?? null;
+    if (data.salaryMin !== undefined)
+      updateData.salaryMin = (data.salaryMin as number | null) ?? null;
+    if (data.salaryMax !== undefined)
+      updateData.salaryMax = (data.salaryMax as number | null) ?? null;
     if (data.salaryCurrency !== undefined) updateData.salaryCurrency = data.salaryCurrency;
     if (data.applicationDeadline !== undefined) {
       updateData.applicationDeadline = data.applicationDeadline
@@ -156,13 +158,17 @@ export const jobService = {
 
     if (newStatus === "active" && existing.status !== "draft") {
       throw new ValidationError(
-        existing.status === "archived" ? "Use the edit form to reactivate an archived job." : "Job is already active.",
+        existing.status === "archived"
+          ? "Use the edit form to reactivate an archived job."
+          : "Job is already active.",
       );
     }
 
     if (newStatus === "archived" && existing.status !== "active") {
       throw new ValidationError(
-        existing.status === "draft" ? "Cannot archive a draft job. Publish it first." : "Job is already archived.",
+        existing.status === "draft"
+          ? "Cannot archive a draft job. Publish it first."
+          : "Job is already archived.",
       );
     }
 

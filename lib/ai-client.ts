@@ -55,7 +55,11 @@ const PROVIDER_CONFIG: Record<AIProvider, ProviderConfig> = {
   },
 };
 
-export async function callAI(userPrompt: string, systemPrompt?: string, maxTokens = 2048): Promise<string | null> {
+export async function callAI(
+  userPrompt: string,
+  systemPrompt?: string,
+  maxTokens = 2048,
+): Promise<string | null> {
   const provider = (process.env.AI_PROVIDER || "anthropic") as AIProvider;
   const config = PROVIDER_CONFIG[provider];
   if (!config) return null;

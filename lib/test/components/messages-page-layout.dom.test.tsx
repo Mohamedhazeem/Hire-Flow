@@ -46,7 +46,10 @@ vi.mock("@/components/chat/thread-list-item", () => ({
   ),
 }));
 
-import { MessagesPageLayout, type MessagesPageConfig } from "@/components/chat/messages-page-layout";
+import {
+  MessagesPageLayout,
+  type MessagesPageConfig,
+} from "@/components/chat/messages-page-layout";
 import type { ThreadListItemData } from "@/components/chat/thread-list-item";
 
 function makeConfig(overrides: Partial<MessagesPageConfig> = {}): MessagesPageConfig {
@@ -115,7 +118,12 @@ describe("MessagesPageLayout", () => {
 
     it("shows skeleton items when isLoading", () => {
       const { container } = render(
-        <MessagesPageLayout config={makeConfig()} threads={undefined} isLoading ThreadViewComponent={MockThreadView} />,
+        <MessagesPageLayout
+          config={makeConfig()}
+          threads={undefined}
+          isLoading
+          ThreadViewComponent={MockThreadView}
+        />,
       );
       // Skeleton renders 5 items with data-slot="skeleton"
       const skeletons = container.querySelectorAll('[data-slot="skeleton"]');

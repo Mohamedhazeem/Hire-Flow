@@ -46,9 +46,14 @@ export function JobCard({
 }: JobCardProps) {
   const router = useRouter();
 
-  const hydrated = useSyncExternalStore(hydrator.subscribe, hydrator.getSnapshot, hydrator.getServerSnapshot);
+  const hydrated = useSyncExternalStore(
+    hydrator.subscribe,
+    hydrator.getSnapshot,
+    hydrator.getServerSnapshot,
+  );
 
-  const fmt = (n: number) => (hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US"));
+  const fmt = (n: number) =>
+    hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US");
 
   const salaryText =
     salaryMin != null || salaryMax != null
@@ -147,7 +152,9 @@ export function JobCard({
               {s}
             </span>
           ))}
-          {skills.length > 4 && <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>}
+          {skills.length > 4 && (
+            <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>
+          )}
         </div>
       )}
     </div>

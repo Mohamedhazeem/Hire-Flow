@@ -1,26 +1,25 @@
 {
   "generatedAt": "2026-07-29T00:00:00.000Z",
   "suites": {
-    "rate-limiter-check": {
-      "rps": 5000,
-      "regressionThreshold": 0.1,
-      "minRps": 3000,
-      "maxAllocations": 5000,
-      "dbQueryTimeMs": 5
+    "PF1-analytics-50k": {
+      "meanMs": null,
+      "budgetMs": 5000
     },
-    "repository-increment": {
-      "rps": 3000,
-      "regressionThreshold": 0.15,
-      "minRps": 1500,
-      "maxAllocations": 3000,
-      "dbQueryTimeMs": 10
+    "PF2-applicant-list-10k": {
+      "meanMs": null,
+      "budgetMs": 1000
     },
-    "middleware-session": {
-      "rps": 1000,
-      "regressionThreshold": 0.2,
-      "minRps": 500,
-      "maxAllocations": 10000,
-      "dbQueryTimeMs": 20
+    "PF3-csv-export-50k": {
+      "meanMs": null,
+      "budgetMs": 30000
+    },
+    "PF4-fulltext-search-100k": {
+      "meanMs": null,
+      "budgetMs": 30000
+    },
+    "PF5-ai-enhance-concurrent": {
+      "meanMs": null,
+      "budgetMs": 5000
     }
   }
 }

@@ -77,20 +77,23 @@ describe("PrismaRateLimitRepository contract", () => {
     expect(b.count).toBe(2);
   });
 
-  it.runIf(isTestDBAvailable())("deleteAllAppKeys removes app: rows but preserves others", async () => {
-    const appKey = `app:contract-test:${Date.now()}`;
-    const otherKey = `other:contract-test:${Date.now()}`;
-    const now = BigInt(Date.now());
-    const cutoff = now - BigInt(60_000);
-    await repo.increment(appKey, now, cutoff);
-    await repo.increment(otherKey, now, cutoff);
-    await repo.deleteAllAppKeys();
-    const appCheck = await repo.increment(appKey, BigInt(Date.now()), cutoff);
-    const otherCheck = await repo.increment(otherKey, BigInt(Date.now()), cutoff);
-    expect(appCheck.count).toBe(1);
-    expect(otherCheck.count).toBe(2);
-    await repo.deleteById(otherKey);
-  });
+  it.runIf(isTestDBAvailable())(
+    "deleteAllAppKeys removes app: rows but preserves others",
+    async () => {
+      const appKey = `app:contract-test:${Date.now()}`;
+      const otherKey = `other:contract-test:${Date.now()}`;
+      const now = BigInt(Date.now());
+      const cutoff = now - BigInt(60_000);
+      await repo.increment(appKey, now, cutoff);
+      await repo.increment(otherKey, now, cutoff);
+      await repo.deleteAllAppKeys();
+      const appCheck = await repo.increment(appKey, BigInt(Date.now()), cutoff);
+      const otherCheck = await repo.increment(otherKey, BigInt(Date.now()), cutoff);
+      expect(appCheck.count).toBe(1);
+      expect(otherCheck.count).toBe(2);
+      await repo.deleteById(otherKey);
+    },
+  );
 
   it.runIf(isTestDBAvailable())("pruneAppKeys removes expired app: and anon: keys", async () => {
     const appKey = `app:contract-test:prune:${Date.now()}`;

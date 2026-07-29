@@ -1,9 +1,22 @@
 "use client";
 
-import { BriefcaseIcon, WorkflowIcon, GlobeIcon, ClockIcon, MapPinIcon, CheckIcon, XIcon } from "lucide-react";
+import {
+  BriefcaseIcon,
+  WorkflowIcon,
+  GlobeIcon,
+  ClockIcon,
+  MapPinIcon,
+  CheckIcon,
+  XIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FilterButton } from "./filter-button";
-import { StatusDot, getStatusOptions, WORK_MODE_OPTIONS, EMPLOYMENT_TYPE_OPTIONS } from "./filter-options";
+import {
+  StatusDot,
+  getStatusOptions,
+  WORK_MODE_OPTIONS,
+  EMPLOYMENT_TYPE_OPTIONS,
+} from "./filter-options";
 
 type DesktopFiltersProps = {
   showJobFilter: boolean;
@@ -40,7 +53,11 @@ export function DesktopFilters({
   return (
     <div className="hidden sm:flex items-center gap-3">
       {showJobFilter && (
-        <FilterButton icon={<BriefcaseIcon className="size-4" />} label="Job" isActive={!!currentJobId}>
+        <FilterButton
+          icon={<BriefcaseIcon className="size-4" />}
+          label="Job"
+          isActive={!!currentJobId}
+        >
           <button onClick={() => onUpdateParam("jobId", "")} className={itemCls(!currentJobId)}>
             All Jobs
           </button>
@@ -86,7 +103,11 @@ export function DesktopFilters({
         })}
       </FilterButton>
 
-      <FilterButton icon={<GlobeIcon className="size-4" />} label="Work Mode" isActive={!!currentWorkMode}>
+      <FilterButton
+        icon={<GlobeIcon className="size-4" />}
+        label="Work Mode"
+        isActive={!!currentWorkMode}
+      >
         <button onClick={() => onUpdateParam("workMode", "")} className={itemCls(!currentWorkMode)}>
           All
         </button>
@@ -102,8 +123,15 @@ export function DesktopFilters({
         ))}
       </FilterButton>
 
-      <FilterButton icon={<ClockIcon className="size-4" />} label="Type" isActive={!!currentEmploymentType}>
-        <button onClick={() => onUpdateParam("employmentType", "")} className={itemCls(!currentEmploymentType)}>
+      <FilterButton
+        icon={<ClockIcon className="size-4" />}
+        label="Type"
+        isActive={!!currentEmploymentType}
+      >
+        <button
+          onClick={() => onUpdateParam("employmentType", "")}
+          className={itemCls(!currentEmploymentType)}
+        >
           All
         </button>
         {EMPLOYMENT_TYPE_OPTIONS.map((opt) => (
@@ -118,7 +146,11 @@ export function DesktopFilters({
         ))}
       </FilterButton>
 
-      <FilterButton icon={<MapPinIcon className="size-4" />} label="Location" isActive={!!currentLocation}>
+      <FilterButton
+        icon={<MapPinIcon className="size-4" />}
+        label="Location"
+        isActive={!!currentLocation}
+      >
         <div className="px-2 pt-1">
           <input
             type="text"

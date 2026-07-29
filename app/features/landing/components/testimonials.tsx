@@ -81,7 +81,9 @@ export function Testimonials() {
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80')]" />
       <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
         <QuoteIcon className="size-8 text-brand/30 mx-auto mb-4" />
-        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-8">What Our Users Say</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-8">
+          What Our Users Say
+        </h2>
 
         {testimonials.length > 1 ? (
           <AnimatePresence mode="wait">
@@ -96,7 +98,13 @@ export function Testimonials() {
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div className="flex items-center justify-center gap-3 mt-6">
-                <Image src={t.avatar} alt="" width={40} height={40} className="size-10 rounded-full object-cover" />
+                <Image
+                  src={t.avatar}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="size-10 rounded-full object-cover"
+                />
                 <div className="text-left">
                   <p className="text-sm font-semibold text-text-heading">{t.name}</p>
                   <p className="text-xs text-text-muted">

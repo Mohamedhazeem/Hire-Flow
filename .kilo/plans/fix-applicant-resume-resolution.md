@@ -100,7 +100,10 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
 // Set worker source
-pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString();
 
 type ResumePreviewDialogProps = {
   open: boolean;
@@ -109,7 +112,12 @@ type ResumePreviewDialogProps = {
   label: string;
 };
 
-export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: ResumePreviewDialogProps) {
+export function ResumePreviewDialog({
+  open,
+  onOpenChange,
+  fileUrl,
+  label,
+}: ResumePreviewDialogProps) {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -154,7 +162,12 @@ export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: Resu
             <Button variant="ghost" size="icon-sm" onClick={handleDownload} title="Download">
               <DownloadIcon className="size-4" />
             </Button>
-            <Button variant="ghost" size="icon-sm" onClick={() => onOpenChange(false)} title="Close">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => onOpenChange(false)}
+              title="Close"
+            >
               <XIcon className="size-4" />
             </Button>
           </div>
@@ -170,7 +183,10 @@ export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: Resu
               >
                 <Page
                   pageNumber={pageNumber}
-                  width={Math.min(800, typeof window !== "undefined" ? window.innerWidth - 48 : 800)}
+                  width={Math.min(
+                    800,
+                    typeof window !== "undefined" ? window.innerWidth - 48 : 800,
+                  )}
                 />
               </Document>
 

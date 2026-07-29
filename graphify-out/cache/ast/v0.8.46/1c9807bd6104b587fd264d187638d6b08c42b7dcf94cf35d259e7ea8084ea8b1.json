@@ -1,1 +1,335 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_step_3_2a_ai_resume_md", "label": "step-3-2a-ai-resume.md", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L1"}, {"id": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "label": "Step 3.2a \u2014 AI-Powered Resume Assistance", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L1"}, {"id": "plans_step_3_2a_ai_resume_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L3"}, {"id": "plans_step_3_2a_ai_resume_architecture", "label": "Architecture", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L7"}, {"id": "plans_step_3_2a_ai_resume_ai_client_generic", "label": "AI Client (Generic)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L27"}, {"id": "plans_step_3_2a_ai_resume_files_to_create_9_files_all_150_lines", "label": "Files to Create (9 files, all \u2264150 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L31"}, {"id": "plans_step_3_2a_ai_resume_file_by_file_design", "label": "File-by-File Design", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L45"}, {"id": "plans_step_3_2a_ai_resume_1_lib_ai_client_ts_75_lines", "label": "1. `lib/ai-client.ts` (~75 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L47"}, {"id": "plans_step_3_2a_ai_resume_2_resume_ai_schema_ts_30_lines", "label": "2. `resume-ai.schema.ts` (~30 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L137"}, {"id": "plans_step_3_2a_ai_resume_3_ai_enhance_route_ts_150_lines", "label": "3. `ai-enhance/route.ts` (~150 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L160"}, {"id": "plans_step_3_2a_ai_resume_4_apply_ai_suggestions_ts_50_lines", "label": "4. `apply-ai-suggestions.ts` (~50 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L190"}, {"id": "plans_step_3_2a_ai_resume_5_use_ai_resume_enhance_ts_30_lines", "label": "5. `use-ai-resume-enhance.ts` (~30 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L205"}, {"id": "plans_step_3_2a_ai_resume_6_ai_suggestions_panel_tsx_150_lines", "label": "6. `ai-suggestions-panel.tsx` (~150 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L229"}, {"id": "plans_step_3_2a_ai_resume_7_schema_migration", "label": "7. Schema Migration", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L271"}, {"id": "plans_step_3_2a_ai_resume_8_utils_env_ts_add_ai_env_vars", "label": "8. `utils/env.ts` \u2014 Add AI env vars", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L287"}, {"id": "plans_step_3_2a_ai_resume_9_resume_card_tsx_add_ai_suggestions_button", "label": "9. `resume-card.tsx` \u2014 Add \"AI Suggestions\" button", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L299"}, {"id": "plans_step_3_2a_ai_resume_npm_dependencies_to_install", "label": "NPM Dependencies to Install", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L308"}, {"id": "plans_step_3_2a_ai_resume_env_vars_to_document", "label": "Env Vars to Document", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L314"}, {"id": "plans_step_3_2a_ai_resume_edge_cases_37_total", "label": "Edge Cases (37 total)", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L327"}, {"id": "plans_step_3_2a_ai_resume_prerequisites", "label": "Prerequisites", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L369"}, {"id": "plans_step_3_2a_ai_resume_validation_steps", "label": "Validation Steps", "file_type": "document", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L376"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_step_3_2a_ai_resume_md", "target": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L7", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_ai_client_generic", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L27", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_files_to_create_9_files_all_150_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L31", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_file_by_file_design", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L45", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_1_lib_ai_client_ts_75_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L47", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_2_resume_ai_schema_ts_30_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L137", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_3_ai_enhance_route_ts_150_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L160", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_4_apply_ai_suggestions_ts_50_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L190", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_5_use_ai_resume_enhance_ts_30_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L205", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_6_ai_suggestions_panel_tsx_150_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L229", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_7_schema_migration", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L271", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_8_utils_env_ts_add_ai_env_vars", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L287", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_file_by_file_design", "target": "plans_step_3_2a_ai_resume_9_resume_card_tsx_add_ai_suggestions_button", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L299", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_npm_dependencies_to_install", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L308", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_env_vars_to_document", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L314", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_edge_cases_37_total", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L327", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_prerequisites", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L369", "weight": 1.0}, {"source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance", "target": "plans_step_3_2a_ai_resume_validation_steps", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-2a-ai-resume.md", "source_location": "L376", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_step_3_2a_ai_resume_md",
+      "label": "step-3-2a-ai-resume.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "label": "Step 3.2a \u2014 AI-Powered Resume Assistance",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_ai_client_generic",
+      "label": "AI Client (Generic)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L27"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_files_to_create_9_files_all_150_lines",
+      "label": "Files to Create (9 files, all \u2264150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "label": "File-by-File Design",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_1_lib_ai_client_ts_75_lines",
+      "label": "1. `lib/ai-client.ts` (~75 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L47"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_2_resume_ai_schema_ts_30_lines",
+      "label": "2. `resume-ai.schema.ts` (~30 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L137"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_3_ai_enhance_route_ts_150_lines",
+      "label": "3. `ai-enhance/route.ts` (~150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L160"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_4_apply_ai_suggestions_ts_50_lines",
+      "label": "4. `apply-ai-suggestions.ts` (~50 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L190"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_5_use_ai_resume_enhance_ts_30_lines",
+      "label": "5. `use-ai-resume-enhance.ts` (~30 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L205"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_6_ai_suggestions_panel_tsx_150_lines",
+      "label": "6. `ai-suggestions-panel.tsx` (~150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L229"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_7_schema_migration",
+      "label": "7. Schema Migration",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L271"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_8_utils_env_ts_add_ai_env_vars",
+      "label": "8. `utils/env.ts` \u2014 Add AI env vars",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L287"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_9_resume_card_tsx_add_ai_suggestions_button",
+      "label": "9. `resume-card.tsx` \u2014 Add \"AI Suggestions\" button",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L299"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_npm_dependencies_to_install",
+      "label": "NPM Dependencies to Install",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L308"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_env_vars_to_document",
+      "label": "Env Vars to Document",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L314"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_edge_cases_37_total",
+      "label": "Edge Cases (37 total)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L327"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_prerequisites",
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L369"
+    },
+    {
+      "id": "plans_step_3_2a_ai_resume_validation_steps",
+      "label": "Validation Steps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L376"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_step_3_2a_ai_resume_md",
+      "target": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_ai_client_generic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_files_to_create_9_files_all_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_1_lib_ai_client_ts_75_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_2_resume_ai_schema_ts_30_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_3_ai_enhance_route_ts_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_4_apply_ai_suggestions_ts_50_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_5_use_ai_resume_enhance_ts_30_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_6_ai_suggestions_panel_tsx_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_7_schema_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_8_utils_env_ts_add_ai_env_vars",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_file_by_file_design",
+      "target": "plans_step_3_2a_ai_resume_9_resume_card_tsx_add_ai_suggestions_button",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_npm_dependencies_to_install",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_env_vars_to_document",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_edge_cases_37_total",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_prerequisites",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L369",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2a_ai_resume_step_3_2a_ai_powered_resume_assistance",
+      "target": "plans_step_3_2a_ai_resume_validation_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2a-ai-resume.md",
+      "source_location": "L376",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -19,7 +19,13 @@ export function DisabledJobCard({ job }: DisabledJobCardProps) {
       <div className="flex items-start gap-4 min-w-0">
         <div className="size-11 rounded-lg bg-bg-muted flex items-center justify-center text-text-muted shrink-0 text-lg font-bold">
           {job.companyLogo ? (
-            <Image src={job.companyLogo} alt="" width={28} height={28} className="size-7 object-contain grayscale" />
+            <Image
+              src={job.companyLogo}
+              alt=""
+              width={28}
+              height={28}
+              className="size-7 object-contain grayscale"
+            />
           ) : (
             (job.companyName[0]?.toUpperCase() ?? "?")
           )}

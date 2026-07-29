@@ -2,7 +2,12 @@ import { describe, it, expect } from "vitest";
 import { APIError } from "better-auth/api";
 import { authError } from "@/app/features/auth/utils/authError";
 
-function makeAPIError(code: string, statusKey: string, statusCode?: number, message?: string): APIError {
+function makeAPIError(
+  code: string,
+  statusKey: string,
+  statusCode?: number,
+  message?: string,
+): APIError {
   const err = new APIError(statusKey as APIError["status"], { code, message });
   if (statusCode !== undefined) {
     Object.defineProperty(err, "statusCode", { value: statusCode, writable: true });

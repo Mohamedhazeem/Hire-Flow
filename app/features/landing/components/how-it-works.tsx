@@ -13,12 +13,14 @@ const steps = [
   {
     icon: SearchIcon,
     title: "Browse Opportunities",
-    description: "Explore thousands of curated job listings from innovative companies that match your expertise.",
+    description:
+      "Explore thousands of curated job listings from innovative companies that match your expertise.",
   },
   {
     icon: BriefcaseIcon,
     title: "Apply & Get Hired",
-    description: "Submit applications with one click, track your progress, and land your next role faster.",
+    description:
+      "Submit applications with one click, track your progress, and land your next role faster.",
   },
 ];
 

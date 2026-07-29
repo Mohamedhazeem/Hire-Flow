@@ -55,7 +55,9 @@ function handleError(error: unknown): NextResponse {
   return fail("Internal server error", 500);
 }
 
-export function withErrorHandler(handler: SimpleHandler): (request: NextRequest) => Promise<NextResponse>;
+export function withErrorHandler(
+  handler: SimpleHandler,
+): (request: NextRequest) => Promise<NextResponse>;
 
 export function withErrorHandler<TParams extends Record<string, string>>(
   handler: ParamHandler<TParams>,

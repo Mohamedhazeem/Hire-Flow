@@ -1,7 +1,13 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { SearchIcon } from "lucide-react";
 
 const WORK_MODE_LABELS: Record<string, string> = {
@@ -54,7 +60,9 @@ export function JobTableToolbar({
       </div>
       <Select value={status} onValueChange={onStatusChange}>
         <SelectTrigger className="w-full sm:w-36">
-          <SelectValue>{status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}</SelectValue>
+          <SelectValue>
+            {status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}
+          </SelectValue>
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">All Status</SelectItem>

@@ -3,7 +3,11 @@
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
-import { useAdminUsers, useRevokeUserSessions, useDeleteUser } from "@/app/features/admin/hooks/use-admin-users";
+import {
+  useAdminUsers,
+  useRevokeUserSessions,
+  useDeleteUser,
+} from "@/app/features/admin/hooks/use-admin-users";
 import { createPeopleTableColumns } from "./people-table-columns";
 import { parseUsersResponse } from "../schema/admin-user-types";
 import { PeopleTableToolbar } from "@/components/shared/people-table-toolbar";
@@ -50,7 +54,10 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
 
   const resetPage = useCallback(() => setPage(1), []);
 
-  const handleRevokeSessions = useCallback((userId: string) => revokeSessions.mutate(userId), [revokeSessions]);
+  const handleRevokeSessions = useCallback(
+    (userId: string) => revokeSessions.mutate(userId),
+    [revokeSessions],
+  );
 
   const handleDeleteUser = useCallback((userId: string) => deleteUser.mutate(userId), [deleteUser]);
 
@@ -116,7 +123,12 @@ export function PeopleTable({ roleFilter }: PeopleTableProps) {
         </div>
       ) : (
         <>
-          <DataTable columns={columns} data={users} emptyMessage="No users found." className="[&_table]:table-auto" />
+          <DataTable
+            columns={columns}
+            data={users}
+            emptyMessage="No users found."
+            className="[&_table]:table-auto"
+          />
           <PeopleTablePagination
             page={page}
             totalPages={totalPages}

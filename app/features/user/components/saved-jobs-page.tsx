@@ -10,6 +10,7 @@ import { useBookmarkedJobs } from "../hooks/use-saved-jobs";
 
 type SavedJobData = {
   id: string;
+  slug: string | null;
   title: string;
   companyName: string;
   companyLogo: string | null;
@@ -34,10 +35,15 @@ export function SavedJobsPage() {
     bookmarks?.map((b: Record<string, unknown>) => {
       const job = b.job as Record<string, unknown> | undefined;
       const company = (job?.company as Record<string, unknown>) ?? {};
-      const dln = job?.applicationDeadline ? new Date(job.applicationDeadline as string).toISOString() : null;
-      const createdAt = job?.createdAt ? new Date(job.createdAt as string).toISOString() : new Date().toISOString();
+      const dln = job?.applicationDeadline
+        ? new Date(job.applicationDeadline as string).toISOString()
+        : null;
+      const createdAt = job?.createdAt
+        ? new Date(job.createdAt as string).toISOString()
+        : new Date().toISOString();
       return {
         id: (job?.id as string) ?? "",
+        slug: (job?.slug as string | null) ?? null,
         title: (job?.title as string) ?? "Untitled",
         companyName: (company?.name as string) ?? "",
         companyLogo: (company?.logoUrl as string) ?? null,
@@ -79,7 +85,11 @@ export function SavedJobsPage() {
         ) : isError ? (
           <div className="text-center py-16">
             <p className="text-text-muted mb-4">Failed to load saved jobs</p>
-            <button type="button" onClick={() => refetch()} className="text-sm text-brand hover:underline">
+            <button
+              type="button"
+              onClick={() => refetch()}
+              className="text-sm text-brand hover:underline"
+            >
               Try again
             </button>
           </div>

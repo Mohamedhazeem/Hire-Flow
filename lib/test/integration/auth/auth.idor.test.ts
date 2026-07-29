@@ -181,7 +181,9 @@ describe("IDOR — User Resource Isolation", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     const items = body.data.notifications;
-    const hasBData = items.some((n: { data: Record<string, unknown> }) => n.data?.note === "B notification");
+    const hasBData = items.some(
+      (n: { data: Record<string, unknown> }) => n.data?.note === "B notification",
+    );
     expect(hasBData).toBe(false);
   });
 });

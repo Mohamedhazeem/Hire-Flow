@@ -13,7 +13,11 @@ type RoleLayoutClientProps = {
   messagesBasePath?: string;
 };
 
-export function RoleLayoutClient({ children, sidebar, messagesBasePath = "/admin/messages" }: RoleLayoutClientProps) {
+export function RoleLayoutClient({
+  children,
+  sidebar,
+  messagesBasePath = "/admin/messages",
+}: RoleLayoutClientProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const { data: session } = useSession();
@@ -49,7 +53,9 @@ export function RoleLayoutClient({ children, sidebar, messagesBasePath = "/admin
         </div>
         {/* bg-linear-to-r from-brand/5 via-brand/5 to-transparent */}
         <div className="hidden absolute right-0 lg:flex items-center  justify-end gap-2 px-6 pt-4 pb-1 shrink-0">
-          {mounted && showNotification && <NotificationDropdown messagesBasePath={messagesBasePath} />}
+          {mounted && showNotification && (
+            <NotificationDropdown messagesBasePath={messagesBasePath} />
+          )}
         </div>
         <div className="flex-1 flex flex-col px-4 pb-4 md:px-6 lg:px-8 lg:pb-8  overflow-y-auto min-w-0">
           {children}

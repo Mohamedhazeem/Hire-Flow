@@ -16,13 +16,23 @@ const plans = [
     name: "Growth",
     price: "$99",
     period: "/month",
-    features: ["Up to 15 active job posts", "Advanced filters and analytics", "Priority support", "Team collaboration"],
+    features: [
+      "Up to 15 active job posts",
+      "Advanced filters and analytics",
+      "Priority support",
+      "Team collaboration",
+    ],
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    features: ["Unlimited job posts", "Dedicated account manager", "Custom integrations", "SLA-backed uptime"],
+    features: [
+      "Unlimited job posts",
+      "Dedicated account manager",
+      "Custom integrations",
+      "SLA-backed uptime",
+    ],
   },
 ];
 

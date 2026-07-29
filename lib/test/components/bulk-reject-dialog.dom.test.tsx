@@ -6,7 +6,13 @@ import { BulkRejectDialog } from "@/app/features/recruiter/components/bulk-rejec
 describe("BulkRejectDialog", () => {
   it("renders selected count in title and description", () => {
     render(
-      <BulkRejectDialog open={true} onOpenChange={vi.fn()} selectedCount={3} onConfirm={vi.fn()} isPending={false} />,
+      <BulkRejectDialog
+        open={true}
+        onOpenChange={vi.fn()}
+        selectedCount={3}
+        onConfirm={vi.fn()}
+        isPending={false}
+      />,
     );
     expect(screen.getByText("Reject 3 Applicants")).toBeInTheDocument();
     expect(screen.getByText(/all 3 selected/)).toBeInTheDocument();
@@ -14,7 +20,13 @@ describe("BulkRejectDialog", () => {
 
   it("submit button is disabled when reason is empty", () => {
     render(
-      <BulkRejectDialog open={true} onOpenChange={vi.fn()} selectedCount={1} onConfirm={vi.fn()} isPending={false} />,
+      <BulkRejectDialog
+        open={true}
+        onOpenChange={vi.fn()}
+        selectedCount={1}
+        onConfirm={vi.fn()}
+        isPending={false}
+      />,
     );
     expect(screen.getByRole("button", { name: "Reject All" })).toBeDisabled();
   });
@@ -22,7 +34,13 @@ describe("BulkRejectDialog", () => {
   it("submit button is enabled after typing a reason", async () => {
     const user = userEvent.setup();
     render(
-      <BulkRejectDialog open={true} onOpenChange={vi.fn()} selectedCount={1} onConfirm={vi.fn()} isPending={false} />,
+      <BulkRejectDialog
+        open={true}
+        onOpenChange={vi.fn()}
+        selectedCount={1}
+        onConfirm={vi.fn()}
+        isPending={false}
+      />,
     );
 
     const textarea = screen.getByPlaceholderText(/Didn't meet/);
@@ -36,7 +54,13 @@ describe("BulkRejectDialog", () => {
     const user = userEvent.setup();
 
     render(
-      <BulkRejectDialog open={true} onOpenChange={vi.fn()} selectedCount={1} onConfirm={onConfirm} isPending={false} />,
+      <BulkRejectDialog
+        open={true}
+        onOpenChange={vi.fn()}
+        selectedCount={1}
+        onConfirm={onConfirm}
+        isPending={false}
+      />,
     );
 
     const textarea = screen.getByPlaceholderText(/Didn't meet/);
@@ -48,7 +72,13 @@ describe("BulkRejectDialog", () => {
 
   it("shows spinner when isPending", () => {
     render(
-      <BulkRejectDialog open={true} onOpenChange={vi.fn()} selectedCount={1} onConfirm={vi.fn()} isPending={true} />,
+      <BulkRejectDialog
+        open={true}
+        onOpenChange={vi.fn()}
+        selectedCount={1}
+        onConfirm={vi.fn()}
+        isPending={true}
+      />,
     );
     const button = screen.getByRole("button", { name: /Reject/ });
     expect(button.querySelector(".animate-spin")).toBeInTheDocument();

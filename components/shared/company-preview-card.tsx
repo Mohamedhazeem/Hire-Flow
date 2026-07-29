@@ -11,7 +11,13 @@ type CompanyPreviewCardProps = {
   locations: string[];
 };
 
-export function CompanyPreviewCard({ name, logo, website, description, locations }: CompanyPreviewCardProps) {
+export function CompanyPreviewCard({
+  name,
+  logo,
+  website,
+  description,
+  locations,
+}: CompanyPreviewCardProps) {
   const initial = name ? name.charAt(0).toUpperCase() : "?";
 
   return (
@@ -40,7 +46,9 @@ export function CompanyPreviewCard({ name, logo, website, description, locations
           )}
         </div>
       </div>
-      {description && <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>}
+      {description && (
+        <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>
+      )}
       {website && (website.startsWith("https://") || website.startsWith("http://")) && (
         <a
           href={website}

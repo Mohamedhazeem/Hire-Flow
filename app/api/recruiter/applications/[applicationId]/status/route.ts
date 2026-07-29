@@ -6,7 +6,10 @@ import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { applicationService } from "@/lib/services/application-service";
 
-async function handlePATCH(request: NextRequest, { params }: { params: Promise<{ applicationId: string }> }) {
+async function handlePATCH(
+  request: NextRequest,
+  { params }: { params: Promise<{ applicationId: string }> },
+) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");

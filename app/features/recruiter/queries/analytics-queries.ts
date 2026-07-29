@@ -64,7 +64,9 @@ function buildWhereFragments(params: {
       .map((s) => s.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      filters.push(Prisma.sql`a."status" IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
+      filters.push(
+        Prisma.sql`a."status" IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`,
+      );
     }
   }
 
@@ -74,7 +76,9 @@ function buildWhereFragments(params: {
       .map((m) => m.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      filters.push(Prisma.sql`j."workMode"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
+      filters.push(
+        Prisma.sql`j."workMode"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`,
+      );
     }
   }
 
@@ -84,7 +88,9 @@ function buildWhereFragments(params: {
       .map((t) => t.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      filters.push(Prisma.sql`j."employmentType"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
+      filters.push(
+        Prisma.sql`j."employmentType"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`,
+      );
     }
   }
 
@@ -94,7 +100,9 @@ function buildWhereFragments(params: {
       .map((l) => l.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      filters.push(Prisma.sql`j."locations" && ARRAY[${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))}]`);
+      filters.push(
+        Prisma.sql`j."locations" && ARRAY[${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))}]`,
+      );
     }
   }
 
@@ -127,7 +135,10 @@ function reconstructFunnelOrder(raw: Array<{ status: string; count: bigint }>): 
   return ordered;
 }
 
-export async function getAnalytics(companyId: string, filter: AnalyticsFilter): Promise<AnalyticsResponse> {
+export async function getAnalytics(
+  companyId: string,
+  filter: AnalyticsFilter,
+): Promise<AnalyticsResponse> {
   const defaults = defaultDateRange();
   const from = filter.dateFrom ?? defaults.dateFrom;
   const to = filter.dateTo ?? defaults.dateTo;
@@ -146,7 +157,9 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
   const appWhere = whereFrom(frags.all);
 
   const breakdownJoin =
-    frags.joinConditions.length > 0 ? Prisma.sql` AND (${Prisma.join(frags.joinConditions, " AND ")})` : Prisma.sql``;
+    frags.joinConditions.length > 0
+      ? Prisma.sql` AND (${Prisma.join(frags.joinConditions, " AND ")})`
+      : Prisma.sql``;
 
   const totalJobsSQL = filter.jobId
     ? Prisma.sql`SELECT COUNT(*)::BIGINT AS v FROM "job" j WHERE j."companyId" = ${companyId}::text AND j."id" = ${filter.jobId}::text`
@@ -215,7 +228,9 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
   const totalApps = Number(totalApplications?.[0]?.count ?? BI_ZERO);
   const hired = Number(hiredCount?.[0]?.count ?? BI_ZERO);
   const conversionRate = totalApps > 0 ? (hired / totalApps) * 100 : 0;
-  const avgFulfillmentDays = fulfillmentRaw?.[0]?.avg ? Math.round(parseFloat(fulfillmentRaw[0].avg) * 10) / 10 : null;
+  const avgFulfillmentDays = fulfillmentRaw?.[0]?.avg
+    ? Math.round(parseFloat(fulfillmentRaw[0].avg) * 10) / 10
+    : null;
 
   const totalViews = breakdownRaw.reduce((sum, row) => sum + Number(row.viewCount), 0);
   const totalJobs = Number(totalJobsRaw?.[0]?.v ?? BI_ZERO);
@@ -260,7 +275,8 @@ export async function getAnalytics(companyId: string, filter: AnalyticsFilter): 
     title: r.title,
     totalApplications: Number(r.totalApplications),
     hired: Number(r.hired),
-    conversionRate: Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
+    conversionRate:
+      Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
     avgFulfillmentDays: null,
     viewCount: Number(r.viewCount),
   }));

@@ -54,7 +54,12 @@ export function usePusherThread(
                   ...t,
                   lastMessage: {
                     content:
-                      msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
+                      msg.content ||
+                      (msg.fileUrl
+                        ? msg.fileType?.startsWith("image/")
+                          ? "📷 Photo"
+                          : "📎 File"
+                        : ""),
                     createdAt: msg.createdAt,
                     senderId: msg.senderId,
                     unread: false,
@@ -64,7 +69,8 @@ export function usePusherThread(
           )
           .sort(
             (a, b) =>
-              new Date(b.lastMessage?.createdAt ?? 0).getTime() - new Date(a.lastMessage?.createdAt ?? 0).getTime(),
+              new Date(b.lastMessage?.createdAt ?? 0).getTime() -
+              new Date(a.lastMessage?.createdAt ?? 0).getTime(),
           );
       });
 
@@ -79,7 +85,11 @@ export function usePusherThread(
       }
     };
 
-    const messageDeletedHandler = (data: { messageId: string; threadId: string; deletedBy: string }) => {
+    const messageDeletedHandler = (data: {
+      messageId: string;
+      threadId: string;
+      deletedBy: string;
+    }) => {
       if (data.deletedBy === currentUserId) return;
 
       queryClient.setQueryData([queryKey, "messages", threadId], (old: unknown) => {

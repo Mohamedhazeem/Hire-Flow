@@ -16,10 +16,16 @@ async function handleGET(request: NextRequest) {
   const applications = await prisma.application.findMany({
     where: {
       job: {
-        OR: [{ recruiterId: recruiter.id }, { company: { teamMembers: { some: { userId: recruiter.id } } } }],
+        OR: [
+          { recruiterId: recruiter.id },
+          { company: { teamMembers: { some: { userId: recruiter.id } } } },
+        ],
       },
       user: {
-        OR: [{ name: { contains: q, mode: "insensitive" } }, { email: { contains: q, mode: "insensitive" } }],
+        OR: [
+          { name: { contains: q, mode: "insensitive" } },
+          { email: { contains: q, mode: "insensitive" } },
+        ],
       },
     },
     select: {

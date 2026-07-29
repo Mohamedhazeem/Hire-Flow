@@ -2,7 +2,13 @@
 
 import ErrorPage from "@/components/shared/error-page";
 
-export default function AdminErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
+export default function AdminErrorPage({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
   return (
     <div className="space-y-4">
       <ErrorPage

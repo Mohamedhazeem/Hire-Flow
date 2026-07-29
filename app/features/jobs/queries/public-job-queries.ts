@@ -108,11 +108,20 @@ export function formatSearchQuery(raw: string): string {
   return tokens.join(" | ");
 }
 
-const ALLOWED_SORT_FIELDS = new Set(["createdAt", "salaryMin", "salaryMax", "title", "applicationDeadline"]);
+const ALLOWED_SORT_FIELDS = new Set([
+  "createdAt",
+  "salaryMin",
+  "salaryMax",
+  "title",
+  "applicationDeadline",
+]);
 const ALLOWED_SORT_ORDERS = new Set(["asc", "desc"]);
 
 export async function listPublicJobs(params: PublicJobListParams): Promise<PublicJobListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const where: Record<string, unknown> = {
     status: "active",
@@ -122,7 +131,10 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.search) {
     const formattedQuery = formatSearchQuery(params.search);
     if (formattedQuery) {
-      where.OR = [{ title: { search: formattedQuery } }, { description: { search: formattedQuery } }];
+      where.OR = [
+        { title: { search: formattedQuery } },
+        { description: { search: formattedQuery } },
+      ];
     }
   }
   if (params.workMode) where.workMode = params.workMode;
@@ -139,8 +151,12 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   }
   // "all" or undefined — no deadline filter
 
-  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "") ? (params.sortBy as string) : "createdAt";
-  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "") ? (params.sortOrder as string) : "desc";
+  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "")
+    ? (params.sortBy as string)
+    : "createdAt";
+  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "")
+    ? (params.sortOrder as string)
+    : "desc";
 
   const [jobs, total] = await Promise.all([
     prisma.job.findMany({
@@ -234,7 +250,11 @@ export async function getPublicJobById(slugOrId: string): Promise<PublicJobDetai
   };
 }
 
-export async function listCompanyJobs(companyId: string, excludeJobId: string, limit = 5): Promise<CompactJobRow[]> {
+export async function listCompanyJobs(
+  companyId: string,
+  excludeJobId: string,
+  limit = 5,
+): Promise<CompactJobRow[]> {
   const jobs = await prisma.job.findMany({
     where: {
       companyId,
@@ -280,7 +300,13 @@ export async function listCompanyJobs(companyId: string, excludeJobId: string, l
 }
 
 export async function listSimilarJobs(
-  currentJob: { id: string; companyId: string; skills: string[]; workMode: string; experienceLevel: string },
+  currentJob: {
+    id: string;
+    companyId: string;
+    skills: string[];
+    workMode: string;
+    experienceLevel: string;
+  },
   limit = 5,
 ): Promise<CompactJobRow[]> {
   const where: Record<string, unknown> = {

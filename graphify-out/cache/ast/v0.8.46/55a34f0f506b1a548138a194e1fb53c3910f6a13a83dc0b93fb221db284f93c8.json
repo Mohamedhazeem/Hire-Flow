@@ -1,1 +1,207 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_fix_applicant_resume_resolution_md", "label": "fix-applicant-resume-resolution.md", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L1"}, {"id": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "label": "Fix: Applicant Detail Resume Resolution + Preview", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L1"}, {"id": "plans_fix_applicant_resume_resolution_problem", "label": "Problem", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L3"}, {"id": "plans_fix_applicant_resume_resolution_design_decisions", "label": "Design Decisions", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L11"}, {"id": "plans_fix_applicant_resume_resolution_edge_cases_covered", "label": "Edge Cases Covered", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L21"}, {"id": "plans_fix_applicant_resume_resolution_files_to_change_4", "label": "Files to Change (4)", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L39"}, {"id": "plans_fix_applicant_resume_resolution_1_app_features_recruiter_libs_get_applicant_detail_ts_server_side_resolution", "label": "1. `app/features/recruiter/libs/get-applicant-detail.ts` \u2014 Server-side resolution", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L41"}, {"id": "plans_fix_applicant_resume_resolution_2_npx_shadcn_latest_add_dialog_get_dialog_for_preview_modal", "label": "2. `npx shadcn@latest add dialog` \u2014 Get Dialog for preview modal", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L82"}, {"id": "plans_fix_applicant_resume_resolution_3_npm_install_react_pdf_pdf_preview_library", "label": "3. `npm install react-pdf` \u2014 PDF preview library", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L86"}, {"id": "plans_fix_applicant_resume_resolution_4_app_features_recruiter_components_applicant_detail_page_tsx_ui_updates", "label": "4. `app/features/recruiter/components/applicant-detail-page.tsx` \u2014 UI updates", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L223"}, {"id": "plans_fix_applicant_resume_resolution_source_label_styling", "label": "Source label styling:", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L281"}, {"id": "plans_fix_applicant_resume_resolution_non_goals", "label": "Non-Goals", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L287"}, {"id": "plans_fix_applicant_resume_resolution_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L295"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_fix_applicant_resume_resolution_md", "target": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_problem", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_design_decisions", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L11", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_edge_cases_covered", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L21", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_files_to_change_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L39", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_files_to_change_4", "target": "plans_fix_applicant_resume_resolution_1_app_features_recruiter_libs_get_applicant_detail_ts_server_side_resolution", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L41", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_files_to_change_4", "target": "plans_fix_applicant_resume_resolution_2_npx_shadcn_latest_add_dialog_get_dialog_for_preview_modal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L82", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_files_to_change_4", "target": "plans_fix_applicant_resume_resolution_3_npm_install_react_pdf_pdf_preview_library", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L86", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_files_to_change_4", "target": "plans_fix_applicant_resume_resolution_4_app_features_recruiter_components_applicant_detail_page_tsx_ui_updates", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L223", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_files_to_change_4", "target": "plans_fix_applicant_resume_resolution_source_label_styling", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L281", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_non_goals", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L287", "weight": 1.0}, {"source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview", "target": "plans_fix_applicant_resume_resolution_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/fix-applicant-resume-resolution.md", "source_location": "L295", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_fix_applicant_resume_resolution_md",
+      "label": "fix-applicant-resume-resolution.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "label": "Fix: Applicant Detail Resume Resolution + Preview",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_problem",
+      "label": "Problem",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_design_decisions",
+      "label": "Design Decisions",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_edge_cases_covered",
+      "label": "Edge Cases Covered",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "label": "Files to Change (4)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L39"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_1_app_features_recruiter_libs_get_applicant_detail_ts_server_side_resolution",
+      "label": "1. `app/features/recruiter/libs/get-applicant-detail.ts` \u2014 Server-side resolution",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_2_npx_shadcn_latest_add_dialog_get_dialog_for_preview_modal",
+      "label": "2. `npx shadcn@latest add dialog` \u2014 Get Dialog for preview modal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_3_npm_install_react_pdf_pdf_preview_library",
+      "label": "3. `npm install react-pdf` \u2014 PDF preview library",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L86"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_4_app_features_recruiter_components_applicant_detail_page_tsx_ui_updates",
+      "label": "4. `app/features/recruiter/components/applicant-detail-page.tsx` \u2014 UI updates",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L223"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_source_label_styling",
+      "label": "Source label styling:",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L281"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_non_goals",
+      "label": "Non-Goals",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L287"
+    },
+    {
+      "id": "plans_fix_applicant_resume_resolution_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L295"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_fix_applicant_resume_resolution_md",
+      "target": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_problem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_design_decisions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_edge_cases_covered",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "target": "plans_fix_applicant_resume_resolution_1_app_features_recruiter_libs_get_applicant_detail_ts_server_side_resolution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "target": "plans_fix_applicant_resume_resolution_2_npx_shadcn_latest_add_dialog_get_dialog_for_preview_modal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "target": "plans_fix_applicant_resume_resolution_3_npm_install_react_pdf_pdf_preview_library",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "target": "plans_fix_applicant_resume_resolution_4_app_features_recruiter_components_applicant_detail_page_tsx_ui_updates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_files_to_change_4",
+      "target": "plans_fix_applicant_resume_resolution_source_label_styling",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L281",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_non_goals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_fix_applicant_resume_resolution_fix_applicant_detail_resume_resolution_preview",
+      "target": "plans_fix_applicant_resume_resolution_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/fix-applicant-resume-resolution.md",
+      "source_location": "L295",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

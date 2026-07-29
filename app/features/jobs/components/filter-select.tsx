@@ -12,7 +12,14 @@ type FilterSelectProps = {
   labels?: Record<string, string>;
 };
 
-export function FilterSelect({ label, paramKey, options, value, onChange, labels }: FilterSelectProps) {
+export function FilterSelect({
+  label,
+  paramKey,
+  options,
+  value,
+  onChange,
+  labels,
+}: FilterSelectProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -44,7 +51,8 @@ export function FilterSelect({ label, paramKey, options, value, onChange, labels
       {open && (
         <div className="absolute z-50 mt-1 left-1/2 -translate-x-1/2 w-full min-w-40 bg-bg-surface border border-border-subtle rounded-xl shadow-lg overflow-hidden">
           {options.map((opt, idx) => {
-            const display = labels?.[opt] ?? opt.replaceAll("_", " ").replace(/\b\w/g, (c) => c.toUpperCase());
+            const display =
+              labels?.[opt] ?? opt.replaceAll("_", " ").replace(/\b\w/g, (c) => c.toUpperCase());
             const isSelected = value === opt;
             return (
               <button
@@ -55,7 +63,9 @@ export function FilterSelect({ label, paramKey, options, value, onChange, labels
                   setOpen(false);
                 }}
                 className={`w-full text-center px-3 py-2 text-sm transition-colors ${
-                  isSelected ? "bg-brand/10 text-brand font-medium" : "text-text-body hover:bg-bg-muted"
+                  isSelected
+                    ? "bg-brand/10 text-brand font-medium"
+                    : "text-text-body hover:bg-bg-muted"
                 } ${idx < options.length - 1 ? "border-b border-border-subtle/50" : ""}`}
               >
                 {display}

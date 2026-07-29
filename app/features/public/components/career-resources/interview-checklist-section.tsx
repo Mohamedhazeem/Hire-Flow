@@ -36,7 +36,9 @@ export function InterviewChecklistSection() {
               <CheckCircle2Icon className="size-6 text-brand" />
               Interview Prep Checklist
             </h2>
-            <p className="text-sm text-text-muted mt-1 mb-8">Walk into every interview confident and prepared.</p>
+            <p className="text-sm text-text-muted mt-1 mb-8">
+              Walk into every interview confident and prepared.
+            </p>
           </motion.div>
 
           <ul className="space-y-4">

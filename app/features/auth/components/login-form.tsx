@@ -83,7 +83,9 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           setFormError(firstError);
         }
       } else {
-        setSuccessMessage(result.message ?? "If that email is registered, reset instructions have been sent.");
+        setSuccessMessage(
+          result.message ?? "If that email is registered, reset instructions have been sent.",
+        );
       }
     } catch {
       setFormError("An unexpected error occurred. Please try again.");
@@ -106,7 +108,9 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           </div>
         ) : null}
         {formError && (
-          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">{formError}</div>
+          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
+            {formError}
+          </div>
         )}
 
         <FormInput
@@ -137,7 +141,10 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           >
             Forgot password?
           </button>
-          <Link href="/register" className="text-text-link hover:text-text-heading font-semibold transition-colors">
+          <Link
+            href="/register"
+            className="text-text-link hover:text-text-heading font-semibold transition-colors"
+          >
             Sign up
           </Link>
         </div>
@@ -145,7 +152,9 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
 
       <div className="relative ">
         <div className="absolute inset-x-0 top-1/2 h-px bg-border-subtle" />
-        <p className="relative mx-auto w-fit bg-bg-elevated px-3 text-sm text-text-muted">or continue with</p>
+        <p className="relative mx-auto w-fit bg-bg-elevated px-3 text-sm text-text-muted">
+          or continue with
+        </p>
       </div>
 
       <SocialSignInButtons isVertical={true} />

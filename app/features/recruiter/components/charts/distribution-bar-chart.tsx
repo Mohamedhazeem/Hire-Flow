@@ -1,6 +1,15 @@
 "use client";
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, type BarShapeProps } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  type BarShapeProps,
+} from "recharts";
 import { BarChart3Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +57,9 @@ export function DistributionBarChart({
         </div>
       </div>
       {data.length === 0 ? (
-        <p className="text-text-muted text-sm py-12 text-center flex-1">{emptyMessage ?? "No data available"}</p>
+        <p className="text-text-muted text-sm py-12 text-center flex-1">
+          {emptyMessage ?? "No data available"}
+        </p>
       ) : (
         <ResponsiveContainer width="100%" height="100%" className="flex-1 min-h-0">
           <BarChart data={data} barCategoryGap="20%">

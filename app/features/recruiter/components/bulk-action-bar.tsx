@@ -41,7 +41,9 @@ export function BulkActionBar({
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border-subtle bg-bg-surface shadow-xl p-4 sm:static sm:border sm:rounded-2xl sm:shadow-xs">
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-text-heading whitespace-nowrap">{selectedIds.size} selected</span>
+          <span className="text-sm font-medium text-text-heading whitespace-nowrap">
+            {selectedIds.size} selected
+          </span>
           {selectedIds.size < total && (
             <Button
               variant="ghost"
@@ -69,7 +71,9 @@ export function BulkActionBar({
             <span className="hidden sm:inline">Also send email</span>
           </label>
           {bulkActions.length === 0 ? (
-            <span className="text-xs text-text-muted">No bulk actions available for this selection</span>
+            <span className="text-xs text-text-muted">
+              No bulk actions available for this selection
+            </span>
           ) : (
             bulkActions.map((action) => (
               <Button

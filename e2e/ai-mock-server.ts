@@ -8,7 +8,8 @@ function mockResponse() {
         type: "bullet_improvement",
         section: "experience",
         original: "Worked on software",
-        suggestion: "Architected and delivered a scalable microservices platform serving 50K+ daily users",
+        suggestion:
+          "Architected and delivered a scalable microservices platform serving 50K+ daily users",
         reasoning: "Adds quantified impact and strong action verb",
         priority: "high",
       },

@@ -11,7 +11,10 @@ export function JobDetailTabs({ tabs, baseHref, className }: JobDetailTabsProps)
   const pathname = usePathname();
   return (
     <div
-      className={cn("flex gap-4 border-b border-border-subtle -mx-4 md:-mx-6 lg:-mx-8 px-4 md:px-6 lg:px-8", className)}
+      className={cn(
+        "flex gap-4 border-b border-border-subtle -mx-4 md:-mx-6 lg:-mx-8 px-4 md:px-6 lg:px-8",
+        className,
+      )}
     >
       {tabs.map((tab) => {
         const href = `${baseHref}${tab.href}`;

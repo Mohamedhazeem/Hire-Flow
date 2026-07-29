@@ -72,7 +72,9 @@ describe("Profile skills persistence (DB round-trip)", () => {
       select: { skills: true },
     });
 
-    expect(profile!.skills).toEqual(expect.arrayContaining(["Python", "React", "TypeScript", "Go"]));
+    expect(profile!.skills).toEqual(
+      expect.arrayContaining(["Python", "React", "TypeScript", "Go"]),
+    );
     expect(profile!.skills).toHaveLength(4);
   });
 

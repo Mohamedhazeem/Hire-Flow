@@ -4,9 +4,19 @@ import { useState, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { DataTable } from "@/components/ui/data-table";
 import { Input } from "@/components/ui/input";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import { PeopleTablePagination } from "@/components/shared/people-table-pagination";
-import { useRecruiterJobs, useDeleteJob, useToggleJobStatus } from "@/app/features/recruiter/hooks/use-recruiter-jobs";
+import {
+  useRecruiterJobs,
+  useDeleteJob,
+  useToggleJobStatus,
+} from "@/app/features/recruiter/hooks/use-recruiter-jobs";
 import type { JobListParams } from "@/app/features/recruiter/schema/job.schema";
 import type { RecruiterJobRow } from "@/app/features/recruiter/queries/job-queries";
 import { createRecruiterJobColumns } from "./recruiter-job-columns";
@@ -123,7 +133,11 @@ export function RecruiterJobsTable() {
   }
 
   if (isError) {
-    return <div className="text-destructive text-sm py-8 text-center">Failed to load jobs. Please try again.</div>;
+    return (
+      <div className="text-destructive text-sm py-8 text-center">
+        Failed to load jobs. Please try again.
+      </div>
+    );
   }
 
   return (
@@ -141,7 +155,10 @@ export function RecruiterJobsTable() {
             className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
           />
         </div>
-        <Select value={status} onValueChange={(v) => updateParams({ status: v ?? "all", page: "1" })}>
+        <Select
+          value={status}
+          onValueChange={(v) => updateParams({ status: v ?? "all", page: "1" })}
+        >
           <SelectTrigger className="w-full sm:w-36">
             <SelectValue>
               {status === "all"
@@ -160,7 +177,10 @@ export function RecruiterJobsTable() {
             <SelectItem value="archived">Archived</SelectItem>
           </SelectContent>
         </Select>
-        <Select value={workMode} onValueChange={(v) => updateParams({ workMode: v ?? "all", page: "1" })}>
+        <Select
+          value={workMode}
+          onValueChange={(v) => updateParams({ workMode: v ?? "all", page: "1" })}
+        >
           <SelectTrigger className="w-full sm:w-36">
             <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
           </SelectTrigger>
@@ -172,7 +192,10 @@ export function RecruiterJobsTable() {
             ))}
           </SelectContent>
         </Select>
-        <Select value={employmentType} onValueChange={(v) => updateParams({ employmentType: v ?? "all", page: "1" })}>
+        <Select
+          value={employmentType}
+          onValueChange={(v) => updateParams({ employmentType: v ?? "all", page: "1" })}
+        >
           <SelectTrigger className="w-full sm:w-40">
             <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
           </SelectTrigger>

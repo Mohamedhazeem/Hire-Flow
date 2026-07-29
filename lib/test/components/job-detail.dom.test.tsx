@@ -13,7 +13,11 @@ const queryState = {
 };
 
 vi.mock("@tanstack/react-query", () => ({
-  useQuery: () => ({ data: queryState.data, isLoading: queryState.isLoading, isError: queryState.isError }),
+  useQuery: () => ({
+    data: queryState.data,
+    isLoading: queryState.isLoading,
+    isError: queryState.isError,
+  }),
   useQueryClient: () => ({ invalidateQueries: vi.fn() }),
 }));
 
@@ -37,7 +41,11 @@ vi.mock("@/components/shared/section-card", () => ({
     count?: number;
     countLabel?: string;
   }) => (
-    <div data-testid={`section-card-${title}`} data-count={count ?? ""} data-countlabel={countLabel ?? ""}>
+    <div
+      data-testid={`section-card-${title}`}
+      data-count={count ?? ""}
+      data-countlabel={countLabel ?? ""}
+    >
       {children}
     </div>
   ),
@@ -54,7 +62,9 @@ vi.mock("@/components/shared/job-detail-tabs", () => ({
 }));
 
 vi.mock("@/components/ui/badge", () => ({
-  Badge: ({ children }: { children: React.ReactNode }) => <span data-testid="badge">{children}</span>,
+  Badge: ({ children }: { children: React.ReactNode }) => (
+    <span data-testid="badge">{children}</span>
+  ),
 }));
 
 vi.mock("@/components/ui/skeleton", () => ({

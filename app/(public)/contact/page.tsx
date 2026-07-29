@@ -47,8 +47,8 @@ export default function ContactPage() {
       </div>
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder contact page. It must be reviewed and replaced with real contact details before any
-        launch.
+        This is a placeholder contact page. It must be reviewed and replaced with real contact
+        details before any launch.
       </p>
     </div>
   );

@@ -13,7 +13,13 @@ type JobTableActionsCellProps = {
   isDeleting: boolean;
 };
 
-export function JobTableActionsCell({ row, onToggle, onDelete, isToggling, isDeleting }: JobTableActionsCellProps) {
+export function JobTableActionsCell({
+  row,
+  onToggle,
+  onDelete,
+  isToggling,
+  isDeleting,
+}: JobTableActionsCellProps) {
   return (
     <div className="flex items-center justify-end gap-1">
       <Button

@@ -31,7 +31,11 @@ const activeKeysGauge = meter.createGauge("rate_limit.active_app_keys", {
   description: "Number of active app: rate limit rows after cleanup",
 });
 
-export function countRateLimitDecision(labels: { endpoint: string; role: string; decision: string }): void {
+export function countRateLimitDecision(labels: {
+  endpoint: string;
+  role: string;
+  decision: string;
+}): void {
   decisionCounter.add(1, labels);
   if (labels.decision === "db_failure") {
     dbFailureCounter.add(1, { endpoint: labels.endpoint });
@@ -70,7 +74,11 @@ export function startCheckSpan(key: string, max: number) {
   });
 }
 
-export function endCheckSpan(span: ReturnType<typeof startCheckSpan>, allowed: boolean, durationMs: number): void {
+export function endCheckSpan(
+  span: ReturnType<typeof startCheckSpan>,
+  allowed: boolean,
+  durationMs: number,
+): void {
   span.setAttribute("allowed", allowed);
   span.setAttribute("duration_ms", durationMs);
   span.end();

@@ -29,7 +29,9 @@ export function RecentMessagesCard({
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">Recent Messages</h2>
+        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
+          Recent Messages
+        </h2>
         {messages.length > 0 && threadId && (
           <Link
             href={`${messagesBasePath}?thread=${threadId}`}
@@ -44,7 +46,9 @@ export function RecentMessagesCard({
         <div className="space-y-2">
           {messages.map((msg) => (
             <div key={msg.id} className="p-3 rounded-xl bg-bg-elevated border border-border-subtle">
-              <p className="text-sm text-text-body line-clamp-2">{msg.content || (msg.fileUrl ? "📎 File" : "")}</p>
+              <p className="text-sm text-text-body line-clamp-2">
+                {msg.content || (msg.fileUrl ? "📎 File" : "")}
+              </p>
               <p className="text-xs text-text-muted mt-1">
                 {new Date(msg.createdAt).toLocaleDateString(undefined, {
                   month: "short",

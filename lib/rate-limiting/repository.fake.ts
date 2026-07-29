@@ -25,7 +25,10 @@ export class FakeRepository implements RateLimitRepository {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async pruneAppKeys(cutoff: bigint, _options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult> {
+  async pruneAppKeys(
+    cutoff: bigint,
+    _options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult> {
     const start = Date.now();
     let deleted = 0;
     for (const [key, row] of this.store.entries()) {
@@ -34,7 +37,12 @@ export class FakeRepository implements RateLimitRepository {
         deleted++;
       }
     }
-    return { rowsDeleted: deleted, batchesExecuted: 1, durationMs: Date.now() - start, timedOut: false };
+    return {
+      rowsDeleted: deleted,
+      batchesExecuted: 1,
+      durationMs: Date.now() - start,
+      timedOut: false,
+    };
   }
 
   _clear(): void {

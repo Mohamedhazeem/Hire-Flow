@@ -12,7 +12,10 @@ export const AdminListUsersParamsSchema = z.object({
     .union([z.literal("true"), z.literal("false"), z.literal("all")])
     .optional()
     .default("all"),
-  sortBy: z.enum(["name", "email", "role", "createdAt", "updatedAt"]).optional().default("createdAt"),
+  sortBy: z
+    .enum(["name", "email", "role", "createdAt", "updatedAt"])
+    .optional()
+    .default("createdAt"),
   sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
 });
 
@@ -63,7 +66,10 @@ export const AdminListJobsParamsSchema = z.object({
   workMode: z.nativeEnum(WorkMode).optional(),
   employmentType: z.nativeEnum(EmploymentType).optional(),
   experienceLevel: z.string().optional(),
-  sortBy: z.enum(["title", "createdAt", "updatedAt", "viewCount", "isActive"]).optional().default("createdAt"),
+  sortBy: z
+    .enum(["title", "createdAt", "updatedAt", "viewCount", "isActive"])
+    .optional()
+    .default("createdAt"),
   sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
 });
 

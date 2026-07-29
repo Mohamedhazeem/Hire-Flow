@@ -5,7 +5,15 @@ const validResume = {
   label: "My Resume",
   summary: "Experienced software engineer.",
   educations: [{ school: "MIT", degree: "BSc", field: "Computer Science", graduationYear: 2020 }],
-  experiences: [{ company: "Google", title: "Engineer", startYear: 2020, endYear: 2024, description: "Built stuff" }],
+  experiences: [
+    {
+      company: "Google",
+      title: "Engineer",
+      startYear: 2020,
+      endYear: 2024,
+      description: "Built stuff",
+    },
+  ],
   skills: ["React", "TypeScript"],
 };
 
@@ -52,7 +60,10 @@ describe("BuilderResumeSchema", () => {
 
   it("rejects educations with 11 items", () => {
     const edu = { school: "S", degree: "BSc", field: "CS", graduationYear: 2020 };
-    const result = BuilderResumeSchema.safeParse({ ...validResume, educations: Array.from({ length: 11 }, () => edu) });
+    const result = BuilderResumeSchema.safeParse({
+      ...validResume,
+      educations: Array.from({ length: 11 }, () => edu),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("educations");
   });

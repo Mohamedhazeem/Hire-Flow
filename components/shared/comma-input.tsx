@@ -20,7 +20,11 @@ type CommaInputProps<T extends FieldValues> = {
   placeholder?: string;
 };
 
-export function CommaInput<T extends FieldValues>({ control, name, placeholder }: CommaInputProps<T>) {
+export function CommaInput<T extends FieldValues>({
+  control,
+  name,
+  placeholder,
+}: CommaInputProps<T>) {
   const value = useWatch({ control, name }) as string[] | undefined;
   const { field } = useController({ control, name });
   return (

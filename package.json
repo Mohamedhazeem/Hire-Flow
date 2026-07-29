@@ -22,7 +22,8 @@
     "test:perf": "vitest run --project perf",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "mutation": "stryker run"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

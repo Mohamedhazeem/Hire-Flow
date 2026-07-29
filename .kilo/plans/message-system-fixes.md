@@ -16,7 +16,8 @@ The message system serves **three roles**: admin, recruiter, user. Realtime via 
 if (channelName.startsWith("private-thread-")) {
   const threadId = channelName.slice("private-thread-".length);
   const parts = threadId.split("_");
-  if (parts.length !== 2 || !parts[0] || !parts[1]) return new Response("Invalid channel", { status: 403 });
+  if (parts.length !== 2 || !parts[0] || !parts[1])
+    return new Response("Invalid channel", { status: 403 });
   if (session.user.id !== parts[0] && session.user.id !== parts[1])
     return new Response("Not a participant", { status: 403 });
 }

@@ -6,18 +6,36 @@ import { apiClient } from "@/lib/api/api-client";
 import type { ApiResponse } from "@/lib/api/api-response";
 import { PageHeader } from "@/components/layout/page-header";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
-import { BarChart3Icon, FileTextIcon, BriefcaseIcon, TrendingUpIcon, ClockIcon } from "lucide-react";
+import {
+  BarChart3Icon,
+  FileTextIcon,
+  BriefcaseIcon,
+  TrendingUpIcon,
+  ClockIcon,
+} from "lucide-react";
 import { TrendChart } from "./charts/trend-chart";
 import { DistributionBarChart } from "./charts/distribution-bar-chart";
 import { FunnelChart } from "./charts/funnel-chart";
 import { AnalyticsFilterBar } from "./filters/analytics-filter-bar";
 import { AnalyticsStatRow } from "@/components/shared/analytics-stat-row";
 import { CHART_COLORS } from "../schema/analytics.schema";
-import type { AnalyticsFilter, AnalyticsResponse, JobBreakdownRow } from "../schema/analytics.schema";
+import type {
+  AnalyticsFilter,
+  AnalyticsResponse,
+  JobBreakdownRow,
+} from "../schema/analytics.schema";
 
 function filterFromParams(params: URLSearchParams): AnalyticsFilter {
   const f: AnalyticsFilter = {};
-  for (const key of ["jobId", "dateFrom", "dateTo", "status", "workMode", "employmentType", "location"] as const) {
+  for (const key of [
+    "jobId",
+    "dateFrom",
+    "dateTo",
+    "status",
+    "workMode",
+    "employmentType",
+    "location",
+  ] as const) {
     const v = params.get(key);
     if (v) (f as Record<string, string>)[key] = v;
   }
@@ -59,7 +77,9 @@ const jobBreakdownColumns: ColumnDef<JobBreakdownRow>[] = [
     key: "totalApplications",
     header: "Applications",
     align: "center",
-    cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.totalApplications}</span>,
+    cell: (row) => (
+      <span className="text-text-body text-sm tabular-nums">{row.totalApplications}</span>
+    ),
   },
   {
     key: "hired",
@@ -71,7 +91,9 @@ const jobBreakdownColumns: ColumnDef<JobBreakdownRow>[] = [
     key: "conversionRate",
     header: "Conv. %",
     align: "center",
-    cell: (row) => <span className="text-text-body text-sm tabular-nums">{row.conversionRate.toFixed(1)}%</span>,
+    cell: (row) => (
+      <span className="text-text-body text-sm tabular-nums">{row.conversionRate.toFixed(1)}%</span>
+    ),
   },
   {
     key: "avgFulfillmentDays",
@@ -186,9 +208,13 @@ export function RecruiterAnalyticsPage() {
           },
           {
             title: "Avg Fulfillment",
-            value: data.summary.avgFulfillmentDays !== null ? `${data.summary.avgFulfillmentDays}d` : "—",
+            value:
+              data.summary.avgFulfillmentDays !== null
+                ? `${data.summary.avgFulfillmentDays}d`
+                : "—",
             icon: <ClockIcon className="size-5" />,
-            description: data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet",
+            description:
+              data.summary.avgFulfillmentDays !== null ? "Avg days to hire" : "No hires yet",
             gradient: "from-amber-500/10 via-amber-500/5 to-transparent",
           },
         ]}
@@ -206,7 +232,10 @@ export function RecruiterAnalyticsPage() {
         <DistributionBarChart
           data={statusBarData(data)}
           colorMap={Object.fromEntries(
-            (Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [k.replace(/_/g, " "), v]),
+            (Object.entries(CHART_COLORS) as Array<[string, string]>).map(([k, v]) => [
+              k.replace(/_/g, " "),
+              v,
+            ]),
           )}
           title="Applications by Status"
           emptyMessage="No applications yet"
@@ -244,9 +273,15 @@ export function RecruiterAnalyticsPage() {
         <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs">
           <div className="mb-4">
             <h2 className="text-base font-semibold text-text-heading">Per-Job Breakdown</h2>
-            <p className="text-[11px] text-text-muted mt-0.5">Metrics across all your job postings</p>
+            <p className="text-[11px] text-text-muted mt-0.5">
+              Metrics across all your job postings
+            </p>
           </div>
-          <DataTable columns={jobBreakdownColumns} data={data.jobBreakdown} emptyMessage="No jobs found" />
+          <DataTable
+            columns={jobBreakdownColumns}
+            data={data.jobBreakdown}
+            emptyMessage="No jobs found"
+          />
         </div>
       )}
     </div>

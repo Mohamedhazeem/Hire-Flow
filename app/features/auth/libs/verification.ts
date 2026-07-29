@@ -6,7 +6,10 @@ import { logger } from "@/utils/logger";
 
 type UserStatusResult = { status: "NOT_FOUND" } | { status: "UNVERIFIED" } | { status: "VERIFIED" };
 
-export async function verifyUserStatus(email: string, callbackPath = "/verify-email"): Promise<UserStatusResult> {
+export async function verifyUserStatus(
+  email: string,
+  callbackPath = "/verify-email",
+): Promise<UserStatusResult> {
   const existingUser = await prisma.user.findUnique({
     where: { email },
   });

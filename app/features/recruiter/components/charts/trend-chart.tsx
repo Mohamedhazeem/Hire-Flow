@@ -1,6 +1,14 @@
 "use client";
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { TrendingUpIcon } from "lucide-react";
 import type { TrendPoint } from "../../schema/analytics.schema";
 
@@ -23,11 +31,21 @@ type TrendChartProps = {
   emptyMessage?: string;
 };
 
-export function TrendChart({ data, color, title, subtitle, gradientId, emptyMessage }: TrendChartProps) {
+export function TrendChart({
+  data,
+  color,
+  title,
+  subtitle,
+  gradientId,
+  emptyMessage,
+}: TrendChartProps) {
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
       <div className="flex items-center gap-2.5 mb-5">
-        <div className="size-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${color}15` }}>
+        <div
+          className="size-9 rounded-xl flex items-center justify-center"
+          style={{ backgroundColor: `${color}15` }}
+        >
           <TrendingUpIcon className="size-4" style={{ color }} />
         </div>
         <div>
@@ -36,7 +54,9 @@ export function TrendChart({ data, color, title, subtitle, gradientId, emptyMess
         </div>
       </div>
       {data.length === 0 ? (
-        <p className="text-text-muted text-sm py-12 text-center flex-1">{emptyMessage ?? "No data available"}</p>
+        <p className="text-text-muted text-sm py-12 text-center flex-1">
+          {emptyMessage ?? "No data available"}
+        </p>
       ) : (
         <ResponsiveContainer width="100%" height={220}>
           <LineChart data={data}>
@@ -46,7 +66,11 @@ export function TrendChart({ data, color, title, subtitle, gradientId, emptyMess
                 <stop offset="100%" stopColor={color} stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" strokeOpacity={0.5} />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="var(--color-border-subtle)"
+              strokeOpacity={0.5}
+            />
             <XAxis
               dataKey="date"
               tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}

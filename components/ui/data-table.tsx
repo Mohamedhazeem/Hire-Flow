@@ -1,6 +1,13 @@
 "use client";
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 
@@ -35,14 +42,17 @@ export function DataTable<TData>({
   getRowId,
   disabledIds,
 }: DataTableProps<TData>) {
-  const selectableRows = disabledIds ? data.filter((row) => !disabledIds.has(getRowId?.(row) ?? "")) : data;
+  const selectableRows = disabledIds
+    ? data.filter((row) => !disabledIds.has(getRowId?.(row) ?? ""))
+    : data;
 
   const allSelected =
     enableSelection &&
     selectableRows.length > 0 &&
     selectableRows.every((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
-  const someSelected = enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
+  const someSelected =
+    enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
   const handleSelectAll = () => {
     if (!enableSelection || !onSelectionChange || !getRowId) return;
@@ -86,7 +96,12 @@ export function DataTable<TData>({
     : columns;
 
   return (
-    <div className={cn("rounded-2xl border border-border-subtle bg-bg-surface overflow-x-auto shadow-xs", className)}>
+    <div
+      className={cn(
+        "rounded-2xl border border-border-subtle bg-bg-surface overflow-x-auto shadow-xs",
+        className,
+      )}
+    >
       <Table>
         <TableHeader>
           <TableRow className="bg-linear-to-r from-bg-elevated via-bg-elevated to-bg-elevated/50 hover:bg-linear-to-r hover:from-bg-elevated hover:via-bg-elevated hover:to-bg-elevated/50 border-b-2 border-border-subtle">
@@ -103,7 +118,9 @@ export function DataTable<TData>({
                 {col.key === "__selection" ? (
                   <Checkbox
                     checked={allSelected}
-                    data-state={allSelected ? "checked" : someSelected ? "indeterminate" : "unchecked"}
+                    data-state={
+                      allSelected ? "checked" : someSelected ? "indeterminate" : "unchecked"
+                    }
                     onCheckedChange={handleSelectAll}
                     aria-label="Select all"
                     className="size-4"
@@ -118,7 +135,10 @@ export function DataTable<TData>({
         <TableBody>
           {data.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={allColumns.length} className="h-28 text-center text-text-muted text-sm">
+              <TableCell
+                colSpan={allColumns.length}
+                className="h-28 text-center text-text-muted text-sm"
+              >
                 <div className="flex flex-col items-center gap-2">
                   <svg
                     className="size-8 text-text-muted/30"

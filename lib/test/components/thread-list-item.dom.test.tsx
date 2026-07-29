@@ -124,7 +124,13 @@ describe("ThreadListItem", () => {
 
   it("renders the online indicator when isOnline", () => {
     const { container } = render(
-      <ThreadListItem thread={thread()} currentUserId="u-1" active={false} basePath="/user/messages" isOnline />,
+      <ThreadListItem
+        thread={thread()}
+        currentUserId="u-1"
+        active={false}
+        basePath="/user/messages"
+        isOnline
+      />,
     );
     expect(container.querySelector(".bg-green-500")).toBeInTheDocument();
   });

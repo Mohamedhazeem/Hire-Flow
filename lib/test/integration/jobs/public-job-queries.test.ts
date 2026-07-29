@@ -56,7 +56,11 @@ describe("Public Job Queries (Phase 4.2)", () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
     await createTestJob(recruiter.id, company.id, { title: "Active Job" });
-    await createTestJob(recruiter.id, company.id, { title: "Killed Job", status: "active", isActive: false });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Killed Job",
+      status: "active",
+      isActive: false,
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs");
@@ -70,7 +74,11 @@ describe("Public Job Queries (Phase 4.2)", () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
     await createTestJob(recruiter.id, company.id, { title: "Active Job" });
-    await createTestJob(recruiter.id, company.id, { title: "Draft but active", status: "draft", isActive: true });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Draft but active",
+      status: "draft",
+      isActive: true,
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs");
@@ -150,7 +158,9 @@ describe("Public Job Queries (Phase 4.2)", () => {
     // Real term followed by thousands of characters — must be bounded, not error.
     const longSearch = `Distinctive ${"x".repeat(5000)}`;
     const { GET } = await import("@/app/api/jobs/route");
-    const req = new NextRequest(`http://localhost/api/jobs?search=${encodeURIComponent(longSearch)}`);
+    const req = new NextRequest(
+      `http://localhost/api/jobs?search=${encodeURIComponent(longSearch)}`,
+    );
     const res = await GET(req);
     expect(res.status).toBe(200);
     const body = await res.json();
@@ -165,7 +175,9 @@ describe("Public Job Queries (Phase 4.2)", () => {
     await createTestJob(recruiter.id, company.id, { title: "Plain English Job" });
 
     const { GET } = await import("@/app/api/jobs/route");
-    const req = new NextRequest(`http://localhost/api/jobs?search=${encodeURIComponent("Ingeniería")}`);
+    const req = new NextRequest(
+      `http://localhost/api/jobs?search=${encodeURIComponent("Ingeniería")}`,
+    );
     const res = await GET(req);
     expect(res.status).toBe(200);
     const body = await res.json();
@@ -189,7 +201,9 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("single job detail returns 404 for missing job", async () => {
     const { GET } = await import("@/app/api/jobs/[id]/route");
     const req = new NextRequest("http://localhost/api/jobs/00000000-0000-0000-0000-000000000000");
-    const res = await GET(req, { params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }) });
+    const res = await GET(req, {
+      params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }),
+    });
     expect(res.status).toBe(404);
   });
 
@@ -207,8 +221,14 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("skills filter: empty skills param returns all active jobs", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React", "TypeScript"] });
-    await createTestJob(recruiter.id, company.id, { title: "Python Job", skills: ["Python", "Django"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs");
@@ -221,8 +241,14 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("skills filter: single matching skill returns only matching jobs", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React", "TypeScript"] });
-    await createTestJob(recruiter.id, company.id, { title: "Python Job", skills: ["Python", "Django"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs?skills=React");
@@ -236,8 +262,14 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("skills filter: multiple skills use OR semantics", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React", "TypeScript"] });
-    await createTestJob(recruiter.id, company.id, { title: "Python Job", skills: ["Python", "Django"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
     await createTestJob(recruiter.id, company.id, { title: "Go Job", skills: ["Go"] });
 
     const { GET } = await import("@/app/api/jobs/route");
@@ -251,7 +283,10 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("skills filter: non-matching skills returns empty list", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React", "TypeScript"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs?skills=COBOL");
@@ -268,7 +303,10 @@ describe("Public Job Queries (Phase 4.2)", () => {
       title: "Senior React Engineer",
       skills: ["React", "TypeScript"],
     });
-    await createTestJob(recruiter.id, company.id, { title: "Senior Python Engineer", skills: ["Python", "Django"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Senior Python Engineer",
+      skills: ["Python", "Django"],
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs?search=React&skills=React");
@@ -297,7 +335,10 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("skills filter: skills param is case-sensitive in Postgres", async () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
-    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React", "TypeScript"] });
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs?skills=react");

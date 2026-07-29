@@ -8,7 +8,13 @@ import { useCreateJob, useUpdateJob } from "@/app/features/recruiter/hooks/use-r
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import { ArrowLeftIcon, Loader2Icon } from "lucide-react";
 import Link from "next/link";
 import { FormField } from "@/components/shared/form-field";
@@ -31,7 +37,11 @@ const EMPLOYMENT_TYPE_OPTIONS = [
   { value: "freelance", label: "Freelance" },
 ];
 
-type JobFormProps = { mode: "create" | "edit"; jobId?: string; defaultValues?: Partial<JobFormInput> };
+type JobFormProps = {
+  mode: "create" | "edit";
+  jobId?: string;
+  defaultValues?: Partial<JobFormInput>;
+};
 
 export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
   const router = useRouter();
@@ -109,10 +119,14 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
             <FormField label="Work Mode" required>
               <Select
                 value={workMode}
-                onValueChange={(v) => setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })}
+                onValueChange={(v) =>
+                  setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })
+                }
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue>{WORK_MODE_OPTIONS.find((o) => o.value === workMode)?.label ?? workMode}</SelectValue>
+                  <SelectValue>
+                    {WORK_MODE_OPTIONS.find((o) => o.value === workMode)?.label ?? workMode}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {WORK_MODE_OPTIONS.map((opt) => (
@@ -129,12 +143,15 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
               <Select
                 value={employmentType}
                 onValueChange={(v) =>
-                  setValue("employmentType", v as JobFormInput["employmentType"], { shouldValidate: true })
+                  setValue("employmentType", v as JobFormInput["employmentType"], {
+                    shouldValidate: true,
+                  })
                 }
               >
                 <SelectTrigger className="w-full">
                   <SelectValue>
-                    {EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ?? employmentType}
+                    {EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ??
+                      employmentType}
                   </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
@@ -177,12 +194,20 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="flex-1">
             <FormField label="Salary Min">
-              <Input type="number" {...register("salaryMin", { valueAsNumber: true })} placeholder="80000" />
+              <Input
+                type="number"
+                {...register("salaryMin", { valueAsNumber: true })}
+                placeholder="80000"
+              />
             </FormField>
           </div>
           <div className="flex-1">
             <FormField label="Salary Max">
-              <Input type="number" {...register("salaryMax", { valueAsNumber: true })} placeholder="120000" />
+              <Input
+                type="number"
+                {...register("salaryMax", { valueAsNumber: true })}
+                placeholder="120000"
+              />
             </FormField>
           </div>
         </div>

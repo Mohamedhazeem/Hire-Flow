@@ -17,6 +17,10 @@ export default function NotFound() {
 }
 function newFunction() {
   return (
-    <ErrorPage errorTag="Unavailable" title="404 — Not Found" description="The path you looking for does not exist" />
+    <ErrorPage
+      errorTag="Unavailable"
+      title="404 — Not Found"
+      description="The path you looking for does not exist"
+    />
   );
 }

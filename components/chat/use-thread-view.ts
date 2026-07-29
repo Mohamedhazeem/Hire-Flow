@@ -12,7 +12,13 @@ import type { ThreadViewHooks, ThreadViewConfig } from "./shared-thread-view";
 import { getOtherUserId } from "@/lib/thread-utils";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
-const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif", "application/pdf"];
+const ALLOWED_FILE_TYPES = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+  "application/pdf",
+];
 
 export function useThreadView(
   threadId: string,
@@ -23,7 +29,8 @@ export function useThreadView(
   const router = useRouter();
   const { data: session } = useSession();
   const currentUserId = (session?.user as { id?: string })?.id;
-  const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage, isError } = hooks.useMessages(threadId);
+  const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage, isError } =
+    hooks.useMessages(threadId);
   const queryClient = useQueryClient();
   const sendMessage = hooks.useSendMessage(threadId);
   const deleteMessage = hooks.useDeleteMessage(threadId);
@@ -108,7 +115,8 @@ export function useThreadView(
     if (allMessages.length > prevMessageCountRef.current) {
       const isNew = allMessages.length - prevMessageCountRef.current === 1;
       if (isNew && isAtBottomRef.current) requestAnimationFrame(() => scrollToBottom("smooth"));
-      else if (prevMessageCountRef.current === 0) requestAnimationFrame(() => scrollToBottom("instant"));
+      else if (prevMessageCountRef.current === 0)
+        requestAnimationFrame(() => scrollToBottom("instant"));
     }
     prevMessageCountRef.current = allMessages.length;
   }, [allMessages.length, scrollToBottom]);

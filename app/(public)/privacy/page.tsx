@@ -28,7 +28,8 @@ const sections = [
   },
   {
     title: "Contact",
-    content: "If you have questions about this policy, please contact us at privacy@hireflow.example.",
+    content:
+      "If you have questions about this policy, please contact us at privacy@hireflow.example.",
   },
 ];
 
@@ -48,8 +49,8 @@ export default function PrivacyPage() {
       </div>
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder privacy policy. It must be reviewed and replaced with legally-reviewed copy before any
-        real launch.
+        This is a placeholder privacy policy. It must be reviewed and replaced with legally-reviewed
+        copy before any real launch.
       </p>
     </div>
   );

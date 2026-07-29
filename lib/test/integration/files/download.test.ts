@@ -48,7 +48,10 @@ describe("File Download (Phase 4.14)", () => {
     const user = await createTestUser({ role: Role.user });
     const filename = await createTestFileOnDisk();
     cleanupFiles.push(filename);
-    await createTestResume(user.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+    await createTestResume(user.id, {
+      fileUrl: `/uploads/${filename}`,
+      fileType: "application/pdf",
+    });
 
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
@@ -89,7 +92,10 @@ describe("File Download (Phase 4.14)", () => {
     const applicantB = await createTestUser({ role: Role.user });
     const filename = await createTestFileOnDisk();
     cleanupFiles.push(filename);
-    await createTestResume(applicantB.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+    await createTestResume(applicantB.id, {
+      fileUrl: `/uploads/${filename}`,
+      fileType: "application/pdf",
+    });
     await createTestApplication(jobB.id, applicantB.id);
 
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiterA.id }));
@@ -106,7 +112,10 @@ describe("File Download (Phase 4.14)", () => {
     const applicant = await createTestUser({ role: Role.user });
     const filename = await createTestFileOnDisk();
     cleanupFiles.push(filename);
-    await createTestResume(applicant.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+    await createTestResume(applicant.id, {
+      fileUrl: `/uploads/${filename}`,
+      fileType: "application/pdf",
+    });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
 
@@ -121,7 +130,9 @@ describe("File Download (Phase 4.14)", () => {
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
     const { GET } = await import("@/app/api/files/download/route");
-    const req = new NextRequest("http://localhost/api/files/download?path=/uploads/nonexistent.pdf");
+    const req = new NextRequest(
+      "http://localhost/api/files/download?path=/uploads/nonexistent.pdf",
+    );
     const res = await GET(req);
     expect(res.status).toBe(404);
   });
@@ -131,7 +142,9 @@ describe("File Download (Phase 4.14)", () => {
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
     const { GET } = await import("@/app/api/files/download/route");
-    const req = new NextRequest("http://localhost/api/files/download?path=/uploads/../../../../etc/passwd");
+    const req = new NextRequest(
+      "http://localhost/api/files/download?path=/uploads/../../../../etc/passwd",
+    );
     const res = await GET(req);
     expect(res.status).toBe(403);
   });
@@ -156,7 +169,10 @@ describe("File Download (Phase 4.14)", () => {
 
     const filename = await createTestFileOnDisk();
     cleanupFiles.push(filename);
-    await createTestResume(owner.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+    await createTestResume(owner.id, {
+      fileUrl: `/uploads/${filename}`,
+      fileType: "application/pdf",
+    });
 
     const { GET } = await import("@/app/api/files/download/route");
     const url = `http://localhost/api/files/download?path=/uploads/${filename}`;

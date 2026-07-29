@@ -31,9 +31,12 @@ export function useJobAnalytics(jobId: string, filter: AnalyticsFilter) {
   return useQuery<AnalyticsResponse>({
     queryKey: ["recruiter", "analytics", jobId, filter],
     queryFn: async () => {
-      const res = await apiClient<ApiResponse<AnalyticsResponse>>(`/api/recruiter/jobs/${jobId}/analytics`, {
-        params: filterToParams(filter),
-      });
+      const res = await apiClient<ApiResponse<AnalyticsResponse>>(
+        `/api/recruiter/jobs/${jobId}/analytics`,
+        {
+          params: filterToParams(filter),
+        },
+      );
       return res.data;
     },
     enabled: !!jobId,

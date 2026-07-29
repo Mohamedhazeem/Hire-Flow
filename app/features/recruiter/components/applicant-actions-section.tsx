@@ -11,13 +11,20 @@ type ApplicantActionsSectionProps = {
   applicant: ApplicantRow;
 };
 
-export function ApplicantActionsSection({ status, isPending, onAction, applicant }: ApplicantActionsSectionProps) {
+export function ApplicantActionsSection({
+  status,
+  isPending,
+  onAction,
+  applicant,
+}: ApplicantActionsSectionProps) {
   const actions = NEXT_ACTIONS[status] ?? [];
   if (actions.length === 0) return null;
 
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Actions</h2>
+      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+        Actions
+      </h2>
       <div className="flex flex-wrap gap-3">
         {actions.map((action) => (
           <Button

@@ -41,7 +41,9 @@ export function SignUpForm() {
     try {
       const result = await registerAction(data);
       if (result.success) {
-        setSuccessMessage("Account created. Check your email to verify your account before signing in.");
+        setSuccessMessage(
+          "Account created. Check your email to verify your account before signing in.",
+        );
       } else {
         const firstError = Object.values(result.errors ?? {})[0]?.[0];
         if (firstError) setFormError(firstError);
@@ -97,7 +99,9 @@ export function SignUpForm() {
           </div>
         ) : null}
         {formError && (
-          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">{formError}</div>
+          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
+            {formError}
+          </div>
         )}
         <FormInput
           label="Full Name"
@@ -129,13 +133,18 @@ export function SignUpForm() {
 
       <div className="relative">
         <div className="absolute inset-x-0 top-1/2 h-px bg-border-subtle" />
-        <p className="relative mx-auto w-fit bg-bg-elevated px-3 text-sm text-text-muted">or continue with</p>
+        <p className="relative mx-auto w-fit bg-bg-elevated px-3 text-sm text-text-muted">
+          or continue with
+        </p>
       </div>
       <SocialSignInButtons isVertical />
       <div className="text-center">
         <p className="text-text-muted text-sm">
           Already have an account?{" "}
-          <Link href="/login" className="text-text-link hover:text-text-heading font-semibold transition-colors">
+          <Link
+            href="/login"
+            className="text-text-link hover:text-text-heading font-semibold transition-colors"
+          >
             Sign in
           </Link>
         </p>

@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { escapeCsvField, buildCsvRow, buildCsvString } from "@/app/features/recruiter/libs/csv-builder";
+import {
+  escapeCsvField,
+  buildCsvRow,
+  buildCsvString,
+} from "@/app/features/recruiter/libs/csv-builder";
 
 describe("escapeCsvField", () => {
   it("wraps normal string in quotes", () => {

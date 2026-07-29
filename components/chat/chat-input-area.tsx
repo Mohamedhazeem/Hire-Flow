@@ -2,7 +2,13 @@
 
 import { type ChangeEvent, type SyntheticEvent } from "react";
 import { Input } from "@/components/ui/input";
-import { SendHorizonalIcon, Loader2Icon, PaperclipIcon, XIcon, AlertTriangleIcon } from "lucide-react";
+import {
+  SendHorizonalIcon,
+  Loader2Icon,
+  PaperclipIcon,
+  XIcon,
+  AlertTriangleIcon,
+} from "lucide-react";
 import { fileIcon, formatFileSize } from "@/components/chat/message-bubble";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -37,7 +43,9 @@ export function ChatInputArea({
           <div className="flex items-center gap-2 flex-1 min-w-0 rounded-radius-md border border-border-subtle bg-bg-sunken px-3 py-1.5 text-sm">
             {fileIcon(selectedFile.type)}
             <span className="truncate flex-1">{selectedFile.name}</span>
-            <span className="text-text-muted text-xs shrink-0">{formatFileSize(selectedFile.size)}</span>
+            <span className="text-text-muted text-xs shrink-0">
+              {formatFileSize(selectedFile.size)}
+            </span>
             <button
               type="button"
               onClick={onFileRemove}
@@ -92,7 +100,11 @@ export function ChatInputArea({
           disabled={(!input.trim() && !selectedFile) || isSending}
           className="shrink-0 flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-brand to-brand-dark text-brand-foreground hover:from-brand-dark hover:to-brand transition-all shadow-brand disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSending ? <Loader2Icon className="size-4 animate-spin" /> : <SendHorizonalIcon className="size-4" />}
+          {isSending ? (
+            <Loader2Icon className="size-4 animate-spin" />
+          ) : (
+            <SendHorizonalIcon className="size-4" />
+          )}
         </button>
       </form>
     </>

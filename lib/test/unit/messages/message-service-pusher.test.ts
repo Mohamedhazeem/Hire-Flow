@@ -13,7 +13,9 @@ vi.mock("@/lib/prisma", () => ({
 }));
 
 vi.mock("@/lib/notifications", () => ({
-  createNotification: vi.fn(() => Promise.resolve({ id: "notif-1", userId: "rec-1", type: "new_message", data: {} })),
+  createNotification: vi.fn(() =>
+    Promise.resolve({ id: "notif-1", userId: "rec-1", type: "new_message", data: {} }),
+  ),
   fireNotification: vi.fn(),
 }));
 
@@ -155,7 +157,9 @@ describe("messageService Pusher events", () => {
         userId: "u1",
       });
 
-      const updateCalls = mockTrigger.mock.calls.filter((call: unknown[]) => call[1] === "message-unread-update");
+      const updateCalls = mockTrigger.mock.calls.filter(
+        (call: unknown[]) => call[1] === "message-unread-update",
+      );
       expect(updateCalls).toHaveLength(0);
     });
 
@@ -185,7 +189,8 @@ describe("messageService Pusher events", () => {
       });
 
       expect(messageRepository.markAsRead).toHaveBeenCalledWith(["m1"]);
-      const { markThreadNotificationsRead } = await import("@/app/features/notifications/queries/notification-queries");
+      const { markThreadNotificationsRead } =
+        await import("@/app/features/notifications/queries/notification-queries");
       expect(markThreadNotificationsRead).toHaveBeenCalledWith("u1_u2", "u1");
     });
   });

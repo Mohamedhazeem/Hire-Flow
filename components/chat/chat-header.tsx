@@ -46,7 +46,9 @@ export function ChatHeader({
           </span>
         </div>
         <div className="min-w-0">
-          <h2 className="text-sm font-semibold text-text-heading truncate">{chatName || "Loading..."}</h2>
+          <h2 className="text-sm font-semibold text-text-heading truncate">
+            {chatName || "Loading..."}
+          </h2>
           {isOnline ? (
             <p className="text-[11px] text-green-500 font-medium">Online</p>
           ) : (

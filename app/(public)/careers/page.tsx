@@ -53,15 +53,15 @@ export default function CareersPage() {
         <div>
           <h2 className="text-lg font-semibold text-text-heading mb-2">What we offer</h2>
           <p className="text-sm text-text-body leading-relaxed">
-            Competitive compensation, flexible hours, remote-first culture, and a team that cares about craft and
-            impact. We hire people who ship and treat each other well.
+            Competitive compensation, flexible hours, remote-first culture, and a team that cares
+            about craft and impact. We hire people who ship and treat each other well.
           </p>
         </div>
       </div>
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder careers page. It must be reviewed and replaced with real job listings and company details
-        before any launch.
+        This is a placeholder careers page. It must be reviewed and replaced with real job listings
+        and company details before any launch.
       </p>
     </div>
   );

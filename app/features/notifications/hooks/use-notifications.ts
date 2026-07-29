@@ -120,7 +120,10 @@ export function useRealtimeNotifications(userId: string) {
         return { ...data, pages: newPages };
       });
 
-      queryClient.setQueryData(["notifications", "unread", userId], (old: number | undefined) => (old ?? 0) + 1);
+      queryClient.setQueryData(
+        ["notifications", "unread", userId],
+        (old: number | undefined) => (old ?? 0) + 1,
+      );
 
       if (n.type === "new_message") {
         const threadId = n.data.threadId as string;
@@ -138,7 +141,9 @@ export function useRealtimeNotifications(userId: string) {
         if (threadId) {
           queryClient.invalidateQueries({
             predicate: (query) =>
-              query.queryKey.length === 3 && query.queryKey[1] === "messages" && query.queryKey[2] === threadId,
+              query.queryKey.length === 3 &&
+              query.queryKey[1] === "messages" &&
+              query.queryKey[2] === threadId,
           });
         }
       }

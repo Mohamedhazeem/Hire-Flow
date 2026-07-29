@@ -17,7 +17,12 @@ async function handlePOST(request: NextRequest, { params }: { params: Promise<{ 
     throw new ValidationError("Invalid ban parameters");
   }
 
-  const result = await userAdminService.banUser(adminUser.id, id, input.data.banReason, input.data.banExpiresIn);
+  const result = await userAdminService.banUser(
+    adminUser.id,
+    id,
+    input.data.banReason,
+    input.data.banExpiresIn,
+  );
 
   return ok(result);
 }

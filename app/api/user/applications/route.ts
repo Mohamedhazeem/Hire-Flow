@@ -11,7 +11,9 @@ const handleGET = withRateLimit(async (request: NextRequest) => {
 
   const params = {
     page: url.searchParams.get("page") ? Number(url.searchParams.get("page")) : undefined,
-    pageSize: url.searchParams.get("pageSize") ? Number(url.searchParams.get("pageSize")) : undefined,
+    pageSize: url.searchParams.get("pageSize")
+      ? Number(url.searchParams.get("pageSize"))
+      : undefined,
     status: url.searchParams.get("status") || undefined,
     search: url.searchParams.get("search") || undefined,
   };

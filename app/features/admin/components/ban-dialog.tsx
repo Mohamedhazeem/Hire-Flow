@@ -52,7 +52,9 @@ export function BanDialog({ userId, userName, banReason }: BanDialogProps) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Ban {userName}</DialogTitle>
-          <DialogDescription>This will prevent the user from accessing the platform.</DialogDescription>
+          <DialogDescription>
+            This will prevent the user from accessing the platform.
+          </DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
           <div className="space-y-2">

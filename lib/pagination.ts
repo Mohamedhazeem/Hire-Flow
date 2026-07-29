@@ -24,7 +24,11 @@ export function parseOffsetParams(
   return { skip, take: pageSize, page, pageSize };
 }
 
-export function buildOffsetMeta(total: number, page: number, pageSize: number): OffsetPaginationMeta {
+export function buildOffsetMeta(
+  total: number,
+  page: number,
+  pageSize: number,
+): OffsetPaginationMeta {
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   return {
     page,
@@ -86,9 +90,15 @@ export type DualModeResult =
   | { mode: "offset"; skip: number; take: number; page: number; pageSize: number }
   | { mode: "cursor"; take: number; cursor: string | undefined };
 
-export function parseDualModePagination(params: DualModePaginationParams, defaultLimit = 20): DualModeResult {
+export function parseDualModePagination(
+  params: DualModePaginationParams,
+  defaultLimit = 20,
+): DualModeResult {
   if (params.cursor) {
-    const cursorResult = parseCursorParams({ cursor: params.cursor, limit: params.limit }, defaultLimit);
+    const cursorResult = parseCursorParams(
+      { cursor: params.cursor, limit: params.limit },
+      defaultLimit,
+    );
     return { mode: "cursor", ...cursorResult };
   }
   const offset = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, defaultLimit);

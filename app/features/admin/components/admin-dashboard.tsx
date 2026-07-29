@@ -9,7 +9,15 @@ import { DashboardLoading } from "@/components/shared/dashboard-loading";
 import { DashboardError } from "@/components/shared/dashboard-error";
 import { ChartCard } from "@/components/shared/chart-card";
 import { WorkModeBarChart } from "@/components/shared/workmode-bar-chart";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import {
   UsersIcon,
   BriefcaseIcon,
@@ -31,17 +39,31 @@ const CHART_TOOLTIP_STYLE = {
   },
 };
 
-function LineChartCard({ data, color }: { data: { date: string; count: number }[]; color: string }) {
-  if (data.length === 0) return <p className="text-text-muted text-sm py-12 text-center">No data yet</p>;
+function LineChartCard({
+  data,
+  color,
+}: {
+  data: { date: string; count: number }[];
+  color: string;
+}) {
+  if (data.length === 0)
+    return <p className="text-text-muted text-sm py-12 text-center">No data yet</p>;
   return (
     <ResponsiveContainer width="100%" height={220}>
       <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-subtle)" strokeOpacity={0.5} />
+        <CartesianGrid
+          strokeDasharray="3 3"
+          stroke="var(--color-border-subtle)"
+          strokeOpacity={0.5}
+        />
         <XAxis
           dataKey="date"
           tick={{ fontSize: 11, fill: "var(--color-text-muted)" }}
           tickFormatter={(val: string) =>
-            new Date(val + "T00:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" })
+            new Date(val + "T00:00:00").toLocaleDateString(undefined, {
+              month: "short",
+              day: "numeric",
+            })
           }
         />
         <YAxis tick={{ fontSize: 11, fill: "var(--color-text-muted)" }} allowDecimals={false} />
@@ -59,7 +81,12 @@ function LineChartCard({ data, color }: { data: { date: string; count: number }[
   );
 }
 
-function createRecentUserColumns(): ColumnDef<{ name: string | null; email: string; role: string; createdAt: Date }>[] {
+function createRecentUserColumns(): ColumnDef<{
+  name: string | null;
+  email: string;
+  role: string;
+  createdAt: Date;
+}>[] {
   return [
     {
       key: "name",
@@ -92,7 +119,11 @@ function createRecentUserColumns(): ColumnDef<{ name: string | null; email: stri
       align: "center",
       cell: (row) => (
         <span className="text-text-muted text-xs whitespace-nowrap">
-          {new Date(row.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}
+          {new Date(row.createdAt).toLocaleDateString(undefined, {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </span>
       ),
     },
@@ -180,7 +211,11 @@ export function AdminDashboard() {
             <p className="text-[11px] text-text-muted mt-0.5">Latest users to join the platform</p>
           </div>
         </div>
-        <DataTable columns={createRecentUserColumns()} data={data.recentUsers} emptyMessage="No users signed up yet" />
+        <DataTable
+          columns={createRecentUserColumns()}
+          data={data.recentUsers}
+          emptyMessage="No users signed up yet"
+        />
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { RecruiterInviteSchema, RecruiterBulkInviteSchema } from "@/app/features/recruiter/schema/team.schema";
+import {
+  RecruiterInviteSchema,
+  RecruiterBulkInviteSchema,
+} from "@/app/features/recruiter/schema/team.schema";
 
 describe("RecruiterInviteSchema", () => {
   it("accepts a valid invite email", () => {

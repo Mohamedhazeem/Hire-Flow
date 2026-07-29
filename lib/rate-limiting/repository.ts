@@ -13,7 +13,10 @@ export interface RateLimitRepository {
   increment(key: string, now: bigint, cutoff: bigint): Promise<{ count: number }>;
   deleteById(key: string): Promise<void>;
   deleteAllAppKeys(): Promise<void>;
-  pruneAppKeys(cutoff: bigint, options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult>;
+  pruneAppKeys(
+    cutoff: bigint,
+    options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult>;
 }
 
 export class PrismaRateLimitRepository implements RateLimitRepository {
@@ -40,7 +43,10 @@ export class PrismaRateLimitRepository implements RateLimitRepository {
     await prisma.rateLimit.deleteMany({ where: { id: { startsWith: "app:" } } });
   }
 
-  async pruneAppKeys(cutoff: bigint, options?: { batchSize?: number; budgetMs?: number }): Promise<PruneResult> {
+  async pruneAppKeys(
+    cutoff: bigint,
+    options?: { batchSize?: number; budgetMs?: number },
+  ): Promise<PruneResult> {
     const start = Date.now();
     const batchSize = options?.batchSize ?? rateLimitConfig.cleanup.batchSize;
     const budgetMs = options?.budgetMs ?? rateLimitConfig.cleanup.budgetMs;
@@ -50,7 +56,12 @@ export class PrismaRateLimitRepository implements RateLimitRepository {
     while (true) {
       const elapsed = Date.now() - start;
       if (elapsed >= budgetMs) {
-        return { rowsDeleted: totalDeleted, batchesExecuted: batches, durationMs: elapsed, timedOut: true };
+        return {
+          rowsDeleted: totalDeleted,
+          batchesExecuted: batches,
+          durationMs: elapsed,
+          timedOut: true,
+        };
       }
 
       const result = await prisma.$executeRaw<number>(Prisma.sql`

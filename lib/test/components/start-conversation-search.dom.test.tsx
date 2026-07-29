@@ -223,7 +223,9 @@ describe("StartConversationSearch", () => {
   });
 
   it("falls back to email when name is null", async () => {
-    const noNameResults = [{ id: "u-4", name: null, email: "noname@example.com", role: "user", company: null }];
+    const noNameResults = [
+      { id: "u-4", name: null, email: "noname@example.com", role: "user", company: null },
+    ];
     mockApiClient.mockResolvedValue({ data: noNameResults });
     const user = userEvent.setup();
     render(<StartConversationSearch {...baseProps()} />);

@@ -16,10 +16,20 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const target = await createTestUser({ role: Role.user });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token2", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token2",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -37,10 +47,20 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const target = await createTestUser({ role: Role.user });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token2", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token2",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -54,7 +74,9 @@ describe("Admin Sessions (Phase 4.10)", () => {
 
     // Verify the mock was called with the correct target userId
     expect(mockRevokeUserSessions).toHaveBeenCalledTimes(1);
-    expect(mockRevokeUserSessions).toHaveBeenCalledWith(expect.objectContaining({ body: { userId: target.id } }));
+    expect(mockRevokeUserSessions).toHaveBeenCalledWith(
+      expect.objectContaining({ body: { userId: target.id } }),
+    );
   });
 
   it("admin can revoke sessions for recruiter target", async () => {
@@ -77,7 +99,9 @@ describe("Admin Sessions (Phase 4.10)", () => {
     });
     const res = await DELETE(req, { params: Promise.resolve({ id: recruiter.id }) });
     expect(res.status).toBe(200);
-    expect(mockRevokeUserSessions).toHaveBeenCalledWith(expect.objectContaining({ body: { userId: recruiter.id } }));
+    expect(mockRevokeUserSessions).toHaveBeenCalledWith(
+      expect.objectContaining({ body: { userId: recruiter.id } }),
+    );
   });
 
   it("admin can revoke a super_admin's sessions", async () => {

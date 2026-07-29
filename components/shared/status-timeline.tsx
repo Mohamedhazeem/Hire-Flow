@@ -84,7 +84,9 @@ function getColor(entry: StatusTimelineEntry): string {
 
 export function StatusTimeline({ entries, className }: Props) {
   if (entries.length === 0) {
-    return <div className="text-sm text-text-muted py-6 text-center">No status history available.</div>;
+    return (
+      <div className="text-sm text-text-muted py-6 text-center">No status history available.</div>
+    );
   }
 
   return (
@@ -111,14 +113,18 @@ export function StatusTimeline({ entries, className }: Props) {
             <div className={cn("min-w-0 flex-1 pt-1", upcoming && "opacity-50")}>
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-sm font-medium text-text-heading">{entry.label}</span>
-                <span className="text-xs text-text-muted whitespace-nowrap">{relativeTime(entry.createdAt)}</span>
+                <span className="text-xs text-text-muted whitespace-nowrap">
+                  {relativeTime(entry.createdAt)}
+                </span>
                 {upcoming && (
                   <span className="inline-flex items-center rounded-full bg-info/10 text-info border border-info/20 px-2 py-0.5 text-xs font-medium">
                     Upcoming
                   </span>
                 )}
               </div>
-              {entry.changedByName && <p className="text-xs text-text-muted mt-0.5">by {entry.changedByName}</p>}
+              {entry.changedByName && (
+                <p className="text-xs text-text-muted mt-0.5">by {entry.changedByName}</p>
+              )}
               {entry.note && (
                 <p className="text-xs text-text-body mt-1 italic bg-bg-elevated rounded-md px-2 py-1 border border-border-subtle">
                   {entry.note}

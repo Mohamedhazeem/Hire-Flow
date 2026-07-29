@@ -2,7 +2,11 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { NotFoundError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
-import { getPublicJobById, listCompanyJobs, listSimilarJobs } from "@/app/features/jobs/queries/public-job-queries";
+import {
+  getPublicJobById,
+  listCompanyJobs,
+  listSimilarJobs,
+} from "@/app/features/jobs/queries/public-job-queries";
 
 async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

@@ -29,7 +29,10 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
   const recruiterId = (session?.user as { id?: string })?.id ?? "";
   const { data, isLoading, isError } = useApplicantDetail(applicationId);
   const transitionStatus = useTransitionStatusWithRefresh(applicationId);
-  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({ type: "", applicant: null });
+  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({
+    type: "",
+    applicant: null,
+  });
   const [previewOpen, setPreviewOpen] = useState(false);
   const [downloadError, setDownloadError] = useState<string | null>(null);
 
@@ -134,7 +137,9 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
         </div>
         <div className="space-y-6">
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Timeline</h2>
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+              Timeline
+            </h2>
             <StatusTimeline entries={statusTimeline} />
           </div>
           <RecentMessagesCard
@@ -154,7 +159,10 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
         applicant={applicantRowForDialog}
       />
 
-      <ApplicantDetailDialogs dialog={dialog} onDialogClose={() => setDialog({ type: "", applicant: null })} />
+      <ApplicantDetailDialogs
+        dialog={dialog}
+        onDialogClose={() => setDialog({ type: "", applicant: null })}
+      />
 
       <ResumePreviewDialog
         open={previewOpen}

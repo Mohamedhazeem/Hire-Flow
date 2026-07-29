@@ -158,7 +158,14 @@ type FilterSelectProps = {
   labels?: Record<string, string>;
 };
 
-export function FilterSelect({ label, paramKey, options, value, onChange, labels }: FilterSelectProps) {
+export function FilterSelect({
+  label,
+  paramKey,
+  options,
+  value,
+  onChange,
+  labels,
+}: FilterSelectProps) {
   return (
     <select
       value={value ?? ""}

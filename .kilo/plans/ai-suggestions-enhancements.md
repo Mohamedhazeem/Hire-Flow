@@ -65,7 +65,10 @@ Simple djb2 string hash of `JSON.stringify(builderData ?? {})` to keep sessionSt
 After `EnhancementsResponseSchema.safeParse` succeeds, spread the data with clamped `projectedScore` before returning:
 
 ```ts
-return ok({ ...validated.data, projectedScore: Math.max(validated.data.projectedScore, validated.data.overallScore) });
+return ok({
+  ...validated.data,
+  projectedScore: Math.max(validated.data.projectedScore, validated.data.overallScore),
+});
 ```
 
 ### Cross-card panel coordination

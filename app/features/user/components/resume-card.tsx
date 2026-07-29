@@ -2,12 +2,23 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon, SparklesIcon, AlertCircle } from "lucide-react";
+import {
+  FileTextIcon,
+  StarIcon,
+  DownloadIcon,
+  PencilIcon,
+  Trash2Icon,
+  SparklesIcon,
+  AlertCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { AiSuggestionsPanel } from "@/app/features/user/components/ai-suggestions-panel";
 import { useAiResumeEnhance } from "@/app/features/user/hooks/use-ai-resume-enhance";
-import { getCachedResponse, setCachedResponse } from "@/app/features/user/hooks/use-ai-suggestions-cache";
+import {
+  getCachedResponse,
+  setCachedResponse,
+} from "@/app/features/user/hooks/use-ai-suggestions-cache";
 import type { ResumeListItem } from "@/app/features/user/hooks/use-resumes";
 import type { EnhancementsResponse } from "@/app/features/user/schema/resume-ai.schema";
 
@@ -79,7 +90,14 @@ function formatDate(dateStr: string): string {
   }
 }
 
-export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownload, onEdit }: ResumeCardProps) {
+export function ResumeCard({
+  resume,
+  isDeleting,
+  onSetPrimary,
+  onDelete,
+  onDownload,
+  onEdit,
+}: ResumeCardProps) {
   const [aiResult, setAiResult] = useState<EnhancementsResponse | null>(null);
   const [aiError, setAiError] = useState<string | null>(null);
   const isBuilder = !resume.fileUrl;
@@ -102,7 +120,9 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
           setAiResult(res);
         } else {
           releasePanel(resume.id);
-          setAiError("AI features temporarily unavailable. Configure an API key to use this feature.");
+          setAiError(
+            "AI features temporarily unavailable. Configure an API key to use this feature.",
+          );
         }
       },
       onError: (error) => {
@@ -119,11 +139,19 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
         initial={false}
         animate={
           enhanceMutation.isPending
-            ? { borderColor: ["rgba(99,102,241,0.2)", "rgba(99,102,241,0.6)", "rgba(99,102,241,0.2)"] }
+            ? {
+                borderColor: [
+                  "rgba(99,102,241,0.2)",
+                  "rgba(99,102,241,0.6)",
+                  "rgba(99,102,241,0.2)",
+                ],
+              }
             : { borderColor: "var(--color-border-subtle)" }
         }
         transition={
-          enhanceMutation.isPending ? { duration: 2, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }
+          enhanceMutation.isPending
+            ? { duration: 2, repeat: Infinity, ease: "easeInOut" }
+            : { duration: 0.3 }
         }
         className="rounded-xl border bg-bg-surface shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
       >
@@ -136,7 +164,8 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-semibold text-text-heading truncate">{resume.label}</p>
                 <p className="text-xs text-text-muted mt-0.5">
-                  {formatDate(resume.createdAt)} &middot; {isBuilder ? "Builder" : formatSize(resume.fileSize)}
+                  {formatDate(resume.createdAt)} &middot;{" "}
+                  {isBuilder ? "Builder" : formatSize(resume.fileSize)}
                 </p>
               </div>
             </div>
@@ -150,7 +179,9 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
 
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="inline-flex items-center rounded-full bg-bg-elevated text-text-muted border border-border-subtle px-2 py-0.5 text-[10px] font-medium">
-              {isBuilder ? "Builder Resume" : (resume.fileType?.split("/").pop()?.toUpperCase() ?? "File")}
+              {isBuilder
+                ? "Builder Resume"
+                : (resume.fileType?.split("/").pop()?.toUpperCase() ?? "File")}
             </span>
           </div>
 
@@ -175,7 +206,12 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
                 )}
 
                 {isBuilder && (
-                  <Button variant="outline" size="sm" className="gap-1.5 text-xs" onClick={() => onEdit(resume.id)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-1.5 text-xs"
+                    onClick={() => onEdit(resume.id)}
+                  >
                     <PencilIcon className="size-3.5" />
                     Edit
                   </Button>

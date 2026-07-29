@@ -36,7 +36,9 @@ export function AutocompleteInput({
 
   const atLimit = value.length >= maxItems;
   const isCustom =
-    allowCustom && search.trim() !== "" && !suggestions.some((s) => s.toLowerCase() === search.toLowerCase());
+    allowCustom &&
+    search.trim() !== "" &&
+    !suggestions.some((s) => s.toLowerCase() === search.toLowerCase());
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -114,7 +116,9 @@ export function AutocompleteInput({
               }
             }}
             disabled={disabled || atLimit}
-            placeholder={value.length === 0 ? placeholder : atLimit ? `Max ${maxItems} items` : "Add more..."}
+            placeholder={
+              value.length === 0 ? placeholder : atLimit ? `Max ${maxItems} items` : "Add more..."
+            }
             className="min-w-[120px] flex-1 border-none bg-transparent py-0.5 text-sm text-text-body outline-none placeholder:text-text-muted disabled:cursor-not-allowed"
           />
           <button
@@ -157,7 +161,9 @@ export function AutocompleteInput({
                 </span>
               </Command.Item>
             )}
-            <Command.Empty className="px-3 py-6 text-center text-sm text-text-muted">{emptyMessage}</Command.Empty>
+            <Command.Empty className="px-3 py-6 text-center text-sm text-text-muted">
+              {emptyMessage}
+            </Command.Empty>
           </Command.List>
         )}
       </Command>

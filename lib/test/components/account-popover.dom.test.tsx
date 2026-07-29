@@ -122,7 +122,9 @@ describe("AccountPopover", () => {
   describe("message badge", () => {
     it("does not render badge when unread count is 0", async () => {
       mockGetUnreadCount.mockResolvedValue(0);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -132,7 +134,9 @@ describe("AccountPopover", () => {
 
     it("renders badge with correct number when count > 0", async () => {
       mockGetUnreadCount.mockResolvedValue(5);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -142,7 +146,9 @@ describe("AccountPopover", () => {
 
     it("caps badge at 99+ when count > 99", async () => {
       mockGetUnreadCount.mockResolvedValue(150);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -152,7 +158,9 @@ describe("AccountPopover", () => {
 
     it("renders badge for user role messages link", async () => {
       mockGetUnreadCount.mockResolvedValue(3);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -163,7 +171,9 @@ describe("AccountPopover", () => {
 
     it("renders badge for recruiter role messages link", async () => {
       mockGetUnreadCount.mockResolvedValue(2);
-      vi.mocked(useSession).mockReturnValue(session({ id: "r1", name: "Rec", email: "r@test.com", role: "recruiter" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "r1", name: "Rec", email: "r@test.com", role: "recruiter" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -174,7 +184,9 @@ describe("AccountPopover", () => {
 
     it("renders badge for admin role messages link", async () => {
       mockGetUnreadCount.mockResolvedValue(1);
-      vi.mocked(useSession).mockReturnValue(session({ id: "a1", name: "Admin", email: "a@test.com", role: "admin" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "a1", name: "Admin", email: "a@test.com", role: "admin" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -185,7 +197,9 @@ describe("AccountPopover", () => {
 
     it("does not show badge on non-message links like Dashboard", async () => {
       mockGetUnreadCount.mockResolvedValue(3);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));
@@ -209,7 +223,9 @@ describe("AccountPopover", () => {
 
     it("has correct badge styling classes", async () => {
       mockGetUnreadCount.mockResolvedValue(1);
-      vi.mocked(useSession).mockReturnValue(session({ id: "u1", name: "User", email: "u@test.com", role: "user" }));
+      vi.mocked(useSession).mockReturnValue(
+        session({ id: "u1", name: "User", email: "u@test.com", role: "user" }),
+      );
       const user = userEvent.setup();
       renderWithClient(<AccountPopover />);
       await user.click(screen.getByRole("button"));

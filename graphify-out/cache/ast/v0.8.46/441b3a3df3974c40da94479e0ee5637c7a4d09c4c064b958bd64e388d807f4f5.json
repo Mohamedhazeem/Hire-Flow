@@ -1,1 +1,271 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_online_presence_plan_md", "label": "online-presence-plan.md", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L1"}, {"id": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "label": "Online Presence \u2014 Green Dot + \"Online\" Label in Messages", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L1"}, {"id": "plans_online_presence_plan_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L3"}, {"id": "plans_online_presence_plan_design", "label": "Design", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L7"}, {"id": "plans_online_presence_plan_key_rules", "label": "Key rules", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L11"}, {"id": "plans_online_presence_plan_changed_files", "label": "Changed files", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L18"}, {"id": "plans_online_presence_plan_implementation_steps", "label": "Implementation steps", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L31"}, {"id": "plans_online_presence_plan_step_1_extend_pusher_auth_handler_for_presence_channels", "label": "Step 1 \u2014 Extend Pusher auth handler for presence channels", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L33"}, {"id": "plans_online_presence_plan_step_2_create_presence_zustand_store", "label": "Step 2 \u2014 Create presence Zustand store", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L52"}, {"id": "plans_online_presence_plan_step_3_create_shared_threadlistitem", "label": "Step 3 \u2014 Create shared ThreadListItem", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L77"}, {"id": "plans_online_presence_plan_step_4_create_presence_subscription_hook", "label": "Step 4 \u2014 Create presence subscription hook", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L106"}, {"id": "plans_online_presence_plan_step_5_update_all_three_messages_pages", "label": "Step 5 \u2014 Update all three messages pages", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L132"}, {"id": "plans_online_presence_plan_step_6_subscribe_current_user_to_their_own_presence", "label": "Step 6 \u2014 Subscribe current user to their own presence", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L143"}, {"id": "plans_online_presence_plan_step_7_enable_presence_auth_in_pusher_client", "label": "Step 7 \u2014 Enable presence auth in pusher-client", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L161"}, {"id": "plans_online_presence_plan_step_8_add_online_to_sharedthreadview", "label": "Step 8 \u2014 Add \"Online\" to SharedThreadView", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L167"}, {"id": "plans_online_presence_plan_edge_cases_handled", "label": "Edge cases handled", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L195"}, {"id": "plans_online_presence_plan_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L212"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_online_presence_plan_md", "target": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_design", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L7", "weight": 1.0}, {"source": "plans_online_presence_plan_design", "target": "plans_online_presence_plan_key_rules", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L11", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_changed_files", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L18", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_implementation_steps", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L31", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_1_extend_pusher_auth_handler_for_presence_channels", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L33", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_2_create_presence_zustand_store", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L52", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_3_create_shared_threadlistitem", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L77", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_4_create_presence_subscription_hook", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L106", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_5_update_all_three_messages_pages", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L132", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_6_subscribe_current_user_to_their_own_presence", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L143", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_7_enable_presence_auth_in_pusher_client", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L161", "weight": 1.0}, {"source": "plans_online_presence_plan_implementation_steps", "target": "plans_online_presence_plan_step_8_add_online_to_sharedthreadview", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L167", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_edge_cases_handled", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L195", "weight": 1.0}, {"source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages", "target": "plans_online_presence_plan_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/online-presence-plan.md", "source_location": "L212", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_online_presence_plan_md",
+      "label": "online-presence-plan.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "label": "Online Presence \u2014 Green Dot + \"Online\" Label in Messages",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_online_presence_plan_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_online_presence_plan_design",
+      "label": "Design",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_online_presence_plan_key_rules",
+      "label": "Key rules",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "plans_online_presence_plan_changed_files",
+      "label": "Changed files",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "plans_online_presence_plan_implementation_steps",
+      "label": "Implementation steps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "plans_online_presence_plan_step_1_extend_pusher_auth_handler_for_presence_channels",
+      "label": "Step 1 \u2014 Extend Pusher auth handler for presence channels",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "plans_online_presence_plan_step_2_create_presence_zustand_store",
+      "label": "Step 2 \u2014 Create presence Zustand store",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L52"
+    },
+    {
+      "id": "plans_online_presence_plan_step_3_create_shared_threadlistitem",
+      "label": "Step 3 \u2014 Create shared ThreadListItem",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "plans_online_presence_plan_step_4_create_presence_subscription_hook",
+      "label": "Step 4 \u2014 Create presence subscription hook",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L106"
+    },
+    {
+      "id": "plans_online_presence_plan_step_5_update_all_three_messages_pages",
+      "label": "Step 5 \u2014 Update all three messages pages",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L132"
+    },
+    {
+      "id": "plans_online_presence_plan_step_6_subscribe_current_user_to_their_own_presence",
+      "label": "Step 6 \u2014 Subscribe current user to their own presence",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L143"
+    },
+    {
+      "id": "plans_online_presence_plan_step_7_enable_presence_auth_in_pusher_client",
+      "label": "Step 7 \u2014 Enable presence auth in pusher-client",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L161"
+    },
+    {
+      "id": "plans_online_presence_plan_step_8_add_online_to_sharedthreadview",
+      "label": "Step 8 \u2014 Add \"Online\" to SharedThreadView",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L167"
+    },
+    {
+      "id": "plans_online_presence_plan_edge_cases_handled",
+      "label": "Edge cases handled",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L195"
+    },
+    {
+      "id": "plans_online_presence_plan_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L212"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_online_presence_plan_md",
+      "target": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_design",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_design",
+      "target": "plans_online_presence_plan_key_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_changed_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_implementation_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_1_extend_pusher_auth_handler_for_presence_channels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_2_create_presence_zustand_store",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_3_create_shared_threadlistitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_4_create_presence_subscription_hook",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_5_update_all_three_messages_pages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_6_subscribe_current_user_to_their_own_presence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_7_enable_presence_auth_in_pusher_client",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_implementation_steps",
+      "target": "plans_online_presence_plan_step_8_add_online_to_sharedthreadview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_edge_cases_handled",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_online_presence_plan_online_presence_green_dot_online_label_in_messages",
+      "target": "plans_online_presence_plan_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/online-presence-plan.md",
+      "source_location": "L212",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

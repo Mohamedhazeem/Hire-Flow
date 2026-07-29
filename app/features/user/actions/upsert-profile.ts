@@ -16,7 +16,18 @@ export async function upsertProfile(input: ProfileInput) {
     throw new ValidationError(parsed.error.issues[0]?.message ?? "Invalid profile data");
   }
 
-  const { headline, bio, location, skills, workMode, basePay, ctc, ectc, experiences, socialLinks } = parsed.data;
+  const {
+    headline,
+    bio,
+    location,
+    skills,
+    workMode,
+    basePay,
+    ctc,
+    ectc,
+    experiences,
+    socialLinks,
+  } = parsed.data;
 
   const profile = await prisma.userProfile.upsert({
     where: { userId: session.id },

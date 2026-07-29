@@ -23,7 +23,9 @@ describe("FakeRepository concurrency", () => {
     const keys = ["a", "b", "c", "d", "e"];
 
     const results = await Promise.all(
-      keys.flatMap((key) => Array.from({ length: 10 }, () => repo.increment(`app:test:${key}`, now, cutoff))),
+      keys.flatMap((key) =>
+        Array.from({ length: 10 }, () => repo.increment(`app:test:${key}`, now, cutoff)),
+      ),
     );
 
     expect(results.length).toBe(50);

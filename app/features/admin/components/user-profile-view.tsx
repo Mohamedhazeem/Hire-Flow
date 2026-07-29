@@ -24,7 +24,8 @@ import { ShowMoreToggle } from "@/components/shared/show-more-toggle";
 import { ResumePreviewDialog } from "@/components/shared/resume-preview-dialog";
 import { useAdminUserApplications } from "@/app/features/admin/hooks/use-admin-users";
 
-const fmtDate = (d: Date) => d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+const fmtDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 const isPdfOrImage = (url: string) => {
   const e = url.split(".").pop()?.toLowerCase();
   return e === "pdf" || ["jpg", "jpeg", "png", "webp", "gif"].includes(e ?? "");
@@ -37,7 +38,10 @@ function ApplicationsTable({ apps }: { apps: App[] }) {
       <thead>
         <tr className="border-b border-border-subtle bg-bg-elevated/50">
           {["Job", "Status", "Applied", ""].map((h) => (
-            <th key={h} className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">
+            <th
+              key={h}
+              className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3"
+            >
               {h || "\u00A0"}
             </th>
           ))}
@@ -96,7 +100,13 @@ type AdminUserProfileViewProps = {
       ctc: number | null;
       socialLinks: unknown;
     } | null;
-    resumes: { id: string; label: string; fileUrl: string | null; isPrimary: boolean; createdAt: string }[];
+    resumes: {
+      id: string;
+      label: string;
+      fileUrl: string | null;
+      isPrimary: boolean;
+      createdAt: string;
+    }[];
   };
 };
 
@@ -126,7 +136,8 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
   }, []);
 
   const p = user.profile;
-  const exp = p?.experiences != null && Array.isArray(p.experiences) ? (p.experiences as unknown[]) : null;
+  const exp =
+    p?.experiences != null && Array.isArray(p.experiences) ? (p.experiences as unknown[]) : null;
   const { data: ad, isLoading } = useAdminUserApplications(user.id);
   const apps = ad?.data?.applications ?? [];
   const displayed = showAll ? apps : apps.slice(0, LIMIT);
@@ -146,7 +157,11 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
             <div className="space-y-4">
               {p?.headline && <p className="text-lg text-text-body font-medium">{p.headline}</p>}
               {p?.bio && <p className="text-sm text-text-muted leading-relaxed">{p.bio}</p>}
-              <InfoRow icon={<MapPinIcon />} label="Location" value={p?.location ?? "Not specified"} />
+              <InfoRow
+                icon={<MapPinIcon />}
+                label="Location"
+                value={p?.location ?? "Not specified"}
+              />
               <InfoRow
                 icon={<GraduationCapIcon />}
                 label="Expected CTC"
@@ -160,7 +175,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
               />
               {p?.skills && p.skills.length > 0 && (
                 <div>
-                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">Skills</p>
+                  <p className="text-xs text-text-muted font-medium uppercase tracking-wider mb-2">
+                    Skills
+                  </p>
                   <div className="flex flex-wrap gap-1.5">
                     {p.skills.map((s, i) => (
                       <SkillChip key={i} label={s} />
@@ -174,7 +191,12 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
             <SectionCard title="Experience" count={exp.length} countLabel="entries">
               <div className="space-y-3">
                 {exp.map((item, i) => {
-                  const e = item as { title?: string; company?: string; startDate?: string; endDate?: string };
+                  const e = item as {
+                    title?: string;
+                    company?: string;
+                    startDate?: string;
+                    endDate?: string;
+                  };
                   return (
                     <div key={i} className="border-l-2 border-border-subtle pl-3">
                       {e.title && <p className="text-sm font-medium text-text-body">{e.title}</p>}
@@ -210,7 +232,9 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-xs text-text-muted">Uploaded {fmtDate(new Date(r.createdAt))}</p>
+                      <p className="text-xs text-text-muted">
+                        Uploaded {fmtDate(new Date(r.createdAt))}
+                      </p>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
                       {r.fileUrl && (
@@ -225,12 +249,19 @@ export function AdminUserProfileView({ user }: AdminUserProfileViewProps) {
                               <EyeIcon className="size-4 text-text-muted hover:text-brand" />
                             </Button>
                           )}
-                          <Button variant="ghost" size="icon-sm" title="Download" onClick={() => download(r.fileUrl!)}>
+                          <Button
+                            variant="ghost"
+                            size="icon-sm"
+                            title="Download"
+                            onClick={() => download(r.fileUrl!)}
+                          >
                             <DownloadIcon className="size-4 text-text-muted hover:text-brand" />
                           </Button>
                         </>
                       )}
-                      {!r.fileUrl && <span className="text-xs text-text-muted italic">No file</span>}
+                      {!r.fileUrl && (
+                        <span className="text-xs text-text-muted italic">No file</span>
+                      )}
                     </div>
                   </div>
                 ))}

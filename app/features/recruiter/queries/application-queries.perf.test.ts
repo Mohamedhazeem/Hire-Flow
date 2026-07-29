@@ -1,6 +1,12 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import { resetDb, createTestUser, createTestCompany, createTestJob, seedApplications } from "@/lib/test";
-import { measure } from "@/lib/test/perf";
+﻿import { describe, it, expect, beforeEach, vi } from "vitest";
+import {
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  seedApplications,
+} from "@/lib/test";
+import { measure, publishBenchmark } from "@/lib/test/perf";
 import { Role } from "@/app/generated/prisma/client";
 
 describe("PF2 — Applicant list 10K+ records performance", () => {
@@ -18,8 +24,21 @@ describe("PF2 — Applicant list 10K+ records performance", () => {
     const { listApplicants } = await import("@/app/features/recruiter/queries/application-queries");
 
     const { ms, result } = await measure(() =>
-      listApplicants(job.id, company.id, { page: 1, pageSize: 100, sortBy: "appliedAt", sortOrder: "desc" }),
+      listApplicants(job.id, company.id, {
+        page: 1,
+        pageSize: 100,
+        sortBy: "appliedAt",
+        sortOrder: "desc",
+      }),
     );
+
+    publishBenchmark({
+      suite: "PF2-applicant-list-10k",
+      meanMs: ms,
+      p50Ms: ms,
+      p95Ms: ms,
+      sampleCount: 1,
+    });
 
     expect(ms).toBeLessThanOrEqual(1000);
     expect(result.total).toBe(10_000);

@@ -55,7 +55,10 @@ export async function listUserApplications(
   userId: string,
   params: { page?: number; pageSize?: number; status?: string; search?: string },
 ): Promise<UserApplicationListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
+  const { skip, take, page, pageSize } = parseOffsetParams(
+    { page: params.page, pageSize: params.pageSize },
+    20,
+  );
 
   const where: Record<string, unknown> = { userId };
   if (params.status) where.status = params.status;
@@ -91,7 +94,10 @@ export async function listUserApplications(
   return { applications, ...buildOffsetMeta(total, page, pageSize) };
 }
 
-export async function getUserApplicationDetail(id: string, userId: string): Promise<UserApplicationDetail | null> {
+export async function getUserApplicationDetail(
+  id: string,
+  userId: string,
+): Promise<UserApplicationDetail | null> {
   const raw = await prisma.application.findUnique({
     where: { id },
     include: {

@@ -178,9 +178,15 @@ export function JobListPage() {
               className="text-center py-16"
             >
               <p className="text-text-muted text-lg">
-                {hasFilters ? "No jobs found matching your criteria" : "No jobs available right now"}
+                {hasFilters
+                  ? "No jobs found matching your criteria"
+                  : "No jobs available right now"}
               </p>
-              {!hasFilters && <p className="text-sm text-text-muted mt-1">Check back later for new opportunities</p>}
+              {!hasFilters && (
+                <p className="text-sm text-text-muted mt-1">
+                  Check back later for new opportunities
+                </p>
+              )}
             </motion.div>
           )}
 
@@ -209,7 +215,9 @@ export function JobListPage() {
                     salaryCurrency={job.salaryCurrency}
                     skills={job.skills}
                     experienceLevel={job.experienceLevel}
-                    applicationDeadline={job.applicationDeadline ? job.applicationDeadline.toString() : null}
+                    applicationDeadline={
+                      job.applicationDeadline ? job.applicationDeadline.toString() : null
+                    }
                     createdAt={job.createdAt.toString()}
                   />
                 </motion.div>

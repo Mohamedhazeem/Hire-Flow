@@ -1,1 +1,207 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_step_3_1_user_profile_md", "label": "step-3-1-user-profile.md", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L1"}, {"id": "plans_step_3_1_user_profile_step_3_1_user_profile", "label": "Step 3.1 \u2014 User Profile", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L1"}, {"id": "plans_step_3_1_user_profile_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L3"}, {"id": "plans_step_3_1_user_profile_architecture", "label": "Architecture", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L7"}, {"id": "plans_step_3_1_user_profile_data_flow", "label": "Data Flow", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L16"}, {"id": "plans_step_3_1_user_profile_files_to_create_7_files_all_150_lines", "label": "Files to Create (7 files, all \u2264150 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L23"}, {"id": "plans_step_3_1_user_profile_schema_details", "label": "Schema Details", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L35"}, {"id": "plans_step_3_1_user_profile_profile_schema_ts", "label": "`profile.schema.ts`", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L37"}, {"id": "plans_step_3_1_user_profile_upsert_profile_ts", "label": "`upsert-profile.ts`", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L55"}, {"id": "plans_step_3_1_user_profile_ui_styling", "label": "UI & Styling", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L63"}, {"id": "plans_step_3_1_user_profile_edge_cases_covered", "label": "Edge Cases Covered", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L74"}, {"id": "plans_step_3_1_user_profile_dependencies", "label": "Dependencies", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L89"}, {"id": "plans_step_3_1_user_profile_verification", "label": "Verification", "file_type": "document", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L99"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_step_3_1_user_profile_md", "target": "plans_step_3_1_user_profile_step_3_1_user_profile", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L7", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_data_flow", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L16", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_files_to_create_7_files_all_150_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L23", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_schema_details", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L35", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_schema_details", "target": "plans_step_3_1_user_profile_profile_schema_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L37", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_schema_details", "target": "plans_step_3_1_user_profile_upsert_profile_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L55", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_ui_styling", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L63", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_edge_cases_covered", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L74", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_dependencies", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L89", "weight": 1.0}, {"source": "plans_step_3_1_user_profile_step_3_1_user_profile", "target": "plans_step_3_1_user_profile_verification", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-1-user-profile.md", "source_location": "L99", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_step_3_1_user_profile_md",
+      "label": "step-3-1-user-profile.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "label": "Step 3.1 \u2014 User Profile",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_data_flow",
+      "label": "Data Flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_files_to_create_7_files_all_150_lines",
+      "label": "Files to Create (7 files, all \u2264150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_schema_details",
+      "label": "Schema Details",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_profile_schema_ts",
+      "label": "`profile.schema.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_upsert_profile_ts",
+      "label": "`upsert-profile.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L55"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_ui_styling",
+      "label": "UI & Styling",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_edge_cases_covered",
+      "label": "Edge Cases Covered",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_dependencies",
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L89"
+    },
+    {
+      "id": "plans_step_3_1_user_profile_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L99"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_step_3_1_user_profile_md",
+      "target": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_data_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_files_to_create_7_files_all_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_schema_details",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_schema_details",
+      "target": "plans_step_3_1_user_profile_profile_schema_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_schema_details",
+      "target": "plans_step_3_1_user_profile_upsert_profile_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_ui_styling",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_edge_cases_covered",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_1_user_profile_step_3_1_user_profile",
+      "target": "plans_step_3_1_user_profile_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-1-user-profile.md",
+      "source_location": "L99",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

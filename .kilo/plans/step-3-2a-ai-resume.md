@@ -94,7 +94,11 @@ const PROVIDER_CONFIG: Record<
   },
 };
 
-export async function callAI(userPrompt: string, systemPrompt?: string, maxTokens = 1024): Promise<string | null> {
+export async function callAI(
+  userPrompt: string,
+  systemPrompt?: string,
+  maxTokens = 1024,
+): Promise<string | null> {
   const provider = (process.env.AI_PROVIDER || "anthropic") as AIProvider;
   const config = PROVIDER_CONFIG[provider];
   if (!config) return null;
@@ -138,7 +142,13 @@ export async function callAI(userPrompt: string, systemPrompt?: string, maxToken
 
 ```ts
 export const ResumeSuggestionSchema = z.object({
-  type: z.enum(["bullet_improvement", "skill_addition", "section_expansion", "ats_optimization", "grammar"]),
+  type: z.enum([
+    "bullet_improvement",
+    "skill_addition",
+    "section_expansion",
+    "ats_optimization",
+    "grammar",
+  ]),
   section: z.string(), // 'experience', 'education', 'skills', 'summary'
   original: z.string().optional(),
   suggestion: z.string(),
@@ -220,7 +230,10 @@ export function useApplyAiSuggestions(resumeId: string) {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (input: { suggestionIds: string[]; suggestions: ResumeSuggestion[] }) =>
-      apiClient(`/api/user/resumes/${resumeId}/apply-ai-suggestions`, { method: "POST", body: input }),
+      apiClient(`/api/user/resumes/${resumeId}/apply-ai-suggestions`, {
+        method: "POST",
+        body: input,
+      }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["user", "resumes"] }),
   });
 }

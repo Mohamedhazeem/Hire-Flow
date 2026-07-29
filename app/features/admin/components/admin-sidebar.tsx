@@ -35,5 +35,13 @@ export function AdminSidebar() {
       }
     : undefined;
 
-  return <Sidebar links={adminLinks} roleLabel="Admin" homeHref="/admin" onSignOut={signOut} user={sidebarUser} />;
+  return (
+    <Sidebar
+      links={adminLinks}
+      roleLabel="Admin"
+      homeHref="/admin"
+      onSignOut={signOut}
+      user={sidebarUser}
+    />
+  );
 }

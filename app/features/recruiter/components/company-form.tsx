@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CompanyProfileSchema, type CompanyProfileInput } from "@/app/features/recruiter/schema/company.schema";
+import {
+  CompanyProfileSchema,
+  type CompanyProfileInput,
+} from "@/app/features/recruiter/schema/company.schema";
 import { upsertCompany } from "@/app/features/recruiter/actions/upsert-company";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -166,9 +169,16 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
           </label>
           <div className="relative">
             <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-text-muted pointer-events-none" />
-            <Input id="company-name" placeholder="Acme Inc." className="pl-9" {...form.register("name")} />
+            <Input
+              id="company-name"
+              placeholder="Acme Inc."
+              className="pl-9"
+              {...form.register("name")}
+            />
           </div>
-          {form.formState.errors.name && <p className="text-xs text-error">{form.formState.errors.name.message}</p>}
+          {form.formState.errors.name && (
+            <p className="text-xs text-error">{form.formState.errors.name.message}</p>
+          )}
         </div>
 
         {/* Industry */}
@@ -245,7 +255,11 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
                   className="absolute inset-0 flex size-20 items-center justify-center rounded-lg bg-error/80 text-white opacity-0 transition-opacity group-hover:opacity-100 disabled:opacity-100"
                   aria-label="Remove logo"
                 >
-                  {removing ? <span className="text-xs">Removing...</span> : <Trash2 className="size-5" />}
+                  {removing ? (
+                    <span className="text-xs">Removing...</span>
+                  ) : (
+                    <Trash2 className="size-5" />
+                  )}
                 </button>
               </div>
             ) : (
@@ -272,7 +286,9 @@ export function CompanyForm({ defaultValues, readOnly = false }: CompanyFormProp
                 aria-label="Upload company logo"
               />
               <span className="text-xs text-text-muted">
-                {logoUrl ? "Logo uploaded \u2014 save to apply" : "JPEG, PNG, WebP, or GIF. Max 5 MB."}
+                {logoUrl
+                  ? "Logo uploaded \u2014 save to apply"
+                  : "JPEG, PNG, WebP, or GIF. Max 5 MB."}
               </span>
             </div>
           </div>

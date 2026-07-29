@@ -66,7 +66,12 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
 
   return (
     <>
-      <div className={cn("hidden lg:block shrink-0 transition-all duration-200", sidebarOpen ? "w-64" : "w-16")} />
+      <div
+        className={cn(
+          "hidden lg:block shrink-0 transition-all duration-200",
+          sidebarOpen ? "w-64" : "w-16",
+        )}
+      />
 
       {/* Mobile backdrop */}
       {sidebarOpen && (
@@ -125,7 +130,9 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
                     >
                       {getSidebarDisplayName(user.name, 14)}
                     </p>
-                    <p className="text-[11px] text-text-muted capitalize truncate">{user.role.replace(/_/g, " ")}</p>
+                    <p className="text-[11px] text-text-muted capitalize truncate">
+                      {user.role.replace(/_/g, " ")}
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -159,7 +166,11 @@ export function Sidebar({ links, roleLabel, homeHref, onSignOut, user }: Sidebar
             className="p-1.5 rounded-md text-text-muted hover:bg-bg-elevated hover:text-text-heading transition-colors"
             title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
           >
-            {sidebarOpen ? <PanelLeftCloseIcon className="size-4" /> : <PanelLeftOpenIcon className="size-4" />}
+            {sidebarOpen ? (
+              <PanelLeftCloseIcon className="size-4" />
+            ) : (
+              <PanelLeftOpenIcon className="size-4" />
+            )}
           </button>
         </div>
 

@@ -23,20 +23,26 @@ describe("ChatInputArea", () => {
     render(<ChatInputArea {...baseProps()} />);
     const submit = screen.getByRole("button", { name: "" }) as HTMLButtonElement;
     // The submit button is the only type=submit button in the form.
-    const submitBtn = screen.getAllByRole("button").find((b) => (b as HTMLButtonElement).type === "submit");
+    const submitBtn = screen
+      .getAllByRole("button")
+      .find((b) => (b as HTMLButtonElement).type === "submit");
     expect(submitBtn).toBeDisabled();
     void submit;
   });
 
   it("enables submit when input has non-whitespace text", () => {
     render(<ChatInputArea {...baseProps()} input="hello" />);
-    const submitBtn = screen.getAllByRole("button").find((b) => (b as HTMLButtonElement).type === "submit");
+    const submitBtn = screen
+      .getAllByRole("button")
+      .find((b) => (b as HTMLButtonElement).type === "submit");
     expect(submitBtn).toBeEnabled();
   });
 
   it("keeps submit disabled for whitespace-only input", () => {
     render(<ChatInputArea {...baseProps()} input="   " />);
-    const submitBtn = screen.getAllByRole("button").find((b) => (b as HTMLButtonElement).type === "submit");
+    const submitBtn = screen
+      .getAllByRole("button")
+      .find((b) => (b as HTMLButtonElement).type === "submit");
     expect(submitBtn).toBeDisabled();
   });
 
@@ -80,7 +86,9 @@ describe("ChatInputArea", () => {
     const onSubmit = vi.fn((e: { preventDefault: () => void }) => e.preventDefault());
     const user = userEvent.setup();
     render(<ChatInputArea {...baseProps()} input="hi" onSubmit={onSubmit} />);
-    const submitBtn = screen.getAllByRole("button").find((b) => (b as HTMLButtonElement).type === "submit")!;
+    const submitBtn = screen
+      .getAllByRole("button")
+      .find((b) => (b as HTMLButtonElement).type === "submit")!;
     await user.click(submitBtn);
     expect(onSubmit).toHaveBeenCalledOnce();
   });

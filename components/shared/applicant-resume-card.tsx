@@ -42,12 +42,19 @@ function isPreviewableType(fileUrl: string | null | undefined): boolean {
   return ext === "pdf" || ["jpg", "jpeg", "png", "webp", "gif"].includes(ext);
 }
 
-export function ApplicantResumeCard({ resume, downloadError, onPreview, onDownload }: ApplicantResumeCardProps) {
+export function ApplicantResumeCard({
+  resume,
+  downloadError,
+  onPreview,
+  onDownload,
+}: ApplicantResumeCardProps) {
   const isPreviewable = isPreviewableType(resume?.fileUrl);
 
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Resume</h2>
+      <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+        Resume
+      </h2>
 
       {resume?.source === "deleted" ? (
         <div className="flex flex-col items-center gap-2 py-4 text-center">
@@ -82,7 +89,11 @@ export function ApplicantResumeCard({ resume, downloadError, onPreview, onDownlo
                     Preview
                   </Button>
                 ) : (
-                  <Button variant="default" size="sm" onClick={() => resume.fileUrl && onDownload(resume.fileUrl)}>
+                  <Button
+                    variant="default"
+                    size="sm"
+                    onClick={() => resume.fileUrl && onDownload(resume.fileUrl)}
+                  >
                     <DownloadIcon className="size-4 mr-1.5" />
                     Download
                   </Button>
