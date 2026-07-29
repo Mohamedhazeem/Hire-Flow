@@ -32,14 +32,9 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
   const { data: session } = useSession();
   const [showApply, setShowApply] = useState(false);
   const [now] = useState(() => Date.now());
-  const hydrated = useSyncExternalStore(
-    hydrator.subscribe,
-    hydrator.getSnapshot,
-    hydrator.getServerSnapshot,
-  );
+  const hydrated = useSyncExternalStore(hydrator.subscribe, hydrator.getSnapshot, hydrator.getServerSnapshot);
 
-  const fmt = (n: number) =>
-    hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US");
+  const fmt = (n: number) => (hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US"));
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["job", id],
@@ -47,10 +42,18 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
     enabled: !!id,
   });
 
-  const { data: related, isLoading: relatedLoading, isError: relatedError } = useQuery({
+  const {
+    data: related,
+    isLoading: relatedLoading,
+    isError: relatedError,
+  } = useQuery({
     queryKey: ["job-related", id],
     queryFn: async () =>
-      (await apiClient<{ data: { companyJobs: CompactJobRow[]; similarJobs: CompactJobRow[] } }>(`/api/jobs/${id}/related`)).data,
+      (
+        await apiClient<{ data: { companyJobs: CompactJobRow[]; similarJobs: CompactJobRow[] } }>(
+          `/api/jobs/${id}/related`,
+        )
+      ).data,
     enabled: !!id,
     staleTime: 120_000,
   });
@@ -109,7 +112,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
         <ArrowLeftIcon className="size-4" /> Back to jobs
       </Link>
 
-        <div className="flex items-start gap-4 mb-6">
+      <div className="flex items-start gap-4 mb-6">
         <div className="size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
           {data.companyLogo ? (
             <Image
@@ -165,8 +168,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       )}
       {ii && (
         <div className="flex items-center gap-2 text-sm text-text-muted bg-bg-muted border border-border-subtle rounded-lg px-4 py-3 mb-6">
-          <AlertCircleIcon className="size-4 shrink-0" /> This job is no longer accepting
-          applications
+          <AlertCircleIcon className="size-4 shrink-0" /> This job is no longer accepting applications
         </div>
       )}
 
@@ -191,25 +193,16 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       </div>
 
       <div className="mb-6">
-        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">
-          Description
-        </h2>
-        <div className="text-sm text-text-body whitespace-pre-line leading-relaxed">
-          {data.description}
-        </div>
+        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">Description</h2>
+        <div className="text-sm text-text-body whitespace-pre-line leading-relaxed">{data.description}</div>
       </div>
 
       {data.skills.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">
-            Skills
-          </h2>
+          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">Skills</h2>
           <div className="flex flex-wrap gap-1.5">
             {data.skills.map((s) => (
-              <span
-                key={s}
-                className="text-xs bg-brand/5 text-brand border border-brand/10 px-2.5 py-1 rounded-full"
-              >
+              <span key={s} className="text-xs bg-brand/5 text-brand border border-brand/10 px-2.5 py-1 rounded-full">
                 {s}
               </span>
             ))}
@@ -219,9 +212,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
 
       {data.tags.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">
-            Tags
-          </h2>
+          <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">Tags</h2>
           <div className="flex flex-wrap gap-1.5">
             {data.tags.map((t) => (
               <span
@@ -253,9 +244,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
             Log in to Apply
           </Link>
         )}
-        <span className="text-xs text-text-muted">
-          {formatApplicantCount(data.applicationCount)}
-        </span>
+        <span className="text-xs text-text-muted">{formatApplicantCount(data.applicationCount)}</span>
       </div>
 
       {showApply && <ApplyModal jobId={data.id} onClose={() => setShowApply(false)} />}
@@ -269,17 +258,11 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       className={`${containerWidth} mx-auto px-4 md:px-6 lg:px-8 py-6`}
     >
       <div className={hasCompanyJobs ? "lg:grid lg:grid-cols-[1fr_320px] lg:gap-8" : ""}>
-        <div className={hasCompanyJobs ? "" : "max-w-3xl"}>
-          {mainContent}
-        </div>
+        <div className={hasCompanyJobs ? "" : "max-w-3xl"}>{mainContent}</div>
 
         {hasCompanyJobs && (
           <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
-            <CompanyJobsPanel
-              companyName={data.companyName}
-              companyId={data.companyId}
-              jobs={related!.companyJobs}
-            />
+            <CompanyJobsPanel companyName={data.companyName} companyId={data.companyId} jobs={related!.companyJobs} />
           </div>
         )}
       </div>

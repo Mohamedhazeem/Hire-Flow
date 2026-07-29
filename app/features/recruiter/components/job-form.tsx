@@ -38,13 +38,29 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
   const createJob = useCreateJob();
   const updateJob = useUpdateJob();
 
-  const { register, handleSubmit, setValue, control, formState: { errors, isSubmitting } } = useForm<JobFormInput>({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    control,
+    formState: { errors, isSubmitting },
+  } = useForm<JobFormInput>({
     resolver: zodResolver(JobCreateSchema) as never,
     defaultValues: {
-      title: "", description: "", locations: [], workMode: "remote",
-      employmentType: "full_time", timezone: "", skills: [], tags: [],
-      experienceLevel: "", salaryMin: undefined, salaryMax: undefined,
-      salaryCurrency: "USD", applicationDeadline: "", ...defaultValues,
+      title: "",
+      description: "",
+      locations: [],
+      workMode: "remote",
+      employmentType: "full_time",
+      timezone: "",
+      skills: [],
+      tags: [],
+      experienceLevel: "",
+      salaryMin: undefined,
+      salaryMax: undefined,
+      salaryCurrency: "USD",
+      applicationDeadline: "",
+      ...defaultValues,
     },
   });
 
@@ -72,7 +88,11 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
         </FormField>
 
         <FormField label="Description" required error={errors.description}>
-          <Textarea {...register("description")} placeholder="Describe the role, responsibilities, and qualifications..." rows={6} />
+          <Textarea
+            {...register("description")}
+            placeholder="Describe the role, responsibilities, and qualifications..."
+            rows={6}
+          />
         </FormField>
 
         <FormField label="Locations" required error={errors.locations as FieldError | undefined}>
@@ -87,24 +107,42 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="flex-1">
             <FormField label="Work Mode" required>
-              <Select value={workMode} onValueChange={(v) => setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })}>
+              <Select
+                value={workMode}
+                onValueChange={(v) => setValue("workMode", v as JobFormInput["workMode"], { shouldValidate: true })}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue>{WORK_MODE_OPTIONS.find((o) => o.value === workMode)?.label ?? workMode}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
-                  {WORK_MODE_OPTIONS.map((opt) => (<SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>))}
+                  {WORK_MODE_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </FormField>
           </div>
           <div className="flex-1">
             <FormField label="Employment Type" required>
-              <Select value={employmentType} onValueChange={(v) => setValue("employmentType", v as JobFormInput["employmentType"], { shouldValidate: true })}>
+              <Select
+                value={employmentType}
+                onValueChange={(v) =>
+                  setValue("employmentType", v as JobFormInput["employmentType"], { shouldValidate: true })
+                }
+              >
                 <SelectTrigger className="w-full">
-                  <SelectValue>{EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ?? employmentType}</SelectValue>
+                  <SelectValue>
+                    {EMPLOYMENT_TYPE_OPTIONS.find((o) => o.value === employmentType)?.label ?? employmentType}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
-                  {EMPLOYMENT_TYPE_OPTIONS.map((opt) => (<SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>))}
+                  {EMPLOYMENT_TYPE_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </FormField>
@@ -116,7 +154,11 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
         </FormField>
 
         <FormField label="Skills">
-          <SkillInput value={skillsField.value} onChange={skillsField.onChange} placeholder="Search or type skills..." />
+          <SkillInput
+            value={skillsField.value}
+            onChange={skillsField.onChange}
+            placeholder="Search or type skills..."
+          />
         </FormField>
 
         <FormField label="Tags">
@@ -155,7 +197,10 @@ export function JobForm({ mode, jobId, defaultValues }: JobFormProps) {
       </div>
 
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center">
-        <Link href={mode === "edit" && jobId ? `/recruiter/jobs/${jobId}` : "/recruiter/jobs"} className="inline-flex items-center justify-center rounded-md border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-9 gap-1.5 px-2.5 text-sm font-medium whitespace-nowrap transition-all">
+        <Link
+          href={mode === "edit" && jobId ? `/recruiter/jobs/${jobId}` : "/recruiter/jobs"}
+          className="inline-flex items-center justify-center rounded-md border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-9 gap-1.5 px-2.5 text-sm font-medium whitespace-nowrap transition-all"
+        >
           <ArrowLeftIcon className="size-4" /> Cancel
         </Link>
         <Button type="submit" disabled={isSubmitting}>

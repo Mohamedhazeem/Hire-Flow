@@ -19,9 +19,7 @@ export function createJobTableColumns(actions: JobTableActions): ColumnDef<Admin
       key: "title",
       header: "Title",
       align: "center",
-      cell: (row) => (
-        <span className="font-medium text-text-heading max-w-xs truncate block">{row.title}</span>
-      ),
+      cell: (row) => <span className="font-medium text-text-heading max-w-xs truncate block">{row.title}</span>,
     },
     {
       key: "company",
@@ -33,18 +31,14 @@ export function createJobTableColumns(actions: JobTableActions): ColumnDef<Admin
       key: "recruiter",
       header: "Recruiter",
       align: "center",
-      cell: (row) => (
-        <span className="text-text-body">{row.recruiterName ?? row.recruiterEmail}</span>
-      ),
+      cell: (row) => <span className="text-text-body">{row.recruiterName ?? row.recruiterEmail}</span>,
     },
     {
       key: "status",
       header: "Status",
       align: "center",
       cell: (row) => (
-        <Badge variant={row.isActive ? "default" : "secondary"}>
-          {row.isActive ? "Active" : "Inactive"}
-        </Badge>
+        <Badge variant={row.isActive ? "default" : "secondary"}>{row.isActive ? "Active" : "Inactive"}</Badge>
       ),
     },
     {
@@ -69,9 +63,7 @@ export function createJobTableColumns(actions: JobTableActions): ColumnDef<Admin
       key: "employmentType",
       header: "Type",
       align: "center",
-      cell: (row) => (
-        <span className="text-text-body capitalize">{row.employmentType.replace(/_/g, " ")}</span>
-      ),
+      cell: (row) => <span className="text-text-body capitalize">{row.employmentType.replace(/_/g, " ")}</span>,
     },
     {
       key: "createdAt",

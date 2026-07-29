@@ -10,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { JobCard } from "./job-card";
 import { JobSearchBar } from "./job-search-bar";
 import { FilterSelect } from "./filter-select";
+import { SkillFilter } from "./skill-filter";
 import type { PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
 import { BriefcaseIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 
@@ -54,6 +55,7 @@ export function JobListPage() {
       employmentType: sp.get("employmentType") || undefined,
       experienceLevel: sp.get("experienceLevel") || undefined,
       status: sp.get("status") || undefined,
+      skills: sp.get("skills")?.split(",").filter(Boolean) || undefined,
     }),
     [sp],
   );
@@ -91,7 +93,8 @@ export function JobListPage() {
     params.workMode ||
     params.employmentType ||
     params.experienceLevel ||
-    params.status
+    params.status ||
+    params.skills?.length
   );
 
   return (
@@ -132,6 +135,10 @@ export function JobListPage() {
               onChange={setParam}
               labels={FILTER_LABELS}
             />
+            <SkillFilter
+              value={params.skills ?? []}
+              onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
+            />
             {hasFilters && (
               <button
                 type="button"
@@ -171,15 +178,9 @@ export function JobListPage() {
               className="text-center py-16"
             >
               <p className="text-text-muted text-lg">
-                {hasFilters
-                  ? "No jobs found matching your criteria"
-                  : "No jobs available right now"}
+                {hasFilters ? "No jobs found matching your criteria" : "No jobs available right now"}
               </p>
-              {!hasFilters && (
-                <p className="text-sm text-text-muted mt-1">
-                  Check back later for new opportunities
-                </p>
-              )}
+              {!hasFilters && <p className="text-sm text-text-muted mt-1">Check back later for new opportunities</p>}
             </motion.div>
           )}
 
@@ -208,9 +209,7 @@ export function JobListPage() {
                     salaryCurrency={job.salaryCurrency}
                     skills={job.skills}
                     experienceLevel={job.experienceLevel}
-                    applicationDeadline={
-                      job.applicationDeadline ? job.applicationDeadline.toString() : null
-                    }
+                    applicationDeadline={job.applicationDeadline ? job.applicationDeadline.toString() : null}
                     createdAt={job.createdAt.toString()}
                   />
                 </motion.div>

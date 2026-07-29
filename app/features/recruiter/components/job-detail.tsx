@@ -14,10 +14,7 @@ import { JobMetaGrid } from "@/components/shared/job-meta-grid";
 import { SectionCard } from "@/components/shared/section-card";
 import { ApplicantsTable } from "@/app/features/recruiter/components/applicants-table";
 
-const STATUS_BADGE: Record<
-  string,
-  { variant: "default" | "secondary" | "outline"; label: string }
-> = {
+const STATUS_BADGE: Record<string, { variant: "default" | "secondary" | "outline"; label: string }> = {
   draft: { variant: "secondary", label: "Draft" },
   active: { variant: "default", label: "Active" },
   archived: { variant: "outline", label: "Archived" },
@@ -103,9 +100,7 @@ export function JobDetail({ jobId }: JobDetailProps) {
       <JobMetaGrid job={job} />
 
       <SectionCard title="Description">
-        <p className="text-sm text-text-body whitespace-pre-wrap leading-relaxed">
-          {job.description}
-        </p>
+        <p className="text-sm text-text-body whitespace-pre-wrap leading-relaxed">{job.description}</p>
       </SectionCard>
 
       <ApplicantsTable jobId={job.id} pageSize={10} />

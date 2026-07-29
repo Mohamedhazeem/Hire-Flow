@@ -4,12 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {
-  BriefcaseIcon,
-  MapPinIcon,
-  ClockIcon,
-  TimerOffIcon,
-} from "lucide-react";
+import { BriefcaseIcon, MapPinIcon, ClockIcon, TimerOffIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { hydrator } from "@/lib/hydration";
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
@@ -51,16 +46,9 @@ export function JobCard({
 }: JobCardProps) {
   const router = useRouter();
 
-  const hydrated = useSyncExternalStore(
-    hydrator.subscribe,
-    hydrator.getSnapshot,
-    hydrator.getServerSnapshot,
-  );
+  const hydrated = useSyncExternalStore(hydrator.subscribe, hydrator.getSnapshot, hydrator.getServerSnapshot);
 
-  const fmt = (n: number) =>
-    hydrated === "client"
-      ? n.toLocaleString()
-      : n.toLocaleString("en-US");
+  const fmt = (n: number) => (hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US"));
 
   const salaryText =
     salaryMin != null || salaryMax != null
@@ -159,9 +147,7 @@ export function JobCard({
               {s}
             </span>
           ))}
-          {skills.length > 4 && (
-            <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>
-          )}
+          {skills.length > 4 && <span className="text-[11px] text-text-muted">+{skills.length - 4}</span>}
         </div>
       )}
     </div>
