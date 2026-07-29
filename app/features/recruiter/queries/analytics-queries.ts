@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { Prisma } from "@/app/generated/prisma/client";
 import type {
   AnalyticsFilter,
   AnalyticsResponse,
@@ -23,6 +24,13 @@ type RawJobBreakdownRow = {
   viewCount: bigint;
 };
 
+type Fragments = {
+  all: Prisma.Sql[];
+  allNoJobId: Prisma.Sql[];
+  joinConditions: Prisma.Sql[];
+  companyCondition: Prisma.Sql;
+};
+
 function defaultDateRange(): { dateFrom: string; dateTo: string } {
   const to = new Date();
   const from = new Date();
@@ -33,9 +41,7 @@ function defaultDateRange(): { dateFrom: string; dateTo: string } {
   };
 }
 
-type ClauseResult = { sql: string; params: unknown[] };
-
-function buildWhereClauses(params: {
+function buildWhereFragments(params: {
   companyId: string;
   dateFrom: string;
   dateTo: string;
@@ -44,17 +50,13 @@ function buildWhereClauses(params: {
   employmentType?: string;
   location?: string;
   jobId?: string;
-}): ClauseResult {
-  const clauses: string[] = [
-    `j."companyId" = $1::text`,
-    `a."appliedAt" >= $2::date`,
-    `a."appliedAt" < ($3::date + interval '1 day')`,
+}): Fragments {
+  const companyCondition = Prisma.sql`j."companyId" = ${params.companyId}::text`;
+  const timeConditions: Prisma.Sql[] = [
+    Prisma.sql`a."appliedAt" >= ${params.dateFrom}::date`,
+    Prisma.sql`a."appliedAt" < (${params.dateTo}::date + interval '1 day')`,
   ];
-  const values: unknown[] = [params.companyId, params.dateFrom, params.dateTo];
-  const p = (value: unknown) => {
-    values.push(value);
-    return `$${values.length}`;
-  };
+  const filters: Prisma.Sql[] = [];
 
   if (params.status) {
     const items = params.status
@@ -62,7 +64,7 @@ function buildWhereClauses(params: {
       .map((s) => s.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      clauses.push(`a."status" IN (${items.map((_, i) => `${p(items[i])}::text`).join(",")})`);
+      filters.push(Prisma.sql`a."status" IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
     }
   }
 
@@ -72,9 +74,7 @@ function buildWhereClauses(params: {
       .map((m) => m.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      clauses.push(
-        `j."workMode"::text IN (${items.map((_, i) => `${p(items[i])}::text`).join(",")})`,
-      );
+      filters.push(Prisma.sql`j."workMode"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
     }
   }
 
@@ -84,9 +84,7 @@ function buildWhereClauses(params: {
       .map((t) => t.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      clauses.push(
-        `j."employmentType"::text IN (${items.map((_, i) => `${p(items[i])}::text`).join(",")})`,
-      );
+      filters.push(Prisma.sql`j."employmentType"::text IN (${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))})`);
     }
   }
 
@@ -96,17 +94,24 @@ function buildWhereClauses(params: {
       .map((l) => l.trim())
       .filter(Boolean);
     if (items.length > 0) {
-      clauses.push(
-        `j."locations" && ARRAY[${items.map((_, i) => `${p(items[i])}::text`).join(",")}]`,
-      );
+      filters.push(Prisma.sql`j."locations" && ARRAY[${Prisma.join(items.map((i) => Prisma.sql`${i}::text`))}]`);
     }
   }
 
-  if (params.jobId) {
-    clauses.push(`a."jobId" = ${p(params.jobId)}::text`);
-  }
+  const jobIdFilter = params.jobId ? Prisma.sql`a."jobId" = ${params.jobId}::text` : null;
 
-  return { sql: clauses.join(" AND "), params: values };
+  const all = jobIdFilter
+    ? [companyCondition, ...timeConditions, ...filters, jobIdFilter]
+    : [companyCondition, ...timeConditions, ...filters];
+  const allNoJobId = [companyCondition, ...timeConditions, ...filters];
+  const joinConditions = [...timeConditions, ...filters];
+
+  return { all, allNoJobId, joinConditions, companyCondition };
+}
+
+function whereFrom(fragments: Prisma.Sql[]): Prisma.Sql {
+  if (fragments.length === 0) return Prisma.sql``;
+  return Prisma.sql`WHERE ${Prisma.join(fragments, " AND ")}`;
 }
 
 function reconstructFunnelOrder(raw: Array<{ status: string; count: bigint }>): FunnelStage[] {
@@ -122,22 +127,12 @@ function reconstructFunnelOrder(raw: Array<{ status: string; count: bigint }>): 
   return ordered;
 }
 
-function joinClauseFromWhere(whereSql: string): string {
-  let sql = whereSql.replace(/^j\."companyId" = \$1::text AND /, "");
-  sql = sql.replace(/AND a\."jobId" = \$\d+::text\s*$/, "");
-  sql = sql.replace(/a\."jobId" = \$\d+::text AND /, "");
-  return sql;
-}
-
-export async function getAnalytics(
-  companyId: string,
-  filter: AnalyticsFilter,
-): Promise<AnalyticsResponse> {
+export async function getAnalytics(companyId: string, filter: AnalyticsFilter): Promise<AnalyticsResponse> {
   const defaults = defaultDateRange();
   const from = filter.dateFrom ?? defaults.dateFrom;
   const to = filter.dateTo ?? defaults.dateTo;
 
-  const where = buildWhereClauses({
+  const frags = buildWhereFragments({
     companyId,
     dateFrom: from,
     dateTo: to,
@@ -148,12 +143,14 @@ export async function getAnalytics(
     jobId: filter.jobId,
   });
 
-  const whereSQL = "WHERE " + where.sql;
+  const appWhere = whereFrom(frags.all);
+
+  const breakdownJoin =
+    frags.joinConditions.length > 0 ? Prisma.sql` AND (${Prisma.join(frags.joinConditions, " AND ")})` : Prisma.sql``;
 
   const totalJobsSQL = filter.jobId
-    ? `SELECT COUNT(*)::BIGINT AS v FROM "job" j WHERE j."companyId" = $1::text AND j."id" = $2::text`
-    : `SELECT COUNT(*)::BIGINT AS v FROM "job" j WHERE j."companyId" = $1::text`;
-  const totalJobsParams = filter.jobId ? [where.params[0], filter.jobId] : [where.params[0]];
+    ? Prisma.sql`SELECT COUNT(*)::BIGINT AS v FROM "job" j WHERE j."companyId" = ${companyId}::text AND j."id" = ${filter.jobId}::text`
+    : Prisma.sql`SELECT COUNT(*)::BIGINT AS v FROM "job" j WHERE j."companyId" = ${companyId}::text`;
 
   const [
     totalApplications,
@@ -169,59 +166,56 @@ export async function getAnalytics(
     breakdownRaw,
     totalJobsRaw,
   ] = await Promise.all([
-    prisma.$queryRawUnsafe<[{ count: bigint }?]>(
-      `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL}`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<[{ count: bigint }?]>(
-      `SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} AND a."status" = 'hired'`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<RawTrendRow[]>(
-      `SELECT TO_CHAR(a."appliedAt", 'YYYY-MM-DD') AS date, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY TO_CHAR(a."appliedAt", 'YYYY-MM-DD') ORDER BY date ASC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<Array<{ status: string; count: bigint }>>(
-      `SELECT a."status", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY a."status" ORDER BY count DESC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<Array<{ workMode: string; count: bigint }>>(
-      `SELECT j."workMode"::text, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY j."workMode"::text ORDER BY count DESC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<Array<{ employmentType: string; count: bigint }>>(
-      `SELECT j."employmentType"::text, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY j."employmentType"::text ORDER BY count DESC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<Array<{ jobId: string; title: string; count: bigint }>>(
-      `SELECT a."jobId" AS "jobId", j."title", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY a."jobId", j."title" ORDER BY count DESC LIMIT 10`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<RawFunnelRow[]>(
-      `SELECT asc_ref."toStatus" AS stage, COUNT(DISTINCT asc_ref."applicationId")::BIGINT AS "uniqueApplications" FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY asc_ref."toStatus" ORDER BY MIN(asc_ref."createdAt") ASC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<RawConversionRow[]>(
-      `SELECT asc_ref."fromStatus" AS "fromStage", asc_ref."toStatus" AS "toStage", COUNT(*)::BIGINT AS count FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${whereSQL} GROUP BY asc_ref."fromStatus", asc_ref."toStatus" ORDER BY count DESC`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<[{ avg: string | null }?]>(
-      `SELECT AVG(EXTRACT(EPOCH FROM (a."updatedAt" - a."appliedAt")) / 86400)::TEXT AS avg FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${whereSQL} AND a."status" = 'hired'`,
-      ...where.params,
-    ),
-    prisma.$queryRawUnsafe<RawJobBreakdownRow[]>(
-      `SELECT j."id" AS "jobId", j."title", COUNT(DISTINCT a."id")::BIGINT AS "totalApplications", COUNT(DISTINCT CASE WHEN a."status" = 'hired' THEN a."id" END)::BIGINT AS hired, j."viewCount"::BIGINT AS "viewCount" FROM "job" j LEFT JOIN "application" a ON a."jobId" = j."id" AND (${joinClauseFromWhere(where.sql)}) WHERE j."companyId" = $1::text GROUP BY j."id", j."title", j."viewCount" ORDER BY "totalApplications" DESC LIMIT 50`,
-      ...(filter.jobId ? where.params.slice(0, -1) : where.params),
-    ),
-    prisma.$queryRawUnsafe<[{ v: bigint }?]>(totalJobsSQL, ...totalJobsParams),
+    prisma.$queryRaw<[{ count: bigint }?]>(Prisma.sql`
+      SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere}
+    `),
+    prisma.$queryRaw<[{ count: bigint }?]>(Prisma.sql`
+      SELECT COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} AND a."status" = 'hired'
+    `),
+    prisma.$queryRaw<RawTrendRow[]>(Prisma.sql`
+      SELECT TO_CHAR(a."appliedAt", 'YYYY-MM-DD') AS date, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY TO_CHAR(a."appliedAt", 'YYYY-MM-DD') ORDER BY date ASC
+    `),
+    prisma.$queryRaw<Array<{ status: string; count: bigint }>>(Prisma.sql`
+      SELECT a."status", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY a."status" ORDER BY count DESC
+    `),
+    prisma.$queryRaw<Array<{ workMode: string; count: bigint }>>(Prisma.sql`
+      SELECT j."workMode"::text, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY j."workMode"::text ORDER BY count DESC
+    `),
+    prisma.$queryRaw<Array<{ employmentType: string; count: bigint }>>(Prisma.sql`
+      SELECT j."employmentType"::text, COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY j."employmentType"::text ORDER BY count DESC
+    `),
+    prisma.$queryRaw<Array<{ jobId: string; title: string; count: bigint }>>(Prisma.sql`
+      SELECT a."jobId" AS "jobId", j."title", COUNT(*)::BIGINT AS count FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY a."jobId", j."title" ORDER BY count DESC LIMIT 10
+    `),
+    prisma.$queryRaw<RawFunnelRow[]>(Prisma.sql`
+      SELECT asc_ref."toStatus" AS stage, COUNT(DISTINCT asc_ref."applicationId")::BIGINT AS "uniqueApplications" FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY asc_ref."toStatus" ORDER BY MIN(asc_ref."createdAt") ASC
+    `),
+    prisma.$queryRaw<RawConversionRow[]>(Prisma.sql`
+      SELECT asc_ref."fromStatus" AS "fromStage", asc_ref."toStatus" AS "toStage", COUNT(*)::BIGINT AS count FROM "application_status_change" asc_ref JOIN "application" a ON asc_ref."applicationId" = a."id" JOIN "job" j ON a."jobId" = j."id" ${appWhere} GROUP BY asc_ref."fromStatus", asc_ref."toStatus" ORDER BY count DESC
+    `),
+    prisma.$queryRaw<[{ avg: string | null }?]>(Prisma.sql`
+      SELECT AVG(EXTRACT(EPOCH FROM (a."updatedAt" - a."appliedAt")) / 86400)::TEXT AS avg FROM "application" a JOIN "job" j ON a."jobId" = j."id" ${appWhere} AND a."status" = 'hired'
+    `),
+    prisma.$queryRaw<RawJobBreakdownRow[]>(Prisma.sql`
+      SELECT j."id" AS "jobId", j."title",
+        COUNT(DISTINCT a."id")::BIGINT AS "totalApplications",
+        COUNT(DISTINCT CASE WHEN a."status" = 'hired' THEN a."id" END)::BIGINT AS hired,
+        j."viewCount"::BIGINT AS "viewCount"
+      FROM "job" j
+      LEFT JOIN "application" a ON a."jobId" = j."id"
+      ${breakdownJoin}
+      WHERE j."companyId" = ${companyId}::text
+      GROUP BY j."id", j."title", j."viewCount"
+      ORDER BY "totalApplications" DESC
+      LIMIT 50
+    `),
+    prisma.$queryRaw<[{ v: bigint }?]>(totalJobsSQL),
   ]);
 
   const totalApps = Number(totalApplications?.[0]?.count ?? BI_ZERO);
   const hired = Number(hiredCount?.[0]?.count ?? BI_ZERO);
   const conversionRate = totalApps > 0 ? (hired / totalApps) * 100 : 0;
-  const avgFulfillmentDays = fulfillmentRaw?.[0]?.avg
-    ? Math.round(parseFloat(fulfillmentRaw[0].avg) * 10) / 10
-    : null;
+  const avgFulfillmentDays = fulfillmentRaw?.[0]?.avg ? Math.round(parseFloat(fulfillmentRaw[0].avg) * 10) / 10 : null;
 
   const totalViews = breakdownRaw.reduce((sum, row) => sum + Number(row.viewCount), 0);
   const totalJobs = Number(totalJobsRaw?.[0]?.v ?? BI_ZERO);
@@ -266,8 +260,7 @@ export async function getAnalytics(
     title: r.title,
     totalApplications: Number(r.totalApplications),
     hired: Number(r.hired),
-    conversionRate:
-      Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
+    conversionRate: Number(r.totalApplications) > 0 ? (Number(r.hired) / Number(r.totalApplications)) * 100 : 0,
     avgFulfillmentDays: null,
     viewCount: Number(r.viewCount),
   }));
