@@ -1,22 +1,23 @@
 # Step 2.5: Recruiter Direct Messaging (Thread‑Based)
 
 ## Goal
+
 Recruiters can have threaded, persistent conversations with applicants, reusing the admin messaging system. Users (applicants) can reply from their own messages page. All realtime via Pusher — matching the admin pattern exactly.
 
 ---
 
 ## Architecture Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| API approach | REST API routes | Match admin pattern; reuse `withErrorHandler`, cursor pagination, Pusher triggers |
-| Data model | Pure `Message` model reuse | No new Prisma entity. `threadId` convention `[smallerUserId]_[largerUserId]` |
-| Tenant clearance | Query-time `verifyRecruiterApplicantRelationship()` utility | Throws `ForbiddenError` if applicant never applied to recruiter's company |
-| Notifications | Yes — reuse `Notification` model + Pusher `private-user-{id}` | Match admin behavior exactly |
-| Rate limiting | 20 msgs/hr per `(senderId, receiverId)` pair | Checked in POST route handler before message creation |
-| Table trigger | Navigate to `/recruiter/messages?thread={threadId}` | Opens messages page inline; same as admin UX pattern |
-| Withdrawn apps | Relationship check allows ANY past application | Recruiter can message rejected/withdrawn applicants |
-| User reply page | Included in Step 2.5 | Basic `/user/messages` page so messaging is bidirectional |
+| Decision         | Choice                                                        | Rationale                                                                         |
+| ---------------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| API approach     | REST API routes                                               | Match admin pattern; reuse `withErrorHandler`, cursor pagination, Pusher triggers |
+| Data model       | Pure `Message` model reuse                                    | No new Prisma entity. `threadId` convention `[smallerUserId]_[largerUserId]`      |
+| Tenant clearance | Query-time `verifyRecruiterApplicantRelationship()` utility   | Throws `ForbiddenError` if applicant never applied to recruiter's company         |
+| Notifications    | Yes — reuse `Notification` model + Pusher `private-user-{id}` | Match admin behavior exactly                                                      |
+| Rate limiting    | 20 msgs/hr per `(senderId, receiverId)` pair                  | Checked in POST route handler before message creation                             |
+| Table trigger    | Navigate to `/recruiter/messages?thread={threadId}`           | Opens messages page inline; same as admin UX pattern                              |
+| Withdrawn apps   | Relationship check allows ANY past application                | Recruiter can message rejected/withdrawn applicants                               |
+| User reply page  | Included in Step 2.5                                          | Basic `/user/messages` page so messaging is bidirectional                         |
 
 ---
 
@@ -25,21 +26,16 @@ Recruiters can have threaded, persistent conversations with applicants, reusing 
 ### Shared Utility
 
 #### 1. `app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts`
+
 ```typescript
-export async function verifyRecruiterApplicantRelationship(
-  recruiterId: string,
-  applicantId: string,
-): Promise<void> {
+export async function verifyRecruiterApplicantRelationship(recruiterId: string, applicantId: string): Promise<void> {
   // Check applicant has ANY application to a job at a company where this recruiter
   // is a member (via CompanyTeamMember) or is the direct job poster (via Job.recruiterId)
   const application = await prisma.application.findFirst({
     where: {
       userId: applicantId,
       job: {
-        OR: [
-          { recruiterId },
-          { company: { teamMembers: { some: { userId: recruiterId } } } },
-        ],
+        OR: [{ recruiterId }, { company: { teamMembers: { some: { userId: recruiterId } } } }],
       },
     },
     select: { id: true },
@@ -51,6 +47,7 @@ export async function verifyRecruiterApplicantRelationship(
 ### API Routes (4 files)
 
 #### 2. `app/api/recruiter/threads/route.ts` — List threads for recruiter
+
 - `GET` — `requireRole(["recruiter"])` returns `companyId`
 - Group `Message` by `threadId` where recruiter is sender or receiver
 - Fetch latest message per thread, other user info
@@ -58,23 +55,28 @@ export async function verifyRecruiterApplicantRelationship(
 - Return same shape as admin threads API: `{ threadId, user, lastMessage }`
 
 #### 3. `app/api/recruiter/messages/[threadId]/route.ts` — Thread CRUD
+
 - `GET` — Cursor-paginated messages. Validate thread participant (`threadId.includes(recruiterId)`). Mark unread as read. Tenant check via `verifyRecruiterApplicantRelationship`.
 - `POST` — **Rate limit check**: count messages in last hour for `(senderId, receiverId)`, throw if >= 20. Validate with shared `SendMessageSchema`. Create `Message`. Fire Pusher `private-thread-{threadId}` event. Create `Notification` for receiver. Fire Pusher `private-user-{receiverId}` notification event.
 - `DELETE` — Delete all messages in thread. Participant check.
 
 #### 4. `app/api/recruiter/messages/search/route.ts` — Search applicants
+
 - `GET` — `?q=` search. Query `Application` joined with `User` where `Application.job.companyId` matches recruiter's company. Return users matching name/email. Used by `StartConversationSearch` on recruiter messages page.
 
 #### 5. `app/api/recruiter/applications/[applicationId]/profile/route.ts` — Applicant user lookup
+
 - `GET` — Returns user name + email for a given application. Used by ThreadView header (matches admin's `/api/admin/users/:id` pattern). Tenant-scoped by verifying application belongs to recruiter's company.
 
 ### Hooks (4 files, under `features/recruiter/hooks/messages/`)
 
 #### 6. `app/features/recruiter/hooks/messages/use-recruiter-threads.ts`
+
 - `useRecruiterThreads()` — `useQuery({ queryKey: ["recruiter", "threads"], refetchInterval: 60_000 })`, calls `GET /api/recruiter/threads`
 - Export `useInvalidateRecruiterThreads()` for mutations
 
 #### 7. `app/features/recruiter/hooks/messages/use-recruiter-messages.ts`
+
 - `useRecruiterMessages(threadId)` — `useInfiniteQuery` with cursor pagination, `refetchInterval: 60_000`, calls `GET /api/recruiter/messages/[threadId]`
 - `useSendMessage(threadId)` — `useMutation`, POST, invalidates threads + messages
 - `useDeleteMessage(threadId)` — `useMutation`, DELETE single message, optimistic cache removal
@@ -83,6 +85,7 @@ export async function verifyRecruiterApplicantRelationship(
 ### Components (2 files)
 
 #### 8. `app/features/recruiter/components/recruiter-messages-page.tsx`
+
 - Client component for `/recruiter/messages`
 - Split-panel layout matching admin messages page:
   - Left: thread list + `StartConversationSearch` (reused from `@/components/shared/start-conversation-search` with search endpoint `/api/recruiter/messages/search` and base path `/recruiter/messages`)
@@ -91,6 +94,7 @@ export async function verifyRecruiterApplicantRelationship(
 - Responsive: mobile toggles between list/thread view
 
 #### 9. `app/features/user/components/user-messages-page.tsx`
+
 - Client component for `/user/messages`
 - Same split-panel layout as recruiter/admin
 - Left: thread list (user can see all threads they participate in)
@@ -101,6 +105,7 @@ export async function verifyRecruiterApplicantRelationship(
 ### Pages (2 files)
 
 #### 10. `app/(roles)/recruiter/messages/page.tsx`
+
 ```typescript
 import { Suspense } from "react";
 import { RecruiterMessagesPage } from "@/app/features/recruiter/components/recruiter-messages-page";
@@ -115,12 +120,14 @@ export default function Page() {
 ```
 
 #### 11. `app/(roles)/user/messages/page.tsx`
+
 - Same pattern as recruiter messages page but uses `/user/messages` path
 - Suspense wrapper, renders `UserMessagesPage` component
 
 ### Applicants Table Update (1 file)
 
 #### 12. `app/features/recruiter/components/applicants-table.tsx` — Add message action
+
 - Add `MessageSquareTextIcon` button in the actions column
 - Visible for all application statuses (not gated by status transitions — messaging is always available)
 - Computes `threadId = computeThreadId(recruiterId, applicant.userId)`
@@ -130,6 +137,7 @@ export default function Page() {
 ### Rate Limiting Helper (1 file)
 
 #### 13. `app/features/recruiter/libs/rate-limit-message.ts`
+
 ```typescript
 import { prisma } from "@/lib/prisma";
 import { TooManyRequestsError } from "@/lib/api-error";
@@ -158,6 +166,7 @@ Need to also add `TooManyRequestsError` to `lib/api-error.ts` (export class, reg
 ## Files to Modify (4)
 
 ### 14. `lib/api-error.ts` — Add `TooManyRequestsError`
+
 ```typescript
 export class TooManyRequestsError extends ApiError {
   constructor(message = "Too many requests") {
@@ -165,12 +174,15 @@ export class TooManyRequestsError extends ApiError {
   }
 }
 ```
+
 Register in `ERROR_STATUS_MAP` in `lib/api-wrapper.ts`:
+
 ```typescript
 [TooManyRequestsError.name]: 429,
 ```
 
 ### 15. `app/features/recruiter/components/applicants-table.tsx` — Add message column button
+
 - Add `MessageSquareTextIcon` import from `lucide-react`
 - Add `useRouter` from `next/navigation`
 - In the actions column, add a `MessageSquareTextIcon` button for every row
@@ -178,39 +190,43 @@ Register in `ERROR_STATUS_MAP` in `lib/api-wrapper.ts`:
 - `onClick={() => router.push(...)}`
 
 ### 16. `prisma/schema.prisma` — Add `applicationId` to `Message` model
+
 - Wait — decision was **no** new field. Skip this.
 
 ### 17. `app/(roles)/user/layout.tsx` — Verify user role layout exists (it should)
+
 - Ensure the user layout mirrors the recruiter/admin pattern with `RoleLayoutClient` + sidebar
 - If user messages page needs a sidebar link, add it to the user's sidebar component
 
 ### 18. `app/features/user/components/user-sidebar.tsx` — Add Messages link
+
 - Add `MessageSquareTextIcon` + `/user/messages` link to the user sidebar navigation
 
 ---
 
 ## Edge Cases Addressed
 
-| # | Edge Case | Handling |
-|---|-----------|----------|
-| 1 | Recruiter messages applicant who never applied | `verifyRecruiterApplicantRelationship` throws `ForbiddenError` (403) |
-| 2 | Applicant applies to 2 jobs, 1 thread per recruiter | Correct — threadId is per (recruiter, applicant) pair, not per job |
-| 3 | Applicant replies | Allowed — their userId is in the threadId. Relationship check is bi-directional |
-| 4 | Recruiter A vs Recruiter B at same company | Different threads. No shared inbox. Each recruiter has their own thread with the applicant |
-| 5 | User computes someone else's threadId | `GET` route checks `threadId.includes(currentUserId)` — rejects non-participants |
-| 6 | Recruiter deletes account | Cascade deletes all their messages. Thread disappears naturally |
-| 7 | Applicant withdraws or is rejected | Relationship check allows ANY past application — messaging still works |
-| 8 | Rate limit exceeded | `checkMessageRateLimit` throws `TooManyRequestsError` (429) before message creation |
-| 9 | Empty thread list | Recruiter: empty state with "Go to Applicants" CTA. User: empty state "No messages yet" |
-| 10 | Pusher disconnects | `refetchInterval: 60_000` on both `useRecruiterMessages` and `useRecruiterThreads` |
-| 11 | File upload in message | Reuses existing `/api/upload` endpoint and `SendMessageSchema` from admin |
-| 12 | User already subscribed to private channel | Pusher handles duplicate subscriptions gracefully |
+| #   | Edge Case                                           | Handling                                                                                   |
+| --- | --------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 1   | Recruiter messages applicant who never applied      | `verifyRecruiterApplicantRelationship` throws `ForbiddenError` (403)                       |
+| 2   | Applicant applies to 2 jobs, 1 thread per recruiter | Correct — threadId is per (recruiter, applicant) pair, not per job                         |
+| 3   | Applicant replies                                   | Allowed — their userId is in the threadId. Relationship check is bi-directional            |
+| 4   | Recruiter A vs Recruiter B at same company          | Different threads. No shared inbox. Each recruiter has their own thread with the applicant |
+| 5   | User computes someone else's threadId               | `GET` route checks `threadId.includes(currentUserId)` — rejects non-participants           |
+| 6   | Recruiter deletes account                           | Cascade deletes all their messages. Thread disappears naturally                            |
+| 7   | Applicant withdraws or is rejected                  | Relationship check allows ANY past application — messaging still works                     |
+| 8   | Rate limit exceeded                                 | `checkMessageRateLimit` throws `TooManyRequestsError` (429) before message creation        |
+| 9   | Empty thread list                                   | Recruiter: empty state with "Go to Applicants" CTA. User: empty state "No messages yet"    |
+| 10  | Pusher disconnects                                  | `refetchInterval: 60_000` on both `useRecruiterMessages` and `useRecruiterThreads`         |
+| 11  | File upload in message                              | Reuses existing `/api/upload` endpoint and `SendMessageSchema` from admin                  |
+| 12  | User already subscribed to private channel          | Pusher handles duplicate subscriptions gracefully                                          |
 
 ---
 
 ## Data Flow
 
 ### Sending a Message (Recruiter → Applicant)
+
 1. Recruiter clicks message icon in applicants table → `router.push(/recruiter/messages?thread={threadId})`
 2. ThreadView mounts → `useRecruiterMessages(threadId)` fetches cursor-paginated history
 3. Recruiter types and sends → POST `/api/recruiter/messages/[threadId]`
@@ -219,6 +235,7 @@ Register in `ERROR_STATUS_MAP` in `lib/api-wrapper.ts`:
 6. Applicant's bell badge updates from `NotificationDropdown` subscription
 
 ### Replying (Applicant → Recruiter)
+
 1. Applicant navigates to `/user/messages?thread={threadId}` (from notification bell click or direct nav)
 2. Same ThreadView component, same API endpoint
 3. Relationship check verifies: "did this applicant apply to any of this recruiter's jobs?" — yes, passes

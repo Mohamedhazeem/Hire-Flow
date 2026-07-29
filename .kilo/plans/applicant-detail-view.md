@@ -8,15 +8,15 @@ Enable recruiters to select multiple applicants in the applicants table and perf
 
 ## Key Design Decisions
 
-| Decision | Choice | Rationale |
-|---|---|---|
-| **Concurrency model** | Skip optimistic locking in bulk | Bulk is a deliberate action; a stale entry shouldn't block the whole batch. |
-| **Email notifications** | Design for future queue, don't build now | Add `pendingEmail` flag on Notification data for future worker. In-app only for MVP. |
-| **DataTable selection** | Extend shared DataTable with optional selection props | Makes selection reusable across all role tables (admin, user). |
-| **Bulk endpoint** | `POST /api/recruiter/applications/bulk/status` | Separate route from single-status PATCH. Accepts array of IDs + target status. |
-| **Bulk rejection** | Single shared `rejectionReason` string across all selected | Matches UX pattern — one dialog for all, not per-applicant. |
-| **Database transaction** | Single `prisma.$transaction` for all updates + status changes + notifications | Atomic: all succeed or all roll back. |
-| **Tenant isolation** | Single `findMany` with `where: { id: { in: ids }, job: { companyId } }` | O(1) query validates all IDs belong to the recruiter's company. |
+| Decision                 | Choice                                                                        | Rationale                                                                            |
+| ------------------------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Concurrency model**    | Skip optimistic locking in bulk                                               | Bulk is a deliberate action; a stale entry shouldn't block the whole batch.          |
+| **Email notifications**  | Design for future queue, don't build now                                      | Add `pendingEmail` flag on Notification data for future worker. In-app only for MVP. |
+| **DataTable selection**  | Extend shared DataTable with optional selection props                         | Makes selection reusable across all role tables (admin, user).                       |
+| **Bulk endpoint**        | `POST /api/recruiter/applications/bulk/status`                                | Separate route from single-status PATCH. Accepts array of IDs + target status.       |
+| **Bulk rejection**       | Single shared `rejectionReason` string across all selected                    | Matches UX pattern — one dialog for all, not per-applicant.                          |
+| **Database transaction** | Single `prisma.$transaction` for all updates + status changes + notifications | Atomic: all succeed or all roll back.                                                |
+| **Tenant isolation**     | Single `findMany` with `where: { id: { in: ids }, job: { companyId } }`       | O(1) query validates all IDs belong to the recruiter's company.                      |
 
 ---
 
@@ -131,6 +131,7 @@ export function useBulkTransitionStatus(jobId: string) {
 ### `app/features/recruiter/components/applicants-table.tsx` — Add selection + bulk action bar
 
 Changes:
+
 1. Add state: `[selectedIds, setSelectedIds] = useState<Set<string>>(new Set())`
 2. Replace `columns` with a new array that prepends a selection checkbox column when needed (or inline it).
 3. Add `enableSelection={true}`, `selectedIds`, `onSelectionChange`, `getRowId={(row) => row.id}` to the `<DataTable>`.
@@ -150,6 +151,7 @@ Mobile: The bulk action bar is fixed at the bottom of the viewport on mobile (`f
 ### `app/features/recruiter/components/application-dialogs.tsx` — Add BulkRejectDialog
 
 New component:
+
 ```tsx
 type BulkRejectDialogProps = {
   open: boolean;
@@ -161,6 +163,7 @@ type BulkRejectDialogProps = {
 ```
 
 Simple dialog with:
+
 - Title: "Reject N Applicants"
 - Description: "Provide a rejection reason that will be applied to all N selected applicants."
 - Single `Textarea` for `rejectionReason`.
@@ -197,39 +200,39 @@ User clicks bulk action button (e.g. "Reject")
 
 ## Edge Cases
 
-| Case | Handling |
-|---|---|
-| Some IDs not found (not in company) | `NotFoundError` — tell user "X of N applications not found or don't belong to your company" |
+| Case                                               | Handling                                                                                                                                                                             |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Some IDs not found (not in company)                | `NotFoundError` — tell user "X of N applications not found or don't belong to your company"                                                                                          |
 | Some apps are in a terminal state (hired/rejected) | Filter those out client-side before showing available actions. If user somehow sends them, reject the whole batch in the route with a `ValidationError` listing the problematic IDs. |
-| Max batch size exceeded (>50) | Zod rejects with clear message |
-| Mix of statuses with different allowed transitions | Show only the **intersection** of allowed transitions. E.g., if some are "applied" (can review/reject) and some are "reviewing" (can shortlist/reject), only "reject" is shown. |
-| No common allowed transition across all selected | Disable action bar with message "No bulk actions available for this selection" |
-| BulkRejectDialog opened but user cancels | State resets, no mutation fires |
-| Network failure mid-transaction | `$transaction` rolls back entirely. No partial state. |
-| Empty selection after page change | Selection is per-page (not cross-page). If user navigates away, selection resets. |
-| User selects "select all" then filters | "Select all" only selects visible rows. If filter changes, selectedIds may contain IDs no longer visible. Mutation still works since IDs are validated server-side. |
-| Rejection reason too long | Zod string max length (e.g., 500 chars) |
+| Max batch size exceeded (>50)                      | Zod rejects with clear message                                                                                                                                                       |
+| Mix of statuses with different allowed transitions | Show only the **intersection** of allowed transitions. E.g., if some are "applied" (can review/reject) and some are "reviewing" (can shortlist/reject), only "reject" is shown.      |
+| No common allowed transition across all selected   | Disable action bar with message "No bulk actions available for this selection"                                                                                                       |
+| BulkRejectDialog opened but user cancels           | State resets, no mutation fires                                                                                                                                                      |
+| Network failure mid-transaction                    | `$transaction` rolls back entirely. No partial state.                                                                                                                                |
+| Empty selection after page change                  | Selection is per-page (not cross-page). If user navigates away, selection resets.                                                                                                    |
+| User selects "select all" then filters             | "Select all" only selects visible rows. If filter changes, selectedIds may contain IDs no longer visible. Mutation still works since IDs are validated server-side.                  |
+| Rejection reason too long                          | Zod string max length (e.g., 500 chars)                                                                                                                                              |
 
 ---
 
 ## New Files
 
-| File | Purpose |
-|---|---|
-| `app/api/recruiter/applications/bulk/status/route.ts` | POST — bulk status transition with atomic transaction |
+| File                                                       | Purpose                                               |
+| ---------------------------------------------------------- | ----------------------------------------------------- |
+| `app/api/recruiter/applications/bulk/status/route.ts`      | POST — bulk status transition with atomic transaction |
 | `app/features/recruiter/components/bulk-reject-dialog.tsx` | Dialog for bulk rejection with single reason textarea |
 
 ---
 
 ## Modified Files
 
-| File | Change |
-|---|---|
-| `components/ui/data-table.tsx` | Add `enableSelection`, `selectedIds`, `onSelectionChange`, `getRowId` props + checkbox column rendering |
-| `app/features/recruiter/schema/application.schema.ts` | Add `BulkStatusTransitionSchema` + type |
-| `app/features/recruiter/hooks/use-applications.ts` | Add `useBulkTransitionStatus(jobId)` hook |
-| `app/features/recruiter/components/applicants-table.tsx` | Add selection state + bulk action bar + integrate BulkRejectDialog |
-| `app/features/recruiter/components/application-dialogs.tsx` | Add `BulkRejectDialog` component (or create separate file) |
+| File                                                        | Change                                                                                                  |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `components/ui/data-table.tsx`                              | Add `enableSelection`, `selectedIds`, `onSelectionChange`, `getRowId` props + checkbox column rendering |
+| `app/features/recruiter/schema/application.schema.ts`       | Add `BulkStatusTransitionSchema` + type                                                                 |
+| `app/features/recruiter/hooks/use-applications.ts`          | Add `useBulkTransitionStatus(jobId)` hook                                                               |
+| `app/features/recruiter/components/applicants-table.tsx`    | Add selection state + bulk action bar + integrate BulkRejectDialog                                      |
+| `app/features/recruiter/components/application-dialogs.tsx` | Add `BulkRejectDialog` component (or create separate file)                                              |
 
 ---
 

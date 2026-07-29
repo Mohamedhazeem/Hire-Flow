@@ -7,10 +7,11 @@
 **Fix**: Create a dedicated `/employers` route; update the footer link.
 
 ### Files
-| Action | File | Detail |
-|---|---|---|
-| Create | `app/(public)/employers/page.tsx` | Static server component. Copy employer-focused CTA content from landing section. `max-w-3xl` centered, `py-16 sm:py-20`. |
-| Update | `app/features/landing/components/footer.tsx:9` | Change `href: "/#for-employers"` → `href: "/employers"` |
+
+| Action | File                                           | Detail                                                                                                                   |
+| ------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Create | `app/(public)/employers/page.tsx`              | Static server component. Copy employer-focused CTA content from landing section. `max-w-3xl` centered, `py-16 sm:py-20`. |
+| Update | `app/features/landing/components/footer.tsx:9` | Change `href: "/#for-employers"` → `href: "/employers"`                                                                  |
 
 ---
 
@@ -18,13 +19,13 @@
 
 All follow `privacy/page.tsx` pattern: server component, `metadata` export, `max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20`, placeholder content sections.
 
-| Route | File | Title |
-|---|---|---|
+| Route      | File                            | Title   |
+| ---------- | ------------------------------- | ------- |
 | `/pricing` | `app/(public)/pricing/page.tsx` | Pricing |
-| `/about` | `app/(public)/about/page.tsx` | About |
+| `/about`   | `app/(public)/about/page.tsx`   | About   |
 | `/careers` | `app/(public)/careers/page.tsx` | Careers |
 | `/contact` | `app/(public)/contact/page.tsx` | Contact |
-| `/press` | `app/(public)/press/page.tsx` | Press |
+| `/press`   | `app/(public)/press/page.tsx`   | Press   |
 
 Each: heading, subtitle, 3–5 placeholder sections, footer disclaimer.
 
@@ -34,11 +35,11 @@ Each: heading, subtitle, 3–5 placeholder sections, footer disclaimer.
 
 Add these to `utils/env.ts` schema (all `z.string().optional()`):
 
-| Var | Purpose |
-|---|---|
-| `NEXT_PUBLIC_LINKEDIN_URL` | LinkedIn profile URL |
-| `NEXT_PUBLIC_TWITTER_URL` | Twitter/X profile URL |
-| `NEXT_PUBLIC_GITHUB_URL` | GitHub profile URL |
+| Var                         | Purpose                                                      |
+| --------------------------- | ------------------------------------------------------------ |
+| `NEXT_PUBLIC_LINKEDIN_URL`  | LinkedIn profile URL                                         |
+| `NEXT_PUBLIC_TWITTER_URL`   | Twitter/X profile URL                                        |
+| `NEXT_PUBLIC_GITHUB_URL`    | GitHub profile URL                                           |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Fallback contact for mailto links when a social URL is unset |
 
 Update `.env.example` with all 4 vars as commented-out placeholders.
@@ -81,8 +82,8 @@ const socials = [
 
 ## Route Config
 
-| File | Change |
-|---|---|
+| File               | Change                                                                                                         |
+| ------------------ | -------------------------------------------------------------------------------------------------------------- |
 | `lib/routes.ts:11` | Add `"/employers"`, `"/pricing"`, `"/about"`, `"/careers"`, `"/contact"`, `"/press"` to `PUBLIC_CONTENT_PATHS` |
 
 This ensures public navbar shows and middleware passes through on these routes.
@@ -91,8 +92,8 @@ This ensures public navbar shows and middleware passes through on these routes.
 
 ## Tests
 
-| File | Change |
-|---|---|
+| File                           | Change                                                                                                                           |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `lib/test/unit/routes.test.ts` | Add `expect(isHiddenRoute("/employers")).toBe(false)` and assertions for each new route in the "shows public content paths" test |
 
 ---

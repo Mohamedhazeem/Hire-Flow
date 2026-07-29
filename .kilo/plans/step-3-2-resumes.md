@@ -6,11 +6,11 @@ Users can upload PDF/DOCX resumes (file-based) or build lightweight JSON resumes
 
 ## Prerequisite Changes (3 files)
 
-| File | Change |
-|------|--------|
-| `lib/upload.ts` | Add `application/msword` and `application/vnd.openxmlformats-officedocument.wordprocessingml.document` to `ALLOWED_MIME_TYPES` |
-| `app/api/files/download/route.ts` | Add `"user"` to `requireRole`, then verify resume ownership before serving |
-| `prisma/schema.prisma` | Add `userId String`, `fileName String?`, `fileSize Int?`, `fileType String?` to Resume; remove `userProfileId String` and relation to UserProfile; add `@@index([userId, deletedAt])` |
+| File                              | Change                                                                                                                                                                                |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lib/upload.ts`                   | Add `application/msword` and `application/vnd.openxmlformats-officedocument.wordprocessingml.document` to `ALLOWED_MIME_TYPES`                                                        |
+| `app/api/files/download/route.ts` | Add `"user"` to `requireRole`, then verify resume ownership before serving                                                                                                            |
+| `prisma/schema.prisma`            | Add `userId String`, `fileName String?`, `fileSize Int?`, `fileType String?` to Resume; remove `userProfileId String` and relation to UserProfile; add `@@index([userId, deletedAt])` |
 
 ### Resume model (after migration)
 
@@ -45,30 +45,32 @@ model Resume {
 
 ## Files to Create (14 files)
 
-| # | File | Est. Lines | Purpose |
-|---|------|-----------|---------|
-| 1 | `app/features/user/schema/resume.schema.ts` | ~35 | BuilderEducationSchema, BuilderExperienceSchema, BuilderResumeSchema |
-| 2 | `app/features/user/actions/save-resume-builder.ts` | ~45 | Server Action: validate BuilderResumeSchema, ensure ≤5, create builder-type Resume |
-| 3 | `app/api/user/resumes/route.ts` | ~45 | GET list (deletedAt:null), POST upload with file |
-| 4 | `app/api/user/resumes/[id]/route.ts` | ~55 | PATCH set-primary, DELETE soft-delete |
-| 5 | `app/api/user/resumes/[id]/builder-data/route.ts` | ~35 | PATCH update builderData (builder-type only) |
-| 6 | `app/features/user/hooks/use-resumes.ts` | ~45 | TanStack Query: list, upload, setPrimary, delete, updateBuilderData |
-| 7 | `app/features/user/components/resume-card.tsx` | ~120 | Individual resume card: label, type badge, primary badge, actions menu |
-| 8 | `app/features/user/components/resume-list.tsx` | ~150 | Unified list with grid layout, empty state, header actions |
-| 9 | `app/features/user/components/resume-upload-button.tsx` | ~55 | File input → POST /api/upload → POST /api/user/resumes |
-| 10 | `app/features/user/components/resume-builder-form.tsx` | ~150 | RHF form: summary, educations, experiences, skills — uses Server Action or PATCH |
-| 11 | `app/(roles)/user/resumes/page.tsx` | ~25 | Page wrapper, renders ResumeList |
-| 12 | `app/(roles)/user/resumes/builder/page.tsx` | ~20 | New builder page, renders ResumeBuilderForm (create mode) |
-| 13 | `app/(roles)/user/resumes/builder/[id]/page.tsx` | ~30 | Edit builder page, fetches existing builderData, passes as defaultValues |
+| #   | File                                                    | Est. Lines | Purpose                                                                            |
+| --- | ------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------- |
+| 1   | `app/features/user/schema/resume.schema.ts`             | ~35        | BuilderEducationSchema, BuilderExperienceSchema, BuilderResumeSchema               |
+| 2   | `app/features/user/actions/save-resume-builder.ts`      | ~45        | Server Action: validate BuilderResumeSchema, ensure ≤5, create builder-type Resume |
+| 3   | `app/api/user/resumes/route.ts`                         | ~45        | GET list (deletedAt:null), POST upload with file                                   |
+| 4   | `app/api/user/resumes/[id]/route.ts`                    | ~55        | PATCH set-primary, DELETE soft-delete                                              |
+| 5   | `app/api/user/resumes/[id]/builder-data/route.ts`       | ~35        | PATCH update builderData (builder-type only)                                       |
+| 6   | `app/features/user/hooks/use-resumes.ts`                | ~45        | TanStack Query: list, upload, setPrimary, delete, updateBuilderData                |
+| 7   | `app/features/user/components/resume-card.tsx`          | ~120       | Individual resume card: label, type badge, primary badge, actions menu             |
+| 8   | `app/features/user/components/resume-list.tsx`          | ~150       | Unified list with grid layout, empty state, header actions                         |
+| 9   | `app/features/user/components/resume-upload-button.tsx` | ~55        | File input → POST /api/upload → POST /api/user/resumes                             |
+| 10  | `app/features/user/components/resume-builder-form.tsx`  | ~150       | RHF form: summary, educations, experiences, skills — uses Server Action or PATCH   |
+| 11  | `app/(roles)/user/resumes/page.tsx`                     | ~25        | Page wrapper, renders ResumeList                                                   |
+| 12  | `app/(roles)/user/resumes/builder/page.tsx`             | ~20        | New builder page, renders ResumeBuilderForm (create mode)                          |
+| 13  | `app/(roles)/user/resumes/builder/[id]/page.tsx`        | ~30        | Edit builder page, fetches existing builderData, passes as defaultValues           |
 
 ## Data Flow
 
 ### Upload flow
+
 ```
 File input → POST /api/upload (returns url) → POST /api/user/resumes (file metadata + url) → prisma.resume.create
 ```
 
 ### Builder flow
+
 ```
 ResumeBuilderForm (RHF) → save-resume-builder.ts (Server Action) → prisma.resume.create (builderData populated, fileUrl: null)
 Edit: ResumeBuilderForm (loaded from PATCH route) → PATCH /api/user/resumes/[id]/builder-data → prisma.resume.update
@@ -84,6 +86,7 @@ Edit: ResumeBuilderForm (loaded from PATCH route) → PATCH /api/user/resumes/[i
 ## UI Layout
 
 ### `/user/resumes`
+
 ```
 [PageHeader: "Resumes" "description"]
 [Upload Resume button] [Build Resume button]
@@ -93,6 +96,7 @@ Edit: ResumeBuilderForm (loaded from PATCH route) → PATCH /api/user/resumes/[i
 ```
 
 ### ResumeCard
+
 ```
 +-----------------------------------+
 | [Badge: Uploaded PDF / Builder]   |
@@ -106,6 +110,7 @@ Edit: ResumeBuilderForm (loaded from PATCH route) → PATCH /api/user/resumes/[i
 ```
 
 ### `/user/resumes/builder`
+
 ```
 [PageHeader: "Build Resume"]
 [form: label, summary, skills (tag input)]
@@ -116,32 +121,32 @@ Edit: ResumeBuilderForm (loaded from PATCH route) → PATCH /api/user/resumes/[i
 
 ## Edge Cases Covered
 
-| # | Edge Case | Handling |
-|---|-----------|----------|
-| 1 | Upload 6th resume → 422 | Count check before insert in POST route |
-| 2 | Builder creates 6th → 422 | Same count check in save-resume-builder.ts |
-| 3 | Upload `.exe` file | `accept` attribute + server MIME validation in upload route |
-| 4 | 5MB file size | `saveUpload()` in `lib/upload.ts` enforces 5MB |
-| 5 | Soft-delete preserves snapshots | `DELETE` sets `deletedAt`, doesn't remove row |
-| 6 | GET filters soft-deleted | `where: { deletedAt: null }` on list query |
-| 7 | Set primary: atomically unset old | `$transaction([unsetAll, setThisOne])` |
-| 8 | Delete the only primary | Acceptable; no primary exists, user can re-set one |
-| 9 | Builder: empty required fields | Zod schema allows empty arrays; save still succeeds |
-| 10 | Resume with null fileUrl AND null builderData | Server Action validates: at least one must be non-null |
-| 11 | Builder educations/experiences cap | `.max(10)` in Zod schema |
-| 12 | Empty resume list | "No resumes yet" with Upload/Build buttons |
-| 13 | Self-download via `/api/files/download` | Route checks resume ownership after adding "user" role |
-| 14 | Non-owner download | 403 Forbidden from ownership check |
-| 15 | Concurrent upload filenames | `Date.now() + random` in saveUpload — no collision |
-| 16 | Upload loading state | Button shows spinner + "Uploading..." during upload |
-| 17 | Edit builder resume | PATCH route: only when `fileUrl === null` |
-| 18 | File-type resume shows "Edit" → disabled | Edit button renders disabled with tooltip |
-| 19 | Builder form: cancel unsaved changes | `beforeunload` event + React Router guard |
-| 20 | Large PDF preview | `ResumePreviewDialog` handles page-by-page PDF rendering |
-| 21 | DOCX preview | Preview shows "Preview not available" + Download button |
-| 22 | No UserProfile exists for user | `userId` FK is direct to User now — no UserProfile dependency |
-| 23 | SQL injection in file path | Existing path traversal protection in download route |
-| 24 | Upload error handling | API error → inline error message on list page |
+| #   | Edge Case                                     | Handling                                                      |
+| --- | --------------------------------------------- | ------------------------------------------------------------- |
+| 1   | Upload 6th resume → 422                       | Count check before insert in POST route                       |
+| 2   | Builder creates 6th → 422                     | Same count check in save-resume-builder.ts                    |
+| 3   | Upload `.exe` file                            | `accept` attribute + server MIME validation in upload route   |
+| 4   | 5MB file size                                 | `saveUpload()` in `lib/upload.ts` enforces 5MB                |
+| 5   | Soft-delete preserves snapshots               | `DELETE` sets `deletedAt`, doesn't remove row                 |
+| 6   | GET filters soft-deleted                      | `where: { deletedAt: null }` on list query                    |
+| 7   | Set primary: atomically unset old             | `$transaction([unsetAll, setThisOne])`                        |
+| 8   | Delete the only primary                       | Acceptable; no primary exists, user can re-set one            |
+| 9   | Builder: empty required fields                | Zod schema allows empty arrays; save still succeeds           |
+| 10  | Resume with null fileUrl AND null builderData | Server Action validates: at least one must be non-null        |
+| 11  | Builder educations/experiences cap            | `.max(10)` in Zod schema                                      |
+| 12  | Empty resume list                             | "No resumes yet" with Upload/Build buttons                    |
+| 13  | Self-download via `/api/files/download`       | Route checks resume ownership after adding "user" role        |
+| 14  | Non-owner download                            | 403 Forbidden from ownership check                            |
+| 15  | Concurrent upload filenames                   | `Date.now() + random` in saveUpload — no collision            |
+| 16  | Upload loading state                          | Button shows spinner + "Uploading..." during upload           |
+| 17  | Edit builder resume                           | PATCH route: only when `fileUrl === null`                     |
+| 18  | File-type resume shows "Edit" → disabled      | Edit button renders disabled with tooltip                     |
+| 19  | Builder form: cancel unsaved changes          | `beforeunload` event + React Router guard                     |
+| 20  | Large PDF preview                             | `ResumePreviewDialog` handles page-by-page PDF rendering      |
+| 21  | DOCX preview                                  | Preview shows "Preview not available" + Download button       |
+| 22  | No UserProfile exists for user                | `userId` FK is direct to User now — no UserProfile dependency |
+| 23  | SQL injection in file path                    | Existing path traversal protection in download route          |
+| 24  | Upload error handling                         | API error → inline error message on list page                 |
 
 ## Validation Steps
 

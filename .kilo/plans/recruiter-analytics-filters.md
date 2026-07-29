@@ -3,25 +3,25 @@
 **Date:** 2026-06-27
 **Total new files:** 14  
 **Modified files:** 3  
-**Prisma migrations:** 0  
+**Prisma migrations:** 0
 
 ---
 
 ## Design Decisions
 
-| Decision | Choice |
-|----------|--------|
-| Data fetching | **REST API + TanStack Query** (consistent with admin dashboard) |
-| Pages | **Both**: standalone `/recruiter/analytics` + per-job `/recruiter/jobs/[id]/analytics` |
-| Chart engine | **recharts** (v3.8.1, already installed, used in admin dashboard) |
-| Chart types | **Line** (daily trends), **Bar** (distributions), **Funnel** (pipeline drop-off) |
-| Filter dimensions | `job`, `dateFrom`, `dateTo` (calendar pickers), `status`, `workMode`, `employmentType`, `location` |
-| Filter state | URL `searchParams` for deep linking |
-| Date range default | Last 30 days, but user selects exact start/end via calendar `<input type="date">` |
-| Funnel — current state | `Application.status` GROUP BY — fast snapshot |
-| Funnel — historical | `ApplicationStatusChange` COUNT(DISTINCT applicationId) — reach-through |
-| Fulfillment time | `Application.updatedAt` when `status = 'hired'` |
-| Route param consistency | **Rename `[jobId]` → `[id]`** for the applicants sub-route. Analytics uses `[id]`. |
+| Decision                | Choice                                                                                             |
+| ----------------------- | -------------------------------------------------------------------------------------------------- |
+| Data fetching           | **REST API + TanStack Query** (consistent with admin dashboard)                                    |
+| Pages                   | **Both**: standalone `/recruiter/analytics` + per-job `/recruiter/jobs/[id]/analytics`             |
+| Chart engine            | **recharts** (v3.8.1, already installed, used in admin dashboard)                                  |
+| Chart types             | **Line** (daily trends), **Bar** (distributions), **Funnel** (pipeline drop-off)                   |
+| Filter dimensions       | `job`, `dateFrom`, `dateTo` (calendar pickers), `status`, `workMode`, `employmentType`, `location` |
+| Filter state            | URL `searchParams` for deep linking                                                                |
+| Date range default      | Last 30 days, but user selects exact start/end via calendar `<input type="date">`                  |
+| Funnel — current state  | `Application.status` GROUP BY — fast snapshot                                                      |
+| Funnel — historical     | `ApplicationStatusChange` COUNT(DISTINCT applicationId) — reach-through                            |
+| Fulfillment time        | `Application.updatedAt` when `status = 'hired'`                                                    |
+| Route param consistency | **Rename `[jobId]` → `[id]`** for the applicants sub-route. Analytics uses `[id]`.                 |
 
 ---
 
@@ -222,13 +222,31 @@ Add a tab/navigation bar above the job information that links to the three sub-r
 ```tsx
 // At top of JobDetail component, after the back button:
 <div className="flex gap-4 border-b border-border-subtle mb-6">
-  <Link href={`/recruiter/jobs/${jobId}`} className={cn("pb-3 text-sm font-medium border-b-2 transition-colors", isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading")}>
+  <Link
+    href={`/recruiter/jobs/${jobId}`}
+    className={cn(
+      "pb-3 text-sm font-medium border-b-2 transition-colors",
+      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+    )}
+  >
     View Details
   </Link>
-  <Link href={`/recruiter/jobs/${jobId}/applicants`} className={cn("pb-3 text-sm font-medium border-b-2 transition-colors", isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading")}>
+  <Link
+    href={`/recruiter/jobs/${jobId}/applicants`}
+    className={cn(
+      "pb-3 text-sm font-medium border-b-2 transition-colors",
+      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+    )}
+  >
     Applicants
   </Link>
-  <Link href={`/recruiter/jobs/${jobId}/analytics`} className={cn("pb-3 text-sm font-medium border-b-2 transition-colors", isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading")}>
+  <Link
+    href={`/recruiter/jobs/${jobId}/analytics`}
+    className={cn(
+      "pb-3 text-sm font-medium border-b-2 transition-colors",
+      isActive ? "border-brand text-text-heading" : "border-transparent text-text-muted hover:text-text-heading",
+    )}
+  >
     Analytics
   </Link>
 </div>
@@ -242,7 +260,9 @@ The `isActive` detection uses `usePathname()` from `next/navigation` to highligh
 
 ```tsx
 export const metadata = { title: "Analytics | HireFlow", description: "Recruiter analytics and insights" };
-export default function AnalyticsPage() { return <RecruiterAnalyticsPage />; }
+export default function AnalyticsPage() {
+  return <RecruiterAnalyticsPage />;
+}
 ```
 
 **`app/(roles)/recruiter/jobs/[id]/analytics/page.tsx`** — server component:
@@ -259,21 +279,21 @@ export default async function JobAnalyticsPage({ params }: { params: Promise<{ i
 
 ## Edge Cases & Safeguards
 
-| Edge case | How it's handled |
-|-----------|------------------|
-| 0 applications | Empty state in each chart, not an error. StatCard shows "0". Funnel shows all stages at 0. |
-| `bigint` from `$queryRaw` | Cast via `Number(r.count)` — same as admin dashboard |
-| Funnel drop-off NaN | Guard: `prevCount > 0 ? ((1 - count/prevCount)*100).toFixed(1) : "—"` |
-| Calendar date `dateFrom > dateTo` | Zod refinement: `dateFrom < dateTo`. If invalid, fall back to 30-day default. |
-| Missing date params | Default to `dateFrom = 30 days ago`, `dateTo = now` |
-| Comma-separated filter empty after split | Skip empty strings, don't add empty filter clause |
-| Location filter with no matches | PostgreSQL array `&&` handles overlap. No match = empty result set = empty state. |
-| Job filter with no matching jobs | (Standalone) Remove job filter, show cross-company data. Never 404 on standalone. |
-| Per-job analytics for missing job | 404 via `notFound()` in the wrapper page |
-| Very large dataset >10k | All aggregated queries use indexed columns. `$queryRaw` with GROUP BY is efficient. |
-| `avgFulfillmentDays` when no one is hired | Return `null`, StatCard shows "—" |
-| Concurrent filter changes | Each `router.push` replaces URL, TanStack Query dedupes via `queryKey` |
-| Mobile 320px | Charts use `ResponsiveContainer width="100%"`. Filter bar stacks. Tab bar horizontal scrolls if needed. |
+| Edge case                                 | How it's handled                                                                                        |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 0 applications                            | Empty state in each chart, not an error. StatCard shows "0". Funnel shows all stages at 0.              |
+| `bigint` from `$queryRaw`                 | Cast via `Number(r.count)` — same as admin dashboard                                                    |
+| Funnel drop-off NaN                       | Guard: `prevCount > 0 ? ((1 - count/prevCount)*100).toFixed(1) : "—"`                                   |
+| Calendar date `dateFrom > dateTo`         | Zod refinement: `dateFrom < dateTo`. If invalid, fall back to 30-day default.                           |
+| Missing date params                       | Default to `dateFrom = 30 days ago`, `dateTo = now`                                                     |
+| Comma-separated filter empty after split  | Skip empty strings, don't add empty filter clause                                                       |
+| Location filter with no matches           | PostgreSQL array `&&` handles overlap. No match = empty result set = empty state.                       |
+| Job filter with no matching jobs          | (Standalone) Remove job filter, show cross-company data. Never 404 on standalone.                       |
+| Per-job analytics for missing job         | 404 via `notFound()` in the wrapper page                                                                |
+| Very large dataset >10k                   | All aggregated queries use indexed columns. `$queryRaw` with GROUP BY is efficient.                     |
+| `avgFulfillmentDays` when no one is hired | Return `null`, StatCard shows "—"                                                                       |
+| Concurrent filter changes                 | Each `router.push` replaces URL, TanStack Query dedupes via `queryKey`                                  |
+| Mobile 320px                              | Charts use `ResponsiveContainer width="100%"`. Filter bar stacks. Tab bar horizontal scrolls if needed. |
 
 ---
 

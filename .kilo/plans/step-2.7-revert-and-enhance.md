@@ -9,12 +9,14 @@ Enforce one-time bulk action constraint (same applicant cannot be re-selected fo
 ## Requirements
 
 ### 1. One-Time Bulk Action Constraint (per session)
+
 - After a bulk action completes, those applicant IDs are tracked in a `actionedIds` Set.
 - Actioned rows are **visually dimmed** and their **checkbox is disabled** (not hidden).
 - The recruiter **cannot** select them again until they manually **revert** the action.
 - The revert removes the ID from `actionedIds`, re-enabling selection.
 
 ### 2. Revert Mechanism (per-row)
+
 - Each row that was bulk-actioned shows a **Revert icon button** (Undo2 icon) in the actions column.
 - Clicking revert opens a **RevertConfirmDialog** ("Revert [Name] to [previousStatus]?").
 - On confirm, `PATCH /api/recruiter/applications/[id]/revert` reverses to the **previous status** (from the most recent `ApplicationStatusChange` record).
@@ -28,6 +30,7 @@ Enforce one-time bulk action constraint (same applicant cannot be re-selected fo
 - After successful revert, the applicant's status badge updates (via query invalidation), and the row becomes selectable again.
 
 ### 3. Color-Coded Status Filter Tags
+
 - The existing `StatusBadge` component already maps each status to a color:
   - `applied`: brand (blue/purple)
   - `reviewing`: info (cyan-ish)
@@ -40,6 +43,7 @@ Enforce one-time bulk action constraint (same applicant cannot be re-selected fo
 - The **table status column** already uses `StatusBadge` which colors based on status → no change needed there.
 
 ### 4. Visual Feedback on Bulk Actions
+
 - On **success**: Show a transient banner below the bulk action bar:
   > ✓ 5 applicants moved to "Shortlisted"
 - On **error**: Show a transient banner below the bulk action bar:
@@ -48,6 +52,7 @@ Enforce one-time bulk action constraint (same applicant cannot be re-selected fo
 - Banner uses success/error color theming.
 
 ### 5. One-Time Constraint on Single (Inline) Actions Too
+
 - The inline action buttons (Shortlist, Schedule Interview, Reject, etc.) on each row already fire status transitions.
 - **Question for user:** Should these inline single actions also be constrained to one-time (i.e., after clicking "Shortlist" on a row, the button disappears because the status changed)? The current behavior: the buttons are status-conditional and disappear naturally when the status changes (because they check `row.status === "reviewing"` etc.).
 - **Assumption:** The inline action buttons are already one-time because they are gated on the current status. Once the status changes, the button condition no longer matches and it disappears. No extra work needed for single actions.
@@ -59,6 +64,7 @@ Enforce one-time bulk action constraint (same applicant cannot be re-selected fo
 ### Modified Files
 
 #### `components/ui/data-table.tsx`
+
 Extend `DataTableProps` with:
 
 ```ts
@@ -66,6 +72,7 @@ disabledIds?: Set<string>;
 ```
 
 Changes in `TableRow` for disabled rows:
+
 ```tsx
 const isDisabled = disabledIds?.has(rowId);
 // ...
@@ -90,20 +97,20 @@ The "Select all" header checkbox: when disabled rows exist, "Select all" should 
 #### `app/features/recruiter/components/applicants-table.tsx`
 
 **New state:**
+
 ```ts
 const [actionedIds, setActionedIds] = useState<Set<string>>(new Set());
 const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
 ```
 
 **New derived data:**
+
 ```ts
-const actionedRows = useMemo(
-  () => applicants.filter((a) => actionedIds.has(a.id)),
-  [applicants, actionedIds],
-);
+const actionedRows = useMemo(() => applicants.filter((a) => actionedIds.has(a.id)), [applicants, actionedIds]);
 ```
 
 **Updated `handleBulkAction` onSuccess:**
+
 ```ts
 onSuccess: (data) => {
   setFeedback({ type: "success", message: `${ids.length} applicants moved to "${BULK_ACTION_LABELS[targetStatus] ?? targetStatus}"` });
@@ -120,32 +127,43 @@ onError: (error: Error) => {
 ```
 
 **Revert handler:**
+
 ```ts
-const handleRevert = useCallback((applicationId: string) => {
-  revertTransition.mutate(
-    { applicationId },
-    {
-      onSuccess: () => {
-        setActionedIds(prev => { const n = new Set(prev); n.delete(applicationId); return n; });
+const handleRevert = useCallback(
+  (applicationId: string) => {
+    revertTransition.mutate(
+      { applicationId },
+      {
+        onSuccess: () => {
+          setActionedIds((prev) => {
+            const n = new Set(prev);
+            n.delete(applicationId);
+            return n;
+          });
+        },
       },
-    },
-  );
-}, [revertTransition]);
+    );
+  },
+  [revertTransition],
+);
 ```
 
 **Actions column per-row:**
 If `actionedIds.has(row.id)`, show a **Revert** icon button (Undo2 from lucide-react) instead of the normal action buttons.
 
 **Bulk action bar:**
+
 - Add `disabledIds={actionedIds}` to `<DataTable>`
 - Add feedback banner below data table, above bulk bar
 
 **RevertConfirmDialog:**
+
 - Simple dialog: "Revert [Name] back to [previousStatus]? This will undo the last status change."
 
 #### `app/features/recruiter/hooks/use-applications.ts`
 
 Add `useRevertStatus` mutation:
+
 ```ts
 export function useRevertStatus() {
   const queryClient = useQueryClient();
@@ -214,6 +232,7 @@ async function handlePOST(request, { params }) {
 #### `app/features/recruiter/components/revert-dialog.tsx` (NEW)
 
 Simple confirmation dialog:
+
 ```tsx
 type RevertDialogProps = {
   open: boolean;
@@ -235,19 +254,22 @@ Actually, the revert route uses the `fromStatus` from the audit trail, so no sch
 Replace the existing `<SelectItem>` inside `<SelectContent>` with styled versions that include a colored dot:
 
 ```tsx
-{STATUS_OPTIONS.map((opt) => (
-  <SelectItem key={opt.value} value={opt.value}>
-    <span className="flex items-center gap-2">
-      <span className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")} />
-      {opt.label}
-    </span>
-  </SelectItem>
-))}
+{
+  STATUS_OPTIONS.map((opt) => (
+    <SelectItem key={opt.value} value={opt.value}>
+      <span className="flex items-center gap-2">
+        <span className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")} />
+        {opt.label}
+      </span>
+    </SelectItem>
+  ));
+}
 ```
 
 Actually, the filter is inside `applicants-table.tsx`, not the page. The Select dropdown there needs updating.
 
 Add a `STATUS_DOT_COLORS` map:
+
 ```ts
 const STATUS_DOT_COLORS: Record<string, string> = {
   all: "bg-muted",
@@ -265,17 +287,17 @@ const STATUS_DOT_COLORS: Record<string, string> = {
 
 ## New Files
 
-| File | Purpose |
-|---|---|
+| File                                                             | Purpose                                      |
+| ---------------------------------------------------------------- | -------------------------------------------- |
 | `app/api/recruiter/applications/[applicationId]/revert/route.ts` | POST — revert application to previous status |
-| `app/features/recruiter/components/revert-dialog.tsx` | Confirmation dialog for revert action |
+| `app/features/recruiter/components/revert-dialog.tsx`            | Confirmation dialog for revert action        |
 
 ## Modified Files
 
-| File | Change |
-|---|---|
-| `components/ui/data-table.tsx` | Add `disabledIds` prop, disable checkbox + dim styling for disabled rows |
-| `app/features/recruiter/hooks/use-applications.ts` | Add `useRevertStatus()` mutation |
+| File                                                     | Change                                                                                                                              |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `components/ui/data-table.tsx`                           | Add `disabledIds` prop, disable checkbox + dim styling for disabled rows                                                            |
+| `app/features/recruiter/hooks/use-applications.ts`       | Add `useRevertStatus()` mutation                                                                                                    |
 | `app/features/recruiter/components/applicants-table.tsx` | `actionedIds` state, feedback banner, revert handler, revert button in actions column, disabledIds passthrough, colored filter dots |
 
 ---

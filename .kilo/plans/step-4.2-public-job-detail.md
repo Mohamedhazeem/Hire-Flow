@@ -6,18 +6,18 @@ Enhance the existing `/jobs/[id]` detail page with view tracking, inactive job r
 
 ## What Already Exists (Phase 3 — Reuse)
 
-| File | Purpose |
-|------|---------|
-| `app/api/jobs/[id]/route.ts` (17 lines) | GET handler with `withErrorHandler`. Currently throws 404 for inactive jobs — will modify to return them |
-| `getPublicJobById` in `public-job-queries.ts` | Returns full detail + company info. Currently returns `null` for inactive — will remove inactive guard |
-| `job-detail-view.tsx` (240 lines, client) | Full detail page: company info, description, skills, tags, salary, deadline, inactive banner, `SaveJobButton`, Apply Now. Will refactor to ≤150 |
-| `app/jobs/[id]/page.tsx` (10 lines, server) | Static metadata — will add `generateMetadata` |
-| `apply-modal.tsx` (205 lines) | Resume selection, cover letter. No changes needed |
-| `app/api/jobs/[id]/apply/route.ts` (118 lines) | Full application pipeline with `requireRole`, rate limiting, notifications. No changes |
-| `require-role.ts` (51 lines) | Role guard |
-| `auth-client.ts` | `useSession` for anonymous detection |
-| `info-row.tsx` | Reusable label/value card |
-| `job.viewCount` (Prisma field) | Already on `Job` model, used in recruiter/admin analytics |
+| File                                           | Purpose                                                                                                                                         |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app/api/jobs/[id]/route.ts` (17 lines)        | GET handler with `withErrorHandler`. Currently throws 404 for inactive jobs — will modify to return them                                        |
+| `getPublicJobById` in `public-job-queries.ts`  | Returns full detail + company info. Currently returns `null` for inactive — will remove inactive guard                                          |
+| `job-detail-view.tsx` (240 lines, client)      | Full detail page: company info, description, skills, tags, salary, deadline, inactive banner, `SaveJobButton`, Apply Now. Will refactor to ≤150 |
+| `app/jobs/[id]/page.tsx` (10 lines, server)    | Static metadata — will add `generateMetadata`                                                                                                   |
+| `apply-modal.tsx` (205 lines)                  | Resume selection, cover letter. No changes needed                                                                                               |
+| `app/api/jobs/[id]/apply/route.ts` (118 lines) | Full application pipeline with `requireRole`, rate limiting, notifications. No changes                                                          |
+| `require-role.ts` (51 lines)                   | Role guard                                                                                                                                      |
+| `auth-client.ts`                               | `useSession` for anonymous detection                                                                                                            |
+| `info-row.tsx`                                 | Reusable label/value card                                                                                                                       |
+| `job.viewCount` (Prisma field)                 | Already on `Job` model, used in recruiter/admin analytics                                                                                       |
 
 ## Files to Create
 
@@ -31,10 +31,7 @@ import { prisma } from "@/lib/prisma";
 import { checkRateLimit } from "@/lib/rate-limiter";
 import { NotFoundError } from "@/lib/api-error";
 
-async function handlePOST(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handlePOST(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const job = await prisma.job.findUnique({
     where: { id },
@@ -67,9 +64,7 @@ type CompanyPreviewCardProps = {
   locations: string[];
 };
 
-export function CompanyPreviewCard({
-  name, logo, website, description, locations,
-}: CompanyPreviewCardProps) {
+export function CompanyPreviewCard({ name, logo, website, description, locations }: CompanyPreviewCardProps) {
   const initial = name.charAt(0).toUpperCase();
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 transition-colors hover:border-brand/20">
@@ -81,15 +76,20 @@ export function CompanyPreviewCard({
           <h3 className="text-base font-semibold text-text-heading truncate">{name}</h3>
           {locations.length > 0 && (
             <p className="text-sm text-text-muted mt-0.5">
-              <MapPinIcon className="size-3.5 inline mr-1" />{locations.join(", ")}
+              <MapPinIcon className="size-3.5 inline mr-1" />
+              {locations.join(", ")}
             </p>
           )}
         </div>
       </div>
       {description && <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>}
       {website && (
-        <a href={website} target="_blank" rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-sm text-brand hover:underline mt-3">
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-brand hover:underline mt-3"
+        >
           <GlobeIcon className="size-3.5" /> Visit website <ChevronRightIcon className="size-3.5" />
         </a>
       )}
@@ -105,6 +105,7 @@ Edge cases: no logo → initial char; long name → `truncate`; no description �
 ### 3. `app/features/jobs/queries/public-job-queries.ts` (+10 lines)
 
 **`PublicJobDetail` type — add:**
+
 ```ts
 isActive: boolean;
 status: string;
@@ -112,6 +113,7 @@ viewCount: number;
 ```
 
 **`getPublicJobById` — change line 139:**
+
 ```ts
 // Before:
 if (!job || job.status !== "active" || !job.isActive) return null;
@@ -120,6 +122,7 @@ if (!job) return null;
 ```
 
 **Add to return object:**
+
 ```ts
 isActive: job.isActive,
 status: job.status,
@@ -135,6 +138,7 @@ No changes needed. `if (!job)` guard stays for truly missing IDs. Inactive jobs 
 ### 5. `app/features/jobs/components/job-detail-view.tsx` (240→≤150 lines)
 
 **Imports — remove/replace:**
+
 - Remove `Image`, `Building2Icon`, `GlobeIcon`, `ChevronRightIcon` (moved to CompanyPreviewCard)
 - Remove `useState` for `now` — use `Date.now()` inline for deadline checks
 - Remove `Record<string, unknown>` casts — import `PublicJobDetail` and type the queryFn return
@@ -148,6 +152,7 @@ No changes needed. `if (!job)` guard stays for truly missing IDs. Inactive jobs 
 a) **Typed query**: Cast API response to `{ data: PublicJobDetail }` instead of `Record<string, unknown>`. All `d.xxx as string` casts become direct property access.
 
 b) **Salary formatting fix** (pre-existing bug: currency prefix duplicated): Simplify to:
+
 ```ts
 const salaryText =
   sMin != null && sMax != null
@@ -160,6 +165,7 @@ const salaryText =
 ```
 
 c) **View tracking effect**:
+
 ```tsx
 useEffect(() => {
   if (!id) return;
@@ -170,17 +176,19 @@ useEffect(() => {
 ```
 
 d) **Anonymous CTA** — replace "Apply Now" button with conditional:
+
 ```tsx
-{session?.user ? (
-  <button onClick={() => setShowApply(true)} disabled={deadlinePassed || !d.isActive || d.status !== "active"}>
-    Apply Now
-  </button>
-) : (
-  <Link href={`/login?returnUrl=${encodeURIComponent(`/jobs/${id}`)}`}
-    className="... bg-brand hover:bg-brand/90 ...">
-    Log in to Apply
-  </Link>
-)}
+{
+  session?.user ? (
+    <button onClick={() => setShowApply(true)} disabled={deadlinePassed || !d.isActive || d.status !== "active"}>
+      Apply Now
+    </button>
+  ) : (
+    <Link href={`/login?returnUrl=${encodeURIComponent(`/jobs/${id}`)}`} className="... bg-brand hover:bg-brand/90 ...">
+      Log in to Apply
+    </Link>
+  );
+}
 ```
 
 e) **Motion wrapper** — wrap entire JSX in `motion.div` with `initial={{ opacity: 0 }} animate={{ opacity: 1 }}`
@@ -190,6 +198,7 @@ f) **Company section** — replace inline (lines 154-172) with `<CompanyPreviewC
 ### 6. `app/jobs/[id]/page.tsx` (+15 lines)
 
 Replace static `metadata` with:
+
 ```tsx
 import { getPublicJobById } from "@/app/features/jobs/queries/public-job-queries";
 
@@ -205,29 +214,29 @@ Edge case: job not found → "Job Not Found" title; inactive job → metadata st
 
 ## Edge Cases Verified
 
-| # | Edge Case | Handling | File |
-|---|-----------|----------|------|
-| 1 | Invalid job ID | `getPublicJobById` returns null → `NotFoundError` → 404 | API route |
-| 2 | Inactive job (isActive=false) | Query returns it → UI shows inactive banner + disabled apply | `public-job-queries.ts` + `job-detail-view.tsx` |
-| 3 | Inactive job (status=draft/archived) | Same as above — `!d.isActive || d.status !== "active"` | `job-detail-view.tsx` |
-| 4 | Anonymous user | `useSession` null → "Log in to Apply" link with `returnUrl` | `job-detail-view.tsx` |
-| 5 | Concurrent view increments | `increment: 1` is Prisma-atomic | `view/route.ts` |
-| 6 | View rate limit exceeded | `checkRateLimit` throws → `withErrorHandler` returns 429 → client `.catch(() => {})` silently ignores | `view/route.ts` + `job-detail-view.tsx` |
-| 7 | Component ≤150 lines | Extracting CompanyPreviewCard (60 lines) + removing Record casts saves ~100 lines | `job-detail-view.tsx` |
-| 8 | Locs empty on CompanyPreviewCard | `locations.length > 0` guard | `company-preview-card.tsx` |
-| 9 | No logo | `initial` character fallback | `company-preview-card.tsx` |
-| 10 | Long description | `line-clamp-3` | `company-preview-card.tsx` |
-| 11 | No website | Link block omitted entirely | `company-preview-card.tsx` |
-| 12 | Slow view fetch | `AbortController` cleanup on unmount | `job-detail-view.tsx` |
-| 13 | generateMetadata for missing job | `if (!job) return { title: "Job Not Found" }` | `page.tsx` |
-| 14 | generateMetadata for inactive job | Returns title + description (no hide) | `page.tsx` |
-| 15 | Salary: only min set | `"USD50,000+"` (currency not duplicated) | `job-detail-view.tsx` |
-| 16 | Salary: only max set | `"Up to USD100,000"` | `job-detail-view.tsx` |
-| 17 | Salary: both null | `null` → salary section hidden | `job-detail-view.tsx` |
-| 18 | `apiClient` type safety | Cast to `{ data: PublicJobDetail }`, not `Record<string, unknown>` | `job-detail-view.tsx` |
-| 19 | Back/forward nav | `useEffect` re-fires view tracking on re-mount (acceptable, no dedup) | `job-detail-view.tsx` |
-| 20 | Very long job title | `truncate` class on h1 | `job-detail-view.tsx` |
-| 21 | Mobile 320px | `p-4 md:p-6 lg:p-8` padding, `flex-col` wrapping | `job-detail-view.tsx` |
+| #   | Edge Case                            | Handling                                                                                              | File                                            |
+| --- | ------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------- | --------------------- |
+| 1   | Invalid job ID                       | `getPublicJobById` returns null → `NotFoundError` → 404                                               | API route                                       |
+| 2   | Inactive job (isActive=false)        | Query returns it → UI shows inactive banner + disabled apply                                          | `public-job-queries.ts` + `job-detail-view.tsx` |
+| 3   | Inactive job (status=draft/archived) | Same as above — `!d.isActive                                                                          |                                                 | d.status !== "active"` | `job-detail-view.tsx` |
+| 4   | Anonymous user                       | `useSession` null → "Log in to Apply" link with `returnUrl`                                           | `job-detail-view.tsx`                           |
+| 5   | Concurrent view increments           | `increment: 1` is Prisma-atomic                                                                       | `view/route.ts`                                 |
+| 6   | View rate limit exceeded             | `checkRateLimit` throws → `withErrorHandler` returns 429 → client `.catch(() => {})` silently ignores | `view/route.ts` + `job-detail-view.tsx`         |
+| 7   | Component ≤150 lines                 | Extracting CompanyPreviewCard (60 lines) + removing Record casts saves ~100 lines                     | `job-detail-view.tsx`                           |
+| 8   | Locs empty on CompanyPreviewCard     | `locations.length > 0` guard                                                                          | `company-preview-card.tsx`                      |
+| 9   | No logo                              | `initial` character fallback                                                                          | `company-preview-card.tsx`                      |
+| 10  | Long description                     | `line-clamp-3`                                                                                        | `company-preview-card.tsx`                      |
+| 11  | No website                           | Link block omitted entirely                                                                           | `company-preview-card.tsx`                      |
+| 12  | Slow view fetch                      | `AbortController` cleanup on unmount                                                                  | `job-detail-view.tsx`                           |
+| 13  | generateMetadata for missing job     | `if (!job) return { title: "Job Not Found" }`                                                         | `page.tsx`                                      |
+| 14  | generateMetadata for inactive job    | Returns title + description (no hide)                                                                 | `page.tsx`                                      |
+| 15  | Salary: only min set                 | `"USD50,000+"` (currency not duplicated)                                                              | `job-detail-view.tsx`                           |
+| 16  | Salary: only max set                 | `"Up to USD100,000"`                                                                                  | `job-detail-view.tsx`                           |
+| 17  | Salary: both null                    | `null` → salary section hidden                                                                        | `job-detail-view.tsx`                           |
+| 18  | `apiClient` type safety              | Cast to `{ data: PublicJobDetail }`, not `Record<string, unknown>`                                    | `job-detail-view.tsx`                           |
+| 19  | Back/forward nav                     | `useEffect` re-fires view tracking on re-mount (acceptable, no dedup)                                 | `job-detail-view.tsx`                           |
+| 20  | Very long job title                  | `truncate` class on h1                                                                                | `job-detail-view.tsx`                           |
+| 21  | Mobile 320px                         | `p-4 md:p-6 lg:p-8` padding, `flex-col` wrapping                                                      | `job-detail-view.tsx`                           |
 
 ## Data Flow
 
