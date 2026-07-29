@@ -1,7 +1,4 @@
-export async function downloadResume(
-  fileUrl: string,
-  onError: (msg: string) => void,
-): Promise<void> {
+export async function downloadResume(fileUrl: string, onError: (msg: string) => void): Promise<void> {
   try {
     const res = await fetch(`/api/files/download?path=${encodeURIComponent(fileUrl)}`);
     if (!res.ok) {

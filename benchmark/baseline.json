@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-07-29T00:00:00.000Z",
+  "suites": {
+    "rate-limiter-check": {
+      "rps": 5000,
+      "regressionThreshold": 0.1,
+      "minRps": 3000,
+      "maxAllocations": 5000,
+      "dbQueryTimeMs": 5
+    },
+    "repository-increment": {
+      "rps": 3000,
+      "regressionThreshold": 0.15,
+      "minRps": 1500,
+      "maxAllocations": 3000,
+      "dbQueryTimeMs": 10
+    },
+    "middleware-session": {
+      "rps": 1000,
+      "regressionThreshold": 0.2,
+      "minRps": 500,
+      "maxAllocations": 10000,
+      "dbQueryTimeMs": 20
+    }
+  }
+}

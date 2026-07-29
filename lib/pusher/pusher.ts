@@ -2,12 +2,7 @@ import Pusher from "pusher";
 import { env } from "@/utils/env";
 
 function createPusherServer(): Pusher | null {
-  if (
-    !env.data?.PUSHER_APP_ID ||
-    !env.data?.PUSHER_KEY ||
-    !env.data?.PUSHER_SECRET ||
-    !env.data?.PUSHER_CLUSTER
-  ) {
+  if (!env.data?.PUSHER_APP_ID || !env.data?.PUSHER_KEY || !env.data?.PUSHER_SECRET || !env.data?.PUSHER_CLUSTER) {
     return null;
   }
   return new Pusher({

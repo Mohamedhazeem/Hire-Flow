@@ -13,10 +13,7 @@ type InviteCancelOptions = {
 export function createInviteCancelHandler(allowedRoles: string[], options: InviteCancelOptions) {
   const { findInvite, deleteInvite, ownershipCheck } = options;
 
-  async function handleDELETE(
-    _request: NextRequest,
-    { params }: { params: Promise<{ id: string }> },
-  ) {
+  async function handleDELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
     const session = await requireRole(allowedRoles);
     const { id } = await params;
 

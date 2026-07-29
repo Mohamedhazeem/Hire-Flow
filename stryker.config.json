@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "plugins": ["@stryker-mutator/vitest-plugin"],
+  "testRunner": "vitest",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "lib/rate-limiting/**/*.ts",
+    "!lib/rate-limiting/di.ts",
+    "!lib/rate-limiting/metrics.ts",
+    "!lib/rate-limiting/telemetry.ts"
+  ],
+  "vitest": {
+    "configFile": "vitest.config.ts",
+    "project": "default"
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": 40
+  },
+  "reporters": ["html", "clear-text", "progress"],
+  "timeoutMS": 60000
+}

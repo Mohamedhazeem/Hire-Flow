@@ -1,11 +1,10 @@
 import { z } from "zod";
 import { pusher } from "@/lib/pusher/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
-import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
+import { ValidationError, NotFoundError } from "@/lib/api/api-error";
 import { createNotification, fireNotification } from "@/lib/notifications";
 import { markThreadNotificationsRead } from "@/app/features/notifications/queries/notification-queries";
 import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
-import { countRecentMessages } from "@/lib/repositories/rate-limit-repository";
 import { messageRepository } from "@/lib/repositories/message-repository";
 import { threadRepository } from "@/lib/repositories/thread-repository";
 
@@ -76,15 +75,7 @@ export const messageService = {
     requireValidUrl?: boolean;
     verifyRelation?: VerifyRelation;
   }) {
-    const {
-      threadId,
-      senderId,
-      senderName,
-      senderRole,
-      body,
-      requireValidUrl = false,
-      verifyRelation,
-    } = params;
+    const { threadId, senderId, senderName, senderRole, body, requireValidUrl = false, verifyRelation } = params;
 
     if (!isValidThreadId(threadId)) {
       throw new ValidationError("Invalid thread ID format");
@@ -96,13 +87,6 @@ export const messageService = {
       throw new ValidationError("You are not a participant in this thread");
     }
 
-    const recentCount = await countRecentMessages(senderId, otherUserId);
-    if (recentCount >= 200) {
-      throw new TooManyRequestsError(
-        "Message limit reached. You can send up to 20 messages per hour.",
-      );
-    }
-
     if (senderRole === "recruiter" && verifyRelation) {
       await verifyRelation(senderId, otherUserId);
     }
@@ -110,9 +94,7 @@ export const messageService = {
     const schema = getSendMessageSchema(requireValidUrl);
     const parsed = schema.safeParse(body);
     if (!parsed.success) {
-      throw new ValidationError(
-        parsed.error.issues.map((e) => e.message).join("; ") || "Invalid message",
-      );
+      throw new ValidationError(parsed.error.issues.map((e) => e.message).join("; ") || "Invalid message");
     }
 
     const message = await messageRepository.create({
@@ -200,9 +182,7 @@ export const messageService = {
     const latestMessages = await threadRepository.findLatestMessages(threadIds, userId);
     const latestByThread = new Map(latestMessages.map((m) => [m.threadId, m]));
 
-    const otherUserIds = threadIds
-      .map((id) => getOtherUserId(id, userId))
-      .filter((id): id is string => id !== null);
+    const otherUserIds = threadIds.map((id) => getOtherUserId(id, userId)).filter((id): id is string => id !== null);
 
     const users = await threadRepository.findParticipants(otherUserIds);
     const userMap = new Map(users.map((u) => [u.id, u]));
@@ -227,11 +207,7 @@ export const messageService = {
             ? {
                 content:
                   latest.content ||
-                  (latest.fileUrl
-                    ? latest.fileType?.startsWith("image/")
-                      ? "📷 Photo"
-                      : "📎 File"
-                    : ""),
+                  (latest.fileUrl ? (latest.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
                 createdAt: latest.createdAt.toISOString(),
                 senderId: latest.senderId,
                 unread: latest.senderId !== userId && !latest.read,

@@ -7,11 +7,7 @@ type NotificationInput = {
   data: Record<string, unknown>;
 };
 
-export async function createNotification(
-  userId: string,
-  type: string,
-  data: Record<string, unknown>,
-) {
+export async function createNotification(userId: string, type: string, data: Record<string, unknown>) {
   // N2: validate the recipient exists before creating a notification, so a
   // bad userId fails fast with a clear error instead of an FK violation.
   const user = await prisma.user.findUnique({
@@ -88,4 +84,3 @@ export function fireNotification(promise: Promise<unknown>): void {
     console.error("[notifications] background notification failed:", error);
   });
 }
-
