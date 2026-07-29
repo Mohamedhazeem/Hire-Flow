@@ -6,11 +6,7 @@ import { DataTable } from "@/components/ui/data-table";
 import { PeopleTablePagination } from "@/components/shared/people-table-pagination";
 import { JobTableToolbar } from "./job-table-toolbar";
 import { createJobTableColumns } from "./job-table-columns";
-import {
-  useAdminJobs,
-  useDeleteJob,
-  useToggleJobStatus,
-} from "@/app/features/admin/hooks/use-admin-jobs";
+import { useAdminJobs, useDeleteJob, useToggleJobStatus } from "@/app/features/admin/hooks/use-admin-jobs";
 import type { AdminListJobsParams } from "@/app/features/admin/schema/admin.schema";
 
 type AdminJobsTableProps = {
@@ -89,11 +85,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   }
 
   if (isError) {
-    return (
-      <div className="text-destructive text-sm py-8 text-center">
-        Failed to load jobs. Please try again.
-      </div>
-    );
+    return <div className="text-destructive text-sm py-8 text-center">Failed to load jobs. Please try again.</div>;
   }
 
   return (
@@ -109,11 +101,7 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
         onEmploymentTypeChange={filterChange(setEmploymentType)}
       />
 
-      <DataTable
-        columns={columns}
-        data={jobs}
-        emptyMessage="No jobs found matching your filters."
-      />
+      <DataTable columns={columns} data={jobs} emptyMessage="No jobs found matching your filters." />
 
       <PeopleTablePagination
         page={responseData?.page ?? 1}

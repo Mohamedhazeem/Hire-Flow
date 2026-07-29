@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  useAdminInvites,
-  useCancelInvite,
-  useRemoveAdmin,
-} from "@/app/features/admin/hooks/use-admin-invites";
+import { useAdminInvites, useCancelInvite, useRemoveAdmin } from "@/app/features/admin/hooks/use-admin-invites";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 import { Badge } from "@/components/ui/badge";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
@@ -25,9 +21,7 @@ export function AdminTeamList() {
 
   if (isError) {
     return (
-      <div className="text-center py-8 text-error text-sm">
-        {(error as Error)?.message ?? "Failed to load team"}
-      </div>
+      <div className="text-center py-8 text-error text-sm">{(error as Error)?.message ?? "Failed to load team"}</div>
     );
   }
 
@@ -95,11 +89,7 @@ export function AdminTeamList() {
     {
       key: "createdAt",
       header: "Date",
-      cell: (row) => (
-        <span className="text-xs text-text-muted">
-          {new Date(row.createdAt).toLocaleDateString()}
-        </span>
-      ),
+      cell: (row) => <span className="text-xs text-text-muted">{new Date(row.createdAt).toLocaleDateString()}</span>,
     },
     {
       key: "actions",
@@ -154,7 +144,5 @@ export function AdminTeamList() {
     },
   ];
 
-  return (
-    <DataTable columns={columns} data={rows} emptyMessage="No team members or pending invites." />
-  );
+  return <DataTable columns={columns} data={rows} emptyMessage="No team members or pending invites." />;
 }
