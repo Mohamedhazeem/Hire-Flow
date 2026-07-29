@@ -1,6 +1,7 @@
 import { getSession } from "@/app/features/auth/libs/auth";
 import { UnauthorizedError, ForbiddenError } from "@/lib/api/api-error";
 import { prisma } from "@/lib/prisma";
+import { getSessionCache } from "@/lib/rate-limiting/request-context";
 
 export type ResolvedSession = {
   id: string;
@@ -12,13 +13,25 @@ export type ResolvedSession = {
 };
 
 export async function requireRole(allowedRoles: string[]): Promise<ResolvedSession> {
-  const session = await getSession();
+  const cached = getSessionCache();
+  if (cached?.session) {
+    const { session } = cached;
+    if (allowedRoles.includes(session.role)) {
+      return session as ResolvedSession;
+    }
+    if (allowedRoles.includes("recruiter") && session.memberRole) {
+      return session as ResolvedSession;
+    }
+    throw new ForbiddenError("Insufficient permissions");
+  }
 
-  if (!session?.user) {
+  const authSession = await getSession();
+
+  if (!authSession?.user) {
     throw new UnauthorizedError();
   }
 
-  const user = session.user as { id: string; name: string; email: string; role?: string };
+  const user = authSession.user as { id: string; name: string; email: string; role?: string };
   const role = user.role ?? "";
   const base: ResolvedSession = { ...user, role };
 

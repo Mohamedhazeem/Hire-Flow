@@ -7,17 +7,17 @@
 
 ## Prioritization
 
-| Tier | # | Issue | Severity | Status |
-|------|---|-------|----------|--------|
-| 1    | 1 | TOCTOU race in revert route | Critical | Pending |
-| 1    | 2 | TOCTOU race in bulk status route | Critical | Pending |
-| 1    | 3 | Bulk route overwrites `updatedAt`, breaks optimistic concurrency | Critical | Pending |
-| 2    | 4 | Revert scoped to own changes with misleading error | High | Pending |
-| 2    | 5 | No `useEffect` cleanup for feedback timeout | High | Pending |
-| 2    | 6 | `rejectionReason` client-only required for bulk reject | High | Pending |
-| 3    | 7 | `actionedIds` unbounded growth | Medium | Pending |
-| 3    | 8 | DataTable `someSelected` doesn't exclude disabled rows | Medium | Pending |
-| 3    | 9 | `totalPages` fallback misses zero | Medium | Pending |
+| Tier | #   | Issue                                                            | Severity | Status  |
+| ---- | --- | ---------------------------------------------------------------- | -------- | ------- |
+| 1    | 1   | TOCTOU race in revert route                                      | Critical | Pending |
+| 1    | 2   | TOCTOU race in bulk status route                                 | Critical | Pending |
+| 1    | 3   | Bulk route overwrites `updatedAt`, breaks optimistic concurrency | Critical | Pending |
+| 2    | 4   | Revert scoped to own changes with misleading error               | High     | Pending |
+| 2    | 5   | No `useEffect` cleanup for feedback timeout                      | High     | Pending |
+| 2    | 6   | `rejectionReason` client-only required for bulk reject           | High     | Pending |
+| 3    | 7   | `actionedIds` unbounded growth                                   | Medium   | Pending |
+| 3    | 8   | DataTable `someSelected` doesn't exclude disabled rows           | Medium   | Pending |
+| 3    | 9   | `totalPages` fallback misses zero                                | Medium   | Pending |
 
 ---
 
@@ -151,7 +151,7 @@ const updateData: Record<string, unknown> = { status };
 
 **Fix:** Remove the `changedById: session.id` filter. Tenant isolation is already enforced by `job: { companyId }` in the application query + `requireRole(["recruiter"])`. Error message stays — now it truly means no status change history exists.
 
-*(Collapsed into Fix 1 — already removed in the rewritten code above.)*
+_(Collapsed into Fix 1 — already removed in the rewritten code above.)_
 
 ### Fix 5 — `useEffect` Cleanup for Feedback Timeout
 
@@ -182,20 +182,25 @@ useEffect(() => {
 **Fix:** Add `.superRefine` making `rejectionReason` required when `status === "rejected"`.
 
 ```ts
-export const BulkStatusTransitionSchema = z.object({
-  applicationIds: z.array(z.string()).min(1).max(50),
-  status: ApplicationStatusSchema,
-  rejectionReason: z.string().min(1).max(500).optional(),
-  email: z.boolean().optional().default(false),
-}).superRefine((data, ctx) => {
-  if (data.status === "rejected" && (!data.rejectionReason || data.rejectionReason.trim().length === 0)) {
-    ctx.addIssue({
-      code: z.ZodIssueCode.custom,
-      message: "Rejection reason is required when rejecting",
-      path: ["rejectionReason"],
-    });
-  }
-});
+export const BulkStatusTransitionSchema = z
+  .object({
+    applicationIds: z.array(z.string()).min(1).max(50),
+    status: ApplicationStatusSchema,
+    rejectionReason: z.string().min(1).max(500).optional(),
+    email: z.boolean().optional().default(false),
+  })
+  .superRefine((data, ctx) => {
+    if (
+      data.status === "rejected" &&
+      (!data.rejectionReason || data.rejectionReason.trim().length === 0)
+    ) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "Rejection reason is required when rejecting",
+        path: ["rejectionReason"],
+      });
+    }
+  });
 ```
 
 ---
@@ -232,7 +237,11 @@ function addActionedIds(prev: Set<string>, ids: string[]): Set<string> {
 
 ```ts
 // Line 225 — replace
-setActionedIds((prev) => { const n = new Set(prev); for (const id of ids) n.add(id); return n; });
+setActionedIds((prev) => {
+  const n = new Set(prev);
+  for (const id of ids) n.add(id);
+  return n;
+});
 // with
 setActionedIds((prev) => addActionedIds(prev, ids));
 
@@ -250,14 +259,11 @@ setActionedIds((prev) => addActionedIds(prev, ids));
 
 ```ts
 // BEFORE
-const someSelected = enableSelection && data.some(
-  (row) => selectedIds?.has(getRowId?.(row) ?? ""),
-);
+const someSelected = enableSelection && data.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 
 // AFTER
-const someSelected = enableSelection && selectableRows.some(
-  (row) => selectedIds?.has(getRowId?.(row) ?? ""),
-);
+const someSelected =
+  enableSelection && selectableRows.some((row) => selectedIds?.has(getRowId?.(row) ?? ""));
 ```
 
 ### Fix 9 — `totalPages` Fallback for Zero
@@ -280,13 +286,13 @@ const totalPages = Math.max(1, responseData?.totalPages ?? 1);
 
 ## Files Summary
 
-| # | File | Changes |
-|---|------|---------|
-| 1 | `app/api/recruiter/applications/[applicationId]/revert/route.ts` | Move all reads inside `$transaction`; remove `changedById: session.id` |
-| 2 | `app/api/recruiter/applications/bulk/status/route.ts` | Move `findMany`+validation inside `$transaction`; remove `updatedAt: new Date()` |
-| 3 | `app/features/recruiter/schema/application.schema.ts` | Add `.superRefine` to `BulkStatusTransitionSchema` |
-| 4 | `app/features/recruiter/components/applicants-table.tsx` | Add `useEffect` cleanup, cap `actionedIds`, fix `totalPages` |
-| 5 | `components/ui/data-table.tsx` | Change `someSelected` to use `selectableRows` |
+| #   | File                                                             | Changes                                                                          |
+| --- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| 1   | `app/api/recruiter/applications/[applicationId]/revert/route.ts` | Move all reads inside `$transaction`; remove `changedById: session.id`           |
+| 2   | `app/api/recruiter/applications/bulk/status/route.ts`            | Move `findMany`+validation inside `$transaction`; remove `updatedAt: new Date()` |
+| 3   | `app/features/recruiter/schema/application.schema.ts`            | Add `.superRefine` to `BulkStatusTransitionSchema`                               |
+| 4   | `app/features/recruiter/components/applicants-table.tsx`         | Add `useEffect` cleanup, cap `actionedIds`, fix `totalPages`                     |
+| 5   | `components/ui/data-table.tsx`                                   | Change `someSelected` to use `selectableRows`                                    |
 
 No new files. No Prisma migrations. No manifest updates.
 

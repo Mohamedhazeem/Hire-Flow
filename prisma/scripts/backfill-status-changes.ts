@@ -40,7 +40,9 @@ async function main() {
     created++;
   }
 
-  console.log(`Done. Created ${created} records, skipped ${skipped} applications (already have records).`);
+  console.log(
+    `Done. Created ${created} records, skipped ${skipped} applications (already have records).`,
+  );
 
   await prisma.$disconnect();
 }

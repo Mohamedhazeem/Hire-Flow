@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+} from "@/lib/test";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { seedRecruiterCompany } from "@/lib/test/integration/helpers";

@@ -23,9 +23,7 @@ export function ApplicantProfileCard({
   experiences,
 }: ApplicantProfileCardProps) {
   const experiencesArray =
-    experiences != null && Array.isArray(experiences)
-      ? (experiences as unknown[])
-      : null;
+    experiences != null && Array.isArray(experiences) ? (experiences as unknown[]) : null;
 
   return (
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
@@ -33,12 +31,8 @@ export function ApplicantProfileCard({
         Profile
       </h2>
       <div className="space-y-4">
-        {headline && (
-          <p className="text-sm text-text-body font-medium">{headline}</p>
-        )}
-        {bio && (
-          <p className="text-sm text-text-muted leading-relaxed">{bio}</p>
-        )}
+        {headline && <p className="text-sm text-text-body font-medium">{headline}</p>}
+        {bio && <p className="text-sm text-text-muted leading-relaxed">{bio}</p>}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <InfoRow
             icon={<MapPinIcon className="size-5" />}

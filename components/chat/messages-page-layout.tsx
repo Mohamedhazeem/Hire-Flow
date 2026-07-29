@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, useEffect } from "react";
+import { useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 import { MessageSquareTextIcon } from "lucide-react";
 import { ThreadListItem, type ThreadListItemData } from "@/components/chat/thread-list-item";
 import { StartConversationSearch } from "@/components/shared/start-conversation-search";
-import { usePresenceStore } from "@/features/messages/stores/presence-store";
-import { useOwnPresence, useThreadPresence } from "@/features/messages/stores/use-thread-presence";
+import { usePresenceStore } from "@/stores/messages/presence-store";
+import { useOwnPresence, useThreadPresence } from "@/stores/messages/use-thread-presence";
 export type MessagesPageConfig = {
   queryKey: string;
   basePath: string;
@@ -122,38 +122,26 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
 
-  const [activeThreadId, setActiveThreadId] = useState<string | null>(
-    () => searchParams.get("thread") ?? null,
-  );
-
-  // Sync with URL changes (browser back/forward)
-  useEffect(() => {
-    setActiveThreadId(searchParams.get("thread") ?? null);
-  }, [searchParams]);
+  const activeThreadId = searchParams.get("thread");
 
   useOwnPresence(userId);
 
   const handleSelectThread = useCallback(
     (threadId: string) => {
-      if (threadId === activeThreadId) return;
-      setActiveThreadId(threadId);
+      if (threadId === searchParams.get("thread")) return;
       router.replace(`${config.basePath}?thread=${threadId}`, { scroll: false });
     },
-    [router, config.basePath, activeThreadId],
+    [router, config.basePath, searchParams],
   );
 
   const handleBack = useCallback(() => {
-    setActiveThreadId(null);
     router.replace(config.basePath, { scroll: false });
   }, [router, config.basePath]);
 
   return (
     <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 md:-mx-6 lg:-mx-8">
       <div
-        className={cn(
-          "flex-1 flex flex-col min-h-0 lg:flex-none",
-          activeThreadId ? "hidden lg:flex lg:w-80" : "flex",
-        )}
+        className={cn("flex-1 flex flex-col min-h-0 lg:flex-none", activeThreadId ? "hidden lg:flex lg:w-80" : "flex")}
       >
         <ThreadListPanel
           threads={threads}
@@ -170,14 +158,9 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
         />
       </div>
 
-      <div
-        className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}
-      >
+      <div className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}>
         {activeThreadId ? (
-          <ThreadViewComponent
-            threadId={activeThreadId}
-            onBack={handleBack}
-          />
+          <ThreadViewComponent threadId={activeThreadId} onBack={handleBack} />
         ) : (
           <div className="flex-1 flex items-center justify-center bg-bg-page/60">
             <div className="text-center">

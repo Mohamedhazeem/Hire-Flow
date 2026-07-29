@@ -44,49 +44,67 @@ export function ApplicantsTableDialogs({
     <>
       <ReviewDialog
         open={dialog.type === "review"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <InviteDialog
         open={dialog.type === "invite"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <ShortlistDialog
         open={dialog.type === "shortlist"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <ScheduleInterviewDialog
         open={dialog.type === "schedule_interview"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <SendOfferDialog
         open={dialog.type === "send_offer"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <HireDialog
         open={dialog.type === "hire"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <RejectDialog
         open={dialog.type === "reject"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <BulkRejectDialog
         open={bulkDialog === "reject"}
-        onOpenChange={(open) => { if (!open) onBulkDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onBulkDialogClose();
+        }}
         selectedCount={selectedCount}
         onConfirm={onBulkRejectConfirm}
         isPending={bulkTransitionPending}
       />
       <RevertConfirmDialog
         open={revertTarget !== null}
-        onOpenChange={(open) => { if (!open) onRevertClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onRevertClose();
+        }}
         applicantName={revertTarget?.name ?? ""}
         currentStatus={revertTarget?.status ?? ""}
         onConfirm={() => {

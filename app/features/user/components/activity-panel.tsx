@@ -75,7 +75,9 @@ export function ActivityPanel() {
     queryFn: async () => {
       const res = await apiClient<{ data: { applications: AppRow[]; total: number } }>(
         "/api/user/applications",
-        { params: { page: "1", pageSize: "5" } },
+        {
+          params: { page: "1", pageSize: "5" },
+        },
       );
       return res.data;
     },

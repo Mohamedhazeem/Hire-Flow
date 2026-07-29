@@ -6,7 +6,7 @@ const validUuid = "550e8400-e29b-41d4-a716-446655440000";
 describe("AnalyticsFilterSchema — SQL injection protection", () => {
   it("rejects SQL injection in status (not in enum)", () => {
     const result = AnalyticsFilterSchema.safeParse({
-      status: "'; DROP TABLE \"application\"; --",
+      status: '\'; DROP TABLE "application"; --',
     });
     expect(result.success).toBe(false);
   });
@@ -20,14 +20,14 @@ describe("AnalyticsFilterSchema — SQL injection protection", () => {
 
   it("rejects SQL injection in employmentType (not in enum)", () => {
     const result = AnalyticsFilterSchema.safeParse({
-      employmentType: "'; SELECT * FROM \"user\"; --",
+      employmentType: '\'; SELECT * FROM "user"; --',
     });
     expect(result.success).toBe(false);
   });
 
   it("rejects SQL injection in dateFrom (not valid ISO date)", () => {
     const result = AnalyticsFilterSchema.safeParse({
-      dateFrom: "'; DROP TABLE \"application\"; --",
+      dateFrom: '\'; DROP TABLE "application"; --',
     });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("dateFrom");
@@ -35,7 +35,7 @@ describe("AnalyticsFilterSchema — SQL injection protection", () => {
 
   it("rejects SQL injection in dateTo (not valid ISO date)", () => {
     const result = AnalyticsFilterSchema.safeParse({
-      dateTo: "'; DROP TABLE \"application\"; --",
+      dateTo: '\'; DROP TABLE "application"; --',
     });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("dateTo");

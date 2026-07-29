@@ -16,13 +16,16 @@ async function handleGET(request: NextRequest) {
     experienceLevel: url.searchParams.get("experienceLevel") || undefined,
     industry: url.searchParams.get("industry") || undefined,
     companyId: url.searchParams.get("companyId") || undefined,
+    skills: url.searchParams.getAll("skills").filter(Boolean),
     status: (url.searchParams.get("status") as "open" | "expired" | "all" | undefined) || undefined,
     sortBy: url.searchParams.get("sortBy") || undefined,
     sortOrder: url.searchParams.get("sortOrder") || undefined,
   };
 
   const result = await listPublicJobs(params);
-  return ok(result);
+  const response = ok(result);
+  response.headers.set("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
+  return response;
 }
 
 export const GET = withErrorHandler(handleGET);

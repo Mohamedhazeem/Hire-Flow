@@ -67,6 +67,7 @@ export type PublicJobListParams = {
   experienceLevel?: string;
   industry?: string;
   companyId?: string;
+  skills?: string[];
   status?: "open" | "expired" | "all";
   sortBy?: string;
   sortOrder?: string;
@@ -141,6 +142,7 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.experienceLevel) where.experienceLevel = params.experienceLevel;
   if (params.industry) where.company = { industry: params.industry };
   if (params.companyId) where.companyId = params.companyId;
+  if (params.skills?.length) where.skills = { hasSome: params.skills };
 
   if (params.status === "open") {
     where.applicationDeadline = { gte: new Date() };
@@ -248,7 +250,11 @@ export async function getPublicJobById(slugOrId: string): Promise<PublicJobDetai
   };
 }
 
-export async function listCompanyJobs(companyId: string, excludeJobId: string, limit = 5): Promise<CompactJobRow[]> {
+export async function listCompanyJobs(
+  companyId: string,
+  excludeJobId: string,
+  limit = 5,
+): Promise<CompactJobRow[]> {
   const jobs = await prisma.job.findMany({
     where: {
       companyId,
@@ -294,7 +300,13 @@ export async function listCompanyJobs(companyId: string, excludeJobId: string, l
 }
 
 export async function listSimilarJobs(
-  currentJob: { id: string; companyId: string; skills: string[]; workMode: string; experienceLevel: string },
+  currentJob: {
+    id: string;
+    companyId: string;
+    skills: string[];
+    workMode: string;
+    experienceLevel: string;
+  },
   limit = 5,
 ): Promise<CompactJobRow[]> {
   const where: Record<string, unknown> = {

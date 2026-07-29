@@ -4,12 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {
-  BriefcaseIcon,
-  MapPinIcon,
-  ClockIcon,
-  TimerOffIcon,
-} from "lucide-react";
+import { BriefcaseIcon, MapPinIcon, ClockIcon, TimerOffIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { hydrator } from "@/lib/hydration";
 import { SaveJobButton } from "@/app/features/user/components/save-job-button";
@@ -58,9 +53,7 @@ export function JobCard({
   );
 
   const fmt = (n: number) =>
-    hydrated === "client"
-      ? n.toLocaleString()
-      : n.toLocaleString("en-US");
+    hydrated === "client" ? n.toLocaleString() : n.toLocaleString("en-US");
 
   const salaryText =
     salaryMin != null || salaryMax != null

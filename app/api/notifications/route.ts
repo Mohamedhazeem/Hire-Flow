@@ -3,6 +3,7 @@ import { ok } from "@/lib/api/api-response";
 import { auth } from "@/app/features/auth/libs/auth";
 import { UnauthorizedError, ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import {
   listNotifications,
   getUnreadCount,
@@ -11,7 +12,7 @@ import {
 } from "@/app/features/notifications/queries/notification-queries";
 import { MarkNotificationsReadSchema } from "@/app/features/notifications/schema/notification.schema";
 
-async function handleGET(request: NextRequest) {
+const handleGET = withRateLimit(async (request: NextRequest) => {
   const session = await auth.api.getSession({ headers: request.headers });
   if (!session?.user) throw new UnauthorizedError();
 
@@ -32,7 +33,7 @@ async function handleGET(request: NextRequest) {
     nextCursor,
     hasMore,
   });
-}
+}, "notifications:list");
 
 async function handlePATCH(request: NextRequest) {
   const session = await auth.api.getSession({ headers: request.headers });

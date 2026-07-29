@@ -40,7 +40,13 @@ describe("Message Repository", () => {
 
     it("does not add userId twice if already hidden", async () => {
       const msg = await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hello", hiddenFor: [sender.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hello",
+          hiddenFor: [sender.id],
+        },
       });
       await messageRepository.hideForParticipant(threadId, sender.id);
       const updated = await prisma.message.findUnique({ where: { id: msg.id } });
@@ -65,7 +71,13 @@ describe("Message Repository", () => {
         data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Visible" },
       });
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const messages = await messageRepository.findByThreadId(threadId, 10, receiver.id);
       expect(messages).toHaveLength(1);
@@ -130,7 +142,13 @@ describe("Thread Repository", () => {
   describe("groupByThread with hiddenFor", () => {
     it("excludes threads where all messages are hidden for user", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const threads = await threadRepository.groupByThread(receiver.id);
       expect(threads).toHaveLength(0);
@@ -138,7 +156,13 @@ describe("Thread Repository", () => {
 
     it("includes thread when at least one message is visible", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       await prisma.message.create({
         data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Visible" },
@@ -154,7 +178,13 @@ describe("Thread Repository", () => {
         data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Older" },
       });
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Latest hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Latest hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const latest = await threadRepository.findLatestMessages([threadId], receiver.id);
       expect(latest).toHaveLength(1);
@@ -163,7 +193,13 @@ describe("Thread Repository", () => {
 
     it("returns empty when only message is hidden", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Sole hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Sole hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const latest = await threadRepository.findLatestMessages([threadId], receiver.id);
       expect(latest).toHaveLength(0);
@@ -202,7 +238,12 @@ describe("Message Service", () => {
 
     it("does not hide messages from the other participant", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Visible to receiver" },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Visible to receiver",
+        },
       });
 
       await messageService.deleteMyMessages(threadId, sender.id);
@@ -213,12 +254,16 @@ describe("Message Service", () => {
     });
 
     it("throws for invalid thread ID", async () => {
-      await expect(messageService.deleteMyMessages("invalid", sender.id)).rejects.toThrow(/Invalid thread/i);
+      await expect(messageService.deleteMyMessages("invalid", sender.id)).rejects.toThrow(
+        /Invalid thread/i,
+      );
     });
 
     it("throws for non-participant", async () => {
       const outsider = await createTestUser({ role: Role.user });
-      await expect(messageService.deleteMyMessages(threadId, outsider.id)).rejects.toThrow(/not a participant/i);
+      await expect(messageService.deleteMyMessages(threadId, outsider.id)).rejects.toThrow(
+        /not a participant/i,
+      );
     });
   });
 
@@ -251,7 +296,12 @@ describe("Message Service", () => {
 
     it("hides message from sender's view via findByThreadId", async () => {
       const msg = await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Gone for sender" },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Gone for sender",
+        },
       });
 
       await messageService.deleteSingleMessage(threadId, sender.id, msg.id);
@@ -262,7 +312,12 @@ describe("Message Service", () => {
 
     it("message stays visible to receiver with deletedAt set", async () => {
       const msg = await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Visible to receiver" },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Visible to receiver",
+        },
       });
 
       await messageService.deleteSingleMessage(threadId, sender.id, msg.id);
@@ -278,9 +333,9 @@ describe("Message Service", () => {
         data: { threadId, senderId: receiver.id, receiverId: sender.id, content: "Not yours" },
       });
 
-      await expect(
-        messageService.deleteSingleMessage(threadId, sender.id, msg.id),
-      ).rejects.toThrow(/only delete your own/i);
+      await expect(messageService.deleteSingleMessage(threadId, sender.id, msg.id)).rejects.toThrow(
+        /only delete your own/i,
+      );
     });
 
     it("throws for non-existent message", async () => {
@@ -290,7 +345,9 @@ describe("Message Service", () => {
     });
 
     it("throws for invalid thread ID", async () => {
-      await expect(messageService.deleteSingleMessage("invalid", sender.id, "some-id")).rejects.toThrow(/Invalid thread/i);
+      await expect(
+        messageService.deleteSingleMessage("invalid", sender.id, "some-id"),
+      ).rejects.toThrow(/Invalid thread/i);
     });
   });
 
@@ -300,7 +357,13 @@ describe("Message Service", () => {
         data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Visible" },
       });
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hidden", hiddenFor: [sender.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hidden",
+          hiddenFor: [sender.id],
+        },
       });
 
       const result = await messageService.getMessages({ threadId, userId: sender.id });
@@ -312,7 +375,13 @@ describe("Message Service", () => {
 
     it("marks unread messages as read and fires markThreadNotificationsRead", async () => {
       const msg = await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Unread", read: false },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Unread",
+          read: false,
+        },
       });
 
       await messageService.getMessages({ threadId, userId: receiver.id });
@@ -335,12 +404,16 @@ describe("Message Service", () => {
     });
 
     it("throws for invalid thread ID", async () => {
-      await expect(messageService.getMessages({ threadId: "invalid", userId: sender.id })).rejects.toThrow(/Invalid thread/i);
+      await expect(
+        messageService.getMessages({ threadId: "invalid", userId: sender.id }),
+      ).rejects.toThrow(/Invalid thread/i);
     });
 
     it("throws for non-participant", async () => {
       const outsider = await createTestUser({ role: Role.user });
-      await expect(messageService.getMessages({ threadId, userId: outsider.id })).rejects.toThrow(/not a participant/i);
+      await expect(messageService.getMessages({ threadId, userId: outsider.id })).rejects.toThrow(
+        /not a participant/i,
+      );
     });
   });
 
@@ -412,7 +485,12 @@ describe("Message Service", () => {
       // Small delay so timestamps differ
       await new Promise((r) => setTimeout(r, 10));
       await prisma.message.create({
-        data: { threadId: threadId2, senderId: sender.id, receiverId: otherUser.id, content: "Newer" },
+        data: {
+          threadId: threadId2,
+          senderId: sender.id,
+          receiverId: otherUser.id,
+          content: "Newer",
+        },
       });
 
       const threads = await messageService.getThreadList(sender.id);
@@ -424,7 +502,13 @@ describe("Message Service", () => {
 
     it("excludes threads where all messages are hidden", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Hidden", hiddenFor: [sender.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Hidden",
+          hiddenFor: [sender.id],
+        },
       });
 
       const threads = await messageService.getThreadList(sender.id);

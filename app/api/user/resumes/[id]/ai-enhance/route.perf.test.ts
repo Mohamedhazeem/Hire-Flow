@@ -1,15 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { NextRequest } from "next/server";
-import {
-  mockSession,
-  resetDb,
-  createTestUser,
-  createTestResume,
-  mockAiClient,
-} from "@/lib/test";
+import { mockSession, resetDb, createTestUser, createTestResume, mockAiClient } from "@/lib/test";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
+import { publishBenchmark } from "@/lib/test/perf";
 
 describe("PF5 — Concurrent AI enhancement rate limit", () => {
   beforeEach(async () => {
@@ -36,13 +31,11 @@ describe("PF5 — Concurrent AI enhancement rate limit", () => {
       }),
     );
 
-    const { POST } = await import(
-      "@/app/api/user/resumes/[id]/ai-enhance/route"
-    );
+    const { POST } = await import("@/app/api/user/resumes/[id]/ai-enhance/route");
 
     const makeRequest = () => {
       const req = new NextRequest(
-        `http://localhost/api/user/resumes/${resume.id}/ai-enhance`,
+        "http://localhost/api/user/resumes/" + resume.id + "/ai-enhance",
         { method: "POST" },
       );
       return POST(req, { params: Promise.resolve({ id: resume.id }) });
@@ -59,6 +52,14 @@ describe("PF5 — Concurrent AI enhancement rate limit", () => {
 
     const dailyLogs = await prisma.resumeEnhancementLog.count({
       where: { userId: user.id },
+    });
+
+    publishBenchmark({
+      suite: "PF5-ai-enhance-concurrent",
+      meanMs: 0,
+      p50Ms: 0,
+      p95Ms: 0,
+      sampleCount: 1,
     });
 
     expect(dailyLogs).toBeLessThanOrEqual(5);

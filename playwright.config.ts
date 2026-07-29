@@ -19,21 +19,23 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: 1,
   globalSetup: "./e2e/global.setup.ts",
-  reporter: [
-    ["list"],
-    ["html", { open: "never" }],
-  ],
+  reporter: [["list"], ["html", { open: "never" }]],
   use: {
     baseURL,
     trace: "on-first-retry",
   },
   projects: [
     {
+      name: "setup",
+      testMatch: "auth.setup.ts",
+    },
+    {
       name: "anonymous",
       use: { ...devices["Desktop Chromium"] },
     },
     {
       name: "user",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Chromium"],
         storageState: "./e2e/.auth/user.json",
@@ -41,6 +43,7 @@ export default defineConfig({
     },
     {
       name: "recruiter",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Chromium"],
         storageState: "./e2e/.auth/recruiter.json",
@@ -48,6 +51,7 @@ export default defineConfig({
     },
     {
       name: "admin",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Chromium"],
         storageState: "./e2e/.auth/admin.json",

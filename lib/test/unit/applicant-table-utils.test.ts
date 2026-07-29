@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { addActionedIds, getBulkActions } from "@/app/features/recruiter/utils/applicant-table-utils";
+import {
+  addActionedIds,
+  getBulkActions,
+} from "@/app/features/recruiter/utils/applicant-table-utils";
 import type { ApplicantRow } from "@/app/features/recruiter/queries/application-queries";
 
 function makeApplicant(status: string, overrides: Partial<ApplicantRow> = {}): ApplicantRow {
@@ -65,7 +68,9 @@ describe("getBulkActions", () => {
     const apps = [makeApplicant("applied"), makeApplicant("reviewing")];
     const actions = getBulkActions(apps);
     const statuses = actions.map((a) => a.status);
-    expect(statuses).toEqual(expect.arrayContaining(["invited", "reviewing", "shortlisted", "rejected"]));
+    expect(statuses).toEqual(
+      expect.arrayContaining(["invited", "reviewing", "shortlisted", "rejected"]),
+    );
   });
 
   it("marks action as disabled when not all applicants support it", () => {

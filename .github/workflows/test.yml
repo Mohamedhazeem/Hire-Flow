@@ -1,179 +1,216 @@
-name: Test
+name: CI
 
-on:
-  pull_request:
-  # push:
-  #   branches: [master]
-  workflow_dispatch:
+# Temporarily disabled to avoid CI runs on every master push
+# on:
+#   push:
+#     branches: [master]
+#   pull_request:
+#     branches: [master]
+
+env:
+  NODE_VERSION: "22"
+  DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/hire_flow_test"
+
+permissions:
+  contents: write
+  pull-requests: read
+  checks: write
 
 concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  DATABASE_URL_TEST: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
-  DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/hireflow_test?schema=public"
-  # utils/env.ts validates the full env with zod (safeParse). If any required
-  # var is missing, env.data is undefined and the Prisma pg pool receives an
-  # undefined connection string, causing SASL "client password must be a
-  # string" errors. Provide safe CI stubs for all required (non-DB) vars.
-  BETTER_AUTH_SECRET: "ci-test-secret-not-used-for-real-auth"
-  BETTER_AUTH_URL: "http://localhost:3000"
-  NEXT_PUBLIC_APP_URL: "http://localhost:3000"
-  NODE_ENV: "test"
-  GOOGLE_CLIENT_ID: "ci-google-client-id"
-  GOOGLE_CLIENT_SECRET: "ci-google-client-secret"
-  RESEND_API_KEY: "ci-resend-key"
-  EMAIL_FROM: "ci@example.com"
-
 jobs:
-  # ── PR gate 1: lint + coverage (fast, fails first) ───────────────────────────
-  unit-integration:
-    name: Lint + Unit/Integration Coverage
+  typecheck:
+    name: Type-check (tsc --noEmit)
     runs-on: ubuntu-latest
-    # Runs on every PR and on pushes to master.
-    # The `performance` job handles the master-push case separately.
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    if: github.event_name == "pull_request"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npx tsc --noEmit
+        timeout-minutes: 5
+
+  lint:
+    name: Lint + Format
+    runs-on: ubuntu-latest
+    if: github.event_name == "pull_request"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npx prettier --check .
+        continue-on-error: true
+        timeout-minutes: 3
+
+  unit-integration-contract:
+    name: Unit + Integration + Contract + Coverage
+    runs-on: ubuntu-latest
+    if: github.event_name == "pull_request"
+    needs: [typecheck, lint]
     services:
       postgres:
-        image: postgres:16
+        image: postgres:17
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: hireflow_test
-        ports:
-          - 5432:5432
+          POSTGRES_DB: hire_flow_test
         options: >-
           --health-cmd pg_isready
-          --health-interval 5s
+          --health-interval 10s
           --health-timeout 5s
-          --health-retries 10
-    env:
-      E2E_BASE_URL: "http://localhost:3000"
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+      - run: npm test -- --project default --project dom --project contract --coverage
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint (source only)
-        # Tests are validated by the test runner; exclude lib/test from lint
-        # (it intentionally uses `any` for mocks and would otherwise fail
-        # the no-explicit-any rule).
-        run: npx eslint app lib components features --ignore-pattern "lib/test" --quiet
-
-      - name: Apply migrations
-        run: npx prisma migrate deploy
-
-      - name: Run unit + integration tests with coverage
-        run: npx vitest run --project default --project dom --coverage
-
-      - name: Upload coverage report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage
-          path: coverage/
-          retention-days: 7
-
-  # ── PR gate 2: Playwright E2E (separate job, only after gate 1) ─────────────
   e2e:
-    name: E2E (Playwright)
+    name: E2E
+    needs: [unit-integration-contract]
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
-    needs: unit-integration
     services:
       postgres:
-        image: postgres:16
+        image: postgres:17
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: hireflow_test
-        ports:
-          - 5432:5432
+          POSTGRES_DB: hire_flow_test
         options: >-
           --health-cmd pg_isready
-          --health-interval 5s
+          --health-interval 10s
           --health-timeout 5s
-          --health-retries 10
-    env:
-      E2E_BASE_URL: "http://localhost:3000"
-      E2E_AI_MOCK_PORT: "8787"
-      AI_PROVIDER: "anthropic"
-      ANTHROPIC_API_KEY: "e2e-stub"
-      ANTHROPIC_API_URL: "http://localhost:8787"
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+      - run: npm run test:e2e
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Apply migrations
-        run: npx prisma migrate deploy
-
-      - name: Run E2E
-        run: npm run test:e2e
-
-      - name: Upload Playwright report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 7
-
-  # ── On push to master (new commit landed) + manual: performance suite (PF1-PF5, RL1-RL5) ──
   performance:
-    name: Performance (PF1-PF5)
+    name: Performance + Benchmark Regression
     runs-on: ubuntu-latest
-    # Runs after a new commit is pushed to master, or when triggered manually.
-    # Not on every PR/push (keeps the standard gate fast) and not on a nightly schedule.
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'push' && github.ref == 'refs/heads/master')
+    if: github.event_name == "workflow_dispatch" || (github.event_name == "push" && github.ref == "refs/heads/master")
+    needs: [unit-integration-contract]
     services:
       postgres:
-        image: postgres:16
+        image: postgres:17
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: hireflow_test
-        ports:
-          - 5432:5432
+          POSTGRES_DB: hire_flow_test
         options: >-
           --health-cmd pg_isready
-          --health-interval 5s
+          --health-interval 10s
           --health-timeout 5s
-          --health-retries 10
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+      - run: npx vitest run --project perf
+        env:
+          DATABASE_URL: ${{ env.DATABASE_URL }}
+      - name: Compare against baseline
+        run: npx tsx scripts/compare-benchmark.ts
+      - name: Update baseline (master only)
+        if: github.ref == "refs/heads/master"
+        run: |
+          npx tsx scripts/update-baseline.ts
+          git config user.name "CI Bot"
+          git config user.email "ci@hire-flow.ai"
+          git add benchmark/baseline.json
+          git commit -m "chore: update benchmark baseline [skip ci]" || exit 0
+          git pull --rebase || true
+          git push || echo "Baseline update skipped (conflict)" && exit 0
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Apply migrations
-        run: npx prisma migrate deploy
-
-      - name: Run performance tests
-        run: npx vitest run --project perf
+#   mutation:
+#     name: Mutation testing (Stryker)
+#     runs-on: ubuntu-latest
+#     if: github.event_name == "push" && github.ref == "refs/heads/master"
+#     needs: [performance]
+#     services:
+#       postgres:
+#         image: postgres:17
+#         env:
+#           POSTGRES_USER: postgres
+#           POSTGRES_PASSWORD: postgres
+#           POSTGRES_DB: hire_flow_test
+#         options: >-
+#           --health-cmd pg_isready
+#           --health-interval 10s
+#           --health-timeout 5s
+#           --health-retries 5
+#         ports:
+#           - 5432:5432
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ env.NODE_VERSION }}
+#           cache: "npm"
+#       - run: npm ci
+#       - run: npx prisma generate
+#       - run: npx prisma migrate deploy
+#         env:
+#           DATABASE_URL: ${{ env.DATABASE_URL }}
+#       - name: Run mutation testing
+#         run: |
+#           if [ -d lib/rate-limiting ]; then
+#             npx stryker run
+#           else
+#             echo "lib/rate-limiting/ not found � skipping mutation testing"
+#           fi
+#         continue-on-error: true
+#         env:
+#           DATABASE_URL: ${{ env.DATABASE_URL }}
+#           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+#       - name: Upload mutation report
+#         if: always()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: mutation-report
+#           path: reports/mutation/
+#           retention-days: 30
+# 

@@ -1,1 +1,463 @@
-{"nodes": [{"id": "d_hire_flow_next_manifest_md", "label": "MANIFEST.md", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L1"}, {"id": "hire_flow_next_manifest_hire_flow_next_project_manifest", "label": "Hire Flow Next - Project Manifest", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L1"}, {"id": "hire_flow_next_manifest_last_updated", "label": "Last Updated", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L7"}, {"id": "hire_flow_next_manifest_overview", "label": "Overview", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L13"}, {"id": "hire_flow_next_manifest_completed_steps", "label": "Completed Steps", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L22"}, {"id": "hire_flow_next_manifest_phase_0_foundation", "label": "Phase 0: Foundation", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L24"}, {"id": "hire_flow_next_manifest_phase_1_admin", "label": "Phase 1: Admin", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L35"}, {"id": "hire_flow_next_manifest_phase_2_recruiter", "label": "Phase 2: Recruiter", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L44"}, {"id": "hire_flow_next_manifest_phase_3_user", "label": "Phase 3: User", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L60"}, {"id": "hire_flow_next_manifest_phase_4_public_job_routes_home_page", "label": "Phase 4: Public Job Routes & Home Page", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L72"}, {"id": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "label": "Created File Paths (Grouped by Phase)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L83"}, {"id": "hire_flow_next_manifest_phase_0", "label": "Phase 0", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L85"}, {"id": "hire_flow_next_manifest_phase_1", "label": "Phase 1", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L127"}, {"id": "hire_flow_next_manifest_phase_2", "label": "Phase 2", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L179"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_5_messaging", "label": "Phase 2 (continued \u2014 Step 2.5 Messaging)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L224"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_6_applicant_detail_view", "label": "Phase 2 (continued \u2014 Step 2.6 Applicant Detail View)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L248"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_7_bulk_actions", "label": "Phase 2 (continued \u2014 Step 2.7 Bulk Actions)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L265"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_8_recruiter_analytics_filters", "label": "Phase 2 (continued \u2014 Step 2.8 Recruiter Analytics & Filters)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L276"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_9_recruiter_dashboard", "label": "Phase 2 (continued \u2014 Step 2.9 Recruiter Dashboard)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L294"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_10_notifications_activity_feed", "label": "Phase 2 (continued \u2014 Step 2.10 Notifications & Activity Feed)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L300"}, {"id": "hire_flow_next_manifest_phase_2_continued_step_2_11_csv_export", "label": "Phase 2 (continued \u2014 Step 2.11 CSV Export)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L318"}, {"id": "hire_flow_next_manifest_phase_3_admin_applicant_detail_view", "label": "Phase 3 \u2014 Admin Applicant Detail View", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L325"}, {"id": "hire_flow_next_manifest_phase_3", "label": "Phase 3", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L347"}, {"id": "hire_flow_next_manifest_phase_4", "label": "Phase 4", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L351"}, {"id": "hire_flow_next_manifest_phase_5", "label": "Phase 5", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L355"}, {"id": "hire_flow_next_manifest_upcoming_dependencies_phase_3", "label": "Upcoming Dependencies (Phase 3)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L366"}, {"id": "hire_flow_next_manifest_upcoming_dependencies_phase_1", "label": "Upcoming Dependencies (Phase 1)", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L371"}, {"id": "hire_flow_next_manifest_active_global_context_snapshot", "label": "Active Global Context Snapshot", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L379"}, {"id": "hire_flow_next_manifest_known_issues_todos", "label": "Known Issues / TODOs", "file_type": "document", "source_file": "MANIFEST.md", "source_location": "L390"}], "edges": [{"source": "d_hire_flow_next_manifest_md", "target": "hire_flow_next_manifest_hire_flow_next_project_manifest", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_last_updated", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L7", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_overview", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L13", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_completed_steps", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L22", "weight": 1.0}, {"source": "hire_flow_next_manifest_completed_steps", "target": "hire_flow_next_manifest_phase_0_foundation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L24", "weight": 1.0}, {"source": "hire_flow_next_manifest_completed_steps", "target": "hire_flow_next_manifest_phase_1_admin", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L35", "weight": 1.0}, {"source": "hire_flow_next_manifest_completed_steps", "target": "hire_flow_next_manifest_phase_2_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L44", "weight": 1.0}, {"source": "hire_flow_next_manifest_completed_steps", "target": "hire_flow_next_manifest_phase_3_user", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L60", "weight": 1.0}, {"source": "hire_flow_next_manifest_completed_steps", "target": "hire_flow_next_manifest_phase_4_public_job_routes_home_page", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L72", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L83", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_0", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L85", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L127", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L179", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_5_messaging", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L224", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_6_applicant_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L248", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_7_bulk_actions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L265", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_8_recruiter_analytics_filters", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L276", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_9_recruiter_dashboard", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L294", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_10_notifications_activity_feed", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L300", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_2_continued_step_2_11_csv_export", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L318", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_3_admin_applicant_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L325", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L347", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L351", "weight": 1.0}, {"source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase", "target": "hire_flow_next_manifest_phase_5", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L355", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_upcoming_dependencies_phase_3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L366", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_upcoming_dependencies_phase_1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L371", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_active_global_context_snapshot", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L379", "weight": 1.0}, {"source": "hire_flow_next_manifest_hire_flow_next_project_manifest", "target": "hire_flow_next_manifest_known_issues_todos", "relation": "contains", "confidence": "EXTRACTED", "source_file": "MANIFEST.md", "source_location": "L390", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_manifest_md",
+      "label": "MANIFEST.md",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "label": "Hire Flow Next - Project Manifest",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_manifest_last_updated",
+      "label": "Last Updated",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "hire_flow_next_manifest_overview",
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "hire_flow_next_manifest_completed_steps",
+      "label": "Completed Steps",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_0_foundation",
+      "label": "Phase 0: Foundation",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_1_admin",
+      "label": "Phase 1: Admin",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_recruiter",
+      "label": "Phase 2: Recruiter",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_3_user",
+      "label": "Phase 3: User",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_4_public_job_routes_home_page",
+      "label": "Phase 4: Public Job Routes & Home Page",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L72"
+    },
+    {
+      "id": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "label": "Created File Paths (Grouped by Phase)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L83"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_0",
+      "label": "Phase 0",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L85"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_1",
+      "label": "Phase 1",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L127"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2",
+      "label": "Phase 2",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L179"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_5_messaging",
+      "label": "Phase 2 (continued \u2014 Step 2.5 Messaging)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L224"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_6_applicant_detail_view",
+      "label": "Phase 2 (continued \u2014 Step 2.6 Applicant Detail View)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L248"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_7_bulk_actions",
+      "label": "Phase 2 (continued \u2014 Step 2.7 Bulk Actions)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L265"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
+      "label": "Phase 2 (continued \u2014 Step 2.8 Recruiter Analytics & Filters)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L276"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_9_recruiter_dashboard",
+      "label": "Phase 2 (continued \u2014 Step 2.9 Recruiter Dashboard)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L294"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_10_notifications_activity_feed",
+      "label": "Phase 2 (continued \u2014 Step 2.10 Notifications & Activity Feed)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L300"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_2_continued_step_2_11_csv_export",
+      "label": "Phase 2 (continued \u2014 Step 2.11 CSV Export)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L318"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_3_admin_applicant_detail_view",
+      "label": "Phase 3 \u2014 Admin Applicant Detail View",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L325"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_3",
+      "label": "Phase 3",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L347"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_4",
+      "label": "Phase 4",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L351"
+    },
+    {
+      "id": "hire_flow_next_manifest_phase_5",
+      "label": "Phase 5",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L355"
+    },
+    {
+      "id": "hire_flow_next_manifest_upcoming_dependencies_phase_3",
+      "label": "Upcoming Dependencies (Phase 3)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L366"
+    },
+    {
+      "id": "hire_flow_next_manifest_upcoming_dependencies_phase_1",
+      "label": "Upcoming Dependencies (Phase 1)",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L371"
+    },
+    {
+      "id": "hire_flow_next_manifest_active_global_context_snapshot",
+      "label": "Active Global Context Snapshot",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L379"
+    },
+    {
+      "id": "hire_flow_next_manifest_known_issues_todos",
+      "label": "Known Issues / TODOs",
+      "file_type": "document",
+      "source_file": "MANIFEST.md",
+      "source_location": "L390"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_manifest_md",
+      "target": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_last_updated",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_completed_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_completed_steps",
+      "target": "hire_flow_next_manifest_phase_0_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_completed_steps",
+      "target": "hire_flow_next_manifest_phase_1_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_completed_steps",
+      "target": "hire_flow_next_manifest_phase_2_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_completed_steps",
+      "target": "hire_flow_next_manifest_phase_3_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_completed_steps",
+      "target": "hire_flow_next_manifest_phase_4_public_job_routes_home_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_5_messaging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_6_applicant_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_7_bulk_actions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_9_recruiter_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_10_notifications_activity_feed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_2_continued_step_2_11_csv_export",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_3_admin_applicant_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L347",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_created_file_paths_grouped_by_phase",
+      "target": "hire_flow_next_manifest_phase_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_upcoming_dependencies_phase_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_upcoming_dependencies_phase_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L371",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_active_global_context_snapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L379",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_manifest_hire_flow_next_project_manifest",
+      "target": "hire_flow_next_manifest_known_issues_todos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MANIFEST.md",
+      "source_location": "L390",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

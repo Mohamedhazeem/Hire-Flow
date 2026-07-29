@@ -28,9 +28,7 @@ export function HowItWorks() {
   return (
     <section className="bg-bg-surface border-y border-border-subtle py-16 sm:py-20">
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">
-          How It Works
-        </h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">How It Works</h2>
         <p className="text-sm text-text-muted mt-1 max-w-xl mx-auto">
           Three simple steps to land your next opportunity
         </p>
@@ -58,15 +56,9 @@ export function HowItWorks() {
               <div className="size-12 rounded-xl bg-brand/10 flex items-center justify-center text-brand mb-4">
                 <step.icon className="size-6" />
               </div>
-              <div className="text-sm font-semibold text-text-muted mb-1">
-                Step {i + 1}
-              </div>
-              <h3 className="text-lg font-semibold text-text-heading mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-text-muted leading-relaxed">
-                {step.description}
-              </p>
+              <div className="text-sm font-semibold text-text-muted mb-1">Step {i + 1}</div>
+              <h3 className="text-lg font-semibold text-text-heading mb-2">{step.title}</h3>
+              <p className="text-sm text-text-muted leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -35,7 +35,14 @@ function makeTable() {
     setSearchInput: vi.fn(),
     status: "all",
     updateParams: vi.fn(),
-    responseData: { page: 1, totalPages: 1, total: tableState.applicants.length, hasPrevPage: false, hasNextPage: false },
+    responseData: {
+      page: 1,
+      totalPages: 1,
+      total: tableState.applicants.length,
+      hasPrevPage: false,
+      hasNextPage: false,
+      mode: "offset",
+    },
     dialog: { type: "", applicant: null },
     setDialog: vi.fn(),
     bulkDialog: "",
@@ -98,7 +105,13 @@ describe("ApplicantsTable", () => {
 
   it("renders bulk action bar with email checkbox when applicants are selected", () => {
     tableState.applicants = [
-      { id: "a1", name: "Alice", email: "alice@example.com", appliedAt: new Date().toISOString(), status: "applied" },
+      {
+        id: "a1",
+        name: "Alice",
+        email: "alice@example.com",
+        appliedAt: new Date().toISOString(),
+        status: "applied",
+      },
     ];
     tableState.selectedIds = new Set(["a1"]);
     renderWithClient(<ApplicantsTable jobId="job-1" />);

@@ -2,7 +2,10 @@ import { BasePage } from "./base-page";
 import type { Page } from "@playwright/test";
 
 export class JobDetailPage extends BasePage {
-  constructor(page: Page, private readonly jobId: string) {
+  constructor(
+    page: Page,
+    private readonly jobId: string,
+  ) {
     super(page);
   }
 

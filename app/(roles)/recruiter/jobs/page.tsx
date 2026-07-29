@@ -30,9 +30,7 @@ export default function RecruiterJobsPage() {
         actions={<CreateJobButton />}
       />
       <Suspense
-        fallback={
-          <div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>
-        }
+        fallback={<div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>}
       >
         <RecruiterJobsTable />
       </Suspense>

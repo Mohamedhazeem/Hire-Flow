@@ -9,10 +9,7 @@ export function computeThreadId(idA: string, idB: string): string {
  * Extract the other participant's user ID from a thread ID.
  * Uses prefix/suffix matching to handle user IDs that may contain the delimiter.
  */
-export function getOtherUserId(
-  threadId: string,
-  userId: string,
-): string | null {
+export function getOtherUserId(threadId: string, userId: string): string | null {
   const prefix = userId + THREAD_DELIMITER;
   if (threadId.startsWith(prefix)) {
     return threadId.slice(prefix.length);
@@ -29,10 +26,7 @@ export function getOtherUserId(
  * More reliable than `threadId.includes(userId)` which can produce false
  * positives when one user ID is a substring of another.
  */
-export function participatesInThread(
-  threadId: string,
-  userId: string,
-): boolean {
+export function participatesInThread(threadId: string, userId: string): boolean {
   return getOtherUserId(threadId, userId) !== null;
 }
 
@@ -40,9 +34,7 @@ export function participatesInThread(
  * Extract both participant IDs from a thread ID.
  * Returns null if the thread ID format is invalid.
  */
-export function parseThreadParticipants(
-  threadId: string,
-): [string, string] | null {
+export function parseThreadParticipants(threadId: string): [string, string] | null {
   // The first participant ID is everything before the first occurrence of
   // the delimiter when matched with the last occurrence.
   // Strategy: try splitting on the delimiter. If exactly 2 parts, great.

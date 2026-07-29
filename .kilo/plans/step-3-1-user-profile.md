@@ -22,15 +22,15 @@ ProfileForm (submit) → upsert-profile.ts (Server Action) → prisma.userProfil
 
 ## Files to Create (7 files, all ≤150 lines)
 
-| # | File | Est. Lines | Purpose |
-|---|------|-----------|---------|
-| 1 | `app/features/user/schema/profile.schema.ts` | ~40 | Zod schemas + inferred types |
-| 2 | `app/features/user/actions/upsert-profile.ts` | ~40 | Server Action |
-| 3 | `app/features/user/components/experience-list-editor.tsx` | ~120 | `useFieldArray` for experiences |
-| 4 | `app/features/user/components/social-links-editor.tsx` | ~80 | `useFieldArray` for social links |
-| 5 | `app/features/user/components/profile-form.tsx` | ~150 | Main RHF form |
-| 6 | `app/features/user/hooks/use-profile.ts` | ~20 | TanStack Query hook |
-| 7 | `app/(roles)/user/profile/page.tsx` | ~70 | Page wrapper |
+| #   | File                                                      | Est. Lines | Purpose                          |
+| --- | --------------------------------------------------------- | ---------- | -------------------------------- |
+| 1   | `app/features/user/schema/profile.schema.ts`              | ~40        | Zod schemas + inferred types     |
+| 2   | `app/features/user/actions/upsert-profile.ts`             | ~40        | Server Action                    |
+| 3   | `app/features/user/components/experience-list-editor.tsx` | ~120       | `useFieldArray` for experiences  |
+| 4   | `app/features/user/components/social-links-editor.tsx`    | ~80        | `useFieldArray` for social links |
+| 5   | `app/features/user/components/profile-form.tsx`           | ~150       | Main RHF form                    |
+| 6   | `app/features/user/hooks/use-profile.ts`                  | ~20        | TanStack Query hook              |
+| 7   | `app/(roles)/user/profile/page.tsx`                       | ~70        | Page wrapper                     |
 
 ## Schema Details
 
@@ -73,18 +73,18 @@ ProfileForm (submit) → upsert-profile.ts (Server Action) → prisma.userProfil
 
 ## Edge Cases Covered
 
-| Edge Case | Handling |
-|-----------|----------|
-| No profile exists yet | `findUnique` returns null → empty form; `upsert` creates row |
-| Cross-user access | `where: { userId: session.id }` in both fetch and upsert |
-| Empty skills after dedupe | Zod `.min(1)` on each element; no empty-string entry survives |
-| Experiences > 20 | `.max(20)` → field-level Zod error |
-| Negative pay | `.nonnegative()` → field-level error |
-| Bio > 2000 chars | `.max(2000)` → field-level error |
-| Non-user role calls action | `requireRole(['user'])` throws UnauthorizedError |
-| Banned user | Layout + action both check session status |
+| Edge Case                            | Handling                                                                               |
+| ------------------------------------ | -------------------------------------------------------------------------------------- |
+| No profile exists yet                | `findUnique` returns null → empty form; `upsert` creates row                           |
+| Cross-user access                    | `where: { userId: session.id }` in both fetch and upsert                               |
+| Empty skills after dedupe            | Zod `.min(1)` on each element; no empty-string entry survives                          |
+| Experiences > 20                     | `.max(20)` → field-level Zod error                                                     |
+| Negative pay                         | `.nonnegative()` → field-level error                                                   |
+| Bio > 2000 chars                     | `.max(2000)` → field-level error                                                       |
+| Non-user role calls action           | `requireRole(['user'])` throws UnauthorizedError                                       |
+| Banned user                          | Layout + action both check session status                                              |
 | null vs undefined in optional fields | Server maps null to undefined before passing to form; Prisma handles undefined as skip |
-| Concurrent tabs | Last-write-wins (acceptable for single-user profile) |
+| Concurrent tabs                      | Last-write-wins (acceptable for single-user profile)                                   |
 
 ## Dependencies
 

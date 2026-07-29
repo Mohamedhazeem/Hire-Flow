@@ -1,18 +1,19 @@
 # Step 2.10 — Notifications & Activity Feed
 
 ## Goal
+
 Extract shared notification infrastructure, add recruiter notification triggers (new application, status changes by teammates, new messages), deliver them via dropdown + standalone activity page, and wire sidebar badge counts. Reuse existing `Notification` model; do **not** add new Prisma enum values.
 
 ## Design Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
+| Decision                               | Choice                                                                         | Rationale                                                                                          |
+| -------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
 | Notification type for new applications | Use existing `application_status` with `previousStatus: null` as discriminator | No Prisma enum value `new_application` exists; schema changes are blocked (unreachable DB server). |
-| Sidebar badge source | `useUnreadCount(userId)` (TanStack Query) called inside `RecruiterSidebar` | Already reactive (30s polling + Pusher cache updates). No separate Zustand store needed. |
-| Sidebar links array | Move inside component function; derive badge from hook | Static `const` array can't inject dynamic badge. |
-| Role-aware notification links | `getNotificationHref` accepts role param; maps type to correct route | Prevents broken `/admin/*` links for recruiters. |
-| User notifications page | Create minimal placeholder | Sidebar link exists → would 404 without it. |
-| Bulk notifications to company team | Create `createNotificationsBulk` + `triggerForCompany` helpers | Multiple recruiter route handlers (bulk status, revert) need batch notification + Pusher. |
+| Sidebar badge source                   | `useUnreadCount(userId)` (TanStack Query) called inside `RecruiterSidebar`     | Already reactive (30s polling + Pusher cache updates). No separate Zustand store needed.           |
+| Sidebar links array                    | Move inside component function; derive badge from hook                         | Static `const` array can't inject dynamic badge.                                                   |
+| Role-aware notification links          | `getNotificationHref` accepts role param; maps type to correct route           | Prevents broken `/admin/*` links for recruiters.                                                   |
+| User notifications page                | Create minimal placeholder                                                     | Sidebar link exists → would 404 without it.                                                        |
+| Bulk notifications to company team     | Create `createNotificationsBulk` + `triggerForCompany` helpers                 | Multiple recruiter route handlers (bulk status, revert) need batch notification + Pusher.          |
 
 ## Files to Create (6)
 
@@ -122,13 +123,13 @@ Zustand store considered but **removed** per edge case analysis. `useUnreadCount
 
 ## Notification Triggers
 
-| Trigger | Location | Type | Recipient | Data |
-|---------|----------|------|-----------|------|
-| New application submitted | (future: `POST /api/jobs/[id]/apply`) | `application_status` | All company recruiters (via `triggerForCompany`) | `{ applicationId, jobId, jobTitle, applicantName, previousStatus: null, newStatus: "applied" }` |
-| Status changed by recruiter | `status/route.ts` | `application_status` | Applicant | `{ applicationId, jobId, previousStatus, newStatus, updatedBy }` |
-| Status changed via bulk | `bulk/status/route.ts` | `application_status` | Each applicant | `{ applicationId, jobId, previousStatus, newStatus, pendingEmail }` |
-| Status reverted | `revert/route.ts` (NEW) | `application_status` | Applicant | `{ applicationId, jobId, previousStatus, newStatus: revertToStatus, note: "Reverted" }` |
-| New message received | `messages/[threadId]/route.ts` | `new_message` | Thread participant | `{ threadId, senderId, senderName, preview }` |
+| Trigger                     | Location                              | Type                 | Recipient                                        | Data                                                                                            |
+| --------------------------- | ------------------------------------- | -------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| New application submitted   | (future: `POST /api/jobs/[id]/apply`) | `application_status` | All company recruiters (via `triggerForCompany`) | `{ applicationId, jobId, jobTitle, applicantName, previousStatus: null, newStatus: "applied" }` |
+| Status changed by recruiter | `status/route.ts`                     | `application_status` | Applicant                                        | `{ applicationId, jobId, previousStatus, newStatus, updatedBy }`                                |
+| Status changed via bulk     | `bulk/status/route.ts`                | `application_status` | Each applicant                                   | `{ applicationId, jobId, previousStatus, newStatus, pendingEmail }`                             |
+| Status reverted             | `revert/route.ts` (NEW)               | `application_status` | Applicant                                        | `{ applicationId, jobId, previousStatus, newStatus: revertToStatus, note: "Reverted" }`         |
+| New message received        | `messages/[threadId]/route.ts`        | `new_message`        | Thread participant                               | `{ threadId, senderId, senderName, preview }`                                                   |
 
 ## Edge Cases Handled
 
@@ -150,6 +151,7 @@ npm run dev -- --turbo # Dev server smoke test
 ```
 
 Manual checklist:
+
 - [ ] Send message as recruiter → notification appears in dropdown + page
 - [ ] Change applicant status → notification appears for applicant
 - [ ] Bulk change status → notifications for all applicants

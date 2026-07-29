@@ -12,7 +12,8 @@ test.describe("Journey 4: Recruiter Bulk Reject", () => {
       waitUntil: "domcontentloaded",
     });
 
-    await expect(page.locator("h1, h2").first()).toBeVisible({ timeout: 20_000 });
+    await page.waitForURL(/\/applicants/, { timeout: 15_000 });
+    await page.waitForLoadState("networkidle");
     await expect(page.getByText(/Eve Applicant/i)).toBeVisible({ timeout: 20_000 });
   });
 });

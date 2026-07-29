@@ -52,3 +52,10 @@ next-env.d.ts
 
 # local test upload artifacts
 /public/uploads
+
+# mutation testing (Stryker)
+.stryker-tmp/
+reports/mutation/
+
+# graphify knowledge graph
+# graphify-out/

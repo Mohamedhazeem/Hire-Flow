@@ -51,7 +51,9 @@ export function createJobTableColumns(actions: JobTableActions): ColumnDef<Admin
       key: "applications",
       header: "Apps",
       align: "center",
-      cell: (row) => <span className="text-text-body text-center block">{row.applicationCount}</span>,
+      cell: (row) => (
+        <span className="text-text-body text-center block">{row.applicationCount}</span>
+      ),
     },
     {
       key: "views",

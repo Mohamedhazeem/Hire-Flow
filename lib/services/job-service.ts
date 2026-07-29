@@ -156,20 +156,16 @@ export const jobService = {
       throw new ForbiddenError("You do not have access to this job");
     }
 
-    if (newStatus === "active" && existing.status !== "draft") {
-      throw new ValidationError(
-        existing.status === "archived"
-          ? "Use the edit form to reactivate an archived job."
-          : "Job is already active.",
-      );
+    if (newStatus === "active" && existing.status === "active") {
+      throw new ValidationError("Job is already active.");
     }
 
-    if (newStatus === "archived" && existing.status !== "active") {
-      throw new ValidationError(
-        existing.status === "draft"
-          ? "Cannot archive a draft job. Publish it first."
-          : "Job is already archived.",
-      );
+    if (newStatus === "archived" && existing.status === "archived") {
+      throw new ValidationError("Job is already archived.");
+    }
+
+    if (newStatus === "archived" && existing.status === "draft") {
+      throw new ValidationError("Cannot archive a draft job. Publish it first.");
     }
 
     const job = await jobRepository.update(jobId, {

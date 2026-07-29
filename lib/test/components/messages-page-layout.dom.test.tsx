@@ -1,5 +1,5 @@
 import { afterEach, describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, act, waitFor } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useSession } from "@/app/features/auth/libs/auth-client";
 
@@ -13,20 +13,28 @@ vi.mock("next/navigation", () => ({
 
 const mockOwnPresence = vi.fn();
 const mockThreadPresence = vi.fn();
-vi.mock("@/features/messages/stores/presence-store", () => ({
+vi.mock("@/stores/messages/presence-store", () => ({
   usePresenceStore: vi.fn((selector: (s: Record<string, unknown>) => unknown) => {
     const state = { isOnline: () => false };
     return selector(state);
   }),
 }));
-vi.mock("@/features/messages/stores/use-thread-presence", () => ({
+vi.mock("@/stores/messages/use-thread-presence", () => ({
   useOwnPresence: (...args: unknown[]) => mockOwnPresence(...args),
   useThreadPresence: (...args: unknown[]) => mockThreadPresence(...args),
 }));
 
-const mockStartConversationSearchProps: { currentUserId?: string; onSelectThread?: (id: string) => void; searchEndpoint?: string }[] = [];
+const mockStartConversationSearchProps: {
+  currentUserId?: string;
+  onSelectThread?: (id: string) => void;
+  searchEndpoint?: string;
+}[] = [];
 vi.mock("@/components/shared/start-conversation-search", () => ({
-  StartConversationSearch: (props: { currentUserId: string; onSelectThread: (id: string) => void; searchEndpoint: string }) => {
+  StartConversationSearch: (props: {
+    currentUserId: string;
+    onSelectThread: (id: string) => void;
+    searchEndpoint: string;
+  }) => {
     mockStartConversationSearchProps.push(props);
     return <div data-testid="start-conversation-search" />;
   },
@@ -38,7 +46,10 @@ vi.mock("@/components/chat/thread-list-item", () => ({
   ),
 }));
 
-import { MessagesPageLayout, type MessagesPageConfig } from "@/components/chat/messages-page-layout";
+import {
+  MessagesPageLayout,
+  type MessagesPageConfig,
+} from "@/components/chat/messages-page-layout";
 import type { ThreadListItemData } from "@/components/chat/thread-list-item";
 
 function makeConfig(overrides: Partial<MessagesPageConfig> = {}): MessagesPageConfig {
@@ -69,7 +80,11 @@ function makeThread(id = "t-1", name = "Alice Applicant"): ThreadListItemData {
 
 const MockThreadView = ({ threadId, onBack }: { threadId: string; onBack?: () => void }) => (
   <div data-testid="thread-view" data-thread-id={threadId}>
-    {onBack && <button data-testid="back-button" onClick={onBack}>Back</button>}
+    {onBack && (
+      <button data-testid="back-button" onClick={onBack}>
+        Back
+      </button>
+    )}
   </div>
 );
 
@@ -77,7 +92,10 @@ describe("MessagesPageLayout", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockSearchParamsGet.mockReturnValue(null);
-    vi.mocked(useSession).mockReturnValue({ data: { user: { id: "user-1" } }, isPending: false } as never);
+    vi.mocked(useSession).mockReturnValue({
+      data: { user: { id: "user-1" } },
+      isPending: false,
+    } as never);
   });
 
   afterEach(() => {
@@ -222,7 +240,9 @@ describe("MessagesPageLayout", () => {
       );
       const props = mockStartConversationSearchProps[0];
       props.onSelectThread!("t-new");
-      expect(mockReplace).toHaveBeenCalledWith("/recruiter/messages?thread=t-new", { scroll: false });
+      expect(mockReplace).toHaveBeenCalledWith("/recruiter/messages?thread=t-new", {
+        scroll: false,
+      });
       // Simulate URL change from router.replace — update mock then re-render
       // so useEffect sync doesn't override the state
       mockSearchParamsGet.mockReturnValue("t-new");

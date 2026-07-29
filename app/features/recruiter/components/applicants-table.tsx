@@ -22,6 +22,29 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
 
   const bulkActions = useMemo(() => getBulkActions(table.selectedRows), [table.selectedRows]);
 
+  const pagination = useMemo(() => {
+    const rd = table.responseData;
+    if (!rd) {
+      return { total: 0, page: 1, totalPages: 1, hasPrevPage: false, hasNextPage: false };
+    }
+    if (rd.mode === "offset") {
+      return {
+        total: rd.total,
+        page: rd.page,
+        totalPages: rd.totalPages,
+        hasPrevPage: rd.hasPrevPage,
+        hasNextPage: rd.hasNextPage,
+      };
+    }
+    return {
+      total: 0,
+      page: 1,
+      totalPages: 1,
+      hasPrevPage: false,
+      hasNextPage: rd.meta.hasNextPage,
+    };
+  }, [table.responseData]);
+
   const columns = useMemo(
     () =>
       createApplicantTableColumns({
@@ -93,7 +116,7 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
 
       <BulkActionBar
         selectedIds={table.selectedIds}
-        total={table.responseData?.total ?? 0}
+        total={pagination.total}
         applicants={table.applicants}
         actionedIds={table.actionedIds}
         bulkActions={bulkActions}
@@ -108,11 +131,11 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
       <ApplicantTableFeedback feedback={table.feedback} onDismiss={() => table.setFeedback(null)} />
 
       <ApplicantTablePagination
-        page={table.responseData?.page ?? 1}
-        totalPages={Math.max(1, table.responseData?.totalPages ?? 1)}
-        total={table.responseData?.total ?? 0}
-        hasPrevPage={table.responseData?.hasPrevPage ?? false}
-        hasNextPage={table.responseData?.hasNextPage ?? false}
+        page={pagination.page}
+        totalPages={Math.max(1, pagination.totalPages)}
+        total={pagination.total}
+        hasPrevPage={pagination.hasPrevPage}
+        hasNextPage={pagination.hasNextPage}
         onPageChange={handlePageChange}
       />
 

@@ -130,8 +130,7 @@ export function useRealtimeNotifications(userId: string) {
 
         // Invalidate thread list so the sidebar shows the updated preview
         queryClient.invalidateQueries({
-          predicate: (query) =>
-            query.queryKey.length === 2 && query.queryKey[1] === "threads",
+          predicate: (query) => query.queryKey.length === 2 && query.queryKey[1] === "threads",
         });
 
         // Invalidate this specific thread's messages cache so clicking the

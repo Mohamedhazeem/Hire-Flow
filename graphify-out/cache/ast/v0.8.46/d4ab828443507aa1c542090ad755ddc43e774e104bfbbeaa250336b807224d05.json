@@ -1,1 +1,127 @@
-{"nodes": [{"id": "d_hire_flow_next_plan_4_5_career_resources_md", "label": "plan-4.5-career-resources.md", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L1"}, {"id": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "label": "Plan: Phase 4.5 \u2014 Career Resources", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L1"}, {"id": "hire_flow_next_plan_4_5_career_resources_overview", "label": "Overview", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L3"}, {"id": "hire_flow_next_plan_4_5_career_resources_step_1_create_app_features_public_components_career_resources_page_tsx", "label": "Step 1: Create `app/features/public/components/career-resources-page.tsx`", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L9"}, {"id": "hire_flow_next_plan_4_5_career_resources_step_2_create_app_resources_page_tsx", "label": "Step 2: Create `app/(resources)/page.tsx`", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L30"}, {"id": "hire_flow_next_plan_4_5_career_resources_step_3_update_footer_to_link_to_resources", "label": "Step 3: Update Footer to link to `/resources`", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L47"}, {"id": "hire_flow_next_plan_4_5_career_resources_verification", "label": "Verification", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L59"}, {"id": "hire_flow_next_plan_4_5_career_resources_edge_cases_covered", "label": "Edge Cases Covered", "file_type": "document", "source_file": "plan-4.5-career-resources.md", "source_location": "L67"}], "edges": [{"source": "d_hire_flow_next_plan_4_5_career_resources_md", "target": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_overview", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L3", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_step_1_create_app_features_public_components_career_resources_page_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L9", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_step_2_create_app_resources_page_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L30", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_step_3_update_footer_to_link_to_resources", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L47", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_verification", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L59", "weight": 1.0}, {"source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources", "target": "hire_flow_next_plan_4_5_career_resources_edge_cases_covered", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plan-4.5-career-resources.md", "source_location": "L67", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_plan_4_5_career_resources_md",
+      "label": "plan-4.5-career-resources.md",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "label": "Plan: Phase 4.5 \u2014 Career Resources",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_overview",
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_step_1_create_app_features_public_components_career_resources_page_tsx",
+      "label": "Step 1: Create `app/features/public/components/career-resources-page.tsx`",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_step_2_create_app_resources_page_tsx",
+      "label": "Step 2: Create `app/(resources)/page.tsx`",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_step_3_update_footer_to_link_to_resources",
+      "label": "Step 3: Update Footer to link to `/resources`",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L47"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L59"
+    },
+    {
+      "id": "hire_flow_next_plan_4_5_career_resources_edge_cases_covered",
+      "label": "Edge Cases Covered",
+      "file_type": "document",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L67"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_plan_4_5_career_resources_md",
+      "target": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_step_1_create_app_features_public_components_career_resources_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_step_2_create_app_resources_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_step_3_update_footer_to_link_to_resources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_plan_4_5_career_resources_plan_phase_4_5_career_resources",
+      "target": "hire_flow_next_plan_4_5_career_resources_edge_cases_covered",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plan-4.5-career-resources.md",
+      "source_location": "L67",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -47,10 +47,18 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
     enabled: !!id,
   });
 
-  const { data: related, isLoading: relatedLoading, isError: relatedError } = useQuery({
+  const {
+    data: related,
+    isLoading: relatedLoading,
+    isError: relatedError,
+  } = useQuery({
     queryKey: ["job-related", id],
     queryFn: async () =>
-      (await apiClient<{ data: { companyJobs: CompactJobRow[]; similarJobs: CompactJobRow[] } }>(`/api/jobs/${id}/related`)).data,
+      (
+        await apiClient<{ data: { companyJobs: CompactJobRow[]; similarJobs: CompactJobRow[] } }>(
+          `/api/jobs/${id}/related`,
+        )
+      ).data,
     enabled: !!id,
     staleTime: 120_000,
   });
@@ -109,7 +117,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
         <ArrowLeftIcon className="size-4" /> Back to jobs
       </Link>
 
-        <div className="flex items-start gap-4 mb-6">
+      <div className="flex items-start gap-4 mb-6">
         <div className="size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
           {data.companyLogo ? (
             <Image
@@ -269,9 +277,7 @@ export function JobDetailView({ jobId }: { jobId?: string }) {
       className={`${containerWidth} mx-auto px-4 md:px-6 lg:px-8 py-6`}
     >
       <div className={hasCompanyJobs ? "lg:grid lg:grid-cols-[1fr_320px] lg:gap-8" : ""}>
-        <div className={hasCompanyJobs ? "" : "max-w-3xl"}>
-          {mainContent}
-        </div>
+        <div className={hasCompanyJobs ? "" : "max-w-3xl"}>{mainContent}</div>
 
         {hasCompanyJobs && (
           <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start">

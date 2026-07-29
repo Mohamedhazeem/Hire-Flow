@@ -8,7 +8,8 @@ function mockResponse() {
         type: "bullet_improvement",
         section: "experience",
         original: "Worked on software",
-        suggestion: "Architected and delivered a scalable microservices platform serving 50K+ daily users",
+        suggestion:
+          "Architected and delivered a scalable microservices platform serving 50K+ daily users",
         reasoning: "Adds quantified impact and strong action verb",
         priority: "high",
       },
@@ -33,7 +34,9 @@ export function startAiMockServer(port: number): Promise<void> {
     server = http.createServer((req, res) => {
       if (req.method === "POST") {
         let body = "";
-        req.on("data", (chunk) => { body += chunk; });
+        req.on("data", (chunk) => {
+          body += chunk;
+        });
         req.on("end", () => {
           res.writeHead(200, { "Content-Type": "application/json" });
           res.end(JSON.stringify(mockResponse()));

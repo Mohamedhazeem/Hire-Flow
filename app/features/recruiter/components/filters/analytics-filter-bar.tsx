@@ -2,12 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import {
-  FilterIcon,
-  RotateCcwIcon,
-  ChevronDownIcon,
-  SlidersHorizontalIcon,
-} from "lucide-react";
+import { FilterIcon, RotateCcwIcon, ChevronDownIcon, SlidersHorizontalIcon } from "lucide-react";
 import { DateRangePicker } from "@/components/ui/date-range-picker";
 import { cn } from "@/lib/utils";
 import { DesktopFilters } from "./desktop-filters";
@@ -71,7 +66,15 @@ export function AnalyticsFilterBar({ jobOptions, showJobFilter }: AnalyticsFilte
     [router, searchParams],
   );
 
-  const hasFilters = !!(currentDateFrom || currentDateTo || currentStatus || currentWorkMode || currentEmploymentType || currentLocation || currentJobId);
+  const hasFilters = !!(
+    currentDateFrom ||
+    currentDateTo ||
+    currentStatus ||
+    currentWorkMode ||
+    currentEmploymentType ||
+    currentLocation ||
+    currentJobId
+  );
 
   const jobDropdownOptions = jobOptions?.map((j) => ({ value: j.id, label: j.title })) || [];
 

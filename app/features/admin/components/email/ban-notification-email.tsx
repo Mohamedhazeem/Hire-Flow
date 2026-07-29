@@ -1,13 +1,4 @@
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Preview,
-  Section,
-  Text,
-} from "react-email";
+import { Body, Container, Head, Heading, Html, Preview, Section, Text } from "react-email";
 
 interface BanNotificationEmailProps {
   adminName: string;

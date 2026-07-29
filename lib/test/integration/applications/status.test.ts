@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+} from "@/lib/test";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
@@ -18,10 +25,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "reviewing" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "reviewing" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -37,27 +47,36 @@ describe("Application Status Transition (Phase 4.4)", () => {
     expect(changes[0].toStatus).toBe("reviewing");
 
     // Notification was created for the applicant (fire-and-forget, poll until ready)
-    await vi.waitFor(async () => {
-      const notification = await prisma.notification.findFirst({
-        where: { userId: applicant.id, type: "application_status" },
-      });
-      expect(notification).not.toBeNull();
-      const notifData = notification?.data as Record<string, unknown> | undefined;
-      expect(notifData?.newStatus).toBe("reviewing");
-      expect(notifData?.applicationId).toBe(application.id);
-    }, { timeout: 5000, interval: 200 });
+    await vi.waitFor(
+      async () => {
+        const notification = await prisma.notification.findFirst({
+          where: { userId: applicant.id, type: "application_status" },
+        });
+        expect(notification).not.toBeNull();
+        const notifData = notification?.data as Record<string, unknown> | undefined;
+        expect(notifData?.newStatus).toBe("reviewing");
+        expect(notifData?.applicationId).toBe(application.id);
+      },
+      { timeout: 5000, interval: 200 },
+    );
   });
 
   it("reviewing to shortlisted succeeds", async () => {
     const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "reviewing" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "reviewing" },
+    });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "shortlisted" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "shortlisted" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -71,24 +90,33 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "applied" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "applied" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(400);
   });
 
   it("rejected to reviewing rejected (invalid transition)", async () => {
     const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "rejected" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "rejected" },
+    });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "reviewing" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "reviewing" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(400);
   });
@@ -98,10 +126,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "rejected", rejectionReason: "Not a fit" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "rejected", rejectionReason: "Not a fit" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -112,18 +143,24 @@ describe("Application Status Transition (Phase 4.4)", () => {
 
   it("interview with details stores data", async () => {
     const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "shortlisted" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "shortlisted" },
+    });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        status: "interview_scheduled",
-        interviewDate: new Date("2026-08-01T10:00:00Z").toISOString(),
-        meetingLink: "https://meet.example.com/test",
-      }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({
+          status: "interview_scheduled",
+          interviewDate: new Date("2026-08-01T10:00:00Z").toISOString(),
+          meetingLink: "https://meet.example.com/test",
+        }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -135,14 +172,20 @@ describe("Application Status Transition (Phase 4.4)", () => {
 
   it("offer with details stores data", async () => {
     const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "interview_scheduled" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "interview_scheduled" },
+    });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "offered", offerDetails: "Full-time, $100k" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "offered", offerDetails: "Full-time, $100k" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -172,10 +215,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "invited" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "invited" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -189,10 +235,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "reviewing" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "reviewing" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -206,10 +255,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "rejected", rejectionReason: "Not a fit" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "rejected", rejectionReason: "Not a fit" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -223,10 +275,13 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "shortlisted" }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "shortlisted" }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(400);
   });
@@ -239,21 +294,27 @@ describe("Application Status Transition (Phase 4.4)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-      method: "PATCH",
-      body: JSON.stringify({ status: "reviewing", email: true }),
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/status`,
+      {
+        method: "PATCH",
+        body: JSON.stringify({ status: "reviewing", email: true }),
+      },
+    );
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
-    await vi.waitFor(() => {
-      expect(emailSpy).toHaveBeenCalledTimes(1);
-      expect(emailSpy).toHaveBeenCalledWith(
-        expect.objectContaining({
-          to: applicant.email,
-          subject: expect.stringContaining("Application Status"),
-        }),
-      );
-    }, { timeout: 5000, interval: 200 });
+    await vi.waitFor(
+      () => {
+        expect(emailSpy).toHaveBeenCalledTimes(1);
+        expect(emailSpy).toHaveBeenCalledWith(
+          expect.objectContaining({
+            to: applicant.email,
+            subject: expect.stringContaining("Application Status"),
+          }),
+        );
+      },
+      { timeout: 5000, interval: 200 },
+    );
   });
 });

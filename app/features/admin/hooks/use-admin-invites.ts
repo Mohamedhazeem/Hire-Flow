@@ -16,9 +16,7 @@ export type AdminTeamMember = {
   createdAt: string;
 };
 
-const hooks = createInviteHooks<AdminTeamMember>("admin", "/api/admin", [
-  ["admin", "users"],
-]);
+const hooks = createInviteHooks<AdminTeamMember>("admin", "/api/admin", [["admin", "users"]]);
 
 export const useAdminInvites = hooks.useInvites;
 export const useCancelInvite = hooks.useCancelInvite;

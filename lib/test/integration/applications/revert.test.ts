@@ -13,7 +13,10 @@ describe("Revert Status (Phase 4.6)", () => {
 
   it("revert to prior status succeeds with audit", async () => {
     const { recruiter, application } = await seedJobWithApplicant();
-    await prisma.application.update({ where: { id: application.id }, data: { status: "reviewing" } });
+    await prisma.application.update({
+      where: { id: application.id },
+      data: { status: "reviewing" },
+    });
     await prisma.applicationStatusChange.create({
       data: {
         applicationId: application.id,
@@ -25,9 +28,12 @@ describe("Revert Status (Phase 4.6)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { POST } = await import("@/app/api/recruiter/applications/[applicationId]/revert/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/revert`, {
-      method: "POST",
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/revert`,
+      {
+        method: "POST",
+      },
+    );
     const res = await POST(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
@@ -48,9 +54,12 @@ describe("Revert Status (Phase 4.6)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { POST } = await import("@/app/api/recruiter/applications/[applicationId]/revert/route");
-    const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/revert`, {
-      method: "POST",
-    });
+    const req = new NextRequest(
+      `http://localhost/api/recruiter/applications/${application.id}/revert`,
+      {
+        method: "POST",
+      },
+    );
     const res = await POST(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(400);
   });

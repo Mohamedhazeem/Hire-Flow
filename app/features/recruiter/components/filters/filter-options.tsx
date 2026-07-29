@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { APPLICATION_STATUSES } from "../../schema/application.schema";
 import { CHART_COLORS } from "../../schema/analytics.schema";
 
@@ -21,11 +22,11 @@ export function getStatusOptions() {
   }));
 }
 
-export function StatusDot({ status }: { status: string }) {
+export function StatusDot({ status, className }: { status: string; className?: string }) {
   const color = CHART_COLORS[status] ?? "#6b7280";
   return (
     <span
-      className="inline-block size-2 rounded-full shrink-0"
+      className={cn("inline-block size-2 rounded-full shrink-0", className)}
       style={{ backgroundColor: color }}
     />
   );

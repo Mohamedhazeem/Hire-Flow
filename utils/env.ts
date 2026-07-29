@@ -9,9 +9,7 @@ export const envSchema = z.object({
   BETTER_AUTH_SECRET: z.string(),
   BETTER_AUTH_URL: z.url(),
 
-  NEXT_PUBLIC_ENABLE_TEMP_MAIL_CHECK: z
-    .enum(["true", "false"])
-    .default("false"),
+  NEXT_PUBLIC_ENABLE_TEMP_MAIL_CHECK: z.enum(["true", "false"]).default("false"),
   ALLOW_SEED: z.enum(["true", "false"]).default("false"),
 
   GOOGLE_CLIENT_ID: z.string(),

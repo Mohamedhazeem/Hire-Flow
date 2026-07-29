@@ -56,7 +56,8 @@ export async function listUserApplications(
   params: { page?: number; pageSize?: number; status?: string; search?: string },
 ): Promise<UserApplicationListResult> {
   const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize }, 20,
+    { page: params.page, pageSize: params.pageSize },
+    20,
   );
 
   const where: Record<string, unknown> = { userId };
@@ -65,7 +66,9 @@ export async function listUserApplications(
 
   const [apps, total] = await Promise.all([
     prisma.application.findMany({
-      where, skip, take,
+      where,
+      skip,
+      take,
       orderBy: { appliedAt: "desc" },
       include: { job: { include: { company: { select: { name: true, logoUrl: true } } } } },
     }),
@@ -121,8 +124,8 @@ export async function getUserApplicationDetail(
     jobCompanyLogo: company.logoUrl,
     jobLocations: job.locations as string[],
     jobWorkMode: job.workMode as string,
-    jobSalaryMin: (job.salaryMin as number | null),
-    jobSalaryMax: (job.salaryMax as number | null),
+    jobSalaryMin: job.salaryMin as number | null,
+    jobSalaryMax: job.salaryMax as number | null,
     jobSalaryCurrency: (job.salaryCurrency as string) ?? "USD",
     jobActive: job.isActive as boolean,
     status: d.status as string,

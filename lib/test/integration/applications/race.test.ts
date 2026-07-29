@@ -9,10 +9,13 @@ import { seedJobWithApplicant } from "@/lib/test/integration/helpers";
 async function patchStatus(applicationId: string, recruiterId: string, updatedAt?: string) {
   mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiterId }));
   const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-  const req = new NextRequest(`http://localhost/api/recruiter/applications/${applicationId}/status`, {
-    method: "PATCH",
-    body: JSON.stringify({ status: "reviewing", updatedAt }),
-  });
+  const req = new NextRequest(
+    `http://localhost/api/recruiter/applications/${applicationId}/status`,
+    {
+      method: "PATCH",
+      body: JSON.stringify({ status: "reviewing", updatedAt }),
+    },
+  );
   return PATCH(req, { params: Promise.resolve({ applicationId }) });
 }
 
@@ -37,7 +40,9 @@ describe("Application race conditions (C1 / C4)", () => {
     const final = await prisma.application.findUnique({ where: { id: application.id } });
     expect(final?.status).toBe("reviewing");
 
-    const changes = await prisma.applicationStatusChange.findMany({ where: { applicationId: application.id } });
+    const changes = await prisma.applicationStatusChange.findMany({
+      where: { applicationId: application.id },
+    });
     expect(changes).toHaveLength(1);
   });
 
@@ -46,18 +51,24 @@ describe("Application race conditions (C1 / C4)", () => {
 
     const patchPromise = (async () => {
       mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
-      const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
-      const req = new NextRequest(`http://localhost/api/recruiter/applications/${application.id}/status`, {
-        method: "PATCH",
-        body: JSON.stringify({ status: "reviewing" }),
-      });
+      const { PATCH } =
+        await import("@/app/api/recruiter/applications/[applicationId]/status/route");
+      const req = new NextRequest(
+        `http://localhost/api/recruiter/applications/${application.id}/status`,
+        {
+          method: "PATCH",
+          body: JSON.stringify({ status: "reviewing" }),
+        },
+      );
       return PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     })();
 
     const deletePromise = (async () => {
       mockGetSession.mockResolvedValue(mockSession("user", { id: applicant.id }));
       const { DELETE } = await import("@/app/api/user/applications/[id]/route");
-      const req = new NextRequest(`http://localhost/api/user/applications/${application.id}`, { method: "DELETE" });
+      const req = new NextRequest(`http://localhost/api/user/applications/${application.id}`, {
+        method: "DELETE",
+      });
       return DELETE(req, { params: Promise.resolve({ id: application.id }) });
     })();
 
@@ -72,7 +83,9 @@ describe("Application race conditions (C1 / C4)", () => {
     const advanced = final?.status === "reviewing";
     expect(withdrawn || advanced).toBe(true);
 
-    const changes = await prisma.applicationStatusChange.findMany({ where: { applicationId: application.id } });
+    const changes = await prisma.applicationStatusChange.findMany({
+      where: { applicationId: application.id },
+    });
     // If the row was deleted by withdraw, no new status change should exist.
     if (withdrawn) {
       const nonAppliedChanges = changes.filter((c) => c.toStatus !== "applied");

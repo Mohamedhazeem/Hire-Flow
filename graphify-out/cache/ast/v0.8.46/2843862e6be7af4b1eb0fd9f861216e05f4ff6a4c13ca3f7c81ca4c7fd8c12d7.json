@@ -1,1 +1,13 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_temp_write_file_ps1", "label": "temp-write-file.ps1", "file_type": "code", "source_file": ".kilo/temp-write-file.ps1", "source_location": "L1"}], "edges": [], "raw_calls": []}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_temp_write_file_ps1",
+      "label": "temp-write-file.ps1",
+      "file_type": "code",
+      "source_file": ".kilo/temp-write-file.ps1",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -16,10 +16,20 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const target = await createTestUser({ role: Role.user });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token2", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token2",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -37,10 +47,20 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const target = await createTestUser({ role: Role.user });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "token2", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "token2",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -63,7 +83,12 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const recruiter = await createTestUser({ role: Role.recruiter });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: recruiter.id, token: "rtoken1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: recruiter.id,
+        token: "rtoken1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -83,7 +108,12 @@ describe("Admin Sessions (Phase 4.10)", () => {
     const admin = await createTestUser({ role: Role.admin });
     const superAdmin = await createTestUser({ role: Role.super_admin });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: superAdmin.id, token: "stoken1", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: superAdmin.id,
+        token: "stoken1",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));
@@ -99,7 +129,12 @@ describe("Admin Sessions (Phase 4.10)", () => {
   it("super_admin can revoke own sessions (role permissions fixed)", async () => {
     const superAdmin = await createTestUser({ role: Role.super_admin });
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: superAdmin.id, token: "sadmintoken", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: superAdmin.id,
+        token: "sadmintoken",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("super_admin", { id: superAdmin.id }));

@@ -32,9 +32,21 @@ type DistributionBarChartProps = {
   className?: string;
 };
 
-export function DistributionBarChart({ data, colorMap, title, subtitle, emptyMessage, className }: DistributionBarChartProps) {
+export function DistributionBarChart({
+  data,
+  colorMap,
+  title,
+  subtitle,
+  emptyMessage,
+  className,
+}: DistributionBarChartProps) {
   return (
-    <div className={cn("rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col", className)}>
+    <div
+      className={cn(
+        "rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col",
+        className,
+      )}
+    >
       <div className="flex items-center gap-2.5 mb-5">
         <div className="size-9 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500">
           <BarChart3Icon className="size-4" />
@@ -45,7 +57,9 @@ export function DistributionBarChart({ data, colorMap, title, subtitle, emptyMes
         </div>
       </div>
       {data.length === 0 ? (
-        <p className="text-text-muted text-sm py-12 text-center flex-1">{emptyMessage ?? "No data available"}</p>
+        <p className="text-text-muted text-sm py-12 text-center flex-1">
+          {emptyMessage ?? "No data available"}
+        </p>
       ) : (
         <ResponsiveContainer width="100%" height="100%" className="flex-1 min-h-0">
           <BarChart data={data} barCategoryGap="20%">

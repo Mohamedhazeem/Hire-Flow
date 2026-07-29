@@ -7,7 +7,10 @@ import { useWatch, useController } from "react-hook-form";
 function toArray(value: unknown): string[] {
   if (Array.isArray(value)) return value;
   if (typeof value === "string")
-    return value.split(",").map((s) => s.trim()).filter(Boolean);
+    return value
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
   return [];
 }
 
@@ -17,7 +20,11 @@ type CommaInputProps<T extends FieldValues> = {
   placeholder?: string;
 };
 
-export function CommaInput<T extends FieldValues>({ control, name, placeholder }: CommaInputProps<T>) {
+export function CommaInput<T extends FieldValues>({
+  control,
+  name,
+  placeholder,
+}: CommaInputProps<T>) {
   const value = useWatch({ control, name }) as string[] | undefined;
   const { field } = useController({ control, name });
   return (

@@ -6,16 +6,16 @@ Enhance the existing `/jobs` page with debounced search, extracted reusable comp
 
 ## What Already Exists (No New Files Needed)
 
-| File | Status |
-|------|--------|
+| File                                              | Status                                                                                                                       |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `app/features/jobs/queries/public-job-queries.ts` | ✅ Filters `status: 'active'` + `isActive: true`. Pagination, search, workMode, employmentType, experienceLevel filters work |
-| `app/api/jobs/route.ts` | ✅ GET handler passes all `searchParams` to query |
-| `app/jobs/page.tsx` | ✅ Renders `JobListPage` |
-| `app/features/jobs/components/job-list-page.tsx` | ✅ 251 lines. Client component with filters, skeleton, empty state, pagination |
-| `app/features/jobs/components/job-card.tsx` | ✅ 145 lines. Includes `SaveJobButton` (redirect-on-click for anonymous) |
-| `app/api/jobs/[id]/route.ts` | ✅ Returns 404 for inactive jobs |
-| `app/features/jobs/hooks/use-apply-job.ts` | ✅ Application mutation |
-| `app/features/auth/libs/auth-client.ts` | ✅ `useSession` for bookmark auth |
+| `app/api/jobs/route.ts`                           | ✅ GET handler passes all `searchParams` to query                                                                            |
+| `app/jobs/page.tsx`                               | ✅ Renders `JobListPage`                                                                                                     |
+| `app/features/jobs/components/job-list-page.tsx`  | ✅ 251 lines. Client component with filters, skeleton, empty state, pagination                                               |
+| `app/features/jobs/components/job-card.tsx`       | ✅ 145 lines. Includes `SaveJobButton` (redirect-on-click for anonymous)                                                     |
+| `app/api/jobs/[id]/route.ts`                      | ✅ Returns 404 for inactive jobs                                                                                             |
+| `app/features/jobs/hooks/use-apply-job.ts`        | ✅ Application mutation                                                                                                      |
+| `app/features/auth/libs/auth-client.ts`           | ✅ `useSession` for bookmark auth                                                                                            |
 
 ## What's Missing (This Step)
 
@@ -53,19 +53,19 @@ User types in search
 
 ## Files to Modify
 
-| File | Changes | Expected Lines |
-|------|---------|---------------|
-| `app/features/jobs/components/job-list-page.tsx` | Replace inline search with `JobSearchBar`, inline `<select>` with `FilterSelect`, wrap cards in motion stagger. Estimated 180–200 lines total (reduction from 251) | ≤200 |
-| `app/features/jobs/queries/public-job-queries.ts` | Add `industry` and `companyId` to `PublicJobListParams` + query logic (deferred filter UI) | +15 |
-| `app/api/jobs/route.ts` | Pass `industry`, `companyId` from searchParams | +4 |
+| File                                              | Changes                                                                                                                                                            | Expected Lines |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| `app/features/jobs/components/job-list-page.tsx`  | Replace inline search with `JobSearchBar`, inline `<select>` with `FilterSelect`, wrap cards in motion stagger. Estimated 180–200 lines total (reduction from 251) | ≤200           |
+| `app/features/jobs/queries/public-job-queries.ts` | Add `industry` and `companyId` to `PublicJobListParams` + query logic (deferred filter UI)                                                                         | +15            |
+| `app/api/jobs/route.ts`                           | Pass `industry`, `companyId` from searchParams                                                                                                                     | +4             |
 
 ## Files to Create
 
-| File | Description | Lines |
-|------|-------------|-------|
-| `app/features/jobs/components/job-search-bar.tsx` | Debounced search input with `useDeferredValue`, `startTransition`, `useSearchParams` | ~60 |
-| `app/features/jobs/components/filter-select.tsx` | Reusable `<select>` dropdown filter | ~40 |
-| `lib/job-categories.ts` | Curated `JOB_CATEGORIES` constant for Phase 4.4 | ~12 |
+| File                                              | Description                                                                          | Lines |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------ | ----- |
+| `app/features/jobs/components/job-search-bar.tsx` | Debounced search input with `useDeferredValue`, `startTransition`, `useSearchParams` | ~60   |
+| `app/features/jobs/components/filter-select.tsx`  | Reusable `<select>` dropdown filter                                                  | ~40   |
+| `lib/job-categories.ts`                           | Curated `JOB_CATEGORIES` constant for Phase 4.4                                      | ~12   |
 
 ---
 
@@ -137,6 +137,7 @@ export function JobSearchBar() {
 ```
 
 **Edge cases:**
+
 - **Back/forward navigation:** `useEffect` syncs URL → input value on `sp` changes after mount
 - **Rapid typing:** Each keystroke cancels previous timer; only last settled value fires
 - **Empty input:** `setValue("")` → deferred becomes `""` → `np.delete("search")` → clears filter
@@ -157,7 +158,14 @@ type FilterSelectProps = {
   labels?: Record<string, string>;
 };
 
-export function FilterSelect({ label, paramKey, options, value, onChange, labels }: FilterSelectProps) {
+export function FilterSelect({
+  label,
+  paramKey,
+  options,
+  value,
+  onChange,
+  labels,
+}: FilterSelectProps) {
   return (
     <select
       value={value ?? ""}
@@ -177,6 +185,7 @@ export function FilterSelect({ label, paramKey, options, value, onChange, labels
 ```
 
 **Edge cases:**
+
 - **No `labels` prop:** Falls back to capitalized `replace("_", " ")` formatting
 - **Empty options array:** Only shows the default `<option>`
 - **Null/undefined value:** `value ?? ""` matches the blank `<option>`
@@ -198,6 +207,7 @@ Note: `workMode: "remote"` matches the Prisma `WorkMode` enum value (lowercase, 
 ### 4. `job-list-page.tsx` (modified)
 
 Changes:
+
 - Remove inline `Filter` component (replaced by `FilterSelect` import)
 - Remove inline search input (replaced by `JobSearchBar` import)
 - Add `motion.div` grid wrapper with `whileInView`, `staggerChildren: 0.08`
@@ -206,6 +216,7 @@ Changes:
 - Skeleton grid also gets motion fade-in for loading state
 
 **Edge cases:**
+
 - **Empty results after filter** — `AnimatePresence` handles exit of old cards
 - **Loading state** — skeletons render immediately, no stagger delay
 - **Error state** — no animation, static error message
@@ -214,12 +225,14 @@ Changes:
 ### 5. `public-job-queries.ts` (modified)
 
 Add to `PublicJobListParams`:
+
 ```ts
 industry?: string;
 companyId?: string;
 ```
 
 Add to query `where`:
+
 ```ts
 if (params.industry) {
   where.company = { industry: params.industry };
@@ -230,12 +243,14 @@ if (params.companyId) {
 ```
 
 **Edge cases:**
+
 - **`company.industry` is nullable** — Prisma handles null comparison gracefully; a filter for `industry: "Technology"` simply won't match companies with null industry
 - **`companyId` with invalid ID** — returns 0 results, not an error
 
 ### 6. `app/api/jobs/route.ts` (modified)
 
 Add to params extraction:
+
 ```ts
 industry: url.searchParams.get("industry") || undefined,
 companyId: url.searchParams.get("companyId") || undefined,
@@ -245,30 +260,30 @@ companyId: url.searchParams.get("companyId") || undefined,
 
 ## Motion Animation Summary
 
-| Element | Trigger | Animation |
-|---------|---------|-----------|
-| Job card grid | Scroll into view | `whileInView` stagger, each card `opacity: 0→1, y: 16→0`, 0.08s stagger |
-| Filter change | URL update | `AnimatePresence` exit animation on old results grid |
-| Search clear button | Appears | Instant (no animation needed) |
-| Filter select hover | Hover | `hover:border-brand/30` transition |
+| Element             | Trigger          | Animation                                                               |
+| ------------------- | ---------------- | ----------------------------------------------------------------------- |
+| Job card grid       | Scroll into view | `whileInView` stagger, each card `opacity: 0→1, y: 16→0`, 0.08s stagger |
+| Filter change       | URL update       | `AnimatePresence` exit animation on old results grid                    |
+| Search clear button | Appears          | Instant (no animation needed)                                           |
+| Filter select hover | Hover            | `hover:border-brand/30` transition                                      |
 
 ---
 
 ## Edge Cases Summary
 
-| Case | Handling |
-|------|----------|
-| Rapid search typing | `useDeferredValue` + 400ms timeout — only last settled value triggers URL push |
-| Back/forward browser nav | `useEffect` syncs URL searchParams back to input state |
-| Empty search after typing | Clear button sets `""` → URL param deleted → all jobs shown |
-| `company.industry` is null | Prisma `where.company = { industry: "X" }` skips null entries naturally |
-| `companyId` with invalid UUID | Zero results — no error thrown |
-| 0 jobs after filter | Empty state shows, pagination hidden |
-| Only 1 page of results | Pagination buttons hidden (`totalPages > 1` check) |
-| Anonymous user on `/jobs` | `SaveJobButton` renders but redirects to `/login` on click (existing behavior) |
-| Slow network | Skeleton grid shown during loading |
-| Mobile viewport | Filters stack vertically, search takes full width |
-| Pagination during stagger animation | Grid re-mounts, stagger re-fires on new results |
+| Case                                | Handling                                                                       |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| Rapid search typing                 | `useDeferredValue` + 400ms timeout — only last settled value triggers URL push |
+| Back/forward browser nav            | `useEffect` syncs URL searchParams back to input state                         |
+| Empty search after typing           | Clear button sets `""` → URL param deleted → all jobs shown                    |
+| `company.industry` is null          | Prisma `where.company = { industry: "X" }` skips null entries naturally        |
+| `companyId` with invalid UUID       | Zero results — no error thrown                                                 |
+| 0 jobs after filter                 | Empty state shows, pagination hidden                                           |
+| Only 1 page of results              | Pagination buttons hidden (`totalPages > 1` check)                             |
+| Anonymous user on `/jobs`           | `SaveJobButton` renders but redirects to `/login` on click (existing behavior) |
+| Slow network                        | Skeleton grid shown during loading                                             |
+| Mobile viewport                     | Filters stack vertically, search takes full width                              |
+| Pagination during stagger animation | Grid re-mounts, stagger re-fires on new results                                |
 
 ---
 
@@ -290,9 +305,9 @@ companyId: url.searchParams.get("companyId") || undefined,
 
 ## Risks & Mitigations
 
-| Risk | Mitigation |
-|------|------------|
-| `useDeferredValue` with `router.push` inside `setTimeout` causes stale closure | `sp` is stable per render; `router` is stable; `useRef` for initial mount guard |
-| `AnimatePresence` exit animation flickers on page change | Grid has stable `key` based on data; only enters/exits when results array changes identity |
-| Passing `industry` through Prisma `where.company` creates a join | Already an inner join via `company.name` in `include` — no performance regression |
-| Stagger animation re-fires on every page change | Acceptable — brief flicker on page turn. `viewport={{ once: true }}` not possible since cards re-mount |
+| Risk                                                                           | Mitigation                                                                                             |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `useDeferredValue` with `router.push` inside `setTimeout` causes stale closure | `sp` is stable per render; `router` is stable; `useRef` for initial mount guard                        |
+| `AnimatePresence` exit animation flickers on page change                       | Grid has stable `key` based on data; only enters/exits when results array changes identity             |
+| Passing `industry` through Prisma `where.company` creates a join               | Already an inner join via `company.name` in `include` — no performance regression                      |
+| Stagger animation re-fires on every page change                                | Acceptable — brief flicker on page turn. `viewport={{ once: true }}` not possible since cards re-mount |

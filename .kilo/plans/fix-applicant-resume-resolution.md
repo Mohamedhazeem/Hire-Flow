@@ -10,37 +10,38 @@ The recruiter applicant detail page (`/recruiter/applicants/[applicationId]`) sh
 
 ## Design Decisions
 
-| Decision | Choice | Rationale |
-|---|---|---|
-| Resume resolution | Server-side (API returns single resolved resume + `source` field) | Privacy: doesn't leak whether user changed resumes after applying. Simpler UI. |
-| File availability | Trust `fileUrl` field (DB-level check only) | Pre-checking disk adds I/O to every detail page load. Rare case. |
-| Download error | Client-side `fetch` + inline error state | Avoids navigating to JSON 404 page. Error resets after 5s. |
-| Resume preview | `react-pdf` (PDF) + image modal (JPG/PNG/WebP/GIF) + download fallback (DOC/DOCX) | Most common resume formats. `react-pdf` is 6.9MB but well-maintained. |
-| Mobile first | Full-screen dialog on mobile (`max-lg:`), modal on desktop | Resume preview must work on recruiter's phone. |
+| Decision          | Choice                                                                            | Rationale                                                                      |
+| ----------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Resume resolution | Server-side (API returns single resolved resume + `source` field)                 | Privacy: doesn't leak whether user changed resumes after applying. Simpler UI. |
+| File availability | Trust `fileUrl` field (DB-level check only)                                       | Pre-checking disk adds I/O to every detail page load. Rare case.               |
+| Download error    | Client-side `fetch` + inline error state                                          | Avoids navigating to JSON 404 page. Error resets after 5s.                     |
+| Resume preview    | `react-pdf` (PDF) + image modal (JPG/PNG/WebP/GIF) + download fallback (DOC/DOCX) | Most common resume formats. `react-pdf` is 6.9MB but well-maintained.          |
+| Mobile first      | Full-screen dialog on mobile (`max-lg:`), modal on desktop                        | Resume preview must work on recruiter's phone.                                 |
 
 ## Edge Cases Covered
 
-| Scenario | Resolved Behavior |
-|---|---|
-| User applied with resume A, then uploaded resume B (primary) | Shows resume A with label "Resume Used for This Application" |
-| User applied with resume A, then deleted resume A | Falls back to current primary resume B with label "Current Resume" |
-| User applied with resume A, then deleted all resumes | Shows "Resume was removed by the applicant" if `resumeId` was set and not found |
-| Application has no `resumeId` (null), user has current primary | Shows current primary with label "Current Resume" |
-| Application has no `resumeId`, user has no resumes at all | Shows "No resume attached to this application" |
-| Application has `resumeId` pointing to valid existing resume | Shows that exact resume with label "Resume Used for This Application" |
-| Resume has `fileUrl` pointing to file deleted from disk | Download button shows inline "File unavailable — removed by applicant" error |
-| Resume is PDF | Opens preview with page navigation (react-pdf Document + Page) |
-| Resume is image (JPG/PNG/WebP/GIF) | Opens preview showing image in a centered view |
-| Resume is DOC/DOCX | Opens download directly (no browser preview available) |
-| Resume has no `fileUrl` at all | Shows "File not available" badge, no interactive button |
-| Mobile viewport (<640px) | Preview dialog goes full-screen, preview controls adjust |
-| Download while preview is already open | Second download triggers directly without opening another preview |
+| Scenario                                                       | Resolved Behavior                                                               |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| User applied with resume A, then uploaded resume B (primary)   | Shows resume A with label "Resume Used for This Application"                    |
+| User applied with resume A, then deleted resume A              | Falls back to current primary resume B with label "Current Resume"              |
+| User applied with resume A, then deleted all resumes           | Shows "Resume was removed by the applicant" if `resumeId` was set and not found |
+| Application has no `resumeId` (null), user has current primary | Shows current primary with label "Current Resume"                               |
+| Application has no `resumeId`, user has no resumes at all      | Shows "No resume attached to this application"                                  |
+| Application has `resumeId` pointing to valid existing resume   | Shows that exact resume with label "Resume Used for This Application"           |
+| Resume has `fileUrl` pointing to file deleted from disk        | Download button shows inline "File unavailable — removed by applicant" error    |
+| Resume is PDF                                                  | Opens preview with page navigation (react-pdf Document + Page)                  |
+| Resume is image (JPG/PNG/WebP/GIF)                             | Opens preview showing image in a centered view                                  |
+| Resume is DOC/DOCX                                             | Opens download directly (no browser preview available)                          |
+| Resume has no `fileUrl` at all                                 | Shows "File not available" badge, no interactive button                         |
+| Mobile viewport (<640px)                                       | Preview dialog goes full-screen, preview controls adjust                        |
+| Download while preview is already open                         | Second download triggers directly without opening another preview               |
 
 ## Files to Change (4)
 
 ### 1. `app/features/recruiter/libs/get-applicant-detail.ts` — Server-side resolution
 
 **Changes:**
+
 - Add `resumeId: true` to the `Application` select
 - Add `applicantResume` to the `ApplicantDetailResponse` type:
 
@@ -56,12 +57,13 @@ applicantResume: {
 ```
 
 **Fallback logic (server-side):**
+
 ```ts
 let resolvedResume = null;
 let resumeSource: "application" | "current_profile" | "deleted" | null = null;
 
 if (application.resumeId) {
-  const matched = profileResumes.find(r => r.id === application.resumeId);
+  const matched = profileResumes.find((r) => r.id === application.resumeId);
   if (matched) {
     resolvedResume = matched;
     resumeSource = "application";
@@ -72,7 +74,7 @@ if (application.resumeId) {
 }
 
 if (!resolvedResume && profileResumes.length > 0) {
-  resolvedResume = profileResumes.find(r => r.isPrimary) ?? profileResumes[0];
+  resolvedResume = profileResumes.find((r) => r.isPrimary) ?? profileResumes[0];
   resumeSource = "current_profile";
 }
 ```
@@ -110,7 +112,12 @@ type ResumePreviewDialogProps = {
   label: string;
 };
 
-export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: ResumePreviewDialogProps) {
+export function ResumePreviewDialog({
+  open,
+  onOpenChange,
+  fileUrl,
+  label,
+}: ResumePreviewDialogProps) {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -134,9 +141,7 @@ export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: Resu
           <DialogTitle>{label}</DialogTitle>
           <div className="text-center py-8 space-y-4">
             <FileTextIcon className="size-12 text-text-muted mx-auto" />
-            <p className="text-sm text-text-muted">
-              Preview not available for this file type.
-            </p>
+            <p className="text-sm text-text-muted">Preview not available for this file type.</p>
             <Button onClick={handleDownload}>
               <DownloadIcon className="size-4 mr-2" />
               Download File
@@ -157,7 +162,12 @@ export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: Resu
             <Button variant="ghost" size="icon-sm" onClick={handleDownload} title="Download">
               <DownloadIcon className="size-4" />
             </Button>
-            <Button variant="ghost" size="icon-sm" onClick={() => onOpenChange(false)} title="Close">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              onClick={() => onOpenChange(false)}
+              title="Close"
+            >
               <XIcon className="size-4" />
             </Button>
           </div>
@@ -167,21 +177,40 @@ export function ResumePreviewDialog({ open, onOpenChange, fileUrl, label }: Resu
         <div className="overflow-auto p-4 bg-bg-elevated flex flex-col items-center min-h-[60vh] max-lg:min-h-[calc(100vh-56px)]">
           {isPdf && (
             <>
-              <Document file={`/api/files/download?path=${encodeURIComponent(fileUrl!)}`} onLoadSuccess={({ numPages }) => setNumPages(numPages)}>
-                <Page pageNumber={pageNumber} width={Math.min(800, typeof window !== "undefined" ? window.innerWidth - 48 : 800)} />
+              <Document
+                file={`/api/files/download?path=${encodeURIComponent(fileUrl!)}`}
+                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+              >
+                <Page
+                  pageNumber={pageNumber}
+                  width={Math.min(
+                    800,
+                    typeof window !== "undefined" ? window.innerWidth - 48 : 800,
+                  )}
+                />
               </Document>
 
               {/* Pagination (only if more than 1 page) */}
               {numPages && numPages > 1 && (
                 <div className="flex items-center gap-4 mt-4 pb-4">
-                  <Button variant="outline" size="sm" disabled={pageNumber <= 1} onClick={() => setPageNumber((p) => p - 1)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={pageNumber <= 1}
+                    onClick={() => setPageNumber((p) => p - 1)}
+                  >
                     <ChevronLeftIcon className="size-4 mr-1" />
                     Previous
                   </Button>
                   <span className="text-xs text-text-muted tabular-nums">
                     {pageNumber} / {numPages}
                   </span>
-                  <Button variant="outline" size="sm" disabled={pageNumber >= numPages} onClick={() => setPageNumber((p) => p + 1)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={pageNumber >= numPages}
+                    onClick={() => setPageNumber((p) => p + 1)}
+                  >
                     Next
                     <ChevronRightIcon className="size-4 ml-1" />
                   </Button>
@@ -212,11 +241,13 @@ Note: The preview fetches files through the existing `/api/files/download` endpo
 **Changes:**
 
 A. **Replace resume selection** at line 138 with `applicantResume` from the response:
+
 ```ts
 const applicantResume = detail.applicantResume;
 ```
 
 B. **Add preview dialog state and download handler:**
+
 ```ts
 const [previewOpen, setPreviewOpen] = useState(false);
 const [downloadError, setDownloadError] = useState<string | null>(null);
@@ -245,16 +276,17 @@ async function handleDownload(fileUrl: string) {
 
 C. **Replace Resume Card** with source-aware rendering:
 
-| `applicantResume` state | Display |
-|---|---|
-| `source === "application"`, has `fileUrl` | "Resume Used for This Application" + Preview button + quick Download |
-| `source === "application"`, no `fileUrl` | "Resume Used for This Application" + "File unavailable" badge (no button) |
-| `source === "current_profile"`, has `fileUrl` | "Current Resume" + Preview button + quick Download |
-| `source === "current_profile"`, no `fileUrl` | "Current Resume" + "File unavailable" badge (no button) |
-| `source === "deleted"` | "Resume was removed by the applicant" (no interactive elements) |
-| `null` | "No resume attached to this application" |
+| `applicantResume` state                       | Display                                                                   |
+| --------------------------------------------- | ------------------------------------------------------------------------- |
+| `source === "application"`, has `fileUrl`     | "Resume Used for This Application" + Preview button + quick Download      |
+| `source === "application"`, no `fileUrl`      | "Resume Used for This Application" + "File unavailable" badge (no button) |
+| `source === "current_profile"`, has `fileUrl` | "Current Resume" + Preview button + quick Download                        |
+| `source === "current_profile"`, no `fileUrl`  | "Current Resume" + "File unavailable" badge (no button)                   |
+| `source === "deleted"`                        | "Resume was removed by the applicant" (no interactive elements)           |
+| `null`                                        | "No resume attached to this application"                                  |
 
 The Preview button extracts the file extension to determine behavior:
+
 - **PDF/Image** → opens `ResumePreviewDialog`
 - **DOC/DOCX** → directly triggers `handleDownload` (since no preview is possible)
 
@@ -263,6 +295,7 @@ D. **Add `DownloadIcon` import for the direct download button next to Preview.**
 E. **Add `ResumePreviewDialog`** at the bottom of the component, initialized after status dialogs.
 
 ### Source label styling:
+
 - "Resume Used for This Application": subtle `bg-brand/10 text-brand border border-brand/20` badge next to the label
 - "Current Resume": `bg-bg-elevated text-text-muted border border-border-subtle` badge
 - Both render only the source badge text — the visual distinction is the badge coloring
@@ -283,6 +316,7 @@ npm run lint
 ```
 
 Manual test checklist:
+
 - [ ] Application with `resumeId` pointing to existing resume → shows "Resume Used for This Application" badge
 - [ ] Application with `resumeId` pointing to deleted resume → falls back; shows "Resume was removed by the applicant" if no other resumes exist
 - [ ] Application with `resumeId` pointing to deleted resume + user has current primary → shows "Current Resume" with current primary

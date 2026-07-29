@@ -9,7 +9,7 @@ export default async function proxy(request: NextRequest) {
   const session = await auth.api.getSession({
     headers: request.headers,
   });
-  const isAuthPage = AUTH_PAGES.includes(pathname as typeof AUTH_PAGES[number]);
+  const isAuthPage = AUTH_PAGES.includes(pathname as (typeof AUTH_PAGES)[number]);
 
   const isProtectedRoute = PROTECTED_ROUTES.some(
     (route) => pathname === route || pathname.startsWith(`${route}/`),

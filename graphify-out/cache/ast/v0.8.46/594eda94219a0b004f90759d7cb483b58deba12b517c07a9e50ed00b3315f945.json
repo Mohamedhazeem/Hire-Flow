@@ -1,1 +1,367 @@
-{"nodes": [{"id": "d_hire_flow_next_lib_test_plan_message_badge_md", "label": "plan-message-badge.md", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L1"}, {"id": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "label": "Plan: Unread Message Badge in AccountPopover (Real-time via Pusher)", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L1"}, {"id": "test_plan_message_badge_architecture", "label": "Architecture", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L3"}, {"id": "test_plan_message_badge_files_to_create_modify", "label": "Files to Create/Modify", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L14"}, {"id": "test_plan_message_badge_1_create_app_features_messages_actions_get_unread_message_count_ts", "label": "1. CREATE: `app/features/messages/actions/get-unread-message-count.ts`", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L16"}, {"id": "test_plan_message_badge_2_create_app_features_public_hooks_use_unread_message_count_ts", "label": "2. CREATE: `app/features/public/hooks/use-unread-message-count.ts`", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L38"}, {"id": "test_plan_message_badge_3_modify_lib_services_message_service_ts", "label": "3. MODIFY: `lib/services/message-service.ts`", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L96"}, {"id": "test_plan_message_badge_4_modify_components_chat_use_thread_view_ts", "label": "4. MODIFY: `components/chat/use-thread-view.ts`", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L119"}, {"id": "test_plan_message_badge_5_modify_app_features_public_components_account_popover_tsx", "label": "5. MODIFY: `app/features/public/components/account-popover.tsx`", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L136"}, {"id": "test_plan_message_badge_implementation_order", "label": "Implementation Order", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L155"}, {"id": "test_plan_message_badge_event_flow_summary", "label": "Event Flow Summary", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L165"}, {"id": "test_plan_message_badge_edge_cases", "label": "Edge Cases", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L208"}, {"id": "test_plan_message_badge_test_requirements", "label": "Test Requirements", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L226"}, {"id": "test_plan_message_badge_a_server_action_unit_test", "label": "A. Server action unit test", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L228"}, {"id": "test_plan_message_badge_b_hook_unit_test", "label": "B. Hook unit test", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L240"}, {"id": "test_plan_message_badge_c_accountpopover_dom_tests", "label": "C. AccountPopover DOM tests", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L255"}, {"id": "test_plan_message_badge_d_service_layer_tests", "label": "D. Service layer tests", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L271"}, {"id": "test_plan_message_badge_e_use_thread_view_integration_test", "label": "E. use-thread-view integration test", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L282"}, {"id": "test_plan_message_badge_mocking_strategy", "label": "Mocking Strategy", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L292"}, {"id": "test_plan_message_badge_hook_test_use_unread_message_count_dom_test_tsx", "label": "Hook test (`use-unread-message-count.dom.test.tsx`):", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L294"}, {"id": "test_plan_message_badge_accountpopover_test_account_popover_dom_test_tsx", "label": "AccountPopover test (`account-popover.dom.test.tsx`):", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L305"}, {"id": "test_plan_message_badge_service_test_message_service_pusher_test_ts", "label": "Service test (`message-service-pusher.test.ts`):", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L316"}, {"id": "test_plan_message_badge_future_considerations_not_in_scope", "label": "Future Considerations (Not in Scope)", "file_type": "document", "source_file": "lib/test/plan-message-badge.md", "source_location": "L323"}], "edges": [{"source": "d_hire_flow_next_lib_test_plan_message_badge_md", "target": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L1", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L3", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_files_to_create_modify", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L14", "weight": 1.0}, {"source": "test_plan_message_badge_files_to_create_modify", "target": "test_plan_message_badge_1_create_app_features_messages_actions_get_unread_message_count_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L16", "weight": 1.0}, {"source": "test_plan_message_badge_files_to_create_modify", "target": "test_plan_message_badge_2_create_app_features_public_hooks_use_unread_message_count_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L38", "weight": 1.0}, {"source": "test_plan_message_badge_files_to_create_modify", "target": "test_plan_message_badge_3_modify_lib_services_message_service_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L96", "weight": 1.0}, {"source": "test_plan_message_badge_files_to_create_modify", "target": "test_plan_message_badge_4_modify_components_chat_use_thread_view_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L119", "weight": 1.0}, {"source": "test_plan_message_badge_files_to_create_modify", "target": "test_plan_message_badge_5_modify_app_features_public_components_account_popover_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L136", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_implementation_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L155", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_event_flow_summary", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L165", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L208", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_test_requirements", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L226", "weight": 1.0}, {"source": "test_plan_message_badge_test_requirements", "target": "test_plan_message_badge_a_server_action_unit_test", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L228", "weight": 1.0}, {"source": "test_plan_message_badge_test_requirements", "target": "test_plan_message_badge_b_hook_unit_test", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L240", "weight": 1.0}, {"source": "test_plan_message_badge_test_requirements", "target": "test_plan_message_badge_c_accountpopover_dom_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L255", "weight": 1.0}, {"source": "test_plan_message_badge_test_requirements", "target": "test_plan_message_badge_d_service_layer_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L271", "weight": 1.0}, {"source": "test_plan_message_badge_test_requirements", "target": "test_plan_message_badge_e_use_thread_view_integration_test", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L282", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_mocking_strategy", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L292", "weight": 1.0}, {"source": "test_plan_message_badge_mocking_strategy", "target": "test_plan_message_badge_hook_test_use_unread_message_count_dom_test_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L294", "weight": 1.0}, {"source": "test_plan_message_badge_mocking_strategy", "target": "test_plan_message_badge_accountpopover_test_account_popover_dom_test_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L305", "weight": 1.0}, {"source": "test_plan_message_badge_mocking_strategy", "target": "test_plan_message_badge_service_test_message_service_pusher_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L316", "weight": 1.0}, {"source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher", "target": "test_plan_message_badge_future_considerations_not_in_scope", "relation": "contains", "confidence": "EXTRACTED", "source_file": "lib/test/plan-message-badge.md", "source_location": "L323", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_lib_test_plan_message_badge_md",
+      "label": "plan-message-badge.md",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "label": "Plan: Unread Message Badge in AccountPopover (Real-time via Pusher)",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_plan_message_badge_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "test_plan_message_badge_files_to_create_modify",
+      "label": "Files to Create/Modify",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "test_plan_message_badge_1_create_app_features_messages_actions_get_unread_message_count_ts",
+      "label": "1. CREATE: `app/features/messages/actions/get-unread-message-count.ts`",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "test_plan_message_badge_2_create_app_features_public_hooks_use_unread_message_count_ts",
+      "label": "2. CREATE: `app/features/public/hooks/use-unread-message-count.ts`",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "test_plan_message_badge_3_modify_lib_services_message_service_ts",
+      "label": "3. MODIFY: `lib/services/message-service.ts`",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L96"
+    },
+    {
+      "id": "test_plan_message_badge_4_modify_components_chat_use_thread_view_ts",
+      "label": "4. MODIFY: `components/chat/use-thread-view.ts`",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L119"
+    },
+    {
+      "id": "test_plan_message_badge_5_modify_app_features_public_components_account_popover_tsx",
+      "label": "5. MODIFY: `app/features/public/components/account-popover.tsx`",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L136"
+    },
+    {
+      "id": "test_plan_message_badge_implementation_order",
+      "label": "Implementation Order",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L155"
+    },
+    {
+      "id": "test_plan_message_badge_event_flow_summary",
+      "label": "Event Flow Summary",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L165"
+    },
+    {
+      "id": "test_plan_message_badge_edge_cases",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L208"
+    },
+    {
+      "id": "test_plan_message_badge_test_requirements",
+      "label": "Test Requirements",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L226"
+    },
+    {
+      "id": "test_plan_message_badge_a_server_action_unit_test",
+      "label": "A. Server action unit test",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L228"
+    },
+    {
+      "id": "test_plan_message_badge_b_hook_unit_test",
+      "label": "B. Hook unit test",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L240"
+    },
+    {
+      "id": "test_plan_message_badge_c_accountpopover_dom_tests",
+      "label": "C. AccountPopover DOM tests",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L255"
+    },
+    {
+      "id": "test_plan_message_badge_d_service_layer_tests",
+      "label": "D. Service layer tests",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L271"
+    },
+    {
+      "id": "test_plan_message_badge_e_use_thread_view_integration_test",
+      "label": "E. use-thread-view integration test",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L282"
+    },
+    {
+      "id": "test_plan_message_badge_mocking_strategy",
+      "label": "Mocking Strategy",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L292"
+    },
+    {
+      "id": "test_plan_message_badge_hook_test_use_unread_message_count_dom_test_tsx",
+      "label": "Hook test (`use-unread-message-count.dom.test.tsx`):",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L294"
+    },
+    {
+      "id": "test_plan_message_badge_accountpopover_test_account_popover_dom_test_tsx",
+      "label": "AccountPopover test (`account-popover.dom.test.tsx`):",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L305"
+    },
+    {
+      "id": "test_plan_message_badge_service_test_message_service_pusher_test_ts",
+      "label": "Service test (`message-service-pusher.test.ts`):",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L316"
+    },
+    {
+      "id": "test_plan_message_badge_future_considerations_not_in_scope",
+      "label": "Future Considerations (Not in Scope)",
+      "file_type": "document",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L323"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_lib_test_plan_message_badge_md",
+      "target": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_files_to_create_modify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_files_to_create_modify",
+      "target": "test_plan_message_badge_1_create_app_features_messages_actions_get_unread_message_count_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_files_to_create_modify",
+      "target": "test_plan_message_badge_2_create_app_features_public_hooks_use_unread_message_count_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_files_to_create_modify",
+      "target": "test_plan_message_badge_3_modify_lib_services_message_service_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_files_to_create_modify",
+      "target": "test_plan_message_badge_4_modify_components_chat_use_thread_view_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_files_to_create_modify",
+      "target": "test_plan_message_badge_5_modify_app_features_public_components_account_popover_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_implementation_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_event_flow_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_test_requirements",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_test_requirements",
+      "target": "test_plan_message_badge_a_server_action_unit_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_test_requirements",
+      "target": "test_plan_message_badge_b_hook_unit_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_test_requirements",
+      "target": "test_plan_message_badge_c_accountpopover_dom_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L255",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_test_requirements",
+      "target": "test_plan_message_badge_d_service_layer_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_test_requirements",
+      "target": "test_plan_message_badge_e_use_thread_view_integration_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_mocking_strategy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_mocking_strategy",
+      "target": "test_plan_message_badge_hook_test_use_unread_message_count_dom_test_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_mocking_strategy",
+      "target": "test_plan_message_badge_accountpopover_test_account_popover_dom_test_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L305",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_mocking_strategy",
+      "target": "test_plan_message_badge_service_test_message_service_pusher_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L316",
+      "weight": 1.0
+    },
+    {
+      "source": "test_plan_message_badge_plan_unread_message_badge_in_accountpopover_real_time_via_pusher",
+      "target": "test_plan_message_badge_future_considerations_not_in_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/plan-message-badge.md",
+      "source_location": "L323",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

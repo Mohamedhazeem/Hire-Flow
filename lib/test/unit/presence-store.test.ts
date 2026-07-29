@@ -14,17 +14,17 @@ vi.mock("@/lib/pusher/pusher-client", () => ({
 describe("usePresenceStore", () => {
   beforeEach(async () => {
     vi.clearAllMocks();
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     usePresenceStore.getState().clear();
   });
 
   it("isOnline returns false initially", async () => {
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     expect(usePresenceStore.getState().isOnline("user-1")).toBe(false);
   });
 
   it("subscribeToUser calls getPusherClient and subscribes", async () => {
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     const { getPusherClient } = await import("@/lib/pusher/pusher-client");
     usePresenceStore.getState().subscribeToUser("user-1");
     expect(getPusherClient).toHaveBeenCalled();
@@ -32,21 +32,21 @@ describe("usePresenceStore", () => {
   });
 
   it("subscribeToUser is idempotent for the same userId", async () => {
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     usePresenceStore.getState().subscribeToUser("user-1");
     usePresenceStore.getState().subscribeToUser("user-1");
     expect(mockPusherClient.subscribe).toHaveBeenCalledTimes(1);
   });
 
   it("unsubscribeFromUser calls pusher.unsubscribe", async () => {
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     usePresenceStore.getState().subscribeToUser("user-1");
     usePresenceStore.getState().unsubscribeFromUser("user-1");
     expect(mockPusherClient.unsubscribe).toHaveBeenCalledWith("presence-online-user-1");
   });
 
   it("clear unsubscribes all channels and resets state", async () => {
-    const { usePresenceStore } = await import("@/features/messages/stores/presence-store");
+    const { usePresenceStore } = await import("@/stores/messages/presence-store");
     usePresenceStore.getState().subscribeToUser("user-1");
     usePresenceStore.getState().subscribeToUser("user-2");
     usePresenceStore.getState().clear();

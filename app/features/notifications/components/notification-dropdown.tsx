@@ -152,9 +152,8 @@ export function NotificationDropdown({
     (n: NotificationItem) => {
       if (!n.read) {
         markAsRead.mutate([n.id]);
-        queryClient.setQueryData(
-          ["notifications", "unread", userId],
-          (old: number | undefined) => Math.max(0, (old ?? 1) - 1),
+        queryClient.setQueryData(["notifications", "unread", userId], (old: number | undefined) =>
+          Math.max(0, (old ?? 1) - 1),
         );
         queryClient.setQueryData(["notifications", userId], (old: unknown) => {
           if (!old || typeof old !== "object") return old;

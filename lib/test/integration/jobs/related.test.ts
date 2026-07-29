@@ -12,7 +12,9 @@ describe("Job Related Endpoint (Phase 4.5)", () => {
   it("returns 404 for non-existent job", async () => {
     const { GET } = await import("@/app/api/jobs/[id]/related/route");
     const req = new NextRequest("http://localhost/api/jobs/00000000-0000-0000-0000-000000000000");
-    const res = await GET(req, { params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }) });
+    const res = await GET(req, {
+      params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }),
+    });
     expect(res.status).toBe(404);
   });
 
@@ -54,8 +56,13 @@ describe("Job Related Endpoint (Phase 4.5)", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body.data.companyJobs).toHaveLength(2);
-    expect(body.data.companyJobs.map((j: { title: string }) => j.title)).toEqual(["Other Job B", "Other Job A"]);
-    expect(body.data.companyJobs.every((j: { companyName: string }) => j.companyName === company.name)).toBe(true);
+    expect(body.data.companyJobs.map((j: { title: string }) => j.title)).toEqual([
+      "Other Job B",
+      "Other Job A",
+    ]);
+    expect(
+      body.data.companyJobs.every((j: { companyName: string }) => j.companyName === company.name),
+    ).toBe(true);
   });
 
   it("returns similar jobs with overlapping skills", async () => {

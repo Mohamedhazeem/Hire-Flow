@@ -23,6 +23,8 @@ async function handleGET(request: NextRequest, { params }: { params: Promise<{ i
   const validated = ListApplicantsParamsSchema.safeParse({
     page: searchParams.get("page") ?? undefined,
     pageSize: searchParams.get("pageSize") ?? undefined,
+    cursor: searchParams.get("cursor") ?? undefined,
+    limit: searchParams.get("limit") ?? undefined,
     search: searchParams.get("search") ?? undefined,
     status: searchParams.get("status") ?? undefined,
     sortBy: searchParams.get("sortBy") ?? undefined,

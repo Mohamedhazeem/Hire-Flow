@@ -114,14 +114,18 @@ describe("User Bookmarks (Phase 4.12)", () => {
     const { POST } = await import("@/app/api/user/bookmarks/route");
 
     const results = await Promise.allSettled([
-      POST(new NextRequest("http://localhost/api/user/bookmarks", {
-        method: "POST",
-        body: JSON.stringify({ jobId: job.id }),
-      })),
-      POST(new NextRequest("http://localhost/api/user/bookmarks", {
-        method: "POST",
-        body: JSON.stringify({ jobId: job.id }),
-      })),
+      POST(
+        new NextRequest("http://localhost/api/user/bookmarks", {
+          method: "POST",
+          body: JSON.stringify({ jobId: job.id }),
+        }),
+      ),
+      POST(
+        new NextRequest("http://localhost/api/user/bookmarks", {
+          method: "POST",
+          body: JSON.stringify({ jobId: job.id }),
+        }),
+      ),
     ]);
 
     const fulfilled = results.filter((r) => r.status === "fulfilled" && r.value.status === 200);

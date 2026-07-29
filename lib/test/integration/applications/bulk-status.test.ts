@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+} from "@/lib/test";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
@@ -102,7 +109,9 @@ describe("Bulk Status Transition (Phase 4.5)", () => {
     const res = await POST(req);
     expect(res.status).toBe(404);
 
-    const allA = await prisma.application.findMany({ where: { id: { in: appsA.map((a) => a.id) } } });
+    const allA = await prisma.application.findMany({
+      where: { id: { in: appsA.map((a) => a.id) } },
+    });
     expect(allA.every((a) => a.status === "applied")).toBe(true);
   });
 
@@ -162,15 +171,18 @@ describe("Bulk Status Transition (Phase 4.5)", () => {
 
     // Notifications are fire-and-forget, so poll until they appear
     for (const app of apps) {
-      await vi.waitFor(async () => {
-        const notification = await prisma.notification.findFirst({
-          where: { userId: app.userId, type: "application_status" },
-        });
-        expect(notification).not.toBeNull();
-        const notifData = notification?.data as Record<string, unknown> | undefined;
-        expect(notifData?.newStatus).toBe("reviewing");
-        expect(notifData?.applicationId).toBe(app.id);
-      }, { timeout: 5000, interval: 200 });
+      await vi.waitFor(
+        async () => {
+          const notification = await prisma.notification.findFirst({
+            where: { userId: app.userId, type: "application_status" },
+          });
+          expect(notification).not.toBeNull();
+          const notifData = notification?.data as Record<string, unknown> | undefined;
+          expect(notifData?.newStatus).toBe("reviewing");
+          expect(notifData?.applicationId).toBe(app.id);
+        },
+        { timeout: 5000, interval: 200 },
+      );
     }
   });
 
@@ -195,18 +207,21 @@ describe("Bulk Status Transition (Phase 4.5)", () => {
     const res = await POST(req);
     expect(res.status).toBe(200);
 
-    await vi.waitFor(() => {
-      expect(emailSpy).toHaveBeenCalledTimes(2);
-      for (const app of apps) {
-        expect(emailSpy).toHaveBeenCalledWith(
-          expect.objectContaining({
-            to: app.user.email,
-            type: "application_status",
-            subject: expect.stringContaining("Application Status"),
-          }),
-        );
-      }
-    }, { timeout: 5000, interval: 200 });
+    await vi.waitFor(
+      () => {
+        expect(emailSpy).toHaveBeenCalledTimes(2);
+        for (const app of apps) {
+          expect(emailSpy).toHaveBeenCalledWith(
+            expect.objectContaining({
+              to: app.user.email,
+              type: "application_status",
+              subject: expect.stringContaining("Application Status"),
+            }),
+          );
+        }
+      },
+      { timeout: 5000, interval: 200 },
+    );
   });
 
   it("audit per application records each transition", async () => {

@@ -12,7 +12,6 @@ export const STATUS_OPTIONS = [
   { value: "rejected", label: "Rejected" },
 ];
 
- 
 export const NEXT_ACTIONS: Record<string, { label: string; status: string }[]> = {
   applied: [
     { label: "Invite", status: "invited" },

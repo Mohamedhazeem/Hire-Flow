@@ -66,10 +66,7 @@ export default async function EditJobPage({ params }: PageProps) {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Edit Job"
-        description={`Update "${job.title}" details`}
-      />
+      <PageHeader title="Edit Job" description={`Update "${job.title}" details`} />
       <JobForm mode="edit" jobId={id} defaultValues={defaultValues} />
     </div>
   );

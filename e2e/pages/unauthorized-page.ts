@@ -12,6 +12,8 @@ export class UnauthorizedPage extends BasePage {
   }
 
   async assertUnauthorizedText() {
-    await expect(this.page.getByText(/unauthorized|forbidden|not permitted/i).first()).toBeVisible();
+    await expect(
+      this.page.getByText(/unauthorized|forbidden|not permitted/i).first(),
+    ).toBeVisible();
   }
 }

@@ -134,7 +134,9 @@ export function StartConversationSearch({
             >
               <MessageSquareTextIcon className="size-4 mt-0.5 shrink-0 text-text-muted" />
               <div className="min-w-0 flex-1">
-                <span className="block truncate font-medium">{user.name ?? user.email ?? "Unknown"}</span>
+                <span className="block truncate font-medium">
+                  {user.name ?? user.email ?? "Unknown"}
+                </span>
                 <span className="block truncate text-xs text-text-muted">{user.email}</span>
                 {user.company && (
                   <span className="flex items-center gap-1 text-xs text-text-muted mt-0.5">

@@ -42,9 +42,7 @@ function getNotificationPreview(n: NotificationItem): string {
   const data = n.data;
   switch (n.type) {
     case "new_message":
-      return data.preview
-        ? `New message: ${(data.preview as string).slice(0, 80)}`
-        : "New message";
+      return data.preview ? `New message: ${(data.preview as string).slice(0, 80)}` : "New message";
     case "application_status":
       return data.previousStatus === null
         ? `New application from ${(data.applicantName as string) ?? "someone"}`
@@ -110,7 +108,9 @@ type NotificationsPageProps = {
   messagesBasePath?: string;
 };
 
-export function NotificationsPage({ messagesBasePath = "/admin/messages" }: NotificationsPageProps) {
+export function NotificationsPage({
+  messagesBasePath = "/admin/messages",
+}: NotificationsPageProps) {
   const router = useRouter();
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
@@ -119,7 +119,6 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
   const { data: unreadCount = 0 } = useUnreadCount(userId);
   const markAsRead = useMarkAsRead();
   const scrollRef = useRef<HTMLDivElement>(null);
-
 
   const allNotifications = useMemo(
     () =>
@@ -150,7 +149,11 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
   const handleScroll = useCallback(
     (e: React.UIEvent<HTMLDivElement>) => {
       const el = e.currentTarget;
-      if (el.scrollHeight - el.scrollTop - el.clientHeight < 120 && hasNextPage && !isFetchingNextPage) {
+      if (
+        el.scrollHeight - el.scrollTop - el.clientHeight < 120 &&
+        hasNextPage &&
+        !isFetchingNextPage
+      ) {
         fetchNextPage();
       }
     },
@@ -164,9 +167,7 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
           <BellIcon className="size-5 text-text-muted" />
           <h1 className="text-xl sm:text-2xl font-bold text-text-heading">Notifications</h1>
           {unreadCount > 0 && (
-            <span className="text-xs text-text-muted font-medium">
-              ({unreadCount} unread)
-            </span>
+            <span className="text-xs text-text-muted font-medium">({unreadCount} unread)</span>
           )}
         </div>
         {unreadCount > 0 && (
@@ -237,12 +238,8 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
                     {getNotificationPreview(n)}
                   </p>
                   <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-xs text-text-muted">
-                      {formatTime(n.createdAt)}
-                    </span>
-                    {!n.read && (
-                      <span className="size-1.5 rounded-full bg-brand shrink-0" />
-                    )}
+                    <span className="text-xs text-text-muted">{formatTime(n.createdAt)}</span>
+                    {!n.read && <span className="size-1.5 rounded-full bg-brand shrink-0" />}
                     <ExternalLinkIcon className="size-3 text-text-muted/40 shrink-0 ml-auto" />
                   </div>
                 </div>
@@ -255,9 +252,7 @@ export function NotificationsPage({ messagesBasePath = "/admin/messages" }: Noti
             </div>
           )}
           {!hasNextPage && allNotifications.length > 0 && (
-            <p className="text-center text-xs text-text-muted/50 py-6">
-              All notifications loaded
-            </p>
+            <p className="text-center text-xs text-text-muted/50 py-6">All notifications loaded</p>
           )}
         </div>
       )}

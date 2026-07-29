@@ -1,1 +1,271 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1782458322810_bulk_actions_edge_case_fixes_md", "label": "1782458322810-bulk-actions-edge-case-fixes.md", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L1"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "label": "Fix Plan: Step 2.7 Bulk Actions Edge Cases", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L1"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_prioritization", "label": "Prioritization", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L8"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity", "label": "Tier 1 \u2014 Critical (Data Integrity)", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L24"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_1_toctou_race_in_revert_route", "label": "Fix 1 \u2014 TOCTOU Race in Revert Route", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L26"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_2_toctou_race_in_bulk_status_route", "label": "Fix 2 \u2014 TOCTOU Race in Bulk Status Route", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L87"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_3_remove_redundant_updatedat_overwrite", "label": "Fix 3 \u2014 Remove Redundant `updatedAt` Overwrite", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L126"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs", "label": "Tier 2 \u2014 High (Functionality Bugs)", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L144"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_4_revert_scoped_to_own_changes", "label": "Fix 4 \u2014 Revert Scoped to Own Changes", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L146"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_5_useeffect_cleanup_for_feedback_timeout", "label": "Fix 5 \u2014 `useEffect` Cleanup for Feedback Timeout", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L156"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_6_rejectionreason_server_side_validation", "label": "Fix 6 \u2014 `rejectionReason` Server-Side Validation", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L176"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux", "label": "Tier 3 \u2014 Medium (Robustness & UX)", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L203"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_7_cap_actionedids_at_1000", "label": "Fix 7 \u2014 Cap `actionedIds` at 1000", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L205"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_8_someselected_should_exclude_disabled_rows", "label": "Fix 8 \u2014 `someSelected` Should Exclude Disabled Rows", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L243"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_9_totalpages_fallback_for_zero", "label": "Fix 9 \u2014 `totalPages` Fallback for Zero", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L263"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_files_summary", "label": "Files Summary", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L281"}, {"id": "plans_1782458322810_bulk_actions_edge_case_fixes_verification", "label": "Verification", "file_type": "document", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L295"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1782458322810_bulk_actions_edge_case_fixes_md", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_prioritization", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L8", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L24", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_1_toctou_race_in_revert_route", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L26", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_2_toctou_race_in_bulk_status_route", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L87", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_3_remove_redundant_updatedat_overwrite", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L126", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L144", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_4_revert_scoped_to_own_changes", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L146", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_5_useeffect_cleanup_for_feedback_timeout", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L156", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_6_rejectionreason_server_side_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L176", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L203", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_7_cap_actionedids_at_1000", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L205", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_8_someselected_should_exclude_disabled_rows", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L243", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_9_totalpages_fallback_for_zero", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L263", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_files_summary", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L281", "weight": 1.0}, {"source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases", "target": "plans_1782458322810_bulk_actions_edge_case_fixes_verification", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md", "source_location": "L295", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1782458322810_bulk_actions_edge_case_fixes_md",
+      "label": "1782458322810-bulk-actions-edge-case-fixes.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "label": "Fix Plan: Step 2.7 Bulk Actions Edge Cases",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_prioritization",
+      "label": "Prioritization",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity",
+      "label": "Tier 1 \u2014 Critical (Data Integrity)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_1_toctou_race_in_revert_route",
+      "label": "Fix 1 \u2014 TOCTOU Race in Revert Route",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_2_toctou_race_in_bulk_status_route",
+      "label": "Fix 2 \u2014 TOCTOU Race in Bulk Status Route",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L87"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_3_remove_redundant_updatedat_overwrite",
+      "label": "Fix 3 \u2014 Remove Redundant `updatedAt` Overwrite",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs",
+      "label": "Tier 2 \u2014 High (Functionality Bugs)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L144"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_4_revert_scoped_to_own_changes",
+      "label": "Fix 4 \u2014 Revert Scoped to Own Changes",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L146"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_5_useeffect_cleanup_for_feedback_timeout",
+      "label": "Fix 5 \u2014 `useEffect` Cleanup for Feedback Timeout",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L156"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_6_rejectionreason_server_side_validation",
+      "label": "Fix 6 \u2014 `rejectionReason` Server-Side Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L176"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux",
+      "label": "Tier 3 \u2014 Medium (Robustness & UX)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L203"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_7_cap_actionedids_at_1000",
+      "label": "Fix 7 \u2014 Cap `actionedIds` at 1000",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L205"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_8_someselected_should_exclude_disabled_rows",
+      "label": "Fix 8 \u2014 `someSelected` Should Exclude Disabled Rows",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L243"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_9_totalpages_fallback_for_zero",
+      "label": "Fix 9 \u2014 `totalPages` Fallback for Zero",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L263"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_files_summary",
+      "label": "Files Summary",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L281"
+    },
+    {
+      "id": "plans_1782458322810_bulk_actions_edge_case_fixes_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L295"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1782458322810_bulk_actions_edge_case_fixes_md",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_prioritization",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_1_toctou_race_in_revert_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_2_toctou_race_in_bulk_status_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_1_critical_data_integrity",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_3_remove_redundant_updatedat_overwrite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_4_revert_scoped_to_own_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_5_useeffect_cleanup_for_feedback_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_2_high_functionality_bugs",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_6_rejectionreason_server_side_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_7_cap_actionedids_at_1000",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_8_someselected_should_exclude_disabled_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L243",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_tier_3_medium_robustness_ux",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_9_totalpages_fallback_for_zero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L263",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_files_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L281",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782458322810_bulk_actions_edge_case_fixes_fix_plan_step_2_7_bulk_actions_edge_cases",
+      "target": "plans_1782458322810_bulk_actions_edge_case_fixes_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782458322810-bulk-actions-edge-case-fixes.md",
+      "source_location": "L295",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

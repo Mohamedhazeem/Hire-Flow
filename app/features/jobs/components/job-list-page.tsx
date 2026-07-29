@@ -10,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { JobCard } from "./job-card";
 import { JobSearchBar } from "./job-search-bar";
 import { FilterSelect } from "./filter-select";
+import { SkillFilter } from "./skill-filter";
 import type { PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
 import { BriefcaseIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 
@@ -54,6 +55,7 @@ export function JobListPage() {
       employmentType: sp.get("employmentType") || undefined,
       experienceLevel: sp.get("experienceLevel") || undefined,
       status: sp.get("status") || undefined,
+      skills: sp.get("skills")?.split(",").filter(Boolean) || undefined,
     }),
     [sp],
   );
@@ -91,7 +93,8 @@ export function JobListPage() {
     params.workMode ||
     params.employmentType ||
     params.experienceLevel ||
-    params.status
+    params.status ||
+    params.skills?.length
   );
 
   return (
@@ -131,6 +134,10 @@ export function JobListPage() {
               value={params.status}
               onChange={setParam}
               labels={FILTER_LABELS}
+            />
+            <SkillFilter
+              value={params.skills ?? []}
+              onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
             />
             {hasFilters && (
               <button

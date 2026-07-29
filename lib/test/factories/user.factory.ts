@@ -6,9 +6,7 @@ import type { Prisma } from "../../../app/generated/prisma/client";
 import { Role } from "../../../app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 
-export async function createTestUser(
-  overrides?: Partial<Prisma.UserUncheckedCreateInput>
-) {
+export async function createTestUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   const email = overrides?.email ?? faker.internet.email();
 
   return prisma.user.create({

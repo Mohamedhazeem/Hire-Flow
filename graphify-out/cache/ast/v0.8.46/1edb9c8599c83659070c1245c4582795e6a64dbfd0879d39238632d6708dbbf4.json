@@ -1,0 +1,479 @@
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_step_3_4_user_activity_panel_md",
+      "label": "step-3-4-user-activity-panel.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "label": "Step 3.4 \u2014 User Activity Panel",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_architecture_decision",
+      "label": "Architecture Decision",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_route_map",
+      "label": "Route Map",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_files_to_create",
+      "label": "Files to Create",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_1_statistics_api_app_api_user_applications_stats_route_ts",
+      "label": "1. Statistics API \u2014 `app/api/user/applications/stats/route.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_2_dashboard_activity_panel_app_features_user_components_activity_panel_tsx_150_lines",
+      "label": "2. Dashboard Activity Panel \u2014 `app/features/user/components/activity-panel.tsx` (\u2264150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_3_dashboard_page_app_roles_user_page_tsx_150_lines",
+      "label": "3. Dashboard Page \u2014 `app/(roles)/user/page.tsx` (\u2264150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "label": "Files to Modify",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L47"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_4_application_queries_app_features_user_queries_user_application_queries_ts",
+      "label": "4. Application Queries \u2014 `app/features/user/queries/user-application-queries.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_5_applications_page_app_features_user_components_applications_page_tsx_150_lines",
+      "label": "5. Applications Page \u2014 `app/features/user/components/applications-page.tsx` (\u2264150 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_6_application_detail_view_split_into_150_line_components",
+      "label": "6. Application Detail View \u2014 Split into \u2264150-line components",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L83"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_7_sidebar_app_features_user_components_user_sidebar_tsx",
+      "label": "7. Sidebar \u2014 `app/features/user/components/user-sidebar.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_8_back_link_path_updates",
+      "label": "8. Back-link Path Updates",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L102"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "label": "Edge Cases (47 total)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L115"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_loading_3",
+      "label": "Loading (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L117"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_empty_states_3",
+      "label": "Empty States (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L123"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_data_edge_cases_6",
+      "label": "Data Edge Cases (6)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L129"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_responsive_3",
+      "label": "Responsive (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L138"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_dashboard_scope_2",
+      "label": "Dashboard Scope (2)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L144"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_back_link_accuracy_5",
+      "label": "Back-link Accuracy (5)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L149"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_notification_routing_2",
+      "label": "Notification Routing (2)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_component_size_1",
+      "label": "Component Size (1)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L158"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_react_compiler_3",
+      "label": "React Compiler (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L162"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_build_lint_3",
+      "label": "Build & Lint (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L166"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_stats_api_4",
+      "label": "Stats API (4)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L172"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_full_apps_page_enhancements_3",
+      "label": "Full Apps Page Enhancements (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L176"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_withdraw_3",
+      "label": "Withdraw (3)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L182"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_error_states_2",
+      "label": "Error States (2)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L188"
+    },
+    {
+      "id": "plans_step_3_4_user_activity_panel_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L193"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_step_3_4_user_activity_panel_md",
+      "target": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_architecture_decision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_route_map",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_files_to_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_create",
+      "target": "plans_step_3_4_user_activity_panel_1_statistics_api_app_api_user_applications_stats_route_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_create",
+      "target": "plans_step_3_4_user_activity_panel_2_dashboard_activity_panel_app_features_user_components_activity_panel_tsx_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_create",
+      "target": "plans_step_3_4_user_activity_panel_3_dashboard_page_app_roles_user_page_tsx_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "target": "plans_step_3_4_user_activity_panel_4_application_queries_app_features_user_queries_user_application_queries_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "target": "plans_step_3_4_user_activity_panel_5_applications_page_app_features_user_components_applications_page_tsx_150_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "target": "plans_step_3_4_user_activity_panel_6_application_detail_view_split_into_150_line_components",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "target": "plans_step_3_4_user_activity_panel_7_sidebar_app_features_user_components_user_sidebar_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_files_to_modify",
+      "target": "plans_step_3_4_user_activity_panel_8_back_link_path_updates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_loading_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_empty_states_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_data_edge_cases_6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_responsive_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_dashboard_scope_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_back_link_accuracy_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_notification_routing_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_component_size_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_react_compiler_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_build_lint_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_stats_api_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_full_apps_page_enhancements_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_withdraw_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_edge_cases_47_total",
+      "target": "plans_step_3_4_user_activity_panel_error_states_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_4_user_activity_panel_step_3_4_user_activity_panel",
+      "target": "plans_step_3_4_user_activity_panel_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-4-user-activity-panel.md",
+      "source_location": "L193",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

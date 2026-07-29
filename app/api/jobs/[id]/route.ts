@@ -8,7 +8,9 @@ async function handleGET(_request: NextRequest, { params }: { params: Promise<{ 
   const { id } = await params;
   const job = await getPublicJobById(id);
   if (!job) throw new NotFoundError("Job not found");
-  return ok(job);
+  const response = ok(job);
+  response.headers.set("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
+  return response;
 }
 
 export const GET = withErrorHandler(handleGET);

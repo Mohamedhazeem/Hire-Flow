@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useResumes, useSetPrimaryResume, useDeleteResume } from "@/app/features/user/hooks/use-resumes";
+import {
+  useResumes,
+  useSetPrimaryResume,
+  useDeleteResume,
+} from "@/app/features/user/hooks/use-resumes";
 import { ResumeCard } from "./resume-card";
 import { ResumeUploadButton } from "./resume-upload-button";
 import { Button } from "@/components/ui/button";
@@ -68,7 +72,7 @@ export function ResumeList() {
         </Link>
       </div>
 
-      {(!resumes || resumes.length === 0) ? (
+      {!resumes || resumes.length === 0 ? (
         <div className="flex flex-col items-center gap-4 py-16 text-center">
           <div className="size-16 rounded-2xl bg-bg-elevated border border-border-subtle flex items-center justify-center">
             <FileTextIcon className="size-8 text-text-muted" />

@@ -86,6 +86,10 @@ export async function listJobs(
     where.experienceLevel = params.experienceLevel;
   }
 
+  if (params.skills?.length) {
+    where.skills = { hasSome: params.skills };
+  }
+
   const [jobs, total] = await Promise.all([
     prisma.job.findMany({
       where,

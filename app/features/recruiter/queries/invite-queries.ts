@@ -20,7 +20,9 @@ export type RecruiterInviteListResponse = {
   teamMembers: RecruiterTeamMemberRow[];
 };
 
-export async function listRecruiterInvites(companyId: string): Promise<RecruiterInviteListResponse> {
+export async function listRecruiterInvites(
+  companyId: string,
+): Promise<RecruiterInviteListResponse> {
   const [invites, teamMembers] = await Promise.all([
     prisma.recruiterInvite.findMany({
       where: { companyId },

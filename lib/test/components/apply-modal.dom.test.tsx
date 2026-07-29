@@ -51,7 +51,9 @@ describe("ApplyModal", () => {
     queryState.isLoading = true;
     const { container } = render(<ApplyModal jobId="job-1" onClose={vi.fn()} />);
     // Skeleton renders an animated placeholder rather than the select.
-    expect(container.querySelector(".animate-pulse") ?? container.querySelector('[class*="Skeleton"]')).toBeTruthy();
+    expect(
+      container.querySelector(".animate-pulse") ?? container.querySelector('[class*="Skeleton"]'),
+    ).toBeTruthy();
     expect(screen.queryByLabelText("Select a resume")).not.toBeInTheDocument();
   });
 

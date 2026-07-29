@@ -76,3 +76,31 @@ export function buildCursorMeta<T extends { id: string }>(
   const nextCursor = hasNextPage ? (items[items.length - 1]?.id ?? null) : null;
   return { items, meta: { nextCursor, hasNextPage } };
 }
+
+// ─── Dual-mode pagination resolver ─────────────────────────────────────────────
+
+export type DualModePaginationParams = {
+  page?: number;
+  pageSize?: number;
+  cursor?: string;
+  limit?: number;
+};
+
+export type DualModeResult =
+  | { mode: "offset"; skip: number; take: number; page: number; pageSize: number }
+  | { mode: "cursor"; take: number; cursor: string | undefined };
+
+export function parseDualModePagination(
+  params: DualModePaginationParams,
+  defaultLimit = 20,
+): DualModeResult {
+  if (params.cursor) {
+    const cursorResult = parseCursorParams(
+      { cursor: params.cursor, limit: params.limit },
+      defaultLimit,
+    );
+    return { mode: "cursor", ...cursorResult };
+  }
+  const offset = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, defaultLimit);
+  return { mode: "offset", ...offset };
+}

@@ -19,7 +19,10 @@ export const ProfileSchema = z.object({
   headline: z.string().max(200).optional().or(z.literal("")).default(""),
   bio: z.string().max(2000).optional().or(z.literal("")).default(""),
   location: z.string().max(200).optional().or(z.literal("")).default(""),
-  skills: z.array(z.string().min(1)).max(50).transform((arr) => [...new Set(arr)]),
+  skills: z
+    .array(z.string().min(1))
+    .max(50)
+    .transform((arr) => [...new Set(arr)]),
   workMode: z.nativeEnum(WorkMode).nullable().optional(),
   basePay: z.coerce.number().int().nonnegative().optional().nullable(),
   ctc: z.coerce.number().int().nonnegative().optional().nullable(),

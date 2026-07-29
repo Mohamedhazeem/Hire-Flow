@@ -12,6 +12,7 @@
 import { execSync } from "child_process";
 import dotenv from "dotenv";
 import path from "path";
+import { globalTeardown } from "./perf-teardown";
 
 export default async function globalSetup() {
   dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
@@ -35,4 +36,6 @@ export default async function globalSetup() {
     console.warn("Test database unavailable — skipping migrations (unit tests can still run)");
     console.warn(error);
   }
+
+  return globalTeardown;
 }

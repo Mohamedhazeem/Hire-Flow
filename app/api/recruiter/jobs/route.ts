@@ -25,6 +25,7 @@ async function handleGET(request: NextRequest) {
     workMode: searchParams.get("workMode") ?? undefined,
     employmentType: searchParams.get("employmentType") ?? undefined,
     experienceLevel: searchParams.get("experienceLevel") ?? undefined,
+    skills: searchParams.getAll("skills").filter(Boolean),
     sortBy: searchParams.get("sortBy") ?? undefined,
     sortOrder: searchParams.get("sortOrder") ?? undefined,
   });

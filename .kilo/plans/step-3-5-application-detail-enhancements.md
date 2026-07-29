@@ -1,13 +1,16 @@
 # Step 3.5 — Application Detail Enhancements (Withdraw, Timeline, Notifications)
 
 ## Goal
+
 Enhance the existing application detail view at `/user/applications/[id]`:
+
 1. Swap the inline timeline for the richer `StatusTimeline` shared component
 2. Add recruiter notification on withdraw (currently the `DELETE` route silently deletes)
 3. Extract `computeThreadId` to shared util (no functional change, just hygiene)
 4. No "Message Recruiter" button — user cannot initiate threads; can only reply in recruiter-initiated threads
 
 ## Context
+
 - Withdraw is a **hard delete** (confirmed by user). `handleDELETE` does `prisma.application.delete({ where: { id } })`. No changes to this behavior.
 - User cannot start conversations — `UserThreadView` config confirms: `emptyMessage: "No messages yet. Wait for the recruiter to reach out."`
 - `StatusTimeline` already exists at `components/shared/status-timeline.tsx` (147 lines) with icons, colors, relative timestamps, notes, changed-by names
@@ -17,6 +20,7 @@ Enhance the existing application detail view at `/user/applications/[id]`:
 ## Files to Create/Modify
 
 ### 1. `lib/thread-utils.ts` (NEW, ~8 lines)
+
 - Extract `computeThreadId` function:
   ```ts
   export function computeThreadId(idA: string, idB: string): string {
@@ -26,6 +30,7 @@ Enhance the existing application detail view at `/user/applications/[id]`:
   ```
 
 ### 2. `app/features/user/components/application-timeline.tsx` (REWRITE, ~30 lines)
+
 - Remove the inline dot-connector render
 - Import and use `StatusTimeline` from `@/components/shared/status-timeline`
 - Map `StatusChange[]` to `StatusTimelineEntry[]`:
@@ -37,6 +42,7 @@ Enhance the existing application detail view at `/user/applications/[id]`:
 - Fallback to single "Applied" entry if `statusChanges` is empty
 
 ### 3. `app/api/user/applications/[id]/route.ts` (MODIFY, ~7 lines added)
+
 - Add `import { createNotification } from "@/lib/notifications"`
 - Add `import { prisma } from "@/lib/prisma"` (already imported)
 - In `handleDELETE`, after `prisma.application.delete(...)`:
@@ -46,23 +52,25 @@ Enhance the existing application detail view at `/user/applications/[id]`:
 - **Don't** use `triggerForCompany` — only notify the job owner recruiter, not the whole company team
 
 ### 4. `components/shared/start-conversation-search.tsx` (MODIFY, ~3 lines changed)
+
 - Replace the local `computeThreadId` function with `import { computeThreadId } from "@/lib/thread-utils"`
 - Remove the local function definition
 
 ## Edge Cases Checklist
 
-| # | Edge Case | Expected Behavior |
-|---|---|---|
-| EC1 | Withdraw on `interview_scheduled`/`offered`/`hired`/`rejected` | `ValidationError` returned (422) — unchanged from current code |
-| EC2 | Withdraw on already-withdrawn app | `NotFoundError` because row was hard-deleted on first withdraw |
-| EC3 | Recruiter notification fails (DB/Pusher error) | Withdraw succeeds — notification is `void`-fired, never blocks the response |
-| EC4 | Job's `recruiterId` deleted (User cascade) | `application.job.recruiterId` still exists at delete time (we read it before deleting); after delete, job still references a user that `onDelete: Cascade` may have removed — notification will fail silently, which is fine |
-| EC5 | Timeline with only "Applied" entry (no status changes in DB) | Shows single "Applied" entry with `type: "application_submitted"` |
-| EC6 | Timeline with many status changes (10+) | All render as vertical timeline — no scroll/truncation needed |
-| EC7 | User views application after withdraw | Redirected to `/user/applications` after withdraw (existing behavior); if they navigate to URL directly, `NotFoundError` (hard delete) |
-| EC8 | `computeThreadId` import path change | Only affects `start-conversation-search.tsx` — no other files use this function |
+| #   | Edge Case                                                      | Expected Behavior                                                                                                                                                                                                            |
+| --- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EC1 | Withdraw on `interview_scheduled`/`offered`/`hired`/`rejected` | `ValidationError` returned (422) — unchanged from current code                                                                                                                                                               |
+| EC2 | Withdraw on already-withdrawn app                              | `NotFoundError` because row was hard-deleted on first withdraw                                                                                                                                                               |
+| EC3 | Recruiter notification fails (DB/Pusher error)                 | Withdraw succeeds — notification is `void`-fired, never blocks the response                                                                                                                                                  |
+| EC4 | Job's `recruiterId` deleted (User cascade)                     | `application.job.recruiterId` still exists at delete time (we read it before deleting); after delete, job still references a user that `onDelete: Cascade` may have removed — notification will fail silently, which is fine |
+| EC5 | Timeline with only "Applied" entry (no status changes in DB)   | Shows single "Applied" entry with `type: "application_submitted"`                                                                                                                                                            |
+| EC6 | Timeline with many status changes (10+)                        | All render as vertical timeline — no scroll/truncation needed                                                                                                                                                                |
+| EC7 | User views application after withdraw                          | Redirected to `/user/applications` after withdraw (existing behavior); if they navigate to URL directly, `NotFoundError` (hard delete)                                                                                       |
+| EC8 | `computeThreadId` import path change                           | Only affects `start-conversation-search.tsx` — no other files use this function                                                                                                                                              |
 
 ## Files NOT Changed (no action needed)
+
 - `application-header.tsx` — no changes
 - `application-sections.tsx` — no changes
 - `application-resume-section.tsx` — no changes
@@ -83,5 +91,6 @@ Enhance the existing application detail view at `/user/applications/[id]`:
 6. **Component line count**: All components must stay ≤150 lines
 
 ## Future Considerations (not in scope)
+
 - If user-initiated messaging is needed later, add a `POST /api/recruiter/threads` endpoint for users and a "Message Recruiter" button — but user confirmed this is not needed
 - Soft-delete withdraw would require schema change (`@@unique` removal) — user confirmed hard delete is correct

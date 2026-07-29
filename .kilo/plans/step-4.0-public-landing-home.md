@@ -1,6 +1,7 @@
 # Phase 4.0 — Public Landing Page & Home Route
 
 ## Goal
+
 Replace the bare `/` (`app/page.tsx`) with a full marketing landing page for unauthenticated visitors, redirect authenticated users to their dashboard, add unsplash hero imagery, motion animations on scroll/click/hover, and a featured jobs grid reusing existing `JobCard`.
 
 ---
@@ -23,6 +24,7 @@ User visits /
 ```
 
 ### Key Decisions
+
 - **Session check via `getSession()`** — server component at `/page.tsx`, redirect before any render
 - **Unsplash images** — https://images.unsplash.com/photo-...?w=1200&q=80, add remotePatterns to `next.config.ts`
 - **Motion** — `from "motion/react"` (already installed v12.40), `motion.div` for scroll-triggered animations via `whileInView`, `viewport={{ once: true }}`, hover via `whileHover`, click via `whileTap`
@@ -37,26 +39,26 @@ User visits /
 
 ### Modified Files
 
-| File | Changes |
-|------|---------|
-| `app/page.tsx` | Replace bare Link with `LandingPage` (proxy.ts already handles auth redirect) |
-| `next.config.ts` | Add `images.remotePatterns` for `images.unsplash.com` |
-| `app/layout.tsx` | No changes needed (root layout already wraps children) |
-| `app/globals.css` | No changes (existing tokens sufficient) |
+| File              | Changes                                                                       |
+| ----------------- | ----------------------------------------------------------------------------- |
+| `app/page.tsx`    | Replace bare Link with `LandingPage` (proxy.ts already handles auth redirect) |
+| `next.config.ts`  | Add `images.remotePatterns` for `images.unsplash.com`                         |
+| `app/layout.tsx`  | No changes needed (root layout already wraps children)                        |
+| `app/globals.css` | No changes (existing tokens sufficient)                                       |
 
 ### New Files
 
-| File | Description | Lines |
-|------|-------------|-------|
-| `app/features/landing/components/landing-page.tsx` | Orchestrator — composes all landing sections | ~30 |
-| `app/features/landing/components/hero-section.tsx` | Hero with unsplash bg, motion text, CTA buttons | ~150 |
-| `app/features/landing/components/stats-banner.tsx` | Static stats row with `useInView` counter animation | ~80 |
-| `app/features/landing/components/featured-jobs.tsx` | Fetches 6 active jobs, renders grid | ~30 (server) |
-| `app/features/landing/components/featured-jobs-grid.tsx` | Client grid with stagger animation | ~50 |
-| `app/features/landing/components/how-it-works.tsx` | 3-step cards with hover/click animation | ~100 |
-| `app/features/landing/components/testimonials.tsx` | Auto-rotating testimonial carousel | ~150 |
-| `app/features/landing/components/footer.tsx` | Full footer with links, social icons | ~100 |
-| `app/features/landing/components/stats-counter.tsx` | Reusable animated counter component | ~40 |
+| File                                                     | Description                                         | Lines        |
+| -------------------------------------------------------- | --------------------------------------------------- | ------------ |
+| `app/features/landing/components/landing-page.tsx`       | Orchestrator — composes all landing sections        | ~30          |
+| `app/features/landing/components/hero-section.tsx`       | Hero with unsplash bg, motion text, CTA buttons     | ~150         |
+| `app/features/landing/components/stats-banner.tsx`       | Static stats row with `useInView` counter animation | ~80          |
+| `app/features/landing/components/featured-jobs.tsx`      | Fetches 6 active jobs, renders grid                 | ~30 (server) |
+| `app/features/landing/components/featured-jobs-grid.tsx` | Client grid with stagger animation                  | ~50          |
+| `app/features/landing/components/how-it-works.tsx`       | 3-step cards with hover/click animation             | ~100         |
+| `app/features/landing/components/testimonials.tsx`       | Auto-rotating testimonial carousel                  | ~150         |
+| `app/features/landing/components/footer.tsx`             | Full footer with links, social icons                | ~100         |
+| `app/features/landing/components/stats-counter.tsx`      | Reusable animated counter component                 | ~40          |
 
 ### Total: ~730 lines across 9 new files + 2 modified files
 
@@ -78,6 +80,7 @@ export default function Home() {
 ### 2. `next.config.ts` (modified)
 
 Add to `remotePatterns`:
+
 ```ts
 { protocol: "https", hostname: "images.unsplash.com" },
 ```
@@ -85,6 +88,7 @@ Add to `remotePatterns`:
 ### 3. `landing-page.tsx` (orchestrator)
 
 Pure composition — no state, no client directives. Renders sections in order:
+
 ```
 <HeroSection />
 <StatsBanner />
@@ -178,27 +182,27 @@ export async function FeaturedJobs() {
 
 ## Unsplash Images Used
 
-| Section | URL | Purpose |
-|---------|-----|---------|
-| Hero BG | `https://images.unsplash.com/photo-1521737711867-e3b97375f3f9?w=1200&q=80` | Team workspace, dark overlay |
-| Testimonials BG | `https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80` | Office meeting room |
-| Avatar fallbacks | `https://i.pravatar.cc/80?u=...` | Testimonial avatars |
+| Section          | URL                                                                        | Purpose                      |
+| ---------------- | -------------------------------------------------------------------------- | ---------------------------- |
+| Hero BG          | `https://images.unsplash.com/photo-1521737711867-e3b97375f3f9?w=1200&q=80` | Team workspace, dark overlay |
+| Testimonials BG  | `https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80`    | Office meeting room          |
+| Avatar fallbacks | `https://i.pravatar.cc/80?u=...`                                           | Testimonial avatars          |
 
 ---
 
 ## Motion Animation Summary
 
-| Element | Trigger | Animation |
-|---------|---------|-----------|
-| Hero text | Page load | `fadeIn + slideUp`, staggered 0.2s delay |
-| Hero CTA buttons | Hover | `scale(1.03)` via `whileHover` |
-| Hero CTA buttons | Click | `scale(0.97)` via `whileTap` |
-| Stats numbers | Scroll into view | Count-up 0→target over 1.5s |
-| Job cards | Scroll into view | `fadeIn + slideUp`, staggered 0.1s each |
-| How-it-works cards | Hover | `scale(1.02) + translateY(-4px)` |
-| How-it-works cards | Click | `scale(0.98)` |
-| Testimonials | Auto | Slide left/out with `AnimatePresence` |
-| All `whileInView` | — | `viewport={{ once: true }}` for perf |
+| Element            | Trigger          | Animation                                |
+| ------------------ | ---------------- | ---------------------------------------- |
+| Hero text          | Page load        | `fadeIn + slideUp`, staggered 0.2s delay |
+| Hero CTA buttons   | Hover            | `scale(1.03)` via `whileHover`           |
+| Hero CTA buttons   | Click            | `scale(0.97)` via `whileTap`             |
+| Stats numbers      | Scroll into view | Count-up 0→target over 1.5s              |
+| Job cards          | Scroll into view | `fadeIn + slideUp`, staggered 0.1s each  |
+| How-it-works cards | Hover            | `scale(1.02) + translateY(-4px)`         |
+| How-it-works cards | Click            | `scale(0.98)`                            |
+| Testimonials       | Auto             | Slide left/out with `AnimatePresence`    |
+| All `whileInView`  | —                | `viewport={{ once: true }}` for perf     |
 
 ---
 
@@ -219,13 +223,13 @@ export async function FeaturedJobs() {
 
 ## Risks & Mitigations
 
-| Risk | Mitigation |
-|------|------------|
-| Unsplash image loads slowly | Low-quality placeholder via `?w=400&q=30` + blur-up CSS |
-| Session check on every `/` visit | Proxy handles it — page.tsx only renders for unauthenticated users |
-| `whileInView` fires on mobile scroll perf | `viewport={{ once: true, margin: "-100px" }}` — animates once, off-screen skip |
+| Risk                                                  | Mitigation                                                                                     |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Unsplash image loads slowly                           | Low-quality placeholder via `?w=400&q=30` + blur-up CSS                                        |
+| Session check on every `/` visit                      | Proxy handles it — page.tsx only renders for unauthenticated users                             |
+| `whileInView` fires on mobile scroll perf             | `viewport={{ once: true, margin: "-100px" }}` — animates once, off-screen skip                 |
 | `prefers-reduced-motion` not respected by motion libs | Explicit `window.matchMedia` check in counter; `motion` respects it natively for `whileInView` |
-| Image domain not allowed | Already adding `images.unsplash.com` to `remotePatterns` in `next.config.ts` |
+| Image domain not allowed                              | Already adding `images.unsplash.com` to `remotePatterns` in `next.config.ts`                   |
 
 ---
 

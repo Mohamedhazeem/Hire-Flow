@@ -12,28 +12,28 @@ The `login-action` currently ignores `returnUrl`, making the `SaveJobButton` and
 
 ## Edge Case Inventory
 
-| # | Edge Case | Handling |
-|---|-----------|----------|
-| 1 | User is already authenticated on landing page | Navbar shows avatar + "Dashboard" link, not "Login"/"Sign Up" |
-| 2 | User navigates to `/jobs` already authenticated | Same as above — navbar is per-route-group aware |
-| 3 | User on `/login` or `/register` — should no navbar show? | Correct — auth pages have no navbar. `usePathname()` excludes them |
-| 4 | Mobile viewport (<768px) | Navbar compresses to logo + hamburger; hamburger opens animated slide-down with nav links + user area |
-| 5 | User clicks Sign Out from popover | `useSignOut` hook calls `signOut()` → on success redirects to `/` (landing) |
-| 6 | User clicks "Dashboard" from popover | Redirects to role-based dashboard (`/admin`, `/recruiter`, `/user`) |
-| 7 | User has no `image` (no avatar set) | Avatar fallback: initials from `name` (2 chars, uppercase) in a colored circle |
-| 8 | Network error on sign-out | `catch(() => {})` inside `useSignOut` → no crash, user can retry |
-| 9 | `getServerSession` returns null (edge: DB down) | Navbar renders unauthenticated state (Login/Sign Up buttons) |
-| 10 | `returnUrl` is an absolute URL (open redirect) | `login-action` validates `returnUrl` starts with `/` only; rejects absolute URLs |
-| 11 | `returnUrl` is `//evil.com` (protocol-relative bypass) | The check `returnUrl.startsWith("/") && !returnUrl.startsWith("//")` catches this |
-| 12 | `returnUrl` points to `/admin` but user is not admin | Role layout's `checkRole()` handles this — redirects to `/unauthorized`. No special handling in navbar. |
-| 13 | User signs out, then presses browser Back | Session cookie is cleared; server renders unauthenticated state. No stale cache issues because navbar uses server-side session for initial state. |
-| 14 | User is on `/jobs/[id]` (job detail), signs out | Signs out → redirect to `/` (landing). No returnUrl needed after sign-out. |
-| 15 | Popover positioned near edge of screen | `side="bottom"`, `align="end"` with fallback. Shadcn popover handles auto-flip. |
-| 16 | Multiple tabs — user signs out in one tab | Second tab's navbar still shows authenticated state until next navigation. This is acceptable — better-auth uses cookies, next request refresh. |
-| 17 | Hamburger menu open → user resizes to desktop | On resize, the menu closes naturally (CSS responsive breakpoint hides the mobile menu). |
-| 18 | Theme toggle inside popover | Included inside `AccountPopover` so user can toggle theme without navigating to dashboard. |
-| 19 | Role not recognized (e.g. `unknown` role) | Falls back to "User" for display; dashboard link goes to `/user`. |
-| 20 | User has very long name | Avatar initials truncate to 2 chars; name in popover is `truncate` with `title` attribute for full name on hover. |
+| #   | Edge Case                                                | Handling                                                                                                                                          |
+| --- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | User is already authenticated on landing page            | Navbar shows avatar + "Dashboard" link, not "Login"/"Sign Up"                                                                                     |
+| 2   | User navigates to `/jobs` already authenticated          | Same as above — navbar is per-route-group aware                                                                                                   |
+| 3   | User on `/login` or `/register` — should no navbar show? | Correct — auth pages have no navbar. `usePathname()` excludes them                                                                                |
+| 4   | Mobile viewport (<768px)                                 | Navbar compresses to logo + hamburger; hamburger opens animated slide-down with nav links + user area                                             |
+| 5   | User clicks Sign Out from popover                        | `useSignOut` hook calls `signOut()` → on success redirects to `/` (landing)                                                                       |
+| 6   | User clicks "Dashboard" from popover                     | Redirects to role-based dashboard (`/admin`, `/recruiter`, `/user`)                                                                               |
+| 7   | User has no `image` (no avatar set)                      | Avatar fallback: initials from `name` (2 chars, uppercase) in a colored circle                                                                    |
+| 8   | Network error on sign-out                                | `catch(() => {})` inside `useSignOut` → no crash, user can retry                                                                                  |
+| 9   | `getServerSession` returns null (edge: DB down)          | Navbar renders unauthenticated state (Login/Sign Up buttons)                                                                                      |
+| 10  | `returnUrl` is an absolute URL (open redirect)           | `login-action` validates `returnUrl` starts with `/` only; rejects absolute URLs                                                                  |
+| 11  | `returnUrl` is `//evil.com` (protocol-relative bypass)   | The check `returnUrl.startsWith("/") && !returnUrl.startsWith("//")` catches this                                                                 |
+| 12  | `returnUrl` points to `/admin` but user is not admin     | Role layout's `checkRole()` handles this — redirects to `/unauthorized`. No special handling in navbar.                                           |
+| 13  | User signs out, then presses browser Back                | Session cookie is cleared; server renders unauthenticated state. No stale cache issues because navbar uses server-side session for initial state. |
+| 14  | User is on `/jobs/[id]` (job detail), signs out          | Signs out → redirect to `/` (landing). No returnUrl needed after sign-out.                                                                        |
+| 15  | Popover positioned near edge of screen                   | `side="bottom"`, `align="end"` with fallback. Shadcn popover handles auto-flip.                                                                   |
+| 16  | Multiple tabs — user signs out in one tab                | Second tab's navbar still shows authenticated state until next navigation. This is acceptable — better-auth uses cookies, next request refresh.   |
+| 17  | Hamburger menu open → user resizes to desktop            | On resize, the menu closes naturally (CSS responsive breakpoint hides the mobile menu).                                                           |
+| 18  | Theme toggle inside popover                              | Included inside `AccountPopover` so user can toggle theme without navigating to dashboard.                                                        |
+| 19  | Role not recognized (e.g. `unknown` role)                | Falls back to "User" for display; dashboard link goes to `/user`.                                                                                 |
+| 20  | User has very long name                                  | Avatar initials truncate to 2 chars; name in popover is `truncate` with `title` attribute for full name on hover.                                 |
 
 ---
 
@@ -45,6 +45,7 @@ The `login-action` currently ignores `returnUrl`, making the `SaveJobButton` and
 
 The navbar needs `usePathname()` for route-aware rendering and `useSession()` for auth state.
 A server-component shell with a tiny client boundary was considered but rejected because:
+
 1. `usePathname()` is client-only — we'd need the client boundary anyway
 2. The popover is inherently interactive (open/close, sign-out, theme toggle)
 3. A single `'use client'` component avoids the extra server-render → client-hydration overhead
@@ -52,6 +53,7 @@ A server-component shell with a tiny client boundary was considered but rejected
 ### How Role Layouts Suppress the Public Navbar
 
 The root layout's `<PublicNavbar />` uses `usePathname()` and checks the path against a public-route set:
+
 - Returns `null` for `/admin/*`, `/recruiter/*`, `/user/*`, `/login`, `/register`, `/verify-email`, `/reset-password`, `/admin-invite`, `/recruiter-invite`
 - Renders navbar for `/`, `/jobs`, `/jobs/*`, `/unauthorized`
 
@@ -134,6 +136,7 @@ The popover content shown when clicking the user avatar. Uses existing `Popover`
 **Content**: Avatar (48px) + name + email + role badge | divider | "Go to Dashboard" (icon) | ThemeToggle | divider | "Sign Out" (icon).
 
 Edge cases handled:
+
 - No avatar → initials fallback (via `AvatarFallback`)
 - Long name → `truncate` + `title` attribute
 - Unknown role → "User" badge
@@ -158,6 +161,7 @@ import { LayoutDashboardIcon, LogOutIcon } from "lucide-react";
 The main navbar. Client component. Uses `usePathname()` for route-aware rendering and `useSession()` for auth state.
 
 **Structure**:
+
 - Desktop: Logo (left) → nav links (Browse Jobs) → ThemeToggle → User avatar with popover (right)
   - Unauthenticated: Login / Sign Up buttons instead of avatar
 - Mobile (<lg): Logo (left) → hamburger (right)
@@ -169,6 +173,7 @@ The main navbar. Client component. Uses `usePathname()` for route-aware renderin
     - ThemeToggle at bottom
 
 **Route awareness**:
+
 - Renders navbar for: `/`, `/jobs`, `/jobs/*`, `/unauthorized`
 - Returns `null` for: `/admin/*`, `/recruiter/*`, `/user/*`, `/login`, `/register`, `/verify-email`, `/reset-password`, `/admin-invite`, `/recruiter-invite`
 
@@ -207,6 +212,7 @@ Add `<Suspense fallback={<PublicNavbarSkeleton />}><PublicNavbar /></Suspense>` 
 wrapping children in a `<main>` that has `flex-1` so the navbar + content stack vertically.
 
 Reference structure:
+
 ```tsx
 <body className="min-h-full flex flex-col">
   <Providers>
@@ -227,8 +233,12 @@ Reference structure:
 ### 3. `app/features/auth/utils/getRedirectPath.ts` — support returnUrl
 
 Add optional `returnUrl` parameter:
+
 ```ts
-export function getRedirectPath(response: User | UserCredentials, returnUrl?: string): AuthRedirectTargetType {
+export function getRedirectPath(
+  response: User | UserCredentials,
+  returnUrl?: string,
+): AuthRedirectTargetType {
   if (returnUrl && returnUrl.startsWith("/") && !returnUrl.startsWith("//")) {
     return returnUrl as AuthRedirectTargetType;
   }
@@ -239,6 +249,7 @@ export function getRedirectPath(response: User | UserCredentials, returnUrl?: st
 ### 4. `app/features/auth/components/login-form.tsx` — read returnUrl from searchParams
 
 Add `useSearchParams()` to read `returnUrl` query param and pass it to `loginAction`:
+
 ```tsx
 const sp = useSearchParams();
 const returnUrl = sp.get("returnUrl") ?? undefined;

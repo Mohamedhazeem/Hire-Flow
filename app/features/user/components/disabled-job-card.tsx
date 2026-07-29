@@ -27,16 +27,12 @@ export function DisabledJobCard({ job }: DisabledJobCardProps) {
               className="size-7 object-contain grayscale"
             />
           ) : (
-            job.companyName[0]?.toUpperCase() ?? "?"
+            (job.companyName[0]?.toUpperCase() ?? "?")
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-text-muted truncate">
-            {job.title}
-          </h3>
-          <p className="text-sm text-text-muted/60 mt-0.5">
-            {job.companyName}
-          </p>
+          <h3 className="font-semibold text-text-muted truncate">{job.title}</h3>
+          <p className="text-sm text-text-muted/60 mt-0.5">{job.companyName}</p>
         </div>
         <div className="flex items-center gap-1.5 shrink-0">
           <span className="inline-flex items-center gap-1 text-xs font-medium text-text-muted bg-bg-muted px-2 py-1 rounded-full">
