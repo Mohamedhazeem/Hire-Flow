@@ -1,1 +1,511 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1783842143038_phase_2_unit_tests_md", "label": "1783842143038-phase-2-unit-tests.md", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L1"}, {"id": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "label": "Phase 2 \u2014 Unit Tests Plan", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L1"}, {"id": "plans_1783842143038_phase_2_unit_tests_1_current_state", "label": "1. Current State", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L9"}, {"id": "plans_1783842143038_phase_2_unit_tests_phase_1_schema_tests_already_done", "label": "Phase 1 (Schema Tests) \u2014 Already Done", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L11"}, {"id": "plans_1783842143038_phase_2_unit_tests_codebase_file_structure_re_checked_2026_07_14", "label": "Codebase File Structure (Re-checked 2026-07-14)", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L14"}, {"id": "plans_1783842143038_phase_2_unit_tests_2_solid_principles_applied", "label": "2. SOLID Principles Applied", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L33"}, {"id": "plans_1783842143038_phase_2_unit_tests_3_test_prioritization_ordering", "label": "3. Test Prioritization & Ordering", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L45"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "label": "4. Test File Inventory", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L78"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_1_lib_test_pagination_test_ts", "label": "4.1 `lib/test/pagination.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L82"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_2_lib_test_routes_test_ts", "label": "4.2 `lib/test/routes.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L104"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_3_lib_test_csv_builder_test_ts", "label": "4.3 `lib/test/csv-builder.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L123"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_4_lib_test_thread_utils_test_ts", "label": "4.4 `lib/test/thread-utils.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L138"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_5_lib_test_format_string_test_ts", "label": "4.5 `lib/test/format-string.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L158"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_6_lib_test_format_time_test_ts", "label": "4.6 `lib/test/format-time.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L168"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_7_lib_test_job_categories_test_ts", "label": "4.7 `lib/test/job-categories.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L178"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_8_lib_test_applicant_table_utils_test_ts", "label": "4.8 `lib/test/applicant-table-utils.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L188"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_9_lib_test_validator_test_ts", "label": "4.9 `lib/test/validator.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L202"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_10_lib_test_autherror_test_ts", "label": "4.10 `lib/test/authError.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L211"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_11_lib_test_get_redirect_path_test_ts", "label": "4.11 `lib/test/get-redirect-path.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L225"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_12_lib_test_api_error_test_ts", "label": "4.12 `lib/test/api-error.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L237"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_13_lib_test_rate_limit_test_ts", "label": "4.13 `lib/test/rate-limit.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L252"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_14_lib_test_api_response_test_ts", "label": "4.14 `lib/test/api-response.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L267"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_15_lib_test_api_wrapper_test_ts", "label": "4.15 `lib/test/api-wrapper.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L278"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_16_lib_test_require_role_test_ts", "label": "4.16 `lib/test/require-role.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L296"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_17_lib_test_rate_limit_message_test_ts", "label": "4.17 `lib/test/rate-limit-message.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L312"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_18_lib_test_ai_client_test_ts", "label": "4.18 `lib/test/ai-client.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L322"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_19_lib_test_batch_helpers_test_ts", "label": "4.19 `lib/test/batch-helpers.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L337"}, {"id": "plans_1783842143038_phase_2_unit_tests_4_20_lib_test_presence_store_test_ts", "label": "4.20 `lib/test/presence-store.test.ts`", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L350"}, {"id": "plans_1783842143038_phase_2_unit_tests_5_files_excluded_from_phase_2", "label": "5. Files Excluded From Phase 2", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L364"}, {"id": "plans_1783842143038_phase_2_unit_tests_6_implementation_order", "label": "6. Implementation Order", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L382"}, {"id": "plans_1783842143038_phase_2_unit_tests_7_risks_mitigations", "label": "7. Risks & Mitigations", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L414"}, {"id": "plans_1783842143038_phase_2_unit_tests_8_validation", "label": "8. Validation", "file_type": "document", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L428"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1783842143038_phase_2_unit_tests_md", "target": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_1_current_state", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L9", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_1_current_state", "target": "plans_1783842143038_phase_2_unit_tests_phase_1_schema_tests_already_done", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L11", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_1_current_state", "target": "plans_1783842143038_phase_2_unit_tests_codebase_file_structure_re_checked_2026_07_14", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L14", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_2_solid_principles_applied", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L33", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_3_test_prioritization_ordering", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L45", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L78", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_1_lib_test_pagination_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L82", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_2_lib_test_routes_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L104", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_3_lib_test_csv_builder_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L123", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_4_lib_test_thread_utils_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L138", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_5_lib_test_format_string_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L158", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_6_lib_test_format_time_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L168", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_7_lib_test_job_categories_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L178", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_8_lib_test_applicant_table_utils_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L188", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_9_lib_test_validator_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L202", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_10_lib_test_autherror_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L211", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_11_lib_test_get_redirect_path_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L225", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_12_lib_test_api_error_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L237", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_13_lib_test_rate_limit_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L252", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_14_lib_test_api_response_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L267", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_15_lib_test_api_wrapper_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L278", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_16_lib_test_require_role_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L296", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_17_lib_test_rate_limit_message_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L312", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_18_lib_test_ai_client_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L322", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_19_lib_test_batch_helpers_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L337", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory", "target": "plans_1783842143038_phase_2_unit_tests_4_20_lib_test_presence_store_test_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L350", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_5_files_excluded_from_phase_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L364", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_6_implementation_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L382", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_7_risks_mitigations", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L414", "weight": 1.0}, {"source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan", "target": "plans_1783842143038_phase_2_unit_tests_8_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md", "source_location": "L428", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1783842143038_phase_2_unit_tests_md",
+      "label": "1783842143038-phase-2-unit-tests.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "label": "Phase 2 \u2014 Unit Tests Plan",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_1_current_state",
+      "label": "1. Current State",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_phase_1_schema_tests_already_done",
+      "label": "Phase 1 (Schema Tests) \u2014 Already Done",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_codebase_file_structure_re_checked_2026_07_14",
+      "label": "Codebase File Structure (Re-checked 2026-07-14)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_2_solid_principles_applied",
+      "label": "2. SOLID Principles Applied",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_3_test_prioritization_ordering",
+      "label": "3. Test Prioritization & Ordering",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "label": "4. Test File Inventory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_1_lib_test_pagination_test_ts",
+      "label": "4.1 `lib/test/pagination.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_2_lib_test_routes_test_ts",
+      "label": "4.2 `lib/test/routes.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L104"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_3_lib_test_csv_builder_test_ts",
+      "label": "4.3 `lib/test/csv-builder.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L123"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_4_lib_test_thread_utils_test_ts",
+      "label": "4.4 `lib/test/thread-utils.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L138"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_5_lib_test_format_string_test_ts",
+      "label": "4.5 `lib/test/format-string.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L158"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_6_lib_test_format_time_test_ts",
+      "label": "4.6 `lib/test/format-time.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L168"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_7_lib_test_job_categories_test_ts",
+      "label": "4.7 `lib/test/job-categories.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L178"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_8_lib_test_applicant_table_utils_test_ts",
+      "label": "4.8 `lib/test/applicant-table-utils.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L188"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_9_lib_test_validator_test_ts",
+      "label": "4.9 `lib/test/validator.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L202"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_10_lib_test_autherror_test_ts",
+      "label": "4.10 `lib/test/authError.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L211"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_11_lib_test_get_redirect_path_test_ts",
+      "label": "4.11 `lib/test/get-redirect-path.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_12_lib_test_api_error_test_ts",
+      "label": "4.12 `lib/test/api-error.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L237"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_13_lib_test_rate_limit_test_ts",
+      "label": "4.13 `lib/test/rate-limit.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L252"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_14_lib_test_api_response_test_ts",
+      "label": "4.14 `lib/test/api-response.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L267"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_15_lib_test_api_wrapper_test_ts",
+      "label": "4.15 `lib/test/api-wrapper.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L278"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_16_lib_test_require_role_test_ts",
+      "label": "4.16 `lib/test/require-role.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L296"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_17_lib_test_rate_limit_message_test_ts",
+      "label": "4.17 `lib/test/rate-limit-message.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L312"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_18_lib_test_ai_client_test_ts",
+      "label": "4.18 `lib/test/ai-client.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L322"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_19_lib_test_batch_helpers_test_ts",
+      "label": "4.19 `lib/test/batch-helpers.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L337"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_4_20_lib_test_presence_store_test_ts",
+      "label": "4.20 `lib/test/presence-store.test.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L350"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_5_files_excluded_from_phase_2",
+      "label": "5. Files Excluded From Phase 2",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L364"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_6_implementation_order",
+      "label": "6. Implementation Order",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L382"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_7_risks_mitigations",
+      "label": "7. Risks & Mitigations",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L414"
+    },
+    {
+      "id": "plans_1783842143038_phase_2_unit_tests_8_validation",
+      "label": "8. Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L428"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1783842143038_phase_2_unit_tests_md",
+      "target": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_1_current_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_1_current_state",
+      "target": "plans_1783842143038_phase_2_unit_tests_phase_1_schema_tests_already_done",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_1_current_state",
+      "target": "plans_1783842143038_phase_2_unit_tests_codebase_file_structure_re_checked_2026_07_14",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_2_solid_principles_applied",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_3_test_prioritization_ordering",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_1_lib_test_pagination_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_2_lib_test_routes_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_3_lib_test_csv_builder_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_4_lib_test_thread_utils_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_5_lib_test_format_string_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_6_lib_test_format_time_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_7_lib_test_job_categories_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_8_lib_test_applicant_table_utils_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_9_lib_test_validator_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_10_lib_test_autherror_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_11_lib_test_get_redirect_path_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_12_lib_test_api_error_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_13_lib_test_rate_limit_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_14_lib_test_api_response_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_15_lib_test_api_wrapper_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_16_lib_test_require_role_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_17_lib_test_rate_limit_message_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_18_lib_test_ai_client_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_19_lib_test_batch_helpers_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_4_test_file_inventory",
+      "target": "plans_1783842143038_phase_2_unit_tests_4_20_lib_test_presence_store_test_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_5_files_excluded_from_phase_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L364",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_6_implementation_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L382",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_7_risks_mitigations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L414",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783842143038_phase_2_unit_tests_phase_2_unit_tests_plan",
+      "target": "plans_1783842143038_phase_2_unit_tests_8_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783842143038-phase-2-unit-tests.md",
+      "source_location": "L428",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

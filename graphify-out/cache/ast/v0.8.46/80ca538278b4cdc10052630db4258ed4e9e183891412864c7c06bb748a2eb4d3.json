@@ -1,1 +1,1007 @@
-{"nodes": [{"id": "d_hire_flow_next_plans_1785126715092_performance_optimization_plan_md", "label": "1785126715092-performance-optimization-plan.md", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L1"}, {"id": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "label": "Performance Optimization Plan \u2014 Big O Improvements", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L1"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2", "label": "Phase 0: Fix SQL Injection in Analytics (BLOCKER \u2014 do before Phase 2)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L8"}, {"id": "plans_1785126715092_performance_optimization_plan_finding", "label": "Finding", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L12"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L22"}, {"id": "plans_1785126715092_performance_optimization_plan_validation", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L28"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "label": "Phase 1: Database Indexes & Query Foundation (Week 1)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L37"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_41", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L41"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L152"}, {"id": "plans_1785126715092_performance_optimization_plan_existing_perf_test_baseline", "label": "Existing Perf Test Baseline", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L181"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_185", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L185"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1", "label": "Phase 1.5: Fix Analytics SortBy \"name\" (Week 1, after Phase 1)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L197"}, {"id": "plans_1785126715092_performance_optimization_plan_finding_201", "label": "Finding", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L201"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_206", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L206"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_211", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L211"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "label": "Phase 1.6: Add Pagination to User Bookmarks (Week 1, after Phase 1.5)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L218"}, {"id": "plans_1785126715092_performance_optimization_plan_finding_222", "label": "Finding", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L222"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_225", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L225"}, {"id": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks", "label": "CRITICAL: Do NOT break existing hooks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L253"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_258", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L258"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "label": "Phase 2: Analytics Query Refactoring (Week 2)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L264"}, {"id": "plans_1785126715092_performance_optimization_plan_current_problem", "label": "Current Problem", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L270"}, {"id": "plans_1785126715092_performance_optimization_plan_target_design_known_trade_off", "label": "Target Design \u2014 Known Trade-off", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L275"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_282", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L282"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases_473", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L473"}, {"id": "plans_1785126715092_performance_optimization_plan_space_complexity_note", "label": "Space Complexity Note", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L482"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_485", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L485"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "label": "Phase 3: Validate and Extend Streaming CSV Export (Week 2-3)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L496"}, {"id": "plans_1785126715092_performance_optimization_plan_current_state", "label": "Current State", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L500"}, {"id": "plans_1785126715092_performance_optimization_plan_remaining_gaps_to_address", "label": "Remaining Gaps to Address", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L511"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases_531", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L531"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_538", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L538"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "label": "Phase 4: AI Resume Enhancement \u2014 Resilience & Memory Hardening (Week 3-4)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L546"}, {"id": "plans_1785126715092_performance_optimization_plan_current_state_550", "label": "Current State", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L550"}, {"id": "plans_1785126715092_performance_optimization_plan_problems_to_solve", "label": "Problems to Solve", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L553"}, {"id": "plans_1785126715092_performance_optimization_plan_target_design", "label": "Target Design", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L558"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_563", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L563"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases_643", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L643"}, {"id": "plans_1785126715092_performance_optimization_plan_space_complexity", "label": "Space Complexity", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L649"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_652", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L652"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "label": "Phase 5: Cursor-based Pagination (Week 4)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L660"}, {"id": "plans_1785126715092_performance_optimization_plan_current_state_664", "label": "Current State", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L664"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_671", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L671"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases_737", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L737"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_745", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L745"}, {"id": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "label": "Phase 6: Cache-Control Headers on Public Routes (Cross-cutting, Week 4-5)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L755"}, {"id": "plans_1785126715092_performance_optimization_plan_current_state_759", "label": "Current State", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L759"}, {"id": "plans_1785126715092_performance_optimization_plan_feasibility_check", "label": "Feasibility Check", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L764"}, {"id": "plans_1785126715092_performance_optimization_plan_tasks_767", "label": "Tasks", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L767"}, {"id": "plans_1785126715092_performance_optimization_plan_edge_cases_795", "label": "Edge Cases", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L795"}, {"id": "plans_1785126715092_performance_optimization_plan_validation_801", "label": "Validation", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L801"}, {"id": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns", "label": "Cross-Cutting Concerns", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L812"}, {"id": "plans_1785126715092_performance_optimization_plan_testing_strategy", "label": "Testing Strategy", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L814"}, {"id": "plans_1785126715092_performance_optimization_plan_existing_perf_tests_to_leverage", "label": "Existing Perf Tests to leverage", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L823"}, {"id": "plans_1785126715092_performance_optimization_plan_open_questions", "label": "Open Questions", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L830"}, {"id": "plans_1785126715092_performance_optimization_plan_rollback_plan", "label": "Rollback Plan", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L846"}, {"id": "plans_1785126715092_performance_optimization_plan_execution_order", "label": "Execution Order", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L862"}, {"id": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "label": "Refinements Applied (2026-07-27 \u2014 Final Round)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L876"}, {"id": "plans_1785126715092_performance_optimization_plan_critical_fixes", "label": "Critical Fixes", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L880"}, {"id": "plans_1785126715092_performance_optimization_plan_moderate_fixes", "label": "Moderate Fixes", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L887"}, {"id": "plans_1785126715092_performance_optimization_plan_score_breakdown", "label": "Score Breakdown", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L896"}, {"id": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90", "label": "Remaining Items (acceptable for \u226590)", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L909"}, {"id": "plans_1785126715092_performance_optimization_plan_sign_off_criteria", "label": "Sign-Off Criteria", "file_type": "document", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L916"}], "edges": [{"source": "d_hire_flow_next_plans_1785126715092_performance_optimization_plan_md", "target": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L8", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2", "target": "plans_1785126715092_performance_optimization_plan_finding", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L12", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2", "target": "plans_1785126715092_performance_optimization_plan_tasks", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L22", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2", "target": "plans_1785126715092_performance_optimization_plan_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L28", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L37", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "target": "plans_1785126715092_performance_optimization_plan_tasks_41", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L41", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "target": "plans_1785126715092_performance_optimization_plan_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L152", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "target": "plans_1785126715092_performance_optimization_plan_existing_perf_test_baseline", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L181", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1", "target": "plans_1785126715092_performance_optimization_plan_validation_185", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L185", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L197", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1", "target": "plans_1785126715092_performance_optimization_plan_finding_201", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L201", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1", "target": "plans_1785126715092_performance_optimization_plan_tasks_206", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L206", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1", "target": "plans_1785126715092_performance_optimization_plan_validation_211", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L211", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L218", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "target": "plans_1785126715092_performance_optimization_plan_finding_222", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L222", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "target": "plans_1785126715092_performance_optimization_plan_tasks_225", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L225", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L253", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5", "target": "plans_1785126715092_performance_optimization_plan_validation_258", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L258", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L264", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_current_problem", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L270", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_target_design_known_trade_off", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L275", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_tasks_282", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L282", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_edge_cases_473", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L473", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L482", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2", "target": "plans_1785126715092_performance_optimization_plan_validation_485", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L485", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L496", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "target": "plans_1785126715092_performance_optimization_plan_current_state", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L500", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "target": "plans_1785126715092_performance_optimization_plan_remaining_gaps_to_address", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L511", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "target": "plans_1785126715092_performance_optimization_plan_edge_cases_531", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L531", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3", "target": "plans_1785126715092_performance_optimization_plan_validation_538", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L538", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L546", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_current_state_550", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L550", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_problems_to_solve", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L553", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_target_design", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L558", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_tasks_563", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L563", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_edge_cases_643", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L643", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_space_complexity", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L649", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4", "target": "plans_1785126715092_performance_optimization_plan_validation_652", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L652", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L660", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "target": "plans_1785126715092_performance_optimization_plan_current_state_664", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L664", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "target": "plans_1785126715092_performance_optimization_plan_tasks_671", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L671", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "target": "plans_1785126715092_performance_optimization_plan_edge_cases_737", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L737", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4", "target": "plans_1785126715092_performance_optimization_plan_validation_745", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L745", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L755", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "target": "plans_1785126715092_performance_optimization_plan_current_state_759", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L759", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "target": "plans_1785126715092_performance_optimization_plan_feasibility_check", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L764", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "target": "plans_1785126715092_performance_optimization_plan_tasks_767", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L767", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "target": "plans_1785126715092_performance_optimization_plan_edge_cases_795", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L795", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5", "target": "plans_1785126715092_performance_optimization_plan_validation_801", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L801", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L812", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns", "target": "plans_1785126715092_performance_optimization_plan_testing_strategy", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L814", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns", "target": "plans_1785126715092_performance_optimization_plan_existing_perf_tests_to_leverage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L823", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns", "target": "plans_1785126715092_performance_optimization_plan_open_questions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L830", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_rollback_plan", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L846", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_execution_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L862", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L876", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "target": "plans_1785126715092_performance_optimization_plan_critical_fixes", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L880", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L887", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "target": "plans_1785126715092_performance_optimization_plan_score_breakdown", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L896", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round", "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L909", "weight": 1.0}, {"source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements", "target": "plans_1785126715092_performance_optimization_plan_sign_off_criteria", "relation": "contains", "confidence": "EXTRACTED", "source_file": "plans/1785126715092-performance-optimization-plan.md", "source_location": "L916", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_plans_1785126715092_performance_optimization_plan_md",
+      "label": "1785126715092-performance-optimization-plan.md",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "label": "Performance Optimization Plan \u2014 Big O Improvements",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "label": "Phase 0: Fix SQL Injection in Analytics (BLOCKER \u2014 do before Phase 2)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_finding",
+      "label": "Finding",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "label": "Phase 1: Database Indexes & Query Foundation (Week 1)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_41",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L152"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_existing_perf_test_baseline",
+      "label": "Existing Perf Test Baseline",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L181"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_185",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L185"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "label": "Phase 1.5: Fix Analytics SortBy \"name\" (Week 1, after Phase 1)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_finding_201",
+      "label": "Finding",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L201"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_206",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L206"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_211",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L211"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "label": "Phase 1.6: Add Pagination to User Bookmarks (Week 1, after Phase 1.5)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L218"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_finding_222",
+      "label": "Finding",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L222"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_225",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks",
+      "label": "CRITICAL: Do NOT break existing hooks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L253"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_258",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L258"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "label": "Phase 2: Analytics Query Refactoring (Week 2)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L264"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_current_problem",
+      "label": "Current Problem",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L270"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_target_design_known_trade_off",
+      "label": "Target Design \u2014 Known Trade-off",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L275"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_282",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L282"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_473",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L473"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_space_complexity_note",
+      "label": "Space Complexity Note",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L482"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_485",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L485"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "label": "Phase 3: Validate and Extend Streaming CSV Export (Week 2-3)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L496"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_current_state",
+      "label": "Current State",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L500"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_remaining_gaps_to_address",
+      "label": "Remaining Gaps to Address",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L511"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_531",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L531"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_538",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L538"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "label": "Phase 4: AI Resume Enhancement \u2014 Resilience & Memory Hardening (Week 3-4)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L546"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_550",
+      "label": "Current State",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L550"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_problems_to_solve",
+      "label": "Problems to Solve",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L553"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_target_design",
+      "label": "Target Design",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L558"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_563",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L563"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_643",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L643"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_space_complexity",
+      "label": "Space Complexity",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L649"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_652",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L652"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "label": "Phase 5: Cursor-based Pagination (Week 4)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L660"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_664",
+      "label": "Current State",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L664"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_671",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L671"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_737",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L737"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_745",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L745"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "label": "Phase 6: Cache-Control Headers on Public Routes (Cross-cutting, Week 4-5)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L755"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_current_state_759",
+      "label": "Current State",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L759"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_feasibility_check",
+      "label": "Feasibility Check",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L764"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_tasks_767",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L767"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_edge_cases_795",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L795"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_validation_801",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L801"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
+      "label": "Cross-Cutting Concerns",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L812"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_testing_strategy",
+      "label": "Testing Strategy",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L814"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_existing_perf_tests_to_leverage",
+      "label": "Existing Perf Tests to leverage",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L823"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_open_questions",
+      "label": "Open Questions",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L830"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_rollback_plan",
+      "label": "Rollback Plan",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L846"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_execution_order",
+      "label": "Execution Order",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L862"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "label": "Refinements Applied (2026-07-27 \u2014 Final Round)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L876"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_critical_fixes",
+      "label": "Critical Fixes",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L880"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_moderate_fixes",
+      "label": "Moderate Fixes",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L887"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_score_breakdown",
+      "label": "Score Breakdown",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L896"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90",
+      "label": "Remaining Items (acceptable for \u226590)",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L909"
+    },
+    {
+      "id": "plans_1785126715092_performance_optimization_plan_sign_off_criteria",
+      "label": "Sign-Off Criteria",
+      "file_type": "document",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L916"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_plans_1785126715092_performance_optimization_plan_md",
+      "target": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "target": "plans_1785126715092_performance_optimization_plan_finding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_0_fix_sql_injection_in_analytics_blocker_do_before_phase_2",
+      "target": "plans_1785126715092_performance_optimization_plan_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_41",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "target": "plans_1785126715092_performance_optimization_plan_existing_perf_test_baseline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_database_indexes_query_foundation_week_1",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_185",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "target": "plans_1785126715092_performance_optimization_plan_finding_201",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_206",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_5_fix_analytics_sortby_name_week_1_after_phase_1",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_211",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "target": "plans_1785126715092_performance_optimization_plan_finding_222",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_225",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "target": "plans_1785126715092_performance_optimization_plan_critical_do_not_break_existing_hooks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_1_6_add_pagination_to_user_bookmarks_week_1_after_phase_1_5",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_258",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_current_problem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_target_design_known_trade_off",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_282",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_473",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L473",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity_note",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L482",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_2_analytics_query_refactoring_week_2",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_485",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L485",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L496",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L500",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "target": "plans_1785126715092_performance_optimization_plan_remaining_gaps_to_address",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_531",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L531",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_3_validate_and_extend_streaming_csv_export_week_2_3",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_538",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L538",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L546",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_550",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_problems_to_solve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L553",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_target_design",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L558",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_563",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L563",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_643",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_space_complexity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L649",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_4_ai_resume_enhancement_resilience_memory_hardening_week_3_4",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_652",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L652",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L660",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_664",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L664",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_671",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L671",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_737",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L737",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_5_cursor_based_pagination_week_4",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_745",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L745",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L755",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "target": "plans_1785126715092_performance_optimization_plan_current_state_759",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L759",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "target": "plans_1785126715092_performance_optimization_plan_feasibility_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L764",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "target": "plans_1785126715092_performance_optimization_plan_tasks_767",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L767",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "target": "plans_1785126715092_performance_optimization_plan_edge_cases_795",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L795",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_phase_6_cache_control_headers_on_public_routes_cross_cutting_week_4_5",
+      "target": "plans_1785126715092_performance_optimization_plan_validation_801",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L801",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L812",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
+      "target": "plans_1785126715092_performance_optimization_plan_testing_strategy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L814",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
+      "target": "plans_1785126715092_performance_optimization_plan_existing_perf_tests_to_leverage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L823",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_cross_cutting_concerns",
+      "target": "plans_1785126715092_performance_optimization_plan_open_questions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L830",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_rollback_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L846",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_execution_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L862",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L876",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "target": "plans_1785126715092_performance_optimization_plan_critical_fixes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L880",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "target": "plans_1785126715092_performance_optimization_plan_moderate_fixes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L887",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "target": "plans_1785126715092_performance_optimization_plan_score_breakdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L896",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_refinements_applied_2026_07_27_final_round",
+      "target": "plans_1785126715092_performance_optimization_plan_remaining_items_acceptable_for_90",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L909",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1785126715092_performance_optimization_plan_performance_optimization_plan_big_o_improvements",
+      "target": "plans_1785126715092_performance_optimization_plan_sign_off_criteria",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plans/1785126715092-performance-optimization-plan.md",
+      "source_location": "L916",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -42,11 +42,7 @@
       {
         "id": "user_roles",
         "label": "Platform User Roles (RBAC)",
-        "nodes": [
-          "role_admin",
-          "role_recruiter",
-          "role_user"
-        ],
+        "nodes": ["role_admin", "role_recruiter", "role_user"],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
@@ -77639,11 +77635,7 @@
     {
       "id": "user_roles",
       "label": "Platform User Roles (RBAC)",
-      "nodes": [
-        "role_admin",
-        "role_recruiter",
-        "role_user"
-      ],
+      "nodes": ["role_admin", "role_recruiter", "role_user"],
       "relation": "participate_in",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,

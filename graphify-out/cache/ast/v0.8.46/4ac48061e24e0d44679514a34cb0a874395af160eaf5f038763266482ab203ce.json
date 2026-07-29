@@ -1,1 +1,255 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1782490602120_recruiter_dashboard_md", "label": "1782490602120-recruiter-dashboard.md", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L1"}, {"id": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "label": "Execution Plan: Step 2.9 \u2014 Recruiter Dashboard", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L1"}, {"id": "plans_1782490602120_recruiter_dashboard_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L11"}, {"id": "plans_1782490602120_recruiter_dashboard_architecture", "label": "Architecture", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L15"}, {"id": "plans_1782490602120_recruiter_dashboard_data_query_app_features_recruiter_queries_dashboard_queries_ts", "label": "Data Query \u2014 `app/features/recruiter/queries/dashboard-queries.ts`", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L28"}, {"id": "plans_1782490602120_recruiter_dashboard_page_app_roles_recruiter_page_tsx", "label": "Page \u2014 `app/(roles)/recruiter/page.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L57"}, {"id": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "label": "Client Component \u2014 `app/features/recruiter/components/recruiter-dashboard.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L74"}, {"id": "plans_1782490602120_recruiter_dashboard_1_page_header", "label": "1. Page Header", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L80"}, {"id": "plans_1782490602120_recruiter_dashboard_2_stat_cards_grid_cols_2_sm_grid_cols_4_gap_4", "label": "2. Stat Cards (`grid-cols-2 sm:grid-cols-4 gap-4`)", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L84"}, {"id": "plans_1782490602120_recruiter_dashboard_3_recent_applications_table", "label": "3. Recent Applications Table", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L95"}, {"id": "plans_1782490602120_recruiter_dashboard_4_quick_action_buttons", "label": "4. Quick Action Buttons", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L106"}, {"id": "plans_1782490602120_recruiter_dashboard_edge_cases", "label": "Edge Cases", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L121"}, {"id": "plans_1782490602120_recruiter_dashboard_files_to_create", "label": "Files to Create", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L136"}, {"id": "plans_1782490602120_recruiter_dashboard_files_to_modify", "label": "Files to Modify", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L141"}, {"id": "plans_1782490602120_recruiter_dashboard_files_not_to_modify", "label": "Files NOT to Modify", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L145"}, {"id": "plans_1782490602120_recruiter_dashboard_verification", "label": "Verification", "file_type": "document", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L150"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1782490602120_recruiter_dashboard_md", "target": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L11", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L15", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_data_query_app_features_recruiter_queries_dashboard_queries_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L28", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_page_app_roles_recruiter_page_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L57", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L74", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "target": "plans_1782490602120_recruiter_dashboard_1_page_header", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L80", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "target": "plans_1782490602120_recruiter_dashboard_2_stat_cards_grid_cols_2_sm_grid_cols_4_gap_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L84", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "target": "plans_1782490602120_recruiter_dashboard_3_recent_applications_table", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L95", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx", "target": "plans_1782490602120_recruiter_dashboard_4_quick_action_buttons", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L106", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L121", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_files_to_create", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L136", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_files_to_modify", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L141", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_files_not_to_modify", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L145", "weight": 1.0}, {"source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard", "target": "plans_1782490602120_recruiter_dashboard_verification", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md", "source_location": "L150", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1782490602120_recruiter_dashboard_md",
+      "label": "1782490602120-recruiter-dashboard.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "label": "Execution Plan: Step 2.9 \u2014 Recruiter Dashboard",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L15"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_data_query_app_features_recruiter_queries_dashboard_queries_ts",
+      "label": "Data Query \u2014 `app/features/recruiter/queries/dashboard-queries.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_page_app_roles_recruiter_page_tsx",
+      "label": "Page \u2014 `app/(roles)/recruiter/page.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "label": "Client Component \u2014 `app/features/recruiter/components/recruiter-dashboard.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_1_page_header",
+      "label": "1. Page Header",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_2_stat_cards_grid_cols_2_sm_grid_cols_4_gap_4",
+      "label": "2. Stat Cards (`grid-cols-2 sm:grid-cols-4 gap-4`)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L84"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_3_recent_applications_table",
+      "label": "3. Recent Applications Table",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L95"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_4_quick_action_buttons",
+      "label": "4. Quick Action Buttons",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L106"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_edge_cases",
+      "label": "Edge Cases",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L121"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_files_to_create",
+      "label": "Files to Create",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L136"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_files_to_modify",
+      "label": "Files to Modify",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L141"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_files_not_to_modify",
+      "label": "Files NOT to Modify",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "plans_1782490602120_recruiter_dashboard_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L150"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1782490602120_recruiter_dashboard_md",
+      "target": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_data_query_app_features_recruiter_queries_dashboard_queries_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_page_app_roles_recruiter_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "target": "plans_1782490602120_recruiter_dashboard_1_page_header",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "target": "plans_1782490602120_recruiter_dashboard_2_stat_cards_grid_cols_2_sm_grid_cols_4_gap_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "target": "plans_1782490602120_recruiter_dashboard_3_recent_applications_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_client_component_app_features_recruiter_components_recruiter_dashboard_tsx",
+      "target": "plans_1782490602120_recruiter_dashboard_4_quick_action_buttons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_files_to_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_files_to_modify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_files_not_to_modify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782490602120_recruiter_dashboard_execution_plan_step_2_9_recruiter_dashboard",
+      "target": "plans_1782490602120_recruiter_dashboard_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782490602120-recruiter-dashboard.md",
+      "source_location": "L150",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

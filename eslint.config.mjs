@@ -6,12 +6,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 const eslintConfig = defineConfig([
   // 1. Global Ignores
   {
-    ignores: [
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
+    ignores: [".next/**", "out/**", "build/**", "next-env.d.ts"],
   },
 
   // 2. Base Next.js and TypeScript Configs

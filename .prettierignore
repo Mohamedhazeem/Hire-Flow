@@ -1,0 +1,7 @@
+.next/
+node_modules/
+app/generated/prisma/
+coverage/
+benchmark/results/
+.git/
+*.sln

@@ -1,1 +1,207 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1784823231062_cross_origin_cloud_storage_plan_md", "label": "1784823231062-cross-origin-cloud-storage-plan.md", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L1"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "label": "Cross-Origin + Cloud Storage Plan (Vercel Blob)", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L1"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_decision_keep_api_wrapper_ts_name", "label": "Decision: Keep `api-wrapper.ts` name", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L3"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture", "label": "CORS Architecture", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L10"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_proxy_ts_options_preflight_only", "label": "`proxy.ts` \ufffd OPTIONS preflight only", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L12"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_api_wrapper_ts_cors_on_actual_responses", "label": "`lib/api/api-wrapper.ts` \ufffd CORS on actual responses", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L18"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_cors_ts_shared_cors_logic", "label": "`lib/api/cors.ts` \ufffd shared CORS logic", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L23"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_tasks_implementation_order", "label": "Tasks (implementation order)", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L30"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_backward_compatibility", "label": "Backward Compatibility", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L52"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan", "label": "Test Plan", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L61"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_unit", "label": "Unit", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L63"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_integration", "label": "Integration", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L68"}, {"id": "plans_1784823231062_cross_origin_cloud_storage_plan_e2e", "label": "E2E", "file_type": "document", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L73"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1784823231062_cross_origin_cloud_storage_plan_md", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_decision_keep_api_wrapper_ts_name", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L10", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_proxy_ts_options_preflight_only", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L12", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_api_wrapper_ts_cors_on_actual_responses", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L18", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_cors_ts_shared_cors_logic", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L23", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_tasks_implementation_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L30", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_backward_compatibility", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L52", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L61", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_unit", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L63", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_integration", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L68", "weight": 1.0}, {"source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan", "target": "plans_1784823231062_cross_origin_cloud_storage_plan_e2e", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md", "source_location": "L73", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1784823231062_cross_origin_cloud_storage_plan_md",
+      "label": "1784823231062-cross-origin-cloud-storage-plan.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "label": "Cross-Origin + Cloud Storage Plan (Vercel Blob)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_decision_keep_api_wrapper_ts_name",
+      "label": "Decision: Keep `api-wrapper.ts` name",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture",
+      "label": "CORS Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_proxy_ts_options_preflight_only",
+      "label": "`proxy.ts` \ufffd OPTIONS preflight only",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_api_wrapper_ts_cors_on_actual_responses",
+      "label": "`lib/api/api-wrapper.ts` \ufffd CORS on actual responses",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_cors_ts_shared_cors_logic",
+      "label": "`lib/api/cors.ts` \ufffd shared CORS logic",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_tasks_implementation_order",
+      "label": "Tasks (implementation order)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_backward_compatibility",
+      "label": "Backward Compatibility",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L52"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan",
+      "label": "Test Plan",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_unit",
+      "label": "Unit",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_integration",
+      "label": "Integration",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L68"
+    },
+    {
+      "id": "plans_1784823231062_cross_origin_cloud_storage_plan_e2e",
+      "label": "E2E",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L73"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1784823231062_cross_origin_cloud_storage_plan_md",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_decision_keep_api_wrapper_ts_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_proxy_ts_options_preflight_only",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_api_wrapper_ts_cors_on_actual_responses",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cors_architecture",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_lib_api_cors_ts_shared_cors_logic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_tasks_implementation_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_backward_compatibility",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_cross_origin_cloud_storage_plan_vercel_blob",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_unit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_integration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784823231062_cross_origin_cloud_storage_plan_test_plan",
+      "target": "plans_1784823231062_cross_origin_cloud_storage_plan_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784823231062-cross-origin-cloud-storage-plan.md",
+      "source_location": "L73",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

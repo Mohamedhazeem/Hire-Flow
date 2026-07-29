@@ -1,1 +1,815 @@
-{"nodes": [{"id": "d_hire_flow_next_docs_specs_hire_flow_requirements_md", "label": "hire-flow-requirements.md", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L1"}, {"id": "specs_hire_flow_requirements_hire_flow_requirements_specification", "label": "Hire Flow \u2014 Requirements Specification", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L1"}, {"id": "specs_hire_flow_requirements_overview", "label": "Overview", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L3"}, {"id": "specs_hire_flow_requirements_roles", "label": "Roles", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L7"}, {"id": "specs_hire_flow_requirements_phase_0_foundation", "label": "Phase 0: Foundation", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L18"}, {"id": "specs_hire_flow_requirements_0_1_project_initialisation", "label": "0.1 Project Initialisation", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L20"}, {"id": "specs_hire_flow_requirements_0_2_database_schema", "label": "0.2 Database Schema", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L24"}, {"id": "specs_hire_flow_requirements_0_3_middleware_route_guards", "label": "0.3 Middleware & Route Guards", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L33"}, {"id": "specs_hire_flow_requirements_0_4_shared_ui_primitives", "label": "0.4 Shared UI Primitives", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L45"}, {"id": "specs_hire_flow_requirements_0_5_file_upload_infrastructure", "label": "0.5 File Upload Infrastructure", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L53"}, {"id": "specs_hire_flow_requirements_0_6_database_seed_script", "label": "0.6 Database Seed Script", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L61"}, {"id": "specs_hire_flow_requirements_0_7_state_management_infrastructure", "label": "0.7 State Management Infrastructure", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L69"}, {"id": "specs_hire_flow_requirements_phase_1_admin", "label": "Phase 1: Admin", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L79"}, {"id": "specs_hire_flow_requirements_1_1_admin_api", "label": "1.1 Admin API", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L81"}, {"id": "specs_hire_flow_requirements_1_2_admin_ui", "label": "1.2 Admin UI", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L97"}, {"id": "specs_hire_flow_requirements_1_3_admin_team_management", "label": "1.3 Admin Team Management", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L111"}, {"id": "specs_hire_flow_requirements_1_4_job_oversight_analytics", "label": "1.4 Job Oversight & Analytics", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L126"}, {"id": "specs_hire_flow_requirements_1_5_admin_messaging_rest", "label": "1.5 Admin Messaging (REST)", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L139"}, {"id": "specs_hire_flow_requirements_1_6_admin_messaging_real_time", "label": "1.6 Admin Messaging (Real-time)", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L147"}, {"id": "specs_hire_flow_requirements_admin_applicant_detail_view", "label": "Admin Applicant Detail View", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L160"}, {"id": "specs_hire_flow_requirements_phase_2_recruiter", "label": "Phase 2: Recruiter", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L171"}, {"id": "specs_hire_flow_requirements_2_0_recruiter_layout_sidebar", "label": "2.0 Recruiter Layout & Sidebar", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L173"}, {"id": "specs_hire_flow_requirements_2_1_company_profile_crud", "label": "2.1 Company Profile CRUD", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L182"}, {"id": "specs_hire_flow_requirements_2_2_recruiter_team_management", "label": "2.2 Recruiter Team Management", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L194"}, {"id": "specs_hire_flow_requirements_2_3_job_posts_crud", "label": "2.3 Job Posts CRUD", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L208"}, {"id": "specs_hire_flow_requirements_2_4_applicants_view_status_updates", "label": "2.4 Applicants View & Status Updates", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L225"}, {"id": "specs_hire_flow_requirements_2_5_recruiter_direct_messaging", "label": "2.5 Recruiter Direct Messaging", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L242"}, {"id": "specs_hire_flow_requirements_2_6_applicant_detail_view", "label": "2.6 Applicant Detail View", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L258"}, {"id": "specs_hire_flow_requirements_2_7_bulk_actions", "label": "2.7 Bulk Actions", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L274"}, {"id": "specs_hire_flow_requirements_2_8_recruiter_analytics_filters", "label": "2.8 Recruiter Analytics & Filters", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L289"}, {"id": "specs_hire_flow_requirements_2_9_recruiter_dashboard", "label": "2.9 Recruiter Dashboard", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L304"}, {"id": "specs_hire_flow_requirements_2_10_notifications_activity_feed", "label": "2.10 Notifications & Activity Feed", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L314"}, {"id": "specs_hire_flow_requirements_2_11_csv_export", "label": "2.11 CSV Export", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L324"}, {"id": "specs_hire_flow_requirements_phase_3_user_job_seeker", "label": "Phase 3: User (Job Seeker)", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L340"}, {"id": "specs_hire_flow_requirements_3_0a_infrastructure_audit", "label": "3.0a Infrastructure Audit", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L342"}, {"id": "specs_hire_flow_requirements_3_0b_schema_migration", "label": "3.0b Schema Migration", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L346"}, {"id": "specs_hire_flow_requirements_3_1_user_profile", "label": "3.1 User Profile", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L350"}, {"id": "specs_hire_flow_requirements_3_2_resumes_in_app_builder", "label": "3.2 Resumes & In-App Builder", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L365"}, {"id": "specs_hire_flow_requirements_3_2a_ai_powered_resume_assistance", "label": "3.2a AI-Powered Resume Assistance", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L384"}, {"id": "specs_hire_flow_requirements_3_3_job_application_flow", "label": "3.3 Job Application Flow", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L401"}, {"id": "specs_hire_flow_requirements_3_4_my_applications", "label": "3.4 My Applications", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L417"}, {"id": "specs_hire_flow_requirements_3_5_application_detail_withdraw_message_recruiter", "label": "3.5 Application Detail, Withdraw & Message Recruiter", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L427"}, {"id": "specs_hire_flow_requirements_3_6_saved_bookmarked_jobs", "label": "3.6 Saved / Bookmarked Jobs", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L443"}, {"id": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "label": "Phase 4: Public Job Routes & Home Page", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L461"}, {"id": "specs_hire_flow_requirements_4_0_public_route_group_shared_shell", "label": "4.0 Public Route Group & Shared Shell", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L463"}, {"id": "specs_hire_flow_requirements_4_1_public_job_listings", "label": "4.1 Public Job Listings", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L471"}, {"id": "specs_hire_flow_requirements_4_2_public_job_details_view_tracking", "label": "4.2 Public Job Details & View Tracking", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L485"}, {"id": "specs_hire_flow_requirements_4_3_auth_aware_navbar_redirect_logic_account_popover", "label": "4.3 Auth-Aware Navbar, Redirect Logic & Account Popover", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L499"}, {"id": "specs_hire_flow_requirements_4_4_home_page_composition", "label": "4.4 Home Page Composition", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L511"}, {"id": "specs_hire_flow_requirements_4_5_career_resources", "label": "4.5 Career Resources", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L528"}, {"id": "specs_hire_flow_requirements_4_6_seo", "label": "4.6 SEO", "file_type": "document", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L537"}], "edges": [{"source": "d_hire_flow_next_docs_specs_hire_flow_requirements_md", "target": "specs_hire_flow_requirements_hire_flow_requirements_specification", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L1", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_overview", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L3", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_roles", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L7", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_phase_0_foundation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L18", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_1_project_initialisation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L20", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_2_database_schema", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L24", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_3_middleware_route_guards", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L33", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_4_shared_ui_primitives", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L45", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_5_file_upload_infrastructure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L53", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_6_database_seed_script", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L61", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_0_foundation", "target": "specs_hire_flow_requirements_0_7_state_management_infrastructure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L69", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_phase_1_admin", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L79", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_1_admin_api", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L81", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_2_admin_ui", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L97", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_3_admin_team_management", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L111", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_4_job_oversight_analytics", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L126", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_5_admin_messaging_rest", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L139", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_1_6_admin_messaging_real_time", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L147", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_1_admin", "target": "specs_hire_flow_requirements_admin_applicant_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L160", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_phase_2_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L171", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_0_recruiter_layout_sidebar", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L173", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_1_company_profile_crud", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L182", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_2_recruiter_team_management", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L194", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_3_job_posts_crud", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L208", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_4_applicants_view_status_updates", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L225", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_5_recruiter_direct_messaging", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L242", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_6_applicant_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L258", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_7_bulk_actions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L274", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_8_recruiter_analytics_filters", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L289", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_9_recruiter_dashboard", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L304", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_10_notifications_activity_feed", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L314", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_2_recruiter", "target": "specs_hire_flow_requirements_2_11_csv_export", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L324", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_phase_3_user_job_seeker", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L340", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_0a_infrastructure_audit", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L342", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_0b_schema_migration", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L346", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_1_user_profile", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L350", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_2_resumes_in_app_builder", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L365", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_2a_ai_powered_resume_assistance", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L384", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_3_job_application_flow", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L401", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_4_my_applications", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L417", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_5_application_detail_withdraw_message_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L427", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_3_user_job_seeker", "target": "specs_hire_flow_requirements_3_6_saved_bookmarked_jobs", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L443", "weight": 1.0}, {"source": "specs_hire_flow_requirements_hire_flow_requirements_specification", "target": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L461", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_0_public_route_group_shared_shell", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L463", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_1_public_job_listings", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L471", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_2_public_job_details_view_tracking", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L485", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_3_auth_aware_navbar_redirect_logic_account_popover", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L499", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_4_home_page_composition", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L511", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_5_career_resources", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L528", "weight": 1.0}, {"source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page", "target": "specs_hire_flow_requirements_4_6_seo", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/specs/hire-flow-requirements.md", "source_location": "L537", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_docs_specs_hire_flow_requirements_md",
+      "label": "hire-flow-requirements.md",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "label": "Hire Flow \u2014 Requirements Specification",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "specs_hire_flow_requirements_overview",
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "specs_hire_flow_requirements_roles",
+      "label": "Roles",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "specs_hire_flow_requirements_phase_0_foundation",
+      "label": "Phase 0: Foundation",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_1_project_initialisation",
+      "label": "0.1 Project Initialisation",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_2_database_schema",
+      "label": "0.2 Database Schema",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_3_middleware_route_guards",
+      "label": "0.3 Middleware & Route Guards",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_4_shared_ui_primitives",
+      "label": "0.4 Shared UI Primitives",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_5_file_upload_infrastructure",
+      "label": "0.5 File Upload Infrastructure",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_6_database_seed_script",
+      "label": "0.6 Database Seed Script",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L61"
+    },
+    {
+      "id": "specs_hire_flow_requirements_0_7_state_management_infrastructure",
+      "label": "0.7 State Management Infrastructure",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L69"
+    },
+    {
+      "id": "specs_hire_flow_requirements_phase_1_admin",
+      "label": "Phase 1: Admin",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L79"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_1_admin_api",
+      "label": "1.1 Admin API",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L81"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_2_admin_ui",
+      "label": "1.2 Admin UI",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L97"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_3_admin_team_management",
+      "label": "1.3 Admin Team Management",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L111"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_4_job_oversight_analytics",
+      "label": "1.4 Job Oversight & Analytics",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_5_admin_messaging_rest",
+      "label": "1.5 Admin Messaging (REST)",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L139"
+    },
+    {
+      "id": "specs_hire_flow_requirements_1_6_admin_messaging_real_time",
+      "label": "1.6 Admin Messaging (Real-time)",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L147"
+    },
+    {
+      "id": "specs_hire_flow_requirements_admin_applicant_detail_view",
+      "label": "Admin Applicant Detail View",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L160"
+    },
+    {
+      "id": "specs_hire_flow_requirements_phase_2_recruiter",
+      "label": "Phase 2: Recruiter",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L171"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_0_recruiter_layout_sidebar",
+      "label": "2.0 Recruiter Layout & Sidebar",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L173"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_1_company_profile_crud",
+      "label": "2.1 Company Profile CRUD",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L182"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_2_recruiter_team_management",
+      "label": "2.2 Recruiter Team Management",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L194"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_3_job_posts_crud",
+      "label": "2.3 Job Posts CRUD",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L208"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_4_applicants_view_status_updates",
+      "label": "2.4 Applicants View & Status Updates",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_5_recruiter_direct_messaging",
+      "label": "2.5 Recruiter Direct Messaging",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L242"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_6_applicant_detail_view",
+      "label": "2.6 Applicant Detail View",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L258"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_7_bulk_actions",
+      "label": "2.7 Bulk Actions",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L274"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_8_recruiter_analytics_filters",
+      "label": "2.8 Recruiter Analytics & Filters",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L289"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_9_recruiter_dashboard",
+      "label": "2.9 Recruiter Dashboard",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L304"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_10_notifications_activity_feed",
+      "label": "2.10 Notifications & Activity Feed",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L314"
+    },
+    {
+      "id": "specs_hire_flow_requirements_2_11_csv_export",
+      "label": "2.11 CSV Export",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L324"
+    },
+    {
+      "id": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "label": "Phase 3: User (Job Seeker)",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L340"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_0a_infrastructure_audit",
+      "label": "3.0a Infrastructure Audit",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L342"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_0b_schema_migration",
+      "label": "3.0b Schema Migration",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L346"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_1_user_profile",
+      "label": "3.1 User Profile",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L350"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_2_resumes_in_app_builder",
+      "label": "3.2 Resumes & In-App Builder",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L365"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_2a_ai_powered_resume_assistance",
+      "label": "3.2a AI-Powered Resume Assistance",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L384"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_3_job_application_flow",
+      "label": "3.3 Job Application Flow",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L401"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_4_my_applications",
+      "label": "3.4 My Applications",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L417"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_5_application_detail_withdraw_message_recruiter",
+      "label": "3.5 Application Detail, Withdraw & Message Recruiter",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L427"
+    },
+    {
+      "id": "specs_hire_flow_requirements_3_6_saved_bookmarked_jobs",
+      "label": "3.6 Saved / Bookmarked Jobs",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L443"
+    },
+    {
+      "id": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "label": "Phase 4: Public Job Routes & Home Page",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L461"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_0_public_route_group_shared_shell",
+      "label": "4.0 Public Route Group & Shared Shell",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L463"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_1_public_job_listings",
+      "label": "4.1 Public Job Listings",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L471"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_2_public_job_details_view_tracking",
+      "label": "4.2 Public Job Details & View Tracking",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L485"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_3_auth_aware_navbar_redirect_logic_account_popover",
+      "label": "4.3 Auth-Aware Navbar, Redirect Logic & Account Popover",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L499"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_4_home_page_composition",
+      "label": "4.4 Home Page Composition",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L511"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_5_career_resources",
+      "label": "4.5 Career Resources",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L528"
+    },
+    {
+      "id": "specs_hire_flow_requirements_4_6_seo",
+      "label": "4.6 SEO",
+      "file_type": "document",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L537"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_docs_specs_hire_flow_requirements_md",
+      "target": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_roles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_phase_0_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_1_project_initialisation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_2_database_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_3_middleware_route_guards",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_4_shared_ui_primitives",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_5_file_upload_infrastructure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_6_database_seed_script",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_0_foundation",
+      "target": "specs_hire_flow_requirements_0_7_state_management_infrastructure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_phase_1_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_1_admin_api",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_2_admin_ui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_3_admin_team_management",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_4_job_oversight_analytics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_5_admin_messaging_rest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_1_6_admin_messaging_real_time",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_1_admin",
+      "target": "specs_hire_flow_requirements_admin_applicant_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_phase_2_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_0_recruiter_layout_sidebar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_1_company_profile_crud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_2_recruiter_team_management",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_3_job_posts_crud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_4_applicants_view_status_updates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_5_recruiter_direct_messaging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_6_applicant_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_7_bulk_actions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_8_recruiter_analytics_filters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_9_recruiter_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_10_notifications_activity_feed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_2_recruiter",
+      "target": "specs_hire_flow_requirements_2_11_csv_export",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L340",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_0a_infrastructure_audit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L342",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_0b_schema_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_1_user_profile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_2_resumes_in_app_builder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L365",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_2a_ai_powered_resume_assistance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_3_job_application_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L401",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_4_my_applications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L417",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_5_application_detail_withdraw_message_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L427",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_3_user_job_seeker",
+      "target": "specs_hire_flow_requirements_3_6_saved_bookmarked_jobs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L443",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_hire_flow_requirements_specification",
+      "target": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L461",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_0_public_route_group_shared_shell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L463",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_1_public_job_listings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_2_public_job_details_view_tracking",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L485",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_3_auth_aware_navbar_redirect_logic_account_popover",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L499",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_4_home_page_composition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_5_career_resources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L528",
+      "weight": 1.0
+    },
+    {
+      "source": "specs_hire_flow_requirements_phase_4_public_job_routes_home_page",
+      "target": "specs_hire_flow_requirements_4_6_seo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/specs/hire-flow-requirements.md",
+      "source_location": "L537",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
