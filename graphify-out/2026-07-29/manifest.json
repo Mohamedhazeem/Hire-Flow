@@ -1855,8 +1855,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785313604.0965858,
-    "ast_hash": "7670dda3ae977277422beea669a143c1",
+    "mtime": 1785332335.9856143,
+    "ast_hash": "f69c35df4c167d0abb6d63d429ea392d",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -2135,8 +2135,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1785320852.5208678,
-    "ast_hash": "7dd7e279eaf7eb8f3ba0360458ab126d",
+    "mtime": 1785335564.8291469,
+    "ast_hash": "4d52e875b5d30a7dc83283977165ebd6",
     "semantic_hash": ""
   },
   "docs/architecture/technical-design.md": {
@@ -2680,8 +2680,8 @@
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1785319931.6263602,
-    "ast_hash": "79cb9d4f5847bfe17274609766f8f990",
+    "mtime": 1785333486.9047363,
+    "ast_hash": "be21fb39b790742ea8731317e5206373",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -3140,8 +3140,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1785321478.4109788,
-    "ast_hash": "69e83b187cf9e33d3cc880babd5a4d07",
+    "mtime": 1785333797.4120493,
+    "ast_hash": "86d3522c3c922859fe83efd67ee50737",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/race.test.ts": {
@@ -3630,8 +3630,8 @@
     "semantic_hash": ""
   },
   "stryker.config.json": {
-    "mtime": 1785319931.4602296,
-    "ast_hash": "8fe9839dceb4aba78813bad635c3d1b4",
+    "mtime": 1785332492.849259,
+    "ast_hash": "25e780e0c0b0b7a205d28b8a801710f9",
     "semantic_hash": ""
   },
   ".kilo/plans/app-wide-rate-limiting.md": {
