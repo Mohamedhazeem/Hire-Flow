@@ -128,9 +128,10 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
 
   const handleSelectThread = useCallback(
     (threadId: string) => {
+      if (threadId === searchParams.get("thread")) return;
       router.replace(`${config.basePath}?thread=${threadId}`, { scroll: false });
     },
-    [router, config.basePath],
+    [router, config.basePath, searchParams],
   );
 
   const handleBack = useCallback(() => {
