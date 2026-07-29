@@ -19,10 +19,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: 1,
   globalSetup: "./e2e/global.setup.ts",
-  reporter: [
-    ["list"],
-    ["html", { open: "never" }],
-  ],
+  reporter: [["list"], ["html", { open: "never" }]],
   use: {
     baseURL,
     trace: "on-first-retry",

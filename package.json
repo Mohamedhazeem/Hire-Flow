@@ -17,7 +17,12 @@
     "test:e2e": "cross-env E2E_DEV=1 playwright test",
     "test:e2e:ui": "cross-env E2E_DEV=1 playwright test --ui",
     "test:e2e:build": "cross-env E2E_PROD=1 playwright test",
-    "test:e2e:build:ui": "cross-env E2E_PROD=1 playwright test --ui"
+    "test:e2e:build:ui": "cross-env E2E_PROD=1 playwright test --ui",
+    "test:contract": "vitest run --project contract",
+    "test:perf": "vitest run --project perf",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -26,6 +31,7 @@
     "@base-ui/react": "^1.5.0",
     "@better-auth/prisma-adapter": "^1.6.15",
     "@hookform/resolvers": "^5.4.0",
+    "@opentelemetry/api": "^1.9.1",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "@tanstack/react-query": "^5.101.0",

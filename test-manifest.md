@@ -1,5 +1,5 @@
 # TEST-MANIFEST.md
- 
+
 > **Last Updated:** 2026-07-17  
 > **Current Phase:** 8 (complete)  
 > **Current Block:** CI green on master push + PRs  
@@ -15,9 +15,9 @@
 > Phase 5 component tests complete (16/16). Phases 6–7 complete. Phase 8 CI complete;
 > coverage thresholds ratcheted to the measured floor (8.1); raising to 60/70 (8.2/8.3)
 > deferred until more tests land.
- 
+
 ## Phase 0 — Infrastructure
- 
+
 - [x] 0.0 `vitest.config.ts` (3 projects: default / dom / perf)
 - [x] 0.1 Test database (`hireflow_test`)
 - [x] 0.2 `lib/test/global-setup.ts`
@@ -31,10 +31,12 @@
 ## Phase 1 — Input Validation & Schema Hardening
 
 ### SQL Injection Prevention
+
 - [x] 1.a1 `analytics-queries.security.test.ts` (SQL payloads in all 7 filter params)
 - [x] 1.a2 `analytics.schema.test.ts` (enum enforcement on status/workMode/employmentType/jobId UUID)
 
 ### Input Edge Cases
+
 - [x] 1.b1 `profile.schema.test.ts` (caps, Unicode, empties, duplicates)
 - [x] 1.b2 `resume.schema.test.ts`
 - [x] 1.b3 `resume-ai.schema.test.ts`
@@ -44,6 +46,7 @@
 - [x] 1.b7 `admin.schema.test.ts` (HTML/SQL in banReason, role enum)
 
 ### Mass Assignment Prevention
+
 - [x] 1.c1 `PATCH /api/admin/users/[id]/role` (extra fields ignored) — `admin/role.test.ts`
 - [x] 1.c2 `POST /api/jobs/[id]/apply` (status override rejected) — `jobs/apply.test.ts`
 - [x] 1.c3 `PATCH /api/user/resumes/[id]` (immutable fields protected) — `user/resumes.test.ts`
@@ -69,17 +72,21 @@
 ## Phase 3 — Authentication & Authorization Tests
 
 ### Session & Token Security
+
 _All covered by `lib/test/integration/auth/auth.session.test.ts`._
+
 - [x] 3.0a Expired session → 401
 - [x] 3.0b Malformed token → 401
 - [x] 3.0c Missing auth → 401
-- [x] 3.0d User → /admin/* → 403
-- [x] 3.0e Admin → /recruiter/* → 403
+- [x] 3.0d User → /admin/\* → 403
+- [x] 3.0e Admin → /recruiter/\* → 403
 - [x] 3.0f Banned user with session → 401
 - [x] 3.0g Super admin bypass
 
 ### IDOR Protection (all resource types)
+
 _All covered by `lib/test/integration/auth/auth.idor.test.ts`._
+
 - [x] 3.I1 Application detail
 - [x] 3.I2 Job management
 - [x] 3.I3 Resume
@@ -91,12 +98,14 @@ _All covered by `lib/test/integration/auth/auth.idor.test.ts`._
 - [x] 3.I9 Admin user actions
 
 ### Middleware & Redirect
+
 _Covered by E2E `cross-role-access.spec.ts` + `idor-deep-links.spec.ts`._
+
 - [x] 3.1a Logged-in → /login redirect
 - [x] 3.1b Logged-in → /register redirect
 - [x] 3.1c Logged-in → / redirect
 - [x] 3.1d /verify-email NOT redirected
-- [x] 3.1e Non-admin → /admin/* → /unauthorized
+- [x] 3.1e Non-admin → /admin/\* → /unauthorized
 - [x] 3.1f Unauthenticated → return URL preserved
 - [x] 3.1g After login, redirect to original deep link
 - [x] 3.1h Banned user post-session-revoke
@@ -104,6 +113,7 @@ _Covered by E2E `cross-role-access.spec.ts` + `idor-deep-links.spec.ts`._
 ## Phase 4 — Integration Tests
 
 _Files under `lib/test/integration/**`._
+
 - [x] #1 Tenant isolation — `auth/auth.idor.test.ts`
 - [x] #2 Public job queries (dual-gate) — `jobs/public-job-queries.test.ts`
 - [x] #3 Apply route (snapshot, audit trail) — `jobs/apply.test.ts`
@@ -123,6 +133,7 @@ _Files under `lib/test/integration/**`._
 - [~] #17 Upload route — `upload.test.ts` (401 + happy path only; edge cases U1–U6 pending)
 
 ### File Upload & Download Edge Cases
+
 - [x] U1 File type bypass (exe → pdf) — unit `upload-security.test.ts` (MIME allow-list)
 - [x] U2 File size >10MB → 413 — unit `upload-security.test.ts` (5 MB limit enforced in `saveUpload`)
 - [x] U3 Path traversal in download — `files/download.test.ts` (raw + encoded → 403)
@@ -131,6 +142,7 @@ _Files under `lib/test/integration/**`._
 - [x] U6 Concurrent multi-role downloads — `files/download.test.ts` (owner/recruiter/admin 200, stranger 403)
 
 ### Notification Permissions & Delivery
+
 - [x] N1 Cross-user notification isolation — `notifications.test.ts`
 - [x] N2 Invalid userId in create — `lib/notifications.ts` validates user exists
 - [x] N3 Mark-read ownership — `notifications.test.ts`
@@ -139,6 +151,7 @@ _Files under `lib/test/integration/**`._
 - [x] N6 Fire-and-forget (Pusher failure non-blocking) — `lib/test/unit/notifications.test.ts`
 
 ### Search & Full-Text
+
 - [x] S1 Special chars in search — `unit/search-query.test.ts` (splits on metachars, no token merge)
 - [x] S2 Empty search → all results — `unit/search-query.test.ts` + `jobs/public-job-queries.test.ts`
 - [x] S3 Very long search string — `unit/search-query.test.ts` (200 char / 20 token cap) + integration
@@ -146,7 +159,9 @@ _Files under `lib/test/integration/**`._
 - [x] S5 SQL payloads in search — `security/analytics-queries.security.test.ts` + `unit/search-query.test.ts`
 
 ### Pagination Boundaries
+
 _All covered by unit `unit/pagination.test.ts` (2.3)._
+
 - [x] P1 Negative page → 1
 - [x] P2 Zero page size → minimum
 - [x] P3 Page size 100000 → 100
@@ -155,6 +170,7 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 - [x] P6 Deleted cursor items
 
 ### Audit Trail Integrity
+
 - [x] A1 Status change fromStatus match — `applications/status.test.ts`
 - [x] A2 Revert audit correctness — `applications/revert.test.ts`
 - [x] A3 Bulk status creates audit rows — `applications/bulk-status.test.ts`
@@ -162,17 +178,20 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 - [x] A5 First status change (apply) — `jobs/apply.test.ts`
 
 ### Error Handling & Information Leakage
+
 - [x] E1 Production error shape (no stack traces) — `unit/api-wrapper.test.ts`
 - [x] E2 404 vs 403 distinction — `files/download.test.ts` + cross-company 403 tests
 - [x] E3 Validation error field names — `unit/api-response.test.ts` / schema suites
 - [x] E4 API wrapper consistency — `unit/api-wrapper.test.ts`
 
 ### Email & Notification Delivery
+
 - [x] M1 Resend not called for banned — `app/features/auth/libs/email.ts` (sendEmail skips banned userId)
 - [x] M2 Notification non-blocking — `lib/notifications.ts` (`void` trigger)
 - [x] M3 Missing Pusher config — `lib/pusher/pusher.ts` returns no-op Proxy
 
 ### Concurrent Operations & Race Conditions
+
 - [x] C1 Concurrent status transitions — `applications/race.test.ts` (loser → 409 ConflictError)
 - [x] C2 Concurrent set-primary — `user/resumes.test.ts` (exactly one primary via $transaction)
 - [x] C3 Concurrent bookmark toggle — `user/bookmarks.test.ts`
@@ -181,6 +200,7 @@ _All covered by unit `unit/pagination.test.ts` (2.3)._
 ## Phase 5 — Component Tests
 
 _Files under `lib/test/components/**`. 16 of 16 implemented._
+
 - [x] `data-table.dom.test.tsx`
 - [x] `applicants-table.dom.test.tsx`
 - [x] `bulk-reject-dialog.dom.test.tsx`
@@ -201,6 +221,7 @@ _Files under `lib/test/components/**`. 16 of 16 implemented._
 ## Phase 6 — E2E (Playwright)
 
 _Specs under `e2e/specs/**`._
+
 - [x] Setup: `playwright.config.ts`
 - [x] Setup: `e2e/global.setup.ts`
 - [x] Setup: `e2e/seed-e2e.ts` (was listed as `prisma/seed-e2e.ts`)
@@ -218,6 +239,7 @@ _Specs under `e2e/specs/**`._
 ## Phase 7 — Performance & Stability
 
 _Perf project (`--project perf`, 300s timeout), files `**/*.perf.test.ts`._
+
 - [x] PF1 Analytics large date range (5 years, <5s) — `recruiter/queries/analytics-queries.perf.test.ts`
 - [x] PF2 Applicant list 10K+ (<500ms) — `recruiter/queries/application-queries.perf.test.ts`
 - [x] PF3 CSV export 50K (<30s, <512MB) — `recruiter/queries/export-queries.perf.test.ts`
@@ -225,7 +247,9 @@ _Perf project (`--project perf`, 300s timeout), files `**/*.perf.test.ts`._
 - [x] PF5 Concurrent AI requests (5/day cap) — `ai-enhance/route.perf.test.ts`
 
 ### Rate Limiter Behavior
+
 _All covered by `lib/test/unit/rate-limit.test.ts`._
+
 - [x] RL1 In-memory reset (document gap)
 - [x] RL2 Key isolation across users
 - [x] RL3 Concurrent request counting
@@ -248,12 +272,14 @@ their own rejections, so the coverage job no longer flakes on a background
 ## Security Audit Checklist (Manual)
 
 ### Authentication & Sessions
+
 - [ ] All role-based redirects (middleware matrix)
 - [ ] Banned user sessions immediately invalidated
 - [ ] Password reset revokes all sessions
 - [ ] /verify-email accessible to authenticated users
 
 ### Authorization & Data Boundaries
+
 - [ ] File upload/download auth matrix (all 4 roles)
 - [ ] Cross-recruiter data isolation
 - [ ] Cross-user data isolation
@@ -261,24 +287,28 @@ their own rejections, so the coverage job no longer flakes on a background
 - [ ] URL ID manipulation → 403/404
 
 ### Input & Injection
+
 - [ ] SQL metacharacters in analytics filters → Zod rejection
 - [ ] Job search special chars → sanitized
 - [ ] File type validation (renamed extensions)
 - [ ] Message content XSS (rendered as text)
 
 ### Real-time & External Services
+
 - [ ] Pusher multi-role connectivity
 - [ ] Pusher channel isolation
 - [ ] AI rate limit + fallback
 - [ ] Email not sent to banned users
 
 ### Data Integrity
+
 - [ ] Bulk operations atomic
 - [ ] Resume snapshot survives deletion
 - [ ] Concurrent operations safe
 - [ ] Audit trail complete
 
 ### SEO & Public Access
+
 - [ ] Sitemap + robots.txt correctness
 - [ ] JSON-LD structured data validation
 - [ ] Draft/archived/deactivated jobs never public

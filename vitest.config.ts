@@ -80,6 +80,16 @@ export default defineConfig({
         plugins: sharedPlugins,
         resolve: sharedResolve,
         test: {
+          name: "contract",
+          environment: "node",
+          include: ["**/*.contract.test.ts"],
+          exclude: ["**/node_modules/**"],
+        },
+      },
+      {
+        plugins: sharedPlugins,
+        resolve: sharedResolve,
+        test: {
           name: "perf",
           environment: "node",
           include: ["**/*.perf.test.ts"],
