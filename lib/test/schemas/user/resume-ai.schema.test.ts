@@ -13,6 +13,7 @@ const validResponse = {
     },
   ],
   overallScore: 75,
+  projectedScore: 85,
   keyStrengths: ["Strong technical background"],
   improvementAreas: ["Leadership skills"],
 };

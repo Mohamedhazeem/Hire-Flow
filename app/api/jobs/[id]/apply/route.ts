@@ -6,7 +6,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { ApplySchema } from "@/app/features/jobs/schema/application-submit.schema";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { revalidatePath } from "next/cache";
-import { resolvePublicJob } from "@/lib/resolvers/job-resolver";
+import { prisma } from "@/lib/prisma";
 import { applicationService } from "@/lib/services/application-service";
 
 async function handlePOST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -14,8 +14,11 @@ async function handlePOST(request: NextRequest, { params }: { params: Promise<{ 
   const { id } = await params;
 
   // Resolve slug → DB ID
-  const job = await resolvePublicJob(id);
+  const job = await prisma.job.findFirst({
+    where: { OR: [{ slug: id }, { id }] },
+  });
   if (!job) throw new NotFoundError("Job not found");
+  if (!job.isActive || job.status !== "active") throw new ValidationError("Job is no longer accepting applications");
 
   checkRateLimit(`apply:${session.id}`, { max: 10, windowMs: 60000 });
 

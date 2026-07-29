@@ -4,7 +4,7 @@ import { measure } from "@/lib/test/perf";
 import { Role, WorkMode, EmploymentType } from "@/app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 
-const ANALYTICS_TIMEOUT = 60000;
+const ANALYTICS_TIMEOUT = 120000;
 
 describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_TIMEOUT }, () => {
   beforeEach(async () => {

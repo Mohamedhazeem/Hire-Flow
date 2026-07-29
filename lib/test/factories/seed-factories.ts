@@ -12,7 +12,7 @@ export async function seedApplications(
   },
 ): Promise<string[]> {
   const { count, statuses = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected"], appliedAtSpreadDays = 365 } = config;
-  const batchSize = 1000;
+  const batchSize = 5000;
   const userIds: string[] = [];
 
   for (let batchStart = 0; batchStart < count; batchStart += batchSize) {
@@ -61,6 +61,11 @@ export async function seedJobs(
   const batchSize = 500;
   const jobIds: string[] = [];
 
+  // Ensure the Prisma adapter connection is initialized before batch inserts.
+  // Without this, createMany can fail with phantom FK violations on the first
+  // batch due to how @prisma/adapter-pg initializes connections.
+  await prisma.$queryRaw`SELECT 1`;
+
   for (let batchStart = 0; batchStart < count; batchStart += batchSize) {
     const batchEnd = Math.min(batchStart + batchSize, count);
     const batchSizeActual = batchEnd - batchStart;
@@ -75,7 +80,7 @@ export async function seedJobs(
         : faker.person.jobTitle();
       return {
         id,
-        slug: slugify(jobTitle),
+        slug: `${slugify(jobTitle)}-${globalIndex}`,
         recruiterId,
         companyId,
         title: jobTitle,
