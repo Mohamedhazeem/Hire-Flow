@@ -4,23 +4,20 @@ import { ValidationError, NotFoundError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { ApplySchema } from "@/app/features/jobs/schema/application-submit.schema";
-import { checkRateLimit } from "@/lib/rate-limit";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { applicationService } from "@/lib/services/application-service";
 
-async function handlePOST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+const handlePOST = withRateLimit(async (request: NextRequest, { params }: { params: Promise<{ id: string }> }) => {
   const session = await requireRole(["user"]);
   const { id } = await params;
 
-  // Resolve slug → DB ID
   const job = await prisma.job.findFirst({
     where: { OR: [{ slug: id }, { id }] },
   });
   if (!job) throw new NotFoundError("Job not found");
   if (!job.isActive || job.status !== "active") throw new ValidationError("Job is no longer accepting applications");
-
-  checkRateLimit(`apply:${session.id}`, { max: 10, windowMs: 60000 });
 
   const body = await request.json().catch(() => ({}));
   const parsed = ApplySchema.safeParse(body);
@@ -34,6 +31,6 @@ async function handlePOST(request: NextRequest, { params }: { params: Promise<{ 
   revalidatePath("/user/applications");
 
   return ok(result, 201);
-}
+}, "jobs:apply");
 
 export const POST = withErrorHandler(handlePOST);
