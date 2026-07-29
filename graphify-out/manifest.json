@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/applicants-table.dom.test.tsx": {
-    "mtime": 1785324134.6660938,
-    "ast_hash": "1ec4d57293aed93e8f7a8bc0cc530e8d",
+    "mtime": 1785325460.5107112,
+    "ast_hash": "b089213a876fdbe922a4faab02ea938d",
     "semantic_hash": ""
   },
   "lib/test/components/apply-modal.dom.test.tsx": {
