@@ -1110,8 +1110,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1785341967.3113437,
-    "ast_hash": "6d987052fa417bc2f2868f94ed211cc8",
+    "mtime": 1785343073.77232,
+    "ast_hash": "0cbf9386c1a622876cd1ea071fc2430b",
     "semantic_hash": ""
   },
   "app/features/landing/components/hero-search.tsx": {

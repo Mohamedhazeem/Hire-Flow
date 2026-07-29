@@ -140,21 +140,22 @@ export function AutocompleteInput({
                 value={item}
                 onSelect={() => addItem(item)}
                 disabled={value.some((s) => s.toLowerCase() === item.toLowerCase())}
-                className={cn(
-                  "flex cursor-pointer items-center px-3 py-2 text-sm text-text-body",
-                  "aria-selected:bg-bg-elevated",
-                  "data-disabled:cursor-not-allowed data-disabled:opacity-40 data-disabled:line-through",
-                )}
+className={cn(
+                   "flex cursor-pointer items-center px-3 py-2 text-sm text-text-body",
+                   "aria-selected:bg-bg-elevated",
+                   "hover:bg-brand/80 hover:text-text-inverse",
+                   "data-disabled:cursor-not-allowed data-disabled:opacity-40 data-disabled:line-through",
+                 )}
               >
                 {item}
               </Command.Item>
             ))}
             {isCustom && (
-              <Command.Item
-                value={search}
-                onSelect={() => addItem(search.trim())}
-                className="flex cursor-pointer items-center gap-2 border-t border-border-subtle px-3 py-2 text-sm text-text-body aria-selected:bg-bg-elevated"
-              >
+<Command.Item
+                 value={search}
+                 onSelect={() => addItem(search.trim())}
+                 className="flex cursor-pointer items-center gap-2 border-t border-border-subtle px-3 py-2 text-sm text-text-body hover:bg-brand/80 hover:text-text-inverse aria-selected:bg-bg-elevated"
+               >
                 <PlusIcon className="size-4 shrink-0 text-text-muted" />
                 <span>
                   Add &ldquo;<span className="font-medium">{search.trim()}</span>&rdquo;

@@ -145,7 +145,10 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.skills?.length) where.skills = { hasSome: params.skills };
 
   if (params.status === "open") {
-    where.applicationDeadline = { gte: new Date() };
+    where.OR = [
+      { applicationDeadline: { gte: new Date() } },
+      { applicationDeadline: null },
+    ];
   } else if (params.status === "expired") {
     where.applicationDeadline = { lt: new Date() };
   }
