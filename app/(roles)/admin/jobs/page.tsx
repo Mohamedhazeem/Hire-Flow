@@ -14,6 +14,7 @@ export default function AdminJobsPage() {
       <PageHeader
         title="Jobs"
         description="Manage all job listings — toggle active/inactive status or delete listings"
+        className="text-center"
       />
       <Suspense
         fallback={<div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>}
