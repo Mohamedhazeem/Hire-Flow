@@ -1,12 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { NextRequest } from "next/server";
-import {
-  mockSession,
-  resetDb,
-  createTestUser,
-  createTestResume,
-  mockAiClient,
-} from "@/lib/test";
+import { mockSession, resetDb, createTestUser, createTestResume, mockAiClient } from "@/lib/test";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
@@ -36,15 +30,10 @@ describe("PF5 — Concurrent AI enhancement rate limit", () => {
       }),
     );
 
-    const { POST } = await import(
-      "@/app/api/user/resumes/[id]/ai-enhance/route"
-    );
+    const { POST } = await import("@/app/api/user/resumes/[id]/ai-enhance/route");
 
     const makeRequest = () => {
-      const req = new NextRequest(
-        `http://localhost/api/user/resumes/${resume.id}/ai-enhance`,
-        { method: "POST" },
-      );
+      const req = new NextRequest(`http://localhost/api/user/resumes/${resume.id}/ai-enhance`, { method: "POST" });
       return POST(req, { params: Promise.resolve({ id: resume.id }) });
     };
 

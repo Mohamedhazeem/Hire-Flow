@@ -4,8 +4,9 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 
-async function handleGET() {
+const handleGET = withRateLimit(async () => {
   const session = await requireRole(["user"]);
 
   const resumes = await prisma.resume.findMany({
@@ -25,18 +26,16 @@ async function handleGET() {
   });
 
   return ok(resumes);
-}
+}, "resumes:list");
 
-async function handlePOST(request: NextRequest) {
+const handlePOST = withRateLimit(async (request: NextRequest) => {
   const session = await requireRole(["user"]);
 
   const existingCount = await prisma.resume.count({
     where: { userId: session.id, deletedAt: null },
   });
   if (existingCount >= 5) {
-    throw new ValidationError(
-      "Resume limit reached (5). Please delete an existing resume before uploading a new one.",
-    );
+    throw new ValidationError("Resume limit reached (5). Please delete an existing resume before uploading a new one.");
   }
 
   let formData: FormData;
@@ -85,7 +84,7 @@ async function handlePOST(request: NextRequest) {
   }
 
   return ok(resume, 201);
-}
+}, "resumes:upload");
 
 export const GET = withErrorHandler(handleGET);
 export const POST = withErrorHandler(handlePOST);

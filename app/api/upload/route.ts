@@ -40,7 +40,7 @@ async function handleDELETE(request: NextRequest) {
     throw new UnauthorizedError();
   }
 
-  const body = await request.json().catch(() => ({})) as { url?: string; filename?: string };
+  const body = (await request.json().catch(() => ({}))) as { url?: string; filename?: string };
   const url = body.url ?? (body.filename ? `/uploads/${body.filename}` : null);
 
   if (!url) {
