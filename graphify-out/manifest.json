@@ -3000,8 +3000,8 @@
     "semantic_hash": ""
   },
   "e2e/global.setup.ts": {
-    "mtime": 1784789050.022043,
-    "ast_hash": "14935f27a2ae36d2344977df43e4ab0f",
+    "mtime": 1785296384.073042,
+    "ast_hash": "d65e1f83d8fa951fe7cb11d9bd9dce1d",
     "semantic_hash": ""
   },
   "e2e/pages/admin-users-page.ts": {
@@ -3075,12 +3075,12 @@
     "semantic_hash": ""
   },
   "e2e/specs/anonymous-apply-redirect.spec.ts": {
-    "mtime": 1784789050.0394645,
-    "ast_hash": "2f3edd1046569ea74ad654b8c5d3ebd5",
+    "mtime": 1785295243.2194428,
+    "ast_hash": "e351f0cbf0a57e0b36277a4a97760c28",
     "semantic_hash": ""
   },
   "e2e/specs/cross-role-access.spec.ts": {
-    "mtime": 1784789050.0404644,
+    "mtime": 1785295559.7466693,
     "ast_hash": "e298a8c888f00fcf9ff0c7156e571090",
     "semantic_hash": ""
   },
@@ -3100,8 +3100,8 @@
     "semantic_hash": ""
   },
   "e2e/specs/recruiter-bulk-reject.spec.ts": {
-    "mtime": 1784789050.044464,
-    "ast_hash": "d17aa4970b1ae79c08aea3a5160f1e9b",
+    "mtime": 1785298065.2387788,
+    "ast_hash": "c5deaf69ced4dd08829eb3461265df34",
     "semantic_hash": ""
   },
   "e2e/specs/recruiter-pipeline.spec.ts": {
@@ -3115,8 +3115,8 @@
     "semantic_hash": ""
   },
   "playwright.config.ts": {
-    "mtime": 1784789051.106107,
-    "ast_hash": "aa2db3bcfbbdc4306e6480114937581e",
+    "mtime": 1785296389.2131894,
+    "ast_hash": "2cc2e6235c3910b54e9dd464037c8646",
     "semantic_hash": ""
   },
   "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts": {
@@ -3487,6 +3487,26 @@
   "stores/messages/use-thread-presence.ts": {
     "mtime": 1785287261.7047832,
     "ast_hash": "d6440a89d833aa2006c74b64d2775f4a",
+    "semantic_hash": ""
+  },
+  ".auth/admin.json": {
+    "mtime": 1785296492.300289,
+    "ast_hash": "1e1810a0eab160176f2c35d42cde3d6e",
+    "semantic_hash": ""
+  },
+  ".auth/recruiter.json": {
+    "mtime": 1785296499.6110847,
+    "ast_hash": "47ad25626fcd75f3c8da401fb3d6ee9c",
+    "semantic_hash": ""
+  },
+  ".auth/user.json": {
+    "mtime": 1785296505.2116816,
+    "ast_hash": "2646108018bf5c08b96c1502710672d7",
+    "semantic_hash": ""
+  },
+  "e2e/specs/auth.setup.ts": {
+    "mtime": 1785298046.2033792,
+    "ast_hash": "a75f14517ce26d15ccb9c3e54307c665",
     "semantic_hash": ""
   }
 }
