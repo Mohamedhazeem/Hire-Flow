@@ -163,7 +163,7 @@ Every AI feature checks for key presence at runtime. If no provider key is confi
 
 **Null-Guarded Structured Data** — JSON-LD `JobPosting` markup is injected via Next.js `generateMetadata`, with every field (salary, location, employment type) individually null-checked so no fabricated data ever reaches search engines.
 
-**CI Quality Gates** — A 6-job GitHub Actions workflow enforces typecheck, lint, format, unit/integration/contract tests with coverage, E2E, performance with baseline regression, and mutation testing. Vitest v3 global setup returns teardown for perf result publishing. Baseline regression compares PF1–PF5 against `benchmark/baseline.json`; mutation testing uses Stryker with `vitest-runner` and `break: null` threshold.
+**CI Quality Gates** — A 6-job GitHub Actions workflow enforces typecheck, lint, format, unit/integration/contract tests with coverage, E2E, performance with baseline regression, and mutation testing (currently disabled in CI)\. Vitest v3 global setup returns teardown for perf result publishing. Baseline regression compares PF1–PF5 against `benchmark/baseline.json`; mutation testing (Stryker, currently disabled) uses `vitest-runner` and `break: null` threshold.
 
 ---
 
@@ -179,7 +179,7 @@ Hire Flow enforces 6 quality gates in `.github/workflows/test.yml`:
 | Tests + Coverage | Vitest (`default` + `dom` + `contract`) | Every PR | Unit, integration, contract tests with coverage ratchet |
 | E2E | Playwright | Every PR | Full role-based journeys with real auth |
 | Performance | Vitest `perf` + baseline compare | Master push | PF1–PF5 budgets + regression against `benchmark/baseline.json` |
-| Mutation | Stryker Mutator | Master push | Surviving mutants across `lib/rate-limiting/` |
+| Mutation | Stryker Mutator | Master push (commented out) | Surviving mutants across `lib/rate-limiting/` � **disabled until Stryker issues are resolved** |
 
 Supporting config: `.prettierrc`, `.prettierignore`, `vitest.config.ts` (4 projects: `default`, `dom`, `contract`, `perf`), `stryker.config.json` (vitest-runner, `break: null`), `scripts/compare-benchmark.ts`, `scripts/update-baseline.ts`, `lib/test/perf-teardown.ts`.
 
@@ -301,7 +301,7 @@ All routes use Zod validation, centralized error handling (`lib/api-error.ts`), 
 - **7-stage** applicant status pipeline with full audit trail
 - **Cloud storage provider abstraction** (local dev ↔ Vercel Blob production)
 - **App-wide rate limiting** — `lib/rate-limiting/` module with config, middleware, rate-limiter, repository, metrics, telemetry, cleanup, request-context; wired into 9 API routes; 7 unit + 3 contract + 6 new rate-limiting tests
-- **CI quality gates** — ESLint 9, Prettier, Vitest 4-project config (`default`/`dom`/`contract`/`perf`), Stryker mutation testing, GitHub Actions 6-job workflow
+- **CI quality gates** — ESLint 9, Prettier, Vitest 4-project config (`default`/`dom`/`contract`/`perf`), Stryker mutation testing (currently disabled), GitHub Actions 6-job workflow
 - **700+** TypeScript/React files across API routes, feature modules, shared components, rate-limiting, and test infrastructure
 - Real-time messaging across **3 role pairs** (admin↔user, recruiter↔applicant) via Pusher private channels
 
@@ -487,7 +487,7 @@ hire-flow-next/
 - **Shared notification utility** — `lib/notifications.ts` performs the DB write and Pusher trigger atomically from a single call site
 - **Rate limiting as infrastructure, not an afterthought** — unified `lib/rate-limiting/` module with configurable sliding-window limiter, OpenTelemetry metrics, batched cleanup, per-endpoint fail strategy, and admin metrics endpoint
 - **Upload provider abstraction** — `UPLOAD_PROVIDER` env var selects `local` or `vercel-blob`; the provider registry in `lib/upload.ts` dispatches `saveUpload`/`deleteUpload` to the correct implementation with zero code changes when switching
-- **CI quality gates as code** — typecheck, lint, format, contract tests, performance baseline regression, and mutation testing are all defined in `.github/workflows/test.yml` with supporting scripts in `scripts/` and config in `vitest.config.ts`/`stryker.config.json`
+- **CI quality gates as code** — typecheck, lint, format, contract tests, performance baseline regression, and mutation testing (currently disabled) are all defined in `.github/workflows/test.yml` with supporting scripts in `scripts/` and config in `vitest.config.ts`/`stryker.config.json`
 
 ---
 
@@ -517,7 +517,7 @@ Hire Flow uses a layered testing strategy matched to each layer of the stack:
 | Integration | Vitest + local Postgres test DB          | API route handlers called directly, tenant isolation, transactions, audit trails                                                           |
 | Performance | Vitest (`perf` project) + local Postgres | Scale budgets: analytics (PF1), applicant listing (PF2), CSV export (PF3), public job FTS search (PF4), resume AI-enhance quota race (PF5) |
 | Component   | React Testing Library                    | Data table selection, bulk action logic, forms, AI suggestions panel                                                                       |
-| Mutation    | Stryker Mutator + Vitest                 | Surviving mutants across `lib/rate-limiting/` and shared APIs                                                                             |
+| Mutation    | Stryker Mutator + Vitest (disabled)    | Surviving mutants across `lib/rate-limiting/` and shared APIs                                                                             |
 | End-to-End  | Playwright                               | Full role-based journeys (anonymous → user → recruiter → admin) with real Better Auth sessions                                             |
 
 External services (Pusher, AI providers, Resend, Vercel Blob) are mocked at the module level — tests never make real network calls or incur API costs.
@@ -535,7 +535,7 @@ Tests are built incrementally per the [testing strategy](docs/testing/testing-st
 | 4     | Integration: API routes + real DB   | All 17 priority route groups (tenant isolation, public-job gate, apply, status/bulk/revert, resume CRUD, ai-enhance rate limit, messages, bookmarks, export, ban/sessions, withdraw, files/download, analytics, notifications, role PATCH, upload/download with cloud storage); file upload/download edges with local and Vercel Blob providers, notification delivery, search/FTS sanitization, pagination boundaries, audit-trail integrity, error-shape/info-leak, concurrent race conditions |
 | 5     | Component tests (RTL)               | `data-table`, `applicants-table`, `bulk-reject-dialog`, `status-timeline`, `resume-builder-form`, `ai-suggestions-panel`, `job-search-bar`, `save-job-button`, `account-popover`, `apply-modal`, chat components, `no-company-prompt`                                                                                                                                                                                                                                                            |
 | 6     | End-to-end (Playwright)             | 10 role-based journeys (anonymous apply redirect, user apply, recruiter pipeline, bulk reject, admin ban, messaging roundtrip, AI enhance, CSV export, cross-role access, IDOR deep links) across anonymous/user/recruiter/admin storage states                                                                                                                                                                                                                                                  |
-| 7     | CI quality gates                    | Typecheck (`tsc --noEmit`), ESLint, Prettier format check, contract tests (`*.contract.test.ts`), performance baseline regression (`benchmark/baseline.json` + `compare-benchmark.ts`), mutation testing (Stryker with vitest-runner)                                                                                                                                                                                                                                                           |
+| 7     | CI quality gates                    | Typecheck (`tsc --noEmit`), ESLint, Prettier format check, contract tests (`*.contract.test.ts`), performance baseline regression (`benchmark/baseline.json` + `compare-benchmark.ts`), mutation testing (Stryker with vitest-runner) � **currently disabled in CI**                                                                                                                                                                                                                                                           |
 
 ### Performance & stability tests (Phase 7)
 
@@ -563,11 +563,11 @@ The `contract` Vitest project runs `*.contract.test.ts` files to enforce shared 
 
 ### Mutation testing (Phase 7)
 
-Stryker Mutator runs on master push using `vitest-runner` against the `default` and `contract` projects. Thresholds: `high: 80`, `low: 60`, `break: null`. Mutants are generated from `lib/rate-limiting/**/*.ts` excluding tests, types, config, and metrics. Reports are written to `reports/mutation/`.
+Stryker Mutator (currently disabled) runs on master push using `vitest-runner` against the `default` and `contract` projects. Thresholds: `high: 80`, `low: 60`, `break: null`. Mutants are generated from `lib/rate-limiting/**/*.ts` excluding tests, types, config, and metrics. Reports are written to `reports/mutation/`.
 
 ### Running tests
 
-`vitest.config.ts` defines four projects: `default` (5s timeout — unit + integration), `dom` (5s timeout — component/RTL tests), `contract` (5s timeout — `*.contract.test.ts`), and `perf` (300s timeout — `*.perf.test.ts` against a real Postgres test DB). By default `npm run test` runs all three; use `--project` to target a specific one.
+`vitest.config.ts` defines four projects: `default` (30s timeout — unit + integration), `dom` (5s timeout — component/RTL tests), `contract` (5s timeout — `*.contract.test.ts`), and `perf` (300s timeout — `*.perf.test.ts` against a real Postgres test DB). By default `npm run test` runs all three; use `--project` to target a specific one.
 
 ```bash
 # One-time: create local test database
@@ -601,7 +601,7 @@ npm run test:e2e
 npm run test:e2e:ui   # interactive mode
 ```
 
-CI quality gates are defined in `.github/workflows/test.yml`: typecheck, lint, format check, unit/integration/contract with coverage, E2E, performance with baseline regression (`scripts/compare-benchmark.ts`), and mutation testing (`scripts/update-baseline.ts` for master baseline updates). Performance results are published to `benchmark/results/${sha}.json` by `lib/test/perf-teardown.ts` via vitest v3 global setup teardown.
+CI quality gates are defined in `.github/workflows/test.yml`: typecheck, lint, format check, unit/integration/contract with coverage, E2E, performance with baseline regression (`scripts/compare-benchmark.ts`). Mutation testing (Stryker) is currently disabled in CI. Performance results are published to `benchmark/results/${sha}.json` by `lib/test/perf-teardown.ts` via vitest v3 global setup teardown.
 
 Coverage thresholds are enforced via `vitest.config.ts` (currently `lines: 22, functions: 54, statements: 22, branches: 67`) and ratchet upward as suites mature.
 

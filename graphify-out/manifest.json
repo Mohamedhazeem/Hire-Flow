@@ -2680,8 +2680,8 @@
     "semantic_hash": ""
   },
   "vitest.config.ts": {
-    "mtime": 1785319931.6263602,
-    "ast_hash": "79cb9d4f5847bfe17274609766f8f990",
+    "mtime": 1785333486.9047363,
+    "ast_hash": "be21fb39b790742ea8731317e5206373",
     "semantic_hash": ""
   },
   "lib/test/schemas/admin/admin.schema.test.ts": {
@@ -3140,8 +3140,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1785321478.4109788,
-    "ast_hash": "69e83b187cf9e33d3cc880babd5a4d07",
+    "mtime": 1785333797.4120493,
+    "ast_hash": "86d3522c3c922859fe83efd67ee50737",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/race.test.ts": {
