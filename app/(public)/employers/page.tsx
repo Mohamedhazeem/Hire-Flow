@@ -30,29 +30,24 @@ const sections = [
   },
   {
     title: "Get started",
-    content:
-      "Ready to hire? Reach out to our team and we'll help you get set up with a recruiter account.",
+    content: "Ready to hire? Reach out to our team and we'll help you get set up with a recruiter account.",
   },
 ];
 
 export default async function EmployersPage() {
   const session = await getSession();
   const role = session?.user?.role;
-  const showCta = !session || (role !== "recruiter");
+  const showCta = !session || role !== "recruiter";
 
   return (
     <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">
-        For Employers
-      </h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">For Employers</h1>
       <p className="text-sm text-text-muted mb-10">Last updated: July 2026</p>
 
       <div className="space-y-8">
         {sections.map((s) => (
           <div key={s.title}>
-            <h2 className="text-lg font-semibold text-text-heading mb-2">
-              {s.title}
-            </h2>
+            <h2 className="text-lg font-semibold text-text-heading mb-2">{s.title}</h2>
             <p className="text-sm text-text-body leading-relaxed">{s.content}</p>
           </div>
         ))}
@@ -68,18 +63,14 @@ export default async function EmployersPage() {
             Register as Employer
             <ArrowRightIcon className="size-4" />
           </a>
-          <Link
-            href="/pricing"
-            className="text-sm text-text-muted hover:text-text-heading transition-colors"
-          >
+          <Link href="/pricing" className="text-sm text-text-muted hover:text-text-heading transition-colors">
             View pricing
           </Link>
         </div>
       )}
 
       <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder employers page. It must be reviewed and updated with
-        real copy before any launch.
+        This is a placeholder employers page. It must be reviewed and updated with real copy before any launch.
       </p>
     </div>
   );
