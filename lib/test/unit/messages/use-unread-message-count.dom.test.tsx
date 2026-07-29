@@ -14,16 +14,18 @@ const capturedUnbindings: string[] = [];
 vi.mock("@/lib/pusher/pusher-client", () => ({
   getPusherClient: vi.fn(() => ({
     subscribe: vi.fn(() => ({
-      bind: (event: string, _handler: unknown) => { capturedBindings.push(event); },
-      unbind: (event: string, _handler: unknown) => { capturedUnbindings.push(event); },
+      bind: (event: string, _handler: unknown) => {
+        capturedBindings.push(event);
+      },
+      unbind: (event: string, _handler: unknown) => {
+        capturedUnbindings.push(event);
+      },
     })),
     unsubscribe: vi.fn(),
   })),
 }));
 
-const { useUnreadMessageCount } = await import(
-  "@/app/features/public/hooks/use-unread-message-count"
-);
+const { useUnreadMessageCount } = await import("@/app/features/public/hooks/use-unread-message-count");
 
 function createWrapper() {
   const client = new QueryClient({
