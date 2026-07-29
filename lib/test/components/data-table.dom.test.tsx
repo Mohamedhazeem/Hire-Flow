@@ -4,9 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { DataTable, type ColumnDef } from "@/components/ui/data-table";
 
 type TestRow = { id: string; name: string };
-const columns: ColumnDef<TestRow>[] = [
-  { key: "name", header: "Name", cell: (row) => row.name },
-];
+const columns: ColumnDef<TestRow>[] = [{ key: "name", header: "Name", cell: (row) => row.name }];
 
 const data: TestRow[] = [
   { id: "1", name: "Alice" },
@@ -16,13 +14,7 @@ const data: TestRow[] = [
 
 describe("DataTable", () => {
   it("renders empty state when data is empty", () => {
-    render(
-      <DataTable
-        columns={columns}
-        data={[]}
-        emptyMessage="No results found."
-      />,
-    );
+    render(<DataTable columns={columns} data={[]} emptyMessage="No results found." />);
     expect(screen.getByText("No results found.")).toBeInTheDocument();
   });
 
@@ -136,9 +128,7 @@ describe("DataTable", () => {
     const rowCheckboxes = screen
       .getAllByRole("checkbox")
       .filter((cb) => cb.getAttribute("aria-label") === "Select row");
-    const bobCheckbox = rowCheckboxes.find(
-      (cb) => cb.closest("tr")?.textContent?.includes("Bob"),
-    );
+    const bobCheckbox = rowCheckboxes.find((cb) => cb.closest("tr")?.textContent?.includes("Bob"));
     expect(bobCheckbox).toHaveAttribute("aria-disabled", "true");
   });
 

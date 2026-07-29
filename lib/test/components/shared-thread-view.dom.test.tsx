@@ -62,9 +62,7 @@ describe("SharedThreadView", () => {
   });
 
   it("shows an invalid-thread message for a malformed thread id", () => {
-    render(
-      <SharedThreadView threadId="nodelimiter" hooks={hooks} config={config} />,
-    );
+    render(<SharedThreadView threadId="nodelimiter" hooks={hooks} config={config} />);
     expect(screen.getByText("Invalid thread identifier.")).toBeInTheDocument();
   });
 

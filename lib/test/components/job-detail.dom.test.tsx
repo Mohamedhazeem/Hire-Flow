@@ -26,7 +26,17 @@ vi.mock("@/components/shared/job-meta-grid", () => ({
 }));
 
 vi.mock("@/components/shared/section-card", () => ({
-  SectionCard: ({ children, title, count, countLabel }: { children: React.ReactNode; title: string; count?: number; countLabel?: string }) => (
+  SectionCard: ({
+    children,
+    title,
+    count,
+    countLabel,
+  }: {
+    children: React.ReactNode;
+    title: string;
+    count?: number;
+    countLabel?: string;
+  }) => (
     <div data-testid={`section-card-${title}`} data-count={count ?? ""} data-countlabel={countLabel ?? ""}>
       {children}
     </div>
@@ -44,9 +54,7 @@ vi.mock("@/components/shared/job-detail-tabs", () => ({
 }));
 
 vi.mock("@/components/ui/badge", () => ({
-  Badge: ({ children }: { children: React.ReactNode }) => (
-    <span data-testid="badge">{children}</span>
-  ),
+  Badge: ({ children }: { children: React.ReactNode }) => <span data-testid="badge">{children}</span>,
 }));
 
 vi.mock("@/components/ui/skeleton", () => ({

@@ -56,9 +56,7 @@ describe("getBulkActions", () => {
   it("returns all allowed transitions for two applicants with same status", () => {
     const apps = [makeApplicant("reviewing"), makeApplicant("reviewing")];
     const actions = getBulkActions(apps);
-    expect(actions.map((a) => a.status)).toEqual(
-      expect.arrayContaining(["shortlisted", "rejected"]),
-    );
+    expect(actions.map((a) => a.status)).toEqual(expect.arrayContaining(["shortlisted", "rejected"]));
   });
 
   it("returns union (not intersection) for applicants with different statuses", () => {

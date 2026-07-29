@@ -154,7 +154,13 @@ describe("Thread Repository", () => {
         data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Older" },
       });
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Latest hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Latest hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const latest = await threadRepository.findLatestMessages([threadId], receiver.id);
       expect(latest).toHaveLength(1);
@@ -163,7 +169,13 @@ describe("Thread Repository", () => {
 
     it("returns empty when only message is hidden", async () => {
       await prisma.message.create({
-        data: { threadId, senderId: sender.id, receiverId: receiver.id, content: "Sole hidden", hiddenFor: [receiver.id] },
+        data: {
+          threadId,
+          senderId: sender.id,
+          receiverId: receiver.id,
+          content: "Sole hidden",
+          hiddenFor: [receiver.id],
+        },
       });
       const latest = await threadRepository.findLatestMessages([threadId], receiver.id);
       expect(latest).toHaveLength(0);
@@ -278,19 +290,21 @@ describe("Message Service", () => {
         data: { threadId, senderId: receiver.id, receiverId: sender.id, content: "Not yours" },
       });
 
-      await expect(
-        messageService.deleteSingleMessage(threadId, sender.id, msg.id),
-      ).rejects.toThrow(/only delete your own/i);
+      await expect(messageService.deleteSingleMessage(threadId, sender.id, msg.id)).rejects.toThrow(
+        /only delete your own/i,
+      );
     });
 
     it("throws for non-existent message", async () => {
-      await expect(
-        messageService.deleteSingleMessage(threadId, sender.id, "non-existent"),
-      ).rejects.toThrow(/not found/i);
+      await expect(messageService.deleteSingleMessage(threadId, sender.id, "non-existent")).rejects.toThrow(
+        /not found/i,
+      );
     });
 
     it("throws for invalid thread ID", async () => {
-      await expect(messageService.deleteSingleMessage("invalid", sender.id, "some-id")).rejects.toThrow(/Invalid thread/i);
+      await expect(messageService.deleteSingleMessage("invalid", sender.id, "some-id")).rejects.toThrow(
+        /Invalid thread/i,
+      );
     });
   });
 
@@ -335,7 +349,9 @@ describe("Message Service", () => {
     });
 
     it("throws for invalid thread ID", async () => {
-      await expect(messageService.getMessages({ threadId: "invalid", userId: sender.id })).rejects.toThrow(/Invalid thread/i);
+      await expect(messageService.getMessages({ threadId: "invalid", userId: sender.id })).rejects.toThrow(
+        /Invalid thread/i,
+      );
     });
 
     it("throws for non-participant", async () => {

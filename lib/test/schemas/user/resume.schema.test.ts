@@ -42,7 +42,10 @@ describe("BuilderResumeSchema", () => {
   });
 
   it("rejects skills with 51 items", () => {
-    const result = BuilderResumeSchema.safeParse({ ...validResume, skills: Array.from({ length: 51 }, (_, i) => `Skill${i}`) });
+    const result = BuilderResumeSchema.safeParse({
+      ...validResume,
+      skills: Array.from({ length: 51 }, (_, i) => `Skill${i}`),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("skills");
   });
@@ -56,7 +59,10 @@ describe("BuilderResumeSchema", () => {
 
   it("rejects experiences with 11 items", () => {
     const exp = { company: "C", title: "T", startYear: 2020, endYear: 2024 };
-    const result = BuilderResumeSchema.safeParse({ ...validResume, experiences: Array.from({ length: 11 }, () => exp) });
+    const result = BuilderResumeSchema.safeParse({
+      ...validResume,
+      experiences: Array.from({ length: 11 }, () => exp),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("experiences");
   });

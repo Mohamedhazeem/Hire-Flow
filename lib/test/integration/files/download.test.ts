@@ -1,6 +1,14 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication, createTestResume } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+  createTestResume,
+} from "@/lib/test";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
@@ -28,7 +36,11 @@ describe("File Download (Phase 4.14)", () => {
 
   afterEach(async () => {
     for (const f of cleanupFiles) {
-      try { await fs.unlink(path.join(uploadsDir, f)); } catch { /* ignore */ }
+      try {
+        await fs.unlink(path.join(uploadsDir, f));
+      } catch {
+        /* ignore */
+      }
     }
   });
 
@@ -53,7 +65,10 @@ describe("File Download (Phase 4.14)", () => {
     const applicant = await createTestUser({ role: Role.user });
     const filename = await createTestFileOnDisk();
     cleanupFiles.push(filename);
-    const resume = await createTestResume(applicant.id, { fileUrl: `/uploads/${filename}`, fileType: "application/pdf" });
+    const resume = await createTestResume(applicant.id, {
+      fileUrl: `/uploads/${filename}`,
+      fileType: "application/pdf",
+    });
     await createTestApplication(job.id, applicant.id, { resumeId: resume.id });
 
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));

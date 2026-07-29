@@ -57,7 +57,12 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
         ],
       });
 
-      const created = await triggerForCompany(company.id, "application_status", { x: 1 }, { excludeUserId: performer.id });
+      const created = await triggerForCompany(
+        company.id,
+        "application_status",
+        { x: 1 },
+        { excludeUserId: performer.id },
+      );
       // owner + other remain; performer excluded.
       const createdUserIds = created.map((n) => n.userId).sort();
       expect(createdUserIds).toEqual([owner.id, other.id].sort());

@@ -14,9 +14,7 @@ import pg from "pg";
 const connectionString = process.env.DATABASE_URL_TEST || process.env.DATABASE_URL;
 
 if (!connectionString) {
-  throw new Error(
-    "DATABASE_URL_TEST or DATABASE_URL environment variable is required for testing."
-  );
+  throw new Error("DATABASE_URL_TEST or DATABASE_URL environment variable is required for testing.");
 }
 
 const pool = new pg.Pool({ connectionString });

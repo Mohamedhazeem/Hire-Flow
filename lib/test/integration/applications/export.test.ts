@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+} from "@/lib/test";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { seedRecruiterCompany, seedJobWithApplicant } from "@/lib/test/integration/helpers";
@@ -35,9 +42,7 @@ describe("CSV Export (Phase 4.19)", () => {
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { GET } = await import("@/app/api/recruiter/jobs/[id]/applicants/export/route");
-    const req = new NextRequest(
-      `http://localhost/api/recruiter/jobs/${job.id}/applicants/export?status=reviewing`,
-    );
+    const req = new NextRequest(`http://localhost/api/recruiter/jobs/${job.id}/applicants/export?status=reviewing`);
     const res = await GET(req, { params: Promise.resolve({ id: job.id }) });
     expect(res.status).toBe(200);
   });

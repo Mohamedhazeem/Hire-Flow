@@ -13,7 +13,7 @@ import { prisma } from "@/lib/prisma";
 export async function createTestApplication(
   jobId: string,
   userId: string,
-  overrides?: Partial<Prisma.ApplicationUncheckedCreateInput>
+  overrides?: Partial<Prisma.ApplicationUncheckedCreateInput>,
 ) {
   return prisma.application.create({
     data: {

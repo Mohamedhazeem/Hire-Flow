@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
-import { mockSession, resetDb, createTestUser, createTestCompany, createTestJob, createTestApplication } from "@/lib/test";
+import {
+  mockSession,
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+} from "@/lib/test";
 import { prisma } from "@/lib/prisma";
 import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
@@ -37,15 +44,18 @@ describe("Application Status Transition (Phase 4.4)", () => {
     expect(changes[0].toStatus).toBe("reviewing");
 
     // Notification was created for the applicant (fire-and-forget, poll until ready)
-    await vi.waitFor(async () => {
-      const notification = await prisma.notification.findFirst({
-        where: { userId: applicant.id, type: "application_status" },
-      });
-      expect(notification).not.toBeNull();
-      const notifData = notification?.data as Record<string, unknown> | undefined;
-      expect(notifData?.newStatus).toBe("reviewing");
-      expect(notifData?.applicationId).toBe(application.id);
-    }, { timeout: 5000, interval: 200 });
+    await vi.waitFor(
+      async () => {
+        const notification = await prisma.notification.findFirst({
+          where: { userId: applicant.id, type: "application_status" },
+        });
+        expect(notification).not.toBeNull();
+        const notifData = notification?.data as Record<string, unknown> | undefined;
+        expect(notifData?.newStatus).toBe("reviewing");
+        expect(notifData?.applicationId).toBe(application.id);
+      },
+      { timeout: 5000, interval: 200 },
+    );
   });
 
   it("reviewing to shortlisted succeeds", async () => {
@@ -246,14 +256,17 @@ describe("Application Status Transition (Phase 4.4)", () => {
     const res = await PATCH(req, { params: Promise.resolve({ applicationId: application.id }) });
     expect(res.status).toBe(200);
 
-    await vi.waitFor(() => {
-      expect(emailSpy).toHaveBeenCalledTimes(1);
-      expect(emailSpy).toHaveBeenCalledWith(
-        expect.objectContaining({
-          to: applicant.email,
-          subject: expect.stringContaining("Application Status"),
-        }),
-      );
-    }, { timeout: 5000, interval: 200 });
+    await vi.waitFor(
+      () => {
+        expect(emailSpy).toHaveBeenCalledTimes(1);
+        expect(emailSpy).toHaveBeenCalledWith(
+          expect.objectContaining({
+            to: applicant.email,
+            subject: expect.stringContaining("Application Status"),
+          }),
+        );
+      },
+      { timeout: 5000, interval: 200 },
+    );
   });
 });

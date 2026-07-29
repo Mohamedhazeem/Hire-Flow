@@ -6,14 +6,16 @@ import type { EnhancementsResponse } from "@/app/features/user/schema/resume-ai.
 
 function result(overrides: Partial<EnhancementsResponse> = {}): EnhancementsResponse {
   return {
-    suggestions: [{
-      type: "bullet_improvement",
-      section: "experience",
-      original: "Did stuff",
-      suggestion: "Led a team of 5 engineers",
-      reasoning: "Quantify impact",
-      priority: "high",
-    }],
+    suggestions: [
+      {
+        type: "bullet_improvement",
+        section: "experience",
+        original: "Did stuff",
+        suggestion: "Led a team of 5 engineers",
+        reasoning: "Quantify impact",
+        priority: "high",
+      },
+    ],
     overallScore: 82,
     projectedScore: 92,
     keyStrengths: ["Strong impact"],
@@ -63,13 +65,7 @@ describe("AiSuggestionsPanel", () => {
   });
 
   it("shows the empty state when there are no suggestions", () => {
-    render(
-      <AiSuggestionsPanel
-        result={result({ suggestions: [] })}
-        isBuilder={false}
-        onClose={vi.fn()}
-      />,
-    );
+    render(<AiSuggestionsPanel result={result({ suggestions: [] })} isBuilder={false} onClose={vi.fn()} />);
     expect(screen.getByText(/No specific suggestions found/)).toBeInTheDocument();
   });
 
@@ -94,9 +90,7 @@ describe("AiSuggestionsPanel", () => {
   it("calls onClose when the close button is clicked", async () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
-    const { container } = render(
-      <AiSuggestionsPanel result={result()} isBuilder={false} onClose={onClose} />,
-    );
+    const { container } = render(<AiSuggestionsPanel result={result()} isBuilder={false} onClose={onClose} />);
     const closeBtn = container.querySelector("button")!;
     await user.click(closeBtn);
     expect(onClose).toHaveBeenCalledOnce();

@@ -15,9 +15,7 @@ describe("Resume builder skills persistence (DB round-trip)", () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { saveResumeBuilder } = await import(
-      "@/app/features/user/actions/save-resume-builder"
-    );
+    const { saveResumeBuilder } = await import("@/app/features/user/actions/save-resume-builder");
     const result = await saveResumeBuilder({
       label: "My Resume",
       summary: "Summary",
@@ -38,9 +36,7 @@ describe("Resume builder skills persistence (DB round-trip)", () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { saveResumeBuilder } = await import(
-      "@/app/features/user/actions/save-resume-builder"
-    );
+    const { saveResumeBuilder } = await import("@/app/features/user/actions/save-resume-builder");
     const createResult = await saveResumeBuilder({
       label: "My Resume",
       summary: "A summary",
@@ -50,22 +46,17 @@ describe("Resume builder skills persistence (DB round-trip)", () => {
     });
     const resumeId = createResult.resume.id;
 
-    const { PATCH } = await import(
-      "@/app/api/user/resumes/[id]/builder-data/route"
-    );
-    const patchReq = new NextRequest(
-      `http://localhost/api/user/resumes/${resumeId}/builder-data`,
-      {
-        method: "PATCH",
-        body: JSON.stringify({
-          label: "My Resume",
-          summary: "A summary",
-          educations: [],
-          experiences: [],
-          skills: ["Python", "TypeScript", "Go"],
-        }),
-      },
-    );
+    const { PATCH } = await import("@/app/api/user/resumes/[id]/builder-data/route");
+    const patchReq = new NextRequest(`http://localhost/api/user/resumes/${resumeId}/builder-data`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        label: "My Resume",
+        summary: "A summary",
+        educations: [],
+        experiences: [],
+        skills: ["Python", "TypeScript", "Go"],
+      }),
+    });
     const patchRes = await PATCH(patchReq, {
       params: Promise.resolve({ id: resumeId }),
     });
@@ -73,18 +64,14 @@ describe("Resume builder skills persistence (DB round-trip)", () => {
 
     const resume = await prisma.resume.findUnique({ where: { id: resumeId } });
     const builderData = resume!.builderData as Record<string, unknown> | null;
-    expect(builderData?.skills).toEqual(
-      expect.arrayContaining(["Python", "TypeScript", "Go"]),
-    );
+    expect(builderData?.skills).toEqual(expect.arrayContaining(["Python", "TypeScript", "Go"]));
   });
 
   it("handles empty skills array correctly", async () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { saveResumeBuilder } = await import(
-      "@/app/features/user/actions/save-resume-builder"
-    );
+    const { saveResumeBuilder } = await import("@/app/features/user/actions/save-resume-builder");
     const result = await saveResumeBuilder({
       label: "My Resume",
       summary: "",

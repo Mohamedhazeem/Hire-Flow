@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { SignInSchema, SignUpSchema, ForgotPasswordSchema, ResetPasswordSchema } from "@/app/features/auth/schema/auth.schema";
+import {
+  SignInSchema,
+  SignUpSchema,
+  ForgotPasswordSchema,
+  ResetPasswordSchema,
+} from "@/app/features/auth/schema/auth.schema";
 
 describe("SignInSchema", () => {
   it("accepts valid credentials", () => {
