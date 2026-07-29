@@ -73,6 +73,11 @@ describe("AnalyticsFilterSchema", () => {
     }
   });
 
+  it("accepts comma-separated status values", () => {
+    const result = AnalyticsFilterSchema.safeParse({ status: "applied,invited" });
+    expect(result.success).toBe(true);
+  });
+
   it("rejects a non-UUID jobId", () => {
     const result = AnalyticsFilterSchema.safeParse({ jobId: "abc" });
     expect(result.success).toBe(false);

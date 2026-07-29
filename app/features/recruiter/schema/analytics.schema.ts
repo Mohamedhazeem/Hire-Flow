@@ -7,7 +7,7 @@ export const AnalyticsFilterSchema = z
     jobId: z.uuid().optional(),
     dateFrom: z.iso.date().optional(),
     dateTo: z.iso.date().optional(),
-    status: z.enum(APPLICATION_STATUSES).optional(),
+    status: z.string().optional(),
     workMode: z.enum(Object.values(WorkMode) as [string, ...string[]]).optional(),
     employmentType: z.enum(Object.values(EmploymentType) as [string, ...string[]]).optional(),
     location: z.string().optional(),
@@ -20,6 +20,14 @@ export const AnalyticsFilterSchema = z
       return true;
     },
     { message: "dateFrom must be before dateTo", path: ["dateFrom"] },
+  )
+  .refine(
+    (data) => {
+      if (data.status === undefined) return true;
+      if (data.status.trim() === "") return false;
+      return data.status.split(",").every((s) => APPLICATION_STATUSES.includes(s as any));
+    },
+    { message: "Invalid status value", path: ["status"] },
   );
 
 export type AnalyticsFilter = z.infer<typeof AnalyticsFilterSchema>;

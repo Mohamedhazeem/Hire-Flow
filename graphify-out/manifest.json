@@ -1175,8 +1175,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/filters/desktop-filters.tsx": {
-    "mtime": 1785319827.4110157,
-    "ast_hash": "9dd4cc5ca08fd1f78b6aca838d6758ff",
+    "mtime": 1785340621.0961955,
+    "ast_hash": "ea96960a74a5cebd185e37a1cd6fbd93",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/filters/filter-button.tsx": {
@@ -1185,8 +1185,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/filters/filter-options.tsx": {
-    "mtime": 1785319827.4395437,
-    "ast_hash": "67e6e3cdb2ccdd1ff6a3b61089e5b6ac",
+    "mtime": 1785340872.2967045,
+    "ast_hash": "d26901a89299ca17bfab9f2404239edb",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/filters/mobile-filters.tsx": {
@@ -1340,8 +1340,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/analytics.schema.ts": {
-    "mtime": 1785308645.5007641,
-    "ast_hash": "269aa2f68a53ec798287bbae81047a12",
+    "mtime": 1785340827.2145789,
+    "ast_hash": "b431fd3e69e03b7e1a3fc1bdfcb7d0a8",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/application.schema.ts": {
