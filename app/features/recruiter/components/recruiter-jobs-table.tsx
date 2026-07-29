@@ -91,8 +91,13 @@ export function RecruiterJobsTable() {
 
   const handleToggle = useCallback(
     (jobId: string, currentStatus: string) => {
-      const nextStatus = currentStatus === "draft" ? "active" : "archived";
-      toggleStatus.mutate({ id: jobId, status: nextStatus });
+      if (currentStatus === "archived") {
+        toggleStatus.mutate({ id: jobId, status: "active" });
+      } else if (currentStatus === "draft") {
+        toggleStatus.mutate({ id: jobId, status: "active" });
+      } else {
+        toggleStatus.mutate({ id: jobId, status: "archived" });
+      }
     },
     [toggleStatus],
   );

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import type { RecruiterJobRow } from "@/app/features/recruiter/queries/job-queries";
-import { ExternalLinkIcon, PencilIcon, PlayIcon, ArchiveIcon, Trash2Icon } from "lucide-react";
+import { ExternalLinkIcon, PencilIcon, PlayIcon, ArchiveIcon, RotateCcwIcon, Trash2Icon } from "lucide-react";
 
 const STATUS_BADGE: Record<
   string,
@@ -43,6 +43,7 @@ export function createRecruiterJobColumns(actions: Actions): ColumnDef<Recruiter
     {
       key: "status",
       header: "Status",
+      className: "text-center",
       cell: (row) => {
         const config = STATUS_BADGE[row.status] ?? {
           variant: "secondary" as const,
@@ -108,7 +109,17 @@ export function createRecruiterJobColumns(actions: Actions): ColumnDef<Recruiter
           >
             <PencilIcon className="size-4 text-text-muted" />
           </Button>
-          {(row.status === "draft" || row.status === "active") && (
+          {row.status === "archived" ? (
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              title="Unarchive"
+              onClick={() => actions.onToggle(row.id, row.status)}
+              disabled={actions.isPending}
+            >
+              <RotateCcwIcon className="size-4 text-success" />
+            </Button>
+          ) : (
             <Button
               variant="ghost"
               size="icon-sm"

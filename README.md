@@ -609,7 +609,7 @@ Coverage thresholds are enforced via `vitest.config.ts` (currently `lines: 22, f
 
 ## 📄 License
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](LICENSE).
+This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](LICENSE.md).
 
 - **View and Study** — free to use for personal learning, education, and non-commercial portfolio reference.
 - **Attribution** — you must give appropriate credit to **Mohamed Hazeem**, provide a link to the original repository, and indicate if changes were made.
