@@ -558,9 +558,21 @@ Both recruiter (Phase 2.6) and user (Phase 3.3) create the first status change r
 
 lib/ai-client.ts supports Anthropic/OpenAI/Google via AI_PROVIDER env var. Falls back to null if no API key is configured (UI shows graceful "AI features temporarily unavailable" message). Rate limit: 5 requests per user per day enforced via ResumeEnhancementLog DB table.
 
-### Rate Limiting (Phase 3)
+### Rate Limiting (Phase 3 legacy)
 
 lib/rate-limiter.ts provides a generic in-memory sliding-window rate limiter with configurable max/windowMs and periodic cleanup every 10 minutes. Used by: apply (10/min), job view (100/min). Throws TooManyRequestsError from lib/api-error.ts.
+
+### Rate Limiting Architecture v2 (Cross-Phase)
+
+New `lib/rate-limiting/` directory (13 files): Prisma-backed, per-actor independent counters with HMAC-SHA256 IP hashing for anonymous users, batched cleanup with SKIP LOCKED, role multipliers (anonymous 0.3x, user 1x, recruiter 2x, admin 5x, super_admin 10x), fail-closed/fail-open per endpoint, AsyncLocalStorage session cache in requireRole (first call reads DB, subsequent calls fast-path). 9 routes wired with `withRateLimit(handler, endpointKey)`. Deleted old files: `lib/rate-limit.ts`, `lib/repositories/rate-limit-repository.ts`, `app/features/recruiter/libs/rate-limit-message.ts`.
+
+### Skills Filter (Cross-Phase)
+
+GIN index migration `20260729000000_add_skills_gin_index` added to `prisma/migrations/`. `PublicJobListParams` and `RecruiterListJobsParamsSchema` both accept `skills: string[]` (max 10). Backend queries use Prisma `hasSome` overlap filter. URL serialization: comma-joined `?skills=React,TypeScript` or repeated `?skills=React&skills=TypeScript`. Case-sensitive matching (Postgres text array). Empty `skills: []` matches nothing.
+
+### Profile Extension to All Roles
+
+`upsert-profile.ts` role guard relaxed to `["user", "recruiter", "admin"]`. `app/api/user/profile/route.ts` guard relaxed. New pages: `app/(roles)/recruiter/profile/page.tsx` and `app/(roles)/admin/profile/page.tsx` using same `ProfileForm` client component. Both sidebars now include Profile link.
 
 ### Public Route Group (Phase 4)
 
@@ -592,7 +604,7 @@ Sitemap: static entries for /, /jobs, /resources, /privacy, /terms + dynamic ent
 - **Route Guards:** Role-based middleware and layout-level protection. (public) group has no guards -- accessible to all.
 - **Styling:** Tailwind v4 + Shadcn, theme variables, mobile-first responsive, motion/react for complex animations (<300ms).
 - **Validation:** Zod v4 always. Schema.safeParse() before every DB write. All errors thrown from lib/api-error.ts.
-- **Rate Limiting:** lib/rate-limiter.ts for apply (10/min) and view (100/min). AI resume enhancement: 5/day via DB ResumeEnhancementLog.
+- **Rate Limiting:** `lib/rate-limiting/` v2 — Prisma-backed per-actor counters with HMAC-SHA256 IP hashing, role multipliers, batched cleanup (SKIP LOCKED), 14 endpoints configured, 9 routes wired with `withRateLimit`. Legacy: apply (10/min) and view (100/min) also still covered. AI resume enhancement: 5/day via DB ResumeEnhancementLog.
 - **Resume Snapshot Architecture:** Apply-time snapshot in Application row survives resume deletion. Recruiters and applicants both see the submitted version.
 - **Dual-Gate Job Visibility:** recruiter-controlled `status` + admin-controlled `isActive` -- all public queries filter on both.
 
@@ -602,8 +614,8 @@ Sitemap: static entries for /, /jobs, /resources, /privacy, /terms + dynamic ent
 
 - [ ] TODO: Replace mock upload (/api/upload) with S3/Vercel Blob in production.
 - [x] TODO: Implement Pusher messaging backend -- DONE in Step 1.6 + Step 2.5.
-- [ ] TODO: Add comprehensive tests once core features are stable.
-- [ ] TODO: Run Prisma migration when database is reachable (`db.prisma.io:5432` unreachable).
+- [ ] TODO: Add comprehensive tests once core features are stable. (80+ rate-limiting tests added; skills filter 7 integration tests added.)
+- [ ] TODO: Run Prisma migration when database is reachable (`db.prisma.io:5432` unreachable). (Pending: `20260729000000_add_skills_gin_index` GIN index migration.)
 - [ ] TODO: `form.watch()` triggers React Compiler `react-hooks/incompatible-library` warning -- project-wide pattern, not a regression.
 - [ ] TODO: Pre-existing `react-pdf` CSS import error in `resume-preview-dialog.tsx` -- blocks `next build` but not `tsc`/`eslint`.
 - [ ] TODO: Scheduled cleanup for soft-deleted resumes older than 60 days (verify no Application.resumeSnapshotUrl references before deleting files).
@@ -615,4 +627,4 @@ Sitemap: static entries for /, /jobs, /resources, /privacy, /terms + dynamic ent
 
 ## Upcoming Dependencies
 
-_(none -- all defined phases implemented)_
+_(none — all defined phases and cross-phase enhancement tasks implemented)_
