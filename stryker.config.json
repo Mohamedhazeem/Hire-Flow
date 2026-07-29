@@ -12,8 +12,7 @@
     "!lib/rate-limiting/metrics.ts"
   ],
   "vitest": {
-    "configFile": "vitest.config.ts",
-    "args": ["--project", "default", "--project", "contract"]
+    "configFile": "vitest.config.ts"
   },
   "thresholds": {
     "high": 80,
@@ -23,6 +22,6 @@
   "timeoutMS": 60000,
   "reporters": ["progress", "html"],
   "htmlReporter": {
-    "baseDir": "reports/mutation"
+    "fileName": "reports/mutation/mutation-report.html"
   }
 }
