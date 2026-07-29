@@ -61,10 +61,9 @@ export const RecruiterListJobsParamsSchema = z.object({
   workMode: z.enum(Object.values(WorkMode) as [string, ...string[]]).optional(),
   employmentType: z.enum(Object.values(EmploymentType) as [string, ...string[]]).optional(),
   experienceLevel: z.string().optional(),
-  sortBy: z
-    .enum(["title", "createdAt", "updatedAt", "viewCount", "status"])
-    .optional()
-    .default("createdAt"),
+  skills: z.array(z.string()).max(10).optional(),
+  skills: z.array(z.string()).max(10).optional(),
+  sortBy: z.enum(["title", "createdAt", "updatedAt", "viewCount", "status"]).optional().default("createdAt"),
   sortOrder: z.enum(["asc", "desc"]).optional().default("desc"),
 });
 

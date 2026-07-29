@@ -7,6 +7,7 @@ import {
   UsersIcon,
   BriefcaseIcon,
   BarChart3Icon,
+  UserIcon,
 } from "lucide-react";
 import { Sidebar, type SidebarLink, type SidebarUser } from "@/components/layout/sidebar";
 import { useSession } from "@/app/features/auth/libs/auth-client";
@@ -19,6 +20,7 @@ const recruiterLinks: SidebarLink[] = [
   { href: "/recruiter/jobs", label: "Jobs", icon: BriefcaseIcon },
   { href: "/recruiter/messages", label: "Messages", icon: MessageSquareTextIcon },
   { href: "/recruiter/analytics", label: "Analytics", icon: BarChart3Icon },
+  { href: "/recruiter/profile", label: "Profile", icon: UserIcon },
 ];
 
 export function RecruiterSidebar() {

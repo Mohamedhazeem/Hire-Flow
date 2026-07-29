@@ -27,7 +27,15 @@ interface SendEmailArgs {
   userId?: string;
 }
 
-export async function sendEmail({ to, subject, url, type, invitedByName, banDetails, userId }: SendEmailArgs): Promise<void> {
+export async function sendEmail({
+  to,
+  subject,
+  url,
+  type,
+  invitedByName,
+  banDetails,
+  userId,
+}: SendEmailArgs): Promise<void> {
   if (userId) {
     const user = await prisma.user.findUnique({
       where: { id: userId },
@@ -51,28 +59,37 @@ export async function sendEmail({ to, subject, url, type, invitedByName, banDeta
       from: emailFrom,
       to: [to],
       subject: subject,
-      html: type === "application_status"
-        ? `<p>Your application status has been updated.</p>`
-        : await (async () => {
-            const emailComponent = type === "reset"
-              ? ResetPasswordEmail
-              : type === "admin-invite"
-                ? AdminInviteEmail
+      html:
+        type === "application_status"
+          ? `<p>Your application status has been updated.</p>`
+          : await (async () => {
+              const emailComponent =
+                type === "reset"
+                  ? ResetPasswordEmail
+                  : type === "admin-invite"
+                    ? AdminInviteEmail
+                    : type === "ban-notification"
+                      ? BanNotificationEmail
+                      : type === "recruiter-invite"
+                        ? RecruiterInviteEmail
+                        : VerificationEmail;
+              return type === "admin-invite" || type === "recruiter-invite"
+                ? await render(
+                    React.createElement(emailComponent as typeof RecruiterInviteEmail, {
+                      url: url!,
+                      invitedByName: invitedByName!,
+                    }),
+                  )
                 : type === "ban-notification"
-                  ? BanNotificationEmail
-                  : type === "recruiter-invite"
-                    ? RecruiterInviteEmail
-                    : VerificationEmail;
-            return type === "admin-invite" || type === "recruiter-invite"
-              ? await render(React.createElement(emailComponent as typeof RecruiterInviteEmail, { url: url!, invitedByName: invitedByName! }))
-              : type === "ban-notification"
-                ? await render(React.createElement(emailComponent as typeof BanNotificationEmail, {
-                    adminName: invitedByName!,
-                    reason: banDetails?.reason,
-                    expiresInDays: banDetails?.expiresInDays,
-                  }))
-                : await render(React.createElement(emailComponent as typeof VerificationEmail, { url: url! }));
-          })(),
+                  ? await render(
+                      React.createElement(emailComponent as typeof BanNotificationEmail, {
+                        adminName: invitedByName!,
+                        reason: banDetails?.reason,
+                        expiresInDays: banDetails?.expiresInDays,
+                      }),
+                    )
+                  : await render(React.createElement(emailComponent as typeof VerificationEmail, { url: url! }));
+            })(),
     });
 
     if (error) {

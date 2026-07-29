@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 import type { ProfileInput } from "@/app/features/user/schema/profile.schema";
 
 export async function upsertProfile(input: ProfileInput) {
-  const session = await requireRole(["user"]);
+  const session = await requireRole(["user", "recruiter", "admin"]);
 
   const parsed = ProfileSchema.safeParse(input);
 
@@ -16,18 +16,7 @@ export async function upsertProfile(input: ProfileInput) {
     throw new ValidationError(parsed.error.issues[0]?.message ?? "Invalid profile data");
   }
 
-  const {
-    headline,
-    bio,
-    location,
-    skills,
-    workMode,
-    basePay,
-    ctc,
-    ectc,
-    experiences,
-    socialLinks,
-  } = parsed.data;
+  const { headline, bio, location, skills, workMode, basePay, ctc, ectc, experiences, socialLinks } = parsed.data;
 
   const profile = await prisma.userProfile.upsert({
     where: { userId: session.id },
