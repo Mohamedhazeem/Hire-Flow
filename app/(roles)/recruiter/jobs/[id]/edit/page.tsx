@@ -59,17 +59,12 @@ export default async function EditJobPage({ params }: PageProps) {
     salaryMin: job.salaryMin ?? undefined,
     salaryMax: job.salaryMax ?? undefined,
     salaryCurrency: job.salaryCurrency,
-    applicationDeadline: job.applicationDeadline
-      ? job.applicationDeadline.toISOString().split("T")[0]
-      : "",
+    applicationDeadline: job.applicationDeadline ? job.applicationDeadline.toISOString().split("T")[0] : "",
   };
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Edit Job"
-        description={`Update "${job.title}" details`}
-      />
+      <PageHeader title="Edit Job" description={`Update "${job.title}" details`} />
       <JobForm mode="edit" jobId={id} defaultValues={defaultValues} />
     </div>
   );

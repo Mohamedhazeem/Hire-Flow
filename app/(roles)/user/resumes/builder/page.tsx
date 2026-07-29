@@ -9,10 +9,7 @@ export const metadata = {
 export default function BuilderPage() {
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Build Resume"
-        description="Fill in your details to create a structured resume"
-      />
+      <PageHeader title="Build Resume" description="Fill in your details to create a structured resume" />
       <ResumeBuilderForm />
     </div>
   );

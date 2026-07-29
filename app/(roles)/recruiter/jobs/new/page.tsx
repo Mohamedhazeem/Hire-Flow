@@ -9,10 +9,7 @@ export const metadata = {
 export default function CreateJobPage() {
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Create Job"
-        description="Fill in the details for your new job posting"
-      />
+      <PageHeader title="Create Job" description="Fill in the details for your new job posting" />
       <JobForm mode="create" />
     </div>
   );

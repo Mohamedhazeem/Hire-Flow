@@ -6,11 +6,11 @@ import { PageHeader } from "@/components/layout/page-header";
 import type { ProfileInput } from "@/app/features/user/schema/profile.schema";
 
 export const metadata = {
-  title: "Profile | Candidate Dashboard",
-  description: "Manage your candidate profile",
+  title: "Profile | Recruiter Dashboard",
+  description: "Manage your recruiter profile",
 };
 
-export default async function ProfilePage() {
+export default async function RecruiterProfilePage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user) return null;
 

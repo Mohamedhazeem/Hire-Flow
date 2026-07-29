@@ -108,12 +108,8 @@ export function AcceptInviteClient({ token, email }: AcceptInviteClientProps) {
       <AuthLayout title="Welcome to the Team!" subtitle="You are now an admin">
         <div className="flex flex-col items-center gap-4 py-4">
           <CheckCircle className="size-12 text-success" />
-          <p className="text-sm text-text-muted text-center">
-            You now have admin access to the platform.
-          </p>
-          <Button onClick={() => router.push("/admin")}>
-            Go to Dashboard
-          </Button>
+          <p className="text-sm text-text-muted text-center">You now have admin access to the platform.</p>
+          <Button onClick={() => router.push("/admin")}>Go to Dashboard</Button>
         </div>
       </AuthLayout>
     );

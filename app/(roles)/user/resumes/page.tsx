@@ -9,10 +9,7 @@ export const metadata = {
 export default function ResumesPage() {
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Resumes"
-        description="Upload, build, and manage your resumes (max 5)"
-      />
+      <PageHeader title="Resumes" description="Upload, build, and manage your resumes (max 5)" />
       <ResumeList />
     </div>
   );
