@@ -137,9 +137,7 @@ export async function exportApplicantsAsCsv(
           if (totalWritten >= MAX_ROWS && hasMore) {
             controller.enqueue(
               encoder.encode(
-                buildCsvRow([
-                  `# Export truncated at ${MAX_ROWS.toLocaleString()} rows. Refine your filters.`,
-                ]),
+                buildCsvRow([`# Export truncated at ${MAX_ROWS.toLocaleString()} rows. Refine your filters.`]),
               ),
             );
           }

@@ -72,7 +72,7 @@ export function ConfirmDialog({
         <div className="flex justify-end gap-2 pt-4">
           <DialogClose render={<Button variant="outline">{cancelLabel}</Button>} />
           <Button variant={buttonVariant} onClick={onConfirm} disabled={isPending}>
-            {isPending ? `${confirmLabel ?? "Confirm"}...` : confirmLabel ?? "Confirm"}
+            {isPending ? `${confirmLabel ?? "Confirm"}...` : (confirmLabel ?? "Confirm")}
           </Button>
         </div>
       </DialogContent>

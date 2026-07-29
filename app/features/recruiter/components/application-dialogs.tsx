@@ -3,13 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,13 +13,7 @@ import type { ApplicantRow } from "@/app/features/recruiter/queries/application-
 
 // ─── Shared email toggle ─────────────────────────────────────────────────────
 
-function EmailCheckbox({
-  checked,
-  onChange,
-}: {
-  checked: boolean;
-  onChange: (v: boolean) => void;
-}) {
+function EmailCheckbox({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
   return (
     <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none pt-2">
       <input
@@ -73,8 +61,7 @@ export function ReviewDialog({ open, onOpenChange, applicant }: ConfirmStatusDia
         <DialogHeader>
           <DialogTitle>Start Review</DialogTitle>
           <DialogDescription>
-            Mark {applicant?.name ?? "this applicant"} as &quot;Reviewing&quot;. They will be
-            notified in-app.
+            Mark {applicant?.name ?? "this applicant"} as &quot;Reviewing&quot;. They will be notified in-app.
           </DialogDescription>
         </DialogHeader>
         <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
@@ -119,8 +106,7 @@ export function ShortlistDialog({ open, onOpenChange, applicant }: ConfirmStatus
         <DialogHeader>
           <DialogTitle>Shortlist Applicant</DialogTitle>
           <DialogDescription>
-            Move {applicant?.name ?? "this applicant"} to the shortlist. They will be notified
-            in-app.
+            Move {applicant?.name ?? "this applicant"} to the shortlist. They will be notified in-app.
           </DialogDescription>
         </DialogHeader>
         <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
@@ -160,11 +146,7 @@ type InterviewFormData = {
   email: boolean;
 };
 
-export function ScheduleInterviewDialog({
-  open,
-  onOpenChange,
-  applicant,
-}: ScheduleInterviewDialogProps) {
+export function ScheduleInterviewDialog({ open, onOpenChange, applicant }: ScheduleInterviewDialogProps) {
   const transitionStatus = useTransitionStatus();
 
   const {
@@ -202,29 +184,18 @@ export function ScheduleInterviewDialog({
         <DialogHeader>
           <DialogTitle>Schedule Interview</DialogTitle>
           <DialogDescription>
-            Set the interview date and an optional meeting link for{" "}
-            {applicant?.name ?? "this applicant"}.
+            Set the interview date and an optional meeting link for {applicant?.name ?? "this applicant"}.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Interview Date & Time *
-            </label>
+            <label className="block text-sm font-medium text-text-heading mb-1">Interview Date & Time *</label>
             <Input type="datetime-local" {...register("interviewDate", { required: "Interview date is required" })} />
-            {errors.interviewDate && (
-              <p className="text-sm text-destructive mt-1">{errors.interviewDate.message}</p>
-            )}
+            {errors.interviewDate && <p className="text-sm text-destructive mt-1">{errors.interviewDate.message}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Meeting Link
-            </label>
-            <Input
-              type="url"
-              {...register("meetingLink")}
-              placeholder="https://meet.google.com/xxx"
-            />
+            <label className="block text-sm font-medium text-text-heading mb-1">Meeting Link</label>
+            <Input type="url" {...register("meetingLink")} placeholder="https://meet.google.com/xxx" />
           </div>
           <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
             <input type="checkbox" className="size-4 accent-brand" {...register("email")} />
@@ -292,23 +263,19 @@ export function SendOfferDialog({ open, onOpenChange, applicant }: SendOfferDial
         <DialogHeader>
           <DialogTitle>Send Offer</DialogTitle>
           <DialogDescription>
-            Enter the offer details for {applicant?.name ?? "this applicant"}. They will be notified
-            of the status change.
+            Enter the offer details for {applicant?.name ?? "this applicant"}. They will be notified of the status
+            change.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Offer Details *
-            </label>
+            <label className="block text-sm font-medium text-text-heading mb-1">Offer Details *</label>
             <Textarea
               {...register("offerDetails", { required: "Offer details are required" })}
               placeholder="Salary, benefits, start date, etc."
               rows={4}
             />
-            {errors.offerDetails && (
-              <p className="text-sm text-destructive mt-1">{errors.offerDetails.message}</p>
-            )}
+            {errors.offerDetails && <p className="text-sm text-destructive mt-1">{errors.offerDetails.message}</p>}
           </div>
           <label className="flex items-center gap-2 text-sm text-text-body cursor-pointer select-none">
             <input type="checkbox" className="size-4 accent-brand" {...register("email")} />
@@ -357,8 +324,7 @@ export function HireDialog({ open, onOpenChange, applicant }: ConfirmStatusDialo
         <DialogHeader>
           <DialogTitle>Mark as Hired</DialogTitle>
           <DialogDescription>
-            Confirm that {applicant?.name ?? "this applicant"} has been hired. They will be
-            notified in-app.
+            Confirm that {applicant?.name ?? "this applicant"} has been hired. They will be notified in-app.
           </DialogDescription>
         </DialogHeader>
         <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
@@ -403,8 +369,7 @@ export function InviteDialog({ open, onOpenChange, applicant }: ConfirmStatusDia
         <DialogHeader>
           <DialogTitle>Invite Applicant</DialogTitle>
           <DialogDescription>
-            Invite {applicant?.name ?? "this applicant"} to the next stage. They will be notified
-            in-app.
+            Invite {applicant?.name ?? "this applicant"} to the next stage. They will be notified in-app.
           </DialogDescription>
         </DialogHeader>
         <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />
@@ -468,15 +433,13 @@ export function RejectDialog({ open, onOpenChange, applicant }: RejectDialogProp
         <DialogHeader>
           <DialogTitle>Reject Applicant</DialogTitle>
           <DialogDescription>
-            Provide a reason for rejecting {applicant?.name ?? "this applicant"}. They will be
-            notified of this decision.
+            Provide a reason for rejecting {applicant?.name ?? "this applicant"}. They will be notified of this
+            decision.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Rejection Reason *
-            </label>
+            <label className="block text-sm font-medium text-text-heading mb-1">Rejection Reason *</label>
             <Textarea
               {...register("rejectionReason", { required: "Rejection reason is required" })}
               placeholder="Didn't meet experience requirements, role filled, etc."

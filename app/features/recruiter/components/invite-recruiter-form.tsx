@@ -10,10 +10,7 @@ import {
   type RecruiterBulkInviteFormInput,
 } from "@/app/features/recruiter/schema/team.schema";
 import { inviteRecruiter } from "@/app/features/recruiter/actions/invite-recruiter";
-import {
-  bulkInviteRecruiters,
-  type BulkInviteResult,
-} from "@/app/features/recruiter/actions/bulk-invite-recruiters";
+import { bulkInviteRecruiters, type BulkInviteResult } from "@/app/features/recruiter/actions/bulk-invite-recruiters";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -128,21 +125,12 @@ export function InviteRecruiterForm() {
               <label htmlFor="invite-email" className="text-sm font-medium text-text-heading">
                 Invite team member by email
               </label>
-              <Input
-                id="invite-email"
-                type="email"
-                placeholder="email@example.com"
-                {...singleForm.register("email")}
-              />
+              <Input id="invite-email" type="email" placeholder="email@example.com" {...singleForm.register("email")} />
               {singleForm.formState.errors.email && (
                 <p className="text-xs text-error">{singleForm.formState.errors.email.message}</p>
               )}
             </div>
-            <Button
-              type="submit"
-              disabled={singleForm.formState.isSubmitting}
-              className="sm:w-auto"
-            >
+            <Button type="submit" disabled={singleForm.formState.isSubmitting} className="sm:w-auto">
               <UserPlus className="size-4" />
               {singleForm.formState.isSubmitting ? "Sending..." : "Send Invite"}
             </Button>
@@ -183,22 +171,16 @@ export function InviteRecruiterForm() {
           </div>
           <Button type="submit" disabled={bulkForm.formState.isSubmitting}>
             <Users className="size-4" />
-            {bulkForm.formState.isSubmitting
-              ? "Sending..."
-              : `Send Invites (${parsedEmails.length})`}
+            {bulkForm.formState.isSubmitting ? "Sending..." : `Send Invites (${parsedEmails.length})`}
           </Button>
         </form>
       )}
 
-      {success && tab === "single" && (
-        <p className="text-sm text-success">Invitation sent successfully.</p>
-      )}
+      {success && tab === "single" && <p className="text-sm text-success">Invitation sent successfully.</p>}
 
       {bulkResult && tab === "bulk" && (
         <div className="space-y-2 text-sm">
-          {bulkResult.sent > 0 && (
-            <p className="text-success">{bulkResult.sent} invitation(s) sent successfully.</p>
-          )}
+          {bulkResult.sent > 0 && <p className="text-success">{bulkResult.sent} invitation(s) sent successfully.</p>}
           {bulkResult.skipped.length > 0 && (
             <div>
               <p className="text-text-muted">Skipped ({bulkResult.skipped.length}):</p>

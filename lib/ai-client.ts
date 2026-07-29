@@ -55,11 +55,7 @@ const PROVIDER_CONFIG: Record<AIProvider, ProviderConfig> = {
   },
 };
 
-export async function callAI(
-  userPrompt: string,
-  systemPrompt?: string,
-  maxTokens = 2048,
-): Promise<string | null> {
+export async function callAI(userPrompt: string, systemPrompt?: string, maxTokens = 2048): Promise<string | null> {
   const provider = (process.env.AI_PROVIDER || "anthropic") as AIProvider;
   const config = PROVIDER_CONFIG[provider];
   if (!config) return null;
@@ -88,7 +84,10 @@ export async function callAI(
     res = await fetch(url, { method: "POST", headers, body: JSON.stringify(body) });
   } catch (err) {
     const reason = err instanceof TypeError ? "network error" : "unreachable";
-    throw new ApiError(`${provider} API ${reason}: the AI service could not be reached. Check your network and API key.`, 502);
+    throw new ApiError(
+      `${provider} API ${reason}: the AI service could not be reached. Check your network and API key.`,
+      502,
+    );
   }
 
   if (!res.ok) {

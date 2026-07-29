@@ -1,11 +1,6 @@
 import { NotFoundError, ValidationError, ConflictError } from "@/lib/api/api-error";
 import { prisma } from "@/lib/prisma";
-import {
-  createNotification,
-  createNotificationsBulk,
-  triggerForCompany,
-  fireNotification,
-} from "@/lib/notifications";
+import { createNotification, createNotificationsBulk, triggerForCompany, fireNotification } from "@/lib/notifications";
 import { sendEmail } from "@/app/features/auth/libs/email";
 import { getApplicationById } from "@/app/features/recruiter/queries/application-queries";
 import { ALLOWED_TRANSITIONS } from "@/app/features/recruiter/schema/application.schema";
@@ -31,9 +26,7 @@ export const applicationService = {
 
     const allowedTransitions = ALLOWED_TRANSITIONS[application.status];
     if (!allowedTransitions || !allowedTransitions.includes(parsedStatus)) {
-      throw new ValidationError(
-        `Cannot transition from "${application.status}" to "${parsedStatus}"`,
-      );
+      throw new ValidationError(`Cannot transition from "${application.status}" to "${parsedStatus}"`);
     }
 
     const concurrencyCheck = updatedAt
@@ -56,16 +49,10 @@ export const applicationService = {
       updateData.meetingLink = (body as { meetingLink?: string }).meetingLink ?? null;
     }
 
-    const updated = await applicationRepository.updateWithConcurrency(
-      applicationId,
-      concurrencyCheck,
-      updateData,
-    );
+    const updated = await applicationRepository.updateWithConcurrency(applicationId, concurrencyCheck, updateData);
 
     if (updated.count === 0) {
-      throw new ConflictError(
-        "This application was modified by another team member. Please refresh and try again.",
-      );
+      throw new ConflictError("This application was modified by another team member. Please refresh and try again.");
     }
 
     await applicationRepository.createStatusChange({
@@ -74,9 +61,7 @@ export const applicationService = {
       toStatus: parsedStatus,
       changedById: sessionId,
       note:
-        ("rejectionReason" in body
-          ? (body as { rejectionReason: string }).rejectionReason
-          : undefined) ??
+        ("rejectionReason" in body ? (body as { rejectionReason: string }).rejectionReason : undefined) ??
         ("offerDetails" in body ? (body as { offerDetails: string }).offerDetails : undefined) ??
         null,
     });
@@ -138,9 +123,7 @@ export const applicationService = {
       for (const app of apps) {
         const allowedTransitions = ALLOWED_TRANSITIONS[app.status];
         if (!allowedTransitions || !allowedTransitions.includes(status)) {
-          throw new ValidationError(
-            `Application ${app.id}: cannot transition from "${app.status}" to "${status}"`,
-          );
+          throw new ValidationError(`Application ${app.id}: cannot transition from "${app.status}" to "${status}"`);
         }
       }
 
@@ -199,10 +182,7 @@ export const applicationService = {
 
   async revertStatus(applicationId: string, companyId: string, sessionId: string) {
     const result = await prisma.$transaction(async (tx) => {
-      const application = await applicationRepository.findByApplicationIdWithCompany(
-        applicationId,
-        companyId,
-      );
+      const application = await applicationRepository.findByApplicationIdWithCompany(applicationId, companyId);
 
       if (!application) {
         throw new NotFoundError("Application not found");
@@ -258,15 +238,11 @@ export const applicationService = {
   },
 
   async getProfileMinimal(applicationId: string, recruiterId: string) {
-    const application = await applicationRepository.findByIdWithAuthProfile(
-      applicationId,
-      recruiterId,
-    );
+    const application = await applicationRepository.findByIdWithAuthProfile(applicationId, recruiterId);
 
     if (!application) throw new NotFoundError("Application not found");
 
-    const isAuthorized =
-      application.job.recruiterId === recruiterId || application.job.company.teamMembers.length > 0;
+    const isAuthorized = application.job.recruiterId === recruiterId || application.job.company.teamMembers.length > 0;
 
     if (!isAuthorized) throw new NotFoundError("Application not found");
 
@@ -277,12 +253,7 @@ export const applicationService = {
     };
   },
 
-  async applyToJob(
-    jobId: string,
-    userId: string,
-    userName: string,
-    body: { resumeId: string; coverLetter?: string },
-  ) {
+  async applyToJob(jobId: string, userId: string, userName: string, body: { resumeId: string; coverLetter?: string }) {
     const { resumeId, coverLetter } = body;
 
     const job = await jobRepository.findByIdWithGates(jobId);
@@ -342,9 +313,7 @@ export const applicationService = {
       jobTitle: null,
       status: "applied",
       applicantName: userName,
-      message: coverLetter
-        ? `${userName} applied to your job with a cover letter`
-        : `${userName} applied to your job`,
+      message: coverLetter ? `${userName} applied to your job with a cover letter` : `${userName} applied to your job`,
     });
 
     await triggerForCompany(

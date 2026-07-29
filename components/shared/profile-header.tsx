@@ -14,14 +14,7 @@ type ProfileHeaderProps = {
   emailVerified?: boolean;
 };
 
-export function ProfileHeader({
-  name,
-  email,
-  image,
-  role,
-  banned,
-  emailVerified,
-}: ProfileHeaderProps) {
+export function ProfileHeader({ name, email, image, role, banned, emailVerified }: ProfileHeaderProps) {
   const router = useRouter();
 
   return (

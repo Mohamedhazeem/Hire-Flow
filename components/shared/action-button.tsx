@@ -11,14 +11,7 @@ type ActionButtonProps = {
   color?: "default" | "error";
 };
 
-export function ActionButton({
-  icon,
-  label,
-  onClick,
-  disabled,
-  title,
-  color = "default",
-}: ActionButtonProps) {
+export function ActionButton({ icon, label, onClick, disabled, title, color = "default" }: ActionButtonProps) {
   return (
     <Button
       variant="ghost"
@@ -26,13 +19,9 @@ export function ActionButton({
       onClick={onClick}
       disabled={disabled}
       title={title}
-      className={
-        color === "error" ? "h-8 px-2 text-xs text-error hover:text-error" : "h-8 px-2 text-xs"
-      }
+      className={color === "error" ? "h-8 px-2 text-xs text-error hover:text-error" : "h-8 px-2 text-xs"}
     >
-      <span className={cn("size-4 flex items-center justify-center", label && "sm:mr-1")}>
-        {icon}
-      </span>
+      <span className={cn("size-4 flex items-center justify-center", label && "sm:mr-1")}>{icon}</span>
       {label && <span className="hidden sm:inline">{label}</span>}
     </Button>
   );

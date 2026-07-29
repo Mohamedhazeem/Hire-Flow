@@ -1,8 +1,5 @@
 import prisma from "@/lib/prisma";
-import {
-  buildOffsetMeta,
-  parseOffsetParams,
-} from "@/lib/pagination";
+import { buildOffsetMeta, parseOffsetParams } from "@/lib/pagination";
 
 export type BookmarkJob = {
   id: string;
@@ -56,9 +53,7 @@ export async function listUserBookmarks(
     company: { select: { id: true, name: true, logoUrl: true } },
   } as const;
 
-  const mapToBookmarkJob = (
-    b: { job: Record<string, unknown> },
-  ): BookmarkJob => b.job as unknown as BookmarkJob;
+  const mapToBookmarkJob = (b: { job: Record<string, unknown> }): BookmarkJob => b.job as unknown as BookmarkJob;
 
   if (!params?.page) {
     const rows = await prisma.bookmark.findMany({
@@ -69,10 +64,7 @@ export async function listUserBookmarks(
     return rows.map(mapToBookmarkJob);
   }
 
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
+  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
 
   const [rows, total] = await Promise.all([
     prisma.bookmark.findMany({
@@ -91,10 +83,7 @@ export async function listUserBookmarks(
   };
 }
 
-export async function checkBookmark(
-  userId: string,
-  jobId: string,
-): Promise<{ bookmarked: boolean }> {
+export async function checkBookmark(userId: string, jobId: string): Promise<{ bookmarked: boolean }> {
   const bookmark = await prisma.bookmark.findUnique({
     where: { userId_jobId: { userId, jobId } },
   });

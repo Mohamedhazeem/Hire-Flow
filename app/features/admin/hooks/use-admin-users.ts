@@ -1,13 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api/api-client";
-import type {
-  AdminListUsersParams,
-  AdminBanUserInput,
-} from "@/app/features/admin/schema/admin.schema";
-import type {
-  AdminUserListResult,
-  AdminUserDetail,
-} from "@/app/features/admin/queries/user-queries";
+import type { AdminListUsersParams, AdminBanUserInput } from "@/app/features/admin/schema/admin.schema";
+import type { AdminUserListResult, AdminUserDetail } from "@/app/features/admin/queries/user-queries";
 import type { ApiResponse } from "@/lib/api/api-response";
 
 export function useAdminUsers(params: AdminListUsersParams) {
@@ -84,8 +78,7 @@ export function useRevokeUserSessions() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (userId: string) =>
-      apiClient(`/api/admin/users/${userId}/sessions`, { method: "DELETE" }),
+    mutationFn: (userId: string) => apiClient(`/api/admin/users/${userId}/sessions`, { method: "DELETE" }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "users"] });
     },

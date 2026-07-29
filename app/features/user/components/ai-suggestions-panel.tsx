@@ -52,7 +52,9 @@ function ScoreGauge({ currentScore, projectedScore }: { currentScore: number; pr
   return (
     <div className="flex items-center justify-center gap-3">
       <div className="flex flex-col items-center gap-1">
-        <div className={`relative size-20 rounded-full ${current.bg} ${current.ring} ring-4 flex items-center justify-center shrink-0`}>
+        <div
+          className={`relative size-20 rounded-full ${current.bg} ${current.ring} ring-4 flex items-center justify-center shrink-0`}
+        >
           <div className="text-center">
             <p className={`text-xl font-bold tracking-tight ${current.color}`}>{currentScore}</p>
             <p className="text-[10px] font-medium text-white/70">/ 100</p>
@@ -62,14 +64,18 @@ function ScoreGauge({ currentScore, projectedScore }: { currentScore: number; pr
       </div>
 
       <div className="flex flex-col items-center gap-1">
-        <div className={`flex items-center justify-center size-10 rounded-full ${delta > 0 ? "bg-green/10" : delta < 0 ? "bg-error/10" : "bg-bg-elevated"} border border-border-subtle`}>
+        <div
+          className={`flex items-center justify-center size-10 rounded-full ${delta > 0 ? "bg-green/10" : delta < 0 ? "bg-error/10" : "bg-bg-elevated"} border border-border-subtle`}
+        >
           <span className={`text-xs font-bold ${deltaColor}`}>{deltaLabel}</span>
         </div>
         <p className="text-[10px] font-medium text-text-muted">delta</p>
       </div>
 
       <div className="flex flex-col items-center gap-1">
-        <div className={`relative size-24 rounded-full ${projected.bg} ${projected.ring} ring-4 flex items-center justify-center shrink-0`}>
+        <div
+          className={`relative size-24 rounded-full ${projected.bg} ${projected.ring} ring-4 flex items-center justify-center shrink-0`}
+        >
           <div className="text-center">
             <p className={`text-2xl font-bold tracking-tight ${projected.color}`}>{projectedScore}</p>
             <p className="text-[10px] font-medium text-white/70">/ 100</p>
@@ -90,8 +96,14 @@ function CopyButton({ text }: { text: string }) {
       type="button"
       onClick={() => {
         navigator.clipboard.writeText(text).then(
-          () => { setCopied(true); setFailed(false); setTimeout(() => setCopied(false), 2000); },
-          () => { setFailed(true); },
+          () => {
+            setCopied(true);
+            setFailed(false);
+            setTimeout(() => setCopied(false), 2000);
+          },
+          () => {
+            setFailed(true);
+          },
         );
       }}
       className="inline-flex items-center gap-1.5 rounded-lg border border-border-subtle bg-bg-surface px-2.5 py-1.5 text-xs font-medium text-text-muted hover:border-brand/30 hover:text-text-heading hover:bg-brand/5 transition-all"
@@ -102,13 +114,23 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-function InfoChip({ children, icon: Icon, color }: { children: string; icon: typeof LightbulbIcon; color: "green" | "amber" }) {
+function InfoChip({
+  children,
+  icon: Icon,
+  color,
+}: {
+  children: string;
+  icon: typeof LightbulbIcon;
+  color: "green" | "amber";
+}) {
   const styles = {
     green: "bg-green/5 text-green border-green/15",
     amber: "bg-amber/5 text-amber border-amber/15",
   };
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border ${styles[color]} px-3 py-1 text-xs font-medium`}>
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border ${styles[color]} px-3 py-1 text-xs font-medium`}
+    >
       <Icon className="size-3" />
       {children}
     </span>
@@ -131,14 +153,12 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
     skills: "Skills",
   };
 
-  const sectionKeys = Object.keys(grouped).sort(
-    (a, b) => {
-      const order = ["summary", "experience", "education", "skills"];
-      const ai = order.indexOf(a);
-      const bi = order.indexOf(b);
-      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-    },
-  );
+  const sectionKeys = Object.keys(grouped).sort((a, b) => {
+    const order = ["summary", "experience", "education", "skills"];
+    const ai = order.indexOf(a);
+    const bi = order.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
 
   return (
     <AnimatePresence>
@@ -186,7 +206,9 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {keyStrengths.map((s, i) => (
-                    <InfoChip key={i} icon={CheckIcon} color="green">{s}</InfoChip>
+                    <InfoChip key={i} icon={CheckIcon} color="green">
+                      {s}
+                    </InfoChip>
                   ))}
                 </div>
               </div>
@@ -200,7 +222,9 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {improvementAreas.map((s, i) => (
-                    <InfoChip key={i} icon={SparklesIcon} color="amber">{s}</InfoChip>
+                    <InfoChip key={i} icon={SparklesIcon} color="amber">
+                      {s}
+                    </InfoChip>
                   ))}
                 </div>
               </div>
@@ -246,7 +270,9 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                                   <span className="text-[10px] font-semibold text-text-muted uppercase tracking-wider">
                                     {typeLabels[s.type] ?? s.type}
                                   </span>
-                                  <span className={`inline-flex items-center gap-1.5 rounded-full ${pc.bg} ${pc.text} border border-transparent px-2 py-0.5 text-[10px] font-medium`}>
+                                  <span
+                                    className={`inline-flex items-center gap-1.5 rounded-full ${pc.bg} ${pc.text} border border-transparent px-2 py-0.5 text-[10px] font-medium`}
+                                  >
                                     <span className={`size-1.5 rounded-full ${pc.dot}`} />
                                     {s.priority}
                                   </span>
@@ -276,7 +302,8 @@ export function AiSuggestionsPanel({ result, isBuilder, onClose }: AiSuggestions
                 <AlertCircle className="size-4 text-amber shrink-0 mt-0.5" />
                 <p className="text-xs text-text-muted leading-relaxed">
                   This resume was uploaded as a file. To apply suggestions,{" "}
-                  <span className="font-medium text-text-heading">copy each change</span>, edit the file externally, and re-upload.
+                  <span className="font-medium text-text-heading">copy each change</span>, edit the file externally, and
+                  re-upload.
                 </p>
               </div>
             )}

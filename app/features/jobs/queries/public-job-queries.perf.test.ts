@@ -20,14 +20,9 @@ describe("PF4 — Job listing 100K full-text search performance", () => {
     const indexes = await prisma.$queryRawUnsafe<Array<{ indexname: string }>>(
       `SELECT indexname FROM pg_indexes WHERE indexname LIKE 'job_%_fts_idx'`,
     );
-    expect(indexes.map((i) => i.indexname).sort()).toEqual([
-      "job_description_fts_idx",
-      "job_title_fts_idx",
-    ]);
+    expect(indexes.map((i) => i.indexname).sort()).toEqual(["job_description_fts_idx", "job_title_fts_idx"]);
 
-    const { listPublicJobs } = await import(
-      "@/app/features/jobs/queries/public-job-queries"
-    );
+    const { listPublicJobs } = await import("@/app/features/jobs/queries/public-job-queries");
 
     // Warm-up so the GIN index + OS page cache are populated; the measured run
     // reflects steady-state latency, not first-touch cold reads (which depend
@@ -35,9 +30,7 @@ describe("PF4 — Job listing 100K full-text search performance", () => {
     const warm = await listPublicJobs({ search: "engineer", page: 1, pageSize: 20 });
     expect(warm.total).toBeGreaterThan(0);
 
-    const { ms, result } = await measure(() =>
-      listPublicJobs({ search: "engineer", page: 1, pageSize: 20 }),
-    );
+    const { ms, result } = await measure(() => listPublicJobs({ search: "engineer", page: 1, pageSize: 20 }));
 
     expect(result.total).toBeGreaterThan(0);
     // Generous budget: a warm GIN-backed query is single-digit ms; a missing

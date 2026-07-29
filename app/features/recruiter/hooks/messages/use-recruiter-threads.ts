@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  createUseThreads,
-  createUseInvalidateThreads,
-} from "@/app/features/shared/hooks/use-threads";
+import { createUseThreads, createUseInvalidateThreads } from "@/app/features/shared/hooks/use-threads";
 
 export type { ThreadUser, ThreadLastMessage, ThreadItem } from "@/app/features/shared/hooks/use-threads";
 

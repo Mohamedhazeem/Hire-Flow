@@ -13,16 +13,7 @@ type StatCardProps = {
   className?: string;
 };
 
-export function StatCard({
-  title,
-  value,
-  icon,
-  description,
-  trend,
-  href,
-  gradient,
-  className,
-}: StatCardProps) {
+export function StatCard({ title, value, icon, description, trend, href, gradient, className }: StatCardProps) {
   const accentGradient = gradient ?? "from-brand/10 via-brand/5 to-transparent";
 
   const inner = (
@@ -47,12 +38,7 @@ export function StatCard({
               ) : (
                 <TrendingDownIcon className="size-3.5 text-error shrink-0" />
               )}
-              <span
-                className={cn(
-                  "text-xs font-medium",
-                  trend.value >= 0 ? "text-success" : "text-error",
-                )}
-              >
+              <span className={cn("text-xs font-medium", trend.value >= 0 ? "text-success" : "text-error")}>
                 {trend.value > 0 ? "+" : ""}
                 {trend.value}% {trend.label}
               </span>
@@ -70,11 +56,7 @@ export function StatCard({
           {icon}
         </div>
       </div>
-      {description && (
-        <p className="text-xs text-text-muted mt-3 pt-3 border-t border-border-subtle">
-          {description}
-        </p>
-      )}
+      {description && <p className="text-xs text-text-muted mt-3 pt-3 border-t border-border-subtle">{description}</p>}
     </div>
   );
 

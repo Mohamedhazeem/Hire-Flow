@@ -44,9 +44,7 @@ export function StartConversationSearch({
       }
 
       try {
-        const res = await apiClient<{ data: SearchResult[] }>(
-          `${searchEndpoint}?q=${encodeURIComponent(value)}`,
-        );
+        const res = await apiClient<{ data: SearchResult[] }>(`${searchEndpoint}?q=${encodeURIComponent(value)}`);
         const data = res.data ?? [];
         setResults(data);
         setIsOpen(data.length > 0);

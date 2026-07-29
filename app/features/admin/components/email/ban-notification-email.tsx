@@ -1,13 +1,4 @@
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Preview,
-  Section,
-  Text,
-} from "react-email";
+import { Body, Container, Head, Heading, Html, Preview, Section, Text } from "react-email";
 
 interface BanNotificationEmailProps {
   adminName: string;
@@ -15,11 +6,7 @@ interface BanNotificationEmailProps {
   expiresInDays?: number | null;
 }
 
-export const BanNotificationEmail = ({
-  adminName,
-  reason,
-  expiresInDays,
-}: BanNotificationEmailProps) => {
+export const BanNotificationEmail = ({ adminName, reason, expiresInDays }: BanNotificationEmailProps) => {
   return (
     <Html lang="en">
       <Head />
@@ -40,14 +27,10 @@ export const BanNotificationEmail = ({
               This suspension will be lifted in <strong>{expiresInDays} day(s)</strong>.
             </Text>
           ) : (
-            <Text style={paragraph}>
-              This suspension is permanent unless reviewed by the admin team.
-            </Text>
+            <Text style={paragraph}>This suspension is permanent unless reviewed by the admin team.</Text>
           )}
           <Section style={noteBox}>
-            <Text style={noteText}>
-              If you believe this is a mistake, please contact the admin team to appeal.
-            </Text>
+            <Text style={noteText}>If you believe this is a mistake, please contact the admin team to appeal.</Text>
           </Section>
         </Container>
       </Body>

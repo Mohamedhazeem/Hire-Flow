@@ -68,16 +68,14 @@ export function ResumeList() {
         </Link>
       </div>
 
-      {(!resumes || resumes.length === 0) ? (
+      {!resumes || resumes.length === 0 ? (
         <div className="flex flex-col items-center gap-4 py-16 text-center">
           <div className="size-16 rounded-2xl bg-bg-elevated border border-border-subtle flex items-center justify-center">
             <FileTextIcon className="size-8 text-text-muted" />
           </div>
           <div>
             <h3 className="text-base font-medium text-text-heading">No resumes yet</h3>
-            <p className="text-sm text-text-muted mt-1">
-              Upload a file or build one from scratch to get started.
-            </p>
+            <p className="text-sm text-text-muted mt-1">Upload a file or build one from scratch to get started.</p>
           </div>
         </div>
       ) : (

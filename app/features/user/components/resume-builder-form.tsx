@@ -4,10 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  BuilderResumeSchema,
-  type BuilderResumeInput,
-} from "@/app/features/user/schema/resume.schema";
+import { BuilderResumeSchema, type BuilderResumeInput } from "@/app/features/user/schema/resume.schema";
 import { saveResumeBuilder } from "@/app/features/user/actions/save-resume-builder";
 import { useUpdateBuilderData } from "@/app/features/user/hooks/use-resumes";
 import { Button } from "@/components/ui/button";
@@ -114,14 +111,8 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
           <label htmlFor="label" className="text-sm font-medium text-text-heading">
             Resume Label <span className="text-error">*</span>
           </label>
-          <Input
-            id="label"
-            placeholder="e.g. Software Engineer Resume"
-            {...form.register("label")}
-          />
-          {form.formState.errors.label && (
-            <p className="text-xs text-error">{form.formState.errors.label.message}</p>
-          )}
+          <Input id="label" placeholder="e.g. Software Engineer Resume" {...form.register("label")} />
+          {form.formState.errors.label && <p className="text-xs text-error">{form.formState.errors.label.message}</p>}
         </div>
 
         <div className="space-y-1">
@@ -154,14 +145,9 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
               Add
             </Button>
           </div>
-          {eduFields.length === 0 && (
-            <p className="text-sm text-text-muted py-1">No education entries.</p>
-          )}
+          {eduFields.length === 0 && <p className="text-sm text-text-muted py-1">No education entries.</p>}
           {eduFields.map((field, i) => (
-            <div
-              key={field.id}
-              className="rounded-lg border border-border-subtle bg-bg-elevated p-3 space-y-2"
-            >
+            <div key={field.id} className="rounded-lg border border-border-subtle bg-bg-elevated p-3 space-y-2">
               <div className="flex justify-end">
                 <button
                   type="button"
@@ -205,14 +191,9 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
               Add
             </Button>
           </div>
-          {expFields.length === 0 && (
-            <p className="text-sm text-text-muted py-1">No experience entries.</p>
-          )}
+          {expFields.length === 0 && <p className="text-sm text-text-muted py-1">No experience entries.</p>}
           {expFields.map((field, i) => (
-            <div
-              key={field.id}
-              className="rounded-lg border border-border-subtle bg-bg-elevated p-3 space-y-2"
-            >
+            <div key={field.id} className="rounded-lg border border-border-subtle bg-bg-elevated p-3 space-y-2">
               <div className="flex justify-end">
                 <button
                   type="button"
@@ -228,22 +209,14 @@ export function ResumeBuilderForm({ defaultValues, resumeId }: Props) {
                 <Input placeholder="Title" {...form.register(`experiences.${i}.title`)} />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <Input
-                  type="number"
-                  placeholder="Start year"
-                  {...form.register(`experiences.${i}.startYear`)}
-                />
+                <Input type="number" placeholder="Start year" {...form.register(`experiences.${i}.startYear`)} />
                 <div className="flex items-center gap-2">
                   {presentYears.has(i) ? (
                     <div className="flex-1 h-9 flex items-center px-3 text-sm text-text-muted border border-dashed border-border-subtle rounded-md">
                       Present
                     </div>
                   ) : (
-                    <Input
-                      type="number"
-                      placeholder="End year"
-                      {...form.register(`experiences.${i}.endYear`)}
-                    />
+                    <Input type="number" placeholder="End year" {...form.register(`experiences.${i}.endYear`)} />
                   )}
                   <label className="flex items-center gap-1 text-xs text-text-muted cursor-pointer shrink-0">
                     <input

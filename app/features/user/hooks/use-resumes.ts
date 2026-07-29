@@ -73,13 +73,10 @@ export function useUpdateBuilderData() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async ({ id, data }: { id: string; data: Record<string, unknown> }) => {
-      const res = await apiClient<{ data: ResumeListItem }>(
-        `/api/user/resumes/${id}/builder-data`,
-        {
-          method: "PATCH",
-          body: data,
-        },
-      );
+      const res = await apiClient<{ data: ResumeListItem }>(`/api/user/resumes/${id}/builder-data`, {
+        method: "PATCH",
+        body: data,
+      });
       return res.data;
     },
     onSuccess: () => {

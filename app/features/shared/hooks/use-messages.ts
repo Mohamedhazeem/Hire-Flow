@@ -38,8 +38,7 @@ export function createUseMessages(queryKey: string, apiBasePath: string) {
         });
       },
       initialPageParam: undefined as string | undefined,
-      getNextPageParam: (lastPage) =>
-        lastPage.data.meta.hasNextPage ? lastPage.data.meta.nextCursor : undefined,
+      getNextPageParam: (lastPage) => (lastPage.data.meta.hasNextPage ? lastPage.data.meta.nextCursor : undefined),
       enabled: isValidThreadId(threadId),
     });
 }

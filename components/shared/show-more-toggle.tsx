@@ -10,13 +10,7 @@ type ShowMoreToggleProps = {
   label?: string;
 };
 
-export function ShowMoreToggle({
-  totalCount,
-  visibleCount,
-  showAll,
-  onToggle,
-  label = "items",
-}: ShowMoreToggleProps) {
+export function ShowMoreToggle({ totalCount, visibleCount, showAll, onToggle, label = "items" }: ShowMoreToggleProps) {
   if (showAll || totalCount <= visibleCount) return null;
 
   return (

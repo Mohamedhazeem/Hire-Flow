@@ -2,10 +2,7 @@
 
 import { useRecruiterThreads } from "@/app/features/recruiter/hooks/messages/use-recruiter-threads";
 import { RecruiterThreadView } from "@/app/features/recruiter/components/recruiter-thread-view";
-import {
-  MessagesPageLayout,
-  type MessagesPageConfig,
-} from "@/components/chat/messages-page-layout";
+import { MessagesPageLayout, type MessagesPageConfig } from "@/components/chat/messages-page-layout";
 
 const config: MessagesPageConfig = {
   queryKey: "recruiter",

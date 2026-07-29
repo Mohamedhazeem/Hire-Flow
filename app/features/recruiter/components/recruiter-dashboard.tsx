@@ -27,9 +27,7 @@ const recentColumns: ColumnDef<DashboardData["recentApplications"][number]>[] = 
     key: "userName",
     header: "Applicant",
     align: "center",
-    cell: (row) => (
-      <span className="font-medium text-text-heading text-sm">{row.userName ?? "—"}</span>
-    ),
+    cell: (row) => <span className="font-medium text-text-heading text-sm">{row.userName ?? "—"}</span>,
   },
   {
     key: "jobTitle",
@@ -160,15 +158,10 @@ export function RecruiterDashboard({ data }: RecruiterDashboardProps) {
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-base font-semibold text-text-heading">Recent Applications</h2>
-            <p className="text-[11px] text-text-muted mt-0.5">
-              Latest 5 applications across all jobs
-            </p>
+            <p className="text-[11px] text-text-muted mt-0.5">Latest 5 applications across all jobs</p>
           </div>
           {data.recentApplications.length > 0 && (
-            <Link
-              href="/recruiter/jobs"
-              className="inline-flex items-center gap-1 text-xs text-brand hover:underline"
-            >
+            <Link href="/recruiter/jobs" className="inline-flex items-center gap-1 text-xs text-brand hover:underline">
               View All Jobs
               <ArrowRightIcon className="size-3" />
             </Link>

@@ -66,10 +66,7 @@ export async function listApplicants(
   );
 
   if (mode === "cursor") {
-    const { take, cursor } = parseCursorParams(
-      { cursor: params.cursor, limit: params.limit },
-      20,
-    );
+    const { take, cursor } = parseCursorParams({ cursor: params.cursor, limit: params.limit }, 20);
     const rows = await prisma.application.findMany({
       where,
       take: take + 1,
@@ -98,10 +95,7 @@ export async function listApplicants(
     return { mode: "cursor", ...buildCursorMeta(items, take) };
   }
 
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
+  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
 
   const orderBy: Record<string, string> = {};
   const sortBy = params.sortBy ?? "appliedAt";

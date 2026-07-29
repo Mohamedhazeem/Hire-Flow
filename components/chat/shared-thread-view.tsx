@@ -10,8 +10,11 @@ import { isValidThreadId } from "@/lib/thread-utils";
 export type ThreadViewHooks = {
   useMessages: (threadId: string) => {
     data: { pages: { data: { messages: MessageItem[] } }[] } | undefined;
-    isLoading: boolean; isFetchingNextPage: boolean; hasNextPage: boolean;
-    fetchNextPage: () => void; isError: boolean;
+    isLoading: boolean;
+    isFetchingNextPage: boolean;
+    hasNextPage: boolean;
+    fetchNextPage: () => void;
+    isError: boolean;
   };
   useSendMessage: (threadId: string) => {
     mutate: (payload: Record<string, unknown>, opts?: { onSuccess?: () => void }) => void;
@@ -36,8 +39,11 @@ export type ThreadViewConfig = {
 };
 
 type Props = {
-  threadId: string; onBack?: () => void;
-  hooks: ThreadViewHooks; config: ThreadViewConfig; chatNameOverride?: string;
+  threadId: string;
+  onBack?: () => void;
+  hooks: ThreadViewHooks;
+  config: ThreadViewConfig;
+  chatNameOverride?: string;
 };
 
 export function SharedThreadView({ threadId, onBack, hooks, config, chatNameOverride }: Props) {

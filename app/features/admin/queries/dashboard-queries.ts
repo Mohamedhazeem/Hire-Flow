@@ -106,7 +106,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       status: a.status,
       appliedAt: a.appliedAt,
     })),
-    applicationsLast14Days:     applicationTrend.map((r) => ({
+    applicationsLast14Days: applicationTrend.map((r) => ({
       date: r.date,
       count: Number(r.count),
     })),

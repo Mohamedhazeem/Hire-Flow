@@ -1,12 +1,6 @@
 "use client";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { STATUS_OPTIONS, STATUS_DOT_COLORS } from "../utils/applicant-table-constants";
 import { SearchIcon, DownloadIcon } from "lucide-react";
@@ -49,17 +43,13 @@ export function ApplicantTableToolbar({
         }}
       >
         <SelectTrigger className="w-full sm:w-36">
-          <SelectValue>
-            {STATUS_OPTIONS.find((o) => o.value === status)?.label ?? "All Status"}
-          </SelectValue>
+          <SelectValue>{STATUS_OPTIONS.find((o) => o.value === status)?.label ?? "All Status"}</SelectValue>
         </SelectTrigger>
         <SelectContent>
           {STATUS_OPTIONS.map((opt) => (
             <SelectItem key={opt.value} value={opt.value}>
               <span className="flex items-center gap-2">
-                <span
-                  className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")}
-                />
+                <span className={cn("size-2 rounded-full", STATUS_DOT_COLORS[opt.value] ?? "bg-muted")} />
                 {opt.label}
               </span>
             </SelectItem>

@@ -67,8 +67,7 @@ const ROLE_META: Record<string, { label: string; dot: string }> = {
   user: { label: "User", dot: "bg-slate-400" },
 };
 
-const MENU_ITEM =
-  "flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-bg-muted transition-colors w-full";
+const MENU_ITEM = "flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:bg-bg-muted transition-colors w-full";
 
 export function AccountPopover() {
   const { data: session } = useSession();
@@ -89,20 +88,12 @@ export function AccountPopover() {
         <AvatarFallback name={user.name} image={user.image} size={36} />
       </PopoverTrigger>
 
-      <PopoverContent
-        side="bottom"
-        align="end"
-        sideOffset={8}
-        className="w-72 p-1.5 overflow-hidden"
-      >
+      <PopoverContent side="bottom" align="end" sideOffset={8} className="w-72 p-1.5 overflow-hidden">
         {/* ── User Info ── */}
         <div className="flex items-center gap-3 px-3 py-1.5">
           <AvatarFallback name={user.name} image={user.image} size={80} />
           <div className="min-w-0 flex-1 space-y-0.5">
-            <p
-              className="text-sm font-semibold text-text-heading truncate leading-tight"
-              title={user.name}
-            >
+            <p className="text-sm font-semibold text-text-heading truncate leading-tight" title={user.name}>
               {user.name}
             </p>
             <p className="text-xs text-text-muted truncate leading-tight">{user.email}</p>
@@ -118,11 +109,7 @@ export function AccountPopover() {
         {/* ── Role-specific links ── */}
         <div className="flex flex-col">
           {links.map(({ href, label, icon: Icon }, i) => (
-            <Link
-              key={href}
-              href={href}
-              className={`${MENU_ITEM} group hover:text-white hover:bg-brand/90`}
-            >
+            <Link key={href} href={href} className={`${MENU_ITEM} group hover:text-white hover:bg-brand/90`}>
               <Icon className="size-4 text-text-muted shrink-0 group-hover:text-white" />
               {label}
               {href.includes("/messages") && unreadCount > 0 && (

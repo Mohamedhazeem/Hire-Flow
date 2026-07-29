@@ -12,16 +12,11 @@ export function authError(error: unknown, authType: AuthType = "SIGNUP"): Action
           form: ["Your email is not verified. A new verification email has been sent."],
         },
       };
-    } else if (
-      error.body?.code?.toLowerCase().includes("already_exists") ||
-      error.status === "UNPROCESSABLE_ENTITY"
-    ) {
+    } else if (error.body?.code?.toLowerCase().includes("already_exists") || error.status === "UNPROCESSABLE_ENTITY") {
       return {
         success: false,
         errors: {
-          email: [
-            error.body?.message || "This email is already registered. Please use another email.",
-          ],
+          email: [error.body?.message || "This email is already registered. Please use another email."],
         },
       };
     } else if (error.body?.code?.toLowerCase() === "email_not_found") {
@@ -37,10 +32,7 @@ export function authError(error: unknown, authType: AuthType = "SIGNUP"): Action
       return {
         success: false,
         errors: {
-          form: [
-            error.body?.message ||
-              "You have made too many attempts. Please wait a moment before trying again.",
-          ],
+          form: [error.body?.message || "You have made too many attempts. Please wait a moment before trying again."],
         },
       };
     }

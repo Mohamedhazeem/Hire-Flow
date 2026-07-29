@@ -15,9 +15,7 @@ describe("PF3 — CSV export 50K rows performance", () => {
     const job = await createTestJob(recruiter.id, company.id);
     await seedApplications(job.id, company.id, { count: 50_000 });
 
-    const { exportApplicantsAsCsv } = await import(
-      "@/app/features/recruiter/queries/export-queries"
-    );
+    const { exportApplicantsAsCsv } = await import("@/app/features/recruiter/queries/export-queries");
 
     const beforeRSS = process.memoryUsage().rss;
     let totalBytes = 0;

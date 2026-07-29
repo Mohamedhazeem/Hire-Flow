@@ -51,9 +51,7 @@ export function SalaryFAQSection() {
               <DollarSignIcon className="size-6 text-brand" />
               Salary Negotiation Basics
             </h2>
-            <p className="text-sm text-text-muted mt-1 mb-8">
-              Know your worth and negotiate with confidence.
-            </p>
+            <p className="text-sm text-text-muted mt-1 mb-8">Know your worth and negotiate with confidence.</p>
           </motion.div>
 
           <div className="space-y-3">

@@ -16,12 +16,8 @@ export function ResourcesCTA() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
           }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">
-            Ready to Find Your Next Role?
-          </h2>
-          <p className="text-sm text-text-muted mt-2 mb-6">
-            Browse thousands of active listings from top companies.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">Ready to Find Your Next Role?</h2>
+          <p className="text-sm text-text-muted mt-2 mb-6">Browse thousands of active listings from top companies.</p>
           <Link
             href="/jobs"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold text-white bg-brand hover:bg-brand-dark rounded-xl transition-all hover:scale-[1.03] active:scale-[0.97]"

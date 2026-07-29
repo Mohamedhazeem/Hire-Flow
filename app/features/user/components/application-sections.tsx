@@ -24,12 +24,20 @@ export function ApplicationSections({ rejectionReason, interviewDate, meetingLin
           <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-2">Interview</h2>
           <p className="text-sm text-text-body">
             {new Date(interviewDate).toLocaleDateString(undefined, {
-              day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit",
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
             })}
           </p>
           {meetingLink != null && (
-            <a href={meetingLink} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-brand hover:underline mt-2">
+            <a
+              href={meetingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-brand hover:underline mt-2"
+            >
               <ExternalLinkIcon className="size-3.5" /> Join Meeting
             </a>
           )}

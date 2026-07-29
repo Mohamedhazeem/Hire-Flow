@@ -31,12 +31,8 @@ export async function FeaturedJobs() {
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">
-              Featured Jobs
-            </h2>
-            <p className="text-sm text-text-muted mt-1">
-              Recent opportunities from top companies
-            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">Featured Jobs</h2>
+            <p className="text-sm text-text-muted mt-1">Recent opportunities from top companies</p>
           </div>
           <Link
             href="/jobs"
@@ -51,10 +47,7 @@ export async function FeaturedJobs() {
             <BriefcaseIcon className="size-8 text-text-muted mx-auto mb-3" />
             <p className="text-text-muted">No featured jobs right now</p>
             <p className="text-sm text-text-muted mt-1">Check back later or browse all listings</p>
-            <Link
-              href="/jobs"
-              className="inline-block mt-4 text-sm font-medium text-brand hover:underline"
-            >
+            <Link href="/jobs" className="inline-block mt-4 text-sm font-medium text-brand hover:underline">
               Browse all jobs &rarr;
             </Link>
           </div>

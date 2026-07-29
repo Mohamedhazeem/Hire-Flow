@@ -2,10 +2,7 @@
 
 import { useUserThreads } from "@/app/features/user/hooks/messages/use-user-threads";
 import { UserThreadView } from "@/app/features/user/components/user-thread-view";
-import {
-  MessagesPageLayout,
-  type MessagesPageConfig,
-} from "@/components/chat/messages-page-layout";
+import { MessagesPageLayout, type MessagesPageConfig } from "@/components/chat/messages-page-layout";
 
 const config: MessagesPageConfig = {
   queryKey: "user",

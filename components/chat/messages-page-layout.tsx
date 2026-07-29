@@ -122,9 +122,7 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
 
-  const [activeThreadId, setActiveThreadId] = useState<string | null>(
-    () => searchParams.get("thread") ?? null,
-  );
+  const [activeThreadId, setActiveThreadId] = useState<string | null>(() => searchParams.get("thread") ?? null);
 
   // Sync with URL changes (browser back/forward)
   useEffect(() => {
@@ -150,10 +148,7 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
   return (
     <div className="flex flex-1 min-h-0 overflow-hidden -mx-4 md:-mx-6 lg:-mx-8">
       <div
-        className={cn(
-          "flex-1 flex flex-col min-h-0 lg:flex-none",
-          activeThreadId ? "hidden lg:flex lg:w-80" : "flex",
-        )}
+        className={cn("flex-1 flex flex-col min-h-0 lg:flex-none", activeThreadId ? "hidden lg:flex lg:w-80" : "flex")}
       >
         <ThreadListPanel
           threads={threads}
@@ -170,14 +165,9 @@ export function MessagesPageLayout({ config, threads, isLoading, ThreadViewCompo
         />
       </div>
 
-      <div
-        className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}
-      >
+      <div className={cn("flex-1 flex flex-col min-h-0", activeThreadId ? "flex" : "hidden lg:flex")}>
         {activeThreadId ? (
-          <ThreadViewComponent
-            threadId={activeThreadId}
-            onBack={handleBack}
-          />
+          <ThreadViewComponent threadId={activeThreadId} onBack={handleBack} />
         ) : (
           <div className="flex-1 flex items-center justify-center bg-bg-page/60">
             <div className="text-center">

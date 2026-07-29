@@ -7,26 +7,11 @@ import { apiClient } from "@/lib/api/api-client";
 import { PageHeader } from "@/components/layout/page-header";
 import { Skeleton } from "@/components/ui/skeleton";
 import { StatusBadge } from "@/components/ui/status-badge";
-import {
-  FileTextIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ExternalLinkIcon,
-  XIcon,
-  SearchIcon,
-} from "lucide-react";
+import { FileTextIcon, ChevronLeftIcon, ChevronRightIcon, ExternalLinkIcon, XIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-const STATUSES = [
-  "applied",
-  "reviewing",
-  "shortlisted",
-  "interview_scheduled",
-  "offered",
-  "hired",
-  "rejected",
-];
+const STATUSES = ["applied", "reviewing", "shortlisted", "interview_scheduled", "offered", "hired", "rejected"];
 type AppRow = {
   id: string;
   jobId: string;
@@ -105,8 +90,7 @@ export function ApplicationsPage() {
             placeholder="Search by job title..."
             defaultValue={params.search ?? ""}
             onKeyDown={(e) => {
-              if (e.key === "Enter")
-                setParam("search", (e.target as HTMLInputElement).value || undefined);
+              if (e.key === "Enter") setParam("search", (e.target as HTMLInputElement).value || undefined);
             }}
             className="w-full pl-10 pr-4 py-2 text-sm bg-bg-surface border border-border-subtle rounded-lg text-text-body placeholder:text-text-muted focus:outline-none focus:border-brand/50"
           />
@@ -176,15 +160,11 @@ export function ApplicationsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border-subtle">
-                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
-                      Job
-                    </th>
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">Job</th>
                     <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden sm:table-cell">
                       Company
                     </th>
-                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">
-                      Status
-                    </th>
+                    <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap">Status</th>
                     <th className="text-center font-medium text-text-muted pb-3 pr-4 whitespace-nowrap hidden md:table-cell">
                       Applied
                     </th>
@@ -196,10 +176,7 @@ export function ApplicationsPage() {
                 </thead>
                 <tbody>
                   {data.applications.map((app) => (
-                    <tr
-                      key={app.id}
-                      className="border-b border-border-subtle hover:bg-bg-muted/40 transition-colors"
-                    >
+                    <tr key={app.id} className="border-b border-border-subtle hover:bg-bg-muted/40 transition-colors">
                       <td className="py-3 pr-4 text-center">
                         <Link
                           href={`/user/applications/${app.id}`}

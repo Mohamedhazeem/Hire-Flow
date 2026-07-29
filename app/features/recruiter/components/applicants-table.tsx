@@ -27,8 +27,7 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
       createApplicantTableColumns({
         recruiterId: table.recruiterId,
         onViewDetails: (id) => router.push(`/recruiter/applicants/${id}`),
-        onNavigateToMessages: (tid) =>
-          router.push(`/recruiter/messages?thread=${tid}`, { scroll: false }),
+        onNavigateToMessages: (tid) => router.push(`/recruiter/messages?thread=${tid}`, { scroll: false }),
         onDialog: (type, applicant) => table.setDialog({ type, applicant }),
         onRevert: (row) => table.setRevertTarget(row),
         actionedIds: table.actionedIds,
@@ -36,10 +35,7 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
     [table, router],
   );
 
-  const handlePageChange = useCallback(
-    (p: number) => table.updateParams({ page: String(p) }),
-    [table],
-  );
+  const handlePageChange = useCallback((p: number) => table.updateParams({ page: String(p) }), [table]);
 
   if (table.isLoading) {
     return (
@@ -57,9 +53,7 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
 
   if (table.isError) {
     return (
-      <div className="text-destructive text-sm py-8 text-center">
-        Failed to load applicants. Please try again.
-      </div>
+      <div className="text-destructive text-sm py-8 text-center">Failed to load applicants. Please try again.</div>
     );
   }
 
@@ -85,9 +79,7 @@ export function ApplicantsTable({ jobId, pageSize }: ApplicantsTableProps) {
         getRowId={(row) => (row as ApplicantRow).id}
         disabledIds={table.actionedIds}
         emptyMessage={
-          hasFilters
-            ? "No applicants match your filters. Try clearing the filters."
-            : "No applicants yet for this job."
+          hasFilters ? "No applicants match your filters. Try clearing the filters." : "No applicants yet for this job."
         }
       />
 

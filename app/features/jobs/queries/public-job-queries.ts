@@ -67,6 +67,7 @@ export type PublicJobListParams = {
   experienceLevel?: string;
   industry?: string;
   companyId?: string;
+  skills?: string[];
   status?: "open" | "expired" | "all";
   sortBy?: string;
   sortOrder?: string;
@@ -107,20 +108,11 @@ export function formatSearchQuery(raw: string): string {
   return tokens.join(" | ");
 }
 
-const ALLOWED_SORT_FIELDS = new Set([
-  "createdAt",
-  "salaryMin",
-  "salaryMax",
-  "title",
-  "applicationDeadline",
-]);
+const ALLOWED_SORT_FIELDS = new Set(["createdAt", "salaryMin", "salaryMax", "title", "applicationDeadline"]);
 const ALLOWED_SORT_ORDERS = new Set(["asc", "desc"]);
 
 export async function listPublicJobs(params: PublicJobListParams): Promise<PublicJobListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
+  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
 
   const where: Record<string, unknown> = {
     status: "active",
@@ -130,10 +122,7 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.search) {
     const formattedQuery = formatSearchQuery(params.search);
     if (formattedQuery) {
-      where.OR = [
-        { title: { search: formattedQuery } },
-        { description: { search: formattedQuery } },
-      ];
+      where.OR = [{ title: { search: formattedQuery } }, { description: { search: formattedQuery } }];
     }
   }
   if (params.workMode) where.workMode = params.workMode;
@@ -141,6 +130,7 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   if (params.experienceLevel) where.experienceLevel = params.experienceLevel;
   if (params.industry) where.company = { industry: params.industry };
   if (params.companyId) where.companyId = params.companyId;
+  if (params.skills?.length) where.skills = { hasSome: params.skills };
 
   if (params.status === "open") {
     where.applicationDeadline = { gte: new Date() };
@@ -149,12 +139,8 @@ export async function listPublicJobs(params: PublicJobListParams): Promise<Publi
   }
   // "all" or undefined — no deadline filter
 
-  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "")
-    ? (params.sortBy as string)
-    : "createdAt";
-  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "")
-    ? (params.sortOrder as string)
-    : "desc";
+  const sortBy = ALLOWED_SORT_FIELDS.has(params.sortBy ?? "") ? (params.sortBy as string) : "createdAt";
+  const sortOrder = ALLOWED_SORT_ORDERS.has(params.sortOrder ?? "") ? (params.sortOrder as string) : "desc";
 
   const [jobs, total] = await Promise.all([
     prisma.job.findMany({

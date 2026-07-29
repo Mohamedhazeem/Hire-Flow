@@ -27,12 +27,7 @@ export function PeopleTablePagination({
         {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, totalUsers)}/{totalUsers}
       </span>
       <div className="flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => onPageChange(Math.max(1, page - 1))}
-          disabled={page <= 1}
-        >
+        <Button variant="outline" size="sm" onClick={() => onPageChange(Math.max(1, page - 1))} disabled={page <= 1}>
           <ChevronLeft className="size-4" />
           <span className="hidden sm:inline ml-1">Previous</span>
         </Button>

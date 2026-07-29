@@ -30,21 +30,11 @@ export function ApplicantTablePagination({
         {page}/{totalPages}
       </span>
       <div className="flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          disabled={!hasPrevPage}
-          onClick={() => onPageChange(Math.max(1, page - 1))}
-        >
+        <Button variant="outline" size="sm" disabled={!hasPrevPage} onClick={() => onPageChange(Math.max(1, page - 1))}>
           <ChevronLeftIcon className="size-4" />
           <span className="hidden sm:inline ml-1">Previous</span>
         </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          disabled={!hasNextPage}
-          onClick={() => onPageChange(page + 1)}
-        >
+        <Button variant="outline" size="sm" disabled={!hasNextPage} onClick={() => onPageChange(page + 1)}>
           <span className="hidden sm:inline mr-1">Next</span>
           <ChevronRightIcon className="size-4" />
         </Button>

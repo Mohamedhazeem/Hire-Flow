@@ -11,9 +11,7 @@ export const userService = {
     }
 
     if (application.status !== "applied" && application.status !== "reviewing") {
-      throw new ValidationError(
-        "Can only withdraw applications that are in 'applied' or 'reviewing' status",
-      );
+      throw new ValidationError("Can only withdraw applications that are in 'applied' or 'reviewing' status");
     }
 
     const { jobId, status } = application;

@@ -37,9 +37,7 @@ export async function registerAction(data: unknown): Promise<ActionResult> {
         return {
           success: false,
           errors: {
-            form: [
-              "Your account already exists but is not verified. A new verification email has been sent.",
-            ],
+            form: ["Your account already exists but is not verified. A new verification email has been sent."],
           },
         };
 

@@ -96,9 +96,7 @@ function SkeletonMessages() {
     <div className="space-y-3 p-4">
       {Array.from({ length: 6 }).map((_, i) => (
         <div key={i} className={cn("flex", i % 2 === 0 ? "justify-end" : "justify-start")}>
-          <div
-            className={cn("h-10 rounded-2xl bg-muted animate-pulse", i % 2 === 0 ? "w-48" : "w-64")}
-          />
+          <div className={cn("h-10 rounded-2xl bg-muted animate-pulse", i % 2 === 0 ? "w-48" : "w-64")} />
         </div>
       ))}
     </div>

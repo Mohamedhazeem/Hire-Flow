@@ -10,13 +10,7 @@ import {
   useMarkAsRead,
   useClearAllNotifications,
 } from "@/app/features/notifications/hooks/use-notifications";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverTitle,
-  PopoverHeader,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger, PopoverTitle, PopoverHeader } from "@/components/ui/popover";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import {
@@ -118,15 +112,12 @@ type NotificationDropdownProps = {
   messagesBasePath?: string;
 };
 
-export function NotificationDropdown({
-  messagesBasePath = "/admin/messages",
-}: NotificationDropdownProps) {
+export function NotificationDropdown({ messagesBasePath = "/admin/messages" }: NotificationDropdownProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
   const { data: session } = useSession();
   const userId = (session?.user as { id?: string })?.id ?? "";
-  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useNotifications(userId);
+  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useNotifications(userId);
   const { data: unreadCount = 0 } = useUnreadCount(userId);
   const markAsRead = useMarkAsRead();
   const clearAll = useClearAllNotifications();
@@ -134,10 +125,7 @@ export function NotificationDropdown({
   // Realtime notifications handled by RoleLayoutClient
 
   const allNotifications = useMemo(
-    () =>
-      data?.pages.flatMap(
-        (p) => (p as { notifications?: NotificationItem[] })?.notifications ?? [],
-      ) ?? [],
+    () => data?.pages.flatMap((p) => (p as { notifications?: NotificationItem[] })?.notifications ?? []) ?? [],
     [data?.pages],
   );
 
@@ -152,9 +140,8 @@ export function NotificationDropdown({
     (n: NotificationItem) => {
       if (!n.read) {
         markAsRead.mutate([n.id]);
-        queryClient.setQueryData(
-          ["notifications", "unread", userId],
-          (old: number | undefined) => Math.max(0, (old ?? 1) - 1),
+        queryClient.setQueryData(["notifications", "unread", userId], (old: number | undefined) =>
+          Math.max(0, (old ?? 1) - 1),
         );
         queryClient.setQueryData(["notifications", userId], (old: unknown) => {
           if (!old || typeof old !== "object") return old;
@@ -167,9 +154,7 @@ export function NotificationDropdown({
             ...data,
             pages: data.pages.map((page) => ({
               ...page,
-              notifications: page.notifications.map((item) =>
-                item.id === n.id ? { ...item, read: true } : item,
-              ),
+              notifications: page.notifications.map((item) => (item.id === n.id ? { ...item, read: true } : item)),
             })),
           };
         });
@@ -202,9 +187,7 @@ export function NotificationDropdown({
         className="w-80 sm:w-96 p-0 overflow-hidden"
       >
         <PopoverHeader className="flex flex-row items-center justify-between px-4 pt-3 pb-2 border-b border-border-subtle">
-          <PopoverTitle className="text-sm font-semibold text-text-heading">
-            Notifications
-          </PopoverTitle>
+          <PopoverTitle className="text-sm font-semibold text-text-heading">Notifications</PopoverTitle>
           <div className="flex items-center gap-2">
             {unreadCount > 0 && (
               <button
@@ -243,11 +226,7 @@ export function NotificationDropdown({
           className="max-h-80 overflow-y-auto"
           onScroll={(e) => {
             const el = e.currentTarget;
-            if (
-              el.scrollHeight - el.scrollTop - el.clientHeight < 60 &&
-              hasNextPage &&
-              !isFetchingNextPage
-            ) {
+            if (el.scrollHeight - el.scrollTop - el.clientHeight < 60 && hasNextPage && !isFetchingNextPage) {
               fetchNextPage();
             }
           }}
@@ -316,9 +295,7 @@ export function NotificationDropdown({
 
         <div className="border-t border-border-subtle px-4 py-2 bg-bg-surface">
           <p className="text-[10px] text-text-muted text-center">
-            {unreadCount > 0
-              ? `${unreadCount} unread notification${unreadCount !== 1 ? "s" : ""}`
-              : "All caught up"}
+            {unreadCount > 0 ? `${unreadCount} unread notification${unreadCount !== 1 ? "s" : ""}` : "All caught up"}
           </p>
         </div>
       </PopoverContent>

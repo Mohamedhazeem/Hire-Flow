@@ -15,9 +15,7 @@ describe("PF2 — Applicant list 10K+ records performance", () => {
     const job = await createTestJob(recruiter.id, company.id);
     await seedApplications(job.id, company.id, { count: 10_000 });
 
-    const { listApplicants } = await import(
-      "@/app/features/recruiter/queries/application-queries"
-    );
+    const { listApplicants } = await import("@/app/features/recruiter/queries/application-queries");
 
     const { ms, result } = await measure(() =>
       listApplicants(job.id, company.id, { page: 1, pageSize: 100, sortBy: "appliedAt", sortOrder: "desc" }),

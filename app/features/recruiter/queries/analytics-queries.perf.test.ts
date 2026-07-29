@@ -1,5 +1,12 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { resetDb, createTestUser, createTestCompany, createTestJob, seedApplications, createTestApplication } from "@/lib/test";
+import {
+  resetDb,
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  seedApplications,
+  createTestApplication,
+} from "@/lib/test";
 import { measure } from "@/lib/test/perf";
 import { Role, WorkMode, EmploymentType } from "@/app/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
@@ -21,9 +28,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
       appliedAtSpreadDays: 365 * 5,
     });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const fiveYearsAgo = new Date();
     fiveYearsAgo.setFullYear(fiveYearsAgo.getFullYear() - 5);
@@ -47,9 +52,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
       statuses: ["applied", "reviewing", "hired", "rejected", "withdrawn"],
     });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, { status: "hired" });
 
@@ -65,9 +68,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     const job = await createTestJob(recruiter.id, company.id);
     await seedApplications(job.id, company.id, { count: 100 });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, {
       dateFrom: "2010-01-01",
@@ -89,9 +90,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     await seedApplications(remoteJob.id, company.id, { count: 50, appliedAtSpreadDays: 30 });
     await seedApplications(onsiteJob.id, company.id, { count: 50, appliedAtSpreadDays: 30 });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, { workMode: "remote" });
 
@@ -108,9 +107,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     await seedApplications(ftJob.id, company.id, { count: 75, appliedAtSpreadDays: 30 });
     await seedApplications(ptJob.id, company.id, { count: 25, appliedAtSpreadDays: 30 });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, { employmentType: "part_time" });
 
@@ -127,9 +124,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     await seedApplications(nyJob.id, company.id, { count: 30, appliedAtSpreadDays: 30 });
     await seedApplications(sfJob.id, company.id, { count: 70, appliedAtSpreadDays: 30 });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, { location: "New York" });
 
@@ -158,9 +153,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
       });
     }
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, {});
 
@@ -175,9 +168,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     const job = await createTestJob(recruiter.id, company.id);
     await seedApplications(job.id, company.id, { count: 100, statuses: ["applied", "reviewing"] });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, {});
 
@@ -192,9 +183,7 @@ describe("PF1 — Analytics performance and correctness", { timeout: ANALYTICS_T
     await seedApplications(jobA.id, company.id, { count: 50, statuses: ["applied"] });
     await seedApplications(jobB.id, company.id, { count: 100, statuses: ["hired"] });
 
-    const { getAnalytics } = await import(
-      "@/app/features/recruiter/queries/analytics-queries"
-    );
+    const { getAnalytics } = await import("@/app/features/recruiter/queries/analytics-queries");
 
     const result = await getAnalytics(company.id, { status: "hired" });
 

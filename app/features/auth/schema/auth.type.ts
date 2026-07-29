@@ -1,10 +1,5 @@
 import { z } from "zod";
-import {
-  ForgotPasswordSchema,
-  ResetPasswordSchema,
-  SignInSchema,
-  SignUpSchema,
-} from "./auth.schema";
+import { ForgotPasswordSchema, ResetPasswordSchema, SignInSchema, SignUpSchema } from "./auth.schema";
 
 export type RegisterInputType = z.infer<typeof SignUpSchema>;
 export type LoginInputType = z.infer<typeof SignInSchema>;

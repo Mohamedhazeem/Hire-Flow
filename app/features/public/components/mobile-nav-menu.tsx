@@ -6,12 +6,15 @@ import { BriefcaseIcon, LogInIcon, UserPlusIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { AvatarFallback } from "@/components/shared/avatar-fallback";
 
-type MobileUser = {
-  name: string;
-  email: string;
-  image?: string | null;
-  role?: string | null;
-} | null | undefined;
+type MobileUser =
+  | {
+      name: string;
+      email: string;
+      image?: string | null;
+      role?: string | null;
+    }
+  | null
+  | undefined;
 
 type Props = {
   user: MobileUser;

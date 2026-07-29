@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  type BarShapeProps,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, type BarShapeProps } from "recharts";
 import { BarChart3Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -32,9 +23,21 @@ type DistributionBarChartProps = {
   className?: string;
 };
 
-export function DistributionBarChart({ data, colorMap, title, subtitle, emptyMessage, className }: DistributionBarChartProps) {
+export function DistributionBarChart({
+  data,
+  colorMap,
+  title,
+  subtitle,
+  emptyMessage,
+  className,
+}: DistributionBarChartProps) {
   return (
-    <div className={cn("rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col", className)}>
+    <div
+      className={cn(
+        "rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col",
+        className,
+      )}
+    >
       <div className="flex items-center gap-2.5 mb-5">
         <div className="size-9 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500">
           <BarChart3Icon className="size-4" />

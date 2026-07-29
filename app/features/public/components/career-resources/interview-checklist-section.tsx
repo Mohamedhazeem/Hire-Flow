@@ -36,18 +36,12 @@ export function InterviewChecklistSection() {
               <CheckCircle2Icon className="size-6 text-brand" />
               Interview Prep Checklist
             </h2>
-            <p className="text-sm text-text-muted mt-1 mb-8">
-              Walk into every interview confident and prepared.
-            </p>
+            <p className="text-sm text-text-muted mt-1 mb-8">Walk into every interview confident and prepared.</p>
           </motion.div>
 
           <ul className="space-y-4">
             {items.map((item, i) => (
-              <motion.li
-                key={i}
-                variants={sectionVariants}
-                className="flex items-start gap-3"
-              >
+              <motion.li key={i} variants={sectionVariants} className="flex items-start gap-3">
                 <CheckCircle2Icon className="size-5 text-brand shrink-0 mt-0.5" />
                 <p className="text-sm text-text-body leading-relaxed">{item}</p>
               </motion.li>

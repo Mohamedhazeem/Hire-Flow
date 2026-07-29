@@ -53,7 +53,8 @@ export function usePusherThread(
               ? {
                   ...t,
                   lastMessage: {
-                    content: msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
+                    content:
+                      msg.content || (msg.fileUrl ? (msg.fileType?.startsWith("image/") ? "📷 Photo" : "📎 File") : ""),
                     createdAt: msg.createdAt,
                     senderId: msg.senderId,
                     unread: false,
@@ -63,8 +64,7 @@ export function usePusherThread(
           )
           .sort(
             (a, b) =>
-              new Date(b.lastMessage?.createdAt ?? 0).getTime() -
-              new Date(a.lastMessage?.createdAt ?? 0).getTime(),
+              new Date(b.lastMessage?.createdAt ?? 0).getTime() - new Date(a.lastMessage?.createdAt ?? 0).getTime(),
           );
       });
 
@@ -72,8 +72,7 @@ export function usePusherThread(
         fetch(`${apiBasePath}/messages/${threadId}?limit=1`)
           .then(() => {
             queryClient.invalidateQueries({
-              predicate: (q) =>
-                q.queryKey.length === 2 && q.queryKey[1] === "threads",
+              predicate: (q) => q.queryKey.length === 2 && q.queryKey[1] === "threads",
             });
           })
           .catch(() => {});
@@ -94,9 +93,7 @@ export function usePusherThread(
             data: {
               ...page.data,
               messages: page.data.messages.map((m: MessageItem) =>
-                m.id === data.messageId
-                  ? { ...m, deletedAt: new Date().toISOString() }
-                  : m,
+                m.id === data.messageId ? { ...m, deletedAt: new Date().toISOString() } : m,
               ),
             },
           })),

@@ -1,14 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  FileTextIcon,
-  SparklesIcon,
-  SearchIcon,
-  BookOpenIcon,
-  PenLineIcon,
-  type LucideIcon,
-} from "lucide-react";
+import { FileTextIcon, SparklesIcon, SearchIcon, BookOpenIcon, PenLineIcon, type LucideIcon } from "lucide-react";
 
 type Tip = {
   icon: LucideIcon;

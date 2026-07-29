@@ -7,7 +7,10 @@ import { getUnreadMessageCount } from "@/app/features/messages/actions/get-unrea
 
 export function useUnreadMessageCount(userId: string | undefined) {
   const queryClient = useQueryClient();
-  const channelRef = useRef<{ bind: (event: string, handler: (...args: unknown[]) => void) => void; unbind: (event: string, handler: (...args: unknown[]) => void) => void } | null>(null);
+  const channelRef = useRef<{
+    bind: (event: string, handler: (...args: unknown[]) => void) => void;
+    unbind: (event: string, handler: (...args: unknown[]) => void) => void;
+  } | null>(null);
 
   const query = useQuery({
     queryKey: ["messages", "unread-count"],
@@ -24,10 +27,7 @@ export function useUnreadMessageCount(userId: string | undefined) {
     channelRef.current = channel;
 
     const onIncrement = () => {
-      queryClient.setQueryData(
-        ["messages", "unread-count"],
-        (old: number | undefined) => (old ?? 0) + 1,
-      );
+      queryClient.setQueryData(["messages", "unread-count"], (old: number | undefined) => (old ?? 0) + 1);
     };
 
     const onUpdate = () => {

@@ -5,14 +5,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { apiClient } from "@/lib/api/api-client";
 import { Skeleton } from "@/components/ui/skeleton";
-import {
-  Loader2Icon,
-  XIcon,
-  CheckCircleIcon,
-  AlertCircleIcon,
-  ExternalLinkIcon,
-  FileTextIcon,
-} from "lucide-react";
+import { Loader2Icon, XIcon, CheckCircleIcon, AlertCircleIcon, ExternalLinkIcon, FileTextIcon } from "lucide-react";
 
 type ResumeOption = {
   id: string;
@@ -42,13 +35,10 @@ export function ApplyModal({ jobId, onClose }: ApplyModalProps) {
 
   const mutation = useMutation({
     mutationFn: async () => {
-      const res = await apiClient<{ data: { id: string; status: string } }>(
-        `/api/jobs/${jobId}/apply`,
-        {
-          method: "POST",
-          body: { resumeId: selectedResumeId, coverLetter: coverLetter || undefined },
-        },
-      );
+      const res = await apiClient<{ data: { id: string; status: string } }>(`/api/jobs/${jobId}/apply`, {
+        method: "POST",
+        body: { resumeId: selectedResumeId, coverLetter: coverLetter || undefined },
+      });
       return res.data;
     },
     onSuccess: () => {
@@ -71,10 +61,7 @@ export function ApplyModal({ jobId, onClose }: ApplyModalProps) {
   const noResumes = !resumesLoading && resumes && resumes.length === 0;
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
       <div
         className="w-full max-w-lg bg-bg-surface rounded-2xl shadow-xl overflow-hidden max-sm:inset-0 max-sm:fixed max-sm:rounded-none max-sm:h-full"
         onClick={(e) => e.stopPropagation()}
@@ -97,9 +84,7 @@ export function ApplyModal({ jobId, onClose }: ApplyModalProps) {
               <CheckCircleIcon className="size-7 text-success" />
             </div>
             <h3 className="text-lg font-semibold text-text-heading mb-1">Application Submitted!</h3>
-            <p className="text-sm text-text-muted mb-6">
-              Your application has been sent successfully.
-            </p>
+            <p className="text-sm text-text-muted mb-6">Your application has been sent successfully.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 type="button"

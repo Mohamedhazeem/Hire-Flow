@@ -25,12 +25,7 @@ function parseDate(str: string): Date | undefined {
   return isValid(parsed) ? parsed : undefined;
 }
 
-export function DateRangePicker({
-  value,
-  onChange,
-  placeholder = "Select dates...",
-  className,
-}: DateRangePickerProps) {
+export function DateRangePicker({ value, onChange, placeholder = "Select dates...", className }: DateRangePickerProps) {
   const [open, setOpen] = React.useState(false);
 
   const fromDate = value.from ? parseDate(value.from) : undefined;

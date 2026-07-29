@@ -17,9 +17,7 @@ export function CompanyJobsPanel({
   return (
     <aside className="space-y-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
-          More from {companyName}
-        </h3>
+        <h3 className="text-sm font-semibold text-text-heading uppercase tracking-wider">More from {companyName}</h3>
       </div>
 
       <div className="space-y-2">

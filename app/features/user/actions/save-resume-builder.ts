@@ -19,9 +19,7 @@ export async function saveResumeBuilder(input: BuilderResumeInput) {
     where: { userId: session.id, deletedAt: null },
   });
   if (existingCount >= 5) {
-    throw new ValidationError(
-      "Resume limit reached (5). Please delete an existing resume before creating a new one.",
-    );
+    throw new ValidationError("Resume limit reached (5). Please delete an existing resume before creating a new one.");
   }
 
   const { label, summary, educations, experiences, skills } = parsed.data;

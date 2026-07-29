@@ -31,9 +31,7 @@ function FunnelRow({
   return (
     <div className="flex items-center gap-3 py-2">
       <div className="w-32 shrink-0">
-        <span className="text-xs font-medium text-text-heading capitalize">
-          {label.replace(/_/g, " ")}
-        </span>
+        <span className="text-xs font-medium text-text-heading capitalize">{label.replace(/_/g, " ")}</span>
       </div>
       <div className="w-16 shrink-0 text-right">
         <span className="text-xs font-semibold text-text-body tabular-nums">{count}</span>
@@ -54,11 +52,7 @@ function FunnelRow({
         <span
           className={cn(
             "text-xs tabular-nums",
-            dropOff.startsWith("-")
-              ? "text-error"
-              : dropOff === "—"
-                ? "text-text-muted"
-                : "text-success",
+            dropOff.startsWith("-") ? "text-error" : dropOff === "—" ? "text-text-muted" : "text-success",
           )}
         >
           {dropOff}
@@ -80,13 +74,7 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
       <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
         <div className="flex items-center gap-2.5 mb-5">
           <div className="size-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
-            <svg
-              className="size-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
+            <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M4 20h16M4 20V4m0 16l6-12 4 8 4-6 2 4" />
             </svg>
           </div>
@@ -106,13 +94,7 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
     <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
       <div className="flex items-center gap-2.5 mb-5">
         <div className="size-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
-          <svg
-            className="size-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
+          <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
             <path d="M4 20h16M4 20V4m0 16l6-12 4 8 4-6 2 4" />
           </svg>
         </div>
@@ -126,38 +108,22 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
         <div className="flex items-center gap-3 pb-1 border-b border-border-subtle mb-2">
           <div className="w-32 shrink-0" />
           <div className="w-16 shrink-0 text-right">
-            <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">
-              Current
-            </span>
+            <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Current</span>
           </div>
           <div className="flex-1" />
           <div className="w-16 shrink-0 text-right">
-            <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">
-              Drop-off
-            </span>
+            <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Drop-off</span>
           </div>
         </div>
 
         {FUNNEL_STAGE_ORDER.map((stage, i) => {
           const count = currentMap.get(stage) ?? 0;
           const prevCount = i > 0 ? (currentMap.get(FUNNEL_STAGE_ORDER[i - 1]) ?? 0) : count;
-          const dropOff =
-            prevCount > 0
-              ? `-${((1 - count / prevCount) * 100).toFixed(1)}%`
-              : count > 0
-                ? "0.0%"
-                : "—";
+          const dropOff = prevCount > 0 ? `-${((1 - count / prevCount) * 100).toFixed(1)}%` : count > 0 ? "0.0%" : "—";
           const color = CHART_COLORS[stage] ?? "#6b7280";
 
           return (
-            <FunnelRow
-              key={stage}
-              label={stage}
-              count={count}
-              maxCount={currentMax}
-              color={color}
-              dropOff={dropOff}
-            />
+            <FunnelRow key={stage} label={stage} count={count} maxCount={currentMax} color={color} dropOff={dropOff} />
           );
         })}
       </div>
@@ -168,15 +134,11 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
             <div className="flex items-center gap-3 pb-1 border-b border-border-subtle mb-2">
               <div className="w-32 shrink-0" />
               <div className="w-16 shrink-0 text-right">
-                <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">
-                  Historical
-                </span>
+                <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Historical</span>
               </div>
               <div className="flex-1" />
               <div className="w-16 shrink-0 text-right">
-                <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">
-                  Drop-off
-                </span>
+                <span className="text-[10px] font-medium text-text-muted uppercase tracking-wider">Drop-off</span>
               </div>
             </div>
 
@@ -184,11 +146,7 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
               const count = historicalMap.get(stage) ?? 0;
               const prevCount = i > 0 ? (historicalMap.get(FUNNEL_STAGE_ORDER[i - 1]) ?? 0) : count;
               const dropOff =
-                prevCount > 0
-                  ? `-${((1 - count / prevCount) * 100).toFixed(1)}%`
-                  : count > 0
-                    ? "0.0%"
-                    : "—";
+                prevCount > 0 ? `-${((1 - count / prevCount) * 100).toFixed(1)}%` : count > 0 ? "0.0%" : "—";
               const color = CHART_COLORS[stage] ?? "#6b7280";
 
               return (

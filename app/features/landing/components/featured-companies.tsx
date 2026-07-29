@@ -18,21 +18,13 @@ export async function FeaturedCompanies() {
           <div className="text-center py-12 border border-dashed border-border-subtle rounded-xl">
             <Building2Icon className="size-8 text-text-muted mx-auto mb-3" />
             <p className="text-text-muted">No featured companies yet</p>
-            <p className="text-sm text-text-muted mt-1">
-              Companies will appear here when they start hiring
-            </p>
+            <p className="text-sm text-text-muted mt-1">Companies will appear here when they start hiring</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {companies.map((c) => (
               <Link key={c.id} href={`/jobs?companyId=${c.id}`} className="block">
-                <CompanyPreviewCard
-                  name={c.name}
-                  logo={c.logoUrl}
-                  website={null}
-                  description={null}
-                  locations={[]}
-                />
+                <CompanyPreviewCard name={c.name} logo={c.logoUrl} website={null} description={null} locations={[]} />
               </Link>
             ))}
           </div>

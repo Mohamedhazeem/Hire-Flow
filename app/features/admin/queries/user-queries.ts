@@ -25,10 +25,7 @@ export type AdminUserListResult = {
 };
 
 export async function listUsers(params: AdminListUsersParams): Promise<AdminUserListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
+  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
 
   const where: Record<string, unknown> = {};
 

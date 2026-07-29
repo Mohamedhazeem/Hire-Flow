@@ -34,9 +34,7 @@ export function useApplicantsTable(jobId: string, pageSize = 20) {
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [bulkDialog, setBulkDialog] = useState<string>("");
   const [actionedIds, setActionedIds] = useState<Set<string>>(new Set());
-  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(
-    null,
-  );
+  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const [revertTarget, setRevertTarget] = useState<ApplicantRow | null>(null);
   const [bulkEmail, setBulkEmail] = useState(false);
   const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -138,10 +136,7 @@ export function useApplicantsTable(jobId: string, pageSize = 20) {
             setBulkEmail(false);
           },
           onError: (error: Error) =>
-            showFeedback(
-              "error",
-              (error as { message?: string }).message ?? "Bulk rejection failed",
-            ),
+            showFeedback("error", (error as { message?: string }).message ?? "Bulk rejection failed"),
         },
       );
     },
@@ -161,8 +156,7 @@ export function useApplicantsTable(jobId: string, pageSize = 20) {
             });
             showFeedback("success", "Applicant reverted to previous status");
           },
-          onError: (error: Error) =>
-            showFeedback("error", (error as { message?: string }).message ?? "Revert failed"),
+          onError: (error: Error) => showFeedback("error", (error as { message?: string }).message ?? "Revert failed"),
         },
       );
     },

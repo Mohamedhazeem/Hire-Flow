@@ -56,15 +56,10 @@ export function ResetPasswordForm() {
   });
 
   return (
-    <AuthLayout
-      title="Reset your password"
-      subtitle="Create a strong new password for your account."
-    >
+    <AuthLayout title="Reset your password" subtitle="Create a strong new password for your account.">
       <form onSubmit={onSubmit} className="space-y-6">
         {formError && (
-          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
-            {formError}
-          </div>
+          <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">{formError}</div>
         )}
 
         {/* <FormInput
@@ -88,19 +83,12 @@ export function ResetPasswordForm() {
           error={errors.newPassword}
         />
 
-        <FormButton
-          isLoading={isLoading}
-          loadingText="Resetting password..."
-          submitText="Reset Password"
-        />
+        <FormButton isLoading={isLoading} loadingText="Resetting password..." submitText="Reset Password" />
 
         <div className="text-center">
           <p className="text-text-muted text-sm">
             Remembered your password?{" "}
-            <Link
-              href="/login"
-              className="text-text-link hover:text-text-heading font-semibold transition-colors"
-            >
+            <Link href="/login" className="text-text-link hover:text-text-heading font-semibold transition-colors">
               Sign in
             </Link>
           </p>

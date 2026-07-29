@@ -81,15 +81,9 @@ export function ResumeUploadButton() {
         ) : (
           <Upload className="size-4" />
         )}
-        {uploadMutation.isPending
-          ? "Uploading..."
-          : showSuccess
-            ? "Uploaded!"
-            : "Upload Resume"}
+        {uploadMutation.isPending ? "Uploading..." : showSuccess ? "Uploaded!" : "Upload Resume"}
       </Button>
-      {uploadError && (
-        <p className="text-xs text-error mt-1">{uploadError}</p>
-      )}
+      {uploadError && <p className="text-xs text-error mt-1">{uploadError}</p>}
     </div>
   );
 }

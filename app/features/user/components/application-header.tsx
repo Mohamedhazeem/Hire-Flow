@@ -16,7 +16,16 @@ type Props = {
   jobActive: boolean;
 };
 
-export function ApplicationHeader({ jobTitle, companyName, companyLogo, locations, workMode, salaryText, status, jobActive }: Props) {
+export function ApplicationHeader({
+  jobTitle,
+  companyName,
+  companyLogo,
+  locations,
+  workMode,
+  salaryText,
+  status,
+  jobActive,
+}: Props) {
   return (
     <>
       <Link
@@ -27,7 +36,14 @@ export function ApplicationHeader({ jobTitle, companyName, companyLogo, location
       </Link>
       {!jobActive && (
         <div className="flex items-center gap-2 text-sm text-text-muted bg-bg-muted border border-border-subtle rounded-lg px-4 py-3 mb-6">
-          <svg className="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" /></svg>
+          <svg className="size-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
+            />
+          </svg>
           This job is no longer active
         </div>
       )}

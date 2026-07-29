@@ -20,27 +20,37 @@ export function ApplicantDetailDialogs({ dialog, onDialogClose }: ApplicantDetai
     <>
       <ReviewDialog
         open={dialog.type === "reviewing"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <ShortlistDialog
         open={dialog.type === "shortlisted"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <ScheduleInterviewDialog
         open={dialog.type === "interview_scheduled"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <SendOfferDialog
         open={dialog.type === "offered"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
       <RejectDialog
         open={dialog.type === "rejected"}
-        onOpenChange={(open) => { if (!open) onDialogClose(); }}
+        onOpenChange={(open) => {
+          if (!open) onDialogClose();
+        }}
         applicant={dialog.applicant}
       />
     </>

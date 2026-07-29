@@ -2,15 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  FileTextIcon,
-  StarIcon,
-  DownloadIcon,
-  PencilIcon,
-  Trash2Icon,
-  SparklesIcon,
-  AlertCircle,
-} from "lucide-react";
+import { FileTextIcon, StarIcon, DownloadIcon, PencilIcon, Trash2Icon, SparklesIcon, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConfirmActionButton } from "@/components/shared/confirm-action-button";
 import { AiSuggestionsPanel } from "@/app/features/user/components/ai-suggestions-panel";
@@ -59,9 +51,7 @@ function AiErrorBanner({ message, onClose }: { message: string; onClose: () => v
       className="flex flex-col items-center gap-4 rounded-lg bg-error/5 border border-error/20 px-6 py-6 sm:px-8 sm:py-8"
     >
       <AlertCircle className="size-8 sm:size-10 text-error shrink-0" />
-      <p className="text-sm sm:text-base text-center text-text-body max-w-md">
-        {message}
-      </p>
+      <p className="text-sm sm:text-base text-center text-text-body max-w-md">{message}</p>
       <button
         type="button"
         onClick={onClose}
@@ -132,7 +122,9 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
             ? { borderColor: ["rgba(99,102,241,0.2)", "rgba(99,102,241,0.6)", "rgba(99,102,241,0.2)"] }
             : { borderColor: "var(--color-border-subtle)" }
         }
-        transition={enhanceMutation.isPending ? { duration: 2, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
+        transition={
+          enhanceMutation.isPending ? { duration: 2, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }
+        }
         className="rounded-xl border bg-bg-surface shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
       >
         <div className="p-4 space-y-3">
@@ -142,9 +134,7 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
                 <FileTextIcon className="size-4 text-brand" />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-semibold text-text-heading truncate">
-                  {resume.label}
-                </p>
+                <p className="text-sm font-semibold text-text-heading truncate">{resume.label}</p>
                 <p className="text-xs text-text-muted mt-0.5">
                   {formatDate(resume.createdAt)} &middot; {isBuilder ? "Builder" : formatSize(resume.fileSize)}
                 </p>
@@ -160,7 +150,7 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
 
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="inline-flex items-center rounded-full bg-bg-elevated text-text-muted border border-border-subtle px-2 py-0.5 text-[10px] font-medium">
-              {isBuilder ? "Builder Resume" : resume.fileType?.split("/").pop()?.toUpperCase() ?? "File"}
+              {isBuilder ? "Builder Resume" : (resume.fileType?.split("/").pop()?.toUpperCase() ?? "File")}
             </span>
           </div>
 
@@ -185,12 +175,7 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
                 )}
 
                 {isBuilder && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-1.5 text-xs"
-                    onClick={() => onEdit(resume.id)}
-                  >
+                  <Button variant="outline" size="sm" className="gap-1.5 text-xs" onClick={() => onEdit(resume.id)}>
                     <PencilIcon className="size-3.5" />
                     Edit
                   </Button>
@@ -234,8 +219,8 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
               </>
             )}
           </div>
-          </div>
-        </motion.div>
+        </div>
+      </motion.div>
 
       <AnimatePresence>
         {aiError ? <AiErrorBanner message={aiError} onClose={() => setAiError(null)} /> : null}
@@ -245,7 +230,12 @@ export function ResumeCard({ resume, isDeleting, onSetPrimary, onDelete, onDownl
         <AiSuggestionsPanel
           result={aiResult}
           isBuilder={isBuilder}
-          onClose={() => { releasePanel(resume.id); setAiResult(null); setAiError(null); enhanceMutation.reset(); }}
+          onClose={() => {
+            releasePanel(resume.id);
+            setAiResult(null);
+            setAiError(null);
+            enhanceMutation.reset();
+          }}
         />
       )}
     </>

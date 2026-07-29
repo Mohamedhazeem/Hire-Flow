@@ -18,9 +18,7 @@ export function SectionCard({ title, count, countLabel, children, className }: S
       )}
     >
       <div className="flex items-center justify-between px-6 py-3.5 bg-bg-elevated/60 border-b border-border-subtle">
-        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">
-          {title}
-        </h2>
+        <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider">{title}</h2>
         {count != null && (
           <span className="text-xs text-text-muted">
             {count} {countLabel ?? ""}

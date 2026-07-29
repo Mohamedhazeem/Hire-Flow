@@ -5,14 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import {
-  XIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  DownloadIcon,
-  FileTextIcon,
-  AlertCircleIcon,
-} from "lucide-react";
+import { XIcon, ChevronLeftIcon, ChevronRightIcon, DownloadIcon, FileTextIcon, AlertCircleIcon } from "lucide-react";
 
 const PdfViewer = dynamic(() => import("./pdf-viewer"), { ssr: false });
 
@@ -98,12 +91,7 @@ export function ResumePreviewDialog({
             <Button variant="ghost" size="icon-sm" onClick={handleDialogDownload} title="Download">
               <DownloadIcon className="size-4" />
             </Button>
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => onOpenChange(false)}
-              title="Close"
-            >
+            <Button variant="ghost" size="icon-sm" onClick={() => onOpenChange(false)} title="Close">
               <XIcon className="size-4" />
             </Button>
           </div>
@@ -142,9 +130,7 @@ export function ResumePreviewDialog({
               ) : pageRenderError ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-12">
                   <AlertCircleIcon className="size-10 text-error" />
-                  <p className="text-sm text-text-muted">
-                    Failed to render this page — file may be corrupted.
-                  </p>
+                  <p className="text-sm text-text-muted">Failed to render this page — file may be corrupted.</p>
                   <Button variant="outline" size="sm" onClick={handleDialogDownload}>
                     <DownloadIcon className="size-4 mr-1.5" />
                     Download Instead

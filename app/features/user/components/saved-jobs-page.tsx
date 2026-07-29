@@ -34,12 +34,8 @@ export function SavedJobsPage() {
     bookmarks?.map((b: Record<string, unknown>) => {
       const job = b.job as Record<string, unknown> | undefined;
       const company = (job?.company as Record<string, unknown>) ?? {};
-      const dln = job?.applicationDeadline
-        ? new Date(job.applicationDeadline as string).toISOString()
-        : null;
-      const createdAt = job?.createdAt
-        ? new Date(job.createdAt as string).toISOString()
-        : new Date().toISOString();
+      const dln = job?.applicationDeadline ? new Date(job.applicationDeadline as string).toISOString() : null;
+      const createdAt = job?.createdAt ? new Date(job.createdAt as string).toISOString() : new Date().toISOString();
       return {
         id: (job?.id as string) ?? "",
         title: (job?.title as string) ?? "Untitled",
@@ -60,8 +56,7 @@ export function SavedJobsPage() {
       };
     }) ?? [];
 
-  const isUnavailable = (j: SavedJobData) =>
-    !j.id || j.isActive !== true || j.status !== "active";
+  const isUnavailable = (j: SavedJobData) => !j.id || j.isActive !== true || j.status !== "active";
 
   const availableJobs = jobs.filter((j) => !isUnavailable(j));
   const unavailableJobs = jobs.filter(isUnavailable);
@@ -70,7 +65,7 @@ export function SavedJobsPage() {
     <div className="min-w-0">
       <PageHeader
         title="Saved Jobs"
-        description="Jobs you&apos;ve bookmarked for later"
+        description="Jobs you've bookmarked for later"
         icon={<BookmarkIcon className="size-5" />}
       />
 
@@ -84,20 +79,14 @@ export function SavedJobsPage() {
         ) : isError ? (
           <div className="text-center py-16">
             <p className="text-text-muted mb-4">Failed to load saved jobs</p>
-            <button
-              type="button"
-              onClick={() => refetch()}
-              className="text-sm text-brand hover:underline"
-            >
+            <button type="button" onClick={() => refetch()} className="text-sm text-brand hover:underline">
               Try again
             </button>
           </div>
         ) : jobs.length === 0 ? (
           <div className="text-center py-16 space-y-4">
             <BookmarkIcon className="size-12 mx-auto text-text-muted/40" />
-            <h2 className="text-lg font-semibold text-text-heading">
-              No saved jobs yet
-            </h2>
+            <h2 className="text-lg font-semibold text-text-heading">No saved jobs yet</h2>
             <p className="text-sm text-text-muted max-w-xs mx-auto">
               Bookmark jobs you&apos;re interested in and they&apos;ll show up here
             </p>

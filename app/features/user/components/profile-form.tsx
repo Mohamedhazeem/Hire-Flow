@@ -11,15 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ExperienceListEditor } from "./experience-list-editor";
 import { SocialLinksEditor } from "./social-links-editor";
 import { SkillInput } from "@/components/ui/skill-input";
-import {
-  UserIcon,
-  FileText,
-  MapPin,
-  Wrench,
-  DollarSign,
-  CheckCircle2,
-  AlertCircle,
-} from "lucide-react";
+import { UserIcon, FileText, MapPin, Wrench, DollarSign, CheckCircle2, AlertCircle } from "lucide-react";
 
 const WORK_MODE_OPTIONS = [
   { value: "remote", label: "Remote" },
@@ -103,9 +95,7 @@ export function ProfileForm({ defaultValues }: Props) {
               {...form.register("bio")}
             />
           </div>
-          {form.formState.errors.bio && (
-            <p className="text-xs text-error">{form.formState.errors.bio.message}</p>
-          )}
+          {form.formState.errors.bio && <p className="text-xs text-error">{form.formState.errors.bio.message}</p>}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -115,12 +105,7 @@ export function ProfileForm({ defaultValues }: Props) {
             </label>
             <div className="relative">
               <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-text-muted pointer-events-none" />
-              <Input
-                id="location"
-                placeholder="San Francisco, CA"
-                className="pl-9"
-                {...form.register("location")}
-              />
+              <Input id="location" placeholder="San Francisco, CA" className="pl-9" {...form.register("location")} />
             </div>
           </div>
 
@@ -153,9 +138,7 @@ export function ProfileForm({ defaultValues }: Props) {
             onChange={(skills) => form.setValue("skills", skills, { shouldValidate: true })}
             disabled={form.formState.isSubmitting}
           />
-          {form.formState.errors.skills && (
-            <p className="text-xs text-error">{form.formState.errors.skills.message}</p>
-          )}
+          {form.formState.errors.skills && <p className="text-xs text-error">{form.formState.errors.skills.message}</p>}
         </div>
 
         <div className="space-y-1">

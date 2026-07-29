@@ -38,9 +38,7 @@ export function SocialSignInButtons({ isVertical }: { isVertical?: boolean }) {
   return (
     <div className="space-y-4">
       {error ? (
-        <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">
-          {error}
-        </div>
+        <div className="bg-error/10 border border-error/50 text-error px-4 py-3 rounded-lg text-sm">{error}</div>
       ) : null}
       <div
         className={`w-full ${isVertical ? "flex flex-col gap-3" : "flex flex-row items-center justify-center gap-3"}`}

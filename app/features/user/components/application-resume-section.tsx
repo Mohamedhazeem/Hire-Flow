@@ -20,13 +20,20 @@ export function ApplicationResumeSection({ builderData, resumeSnapshotUrl, class
       {builderData ? (
         <div className="space-y-2 text-sm text-text-body">
           {builderData.label ? (
-            <p><span className="text-text-muted">Label:</span> {String(builderData.label)}</p>
+            <p>
+              <span className="text-text-muted">Label:</span> {String(builderData.label)}
+            </p>
           ) : null}
           {builderData.skills && Array.isArray(builderData.skills) && (builderData.skills as string[]).length > 0 ? (
-            <p><span className="text-text-muted">Skills:</span> {(builderData.skills as string[]).join(", ")}</p>
+            <p>
+              <span className="text-text-muted">Skills:</span> {(builderData.skills as string[]).join(", ")}
+            </p>
           ) : null}
           {builderData.experiences && Array.isArray(builderData.experiences) ? (
-            <p><span className="text-text-muted">Experience:</span> {(builderData.experiences as unknown[]).length} entr{(builderData.experiences as unknown[]).length === 1 ? "y" : "ies"}</p>
+            <p>
+              <span className="text-text-muted">Experience:</span> {(builderData.experiences as unknown[]).length} entr
+              {(builderData.experiences as unknown[]).length === 1 ? "y" : "ies"}
+            </p>
           ) : null}
         </div>
       ) : resumeSnapshotUrl ? (

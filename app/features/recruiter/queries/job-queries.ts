@@ -50,14 +50,8 @@ export type RecruiterJobListResult = {
   hasPrevPage: boolean;
 };
 
-export async function listJobs(
-  companyId: string,
-  params: JobListParams,
-): Promise<RecruiterJobListResult> {
-  const { skip, take, page, pageSize } = parseOffsetParams(
-    { page: params.page, pageSize: params.pageSize },
-    20,
-  );
+export async function listJobs(companyId: string, params: JobListParams): Promise<RecruiterJobListResult> {
+  const { skip, take, page, pageSize } = parseOffsetParams({ page: params.page, pageSize: params.pageSize }, 20);
 
   const where: Record<string, unknown> = {
     companyId,
@@ -84,6 +78,10 @@ export async function listJobs(
 
   if (params.experienceLevel) {
     where.experienceLevel = params.experienceLevel;
+  }
+
+  if (params.skills?.length) {
+    where.skills = { hasSome: params.skills };
   }
 
   const [jobs, total] = await Promise.all([
@@ -124,10 +122,7 @@ export async function listJobs(
   return { jobs: rows, ...buildOffsetMeta(total, page, pageSize) };
 }
 
-export async function getJobById(
-  id: string,
-  companyId: string,
-): Promise<RecruiterJobDetail | null> {
+export async function getJobById(id: string, companyId: string): Promise<RecruiterJobDetail | null> {
   const job = await prisma.job.findUnique({
     where: { id },
     select: {

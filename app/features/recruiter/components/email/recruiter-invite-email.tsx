@@ -1,15 +1,4 @@
-import {
-  Body,
-  Button,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Link,
-  Preview,
-  Section,
-  Text,
-} from "react-email";
+import { Body, Button, Container, Head, Heading, Html, Link, Preview, Section, Text } from "react-email";
 
 interface RecruiterInviteEmailProps {
   url: string;
@@ -25,8 +14,8 @@ export const RecruiterInviteEmail = ({ url, invitedByName }: RecruiterInviteEmai
         <Container style={container}>
           <Heading style={heading}>Team Invitation</Heading>
           <Text style={paragraph}>
-            <strong>{invitedByName}</strong> has invited you to join their recruitment team on{" "}
-            <strong>HireFlow</strong>.
+            <strong>{invitedByName}</strong> has invited you to join their recruitment team on <strong>HireFlow</strong>
+            .
           </Text>
           <Text style={paragraph}>
             Click the button below to accept the invitation and gain access to the team dashboard.
@@ -41,8 +30,8 @@ export const RecruiterInviteEmail = ({ url, invitedByName }: RecruiterInviteEmai
             </Link>
           </Section>
           <Text style={paragraph}>
-            This invitation link is valid for one-time use. If you were not expecting this
-            invitation, you can safely ignore this email.
+            This invitation link is valid for one-time use. If you were not expecting this invitation, you can safely
+            ignore this email.
           </Text>
         </Container>
       </Body>

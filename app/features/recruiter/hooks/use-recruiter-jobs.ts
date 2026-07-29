@@ -14,8 +14,7 @@ export function useRecruiterJobs(params: JobListParams) {
 export function useCreateJob() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (data: JobFormInput) =>
-      apiClient("/api/recruiter/jobs", { method: "POST", body: data }),
+    mutationFn: (data: JobFormInput) => apiClient("/api/recruiter/jobs", { method: "POST", body: data }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["recruiter", "jobs"] });
     },

@@ -50,9 +50,7 @@ export function AccountCard({ email, emailVerified, createdAt, role }: AccountCa
             <CalendarIcon className="size-5" />
           </IconBox>
           <div>
-            <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
-              Member Since
-            </p>
+            <p className="text-xs text-text-muted font-medium uppercase tracking-wider">Member Since</p>
             <p className="text-sm text-text-body mt-0.5">{formatDate(createdAt)}</p>
           </div>
         </div>
