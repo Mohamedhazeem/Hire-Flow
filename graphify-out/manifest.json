@@ -435,8 +435,8 @@
     "semantic_hash": ""
   },
   "app/api/jobs/[id]/apply/route.ts": {
-    "mtime": 1784822726.1230993,
-    "ast_hash": "6b0ab73cc4b876bba598b51f08db37d8",
+    "mtime": 1785289968.5684888,
+    "ast_hash": "adf6f7a58d5603297fc805b267505d53",
     "semantic_hash": ""
   },
   "app/api/jobs/[id]/route.ts": {
@@ -2750,8 +2750,8 @@
     "semantic_hash": ""
   },
   "lib/test/schemas/user/resume-ai.schema.test.ts": {
-    "mtime": 1784789050.9869516,
-    "ast_hash": "b05b3dcbfb74635b0c7c65272387ed46",
+    "mtime": 1785289545.6955543,
+    "ast_hash": "74d138d73d994c1c6e8d972364070cd6",
     "semantic_hash": ""
   },
   "lib/test/schemas/user/resume.schema.test.ts": {
@@ -3130,8 +3130,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/analytics-queries.perf.test.ts": {
-    "mtime": 1785206988.0403602,
-    "ast_hash": "8ea7eb43016f6d6cb64ba8d62d36697b",
+    "mtime": 1785289336.6750636,
+    "ast_hash": "d79a65fdfcdd4204b33a0886e41e54bb",
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/application-queries.perf.test.ts": {
@@ -3145,8 +3145,8 @@
     "semantic_hash": ""
   },
   "lib/test/factories/seed-factories.ts": {
-    "mtime": 1784822853.3418295,
-    "ast_hash": "901bab33e24b2c9a92bc533bb450df8a",
+    "mtime": 1785290399.9323087,
+    "ast_hash": "132baaf863706e81747d17c6eb69919e",
     "semantic_hash": ""
   },
   "lib/test/perf.ts": {
@@ -3432,11 +3432,6 @@
   ".kilo/plans/ai-suggestions-enhancements.md": {
     "mtime": 1785159691.9690294,
     "ast_hash": "f027f3b35466872ff3dcadcd339dc53d",
-    "semantic_hash": ""
-  },
-  "plans/1785126715092-performance-optimization-plan.md": {
-    "mtime": 1785254719.1616883,
-    "ast_hash": "6414411b93e4aa58446476402aaada3e",
     "semantic_hash": ""
   },
   "components/ui/autocomplete-input.tsx": {

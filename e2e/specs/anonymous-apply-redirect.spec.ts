@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { JOBS } from "../fixtures/accounts";
+import { JOBS, JOB_SLUGS } from "../fixtures/accounts";
 
 test.describe("Journey 1: Anonymous Apply Redirect", () => {
   test("anonymous user sees Log in to Apply link with correct returnUrl", async ({ page }) => {
@@ -11,7 +11,7 @@ test.describe("Journey 1: Anonymous Apply Redirect", () => {
     const href = await page.getByRole("link", { name: "Log in to Apply" }).getAttribute("href");
     expect(href).toContain("/login");
     expect(href).toContain("returnUrl");
-    expect(href).toContain(encodeURIComponent(`/jobs/${JOBS.acme_senior_engineer}`));
+    expect(href).toContain(encodeURIComponent(`/jobs/${JOB_SLUGS.acme_senior_engineer}`));
   });
 
   test("anonymous user is redirected to /login when clicking Log in to Apply", async ({ page }) => {
