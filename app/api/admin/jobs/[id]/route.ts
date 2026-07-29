@@ -4,10 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { jobService } from "@/lib/services/job-service";
 
-async function handleDELETE(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleDELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await requireRole(["admin", "super_admin"]);
   const { id } = await params;
   const result = await jobService.adminDelete(id);

@@ -18,10 +18,7 @@ async function handleGET(_request: NextRequest, { params }: { params: Promise<{ 
   return ok(user);
 }
 
-async function handleDELETE(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
-) {
+async function handleDELETE(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const adminUser = await requireRole(["admin", "super_admin"]);
   const { id } = await params;
 
