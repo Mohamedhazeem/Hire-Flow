@@ -13,7 +13,11 @@ const queryState = {
 };
 
 vi.mock("@tanstack/react-query", () => ({
-  useQuery: () => ({ data: queryState.data, isLoading: queryState.isLoading, isError: queryState.isError }),
+  useQuery: () => ({
+    data: queryState.data,
+    isLoading: queryState.isLoading,
+    isError: queryState.isError,
+  }),
   useQueryClient: () => ({ invalidateQueries: vi.fn() }),
 }));
 
@@ -26,8 +30,22 @@ vi.mock("@/components/shared/job-meta-grid", () => ({
 }));
 
 vi.mock("@/components/shared/section-card", () => ({
-  SectionCard: ({ children, title, count, countLabel }: { children: React.ReactNode; title: string; count?: number; countLabel?: string }) => (
-    <div data-testid={`section-card-${title}`} data-count={count ?? ""} data-countlabel={countLabel ?? ""}>
+  SectionCard: ({
+    children,
+    title,
+    count,
+    countLabel,
+  }: {
+    children: React.ReactNode;
+    title: string;
+    count?: number;
+    countLabel?: string;
+  }) => (
+    <div
+      data-testid={`section-card-${title}`}
+      data-count={count ?? ""}
+      data-countlabel={countLabel ?? ""}
+    >
       {children}
     </div>
   ),

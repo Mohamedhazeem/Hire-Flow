@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { parseOffsetParams, buildOffsetMeta, parseCursorParams, buildCursorMeta } from "@/lib/pagination";
+import {
+  parseOffsetParams,
+  buildOffsetMeta,
+  parseCursorParams,
+  buildCursorMeta,
+} from "@/lib/pagination";
 
 describe("parseOffsetParams", () => {
   it("returns defaults when no params provided", () => {

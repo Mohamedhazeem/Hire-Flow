@@ -58,11 +58,7 @@ export const applicationRepository = {
     });
   },
 
-  updateWithConcurrency(
-    applicationId: string,
-    updatedAt: string,
-    data: Record<string, unknown>,
-  ) {
+  updateWithConcurrency(applicationId: string, updatedAt: string, data: Record<string, unknown>) {
     return prisma.application.updateMany({
       where: {
         id: applicationId,
@@ -72,10 +68,7 @@ export const applicationRepository = {
     });
   },
 
-  updateStatus(
-    applicationId: string,
-    data: Record<string, unknown>,
-  ) {
+  updateStatus(applicationId: string, data: Record<string, unknown>) {
     return prisma.application.update({
       where: { id: applicationId },
       data,
@@ -90,10 +83,7 @@ export const applicationRepository = {
     return prisma.application.delete({ where: { id: applicationId } });
   },
 
-  async updateManyWithConcurrency(
-    applicationIds: string[],
-    data: Record<string, unknown>,
-  ) {
+  async updateManyWithConcurrency(applicationIds: string[], data: Record<string, unknown>) {
     return prisma.application.updateMany({
       where: { id: { in: applicationIds } },
       data,

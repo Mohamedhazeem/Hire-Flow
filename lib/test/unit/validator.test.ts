@@ -23,7 +23,10 @@ describe("validateWithZod", () => {
 
   it("validates nested objects", () => {
     const schema = z.object({ name: z.string(), age: z.number() });
-    const result = validateWithZod<{ name: string; age: number }>(schema, { name: "Alice", age: 30 });
+    const result = validateWithZod<{ name: string; age: number }>(schema, {
+      name: "Alice",
+      age: 30,
+    });
     expect(result.success).toBe(true);
   });
 

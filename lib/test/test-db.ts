@@ -15,7 +15,7 @@ const connectionString = process.env.DATABASE_URL_TEST || process.env.DATABASE_U
 
 if (!connectionString) {
   throw new Error(
-    "DATABASE_URL_TEST or DATABASE_URL environment variable is required for testing."
+    "DATABASE_URL_TEST or DATABASE_URL environment variable is required for testing.",
   );
 }
 

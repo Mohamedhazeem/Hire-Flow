@@ -54,7 +54,11 @@ export function useApplicantsTable(jobId: string, pageSize = 20) {
   const { data, isLoading, isError } = useApplicants(jobId, params);
 
   const responseData = data?.data;
-  const applicants = useMemo(() => responseData?.applicants ?? [], [responseData?.applicants]);
+  const applicants = useMemo(() => {
+    if (!responseData) return [];
+    if (responseData.mode === "cursor") return responseData.items;
+    return responseData.applicants;
+  }, [responseData]);
 
   const updateParams = useCallback(
     (updates: Record<string, string>) => {

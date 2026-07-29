@@ -1,1 +1,449 @@
-{"nodes": [{"id": "d_hire_flow_next_readme_md", "label": "README.md", "file_type": "document", "source_file": "README.md", "source_location": "L1"}, {"id": "hire_flow_next_readme_hire_flow_next", "label": "\ud83d\ude80 Hire Flow Next", "file_type": "document", "source_file": "README.md", "source_location": "L1"}, {"id": "hire_flow_next_readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale", "label": "A full-stack, multi-tenant hiring platform built for scale", "file_type": "document", "source_file": "README.md", "source_location": "L3"}, {"id": "hire_flow_next_readme_tech_stack", "label": "\ud83e\uddf1 Tech Stack", "file_type": "document", "source_file": "README.md", "source_location": "L11"}, {"id": "hire_flow_next_readme_features", "label": "\u2728 Features", "file_type": "document", "source_file": "README.md", "source_location": "L36"}, {"id": "hire_flow_next_readme_admin", "label": "\ud83d\udee1\ufe0f Admin", "file_type": "document", "source_file": "README.md", "source_location": "L38"}, {"id": "hire_flow_next_readme_recruiter", "label": "\ud83c\udfe2 Recruiter", "file_type": "document", "source_file": "README.md", "source_location": "L47"}, {"id": "hire_flow_next_readme_job_seeker_user", "label": "\ud83d\udc64 Job Seeker (User)", "file_type": "document", "source_file": "README.md", "source_location": "L59"}, {"id": "hire_flow_next_readme_public", "label": "\ud83c\udf0d Public", "file_type": "document", "source_file": "README.md", "source_location": "L68"}, {"id": "hire_flow_next_readme_architecture_design_decisions", "label": "\ud83c\udfdb\ufe0f Architecture & Design Decisions", "file_type": "document", "source_file": "README.md", "source_location": "L79"}, {"id": "hire_flow_next_readme_project_scale", "label": "\ud83d\udcc8 Project Scale", "file_type": "document", "source_file": "README.md", "source_location": "L99"}, {"id": "hire_flow_next_readme_getting_started", "label": "\ud83c\udfc1 Getting Started", "file_type": "document", "source_file": "README.md", "source_location": "L109"}, {"id": "hire_flow_next_readme_prerequisites", "label": "Prerequisites", "file_type": "document", "source_file": "README.md", "source_location": "L111"}, {"id": "hire_flow_next_readme_1_clone_install", "label": "1. Clone & install", "file_type": "document", "source_file": "README.md", "source_location": "L118"}, {"id": "hire_flow_next_readme_2_configure_environment_variables", "label": "2. Configure environment variables", "file_type": "document", "source_file": "README.md", "source_location": "L126"}, {"id": "hire_flow_next_readme_3_set_up_the_database", "label": "3. Set up the database", "file_type": "document", "source_file": "README.md", "source_location": "L178"}, {"id": "hire_flow_next_readme_4_promote_a_super_admin", "label": "4. Promote a super admin", "file_type": "document", "source_file": "README.md", "source_location": "L185"}, {"id": "hire_flow_next_readme_5_run_the_dev_server", "label": "5. Run the dev server", "file_type": "document", "source_file": "README.md", "source_location": "L195"}, {"id": "hire_flow_next_readme_project_structure", "label": "\ud83d\udcc2 Project Structure", "file_type": "document", "source_file": "README.md", "source_location": "L205"}, {"id": "hire_flow_next_readme_key_patterns", "label": "\ud83e\udde9 Key Patterns", "file_type": "document", "source_file": "README.md", "source_location": "L246"}, {"id": "hire_flow_next_readme_deployment", "label": "\u2601\ufe0f Deployment", "file_type": "document", "source_file": "README.md", "source_location": "L259"}, {"id": "hire_flow_next_readme_testing", "label": "\ud83e\uddea Testing", "file_type": "document", "source_file": "README.md", "source_location": "L274"}, {"id": "hire_flow_next_readme_test_infrastructure_phases_0_6", "label": "Test infrastructure (Phases 0\u20136)", "file_type": "document", "source_file": "README.md", "source_location": "L288"}, {"id": "hire_flow_next_readme_performance_stability_tests_phase_7", "label": "Performance & stability tests (Phase 7)", "file_type": "document", "source_file": "README.md", "source_location": "L302"}, {"id": "hire_flow_next_readme_running_tests", "label": "Running tests", "file_type": "document", "source_file": "README.md", "source_location": "L317"}, {"id": "hire_flow_next_readme_license", "label": "\ud83d\udcc4 License", "file_type": "document", "source_file": "README.md", "source_location": "L351"}, {"id": "hire_flow_next_readme_contact", "label": "\ud83d\udcec Contact", "file_type": "document", "source_file": "README.md", "source_location": "L355"}], "edges": [{"source": "d_hire_flow_next_readme_md", "target": "hire_flow_next_readme_hire_flow_next", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L3", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_tech_stack", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L11", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_features", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L36", "weight": 1.0}, {"source": "hire_flow_next_readme_features", "target": "hire_flow_next_readme_admin", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L38", "weight": 1.0}, {"source": "hire_flow_next_readme_features", "target": "hire_flow_next_readme_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L47", "weight": 1.0}, {"source": "hire_flow_next_readme_features", "target": "hire_flow_next_readme_job_seeker_user", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L59", "weight": 1.0}, {"source": "hire_flow_next_readme_features", "target": "hire_flow_next_readme_public", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L68", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_architecture_design_decisions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L79", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_project_scale", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L99", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_getting_started", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L109", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_prerequisites", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L111", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_1_clone_install", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L118", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_2_configure_environment_variables", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L126", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_3_set_up_the_database", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L178", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_4_promote_a_super_admin", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L185", "weight": 1.0}, {"source": "hire_flow_next_readme_getting_started", "target": "hire_flow_next_readme_5_run_the_dev_server", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L195", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_project_structure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L205", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_key_patterns", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L246", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_deployment", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L259", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_testing", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L274", "weight": 1.0}, {"source": "hire_flow_next_readme_testing", "target": "hire_flow_next_readme_test_infrastructure_phases_0_6", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L288", "weight": 1.0}, {"source": "d_hire_flow_next_readme_md", "target": "d_hire_flow_next_docs_testing_testing_strategy_md", "relation": "references", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L290", "weight": 1.0}, {"source": "hire_flow_next_readme_testing", "target": "hire_flow_next_readme_performance_stability_tests_phase_7", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L302", "weight": 1.0}, {"source": "hire_flow_next_readme_testing", "target": "hire_flow_next_readme_running_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L317", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_license", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L351", "weight": 1.0}, {"source": "d_hire_flow_next_readme_md", "target": "d_hire_flow_next_license_md", "relation": "references", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L353", "weight": 1.0}, {"source": "hire_flow_next_readme_hire_flow_next", "target": "hire_flow_next_readme_contact", "relation": "contains", "confidence": "EXTRACTED", "source_file": "README.md", "source_location": "L355", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_readme_hire_flow_next",
+      "label": "\ud83d\ude80 Hire Flow Next",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale",
+      "label": "A full-stack, multi-tenant hiring platform built for scale",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "hire_flow_next_readme_tech_stack",
+      "label": "\ud83e\uddf1 Tech Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "hire_flow_next_readme_features",
+      "label": "\u2728 Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "hire_flow_next_readme_admin",
+      "label": "\ud83d\udee1\ufe0f Admin",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "hire_flow_next_readme_recruiter",
+      "label": "\ud83c\udfe2 Recruiter",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L47"
+    },
+    {
+      "id": "hire_flow_next_readme_job_seeker_user",
+      "label": "\ud83d\udc64 Job Seeker (User)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L59"
+    },
+    {
+      "id": "hire_flow_next_readme_public",
+      "label": "\ud83c\udf0d Public",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L68"
+    },
+    {
+      "id": "hire_flow_next_readme_architecture_design_decisions",
+      "label": "\ud83c\udfdb\ufe0f Architecture & Design Decisions",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L79"
+    },
+    {
+      "id": "hire_flow_next_readme_project_scale",
+      "label": "\ud83d\udcc8 Project Scale",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L99"
+    },
+    {
+      "id": "hire_flow_next_readme_getting_started",
+      "label": "\ud83c\udfc1 Getting Started",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L109"
+    },
+    {
+      "id": "hire_flow_next_readme_prerequisites",
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L111"
+    },
+    {
+      "id": "hire_flow_next_readme_1_clone_install",
+      "label": "1. Clone & install",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L118"
+    },
+    {
+      "id": "hire_flow_next_readme_2_configure_environment_variables",
+      "label": "2. Configure environment variables",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "hire_flow_next_readme_3_set_up_the_database",
+      "label": "3. Set up the database",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L178"
+    },
+    {
+      "id": "hire_flow_next_readme_4_promote_a_super_admin",
+      "label": "4. Promote a super admin",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L185"
+    },
+    {
+      "id": "hire_flow_next_readme_5_run_the_dev_server",
+      "label": "5. Run the dev server",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L195"
+    },
+    {
+      "id": "hire_flow_next_readme_project_structure",
+      "label": "\ud83d\udcc2 Project Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L205"
+    },
+    {
+      "id": "hire_flow_next_readme_key_patterns",
+      "label": "\ud83e\udde9 Key Patterns",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L246"
+    },
+    {
+      "id": "hire_flow_next_readme_deployment",
+      "label": "\u2601\ufe0f Deployment",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L259"
+    },
+    {
+      "id": "hire_flow_next_readme_testing",
+      "label": "\ud83e\uddea Testing",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L274"
+    },
+    {
+      "id": "hire_flow_next_readme_test_infrastructure_phases_0_6",
+      "label": "Test infrastructure (Phases 0\u20136)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L288"
+    },
+    {
+      "id": "hire_flow_next_readme_performance_stability_tests_phase_7",
+      "label": "Performance & stability tests (Phase 7)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L302"
+    },
+    {
+      "id": "hire_flow_next_readme_running_tests",
+      "label": "Running tests",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L317"
+    },
+    {
+      "id": "hire_flow_next_readme_license",
+      "label": "\ud83d\udcc4 License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L351"
+    },
+    {
+      "id": "hire_flow_next_readme_contact",
+      "label": "\ud83d\udcec Contact",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L355"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_readme_md",
+      "target": "hire_flow_next_readme_hire_flow_next",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_a_full_stack_multi_tenant_hiring_platform_built_for_scale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_tech_stack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_features",
+      "target": "hire_flow_next_readme_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_features",
+      "target": "hire_flow_next_readme_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_features",
+      "target": "hire_flow_next_readme_job_seeker_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_features",
+      "target": "hire_flow_next_readme_public",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_architecture_design_decisions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_project_scale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_getting_started",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_prerequisites",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_1_clone_install",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_2_configure_environment_variables",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_3_set_up_the_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_4_promote_a_super_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_getting_started",
+      "target": "hire_flow_next_readme_5_run_the_dev_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_project_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_key_patterns",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L246",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_deployment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_testing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_testing",
+      "target": "hire_flow_next_readme_test_infrastructure_phases_0_6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_readme_md",
+      "target": "d_hire_flow_next_docs_testing_testing_strategy_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_testing",
+      "target": "hire_flow_next_readme_performance_stability_tests_phase_7",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L302",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_testing",
+      "target": "hire_flow_next_readme_running_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L317",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_readme_md",
+      "target": "d_hire_flow_next_license_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_readme_hire_flow_next",
+      "target": "hire_flow_next_readme_contact",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L355",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

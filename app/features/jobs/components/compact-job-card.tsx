@@ -6,7 +6,8 @@ import type { CompactJobRow } from "@/app/features/jobs/queries/public-job-queri
 function formatSalary(currency: string, min: number | null, max: number | null): string | null {
   if (min == null && max == null) return null;
   const c = currency || "USD";
-  if (min != null && max != null) return `${c}${min.toLocaleString()} - ${c}${max.toLocaleString()}`;
+  if (min != null && max != null)
+    return `${c}${min.toLocaleString()} - ${c}${max.toLocaleString()}`;
   if (min != null) return `${c}${min.toLocaleString()}+`;
   return `Up to ${c}${max!.toLocaleString()}`;
 }
@@ -32,7 +33,10 @@ export function CompactJobCard({ job }: { job: CompactJobRow }) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <Link href={href} className="block text-sm font-medium text-text-heading hover:text-brand truncate">
+        <Link
+          href={href}
+          className="block text-sm font-medium text-text-heading hover:text-brand truncate"
+        >
           {job.title}
         </Link>
         <p className="text-xs text-text-muted truncate">{job.companyName}</p>

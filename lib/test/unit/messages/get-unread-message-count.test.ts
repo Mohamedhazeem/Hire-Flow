@@ -12,9 +12,8 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-const { getUnreadMessageCount } = await import(
-  "@/app/features/messages/actions/get-unread-message-count"
-);
+const { getUnreadMessageCount } =
+  await import("@/app/features/messages/actions/get-unread-message-count");
 
 describe("getUnreadMessageCount", () => {
   beforeEach(() => {

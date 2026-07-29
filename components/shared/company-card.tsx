@@ -44,7 +44,9 @@ export function CompanyCard({ companyId, companyName, companyLogo, memberRole }:
             <ShieldCheckIcon className="size-5" />
           </IconBox>
           <div>
-            <p className="text-xs text-text-muted font-medium uppercase tracking-wider">Member Role</p>
+            <p className="text-xs text-text-muted font-medium uppercase tracking-wider">
+              Member Role
+            </p>
             <p className="text-sm text-text-body mt-0.5 capitalize">{memberRole}</p>
           </div>
         </div>

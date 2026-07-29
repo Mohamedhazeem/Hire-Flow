@@ -1,1 +1,527 @@
-{"nodes": [{"id": "d_hire_flow_next_test_manifest_md", "label": "test-manifest.md", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L1"}, {"id": "hire_flow_next_test_manifest_test_manifest_md", "label": "TEST-MANIFEST.md", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L1"}, {"id": "hire_flow_next_test_manifest_phase_0_infrastructure", "label": "Phase 0 \u2014 Infrastructure", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L8"}, {"id": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening", "label": "Phase 1 \u2014 Input Validation & Schema Hardening", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L20"}, {"id": "hire_flow_next_test_manifest_sql_injection_prevention", "label": "SQL Injection Prevention", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L22"}, {"id": "hire_flow_next_test_manifest_input_edge_cases", "label": "Input Edge Cases", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L26"}, {"id": "hire_flow_next_test_manifest_mass_assignment_prevention", "label": "Mass Assignment Prevention", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L35"}, {"id": "hire_flow_next_test_manifest_phase_2_unit_tests", "label": "Phase 2 \u2014 Unit Tests", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L41"}, {"id": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests", "label": "Phase 3 \u2014 Authentication & Authorization Tests", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L58"}, {"id": "hire_flow_next_test_manifest_session_token_security", "label": "Session & Token Security", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L60"}, {"id": "hire_flow_next_test_manifest_idor_protection_all_resource_types", "label": "IDOR Protection (all resource types)", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L69"}, {"id": "hire_flow_next_test_manifest_middleware_redirect", "label": "Middleware & Redirect", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L80"}, {"id": "hire_flow_next_test_manifest_phase_4_integration_tests", "label": "Phase 4 \u2014 Integration Tests", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L90"}, {"id": "hire_flow_next_test_manifest_file_upload_download_edge_cases", "label": "File Upload & Download Edge Cases", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L110"}, {"id": "hire_flow_next_test_manifest_notification_permissions_delivery", "label": "Notification Permissions & Delivery", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L118"}, {"id": "hire_flow_next_test_manifest_search_full_text", "label": "Search & Full-Text", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L126"}, {"id": "hire_flow_next_test_manifest_pagination_boundaries", "label": "Pagination Boundaries", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L133"}, {"id": "hire_flow_next_test_manifest_audit_trail_integrity", "label": "Audit Trail Integrity", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L141"}, {"id": "hire_flow_next_test_manifest_error_handling_information_leakage", "label": "Error Handling & Information Leakage", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L148"}, {"id": "hire_flow_next_test_manifest_email_notification_delivery", "label": "Email & Notification Delivery", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L154"}, {"id": "hire_flow_next_test_manifest_concurrent_operations_race_conditions", "label": "Concurrent Operations & Race Conditions", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L159"}, {"id": "hire_flow_next_test_manifest_phase_5_component_tests", "label": "Phase 5 \u2014 Component Tests", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L165"}, {"id": "hire_flow_next_test_manifest_phase_6_e2e_playwright", "label": "Phase 6 \u2014 E2E (Playwright)", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L184"}, {"id": "hire_flow_next_test_manifest_phase_7_performance_stability", "label": "Phase 7 \u2014 Performance & Stability", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L200"}, {"id": "hire_flow_next_test_manifest_rate_limiter_behavior", "label": "Rate Limiter Behavior", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L208"}, {"id": "hire_flow_next_test_manifest_phase_8_ci_coverage", "label": "Phase 8 \u2014 CI & Coverage", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L215"}, {"id": "hire_flow_next_test_manifest_security_audit_checklist_manual", "label": "Security Audit Checklist (Manual)", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L224"}, {"id": "hire_flow_next_test_manifest_authentication_sessions", "label": "Authentication & Sessions", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L226"}, {"id": "hire_flow_next_test_manifest_authorization_data_boundaries", "label": "Authorization & Data Boundaries", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L232"}, {"id": "hire_flow_next_test_manifest_input_injection", "label": "Input & Injection", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L239"}, {"id": "hire_flow_next_test_manifest_real_time_external_services", "label": "Real-time & External Services", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L245"}, {"id": "hire_flow_next_test_manifest_data_integrity", "label": "Data Integrity", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L251"}, {"id": "hire_flow_next_test_manifest_seo_public_access", "label": "SEO & Public Access", "file_type": "document", "source_file": "test-manifest.md", "source_location": "L257"}], "edges": [{"source": "d_hire_flow_next_test_manifest_md", "target": "hire_flow_next_test_manifest_test_manifest_md", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_0_infrastructure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L8", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L20", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening", "target": "hire_flow_next_test_manifest_sql_injection_prevention", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L22", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening", "target": "hire_flow_next_test_manifest_input_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L26", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening", "target": "hire_flow_next_test_manifest_mass_assignment_prevention", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L35", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_2_unit_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L41", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L58", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests", "target": "hire_flow_next_test_manifest_session_token_security", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L60", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests", "target": "hire_flow_next_test_manifest_idor_protection_all_resource_types", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L69", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests", "target": "hire_flow_next_test_manifest_middleware_redirect", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L80", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_4_integration_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L90", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_file_upload_download_edge_cases", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L110", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_notification_permissions_delivery", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L118", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_search_full_text", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L126", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_pagination_boundaries", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L133", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_audit_trail_integrity", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L141", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_error_handling_information_leakage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L148", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_email_notification_delivery", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L154", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_4_integration_tests", "target": "hire_flow_next_test_manifest_concurrent_operations_race_conditions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L159", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_5_component_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L165", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_6_e2e_playwright", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L184", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_7_performance_stability", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L200", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_phase_7_performance_stability", "target": "hire_flow_next_test_manifest_rate_limiter_behavior", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L208", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_phase_8_ci_coverage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L215", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_test_manifest_md", "target": "hire_flow_next_test_manifest_security_audit_checklist_manual", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L224", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_authentication_sessions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L226", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_authorization_data_boundaries", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L232", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_input_injection", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L239", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_real_time_external_services", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L245", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_data_integrity", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L251", "weight": 1.0}, {"source": "hire_flow_next_test_manifest_security_audit_checklist_manual", "target": "hire_flow_next_test_manifest_seo_public_access", "relation": "contains", "confidence": "EXTRACTED", "source_file": "test-manifest.md", "source_location": "L257", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_test_manifest_md",
+      "label": "test-manifest.md",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_test_manifest_md",
+      "label": "TEST-MANIFEST.md",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_0_infrastructure",
+      "label": "Phase 0 \u2014 Infrastructure",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening",
+      "label": "Phase 1 \u2014 Input Validation & Schema Hardening",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_sql_injection_prevention",
+      "label": "SQL Injection Prevention",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_input_edge_cases",
+      "label": "Input Edge Cases",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_mass_assignment_prevention",
+      "label": "Mass Assignment Prevention",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_2_unit_tests",
+      "label": "Phase 2 \u2014 Unit Tests",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests",
+      "label": "Phase 3 \u2014 Authentication & Authorization Tests",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L58"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_session_token_security",
+      "label": "Session & Token Security",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_idor_protection_all_resource_types",
+      "label": "IDOR Protection (all resource types)",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L69"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_middleware_redirect",
+      "label": "Middleware & Redirect",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "label": "Phase 4 \u2014 Integration Tests",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L90"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_file_upload_download_edge_cases",
+      "label": "File Upload & Download Edge Cases",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L110"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_notification_permissions_delivery",
+      "label": "Notification Permissions & Delivery",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L118"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_search_full_text",
+      "label": "Search & Full-Text",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_pagination_boundaries",
+      "label": "Pagination Boundaries",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L133"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_audit_trail_integrity",
+      "label": "Audit Trail Integrity",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L141"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_error_handling_information_leakage",
+      "label": "Error Handling & Information Leakage",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L148"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_email_notification_delivery",
+      "label": "Email & Notification Delivery",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L154"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_concurrent_operations_race_conditions",
+      "label": "Concurrent Operations & Race Conditions",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L159"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_5_component_tests",
+      "label": "Phase 5 \u2014 Component Tests",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L165"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_6_e2e_playwright",
+      "label": "Phase 6 \u2014 E2E (Playwright)",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L184"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_7_performance_stability",
+      "label": "Phase 7 \u2014 Performance & Stability",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L200"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_rate_limiter_behavior",
+      "label": "Rate Limiter Behavior",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L208"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_phase_8_ci_coverage",
+      "label": "Phase 8 \u2014 CI & Coverage",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L215"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "label": "Security Audit Checklist (Manual)",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L224"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_authentication_sessions",
+      "label": "Authentication & Sessions",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L226"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_authorization_data_boundaries",
+      "label": "Authorization & Data Boundaries",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L232"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_input_injection",
+      "label": "Input & Injection",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L239"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_real_time_external_services",
+      "label": "Real-time & External Services",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L245"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_data_integrity",
+      "label": "Data Integrity",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L251"
+    },
+    {
+      "id": "hire_flow_next_test_manifest_seo_public_access",
+      "label": "SEO & Public Access",
+      "file_type": "document",
+      "source_file": "test-manifest.md",
+      "source_location": "L257"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_test_manifest_md",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_0_infrastructure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening",
+      "target": "hire_flow_next_test_manifest_sql_injection_prevention",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening",
+      "target": "hire_flow_next_test_manifest_input_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_1_input_validation_schema_hardening",
+      "target": "hire_flow_next_test_manifest_mass_assignment_prevention",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_2_unit_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests",
+      "target": "hire_flow_next_test_manifest_session_token_security",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests",
+      "target": "hire_flow_next_test_manifest_idor_protection_all_resource_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_3_authentication_authorization_tests",
+      "target": "hire_flow_next_test_manifest_middleware_redirect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_file_upload_download_edge_cases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_notification_permissions_delivery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_search_full_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_pagination_boundaries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_audit_trail_integrity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_error_handling_information_leakage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_email_notification_delivery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_4_integration_tests",
+      "target": "hire_flow_next_test_manifest_concurrent_operations_race_conditions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_5_component_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_6_e2e_playwright",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_7_performance_stability",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_phase_7_performance_stability",
+      "target": "hire_flow_next_test_manifest_rate_limiter_behavior",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_phase_8_ci_coverage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_test_manifest_md",
+      "target": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_authentication_sessions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_authorization_data_boundaries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_input_injection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_real_time_external_services",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_data_integrity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_test_manifest_security_audit_checklist_manual",
+      "target": "hire_flow_next_test_manifest_seo_public_access",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test-manifest.md",
+      "source_location": "L257",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

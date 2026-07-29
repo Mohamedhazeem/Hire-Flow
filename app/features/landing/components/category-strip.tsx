@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { JOB_CATEGORIES } from "@/lib/job-categories";
-import { BriefcaseIcon, MonitorIcon, HeartPulseIcon, BanknoteIcon, MegaphoneIcon, GlobeIcon } from "lucide-react";
+import {
+  BriefcaseIcon,
+  MonitorIcon,
+  HeartPulseIcon,
+  BanknoteIcon,
+  MegaphoneIcon,
+  GlobeIcon,
+} from "lucide-react";
 
 const CATEGORY_ICONS: Record<string, typeof BriefcaseIcon> = {
   Technology: MonitorIcon,

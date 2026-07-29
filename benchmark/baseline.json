@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-07-29T00:00:00.000Z",
+  "suites": {
+    "PF1-analytics-50k": {
+      "meanMs": null,
+      "budgetMs": 5000
+    },
+    "PF2-applicant-list-10k": {
+      "meanMs": null,
+      "budgetMs": 1000
+    },
+    "PF3-csv-export-50k": {
+      "meanMs": null,
+      "budgetMs": 30000
+    },
+    "PF4-fulltext-search-100k": {
+      "meanMs": null,
+      "budgetMs": 30000
+    },
+    "PF5-ai-enhance-concurrent": {
+      "meanMs": null,
+      "budgetMs": 5000
+    }
+  }
+}

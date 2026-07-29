@@ -41,9 +41,7 @@ export function mockAiClient(response: string | null) {
  * mail flow. Returns the inner mock so tests can assert call args.
  */
 export function mockResend() {
-  const mockSend = vi
-    .fn()
-    .mockResolvedValue({ data: { id: "mock-email-id" }, error: null });
+  const mockSend = vi.fn().mockResolvedValue({ data: { id: "mock-email-id" }, error: null });
 
   vi.spyOn(emailModule, "sendEmail").mockImplementation(async (args) => {
     await mockSend(args);

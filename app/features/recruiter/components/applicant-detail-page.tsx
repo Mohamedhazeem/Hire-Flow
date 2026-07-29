@@ -29,7 +29,10 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
   const recruiterId = (session?.user as { id?: string })?.id ?? "";
   const { data, isLoading, isError } = useApplicantDetail(applicationId);
   const transitionStatus = useTransitionStatusWithRefresh(applicationId);
-  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({ type: "", applicant: null });
+  const [dialog, setDialog] = useState<{ type: string; applicant: ApplicantRow | null }>({
+    type: "",
+    applicant: null,
+  });
   const [previewOpen, setPreviewOpen] = useState(false);
   const [downloadError, setDownloadError] = useState<string | null>(null);
 
@@ -38,7 +41,10 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
     setTimeout(() => setDownloadError(null), 5000);
   }, []);
 
-  const handleDownload = useCallback((fileUrl: string) => downloadResume(fileUrl, showDownloadError), [showDownloadError]);
+  const handleDownload = useCallback(
+    (fileUrl: string) => downloadResume(fileUrl, showDownloadError),
+    [showDownloadError],
+  );
 
   if (isLoading) return <ApplicantDetailSkeleton />;
 
@@ -46,7 +52,9 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
     return (
       <div className="text-destructive text-sm py-8 text-center">
         Failed to load applicant details.{" "}
-        <button onClick={() => router.back()} className="text-brand underline">Go back</button>
+        <button onClick={() => router.back()} className="text-brand underline">
+          Go back
+        </button>
       </div>
     );
   }
@@ -61,22 +69,34 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
     createdAt: typeof m.createdAt === "string" ? m.createdAt : new Date(m.createdAt).toISOString(),
   }));
 
-  const resumeFileUrl = applicantResume && "fileUrl" in applicantResume
-    ? (applicantResume as { fileUrl?: string | null }).fileUrl ?? null : null;
-  const resumeLabel = applicantResume && "label" in applicantResume
-    ? (applicantResume as { label?: string }).label ?? "Resume" : "Resume";
+  const resumeFileUrl =
+    applicantResume && "fileUrl" in applicantResume
+      ? ((applicantResume as { fileUrl?: string | null }).fileUrl ?? null)
+      : null;
+  const resumeLabel =
+    applicantResume && "label" in applicantResume
+      ? ((applicantResume as { label?: string }).label ?? "Resume")
+      : "Resume";
 
   const applicantRowForDialog: ApplicantRow = {
-    id: application.id, userId: applicant.id, name: applicant.name,
-    email: applicant.email, status: application.status,
-    appliedAt: application.appliedAt, updatedAt: application.updatedAt,
+    id: application.id,
+    userId: applicant.id,
+    name: applicant.name,
+    email: applicant.email,
+    status: application.status,
+    appliedAt: application.appliedAt,
+    updatedAt: application.updatedAt,
   };
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-center gap-3">
-          <button onClick={() => router.back()} className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all" aria-label="back">
+          <button
+            onClick={() => router.back()}
+            className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] hover:bg-muted hover:text-foreground size-8 transition-all"
+            aria-label="back"
+          >
             <ArrowLeftIcon className="size-5" />
           </button>
           <div>
@@ -87,47 +107,68 @@ export function ApplicantDetailPage({ applicationId }: ApplicantDetailPageProps)
             <p className="text-sm text-text-muted mt-0.5">{applicant.email}</p>
           </div>
         </div>
-        <Link href={`/recruiter/jobs/${application.job.id}`} className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-brand transition-colors">
-          <BriefcaseIcon className="size-4" />{application.job.title}<ExternalLinkIcon className="size-3" />
+        <Link
+          href={`/recruiter/jobs/${application.job.id}`}
+          className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-brand transition-colors"
+        >
+          <BriefcaseIcon className="size-4" />
+          {application.job.title}
+          <ExternalLinkIcon className="size-3" />
         </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-6">
           <ApplicantProfileCard
-            headline={profile?.headline} bio={profile?.bio} location={profile?.location}
-            ctc={profile?.ctc} basePay={profile?.basePay} skills={profile?.skills} experiences={profile?.experiences}
+            headline={profile?.headline}
+            bio={profile?.bio}
+            location={profile?.location}
+            ctc={profile?.ctc}
+            basePay={profile?.basePay}
+            skills={profile?.skills}
+            experiences={profile?.experiences}
           />
           <ApplicantResumeCard
-            resume={applicantResume} downloadError={downloadError}
-            onPreview={() => setPreviewOpen(true)} onDownload={handleDownload}
+            resume={applicantResume}
+            downloadError={downloadError}
+            onPreview={() => setPreviewOpen(true)}
+            onDownload={handleDownload}
           />
         </div>
         <div className="space-y-6">
           <div className="rounded-2xl border border-border-subtle bg-bg-surface p-6">
-            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">Timeline</h2>
+            <h2 className="text-sm font-semibold text-text-heading uppercase tracking-wider mb-4">
+              Timeline
+            </h2>
             <StatusTimeline entries={statusTimeline} />
           </div>
           <RecentMessagesCard
-            messages={messagesForCard} threadId={threadId} messagesBasePath="/recruiter/messages" hasStartButton
+            messages={messagesForCard}
+            threadId={threadId}
+            messagesBasePath="/recruiter/messages"
+            hasStartButton
             onStartConversation={() => router.push(`/recruiter/messages?thread=${threadId}`)}
           />
         </div>
       </div>
 
       <ApplicantActionsSection
-        status={application.status} isPending={transitionStatus.isPending}
+        status={application.status}
+        isPending={transitionStatus.isPending}
         onAction={(type, applicant) => setDialog({ type, applicant })}
         applicant={applicantRowForDialog}
       />
 
       <ApplicantDetailDialogs
-        dialog={dialog} onDialogClose={() => setDialog({ type: "", applicant: null })}
+        dialog={dialog}
+        onDialogClose={() => setDialog({ type: "", applicant: null })}
       />
 
       <ResumePreviewDialog
-        open={previewOpen} onOpenChange={setPreviewOpen}
-        fileUrl={resumeFileUrl} label={resumeLabel}
+        open={previewOpen}
+        onOpenChange={setPreviewOpen}
+        fileUrl={resumeFileUrl}
+        label={resumeLabel}
         onDownload={resumeFileUrl ? () => handleDownload(resumeFileUrl) : undefined}
         downloadError={downloadError}
       />

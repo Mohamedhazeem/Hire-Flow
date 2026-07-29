@@ -62,10 +62,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Profile"
-        description="Manage your personal and professional details"
-      />
+      <PageHeader title="Profile" description="Manage your personal and professional details" />
       <ProfileForm defaultValues={defaultValues} />
     </div>
   );

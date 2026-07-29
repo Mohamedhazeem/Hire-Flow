@@ -43,7 +43,13 @@ type AdminRecruiterProfileViewProps = {
 
 function JobStatusBadge({ status, isActive }: { status: string; isActive: boolean }) {
   if (!isActive) return <Badge variant="destructive">Disabled</Badge>;
-  return <Badge variant={status === "active" ? "default" : status === "archived" ? "secondary" : "outline"}>{status === "draft" ? "Draft" : status.charAt(0).toUpperCase() + status.slice(1)}</Badge>;
+  return (
+    <Badge
+      variant={status === "active" ? "default" : status === "archived" ? "secondary" : "outline"}
+    >
+      {status === "draft" ? "Draft" : status.charAt(0).toUpperCase() + status.slice(1)}
+    </Badge>
+  );
 }
 
 function fmtDate(d: Date) {
@@ -56,29 +62,50 @@ function CompanyJobsTable({ jobs, now }: { jobs: CompanyJob[]; now: number }) {
       <thead>
         <tr className="border-b border-border-subtle bg-bg-elevated/50">
           {["Title", "Status", "Applicants", "Deadline", ""].map((h) => (
-            <th key={h} className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3">{h || "\u00A0"}</th>
+            <th
+              key={h}
+              className="text-center text-xs font-medium text-text-muted uppercase tracking-wider px-6 py-3"
+            >
+              {h || "\u00A0"}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody className="divide-y divide-border-subtle">
         {jobs.map((job) => {
-          const deadline = job.applicationDeadline ? new Date(job.applicationDeadline).getTime() : null;
+          const deadline = job.applicationDeadline
+            ? new Date(job.applicationDeadline).getTime()
+            : null;
           const expired = deadline !== null && deadline < now;
           return (
             <tr key={job.id} className="hover:bg-bg-elevated/50 transition-colors text-center">
               <td className="px-6 py-3">
-                <Link href={`/admin/jobs/${job.id}`} className="text-sm font-medium text-text-heading hover:text-brand truncate block max-w-60">{job.title}</Link>
+                <Link
+                  href={`/admin/jobs/${job.id}`}
+                  className="text-sm font-medium text-text-heading hover:text-brand truncate block max-w-60"
+                >
+                  {job.title}
+                </Link>
               </td>
               <td className="px-4 py-3">
                 <div className="flex items-center justify-center gap-2">
                   <JobStatusBadge status={job.status} isActive={job.isActive} />
-                  {expired && <Badge variant="outline" className="text-warning border-warning/30">Expired</Badge>}
+                  {expired && (
+                    <Badge variant="outline" className="text-warning border-warning/30">
+                      Expired
+                    </Badge>
+                  )}
                 </div>
               </td>
               <td className="px-4 py-3 text-sm text-text-body">{job.applicationCount}</td>
-              <td className="px-4 py-3 text-sm text-text-muted">{deadline ? fmtDate(new Date(deadline)) : "\u2014"}</td>
+              <td className="px-4 py-3 text-sm text-text-muted">
+                {deadline ? fmtDate(new Date(deadline)) : "\u2014"}
+              </td>
               <td className="px-6 py-3">
-                <Link href={`/admin/jobs/${job.id}`} className="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline">
+                <Link
+                  href={`/admin/jobs/${job.id}`}
+                  className="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline"
+                >
                   View <ExternalLinkIcon className="size-3" />
                 </Link>
               </td>
@@ -103,13 +130,32 @@ export function AdminRecruiterProfileView({ user }: AdminRecruiterProfileViewPro
       <ProfileHeader {...user} />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-6 lg:self-start">
-          <AccountCard email={user.email} emailVerified={user.emailVerified} createdAt={user.createdAt} role={user.role} />
-          {m && <CompanyCard companyId={m.companyId} companyName={m.companyName} companyLogo={m.companyLogo} memberRole={m.role} />}
+          <AccountCard
+            email={user.email}
+            emailVerified={user.emailVerified}
+            createdAt={user.createdAt}
+            role={user.role}
+          />
+          {m && (
+            <CompanyCard
+              companyId={m.companyId}
+              companyName={m.companyName}
+              companyLogo={m.companyLogo}
+              memberRole={m.role}
+            />
+          )}
         </div>
         <div className="lg:col-span-2 space-y-6">
           {m && jobs.length > 0 ? (
-            <DataTableSection title="Company Jobs" count={jobs.length} countLabel="jobs"
-              totalCount={jobs.length} visibleCount={LIMIT} showAll={showAllJobs} onShowAll={() => setShowAllJobs(true)}>
+            <DataTableSection
+              title="Company Jobs"
+              count={jobs.length}
+              countLabel="jobs"
+              totalCount={jobs.length}
+              visibleCount={LIMIT}
+              showAll={showAllJobs}
+              onShowAll={() => setShowAllJobs(true)}
+            >
               <CompanyJobsTable jobs={displayedJobs} now={now} />
             </DataTableSection>
           ) : m && jobs.length === 0 ? (

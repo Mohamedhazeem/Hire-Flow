@@ -9,7 +9,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function createTestCompany(
   recruiterId: string,
-  overrides?: Partial<Prisma.CompanyUncheckedCreateInput>
+  overrides?: Partial<Prisma.CompanyUncheckedCreateInput>,
 ) {
   const company = await prisma.company.create({
     data: {

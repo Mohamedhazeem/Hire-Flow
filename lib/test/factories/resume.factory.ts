@@ -12,7 +12,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function createTestResume(
   userId: string,
-  overrides?: Partial<Prisma.ResumeUncheckedCreateInput>
+  overrides?: Partial<Prisma.ResumeUncheckedCreateInput>,
 ) {
   return prisma.resume.create({
     data: {

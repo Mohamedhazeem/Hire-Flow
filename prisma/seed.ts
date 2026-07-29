@@ -69,7 +69,7 @@ function avatarUrl(name: string): string {
   for (let i = 0; i < name.length; i++) {
     hash = (hash * 31 + name.charCodeAt(i)) | 0;
   }
-  const seed = Math.abs(hash) % 1000 + 1;
+  const seed = (Math.abs(hash) % 1000) + 1;
   return `https://i.pravatar.cc/150?u=${seed}`;
 }
 

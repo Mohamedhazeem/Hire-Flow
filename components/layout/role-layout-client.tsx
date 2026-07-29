@@ -37,9 +37,7 @@ export function RoleLayoutClient({
   const showNotification =
     mounted &&
     pathname &&
-    (pathname === basePath ||
-      pathname === basePath + "/" ||
-      pathname.startsWith(messagesBasePath));
+    (pathname === basePath || pathname === basePath + "/" || pathname.startsWith(messagesBasePath));
 
   return (
     <div className="flex h-screen overflow-hidden">

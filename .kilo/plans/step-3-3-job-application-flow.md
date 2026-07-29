@@ -1,6 +1,7 @@
 # Step 3.3 — User Job Application Flow
 
 ## Goal
+
 User can browse public jobs, view job details, apply with a resume (and optional cover letter), track their applications, and withdraw.
 
 ## Key Design Decisions
@@ -19,10 +20,15 @@ User can browse public jobs, view job details, apply with a resume (and optional
 ### Schemas (2)
 
 1. **`app/features/jobs/schema/application-submit.schema.ts`** (~20 lines)
+
    ```ts
    export const ApplySchema = z.object({
      resumeId: z.string().min(1, "Resume is required"),
-     coverLetter: z.string().max(5000).optional().transform(v => v?.trim() || undefined),
+     coverLetter: z
+       .string()
+       .max(5000)
+       .optional()
+       .transform((v) => v?.trim() || undefined),
    });
    ```
 
@@ -84,44 +90,44 @@ User can browse public jobs, view job details, apply with a resume (and optional
 
 ## Edge Cases (36)
 
-| # | Edge Case | Handling |
-|---|-----------|----------|
-| 1 | No resumes to apply with | Modal shows "Create a resume first" link, submit disabled |
-| 2 | Apply to inactive/deleted job | Server checks `status:"active"` + `isActive:true` → `ValidationError` |
-| 3 | Apply after deadline | Route checks `applicationDeadline` → `ValidationError` |
-| 4 | Apply twice to same job | `@@unique` → P2002 → `ConflictError("You have already applied")` |
-| 5 | Apply with someone else's resume | Fetch resume checks `userId` + `deletedAt: null` → `ForbiddenError` |
-| 6 | Resume deleted after apply | Snapshot stored at apply time — future edits don't matter |
-| 7 | File-uploaded resume apply | `resumeSnapshotUrl` stores the file URL |
-| 8 | Builder resume apply | `resumeSnapshotBuilderData` stores the builderData JSON |
-| 9 | Cover letter empty or whitespace | Zod `.transform(v => v?.trim() \|\| undefined)` → stored as undefined |
-| 10 | Withdraw when already hired/rejected | Server check: only `"applied"` or `"reviewing"` → `ValidationError` |
-| 11 | Withdraw is hard-delete | Application record removed. `@@unique` freed — user can re-apply |
-| 12 | Withdraw on already-deleted app | Prisma `delete` throws P2025 → caught → `NotFoundError` |
-| 13 | View application for deleted job | Show "Job no longer available" banner, display resume snapshot + timeline |
-| 14 | Empty applications list | "No applications yet. Browse jobs" CTA → link to `/jobs` |
-| 15 | Empty job search results | "No jobs found matching your criteria" with "Clear filters" button |
-| 16 | Page beyond total results | Pagination hides next button, shows "Page X of Y" |
-| 17 | Unauthenticated user on public jobs | `app/jobs/` is outside `(roles)` — no auth check, no session access |
-| 18 | Unauthenticated user clicks Apply | API route returns 401 via `requireRole` |
-| 19 | Apply modal backdrop click | Closes modal. In-flight mutation cancelled by TanStack Query on unmount |
-| 20 | Double-click submit | Button `disabled` during `isPending` |
-| 21 | Cover letter exactly 5000 chars | Zod `.max(5000)` allows boundary |
-| 22 | Job with no company info | `companyName` defaults to "Unknown" in query |
-| 23 | Salary range null | Don't show salary section |
-| 24 | Public job list sort/order | Default: `createdAt DESC`. Params override |
-| 25 | Mobile job card | Single column, truncated text, horizontal scroll for skills |
-| 26 | Mobile apply modal | Full-screen on mobile (`max-sm:inset-0`), scrollable |
-| 27 | Status timeline empty (race condition) | Detail view injects a synthetic "Applied" entry as fallback |
-| 28 | Resume snapshot missing both URL and builderData | Show "Resume data not available" |
-| 29 | Apply to expired deadline (timezone edge) | Compare against `new Date()` UTC. Deadline stored as DateTime (UTC) |
-| 30 | Multiple rapid submits from network replay | `@@unique` constraint in DB is the final guard |
-| 31 | Invalid sort params in URL | Zod defaults on `safeParse`: `sortBy: "createdAt"`, `sortOrder: "desc"` |
-| 32 | Empty DB on browse | `<JobListPage>` shows "No jobs found" with CTA |
-| 33 | Cover letter empty string | Zod `transform` converts to undefined |
-| 34 | Application created but status log fails | Prisma `$transaction` wraps both creates atomically |
-| 35 | User applies with stale resume data in modal | Resume list fetched fresh on mount via `useQuery`. Stale data rejected by server |
-| 36 | View another user's application by URL | Server checks `userId === session.id` → 404 |
+| #   | Edge Case                                        | Handling                                                                         |
+| --- | ------------------------------------------------ | -------------------------------------------------------------------------------- |
+| 1   | No resumes to apply with                         | Modal shows "Create a resume first" link, submit disabled                        |
+| 2   | Apply to inactive/deleted job                    | Server checks `status:"active"` + `isActive:true` → `ValidationError`            |
+| 3   | Apply after deadline                             | Route checks `applicationDeadline` → `ValidationError`                           |
+| 4   | Apply twice to same job                          | `@@unique` → P2002 → `ConflictError("You have already applied")`                 |
+| 5   | Apply with someone else's resume                 | Fetch resume checks `userId` + `deletedAt: null` → `ForbiddenError`              |
+| 6   | Resume deleted after apply                       | Snapshot stored at apply time — future edits don't matter                        |
+| 7   | File-uploaded resume apply                       | `resumeSnapshotUrl` stores the file URL                                          |
+| 8   | Builder resume apply                             | `resumeSnapshotBuilderData` stores the builderData JSON                          |
+| 9   | Cover letter empty or whitespace                 | Zod `.transform(v => v?.trim() \|\| undefined)` → stored as undefined            |
+| 10  | Withdraw when already hired/rejected             | Server check: only `"applied"` or `"reviewing"` → `ValidationError`              |
+| 11  | Withdraw is hard-delete                          | Application record removed. `@@unique` freed — user can re-apply                 |
+| 12  | Withdraw on already-deleted app                  | Prisma `delete` throws P2025 → caught → `NotFoundError`                          |
+| 13  | View application for deleted job                 | Show "Job no longer available" banner, display resume snapshot + timeline        |
+| 14  | Empty applications list                          | "No applications yet. Browse jobs" CTA → link to `/jobs`                         |
+| 15  | Empty job search results                         | "No jobs found matching your criteria" with "Clear filters" button               |
+| 16  | Page beyond total results                        | Pagination hides next button, shows "Page X of Y"                                |
+| 17  | Unauthenticated user on public jobs              | `app/jobs/` is outside `(roles)` — no auth check, no session access              |
+| 18  | Unauthenticated user clicks Apply                | API route returns 401 via `requireRole`                                          |
+| 19  | Apply modal backdrop click                       | Closes modal. In-flight mutation cancelled by TanStack Query on unmount          |
+| 20  | Double-click submit                              | Button `disabled` during `isPending`                                             |
+| 21  | Cover letter exactly 5000 chars                  | Zod `.max(5000)` allows boundary                                                 |
+| 22  | Job with no company info                         | `companyName` defaults to "Unknown" in query                                     |
+| 23  | Salary range null                                | Don't show salary section                                                        |
+| 24  | Public job list sort/order                       | Default: `createdAt DESC`. Params override                                       |
+| 25  | Mobile job card                                  | Single column, truncated text, horizontal scroll for skills                      |
+| 26  | Mobile apply modal                               | Full-screen on mobile (`max-sm:inset-0`), scrollable                             |
+| 27  | Status timeline empty (race condition)           | Detail view injects a synthetic "Applied" entry as fallback                      |
+| 28  | Resume snapshot missing both URL and builderData | Show "Resume data not available"                                                 |
+| 29  | Apply to expired deadline (timezone edge)        | Compare against `new Date()` UTC. Deadline stored as DateTime (UTC)              |
+| 30  | Multiple rapid submits from network replay       | `@@unique` constraint in DB is the final guard                                   |
+| 31  | Invalid sort params in URL                       | Zod defaults on `safeParse`: `sortBy: "createdAt"`, `sortOrder: "desc"`          |
+| 32  | Empty DB on browse                               | `<JobListPage>` shows "No jobs found" with CTA                                   |
+| 33  | Cover letter empty string                        | Zod `transform` converts to undefined                                            |
+| 34  | Application created but status log fails         | Prisma `$transaction` wraps both creates atomically                              |
+| 35  | User applies with stale resume data in modal     | Resume list fetched fresh on mount via `useQuery`. Stale data rejected by server |
+| 36  | View another user's application by URL           | Server checks `userId === session.id` → 404                                      |
 
 ## Implementation Order
 

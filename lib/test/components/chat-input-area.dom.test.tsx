@@ -58,9 +58,7 @@ describe("ChatInputArea", () => {
     const onFileRemove = vi.fn();
     const user = userEvent.setup();
     const file = new File(["x".repeat(2048)], "report.pdf", { type: "application/pdf" });
-    render(
-      <ChatInputArea {...baseProps()} selectedFile={file} onFileRemove={onFileRemove} />,
-    );
+    render(<ChatInputArea {...baseProps()} selectedFile={file} onFileRemove={onFileRemove} />);
     expect(screen.getByText("report.pdf")).toBeInTheDocument();
     expect(screen.getByText("2.0 KB")).toBeInTheDocument();
 

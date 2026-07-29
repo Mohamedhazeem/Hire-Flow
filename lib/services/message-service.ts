@@ -1,11 +1,10 @@
 import { z } from "zod";
 import { pusher } from "@/lib/pusher/pusher";
 import { parseCursorParams, buildCursorMeta } from "@/lib/pagination";
-import { ValidationError, NotFoundError, TooManyRequestsError } from "@/lib/api/api-error";
+import { ValidationError, NotFoundError } from "@/lib/api/api-error";
 import { createNotification, fireNotification } from "@/lib/notifications";
 import { markThreadNotificationsRead } from "@/app/features/notifications/queries/notification-queries";
 import { getOtherUserId, isValidThreadId, participatesInThread } from "@/lib/thread-utils";
-import { countRecentMessages } from "@/lib/repositories/rate-limit-repository";
 import { messageRepository } from "@/lib/repositories/message-repository";
 import { threadRepository } from "@/lib/repositories/thread-repository";
 
@@ -94,13 +93,6 @@ export const messageService = {
 
     if (!otherUserId) {
       throw new ValidationError("You are not a participant in this thread");
-    }
-
-    const recentCount = await countRecentMessages(senderId, otherUserId);
-    if (recentCount >= 200) {
-      throw new TooManyRequestsError(
-        "Message limit reached. You can send up to 20 messages per hour.",
-      );
     }
 
     if (senderRole === "recruiter" && verifyRelation) {

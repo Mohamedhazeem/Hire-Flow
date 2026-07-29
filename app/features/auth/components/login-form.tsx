@@ -84,8 +84,7 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
         }
       } else {
         setSuccessMessage(
-          result.message ??
-            "If that email is registered, reset instructions have been sent.",
+          result.message ?? "If that email is registered, reset instructions have been sent.",
         );
       }
     } catch {
@@ -132,11 +131,7 @@ export function LoginForm({ pageMessage }: LoginFormProps) {
           error={errors.password}
         />
 
-        <FormButton
-          isLoading={isLoading}
-          loadingText="Signing in..."
-          submitText="Sign In"
-        />
+        <FormButton isLoading={isLoading} loadingText="Signing in..." submitText="Sign In" />
 
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between text-sm text-text-muted">
           <button

@@ -1,1 +1,271 @@
-{"nodes": [{"id": "d_hire_flow_next_legacy_refactoring_md", "label": "refactoring.md", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L1"}, {"id": "legacy_refactoring_documentation_refactoring_task", "label": "Documentation Refactoring Task", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L1"}, {"id": "legacy_refactoring_objective", "label": "Objective", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L3"}, {"id": "legacy_refactoring_primary_sources", "label": "Primary Sources", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L11"}, {"id": "legacy_refactoring_critical_rules", "label": "Critical Rules", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L35"}, {"id": "legacy_refactoring_do_not", "label": "DO NOT", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L37"}, {"id": "legacy_refactoring_documentation_principles", "label": "Documentation Principles", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L54"}, {"id": "legacy_refactoring_documentation_structure", "label": "Documentation Structure", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L71"}, {"id": "legacy_refactoring_1_architecture", "label": "1. Architecture", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L90"}, {"id": "legacy_refactoring_2_specification", "label": "2. Specification", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L129"}, {"id": "legacy_refactoring_3_implementation", "label": "3. Implementation", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L164"}, {"id": "legacy_refactoring_4_testing", "label": "4. Testing", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L216"}, {"id": "legacy_refactoring_codebase_verification", "label": "Codebase Verification", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L241"}, {"id": "legacy_refactoring_remove_duplication", "label": "Remove Duplication", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L262"}, {"id": "legacy_refactoring_preserve_traceability", "label": "Preserve Traceability", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L281"}, {"id": "legacy_refactoring_archive_original_files", "label": "Archive Original Files", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L300"}, {"id": "legacy_refactoring_final_deliverables", "label": "Final Deliverables", "file_type": "document", "source_file": "legacy/refactoring.md", "source_location": "L324"}], "edges": [{"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_documentation_refactoring_task", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L1", "weight": 1.0}, {"source": "legacy_refactoring_documentation_refactoring_task", "target": "legacy_refactoring_objective", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L3", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_primary_sources", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L11", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_critical_rules", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L35", "weight": 1.0}, {"source": "legacy_refactoring_critical_rules", "target": "legacy_refactoring_do_not", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L37", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_documentation_principles", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L54", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_documentation_structure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L71", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_1_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L90", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_2_specification", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L129", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_3_implementation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L164", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_4_testing", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L216", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_codebase_verification", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L241", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_remove_duplication", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L262", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_preserve_traceability", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L281", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_archive_original_files", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L300", "weight": 1.0}, {"source": "d_hire_flow_next_legacy_refactoring_md", "target": "legacy_refactoring_final_deliverables", "relation": "contains", "confidence": "EXTRACTED", "source_file": "legacy/refactoring.md", "source_location": "L324", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_legacy_refactoring_md",
+      "label": "refactoring.md",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "legacy_refactoring_documentation_refactoring_task",
+      "label": "Documentation Refactoring Task",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "legacy_refactoring_objective",
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "legacy_refactoring_primary_sources",
+      "label": "Primary Sources",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "legacy_refactoring_critical_rules",
+      "label": "Critical Rules",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "legacy_refactoring_do_not",
+      "label": "DO NOT",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "legacy_refactoring_documentation_principles",
+      "label": "Documentation Principles",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L54"
+    },
+    {
+      "id": "legacy_refactoring_documentation_structure",
+      "label": "Documentation Structure",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "legacy_refactoring_1_architecture",
+      "label": "1. Architecture",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L90"
+    },
+    {
+      "id": "legacy_refactoring_2_specification",
+      "label": "2. Specification",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L129"
+    },
+    {
+      "id": "legacy_refactoring_3_implementation",
+      "label": "3. Implementation",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L164"
+    },
+    {
+      "id": "legacy_refactoring_4_testing",
+      "label": "4. Testing",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L216"
+    },
+    {
+      "id": "legacy_refactoring_codebase_verification",
+      "label": "Codebase Verification",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L241"
+    },
+    {
+      "id": "legacy_refactoring_remove_duplication",
+      "label": "Remove Duplication",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L262"
+    },
+    {
+      "id": "legacy_refactoring_preserve_traceability",
+      "label": "Preserve Traceability",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L281"
+    },
+    {
+      "id": "legacy_refactoring_archive_original_files",
+      "label": "Archive Original Files",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L300"
+    },
+    {
+      "id": "legacy_refactoring_final_deliverables",
+      "label": "Final Deliverables",
+      "file_type": "document",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L324"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_documentation_refactoring_task",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "legacy_refactoring_documentation_refactoring_task",
+      "target": "legacy_refactoring_objective",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_primary_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_critical_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "legacy_refactoring_critical_rules",
+      "target": "legacy_refactoring_do_not",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_documentation_principles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_documentation_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_1_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_2_specification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_3_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_4_testing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_codebase_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L241",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_remove_duplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L262",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_preserve_traceability",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L281",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_archive_original_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_legacy_refactoring_md",
+      "target": "legacy_refactoring_final_deliverables",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy/refactoring.md",
+      "source_location": "L324",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

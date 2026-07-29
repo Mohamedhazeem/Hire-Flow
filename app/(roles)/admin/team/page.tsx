@@ -17,13 +17,15 @@ export default function AdminTeamPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-lg font-semibold text-text-heading">Invite Admin</h2>
+        <h2 className="text-lg font-semibold text-text-heading text-center">Invite Admin</h2>
         <InviteAdminForm />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-lg font-semibold text-text-heading">Current Team</h2>
-        <Suspense fallback={<div className="text-text-muted text-sm py-8 text-center">Loading team...</div>}>
+        <h2 className="text-lg font-semibold text-text-heading text-center">Current Team</h2>
+        <Suspense
+          fallback={<div className="text-text-muted text-sm py-8 text-center">Loading team...</div>}
+        >
           <AdminTeamList />
         </Suspense>
       </section>

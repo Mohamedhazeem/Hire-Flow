@@ -23,7 +23,9 @@ export function RecruiterMessagesPage() {
   return (
     <MessagesPageLayout
       config={config}
-      threads={threads as import("@/components/chat/thread-list-item").ThreadListItemData[] | undefined}
+      threads={
+        threads as import("@/components/chat/thread-list-item").ThreadListItemData[] | undefined
+      }
       isLoading={isLoading}
       ThreadViewComponent={RecruiterThreadView}
     />

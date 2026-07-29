@@ -35,7 +35,11 @@ function buildJobJsonLd(job: NonNullable<Awaited<ReturnType<typeof getPublicJobB
   return ld;
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
   const { id } = await params;
   const job = await getPublicJobById(id);
   if (!job) return { title: "Job Not Found" };

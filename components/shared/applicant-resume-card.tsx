@@ -59,9 +59,7 @@ export function ApplicantResumeCard({
       {resume?.source === "deleted" ? (
         <div className="flex flex-col items-center gap-2 py-4 text-center">
           <AlertCircleIcon className="size-8 text-text-muted" />
-          <p className="text-sm text-text-muted">
-            Resume was removed by the applicant.
-          </p>
+          <p className="text-sm text-text-muted">Resume was removed by the applicant.</p>
         </div>
       ) : resume ? (
         <div className="space-y-3">
@@ -69,9 +67,7 @@ export function ApplicantResumeCard({
             <FileTextIcon className="size-5 text-brand shrink-0" />
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <p className="text-sm font-medium text-text-heading truncate">
-                  {resume.label}
-                </p>
+                <p className="text-sm font-medium text-text-heading truncate">{resume.label}</p>
                 {renderResumeSourceBadge(resume.source)}
               </div>
             </div>
@@ -88,11 +84,7 @@ export function ApplicantResumeCard({
             {resume.fileUrl ? (
               <>
                 {isPreviewable ? (
-                  <Button
-                    variant="default"
-                    size="sm"
-                    onClick={onPreview}
-                  >
+                  <Button variant="default" size="sm" onClick={onPreview}>
                     <EyeIcon className="size-4 mr-1.5" />
                     Preview
                   </Button>
@@ -107,11 +99,7 @@ export function ApplicantResumeCard({
                   </Button>
                 )}
                 {isPreviewable && resume.fileUrl && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => onDownload(resume.fileUrl!)}
-                  >
+                  <Button variant="outline" size="sm" onClick={() => onDownload(resume.fileUrl!)}>
                     <DownloadIcon className="size-4 mr-1.5" />
                     Download
                   </Button>
@@ -128,9 +116,7 @@ export function ApplicantResumeCard({
       ) : (
         <div className="flex flex-col items-center gap-2 py-4 text-center">
           <FileTextIcon className="size-8 text-text-muted" />
-          <p className="text-sm text-text-muted">
-            No resume attached to this application.
-          </p>
+          <p className="text-sm text-text-muted">No resume attached to this application.</p>
         </div>
       )}
     </div>

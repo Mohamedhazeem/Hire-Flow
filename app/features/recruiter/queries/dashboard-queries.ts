@@ -22,34 +22,35 @@ export async function getRecruiterDashboardStats(companyId: string): Promise<Das
   const sevenDaysAgo = new Date();
   sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-  const [totalJobs, totalApplications, pendingReviews, newThisWeek, recentApplications] = await Promise.all([
-    prisma.job.count({ where: { companyId } }),
-    prisma.application.count({ where: { job: { companyId } } }),
-    prisma.application.count({
-      where: {
-        job: { companyId },
-        status: { in: ["applied", "reviewing"] },
-      },
-    }),
-    prisma.application.count({
-      where: {
-        job: { companyId },
-        appliedAt: { gte: sevenDaysAgo },
-      },
-    }),
-    prisma.application.findMany({
-      where: { job: { companyId } },
-      orderBy: { appliedAt: "desc" },
-      take: 5,
-      select: {
-        id: true,
-        status: true,
-        appliedAt: true,
-        job: { select: { id: true, title: true } },
-        user: { select: { id: true, name: true } },
-      },
-    }),
-  ]);
+  const [totalJobs, totalApplications, pendingReviews, newThisWeek, recentApplications] =
+    await Promise.all([
+      prisma.job.count({ where: { companyId } }),
+      prisma.application.count({ where: { job: { companyId } } }),
+      prisma.application.count({
+        where: {
+          job: { companyId },
+          status: { in: ["applied", "reviewing"] },
+        },
+      }),
+      prisma.application.count({
+        where: {
+          job: { companyId },
+          appliedAt: { gte: sevenDaysAgo },
+        },
+      }),
+      prisma.application.findMany({
+        where: { job: { companyId } },
+        orderBy: { appliedAt: "desc" },
+        take: 5,
+        select: {
+          id: true,
+          status: true,
+          appliedAt: true,
+          job: { select: { id: true, title: true } },
+          user: { select: { id: true, name: true } },
+        },
+      }),
+    ]);
 
   return {
     totalJobs,

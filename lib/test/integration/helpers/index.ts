@@ -1,4 +1,10 @@
-import { createTestUser, createTestCompany, createTestJob, createTestApplication, createTestResume } from "@/lib/test";
+import {
+  createTestUser,
+  createTestCompany,
+  createTestJob,
+  createTestApplication,
+  createTestResume,
+} from "@/lib/test";
 import { Role } from "@/app/generated/prisma/client";
 import type { User, Company, Job, Application, Resume } from "@/app/generated/prisma/client";
 
@@ -18,11 +24,20 @@ export async function seedUserApplication(): Promise<{ user: User; application: 
   return { user, application };
 }
 
-export async function seedResume(userId: string, overrides?: Partial<Parameters<typeof createTestResume>[1]>): Promise<Resume> {
+export async function seedResume(
+  userId: string,
+  overrides?: Partial<Parameters<typeof createTestResume>[1]>,
+): Promise<Resume> {
   return createTestResume(userId, overrides);
 }
 
-export async function seedJobWithApplicant(): Promise<{ recruiter: User; company: Company; job: Job; applicant: User; application: Application }> {
+export async function seedJobWithApplicant(): Promise<{
+  recruiter: User;
+  company: Company;
+  job: Job;
+  applicant: User;
+  application: Application;
+}> {
   const recruiter = await createTestUser({ role: Role.recruiter });
   const company = await createTestCompany(recruiter.id);
   const job = await createTestJob(recruiter.id, company.id);

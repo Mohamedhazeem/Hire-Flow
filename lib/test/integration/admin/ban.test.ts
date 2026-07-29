@@ -17,7 +17,12 @@ describe("Admin Ban (Phase 4.9)", () => {
     const target = await createTestUser({ role: Role.user });
 
     await prisma.session.create({
-      data: { id: faker.string.uuid(), userId: target.id, token: "test-token", expiresAt: new Date(Date.now() + 86400000) },
+      data: {
+        id: faker.string.uuid(),
+        userId: target.id,
+        token: "test-token",
+        expiresAt: new Date(Date.now() + 86400000),
+      },
     });
 
     mockGetSession.mockResolvedValue(mockSession("admin", { id: admin.id }));

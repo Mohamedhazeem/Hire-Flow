@@ -1,7 +1,13 @@
 import { z } from "zod/v4";
 
 export const ResumeSuggestionSchema = z.object({
-  type: z.enum(["bullet_improvement", "skill_addition", "section_expansion", "ats_optimization", "grammar"]),
+  type: z.enum([
+    "bullet_improvement",
+    "skill_addition",
+    "section_expansion",
+    "ats_optimization",
+    "grammar",
+  ]),
   section: z.string(),
   original: z.string().optional(),
   suggestion: z.string(),

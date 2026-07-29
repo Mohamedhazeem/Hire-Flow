@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 import type { ProfileInput } from "@/app/features/user/schema/profile.schema";
 
 export async function upsertProfile(input: ProfileInput) {
-  const session = await requireRole(["user"]);
+  const session = await requireRole(["user", "recruiter", "admin"]);
 
   const parsed = ProfileSchema.safeParse(input);
 

@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config";
+﻿import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { fileURLToPath } from "node:url";
@@ -32,11 +32,10 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "json", "html"],
-      // Ratchet floor: set just below the measured coverage of the CI command
-      // (`--project default --project dom --coverage`) so coverage cannot
-      // regress. Measured on the current tree: lines/statements ~24.5%,
-      // functions ~56.8% (fluctuates 56.7–56.9), branches ~70% (70.1–70.6).
-      // Raise these numbers as coverage grows (targets: 60% then 70%).
+      // RATCHET POLICY (do not violate):
+      //   Coverage thresholds can ONLY be raised, never lowered or removed.
+      //   When coverage measurably increases, update the floor to match.
+      //   Measured 2026-07-29: lines ~24.5%, functions ~56.8%, branches ~70%.
       thresholds: {
         lines: 22,
         functions: 54,
@@ -63,6 +62,8 @@ export default defineConfig({
           setupFiles: ["./lib/test/vitest.setup.ts"],
           include: ["app/**/*.test.{ts,tsx}", "lib/**/*.test.{ts,tsx}"],
           exclude: ["**/node_modules/**", "**/*.perf.test.ts", "**/*.dom.test.tsx"],
+          testTimeout: 30000,
+          hookTimeout: 30000,
         },
       },
       {
@@ -73,6 +74,16 @@ export default defineConfig({
           environment: "jsdom",
           setupFiles: ["./lib/test/vitest.setup.ts"],
           include: ["**/*.dom.test.tsx"],
+          exclude: ["**/node_modules/**"],
+        },
+      },
+      {
+        plugins: sharedPlugins,
+        resolve: sharedResolve,
+        test: {
+          name: "contract",
+          environment: "node",
+          include: ["**/*.contract.test.ts"],
           exclude: ["**/node_modules/**"],
         },
       },

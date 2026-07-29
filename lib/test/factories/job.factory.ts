@@ -16,7 +16,7 @@ import { slugify } from "@/lib/slugify";
 export async function createTestJob(
   recruiterId: string,
   companyId: string,
-  overrides?: Partial<Prisma.JobUncheckedCreateInput>
+  overrides?: Partial<Prisma.JobUncheckedCreateInput>,
 ) {
   const title = overrides?.title ?? faker.person.jobTitle();
   const slug = overrides?.slug ?? slugify(title);

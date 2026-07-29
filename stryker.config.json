@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "testRunner": "vitest",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "lib/rate-limiting/**/*.ts",
+    "!lib/rate-limiting/**/*.test.ts",
+    "!lib/rate-limiting/**/*.contract.test.ts",
+    "!lib/rate-limiting/types.ts",
+    "!lib/rate-limiting/config.ts",
+    "!lib/rate-limiting/metrics.ts"
+  ],
+  "vitest": {
+    "configFile": "vitest.config.ts"
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutMS": 60000,
+  "reporters": ["progress", "html"],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation-report.html"
+  }
+}

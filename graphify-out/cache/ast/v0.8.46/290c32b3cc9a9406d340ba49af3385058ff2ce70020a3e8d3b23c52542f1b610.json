@@ -1,1 +1,207 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_step_3_5_application_detail_enhancements_md", "label": "step-3-5-application-detail-enhancements.md", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L1"}, {"id": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "label": "Step 3.5 \u2014 Application Detail Enhancements (Withdraw, Timeline, Notifications)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L1"}, {"id": "plans_step_3_5_application_detail_enhancements_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L3"}, {"id": "plans_step_3_5_application_detail_enhancements_context", "label": "Context", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L10"}, {"id": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "label": "Files to Create/Modify", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L17"}, {"id": "plans_step_3_5_application_detail_enhancements_1_lib_thread_utils_ts_new_8_lines", "label": "1. `lib/thread-utils.ts` (NEW, ~8 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L19"}, {"id": "plans_step_3_5_application_detail_enhancements_2_app_features_user_components_application_timeline_tsx_rewrite_30_lines", "label": "2. `app/features/user/components/application-timeline.tsx` (REWRITE, ~30 lines)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L28"}, {"id": "plans_step_3_5_application_detail_enhancements_3_app_api_user_applications_id_route_ts_modify_7_lines_added", "label": "3. `app/api/user/applications/[id]/route.ts` (MODIFY, ~7 lines added)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L39"}, {"id": "plans_step_3_5_application_detail_enhancements_4_components_shared_start_conversation_search_tsx_modify_3_lines_changed", "label": "4. `components/shared/start-conversation-search.tsx` (MODIFY, ~3 lines changed)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L48"}, {"id": "plans_step_3_5_application_detail_enhancements_edge_cases_checklist", "label": "Edge Cases Checklist", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L52"}, {"id": "plans_step_3_5_application_detail_enhancements_files_not_changed_no_action_needed", "label": "Files NOT Changed (no action needed)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L65"}, {"id": "plans_step_3_5_application_detail_enhancements_verification_steps", "label": "Verification Steps", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L76"}, {"id": "plans_step_3_5_application_detail_enhancements_future_considerations_not_in_scope", "label": "Future Considerations (not in scope)", "file_type": "document", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L85"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_step_3_5_application_detail_enhancements_md", "target": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_context", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L10", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L17", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "target": "plans_step_3_5_application_detail_enhancements_1_lib_thread_utils_ts_new_8_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L19", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "target": "plans_step_3_5_application_detail_enhancements_2_app_features_user_components_application_timeline_tsx_rewrite_30_lines", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L28", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "target": "plans_step_3_5_application_detail_enhancements_3_app_api_user_applications_id_route_ts_modify_7_lines_added", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L39", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify", "target": "plans_step_3_5_application_detail_enhancements_4_components_shared_start_conversation_search_tsx_modify_3_lines_changed", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L48", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_edge_cases_checklist", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L52", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_files_not_changed_no_action_needed", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L65", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_verification_steps", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L76", "weight": 1.0}, {"source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications", "target": "plans_step_3_5_application_detail_enhancements_future_considerations_not_in_scope", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md", "source_location": "L85", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_step_3_5_application_detail_enhancements_md",
+      "label": "step-3-5-application-detail-enhancements.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "label": "Step 3.5 \u2014 Application Detail Enhancements (Withdraw, Timeline, Notifications)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_context",
+      "label": "Context",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "label": "Files to Create/Modify",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_1_lib_thread_utils_ts_new_8_lines",
+      "label": "1. `lib/thread-utils.ts` (NEW, ~8 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_2_app_features_user_components_application_timeline_tsx_rewrite_30_lines",
+      "label": "2. `app/features/user/components/application-timeline.tsx` (REWRITE, ~30 lines)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_3_app_api_user_applications_id_route_ts_modify_7_lines_added",
+      "label": "3. `app/api/user/applications/[id]/route.ts` (MODIFY, ~7 lines added)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L39"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_4_components_shared_start_conversation_search_tsx_modify_3_lines_changed",
+      "label": "4. `components/shared/start-conversation-search.tsx` (MODIFY, ~3 lines changed)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_edge_cases_checklist",
+      "label": "Edge Cases Checklist",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L52"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_files_not_changed_no_action_needed",
+      "label": "Files NOT Changed (no action needed)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L65"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_verification_steps",
+      "label": "Verification Steps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L76"
+    },
+    {
+      "id": "plans_step_3_5_application_detail_enhancements_future_considerations_not_in_scope",
+      "label": "Future Considerations (not in scope)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L85"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_step_3_5_application_detail_enhancements_md",
+      "target": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "target": "plans_step_3_5_application_detail_enhancements_1_lib_thread_utils_ts_new_8_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "target": "plans_step_3_5_application_detail_enhancements_2_app_features_user_components_application_timeline_tsx_rewrite_30_lines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "target": "plans_step_3_5_application_detail_enhancements_3_app_api_user_applications_id_route_ts_modify_7_lines_added",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_files_to_create_modify",
+      "target": "plans_step_3_5_application_detail_enhancements_4_components_shared_start_conversation_search_tsx_modify_3_lines_changed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_edge_cases_checklist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_files_not_changed_no_action_needed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_verification_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_5_application_detail_enhancements_step_3_5_application_detail_enhancements_withdraw_timeline_notifications",
+      "target": "plans_step_3_5_application_detail_enhancements_future_considerations_not_in_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-5-application-detail-enhancements.md",
+      "source_location": "L85",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

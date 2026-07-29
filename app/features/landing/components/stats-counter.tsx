@@ -38,11 +38,9 @@ export function StatsCounter({ target, suffix = "", label }: StatsCounterProps) 
 
   return (
     <div className="text-center">
-      <span
-        ref={ref}
-        className="text-3xl sm:text-4xl font-bold text-text-heading tabular-nums"
-      >
-        {display.toLocaleString()}{suffix}
+      <span ref={ref} className="text-3xl sm:text-4xl font-bold text-text-heading tabular-nums">
+        {display.toLocaleString()}
+        {suffix}
       </span>
       <p className="text-sm text-text-muted mt-1">{label}</p>
     </div>

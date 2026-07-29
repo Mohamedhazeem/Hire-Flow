@@ -15,7 +15,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function createTestMessage(
   threadId: string,
-  overrides?: Partial<Prisma.MessageUncheckedCreateInput>
+  overrides?: Partial<Prisma.MessageUncheckedCreateInput>,
 ) {
   return prisma.message.create({
     data: {

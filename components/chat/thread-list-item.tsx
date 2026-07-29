@@ -24,23 +24,14 @@ type Props = {
   isOnline: boolean;
 };
 
-export function ThreadListItem({
-  thread,
-  currentUserId,
-  active,
-  basePath,
-  isOnline,
-}: Props) {
+export function ThreadListItem({ thread, currentUserId, active, basePath, isOnline }: Props) {
   const router = useRouter();
-  const isUnread =
-    thread.lastMessage?.senderId !== currentUserId && thread.lastMessage?.unread;
+  const isUnread = thread.lastMessage?.senderId !== currentUserId && thread.lastMessage?.unread;
 
   return (
     <button
       type="button"
-      onClick={() =>
-        router.push(`${basePath}?thread=${thread.threadId}`, { scroll: false })
-      }
+      onClick={() => router.push(`${basePath}?thread=${thread.threadId}`, { scroll: false })}
       className={cn(
         "w-full flex items-start gap-3 px-3 py-3 text-left hover:bg-bg-elevated transition-colors rounded-radius-lg group",
         active && "bg-bg-elevated",

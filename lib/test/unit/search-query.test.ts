@@ -32,9 +32,7 @@ describe("formatSearchQuery (S1–S5)", () => {
     });
 
     it("joins multiple real words with the OR operator", () => {
-      expect(formatSearchQuery("senior frontend engineer")).toBe(
-        "senior | frontend | engineer",
-      );
+      expect(formatSearchQuery("senior frontend engineer")).toBe("senior | frontend | engineer");
     });
   });
 

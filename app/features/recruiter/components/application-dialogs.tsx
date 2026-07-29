@@ -152,7 +152,9 @@ function formatDateForInput(isoString: string): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
-const TOMORROW_DEFAULT = formatDateForInput(new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString());
+const TOMORROW_DEFAULT = formatDateForInput(
+  new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+);
 
 type InterviewFormData = {
   interviewDate: string;
@@ -211,15 +213,16 @@ export function ScheduleInterviewDialog({
             <label className="block text-sm font-medium text-text-heading mb-1">
               Interview Date & Time *
             </label>
-            <Input type="datetime-local" {...register("interviewDate", { required: "Interview date is required" })} />
+            <Input
+              type="datetime-local"
+              {...register("interviewDate", { required: "Interview date is required" })}
+            />
             {errors.interviewDate && (
               <p className="text-sm text-destructive mt-1">{errors.interviewDate.message}</p>
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium text-text-heading mb-1">
-              Meeting Link
-            </label>
+            <label className="block text-sm font-medium text-text-heading mb-1">Meeting Link</label>
             <Input
               type="url"
               {...register("meetingLink")}
@@ -357,8 +360,8 @@ export function HireDialog({ open, onOpenChange, applicant }: ConfirmStatusDialo
         <DialogHeader>
           <DialogTitle>Mark as Hired</DialogTitle>
           <DialogDescription>
-            Confirm that {applicant?.name ?? "this applicant"} has been hired. They will be
-            notified in-app.
+            Confirm that {applicant?.name ?? "this applicant"} has been hired. They will be notified
+            in-app.
           </DialogDescription>
         </DialogHeader>
         <EmailCheckbox checked={sendEmail} onChange={setSendEmail} />

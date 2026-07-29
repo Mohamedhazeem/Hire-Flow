@@ -23,9 +23,7 @@ describe("Profile skills persistence (DB round-trip)", () => {
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
     // Act: call upsertProfile with a skill
-    const { upsertProfile } = await import(
-      "@/app/features/user/actions/upsert-profile"
-    );
+    const { upsertProfile } = await import("@/app/features/user/actions/upsert-profile");
     const result = await upsertProfile({
       headline: "Test Engineer",
       bio: "",
@@ -55,9 +53,7 @@ describe("Profile skills persistence (DB round-trip)", () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { upsertProfile } = await import(
-      "@/app/features/user/actions/upsert-profile"
-    );
+    const { upsertProfile } = await import("@/app/features/user/actions/upsert-profile");
     await upsertProfile({
       headline: "Full Stack",
       bio: "",
@@ -86,9 +82,7 @@ describe("Profile skills persistence (DB round-trip)", () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { upsertProfile } = await import(
-      "@/app/features/user/actions/upsert-profile"
-    );
+    const { upsertProfile } = await import("@/app/features/user/actions/upsert-profile");
 
     // First save
     await upsertProfile({
@@ -134,9 +128,7 @@ describe("Profile skills persistence (DB round-trip)", () => {
     const user = await createTestUser({ role: "user" });
     mockGetSession.mockResolvedValue(mockSession("user", { id: user.id }));
 
-    const { upsertProfile } = await import(
-      "@/app/features/user/actions/upsert-profile"
-    );
+    const { upsertProfile } = await import("@/app/features/user/actions/upsert-profile");
     await upsertProfile({
       headline: "Engineer",
       bio: "",

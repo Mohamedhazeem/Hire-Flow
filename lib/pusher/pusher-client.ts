@@ -33,4 +33,3 @@ export function getPusherClient(): Pusher | null {
   }
   return pusherClient;
 }
-

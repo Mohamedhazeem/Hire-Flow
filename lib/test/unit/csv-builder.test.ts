@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { escapeCsvField, buildCsvRow, buildCsvString } from "@/app/features/recruiter/libs/csv-builder";
+import {
+  escapeCsvField,
+  buildCsvRow,
+  buildCsvString,
+} from "@/app/features/recruiter/libs/csv-builder";
 
 describe("escapeCsvField", () => {
   it("wraps normal string in quotes", () => {
@@ -43,7 +47,10 @@ describe("buildCsvString", () => {
   it("prepends BOM and includes header row + data rows", () => {
     const result = buildCsvString(
       ["Name", "Email"],
-      [["Alice", "alice@test.com"], ["Bob", "bob@test.com"]],
+      [
+        ["Alice", "alice@test.com"],
+        ["Bob", "bob@test.com"],
+      ],
     );
     expect(result.startsWith("\uFEFF")).toBe(true);
     expect(result).toContain('"Name","Email"');

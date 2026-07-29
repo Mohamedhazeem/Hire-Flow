@@ -11,6 +11,7 @@ All components ≤150 lines, mobile-first, design consistent with existing landi
 A Server Component (no data fetching) that renders the full `/resources` page.
 
 **Sections:**
+
 1. **Hero** — page title + subtitle
 2. **Resume Tips** — bullet-style cards (tailor resume, quantify impact, ATS keywords, proofread)
 3. **Interview Prep Checklist** — vertical timeline checklist with icons
@@ -18,6 +19,7 @@ A Server Component (no data fetching) that renders the full `/resources` page.
 5. **CTA** — "Ready to find your next role?" → Link to /jobs
 
 **Constraints:**
+
 - Mobile-first responsive: `px-4 md:px-6 lg:px-8`, `py-16 sm:py-20`, `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`, etc.
 - All content hardcoded (static arrays or inline)
 - Zero Prisma / API calls
@@ -36,7 +38,8 @@ import { CareerResourcesPage } from "@/app/features/public/components/career-res
 
 export const metadata = {
   title: "Career Resources",
-  description: "Resume tips, interview prep, and salary negotiation advice to help you land your next role.",
+  description:
+    "Resume tips, interview prep, and salary negotiation advice to help you land your next role.",
 };
 
 export default function ResourcesPage() {

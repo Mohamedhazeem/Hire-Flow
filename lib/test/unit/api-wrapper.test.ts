@@ -42,9 +42,19 @@ describe("withErrorHandler", () => {
 
   it("catches ZodError and returns 422 with field details", async () => {
     const { withErrorHandler } = await import("@/lib/api/api-wrapper");
-    const handler = vi.fn().mockRejectedValue(new z.ZodError([
-      { code: "too_small", minimum: 1, type: "string", inclusive: true, exact: false, message: "Required", path: ["name"] },
-    ]));
+    const handler = vi.fn().mockRejectedValue(
+      new z.ZodError([
+        {
+          code: "too_small",
+          minimum: 1,
+          type: "string",
+          inclusive: true,
+          exact: false,
+          message: "Required",
+          path: ["name"],
+        },
+      ]),
+    );
 
     mockNextResponseJson.mockReturnValue({ status: 422 });
     const wrapped = withErrorHandler(handler);
@@ -53,7 +63,9 @@ describe("withErrorHandler", () => {
 
     expect(mockNextResponseJson).toHaveBeenCalledWith(
       expect.objectContaining({ error: "Validation failed" }),
-      { status: 422 },
+      {
+        status: 422,
+      },
     );
   });
 

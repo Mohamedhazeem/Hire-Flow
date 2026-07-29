@@ -56,7 +56,11 @@ describe("Public Job Queries (Phase 4.2)", () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
     await createTestJob(recruiter.id, company.id, { title: "Active Job" });
-    await createTestJob(recruiter.id, company.id, { title: "Killed Job", status: "active", isActive: false });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Killed Job",
+      status: "active",
+      isActive: false,
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs");
@@ -70,7 +74,11 @@ describe("Public Job Queries (Phase 4.2)", () => {
     const recruiter = await createTestUser({ role: Role.recruiter });
     const company = await createTestCompany(recruiter.id);
     await createTestJob(recruiter.id, company.id, { title: "Active Job" });
-    await createTestJob(recruiter.id, company.id, { title: "Draft but active", status: "draft", isActive: true });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Draft but active",
+      status: "draft",
+      isActive: true,
+    });
 
     const { GET } = await import("@/app/api/jobs/route");
     const req = new NextRequest("http://localhost/api/jobs");
@@ -133,9 +141,7 @@ describe("Public Job Queries (Phase 4.2)", () => {
     await createTestJob(recruiter.id, company.id, { title: "Beta Engineer" });
 
     const { GET } = await import("@/app/api/jobs/route");
-    const req = new NextRequest(
-      `http://localhost/api/jobs?search=${encodeURIComponent("&|!*()")}`,
-    );
+    const req = new NextRequest(`http://localhost/api/jobs?search=${encodeURIComponent("&|!*()")}`);
     const res = await GET(req);
     expect(res.status).toBe(200);
     const body = await res.json();
@@ -195,7 +201,9 @@ describe("Public Job Queries (Phase 4.2)", () => {
   it("single job detail returns 404 for missing job", async () => {
     const { GET } = await import("@/app/api/jobs/[id]/route");
     const req = new NextRequest("http://localhost/api/jobs/00000000-0000-0000-0000-000000000000");
-    const res = await GET(req, { params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }) });
+    const res = await GET(req, {
+      params: Promise.resolve({ id: "00000000-0000-0000-0000-000000000000" }),
+    });
     expect(res.status).toBe(404);
   });
 
@@ -208,5 +216,135 @@ describe("Public Job Queries (Phase 4.2)", () => {
     const req = new NextRequest(`http://localhost/api/jobs/${job.id}`);
     const res = await GET(req, { params: Promise.resolve({ id: job.id }) });
     expect(res.status).toBe(404);
+  });
+
+  it("skills filter: empty skills param returns all active jobs", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(2);
+  });
+
+  it("skills filter: single matching skill returns only matching jobs", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?skills=React");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(1);
+    expect(body.data.jobs[0].title).toBe("React Job");
+  });
+
+  it("skills filter: multiple skills use OR semantics", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Python Job",
+      skills: ["Python", "Django"],
+    });
+    await createTestJob(recruiter.id, company.id, { title: "Go Job", skills: ["Go"] });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?skills=React&skills=Python");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(2);
+  });
+
+  it("skills filter: non-matching skills returns empty list", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?skills=COBOL");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(0);
+  });
+
+  it("skills filter: combined with search uses AND semantics", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "Senior React Engineer",
+      skills: ["React", "TypeScript"],
+    });
+    await createTestJob(recruiter.id, company.id, {
+      title: "Senior Python Engineer",
+      skills: ["Python", "Django"],
+    });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?search=React&skills=React");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(1);
+    expect(body.data.jobs[0].title).toBe("Senior React Engineer");
+  });
+
+  it("skills filter: job with empty skills array does not match hasSome", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, { title: "No Skills Job", skills: [] });
+    await createTestJob(recruiter.id, company.id, { title: "React Job", skills: ["React"] });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?skills=React");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(1);
+    expect(body.data.jobs[0].title).toBe("React Job");
+  });
+
+  it("skills filter: skills param is case-sensitive in Postgres", async () => {
+    const recruiter = await createTestUser({ role: Role.recruiter });
+    const company = await createTestCompany(recruiter.id);
+    await createTestJob(recruiter.id, company.id, {
+      title: "React Job",
+      skills: ["React", "TypeScript"],
+    });
+
+    const { GET } = await import("@/app/api/jobs/route");
+    const req = new NextRequest("http://localhost/api/jobs?skills=react");
+    const res = await GET(req);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.data.jobs).toHaveLength(0);
   });
 });

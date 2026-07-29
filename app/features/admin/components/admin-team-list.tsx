@@ -68,8 +68,9 @@ export function AdminTeamList() {
     {
       key: "name",
       header: "Name",
+      align: "center",
       cell: (row) => (
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <span className="font-medium text-text-heading">{row.name}</span>
           <span className="text-xs text-text-muted">{row.email}</span>
         </div>
@@ -78,6 +79,7 @@ export function AdminTeamList() {
     {
       key: "type",
       header: "Status",
+      align: "center",
       cell: (row) =>
         row.type === "admin" ? (
           <Badge variant={row.role === "super_admin" ? "default" : "secondary"}>
@@ -90,11 +92,13 @@ export function AdminTeamList() {
     {
       key: "invitedBy",
       header: "Invited By",
+      align: "center",
       cell: (row) => <span className="text-sm text-text-muted">{row.invitedBy ?? "—"}</span>,
     },
     {
       key: "createdAt",
       header: "Date",
+      align: "center",
       cell: (row) => (
         <span className="text-xs text-text-muted">
           {new Date(row.createdAt).toLocaleDateString()}
@@ -104,6 +108,7 @@ export function AdminTeamList() {
     {
       key: "actions",
       header: "Actions",
+      align: "center",
       cell: (row) => {
         const isSelf = row.id === session?.user?.id;
         const isSuperAdmin = row.role === "super_admin";

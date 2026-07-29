@@ -9,10 +9,7 @@ export const metadata = {
 export default function AdminRecruitersPage() {
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Recruiters"
-        description="Manage all recruiter accounts"
-      />
+      <PageHeader title="Recruiters" description="Manage all recruiter accounts" />
       <PeopleTable roleFilter="recruiter" />
     </div>
   );

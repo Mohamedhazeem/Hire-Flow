@@ -9,6 +9,7 @@ Display a green dot next to a user's name in the thread list and show "Online" u
 **Pusher presence channels** (`presence-online-{userId}`). Each user subscribes to their own channel when they mount the messages page. The thread list subscribes to each unique partner's presence channel. Pusher broadcasts `member_added` / `member_removed` events automatically.
 
 ### Key rules
+
 - No schema changes, no DB migrations, no new dependencies
 - React Compiler handles memoization — no manual `useMemo`/`useCallback`
 - `useEffect` only for Pusher subscribe/unsubscribe lifecycle
@@ -16,16 +17,16 @@ Display a green dot next to a user's name in the thread list and show "Online" u
 
 ## Changed files
 
-| File | Action | Notes |
-|---|---|---|
-| `app/api/pusher/auth/route.ts` | **Edit** | Add `presence-` channel handler |
-| `features/messages/stores/presence-store.ts` | **New** | Zustand store for online user IDs |
-| `components/chat/thread-list-item.tsx` | **New** | Shared `ThreadListItem` with green dot |
-| `components/chat/shared-thread-view.tsx` | **Edit** | Add "Online" label under chat name |
-| `app/(roles)/admin/messages/page.tsx` | **Edit** | Use shared ThreadListItem, mount presence hook |
-| `app/features/recruiter/components/recruiter-messages-page.tsx` | **Edit** | Same |
-| `app/features/user/components/user-messages-page.tsx` | **Edit** | Same |
-| `lib/pusher-client.ts` | **Edit** | Enable presence channel auth |
+| File                                                            | Action   | Notes                                          |
+| --------------------------------------------------------------- | -------- | ---------------------------------------------- |
+| `app/api/pusher/auth/route.ts`                                  | **Edit** | Add `presence-` channel handler                |
+| `features/messages/stores/presence-store.ts`                    | **New**  | Zustand store for online user IDs              |
+| `components/chat/thread-list-item.tsx`                          | **New**  | Shared `ThreadListItem` with green dot         |
+| `components/chat/shared-thread-view.tsx`                        | **Edit** | Add "Online" label under chat name             |
+| `app/(roles)/admin/messages/page.tsx`                           | **Edit** | Use shared ThreadListItem, mount presence hook |
+| `app/features/recruiter/components/recruiter-messages-page.tsx` | **Edit** | Same                                           |
+| `app/features/user/components/user-messages-page.tsx`           | **Edit** | Same                                           |
+| `lib/pusher-client.ts`                                          | **Edit** | Enable presence channel auth                   |
 
 ## Implementation steps
 
@@ -37,7 +38,7 @@ Add a check before the existing `private-thread-` handler:
 
 ```
 if channelName starts with "presence-online-"
-  extract userId from channelName (strip "presence-online-" prefix)  
+  extract userId from channelName (strip "presence-online-" prefix)
   if session.user.id !== extracted userId → return 403 (prevent spoofing)
   authResponse = pusher.authorizeChannel(socketId, channelName, {
     user_id: session.user.id,
@@ -65,7 +66,8 @@ type PresenceState = {
 ```
 
 Implementation:
-- `subscribeToUser(userId)`: guard if already subscribed. Get Pusher client, subscribe to `presence-online-{userId}`. Bind `member_added` → add to Set. Bind `member_removed` → delete from Set. Subscribe succeeds → the current user is already a member, so `member_added` fires immediately for themselves but we only care about *other* members. Pusher's `subscription_succeeded` callback provides initial member list. Use `channel.members.each(...)` to seed the initial set.
+
+- `subscribeToUser(userId)`: guard if already subscribed. Get Pusher client, subscribe to `presence-online-{userId}`. Bind `member_added` → add to Set. Bind `member_removed` → delete from Set. Subscribe succeeds → the current user is already a member, so `member_added` fires immediately for themselves but we only care about _other_ members. Pusher's `subscription_succeeded` callback provides initial member list. Use `channel.members.each(...)` to seed the initial set.
 - `unsubscribeFromUser(userId)`: guard if not subscribed. Unbind all, unsubscribe channel, remove from tracking.
 - `isOnline(userId)`: `onlineUserIds.has(userId)`.
 - `clear()`: iterate subscriptions and unsubscribe all.
@@ -78,7 +80,11 @@ Implementation:
 
 ```ts
 type Props = {
-  thread: { threadId: string; user: { id: string; name: string }; lastMessage: { content: string; createdAt: string; senderId: string; unread: boolean } | null };
+  thread: {
+    threadId: string;
+    user: { id: string; name: string };
+    lastMessage: { content: string; createdAt: string; senderId: string; unread: boolean } | null;
+  };
   currentUserId: string;
   active: boolean;
   basePath: string;
@@ -87,6 +93,7 @@ type Props = {
 ```
 
 Render:
+
 - Avatar circle with first letter (same gradient as current)
 - Name + time row
 - Gray "No messages yet" / message content
@@ -109,7 +116,7 @@ export function useThreadPresence(threads: Array<{ user: { id: string } }>) {
   useEffect(() => {
     // Subscribe current user's own presence channel
     // (handled separately — the page component mounts this)
-    
+
     // Subscribe to each unique partner
     const userIds = [...new Set(threads?.map((t) => t.user.id) ?? [])];
     userIds.forEach(subscribeToUser);
@@ -125,6 +132,7 @@ export function useThreadPresence(threads: Array<{ user: { id: string } }>) {
 ### Step 5 — Update all three messages pages
 
 Each page:
+
 1. Import `ThreadListItem` from shared component
 2. Import `usePresenceStore` for `isOnline(userId)` calls
 3. Import `useThreadPresence` hook for lifecycle
@@ -161,13 +169,16 @@ The existing `Pusher` constructor already has `authEndpoint: "/api/pusher/auth"`
 **File:** `components/chat/shared-thread-view.tsx`
 
 In the chat header (lines 340–345), change:
+
 ```
 <div className="min-w-0">
   <h2 ...>{chatName || "Loading..."}</h2>
   <p className="text-[11px] text-text-muted">{config.roleLabel}</p>
 </div>
 ```
+
 To:
+
 ```
 <div className="min-w-0">
   <h2 ...>{chatName || "Loading..."}</h2>
@@ -183,24 +194,25 @@ Import `usePresenceStore` and call `isOnline(otherUserId)`.
 
 ## Edge cases handled
 
-| Case | Behavior |
-|---|---|
-| Pusher unavailable | No dots shown, messaging works |
-| User deleted | Channel empty → not online |
-| Multiple tabs | Pusher handles; online until last tab closes |
-| Thread deletion (own side) | Own presence still active; partner still subscribed |
-| Thread deletion (partner's side) | Partner's presence unaffected |
-| New thread appears (search) | Effect re-runs, subscribes to new partner |
-| Race condition on effect cleanup | Store guards double subscribe/unsubscribe |
-| Auth spoof attempt (subscribe as another user) | Auth handler returns 403 |
-| 50+ threads | One subscription per unique partner ID; Set auto-deduplicates |
-| SPA navigation away/back | Cleanup unsubscribes; re-subscribes on return |
-| Zero threads | Own presence active; no partner subscriptions |
-| Admin messages admin | Both subscribe to each other's channels; both see online |
+| Case                                           | Behavior                                                      |
+| ---------------------------------------------- | ------------------------------------------------------------- |
+| Pusher unavailable                             | No dots shown, messaging works                                |
+| User deleted                                   | Channel empty → not online                                    |
+| Multiple tabs                                  | Pusher handles; online until last tab closes                  |
+| Thread deletion (own side)                     | Own presence still active; partner still subscribed           |
+| Thread deletion (partner's side)               | Partner's presence unaffected                                 |
+| New thread appears (search)                    | Effect re-runs, subscribes to new partner                     |
+| Race condition on effect cleanup               | Store guards double subscribe/unsubscribe                     |
+| Auth spoof attempt (subscribe as another user) | Auth handler returns 403                                      |
+| 50+ threads                                    | One subscription per unique partner ID; Set auto-deduplicates |
+| SPA navigation away/back                       | Cleanup unsubscribes; re-subscribes on return                 |
+| Zero threads                                   | Own presence active; no partner subscriptions                 |
+| Admin messages admin                           | Both subscribe to each other's channels; both see online      |
 
 ## Validation
 
 After implementation:
+
 1. `npm run lint` — 0 errors (pre-existing warnings only)
 2. `npx tsc --noEmit` — 0 errors
 3. Manual: open two browser windows as different users, verify green dot + "Online" label

@@ -16,7 +16,8 @@ export function NoCompanyPrompt() {
         </div>
         <h1 className="text-2xl font-bold text-text-heading mb-2">Welcome to HireFlow</h1>
         <p className="text-text-muted text-sm mb-6">
-          You&apos;re almost ready to start hiring. Create your company profile first to manage jobs and applications.
+          You&apos;re almost ready to start hiring. Create your company profile first to manage jobs
+          and applications.
         </p>
         <Link
           href="/recruiter/company"

@@ -74,8 +74,9 @@ export function RecruiterTeamList() {
     {
       key: "name",
       header: "Name",
+      align: "center",
       cell: (row) => (
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <span className="font-medium text-text-heading">{row.name}</span>
           <span className="text-xs text-text-muted">{row.email}</span>
         </div>
@@ -84,6 +85,7 @@ export function RecruiterTeamList() {
     {
       key: "type",
       header: "Status",
+      align: "center",
       cell: (row) =>
         row.type === "member" ? (
           <Badge variant={row.memberRole === "owner" ? "secondary" : "secondary"}>
@@ -96,11 +98,13 @@ export function RecruiterTeamList() {
     {
       key: "invitedBy",
       header: "Invited By",
+      align: "center",
       cell: (row) => <span className="text-sm text-text-muted">{row.invitedBy ?? "—"}</span>,
     },
     {
       key: "createdAt",
       header: "Date",
+      align: "center",
       cell: (row) => (
         <span className="text-xs text-text-muted">
           {new Date(row.createdAt).toLocaleDateString()}
@@ -110,6 +114,7 @@ export function RecruiterTeamList() {
     {
       key: "actions",
       header: "Actions",
+      align: "center",
       cell: (row) => {
         if (row.type === "invite") {
           const isMine = row.invitedBy === (session?.user?.name ?? session?.user?.email);

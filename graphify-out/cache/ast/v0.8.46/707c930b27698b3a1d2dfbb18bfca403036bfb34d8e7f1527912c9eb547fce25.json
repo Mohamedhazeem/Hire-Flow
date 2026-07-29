@@ -1,1 +1,287 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1782747685285_home_page_composition_md", "label": "1782747685285-home-page-composition.md", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L1"}, {"id": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "label": "Phase 4.4 \u2014 Home Page Composition", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L1"}, {"id": "plans_1782747685285_home_page_composition_goal", "label": "Goal", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L3"}, {"id": "plans_1782747685285_home_page_composition_context_files_read_first", "label": "Context Files (read first)", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L6"}, {"id": "plans_1782747685285_home_page_composition_existing_files_to_not_touch", "label": "Existing Files to NOT Touch", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L14"}, {"id": "plans_1782747685285_home_page_composition_new_files_4", "label": "New Files (4)", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L19"}, {"id": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx", "label": "1. `app/features/public/components/hero-search.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L21"}, {"id": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx", "label": "2. `app/features/public/components/category-strip.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L30"}, {"id": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts", "label": "3. `app/features/public/queries/list-featured-companies.ts`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L38"}, {"id": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx", "label": "4. `app/features/public/components/featured-companies.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L45"}, {"id": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx", "label": "5. `app/features/public/components/employer-cta.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L51"}, {"id": "plans_1782747685285_home_page_composition_files_to_modify_2", "label": "Files to Modify (2)", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L60"}, {"id": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx", "label": "6. `app/features/landing/components/footer.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L62"}, {"id": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx", "label": "7. `app/features/landing/components/landing-page.tsx`", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L65"}, {"id": "plans_1782747685285_home_page_composition_delete", "label": "Delete", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L78"}, {"id": "plans_1782747685285_home_page_composition_edge_cases_verified", "label": "Edge Cases Verified", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L81"}, {"id": "plans_1782747685285_home_page_composition_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L92"}, {"id": "plans_1782747685285_home_page_composition_designs_resolved", "label": "Designs Resolved", "file_type": "document", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L98"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1782747685285_home_page_composition_md", "target": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_goal", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_context_files_read_first", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L6", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_existing_files_to_not_touch", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L14", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_new_files_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L19", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_new_files_4", "target": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L21", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_new_files_4", "target": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L30", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_new_files_4", "target": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L38", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_new_files_4", "target": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L45", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_new_files_4", "target": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L51", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_files_to_modify_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L60", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_files_to_modify_2", "target": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L62", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_files_to_modify_2", "target": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L65", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_delete", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L78", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_edge_cases_verified", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L81", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L92", "weight": 1.0}, {"source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition", "target": "plans_1782747685285_home_page_composition_designs_resolved", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1782747685285-home-page-composition.md", "source_location": "L98", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1782747685285_home_page_composition_md",
+      "label": "1782747685285-home-page-composition.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "label": "Phase 4.4 \u2014 Home Page Composition",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_context_files_read_first",
+      "label": "Context Files (read first)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_existing_files_to_not_touch",
+      "label": "Existing Files to NOT Touch",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_new_files_4",
+      "label": "New Files (4)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx",
+      "label": "1. `app/features/public/components/hero-search.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx",
+      "label": "2. `app/features/public/components/category-strip.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts",
+      "label": "3. `app/features/public/queries/list-featured-companies.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L38"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx",
+      "label": "4. `app/features/public/components/featured-companies.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx",
+      "label": "5. `app/features/public/components/employer-cta.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L51"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "label": "Files to Modify (2)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx",
+      "label": "6. `app/features/landing/components/footer.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx",
+      "label": "7. `app/features/landing/components/landing-page.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L65"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_delete",
+      "label": "Delete",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_edge_cases_verified",
+      "label": "Edge Cases Verified",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L81"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L92"
+    },
+    {
+      "id": "plans_1782747685285_home_page_composition_designs_resolved",
+      "label": "Designs Resolved",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L98"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1782747685285_home_page_composition_md",
+      "target": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_context_files_read_first",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_existing_files_to_not_touch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_new_files_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_1_app_features_public_components_hero_search_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_2_app_features_public_components_category_strip_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_3_app_features_public_queries_list_featured_companies_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_4_app_features_public_components_featured_companies_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_new_files_4",
+      "target": "plans_1782747685285_home_page_composition_5_app_features_public_components_employer_cta_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "target": "plans_1782747685285_home_page_composition_6_app_features_landing_components_footer_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_files_to_modify_2",
+      "target": "plans_1782747685285_home_page_composition_7_app_features_landing_components_landing_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_delete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_edge_cases_verified",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1782747685285_home_page_composition_phase_4_4_home_page_composition",
+      "target": "plans_1782747685285_home_page_composition_designs_resolved",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1782747685285-home-page-composition.md",
+      "source_location": "L98",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

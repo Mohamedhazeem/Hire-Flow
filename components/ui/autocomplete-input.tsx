@@ -117,11 +117,7 @@ export function AutocompleteInput({
             }}
             disabled={disabled || atLimit}
             placeholder={
-              value.length === 0
-                ? placeholder
-                : atLimit
-                  ? `Max ${maxItems} items`
-                  : "Add more..."
+              value.length === 0 ? placeholder : atLimit ? `Max ${maxItems} items` : "Add more..."
             }
             className="min-w-[120px] flex-1 border-none bg-transparent py-0.5 text-sm text-text-body outline-none placeholder:text-text-muted disabled:cursor-not-allowed"
           />

@@ -1,1 +1,191 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1784047875442_phase8_coverage_ci_plan_md", "label": "1784047875442-phase8-coverage-ci-plan.md", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L1"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "label": "Phase 8 \u2014 Coverage & CI", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L1"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_context", "label": "Context", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L3"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_solid_aligned_approach", "label": "SOLID-aligned approach", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L16"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "label": "Tasks", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L24"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_t1_ratchet_coverage_thresholds_evidence_driven_monotonic_in_vitest_config_ts", "label": "T1 \u2014 Ratchet coverage thresholds (evidence-driven, monotonic, in `vitest.config.ts`)", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L26"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_t2_create_github_workflows_test_yml_pr_gate", "label": "T2 \u2014 Create `.github/workflows/test.yml` (PR gate)", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L41"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_t3_nightly_perf_job_manual_scheduled_not_per_pr", "label": "T3 \u2014 Nightly perf job (manual + scheduled, NOT per-PR)", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L59"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_t4_coverage_lint_gate_hygiene", "label": "T4 \u2014 Coverage + lint gate hygiene", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L67"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_affected_files", "label": "Affected files", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L72"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L77"}, {"id": "plans_1784047875442_phase8_coverage_ci_plan_risks_open_questions", "label": "Risks / open questions", "file_type": "document", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L84"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1784047875442_phase8_coverage_ci_plan_md", "target": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_context", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_solid_aligned_approach", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L16", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L24", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "target": "plans_1784047875442_phase8_coverage_ci_plan_t1_ratchet_coverage_thresholds_evidence_driven_monotonic_in_vitest_config_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L26", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "target": "plans_1784047875442_phase8_coverage_ci_plan_t2_create_github_workflows_test_yml_pr_gate", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L41", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "target": "plans_1784047875442_phase8_coverage_ci_plan_t3_nightly_perf_job_manual_scheduled_not_per_pr", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L59", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_tasks", "target": "plans_1784047875442_phase8_coverage_ci_plan_t4_coverage_lint_gate_hygiene", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L67", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_affected_files", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L72", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L77", "weight": 1.0}, {"source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci", "target": "plans_1784047875442_phase8_coverage_ci_plan_risks_open_questions", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md", "source_location": "L84", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1784047875442_phase8_coverage_ci_plan_md",
+      "label": "1784047875442-phase8-coverage-ci-plan.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "label": "Phase 8 \u2014 Coverage & CI",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_context",
+      "label": "Context",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_solid_aligned_approach",
+      "label": "SOLID-aligned approach",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "label": "Tasks",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_t1_ratchet_coverage_thresholds_evidence_driven_monotonic_in_vitest_config_ts",
+      "label": "T1 \u2014 Ratchet coverage thresholds (evidence-driven, monotonic, in `vitest.config.ts`)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_t2_create_github_workflows_test_yml_pr_gate",
+      "label": "T2 \u2014 Create `.github/workflows/test.yml` (PR gate)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_t3_nightly_perf_job_manual_scheduled_not_per_pr",
+      "label": "T3 \u2014 Nightly perf job (manual + scheduled, NOT per-PR)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L59"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_t4_coverage_lint_gate_hygiene",
+      "label": "T4 \u2014 Coverage + lint gate hygiene",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_affected_files",
+      "label": "Affected files",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L72"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "plans_1784047875442_phase8_coverage_ci_plan_risks_open_questions",
+      "label": "Risks / open questions",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L84"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1784047875442_phase8_coverage_ci_plan_md",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_solid_aligned_approach",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_t1_ratchet_coverage_thresholds_evidence_driven_monotonic_in_vitest_config_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_t2_create_github_workflows_test_yml_pr_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_t3_nightly_perf_job_manual_scheduled_not_per_pr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_tasks",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_t4_coverage_lint_gate_hygiene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_affected_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1784047875442_phase8_coverage_ci_plan_phase_8_coverage_ci",
+      "target": "plans_1784047875442_phase8_coverage_ci_plan_risks_open_questions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1784047875442-phase8-coverage-ci-plan.md",
+      "source_location": "L84",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

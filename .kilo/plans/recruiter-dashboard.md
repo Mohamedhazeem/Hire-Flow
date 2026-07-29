@@ -31,8 +31,8 @@ No REST API, no TanStack Query for initial load. The server component renders in
 export type DashboardData = {
   totalJobs: number;
   totalApplications: number;
-  pendingReviews: number;         // status = applied OR reviewing
-  newThisWeek: number;            // appliedAt >= 7 days ago
+  pendingReviews: number; // status = applied OR reviewing
+  newThisWeek: number; // appliedAt >= 7 days ago
   recentApplications: Array<{
     id: string;
     jobId: string;
@@ -48,6 +48,7 @@ export type DashboardData = {
 **Query function `getRecruiterDashboardStats(companyId: string): Promise<DashboardData>`**
 
 Runs 5 parallel Prisma calls via `Promise.all`:
+
 1. `prisma.job.count({ where: { companyId } })` — totalJobs
 2. `prisma.application.count({ where: { job: { companyId } } })` — totalApplications
 3. `prisma.application.count({ where: { job: { companyId }, status: { in: ["applied", "reviewing"] } } })` — pendingReviews
@@ -64,7 +65,7 @@ If `session.companyId` is null (recruiter hasn't created a company yet), return 
 export default async function RecruiterPage() {
   const session = await requireRole(["recruiter"]);
   if (!session.companyId) {
-    return <NoCompanyPrompt />;   // inline server component
+    return <NoCompanyPrompt />; // inline server component
   }
   const data = await getRecruiterDashboardStats(session.companyId);
   return <RecruiterDashboard data={data} />;
@@ -78,26 +79,29 @@ export default async function RecruiterPage() {
 Renders three sections:
 
 ### 1. Page Header
+
 - Title: "Dashboard"
 - Description: "Overview of your recruiting activity"
 
 ### 2. Stat Cards (`grid-cols-2 sm:grid-cols-4 gap-4`)
 
-| Card | Icon | Value | Description | Gradient |
-|------|------|-------|-------------|---------|
-| Total Jobs | `BriefcaseIcon` | `data.totalJobs` | `data.totalJobs === 1 ? "1 job posted" : \`${data.totalJobs} jobs posted\`` | emerald |
-| Total Applications | `FileTextIcon` | `data.totalApplications` | `"Across all job postings"` | purple |
-| Pending Reviews | `ClockIcon` | `data.pendingReviews` | `"Awaiting your decision"` | amber |
-| New This Week | `TrendingUpIcon` | `data.newThisWeek` | `"Last 7 days"` | blue |
+| Card               | Icon             | Value                    | Description                                                                 | Gradient |
+| ------------------ | ---------------- | ------------------------ | --------------------------------------------------------------------------- | -------- |
+| Total Jobs         | `BriefcaseIcon`  | `data.totalJobs`         | `data.totalJobs === 1 ? "1 job posted" : \`${data.totalJobs} jobs posted\`` | emerald  |
+| Total Applications | `FileTextIcon`   | `data.totalApplications` | `"Across all job postings"`                                                 | purple   |
+| Pending Reviews    | `ClockIcon`      | `data.pendingReviews`    | `"Awaiting your decision"`                                                  | amber    |
+| New This Week      | `TrendingUpIcon` | `data.newThisWeek`       | `"Last 7 days"`                                                             | blue     |
 
 All cards use the existing `StatCard` component from `components/ui/stat-card.tsx`.
 
 ### 3. Recent Applications Table
 
 If `data.recentApplications.length === 0`:
+
 - Show a centered empty state: "No applications yet. Post your first job to start receiving applications." with a "Create New Job" button.
 
 If `data.recentApplications.length > 0`:
+
 - Use existing `DataTable` component from `components/ui/data-table.tsx`
 - Columns: Applicant Name, Job Title, Status (StatusBadge), Applied Date
 - Each row links to `/recruiter/applicants/${application.id}` via an `onRowClick` or wrapping the cell in a Link
@@ -120,18 +124,18 @@ If `data.totalJobs === 0`, the "View All Jobs" button shows muted styling.
 
 ## Edge Cases
 
-| Edge case | Handling |
-|-----------|----------|
-| **No company** | `requireRole` succeeds but `companyId` is null → render `NoCompanyPrompt` with message + link to `/recruiter/company` |
-| **No jobs** | Stat cards show 0. Empty state in Recent Apps. "Create New Job" prominently styled. |
-| **No recent apps** | Empty state with message + CTA button |
-| **0 pending reviews** | Stat card shows 0, description: "No pending reviews" |
-| **0 new this week** | Stat card shows 0, description: "No new applications this week" |
-| **Large numbers** | `toLocaleString()` in StatCard |
-| **DB error** | `getRecruiterDashboardStats` throws → Next.js error boundary catches it |
-| **User name null** | Table shows "—" |
-| **Concurrent application** | Server-rendered snapshot is acceptable; navigation re-fetches |
-| **Application status mismatch** | Raw status shown; StatusBadge has fallback styling |
+| Edge case                       | Handling                                                                                                              |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **No company**                  | `requireRole` succeeds but `companyId` is null → render `NoCompanyPrompt` with message + link to `/recruiter/company` |
+| **No jobs**                     | Stat cards show 0. Empty state in Recent Apps. "Create New Job" prominently styled.                                   |
+| **No recent apps**              | Empty state with message + CTA button                                                                                 |
+| **0 pending reviews**           | Stat card shows 0, description: "No pending reviews"                                                                  |
+| **0 new this week**             | Stat card shows 0, description: "No new applications this week"                                                       |
+| **Large numbers**               | `toLocaleString()` in StatCard                                                                                        |
+| **DB error**                    | `getRecruiterDashboardStats` throws → Next.js error boundary catches it                                               |
+| **User name null**              | Table shows "—"                                                                                                       |
+| **Concurrent application**      | Server-rendered snapshot is acceptable; navigation re-fetches                                                         |
+| **Application status mismatch** | Raw status shown; StatusBadge has fallback styling                                                                    |
 
 ## Files to Create
 

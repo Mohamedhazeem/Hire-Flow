@@ -26,9 +26,9 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
 
   describe("N2: invalid userId in createNotification", () => {
     it("throws when the recipient user does not exist", async () => {
-      await expect(createNotification("does-not-exist", "application_status", { a: 1 })).rejects.toThrow(
-        /does not exist/i,
-      );
+      await expect(
+        createNotification("does-not-exist", "application_status", { a: 1 }),
+      ).rejects.toThrow(/does not exist/i);
     });
 
     it("creates a notification for a valid user and triggers Pusher", async () => {
@@ -57,7 +57,12 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
         ],
       });
 
-      const created = await triggerForCompany(company.id, "application_status", { x: 1 }, { excludeUserId: performer.id });
+      const created = await triggerForCompany(
+        company.id,
+        "application_status",
+        { x: 1 },
+        { excludeUserId: performer.id },
+      );
       // owner + other remain; performer excluded.
       const createdUserIds = created.map((n) => n.userId).sort();
       expect(createdUserIds).toEqual([owner.id, other.id].sort());
@@ -98,7 +103,13 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
       const user = await createTestUser({ role: Role.user });
       await prisma.user.update({ where: { id: user.id }, data: { banned: true } });
 
-      await sendEmail({ to: user.email, subject: "Verify", url: "https://x", type: "verification", userId: user.id });
+      await sendEmail({
+        to: user.email,
+        subject: "Verify",
+        url: "https://x",
+        type: "verification",
+        userId: user.id,
+      });
 
       expect(mocks.mockResendSend).not.toHaveBeenCalled();
     });
@@ -106,7 +117,13 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
     it("M1 (positive): email is sent for a non-banned user", async () => {
       const user = await createTestUser({ role: Role.user });
 
-      await sendEmail({ to: user.email, subject: "Verify", url: "https://x", type: "verification", userId: user.id });
+      await sendEmail({
+        to: user.email,
+        subject: "Verify",
+        url: "https://x",
+        type: "verification",
+        userId: user.id,
+      });
 
       expect(mocks.mockResendSend).toHaveBeenCalledTimes(1);
     });
@@ -115,7 +132,9 @@ describe("Notifications & Delivery (N2 / N4 / N5 / N6 / M1 / M2 / M3)", () => {
       const user = await createTestUser({ role: Role.user });
       mocks.mockPusherTrigger.mockRejectedValueOnce(new Error("pusher down"));
       // Should resolve without throwing despite the Pusher failure.
-      await expect(createNotification(user.id, "application_status", { a: 1 })).resolves.toBeDefined();
+      await expect(
+        createNotification(user.id, "application_status", { a: 1 }),
+      ).resolves.toBeDefined();
     });
 
     it("M3: missing Pusher key does not throw (no-op fallback)", async () => {

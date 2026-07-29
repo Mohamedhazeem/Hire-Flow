@@ -1,1 +1,207 @@
-{"nodes": [{"id": "d_hire_flow_next_hire_flow_prompts_md", "label": "HIRE_FLOW_PROMPTS.md", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_prompts_my_details", "label": "My details:", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_prompts_current_project_setup", "label": "Current project setup:", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L5"}, {"id": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "label": "**DEEPSEAK PROMPT:**", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L45"}, {"id": "hire_flow_next_hire_flow_prompts_project_context", "label": "PROJECT CONTEXT", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L73"}, {"id": "hire_flow_next_hire_flow_prompts_what_i_need_you_to_output", "label": "WHAT I NEED YOU TO OUTPUT", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L169"}, {"id": "hire_flow_next_hire_flow_prompts_supplementary_details_i_added_missing_parts_to_make_the_platform_complete", "label": "SUPPLEMENTARY DETAILS (I added missing parts to make the platform complete)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L191"}, {"id": "hire_flow_next_hire_flow_prompts_begin_your_output_now", "label": "Begin your output now.", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L249"}, {"id": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "label": "**CLAUDE OUTPUT REFINE WITH GEMENI**", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L251"}, {"id": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores", "label": "Step 0.6: TanStack Query Provider & Zustand Stores", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L426"}, {"id": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory", "label": "Step 0.7: Project Manifest (Agent Memory)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L455"}, {"id": "hire_flow_next_hire_flow_prompts_phase_2_recruiter", "label": "Phase 2: Recruiter", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L578"}, {"id": "hire_flow_next_hire_flow_prompts_phase_3_user", "label": "Phase 3: User", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L629"}], "edges": [{"source": "d_hire_flow_next_hire_flow_prompts_md", "target": "hire_flow_next_hire_flow_prompts_my_details", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_my_details", "target": "hire_flow_next_hire_flow_prompts_current_project_setup", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L5", "weight": 1.0}, {"source": "d_hire_flow_next_hire_flow_prompts_md", "target": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L45", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "target": "hire_flow_next_hire_flow_prompts_project_context", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L73", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "target": "hire_flow_next_hire_flow_prompts_what_i_need_you_to_output", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L169", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "target": "hire_flow_next_hire_flow_prompts_supplementary_details_i_added_missing_parts_to_make_the_platform_complete", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L191", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_deepseak_prompt", "target": "hire_flow_next_hire_flow_prompts_begin_your_output_now", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L249", "weight": 1.0}, {"source": "d_hire_flow_next_hire_flow_prompts_md", "target": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L251", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L426", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L455", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_phase_2_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L578", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_phase_3_user", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L629", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_hire_flow_prompts_md",
+      "label": "HIRE_FLOW_PROMPTS.md",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_my_details",
+      "label": "My details:",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_current_project_setup",
+      "label": "Current project setup:",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "label": "**DEEPSEAK PROMPT:**",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_project_context",
+      "label": "PROJECT CONTEXT",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L73"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_what_i_need_you_to_output",
+      "label": "WHAT I NEED YOU TO OUTPUT",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L169"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_supplementary_details_i_added_missing_parts_to_make_the_platform_complete",
+      "label": "SUPPLEMENTARY DETAILS (I added missing parts to make the platform complete)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L191"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_begin_your_output_now",
+      "label": "Begin your output now.",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L249"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "label": "**CLAUDE OUTPUT REFINE WITH GEMENI**",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L251"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores",
+      "label": "Step 0.6: TanStack Query Provider & Zustand Stores",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L426"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory",
+      "label": "Step 0.7: Project Manifest (Agent Memory)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L455"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_phase_2_recruiter",
+      "label": "Phase 2: Recruiter",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L578"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "label": "Phase 3: User",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L629"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_hire_flow_prompts_md",
+      "target": "hire_flow_next_hire_flow_prompts_my_details",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_my_details",
+      "target": "hire_flow_next_hire_flow_prompts_current_project_setup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_hire_flow_prompts_md",
+      "target": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "target": "hire_flow_next_hire_flow_prompts_project_context",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "target": "hire_flow_next_hire_flow_prompts_what_i_need_you_to_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "target": "hire_flow_next_hire_flow_prompts_supplementary_details_i_added_missing_parts_to_make_the_platform_complete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_deepseak_prompt",
+      "target": "hire_flow_next_hire_flow_prompts_begin_your_output_now",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_hire_flow_prompts_md",
+      "target": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L426",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L455",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_phase_2_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L578",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L629",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

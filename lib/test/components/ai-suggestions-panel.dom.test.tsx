@@ -6,14 +6,16 @@ import type { EnhancementsResponse } from "@/app/features/user/schema/resume-ai.
 
 function result(overrides: Partial<EnhancementsResponse> = {}): EnhancementsResponse {
   return {
-    suggestions: [{
-      type: "bullet_improvement",
-      section: "experience",
-      original: "Did stuff",
-      suggestion: "Led a team of 5 engineers",
-      reasoning: "Quantify impact",
-      priority: "high",
-    }],
+    suggestions: [
+      {
+        type: "bullet_improvement",
+        section: "experience",
+        original: "Did stuff",
+        suggestion: "Led a team of 5 engineers",
+        reasoning: "Quantify impact",
+        priority: "high",
+      },
+    ],
     overallScore: 82,
     projectedScore: 92,
     keyStrengths: ["Strong impact"],

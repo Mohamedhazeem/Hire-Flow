@@ -1,0 +1,287 @@
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_recruiter_analytics_filters_md",
+      "label": "recruiter-analytics-filters.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "label": "Execution Plan: Step 2.8 \u2014 Recruiter Analytics & Filters",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_design_decisions",
+      "label": "Design Decisions",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_prerequisite_rename_jobid_to_id",
+      "label": "Prerequisite: Rename `[jobId]` to `[id]`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_file_manifest",
+      "label": "File Manifest",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L41"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_1_schema_app_features_recruiter_schema_analytics_schema_ts",
+      "label": "1. Schema \u2014 `app/features/recruiter/schema/analytics.schema.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_2_queries_app_features_recruiter_queries_analytics_queries_ts",
+      "label": "2. Queries \u2014 `app/features/recruiter/queries/analytics-queries.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L84"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_3_api_routes",
+      "label": "3. API Routes",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L105"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_4_hook_app_features_recruiter_hooks_use_analytics_ts",
+      "label": "4. Hook \u2014 `app/features/recruiter/hooks/use-analytics.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_5_charts_3_reusable_components",
+      "label": "5. Charts (3 reusable components)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_6_filters_app_features_recruiter_components_filters_analytics_filter_bar_tsx",
+      "label": "6. Filters \u2014 `app/features/recruiter/components/filters/analytics-filter-bar.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L172"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_7_standalone_page_app_features_recruiter_components_recruiter_analytics_page_tsx",
+      "label": "7. Standalone Page \u2014 `app/features/recruiter/components/recruiter-analytics-page.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L188"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_8_per_job_page_app_features_recruiter_components_per_job_analytics_page_tsx",
+      "label": "8. Per-Job Page \u2014 `app/features/recruiter/components/per-job-analytics-page.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L205"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_9_tab_navigation_modify_job_detail_tsx",
+      "label": "9. Tab Navigation \u2014 Modify `job-detail.tsx`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L218"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_10_page_wrappers",
+      "label": "10. Page Wrappers",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L257"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_edge_cases_safeguards",
+      "label": "Edge Cases & Safeguards",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L280"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_implementation_order",
+      "label": "Implementation Order",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L300"
+    },
+    {
+      "id": "plans_recruiter_analytics_filters_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L314"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_recruiter_analytics_filters_md",
+      "target": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_design_decisions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_prerequisite_rename_jobid_to_id",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_file_manifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_1_schema_app_features_recruiter_schema_analytics_schema_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_2_queries_app_features_recruiter_queries_analytics_queries_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_3_api_routes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_4_hook_app_features_recruiter_hooks_use_analytics_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_5_charts_3_reusable_components",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_6_filters_app_features_recruiter_components_filters_analytics_filter_bar_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_7_standalone_page_app_features_recruiter_components_recruiter_analytics_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_8_per_job_page_app_features_recruiter_components_per_job_analytics_page_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_9_tab_navigation_modify_job_detail_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_file_manifest",
+      "target": "plans_recruiter_analytics_filters_10_page_wrappers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_edge_cases_safeguards",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L280",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_implementation_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_recruiter_analytics_filters_execution_plan_step_2_8_recruiter_analytics_filters",
+      "target": "plans_recruiter_analytics_filters_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/recruiter-analytics-filters.md",
+      "source_location": "L314",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

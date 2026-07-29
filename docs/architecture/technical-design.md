@@ -2,26 +2,26 @@
 
 ## Technology Stack
 
-| Layer | Technology | Version |
-|---|---|---|
-| Framework | Next.js (App Router, Turbopack) | 16.2.7 |
-| UI Library | React | 19.2.4 |
-| Language | TypeScript | 5.x (strict mode) |
-| Styling | Tailwind CSS | v4 |
-| Component Library | Shadcn UI | 4.11.0 |
-| Database | PostgreSQL + Prisma | 7.8.0 |
-| Authentication | Better Auth + Prisma Adapter | 1.6.15 |
-| Server State | TanStack Query | 5.101.0 |
-| Client State | Zustand | 5.0.14 |
-| Forms | React Hook Form + Zod | 7.78.0 / 4.4.3 |
-| Animations | Motion (formerly Framer Motion) | 12.40.0 |
-| Charts | Recharts | 3.8.1 |
-| Icons | Lucide React / React Icons | 1.18.0 / 5.6.0 |
-| Real-time | Pusher | 5.3.4 |
-| Email | Resend + React Email | 6.12.4 / 6.6.1 |
-| Date Handling | date-fns | 4.4.0 |
-| PDF Processing | pdf-parse, mammoth, react-pdf | — |
-| Runtime Validation | Zod v4 | 4.4.3 |
+| Layer              | Technology                      | Version           |
+| ------------------ | ------------------------------- | ----------------- |
+| Framework          | Next.js (App Router, Turbopack) | 16.2.7            |
+| UI Library         | React                           | 19.2.4            |
+| Language           | TypeScript                      | 5.x (strict mode) |
+| Styling            | Tailwind CSS                    | v4                |
+| Component Library  | Shadcn UI                       | 4.11.0            |
+| Database           | PostgreSQL + Prisma             | 7.8.0             |
+| Authentication     | Better Auth + Prisma Adapter    | 1.6.15            |
+| Server State       | TanStack Query                  | 5.101.0           |
+| Client State       | Zustand                         | 5.0.14            |
+| Forms              | React Hook Form + Zod           | 7.78.0 / 4.4.3    |
+| Animations         | Motion (formerly Framer Motion) | 12.40.0           |
+| Charts             | Recharts                        | 3.8.1             |
+| Icons              | Lucide React / React Icons      | 1.18.0 / 5.6.0    |
+| Real-time          | Pusher                          | 5.3.4             |
+| Email              | Resend + React Email            | 6.12.4 / 6.6.1    |
+| Date Handling      | date-fns                        | 4.4.0             |
+| PDF Processing     | pdf-parse, mammoth, react-pdf   | —                 |
+| Runtime Validation | Zod v4                          | 4.4.3             |
 
 ## Project Structure
 
@@ -74,16 +74,16 @@ features/<name>/
 
 ### Feature Modules
 
-| Module | Purpose |
-|---|---|
-| `admin` | Admin dashboard, user/recruiter management, team invites, job oversight, messaging |
-| `auth` | Authentication forms, server actions, session utilities, RBAC |
-| `jobs` | Public job listings, job cards, search, filters, apply flow |
-| `landing` | Home page sections (hero, featured jobs, testimonials, footer) |
-| `notifications` | Notification dropdown, activity feed page, hooks |
-| `public` | Public navbar, account popover, career resources, featured companies |
-| `recruiter` | Company management, job CRUD, applicant pipeline, analytics, export |
-| `user` | Profile, resumes, AI enhancement, applications, saved jobs |
+| Module          | Purpose                                                                            |
+| --------------- | ---------------------------------------------------------------------------------- |
+| `admin`         | Admin dashboard, user/recruiter management, team invites, job oversight, messaging |
+| `auth`          | Authentication forms, server actions, session utilities, RBAC                      |
+| `jobs`          | Public job listings, job cards, search, filters, apply flow                        |
+| `landing`       | Home page sections (hero, featured jobs, testimonials, footer)                     |
+| `notifications` | Notification dropdown, activity feed page, hooks                                   |
+| `public`        | Public navbar, account popover, career resources, featured companies               |
+| `recruiter`     | Company management, job CRUD, applicant pipeline, analytics, export                |
+| `user`          | Profile, resumes, AI enhancement, applications, saved jobs                         |
 
 ## Authentication
 
@@ -107,6 +107,7 @@ The proxy middleware enforces three tiers of access control:
 3. **Non-admin users** accessing `/admin/*` are redirected to `/unauthorized`.
 
 Route categories are defined in `lib/routes.ts`:
+
 - `AUTH_PAGES`: login, register, reset-password, verify-email
 - `PROTECTED_ROUTES`: admin, recruiter, user
 - `PUBLIC_CONTENT_PATHS`: /, /jobs, /resources, /privacy, /terms, /unauthorized
@@ -137,16 +138,16 @@ API routes use Next.js App Router Route Handlers under `app/api/`. Handlers are 
 
 Custom error classes in `lib/api-error.ts` map to HTTP status codes:
 
-| Error Class | HTTP Status |
-|---|---|
-| `UnauthorizedError` | 401 |
-| `ForbiddenError` | 403 |
-| `NotFoundError` | 404 |
-| `ValidationError` | 400 |
-| `ConflictError` | 409 |
-| `TooManyRequestsError` | 429 |
-| `ApiError` | dynamic (explicit status) |
-| `ZodError` | 422 (unprocessable entity) |
+| Error Class            | HTTP Status                |
+| ---------------------- | -------------------------- |
+| `UnauthorizedError`    | 401                        |
+| `ForbiddenError`       | 403                        |
+| `NotFoundError`        | 404                        |
+| `ValidationError`      | 400                        |
+| `ConflictError`        | 409                        |
+| `TooManyRequestsError` | 429                        |
+| `ApiError`             | dynamic (explicit status)  |
+| `ZodError`             | 422 (unprocessable entity) |
 
 The `api-wrapper.ts` catches these errors and returns structured JSON responses.
 
@@ -164,6 +165,7 @@ Validation failures include a `details` field with Zod-flattened field errors.
 ### Page Protection
 
 Each role's API routes enforce authorization:
+
 - **Admin routes**: `requireRole(["admin", "super_admin"])`
 - **Recruiter routes**: `requireRole(["recruiter"])` with tenant isolation via `companyId`
 - **User routes**: `requireRole(["user"])` with `userId`-scoped data access
@@ -174,6 +176,7 @@ Each role's API routes enforce authorization:
 Zod v4 is used for all input validation. Every mutation endpoint calls `schema.safeParse()` before writing to the database. A shared `validateWithZod()` utility in `lib/validator.ts` wraps this pattern.
 
 Key schemas:
+
 - `admin.schema.ts` — Admin query params, invite, ban, role management
 - `auth.schema.ts` — Login, registration, password reset
 - `company.schema.ts` — Company profile CRUD
@@ -192,22 +195,22 @@ Generated client output is at `app/generated/prisma/` (custom path via `prisma.c
 
 ### Core Models
 
-| Model | Description |
-|---|---|
-| `User` | Better Auth core user with `role`, `banned`, `banReason`, `banExpiresAt` |
-| `UserProfile` | Extended profile: headline, bio, skills, experience, salary, social links |
-| `Resume` | File uploads or builder-created JSON, soft-delete via `deletedAt`, per-user primary |
-| `Company` | Recruiter-owned company with industry, website, social links |
-| `CompanyTeamMember` | Memberships linking users to companies with a role |
-| `RecruiterInvite` | Email-based invites with token, accepted tracking |
-| `AdminInvite` | Admin team invites with token, accepted tracking |
-| `Job` | Job postings with dual visibility: recruiter `status` + admin `isActive` toggle |
-| `Application` | User applications with status, resume snapshot, rejection reason, interview details |
-| `ApplicationStatusChange` | Audit trail of every status transition (fromStatus → toStatus) |
-| `Message` | Threaded messages with file attachments, read status |
-| `Notification` | In-app notifications with type discriminator and JSON data |
-| `Bookmark` | User job bookmarks with `@@unique([userId, jobId])` |
-| `ResumeEnhancementLog` | Rate-limit counter for AI resume enhancement (5/day per user) |
+| Model                     | Description                                                                         |
+| ------------------------- | ----------------------------------------------------------------------------------- |
+| `User`                    | Better Auth core user with `role`, `banned`, `banReason`, `banExpiresAt`            |
+| `UserProfile`             | Extended profile: headline, bio, skills, experience, salary, social links           |
+| `Resume`                  | File uploads or builder-created JSON, soft-delete via `deletedAt`, per-user primary |
+| `Company`                 | Recruiter-owned company with industry, website, social links                        |
+| `CompanyTeamMember`       | Memberships linking users to companies with a role                                  |
+| `RecruiterInvite`         | Email-based invites with token, accepted tracking                                   |
+| `AdminInvite`             | Admin team invites with token, accepted tracking                                    |
+| `Job`                     | Job postings with dual visibility: recruiter `status` + admin `isActive` toggle     |
+| `Application`             | User applications with status, resume snapshot, rejection reason, interview details |
+| `ApplicationStatusChange` | Audit trail of every status transition (fromStatus → toStatus)                      |
+| `Message`                 | Threaded messages with file attachments, read status                                |
+| `Notification`            | In-app notifications with type discriminator and JSON data                          |
+| `Bookmark`                | User job bookmarks with `@@unique([userId, jobId])`                                 |
+| `ResumeEnhancementLog`    | Rate-limit counter for AI resume enhancement (5/day per user)                       |
 
 ### Enums
 
@@ -225,6 +228,7 @@ All client-side data fetching uses TanStack Query. A singleton `QueryClient` wit
 ### Zustand (Client State)
 
 Zustand manages UI-only client state:
+
 - `stores/ui-store.ts` — Sidebar toggle, theme preference (persisted)
 - `stores/chat-store.ts` — Active thread, unread message counts
 
@@ -278,12 +282,12 @@ This filter is applied in: `listPublicJobs()`, featured jobs queries, sitemap dy
 
 `lib/rate-limiter.ts` provides an in-memory sliding-window rate limiter with periodic cleanup (10 minutes):
 
-| Endpoint | Limit | Window |
-|---|---|---|
-| Job apply | 10 | per minute |
-| Job view tracking | 100 | per minute |
-| AI resume enhancement | 5 | per day (DB-backed via `ResumeEnhancementLog`) |
-| Recruiter messages | 20 | per hour per pair |
+| Endpoint              | Limit | Window                                         |
+| --------------------- | ----- | ---------------------------------------------- |
+| Job apply             | 10    | per minute                                     |
+| Job view tracking     | 100   | per minute                                     |
+| AI resume enhancement | 5     | per day (DB-backed via `ResumeEnhancementLog`) |
+| Recruiter messages    | 20    | per hour per pair                              |
 
 AI rate limiting uses the `ResumeEnhancementLog` database table for persistence across server restarts and instances.
 
@@ -292,6 +296,7 @@ AI rate limiting uses the `ResumeEnhancementLog` database table for persistence 
 `app/api/upload/route.ts` handles file uploads. The current implementation is a mock provider (local file storage). Production deployment requires replacement with S3 or Vercel Blob.
 
 File downloads are proxied through `app/api/files/download/route.ts` with authorization checks:
+
 - File owner can download their own files
 - Recruiters with an active relationship to the applicant can download
 - Admins can download any file
@@ -307,11 +312,11 @@ File downloads are proxied through `app/api/files/download/route.ts` with author
 
 `lib/ai-client.ts` provides a multi-provider AI abstraction supporting:
 
-| Provider | Model (default) | Env Variable |
-|---|---|---|
+| Provider  | Model (default)          | Env Variable        |
+| --------- | ------------------------ | ------------------- |
 | Anthropic | claude-sonnet-4-20250514 | `ANTHROPIC_API_KEY` |
-| OpenAI | gpt-4o | `OPENAI_API_KEY` |
-| Google | gemini-2.0-flash | `GEMINI_API_KEY` |
+| OpenAI    | gpt-4o                   | `OPENAI_API_KEY`    |
+| Google    | gemini-2.0-flash         | `GEMINI_API_KEY`    |
 
 Provider selection via `AI_PROVIDER` env variable. Returns `null` gracefully when no API key is configured.
 

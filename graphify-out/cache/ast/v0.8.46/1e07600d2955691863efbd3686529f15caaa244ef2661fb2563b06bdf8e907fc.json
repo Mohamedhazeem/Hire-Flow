@@ -1,0 +1,1007 @@
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_app_wide_rate_limiting_md",
+      "label": "app-wide-rate-limiting.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "label": "App-Wide Rate Limiting \u2014 Unified, Role-Aware, DB-Backed (Improved)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_current_state_before",
+      "label": "Current State (Before)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_target_architecture",
+      "label": "Target Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_dependency_hierarchy_unchanged",
+      "label": "Dependency Hierarchy (Unchanged)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_component_specifications",
+      "label": "Component Specifications",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_storage_prisma_ratelimit_model_reuse_no_schema_changes",
+      "label": "Storage: Prisma `RateLimit` Model (reuse, no schema changes)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L73"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_types_ts_shared_interfaces",
+      "label": "`types.ts` \u2014 Shared Interfaces",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_config_ts_immutable_comprehensively_validated",
+      "label": "`config.ts` \u2014 Immutable, Comprehensively Validated",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_clock_ts_time_abstraction",
+      "label": "`clock.ts` \u2014 Time Abstraction",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L283"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_repository_ts_pure_data_access_with_batched_cleanup",
+      "label": "`repository.ts` \u2014 Pure Data Access with Batched Cleanup",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L287"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_rate_limiter_ts_single_clock_capture_unchanged_interface",
+      "label": "`rate-limiter.ts` \u2014 Single Clock Capture, Unchanged Interface",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L377"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_middleware_ts_configurable_failure_strategy",
+      "label": "`middleware.ts` \u2014 Configurable Failure Strategy",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L422"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_metrics_ts_real_opentelemetry_not_stubs",
+      "label": "`metrics.ts` \u2014 Real OpenTelemetry (not stubs)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L478"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_telemetry_ts_requestid_and_trace_context_new",
+      "label": "`telemetry.ts` \u2014 RequestId and Trace Context (NEW)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L570"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_cleanup_ts_batched_cleanup_orchestrator",
+      "label": "`cleanup.ts` \u2014 Batched Cleanup Orchestrator",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L608"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_request_context_ts_asynclocalstorage_session_cache",
+      "label": "`request-context.ts` \u2014 AsyncLocalStorage Session Cache",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L650"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_ip_hash_ts_deterministic_ip_hashing",
+      "label": "`ip-hash.ts` \u2014 Deterministic IP Hashing",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L654"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_di_ts_single_wiring_point",
+      "label": "`di.ts` \u2014 Single Wiring Point",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L658"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_repository_fake_ts_in_memory_fakerepository_for_tests_new",
+      "label": "`repository.fake.ts` \u2014 In-Memory FakeRepository for Tests (NEW)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L662"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_repository_contract_tests_shared_behavioral_suite",
+      "label": "Repository Contract Tests (Shared Behavioral Suite)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L712"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_benchmark_regression_support",
+      "label": "Benchmark Regression Support",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L830"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_implementation_steps",
+      "label": "Implementation Steps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L880"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_1_create_lib_rate_limiting_types_ts",
+      "label": "Step 1: Create `lib/rate-limiting/types.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L882"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_2_create_lib_rate_limiting_config_ts",
+      "label": "Step 2: Create `lib/rate-limiting/config.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L886"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_3_create_lib_rate_limiting_clock_ts",
+      "label": "Step 3: Create `lib/rate-limiting/clock.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L890"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_4_create_lib_rate_limiting_repository_ts",
+      "label": "Step 4: Create `lib/rate-limiting/repository.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L894"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_5_create_lib_rate_limiting_rate_limiter_ts",
+      "label": "Step 5: Create `lib/rate-limiting/rate-limiter.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L898"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_6_create_lib_rate_limiting_middleware_ts",
+      "label": "Step 6: Create `lib/rate-limiting/middleware.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L902"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_7_create_lib_rate_limiting_di_ts",
+      "label": "Step 7: Create `lib/rate-limiting/di.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L906"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_8_create_lib_rate_limiting_metrics_ts",
+      "label": "Step 8: Create `lib/rate-limiting/metrics.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L910"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_9_create_lib_rate_limiting_telemetry_ts",
+      "label": "Step 9: Create `lib/rate-limiting/telemetry.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L914"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_10_create_lib_rate_limiting_request_context_ts",
+      "label": "Step 10: Create `lib/rate-limiting/request-context.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L918"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_11_modify_require_role_ts",
+      "label": "Step 11: Modify `require-role.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L922"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_12_create_lib_rate_limiting_ip_hash_ts",
+      "label": "Step 12: Create `lib/rate-limiting/ip-hash.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L926"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_13_create_lib_rate_limiting_cleanup_ts",
+      "label": "Step 13: Create `lib/rate-limiting/cleanup.ts`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L930"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_14_wire_existing_routes_same_as_consolidated_plan",
+      "label": "Step 14: Wire existing routes (same as consolidated plan)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L934"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_15_wire_unprotected_routes_same_as_consolidated_plan",
+      "label": "Step 15: Wire unprotected routes (same as consolidated plan)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L936"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "label": "Step 16: Write tests",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L938"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_16_1_unit_tests",
+      "label": "16.1 \u2014 Unit Tests",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L940"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_16_2_integration_tests_real_db",
+      "label": "16.2 \u2014 Integration Tests (real DB)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L956"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_16_3_contract_tests_shared_suite",
+      "label": "16.3 \u2014 Contract Tests (shared suite)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L966"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_16_4_e2e_same_as_consolidated_plan",
+      "label": "16.4 \u2014 E2E (same as consolidated plan)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L974"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_17_remove_dead_code_same_as_consolidated_plan",
+      "label": "Step 17: Remove dead code (same as consolidated plan)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L976"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_18_refactor_analytics_queries_ts_separate_concern",
+      "label": "Step 18: Refactor `analytics-queries.ts` (separate concern)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L978"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_19_keep_better_auth_s_built_in_rate_limiting",
+      "label": "Step 19: Keep Better Auth's built-in rate limiting",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L980"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_step_20_npm_run_build_npm_run_lint_npm_test",
+      "label": "Step 20: `npm run build && npm run lint && npm test`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L982"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_edge_cases_updated",
+      "label": "Edge Cases \u2014 Updated",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L986"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_big_o_analysis_updated",
+      "label": "Big O Analysis \u2014 Updated",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1009"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_updated_design_decisions",
+      "label": "Updated Design Decisions",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1033"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "label": "Documentation (Fix #10)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1051"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_1_dependency_graph",
+      "label": "1. Dependency Graph",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1055"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_2_request_flow",
+      "label": "2. Request Flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1079"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_3_cleanup_flow",
+      "label": "3. Cleanup Flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1083"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_4_failure_strategy_decision",
+      "label": "4. Failure Strategy Decision",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1104"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_5_observability",
+      "label": "5. Observability",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1118"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_6_repository_contract_expectations",
+      "label": "6. Repository Contract Expectations",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1126"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_7_extension_guide_adding_redis_strategy",
+      "label": "7. Extension Guide: Adding Redis Strategy",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1135"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_8_extension_guide_adding_new_endpoint_limits",
+      "label": "8. Extension Guide: Adding New Endpoint Limits",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1143"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_9_extension_guide_adding_new_roles",
+      "label": "9. Extension Guide: Adding New Roles",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1149"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_files_touched_complete",
+      "label": "Files Touched (Complete)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1156"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_rollout_order",
+      "label": "Rollout Order",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1214"
+    },
+    {
+      "id": "plans_app_wide_rate_limiting_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1249"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_app_wide_rate_limiting_md",
+      "target": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_current_state_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_target_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_target_architecture",
+      "target": "plans_app_wide_rate_limiting_dependency_hierarchy_unchanged",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_component_specifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_storage_prisma_ratelimit_model_reuse_no_schema_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_types_ts_shared_interfaces",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_config_ts_immutable_comprehensively_validated",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_clock_ts_time_abstraction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_repository_ts_pure_data_access_with_batched_cleanup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_rate_limiter_ts_single_clock_capture_unchanged_interface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_middleware_ts_configurable_failure_strategy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L422",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_metrics_ts_real_opentelemetry_not_stubs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L478",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_telemetry_ts_requestid_and_trace_context_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_cleanup_ts_batched_cleanup_orchestrator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L608",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_request_context_ts_asynclocalstorage_session_cache",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_ip_hash_ts_deterministic_ip_hashing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L654",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_di_ts_single_wiring_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L658",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_component_specifications",
+      "target": "plans_app_wide_rate_limiting_repository_fake_ts_in_memory_fakerepository_for_tests_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L662",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_repository_contract_tests_shared_behavioral_suite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L712",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_benchmark_regression_support",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L830",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_implementation_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L880",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_1_create_lib_rate_limiting_types_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L882",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_2_create_lib_rate_limiting_config_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L886",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_3_create_lib_rate_limiting_clock_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L890",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_4_create_lib_rate_limiting_repository_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L894",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_5_create_lib_rate_limiting_rate_limiter_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L898",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_6_create_lib_rate_limiting_middleware_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L902",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_7_create_lib_rate_limiting_di_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L906",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_8_create_lib_rate_limiting_metrics_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L910",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_9_create_lib_rate_limiting_telemetry_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L914",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_10_create_lib_rate_limiting_request_context_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L918",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_11_modify_require_role_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L922",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_12_create_lib_rate_limiting_ip_hash_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L926",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_13_create_lib_rate_limiting_cleanup_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L930",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_14_wire_existing_routes_same_as_consolidated_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L934",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_15_wire_unprotected_routes_same_as_consolidated_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L936",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L938",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "target": "plans_app_wide_rate_limiting_16_1_unit_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L940",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "target": "plans_app_wide_rate_limiting_16_2_integration_tests_real_db",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L956",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "target": "plans_app_wide_rate_limiting_16_3_contract_tests_shared_suite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L966",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_step_16_write_tests",
+      "target": "plans_app_wide_rate_limiting_16_4_e2e_same_as_consolidated_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L974",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_17_remove_dead_code_same_as_consolidated_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L976",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_18_refactor_analytics_queries_ts_separate_concern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L978",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_19_keep_better_auth_s_built_in_rate_limiting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L980",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_implementation_steps",
+      "target": "plans_app_wide_rate_limiting_step_20_npm_run_build_npm_run_lint_npm_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L982",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_edge_cases_updated",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L986",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_big_o_analysis_updated",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1009",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_updated_design_decisions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1033",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1051",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_1_dependency_graph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1055",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_2_request_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1079",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_3_cleanup_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1083",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_4_failure_strategy_decision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1104",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_5_observability",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1118",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_6_repository_contract_expectations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1126",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_7_extension_guide_adding_redis_strategy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1135",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_8_extension_guide_adding_new_endpoint_limits",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1143",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_documentation_fix_10",
+      "target": "plans_app_wide_rate_limiting_9_extension_guide_adding_new_roles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1149",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_files_touched_complete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1156",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_rollout_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1214",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_app_wide_rate_limiting_app_wide_rate_limiting_unified_role_aware_db_backed_improved",
+      "target": "plans_app_wide_rate_limiting_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/app-wide-rate-limiting.md",
+      "source_location": "L1249",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

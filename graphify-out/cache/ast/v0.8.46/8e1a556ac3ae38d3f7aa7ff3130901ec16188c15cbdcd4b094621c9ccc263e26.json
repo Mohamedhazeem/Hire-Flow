@@ -1,1 +1,319 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_1783392165444_solid_principles_refactor_md", "label": "1783392165444-solid-principles-refactor.md", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L1"}, {"id": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "label": "System-Wide SOLID Refactor Plan \u2014 Final v6", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L1"}, {"id": "plans_1783392165444_solid_principles_refactor_coverage_100_of_113_files_58_routes_27_hooks_13_queries_15_schemas", "label": "Coverage: 100% of 113 files (58 routes, 27 hooks, 13 queries, 15 schemas)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L3"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "label": "Phase Plan (8 Phases)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L7"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_1_message_route_handler_factory", "label": "Phase 1: Message Route Handler Factory", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L9"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_2_invite_cancel_route_factory", "label": "Phase 2: Invite Cancel Route Factory", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L12"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_3_search_route_handler_factory", "label": "Phase 3: Search Route Handler Factory", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L15"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_4_user_admin_domain_service_extraction", "label": "Phase 4: User & Admin Domain Service Extraction", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L18"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_5_job_repository_service", "label": "Phase 5: Job Repository + Service", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L44"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_6_application_service_layer", "label": "Phase 6: Application Service Layer", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L57"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_7_invite_hook_factory", "label": "Phase 7: Invite Hook Factory", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L68"}, {"id": "plans_1783392165444_solid_principles_refactor_phase_8_shared_prisma_select_constants", "label": "Phase 8: Shared Prisma Select Constants", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L71"}, {"id": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "label": "Final File Inventory", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L76"}, {"id": "plans_1783392165444_solid_principles_refactor_new_files_18", "label": "New Files (18)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L78"}, {"id": "plans_1783392165444_solid_principles_refactor_modified_files_35", "label": "Modified Files (35)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L102"}, {"id": "plans_1783392165444_solid_principles_refactor_unchanged_78_files", "label": "Unchanged (78 files)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L141"}, {"id": "plans_1783392165444_solid_principles_refactor_every_route_file_accounted_for_58_58", "label": "Every Route File Accounted For (58/58)", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L145"}, {"id": "plans_1783392165444_solid_principles_refactor_solid_score_projection", "label": "SOLID Score Projection", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L162"}, {"id": "plans_1783392165444_solid_principles_refactor_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L177"}, {"id": "plans_1783392165444_solid_principles_refactor_implementation_order", "label": "Implementation Order", "file_type": "document", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L187"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_1783392165444_solid_principles_refactor_md", "target": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_coverage_100_of_113_files_58_routes_27_hooks_13_queries_15_schemas", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L7", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_1_message_route_handler_factory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L9", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_2_invite_cancel_route_factory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L12", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_3_search_route_handler_factory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L15", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_4_user_admin_domain_service_extraction", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L18", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_5_job_repository_service", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L44", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_6_application_service_layer", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L57", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_7_invite_hook_factory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L68", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases", "target": "plans_1783392165444_solid_principles_refactor_phase_8_shared_prisma_select_constants", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L71", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L76", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "target": "plans_1783392165444_solid_principles_refactor_new_files_18", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L78", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "target": "plans_1783392165444_solid_principles_refactor_modified_files_35", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L102", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "target": "plans_1783392165444_solid_principles_refactor_unchanged_78_files", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L141", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_final_file_inventory", "target": "plans_1783392165444_solid_principles_refactor_every_route_file_accounted_for_58_58", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L145", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_solid_score_projection", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L162", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L177", "weight": 1.0}, {"source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6", "target": "plans_1783392165444_solid_principles_refactor_implementation_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md", "source_location": "L187", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_1783392165444_solid_principles_refactor_md",
+      "label": "1783392165444-solid-principles-refactor.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "label": "System-Wide SOLID Refactor Plan \u2014 Final v6",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_coverage_100_of_113_files_58_routes_27_hooks_13_queries_15_schemas",
+      "label": "Coverage: 100% of 113 files (58 routes, 27 hooks, 13 queries, 15 schemas)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "label": "Phase Plan (8 Phases)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_1_message_route_handler_factory",
+      "label": "Phase 1: Message Route Handler Factory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_2_invite_cancel_route_factory",
+      "label": "Phase 2: Invite Cancel Route Factory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_3_search_route_handler_factory",
+      "label": "Phase 3: Search Route Handler Factory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L15"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_4_user_admin_domain_service_extraction",
+      "label": "Phase 4: User & Admin Domain Service Extraction",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_5_job_repository_service",
+      "label": "Phase 5: Job Repository + Service",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_6_application_service_layer",
+      "label": "Phase 6: Application Service Layer",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_7_invite_hook_factory",
+      "label": "Phase 7: Invite Hook Factory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L68"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_phase_8_shared_prisma_select_constants",
+      "label": "Phase 8: Shared Prisma Select Constants",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "label": "Final File Inventory",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L76"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_new_files_18",
+      "label": "New Files (18)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_modified_files_35",
+      "label": "Modified Files (35)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L102"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_unchanged_78_files",
+      "label": "Unchanged (78 files)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L141"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_every_route_file_accounted_for_58_58",
+      "label": "Every Route File Accounted For (58/58)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_solid_score_projection",
+      "label": "SOLID Score Projection",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L162"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L177"
+    },
+    {
+      "id": "plans_1783392165444_solid_principles_refactor_implementation_order",
+      "label": "Implementation Order",
+      "file_type": "document",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L187"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_1783392165444_solid_principles_refactor_md",
+      "target": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_coverage_100_of_113_files_58_routes_27_hooks_13_queries_15_schemas",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_1_message_route_handler_factory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_2_invite_cancel_route_factory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_3_search_route_handler_factory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_4_user_admin_domain_service_extraction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_5_job_repository_service",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_6_application_service_layer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_7_invite_hook_factory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_phase_plan_8_phases",
+      "target": "plans_1783392165444_solid_principles_refactor_phase_8_shared_prisma_select_constants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "target": "plans_1783392165444_solid_principles_refactor_new_files_18",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "target": "plans_1783392165444_solid_principles_refactor_modified_files_35",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "target": "plans_1783392165444_solid_principles_refactor_unchanged_78_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_final_file_inventory",
+      "target": "plans_1783392165444_solid_principles_refactor_every_route_file_accounted_for_58_58",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_solid_score_projection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_1783392165444_solid_principles_refactor_system_wide_solid_refactor_plan_final_v6",
+      "target": "plans_1783392165444_solid_principles_refactor_implementation_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/1783392165444-solid-principles-refactor.md",
+      "source_location": "L187",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

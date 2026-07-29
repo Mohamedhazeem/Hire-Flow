@@ -80,9 +80,7 @@ describe("ChatHeader", () => {
   });
 
   it("disables the confirm button and shows a spinner while deleting", () => {
-    render(
-      <ChatHeader {...baseProps()} hasDeleteThread confirmDelete isDeletingThread />,
-    );
+    render(<ChatHeader {...baseProps()} hasDeleteThread confirmDelete isDeletingThread />);
     // While deleting the label text is replaced by a spinner icon.
     const buttons = screen.getAllByRole("button");
     const confirm = buttons.find((b) => b.querySelector(".animate-spin"));

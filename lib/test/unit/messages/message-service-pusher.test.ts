@@ -13,12 +13,14 @@ vi.mock("@/lib/prisma", () => ({
 }));
 
 vi.mock("@/lib/notifications", () => ({
-  createNotification: vi.fn(() => Promise.resolve({ id: "notif-1", userId: "rec-1", type: "new_message", data: {} })),
+  createNotification: vi.fn(() =>
+    Promise.resolve({ id: "notif-1", userId: "rec-1", type: "new_message", data: {} }),
+  ),
   fireNotification: vi.fn(),
 }));
 
-vi.mock("@/lib/repositories/rate-limit-repository", () => ({
-  countRecentMessages: vi.fn().mockResolvedValue(0),
+vi.mock("@/lib/rate-limiting/di", () => ({
+  rateLimiter: { enforce: vi.fn().mockResolvedValue(undefined) },
 }));
 
 vi.mock("@/lib/repositories/message-repository", () => {
@@ -81,11 +83,7 @@ describe("messageService Pusher events", () => {
         verifyRelation: mockVerifyRelation,
       });
 
-      expect(mockTrigger).toHaveBeenCalledWith(
-        "private-user-u2",
-        "message-unread-increment",
-        {},
-      );
+      expect(mockTrigger).toHaveBeenCalledWith("private-user-u2", "message-unread-increment", {});
     });
 
     it("still fires the existing new-message thread event", async () => {
@@ -131,11 +129,7 @@ describe("messageService Pusher events", () => {
         userId: "u1",
       });
 
-      expect(mockTrigger).toHaveBeenCalledWith(
-        "private-user-u1",
-        "message-unread-update",
-        {},
-      );
+      expect(mockTrigger).toHaveBeenCalledWith("private-user-u1", "message-unread-update", {});
     });
 
     it("does NOT fire message-unread-update when no unread messages", async () => {
@@ -195,9 +189,8 @@ describe("messageService Pusher events", () => {
       });
 
       expect(messageRepository.markAsRead).toHaveBeenCalledWith(["m1"]);
-      const { markThreadNotificationsRead } = await import(
-        "@/app/features/notifications/queries/notification-queries"
-      );
+      const { markThreadNotificationsRead } =
+        await import("@/app/features/notifications/queries/notification-queries");
       expect(markThreadNotificationsRead).toHaveBeenCalledWith("u1_u2", "u1");
     });
   });

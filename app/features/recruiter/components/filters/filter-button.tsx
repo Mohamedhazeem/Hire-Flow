@@ -12,13 +12,7 @@ type FilterButtonProps = {
   children?: ReactNode;
 };
 
-export function FilterButton({
-  icon,
-  label,
-  isActive,
-  badgeCount,
-  children,
-}: FilterButtonProps) {
+export function FilterButton({ icon, label, isActive, badgeCount, children }: FilterButtonProps) {
   return (
     <Popover>
       <PopoverTrigger className="outline-none" aria-label={label}>

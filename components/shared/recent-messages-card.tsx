@@ -51,7 +51,10 @@ export function RecentMessagesCard({
               </p>
               <p className="text-xs text-text-muted mt-1">
                 {new Date(msg.createdAt).toLocaleDateString(undefined, {
-                  month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
+                  month: "short",
+                  day: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
                 })}
               </p>
             </div>

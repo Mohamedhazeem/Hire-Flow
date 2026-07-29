@@ -3,7 +3,10 @@ import type { Page } from "@playwright/test";
 import { expect } from "@playwright/test";
 
 export class RecruiterApplicantDetailPage extends BasePage {
-  constructor(page: Page, private readonly applicationId: string) {
+  constructor(
+    page: Page,
+    private readonly applicationId: string,
+  ) {
     super(page);
   }
 

@@ -64,12 +64,20 @@ export async function exportApplicantsAsCsv(
   jobId: string,
   companyId: string,
   filters: { search?: string; status?: string },
+  signal?: AbortSignal,
 ): Promise<ReadableStream<Uint8Array>> {
   const encoder = new TextEncoder();
 
   let totalWritten = 0;
   let cursor: string | undefined;
   let hasMore = true;
+  let aborted = false;
+
+  if (signal) {
+    signal.addEventListener("abort", () => {
+      aborted = true;
+    });
+  }
 
   const where: Record<string, unknown> = {
     jobId,
@@ -94,7 +102,7 @@ export async function exportApplicantsAsCsv(
       try {
         controller.enqueue(encoder.encode("\uFEFF" + buildCsvRow(HEADERS)));
 
-        while (hasMore && totalWritten < MAX_ROWS) {
+        while (hasMore && totalWritten < MAX_ROWS && !aborted) {
           const take = Math.min(BATCH_SIZE, MAX_ROWS - totalWritten);
           const rows = await prisma.application.findMany({
             where,
@@ -119,6 +127,7 @@ export async function exportApplicantsAsCsv(
           const batch = hasMore ? rows.slice(0, take) : rows;
 
           for (const row of batch) {
+            if (aborted) break;
             controller.enqueue(encoder.encode(buildCsvRow(mapRow(row))));
           }
 
@@ -138,7 +147,9 @@ export async function exportApplicantsAsCsv(
 
         controller.close();
       } catch (e) {
-        controller.error(e);
+        if (!aborted) {
+          controller.error(e);
+        }
       }
     },
   });

@@ -46,10 +46,7 @@ export interface MockSession {
  * @param overrides - Optional field overrides applied to the user object.
  *                    Spread last, so any override wins over defaults.
  */
-export function mockSession(
-  role: string,
-  overrides?: Partial<MockSessionUser>
-): MockSession {
+export function mockSession(role: string, overrides?: Partial<MockSessionUser>): MockSession {
   const userId = overrides?.id ?? "mock-user-id";
 
   return {

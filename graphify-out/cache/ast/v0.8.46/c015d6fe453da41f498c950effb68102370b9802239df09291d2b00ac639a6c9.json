@@ -1,1 +1,367 @@
-{"nodes": [{"id": "d_hire_flow_next_hire_flow_testing_md", "label": "HIRE_FLOW_TESTING.md", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "label": "Hire Flow Next \u2014 Test Suite Build Plan", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_testing_stack_decision_locked_do_not_deviate", "label": "Stack Decision (locked \u2014 do not deviate)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L7"}, {"id": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "label": "Phase 0 \u2014 Test Infrastructure", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L30"}, {"id": "hire_flow_next_hire_flow_testing_step_0_0_vitest_config_ts_project_root", "label": "Step 0.0 \u2014 `vitest.config.ts` (project root)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L34"}, {"id": "hire_flow_next_hire_flow_testing_step_0_1_test_database_local_postgres_no_docker", "label": "Step 0.1 \u2014 Test database (local Postgres, no Docker)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L63"}, {"id": "hire_flow_next_hire_flow_testing_step_0_2_lib_test_global_setup_ts", "label": "Step 0.2 \u2014 `lib/test/global-setup.ts`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L81"}, {"id": "hire_flow_next_hire_flow_testing_step_0_3_lib_test_test_db_ts_isolated_prisma_client_never_import_lib_prisma_ts_in_tests", "label": "Step 0.3 \u2014 `lib/test/test-db.ts` (isolated Prisma client, never import `lib/prisma.ts` in tests)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L94"}, {"id": "hire_flow_next_hire_flow_testing_step_0_4_lib_test_reset_db_ts", "label": "Step 0.4 \u2014 `lib/test/reset-db.ts`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L104"}, {"id": "hire_flow_next_hire_flow_testing_step_0_5_lib_test_factories_ts", "label": "Step 0.5 \u2014 `lib/test/factories.ts`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L138"}, {"id": "hire_flow_next_hire_flow_testing_step_0_6_lib_test_auth_fixtures_ts", "label": "Step 0.6 \u2014 `lib/test/auth-fixtures.ts`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L188"}, {"id": "hire_flow_next_hire_flow_testing_step_0_7_external_service_mocks_lib_test_mocks_ts", "label": "Step 0.7 \u2014 External service mocks \u2014 `lib/test/mocks.ts`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L204"}, {"id": "hire_flow_next_hire_flow_testing_step_0_8_package_json_scripts_add_don_t_remove_existing", "label": "Step 0.8 \u2014 `package.json` scripts (add, don't remove existing)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L226"}, {"id": "hire_flow_next_hire_flow_testing_phase_1_unit_tests_pure_logic_no_db_no_network_highest_roi_first", "label": "Phase 1 \u2014 Unit Tests: Pure Logic (no DB, no network, highest ROI first)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L245"}, {"id": "hire_flow_next_hire_flow_testing_phase_2_integration_tests_api_routes_real_test_db", "label": "Phase 2 \u2014 Integration Tests: API Routes + Real Test DB", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L265"}, {"id": "hire_flow_next_hire_flow_testing_phase_3_component_tests_rtl_dom_test_tsx", "label": "Phase 3 \u2014 Component Tests (RTL, `*.dom.test.tsx`)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L301"}, {"id": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies", "label": "Phase 4 \u2014 E2E (Playwright, real browser, real Better Auth cookies)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L322"}, {"id": "hire_flow_next_hire_flow_testing_setup", "label": "Setup", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L324"}, {"id": "hire_flow_next_hire_flow_testing_journeys_one_spec_file_each_run_against_user_recruiter_admin_anonymous_projects_as_appropriate", "label": "Journeys (one spec file each, run against `user`/`recruiter`/`admin`/`anonymous` projects as appropriate)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L362"}, {"id": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci", "label": "Phase 5 \u2014 Coverage Gate & CI", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L379"}, {"id": "hire_flow_next_hire_flow_testing_raise_thresholds_incrementally", "label": "Raise thresholds incrementally", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L381"}, {"id": "hire_flow_next_hire_flow_testing_github_workflows_test_yml", "label": "`.github/workflows/test.yml`", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L385"}, {"id": "hire_flow_next_hire_flow_testing_execution_order_summary_paste_into_kilo_code_in_this_sequence", "label": "Execution Order Summary (paste into Kilo Code in this sequence)", "file_type": "document", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L421"}], "edges": [{"source": "d_hire_flow_next_hire_flow_testing_md", "target": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_stack_decision_locked_do_not_deviate", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L7", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L30", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_0_vitest_config_ts_project_root", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L34", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_1_test_database_local_postgres_no_docker", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L63", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_2_lib_test_global_setup_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L81", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_3_lib_test_test_db_ts_isolated_prisma_client_never_import_lib_prisma_ts_in_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L94", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_4_lib_test_reset_db_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L104", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_5_lib_test_factories_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L138", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_6_lib_test_auth_fixtures_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L188", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_7_external_service_mocks_lib_test_mocks_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L204", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure", "target": "hire_flow_next_hire_flow_testing_step_0_8_package_json_scripts_add_don_t_remove_existing", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L226", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_1_unit_tests_pure_logic_no_db_no_network_highest_roi_first", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L245", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_2_integration_tests_api_routes_real_test_db", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L265", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_3_component_tests_rtl_dom_test_tsx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L301", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L322", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies", "target": "hire_flow_next_hire_flow_testing_setup", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L324", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies", "target": "hire_flow_next_hire_flow_testing_journeys_one_spec_file_each_run_against_user_recruiter_admin_anonymous_projects_as_appropriate", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L362", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L379", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci", "target": "hire_flow_next_hire_flow_testing_raise_thresholds_incrementally", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L381", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci", "target": "hire_flow_next_hire_flow_testing_github_workflows_test_yml", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L385", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan", "target": "hire_flow_next_hire_flow_testing_execution_order_summary_paste_into_kilo_code_in_this_sequence", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_TESTING.md", "source_location": "L421", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_hire_flow_testing_md",
+      "label": "HIRE_FLOW_TESTING.md",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "label": "Hire Flow Next \u2014 Test Suite Build Plan",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_stack_decision_locked_do_not_deviate",
+      "label": "Stack Decision (locked \u2014 do not deviate)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "label": "Phase 0 \u2014 Test Infrastructure",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_0_vitest_config_ts_project_root",
+      "label": "Step 0.0 \u2014 `vitest.config.ts` (project root)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_1_test_database_local_postgres_no_docker",
+      "label": "Step 0.1 \u2014 Test database (local Postgres, no Docker)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_2_lib_test_global_setup_ts",
+      "label": "Step 0.2 \u2014 `lib/test/global-setup.ts`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L81"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_3_lib_test_test_db_ts_isolated_prisma_client_never_import_lib_prisma_ts_in_tests",
+      "label": "Step 0.3 \u2014 `lib/test/test-db.ts` (isolated Prisma client, never import `lib/prisma.ts` in tests)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L94"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_4_lib_test_reset_db_ts",
+      "label": "Step 0.4 \u2014 `lib/test/reset-db.ts`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L104"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_5_lib_test_factories_ts",
+      "label": "Step 0.5 \u2014 `lib/test/factories.ts`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L138"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_6_lib_test_auth_fixtures_ts",
+      "label": "Step 0.6 \u2014 `lib/test/auth-fixtures.ts`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L188"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_7_external_service_mocks_lib_test_mocks_ts",
+      "label": "Step 0.7 \u2014 External service mocks \u2014 `lib/test/mocks.ts`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L204"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_step_0_8_package_json_scripts_add_don_t_remove_existing",
+      "label": "Step 0.8 \u2014 `package.json` scripts (add, don't remove existing)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L226"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_1_unit_tests_pure_logic_no_db_no_network_highest_roi_first",
+      "label": "Phase 1 \u2014 Unit Tests: Pure Logic (no DB, no network, highest ROI first)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L245"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_2_integration_tests_api_routes_real_test_db",
+      "label": "Phase 2 \u2014 Integration Tests: API Routes + Real Test DB",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L265"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_3_component_tests_rtl_dom_test_tsx",
+      "label": "Phase 3 \u2014 Component Tests (RTL, `*.dom.test.tsx`)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L301"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies",
+      "label": "Phase 4 \u2014 E2E (Playwright, real browser, real Better Auth cookies)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L322"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_setup",
+      "label": "Setup",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L324"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_journeys_one_spec_file_each_run_against_user_recruiter_admin_anonymous_projects_as_appropriate",
+      "label": "Journeys (one spec file each, run against `user`/`recruiter`/`admin`/`anonymous` projects as appropriate)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L362"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci",
+      "label": "Phase 5 \u2014 Coverage Gate & CI",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L379"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_raise_thresholds_incrementally",
+      "label": "Raise thresholds incrementally",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L381"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_github_workflows_test_yml",
+      "label": "`.github/workflows/test.yml`",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L385"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_testing_execution_order_summary_paste_into_kilo_code_in_this_sequence",
+      "label": "Execution Order Summary (paste into Kilo Code in this sequence)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L421"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_hire_flow_testing_md",
+      "target": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_stack_decision_locked_do_not_deviate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_0_vitest_config_ts_project_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_1_test_database_local_postgres_no_docker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_2_lib_test_global_setup_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_3_lib_test_test_db_ts_isolated_prisma_client_never_import_lib_prisma_ts_in_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_4_lib_test_reset_db_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_5_lib_test_factories_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_6_lib_test_auth_fixtures_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_7_external_service_mocks_lib_test_mocks_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_0_test_infrastructure",
+      "target": "hire_flow_next_hire_flow_testing_step_0_8_package_json_scripts_add_don_t_remove_existing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_1_unit_tests_pure_logic_no_db_no_network_highest_roi_first",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_2_integration_tests_api_routes_real_test_db",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_3_component_tests_rtl_dom_test_tsx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies",
+      "target": "hire_flow_next_hire_flow_testing_setup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_4_e2e_playwright_real_browser_real_better_auth_cookies",
+      "target": "hire_flow_next_hire_flow_testing_journeys_one_spec_file_each_run_against_user_recruiter_admin_anonymous_projects_as_appropriate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L379",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci",
+      "target": "hire_flow_next_hire_flow_testing_raise_thresholds_incrementally",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_phase_5_coverage_gate_ci",
+      "target": "hire_flow_next_hire_flow_testing_github_workflows_test_yml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L385",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_testing_hire_flow_next_test_suite_build_plan",
+      "target": "hire_flow_next_hire_flow_testing_execution_order_summary_paste_into_kilo_code_in_this_sequence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_TESTING.md",
+      "source_location": "L421",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -11,7 +11,13 @@ export const jobRepository = {
   findByIdWithGates(id: string) {
     return prisma.job.findUnique({
       where: { id },
-      select: { status: true, isActive: true, applicationDeadline: true, recruiterId: true, companyId: true },
+      select: {
+        status: true,
+        isActive: true,
+        applicationDeadline: true,
+        recruiterId: true,
+        companyId: true,
+      },
     });
   },
 

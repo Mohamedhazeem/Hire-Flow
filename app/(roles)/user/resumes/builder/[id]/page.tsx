@@ -10,11 +10,7 @@ export const metadata = {
   description: "Edit your builder-created resume",
 };
 
-export default async function EditBuilderPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function EditBuilderPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await requireRole(["user"]);
 
   const { id } = await params;
@@ -40,10 +36,7 @@ export default async function EditBuilderPage({
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Edit Resume"
-        description="Update your builder-created resume"
-      />
+      <PageHeader title="Edit Resume" description="Update your builder-created resume" />
       <ResumeBuilderForm defaultValues={defaultValues} resumeId={id} />
     </div>
   );

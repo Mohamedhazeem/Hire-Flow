@@ -95,10 +95,7 @@ describe("AccountPopover", () => {
     expect(screen.getByText("Recruiter Rita")).toBeInTheDocument();
     expect(screen.getByText("rita@example.com")).toBeInTheDocument();
     expect(screen.getByText("Recruiter")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute(
-      "href",
-      "/recruiter",
-    );
+    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute("href", "/recruiter");
   });
 
   it("routes admins to the admin dashboard", async () => {
@@ -108,10 +105,7 @@ describe("AccountPopover", () => {
     const user = userEvent.setup();
     renderWithClient(<AccountPopover />);
     await user.click(screen.getByRole("button"));
-    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute(
-      "href",
-      "/admin",
-    );
+    expect(screen.getByRole("link", { name: /Dashboard/ })).toHaveAttribute("href", "/admin");
   });
 
   it("calls sign out when the Sign Out button is clicked", async () => {

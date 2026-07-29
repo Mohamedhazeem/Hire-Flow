@@ -22,6 +22,7 @@ import type { RecruiterJobRow } from "@/app/features/recruiter/queries/job-queri
 import { createRecruiterJobColumns } from "./recruiter-job-columns";
 import { SearchIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SkillFilter } from "@/app/features/jobs/components/skill-filter";
 
 const WORK_MODE_LABELS: Record<string, string> = {
   all: "All Modes",
@@ -47,6 +48,8 @@ export function RecruiterJobsTable() {
   const status = searchParams.get("status") ?? "all";
   const workMode = searchParams.get("workMode") ?? "all";
   const employmentType = searchParams.get("employmentType") ?? "all";
+  const rawSkills = searchParams.get("skills") ?? "";
+  const skills = rawSkills ? rawSkills.split(",").filter(Boolean) : [];
   const [searchInput, setSearchInput] = useState(search);
 
   const params: JobListParams = {
@@ -61,6 +64,7 @@ export function RecruiterJobsTable() {
       employmentType === "all"
         ? undefined
         : (employmentType as "full_time" | "part_time" | "contract" | "internship" | "freelance"),
+    skills: skills.length > 0 ? skills : undefined,
   };
 
   const { data, isLoading, isError } = useRecruiterJobs(params);
@@ -87,8 +91,13 @@ export function RecruiterJobsTable() {
 
   const handleToggle = useCallback(
     (jobId: string, currentStatus: string) => {
-      const nextStatus = currentStatus === "draft" ? "active" : "archived";
-      toggleStatus.mutate({ id: jobId, status: nextStatus });
+      if (currentStatus === "archived") {
+        toggleStatus.mutate({ id: jobId, status: "active" });
+      } else if (currentStatus === "draft") {
+        toggleStatus.mutate({ id: jobId, status: "active" });
+      } else {
+        toggleStatus.mutate({ id: jobId, status: "archived" });
+      }
     },
     [toggleStatus],
   );
@@ -203,6 +212,14 @@ export function RecruiterJobsTable() {
             ))}
           </SelectContent>
         </Select>
+        <SkillFilter
+          value={skills}
+          onChange={(next) =>
+            updateParams({
+              skills: next.join(","),
+            })
+          }
+        />
       </div>
 
       <DataTable

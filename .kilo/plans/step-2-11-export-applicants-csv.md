@@ -1,19 +1,20 @@
 # Step 2.11 — Export Applicants (CSV)
 
 ## Goal
+
 Add a per-job CSV export for the recruiter applicants table, delivering a correct, filter-aware, server-side generated file that triggers a browser download.
 
 ## Design Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| CSV library | None — manual RFC 4180 string builder | `csv-stringify`/`papaparse` not installed. Manual implementation is ~30 lines and simpler than adding a dependency. |
-| Large dataset handling | `ReadableStream` with cursor-batched fetches (1000 rows/batch) | Avoids OOM for 10K+ rows. Existing pagination lib's 100-row cap would require 100+ round trips. |
-| Encoding | UTF-8 with BOM (`\uFEFF`) | Ensures Excel (Windows) detects UTF-8 automatically. Without BOM, CJK characters display as `???`. |
-| Line endings | CRLF (`\r\n`) per RFC 4180 section 2 | Required for Excel compatibility. |
-| Date format | `yyyy-MM-dd HH:mm:ss` UTC via `date-fns` `format()` | ISO-like, timezone-agnostic, sortable. `date-fns` v4.4.0 already installed. |
-| Delivery | API route → `new NextResponse(csvString)` with `Content-Disposition: attachment` | Follows existing file download pattern at `app/api/files/download/route.ts`. |
-| Filters | Respects `search` and `status` searchParams from the current view | Export mirrors what the recruiter sees in the table. Default = all applicants for the job. |
+| Decision               | Choice                                                                           | Rationale                                                                                                           |
+| ---------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| CSV library            | None — manual RFC 4180 string builder                                            | `csv-stringify`/`papaparse` not installed. Manual implementation is ~30 lines and simpler than adding a dependency. |
+| Large dataset handling | `ReadableStream` with cursor-batched fetches (1000 rows/batch)                   | Avoids OOM for 10K+ rows. Existing pagination lib's 100-row cap would require 100+ round trips.                     |
+| Encoding               | UTF-8 with BOM (`\uFEFF`)                                                        | Ensures Excel (Windows) detects UTF-8 automatically. Without BOM, CJK characters display as `???`.                  |
+| Line endings           | CRLF (`\r\n`) per RFC 4180 section 2                                             | Required for Excel compatibility.                                                                                   |
+| Date format            | `yyyy-MM-dd HH:mm:ss` UTC via `date-fns` `format()`                              | ISO-like, timezone-agnostic, sortable. `date-fns` v4.4.0 already installed.                                         |
+| Delivery               | API route → `new NextResponse(csvString)` with `Content-Disposition: attachment` | Follows existing file download pattern at `app/api/files/download/route.ts`.                                        |
+| Filters                | Respects `search` and `status` searchParams from the current view                | Export mirrors what the recruiter sees in the table. Default = all applicants for the job.                          |
 
 ## Edge Cases Covered
 
@@ -34,22 +35,25 @@ Add a per-job CSV export for the recruiter applicants table, delivering a correc
 RFC 4180 CSV string builder utility:
 
 ```ts
-function escapeCsvField(value: string): string
+function escapeCsvField(value: string): string;
 ```
+
 - Coalesces null/undefined to `""`
 - Doubles any `"` → `""`
 - Returns `"${escaped}"` (always quoted for simplicity)
 
 ```ts
-function buildCsvRow(values: string[]): string
+function buildCsvRow(values: string[]): string;
 ```
+
 - Maps each value through `escapeCsvField`
 - Joins with `,`
 - Returns row + `\r\n`
 
 ```ts
-export function buildCsvString(headers: string[], rows: string[][]): string
+export function buildCsvString(headers: string[], rows: string[][]): string;
 ```
+
 - Prepends `\uFEFF` (BOM)
 - Writes header row
 - Maps each row through `buildCsvRow`
@@ -85,6 +89,7 @@ export async function exportApplicantsAsCsv(
   filters: { search?: string; status?: string },
 ): Promise<ReadableStream<Uint8Array>>
 ```
+
 - `ReadableStream` with `start(controller)`:
   1. Enqueue BOM + header row as Uint8Array
   2. Batch loop: fetch 1000 rows via cursor-based `findMany({ where: { jobId, job: { companyId }, status?, user: search? }, orderBy: { id: "asc" }, take: 1000, ...cursor, select: { id, status, rejectionReason, recruiterNote, interviewDate, meetingLink, offerDetails, appliedAt, updatedAt, user: { name, email }, job: { title, locations } } })`
@@ -160,7 +165,7 @@ import { DownloadIcon } from "lucide-react";
 >
   <DownloadIcon className="size-4" />
   <span className="hidden sm:inline">Export CSV</span>
-</a>
+</a>;
 ```
 
 The `download` attribute triggers native browser download. Using `<a>` instead of `<button>` avoids any JavaScript for the download flow.
@@ -195,6 +200,7 @@ npm run lint
 ```
 
 Manual test checklist:
+
 - [ ] Click Export CSV on a job with applicants → file downloads with correct filename
 - [ ] Apply a status filter → export contains only matching rows
 - [ ] Enter a search term → export contains only matching rows

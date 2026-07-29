@@ -246,7 +246,10 @@ model Job {
   updatedAt           DateTime       @updatedAt
   bookmarks           Bookmark[]
 
+  @@index([companyId, status, isActive])
   @@index([status, isActive, createdAt])
+  @@index([updatedAt])
+  @@index([viewCount])
   @@map("job")
 }
 
@@ -274,6 +277,8 @@ model Application {
   @@index([userId, status])
   @@index([appliedAt])
   @@index([jobId, appliedAt])
+  @@index([status])
+  @@index([jobId, status, appliedAt])
   @@map("application")
 }
 

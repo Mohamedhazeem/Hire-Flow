@@ -11,11 +11,15 @@ const validProfile = {
   ctc: 120000,
   ectc: 150000,
   experiences: [
-    { company: "Google", title: "Engineer", startDate: "2020-01", endDate: null, description: "Worked on web" },
+    {
+      company: "Google",
+      title: "Engineer",
+      startDate: "2020-01",
+      endDate: null,
+      description: "Worked on web",
+    },
   ],
-  socialLinks: [
-    { platform: "linkedin" as const, url: "https://linkedin.com/in/test" },
-  ],
+  socialLinks: [{ platform: "linkedin" as const, url: "https://linkedin.com/in/test" }],
 };
 
 describe("ProfileSchema", () => {
@@ -42,7 +46,10 @@ describe("ProfileSchema", () => {
   });
 
   it("accepts Unicode/emoji in headline", () => {
-    const result = ProfileSchema.safeParse({ ...validProfile, headline: "Software Engineer 🚀 @ Google" });
+    const result = ProfileSchema.safeParse({
+      ...validProfile,
+      headline: "Software Engineer 🚀 @ Google",
+    });
     expect(result.success).toBe(true);
   });
 
@@ -57,26 +64,38 @@ describe("ProfileSchema", () => {
   });
 
   it("rejects skills with 51 items", () => {
-    const result = ProfileSchema.safeParse({ ...validProfile, skills: Array.from({ length: 51 }, (_, i) => `Skill${i}`) });
+    const result = ProfileSchema.safeParse({
+      ...validProfile,
+      skills: Array.from({ length: 51 }, (_, i) => `Skill${i}`),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("skills");
   });
 
   it("deduplicates duplicate skills", () => {
-    const result = ProfileSchema.parse({ ...validProfile, skills: ["React", "React", "TypeScript"] });
+    const result = ProfileSchema.parse({
+      ...validProfile,
+      skills: ["React", "React", "TypeScript"],
+    });
     expect(result.skills).toEqual(["React", "TypeScript"]);
   });
 
   it("rejects experiences with 21 items", () => {
     const exp = { company: "C", title: "T", startDate: "2020-01", endDate: null };
-    const result = ProfileSchema.safeParse({ ...validProfile, experiences: Array.from({ length: 21 }, () => exp) });
+    const result = ProfileSchema.safeParse({
+      ...validProfile,
+      experiences: Array.from({ length: 21 }, () => exp),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("experiences");
   });
 
   it("rejects socialLinks with 11 items", () => {
     const link = { platform: "linkedin" as const, url: "https://linkedin.com/in/test" };
-    const result = ProfileSchema.safeParse({ ...validProfile, socialLinks: Array.from({ length: 11 }, () => link) });
+    const result = ProfileSchema.safeParse({
+      ...validProfile,
+      socialLinks: Array.from({ length: 11 }, () => link),
+    });
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues[0].path).toContain("socialLinks");
   });

@@ -6,11 +6,11 @@
 
 ## Route Map
 
-| Route | Component | Sidebar Link |
-|-------|-----------|-------------|
-| `/user` | **Activity Panel** — stats bar + compact recent 5 applications | "Dashboard" (LayoutDashboardIcon) |
-| `/user/applications` | **Full Applications List** — enhanced: company logo, updatedAt column | "Applications" (FileTextIcon) |
-| `/user/applications/[id]` | **Application Detail** — split into ≤150-line sub-components | — (linked from list) |
+| Route                     | Component                                                             | Sidebar Link                      |
+| ------------------------- | --------------------------------------------------------------------- | --------------------------------- |
+| `/user`                   | **Activity Panel** — stats bar + compact recent 5 applications        | "Dashboard" (LayoutDashboardIcon) |
+| `/user/applications`      | **Full Applications List** — enhanced: company logo, updatedAt column | "Applications" (FileTextIcon)     |
+| `/user/applications/[id]` | **Application Detail** — split into ≤150-line sub-components          | — (linked from list)              |
 
 All other user routes (`/user/profile`, `/user/resumes`, `/user/messages`, `/user/notifications`): **unchanged**.
 
@@ -56,7 +56,7 @@ export type UserApplicationRow = {
   jobId: string;
   jobTitle: string;
   companyName: string;
-  companyLogo: string | null;  // NEW
+  companyLogo: string | null; // NEW
   status: string;
   appliedAt: Date;
   updatedAt: Date;
@@ -64,6 +64,7 @@ export type UserApplicationRow = {
 ```
 
 Update Prisma include in `listUserApplications`:
+
 ```ts
 include: { job: { include: { company: { select: { name: true, logoUrl: true } } } } }
 ```
@@ -73,6 +74,7 @@ Map `companyLogo: company.logoUrl` in the cast section.
 ### 5. Applications Page — `app/features/user/components/applications-page.tsx` (≤150 lines)
 
 **Enhancements:**
+
 - Add company logo column (initial fallback): `hidden sm:table-cell`
 - Add `updatedAt` column: `hidden lg:table-cell` — "Last updated" relative date
 - Logo + company name in same cell for compact layout
@@ -82,14 +84,14 @@ Map `companyLogo: company.logoUrl` in the cast section.
 
 **Existing file** `application-detail-view.tsx` (315 lines) → split into:
 
-| Component | Lines | Purpose |
-|-----------|-------|---------|
-| `ApplicationDetailView` | ~30 | Orchestrator, fetches data, renders sub-components |
-| `ApplicationHeader` | ~80 | Job title, company logo, status badge, meta tags (location, work mode, salary) |
-| `ApplicationTimeline` | ~80 | Status timeline from `statusChanges` array |
-| `ApplicationSections` | ~80 | Rejection reason, interview details, offer details cards |
-| `ApplicationResumeSection` | ~50 | Resume snapshot (file download or builder data preview) |
-| `ApplicationActions` | ~50 | Withdraw button + error display |
+| Component                  | Lines | Purpose                                                                        |
+| -------------------------- | ----- | ------------------------------------------------------------------------------ |
+| `ApplicationDetailView`    | ~30   | Orchestrator, fetches data, renders sub-components                             |
+| `ApplicationHeader`        | ~80   | Job title, company logo, status badge, meta tags (location, work mode, salary) |
+| `ApplicationTimeline`      | ~80   | Status timeline from `statusChanges` array                                     |
+| `ApplicationSections`      | ~80   | Rejection reason, interview details, offer details cards                       |
+| `ApplicationResumeSection` | ~50   | Resume snapshot (file download or builder data preview)                        |
+| `ApplicationActions`       | ~50   | Withdraw button + error display                                                |
 
 All placed in `app/features/user/components/` with `application-` prefix.
 
@@ -102,6 +104,7 @@ All placed in `app/features/user/components/` with `application-` prefix.
 Update all `/user/applications` hardcoded paths where the destination should remain `/user/applications` (already correct). The apply success redirect in `apply-modal.tsx` should update from `/user/applications` to `/user/applications` (no change — it stays the full list page).
 
 **Files with back-link changes (application detail → `/user/applications`):**
+
 - `application-detail-view.tsx` lines 47, 65, 108 → already `/user/applications` (correct)
 - `apply-modal.tsx` line 103 → `router.push("/user/applications")` (correct — redirects to full list)
 - `revalidatePath("/user/applications")` in apply route line 113 → already correct
@@ -112,16 +115,19 @@ Update all `/user/applications` hardcoded paths where the destination should rem
 ## Edge Cases (47 total)
 
 ### Loading (3)
+
 1. Initial stats + activity load → dual skeleton
 2. Stats loaded, activity pending → partial skeleton
 3. Network failure → error banner + retry
 
 ### Empty States (3)
+
 4. Zero applications → "No applications yet" + Browse Jobs
 5. Zero applications but user has data elsewhere → fine
 6. Exactly 1 → singular text "1 application"
 
 ### Data Edge Cases (6)
+
 7. Withdrawn status → excluded from active/pipeline stats, shown in list (dimmed)
 8. Rejected without reason → status shown, no reason block in detail
 9. Hired → counted in Offers stat, green badge
@@ -130,46 +136,57 @@ Update all `/user/applications` hardcoded paths where the destination should rem
 12. Stats filtering: withdrawn excluded from active/interviews/offers
 
 ### Responsive (3)
+
 13. Stats: `grid-cols-2 sm:grid-cols-4`
 14. Desktop full apps table: logo `hidden sm:table-cell`, updatedAt `hidden lg:table-cell`
 15. Touch targets ≥36px on all buttons/filter pills
 
 ### Dashboard Scope (2)
+
 16. Dashboard shows 5 most recent, no inline filters
 17. Dashboard links to `/user/applications` for full list
 
 ### Back-link Accuracy (5)
+
 18–22. All 5 existing `/user/applications` references checked — all correct for new routing (detail stays at `/user/applications/[id]`, list stays at `/user/applications`)
 
 ### Notification Routing (2)
+
 23. `application_status` → `/user/applications/[id]` (not the list)
 24. Other notification types unchanged
 
 ### Component Size (1)
+
 25. `ApplicationDetailView` (315 lines) → 6 sub-components each ≤150 lines
 
 ### React Compiler (3)
+
 26–28. All `new Date(...)` in JSX are pure reads — safe under React Compiler. No `Date.now()` in render. Verified.
 
 ### Build & Lint (3)
+
 29. TypeScript strict: no `any`, `import type` for type-only imports
 30. ESLint: no unused imports
 31. 150-line cap on every component
 
 ### Stats API (4)
+
 32–35. `GET /api/user/applications/stats` returns `{ total, active, interviews, offers }`. Uses 4 parallel `count` + `findMany({ take: 5 })` in a single `Promise.all`. No pagination needed.
 
 ### Full Apps Page Enhancements (3)
+
 36. Company logo column: initial letter fallback if null
 37. UpdatedAt column: relative time ("2 days ago") via compact formatter
 38. Existing search/filter/pagination behavior preserved
 
 ### Withdraw (3)
+
 39. Withdraw success → redirect to `/user/applications` (full list)
 40. Withdraw blocked at `interview_scheduled`+ statuses — already enforced by route
 41. Withdraw notify recruiter — already built in Step 3.5
 
 ### Error States (2)
+
 42. Stats API fails → show partial dashboard (activity list only, stats show "—")
 43. Activity list fails → show stats only, error banner for list
 

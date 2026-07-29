@@ -22,9 +22,7 @@ export default async function BecomeEmployerPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-6">
-        Become an Employer
-      </h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-6">Become an Employer</h1>
 
       {role === Roles.ADMIN || role === Roles.SUPER_ADMIN ? (
         <div className="bg-warning/10 border border-warning/30 text-warning px-5 py-4 rounded-xl text-sm leading-relaxed">

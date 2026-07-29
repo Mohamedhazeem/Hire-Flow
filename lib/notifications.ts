@@ -88,4 +88,3 @@ export function fireNotification(promise: Promise<unknown>): void {
     console.error("[notifications] background notification failed:", error);
   });
 }
-

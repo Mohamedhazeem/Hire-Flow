@@ -54,7 +54,8 @@ export function AdminJobsTable({ statusFilter = "all" }: AdminJobsTableProps) {
   );
 
   const handleToggle = useCallback(
-    (jobId: string, currentActive: boolean) => toggleStatus.mutate({ jobId, isActive: !currentActive }),
+    (jobId: string, currentActive: boolean) =>
+      toggleStatus.mutate({ jobId, isActive: !currentActive }),
     [toggleStatus],
   );
 

@@ -22,5 +22,8 @@ if (!process.env.DATABASE_URL) {
 }
 
 console.warn("Seeding e2e test database...");
-execSync("npx tsx prisma/seed.ts", { stdio: "inherit", env: { ...process.env, ALLOW_SEED: "true" } });
+execSync("npx tsx prisma/seed.ts", {
+  stdio: "inherit",
+  env: { ...process.env, ALLOW_SEED: "true" },
+});
 console.warn("e2e seed complete.");

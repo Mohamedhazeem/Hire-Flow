@@ -1,1 +1,655 @@
-{"nodes": [{"id": "d_hire_flow_next_docs_architecture_technical_design_md", "label": "technical-design.md", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L1"}, {"id": "architecture_technical_design_technical_design", "label": "Technical Design", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L1"}, {"id": "architecture_technical_design_technology_stack", "label": "Technology Stack", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L3"}, {"id": "architecture_technical_design_project_structure", "label": "Project Structure", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L26"}, {"id": "architecture_technical_design_feature_based_modules", "label": "Feature-Based Modules", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L57"}, {"id": "architecture_technical_design_feature_modules", "label": "Feature Modules", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L75"}, {"id": "architecture_technical_design_authentication", "label": "Authentication", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L88"}, {"id": "architecture_technical_design_authorization_middleware", "label": "Authorization & Middleware", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L99"}, {"id": "architecture_technical_design_proxy_middleware_proxy_ts", "label": "Proxy Middleware (`proxy.ts`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L101"}, {"id": "architecture_technical_design_role_guard_requirerole", "label": "Role Guard (`requireRole`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L115"}, {"id": "architecture_technical_design_route_level_protection", "label": "Route-Level Protection", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L126"}, {"id": "architecture_technical_design_api_conventions", "label": "API Conventions", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L130"}, {"id": "architecture_technical_design_route_handlers", "label": "Route Handlers", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L132"}, {"id": "architecture_technical_design_error_handling", "label": "Error Handling", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L136"}, {"id": "architecture_technical_design_response_format", "label": "Response Format", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L153"}, {"id": "architecture_technical_design_page_protection", "label": "Page Protection", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L164"}, {"id": "architecture_technical_design_validation", "label": "Validation", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L172"}, {"id": "architecture_technical_design_prisma_schema_database", "label": "Prisma Schema & Database", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L189"}, {"id": "architecture_technical_design_core_models", "label": "Core Models", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L193"}, {"id": "architecture_technical_design_enums", "label": "Enums", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L212"}, {"id": "architecture_technical_design_data_fetching_state_management", "label": "Data Fetching & State Management", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L219"}, {"id": "architecture_technical_design_tanstack_query_server_state", "label": "TanStack Query (Server State)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L221"}, {"id": "architecture_technical_design_zustand_client_state", "label": "Zustand (Client State)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L225"}, {"id": "architecture_technical_design_prisma_queries_server_only", "label": "Prisma Queries (Server-Only)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L233"}, {"id": "architecture_technical_design_real_time_communication", "label": "Real-time Communication", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L237"}, {"id": "architecture_technical_design_pusher", "label": "Pusher", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L239"}, {"id": "architecture_technical_design_notifications", "label": "Notifications", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L249"}, {"id": "architecture_technical_design_resume_snapshot_architecture", "label": "Resume Snapshot Architecture", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L259"}, {"id": "architecture_technical_design_job_visibility_dual_gate", "label": "Job Visibility (Dual-Gate)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L268"}, {"id": "architecture_technical_design_rate_limiting", "label": "Rate Limiting", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L277"}, {"id": "architecture_technical_design_file_upload", "label": "File Upload", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L290"}, {"id": "architecture_technical_design_seo_structured_data", "label": "SEO & Structured Data", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L300"}, {"id": "architecture_technical_design_ai_integration", "label": "AI Integration", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L306"}, {"id": "architecture_technical_design_shared_ui_components", "label": "Shared UI Components", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L318"}, {"id": "architecture_technical_design_ui_primitives_components_ui", "label": "UI Primitives (`components/ui/`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L320"}, {"id": "architecture_technical_design_shared_components_components_shared", "label": "Shared Components (`components/shared/`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L324"}, {"id": "architecture_technical_design_layout_components_components_layout", "label": "Layout Components (`components/layout/`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L328"}, {"id": "architecture_technical_design_chat_components_components_chat", "label": "Chat Components (`components/chat/`)", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L332"}, {"id": "architecture_technical_design_naming_conventions", "label": "Naming Conventions", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L336"}, {"id": "architecture_technical_design_coding_standards", "label": "Coding Standards", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L345"}, {"id": "architecture_technical_design_css_theming", "label": "CSS & Theming", "file_type": "document", "source_file": "docs/architecture/technical-design.md", "source_location": "L354"}], "edges": [{"source": "d_hire_flow_next_docs_architecture_technical_design_md", "target": "architecture_technical_design_technical_design", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L1", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_technology_stack", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L3", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_project_structure", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L26", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_feature_based_modules", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L57", "weight": 1.0}, {"source": "architecture_technical_design_feature_based_modules", "target": "architecture_technical_design_feature_modules", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L75", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_authentication", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L88", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_authorization_middleware", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L99", "weight": 1.0}, {"source": "architecture_technical_design_authorization_middleware", "target": "architecture_technical_design_proxy_middleware_proxy_ts", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L101", "weight": 1.0}, {"source": "architecture_technical_design_authorization_middleware", "target": "architecture_technical_design_role_guard_requirerole", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L115", "weight": 1.0}, {"source": "architecture_technical_design_authorization_middleware", "target": "architecture_technical_design_route_level_protection", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L126", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_api_conventions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L130", "weight": 1.0}, {"source": "architecture_technical_design_api_conventions", "target": "architecture_technical_design_route_handlers", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L132", "weight": 1.0}, {"source": "architecture_technical_design_api_conventions", "target": "architecture_technical_design_error_handling", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L136", "weight": 1.0}, {"source": "architecture_technical_design_api_conventions", "target": "architecture_technical_design_response_format", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L153", "weight": 1.0}, {"source": "architecture_technical_design_api_conventions", "target": "architecture_technical_design_page_protection", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L164", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L172", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_prisma_schema_database", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L189", "weight": 1.0}, {"source": "architecture_technical_design_prisma_schema_database", "target": "architecture_technical_design_core_models", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L193", "weight": 1.0}, {"source": "architecture_technical_design_prisma_schema_database", "target": "architecture_technical_design_enums", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L212", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_data_fetching_state_management", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L219", "weight": 1.0}, {"source": "architecture_technical_design_data_fetching_state_management", "target": "architecture_technical_design_tanstack_query_server_state", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L221", "weight": 1.0}, {"source": "architecture_technical_design_data_fetching_state_management", "target": "architecture_technical_design_zustand_client_state", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L225", "weight": 1.0}, {"source": "architecture_technical_design_data_fetching_state_management", "target": "architecture_technical_design_prisma_queries_server_only", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L233", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_real_time_communication", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L237", "weight": 1.0}, {"source": "architecture_technical_design_real_time_communication", "target": "architecture_technical_design_pusher", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L239", "weight": 1.0}, {"source": "architecture_technical_design_real_time_communication", "target": "architecture_technical_design_notifications", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L249", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_resume_snapshot_architecture", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L259", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_job_visibility_dual_gate", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L268", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_rate_limiting", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L277", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_file_upload", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L290", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_seo_structured_data", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L300", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_ai_integration", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L306", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_shared_ui_components", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L318", "weight": 1.0}, {"source": "architecture_technical_design_shared_ui_components", "target": "architecture_technical_design_ui_primitives_components_ui", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L320", "weight": 1.0}, {"source": "architecture_technical_design_shared_ui_components", "target": "architecture_technical_design_shared_components_components_shared", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L324", "weight": 1.0}, {"source": "architecture_technical_design_shared_ui_components", "target": "architecture_technical_design_layout_components_components_layout", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L328", "weight": 1.0}, {"source": "architecture_technical_design_shared_ui_components", "target": "architecture_technical_design_chat_components_components_chat", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L332", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_naming_conventions", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L336", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_coding_standards", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L345", "weight": 1.0}, {"source": "architecture_technical_design_technical_design", "target": "architecture_technical_design_css_theming", "relation": "contains", "confidence": "EXTRACTED", "source_file": "docs/architecture/technical-design.md", "source_location": "L354", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_docs_architecture_technical_design_md",
+      "label": "technical-design.md",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "architecture_technical_design_technical_design",
+      "label": "Technical Design",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "architecture_technical_design_technology_stack",
+      "label": "Technology Stack",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "architecture_technical_design_project_structure",
+      "label": "Project Structure",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "architecture_technical_design_feature_based_modules",
+      "label": "Feature-Based Modules",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "architecture_technical_design_feature_modules",
+      "label": "Feature Modules",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L75"
+    },
+    {
+      "id": "architecture_technical_design_authentication",
+      "label": "Authentication",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L88"
+    },
+    {
+      "id": "architecture_technical_design_authorization_middleware",
+      "label": "Authorization & Middleware",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L99"
+    },
+    {
+      "id": "architecture_technical_design_proxy_middleware_proxy_ts",
+      "label": "Proxy Middleware (`proxy.ts`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L101"
+    },
+    {
+      "id": "architecture_technical_design_role_guard_requirerole",
+      "label": "Role Guard (`requireRole`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L115"
+    },
+    {
+      "id": "architecture_technical_design_route_level_protection",
+      "label": "Route-Level Protection",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L126"
+    },
+    {
+      "id": "architecture_technical_design_api_conventions",
+      "label": "API Conventions",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L130"
+    },
+    {
+      "id": "architecture_technical_design_route_handlers",
+      "label": "Route Handlers",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L132"
+    },
+    {
+      "id": "architecture_technical_design_error_handling",
+      "label": "Error Handling",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L136"
+    },
+    {
+      "id": "architecture_technical_design_response_format",
+      "label": "Response Format",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "architecture_technical_design_page_protection",
+      "label": "Page Protection",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L164"
+    },
+    {
+      "id": "architecture_technical_design_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L172"
+    },
+    {
+      "id": "architecture_technical_design_prisma_schema_database",
+      "label": "Prisma Schema & Database",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L189"
+    },
+    {
+      "id": "architecture_technical_design_core_models",
+      "label": "Core Models",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L193"
+    },
+    {
+      "id": "architecture_technical_design_enums",
+      "label": "Enums",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L212"
+    },
+    {
+      "id": "architecture_technical_design_data_fetching_state_management",
+      "label": "Data Fetching & State Management",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L219"
+    },
+    {
+      "id": "architecture_technical_design_tanstack_query_server_state",
+      "label": "TanStack Query (Server State)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L221"
+    },
+    {
+      "id": "architecture_technical_design_zustand_client_state",
+      "label": "Zustand (Client State)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "architecture_technical_design_prisma_queries_server_only",
+      "label": "Prisma Queries (Server-Only)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L233"
+    },
+    {
+      "id": "architecture_technical_design_real_time_communication",
+      "label": "Real-time Communication",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L237"
+    },
+    {
+      "id": "architecture_technical_design_pusher",
+      "label": "Pusher",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L239"
+    },
+    {
+      "id": "architecture_technical_design_notifications",
+      "label": "Notifications",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L249"
+    },
+    {
+      "id": "architecture_technical_design_resume_snapshot_architecture",
+      "label": "Resume Snapshot Architecture",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L259"
+    },
+    {
+      "id": "architecture_technical_design_job_visibility_dual_gate",
+      "label": "Job Visibility (Dual-Gate)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L268"
+    },
+    {
+      "id": "architecture_technical_design_rate_limiting",
+      "label": "Rate Limiting",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L277"
+    },
+    {
+      "id": "architecture_technical_design_file_upload",
+      "label": "File Upload",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L290"
+    },
+    {
+      "id": "architecture_technical_design_seo_structured_data",
+      "label": "SEO & Structured Data",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L300"
+    },
+    {
+      "id": "architecture_technical_design_ai_integration",
+      "label": "AI Integration",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L306"
+    },
+    {
+      "id": "architecture_technical_design_shared_ui_components",
+      "label": "Shared UI Components",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L318"
+    },
+    {
+      "id": "architecture_technical_design_ui_primitives_components_ui",
+      "label": "UI Primitives (`components/ui/`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L320"
+    },
+    {
+      "id": "architecture_technical_design_shared_components_components_shared",
+      "label": "Shared Components (`components/shared/`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L324"
+    },
+    {
+      "id": "architecture_technical_design_layout_components_components_layout",
+      "label": "Layout Components (`components/layout/`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L328"
+    },
+    {
+      "id": "architecture_technical_design_chat_components_components_chat",
+      "label": "Chat Components (`components/chat/`)",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L332"
+    },
+    {
+      "id": "architecture_technical_design_naming_conventions",
+      "label": "Naming Conventions",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L336"
+    },
+    {
+      "id": "architecture_technical_design_coding_standards",
+      "label": "Coding Standards",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L345"
+    },
+    {
+      "id": "architecture_technical_design_css_theming",
+      "label": "CSS & Theming",
+      "file_type": "document",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L354"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_docs_architecture_technical_design_md",
+      "target": "architecture_technical_design_technical_design",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_technology_stack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_project_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_feature_based_modules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_feature_based_modules",
+      "target": "architecture_technical_design_feature_modules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_authentication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_authorization_middleware",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_authorization_middleware",
+      "target": "architecture_technical_design_proxy_middleware_proxy_ts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_authorization_middleware",
+      "target": "architecture_technical_design_role_guard_requirerole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_authorization_middleware",
+      "target": "architecture_technical_design_route_level_protection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_api_conventions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_api_conventions",
+      "target": "architecture_technical_design_route_handlers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_api_conventions",
+      "target": "architecture_technical_design_error_handling",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_api_conventions",
+      "target": "architecture_technical_design_response_format",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_api_conventions",
+      "target": "architecture_technical_design_page_protection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_prisma_schema_database",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_prisma_schema_database",
+      "target": "architecture_technical_design_core_models",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_prisma_schema_database",
+      "target": "architecture_technical_design_enums",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_data_fetching_state_management",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_data_fetching_state_management",
+      "target": "architecture_technical_design_tanstack_query_server_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_data_fetching_state_management",
+      "target": "architecture_technical_design_zustand_client_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_data_fetching_state_management",
+      "target": "architecture_technical_design_prisma_queries_server_only",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_real_time_communication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_real_time_communication",
+      "target": "architecture_technical_design_pusher",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_real_time_communication",
+      "target": "architecture_technical_design_notifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_resume_snapshot_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_job_visibility_dual_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_rate_limiting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_file_upload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_seo_structured_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_ai_integration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_shared_ui_components",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_shared_ui_components",
+      "target": "architecture_technical_design_ui_primitives_components_ui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_shared_ui_components",
+      "target": "architecture_technical_design_shared_components_components_shared",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_shared_ui_components",
+      "target": "architecture_technical_design_layout_components_components_layout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_shared_ui_components",
+      "target": "architecture_technical_design_chat_components_components_chat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_naming_conventions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_coding_standards",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "architecture_technical_design_technical_design",
+      "target": "architecture_technical_design_css_theming",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/architecture/technical-design.md",
+      "source_location": "L354",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

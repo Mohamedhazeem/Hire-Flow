@@ -10,7 +10,8 @@ const providers = [
     label: "Continue with Google",
     icon: FcGoogle,
     // Google brand styles
-    styles: "bg-bg-surface text-text-body border-border hover:bg-bg-elevated focus-visible:ring-brand/20",
+    styles:
+      "bg-bg-surface text-text-body border-border hover:bg-bg-elevated focus-visible:ring-brand/20",
     iconStyles: "text-white",
   },
 ];

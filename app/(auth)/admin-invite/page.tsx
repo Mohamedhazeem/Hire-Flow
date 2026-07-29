@@ -49,9 +49,7 @@ export default async function AdminInvitePage({ searchParams }: Props) {
       <div className="min-h-screen flex items-center justify-center bg-bg-page px-4">
         <div className="relative w-full max-w-md bg-bg-elevated/50 backdrop-blur-xl border border-border/50 rounded-2xl shadow-brand p-8 text-center space-y-4">
           <h1 className="text-2xl font-bold text-text-heading">Already Accepted</h1>
-          <p className="text-text-muted">
-            This invitation has already been accepted.
-          </p>
+          <p className="text-text-muted">This invitation has already been accepted.</p>
         </div>
       </div>
     );

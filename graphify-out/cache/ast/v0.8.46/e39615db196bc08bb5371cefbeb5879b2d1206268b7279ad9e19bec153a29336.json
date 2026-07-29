@@ -1,0 +1,319 @@
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_step_3_2_resumes_md",
+      "label": "step-3-2-resumes.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "label": "Step 3.2 \u2014 Resumes & In-App Builder",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_step_3_2_resumes_goal",
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_step_3_2_resumes_prerequisite_changes_3_files",
+      "label": "Prerequisite Changes (3 files)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "plans_step_3_2_resumes_resume_model_after_migration",
+      "label": "Resume model (after migration)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L15"
+    },
+    {
+      "id": "plans_step_3_2_resumes_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "plans_step_3_2_resumes_files_to_create_14_files",
+      "label": "Files to Create (14 files)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L46"
+    },
+    {
+      "id": "plans_step_3_2_resumes_data_flow",
+      "label": "Data Flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L64"
+    },
+    {
+      "id": "plans_step_3_2_resumes_upload_flow",
+      "label": "Upload flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "plans_step_3_2_resumes_builder_flow",
+      "label": "Builder flow",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L72"
+    },
+    {
+      "id": "plans_step_3_2_resumes_key_design_decisions",
+      "label": "Key Design Decisions",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L79"
+    },
+    {
+      "id": "plans_step_3_2_resumes_ui_layout",
+      "label": "UI Layout",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L86"
+    },
+    {
+      "id": "plans_step_3_2_resumes_user_resumes",
+      "label": "`/user/resumes`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L88"
+    },
+    {
+      "id": "plans_step_3_2_resumes_resumecard",
+      "label": "ResumeCard",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L98"
+    },
+    {
+      "id": "plans_step_3_2_resumes_user_resumes_builder",
+      "label": "`/user/resumes/builder`",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L112"
+    },
+    {
+      "id": "plans_step_3_2_resumes_edge_cases_covered",
+      "label": "Edge Cases Covered",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L122"
+    },
+    {
+      "id": "plans_step_3_2_resumes_validation_steps",
+      "label": "Validation Steps",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L151"
+    },
+    {
+      "id": "plans_step_3_2_resumes_dependencies",
+      "label": "Dependencies",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L164"
+    },
+    {
+      "id": "plans_step_3_2_resumes_migration_rollout",
+      "label": "Migration / Rollout",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L177"
+    },
+    {
+      "id": "plans_step_3_2_resumes_open_deferred",
+      "label": "Open / Deferred",
+      "file_type": "document",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L182"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_step_3_2_resumes_md",
+      "target": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_goal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_prerequisite_changes_3_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_prerequisite_changes_3_files",
+      "target": "plans_step_3_2_resumes_resume_model_after_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_files_to_create_14_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_data_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_data_flow",
+      "target": "plans_step_3_2_resumes_upload_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_data_flow",
+      "target": "plans_step_3_2_resumes_builder_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_key_design_decisions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_ui_layout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_ui_layout",
+      "target": "plans_step_3_2_resumes_user_resumes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_ui_layout",
+      "target": "plans_step_3_2_resumes_resumecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_ui_layout",
+      "target": "plans_step_3_2_resumes_user_resumes_builder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_edge_cases_covered",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_validation_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_migration_rollout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_step_3_2_resumes_step_3_2_resumes_in_app_builder",
+      "target": "plans_step_3_2_resumes_open_deferred",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/step-3-2-resumes.md",
+      "source_location": "L182",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

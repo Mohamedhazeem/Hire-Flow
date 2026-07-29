@@ -1,1 +1,191 @@
-{"nodes": [{"id": "d_hire_flow_next_kilo_plans_footer_pages_plan_md", "label": "footer-pages-plan.md", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L1"}, {"id": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "label": "Plan: Footer Pages, Social Links & For Employers Fix", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L1"}, {"id": "plans_footer_pages_plan_bug_fix_for_employers_link", "label": "Bug Fix \u2014 For Employers Link", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L3"}, {"id": "plans_footer_pages_plan_files", "label": "Files", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L9"}, {"id": "plans_footer_pages_plan_new_static_pages_5", "label": "New Static Pages (5)", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L17"}, {"id": "plans_footer_pages_plan_env_vars_social_links_contact_email", "label": "Env Vars \u2014 Social Links & Contact Email", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L33"}, {"id": "plans_footer_pages_plan_footer_changes_social_icons", "label": "Footer Changes \u2014 Social Icons", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L48"}, {"id": "plans_footer_pages_plan_route_config", "label": "Route Config", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L82"}, {"id": "plans_footer_pages_plan_tests", "label": "Tests", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L92"}, {"id": "plans_footer_pages_plan_execution_order", "label": "Execution Order", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L100"}, {"id": "plans_footer_pages_plan_validation", "label": "Validation", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L109"}, {"id": "plans_footer_pages_plan_constraints", "label": "Constraints", "file_type": "document", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L117"}], "edges": [{"source": "d_hire_flow_next_kilo_plans_footer_pages_plan_md", "target": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L1", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_bug_fix_for_employers_link", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L3", "weight": 1.0}, {"source": "plans_footer_pages_plan_bug_fix_for_employers_link", "target": "plans_footer_pages_plan_files", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L9", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_new_static_pages_5", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L17", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_env_vars_social_links_contact_email", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L33", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_footer_changes_social_icons", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L48", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_route_config", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L82", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_tests", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L92", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_execution_order", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L100", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_validation", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L109", "weight": 1.0}, {"source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix", "target": "plans_footer_pages_plan_constraints", "relation": "contains", "confidence": "EXTRACTED", "source_file": ".kilo/plans/footer-pages-plan.md", "source_location": "L117", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_kilo_plans_footer_pages_plan_md",
+      "label": "footer-pages-plan.md",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "label": "Plan: Footer Pages, Social Links & For Employers Fix",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "plans_footer_pages_plan_bug_fix_for_employers_link",
+      "label": "Bug Fix \u2014 For Employers Link",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "plans_footer_pages_plan_files",
+      "label": "Files",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "plans_footer_pages_plan_new_static_pages_5",
+      "label": "New Static Pages (5)",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "plans_footer_pages_plan_env_vars_social_links_contact_email",
+      "label": "Env Vars \u2014 Social Links & Contact Email",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "plans_footer_pages_plan_footer_changes_social_icons",
+      "label": "Footer Changes \u2014 Social Icons",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "plans_footer_pages_plan_route_config",
+      "label": "Route Config",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "plans_footer_pages_plan_tests",
+      "label": "Tests",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L92"
+    },
+    {
+      "id": "plans_footer_pages_plan_execution_order",
+      "label": "Execution Order",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L100"
+    },
+    {
+      "id": "plans_footer_pages_plan_validation",
+      "label": "Validation",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L109"
+    },
+    {
+      "id": "plans_footer_pages_plan_constraints",
+      "label": "Constraints",
+      "file_type": "document",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L117"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_kilo_plans_footer_pages_plan_md",
+      "target": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_bug_fix_for_employers_link",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_bug_fix_for_employers_link",
+      "target": "plans_footer_pages_plan_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_new_static_pages_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_env_vars_social_links_contact_email",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_footer_changes_social_icons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_route_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_execution_order",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "plans_footer_pages_plan_plan_footer_pages_social_links_for_employers_fix",
+      "target": "plans_footer_pages_plan_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".kilo/plans/footer-pages-plan.md",
+      "source_location": "L117",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

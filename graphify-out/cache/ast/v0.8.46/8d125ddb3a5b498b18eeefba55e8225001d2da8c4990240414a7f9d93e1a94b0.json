@@ -1,1 +1,575 @@
-{"nodes": [{"id": "d_hire_flow_next_hire_flow_prompts_md", "label": "HIRE_FLOW_PROMPTS.md", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "label": "**CLAUDE OUTPUT REFINE WITH GEMENI**", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1"}, {"id": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores", "label": "Step 0.6: TanStack Query Provider & Zustand Stores", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L156"}, {"id": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory", "label": "Step 0.7: Project Manifest (Agent Memory)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L185"}, {"id": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "label": "Phase 2: Recruiter Portal \u2013 Implementation Guide for AI Agent", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L308"}, {"id": "hire_flow_next_hire_flow_prompts_core_principles_constraints", "label": "Core Principles & Constraints", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L315"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation", "label": "Step 2.0: Recruiter Layout & Sidebar (Foundation)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L332"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_1_company_profile_crud", "label": "Step 2.1: Company Profile CRUD", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L356"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_2_recruiter_team_management", "label": "Step 2.2: Recruiter Team Management", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L379"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view", "label": "Step 2.3: Job Posts CRUD (with Job Detail View)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L395"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow", "label": "Step 2.4: Applicants View, Status Pipeline & Selection Workflow", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L419"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_5_direct_messaging_thread_based", "label": "Step 2.5: Direct Messaging (Thread\u2011Based)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L444"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_6_applicant_detail_view", "label": "Step 2.6: Applicant Detail View", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L474"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_7_bulk_actions_for_selection", "label": "Step 2.7: Bulk Actions for Selection", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L491"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_8_recruiter_analytics_filters", "label": "Step 2.8: Recruiter Analytics & Filters", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L506"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_9_recruiter_dashboard", "label": "Step 2.9: Recruiter Dashboard", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L519"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_10_notifications_activity_feed", "label": "Step 2.10: Notifications & Activity Feed", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L531"}, {"id": "hire_flow_next_hire_flow_prompts_step_2_11_export_applicants_csv", "label": "Step 2.11: Export Applicants (CSV)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L543"}, {"id": "hire_flow_next_hire_flow_prompts_phase_3_user", "label": "Phase 3: User", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L558"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action", "label": "Step 3.0a: Infrastructure Audit (Status: Already Built \u2014 No Action)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L560"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_0b_user_dashboard_real_implementation", "label": "Step 3.0b: User Dashboard (Real Implementation)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L572"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_0c_schema_migration_missing_fields", "label": "Step 3.0c: Schema Migration \u2014 Missing Fields", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L596"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_1_user_profile", "label": "Step 3.1: User Profile", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L637"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based", "label": "Step 3.2: Resumes & In-App Builder (Lightweight Form-Based)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L680"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_2b_new_optional_ai_powered_resume_assistance", "label": "Step 3.2b (NEW, Optional): AI-Powered Resume Assistance", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L720"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_3_job_application_flow", "label": "Step 3.3: Job Application Flow", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L853"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_4_user_activity_panel_my_applications", "label": "Step 3.4: User Activity Panel (My Applications)", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L878"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter", "label": "Step 3.5 (NEW): Application Detail, Withdraw & Message Recruiter", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L899"}, {"id": "hire_flow_next_hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs", "label": "Step 3.6 (NEW, optional): Saved / Bookmarked Jobs", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L923"}, {"id": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "label": "Phase 4: Public Job Routes & Home Page", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L939"}, {"id": "hire_flow_next_hire_flow_prompts_step_4_0_new_public_route_group_shared_shell", "label": "Step 4.0 (NEW): Public Route Group & Shared Shell", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L941"}, {"id": "hire_flow_next_hire_flow_prompts_step_4_1_public_job_listings", "label": "Step 4.1: Public Job Listings", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L961"}, {"id": "hire_flow_next_hire_flow_prompts_step_4_2_public_job_details_view_tracking", "label": "Step 4.2: Public Job Details & View Tracking", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L986"}, {"id": "hire_flow_next_hire_flow_prompts_step_4_3_home_page_role_aware_navbar", "label": "Step 4.3: Home Page & Role-Aware Navbar", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1008"}, {"id": "hire_flow_next_hire_flow_prompts_step_4_4_new_seo_metadata_sitemap_robots", "label": "Step 4.4 (NEW): SEO \u2014 Metadata, Sitemap & Robots", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1030"}, {"id": "hire_flow_next_hire_flow_prompts_verification_sitemap_xml_lists_only_currently_active_jobs_archived_deactivated_jobs_disappear_from_it_automatically_as_their_status_flips_robots_txt_disallows_all_role_prefixed_paths", "label": "Verification: `/sitemap.xml` lists only currently-active jobs (archived/deactivated jobs disappear from it automatically as their status flips); `/robots.txt` disallows all role-prefixed paths.", "file_type": "document", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1046"}], "edges": [{"source": "d_hire_flow_next_hire_flow_prompts_md", "target": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L156", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni", "target": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L185", "weight": 1.0}, {"source": "d_hire_flow_next_hire_flow_prompts_md", "target": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L308", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_core_principles_constraints", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L315", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L332", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_1_company_profile_crud", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L356", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_2_recruiter_team_management", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L379", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L395", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L419", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_5_direct_messaging_thread_based", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L444", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_6_applicant_detail_view", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L474", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_7_bulk_actions_for_selection", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L491", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_8_recruiter_analytics_filters", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L506", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_9_recruiter_dashboard", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L519", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_10_notifications_activity_feed", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L531", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_step_2_11_export_applicants_csv", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L543", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_phase_3_user", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L558", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L560", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_0b_user_dashboard_real_implementation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L572", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_0c_schema_migration_missing_fields", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L596", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_1_user_profile", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L637", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L680", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_2b_new_optional_ai_powered_resume_assistance", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L720", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_3_job_application_flow", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L853", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_4_user_activity_panel_my_applications", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L878", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L899", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_3_user", "target": "hire_flow_next_hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L923", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L939", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "target": "hire_flow_next_hire_flow_prompts_step_4_0_new_public_route_group_shared_shell", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L941", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "target": "hire_flow_next_hire_flow_prompts_step_4_1_public_job_listings", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L961", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "target": "hire_flow_next_hire_flow_prompts_step_4_2_public_job_details_view_tracking", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L986", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "target": "hire_flow_next_hire_flow_prompts_step_4_3_home_page_role_aware_navbar", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1008", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page", "target": "hire_flow_next_hire_flow_prompts_step_4_4_new_seo_metadata_sitemap_robots", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1030", "weight": 1.0}, {"source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent", "target": "hire_flow_next_hire_flow_prompts_verification_sitemap_xml_lists_only_currently_active_jobs_archived_deactivated_jobs_disappear_from_it_automatically_as_their_status_flips_robots_txt_disallows_all_role_prefixed_paths", "relation": "contains", "confidence": "EXTRACTED", "source_file": "HIRE_FLOW_PROMPTS.md", "source_location": "L1046", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "d_hire_flow_next_hire_flow_prompts_md",
+      "label": "HIRE_FLOW_PROMPTS.md",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "label": "**CLAUDE OUTPUT REFINE WITH GEMENI**",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores",
+      "label": "Step 0.6: TanStack Query Provider & Zustand Stores",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L156"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory",
+      "label": "Step 0.7: Project Manifest (Agent Memory)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L185"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "label": "Phase 2: Recruiter Portal \u2013 Implementation Guide for AI Agent",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L308"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_core_principles_constraints",
+      "label": "Core Principles & Constraints",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L315"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation",
+      "label": "Step 2.0: Recruiter Layout & Sidebar (Foundation)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L332"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_1_company_profile_crud",
+      "label": "Step 2.1: Company Profile CRUD",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L356"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_2_recruiter_team_management",
+      "label": "Step 2.2: Recruiter Team Management",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L379"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view",
+      "label": "Step 2.3: Job Posts CRUD (with Job Detail View)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L395"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow",
+      "label": "Step 2.4: Applicants View, Status Pipeline & Selection Workflow",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L419"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_5_direct_messaging_thread_based",
+      "label": "Step 2.5: Direct Messaging (Thread\u2011Based)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L444"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_6_applicant_detail_view",
+      "label": "Step 2.6: Applicant Detail View",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L474"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_7_bulk_actions_for_selection",
+      "label": "Step 2.7: Bulk Actions for Selection",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L491"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_8_recruiter_analytics_filters",
+      "label": "Step 2.8: Recruiter Analytics & Filters",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L506"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_9_recruiter_dashboard",
+      "label": "Step 2.9: Recruiter Dashboard",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L519"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_10_notifications_activity_feed",
+      "label": "Step 2.10: Notifications & Activity Feed",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L531"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_2_11_export_applicants_csv",
+      "label": "Step 2.11: Export Applicants (CSV)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L543"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "label": "Phase 3: User",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L558"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action",
+      "label": "Step 3.0a: Infrastructure Audit (Status: Already Built \u2014 No Action)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L560"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_0b_user_dashboard_real_implementation",
+      "label": "Step 3.0b: User Dashboard (Real Implementation)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L572"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_0c_schema_migration_missing_fields",
+      "label": "Step 3.0c: Schema Migration \u2014 Missing Fields",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L596"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_1_user_profile",
+      "label": "Step 3.1: User Profile",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L637"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based",
+      "label": "Step 3.2: Resumes & In-App Builder (Lightweight Form-Based)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L680"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_2b_new_optional_ai_powered_resume_assistance",
+      "label": "Step 3.2b (NEW, Optional): AI-Powered Resume Assistance",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L720"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_3_job_application_flow",
+      "label": "Step 3.3: Job Application Flow",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L853"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_4_user_activity_panel_my_applications",
+      "label": "Step 3.4: User Activity Panel (My Applications)",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L878"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter",
+      "label": "Step 3.5 (NEW): Application Detail, Withdraw & Message Recruiter",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L899"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs",
+      "label": "Step 3.6 (NEW, optional): Saved / Bookmarked Jobs",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L923"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "label": "Phase 4: Public Job Routes & Home Page",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L939"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_4_0_new_public_route_group_shared_shell",
+      "label": "Step 4.0 (NEW): Public Route Group & Shared Shell",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L941"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_4_1_public_job_listings",
+      "label": "Step 4.1: Public Job Listings",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L961"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_4_2_public_job_details_view_tracking",
+      "label": "Step 4.2: Public Job Details & View Tracking",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L986"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_4_3_home_page_role_aware_navbar",
+      "label": "Step 4.3: Home Page & Role-Aware Navbar",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1008"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_step_4_4_new_seo_metadata_sitemap_robots",
+      "label": "Step 4.4 (NEW): SEO \u2014 Metadata, Sitemap & Robots",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1030"
+    },
+    {
+      "id": "hire_flow_next_hire_flow_prompts_verification_sitemap_xml_lists_only_currently_active_jobs_archived_deactivated_jobs_disappear_from_it_automatically_as_their_status_flips_robots_txt_disallows_all_role_prefixed_paths",
+      "label": "Verification: `/sitemap.xml` lists only currently-active jobs (archived/deactivated jobs disappear from it automatically as their status flips); `/robots.txt` disallows all role-prefixed paths.",
+      "file_type": "document",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1046"
+    }
+  ],
+  "edges": [
+    {
+      "source": "d_hire_flow_next_hire_flow_prompts_md",
+      "target": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_step_0_6_tanstack_query_provider_zustand_stores",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_claude_output_refine_with_gemeni",
+      "target": "hire_flow_next_hire_flow_prompts_step_0_7_project_manifest_agent_memory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "d_hire_flow_next_hire_flow_prompts_md",
+      "target": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_core_principles_constraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_0_recruiter_layout_sidebar_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_1_company_profile_crud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L356",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_2_recruiter_team_management",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L379",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_3_job_posts_crud_with_job_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_4_applicants_view_status_pipeline_selection_workflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L419",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_5_direct_messaging_thread_based",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L444",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_6_applicant_detail_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L474",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_7_bulk_actions_for_selection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L491",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_8_recruiter_analytics_filters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L506",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_9_recruiter_dashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L519",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_10_notifications_activity_feed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L531",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_step_2_11_export_applicants_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L543",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L558",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_0a_infrastructure_audit_status_already_built_no_action",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L560",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_0b_user_dashboard_real_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L572",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_0c_schema_migration_missing_fields",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L596",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_1_user_profile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L637",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_2_resumes_in_app_builder_lightweight_form_based",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L680",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_2b_new_optional_ai_powered_resume_assistance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L720",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_3_job_application_flow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L853",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_4_user_activity_panel_my_applications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L878",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_5_new_application_detail_withdraw_message_recruiter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L899",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_3_user",
+      "target": "hire_flow_next_hire_flow_prompts_step_3_6_new_optional_saved_bookmarked_jobs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L923",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L939",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "target": "hire_flow_next_hire_flow_prompts_step_4_0_new_public_route_group_shared_shell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L941",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "target": "hire_flow_next_hire_flow_prompts_step_4_1_public_job_listings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L961",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "target": "hire_flow_next_hire_flow_prompts_step_4_2_public_job_details_view_tracking",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L986",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "target": "hire_flow_next_hire_flow_prompts_step_4_3_home_page_role_aware_navbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1008",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_4_public_job_routes_home_page",
+      "target": "hire_flow_next_hire_flow_prompts_step_4_4_new_seo_metadata_sitemap_robots",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1030",
+      "weight": 1.0
+    },
+    {
+      "source": "hire_flow_next_hire_flow_prompts_phase_2_recruiter_portal_implementation_guide_for_ai_agent",
+      "target": "hire_flow_next_hire_flow_prompts_verification_sitemap_xml_lists_only_currently_active_jobs_archived_deactivated_jobs_disappear_from_it_automatically_as_their_status_flips_robots_txt_disallows_all_role_prefixed_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "HIRE_FLOW_PROMPTS.md",
+      "source_location": "L1046",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
