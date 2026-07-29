@@ -2,10 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { WorkMode, EmploymentType } from "@/app/generated/prisma/enums";
-import {
-  RecruiterListJobsParamsSchema,
-  JobCreateSchema,
-} from "@/app/features/recruiter/schema/job.schema";
+import { RecruiterListJobsParamsSchema, JobCreateSchema } from "@/app/features/recruiter/schema/job.schema";
 import { listJobs } from "@/app/features/recruiter/queries/job-queries";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
@@ -25,6 +22,7 @@ async function handleGET(request: NextRequest) {
     workMode: searchParams.get("workMode") ?? undefined,
     employmentType: searchParams.get("employmentType") ?? undefined,
     experienceLevel: searchParams.get("experienceLevel") ?? undefined,
+    skills: searchParams.getAll("skills").filter(Boolean),
     sortBy: searchParams.get("sortBy") ?? undefined,
     sortOrder: searchParams.get("sortOrder") ?? undefined,
   });

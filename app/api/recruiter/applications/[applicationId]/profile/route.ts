@@ -4,10 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { applicationService } from "@/lib/services/application-service";
 
-async function handleGET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ applicationId: string }> },
-) {
+async function handleGET(_request: NextRequest, { params }: { params: Promise<{ applicationId: string }> }) {
   const recruiter = await requireRole(["recruiter"]);
   const { applicationId } = await params;
 

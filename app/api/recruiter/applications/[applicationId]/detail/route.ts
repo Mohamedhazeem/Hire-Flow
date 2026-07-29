@@ -5,10 +5,7 @@ import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
 import { getApplicantDetail } from "@/app/features/recruiter/libs/get-applicant-detail";
 
-async function handleGET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ applicationId: string }> },
-) {
+async function handleGET(_request: NextRequest, { params }: { params: Promise<{ applicationId: string }> }) {
   const session = await requireRole(["recruiter"]);
   const companyId = session.companyId;
   if (!companyId) throw new ValidationError("No company found for this recruiter");

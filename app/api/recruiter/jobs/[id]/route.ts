@@ -35,11 +35,7 @@ async function handlePATCH(request: NextRequest, { params }: { params: Promise<{
     throw new ValidationError("Invalid job data");
   }
 
-  const result = await jobService.recruiterUpdateJob(
-    id,
-    companyId,
-    parsed.data as Record<string, unknown>,
-  );
+  const result = await jobService.recruiterUpdateJob(id, companyId, parsed.data as Record<string, unknown>);
   return ok(result);
 }
 
