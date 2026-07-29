@@ -4,14 +4,804 @@
   "graph": {},
   "nodes": [
     {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "about_page",
+      "community": 230,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "about_page_metadata",
+      "community": 230,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "about_page_sections",
+      "community": 230,
+      "norm_label": "sections"
+    },
+    {
+      "label": "AboutPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "about_page_aboutpage",
+      "community": 230,
+      "norm_label": "aboutpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "become_employer_page",
+      "community": 169,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "become_employer_page_metadata",
+      "community": 169,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "BecomeEmployerPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "become_employer_page_becomeemployerpage",
+      "community": 169,
+      "norm_label": "becomeemployerpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "careers_page",
+      "community": 231,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "careers_page_metadata",
+      "community": 231,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "openings",
+      "file_type": "code",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "careers_page_openings",
+      "community": 231,
+      "norm_label": "openings"
+    },
+    {
+      "label": "CareersPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "careers_page_careerspage",
+      "community": 231,
+      "norm_label": "careerspage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/contact/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "contact_page",
+      "community": 236,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/contact/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "contact_page_metadata",
+      "community": 236,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "ContactPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/contact/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "contact_page_contactpage",
+      "community": 236,
+      "norm_label": "contactpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "employers_page",
+      "community": 241,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "employers_page_metadata",
+      "community": 241,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "employers_page_sections",
+      "community": 241,
+      "norm_label": "sections"
+    },
+    {
+      "label": "EmployersPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "employers_page_employerspage",
+      "community": 241,
+      "norm_label": "employerspage()"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_layout",
+      "community": 180,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "PublicLayout()",
+      "file_type": "code",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "public_layout_publiclayout",
+      "community": 180,
+      "norm_label": "publiclayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "press_page",
+      "community": 234,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "press_page_metadata",
+      "community": 234,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "mentions",
+      "file_type": "code",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "press_page_mentions",
+      "community": 234,
+      "norm_label": "mentions"
+    },
+    {
+      "label": "PressPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "press_page_presspage",
+      "community": 234,
+      "norm_label": "presspage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pricing_page",
+      "community": 235,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "pricing_page_metadata",
+      "community": 235,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "plans",
+      "file_type": "code",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "pricing_page_plans",
+      "community": 235,
+      "norm_label": "plans"
+    },
+    {
+      "label": "PricingPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "pricing_page_pricingpage",
+      "community": 235,
+      "norm_label": "pricingpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "privacy_page",
+      "community": 132,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "privacy_page_metadata",
+      "community": 132,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "privacy_page_sections",
+      "community": 132,
+      "norm_label": "sections"
+    },
+    {
+      "label": "PrivacyPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "privacy_page_privacypage",
+      "community": 132,
+      "norm_label": "privacypage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "terms_page",
+      "community": 138,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "terms_page_metadata",
+      "community": 138,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "sections",
+      "file_type": "code",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "terms_page_sections",
+      "community": 138,
+      "norm_label": "sections"
+    },
+    {
+      "label": "TermsPage()",
+      "file_type": "code",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "terms_page_termspage",
+      "community": 138,
+      "norm_label": "termspage()"
+    },
+    {
+      "label": "get-unread-message-count.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 216,
+      "norm_label": "get-unread-message-count.test.ts",
+      "id": "messages_get_unread_message_count_test"
+    },
+    {
+      "label": "mockRequireRole",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 216,
+      "norm_label": "mockrequirerole",
+      "id": "messages_get_unread_message_count_test_mockrequirerole"
+    },
+    {
+      "label": "mockCount",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 216,
+      "norm_label": "mockcount",
+      "id": "messages_get_unread_message_count_test_mockcount"
+    },
+    {
+      "label": "message-service-pusher.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 217,
+      "norm_label": "message-service-pusher.test.ts",
+      "id": "messages_message_service_pusher_test"
+    },
+    {
+      "label": "mockTrigger",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 217,
+      "norm_label": "mocktrigger",
+      "id": "messages_message_service_pusher_test_mocktrigger"
+    },
+    {
+      "label": "use-unread-message-count.dom.test.tsx",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 203,
+      "norm_label": "use-unread-message-count.dom.test.tsx",
+      "id": "messages_use_unread_message_count_dom_test"
+    },
+    {
+      "label": "mockGetUnreadCount",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 203,
+      "norm_label": "mockgetunreadcount",
+      "id": "messages_use_unread_message_count_dom_test_mockgetunreadcount"
+    },
+    {
+      "label": "capturedBindings",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 203,
+      "norm_label": "capturedbindings",
+      "id": "messages_use_unread_message_count_dom_test_capturedbindings"
+    },
+    {
+      "label": "capturedUnbindings",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 203,
+      "norm_label": "capturedunbindings",
+      "id": "messages_use_unread_message_count_dom_test_capturedunbindings"
+    },
+    {
+      "label": "createWrapper()",
+      "file_type": "code",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 203,
+      "norm_label": "createwrapper()",
+      "id": "messages_use_unread_message_count_dom_test_createwrapper"
+    },
+    {
+      "label": "search-query.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/unit/search-query.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 149,
+      "norm_label": "search-query.test.ts",
+      "id": "unit_search_query_test"
+    },
+    {
+      "label": "seed.ts",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "seed.ts",
+      "id": "prisma_seed"
+    },
+    {
+      "label": "pool",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "pool",
+      "id": "prisma_seed_pool"
+    },
+    {
+      "label": "adapter",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "adapter",
+      "id": "prisma_seed_adapter"
+    },
+    {
+      "label": "prisma",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "prisma",
+      "id": "prisma_seed_prisma"
+    },
+    {
+      "label": "userId()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "userid()",
+      "id": "prisma_seed_userid"
+    },
+    {
+      "label": "jobSlug()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "jobslug()",
+      "id": "prisma_seed_jobslug"
+    },
+    {
+      "label": "upsertCredentialAccount()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "upsertcredentialaccount()",
+      "id": "prisma_seed_upsertcredentialaccount"
+    },
+    {
+      "label": "avatarUrl()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L67",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "avatarurl()",
+      "id": "prisma_seed_avatarurl"
+    },
+    {
+      "label": "companyLogoUrl()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "companylogourl()",
+      "id": "prisma_seed_companylogourl"
+    },
+    {
+      "label": "ADMIN",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "admin",
+      "id": "prisma_seed_admin"
+    },
+    {
+      "label": "ADMIN_USER",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L88",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "admin_user",
+      "id": "prisma_seed_admin_user"
+    },
+    {
+      "label": "RECRUITERS",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L94",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "recruiters",
+      "id": "prisma_seed_recruiters"
+    },
+    {
+      "label": "USERS",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L117",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "users",
+      "id": "prisma_seed_users"
+    },
+    {
+      "label": "JOB_TEMPLATES",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L141",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "job_templates",
+      "id": "prisma_seed_job_templates"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L176",
+      "_origin": "ast",
+      "community": 118,
+      "norm_label": "main()",
+      "id": "prisma_seed_main"
+    },
+    {
+      "label": "demote-super-admin.ts",
+      "file_type": "code",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "demote-super-admin.ts",
+      "id": "scripts_demote_super_admin"
+    },
+    {
+      "label": "pool",
+      "file_type": "code",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "pool",
+      "id": "scripts_demote_super_admin_pool"
+    },
+    {
+      "label": "adapter",
+      "file_type": "code",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "adapter",
+      "id": "scripts_demote_super_admin_adapter"
+    },
+    {
+      "label": "prisma",
+      "file_type": "code",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "prisma",
+      "id": "scripts_demote_super_admin_prisma"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "main()",
+      "id": "scripts_demote_super_admin_main"
+    },
+    {
+      "label": "promote-super-admin.ts",
+      "file_type": "code",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "promote-super-admin.ts",
+      "id": "scripts_promote_super_admin"
+    },
+    {
+      "label": "pool",
+      "file_type": "code",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "pool",
+      "id": "scripts_promote_super_admin_pool"
+    },
+    {
+      "label": "adapter",
+      "file_type": "code",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "adapter",
+      "id": "scripts_promote_super_admin_adapter"
+    },
+    {
+      "label": "prisma",
+      "file_type": "code",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "prisma",
+      "id": "scripts_promote_super_admin_prisma"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "main()",
+      "id": "scripts_promote_super_admin_main"
+    },
+    {
+      "label": "presence-store.ts",
+      "file_type": "code",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 97,
+      "norm_label": "presence-store.ts",
+      "id": "messages_presence_store"
+    },
+    {
+      "label": "PresenceState",
+      "file_type": "code",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 97,
+      "norm_label": "presencestate",
+      "id": "messages_presence_store_presencestate"
+    },
+    {
+      "label": "usePresenceStore",
+      "file_type": "code",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 97,
+      "norm_label": "usepresencestore",
+      "id": "messages_presence_store_usepresencestore"
+    },
+    {
+      "label": "env.ts",
+      "file_type": "code",
+      "source_file": "utils/env.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "env.ts",
+      "id": "utils_env"
+    },
+    {
+      "label": "envSchema",
+      "file_type": "code",
+      "source_file": "utils/env.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "envschema",
+      "id": "utils_env_envschema"
+    },
+    {
+      "label": "EnvTypes",
+      "file_type": "code",
+      "source_file": "utils/env.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "envtypes",
+      "id": "utils_env_envtypes"
+    },
+    {
+      "label": "env",
+      "file_type": "code",
+      "source_file": "utils/env.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 92,
+      "norm_label": "env",
+      "id": "utils_env_env"
+    },
+    {
       "label": "manifest.md",
       "file_type": "document",
       "source_file": "manifest.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "manifest",
       "community": 229,
-      "norm_label": "manifest.md"
+      "norm_label": "manifest.md",
+      "id": "manifest"
     },
     {
       "label": "Hire Flow Next - Project Manifest",
@@ -19,9 +809,9 @@
       "source_file": "manifest.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "manifest_hire_flow_next_project_manifest",
       "community": 229,
-      "norm_label": "hire flow next - project manifest"
+      "norm_label": "hire flow next - project manifest",
+      "id": "manifest_hire_flow_next_project_manifest"
     },
     {
       "label": "Last Updated",
@@ -29,9 +819,9 @@
       "source_file": "manifest.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "manifest_last_updated",
       "community": 229,
-      "norm_label": "last updated"
+      "norm_label": "last updated",
+      "id": "manifest_last_updated"
     },
     {
       "label": "Overview",
@@ -39,9 +829,9 @@
       "source_file": "manifest.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "manifest_overview",
       "community": 229,
-      "norm_label": "overview"
+      "norm_label": "overview",
+      "id": "manifest_overview"
     },
     {
       "label": "Completed Steps",
@@ -49,9 +839,9 @@
       "source_file": "manifest.md",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "manifest_completed_steps",
       "community": 237,
-      "norm_label": "completed steps"
+      "norm_label": "completed steps",
+      "id": "manifest_completed_steps"
     },
     {
       "label": "Phase 0: Foundation",
@@ -59,9 +849,9 @@
       "source_file": "manifest.md",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "manifest_phase_0_foundation",
       "community": 237,
-      "norm_label": "phase 0: foundation"
+      "norm_label": "phase 0: foundation",
+      "id": "manifest_phase_0_foundation"
     },
     {
       "label": "Phase 1: Admin",
@@ -69,9 +859,9 @@
       "source_file": "manifest.md",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "manifest_phase_1_admin",
       "community": 237,
-      "norm_label": "phase 1: admin"
+      "norm_label": "phase 1: admin",
+      "id": "manifest_phase_1_admin"
     },
     {
       "label": "Phase 2: Recruiter",
@@ -79,9 +869,9 @@
       "source_file": "manifest.md",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "manifest_phase_2_recruiter",
       "community": 237,
-      "norm_label": "phase 2: recruiter"
+      "norm_label": "phase 2: recruiter",
+      "id": "manifest_phase_2_recruiter"
     },
     {
       "label": "Phase 3: User",
@@ -89,9 +879,9 @@
       "source_file": "manifest.md",
       "source_location": "L61",
       "_origin": "ast",
-      "id": "manifest_phase_3_user",
       "community": 237,
-      "norm_label": "phase 3: user"
+      "norm_label": "phase 3: user",
+      "id": "manifest_phase_3_user"
     },
     {
       "label": "Phase 4: Public Job Routes & Home Page",
@@ -99,9 +889,9 @@
       "source_file": "manifest.md",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "manifest_phase_4_public_job_routes_home_page",
       "community": 237,
-      "norm_label": "phase 4: public job routes & home page"
+      "norm_label": "phase 4: public job routes & home page",
+      "id": "manifest_phase_4_public_job_routes_home_page"
     },
     {
       "label": "Created File Paths (Grouped by Phase)",
@@ -109,9 +899,9 @@
       "source_file": "manifest.md",
       "source_location": "L85",
       "_origin": "ast",
-      "id": "manifest_created_file_paths_grouped_by_phase",
       "community": 20,
-      "norm_label": "created file paths (grouped by phase)"
+      "norm_label": "created file paths (grouped by phase)",
+      "id": "manifest_created_file_paths_grouped_by_phase"
     },
     {
       "label": "Phase 0",
@@ -119,9 +909,9 @@
       "source_file": "manifest.md",
       "source_location": "L87",
       "_origin": "ast",
-      "id": "manifest_phase_0",
       "community": 20,
-      "norm_label": "phase 0"
+      "norm_label": "phase 0",
+      "id": "manifest_phase_0"
     },
     {
       "label": "Phase 1",
@@ -129,9 +919,9 @@
       "source_file": "manifest.md",
       "source_location": "L129",
       "_origin": "ast",
-      "id": "manifest_phase_1",
       "community": 20,
-      "norm_label": "phase 1"
+      "norm_label": "phase 1",
+      "id": "manifest_phase_1"
     },
     {
       "label": "Phase 2",
@@ -139,9 +929,9 @@
       "source_file": "manifest.md",
       "source_location": "L181",
       "_origin": "ast",
-      "id": "manifest_phase_2",
       "community": 20,
-      "norm_label": "phase 2"
+      "norm_label": "phase 2",
+      "id": "manifest_phase_2"
     },
     {
       "label": "Phase 2 (continued - Step 2.5 Messaging)",
@@ -149,9 +939,9 @@
       "source_file": "manifest.md",
       "source_location": "L226",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_5_messaging",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.5 messaging)"
+      "norm_label": "phase 2 (continued - step 2.5 messaging)",
+      "id": "manifest_phase_2_continued_step_2_5_messaging"
     },
     {
       "label": "Phase 2 (continued - Step 2.6 Applicant Detail View)",
@@ -159,9 +949,9 @@
       "source_file": "manifest.md",
       "source_location": "L250",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.6 applicant detail view)"
+      "norm_label": "phase 2 (continued - step 2.6 applicant detail view)",
+      "id": "manifest_phase_2_continued_step_2_6_applicant_detail_view"
     },
     {
       "label": "Phase 2 (continued - Step 2.7 Bulk Actions)",
@@ -169,9 +959,9 @@
       "source_file": "manifest.md",
       "source_location": "L267",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_7_bulk_actions",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.7 bulk actions)"
+      "norm_label": "phase 2 (continued - step 2.7 bulk actions)",
+      "id": "manifest_phase_2_continued_step_2_7_bulk_actions"
     },
     {
       "label": "Phase 2 (continued - Step 2.8 Recruiter Analytics & Filters)",
@@ -179,9 +969,9 @@
       "source_file": "manifest.md",
       "source_location": "L278",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.8 recruiter analytics & filters)"
+      "norm_label": "phase 2 (continued - step 2.8 recruiter analytics & filters)",
+      "id": "manifest_phase_2_continued_step_2_8_recruiter_analytics_filters"
     },
     {
       "label": "Phase 2 (continued - Step 2.9 Recruiter Dashboard)",
@@ -189,9 +979,9 @@
       "source_file": "manifest.md",
       "source_location": "L296",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.9 recruiter dashboard)"
+      "norm_label": "phase 2 (continued - step 2.9 recruiter dashboard)",
+      "id": "manifest_phase_2_continued_step_2_9_recruiter_dashboard"
     },
     {
       "label": "Phase 2 (continued - Step 2.10 Notifications & Activity Feed)",
@@ -199,9 +989,9 @@
       "source_file": "manifest.md",
       "source_location": "L302",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.10 notifications & activity feed)"
+      "norm_label": "phase 2 (continued - step 2.10 notifications & activity feed)",
+      "id": "manifest_phase_2_continued_step_2_10_notifications_activity_feed"
     },
     {
       "label": "Phase 2 (continued - Step 2.11 CSV Export)",
@@ -209,9 +999,9 @@
       "source_file": "manifest.md",
       "source_location": "L320",
       "_origin": "ast",
-      "id": "manifest_phase_2_continued_step_2_11_csv_export",
       "community": 20,
-      "norm_label": "phase 2 (continued - step 2.11 csv export)"
+      "norm_label": "phase 2 (continued - step 2.11 csv export)",
+      "id": "manifest_phase_2_continued_step_2_11_csv_export"
     },
     {
       "label": "Admin Applicant Detail View (cross-phase)",
@@ -219,9 +1009,9 @@
       "source_file": "manifest.md",
       "source_location": "L327",
       "_origin": "ast",
-      "id": "manifest_admin_applicant_detail_view_cross_phase",
       "community": 20,
-      "norm_label": "admin applicant detail view (cross-phase)"
+      "norm_label": "admin applicant detail view (cross-phase)",
+      "id": "manifest_admin_applicant_detail_view_cross_phase"
     },
     {
       "label": "Phase 3 - Step 3.1 (User Profile)",
@@ -229,9 +1019,9 @@
       "source_file": "manifest.md",
       "source_location": "L339",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_1_user_profile",
       "community": 20,
-      "norm_label": "phase 3 - step 3.1 (user profile)"
+      "norm_label": "phase 3 - step 3.1 (user profile)",
+      "id": "manifest_phase_3_step_3_1_user_profile"
     },
     {
       "label": "Phase 3 - Step 3.2 (Resumes & In-App Builder)",
@@ -239,9 +1029,9 @@
       "source_file": "manifest.md",
       "source_location": "L350",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_2_resumes_in_app_builder",
       "community": 20,
-      "norm_label": "phase 3 - step 3.2 (resumes & in-app builder)"
+      "norm_label": "phase 3 - step 3.2 (resumes & in-app builder)",
+      "id": "manifest_phase_3_step_3_2_resumes_in_app_builder"
     },
     {
       "label": "Phase 3 - Step 3.2a (AI Resume Enhancement)",
@@ -249,9 +1039,9 @@
       "source_file": "manifest.md",
       "source_location": "L366",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_2a_ai_resume_enhancement",
       "community": 20,
-      "norm_label": "phase 3 - step 3.2a (ai resume enhancement)"
+      "norm_label": "phase 3 - step 3.2a (ai resume enhancement)",
+      "id": "manifest_phase_3_step_3_2a_ai_resume_enhancement"
     },
     {
       "label": "Phase 3 - Step 3.3 (Job Application Flow)",
@@ -259,9 +1049,9 @@
       "source_file": "manifest.md",
       "source_location": "L375",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_3_job_application_flow",
       "community": 20,
-      "norm_label": "phase 3 - step 3.3 (job application flow)"
+      "norm_label": "phase 3 - step 3.3 (job application flow)",
+      "id": "manifest_phase_3_step_3_3_job_application_flow"
     },
     {
       "label": "Phase 3 - Step 3.4 (My Applications)",
@@ -269,9 +1059,9 @@
       "source_file": "manifest.md",
       "source_location": "L383",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_4_my_applications",
       "community": 20,
-      "norm_label": "phase 3 - step 3.4 (my applications)"
+      "norm_label": "phase 3 - step 3.4 (my applications)",
+      "id": "manifest_phase_3_step_3_4_my_applications"
     },
     {
       "label": "Phase 3 - Step 3.5 (Application Detail, Withdraw & Message Recruiter)",
@@ -279,9 +1069,9 @@
       "source_file": "manifest.md",
       "source_location": "L391",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter",
       "community": 20,
-      "norm_label": "phase 3 - step 3.5 (application detail, withdraw & message recruiter)"
+      "norm_label": "phase 3 - step 3.5 (application detail, withdraw & message recruiter)",
+      "id": "manifest_phase_3_step_3_5_application_detail_withdraw_message_recruiter"
     },
     {
       "label": "Phase 3 - Step 3.6 (Saved / Bookmarked Jobs)",
@@ -289,9 +1079,9 @@
       "source_file": "manifest.md",
       "source_location": "L402",
       "_origin": "ast",
-      "id": "manifest_phase_3_step_3_6_saved_bookmarked_jobs",
       "community": 20,
-      "norm_label": "phase 3 - step 3.6 (saved / bookmarked jobs)"
+      "norm_label": "phase 3 - step 3.6 (saved / bookmarked jobs)",
+      "id": "manifest_phase_3_step_3_6_saved_bookmarked_jobs"
     },
     {
       "label": "Phase 3 - Supporting",
@@ -299,9 +1089,9 @@
       "source_file": "manifest.md",
       "source_location": "L412",
       "_origin": "ast",
-      "id": "manifest_phase_3_supporting",
       "community": 20,
-      "norm_label": "phase 3 - supporting"
+      "norm_label": "phase 3 - supporting",
+      "id": "manifest_phase_3_supporting"
     },
     {
       "label": "Phase 4 - Steps 4.0-4.2 (Public Routes, Jobs, Details)",
@@ -309,9 +1099,9 @@
       "source_file": "manifest.md",
       "source_location": "L417",
       "_origin": "ast",
-      "id": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details",
       "community": 20,
-      "norm_label": "phase 4 - steps 4.0-4.2 (public routes, jobs, details)"
+      "norm_label": "phase 4 - steps 4.0-4.2 (public routes, jobs, details)",
+      "id": "manifest_phase_4_steps_4_0_4_2_public_routes_jobs_details"
     },
     {
       "label": "Phase 4 - Step 4.3 (Auth-Aware Navbar & Redirect)",
@@ -319,9 +1109,9 @@
       "source_file": "manifest.md",
       "source_location": "L444",
       "_origin": "ast",
-      "id": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect",
       "community": 20,
-      "norm_label": "phase 4 - step 4.3 (auth-aware navbar & redirect)"
+      "norm_label": "phase 4 - step 4.3 (auth-aware navbar & redirect)",
+      "id": "manifest_phase_4_step_4_3_auth_aware_navbar_redirect"
     },
     {
       "label": "Phase 4 - Step 4.4 (Home Page Composition)",
@@ -329,9 +1119,9 @@
       "source_file": "manifest.md",
       "source_location": "L455",
       "_origin": "ast",
-      "id": "manifest_phase_4_step_4_4_home_page_composition",
       "community": 20,
-      "norm_label": "phase 4 - step 4.4 (home page composition)"
+      "norm_label": "phase 4 - step 4.4 (home page composition)",
+      "id": "manifest_phase_4_step_4_4_home_page_composition"
     },
     {
       "label": "Phase 4 - Step 4.5 (Career Resources)",
@@ -339,9 +1129,9 @@
       "source_file": "manifest.md",
       "source_location": "L465",
       "_origin": "ast",
-      "id": "manifest_phase_4_step_4_5_career_resources",
       "community": 20,
-      "norm_label": "phase 4 - step 4.5 (career resources)"
+      "norm_label": "phase 4 - step 4.5 (career resources)",
+      "id": "manifest_phase_4_step_4_5_career_resources"
     },
     {
       "label": "Phase 4 - Step 4.6 (SEO)",
@@ -349,9 +1139,9 @@
       "source_file": "manifest.md",
       "source_location": "L476",
       "_origin": "ast",
-      "id": "manifest_phase_4_step_4_6_seo",
       "community": 20,
-      "norm_label": "phase 4 - step 4.6 (seo)"
+      "norm_label": "phase 4 - step 4.6 (seo)",
+      "id": "manifest_phase_4_step_4_6_seo"
     },
     {
       "label": "Phase 4 - Supporting Changes",
@@ -359,9 +1149,9 @@
       "source_file": "manifest.md",
       "source_location": "L481",
       "_origin": "ast",
-      "id": "manifest_phase_4_supporting_changes",
       "community": 20,
-      "norm_label": "phase 4 - supporting changes"
+      "norm_label": "phase 4 - supporting changes",
+      "id": "manifest_phase_4_supporting_changes"
     },
     {
       "label": "Cross-Phase: Rate Limiting Architecture (lib/rate-limiting/)",
@@ -369,9 +1159,9 @@
       "source_file": "manifest.md",
       "source_location": "L487",
       "_origin": "ast",
-      "id": "manifest_cross_phase_rate_limiting_architecture_lib_rate_limiting",
       "community": 20,
-      "norm_label": "cross-phase: rate limiting architecture (lib/rate-limiting/)"
+      "norm_label": "cross-phase: rate limiting architecture (lib/rate-limiting/)",
+      "id": "manifest_cross_phase_rate_limiting_architecture_lib_rate_limiting"
     },
     {
       "label": "Cross-Phase: Skills Filter for Job Search (TASK-4.1.7)",
@@ -379,9 +1169,9 @@
       "source_file": "manifest.md",
       "source_location": "L519",
       "_origin": "ast",
-      "id": "manifest_cross_phase_skills_filter_for_job_search_task_4_1_7",
       "community": 20,
-      "norm_label": "cross-phase: skills filter for job search (task-4.1.7)"
+      "norm_label": "cross-phase: skills filter for job search (task-4.1.7)",
+      "id": "manifest_cross_phase_skills_filter_for_job_search_task_4_1_7"
     },
     {
       "label": "Cross-Phase: Recruiter & Admin Profile Pages (TASK-3.1.5)",
@@ -389,9 +1179,9 @@
       "source_file": "manifest.md",
       "source_location": "L532",
       "_origin": "ast",
-      "id": "manifest_cross_phase_recruiter_admin_profile_pages_task_3_1_5",
       "community": 20,
-      "norm_label": "cross-phase: recruiter & admin profile pages (task-3.1.5)"
+      "norm_label": "cross-phase: recruiter & admin profile pages (task-3.1.5)",
+      "id": "manifest_cross_phase_recruiter_admin_profile_pages_task_3_1_5"
     },
     {
       "label": "Key Architecture Decisions",
@@ -399,9 +1189,9 @@
       "source_file": "manifest.md",
       "source_location": "L543",
       "_origin": "ast",
-      "id": "manifest_key_architecture_decisions",
       "community": 79,
-      "norm_label": "key architecture decisions"
+      "norm_label": "key architecture decisions",
+      "id": "manifest_key_architecture_decisions"
     },
     {
       "label": "Resume Snapshot (Phase 3)",
@@ -409,9 +1199,9 @@
       "source_file": "manifest.md",
       "source_location": "L545",
       "_origin": "ast",
-      "id": "manifest_resume_snapshot_phase_3",
       "community": 79,
-      "norm_label": "resume snapshot (phase 3)"
+      "norm_label": "resume snapshot (phase 3)",
+      "id": "manifest_resume_snapshot_phase_3"
     },
     {
       "label": "ApplicationStatusChange (Phase 3)",
@@ -419,9 +1209,9 @@
       "source_file": "manifest.md",
       "source_location": "L553",
       "_origin": "ast",
-      "id": "manifest_applicationstatuschange_phase_3",
       "community": 79,
-      "norm_label": "applicationstatuschange (phase 3)"
+      "norm_label": "applicationstatuschange (phase 3)",
+      "id": "manifest_applicationstatuschange_phase_3"
     },
     {
       "label": "Multi-Provider AI (Phase 3)",
@@ -429,9 +1219,9 @@
       "source_file": "manifest.md",
       "source_location": "L557",
       "_origin": "ast",
-      "id": "manifest_multi_provider_ai_phase_3",
       "community": 79,
-      "norm_label": "multi-provider ai (phase 3)"
+      "norm_label": "multi-provider ai (phase 3)",
+      "id": "manifest_multi_provider_ai_phase_3"
     },
     {
       "label": "Rate Limiting (Phase 3 legacy)",
@@ -439,9 +1229,9 @@
       "source_file": "manifest.md",
       "source_location": "L561",
       "_origin": "ast",
-      "id": "manifest_rate_limiting_phase_3_legacy",
       "community": 79,
-      "norm_label": "rate limiting (phase 3 legacy)"
+      "norm_label": "rate limiting (phase 3 legacy)",
+      "id": "manifest_rate_limiting_phase_3_legacy"
     },
     {
       "label": "Rate Limiting Architecture v2 (Cross-Phase)",
@@ -449,9 +1239,9 @@
       "source_file": "manifest.md",
       "source_location": "L565",
       "_origin": "ast",
-      "id": "manifest_rate_limiting_architecture_v2_cross_phase",
       "community": 79,
-      "norm_label": "rate limiting architecture v2 (cross-phase)"
+      "norm_label": "rate limiting architecture v2 (cross-phase)",
+      "id": "manifest_rate_limiting_architecture_v2_cross_phase"
     },
     {
       "label": "Skills Filter (Cross-Phase)",
@@ -459,9 +1249,9 @@
       "source_file": "manifest.md",
       "source_location": "L569",
       "_origin": "ast",
-      "id": "manifest_skills_filter_cross_phase",
       "community": 79,
-      "norm_label": "skills filter (cross-phase)"
+      "norm_label": "skills filter (cross-phase)",
+      "id": "manifest_skills_filter_cross_phase"
     },
     {
       "label": "Profile Extension to All Roles",
@@ -469,9 +1259,9 @@
       "source_file": "manifest.md",
       "source_location": "L573",
       "_origin": "ast",
-      "id": "manifest_profile_extension_to_all_roles",
       "community": 79,
-      "norm_label": "profile extension to all roles"
+      "norm_label": "profile extension to all roles",
+      "id": "manifest_profile_extension_to_all_roles"
     },
     {
       "label": "Public Route Group (Phase 4)",
@@ -479,9 +1269,9 @@
       "source_file": "manifest.md",
       "source_location": "L577",
       "_origin": "ast",
-      "id": "manifest_public_route_group_phase_4",
       "community": 79,
-      "norm_label": "public route group (phase 4)"
+      "norm_label": "public route group (phase 4)",
+      "id": "manifest_public_route_group_phase_4"
     },
     {
       "label": "Job Visibility Dual-Gate (Phase 4)",
@@ -489,9 +1279,9 @@
       "source_file": "manifest.md",
       "source_location": "L581",
       "_origin": "ast",
-      "id": "manifest_job_visibility_dual_gate_phase_4",
       "community": 79,
-      "norm_label": "job visibility dual-gate (phase 4)"
+      "norm_label": "job visibility dual-gate (phase 4)",
+      "id": "manifest_job_visibility_dual_gate_phase_4"
     },
     {
       "label": "Auth-Aware Navbar & Redirect (Phase 4)",
@@ -499,9 +1289,9 @@
       "source_file": "manifest.md",
       "source_location": "L585",
       "_origin": "ast",
-      "id": "manifest_auth_aware_navbar_redirect_phase_4",
       "community": 79,
-      "norm_label": "auth-aware navbar & redirect (phase 4)"
+      "norm_label": "auth-aware navbar & redirect (phase 4)",
+      "id": "manifest_auth_aware_navbar_redirect_phase_4"
     },
     {
       "label": "JSON-LD Structured Data (Phase 4)",
@@ -509,9 +1299,9 @@
       "source_file": "manifest.md",
       "source_location": "L589",
       "_origin": "ast",
-      "id": "manifest_json_ld_structured_data_phase_4",
       "community": 79,
-      "norm_label": "json-ld structured data (phase 4)"
+      "norm_label": "json-ld structured data (phase 4)",
+      "id": "manifest_json_ld_structured_data_phase_4"
     },
     {
       "label": "Sitemap & Robots (Phase 4)",
@@ -519,9 +1309,9 @@
       "source_file": "manifest.md",
       "source_location": "L593",
       "_origin": "ast",
-      "id": "manifest_sitemap_robots_phase_4",
       "community": 79,
-      "norm_label": "sitemap & robots (phase 4)"
+      "norm_label": "sitemap & robots (phase 4)",
+      "id": "manifest_sitemap_robots_phase_4"
     },
     {
       "label": "Active Global Context Snapshot",
@@ -529,9 +1319,9 @@
       "source_file": "manifest.md",
       "source_location": "L599",
       "_origin": "ast",
-      "id": "manifest_active_global_context_snapshot",
       "community": 229,
-      "norm_label": "active global context snapshot"
+      "norm_label": "active global context snapshot",
+      "id": "manifest_active_global_context_snapshot"
     },
     {
       "label": "Known Issues / TODOs",
@@ -539,9 +1329,9 @@
       "source_file": "manifest.md",
       "source_location": "L613",
       "_origin": "ast",
-      "id": "manifest_known_issues_todos",
       "community": 229,
-      "norm_label": "known issues / todos"
+      "norm_label": "known issues / todos",
+      "id": "manifest_known_issues_todos"
     },
     {
       "label": "Upcoming Dependencies",
@@ -549,9 +1339,9 @@
       "source_file": "manifest.md",
       "source_location": "L628",
       "_origin": "ast",
-      "id": "manifest_upcoming_dependencies",
       "community": 229,
-      "norm_label": "upcoming dependencies"
+      "norm_label": "upcoming dependencies",
+      "id": "manifest_upcoming_dependencies"
     },
     {
       "label": "SKILL.md",
@@ -8176,186 +8966,6 @@
     {
       "label": "page.tsx",
       "file_type": "code",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 230,
-      "norm_label": "page.tsx",
-      "id": "about_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 230,
-      "norm_label": "metadata",
-      "id": "about_page_metadata"
-    },
-    {
-      "label": "sections",
-      "file_type": "code",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 230,
-      "norm_label": "sections",
-      "id": "about_page_sections"
-    },
-    {
-      "label": "AboutPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 230,
-      "norm_label": "aboutpage()",
-      "id": "about_page_aboutpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 169,
-      "norm_label": "page.tsx",
-      "id": "become_employer_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 169,
-      "norm_label": "metadata",
-      "id": "become_employer_page_metadata"
-    },
-    {
-      "label": "BecomeEmployerPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 169,
-      "norm_label": "becomeemployerpage()",
-      "id": "become_employer_page_becomeemployerpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 231,
-      "norm_label": "page.tsx",
-      "id": "careers_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 231,
-      "norm_label": "metadata",
-      "id": "careers_page_metadata"
-    },
-    {
-      "label": "openings",
-      "file_type": "code",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 231,
-      "norm_label": "openings",
-      "id": "careers_page_openings"
-    },
-    {
-      "label": "CareersPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 231,
-      "norm_label": "careerspage()",
-      "id": "careers_page_careerspage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/contact/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 236,
-      "norm_label": "page.tsx",
-      "id": "contact_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/contact/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 236,
-      "norm_label": "metadata",
-      "id": "contact_page_metadata"
-    },
-    {
-      "label": "ContactPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/contact/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 236,
-      "norm_label": "contactpage()",
-      "id": "contact_page_contactpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 241,
-      "norm_label": "page.tsx",
-      "id": "employers_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 241,
-      "norm_label": "metadata",
-      "id": "employers_page_metadata"
-    },
-    {
-      "label": "sections",
-      "file_type": "code",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 241,
-      "norm_label": "sections",
-      "id": "employers_page_sections"
-    },
-    {
-      "label": "EmployersPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 241,
-      "norm_label": "employerspage()",
-      "id": "employers_page_employerspage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
       "source_file": "app/(public)/jobs/[id]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
@@ -8434,26 +9044,6 @@
       "id": "jobs_page_jobspage"
     },
     {
-      "label": "layout.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 180,
-      "norm_label": "layout.tsx",
-      "id": "public_layout"
-    },
-    {
-      "label": "PublicLayout()",
-      "file_type": "code",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 180,
-      "norm_label": "publiclayout()",
-      "id": "public_layout_publiclayout"
-    },
-    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(public)/page.tsx",
@@ -8472,126 +9062,6 @@
       "community": 43,
       "norm_label": "home()",
       "id": "public_page_home"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 234,
-      "norm_label": "page.tsx",
-      "id": "press_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 234,
-      "norm_label": "metadata",
-      "id": "press_page_metadata"
-    },
-    {
-      "label": "mentions",
-      "file_type": "code",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 234,
-      "norm_label": "mentions",
-      "id": "press_page_mentions"
-    },
-    {
-      "label": "PressPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 234,
-      "norm_label": "presspage()",
-      "id": "press_page_presspage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 235,
-      "norm_label": "page.tsx",
-      "id": "pricing_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 235,
-      "norm_label": "metadata",
-      "id": "pricing_page_metadata"
-    },
-    {
-      "label": "plans",
-      "file_type": "code",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 235,
-      "norm_label": "plans",
-      "id": "pricing_page_plans"
-    },
-    {
-      "label": "PricingPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L43",
-      "_origin": "ast",
-      "community": 235,
-      "norm_label": "pricingpage()",
-      "id": "pricing_page_pricingpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 132,
-      "norm_label": "page.tsx",
-      "id": "privacy_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 132,
-      "norm_label": "metadata",
-      "id": "privacy_page_metadata"
-    },
-    {
-      "label": "sections",
-      "file_type": "code",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 132,
-      "norm_label": "sections",
-      "id": "privacy_page_sections"
-    },
-    {
-      "label": "PrivacyPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 132,
-      "norm_label": "privacypage()",
-      "id": "privacy_page_privacypage"
     },
     {
       "label": "page.tsx",
@@ -8622,46 +9092,6 @@
       "community": 49,
       "norm_label": "resourcespage()",
       "id": "resources_page_resourcespage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 138,
-      "norm_label": "page.tsx",
-      "id": "terms_page"
-    },
-    {
-      "label": "metadata",
-      "file_type": "code",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 138,
-      "norm_label": "metadata",
-      "id": "terms_page_metadata"
-    },
-    {
-      "label": "sections",
-      "file_type": "code",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 138,
-      "norm_label": "sections",
-      "id": "terms_page_sections"
-    },
-    {
-      "label": "TermsPage()",
-      "file_type": "code",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L46",
-      "_origin": "ast",
-      "community": 138,
-      "norm_label": "termspage()",
-      "id": "terms_page_termspage"
     },
     {
       "label": "admin-layout-client.tsx",
@@ -28894,106 +29324,6 @@
       "id": "unit_job_categories_test"
     },
     {
-      "label": "get-unread-message-count.test.ts",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 216,
-      "norm_label": "get-unread-message-count.test.ts",
-      "id": "messages_get_unread_message_count_test"
-    },
-    {
-      "label": "mockRequireRole",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 216,
-      "norm_label": "mockrequirerole",
-      "id": "messages_get_unread_message_count_test_mockrequirerole"
-    },
-    {
-      "label": "mockCount",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 216,
-      "norm_label": "mockcount",
-      "id": "messages_get_unread_message_count_test_mockcount"
-    },
-    {
-      "label": "message-service-pusher.test.ts",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 217,
-      "norm_label": "message-service-pusher.test.ts",
-      "id": "messages_message_service_pusher_test"
-    },
-    {
-      "label": "mockTrigger",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 217,
-      "norm_label": "mocktrigger",
-      "id": "messages_message_service_pusher_test_mocktrigger"
-    },
-    {
-      "label": "use-unread-message-count.dom.test.tsx",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "use-unread-message-count.dom.test.tsx",
-      "id": "messages_use_unread_message_count_dom_test"
-    },
-    {
-      "label": "mockGetUnreadCount",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "mockgetunreadcount",
-      "id": "messages_use_unread_message_count_dom_test_mockgetunreadcount"
-    },
-    {
-      "label": "capturedBindings",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "capturedbindings",
-      "id": "messages_use_unread_message_count_dom_test_capturedbindings"
-    },
-    {
-      "label": "capturedUnbindings",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "capturedunbindings",
-      "id": "messages_use_unread_message_count_dom_test_capturedunbindings"
-    },
-    {
-      "label": "createWrapper()",
-      "file_type": "code",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 203,
-      "norm_label": "createwrapper()",
-      "id": "messages_use_unread_message_count_dom_test_createwrapper"
-    },
-    {
       "label": "notifications.test.ts",
       "file_type": "code",
       "source_file": "lib/test/unit/notifications.test.ts",
@@ -29112,16 +29442,6 @@
       "community": 125,
       "norm_label": "routes.test.ts",
       "id": "unit_routes_test"
-    },
-    {
-      "label": "search-query.test.ts",
-      "file_type": "code",
-      "source_file": "lib/test/unit/search-query.test.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 149,
-      "norm_label": "search-query.test.ts",
-      "id": "unit_search_query_test"
     },
     {
       "label": "thread-utils.test.ts",
@@ -30434,156 +30754,6 @@
       "id": "scripts_backfill_status_changes_main"
     },
     {
-      "label": "seed.ts",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "seed.ts",
-      "id": "prisma_seed"
-    },
-    {
-      "label": "pool",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "pool",
-      "id": "prisma_seed_pool"
-    },
-    {
-      "label": "adapter",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "adapter",
-      "id": "prisma_seed_adapter"
-    },
-    {
-      "label": "prisma",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "prisma",
-      "id": "prisma_seed_prisma"
-    },
-    {
-      "label": "userId()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "userid()",
-      "id": "prisma_seed_userid"
-    },
-    {
-      "label": "jobSlug()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L39",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "jobslug()",
-      "id": "prisma_seed_jobslug"
-    },
-    {
-      "label": "upsertCredentialAccount()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L53",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "upsertcredentialaccount()",
-      "id": "prisma_seed_upsertcredentialaccount"
-    },
-    {
-      "label": "avatarUrl()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L67",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "avatarurl()",
-      "id": "prisma_seed_avatarurl"
-    },
-    {
-      "label": "companyLogoUrl()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L76",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "companylogourl()",
-      "id": "prisma_seed_companylogourl"
-    },
-    {
-      "label": "ADMIN",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L82",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "admin",
-      "id": "prisma_seed_admin"
-    },
-    {
-      "label": "ADMIN_USER",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L88",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "admin_user",
-      "id": "prisma_seed_admin_user"
-    },
-    {
-      "label": "RECRUITERS",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L94",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "recruiters",
-      "id": "prisma_seed_recruiters"
-    },
-    {
-      "label": "USERS",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L117",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "users",
-      "id": "prisma_seed_users"
-    },
-    {
-      "label": "JOB_TEMPLATES",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L141",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "job_templates",
-      "id": "prisma_seed_job_templates"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L176",
-      "_origin": "ast",
-      "community": 118,
-      "norm_label": "main()",
-      "id": "prisma_seed_main"
-    },
-    {
       "label": "proxy.ts",
       "file_type": "code",
       "source_file": "proxy.ts",
@@ -30614,106 +30784,6 @@
       "id": "proxy_config"
     },
     {
-      "label": "demote-super-admin.ts",
-      "file_type": "code",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "demote-super-admin.ts",
-      "id": "scripts_demote_super_admin"
-    },
-    {
-      "label": "pool",
-      "file_type": "code",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "pool",
-      "id": "scripts_demote_super_admin_pool"
-    },
-    {
-      "label": "adapter",
-      "file_type": "code",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "adapter",
-      "id": "scripts_demote_super_admin_adapter"
-    },
-    {
-      "label": "prisma",
-      "file_type": "code",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "prisma",
-      "id": "scripts_demote_super_admin_prisma"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "main()",
-      "id": "scripts_demote_super_admin_main"
-    },
-    {
-      "label": "promote-super-admin.ts",
-      "file_type": "code",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "promote-super-admin.ts",
-      "id": "scripts_promote_super_admin"
-    },
-    {
-      "label": "pool",
-      "file_type": "code",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "pool",
-      "id": "scripts_promote_super_admin_pool"
-    },
-    {
-      "label": "adapter",
-      "file_type": "code",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "adapter",
-      "id": "scripts_promote_super_admin_adapter"
-    },
-    {
-      "label": "prisma",
-      "file_type": "code",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "prisma",
-      "id": "scripts_promote_super_admin_prisma"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "main()",
-      "id": "scripts_promote_super_admin_main"
-    },
-    {
       "label": "chat-store.ts",
       "file_type": "code",
       "source_file": "stores/chat-store.ts",
@@ -30742,36 +30812,6 @@
       "community": 146,
       "norm_label": "usechatstore",
       "id": "stores_chat_store_usechatstore"
-    },
-    {
-      "label": "presence-store.ts",
-      "file_type": "code",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 97,
-      "norm_label": "presence-store.ts",
-      "id": "messages_presence_store"
-    },
-    {
-      "label": "PresenceState",
-      "file_type": "code",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 97,
-      "norm_label": "presencestate",
-      "id": "messages_presence_store_presencestate"
-    },
-    {
-      "label": "usePresenceStore",
-      "file_type": "code",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 97,
-      "norm_label": "usepresencestore",
-      "id": "messages_presence_store_usepresencestore"
     },
     {
       "label": "use-thread-presence.ts",
@@ -31062,46 +31102,6 @@
       "community": 60,
       "norm_label": "exclude",
       "id": "tsconfig_exclude"
-    },
-    {
-      "label": "env.ts",
-      "file_type": "code",
-      "source_file": "utils/env.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "env.ts",
-      "id": "utils_env"
-    },
-    {
-      "label": "envSchema",
-      "file_type": "code",
-      "source_file": "utils/env.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "envschema",
-      "id": "utils_env_envschema"
-    },
-    {
-      "label": "EnvTypes",
-      "file_type": "code",
-      "source_file": "utils/env.ts",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "envtypes",
-      "id": "utils_env_envtypes"
-    },
-    {
-      "label": "env",
-      "file_type": "code",
-      "source_file": "utils/env.ts",
-      "source_location": "L50",
-      "_origin": "ast",
-      "community": 92,
-      "norm_label": "env",
-      "id": "utils_env_env"
     },
     {
       "label": "format-string.ts",
@@ -36768,6 +36768,1409 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "about_page",
+      "target": "about_page_aboutpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "about_page",
+      "target": "about_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/about/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "about_page",
+      "target": "about_page_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "become_employer_page_becomeemployerpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "become_employer_page_metadata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "components_upgrade_to_recruiter_form"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "components_upgrade_to_recruiter_form_upgradetorecruiterform"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "libs_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "libs_auth_getsession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "schema_role_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "become_employer_page",
+      "target": "schema_role_schema_roles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(public)/become-employer/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "become_employer_page_becomeemployerpage",
+      "target": "libs_auth_getsession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "careers_page",
+      "target": "careers_page_careerspage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "careers_page",
+      "target": "careers_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/careers/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "careers_page",
+      "target": "careers_page_openings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/contact/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "contact_page",
+      "target": "contact_page_contactpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/contact/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "contact_page",
+      "target": "contact_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "employers_page",
+      "target": "employers_page_employerspage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "employers_page",
+      "target": "employers_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "employers_page",
+      "target": "employers_page_sections"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "employers_page",
+      "target": "libs_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "employers_page",
+      "target": "libs_auth_getsession"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/(public)/employers/page.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "employers_page_employerspage",
+      "target": "libs_auth_getsession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_footer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_footer_footer"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar_publicnavbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_layout",
+      "target": "public_layout_publiclayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "press_page",
+      "target": "press_page_mentions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "press_page",
+      "target": "press_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/press/page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "press_page",
+      "target": "press_page_presspage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pricing_page",
+      "target": "pricing_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pricing_page",
+      "target": "pricing_page_plans"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/pricing/page.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pricing_page",
+      "target": "pricing_page_pricingpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "privacy_page",
+      "target": "privacy_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "privacy_page",
+      "target": "privacy_page_privacypage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/privacy/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "privacy_page",
+      "target": "privacy_page_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "terms_page",
+      "target": "terms_page_metadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "terms_page",
+      "target": "terms_page_sections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/terms/page.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "terms_page",
+      "target": "terms_page_termspage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_get_unread_message_count_test",
+      "target": "messages_get_unread_message_count_test_mockcount"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_get_unread_message_count_test",
+      "target": "messages_get_unread_message_count_test_mockrequirerole"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_message_service_pusher_test",
+      "target": "messages_message_service_pusher_test_mocktrigger"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_unread_message_count_dom_test",
+      "target": "messages_use_unread_message_count_dom_test_capturedbindings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_unread_message_count_dom_test",
+      "target": "messages_use_unread_message_count_dom_test_capturedunbindings"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_unread_message_count_dom_test",
+      "target": "messages_use_unread_message_count_dom_test_createwrapper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_unread_message_count_dom_test",
+      "target": "messages_use_unread_message_count_dom_test_mockgetunreadcount"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/search-query.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unit_search_query_test",
+      "target": "queries_public_job_queries"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/search-query.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unit_search_query_test",
+      "target": "queries_public_job_queries_formatsearchquery"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_adapter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_admin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_admin_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_avatarurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_companylogourl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_job_templates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_jobslug"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_pool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_prisma"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_recruiters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_upsertcredentialaccount"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_userid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "prisma_seed_users"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "utils_logger"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed",
+      "target": "utils_logger_logger"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L219",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed_main",
+      "target": "prisma_seed_jobslug"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L168",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed_main",
+      "target": "prisma_seed_upsertcredentialaccount"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed_main",
+      "target": "prisma_seed_avatarurl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "prisma/seed.ts",
+      "source_location": "L246",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prisma_seed_main",
+      "target": "prisma_seed_companylogourl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "scripts_demote_super_admin_adapter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "scripts_demote_super_admin_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "scripts_demote_super_admin_pool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "scripts_demote_super_admin_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/demote-super-admin.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_demote_super_admin",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "scripts_promote_super_admin_adapter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "scripts_promote_super_admin_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "scripts_promote_super_admin_pool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "scripts_promote_super_admin_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/promote-super-admin.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_promote_super_admin",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_messages_page_layout",
+      "target": "messages_presence_store"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/chat/use-thread-view.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_use_thread_view",
+      "target": "messages_presence_store"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_presence_store",
+      "target": "messages_presence_store_presencestate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_presence_store",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_presence_store",
+      "target": "pusher_pusher_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/presence-store.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_presence_store",
+      "target": "pusher_pusher_client_getpusherclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/use-thread-presence.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_thread_presence",
+      "target": "messages_presence_store"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_messages_page_layout",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/chat/messages-page-layout.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "chat_messages_page_layout_threadlistpanel",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/chat/use-thread-view.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_use_thread_view",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/chat/use-thread-view.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "chat_use_thread_view_usethreadview",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "stores/messages/use-thread-presence.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_use_thread_presence",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "stores/messages/use-thread-presence.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "messages_use_thread_presence_usethreadpresence",
+      "target": "messages_presence_store_usepresencestore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_admin",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_recruiters",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_admin",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_recruiter",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footer",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/files/download/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "download_route",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/upload.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_upload",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/auth.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_auth",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/auth-client.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_auth_client",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/email.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_email",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/verification.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_verification",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pusher/pusher.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pusher_pusher",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pusher/pusher-client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pusher_pusher_client",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/schema/auth.schema.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_auth_schema",
+      "target": "utils_env"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/env.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_env",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/env.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_env",
+      "target": "utils_env_envschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/env.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_env",
+      "target": "utils_env_envtypes"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/url.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_url",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_admin",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_recruiters",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_admin",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_recruiter",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_footer",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/files/download/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "download_route",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/upload.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_upload",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/auth.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_auth",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/auth-client.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_auth_client",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/email.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_email",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/verification.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_verification",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pusher/pusher.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pusher_pusher",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/pusher/pusher-client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pusher_pusher_client",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/schema/auth.schema.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schema_auth_schema",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/url.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_url",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "MANIFEST.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -36921,9 +38324,9 @@
       "source_file": "manifest.md",
       "source_location": "L487",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_cross_phase_rate_limiting_architecture_lib_rate_limiting",
-      "confidence_score": 1.0
+      "target": "manifest_cross_phase_rate_limiting_architecture_lib_rate_limiting"
     },
     {
       "relation": "contains",
@@ -36931,9 +38334,9 @@
       "source_file": "manifest.md",
       "source_location": "L532",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_cross_phase_recruiter_admin_profile_pages_task_3_1_5",
-      "confidence_score": 1.0
+      "target": "manifest_cross_phase_recruiter_admin_profile_pages_task_3_1_5"
     },
     {
       "relation": "contains",
@@ -36941,9 +38344,9 @@
       "source_file": "manifest.md",
       "source_location": "L519",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_created_file_paths_grouped_by_phase",
-      "target": "manifest_cross_phase_skills_filter_for_job_search_task_4_1_7",
-      "confidence_score": 1.0
+      "target": "manifest_cross_phase_skills_filter_for_job_search_task_4_1_7"
     },
     {
       "relation": "contains",
@@ -37241,9 +38644,9 @@
       "source_file": "manifest.md",
       "source_location": "L573",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_key_architecture_decisions",
-      "target": "manifest_profile_extension_to_all_roles",
-      "confidence_score": 1.0
+      "target": "manifest_profile_extension_to_all_roles"
     },
     {
       "relation": "contains",
@@ -37261,9 +38664,9 @@
       "source_file": "manifest.md",
       "source_location": "L565",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_key_architecture_decisions",
-      "target": "manifest_rate_limiting_architecture_v2_cross_phase",
-      "confidence_score": 1.0
+      "target": "manifest_rate_limiting_architecture_v2_cross_phase"
     },
     {
       "relation": "contains",
@@ -37271,9 +38674,9 @@
       "source_file": "manifest.md",
       "source_location": "L561",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_key_architecture_decisions",
-      "target": "manifest_rate_limiting_phase_3_legacy",
-      "confidence_score": 1.0
+      "target": "manifest_rate_limiting_phase_3_legacy"
     },
     {
       "relation": "contains",
@@ -37301,9 +38704,9 @@
       "source_file": "manifest.md",
       "source_location": "L569",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "manifest_key_architecture_decisions",
-      "target": "manifest_skills_filter_cross_phase",
-      "confidence_score": 1.0
+      "target": "manifest_skills_filter_cross_phase"
     },
     {
       "relation": "contains",
@@ -45376,246 +46779,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "about_page",
-      "target": "about_page_aboutpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "about_page",
-      "target": "about_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/about/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "about_page",
-      "target": "about_page_sections"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "become_employer_page_becomeemployerpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "become_employer_page_metadata"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "components_upgrade_to_recruiter_form"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "components_upgrade_to_recruiter_form_upgradetorecruiterform"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "libs_auth"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "schema_role_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "become_employer_page",
-      "target": "schema_role_schema_roles"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(public)/become-employer/page.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "become_employer_page_becomeemployerpage",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "careers_page",
-      "target": "careers_page_careerspage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "careers_page",
-      "target": "careers_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/careers/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "careers_page",
-      "target": "careers_page_openings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/contact/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "contact_page",
-      "target": "contact_page_contactpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/contact/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "contact_page",
-      "target": "contact_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "employers_page",
-      "target": "employers_page_employerspage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "employers_page",
-      "target": "employers_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "employers_page",
-      "target": "employers_page_sections"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "employers_page",
-      "target": "libs_auth"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "employers_page",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(public)/employers/page.tsx",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "employers_page_employerspage",
-      "target": "libs_auth_getsession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/(public)/jobs/[id]/page.tsx",
       "source_location": "L38",
       "weight": 1.0,
@@ -45776,82 +46939,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_footer"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_footer_footer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar_publicnavbar"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar_skeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "components_public_navbar_skeleton_publicnavbarskeleton"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/layout.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_layout",
-      "target": "public_layout_publiclayout"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/(public)/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
@@ -45879,96 +46966,6 @@
       "confidence_score": 1.0,
       "source": "public_page",
       "target": "public_page_home"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "press_page",
-      "target": "press_page_mentions"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "press_page",
-      "target": "press_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/press/page.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "press_page",
-      "target": "press_page_presspage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pricing_page",
-      "target": "pricing_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pricing_page",
-      "target": "pricing_page_plans"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/pricing/page.tsx",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pricing_page",
-      "target": "pricing_page_pricingpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "privacy_page",
-      "target": "privacy_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "privacy_page",
-      "target": "privacy_page_privacypage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/privacy/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "privacy_page",
-      "target": "privacy_page_sections"
     },
     {
       "relation": "imports",
@@ -46011,36 +47008,6 @@
       "confidence_score": 1.0,
       "source": "resources_page",
       "target": "resources_page_resourcespage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "terms_page",
-      "target": "terms_page_metadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "terms_page",
-      "target": "terms_page_sections"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/terms/page.tsx",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "terms_page",
-      "target": "terms_page_termspage"
     },
     {
       "relation": "contains",
@@ -51703,28 +52670,6 @@
       "confidence_score": 1.0,
       "source": "download_route",
       "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/files/download/route.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "download_route",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/files/download/route.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "download_route",
-      "target": "utils_env_env"
     },
     {
       "relation": "calls",
@@ -58789,28 +59734,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_admin",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_admin",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -59013,28 +59936,6 @@
       "confidence_score": 1.0,
       "source": "actions_invite_admin",
       "target": "schema_admin_schema_admininviteschema"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/invite-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_admin",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/invite-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_admin",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -66695,28 +67596,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/auth-client.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_auth_client",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/auth-client.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_auth_client",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "components/shared/start-conversation-search.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -66809,28 +67688,6 @@
       "confidence_score": 1.0,
       "source": "libs_auth",
       "target": "schema_role_schema_roles"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/auth.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_auth",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/auth.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_auth",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -67043,28 +67900,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/libs/email.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_email",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/email.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_email",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -67228,28 +68063,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/libs/verification.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_verification",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/verification.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_verification",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -67391,28 +68204,6 @@
       "confidence_score": 1.0,
       "source": "schema_auth_schema",
       "target": "schema_role_schema_roleschema"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/schema/auth.schema.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_auth_schema",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/schema/auth.schema.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "schema_auth_schema",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -69255,17 +70046,6 @@
       "target": "queries_public_job_queries_publicjobrow"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/search-query.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unit_search_query_test",
-      "target": "queries_public_job_queries"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -69285,17 +70065,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "queries_public_job_queries_listpublicjobs",
-      "target": "queries_public_job_queries_formatsearchquery"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/search-query.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unit_search_query_test",
       "target": "queries_public_job_queries_formatsearchquery"
     },
     {
@@ -69680,28 +70449,6 @@
       "confidence_score": 1.0,
       "source": "components_footer",
       "target": "components_footer_socials"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/footer.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_footer",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/footer.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_footer",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -72125,28 +72872,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_recruiters",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_recruiters",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -72294,28 +73019,6 @@
       "confidence_score": 1.0,
       "source": "actions_invite_recruiter",
       "target": "schema_team_schema_recruiterinviteschema"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_recruiter",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_recruiter",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -87555,28 +88258,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_messages_page_layout",
-      "target": "messages_presence_store"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_messages_page_layout",
-      "target": "messages_presence_store_usepresencestore"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -87670,17 +88351,6 @@
       "confidence_score": 1.0,
       "source": "components_messages_page_layout_dom_test",
       "target": "chat_messages_page_layout_messagespageconfig"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/chat/messages-page-layout.tsx",
-      "source_location": "L71",
-      "weight": 1.0,
-      "source": "chat_messages_page_layout_threadlistpanel",
-      "target": "messages_presence_store_usepresencestore"
     },
     {
       "relation": "calls",
@@ -88190,28 +88860,6 @@
       "target": "lib_thread_utils_isvalidthreadid"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/chat/use-thread-view.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_use_thread_view",
-      "target": "messages_presence_store"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/chat/use-thread-view.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_use_thread_view",
-      "target": "messages_presence_store_usepresencestore"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -88221,17 +88869,6 @@
       "weight": 1.0,
       "source": "chat_use_thread_view_usethreadview",
       "target": "lib_thread_utils_getotheruserid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/chat/use-thread-view.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "chat_use_thread_view_usethreadview",
-      "target": "messages_presence_store_usepresencestore"
     },
     {
       "relation": "contains",
@@ -95663,28 +96300,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "lib/rate-limit.ts",
       "source_location": "L1",
       "weight": 1.0,
@@ -95883,17 +96498,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_presence_store",
-      "target": "pusher_pusher_client"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "stores/messages/use-thread-presence.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -95922,28 +96526,6 @@
       "target": "pusher_pusher_client_getpusherconfig"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pusher/pusher-client.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pusher_pusher_client",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pusher/pusher-client.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pusher_pusher_client",
-      "target": "utils_env_env"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -95953,17 +96535,6 @@
       "confidence_score": 1.0,
       "source": "pusher_pusher_client_getpusherclient",
       "target": "pusher_pusher_client_getpusherconfig"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_presence_store",
-      "target": "pusher_pusher_client_getpusherclient"
     },
     {
       "relation": "imports",
@@ -96016,28 +96587,6 @@
       "confidence_score": 1.0,
       "source": "pusher_pusher",
       "target": "pusher_pusher_realpusher"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pusher/pusher.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pusher_pusher",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/pusher/pusher.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "pusher_pusher",
-      "target": "utils_env_env"
     },
     {
       "relation": "imports_from",
@@ -100940,76 +101489,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_get_unread_message_count_test",
-      "target": "messages_get_unread_message_count_test_mockcount"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/get-unread-message-count.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_get_unread_message_count_test",
-      "target": "messages_get_unread_message_count_test_mockrequirerole"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/message-service-pusher.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_message_service_pusher_test",
-      "target": "messages_message_service_pusher_test_mocktrigger"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_unread_message_count_dom_test",
-      "target": "messages_use_unread_message_count_dom_test_capturedbindings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_unread_message_count_dom_test",
-      "target": "messages_use_unread_message_count_dom_test_capturedunbindings"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_unread_message_count_dom_test",
-      "target": "messages_use_unread_message_count_dom_test_createwrapper"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/messages/use-unread-message-count.dom.test.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_unread_message_count_dom_test",
-      "target": "messages_use_unread_message_count_dom_test_mockgetunreadcount"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "lib/test/unit/notifications.test.ts",
       "source_location": "L8",
       "weight": 1.0,
@@ -101417,28 +101896,6 @@
       "confidence_score": 1.0,
       "source": "lib_upload",
       "target": "lib_upload_validatefile"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/upload.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_upload",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/upload.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_upload",
-      "target": "utils_env_env"
     },
     {
       "relation": "calls",
@@ -102405,234 +102862,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_adapter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_admin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_admin_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_avatarurl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_companylogourl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_job_templates"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_jobslug"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L143",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_pool"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_prisma"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_recruiters"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_upsertcredentialaccount"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_userid"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "prisma_seed_users"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "utils_logger"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed",
-      "target": "utils_logger_logger"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L219",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed_main",
-      "target": "prisma_seed_jobslug"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L168",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed_main",
-      "target": "prisma_seed_upsertcredentialaccount"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L198",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed_main",
-      "target": "prisma_seed_avatarurl"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "prisma/seed.ts",
-      "source_location": "L246",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "prisma_seed_main",
-      "target": "prisma_seed_companylogourl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "proxy.ts",
       "source_location": "L40",
       "weight": 1.0,
@@ -102653,130 +102882,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "scripts_demote_super_admin_adapter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "scripts_demote_super_admin_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "scripts_demote_super_admin_pool"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "scripts_demote_super_admin_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/demote-super-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_demote_super_admin",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "scripts_promote_super_admin_adapter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "scripts_promote_super_admin_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "scripts_promote_super_admin_pool"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "scripts_promote_super_admin_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/promote-super-admin.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_promote_super_admin",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "stores/chat-store.ts",
       "source_location": "L3",
       "weight": 1.0,
@@ -102793,59 +102898,6 @@
       "confidence_score": 1.0,
       "source": "stores_chat_store",
       "target": "stores_chat_store_usechatstore"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_presence_store",
-      "target": "messages_presence_store_presencestate"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "stores/messages/presence-store.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_presence_store",
-      "target": "messages_presence_store_usepresencestore"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "stores/messages/use-thread-presence.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_thread_presence",
-      "target": "messages_presence_store"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "stores/messages/use-thread-presence.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_use_thread_presence",
-      "target": "messages_presence_store_usepresencestore"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "stores/messages/use-thread-presence.ts",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "messages_use_thread_presence_usethreadpresence",
-      "target": "messages_presence_store_usepresencestore"
     },
     {
       "relation": "contains",
@@ -103106,58 +103158,6 @@
       "confidence_score": 1.0,
       "source": "tsconfig_compileroptions_paths",
       "target": "tsconfig_paths"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "utils/env.ts",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_env",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "utils/env.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_env",
-      "target": "utils_env_envschema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "utils/env.ts",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_env",
-      "target": "utils_env_envtypes"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "utils/url.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_url",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "utils/url.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_url",
-      "target": "utils_env_env"
     },
     {
       "relation": "contains",
@@ -108601,5 +108601,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "dc4fd1f2a805c0defd24f86b30ceb5112f79bf01"
+  "built_at_commit": "4642e8b9c3627d444eb4dade3686c3a23a8955ba"
 }

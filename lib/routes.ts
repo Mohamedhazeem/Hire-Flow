@@ -8,14 +8,24 @@ export const PROTECTED_ROUTES = ["/admin", "/recruiter", "/user"] as const;
 
 export const ADDITIONAL_HIDDEN_PREFIXES = ["/admin-invite", "/recruiter-invite"] as const;
 
-export const PUBLIC_CONTENT_PATHS = ["/", "/jobs", "/resources", "/privacy", "/terms", "/unauthorized", "/employers", "/pricing", "/about", "/careers", "/contact", "/press", "/become-employer"] as const;
+export const PUBLIC_CONTENT_PATHS = [
+  "/",
+  "/jobs",
+  "/resources",
+  "/privacy",
+  "/terms",
+  "/unauthorized",
+  "/employers",
+  "/pricing",
+  "/about",
+  "/careers",
+  "/contact",
+  "/press",
+  "/become-employer",
+] as const;
 
 /** All prefix-based route patterns where the navbar is hidden */
-const HIDDEN_ROUTE_PREFIXES = [
-  ...PROTECTED_ROUTES,
-  ...AUTH_PAGES,
-  ...ADDITIONAL_HIDDEN_PREFIXES,
-] as const;
+const HIDDEN_ROUTE_PREFIXES = [...PROTECTED_ROUTES, ...AUTH_PAGES, ...ADDITIONAL_HIDDEN_PREFIXES] as const;
 
 /**
  * Returns true if the PublicNavbar should NOT render for the given pathname.
@@ -33,7 +43,7 @@ const HIDDEN_ROUTE_PREFIXES = [
 export function isHiddenRoute(pathname: string | null): boolean {
   if (!pathname) return false;
   // Allow exact public content paths
-  if (PUBLIC_CONTENT_PATHS.includes(pathname as typeof PUBLIC_CONTENT_PATHS[number])) {
+  if (PUBLIC_CONTENT_PATHS.includes(pathname as (typeof PUBLIC_CONTENT_PATHS)[number])) {
     return false;
   }
 
@@ -43,7 +53,5 @@ export function isHiddenRoute(pathname: string | null): boolean {
   }
 
   // Hidden if it matches any hidden prefix
-  return HIDDEN_ROUTE_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
-  );
+  return HIDDEN_ROUTE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }

@@ -152,9 +152,7 @@ Call `resetDb()` in `beforeEach` of every integration test file.
 import { faker } from "@faker-js/faker";
 import { testPrisma } from "./test-db";
 
-export async function createTestUser(
-  overrides: Partial<{ role: "user" | "recruiter" | "admin"; email: string }> = {},
-) {
+export async function createTestUser(overrides: Partial<{ role: "user" | "recruiter" | "admin"; email: string }> = {}) {
   return testPrisma.user.create({
     data: {
       email: overrides.email ?? faker.internet.email(),
@@ -171,10 +169,7 @@ export async function createTestCompany(recruiterId: string, overrides = {}) {
   });
 }
 
-export async function createTestJob(
-  companyId: string,
-  overrides: Partial<{ status: string; isActive: boolean }> = {},
-) {
+export async function createTestJob(companyId: string, overrides: Partial<{ status: string; isActive: boolean }> = {}) {
   return testPrisma.job.create({
     data: {
       companyId,
@@ -199,10 +194,7 @@ Extend with `createTestResume`, `createTestThread` as Phase 2 needs them — add
 ### Step 0.6 — `lib/test/auth-fixtures.ts`
 
 ```ts
-export function mockSession(
-  role: "admin" | "recruiter" | "user",
-  overrides: Record<string, unknown> = {},
-) {
+export function mockSession(role: "admin" | "recruiter" | "user", overrides: Record<string, unknown> = {}) {
   return {
     user: { id: `test-${role}-id`, email: `${role}@test.dev`, role, ...overrides },
     session: { id: "test-session-id" },

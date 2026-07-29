@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-29)
 
 ## Corpus Check
-- 721 files · ~311,867 words
+- 721 files · ~311,912 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dc4fd1f2`
+- Built from commit: `4642e8b9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1010,7 +1010,7 @@ Cohesion: 0.24
 Nodes (9): InfoRow(), chipList(), JobMeta, JobMetaGrid(), JobMetaGridProps, salaryDisplay(), TagChip(), TagChipProps (+1 more)
 
 ## Knowledge Gaps
-- **1844 isolated node(s):** `Last Updated`, `Overview`, `Phase 0: Foundation`, `Phase 1: Admin`, `Phase 2: Recruiter` (+1839 more)
+- **1844 isolated node(s):** `metadata`, `sections`, `metadata`, `metadata`, `openings` (+1839 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **39 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1018,16 +1018,16 @@ Nodes (9): InfoRow(), chipList(), JobMeta, JobMetaGrid(), JobMetaGridProps, sala
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 40` to `Community 18`, `Community 147`, `Community 21`, `Community 23`, `Community 26`, `Community 28`, `Community 34`, `Community 38`, `Community 42`, `Community 49`, `Community 178`, `Community 51`, `Community 182`, `Community 54`, `Community 58`, `Community 61`, `Community 67`, `Community 70`, `Community 74`, `Community 86`, `Community 90`, `Community 218`, `Community 94`, `Community 95`, `Community 97`, `Community 102`, `Community 243`, `Community 117`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Why does `PageHeader()` connect `Community 90` to `Community 65`, `Community 34`, `Community 36`, `Community 69`, `Community 102`, `Community 40`, `Community 42`, `Community 140`, `Community 17`, `Community 83`, `Community 51`, `Community 21`, `Community 58`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 30` to `Community 140`, `Community 22`, `Community 24`, `Community 155`, `Community 35`, `Community 179`, `Community 65`, `Community 199`, `Community 80`, `Community 83`, `Community 211`, `Community 87`, `Community 215`, `Community 88`, `Community 92`, `Community 222`, `Community 95`, `Community 233`, `Community 110`, `Community 239`, `Community 112`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `Button()` connect `Community 38` to `Community 18`, `Community 21`, `Community 29`, `Community 36`, `Community 40`, `Community 42`, `Community 178`, `Community 58`, `Community 65`, `Community 67`, `Community 75`, `Community 80`, `Community 83`, `Community 92`, `Community 93`, `Community 95`, `Community 223`, `Community 102`, `Community 106`, `Community 238`, `Community 111`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 23 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 20 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 20 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Last Updated`, `Overview`, `Phase 0: Foundation` to the rest of the system?**
+- **What connects `metadata`, `sections`, `metadata` to the rest of the system?**
   _1844 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._

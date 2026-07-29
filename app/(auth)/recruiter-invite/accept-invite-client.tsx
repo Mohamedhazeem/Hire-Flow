@@ -56,9 +56,7 @@ export function AcceptInviteClient({ token, email }: { token: string; email: str
           <>
             <CheckCircle className="size-12 text-success mx-auto" />
             <h1 className="text-2xl font-bold text-text-heading">Invitation Accepted</h1>
-            <p className="text-text-muted">
-              You are now a member of the team. Redirecting to your dashboard...
-            </p>
+            <p className="text-text-muted">You are now a member of the team. Redirecting to your dashboard...</p>
           </>
         ) : (
           <>
@@ -80,8 +78,7 @@ export function AcceptInviteClient({ token, email }: { token: string; email: str
             ) : (
               <div className="space-y-3">
                 <p className="text-sm text-text-muted">
-                  You need an account with the email <strong>{email}</strong> to accept this
-                  invitation.
+                  You need an account with the email <strong>{email}</strong> to accept this invitation.
                 </p>
                 <Button onClick={handleSignUpRedirect} variant="default" className="w-full">
                   Create Account
