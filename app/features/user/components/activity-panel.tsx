@@ -164,14 +164,14 @@ export function ActivityPanel() {
                 href={`/user/applications/${app.id}`}
                 className="flex items-center gap-3 px-4 py-3 border-b border-border-subtle last:border-b-0 hover:bg-bg-muted/40 transition-colors"
               >
-                <div className="size-9 rounded-lg bg-brand/10 flex items-center justify-center text-brand text-xs font-bold shrink-0">
+                <div className="size-9 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-xs font-bold shrink-0 overflow-hidden">
                   {app.companyLogo ? (
                     <Image
                       src={app.companyLogo}
                       alt=""
-                      width={20}
-                      height={20}
-                      className="size-5 object-contain"
+                      width={36}
+                      height={36}
+                      className="size-full rounded-xl object-cover"
                     />
                   ) : (
                     (app.companyName[0]?.toUpperCase() ?? "?")
