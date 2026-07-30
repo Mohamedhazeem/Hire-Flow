@@ -94,31 +94,31 @@ export function ActivityPanel() {
         {statsLoad
           ? Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="bg-bg-surface border border-border-subtle rounded-xl p-4">
-                <Skeleton className="h-3 w-20 mb-2" />
-                <Skeleton className="h-7 w-10" />
+                <Skeleton className="h-3 w-20 mb-3" />
+                <Skeleton className="h-9 w-12 mx-auto" />
               </div>
             ))
           : statsErr
             ? statConfig.map((s) => (
                 <div
                   key={s.key}
-                  className="bg-bg-surface border border-border-subtle rounded-xl p-4"
+                  className="bg-bg-surface border border-border-subtle rounded-xl p-4 flex flex-col items-center gap-2"
                 >
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex items-center gap-2">
                     <div className="size-7 rounded-lg flex items-center justify-center bg-bg-muted text-text-muted">
                       {s.icon}
                     </div>
                     <span className="text-xs text-text-muted">{s.label}</span>
                   </div>
-                  <p className="text-xl font-bold text-text-heading">&mdash;</p>
+                  <p className="text-3xl font-bold text-text-heading">&mdash;</p>
                 </div>
               ))
             : statConfig.map((s) => (
                 <div
                   key={s.key}
-                  className="bg-bg-surface border border-border-subtle rounded-xl p-4"
+                  className="bg-bg-surface border border-border-subtle rounded-xl p-4 flex flex-col items-center gap-2"
                 >
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex items-center gap-2">
                     <div
                       className={`size-7 rounded-lg flex items-center justify-center ${s.color}`}
                     >
@@ -126,7 +126,7 @@ export function ActivityPanel() {
                     </div>
                     <span className="text-xs text-text-muted">{s.label}</span>
                   </div>
-                  <p className="text-xl font-bold text-text-heading">{stats?.[s.key] ?? 0}</p>
+                  <p className="text-3xl font-bold text-text-heading">{stats?.[s.key] ?? 0}</p>
                 </div>
               ))}
       </div>
