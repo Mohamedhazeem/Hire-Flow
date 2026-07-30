@@ -2460,8 +2460,8 @@
     "semantic_hash": ""
   },
   "lib/resolvers/job-resolver.ts": {
-    "mtime": 1785409360.8918307,
-    "ast_hash": "e7dfcf9b2d7d09a83d3e869d1dd92eac",
+    "mtime": 1785409407.3410387,
+    "ast_hash": "d7774712d6d927de457e95e398daf474",
     "semantic_hash": ""
   },
   "lib/routes.ts": {
@@ -3020,7 +3020,7 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785341974.4628634,
+    "mtime": 1785409781.6990175,
     "ast_hash": "13599664ae6249157d879252772c18bd",
     "semantic_hash": ""
   },
@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1785407885.198594,
-    "ast_hash": "c9c238505e4f8855a9b3bb5d9de1ce26",
+    "mtime": 1785410106.5138707,
+    "ast_hash": "7243d5a869295785ffe84a6a14465b66",
     "semantic_hash": ""
   },
   ".kilo/plans/ai-suggestions-enhancements.md": {
