@@ -3070,8 +3070,8 @@
     "semantic_hash": ""
   },
   "prisma/seed.ts": {
-    "mtime": 1785402702.3474498,
-    "ast_hash": "242741e152ee8c087666d4af3fc160df",
+    "mtime": 1785419643.4722328,
+    "ast_hash": "cefaf77846d3913ea0f19214da94a7c5",
     "semantic_hash": ""
   },
   "proxy.ts": {
@@ -3080,13 +3080,13 @@
     "semantic_hash": ""
   },
   "scripts/demote-super-admin.ts": {
-    "mtime": 1785319931.318698,
-    "ast_hash": "457ec61b011f0df1d529ef10427a93b9",
+    "mtime": 1785419644.494223,
+    "ast_hash": "95b4033feafeb052501a3ed29da19a57",
     "semantic_hash": ""
   },
   "scripts/promote-super-admin.ts": {
-    "mtime": 1785319931.3297,
-    "ast_hash": "59f3292b74e219f412a2f2fac292aeab",
+    "mtime": 1785419643.9602313,
+    "ast_hash": "a5c6da36d1aebc135d7442d4d5600381",
     "semantic_hash": ""
   },
   "stores/chat-store.ts": {
