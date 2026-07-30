@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import { JobListPage } from "@/app/features/jobs/components/job-list-page";
+import { JobListSkeleton } from "@/app/features/jobs/components/job-list-skeleton";
 
 export const metadata = {
   title: "Browse Jobs",
@@ -6,5 +8,9 @@ export const metadata = {
 };
 
 export default function JobsPage() {
-  return <JobListPage />;
+  return (
+    <Suspense fallback={<JobListSkeleton />}>
+      <JobListPage />
+    </Suspense>
+  );
 }
