@@ -1670,8 +1670,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/application-header.tsx": {
-    "mtime": 1785341967.51697,
-    "ast_hash": "f51dcc5577e439a8285e9d73464e211c",
+    "mtime": 1785401401.8002079,
+    "ast_hash": "27be3e890595d215fca3120d2cc06442",
     "semantic_hash": ""
   },
   "app/features/user/components/application-resume-section.tsx": {

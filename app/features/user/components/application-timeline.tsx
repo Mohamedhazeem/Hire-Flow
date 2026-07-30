@@ -19,9 +19,13 @@ function statusLabel(from: string | null, to: string): string {
 }
 
 export function ApplicationTimeline({ statusChanges, createdAt }: Props) {
+  const filtered = statusChanges.filter(
+    (sc) => sc.fromStatus !== sc.toStatus,
+  );
+
   const entries: StatusTimelineEntry[] =
-    statusChanges.length > 0
-      ? statusChanges.map((sc) => ({
+    filtered.length > 0
+      ? filtered.map((sc) => ({
           id: sc.id,
           type: "status_change" as const,
           fromStatus: sc.fromStatus,

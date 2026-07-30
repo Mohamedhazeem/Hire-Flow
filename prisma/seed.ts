@@ -380,6 +380,23 @@ async function main() {
           resumeId: `resume_${usr.id}_0`,
         },
       });
+
+      const targetStatus = statuses[(u * 3 + j) % statuses.length];
+      if (targetStatus !== "applied") {
+        const existingChange = await prisma.applicationStatusChange.findFirst({
+          where: { applicationId: appId },
+        });
+        if (!existingChange) {
+          await prisma.applicationStatusChange.create({
+            data: {
+              applicationId: appId,
+              fromStatus: "applied",
+              toStatus: targetStatus,
+              changedById: usr.id,
+            },
+          });
+        }
+      }
     }
   }
 
