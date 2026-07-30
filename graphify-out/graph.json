@@ -4,1096 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route",
-      "community": 72,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_handleget",
-      "community": 72,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_get",
-      "community": 72,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "dashboard_route",
-      "community": 158,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "dashboard_route_handleget",
-      "community": 158,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/dashboard/route.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "dashboard_route_get",
-      "community": 158,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_id_route_ts_id_route",
-      "community": 38,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "{ DELETE }",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/[id]/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_id_route_ts_id_route_delete",
-      "community": 38,
-      "norm_label": "{ delete }"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/accept/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_accept_route_ts_accept_route",
-      "community": 72,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/accept/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_accept_route_ts_accept_route_handlepost",
-      "community": 72,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/accept/route.ts",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_accept_route_ts_accept_route_post",
-      "community": 72,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_route_ts_invite_route",
-      "community": 220,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_route_ts_invite_route_handleget",
-      "community": 220,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/invite/route.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "app_api_admin_invite_route_ts_invite_route_get",
-      "community": 220,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_id_route_ts_id_route",
-      "community": 106,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_id_route_ts_id_route_handledelete",
-      "community": 106,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "handlePATCH()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_id_route_ts_id_route_handlepatch",
-      "community": 106,
-      "norm_label": "handlepatch()"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_id_route_ts_id_route_delete",
-      "community": 106,
-      "norm_label": "delete"
-    },
-    {
-      "label": "PATCH",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/[id]/route.ts",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_id_route_ts_id_route_patch",
-      "community": 106,
-      "norm_label": "patch"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_route_ts_jobs_route",
-      "community": 51,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_route_ts_jobs_route_handleget",
-      "community": 51,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/jobs/route.ts",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "app_api_admin_jobs_route_ts_jobs_route_get",
-      "community": 51,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/messages/search/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_messages_search_route_ts_search_route",
-      "community": 221,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/messages/search/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_admin_messages_search_route_ts_search_route_handleget",
-      "community": 221,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/messages/search/route.ts",
-      "source_location": "L40",
-      "_origin": "ast",
-      "id": "app_api_admin_messages_search_route_ts_search_route_get",
-      "community": 221,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/team/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_team_id_route_ts_id_route",
-      "community": 72,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/admin/team/[id]/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_admin_team_id_route_ts_id_route_handledelete",
-      "community": 72,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/admin/team/[id]/route.ts",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "app_api_admin_team_id_route_ts_id_route_delete",
-      "community": 72,
-      "norm_label": "delete"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/applications/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "applications_route",
-      "community": 107,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/applications/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "applications_route_handleget",
-      "community": 107,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/applications/route.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "applications_route_get",
-      "community": 107,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "ban_route",
-      "community": 223,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "ban_route_handlepost",
-      "community": 223,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/ban/route.ts",
-      "source_location": "L31",
-      "_origin": "ast",
-      "id": "ban_route_post",
-      "community": 223,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "role_route",
-      "community": 47,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "role_route_handlepost",
-      "community": 47,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/role/route.ts",
-      "source_location": "L18",
-      "_origin": "ast",
-      "id": "role_route_post",
-      "community": 47,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_admin_users_id_route_ts_id_route",
-      "community": 123,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "app_api_admin_users_id_route_ts_id_route_handleget",
-      "community": 123,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_api_admin_users_id_route_ts_id_route_handledelete",
-      "community": 123,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "app_api_admin_users_id_route_ts_id_route_get",
-      "community": 123,
-      "norm_label": "get"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/route.ts",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "app_api_admin_users_id_route_ts_id_route_delete",
-      "community": 123,
-      "norm_label": "delete"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "sessions_route",
-      "community": 219,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "sessions_route_handleget",
-      "community": 219,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "sessions_route_handledelete",
-      "community": 219,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L29",
-      "_origin": "ast",
-      "id": "sessions_route_get",
-      "community": 219,
-      "norm_label": "get"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "sessions_route_delete",
-      "community": 219,
-      "norm_label": "delete"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "unban_route",
-      "community": 47,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "unban_route_handlepost",
-      "community": 47,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/[id]/unban/route.ts",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "unban_route_post",
-      "community": 47,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "users_route",
-      "community": 224,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "users_route_handleget",
-      "community": 224,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/admin/users/route.ts",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "users_route_get",
-      "community": 224,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/analytics/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "community": 17,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/analytics/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "app_api_recruiter_analytics_route_ts_analytics_route_handleget",
-      "community": 17,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/analytics/route.ts",
-      "source_location": "L21",
-      "_origin": "ast",
-      "id": "app_api_recruiter_analytics_route_ts_analytics_route_get",
-      "community": 17,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route",
-      "community": 222,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_handleget",
-      "community": 222,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_get",
-      "community": 222,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "profile_route",
-      "community": 107,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "profile_route_handleget",
-      "community": 107,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "profile_route_get",
-      "community": 107,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "revert_route",
-      "community": 72,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "revert_route_handlepost",
-      "community": 72,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "revert_route_post",
-      "community": 72,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "community": 43,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePATCH()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "status_route_handlepatch",
-      "community": 43,
-      "norm_label": "handlepatch()"
-    },
-    {
-      "label": "PATCH",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
-      "source_location": "L38",
-      "_origin": "ast",
-      "id": "status_route_patch",
-      "community": 43,
-      "norm_label": "patch"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "community": 43,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "status_route_handlepost",
-      "community": 43,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "status_route_post",
-      "community": 43,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_id_route_ts_id_route",
-      "community": 38,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "{ DELETE }",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/[id]/route.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_id_route_ts_id_route_delete",
-      "community": 38,
-      "norm_label": "{ delete }"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/accept/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "community": 72,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/accept/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_accept_route_ts_accept_route_handlepost",
-      "community": 72,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/accept/route.ts",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_accept_route_ts_accept_route_post",
-      "community": 72,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_route_ts_invite_route",
-      "community": 129,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "community": 129,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/invite/route.ts",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "app_api_recruiter_invite_route_ts_invite_route_get",
-      "community": 129,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "community": 17,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_handleget",
-      "community": 17,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_get",
-      "community": 17,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "export_route",
-      "community": 79,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "export_route_handleget",
-      "community": 79,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "export_route_get",
-      "community": 79,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "applicants_route",
-      "community": 105,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "applicants_route_handleget",
-      "community": 105,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "applicants_route_get",
-      "community": 105,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "community": 8,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handleget",
-      "community": 8,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "handlePATCH()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handlepatch",
-      "community": 8,
-      "norm_label": "handlepatch()"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L47",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handledelete",
-      "community": 8,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_get",
-      "community": 8,
-      "norm_label": "get"
-    },
-    {
-      "label": "PATCH",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L61",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_patch",
-      "community": 8,
-      "norm_label": "patch"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
-      "source_location": "L62",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_id_route_ts_id_route_delete",
-      "community": 8,
-      "norm_label": "delete"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "toggle_route",
-      "community": 51,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handlePATCH()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "toggle_route_handlepatch",
-      "community": 51,
-      "norm_label": "handlepatch()"
-    },
-    {
-      "label": "PATCH",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "toggle_route_patch",
-      "community": 51,
-      "norm_label": "patch"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_route_ts_jobs_route",
-      "community": 51,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/route.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_route_ts_jobs_route_handleget",
-      "community": 51,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "handlePOST()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/route.ts",
-      "source_location": "L42",
-      "_origin": "ast",
-      "id": "jobs_route_handlepost",
-      "community": 51,
-      "norm_label": "handlepost()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/route.ts",
-      "source_location": "L63",
-      "_origin": "ast",
-      "id": "app_api_recruiter_jobs_route_ts_jobs_route_get",
-      "community": 51,
-      "norm_label": "get"
-    },
-    {
-      "label": "POST",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/jobs/route.ts",
-      "source_location": "L64",
-      "_origin": "ast",
-      "id": "jobs_route_post",
-      "community": 51,
-      "norm_label": "post"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/messages/search/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_messages_search_route_ts_search_route",
-      "community": 47,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleGET()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/messages/search/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_recruiter_messages_search_route_ts_search_route_handleget",
-      "community": 47,
-      "norm_label": "handleget()"
-    },
-    {
-      "label": "GET",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/messages/search/route.ts",
-      "source_location": "L58",
-      "_origin": "ast",
-      "id": "app_api_recruiter_messages_search_route_ts_search_route_get",
-      "community": 47,
-      "norm_label": "get"
-    },
-    {
-      "label": "route.ts",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/team/[id]/route.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "app_api_recruiter_team_id_route_ts_id_route",
-      "community": 47,
-      "norm_label": "route.ts"
-    },
-    {
-      "label": "handleDELETE()",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/team/[id]/route.ts",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "app_api_recruiter_team_id_route_ts_id_route_handledelete",
-      "community": 47,
-      "norm_label": "handledelete()"
-    },
-    {
-      "label": "DELETE",
-      "file_type": "code",
-      "source_file": "app/api/recruiter/team/[id]/route.ts",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "app_api_recruiter_team_id_route_ts_id_route_delete",
-      "community": 47,
-      "norm_label": "delete"
-    },
-    {
       "label": "profile-form.tsx",
       "file_type": "code",
       "source_file": "app/features/user/components/profile-form.tsx",
@@ -1107,7 +17,7 @@
       "label": "WORK_MODE_OPTIONS",
       "file_type": "code",
       "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "components_profile_form_work_mode_options",
       "community": 60,
@@ -1117,7 +27,7 @@
       "label": "Props",
       "file_type": "code",
       "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "components_profile_form_props",
       "community": 60,
@@ -1127,91 +37,11 @@
       "label": "ProfileForm()",
       "file_type": "code",
       "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "components_profile_form_profileform",
       "community": 60,
       "norm_label": "profileform()"
-    },
-    {
-      "label": "invite.ts",
-      "file_type": "code",
-      "source_file": "lib/handlers/invite.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handlers_invite",
-      "community": 38,
-      "norm_label": "invite.ts"
-    },
-    {
-      "label": "InviteCancelOptions",
-      "file_type": "code",
-      "source_file": "lib/handlers/invite.ts",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "handlers_invite_invitecanceloptions",
-      "community": 38,
-      "norm_label": "invitecanceloptions"
-    },
-    {
-      "label": "createInviteCancelHandler()",
-      "file_type": "code",
-      "source_file": "lib/handlers/invite.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "handlers_invite_createinvitecancelhandler",
-      "community": 38,
-      "norm_label": "createinvitecancelhandler()"
-    },
-    {
-      "label": "config.ts",
-      "file_type": "code",
-      "source_file": "lib/rate-limiting/config.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "rate_limiting_config",
-      "community": 71,
-      "norm_label": "config.ts"
-    },
-    {
-      "label": "rateLimitConfig",
-      "file_type": "code",
-      "source_file": "lib/rate-limiting/config.ts",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "rate_limiting_config_ratelimitconfig",
-      "community": 71,
-      "norm_label": "ratelimitconfig"
-    },
-    {
-      "label": "RateLimitEndpoint",
-      "file_type": "code",
-      "source_file": "lib/rate-limiting/config.ts",
-      "source_location": "L88",
-      "_origin": "ast",
-      "id": "rate_limiting_config_ratelimitendpoint",
-      "community": 38,
-      "norm_label": "ratelimitendpoint"
-    },
-    {
-      "label": "validateConfig()",
-      "file_type": "code",
-      "source_file": "lib/rate-limiting/config.ts",
-      "source_location": "L90",
-      "_origin": "ast",
-      "id": "rate_limiting_config_validateconfig",
-      "community": 71,
-      "norm_label": "validateconfig()"
-    },
-    {
-      "label": "freezeConfig()",
-      "file_type": "code",
-      "source_file": "lib/rate-limiting/config.ts",
-      "source_location": "L195",
-      "_origin": "ast",
-      "id": "rate_limiting_config_freezeconfig",
-      "community": 71,
-      "norm_label": "freezeconfig()"
     },
     {
       "label": "profile-form.dom.test.tsx",
@@ -1244,14 +74,1184 @@
       "norm_label": "mockupsertprofile"
     },
     {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 223,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 223,
+      "norm_label": "handleget()",
+      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 223,
+      "norm_label": "get",
+      "id": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 158,
+      "norm_label": "route.ts",
+      "id": "dashboard_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 158,
+      "norm_label": "handleget()",
+      "id": "dashboard_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/dashboard/route.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 158,
+      "norm_label": "get",
+      "id": "dashboard_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_invite_id_route_ts_id_route"
+    },
+    {
+      "label": "{ DELETE }",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/[id]/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "{ delete }",
+      "id": "app_api_admin_invite_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/accept/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_invite_accept_route_ts_accept_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/accept/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handlepost()",
+      "id": "app_api_admin_invite_accept_route_ts_accept_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/accept/route.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "post",
+      "id": "app_api_admin_invite_accept_route_ts_accept_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 220,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_invite_route_ts_invite_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/route.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 220,
+      "norm_label": "handleget()",
+      "id": "app_api_admin_invite_route_ts_invite_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/invite/route.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 220,
+      "norm_label": "get",
+      "id": "app_api_admin_invite_route_ts_invite_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_jobs_id_route_ts_id_route"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "handledelete()",
+      "id": "app_api_admin_jobs_id_route_ts_id_route_handledelete"
+    },
+    {
+      "label": "handlePATCH()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "handlepatch()",
+      "id": "app_api_admin_jobs_id_route_ts_id_route_handlepatch"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "delete",
+      "id": "app_api_admin_jobs_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "PATCH",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/[id]/route.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "patch",
+      "id": "app_api_admin_jobs_id_route_ts_id_route_patch"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_jobs_route_ts_jobs_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "handleget()",
+      "id": "app_api_admin_jobs_route_ts_jobs_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/jobs/route.ts",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "get",
+      "id": "app_api_admin_jobs_route_ts_jobs_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/messages/search/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_messages_search_route_ts_search_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/messages/search/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "handleget()",
+      "id": "app_api_admin_messages_search_route_ts_search_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/messages/search/route.ts",
+      "source_location": "L40",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "get",
+      "id": "app_api_admin_messages_search_route_ts_search_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/team/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 224,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_team_id_route_ts_id_route"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/admin/team/[id]/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 224,
+      "norm_label": "handledelete()",
+      "id": "app_api_admin_team_id_route_ts_id_route_handledelete"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/admin/team/[id]/route.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 224,
+      "norm_label": "delete",
+      "id": "app_api_admin_team_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/applications/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "route.ts",
+      "id": "applications_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/applications/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "handleget()",
+      "id": "applications_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/applications/route.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 24,
+      "norm_label": "get",
+      "id": "applications_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "ban_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handlepost()",
+      "id": "ban_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/ban/route.ts",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "post",
+      "id": "ban_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "route.ts",
+      "id": "role_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "handlepost()",
+      "id": "role_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/role/route.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "post",
+      "id": "role_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 123,
+      "norm_label": "route.ts",
+      "id": "app_api_admin_users_id_route_ts_id_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 123,
+      "norm_label": "handleget()",
+      "id": "app_api_admin_users_id_route_ts_id_route_handleget"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 123,
+      "norm_label": "handledelete()",
+      "id": "app_api_admin_users_id_route_ts_id_route_handledelete"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L37",
+      "_origin": "ast",
+      "community": 123,
+      "norm_label": "get",
+      "id": "app_api_admin_users_id_route_ts_id_route_get"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/route.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 123,
+      "norm_label": "delete",
+      "id": "app_api_admin_users_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 219,
+      "norm_label": "route.ts",
+      "id": "sessions_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 219,
+      "norm_label": "handleget()",
+      "id": "sessions_route_handleget"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 219,
+      "norm_label": "handledelete()",
+      "id": "sessions_route_handledelete"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 219,
+      "norm_label": "get",
+      "id": "sessions_route_get"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/sessions/route.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 219,
+      "norm_label": "delete",
+      "id": "sessions_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "route.ts",
+      "id": "unban_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "handlepost()",
+      "id": "unban_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/[id]/unban/route.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 47,
+      "norm_label": "post",
+      "id": "unban_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "users_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handleget()",
+      "id": "users_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/admin/users/route.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "get",
+      "id": "users_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/analytics/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_analytics_route_ts_analytics_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/analytics/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_analytics_route_ts_analytics_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/analytics/route.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "get",
+      "id": "app_api_recruiter_analytics_route_ts_analytics_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "get",
+      "id": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "route.ts",
+      "id": "profile_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "handleget()",
+      "id": "profile_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/profile/route.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 107,
+      "norm_label": "get",
+      "id": "profile_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 225,
+      "norm_label": "route.ts",
+      "id": "revert_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 225,
+      "norm_label": "handlepost()",
+      "id": "revert_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 225,
+      "norm_label": "post",
+      "id": "revert_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_applications_applicationid_status_route_ts_status_route"
+    },
+    {
+      "label": "handlePATCH()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "handlepatch()",
+      "id": "status_route_handlepatch"
+    },
+    {
+      "label": "PATCH",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "patch",
+      "id": "status_route_patch"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_applications_bulk_status_route_ts_status_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "handlepost()",
+      "id": "status_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "post",
+      "id": "status_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_invite_id_route_ts_id_route"
+    },
+    {
+      "label": "{ DELETE }",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/[id]/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "{ delete }",
+      "id": "app_api_recruiter_invite_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/accept/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_invite_accept_route_ts_accept_route"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/accept/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handlepost()",
+      "id": "app_api_recruiter_invite_accept_route_ts_accept_route_handlepost"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/accept/route.ts",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "post",
+      "id": "app_api_recruiter_invite_accept_route_ts_accept_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 129,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_invite_route_ts_invite_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 129,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_invite_route_ts_invite_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/invite/route.ts",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 129,
+      "norm_label": "get",
+      "id": "app_api_recruiter_invite_route_ts_invite_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "get",
+      "id": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 79,
+      "norm_label": "route.ts",
+      "id": "export_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 79,
+      "norm_label": "handleget()",
+      "id": "export_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
+      "source_location": "L43",
+      "_origin": "ast",
+      "community": 79,
+      "norm_label": "get",
+      "id": "export_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "route.ts",
+      "id": "applicants_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "handleget()",
+      "id": "applicants_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
+      "source_location": "L43",
+      "_origin": "ast",
+      "community": 43,
+      "norm_label": "get",
+      "id": "applicants_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handleget"
+    },
+    {
+      "label": "handlePATCH()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "handlepatch()",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handlepatch"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L47",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "handledelete()",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_handledelete"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L60",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "get",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_get"
+    },
+    {
+      "label": "PATCH",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L61",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "patch",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_patch"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/route.ts",
+      "source_location": "L62",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "delete",
+      "id": "app_api_recruiter_jobs_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "route.ts",
+      "id": "toggle_route"
+    },
+    {
+      "label": "handlePATCH()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "handlepatch()",
+      "id": "toggle_route_handlepatch"
+    },
+    {
+      "label": "PATCH",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 51,
+      "norm_label": "patch",
+      "id": "toggle_route_patch"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_jobs_route_ts_jobs_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/route.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_jobs_route_ts_jobs_route_handleget"
+    },
+    {
+      "label": "handlePOST()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/route.ts",
+      "source_location": "L42",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "handlepost()",
+      "id": "jobs_route_handlepost"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/route.ts",
+      "source_location": "L63",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "get",
+      "id": "app_api_recruiter_jobs_route_ts_jobs_route_get"
+    },
+    {
+      "label": "POST",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/jobs/route.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "community": 132,
+      "norm_label": "post",
+      "id": "jobs_route_post"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/messages/search/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_messages_search_route_ts_search_route"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/messages/search/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handleget()",
+      "id": "app_api_recruiter_messages_search_route_ts_search_route_handleget"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/messages/search/route.ts",
+      "source_location": "L58",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "get",
+      "id": "app_api_recruiter_messages_search_route_ts_search_route_get"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/team/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "route.ts",
+      "id": "app_api_recruiter_team_id_route_ts_id_route"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/team/[id]/route.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "handledelete()",
+      "id": "app_api_recruiter_team_id_route_ts_id_route_handledelete"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/recruiter/team/[id]/route.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 72,
+      "norm_label": "delete",
+      "id": "app_api_recruiter_team_id_route_ts_id_route_delete"
+    },
+    {
+      "label": "invite.ts",
+      "file_type": "code",
+      "source_file": "lib/handlers/invite.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "invite.ts",
+      "id": "handlers_invite"
+    },
+    {
+      "label": "InviteCancelOptions",
+      "file_type": "code",
+      "source_file": "lib/handlers/invite.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "invitecanceloptions",
+      "id": "handlers_invite_invitecanceloptions"
+    },
+    {
+      "label": "createInviteCancelHandler()",
+      "file_type": "code",
+      "source_file": "lib/handlers/invite.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "createinvitecancelhandler()",
+      "id": "handlers_invite_createinvitecancelhandler"
+    },
+    {
+      "label": "config.ts",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 71,
+      "norm_label": "config.ts",
+      "id": "rate_limiting_config"
+    },
+    {
+      "label": "rateLimitConfig",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/config.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 71,
+      "norm_label": "ratelimitconfig",
+      "id": "rate_limiting_config_ratelimitconfig"
+    },
+    {
+      "label": "RateLimitEndpoint",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/config.ts",
+      "source_location": "L88",
+      "_origin": "ast",
+      "community": 38,
+      "norm_label": "ratelimitendpoint",
+      "id": "rate_limiting_config_ratelimitendpoint"
+    },
+    {
+      "label": "validateConfig()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/config.ts",
+      "source_location": "L90",
+      "_origin": "ast",
+      "community": 71,
+      "norm_label": "validateconfig()",
+      "id": "rate_limiting_config_validateconfig"
+    },
+    {
+      "label": "freezeConfig()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/config.ts",
+      "source_location": "L195",
+      "_origin": "ast",
+      "community": 71,
+      "norm_label": "freezeconfig()",
+      "id": "rate_limiting_config_freezeconfig"
+    },
+    {
       "label": "middleware.test.ts",
       "file_type": "code",
       "source_file": "lib/test/unit/rate-limiting/middleware.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "rate_limiting_middleware_test",
       "community": 35,
-      "norm_label": "middleware.test.ts"
+      "norm_label": "middleware.test.ts",
+      "id": "rate_limiting_middleware_test"
     },
     {
       "label": "filter-select.tsx",
@@ -10139,7 +10139,7 @@
       "source_file": "app/(public)/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "layout.tsx",
       "id": "public_layout"
     },
@@ -10149,7 +10149,7 @@
       "source_file": "app/(public)/layout.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "publiclayout()",
       "id": "public_layout_publiclayout"
     },
@@ -10639,7 +10639,7 @@
       "source_file": "app/(roles)/user/profile/page.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 60,
+      "community": 79,
       "norm_label": "profilepage()",
       "id": "profile_page_profilepage"
     },
@@ -10709,7 +10709,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 47,
       "norm_label": "route.ts",
       "id": "download_route"
     },
@@ -10719,7 +10719,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 3,
+      "community": 47,
       "norm_label": "upload_dir",
       "id": "download_route_upload_dir"
     },
@@ -10729,7 +10729,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 3,
+      "community": 47,
       "norm_label": "mime_map",
       "id": "download_route_mime_map"
     },
@@ -10739,7 +10739,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 3,
+      "community": 47,
       "norm_label": "handleget()",
       "id": "download_route_handleget"
     },
@@ -10749,7 +10749,7 @@
       "source_file": "app/api/files/download/route.ts",
       "source_location": "L119",
       "_origin": "ast",
-      "community": 3,
+      "community": 47,
       "norm_label": "get",
       "id": "download_route_get"
     },
@@ -11059,7 +11059,7 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 107,
+      "community": 24,
       "norm_label": "route.ts",
       "id": "bookmarks_route"
     },
@@ -11069,7 +11069,7 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 107,
+      "community": 24,
       "norm_label": "handleget",
       "id": "bookmarks_route_handleget"
     },
@@ -11079,7 +11079,7 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 107,
+      "community": 24,
       "norm_label": "handlepost",
       "id": "bookmarks_route_handlepost"
     },
@@ -11089,7 +11089,7 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 107,
+      "community": 24,
       "norm_label": "get",
       "id": "bookmarks_route_get"
     },
@@ -11099,7 +11099,7 @@
       "source_file": "app/api/user/bookmarks/route.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 107,
+      "community": 24,
       "norm_label": "post",
       "id": "bookmarks_route_post"
     },
@@ -11119,7 +11119,7 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "route.ts",
       "id": "ai_enhance_route"
     },
@@ -11129,7 +11129,7 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "handlepost",
       "id": "ai_enhance_route_handlepost"
     },
@@ -11139,7 +11139,7 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L129",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "post",
       "id": "ai_enhance_route_post"
     },
@@ -11149,7 +11149,7 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 132,
+      "community": 107,
       "norm_label": "route.ts",
       "id": "resumes_route"
     },
@@ -11159,7 +11159,7 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 132,
+      "community": 107,
       "norm_label": "handleget",
       "id": "resumes_route_handleget"
     },
@@ -11169,7 +11169,7 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 132,
+      "community": 107,
       "norm_label": "handlepost",
       "id": "resumes_route_handlepost"
     },
@@ -11179,7 +11179,7 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 132,
+      "community": 107,
       "norm_label": "get",
       "id": "resumes_route_get"
     },
@@ -11189,7 +11189,7 @@
       "source_file": "app/api/user/resumes/route.ts",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 132,
+      "community": 107,
       "norm_label": "post",
       "id": "resumes_route_post"
     },
@@ -11379,7 +11379,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "ban-notification-email.tsx",
       "id": "email_ban_notification_email"
     },
@@ -11389,7 +11389,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "bannotificationemailprops",
       "id": "email_ban_notification_email_bannotificationemailprops"
     },
@@ -11399,7 +11399,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "bannotificationemail()",
       "id": "email_ban_notification_email_bannotificationemail"
     },
@@ -11409,7 +11409,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "main",
       "id": "email_ban_notification_email_main"
     },
@@ -11419,7 +11419,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "container",
       "id": "email_ban_notification_email_container"
     },
@@ -11429,7 +11429,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "heading",
       "id": "email_ban_notification_email_heading"
     },
@@ -11439,7 +11439,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "paragraph",
       "id": "email_ban_notification_email_paragraph"
     },
@@ -11449,7 +11449,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "notebox",
       "id": "email_ban_notification_email_notebox"
     },
@@ -11459,7 +11459,7 @@
       "source_file": "app/features/admin/components/email/ban-notification-email.tsx",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "notetext",
       "id": "email_ban_notification_email_notetext"
     },
@@ -11849,7 +11849,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "email.ts",
       "id": "libs_email"
     },
@@ -11859,7 +11859,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "resend",
       "id": "libs_email_resend"
     },
@@ -11869,7 +11869,7 @@
       "source_file": "app/features/auth/libs/email.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 3,
+      "community": 105,
       "norm_label": "sendemailargs",
       "id": "libs_email_sendemailargs"
     },
@@ -12079,7 +12079,7 @@
       "source_file": "app/features/landing/components/footer.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "footer.tsx",
       "id": "components_footer"
     },
@@ -12089,7 +12089,7 @@
       "source_file": "app/features/landing/components/footer.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "columns",
       "id": "components_footer_columns"
     },
@@ -12099,7 +12099,7 @@
       "source_file": "app/features/landing/components/footer.tsx",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "socials",
       "id": "components_footer_socials"
     },
@@ -12109,7 +12109,7 @@
       "source_file": "app/features/landing/components/footer.tsx",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "footer()",
       "id": "components_footer_footer"
     },
@@ -12529,7 +12529,7 @@
       "source_file": "app/features/recruiter/components/applicant-actions-section.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 92,
       "norm_label": "applicant-actions-section.tsx",
       "id": "components_applicant_actions_section"
     },
@@ -12539,7 +12539,7 @@
       "source_file": "app/features/recruiter/components/applicant-actions-section.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 27,
+      "community": 92,
       "norm_label": "applicantactionssectionprops",
       "id": "components_applicant_actions_section_applicantactionssectionprops"
     },
@@ -12579,7 +12579,7 @@
       "source_file": "app/features/recruiter/components/applicant-detail-dialogs.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 29,
+      "community": 27,
       "norm_label": "applicantdetaildialogs()",
       "id": "components_applicant_detail_dialogs_applicantdetaildialogs"
     },
@@ -12669,7 +12669,7 @@
       "source_file": "app/features/recruiter/components/applicants-table-dialogs.tsx",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 52,
+      "community": 29,
       "norm_label": "applicantstabledialogs()",
       "id": "components_applicants_table_dialogs_applicantstabledialogs"
     },
@@ -12889,7 +12889,7 @@
       "source_file": "app/features/recruiter/components/bulk-action-bar.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 52,
+      "community": 92,
       "norm_label": "bulk-action-bar.tsx",
       "id": "components_bulk_action_bar"
     },
@@ -12899,7 +12899,7 @@
       "source_file": "app/features/recruiter/components/bulk-action-bar.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 52,
+      "community": 92,
       "norm_label": "bulkactionbarprops",
       "id": "components_bulk_action_bar_bulkactionbarprops"
     },
@@ -12909,7 +12909,7 @@
       "source_file": "app/features/recruiter/components/bulk-action-bar.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 52,
+      "community": 92,
       "norm_label": "bulkactionbar()",
       "id": "components_bulk_action_bar_bulkactionbar"
     },
@@ -13389,7 +13389,7 @@
       "source_file": "app/features/recruiter/components/use-applicants-table.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "use-applicants-table.ts",
       "id": "components_use_applicants_table"
     },
@@ -13589,7 +13589,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 92,
       "norm_label": "application-queries.ts",
       "id": "queries_application_queries"
     },
@@ -13599,7 +13599,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 27,
+      "community": 92,
       "norm_label": "applicantrow",
       "id": "queries_application_queries_applicantrow"
     },
@@ -13609,7 +13609,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 24,
+      "community": 92,
       "norm_label": "applicantcursorresult",
       "id": "queries_application_queries_applicantcursorresult"
     },
@@ -13619,7 +13619,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 24,
+      "community": 92,
       "norm_label": "applicantoffsetresult",
       "id": "queries_application_queries_applicantoffsetresult"
     },
@@ -13629,7 +13629,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 24,
+      "community": 92,
       "norm_label": "applicantlistresult",
       "id": "queries_application_queries_applicantlistresult"
     },
@@ -13649,7 +13649,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L142",
       "_origin": "ast",
-      "community": 24,
+      "community": 92,
       "norm_label": "getapplicationbyid()",
       "id": "queries_application_queries_getapplicationbyid"
     },
@@ -13729,7 +13729,7 @@
       "source_file": "app/features/recruiter/queries/export-queries.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 60,
+      "community": 79,
       "norm_label": "headers",
       "id": "queries_export_queries_headers"
     },
@@ -13859,7 +13859,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "community": 51,
+      "community": 132,
       "norm_label": "listjobs()",
       "id": "queries_job_queries_listjobs"
     },
@@ -14049,7 +14049,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "allowed_transitions",
       "id": "schema_application_schema_allowed_transitions"
     },
@@ -14069,7 +14069,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 105,
+      "community": 43,
       "norm_label": "listapplicantsparamsschema",
       "id": "schema_application_schema_listapplicantsparamsschema"
     },
@@ -14079,7 +14079,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "listapplicantsparams",
       "id": "schema_application_schema_listapplicantsparams"
     },
@@ -14159,7 +14159,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L100",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "bulkstatustransitioninput",
       "id": "schema_application_schema_bulkstatustransitioninput"
     },
@@ -14169,7 +14169,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "applicant-table-constants.ts",
       "id": "utils_applicant_table_constants"
     },
@@ -14179,7 +14179,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "status_options",
       "id": "utils_applicant_table_constants_status_options"
     },
@@ -14189,7 +14189,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "next_actions",
       "id": "utils_applicant_table_constants_next_actions"
     },
@@ -14199,7 +14199,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 52,
+      "community": 92,
       "norm_label": "bulkactiondef",
       "id": "utils_applicant_table_constants_bulkactiondef"
     },
@@ -14209,7 +14209,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "status_dot_colors",
       "id": "utils_applicant_table_constants_status_dot_colors"
     },
@@ -14219,7 +14219,7 @@
       "source_file": "app/features/recruiter/utils/applicant-table-constants.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 43,
+      "community": 92,
       "norm_label": "bulk_action_labels",
       "id": "utils_applicant_table_constants_bulk_action_labels"
     },
@@ -14769,7 +14769,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 26,
+      "community": 25,
       "norm_label": "userthreadview()",
       "id": "components_user_thread_view_userthreadview"
     },
@@ -15179,7 +15179,7 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 76,
       "norm_label": "messages-page-layout.tsx",
       "id": "chat_messages_page_layout"
     },
@@ -15199,7 +15199,7 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 25,
+      "community": 76,
       "norm_label": "props",
       "id": "chat_messages_page_layout_props"
     },
@@ -15209,7 +15209,7 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 25,
+      "community": 76,
       "norm_label": "threadlistskeleton()",
       "id": "chat_messages_page_layout_threadlistskeleton"
     },
@@ -15229,7 +15229,7 @@
       "source_file": "components/chat/messages-page-layout.tsx",
       "source_location": "L119",
       "_origin": "ast",
-      "community": 25,
+      "community": 76,
       "norm_label": "messagespagelayout()",
       "id": "chat_messages_page_layout_messagespagelayout"
     },
@@ -19749,7 +19749,7 @@
       "source_file": "lib/ai-client.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "ai-client.ts",
       "id": "lib_ai_client"
     },
@@ -19759,7 +19759,7 @@
       "source_file": "lib/ai-client.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "aiprovider",
       "id": "lib_ai_client_aiprovider"
     },
@@ -19769,7 +19769,7 @@
       "source_file": "lib/ai-client.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "providerconfig",
       "id": "lib_ai_client_providerconfig"
     },
@@ -19779,7 +19779,7 @@
       "source_file": "lib/ai-client.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "provider_config",
       "id": "lib_ai_client_provider_config"
     },
@@ -19789,7 +19789,7 @@
       "source_file": "lib/ai-client.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 92,
+      "community": 5,
       "norm_label": "callai()",
       "id": "lib_ai_client_callai"
     },
@@ -21009,7 +21009,7 @@
       "source_file": "lib/repositories/job-repository.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 105,
+      "community": 51,
       "norm_label": "job-repository.ts",
       "id": "repositories_job_repository"
     },
@@ -21019,7 +21019,7 @@
       "source_file": "lib/repositories/job-repository.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 105,
+      "community": 51,
       "norm_label": "jobrepository",
       "id": "repositories_job_repository_jobrepository"
     },
@@ -21119,7 +21119,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "message-service.ts",
       "id": "services_message_service"
     },
@@ -21129,7 +21129,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "sendmessageschema",
       "id": "services_message_service_sendmessageschema"
     },
@@ -21139,7 +21139,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "getsendmessageschema()",
       "id": "services_message_service_getsendmessageschema"
     },
@@ -21149,7 +21149,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "getmessagesparams",
       "id": "services_message_service_getmessagesparams"
     },
@@ -21159,7 +21159,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "verifyrelation",
       "id": "services_message_service_verifyrelation"
     },
@@ -21169,7 +21169,7 @@
       "source_file": "lib/services/message-service.ts",
       "source_location": "L39",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "messageservice",
       "id": "services_message_service_messageservice"
     },
@@ -21669,7 +21669,7 @@
       "source_file": "lib/test/components/shared-thread-view.dom.test.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
+      "community": 222,
       "norm_label": "shared-thread-view.dom.test.tsx",
       "id": "components_shared_thread_view_dom_test"
     },
@@ -21679,7 +21679,7 @@
       "source_file": "lib/test/components/shared-thread-view.dom.test.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 26,
+      "community": 222,
       "norm_label": "viewstate",
       "id": "components_shared_thread_view_dom_test_viewstate"
     },
@@ -21689,7 +21689,7 @@
       "source_file": "lib/test/components/shared-thread-view.dom.test.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 26,
+      "community": 222,
       "norm_label": "makeview()",
       "id": "components_shared_thread_view_dom_test_makeview"
     },
@@ -21699,7 +21699,7 @@
       "source_file": "lib/test/components/shared-thread-view.dom.test.tsx",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 26,
+      "community": 222,
       "norm_label": "config",
       "id": "components_shared_thread_view_dom_test_config"
     },
@@ -21709,7 +21709,7 @@
       "source_file": "lib/test/components/shared-thread-view.dom.test.tsx",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 26,
+      "community": 222,
       "norm_label": "hooks",
       "id": "components_shared_thread_view_dom_test_hooks"
     },
@@ -22119,7 +22119,7 @@
       "source_file": "lib/test/integration/messages.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "messages.test.ts",
       "id": "integration_messages_test"
     },
@@ -22129,7 +22129,7 @@
       "source_file": "lib/test/integration/messages.test.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 94,
+      "community": 221,
       "norm_label": "mocks",
       "id": "integration_messages_test_mocks"
     },
@@ -22759,7 +22759,7 @@
       "source_file": "lib/test/unit/applicant-table-utils.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
+      "community": 92,
       "norm_label": "applicant-table-utils.test.ts",
       "id": "unit_applicant_table_utils_test"
     },
@@ -22769,7 +22769,7 @@
       "source_file": "lib/test/unit/applicant-table-utils.test.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 27,
+      "community": 92,
       "norm_label": "makeapplicant()",
       "id": "unit_applicant_table_utils_test_makeapplicant"
     },
@@ -24619,7 +24619,7 @@
       "source_file": "stores/messages/use-thread-presence.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 25,
+      "community": 76,
       "norm_label": "useownpresence()",
       "id": "messages_use_thread_presence_useownpresence"
     },
@@ -25339,7 +25339,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "env.ts",
       "id": "utils_env"
     },
@@ -25349,7 +25349,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "envschema",
       "id": "utils_env_envschema"
     },
@@ -25359,7 +25359,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "envtypes",
       "id": "utils_env_envtypes"
     },
@@ -25369,7 +25369,7 @@
       "source_file": "utils/env.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 3,
+      "community": 106,
       "norm_label": "env",
       "id": "utils_env_env"
     },
@@ -25429,12 +25429,128 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "actions_upsert_profile_upsertprofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "components_profile_form_profileform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "components_profile_form_props"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "components_profile_form_work_mode_options"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_profile_form",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "schema_profile_schema_profileinput"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/profile-form.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form",
+      "target": "schema_profile_schema_profileschema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/profile-form.dom.test.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form_dom_test",
+      "target": "components_profile_form"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/profile-form.dom.test.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form_dom_test",
+      "target": "components_profile_form_profileform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/profile-form.dom.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form_dom_test",
+      "target": "components_profile_form_dom_test_mockpush"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/components/profile-form.dom.test.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_profile_form_dom_test",
+      "target": "components_profile_form_dom_test_mockupsertprofile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_applications_applicationid_detail_route_ts_detail_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25442,9 +25558,9 @@
       "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_applications_applicationid_detail_route_ts_detail_route",
-      "target": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_get"
     },
     {
       "relation": "contains",
@@ -25452,9 +25568,9 @@
       "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_applications_applicationid_detail_route_ts_detail_route",
-      "target": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_admin_applications_applicationid_detail_route_ts_detail_route_handleget"
     },
     {
       "relation": "imports",
@@ -25463,9 +25579,9 @@
       "source_file": "app/api/admin/applications/[applicationId]/detail/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_applications_applicationid_detail_route_ts_detail_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25474,9 +25590,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25484,9 +25600,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "dashboard_route_get",
-      "confidence_score": 1.0
+      "target": "dashboard_route_get"
     },
     {
       "relation": "contains",
@@ -25494,9 +25610,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "dashboard_route_handleget",
-      "confidence_score": 1.0
+      "target": "dashboard_route_handleget"
     },
     {
       "relation": "imports",
@@ -25505,9 +25621,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "queries_dashboard_queries_getdashboardstats",
-      "confidence_score": 1.0
+      "target": "queries_dashboard_queries_getdashboardstats"
     },
     {
       "relation": "imports",
@@ -25516,9 +25632,9 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -25526,9 +25642,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "app_api_admin_invite_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_invite_id_route_ts_id_route_delete"
     },
     {
       "relation": "imports_from",
@@ -25537,9 +25653,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "handlers_invite",
-      "confidence_score": 1.0
+      "target": "handlers_invite"
     },
     {
       "relation": "imports",
@@ -25548,9 +25664,9 @@
       "source_file": "app/api/admin/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "contains",
@@ -25558,9 +25674,9 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_accept_route_ts_accept_route",
-      "target": "app_api_admin_invite_accept_route_ts_accept_route_handlepost",
-      "confidence_score": 1.0
+      "target": "app_api_admin_invite_accept_route_ts_accept_route_handlepost"
     },
     {
       "relation": "contains",
@@ -25568,9 +25684,9 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_accept_route_ts_accept_route",
-      "target": "app_api_admin_invite_accept_route_ts_accept_route_post",
-      "confidence_score": 1.0
+      "target": "app_api_admin_invite_accept_route_ts_accept_route_post"
     },
     {
       "relation": "imports",
@@ -25579,9 +25695,9 @@
       "source_file": "app/api/admin/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_accept_route_ts_accept_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25590,9 +25706,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25600,9 +25716,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route",
-      "target": "app_api_admin_invite_route_ts_invite_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_admin_invite_route_ts_invite_route_get"
     },
     {
       "relation": "contains",
@@ -25610,9 +25726,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route",
-      "target": "app_api_admin_invite_route_ts_invite_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_admin_invite_route_ts_invite_route_handleget"
     },
     {
       "relation": "imports",
@@ -25621,9 +25737,9 @@
       "source_file": "app/api/admin/invite/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_invite_route_ts_invite_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25632,9 +25748,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25642,9 +25758,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "app_api_admin_jobs_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_id_route_ts_id_route_delete"
     },
     {
       "relation": "contains",
@@ -25652,9 +25768,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "app_api_admin_jobs_id_route_ts_id_route_handledelete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_id_route_ts_id_route_handledelete"
     },
     {
       "relation": "contains",
@@ -25662,9 +25778,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "app_api_admin_jobs_id_route_ts_id_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_id_route_ts_id_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -25672,9 +25788,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "app_api_admin_jobs_id_route_ts_id_route_patch",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_id_route_ts_id_route_patch"
     },
     {
       "relation": "imports",
@@ -25683,9 +25799,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25694,9 +25810,9 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_id_route_ts_id_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "imports",
@@ -25705,9 +25821,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_route_ts_jobs_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25715,9 +25831,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_route_ts_jobs_route",
-      "target": "app_api_admin_jobs_route_ts_jobs_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_route_ts_jobs_route_get"
     },
     {
       "relation": "contains",
@@ -25725,9 +25841,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_route_ts_jobs_route",
-      "target": "app_api_admin_jobs_route_ts_jobs_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_admin_jobs_route_ts_jobs_route_handleget"
     },
     {
       "relation": "imports",
@@ -25736,9 +25852,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_route_ts_jobs_route",
-      "target": "queries_job_queries_listjobs",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_listjobs"
     },
     {
       "relation": "imports",
@@ -25747,9 +25863,9 @@
       "source_file": "app/api/admin/jobs/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_jobs_route_ts_jobs_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25758,9 +25874,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_search_route_ts_search_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25768,9 +25884,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_search_route_ts_search_route",
-      "target": "app_api_admin_messages_search_route_ts_search_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_admin_messages_search_route_ts_search_route_get"
     },
     {
       "relation": "contains",
@@ -25778,9 +25894,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_search_route_ts_search_route",
-      "target": "app_api_admin_messages_search_route_ts_search_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_admin_messages_search_route_ts_search_route_handleget"
     },
     {
       "relation": "imports",
@@ -25789,9 +25905,9 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_messages_search_route_ts_search_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25800,9 +25916,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25810,9 +25926,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "app_api_admin_team_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_team_id_route_ts_id_route_delete"
     },
     {
       "relation": "contains",
@@ -25820,9 +25936,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "app_api_admin_team_id_route_ts_id_route_handledelete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_team_id_route_ts_id_route_handledelete"
     },
     {
       "relation": "imports",
@@ -25831,9 +25947,9 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_team_id_route_ts_id_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports_from",
@@ -25928,9 +26044,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -25938,9 +26054,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "ban_route_handlepost",
-      "confidence_score": 1.0
+      "target": "ban_route_handlepost"
     },
     {
       "relation": "contains",
@@ -25948,9 +26064,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "ban_route_post",
-      "confidence_score": 1.0
+      "target": "ban_route_post"
     },
     {
       "relation": "imports",
@@ -25959,9 +26075,9 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ban_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -25970,9 +26086,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -25981,9 +26097,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -25991,9 +26107,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "role_route_handlepost",
-      "confidence_score": 1.0
+      "target": "role_route_handlepost"
     },
     {
       "relation": "contains",
@@ -26001,9 +26117,9 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "role_route",
-      "target": "role_route_post",
-      "confidence_score": 1.0
+      "target": "role_route_post"
     },
     {
       "relation": "imports",
@@ -26012,9 +26128,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26022,9 +26138,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "app_api_admin_users_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_users_id_route_ts_id_route_delete"
     },
     {
       "relation": "contains",
@@ -26032,9 +26148,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "app_api_admin_users_id_route_ts_id_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_admin_users_id_route_ts_id_route_get"
     },
     {
       "relation": "contains",
@@ -26042,9 +26158,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "app_api_admin_users_id_route_ts_id_route_handledelete",
-      "confidence_score": 1.0
+      "target": "app_api_admin_users_id_route_ts_id_route_handledelete"
     },
     {
       "relation": "contains",
@@ -26052,9 +26168,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "app_api_admin_users_id_route_ts_id_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_admin_users_id_route_ts_id_route_handleget"
     },
     {
       "relation": "imports",
@@ -26063,9 +26179,9 @@
       "source_file": "app/api/admin/users/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_admin_users_id_route_ts_id_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26074,9 +26190,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26085,9 +26201,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -26095,9 +26211,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "sessions_route_delete",
-      "confidence_score": 1.0
+      "target": "sessions_route_delete"
     },
     {
       "relation": "contains",
@@ -26105,9 +26221,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "sessions_route_get",
-      "confidence_score": 1.0
+      "target": "sessions_route_get"
     },
     {
       "relation": "contains",
@@ -26115,9 +26231,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "sessions_route_handledelete",
-      "confidence_score": 1.0
+      "target": "sessions_route_handledelete"
     },
     {
       "relation": "contains",
@@ -26125,9 +26241,9 @@
       "source_file": "app/api/admin/users/[id]/sessions/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sessions_route",
-      "target": "sessions_route_handleget",
-      "confidence_score": 1.0
+      "target": "sessions_route_handleget"
     },
     {
       "relation": "imports",
@@ -26136,9 +26252,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26147,9 +26263,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -26157,9 +26273,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "unban_route_handlepost",
-      "confidence_score": 1.0
+      "target": "unban_route_handlepost"
     },
     {
       "relation": "contains",
@@ -26167,9 +26283,9 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "unban_route",
-      "target": "unban_route_post",
-      "confidence_score": 1.0
+      "target": "unban_route_post"
     },
     {
       "relation": "imports",
@@ -26178,9 +26294,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26189,9 +26305,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -26199,9 +26315,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "users_route_get",
-      "confidence_score": 1.0
+      "target": "users_route_get"
     },
     {
       "relation": "contains",
@@ -26209,9 +26325,9 @@
       "source_file": "app/api/admin/users/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "users_route",
-      "target": "users_route_handleget",
-      "confidence_score": 1.0
+      "target": "users_route_handleget"
     },
     {
       "relation": "imports",
@@ -26220,9 +26336,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26230,9 +26346,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "app_api_recruiter_analytics_route_ts_analytics_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_analytics_route_ts_analytics_route_get"
     },
     {
       "relation": "contains",
@@ -26240,9 +26356,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "app_api_recruiter_analytics_route_ts_analytics_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_analytics_route_ts_analytics_route_handleget"
     },
     {
       "relation": "imports",
@@ -26251,9 +26367,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "queries_analytics_queries_getanalytics",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_getanalytics"
     },
     {
       "relation": "imports",
@@ -26262,9 +26378,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26273,9 +26389,9 @@
       "source_file": "app/api/recruiter/analytics/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema_analyticsfilterschema",
-      "confidence_score": 1.0
+      "target": "schema_analytics_schema_analyticsfilterschema"
     },
     {
       "relation": "imports",
@@ -26284,9 +26400,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26294,9 +26410,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route",
-      "target": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_get"
     },
     {
       "relation": "contains",
@@ -26304,9 +26420,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route",
-      "target": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route_handleget"
     },
     {
       "relation": "imports",
@@ -26315,9 +26431,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/detail/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_detail_route_ts_detail_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports_from",
@@ -26390,9 +26506,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26401,9 +26517,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "contains",
@@ -26411,9 +26527,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "revert_route_handlepost",
-      "confidence_score": 1.0
+      "target": "revert_route_handlepost"
     },
     {
       "relation": "contains",
@@ -26421,9 +26537,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/revert/route.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "revert_route",
-      "target": "revert_route_post",
-      "confidence_score": 1.0
+      "target": "revert_route_post"
     },
     {
       "relation": "imports",
@@ -26432,9 +26548,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26443,9 +26559,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26454,9 +26570,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "schema_application_schema_statustransitionschema",
-      "confidence_score": 1.0
+      "target": "schema_application_schema_statustransitionschema"
     },
     {
       "relation": "contains",
@@ -26464,9 +26580,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "status_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "status_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -26474,9 +26590,9 @@
       "source_file": "app/api/recruiter/applications/[applicationId]/status/route.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_applicationid_status_route_ts_status_route",
-      "target": "status_route_patch",
-      "confidence_score": 1.0
+      "target": "status_route_patch"
     },
     {
       "relation": "imports",
@@ -26485,9 +26601,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -26496,9 +26612,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26507,9 +26623,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "schema_application_schema_bulkstatustransitionschema",
-      "confidence_score": 1.0
+      "target": "schema_application_schema_bulkstatustransitionschema"
     },
     {
       "relation": "contains",
@@ -26517,9 +26633,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "status_route_handlepost",
-      "confidence_score": 1.0
+      "target": "status_route_handlepost"
     },
     {
       "relation": "contains",
@@ -26527,9 +26643,9 @@
       "source_file": "app/api/recruiter/applications/bulk/status/route.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_applications_bulk_status_route_ts_status_route",
-      "target": "status_route_post",
-      "confidence_score": 1.0
+      "target": "status_route_post"
     },
     {
       "relation": "contains",
@@ -26537,9 +26653,9 @@
       "source_file": "app/api/recruiter/invite/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "app_api_recruiter_invite_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_invite_id_route_ts_id_route_delete"
     },
     {
       "relation": "imports_from",
@@ -26548,9 +26664,9 @@
       "source_file": "app/api/recruiter/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "handlers_invite",
-      "confidence_score": 1.0
+      "target": "handlers_invite"
     },
     {
       "relation": "imports",
@@ -26559,9 +26675,9 @@
       "source_file": "app/api/recruiter/invite/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "contains",
@@ -26569,9 +26685,9 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "target": "app_api_recruiter_invite_accept_route_ts_accept_route_handlepost",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_invite_accept_route_ts_accept_route_handlepost"
     },
     {
       "relation": "contains",
@@ -26579,9 +26695,9 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "target": "app_api_recruiter_invite_accept_route_ts_accept_route_post",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_invite_accept_route_ts_accept_route_post"
     },
     {
       "relation": "imports",
@@ -26590,9 +26706,9 @@
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_accept_route_ts_accept_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26601,9 +26717,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26611,9 +26727,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "app_api_recruiter_invite_route_ts_invite_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_invite_route_ts_invite_route_get"
     },
     {
       "relation": "contains",
@@ -26621,9 +26737,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "app_api_recruiter_invite_route_ts_invite_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_invite_route_ts_invite_route_handleget"
     },
     {
       "relation": "imports",
@@ -26632,9 +26748,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "queries_invite_queries_listrecruiterinvites",
-      "confidence_score": 1.0
+      "target": "queries_invite_queries_listrecruiterinvites"
     },
     {
       "relation": "imports",
@@ -26643,9 +26759,9 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26654,9 +26770,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26664,9 +26780,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_get"
     },
     {
       "relation": "contains",
@@ -26674,9 +26790,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route_handleget"
     },
     {
       "relation": "imports",
@@ -26685,9 +26801,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "queries_analytics_queries_getjobanalytics",
-      "confidence_score": 1.0
+      "target": "queries_analytics_queries_getjobanalytics"
     },
     {
       "relation": "imports",
@@ -26696,9 +26812,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -26707,9 +26823,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/analytics/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_analytics_route_ts_analytics_route",
-      "target": "schema_analytics_schema_analyticsfilterschema",
-      "confidence_score": 1.0
+      "target": "schema_analytics_schema_analyticsfilterschema"
     },
     {
       "relation": "imports_from",
@@ -26782,9 +26898,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "export_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "calls",
@@ -26879,9 +26995,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/applicants/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "applicants_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports_from",
@@ -26956,9 +27072,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -26966,9 +27082,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_delete"
     },
     {
       "relation": "contains",
@@ -26976,9 +27092,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_get"
     },
     {
       "relation": "contains",
@@ -26986,9 +27102,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handledelete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handledelete"
     },
     {
       "relation": "contains",
@@ -26996,9 +27112,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handleget"
     },
     {
       "relation": "contains",
@@ -27006,9 +27122,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -27016,9 +27132,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "app_api_recruiter_jobs_id_route_ts_id_route_patch",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_jobs_id_route_ts_id_route_patch"
     },
     {
       "relation": "imports",
@@ -27027,9 +27143,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "queries_job_queries_getjobbyid",
-      "confidence_score": 1.0
+      "target": "queries_job_queries_getjobbyid"
     },
     {
       "relation": "imports",
@@ -27038,9 +27154,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -27049,9 +27165,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "schema_job_schema_jobupdateschema",
-      "confidence_score": 1.0
+      "target": "schema_job_schema_jobupdateschema"
     },
     {
       "relation": "imports",
@@ -27060,9 +27176,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_id_route_ts_id_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "imports",
@@ -27071,9 +27187,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -27082,9 +27198,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -27093,9 +27209,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "schema_job_schema_recruitertogglejobstatusschema",
-      "confidence_score": 1.0
+      "target": "schema_job_schema_recruitertogglejobstatusschema"
     },
     {
       "relation": "imports",
@@ -27104,9 +27220,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "services_job_service_jobservice",
-      "confidence_score": 1.0
+      "target": "services_job_service_jobservice"
     },
     {
       "relation": "contains",
@@ -27114,9 +27230,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "toggle_route_handlepatch",
-      "confidence_score": 1.0
+      "target": "toggle_route_handlepatch"
     },
     {
       "relation": "contains",
@@ -27124,9 +27240,9 @@
       "source_file": "app/api/recruiter/jobs/[id]/toggle/route.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "toggle_route",
-      "target": "toggle_route_patch",
-      "confidence_score": 1.0
+      "target": "toggle_route_patch"
     },
     {
       "relation": "imports_from",
@@ -27219,9 +27335,9 @@
       "source_file": "app/api/recruiter/jobs/route.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_jobs_route_ts_jobs_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports_from",
@@ -27318,9 +27434,9 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_search_route_ts_search_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -27328,9 +27444,9 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_search_route_ts_search_route",
-      "target": "app_api_recruiter_messages_search_route_ts_search_route_get",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_messages_search_route_ts_search_route_get"
     },
     {
       "relation": "contains",
@@ -27338,9 +27454,9 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_search_route_ts_search_route",
-      "target": "app_api_recruiter_messages_search_route_ts_search_route_handleget",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_messages_search_route_ts_search_route_handleget"
     },
     {
       "relation": "imports",
@@ -27349,9 +27465,9 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_search_route_ts_search_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -27360,9 +27476,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "contains",
@@ -27370,9 +27486,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "app_api_recruiter_team_id_route_ts_id_route_delete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_team_id_route_ts_id_route_delete"
     },
     {
       "relation": "contains",
@@ -27380,9 +27496,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "app_api_recruiter_team_id_route_ts_id_route_handledelete",
-      "confidence_score": 1.0
+      "target": "app_api_recruiter_team_id_route_ts_id_route_handledelete"
     },
     {
       "relation": "imports",
@@ -27391,94 +27507,9 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_api_recruiter_team_id_route_ts_id_route",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "actions_upsert_profile_upsertprofile",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "components_profile_form_profileform",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "components_profile_form_props",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "components_profile_form_work_mode_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "schema_profile_schema_profileinput",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/profile-form.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "components_profile_form",
-      "target": "schema_profile_schema_profileschema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/profile-form.dom.test.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_profile_form_dom_test",
-      "target": "components_profile_form",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/profile-form.dom.test.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_profileform",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports",
@@ -27487,9 +27518,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "api_require_role_requirerole",
-      "confidence_score": 1.0
+      "target": "api_require_role_requirerole"
     },
     {
       "relation": "imports",
@@ -27498,9 +27529,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "api_require_role_resolvedsession",
-      "confidence_score": 1.0
+      "target": "api_require_role_resolvedsession"
     },
     {
       "relation": "contains",
@@ -27508,9 +27539,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "handlers_invite_createinvitecancelhandler",
-      "confidence_score": 1.0
+      "target": "handlers_invite_createinvitecancelhandler"
     },
     {
       "relation": "contains",
@@ -27518,9 +27549,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "handlers_invite_invitecanceloptions",
-      "confidence_score": 1.0
+      "target": "handlers_invite_invitecanceloptions"
     },
     {
       "relation": "imports_from",
@@ -27529,9 +27560,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "rate_limiting_config",
-      "confidence_score": 1.0
+      "target": "rate_limiting_config"
     },
     {
       "relation": "imports",
@@ -27540,9 +27571,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "rate_limiting_config_ratelimitendpoint",
-      "confidence_score": 1.0
+      "target": "rate_limiting_config_ratelimitendpoint"
     },
     {
       "relation": "imports",
@@ -27551,9 +27582,9 @@
       "source_file": "lib/handlers/invite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "handlers_invite",
-      "target": "rate_limiting_di_withratelimit",
-      "confidence_score": 1.0
+      "target": "rate_limiting_di_withratelimit"
     },
     {
       "relation": "imports_from",
@@ -27814,26 +27845,6 @@
       "confidence_score": 1.0,
       "source": "rate_limiting_di",
       "target": "rate_limiting_config_freezeconfig"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/profile-form.dom.test.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockpush",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/components/profile-form.dom.test.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "components_profile_form_dom_test",
-      "target": "components_profile_form_dom_test_mockupsertprofile",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -57238,5 +57249,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d5799ecd090581a572851d41f30c2689fe6ebd13"
+  "built_at_commit": "12e1739d4fdcfa0330e433d85e3f2d8518d4e4ec"
 }

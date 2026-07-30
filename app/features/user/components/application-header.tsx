@@ -49,12 +49,14 @@ export function ApplicationHeader({
       )}
 
       <div className="flex items-start gap-4 mb-6">
-        <div className="size-12 sm:size-14 lg:size-16 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold">
+        <div className="size-12 sm:size-14 lg:size-16 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold overflow-hidden">
           {companyLogo ? (
             <Image
               src={companyLogo}
               alt=""
-              className="size-8 sm:size-10 lg:size-12 object-contain"
+              width={64}
+              height={64}
+              className="size-full object-cover rounded-xl"
             />
           ) : (
             (companyName[0]?.toUpperCase() ?? "?")
