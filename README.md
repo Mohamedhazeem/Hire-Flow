@@ -1,7 +1,7 @@
 # 🚀 Hire Flow
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mohamedhazeem/hire-flow-next/master/public/images/Hire_Flow_Cover_1.png" alt="Hire Flow Cover" />
+  <img src="https://raw.githubusercontent.com/Mohamedhazeem/hire-flow/master/public/images/Hire_Flow_Cover_1.png" alt="Hire Flow Cover" />
 </p>
 
 <p align="center">
@@ -321,7 +321,7 @@ All routes use Zod validation, centralized error handling (`lib/api-error.ts`), 
 
 ```bash
 git clone https://github.com/Mohamedhazeem/hire-flow.git
-cd hire-flow-next
+cd hire-flow
 npm install
 ```
 
@@ -423,7 +423,7 @@ Visit `http://localhost:3000`. Sign up as a job seeker directly, or promote your
 ## 📂 Project Structure
 
 ```
-hire-flow-next/
+hire-flow/
 ├── app/
 │   ├── (public)/                # Marketing shell: home, jobs, resources, privacy, terms, about, careers, contact, pricing, press, employers, become-employer
 │   ├── (auth)/                  # Login, register, verify-email, reset-password, unauthorised, admin-invite, recruiter-invite
