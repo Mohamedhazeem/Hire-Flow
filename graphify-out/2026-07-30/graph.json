@@ -6,12 +6,32 @@
     {
       "label": "page.tsx",
       "file_type": "code",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_page",
+      "community": 162,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "public_page_home",
+      "community": 162,
+      "norm_label": "home()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "jobs_page",
       "community": 260,
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "jobs_page"
     },
     {
       "label": "metadata",
@@ -19,9 +39,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "jobs_page_metadata",
       "community": 260,
-      "norm_label": "metadata"
+      "norm_label": "metadata",
+      "id": "jobs_page_metadata"
     },
     {
       "label": "JobsPage()",
@@ -29,9 +49,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "jobs_page_jobspage",
       "community": 260,
-      "norm_label": "jobspage()"
+      "norm_label": "jobspage()",
+      "id": "jobs_page_jobspage"
     },
     {
       "label": "job-list-skeleton.tsx",
@@ -39,9 +59,9 @@
       "source_file": "app/features/jobs/components/job-list-skeleton.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_job_list_skeleton",
       "community": 260,
-      "norm_label": "job-list-skeleton.tsx"
+      "norm_label": "job-list-skeleton.tsx",
+      "id": "components_job_list_skeleton"
     },
     {
       "label": "JobListSkeleton()",
@@ -49,9 +69,9 @@
       "source_file": "app/features/jobs/components/job-list-skeleton.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "components_job_list_skeleton_joblistskeleton",
       "community": 260,
-      "norm_label": "joblistskeleton()"
+      "norm_label": "joblistskeleton()",
+      "id": "components_job_list_skeleton_joblistskeleton"
     },
     {
       "label": "job-resolver.ts",
@@ -752,26 +772,6 @@
       "community": 140,
       "norm_label": "publiclayout()",
       "id": "public_layout_publiclayout"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(public)/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 162,
-      "norm_label": "page.tsx",
-      "id": "public_page"
-    },
-    {
-      "label": "Home()",
-      "file_type": "code",
-      "source_file": "app/(public)/page.tsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 162,
-      "norm_label": "home()",
-      "id": "public_page_home"
     },
     {
       "label": "page.tsx",
@@ -38496,15 +38496,47 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_page",
+      "target": "components_landing_page"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_page",
+      "target": "components_landing_page_landingpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "public_page",
+      "target": "public_page_home"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "components_job_list_page_joblistpage",
-      "confidence_score": 1.0
+      "target": "components_job_list_page_joblistpage"
     },
     {
       "relation": "imports_from",
@@ -38513,9 +38545,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "components_job_list_skeleton",
-      "confidence_score": 1.0
+      "target": "components_job_list_skeleton"
     },
     {
       "relation": "imports",
@@ -38524,9 +38556,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "components_job_list_skeleton_joblistskeleton",
-      "confidence_score": 1.0
+      "target": "components_job_list_skeleton_joblistskeleton"
     },
     {
       "relation": "contains",
@@ -38534,9 +38566,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "jobs_page_jobspage",
-      "confidence_score": 1.0
+      "target": "jobs_page_jobspage"
     },
     {
       "relation": "contains",
@@ -38544,9 +38576,9 @@
       "source_file": "app/(public)/jobs/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "jobs_page",
-      "target": "jobs_page_metadata",
-      "confidence_score": 1.0
+      "target": "jobs_page_metadata"
     },
     {
       "relation": "contains",
@@ -38554,9 +38586,9 @@
       "source_file": "app/features/jobs/components/job-list-skeleton.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_job_list_skeleton",
-      "target": "components_job_list_skeleton_joblistskeleton",
-      "confidence_score": 1.0
+      "target": "components_job_list_skeleton_joblistskeleton"
     },
     {
       "relation": "imports",
@@ -38565,9 +38597,9 @@
       "source_file": "app/features/jobs/components/job-list-skeleton.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_job_list_skeleton",
-      "target": "ui_skeleton_skeleton",
-      "confidence_score": 1.0
+      "target": "ui_skeleton_skeleton"
     },
     {
       "relation": "imports_from",
@@ -39720,38 +39752,6 @@
       "confidence_score": 1.0,
       "source": "public_layout",
       "target": "public_layout_publiclayout"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_page",
-      "target": "components_landing_page"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_page",
-      "target": "components_landing_page_landingpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(public)/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "public_page",
-      "target": "public_page_home"
     },
     {
       "relation": "contains",
@@ -112005,5 +112005,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "85b8ec74acd16daa80c131124f16f92d01845d1f"
+  "built_at_commit": "d4f872e8a77730c5554bbc3c6a7cf95d0f615381"
 }

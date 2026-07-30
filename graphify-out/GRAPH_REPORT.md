@@ -1,7 +1,7 @@
 # Graph Report - hire-flow-next  (2026-07-30)
 
 ## Corpus Check
-- 730 files · ~318,408 words
+- 730 files · ~318,412 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d4f872e8`
+- Built from commit: `d3ebb44c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1109,7 +1109,7 @@ Cohesion: 0.50
 Nodes (3): MessageItem, RecentMessagesCard(), RecentMessagesCardProps
 
 ## Knowledge Gaps
-- **1914 isolated node(s):** `metadata`, `$schema`, `plugin`, `snapshot`, `@kilocode/plugin` (+1909 more)
+- **1914 isolated node(s):** `globalForPrisma`, `pool`, `adapter`, `metadata`, `$schema` (+1909 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -1117,16 +1117,16 @@ Nodes (3): MessageItem, RecentMessagesCard(), RecentMessagesCardProps
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 233` to `Community 0`, `Community 2`, `Community 137`, `Community 150`, `Community 25`, `Community 26`, `Community 27`, `Community 164`, `Community 167`, `Community 46`, `Community 47`, `Community 178`, `Community 180`, `Community 181`, `Community 182`, `Community 183`, `Community 60`, `Community 61`, `Community 198`, `Community 76`, `Community 78`, `Community 214`, `Community 222`, `Community 226`, `Community 236`, `Community 110`, `Community 121`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `requireRole()` connect `Community 134` to `Community 132`, `Community 263`, `Community 136`, `Community 141`, `Community 38`, `Community 171`, `Community 43`, `Community 51`, `Community 184`, `Community 196`, `Community 72`, `Community 76`, `Community 212`, `Community 216`, `Community 217`, `Community 221`, `Community 94`, `Community 223`, `Community 105`, `Community 107`, `Community 238`, `Community 123`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **Why does `env` connect `Community 129` to `Community 163`, `Community 196`, `Community 195`, `Community 102`, `Community 3`, `Community 168`, `Community 105`, `Community 10`, `Community 199`, `Community 140`, `Community 76`, `Community 212`, `Community 92`, `Community 158`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Are the 19 inferred relationships involving `requireRole()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`requireRole()` has 19 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 17 inferred relationships involving `ok()` (e.g. with `handleDELETE()` and `handleDELETE()`) actually correct?**
   _`ok()` has 17 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `metadata`, `$schema`, `plugin` to the rest of the system?**
+- **What connects `globalForPrisma`, `pool`, `adapter` to the rest of the system?**
   _1914 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

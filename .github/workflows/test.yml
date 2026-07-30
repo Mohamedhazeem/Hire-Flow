@@ -24,7 +24,7 @@ jobs:
   typecheck:
     name: Type-check (tsc --noEmit)
     runs-on: ubuntu-latest
-    if: github.event_name == "pull_request"
+    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -39,7 +39,7 @@ jobs:
   lint:
     name: Lint + Format
     runs-on: ubuntu-latest
-    if: github.event_name == "pull_request"
+    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,7 +55,7 @@ jobs:
   unit-integration-contract:
     name: Unit + Integration + Contract + Coverage
     runs-on: ubuntu-latest
-    if: github.event_name == "pull_request"
+    if: github.event_name == 'pull_request'
     needs: [typecheck, lint]
     services:
       postgres:
@@ -122,7 +122,7 @@ jobs:
   performance:
     name: Performance + Benchmark Regression
     runs-on: ubuntu-latest
-    if: github.event_name == "workflow_dispatch" || (github.event_name == "push" && github.ref == "refs/heads/master")
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/master')
     needs: [unit-integration-contract]
     services:
       postgres:
@@ -155,7 +155,7 @@ jobs:
       - name: Compare against baseline
         run: npx tsx scripts/compare-benchmark.ts
       - name: Update baseline (master only)
-        if: github.ref == "refs/heads/master"
+        if: github.ref == 'refs/heads/master'
         run: |
           npx tsx scripts/update-baseline.ts
           git config user.name "CI Bot"

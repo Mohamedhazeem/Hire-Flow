@@ -4,14 +4,54 @@
   "graph": {},
   "nodes": [
     {
+      "label": "prisma.ts",
+      "file_type": "code",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_prisma",
+      "community": 10,
+      "norm_label": "prisma.ts"
+    },
+    {
+      "label": "globalForPrisma",
+      "file_type": "code",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "lib_prisma_globalforprisma",
+      "community": 10,
+      "norm_label": "globalforprisma"
+    },
+    {
+      "label": "pool",
+      "file_type": "code",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "lib_prisma_pool",
+      "community": 10,
+      "norm_label": "pool"
+    },
+    {
+      "label": "adapter",
+      "file_type": "code",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "lib_prisma_adapter",
+      "community": 10,
+      "norm_label": "adapter"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(public)/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "public_page",
       "community": 162,
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "public_page"
     },
     {
       "label": "Home()",
@@ -19,9 +59,9 @@
       "source_file": "app/(public)/page.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "public_page_home",
       "community": 162,
-      "norm_label": "home()"
+      "norm_label": "home()",
+      "id": "public_page_home"
     },
     {
       "label": "page.tsx",
@@ -18782,46 +18822,6 @@
       "community": 24,
       "norm_label": "parsedualmodepagination()",
       "id": "lib_pagination_parsedualmodepagination"
-    },
-    {
-      "label": "prisma.ts",
-      "file_type": "code",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "prisma.ts",
-      "id": "lib_prisma"
-    },
-    {
-      "label": "globalForPrisma",
-      "file_type": "code",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "globalforprisma",
-      "id": "lib_prisma_globalforprisma"
-    },
-    {
-      "label": "pool",
-      "file_type": "code",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "pool",
-      "id": "lib_prisma_pool"
-    },
-    {
-      "label": "adapter",
-      "file_type": "code",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 10,
-      "norm_label": "adapter",
-      "id": "lib_prisma_adapter"
     },
     {
       "label": "pusher-client.ts",
@@ -38499,6 +38499,1158 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_admin",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_bulk_invite_recruiters",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/actions/invite-admin.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_admin",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_invite_recruiter",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/actions/reset-password-action.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_reset_password_action",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/actions/save-resume-builder.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_save_resume_builder",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/upgrade-to-recruiter.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_upgrade_to_recruiter",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/actions/upsert-company.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_upsert_company",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/actions/upsert-profile.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_upsert_profile",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/admin/ban.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ban_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(auth)/admin-invite/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_invite_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/admin/role.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_role_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/admin/sessions.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_sessions_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_enhance_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_enhance_route_perf_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_require_role",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/invite/[id]/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_admin_invite_id_route_ts_id_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/admin/messages/search/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_admin_messages_search_route_ts_search_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/invite/[id]/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_invite_id_route_ts_id_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/invite/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_invite_route_ts_invite_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/messages/search/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_recruiter_messages_search_route_ts_search_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_user_resumes_id_route_ts_id_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/users/[id]/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_api_users_id_route_ts_id_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/queries/dashboard-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_admin_queries_dashboard_queries_ts_queries_dashboard_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/queries/invite-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/queries/job-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_admin_queries_job_queries_ts_queries_job_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_recruiter_queries_dashboard_queries_ts_queries_dashboard_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/invite-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_features_recruiter_queries_job_queries_ts_queries_job_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/recruiters/[id]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_roles_admin_recruiters_id_page_tsx_id_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/admin/users/[id]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_roles_admin_users_id_page_tsx_id_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_roles_recruiter_jobs_id_page_tsx_id_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/resumes/builder/[id]/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_roles_user_resumes_builder_id_page_tsx_id_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/sitemap.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_sitemap",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/applications/bulk-status.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applications_bulk_status_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/applications/race.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applications_race_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/applications/revert.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applications_revert_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/applications/status.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applications_status_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/applications/withdraw.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applications_withdraw_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/jobs/[id]/apply/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "apply_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/auth/auth.idor.test.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_auth_idor_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/[id]/builder-data/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "builder_data_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/company/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "company_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/files/download/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "download_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "edit_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "export_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/application.factory.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_application_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/company.factory.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_company_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/job.factory.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_job_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/message.factory.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_message_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/resume.factory.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_resume_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/seed-factories.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_seed_factories",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/factories/user.factory.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "factories_user_factory",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/files/download.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "files_download_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/messages.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "integration_messages_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/notifications.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "integration_notifications_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/jobs/apply.test.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jobs_apply_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/notifications.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_notifications",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "lib_prisma_adapter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "lib_prisma_globalforprisma"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "lib_prisma_pool"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "utils_env"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/prisma.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_prisma",
+      "target": "utils_env_env"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/auth.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_auth",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/email.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_email",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/libs/get-applicant-detail.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_get_applicant_detail",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/libs/verification.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_verification",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "libs_verify_recruiter_applicant_relationship",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/user/profile/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "profile_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "profile_skills_persistence_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_analytics_queries_perf_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/queries/applicant-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_applicant_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/application-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_application_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/bookmark-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_bookmark_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/export-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_export_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/queries/list-featured-companies.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_list_featured_companies",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/notifications/queries/notification-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_notification_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/profile-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_profile_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/queries/public-job-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_public_job_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/queries/public-job-queries.perf.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_public_job_queries_perf_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/admin/queries/user-queries.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queries_user_queries",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/cleanup.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "rate_limiting_cleanup",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/repository.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "rate_limiting_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/rate-limiting/repository.prisma.contract.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "rate_limiting_repository_prisma_contract_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(auth)/recruiter-invite/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "recruiter_invite_page",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/repositories/application-repository.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "repositories_application_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/repositories/job-repository.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "repositories_job_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/repositories/message-repository.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "repositories_message_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/repositories/resume-repository.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "repositories_resume_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/repositories/thread-repository.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "repositories_thread_repository",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/resolvers/job-resolver.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "resolvers_job_resolver",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "resume_builder_skills_persistence_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/resumes/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "resumes_route",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/services/application-service.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_application_service",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/services/invite-service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_invite_service",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/services/user-admin-service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_user_admin_service",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/services/user-service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_user_service",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/reset-db.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "test_reset_db",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/notifications.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "unit_notifications_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/user/bookmarks.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_bookmarks_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/integration/user/resumes.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "user_resumes_test",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/auth/utils/rbac.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_rbac",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(public)/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
@@ -38600,17 +39752,6 @@
       "confidence_score": 1.0,
       "source": "components_job_list_skeleton",
       "target": "ui_skeleton_skeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/resolvers/job-resolver.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "resolvers_job_resolver",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -38885,17 +40026,6 @@
       "target": "admin_invite_page_props"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(auth)/admin-invite/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_invite_page",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(auth)/error.tsx",
@@ -39075,17 +40205,6 @@
       "confidence_score": 1.0,
       "source": "recruiter_invite_page",
       "target": "recruiter_invite_accept_invite_client_acceptinviteclient"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(auth)/recruiter-invite/page.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "recruiter_invite_page",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -40384,17 +41503,6 @@
       "target": "id_page_adminrecruiterdetailpage"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/recruiters/[id]/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_roles_admin_recruiters_id_page_tsx_id_page",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -40629,17 +41737,6 @@
       "confidence_score": 1.0,
       "source": "app_roles_admin_users_id_page_tsx_id_page",
       "target": "id_page_adminuserdetailpage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/admin/users/[id]/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_roles_admin_users_id_page_tsx_id_page",
-      "target": "lib_prisma"
     },
     {
       "relation": "calls",
@@ -40906,17 +42003,6 @@
       "confidence_score": 1.0,
       "source": "company_page",
       "target": "layout_page_header_pageheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/company/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "company_page",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -41210,17 +42296,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "edit_page",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/jobs/[id]/edit/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -41300,17 +42375,6 @@
       "confidence_score": 1.0,
       "source": "app_roles_recruiter_jobs_id_page_tsx_id_page",
       "target": "components_job_detail_jobdetail"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_roles_recruiter_jobs_id_page_tsx_id_page",
-      "target": "lib_prisma"
     },
     {
       "relation": "calls",
@@ -42227,17 +43291,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(roles)/user/profile/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "profile_page",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/profile/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -42393,17 +43446,6 @@
       "confidence_score": 1.0,
       "source": "app_roles_user_resumes_builder_id_page_tsx_id_page",
       "target": "layout_page_header_pageheader"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(roles)/user/resumes/builder/[id]/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_roles_user_resumes_builder_id_page_tsx_id_page",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -43041,17 +44083,6 @@
       "confidence_score": 1.0,
       "source": "app_api_admin_invite_id_route_ts_id_route",
       "target": "handlers_invite_createinvitecancelhandler"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/invite/[id]/route.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_admin_invite_id_route_ts_id_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -43885,17 +44916,6 @@
       "confidence_score": 1.0,
       "source": "app_api_admin_messages_search_route_ts_search_route",
       "target": "app_api_admin_messages_search_route_ts_search_route_handleget"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/admin/messages/search/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_admin_messages_search_route_ts_search_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -45647,17 +46667,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/files/download/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "download_route",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/files/download/route.ts",
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -45804,17 +46813,6 @@
       "confidence_score": 1.0,
       "source": "apply_route",
       "target": "apply_route_post"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/jobs/[id]/apply/route.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "apply_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -48014,17 +49012,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/invite/[id]/route.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_invite_id_route_ts_id_route",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/api/recruiter/invite/accept/route.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -48269,17 +49256,6 @@
       "confidence_score": 1.0,
       "source": "app_api_recruiter_invite_route_ts_invite_route",
       "target": "app_api_recruiter_invite_route_ts_invite_route_handleget"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/invite/route.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_invite_route_ts_invite_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports",
@@ -48650,17 +49626,6 @@
       "confidence_score": 1.0,
       "source": "export_route",
       "target": "export_route_handleget"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/jobs/[id]/applicants/export/route.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "export_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -49897,17 +50862,6 @@
       "confidence_score": 1.0,
       "source": "app_api_recruiter_messages_search_route_ts_search_route",
       "target": "app_api_recruiter_messages_search_route_ts_search_route_handleget"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/recruiter/messages/search/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_recruiter_messages_search_route_ts_search_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -51372,17 +52326,6 @@
       "target": "factories_user_factory_createtestuser"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_enhance_route_perf_test",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -51627,17 +52570,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_enhance_route",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/ai-enhance/route.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -51806,17 +52738,6 @@
       "confidence_score": 1.0,
       "source": "builder_data_route",
       "target": "builder_data_route_patch"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/builder-data/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "builder_data_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -52017,17 +52938,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/user/resumes/[id]/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_user_resumes_id_route_ts_id_route",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -52176,17 +53086,6 @@
       "confidence_score": 1.0,
       "source": "resumes_route",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/user/resumes/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "resumes_route",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -52359,17 +53258,6 @@
       "target": "app_api_users_id_route_ts_id_route_handleget"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/api/users/[id]/route.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_api_users_id_route_ts_id_route",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -52454,17 +53342,6 @@
       "confidence_score": 1.0,
       "source": "actions_bulk_invite_admin",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/bulk-invite-admin.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_admin",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -52651,17 +53528,6 @@
       "confidence_score": 1.0,
       "source": "actions_invite_admin",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/actions/invite-admin.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_admin",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -56706,17 +57572,6 @@
       "target": "api_api_error_notfounderror"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/queries/applicant-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_applicant_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/admin/queries/applicant-queries.ts",
@@ -56787,17 +57642,6 @@
       "target": "queries_applicant_queries_status_labels"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/queries/dashboard-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_admin_queries_dashboard_queries_ts_queries_dashboard_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
@@ -56816,17 +57660,6 @@
       "confidence_score": 1.0,
       "source": "app_features_admin_queries_dashboard_queries_ts_queries_dashboard_queries",
       "target": "queries_dashboard_queries_getdashboardstats"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/queries/invite-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_admin_queries_invite_queries_ts_queries_invite_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -56910,17 +57743,6 @@
       "confidence_score": 1.0,
       "source": "app_features_admin_queries_job_queries_ts_queries_job_queries",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/queries/job-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_admin_queries_job_queries_ts_queries_job_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -57018,17 +57840,6 @@
       "confidence_score": 1.0,
       "source": "queries_user_queries",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/admin/queries/user-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_user_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -58217,17 +59028,6 @@
       "confidence_score": 1.0,
       "source": "actions_reset_password_action",
       "target": "actions_reset_password_action_resetpasswordaction"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/actions/reset-password-action.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_reset_password_action",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -59769,17 +60569,6 @@
       "target": "libs_auth"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/auth.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_auth",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/libs/auth.ts",
@@ -60097,17 +60886,6 @@
       "target": "email_recruiter_invite_email_recruiterinviteemail"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/email.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_email",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/auth/libs/email.ts",
@@ -60290,17 +61068,6 @@
       "confidence_score": 1.0,
       "source": "unit_notifications_test",
       "target": "libs_email_sendemail"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/libs/verification.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_verification",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -61057,17 +61824,6 @@
       "confidence_score": 1.0,
       "source": "unit_get_redirect_path_test",
       "target": "utils_getredirectpath_getredirectpath"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/auth/utils/rbac.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_rbac",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -62258,17 +63014,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/jobs/queries/public-job-queries.perf.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_public_job_queries_perf_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/queries/public-job-queries.perf.test.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -62362,17 +63107,6 @@
       "confidence_score": 1.0,
       "source": "queries_public_job_queries",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/queries/public-job-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_public_job_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -63157,17 +63891,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_get_unread_message_count",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/public/hooks/use-unread-message-count.ts",
       "source_location": "L6",
       "weight": 1.0,
@@ -63911,17 +64634,6 @@
       "weight": 1.0,
       "source": "layout_role_layout_client_rolelayoutclient",
       "target": "hooks_use_notifications_userealtimenotifications"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/notifications/queries/notification-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_notification_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -65145,17 +65857,6 @@
       "target": "pusher_pusher_client_getpusherclient"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/queries/list-featured-companies.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_list_featured_companies",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/public/queries/list-featured-companies.ts",
@@ -65238,17 +65939,6 @@
       "confidence_score": 1.0,
       "source": "actions_bulk_invite_recruiters",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/bulk-invite-recruiters.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_bulk_invite_recruiters",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -65419,17 +66109,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_invite_recruiter",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/invite-recruiter.ts",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -65538,17 +66217,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/upgrade-to-recruiter.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_upgrade_to_recruiter",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/components/upgrade-to-recruiter-form.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -65642,17 +66310,6 @@
       "confidence_score": 1.0,
       "source": "actions_upsert_company",
       "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/actions/upsert-company.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_upsert_company",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -72571,17 +73228,6 @@
       "target": "api_api_error_notfounderror"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/libs/get-applicant-detail.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_get_applicant_detail",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/libs/get-applicant-detail.ts",
@@ -72654,17 +73300,6 @@
       "target": "api_api_error_forbiddenerror"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "libs_verify_recruiter_applicant_relationship",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/libs/verify-recruiter-applicant-relationship.ts",
@@ -72734,17 +73369,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries_perf_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -72794,17 +73418,6 @@
       "confidence_score": 1.0,
       "source": "queries_analytics_queries_perf_test",
       "target": "test_reset_db_resetdb"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/analytics-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_analytics_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -73257,17 +73870,6 @@
       "target": "lib_pagination_parseoffsetparams"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/application-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_application_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/queries/application-queries.ts",
@@ -73471,17 +74073,6 @@
       "target": "queries_application_queries_getapplicationbyid"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_recruiter_queries_dashboard_queries_ts_queries_dashboard_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/queries/dashboard-queries.ts",
@@ -73611,17 +74202,6 @@
       "target": "test_reset_db_resetdb"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/export-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_export_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/recruiter/queries/export-queries.ts",
@@ -73681,17 +74261,6 @@
       "confidence_score": 1.0,
       "source": "queries_export_queries_maprow",
       "target": "queries_export_queries_formatdate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/invite-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -73775,17 +74344,6 @@
       "confidence_score": 1.0,
       "source": "app_features_recruiter_queries_job_queries_ts_queries_job_queries",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/queries/job-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_features_recruiter_queries_job_queries_ts_queries_job_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -74887,17 +75445,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/shared/api/require-role.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_require_role",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/shared/api/require-role.ts",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -75522,17 +76069,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/features/user/actions/save-resume-builder.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_save_resume_builder",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/actions/save-resume-builder.ts",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -75614,17 +76150,6 @@
       "confidence_score": 1.0,
       "source": "actions_upsert_profile",
       "target": "api_api_error_validationerror"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/actions/upsert-profile.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_upsert_profile",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -78877,17 +79402,6 @@
       "target": "lib_pagination_parseoffsetparams"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/queries/bookmark-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_bookmark_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/user/queries/bookmark-queries.ts",
@@ -78950,17 +79464,6 @@
       "target": "lib_pagination_parseoffsetparams"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/queries/profile-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_profile_queries",
-      "target": "lib_prisma"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/user/queries/profile-queries.ts",
@@ -79012,17 +79515,6 @@
       "confidence_score": 1.0,
       "source": "queries_user_application_queries",
       "target": "lib_pagination_parseoffsetparams"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/queries/user-application-queries.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "queries_user_application_queries",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -79645,17 +80137,6 @@
       "confidence_score": 1.0,
       "source": "app_sitemap",
       "target": "app_sitemap_sitemap"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/sitemap.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_sitemap",
-      "target": "lib_prisma"
     },
     {
       "relation": "contains",
@@ -88323,17 +88804,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "lib/notifications.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_notifications",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/notifications.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -88724,476 +89194,6 @@
       "confidence_score": 1.0,
       "source": "unit_pagination_test",
       "target": "lib_pagination_buildcursormeta"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/admin/ban.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ban_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/admin/role.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_role_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/admin/sessions.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_sessions_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/applications/bulk-status.test.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "applications_bulk_status_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/applications/race.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "applications_race_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/applications/revert.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "applications_revert_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/applications/status.test.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "applications_status_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/applications/withdraw.test.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "applications_withdraw_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/auth/auth.idor.test.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "auth_auth_idor_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/application.factory.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_application_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/company.factory.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_company_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/job.factory.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_job_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/message.factory.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_message_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/resume.factory.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_resume_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/seed-factories.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_seed_factories",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/factories/user.factory.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "factories_user_factory",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/files/download.test.ts",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "files_download_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/messages.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "integration_messages_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/notifications.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "integration_notifications_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/jobs/apply.test.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "jobs_apply_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "lib_prisma_adapter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "lib_prisma_globalforprisma"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "lib_prisma_pool"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "utils_env"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/prisma.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_prisma",
-      "target": "utils_env_env"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "profile_skills_persistence_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/rate-limiting/cleanup.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rate_limiting_cleanup",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/rate-limiting/repository.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rate_limiting_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/rate-limiting/repository.prisma.contract.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rate_limiting_repository_prisma_contract_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/repositories/application-repository.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "repositories_application_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/repositories/job-repository.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "repositories_job_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/repositories/message-repository.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "repositories_message_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/repositories/resume-repository.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "repositories_resume_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/repositories/thread-repository.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "repositories_thread_repository",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "resume_builder_skills_persistence_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/services/application-service.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_application_service",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/services/invite-service.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_invite_service",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/services/user-admin-service.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_user_admin_service",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/services/user-service.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_user_service",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/reset-db.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "test_reset_db",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/unit/notifications.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "unit_notifications_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/user/bookmarks.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_bookmarks_test",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/test/integration/user/resumes.test.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "user_resumes_test",
-      "target": "lib_prisma"
     },
     {
       "relation": "imports_from",
@@ -112005,5 +112005,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d4f872e8a77730c5554bbc3c6a7cf95d0f615381"
+  "built_at_commit": "d3ebb44c857f23c9c62b09016bd47422aaefe3e5"
 }
