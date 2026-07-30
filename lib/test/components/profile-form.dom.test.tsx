@@ -142,9 +142,27 @@ describe("ProfileForm", () => {
     expect(screen.getByRole("button", { name: /Saving/ })).toBeDisabled();
   });
 
-  it("submits empty profile successfully", async () => {
+  it("submit is disabled when form is unchanged", () => {
+    render(<ProfileForm />);
+    expect(screen.getByRole("button", { name: "Save profile" })).toBeDisabled();
+  });
+
+  it("submit enables after user makes a change", async () => {
     const user = userEvent.setup();
     render(<ProfileForm />);
+
+    const btn = screen.getByRole("button", { name: "Save profile" });
+    expect(btn).toBeDisabled();
+
+    await user.type(screen.getByLabelText("Headline"), "Changed");
+    expect(btn).not.toBeDisabled();
+  });
+
+  it("submits after user modifies form", async () => {
+    const user = userEvent.setup();
+    render(<ProfileForm />);
+
+    await user.type(screen.getByLabelText("Headline"), "Test");
 
     await user.click(screen.getByRole("button", { name: "Save profile" }));
 
@@ -154,6 +172,6 @@ describe("ProfileForm", () => {
 
     const callArg = mockUpsertProfile.mock.calls[0][0];
     expect(callArg.skills).toEqual([]);
-    expect(callArg.headline).toBe("");
+    expect(callArg.headline).toBe("Test");
   });
 });

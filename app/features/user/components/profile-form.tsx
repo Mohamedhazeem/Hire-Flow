@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { usePathname, useRouter } from "next/navigation";
 import { ProfileSchema, type ProfileInput } from "@/app/features/user/schema/profile.schema";
@@ -291,10 +292,10 @@ export function ProfileForm({ defaultValues }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <Button
             type="submit"
-            disabled={form.formState.isSubmitting}
+            disabled={!isDirty || form.formState.isSubmitting}
             variant="default"
             size="default"
-            className="w-full sm:w-auto"
+            className={cn("w-full sm:w-auto transition-opacity", !isDirty && "opacity-40 cursor-not-allowed")}
           >
             {form.formState.isSubmitting ? "Saving..." : "Save profile"}
           </Button>
