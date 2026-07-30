@@ -10,6 +10,8 @@ env:
   NODE_VERSION: "22"
   DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1:5432/hire_flow_test"
   PGHOST: 127.0.0.1
+  PGUSER: postgres
+  PGPASSWORD: postgres
 
 permissions:
   contents: write
