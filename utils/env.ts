@@ -45,4 +45,10 @@ export const envSchema = z.object({
 
 export type EnvTypes = z.infer<typeof envSchema>;
 
-export const env = envSchema.safeParse(process.env);
+const _parseEnv = () => envSchema.safeParse(process.env);
+
+export let env = _parseEnv();
+
+export function reloadEnv() {
+  env = _parseEnv();
+}

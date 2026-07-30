@@ -3,6 +3,7 @@ import { vi, afterEach } from "vitest";
 import { cleanup } from "@testing-library/react";
 import dotenv from "dotenv";
 import path from "path";
+import { reloadEnv } from "@/utils/env";
 
 // cmdk uses ResizeObserver + scrollIntoView internally — polyfill for jsdom
 if (typeof ResizeObserver === "undefined") {
@@ -22,10 +23,14 @@ afterEach(() => {
   cleanup();
 });
 
-dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
+// In CI, DATABASE_URL is set by the workflow — don't let .env.test clobber it.
+if (!process.env.CI) {
+  dotenv.config({ path: path.resolve(process.cwd(), ".env.test"), override: true });
+}
 
 if (process.env.DATABASE_URL_TEST) {
   process.env.DATABASE_URL = process.env.DATABASE_URL_TEST;
+  reloadEnv();
 }
 
 // ── Next.js headers / cookies ──────────────────────────────────────────────

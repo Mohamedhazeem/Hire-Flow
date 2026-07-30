@@ -12,7 +12,10 @@ import path from "path";
 import dotenv from "dotenv";
 
 export default async function globalSetup(_config: FullConfig) {
-  dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
+  // In CI, DATABASE_URL is set by the workflow — .env.test is not needed.
+  if (!process.env.CI) {
+    dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
+  }
   if (process.env.DATABASE_URL_TEST) {
     process.env.DATABASE_URL = process.env.DATABASE_URL_TEST;
   }
