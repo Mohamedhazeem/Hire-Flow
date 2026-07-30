@@ -26,7 +26,7 @@ import { env } from "@/utils/env";
 
 const SEED_PASSWORD = "Password1";
 
-const pool = new pg.Pool({ connectionString: env.data?.DATABASE_URL });
+const pool = new pg.Pool({ connectionString: env.data?.DATABASE_URL ?? process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
