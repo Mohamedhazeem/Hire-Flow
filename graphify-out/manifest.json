@@ -3698,5 +3698,10 @@
     "mtime": 1785410638.9495008,
     "ast_hash": "47633979107bd2f3790c04d126d8cc93",
     "semantic_hash": ""
+  },
+  "prisma/migrations/20260730000000_add_job_slug/migration.sql": {
+    "mtime": 1785421412.0019453,
+    "ast_hash": "ed3fa40a47fe6fa84c4eed2311231731",
+    "semantic_hash": ""
   }
 }
