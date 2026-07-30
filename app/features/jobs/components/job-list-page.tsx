@@ -5,14 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { apiClient } from "@/lib/api/api-client";
-import { PageHeader } from "@/components/layout/page-header";
 import { Skeleton } from "@/components/ui/skeleton";
 import { JobCard } from "./job-card";
 import { JobSearchBar } from "./job-search-bar";
 import { FilterSelect } from "./filter-select";
 import { SkillFilter } from "./skill-filter";
 import type { PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
-import { BriefcaseIcon, ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const WORK_MODES = ["remote", "hybrid", "onsite"] as const;
 const EMPLOYMENT_TYPES = ["full_time", "part_time", "contract", "freelance", "internship"] as const;
@@ -102,7 +101,11 @@ export function JobListPage() {
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <JobSearchBar />
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
+            <SkillFilter
+              value={params.skills ?? []}
+              onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
+            />
             <FilterSelect
               label="Work Mode"
               paramKey="workMode"
@@ -135,15 +138,12 @@ export function JobListPage() {
               onChange={setParam}
               labels={FILTER_LABELS}
             />
-            <SkillFilter
-              value={params.skills ?? []}
-              onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
-            />
+
             {hasFilters && (
               <button
                 type="button"
                 onClick={() => router.push("/jobs")}
-                className="bg-error/90 min-w-20 text-center font-bold text-text-inverse  px-2.5 py-2.5 text-sm  hover:text-text-body border border-border-subtle rounded-lg transition-colors"
+                className="bg-error/90 text-center font-bold text-text-inverse px-2.5 py-2.5 text-sm hover:text-text-body border border-border-subtle rounded-lg transition-colors"
               >
                 Clear
               </button>

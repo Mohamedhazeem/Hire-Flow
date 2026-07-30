@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useId } from "react";
 import { Command } from "cmdk";
 import { XIcon, ChevronsUpDownIcon, PlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -33,6 +33,7 @@ export function AutocompleteInput({
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const listboxId = useId();
 
   const atLimit = value.length >= maxItems;
   const isCustom =
@@ -73,13 +74,15 @@ export function AutocompleteInput({
   );
 
   return (
-    <div ref={containerRef} className="relative" id={id}>
+    <div ref={containerRef} className="relative min-w-0" id={id}>
       <Command shouldFilter className="overflow-visible">
         <div
           role="combobox"
           aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-controls={listboxId}
           className={cn(
-            "flex min-h-9 w-full flex-wrap items-center gap-1 rounded-md border border-border-subtle bg-bg-surface px-2 py-1 text-sm",
+            "flex min-h-10 w-full flex-wrap items-center gap-1 rounded-lg border border-border-subtle bg-bg-surface px-2 py-2.5 text-sm",
             "focus-within:border-border-focus focus-within:ring-1 focus-within:ring-brand/30",
             disabled && "cursor-not-allowed opacity-50",
           )}
@@ -133,7 +136,10 @@ export function AutocompleteInput({
         </div>
 
         {open && (
-          <Command.List className="absolute left-0 right-0 top-full z-50 mt-1 max-h-60 overflow-y-auto rounded-md border border-border-subtle bg-bg-surface shadow-lg outline-none">
+          <Command.List
+            id={listboxId}
+            className="absolute left-0 right-0 top-full z-50 mt-1 max-h-60 overflow-y-auto rounded-md border border-border-subtle bg-bg-surface shadow-lg outline-none"
+          >
             {suggestions.map((item) => (
               <Command.Item
                 key={item}

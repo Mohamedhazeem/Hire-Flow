@@ -43,7 +43,7 @@ export function FilterSelect({
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         aria-label={label}
-        className="w-full flex items-center justify-center gap-1.5 text-sm bg-bg-surface border border-border-subtle rounded-lg px-3 py-2.5 text-text-body cursor-pointer transition-colors hover:border-brand/30 whitespace-nowrap"
+          className="w-full min-w-0 flex items-center justify-center gap-1.5 text-sm bg-bg-surface border border-border-subtle rounded-lg px-3 py-2.5 text-text-body cursor-pointer transition-colors hover:border-brand/30 truncate"
       >
         <span>{selectedLabel}</span>
         <ChevronDown className="size-4 shrink-0 text-text-muted" />
