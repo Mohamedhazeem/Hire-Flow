@@ -47,7 +47,7 @@ describe("withErrorHandler", () => {
         {
           code: "too_small",
           minimum: 1,
-          type: "string",
+          origin: "field",
           inclusive: true,
           exact: false,
           message: "Required",

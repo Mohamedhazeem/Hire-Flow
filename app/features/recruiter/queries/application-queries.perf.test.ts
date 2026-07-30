@@ -41,6 +41,7 @@ describe("PF2 — Applicant list 10K+ records performance", () => {
     });
 
     expect(ms).toBeLessThanOrEqual(1000);
-    expect(result.total).toBe(10_000);
+    expect(result).toHaveProperty("mode", "offset");
+    expect((result as { total: number }).total).toBe(10_000);
   });
 });
