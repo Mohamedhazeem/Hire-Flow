@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/prisma";
-import type { Prisma } from "@/app/generated/prisma/client";
 
 /**
  * Resolve a job by slug OR id.
