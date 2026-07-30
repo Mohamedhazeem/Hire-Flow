@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { userAdminService } from "@/lib/services/user-admin-service";
 
 async function handleDELETE(
@@ -15,4 +16,4 @@ async function handleDELETE(
   return ok(result);
 }
 
-export const DELETE = withErrorHandler(handleDELETE);
+export const DELETE = withErrorHandler(withRateLimit(handleDELETE, "admin:team:manage"));

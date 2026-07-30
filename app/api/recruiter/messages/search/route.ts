@@ -3,6 +3,7 @@ import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { prisma } from "@/lib/prisma";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 
 async function handleGET(request: NextRequest) {
   const recruiter = await requireRole(["recruiter"]);
@@ -54,4 +55,4 @@ async function handleGET(request: NextRequest) {
   return ok(users);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:messages:search"));

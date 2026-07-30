@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok, fail } from "@/lib/api/api-response";
 import { RecruiterAcceptInviteSchema } from "@/app/features/recruiter/schema/team.schema";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { inviteService } from "@/lib/services/invite-service";
 
 async function handlePOST(request: NextRequest) {
@@ -21,4 +22,4 @@ async function handlePOST(request: NextRequest) {
   return ok(result);
 }
 
-export const POST = withErrorHandler(handlePOST);
+export const POST = withErrorHandler(withRateLimit(handlePOST, "recruiter:invite:accept"));

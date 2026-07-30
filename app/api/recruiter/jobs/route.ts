@@ -9,6 +9,7 @@ import {
 import { listJobs } from "@/app/features/recruiter/queries/job-queries";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { jobService } from "@/lib/services/job-service";
 
 async function handleGET(request: NextRequest) {
@@ -59,5 +60,5 @@ async function handlePOST(request: NextRequest) {
   return ok(result, 201);
 }
 
-export const GET = withErrorHandler(handleGET);
-export const POST = withErrorHandler(handlePOST);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:jobs:list"));
+export const POST = withErrorHandler(withRateLimit(handlePOST, "recruiter:jobs:manage"));

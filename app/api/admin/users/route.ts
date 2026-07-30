@@ -5,6 +5,7 @@ import { AdminListUsersParamsSchema } from "@/app/features/admin/schema/admin.sc
 import { listUsers } from "@/app/features/admin/queries/user-queries";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 
 async function handleGET(request: NextRequest) {
   await requireRole(["admin", "super_admin"]);
@@ -28,4 +29,4 @@ async function handleGET(request: NextRequest) {
   return ok(result);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "admin:users:list"));

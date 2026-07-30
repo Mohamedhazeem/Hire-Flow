@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { BulkStatusTransitionSchema } from "@/app/features/recruiter/schema/application.schema";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { applicationService } from "@/lib/services/application-service";
 
 async function handlePOST(request: NextRequest) {
@@ -23,4 +24,4 @@ async function handlePOST(request: NextRequest) {
   return ok(result);
 }
 
-export const POST = withErrorHandler(handlePOST);
+export const POST = withErrorHandler(withRateLimit(handlePOST, "recruiter:applications:manage"));

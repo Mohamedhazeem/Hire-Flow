@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { ValidationError } from "@/lib/api/api-error";
 import { RecruiterToggleJobStatusSchema } from "@/app/features/recruiter/schema/job.schema";
 import { jobService } from "@/lib/services/job-service";
@@ -23,4 +24,4 @@ async function handlePATCH(request: NextRequest, { params }: { params: Promise<{
   return ok(result);
 }
 
-export const PATCH = withErrorHandler(handlePATCH);
+export const PATCH = withErrorHandler(withRateLimit(handlePATCH, "recruiter:jobs:manage"));

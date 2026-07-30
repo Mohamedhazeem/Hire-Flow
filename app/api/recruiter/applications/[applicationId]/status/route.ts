@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { StatusTransitionSchema } from "@/app/features/recruiter/schema/application.schema";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { applicationService } from "@/lib/services/application-service";
 
 async function handlePATCH(
@@ -34,4 +35,4 @@ async function handlePATCH(
   return ok(result);
 }
 
-export const PATCH = withErrorHandler(handlePATCH);
+export const PATCH = withErrorHandler(withRateLimit(handlePATCH, "recruiter:applications:manage"));

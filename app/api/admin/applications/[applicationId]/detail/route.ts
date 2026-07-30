@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { getAdminApplicantDetail } from "@/app/features/admin/queries/applicant-queries";
 
 async function handleGET(
@@ -14,4 +15,4 @@ async function handleGET(
   return ok(detail);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "admin:applications:detail"));

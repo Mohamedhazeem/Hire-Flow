@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 import { JobUpdateSchema } from "@/app/features/recruiter/schema/job.schema";
 import { getJobById } from "@/app/features/recruiter/queries/job-queries";
@@ -56,6 +57,6 @@ async function handleDELETE(request: NextRequest, { params }: { params: Promise<
   return ok(result);
 }
 
-export const GET = withErrorHandler(handleGET);
-export const PATCH = withErrorHandler(handlePATCH);
-export const DELETE = withErrorHandler(handleDELETE);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:jobs:list"));
+export const PATCH = withErrorHandler(withRateLimit(handlePATCH, "recruiter:jobs:manage"));
+export const DELETE = withErrorHandler(withRateLimit(handleDELETE, "recruiter:jobs:manage"));

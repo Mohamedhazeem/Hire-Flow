@@ -3,8 +3,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 const mockPush = vi.fn();
+const mockPathname = "/user/profile";
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: mockPush }),
+  usePathname: () => mockPathname,
 }));
 
 const mockUpsertProfile = vi.fn().mockResolvedValue({ success: true });

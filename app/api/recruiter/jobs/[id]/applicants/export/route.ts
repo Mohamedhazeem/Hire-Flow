@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { prisma } from "@/lib/prisma";
 import { exportApplicantsAsCsv } from "@/app/features/recruiter/queries/export-queries";
 import { format } from "date-fns";
@@ -39,4 +40,4 @@ async function handleGET(request: NextRequest, { params }: { params: Promise<{ i
   });
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:applicants:export"));

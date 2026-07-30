@@ -5,6 +5,7 @@ import { ListApplicantsParamsSchema } from "@/app/features/recruiter/schema/appl
 import { listApplicants } from "@/app/features/recruiter/queries/application-queries";
 import { ValidationError, NotFoundError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { jobRepository } from "@/lib/repositories/job-repository";
 
 async function handleGET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -39,4 +40,4 @@ async function handleGET(request: NextRequest, { params }: { params: Promise<{ i
   return ok(result);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:applicants:list"));

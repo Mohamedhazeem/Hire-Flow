@@ -5,6 +5,7 @@ import { AdminListJobsParamsSchema } from "@/app/features/admin/schema/admin.sch
 import { listJobs } from "@/app/features/admin/queries/job-queries";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 
 async function handleGET(request: NextRequest) {
   await requireRole(["admin", "super_admin"]);
@@ -30,4 +31,4 @@ async function handleGET(request: NextRequest) {
   return ok(result);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "admin:jobs:list"));

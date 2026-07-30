@@ -2,7 +2,9 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole, type ResolvedSession } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { NotFoundError, ValidationError } from "@/lib/api/api-error";
+import type { RateLimitEndpoint } from "@/lib/rate-limiting/config";
 
 type InviteCancelOptions = {
   findInvite: (id: string) => Promise<{ invitedById: string; acceptedAt: Date | null } | null>;
@@ -10,7 +12,11 @@ type InviteCancelOptions = {
   ownershipCheck: (invite: { invitedById: string }, session: ResolvedSession) => void;
 };
 
-export function createInviteCancelHandler(allowedRoles: string[], options: InviteCancelOptions) {
+export function createInviteCancelHandler(
+  allowedRoles: string[],
+  options: InviteCancelOptions,
+  rateLimitEndpoint?: RateLimitEndpoint,
+) {
   const { findInvite, deleteInvite, ownershipCheck } = options;
 
   async function handleDELETE(
@@ -37,7 +43,12 @@ export function createInviteCancelHandler(allowedRoles: string[], options: Invit
     return ok({ cancelled: true });
   }
 
+  let wrapped = withErrorHandler(handleDELETE);
+  if (rateLimitEndpoint) {
+    wrapped = withErrorHandler(withRateLimit(handleDELETE, rateLimitEndpoint));
+  }
+
   return {
-    DELETE: withErrorHandler(handleDELETE),
+    DELETE: wrapped,
   };
 }

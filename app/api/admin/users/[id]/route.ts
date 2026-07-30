@@ -5,6 +5,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { auth } from "@/app/features/auth/libs/auth";
 import { NotFoundError, ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 
 async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   await requireRole(["admin", "super_admin"]);
@@ -33,5 +34,5 @@ async function handleDELETE(
   return ok({ deleted: true });
 }
 
-export const GET = withErrorHandler(handleGET);
-export const DELETE = withErrorHandler(handleDELETE);
+export const GET = withErrorHandler(withRateLimit(handleGET, "admin:users:detail"));
+export const DELETE = withErrorHandler(withRateLimit(handleDELETE, "admin:users:manage"));

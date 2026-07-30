@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { getUserApplications } from "@/app/features/admin/queries/applicant-queries";
 
 async function handleGET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -11,4 +12,4 @@ async function handleGET(_request: NextRequest, { params }: { params: Promise<{ 
   return ok(data);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "admin:users:detail"));

@@ -3,6 +3,7 @@ import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { getApplicantDetail } from "@/app/features/recruiter/libs/get-applicant-detail";
 
 async function handleGET(
@@ -18,4 +19,4 @@ async function handleGET(
   return ok(detail);
 }
 
-export const GET = withErrorHandler(handleGET);
+export const GET = withErrorHandler(withRateLimit(handleGET, "recruiter:applications:detail"));

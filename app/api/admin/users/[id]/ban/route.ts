@@ -4,6 +4,7 @@ import { requireRole } from "@/app/features/shared/api/require-role";
 import { AdminBanUserSchema } from "@/app/features/admin/schema/admin.schema";
 import { ValidationError } from "@/lib/api/api-error";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { userAdminService } from "@/lib/services/user-admin-service";
 
 async function handlePOST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -27,4 +28,4 @@ async function handlePOST(request: NextRequest, { params }: { params: Promise<{ 
   return ok(result);
 }
 
-export const POST = withErrorHandler(handlePOST);
+export const POST = withErrorHandler(withRateLimit(handlePOST, "admin:users:manage"));

@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { ok } from "@/lib/api/api-response";
 import { requireRole } from "@/app/features/shared/api/require-role";
 import { withErrorHandler } from "@/lib/api/api-wrapper";
+import { withRateLimit } from "@/lib/rate-limiting/di";
 import { jobService } from "@/lib/services/job-service";
 
 async function handleDELETE(
@@ -23,5 +24,5 @@ async function handlePATCH(request: NextRequest, { params }: { params: Promise<{
   return ok(result);
 }
 
-export const DELETE = withErrorHandler(handleDELETE);
-export const PATCH = withErrorHandler(handlePATCH);
+export const DELETE = withErrorHandler(withRateLimit(handleDELETE, "admin:jobs:manage"));
+export const PATCH = withErrorHandler(withRateLimit(handlePATCH, "admin:jobs:manage"));

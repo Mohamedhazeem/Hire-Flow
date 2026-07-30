@@ -130,4 +130,73 @@ describe("createWithRateLimit", () => {
     await wrapped(request);
     expect(mockRateLimiter.check).toHaveBeenCalled();
   });
+
+  it("applies recruiter multiplier", async () => {
+    (getSession as ReturnType<typeof vi.fn>).mockResolvedValue({
+      user: { id: "rec-1", name: "Rec", email: "rec@co.com", role: "recruiter" },
+    });
+    mockRateLimiter.check = vi
+      .fn()
+      .mockResolvedValue({
+        allowed: true,
+        limit: 60,
+        remaining: 59,
+        reset: 1000,
+        retryAfter: 0,
+      } as RateLimitResult);
+    const wrapped = withRateLimit(handler, "jobs:view");
+    const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
+    await wrapped(request);
+    expect(mockRateLimiter.check).toHaveBeenCalledWith(
+      expect.any(String),
+      200,
+      expect.any(Number),
+    );
+  });
+
+  it("applies admin multiplier", async () => {
+    (getSession as ReturnType<typeof vi.fn>).mockResolvedValue({
+      user: { id: "adm-1", name: "Admin", email: "adm@co.com", role: "admin" },
+    });
+    mockRateLimiter.check = vi
+      .fn()
+      .mockResolvedValue({
+        allowed: true,
+        limit: 500,
+        remaining: 499,
+        reset: 1000,
+        retryAfter: 0,
+      } as RateLimitResult);
+    const wrapped = withRateLimit(handler, "jobs:view");
+    const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
+    await wrapped(request);
+    expect(mockRateLimiter.check).toHaveBeenCalledWith(
+      expect.any(String),
+      500,
+      expect.any(Number),
+    );
+  });
+
+  it("applies super_admin multiplier", async () => {
+    (getSession as ReturnType<typeof vi.fn>).mockResolvedValue({
+      user: { id: "sa-1", name: "Super", email: "sa@co.com", role: "super_admin" },
+    });
+    mockRateLimiter.check = vi
+      .fn()
+      .mockResolvedValue({
+        allowed: true,
+        limit: 1000,
+        remaining: 999,
+        reset: 1000,
+        retryAfter: 0,
+      } as RateLimitResult);
+    const wrapped = withRateLimit(handler, "jobs:view");
+    const request = new NextRequest(new Request("http://localhost/api/jobs/test/view"));
+    await wrapped(request);
+    expect(mockRateLimiter.check).toHaveBeenCalledWith(
+      expect.any(String),
+      1000,
+      expect.any(Number),
+    );
+  });
 });
