@@ -1,11 +1,11 @@
-name: CI
+ï»¿name: CI
 
-# Temporarily disabled to avoid CI runs on every master push
-# on:
-#   push:
-#     branches: [master]
-#   pull_request:
-#     branches: [master]
+Temporarily disabled to avoid CI runs on every master push
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 env:
   NODE_VERSION: "22"
@@ -200,7 +200,7 @@ jobs:
 #           if [ -d lib/rate-limiting ]; then
 #             npx stryker run
 #           else
-#             echo "lib/rate-limiting/ not found — skipping mutation testing"
+#             echo "lib/rate-limiting/ not found ï¿½ skipping mutation testing"
 #           fi
 #         continue-on-error: true
 #         env:
