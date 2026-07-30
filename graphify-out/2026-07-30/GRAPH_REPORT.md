@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-07-30)
 
 ## Corpus Check
-- 729 files · ~316,573 words
+- 729 files · ~316,880 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2440 nodes · 2933 edges · 221 communities (169 shown, 52 thin omitted)
+- 2440 nodes · 2936 edges · 220 communities (169 shown, 51 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `edaab0a8`
+- Built from commit: `f37a6320`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -205,12 +205,11 @@
 - [[_COMMUNITY_Community 195|Community 195]]
 - [[_COMMUNITY_Community 213|Community 213]]
 - [[_COMMUNITY_Community 219|Community 219]]
-- [[_COMMUNITY_Community 220|Community 220]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Phase 2: Recruiter` - 59 edges
 2. `Phase 3: User (Job Seeker)` - 35 edges
-3. `cn()` - 34 edges
+3. `cn()` - 35 edges
 4. `Phase 4: Public Job Routes & Home Page` - 31 edges
 5. `Created File Paths (Grouped by Phase)` - 29 edges
 6. `requireRole()` - 24 edges
@@ -234,11 +233,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (221 total, 52 thin omitted)
+## Communities (220 total, 51 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
-Nodes (46): geistMono, geistSans, inter, metadata, RootLayout(), CHART_TOOLTIP_STYLE, DistributionBarChart(), DistributionBarChartProps (+38 more)
+Nodes (48): geistMono, geistSans, inter, metadata, RootLayout(), CHART_TOOLTIP_STYLE, DistributionBarChart(), DistributionBarChartProps (+40 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.03
@@ -793,23 +792,23 @@ Cohesion: 0.25
 Nodes (5): ResolvedSession, GET, handleGET, GET, handleGET
 
 ## Knowledge Gaps
-- **1470 isolated node(s):** `JobUpdateSchema`, `RecruiterToggleJobStatusSchema`, `JobUpdateInput`, `JobToggleInput`, `AutocompleteInputProps` (+1465 more)
+- **1470 isolated node(s):** `FilterSelectProps`, `WORK_MODES`, `EMPLOYMENT_TYPES`, `EXPERIENCE_LEVELS`, `STATUS_OPTIONS` (+1465 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **52 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **51 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `requireRole()` connect `Community 47` to `Community 132`, `Community 8`, `Community 72`, `Community 107`, `Community 43`, `Community 123`, `Community 92`, `Community 112`, `Community 79`, `Community 219`, `Community 60`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `Skeleton()` connect `Community 2` to `Community 0`, `Community 5`, `Community 6`, `Community 8`, `Community 52`, `Community 25`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Why does `cn()` connect `Community 0` to `Community 25`, `Community 2`, `Community 61`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `JobUpdateSchema`, `RecruiterToggleJobStatusSchema`, `JobUpdateInput` to the rest of the system?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `Skeleton()` connect `Community 2` to `Community 0`, `Community 5`, `Community 6`, `Community 8`, `Community 52`, `Community 25`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **What connects `FilterSelectProps`, `WORK_MODES`, `EMPLOYMENT_TYPES` to the rest of the system?**
   _1470 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.057859703020993344 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05501165501165501 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

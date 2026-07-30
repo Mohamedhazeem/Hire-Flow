@@ -4,94 +4,154 @@
   "graph": {},
   "nodes": [
     {
-      "label": "job.schema.ts",
+      "label": "filter-select.tsx",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "schema_job_schema",
-      "community": 8,
-      "norm_label": "job.schema.ts"
+      "id": "components_filter_select",
+      "community": 0,
+      "norm_label": "filter-select.tsx"
     },
     {
-      "label": "JobCreateSchema",
+      "label": "FilterSelectProps",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L4",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L6",
       "_origin": "ast",
-      "id": "schema_job_schema_jobcreateschema",
-      "community": 8,
-      "norm_label": "jobcreateschema"
+      "id": "components_filter_select_filterselectprops",
+      "community": 0,
+      "norm_label": "filterselectprops"
     },
     {
-      "label": "JobUpdateSchema",
+      "label": "FilterSelect()",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L30",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L15",
       "_origin": "ast",
-      "id": "schema_job_schema_jobupdateschema",
-      "community": 8,
-      "norm_label": "jobupdateschema"
+      "id": "components_filter_select_filterselect",
+      "community": 0,
+      "norm_label": "filterselect()"
     },
     {
-      "label": "RecruiterListJobsParamsSchema",
+      "label": "job-list-page.tsx",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L56",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L1",
       "_origin": "ast",
-      "id": "schema_job_schema_recruiterlistjobsparamsschema",
-      "community": 8,
-      "norm_label": "recruiterlistjobsparamsschema"
+      "id": "components_job_list_page",
+      "community": 0,
+      "norm_label": "job-list-page.tsx"
     },
     {
-      "label": "RecruiterToggleJobStatusSchema",
+      "label": "WORK_MODES",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L72",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L16",
       "_origin": "ast",
-      "id": "schema_job_schema_recruitertogglejobstatusschema",
-      "community": 8,
-      "norm_label": "recruitertogglejobstatusschema"
+      "id": "components_job_list_page_work_modes",
+      "community": 0,
+      "norm_label": "work_modes"
     },
     {
-      "label": "JobFormInput",
+      "label": "EMPLOYMENT_TYPES",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L76",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "schema_job_schema_jobforminput",
-      "community": 8,
-      "norm_label": "jobforminput"
+      "id": "components_job_list_page_employment_types",
+      "community": 0,
+      "norm_label": "employment_types"
     },
     {
-      "label": "JobUpdateInput",
+      "label": "EXPERIENCE_LEVELS",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L77",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L18",
       "_origin": "ast",
-      "id": "schema_job_schema_jobupdateinput",
-      "community": 8,
-      "norm_label": "jobupdateinput"
+      "id": "components_job_list_page_experience_levels",
+      "community": 0,
+      "norm_label": "experience_levels"
     },
     {
-      "label": "JobListParams",
+      "label": "STATUS_OPTIONS",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L78",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L19",
       "_origin": "ast",
-      "id": "schema_job_schema_joblistparams",
-      "community": 8,
-      "norm_label": "joblistparams"
+      "id": "components_job_list_page_status_options",
+      "community": 0,
+      "norm_label": "status_options"
     },
     {
-      "label": "JobToggleInput",
+      "label": "FILTER_LABELS",
       "file_type": "code",
-      "source_file": "app/features/recruiter/schema/job.schema.ts",
-      "source_location": "L79",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L20",
       "_origin": "ast",
-      "id": "schema_job_schema_jobtoggleinput",
-      "community": 8,
-      "norm_label": "jobtoggleinput"
+      "id": "components_job_list_page_filter_labels",
+      "community": 0,
+      "norm_label": "filter_labels"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "components_job_list_page_containervariants",
+      "community": 0,
+      "norm_label": "containervariants"
+    },
+    {
+      "label": "cardVariants",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "components_job_list_page_cardvariants",
+      "community": 0,
+      "norm_label": "cardvariants"
+    },
+    {
+      "label": "JobListPage()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "components_job_list_page_joblistpage",
+      "community": 0,
+      "norm_label": "joblistpage()"
+    },
+    {
+      "label": "skill-filter.tsx",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_skill_filter",
+      "community": 0,
+      "norm_label": "skill-filter.tsx"
+    },
+    {
+      "label": "SkillFilterProps",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_skill_filter_skillfilterprops",
+      "community": 0,
+      "norm_label": "skillfilterprops"
+    },
+    {
+      "label": "SkillFilter()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "components_skill_filter_skillfilter",
+      "community": 0,
+      "norm_label": "skillfilter()"
     },
     {
       "label": "autocomplete-input.tsx",
@@ -124,34 +184,94 @@
       "norm_label": "autocompleteinput()"
     },
     {
-      "label": "filter-select.tsx",
+      "label": "job.schema.ts",
       "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 220,
-      "norm_label": "filter-select.tsx",
-      "id": "components_filter_select"
+      "community": 8,
+      "norm_label": "job.schema.ts",
+      "id": "schema_job_schema"
     },
     {
-      "label": "FilterSelectProps",
+      "label": "JobCreateSchema",
       "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L6",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L4",
       "_origin": "ast",
-      "community": 220,
-      "norm_label": "filterselectprops",
-      "id": "components_filter_select_filterselectprops"
+      "community": 8,
+      "norm_label": "jobcreateschema",
+      "id": "schema_job_schema_jobcreateschema"
     },
     {
-      "label": "FilterSelect()",
+      "label": "JobUpdateSchema",
       "file_type": "code",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L15",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L30",
       "_origin": "ast",
-      "community": 220,
-      "norm_label": "filterselect()",
-      "id": "components_filter_select_filterselect"
+      "community": 8,
+      "norm_label": "jobupdateschema",
+      "id": "schema_job_schema_jobupdateschema"
+    },
+    {
+      "label": "RecruiterListJobsParamsSchema",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L56",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "recruiterlistjobsparamsschema",
+      "id": "schema_job_schema_recruiterlistjobsparamsschema"
+    },
+    {
+      "label": "RecruiterToggleJobStatusSchema",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L72",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "recruitertogglejobstatusschema",
+      "id": "schema_job_schema_recruitertogglejobstatusschema"
+    },
+    {
+      "label": "JobFormInput",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "jobforminput",
+      "id": "schema_job_schema_jobforminput"
+    },
+    {
+      "label": "JobUpdateInput",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L77",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "jobupdateinput",
+      "id": "schema_job_schema_jobupdateinput"
+    },
+    {
+      "label": "JobListParams",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "joblistparams",
+      "id": "schema_job_schema_joblistparams"
+    },
+    {
+      "label": "JobToggleInput",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/schema/job.schema.ts",
+      "source_location": "L79",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "jobtoggleinput",
+      "id": "schema_job_schema_jobtoggleinput"
     },
     {
       "label": "public-job-queries.ts",
@@ -10772,126 +10892,6 @@
       "community": 6,
       "norm_label": "jobdetailview()",
       "id": "components_job_detail_view_jobdetailview"
-    },
-    {
-      "label": "job-list-page.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "job-list-page.tsx",
-      "id": "components_job_list_page"
-    },
-    {
-      "label": "WORK_MODES",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "work_modes",
-      "id": "components_job_list_page_work_modes"
-    },
-    {
-      "label": "EMPLOYMENT_TYPES",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "employment_types",
-      "id": "components_job_list_page_employment_types"
-    },
-    {
-      "label": "EXPERIENCE_LEVELS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "experience_levels",
-      "id": "components_job_list_page_experience_levels"
-    },
-    {
-      "label": "STATUS_OPTIONS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "status_options",
-      "id": "components_job_list_page_status_options"
-    },
-    {
-      "label": "FILTER_LABELS",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "filter_labels",
-      "id": "components_job_list_page_filter_labels"
-    },
-    {
-      "label": "containerVariants",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "containervariants",
-      "id": "components_job_list_page_containervariants"
-    },
-    {
-      "label": "cardVariants",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "cardvariants",
-      "id": "components_job_list_page_cardvariants"
-    },
-    {
-      "label": "JobListPage()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L46",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "joblistpage()",
-      "id": "components_job_list_page_joblistpage"
-    },
-    {
-      "label": "skill-filter.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "skill-filter.tsx",
-      "id": "components_skill_filter"
-    },
-    {
-      "label": "SkillFilterProps",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "skillfilterprops",
-      "id": "components_skill_filter_skillfilterprops"
-    },
-    {
-      "label": "SkillFilter()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 0,
-      "norm_label": "skillfilter()",
-      "id": "components_skill_filter_skillfilter"
     },
     {
       "label": "public-job-queries.perf.test.ts",
@@ -24406,6 +24406,366 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_filter_select",
+      "target": "components_filter_select_filterselect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/filter-select.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_filter_select",
+      "target": "components_filter_select_filterselectprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_filter_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_filter_select_filterselect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card_jobcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_cardvariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_containervariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_employment_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_experience_levels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_filter_labels"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_joblistpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_status_options"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_list_page_work_modes"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_skill_filter"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_skill_filter_skillfilter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "queries_public_job_queries"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "queries_public_job_queries_publicjobrow"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "ui_skeleton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "ui_skeleton_skeleton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_skill_filter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_skill_filter",
+      "target": "components_skill_filter_skillfilter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_skill_filter",
+      "target": "components_skill_filter_skillfilterprops"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_skill_filter",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_skill_filter",
+      "target": "ui_autocomplete_input"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/skill-filter.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_skill_filter",
+      "target": "ui_autocomplete_input_autocompleteinput"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_skill_filter_skillfilter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-form.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_form",
+      "target": "ui_autocomplete_input"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/autocomplete-input.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_autocomplete_input",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/autocomplete-input.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_autocomplete_input",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/autocomplete-input.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_autocomplete_input",
+      "target": "ui_autocomplete_input_autocompleteinput"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/autocomplete-input.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_autocomplete_input",
+      "target": "ui_autocomplete_input_autocompleteinputprops"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-form.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_form",
+      "target": "ui_autocomplete_input_autocompleteinput"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "components/ui/autocomplete-input.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "ui_autocomplete_input_autocompleteinput",
+      "target": "lib_utils_cn"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -24621,123 +24981,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/job-form.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_form",
-      "target": "ui_autocomplete_input"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_skill_filter",
-      "target": "ui_autocomplete_input"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/autocomplete-input.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_autocomplete_input",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/autocomplete-input.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_autocomplete_input",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/autocomplete-input.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_autocomplete_input",
-      "target": "ui_autocomplete_input_autocompleteinput"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/ui/autocomplete-input.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_autocomplete_input",
-      "target": "ui_autocomplete_input_autocompleteinputprops"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/job-form.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_form",
-      "target": "ui_autocomplete_input_autocompleteinput"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_skill_filter",
-      "target": "ui_autocomplete_input_autocompleteinput"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "components/ui/autocomplete-input.tsx",
-      "source_location": "L81",
-      "weight": 1.0,
-      "source": "ui_autocomplete_input_autocompleteinput",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_filter_select",
-      "target": "components_filter_select_filterselect"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/filter-select.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_filter_select",
-      "target": "components_filter_select_filterselectprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/api/jobs/route.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -24787,17 +25030,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_job_detail_view",
-      "target": "queries_public_job_queries"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
       "target": "queries_public_job_queries"
     },
     {
@@ -24995,17 +25227,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_featured_jobs",
-      "target": "queries_public_job_queries_publicjobrow"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
       "target": "queries_public_job_queries_publicjobrow"
     },
     {
@@ -36301,17 +36522,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/user/components/saved-jobs-page.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -36329,17 +36539,6 @@
       "weight": 1.0,
       "source": "components_job_card_jobcard",
       "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card_jobcard"
     },
     {
       "relation": "imports",
@@ -36426,172 +36625,6 @@
       "confidence_score": 1.0,
       "source": "components_job_detail_view_jobdetailview",
       "target": "components_job_detail_view_formatapplicantcount"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_cardvariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_containervariants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_employment_types"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_experience_levels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_filter_labels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_joblistpage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_status_options"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_list_page_work_modes"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_skill_filter"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_skill_filter_skillfilter"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "ui_skeleton"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "ui_skeleton_skeleton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_jobs_table",
-      "target": "components_skill_filter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_skill_filter",
-      "target": "components_skill_filter_skillfilter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/skill-filter.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_skill_filter",
-      "target": "components_skill_filter_skillfilterprops"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_recruiter_jobs_table",
-      "target": "components_skill_filter_skillfilter"
     },
     {
       "relation": "imports_from",
@@ -54573,5 +54606,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "edaab0a86de5d2dc7cdc51a38827ee1a46934cf9"
+  "built_at_commit": "f37a63209974198acbd08fe2d050ed536bb6f227"
 }
