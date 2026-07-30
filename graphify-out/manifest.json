@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1785422741.1810067,
-    "ast_hash": "01e4c5ca8887a8b7cd9a7985dbe691f7",
+    "mtime": 1785423579.515453,
+    "ast_hash": "d2da1662d752cb0744e91122381fbec6",
     "semantic_hash": ""
   },
   ".kilo/plans/ai-suggestions-enhancements.md": {
