@@ -1,6 +1,5 @@
 ﻿name: CI
 
-# Temporarily disabled to avoid CI runs on every master push
 on:
   push:
     branches: [master]
@@ -24,7 +23,6 @@ jobs:
   typecheck:
     name: Type-check (tsc --noEmit)
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -39,7 +37,6 @@ jobs:
   lint:
     name: Lint + Format
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,7 +52,6 @@ jobs:
   unit-integration-contract:
     name: Unit + Integration + Contract + Coverage
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     needs: [typecheck, lint]
     services:
       postgres:
