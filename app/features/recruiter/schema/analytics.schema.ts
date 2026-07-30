@@ -25,7 +25,7 @@ export const AnalyticsFilterSchema = z
     (data) => {
       if (data.status === undefined) return true;
       if (data.status.trim() === "") return false;
-      return data.status.split(",").every((s) => APPLICATION_STATUSES.includes(s as any));
+      return data.status.split(",").every((s) => APPLICATION_STATUSES.includes(s as (typeof APPLICATION_STATUSES)[number]));
     },
     { message: "Invalid status value", path: ["status"] },
   );
