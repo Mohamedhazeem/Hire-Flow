@@ -208,16 +208,16 @@ export function ApplicationsPage() {
                           {app.jobTitle}
                         </Link>
                       </td>
-                      <td className="py-3 pr-4 hidden sm:table-cell text-center">
+                       <td className="py-3 pr-4 hidden sm:table-cell text-center">
                         <div className="flex items-center justify-center gap-2">
-                          <div className="size-6 rounded-md bg-brand/10 flex items-center justify-center text-brand text-[10px] font-bold shrink-0">
+                          <div className="size-6 rounded-full bg-brand/10 flex items-center justify-center text-brand text-[10px] font-bold shrink-0 overflow-hidden">
                             {app.companyLogo ? (
                               <Image
                                 src={app.companyLogo}
                                 alt=""
-                                width={16}
-                                height={16}
-                                className="size-4 object-contain"
+                                width={24}
+                                height={24}
+                                className="size-full rounded-full object-cover"
                               />
                             ) : (
                               (app.companyName[0]?.toUpperCase() ?? "?")

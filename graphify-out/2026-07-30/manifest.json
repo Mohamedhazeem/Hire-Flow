@@ -1670,8 +1670,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/application-header.tsx": {
-    "mtime": 1785341967.51697,
-    "ast_hash": "f51dcc5577e439a8285e9d73464e211c",
+    "mtime": 1785401401.8002079,
+    "ast_hash": "27be3e890595d215fca3120d2cc06442",
     "semantic_hash": ""
   },
   "app/features/user/components/application-resume-section.tsx": {
@@ -1705,8 +1705,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/profile-form.tsx": {
-    "mtime": 1785396347.3355803,
-    "ast_hash": "c6f0a2750670d8aad099bfef610d6419",
+    "mtime": 1785399086.2196324,
+    "ast_hash": "8211c6c8960076359d00b2931709e6b2",
     "semantic_hash": ""
   },
   "app/features/user/components/resume-builder-form.tsx": {
@@ -2575,8 +2575,8 @@
     "semantic_hash": ""
   },
   "lib/test/components/profile-form.dom.test.tsx": {
-    "mtime": 1785393624.774712,
-    "ast_hash": "560da873e7d01e85136aa3761e5e2fcd",
+    "mtime": 1785399404.3297088,
+    "ast_hash": "69d5e3faab125d46bbb248e1a19dc425",
     "semantic_hash": ""
   },
   "lib/test/components/resume-builder-form.dom.test.tsx": {
