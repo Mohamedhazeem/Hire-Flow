@@ -75,12 +75,28 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npx prisma generate
-      - run: npx prisma migrate deploy
+      - name: Wait for Postgres
+        run: |
+          for i in {1..30}; do
+            pg_isready -h localhost -p 5432 -U postgres && break
+            echo "Waiting for Postgres..."
+            sleep 1
+          done
+        env:
+          PGPASSWORD: postgres
+      - name: Show migrations
+        run: ls -R prisma/migrations
+      - name: Apply migrations
+        run: npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
       - run: npm test -- --project default --project dom --project contract --coverage
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
 
   e2e:
     name: E2E
@@ -108,12 +124,28 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npx prisma generate
-      - run: npx prisma migrate deploy
+      - name: Wait for Postgres
+        run: |
+          for i in {1..30}; do
+            pg_isready -h localhost -p 5432 -U postgres && break
+            echo "Waiting for Postgres..."
+            sleep 1
+          done
+        env:
+          PGPASSWORD: postgres
+      - name: Show migrations
+        run: ls -R prisma/migrations
+      - name: Apply migrations
+        run: npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
       - run: npm run test:e2e
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
 
   performance:
     name: Performance + Benchmark Regression
@@ -142,12 +174,28 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npx prisma generate
-      - run: npx prisma migrate deploy
+      - name: Wait for Postgres
+        run: |
+          for i in {1..30}; do
+            pg_isready -h localhost -p 5432 -U postgres && break
+            echo "Waiting for Postgres..."
+            sleep 1
+          done
+        env:
+          PGPASSWORD: postgres
+      - name: Show migrations
+        run: ls -R prisma/migrations
+      - name: Apply migrations
+        run: npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
       - run: npx vitest run --project perf
         env:
           DATABASE_URL: ${{ env.DATABASE_URL }}
+          PGUSER: postgres
+          PGPASSWORD: postgres
       - name: Compare against baseline
         run: npx tsx scripts/compare-benchmark.ts
       - name: Update baseline (master only)
