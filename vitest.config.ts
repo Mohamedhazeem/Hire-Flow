@@ -83,6 +83,7 @@ export default defineConfig({
         test: {
           name: "contract",
           environment: "node",
+          setupFiles: ["./lib/test/vitest.setup.ts"],
           include: ["**/*.contract.test.ts"],
           exclude: ["**/node_modules/**"],
         },
