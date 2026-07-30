@@ -1110,8 +1110,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1785341967.3113437,
-    "ast_hash": "6d987052fa417bc2f2868f94ed211cc8",
+    "mtime": 1785343073.77232,
+    "ast_hash": "0cbf9386c1a622876cd1ea071fc2430b",
     "semantic_hash": ""
   },
   "app/features/landing/components/hero-search.tsx": {
@@ -3452,6 +3452,246 @@
   "public/window.svg": {
     "mtime": 1780988827.0267193,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  ".auth/admin.json": {
+    "mtime": 1785341966.6521173,
+    "ast_hash": "974f3bd849368aa161faaa620ad44a6d",
+    "semantic_hash": ""
+  },
+  ".auth/recruiter.json": {
+    "mtime": 1785341966.6541173,
+    "ast_hash": "7a2b28f977a45860966c6bebab0b86f5",
+    "semantic_hash": ""
+  },
+  ".auth/user.json": {
+    "mtime": 1785341966.6561172,
+    "ast_hash": "5ffcb040d94b6132be9c9c5c1775a977",
+    "semantic_hash": ""
+  },
+  "app/features/jobs/components/skill-filter.tsx": {
+    "mtime": 1785341967.296329,
+    "ast_hash": "c8d74e262016d3f79cfae812f208011e",
+    "semantic_hash": ""
+  },
+  "benchmark/baseline.json": {
+    "mtime": 1785341967.6505086,
+    "ast_hash": "8c9ee8056cb0e3744a4afb38b20b2f4a",
+    "semantic_hash": ""
+  },
+  "e2e/specs/auth.setup.ts": {
+    "mtime": 1785341967.7990668,
+    "ast_hash": "03a07b10223e6313c0ceb35f54109eb4",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/cleanup.ts": {
+    "mtime": 1785341973.7200031,
+    "ast_hash": "4850ea94cfdeaf7a011d1b8d9ca74842",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/clock.ts": {
+    "mtime": 1785341973.7230034,
+    "ast_hash": "cff8adcee6757ca06a2d080a7ad250a2",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/config.ts": {
+    "mtime": 1785341973.7270021,
+    "ast_hash": "e0a8eababff84fdce055e80ca1753141",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/di.ts": {
+    "mtime": 1785341973.729001,
+    "ast_hash": "26b78a7e2281fae9f07cd725d22a9b59",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/ip-hash.ts": {
+    "mtime": 1785341973.7330048,
+    "ast_hash": "2e6eeb976bac65b11cb8dcfb504ce9aa",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/metrics.ts": {
+    "mtime": 1785341973.7350016,
+    "ast_hash": "987784fc86de7e1b871d3ab7e2a1987b",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/middleware.ts": {
+    "mtime": 1785341973.742003,
+    "ast_hash": "0ed48c141ef3b4b72b67a99b5318ac7f",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/rate-limiter.ts": {
+    "mtime": 1785341973.7440028,
+    "ast_hash": "b9d2ad43e0fb2c20d488737455e0d378",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/repository.fake.ts": {
+    "mtime": 1785341973.746,
+    "ast_hash": "65e58e4ce9b70b5a82084499ba3a17bd",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/repository.ts": {
+    "mtime": 1785341973.7510002,
+    "ast_hash": "a2db07a820197495c2ff040b6942aef0",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/request-context.ts": {
+    "mtime": 1785341973.762001,
+    "ast_hash": "55bd394890b43b8265f8f5b354fcc95f",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/telemetry.ts": {
+    "mtime": 1785341973.768002,
+    "ast_hash": "bd3baca41e69723d49b2548b316e76d5",
+    "semantic_hash": ""
+  },
+  "lib/rate-limiting/types.ts": {
+    "mtime": 1785341973.7710023,
+    "ast_hash": "a07ce843b76f6277f15c21bdbc75a199",
+    "semantic_hash": ""
+  },
+  "lib/test/perf-teardown.ts": {
+    "mtime": 1785341974.0546637,
+    "ast_hash": "9f1a7135d795873445a8775d0a8719ac",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/benchmark.test.ts": {
+    "mtime": 1785341974.3167865,
+    "ast_hash": "babc8320e64ffb4e0a0051431104a9cf",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/chaos.test.ts": {
+    "mtime": 1785341974.319318,
+    "ast_hash": "7310e873baf06e386b0ffbdf21d95ca1",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/cleanup.test.ts": {
+    "mtime": 1785341974.322317,
+    "ast_hash": "5012e0478662b161ebe38a5b5f5fb8cc",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/clock.test.ts": {
+    "mtime": 1785341974.332324,
+    "ast_hash": "a1ab9848fea0b90e12d4d798ca2f1607",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/concurrency.test.ts": {
+    "mtime": 1785341974.3343196,
+    "ast_hash": "b37f05c616d77cd7e04f01f664ef5f96",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/config.test.ts": {
+    "mtime": 1785341974.3423152,
+    "ast_hash": "fbf0298c00bd1916911740e6dfc7375f",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/contract/repository-contract.ts": {
+    "mtime": 1785341974.3523185,
+    "ast_hash": "cef2ae27e44bfde54e4b9118684ae359",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/fuzz.test.ts": {
+    "mtime": 1785341974.3553212,
+    "ast_hash": "7e7e1299d51daf3770fcb39cbaefd189",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/ip-hash.test.ts": {
+    "mtime": 1785341974.3573184,
+    "ast_hash": "ad4c41f641b9244d5c421e543cbc0c93",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/metrics.test.ts": {
+    "mtime": 1785341974.3593192,
+    "ast_hash": "8f558f944e4d7991230696f73fc7fcf7",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/middleware.test.ts": {
+    "mtime": 1785341974.366321,
+    "ast_hash": "bc080acd9c4eca53f3b6a15c14014286",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/rate-limiter.test.ts": {
+    "mtime": 1785341974.3693197,
+    "ast_hash": "b4ee649fc04c6a03d35c60ec4737d8ab",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/repository.fake.test.ts": {
+    "mtime": 1785341974.3713171,
+    "ast_hash": "86d9206d60c1e877660b9c22b5b50a4d",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/repository.prisma.contract.test.ts": {
+    "mtime": 1785341974.3733237,
+    "ast_hash": "03eab1d6aef8b3a49be9b81931bfa54e",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/repository.prisma.test.ts": {
+    "mtime": 1785341974.3853183,
+    "ast_hash": "dd1663d4d92e88d949df05c09a6cd2b9",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/request-context.test.ts": {
+    "mtime": 1785341974.4023192,
+    "ast_hash": "b5f7e45a5db83dafe939310e3d1d1799",
+    "semantic_hash": ""
+  },
+  "lib/test/unit/rate-limiting/telemetry.test.ts": {
+    "mtime": 1785341974.4053333,
+    "ast_hash": "288f49596f12b2163c93e36a7f779770",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260728000000_add_perf_indexes/migration.sql": {
+    "mtime": 1785341974.4808662,
+    "ast_hash": "09f90aab302ebfa5a4f70c339d32a29f",
+    "semantic_hash": ""
+  },
+  "prisma/migrations/20260729000000_add_skills_gin_index/migration.sql": {
+    "mtime": 1785341974.4948657,
+    "ast_hash": "2758195447e220f37021251784a1578a",
+    "semantic_hash": ""
+  },
+  "scripts/compare-benchmark.ts": {
+    "mtime": 1785341974.529419,
+    "ast_hash": "9e2a6473902ff2aba32eb4d918936548",
+    "semantic_hash": ""
+  },
+  "scripts/update-baseline.ts": {
+    "mtime": 1785341974.5324204,
+    "ast_hash": "13da3875d37e7dc43bf90cad83b91313",
+    "semantic_hash": ""
+  },
+  "stores/messages/presence-store.ts": {
+    "mtime": 1785341974.5474215,
+    "ast_hash": "c8cfca04b1c58b4f4c8d5fd39653a9be",
+    "semantic_hash": ""
+  },
+  "stores/messages/use-thread-presence.ts": {
+    "mtime": 1785341974.5504193,
+    "ast_hash": "d6440a89d833aa2006c74b64d2775f4a",
+    "semantic_hash": ""
+  },
+  "stryker.config.json": {
+    "mtime": 1785341974.5534205,
+    "ast_hash": "25e780e0c0b0b7a205d28b8a801710f9",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/app-wide-rate-limiting.md": {
+    "mtime": 1785341966.7071364,
+    "ast_hash": "b2a743319de70e68a3bbae359f53a947",
+    "semantic_hash": ""
+  },
+  ".kilo/plans/introduce-ci-quality-gates.md": {
+    "mtime": 1785341966.7266612,
+    "ast_hash": "2b8508a632faed262ad323ee6c38e8c3",
+    "semantic_hash": ""
+  },
+  "LICENSE.md": {
+    "mtime": 1785341966.8212128,
+    "ast_hash": "57ed98b129d96d5b9f37e67f60ec0d30",
+    "semantic_hash": ""
+  },
+  "docs/architecture/rate-limiting.md": {
+    "mtime": 1785341967.752067,
+    "ast_hash": "31fc32c6964d48eb2c38f5e2b5ef6821",
     "semantic_hash": ""
   }
 }

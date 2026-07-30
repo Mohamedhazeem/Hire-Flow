@@ -1,16 +1,16 @@
 # Graph Report - hire-flow-next  (2026-07-29)
 
 ## Corpus Check
-- 729 files · ~316,559 words
+- 729 files · ~316,575 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2437 nodes · 2931 edges · 219 communities (168 shown, 51 thin omitted)
+- 2440 nodes · 2933 edges · 221 communities (169 shown, 52 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `67ca4636`
+- Built from commit: `20242d94`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -204,6 +204,8 @@
 - [[_COMMUNITY_Community 194|Community 194]]
 - [[_COMMUNITY_Community 195|Community 195]]
 - [[_COMMUNITY_Community 213|Community 213]]
+- [[_COMMUNITY_Community 219|Community 219]]
+- [[_COMMUNITY_Community 220|Community 220]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Phase 2: Recruiter` - 59 edges
@@ -218,12 +220,12 @@
 10. `Technical Design` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `patchStatus()` --calls--> `PATCH`  [INFERRED]
-  lib/test/integration/applications/race.test.ts → app/api/notifications/route.ts
 - `listPublicJobs()` --calls--> `buildOffsetMeta()`  [EXTRACTED]
   app/features/jobs/queries/public-job-queries.ts → lib/pagination.ts
 - `listPublicJobs()` --calls--> `parseOffsetParams()`  [EXTRACTED]
   app/features/jobs/queries/public-job-queries.ts → lib/pagination.ts
+- `patchStatus()` --calls--> `PATCH`  [INFERRED]
+  lib/test/integration/applications/race.test.ts → app/api/notifications/route.ts
 - `DistributionBarChart()` --calls--> `cn()`  [EXTRACTED]
   app/features/recruiter/components/charts/distribution-bar-chart.tsx → lib/utils.ts
 - `AnalyticsFilterBar()` --calls--> `cn()`  [EXTRACTED]
@@ -232,7 +234,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (219 total, 51 thin omitted)
+## Communities (221 total, 52 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.06
@@ -267,8 +269,8 @@ Cohesion: 0.05
 Nodes (40): dependencies, @base-ui/react, better-auth, @better-auth/prisma-adapter, class-variance-authority, clsx, cmdk, date-fns (+32 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.07
-Nodes (25): metadata, EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, Actions, createRecruiterJobColumns(), STATUS_BADGE (+17 more)
+Cohesion: 0.06
+Nodes (30): GET, metadata, EMPLOYMENT_TYPE_OPTIONS, JobForm(), JobFormProps, WORK_MODE_OPTIONS, Actions, createRecruiterJobColumns() (+22 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.05
@@ -304,7 +306,7 @@ Nodes (29): Admin Applicant Detail View (cross-phase), Created File Paths (Group
 
 ### Community 17 - "Community 17"
 Cohesion: 0.11
-Nodes (24): BI_ZERO, buildWhereFragments(), defaultDateRange(), Fragments, getAnalytics(), getJobAnalytics(), RawConversionRow, RawFunnelRow (+16 more)
+Nodes (25): BI_ZERO, buildWhereFragments(), defaultDateRange(), Fragments, getAnalytics(), getJobAnalytics(), RawConversionRow, RawFunnelRow (+17 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.07
@@ -331,8 +333,8 @@ Cohesion: 0.08
 Nodes (25): 10. `testimonials.tsx` (client), 11. `footer.tsx` (server), 1. `app/page.tsx` (modified), 2. `next.config.ts` (modified), 3. `landing-page.tsx` (orchestrator), 4. `hero-section.tsx` (client), 5. `stats-banner.tsx` (server + client counter), 6. `stats-counter.tsx` (client) (+17 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.14
-Nodes (19): buildCursorMeta(), buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams, DualModePaginationParams, DualModeResult, OffsetPaginationMeta, OffsetPaginationParams (+11 more)
+Cohesion: 0.12
+Nodes (23): buildCursorMeta(), buildOffsetMeta(), CursorPaginationMeta, CursorPaginationParams, DualModePaginationParams, DualModeResult, OffsetPaginationMeta, OffsetPaginationParams (+15 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.12
@@ -343,8 +345,8 @@ Cohesion: 0.12
 Nodes (17): Props, SharedThreadView(), ThreadViewConfig, ThreadViewHooks, config, hooks, Props, config (+9 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.12
-Nodes (16): AdminApplicantDetailPageProps, ApplicantActionsSection(), ApplicantActionsSectionProps, ApplicantDetailDialogs(), ApplicantDetailPageProps, ApplicantProfileCard(), ApplicantProfileCardProps, ApplicantResumeCard() (+8 more)
+Cohesion: 0.15
+Nodes (13): AdminApplicantDetailPageProps, ApplicantDetailDialogs(), ApplicantDetailPageProps, ApplicantProfileCard(), ApplicantProfileCardProps, ApplicantResumeCard(), ApplicantResumeCardProps, isPreviewableType() (+5 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.08
@@ -387,8 +389,8 @@ Cohesion: 0.10
 Nodes (20): 1. `lib/ai-client.ts` (~75 lines), 2. `resume-ai.schema.ts` (~30 lines), 3. `ai-enhance/route.ts` (~150 lines), 4. `apply-ai-suggestions.ts` (~50 lines), 5. `use-ai-resume-enhance.ts` (~30 lines), 6. `ai-suggestions-panel.tsx` (~150 lines), 7. Schema Migration, 8. `utils/env.ts` — Add AI env vars (+12 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.16
-Nodes (14): startCleanup(), freezeConfig(), RateLimitEndpoint, validateConfig(), clock, rateLimiter, repository, setActiveKeyCount() (+6 more)
+Cohesion: 0.33
+Nodes (7): RateLimitEndpoint, createWithRateLimit(), CleanupConfig, EndpointLimit, FailStrategyConfig, RateLimiter, RateLimitResult
 
 ### Community 39 - "Community 39"
 Cohesion: 0.10
@@ -407,8 +409,8 @@ Cohesion: 0.10
 Nodes (19): 1. `app/features/jobs/components/job-search-bar.tsx`, 2. `app/features/jobs/components/filter-select.tsx`, 3. `lib/job-categories.ts`, 4. `job-list-page.tsx` (modified), 5. `public-job-queries.ts` (modified), 6. `app/api/jobs/route.ts` (modified), Architecture, Component Specifications (+11 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.18
-Nodes (15): ALLOWED_TRANSITIONS, ApplicationStatusSchema, baseTransitionSchema, BulkStatusTransitionInput, BulkStatusTransitionSchema, ListApplicantsParams, RejectSchema, ScheduleInterviewSchema (+7 more)
+Cohesion: 0.20
+Nodes (12): GET, handleGET(), ApplicationStatusSchema, baseTransitionSchema, BulkStatusTransitionSchema, ListApplicantsParamsSchema, RejectSchema, ScheduleInterviewSchema (+4 more)
 
 ### Community 44 - "Community 44"
 Cohesion: 0.22
@@ -423,8 +425,8 @@ Cohesion: 0.21
 Nodes (8): assertMemoryWithin(), assertWithin(), BenchmarkResult, measure(), publishBenchmark(), publishedResults, globalTeardown(), writeBenchmarkResults()
 
 ### Community 47 - "Community 47"
-Cohesion: 0.16
-Nodes (13): requireRole(), ResolvedSession, GET, handleGET(), MIME_MAP, UPLOAD_DIR, EditBuilderPage(), metadata (+5 more)
+Cohesion: 0.17
+Nodes (12): requireRole(), handleGET(), GET, handleGET(), MIME_MAP, UPLOAD_DIR, EditBuilderPage(), metadata (+4 more)
 
 ### Community 48 - "Community 48"
 Cohesion: 0.11
@@ -439,12 +441,12 @@ Cohesion: 0.11
 Nodes (17): 1. `app/api/user/bookmarks/route.ts` (~30 lines), 2. `app/api/user/bookmarks/[jobId]/route.ts` (~20 lines), 3. `app/features/user/hooks/use-saved-jobs.ts` (~40 lines), 4. `app/features/user/components/save-job-button.tsx` (~45 lines), 5. `app/features/user/components/saved-jobs-page.tsx` (~120 lines), 6. `app/(roles)/user/saved-jobs/page.tsx` (~8 lines), 7. `app/features/user/components/user-sidebar.tsx` (+2 lines), 8. `app/features/jobs/components/job-card.tsx` (~+8 lines) (+9 more)
 
 ### Community 51 - "Community 51"
-Cohesion: 0.15
-Nodes (12): GET, handleGET(), GET, handleGET(), handlePOST(), POST, listJobs(), jobRepository (+4 more)
+Cohesion: 0.21
+Nodes (9): ApplicantActionsSection(), ApplicantActionsSectionProps, ALLOWED_TRANSITIONS, BulkStatusTransitionInput, ListApplicantsParams, BULK_ACTION_LABELS, NEXT_ACTIONS, STATUS_DOT_COLORS (+1 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.18
-Nodes (10): ApplicantTableColumnsProps, createApplicantTableColumns(), ApplicantsTableProps, BulkActionBar(), BulkActionBarProps, ApplicantCursorResult, ApplicantListResult, ApplicantOffsetResult (+2 more)
+Cohesion: 0.11
+Nodes (14): metadata, Props, ApplicantTableColumnsProps, createApplicantTableColumns(), ApplicantsTable(), ApplicantsTableProps, capturedArgs, mockPush (+6 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.12
@@ -519,12 +521,12 @@ Cohesion: 0.15
 Nodes (13): 2.0 Recruiter Layout & Sidebar, 2.10 Notifications & Activity Feed, 2.11 CSV Export, 2.1 Company Profile CRUD, 2.2 Recruiter Team Management, 2.3 Job Posts CRUD, 2.4 Applicants View & Status Updates, 2.5 Recruiter Direct Messaging (+5 more)
 
 ### Community 71 - "Community 71"
-Cohesion: 0.17
-Nodes (7): metadata, Props, ApplicantsTable(), capturedArgs, mockPush, tableState, useApplicantsTable()
+Cohesion: 0.24
+Nodes (7): startCleanup(), freezeConfig(), validateConfig(), clock, rateLimiter, repository, setActiveKeyCount()
 
 ### Community 72 - "Community 72"
-Cohesion: 0.21
-Nodes (10): GET, handleGET, createMessageIdDeleteHandler(), createThreadIdMessageHandlers(), createThreadListHandler(), MessageIdHandlerOptions, ThreadIdHandlerOptions, ThreadListHandlerOptions (+2 more)
+Cohesion: 0.31
+Nodes (8): createMessageIdDeleteHandler(), createThreadIdMessageHandlers(), createThreadListHandler(), MessageIdHandlerOptions, ThreadIdHandlerOptions, ThreadListHandlerOptions, VerifyRelation, withRateLimit
 
 ### Community 73 - "Community 73"
 Cohesion: 0.17
@@ -587,7 +589,7 @@ Cohesion: 0.22
 Nodes (8): Create, Edge Cases Preserved, Files, Modify, Non-goals, Props, Shared Messages Page Layout, Tasks
 
 ### Community 89 - "Community 89"
-Cohesion: 0.31
+Cohesion: 0.29
 Nodes (3): FakeClock, SystemClock, Clock
 
 ### Community 90 - "Community 90"
@@ -786,24 +788,28 @@ Nodes (3): CI Pipeline, Coverage Thresholds, Phase 8 — Coverage & CI
 Cohesion: 0.67
 Nodes (3): Phase 7 — Performance & Stability, Query Performance, Rate Limiter Behavioral Tests
 
+### Community 219 - "Community 219"
+Cohesion: 0.25
+Nodes (5): ResolvedSession, GET, handleGET, GET, handleGET
+
 ## Knowledge Gaps
-- **1469 isolated node(s):** `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)`, `Step 1 - Ensure graphify is installed`, `Step 2 - Detect files` (+1464 more)
+- **1470 isolated node(s):** `FilterSelectProps`, `PublicJobListResult`, `PublicJobListParams`, `ALLOWED_SORT_FIELDS`, `ALLOWED_SORT_ORDERS` (+1465 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **51 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **52 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `requireRole()` connect `Community 47` to `Community 132`, `Community 72`, `Community 107`, `Community 92`, `Community 112`, `Community 79`, `Community 51`, `Community 123`, `Community 60`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `requireRole()` connect `Community 47` to `Community 132`, `Community 8`, `Community 72`, `Community 107`, `Community 43`, `Community 123`, `Community 92`, `Community 112`, `Community 79`, `Community 219`, `Community 60`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `Skeleton()` connect `Community 2` to `Community 0`, `Community 5`, `Community 6`, `Community 8`, `Community 52`, `Community 25`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `cn()` connect `Community 0` to `Community 25`, `Community 2`, `Community 61`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)` to the rest of the system?**
-  _1469 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **What connects `FilterSelectProps`, `PublicJobListResult`, `PublicJobListParams` to the rest of the system?**
+  _1470 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05734767025089606 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.057859703020993344 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.03389830508474576 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
