@@ -1650,8 +1650,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/activity-panel.tsx": {
-    "mtime": 1785385233.5206814,
-    "ast_hash": "ab791b0d5490da5767bf950a605c48c1",
+    "mtime": 1785404034.1184201,
+    "ast_hash": "fc83b7d08034323039d4ad1a54697d96",
     "semantic_hash": ""
   },
   "app/features/user/components/ai-suggestions-panel.tsx": {
@@ -1835,8 +1835,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1785341967.6119845,
-    "ast_hash": "4467a5ecc2d0ba48985f7511736c1f18",
+    "mtime": 1785409108.7619267,
+    "ast_hash": "69cb9fa2393c3ec30164f2aa3b4c2c12",
     "semantic_hash": ""
   },
   "app/providers.tsx": {
@@ -2460,8 +2460,8 @@
     "semantic_hash": ""
   },
   "lib/resolvers/job-resolver.ts": {
-    "mtime": 1784822400.439813,
-    "ast_hash": "37fd4b11ca20cdbd0b06ba258e018589",
+    "mtime": 1785409360.8918307,
+    "ast_hash": "e7dfcf9b2d7d09a83d3e869d1dd92eac",
     "semantic_hash": ""
   },
   "lib/routes.ts": {
@@ -3185,8 +3185,8 @@
     "semantic_hash": ""
   },
   ".github/workflows/test.yml": {
-    "mtime": 1785341966.6871195,
-    "ast_hash": "816adde04da17f83f6ddfd8c08396604",
+    "mtime": 1785407885.198594,
+    "ast_hash": "c9c238505e4f8855a9b3bb5d9de1ce26",
     "semantic_hash": ""
   },
   ".kilo/plans/ai-suggestions-enhancements.md": {
