@@ -15,7 +15,7 @@ export function PageHeader({ title, description, actions, icon, className }: Pag
       <div
         className={cn(
           "flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between",
-          "pb-5 border-b-2 border-border-subtle",
+          "border-b-2 border-border-subtle",
           "bg-linear-to-r from-brand/20 via-brand/10 to-brand/5 -mx-4 md:-mx-6 lg:-mx-8 px-4 md:px-6 lg:px-8 pt-6 pb-5",
         )}
       >

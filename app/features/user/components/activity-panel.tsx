@@ -85,11 +85,6 @@ export function ActivityPanel() {
 
   return (
     <div>
-      <div className="px-4 md:px-6 lg:px-8 pt-6 pb-2">
-        <h1 className="text-xl sm:text-2xl font-bold text-text-heading">Activity</h1>
-        <p className="text-sm text-text-muted mt-1">Track your job applications and activity</p>
-      </div>
-
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 px-4 md:px-6 lg:px-8 py-4">
         {statsLoad
           ? Array.from({ length: 4 }).map((_, i) => (
