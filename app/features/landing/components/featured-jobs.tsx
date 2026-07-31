@@ -1,31 +1,10 @@
-import { listPublicJobs, type PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
+import { listPublicJobs } from "@/app/features/jobs/queries/public-job-queries";
 import { FeaturedJobsGrid } from "./featured-jobs-grid";
 import Link from "next/link";
 import { BriefcaseIcon } from "lucide-react";
 
-function toCardProps(j: PublicJobRow) {
-  return {
-    id: j.id,
-    slug: j.slug,
-    title: j.title,
-    companyName: j.companyName,
-    companyLogo: j.companyLogo,
-    locations: j.locations,
-    workMode: j.workMode,
-    employmentType: j.employmentType,
-    salaryMin: j.salaryMin,
-    salaryMax: j.salaryMax,
-    salaryCurrency: j.salaryCurrency,
-    skills: j.skills,
-    experienceLevel: j.experienceLevel,
-    applicationDeadline: j.applicationDeadline?.toISOString() ?? null,
-    createdAt: j.createdAt.toISOString(),
-  };
-}
-
 export async function FeaturedJobs() {
   const result = await listPublicJobs({ pageSize: 6 });
-  const cards = result.jobs.map(toCardProps);
 
   return (
     <section className="py-16 sm:py-20">
@@ -56,7 +35,7 @@ export async function FeaturedJobs() {
             </Link>
           </div>
         ) : (
-          <FeaturedJobsGrid jobs={cards} />
+          <FeaturedJobsGrid jobs={result.jobs} />
         )}
 
         <Link

@@ -20,6 +20,15 @@ const CATEGORY_ICONS: Record<string, typeof BriefcaseIcon> = {
   Remote: GlobeIcon,
 };
 
+const parentVariants = {
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export function CategoryStrip() {
   return (
     <div className="bg-bg-surface border-b border-border-subtle">
@@ -28,9 +37,7 @@ export function CategoryStrip() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-30px" }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.08 } },
-          }}
+          variants={parentVariants}
         >
           <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4 text-center sm:text-left">
             Browse by Category
@@ -47,16 +54,13 @@ export function CategoryStrip() {
               return (
                 <motion.div
                   key={cat.label}
-                  variants={{
-                    hidden: { opacity: 0, y: 16 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
+                  variants={childVariants}
                   whileHover={{ scale: 1.04, y: -2 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   <Link
                     href={`/jobs?${params.toString()}`}
-                    className="flex flex-col items-center gap-2 min-w-[100px] sm:min-w-0 px-5 py-4 rounded-2xl border border-border-subtle bg-bg-page hover:bg-bg-surface hover:border-brand/20 transition-all"
+                    className="flex flex-col items-center gap-2 min-w-25 sm:min-w-0 px-5 py-4 rounded-2xl border border-border-subtle bg-bg-page hover:bg-bg-surface hover:border-brand/20 transition-all"
                   >
                     <div className="size-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
                       <Icon className="size-5" />
