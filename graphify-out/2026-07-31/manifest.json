@@ -1620,8 +1620,8 @@
     "semantic_hash": ""
   },
   "app/features/shared/api/require-role.ts": {
-    "mtime": 1785341967.4944317,
-    "ast_hash": "2b27f098152950a7b434ed434b333d75",
+    "mtime": 1785482414.3892732,
+    "ast_hash": "5bd4fe44ddea07f8352723a79d53a182",
     "semantic_hash": ""
   },
   "app/features/shared/hooks/use-invites.ts": {
@@ -2700,8 +2700,8 @@
     "semantic_hash": ""
   },
   "lib/test/integration/applications/status.test.ts": {
-    "mtime": 1785341973.9781072,
-    "ast_hash": "1c442304430c62111d2946fa000e5582",
+    "mtime": 1785482742.4651144,
+    "ast_hash": "2e0c565f8c24a886d9c10758342e4460",
     "semantic_hash": ""
   },
   "lib/test/integration/applications/withdraw.test.ts": {
@@ -3075,7 +3075,7 @@
     "semantic_hash": ""
   },
   "proxy.ts": {
-    "mtime": 1785341974.5264175,
+    "mtime": 1785482089.5648863,
     "ast_hash": "35cfbd361e7876fa71f80ee3547b3fd1",
     "semantic_hash": ""
   },
@@ -3515,8 +3515,8 @@
     "semantic_hash": ""
   },
   "lib/rate-limiting/middleware.ts": {
-    "mtime": 1785341973.742003,
-    "ast_hash": "0ed48c141ef3b4b72b67a99b5318ac7f",
+    "mtime": 1785482291.3650541,
+    "ast_hash": "0b75de00bf8ea55fb038c9c3b74e0f92",
     "semantic_hash": ""
   },
   "lib/rate-limiting/rate-limiter.ts": {

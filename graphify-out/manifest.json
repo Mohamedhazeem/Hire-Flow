@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/jobs/[id]/page.tsx": {
-    "mtime": 1784823978.0275266,
-    "ast_hash": "2f8868bc3dee85ddb942ed31e69e838a",
+    "mtime": 1785483223.2970786,
+    "ast_hash": "99b6d0399ce9753c1bb091407a8e0b8c",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/jobs/new/page.tsx": {
@@ -1410,8 +1410,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-detail.tsx": {
-    "mtime": 1785319827.506564,
-    "ast_hash": "978d88141f4573ca2abbc745deb936fa",
+    "mtime": 1785483449.168327,
+    "ast_hash": "67dbaa3f9ef2b915be5412715501a1b5",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/job-form.tsx": {
@@ -1440,13 +1440,13 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-job-columns.tsx": {
-    "mtime": 1785341967.4224305,
-    "ast_hash": "6dbf0cc12cd58e6dbadde3a2120b2dc6",
+    "mtime": 1785483366.0411503,
+    "ast_hash": "c7bfb87846a6c4a04ec793ca0dc3ed1c",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-jobs-table.tsx": {
-    "mtime": 1785341967.4254234,
-    "ast_hash": "0e837e9b6ba13610dac7beb792f818d8",
+    "mtime": 1785483315.9057517,
+    "ast_hash": "7b2c9826fa5bc7f0b2f027ac5fe951c4",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-messages-page.tsx": {
@@ -1580,8 +1580,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/queries/job-queries.ts": {
-    "mtime": 1785341967.478423,
-    "ast_hash": "29c80e28259eb867e16215103eee4bf2",
+    "mtime": 1785483304.3810189,
+    "ast_hash": "8c9334fe5f9786cd6a62e9657ed8e0ec",
     "semantic_hash": ""
   },
   "app/features/recruiter/schema/analytics.schema.ts": {
@@ -2960,8 +2960,8 @@
     "semantic_hash": ""
   },
   "lib/test/unit/require-role.test.ts": {
-    "mtime": 1785308986.1035655,
-    "ast_hash": "4c819cb6774d74125b94e9cfeb3697e0",
+    "mtime": 1785484942.309107,
+    "ast_hash": "ab6f2c565f3d8bf46f617dca970fbb59",
     "semantic_hash": ""
   },
   "lib/test/unit/routes.test.ts": {
