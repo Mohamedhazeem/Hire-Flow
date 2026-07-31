@@ -6,10 +6,14 @@ vi.mock("@/app/features/auth/libs/auth", () => ({
 }));
 
 const mockFindUnique = vi.fn();
+const mockCompanyFindUnique = vi.fn();
 vi.mock("@/lib/prisma", () => ({
   prisma: {
     companyTeamMember: {
       findUnique: mockFindUnique,
+    },
+    company: {
+      findUnique: mockCompanyFindUnique,
     },
   },
 }));
@@ -69,6 +73,7 @@ describe("requireRole", () => {
       user: { id: "5", name: "Admin", email: "admin@test.com", role: "admin" },
     });
     mockFindUnique.mockResolvedValue(null);
+    mockCompanyFindUnique.mockResolvedValue(null);
     const { requireRole } = await import("@/app/features/shared/api/require-role");
     await expect(requireRole(["recruiter"])).rejects.toThrow("Insufficient permissions");
   });
@@ -82,13 +87,15 @@ describe("requireRole", () => {
     await expect(requireRole(["admin"])).rejects.toThrow("Insufficient permissions");
   });
 
-  it("finds membership for recruiter in the recruiter-fallback path", async () => {
+  it("finds owned company for recruiter in the recruiter-fallback path", async () => {
     mockSession.mockResolvedValue({
       user: { id: "7", name: "Recruiter2", email: "r2@test.com", role: "recruiter" },
     });
-    mockFindUnique.mockResolvedValue({ companyId: "c2", role: "member" });
+    mockFindUnique.mockResolvedValue(null);
+    mockCompanyFindUnique.mockResolvedValue({ id: "c2" });
     const { requireRole } = await import("@/app/features/shared/api/require-role");
     const result = await requireRole(["recruiter"]);
     expect(result.companyId).toBe("c2");
+    expect(result.memberRole).toBe("owner");
   });
 });

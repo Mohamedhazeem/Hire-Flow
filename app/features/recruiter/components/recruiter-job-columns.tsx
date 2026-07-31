@@ -17,8 +17,8 @@ const STATUS_BADGE: Record<
 };
 
 type Actions = {
-  onView: (id: string) => void;
-  onEdit: (id: string) => void;
+  onView: (job: RecruiterJobRow) => void;
+  onEdit: (job: RecruiterJobRow) => void;
   onToggle: (id: string, status: string) => void;
   onDelete: (job: RecruiterJobRow) => void;
   isPending: boolean;
@@ -34,7 +34,7 @@ export function createRecruiterJobColumns(actions: Actions): ColumnDef<Recruiter
         align: "center",
         cell: (row) => (
           <button
-            onClick={() => actions.onView(row.id)}
+            onClick={() => actions.onView(row)}
             className="font-medium text-text-heading max-w-xs truncate block mx-auto hover:text-brand transition-colors text-center"
           >
             {row.title}
@@ -101,7 +101,7 @@ export function createRecruiterJobColumns(actions: Actions): ColumnDef<Recruiter
               variant="ghost"
               size="icon-sm"
               title="View details"
-              onClick={() => actions.onView(row.id)}
+              onClick={() => actions.onView(row)}
             >
               <ExternalLinkIcon className="size-4 text-text-muted" />
             </Button>
@@ -109,7 +109,7 @@ export function createRecruiterJobColumns(actions: Actions): ColumnDef<Recruiter
               variant="ghost"
               size="icon-sm"
               title="Edit"
-              onClick={() => actions.onEdit(row.id)}
+              onClick={() => actions.onEdit(row)}
             >
               <PencilIcon className="size-4 text-text-muted" />
             </Button>

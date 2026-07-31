@@ -620,8 +620,8 @@
     "semantic_hash": ""
   },
   "app/api/user/applications/[id]/route.ts": {
-    "mtime": 1785319824.184428,
-    "ast_hash": "1234ad30dff843e9289e84836511fefe",
+    "mtime": 1785480569.9773104,
+    "ast_hash": "fc014b9c84be720fa21fd046cb543f05",
     "semantic_hash": ""
   },
   "app/api/user/applications/route.ts": {
@@ -1690,8 +1690,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/applications-page.tsx": {
-    "mtime": 1785403061.3225758,
-    "ast_hash": "ec83d30e6897402b6cc036148cc845d5",
+    "mtime": 1785480569.9803119,
+    "ast_hash": "d82a67a8062ff73d596652666acfb730",
     "semantic_hash": ""
   },
   "app/features/user/components/disabled-job-card.tsx": {
@@ -1805,8 +1805,8 @@
     "semantic_hash": ""
   },
   "app/features/user/queries/user-application-queries.ts": {
-    "mtime": 1785341967.6039848,
-    "ast_hash": "9a617e624b3731ad4ce5343bfc6a75c3",
+    "mtime": 1785480569.9823148,
+    "ast_hash": "3c03e7da8094e95007967b80aeaad0e8",
     "semantic_hash": ""
   },
   "app/features/user/schema/profile.schema.ts": {
