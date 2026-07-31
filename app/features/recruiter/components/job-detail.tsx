@@ -90,7 +90,7 @@ export function JobDetail({ jobId }: JobDetailProps) {
         </div>
         {job.status !== "archived" && (
           <Link
-            href={`/recruiter/jobs/${job.id}/edit`}
+            href={`/recruiter/jobs/${job.slug ?? job.id}/edit`}
             className="inline-flex items-center justify-center rounded-[min(var(--radius-md),10px)] border border-border bg-background shadow-xs hover:bg-muted hover:text-foreground h-8 gap-1 px-2.5 text-sm font-medium whitespace-nowrap transition-all"
           >
             <PencilIcon className="size-4" /> Edit

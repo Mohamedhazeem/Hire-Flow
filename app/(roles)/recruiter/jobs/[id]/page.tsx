@@ -1,5 +1,5 @@
 import { JobDetail } from "@/app/features/recruiter/components/job-detail";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 
 type PageProps = {
@@ -8,8 +8,8 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
-  const job = await prisma.job.findUnique({
-    where: { id },
+  const job = await prisma.job.findFirst({
+    where: { OR: [{ slug: id }, { id }] },
     select: { title: true },
   });
   if (!job) return { title: "Job Not Found | HireFlow" };
@@ -18,19 +18,22 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function JobDetailPage({ params }: PageProps) {
   const { id } = await params;
-
-  const job = await prisma.job.findUnique({
-    where: { id },
-    select: { id: true },
+  const job = await prisma.job.findFirst({
+    where: { OR: [{ slug: id }, { id }] },
+    select: { id: true, slug: true },
   });
 
   if (!job) {
     notFound();
   }
 
+  if (job.slug && id !== job.slug) {
+    redirect(`/recruiter/jobs/${job.slug}`);
+  }
+
   return (
     <div className="pt-4 sm:pt-6 space-y-6">
-      <JobDetail jobId={id} />
+      <JobDetail jobId={job.id} />
     </div>
   );
 }

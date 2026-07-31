@@ -112,9 +112,9 @@ export function RecruiterJobsTable() {
   );
 
   const columns = createRecruiterJobColumns({
-    onView: (id) => router.push(`/recruiter/jobs/${id}`),
-    onEdit: (id) => router.push(`/recruiter/jobs/${id}/edit`),
-    onToggle: handleToggle,
+    onView: (job) => router.push(`/recruiter/jobs/${job.slug ?? job.id}`),
+    onEdit: (job) => router.push(`/recruiter/jobs/${job.slug ?? job.id}/edit`),
+    onToggle: (id, currentStatus) => handleToggle(id, currentStatus),
     onDelete: handleDelete,
     isPending: toggleStatus.isPending,
     deletingId,

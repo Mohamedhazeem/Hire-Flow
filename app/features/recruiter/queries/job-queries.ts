@@ -4,6 +4,7 @@ import type { JobListParams } from "../schema/job.schema";
 
 export type RecruiterJobRow = {
   id: string;
+  slug: string | null;
   title: string;
   status: string;
   workMode: string;
@@ -38,6 +39,7 @@ export type RecruiterJobDetail = {
   applicationCount: number;
   createdAt: Date;
   updatedAt: Date;
+  slug: string | null;
 };
 
 export type RecruiterJobListResult = {
@@ -98,6 +100,7 @@ export async function listJobs(
       orderBy: { [params.sortBy ?? "createdAt"]: params.sortOrder ?? "desc" },
       select: {
         id: true,
+        slug: true,
         title: true,
         status: true,
         viewCount: true,
@@ -114,6 +117,7 @@ export async function listJobs(
 
   const rows: RecruiterJobRow[] = jobs.map((job) => ({
     id: job.id,
+    slug: job.slug,
     title: job.title,
     status: job.status,
     viewCount: job.viewCount,
@@ -129,11 +133,14 @@ export async function listJobs(
 }
 
 export async function getJobById(
-  id: string,
+  idOrSlug: string,
   companyId: string,
 ): Promise<RecruiterJobDetail | null> {
-  const job = await prisma.job.findUnique({
-    where: { id },
+  const job = await prisma.job.findFirst({
+    where: {
+      companyId,
+      OR: [{ slug: idOrSlug }, { id: idOrSlug }],
+    },
     select: {
       id: true,
       recruiterId: true,
@@ -156,11 +163,12 @@ export async function getJobById(
       viewCount: true,
       createdAt: true,
       updatedAt: true,
+      slug: true,
       _count: { select: { applications: true } },
     },
   });
 
-  if (!job || job.companyId !== companyId) return null;
+  if (!job) return null;
 
   return {
     id: job.id,
@@ -185,5 +193,6 @@ export async function getJobById(
     applicationCount: job._count.applications,
     createdAt: job.createdAt,
     updatedAt: job.updatedAt,
+    slug: job.slug,
   };
 }

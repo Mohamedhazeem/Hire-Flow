@@ -28,6 +28,11 @@ const faqs: FAQ[] = [
   },
 ];
 
+const parentVariants = {
+  visible: { transition: { staggerChildren: 0.12 } },
+  hidden: {},
+};
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -41,10 +46,7 @@ export function SalaryFAQSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.12 } },
-            hidden: {},
-          }}
+          variants={parentVariants}
         >
           <motion.div variants={sectionVariants}>
             <h2 className="text-2xl sm:text-3xl font-bold text-text-heading flex items-center gap-2">

@@ -77,7 +77,12 @@ export function createWithRateLimit(rateLimiter: RateLimiter) {
     ): Promise<NextResponse> => {
       const requestId = generateRequestId();
 
-      const session = await getSession();
+      let session;
+      try {
+        session = await getSession();
+      } catch {
+        session = null;
+      }
       const user = session?.user as
         | { id: string; name: string; email: string; role?: string }
         | undefined;

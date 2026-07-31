@@ -30,6 +30,7 @@ const STATUSES = [
 type AppRow = {
   id: string;
   jobId: string;
+  jobSlug: string | null;
   jobTitle: string;
   companyName: string;
   companyLogo: string | null;
@@ -202,7 +203,7 @@ export function ApplicationsPage() {
                     >
                       <td className="py-3 pr-4 text-center">
                         <Link
-                          href={`/user/applications/${app.id}`}
+                          href={app.jobSlug ? `/user/applications/${app.jobSlug}` : `/user/applications/${app.id}`}
                           className="font-medium text-text-heading hover:text-brand transition-colors"
                         >
                           {app.jobTitle}
@@ -237,7 +238,7 @@ export function ApplicationsPage() {
                       </td>
                       <td className="py-3 text-center">
                         <Link
-                          href={`/user/applications/${app.id}`}
+                          href={app.jobSlug ? `/user/applications/${app.jobSlug}` : `/user/applications/${app.id}`}
                           className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-brand hover:bg-brand/90 px-3 py-1.5 rounded-lg transition-colors"
                         >
                           View

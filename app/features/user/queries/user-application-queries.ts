@@ -4,6 +4,7 @@ import { buildOffsetMeta, parseOffsetParams } from "@/lib/pagination";
 export type UserApplicationRow = {
   id: string;
   jobId: string;
+  jobSlug: string | null;
   jobTitle: string;
   companyName: string;
   companyLogo: string | null;
@@ -82,6 +83,7 @@ export async function listUserApplications(
     return {
       id: record.id as string,
       jobId: record.jobId as string,
+      jobSlug: job.slug as string | null,
       jobTitle: job.title as string,
       companyName: company.name ?? "Unknown",
       companyLogo: company.logoUrl,
@@ -111,14 +113,37 @@ export async function getUserApplicationDetail(
 
   if (!raw || raw.userId !== userId) return null;
 
-  const d = raw as unknown as Record<string, unknown>;
-  const job = d.job as Record<string, unknown>;
+  return mapApplication(raw);
+}
+
+export async function getUserApplicationByJobSlug(
+  userId: string,
+  slug: string,
+): Promise<UserApplicationDetail | null> {
+  const raw = await prisma.application.findFirst({
+    where: { userId, job: { slug } },
+    include: {
+      job: { include: { company: { select: { name: true, logoUrl: true } } } },
+      statusChanges: {
+        orderBy: { createdAt: "asc" },
+        select: { id: true, fromStatus: true, toStatus: true, createdAt: true },
+      },
+    },
+  });
+
+  if (!raw) return null;
+
+  return mapApplication(raw);
+}
+
+function mapApplication(raw: Record<string, unknown>): UserApplicationDetail {
+  const job = raw.job as Record<string, unknown>;
   const company = job.company as Record<string, string | null>;
-  const changes = d.statusChanges as Array<Record<string, unknown>>;
+  const changes = raw.statusChanges as Array<Record<string, unknown>>;
 
   return {
-    id: d.id as string,
-    jobId: d.jobId as string,
+    id: raw.id as string,
+    jobId: raw.jobId as string,
     jobTitle: job.title as string,
     jobCompanyName: company.name ?? "Unknown",
     jobCompanyLogo: company.logoUrl,
@@ -128,15 +153,15 @@ export async function getUserApplicationDetail(
     jobSalaryMax: job.salaryMax as number | null,
     jobSalaryCurrency: (job.salaryCurrency as string) ?? "USD",
     jobActive: job.isActive as boolean,
-    status: d.status as string,
-    resumeSnapshotUrl: d.resumeSnapshotUrl as string | null,
-    resumeSnapshotBuilderData: d.resumeSnapshotBuilderData,
-    rejectionReason: d.rejectionReason as string | null,
-    interviewDate: d.interviewDate as Date | null,
-    meetingLink: d.meetingLink as string | null,
-    offerDetails: d.offerDetails as string | null,
-    appliedAt: d.appliedAt as Date,
-    updatedAt: d.updatedAt as Date,
+    status: raw.status as string,
+    resumeSnapshotUrl: raw.resumeSnapshotUrl as string | null,
+    resumeSnapshotBuilderData: raw.resumeSnapshotBuilderData,
+    rejectionReason: raw.rejectionReason as string | null,
+    interviewDate: raw.interviewDate as Date | null,
+    meetingLink: raw.meetingLink as string | null,
+    offerDetails: raw.offerDetails as string | null,
+    appliedAt: raw.appliedAt as Date,
+    updatedAt: raw.updatedAt as Date,
     statusChanges: changes.map((sc) => ({
       id: sc.id as string,
       fromStatus: sc.fromStatus as string | null,
