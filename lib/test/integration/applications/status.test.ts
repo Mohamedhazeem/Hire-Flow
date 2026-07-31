@@ -3,13 +3,8 @@ import { NextRequest } from "next/server";
 import {
   mockSession,
   resetDb,
-  createTestUser,
-  createTestCompany,
-  createTestJob,
-  createTestApplication,
 } from "@/lib/test";
 import { prisma } from "@/lib/prisma";
-import { Role } from "@/app/generated/prisma/client";
 import { mockGetSession } from "@/lib/test/shared-auth-mock";
 import { seedJobWithApplicant } from "@/lib/test/integration/helpers";
 import { mockResend } from "@/lib/test/mocks";
@@ -21,7 +16,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("applied to reviewing succeeds", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, applicant, application } = await seedJobWithApplicant();
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
@@ -62,7 +57,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("reviewing to shortlisted succeeds", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({
       where: { id: application.id },
       data: { status: "reviewing" },
@@ -85,7 +80,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("hired to applied rejected (invalid transition)", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({ where: { id: application.id }, data: { status: "hired" } });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
@@ -102,7 +97,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("rejected to reviewing rejected (invalid transition)", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({
       where: { id: application.id },
       data: { status: "rejected" },
@@ -122,7 +117,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("reject with reason stores rejectionReason", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
@@ -142,7 +137,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("interview with details stores data", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({
       where: { id: application.id },
       data: { status: "shortlisted" },
@@ -171,7 +166,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("offer with details stores data", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({
       where: { id: application.id },
       data: { status: "interview_scheduled" },
@@ -211,7 +206,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   // ── Fix 5: invited status ──────────────────────────────────────────────
 
   it("applied to invited succeeds", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");
@@ -230,7 +225,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("invited to reviewing succeeds", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
@@ -250,7 +245,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("invited to rejected succeeds", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
@@ -270,7 +265,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
   });
 
   it("invited to shortlisted rejected (invalid transition)", async () => {
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, application } = await seedJobWithApplicant();
     await prisma.application.update({ where: { id: application.id }, data: { status: "invited" } });
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
@@ -290,7 +285,7 @@ describe("Application Status Transition (Phase 4.4)", () => {
 
   it("transition with email=true calls sendEmail", async () => {
     const emailSpy = mockResend();
-    const { recruiter, company, job, applicant, application } = await seedJobWithApplicant();
+    const { recruiter, applicant, application } = await seedJobWithApplicant();
     mockGetSession.mockResolvedValue(mockSession("recruiter", { id: recruiter.id }));
 
     const { PATCH } = await import("@/app/api/recruiter/applications/[applicationId]/status/route");

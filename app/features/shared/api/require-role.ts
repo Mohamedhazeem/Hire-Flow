@@ -1,7 +1,7 @@
 import { getSession } from "@/app/features/auth/libs/auth";
 import { UnauthorizedError, ForbiddenError } from "@/lib/api/api-error";
 import { prisma } from "@/lib/prisma";
-import { getSessionCache } from "@/lib/rate-limiting/request-context";
+import { getSessionCache, setCachedSession } from "@/lib/rate-limiting/request-context";
 
 export type ResolvedSession = {
   id: string;
@@ -17,7 +17,36 @@ export async function requireRole(allowedRoles: string[]): Promise<ResolvedSessi
   if (cached?.session) {
     const { session } = cached;
     if (allowedRoles.includes(session.role)) {
-      return session as ResolvedSession;
+      if (session.role === "recruiter" && !session.companyId) {
+        const membership = await prisma.companyTeamMember.findUnique({
+          where: { userId: session.id },
+          select: { companyId: true, role: true },
+        });
+        if (membership) {
+          const enriched = {
+            ...session,
+            companyId: membership.companyId,
+            memberRole: membership.role,
+          } as ResolvedSession;
+          setCachedSession(enriched);
+          return enriched;
+        }
+        const ownedCompany = await prisma.company.findUnique({
+          where: { recruiterId: session.id },
+          select: { id: true },
+        });
+        if (ownedCompany) {
+          const enriched = {
+            ...session,
+            companyId: ownedCompany.id,
+            memberRole: "owner",
+          } as ResolvedSession;
+          setCachedSession(enriched);
+          return enriched;
+        }
+      } else {
+        return session as ResolvedSession;
+      }
     }
     if (allowedRoles.includes("recruiter") && session.memberRole) {
       return session as ResolvedSession;
@@ -25,7 +54,12 @@ export async function requireRole(allowedRoles: string[]): Promise<ResolvedSessi
     throw new ForbiddenError("Insufficient permissions");
   }
 
-  const authSession = await getSession();
+  let authSession;
+  try {
+    authSession = await getSession();
+  } catch {
+    authSession = null;
+  }
 
   if (!authSession?.user) {
     throw new UnauthorizedError();
@@ -44,6 +78,15 @@ export async function requireRole(allowedRoles: string[]): Promise<ResolvedSessi
       if (membership) {
         base.companyId = membership.companyId;
         base.memberRole = membership.role;
+      } else {
+        const ownedCompany = await prisma.company.findUnique({
+          where: { recruiterId: user.id },
+          select: { id: true },
+        });
+        if (ownedCompany) {
+          base.companyId = ownedCompany.id;
+          base.memberRole = "owner";
+        }
       }
     }
     return base;
@@ -57,6 +100,14 @@ export async function requireRole(allowedRoles: string[]): Promise<ResolvedSessi
 
     if (membership) {
       return { ...base, companyId: membership.companyId, memberRole: membership.role };
+    }
+
+    const ownedCompany = await prisma.company.findUnique({
+      where: { recruiterId: user.id },
+      select: { id: true },
+    });
+    if (ownedCompany) {
+      return { ...base, companyId: ownedCompany.id, memberRole: "owner" };
     }
   }
 
