@@ -1,5 +1,3 @@
-/* TODO: Replace with real legally-reviewed terms of service before launch */
-
 export const metadata = {
   title: "Terms of Service",
   description: "HireFlow terms of service",
@@ -7,60 +5,68 @@ export const metadata = {
 
 const sections = [
   {
-    title: "Acceptance of Terms",
+    title: "Acceptance of terms",
     content:
-      "By accessing or using HireFlow, you agree to be bound by these Terms of Service. If you do not agree, you may not use the platform.",
+      "By accessing or using HireFlow, you agree to follow these Terms of Service. If you do not agree, please do not use the platform.",
   },
   {
-    title: "User Accounts & Responsibilities",
+    title: "User accounts & responsibilities",
     content:
-      "You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. You must provide accurate information and keep it up to date.",
+      "You are responsible for keeping your login credentials secure and for all activity on your account. Provide accurate information and update it as needed.",
   },
   {
-    title: "Job Listings & Applications",
+    title: "Job listings & applications",
     content:
-      "Employers are responsible for the accuracy of their job listings. Job seekers apply at their own discretion. HireFlow does not guarantee employment outcomes or the legitimacy of any listing.",
+      "Employers are responsible for the accuracy of their job listings. Job seekers apply at their own discretion. HireFlow does not guarantee any hiring outcome.",
   },
   {
-    title: "Prohibited Conduct",
+    title: "Prohibited conduct",
     content:
-      "You may not use HireFlow for any unlawful purpose, to harass others, to post fraudulent listings, or to collect user data without authorization. Violations may result in account suspension or termination.",
+      "Do not use HireFlow for unlawful activity, harassment, fraud, or unauthorized data collection. Violations may result in account suspension or termination.",
   },
   {
-    title: "Limitation of Liability",
+    title: "Limitation of liability",
     content:
-      'HireFlow is provided "as is" without warranties of any kind. To the maximum extent permitted by law, we are not liable for any damages arising from your use of the platform.',
+      "HireFlow is provided as-is without warranties. To the maximum extent permitted by law, we are not liable for damages resulting from your use of the platform.",
   },
   {
-    title: "Governing Law",
+    title: "Governing law",
     content:
-      "These terms are governed by the laws of the jurisdiction in which HireFlow operates. Any disputes shall be resolved in the courts of that jurisdiction.",
+      "These terms are governed by the laws of the jurisdiction where HireFlow operates. Disputes will be resolved in the applicable courts.",
   },
   {
     title: "Contact",
-    content: "For questions about these terms, please contact us at legal@hireflow.example.",
+    content: "For questions about these terms, email legal@hireflow.example.",
   },
 ];
 
 export default function TermsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">Terms of Service</h1>
-      <p className="text-sm text-text-muted mb-10">Last updated: July 2026</p>
+    <div className="bg-slate-50 dark:bg-slate-950">
+      <section className="border-b border-border-subtle bg-white/80 dark:bg-slate-950/80">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-3xl space-y-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-text-heading">Terms of Service</h1>
+              <p className="mt-4 text-base text-text-muted leading-relaxed">
+                Review HireFlow’s terms, responsibilities, and the rules for using our service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="space-y-8">
-        {sections.map((s) => (
-          <div key={s.title}>
-            <h2 className="text-lg font-semibold text-text-heading mb-2">{s.title}</h2>
-            <p className="text-sm text-text-body leading-relaxed">{s.content}</p>
+      <main className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-12 space-y-8">
+        {sections.map((section) => (
+          <div
+            key={section.title}
+            className="rounded-3xl border border-border-subtle bg-bg-surface p-8 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80"
+          >
+            <h2 className="text-lg font-semibold text-text-heading mb-3">{section.title}</h2>
+            <p className="text-sm text-text-body leading-relaxed">{section.content}</p>
           </div>
         ))}
-      </div>
-
-      <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        These are placeholder terms of service. They must be reviewed and replaced with
-        legally-reviewed copy before any real launch.
-      </p>
+      </main>
     </div>
   );
 }

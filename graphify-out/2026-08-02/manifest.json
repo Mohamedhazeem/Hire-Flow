@@ -165,13 +165,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/admin-layout-client.tsx": {
-<<<<<<< HEAD
-    "mtime": 1782521595.8907378,
-    "ast_hash": "779b27f084031cc5fca5202163024b7c",
-=======
-    "mtime": 1785643236.7792232,
-    "ast_hash": "4e651c473cd59f9bd98b85e832aea4df",
->>>>>>> bug-fixes
+    "mtime": 1785672643.6944144,
+    "ast_hash": "543aec923bda85919a31727050a00c3e",
     "semantic_hash": ""
   },
   "app/(roles)/admin/applications/[applicationId]/page.tsx": {
@@ -185,23 +180,13 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/jobs/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341966.8892126,
-    "ast_hash": "59a9c58e9603470ba339b6478b2a4cc9",
-    "semantic_hash": ""
-  },
-  "app/(roles)/admin/layout.tsx": {
-    "mtime": 1782378250.294658,
-    "ast_hash": "4eac9c41d4770d9e5155ae238139ed57",
-=======
-    "mtime": 1785641701.9179966,
+    "mtime": 1785672643.6984134,
     "ast_hash": "fb658d692aec53e3565c784e8deba058",
     "semantic_hash": ""
   },
   "app/(roles)/admin/layout.tsx": {
-    "mtime": 1785643236.769217,
-    "ast_hash": "2d69662c39aff897c7cc1791701d2f7a",
->>>>>>> bug-fixes
+    "mtime": 1785672643.7014153,
+    "ast_hash": "b5c75e3ba4117477301302b3be651d71",
     "semantic_hash": ""
   },
   "app/(roles)/admin/loading.tsx": {
@@ -230,23 +215,13 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/recruiters/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341966.8932135,
-    "ast_hash": "43736f2f00a05b13234e838e5e408ef7",
-    "semantic_hash": ""
-  },
-  "app/(roles)/admin/team/page.tsx": {
-    "mtime": 1785341966.8972137,
-    "ast_hash": "c1dde515715ef95697c88730e0698e5a",
-=======
-    "mtime": 1785641701.9569924,
+    "mtime": 1785672643.7034125,
     "ast_hash": "5c03ee74c8596bbc640f68cf8dd37eaa",
     "semantic_hash": ""
   },
   "app/(roles)/admin/team/page.tsx": {
-    "mtime": 1785663967.7006252,
+    "mtime": 1785672643.7184143,
     "ast_hash": "6eb7a77c5f57bd6bb675da99bc367ea9",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/(roles)/admin/users/[id]/page.tsx": {
@@ -255,13 +230,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/admin/users/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785308636.587494,
-    "ast_hash": "1ddb8ef7380f6daa5be226fee27869dd",
-=======
-    "mtime": 1785641702.1650915,
-    "ast_hash": "cde93dae7df8896bb3ad145deeb24917",
->>>>>>> bug-fixes
+    "mtime": 1785672643.722412,
+    "ast_hash": "222b79532c86393224a0dd4e16a08c14",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/analytics/page.tsx": {
@@ -275,13 +245,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/company/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785319822.9623032,
-    "ast_hash": "4e26123d6b84d5028abcd44e84cd6ef3",
-=======
-    "mtime": 1785642341.241533,
-    "ast_hash": "4e305c8e80f4e9376dd6efe85510f6aa",
->>>>>>> bug-fixes
+    "mtime": 1785672643.7274144,
+    "ast_hash": "48f93f4a97bf4a6bbe116ba1a114915b",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/error.tsx": {
@@ -315,23 +280,13 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/jobs/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341966.9157631,
-    "ast_hash": "19be8bf13c15fdb3b4551257b85bd801",
-    "semantic_hash": ""
-  },
-  "app/(roles)/recruiter/layout.tsx": {
-    "mtime": 1785308636.8505878,
-    "ast_hash": "90b76e08a8dc974c65b8e6d0d56f6016",
-=======
-    "mtime": 1785642341.2585318,
+    "mtime": 1785672643.7364156,
     "ast_hash": "48fe190fd17ff0d9534fe25216eaa1a6",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/layout.tsx": {
-    "mtime": 1785643269.3055785,
-    "ast_hash": "be61078c796030c796ea9b50a6f39d0a",
->>>>>>> bug-fixes
+    "mtime": 1785672643.7384195,
+    "ast_hash": "a5c58bf858c9b8bdfff716ef2172ff3d",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/loading.tsx": {
@@ -355,23 +310,13 @@
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/recruiter-layout-client.tsx": {
-<<<<<<< HEAD
-    "mtime": 1782521590.701394,
-    "ast_hash": "36f71fd9dcf75763826c977f2a6b3ec3",
+    "mtime": 1785672643.741417,
+    "ast_hash": "1152e27f083fbfafa68ef1a47333d2b2",
     "semantic_hash": ""
   },
   "app/(roles)/recruiter/team/page.tsx": {
-    "mtime": 1785341966.9215024,
-    "ast_hash": "83630ad8f2a33a56cc2ad9a58551157e",
-=======
-    "mtime": 1785643269.2935717,
-    "ast_hash": "0e896e2369a3f76052ea84c82e4839bd",
-    "semantic_hash": ""
-  },
-  "app/(roles)/recruiter/team/page.tsx": {
-    "mtime": 1785642341.2905319,
+    "mtime": 1785672643.7534132,
     "ast_hash": "9d2e80d58d86b19a35ec6a3a785f8daa",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/(roles)/user/applications/[id]/page.tsx": {
@@ -390,13 +335,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/user/layout.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785308637.0013638,
-    "ast_hash": "8681100485766a920cf9f7836edd07d2",
-=======
-    "mtime": 1785643269.4559577,
-    "ast_hash": "9700cbec964f409013b33dad5c39e381",
->>>>>>> bug-fixes
+    "mtime": 1785672643.7564113,
+    "ast_hash": "8bfbc217c4683300ae59a65078f16b35",
     "semantic_hash": ""
   },
   "app/(roles)/user/loading.tsx": {
@@ -420,13 +360,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/user/profile/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341966.926224,
-    "ast_hash": "1ab2f81c1685d21fbe223890ada08075",
-=======
-    "mtime": 1785642341.3215506,
+    "mtime": 1785672643.765411,
     "ast_hash": "88170876883a05408fe8e81e20f22bfb",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/(roles)/user/resumes/builder/[id]/page.tsx": {
@@ -440,13 +375,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/user/resumes/page.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341966.9386075,
-    "ast_hash": "ea3ff8571957b6c91030cd2da82fe2a4",
-=======
-    "mtime": 1785642341.3460827,
+    "mtime": 1785672643.7694128,
     "ast_hash": "1b3b35a98464d5dd4fad0cf09c2c2f13",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/(roles)/user/saved-jobs/page.tsx": {
@@ -455,13 +385,8 @@
     "semantic_hash": ""
   },
   "app/(roles)/user/user-layout-client.tsx": {
-<<<<<<< HEAD
-    "mtime": 1782521601.3832357,
-    "ast_hash": "eef9994bb92233a9e2a9cdfa48575424",
-=======
-    "mtime": 1785643269.4469533,
-    "ast_hash": "c8f229b662eefa10aa15fff410e0c88c",
->>>>>>> bug-fixes
+    "mtime": 1785672643.7724133,
+    "ast_hash": "983fdf20e53f81674d38512dc6cf3b18",
     "semantic_hash": ""
   },
   "app/api/admin/applications/[applicationId]/detail/route.ts": {
@@ -800,13 +725,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-sidebar.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785336268.858771,
-    "ast_hash": "5303d1611fe6770cb74a65db977e9f65",
-=======
-    "mtime": 1785643254.8263316,
-    "ast_hash": "5cd6017e7d06ef964bf6054386886476",
->>>>>>> bug-fixes
+    "mtime": 1785672643.778412,
+    "ast_hash": "ab261fc29acf18bce91ddf39405d603f",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-team-list.tsx": {
@@ -1030,11 +950,7 @@
     "semantic_hash": ""
   },
   "app/features/auth/components/login-form.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341967.2753234,
-=======
     "mtime": 1785651996.5691552,
->>>>>>> bug-fixes
     "ast_hash": "4a89fe69cc1b0b51b8014b466b4df2ef",
     "semantic_hash": ""
   },
@@ -1139,13 +1055,8 @@
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-card.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341967.290327,
-    "ast_hash": "96ff2f5bcb2302727993e1190e3fb5b8",
-=======
-    "mtime": 1785662603.8765283,
+    "mtime": 1785672643.821412,
     "ast_hash": "059bcdab3cfb567a44e60c795c83d4e7",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/features/jobs/components/job-detail-view.tsx": {
@@ -1199,33 +1110,18 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/category-strip.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785487797.9685447,
-    "ast_hash": "6b6feb776fb5d5fd322f9555bbee29f8",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/employer-cta.tsx": {
-    "mtime": 1785319826.1076355,
-    "ast_hash": "87ed51042f6049211c48b4a8f65c0977",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/featured-companies.tsx": {
-    "mtime": 1785319826.12014,
-    "ast_hash": "53452542f8c07b5bbe2721160b5b4469",
-=======
-    "mtime": 1785662603.856547,
+    "mtime": 1785672643.8254192,
     "ast_hash": "f22c6993197e0884624d413d4533150f",
     "semantic_hash": ""
   },
   "app/features/landing/components/employer-cta.tsx": {
-    "mtime": 1785662745.4791722,
-    "ast_hash": "7428b24eeaf8aaf02ee85d33fbd9b8ae",
+    "mtime": 1785672643.833408,
+    "ast_hash": "6eb9736bcb0d57ece5c898067b3a402a",
     "semantic_hash": ""
   },
   "app/features/landing/components/featured-companies.tsx": {
-    "mtime": 1785653984.6259573,
+    "mtime": 1785672643.8384106,
     "ast_hash": "a941b0206ff03de6a268c577c0de0d2b",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/features/landing/components/featured-jobs-grid.tsx": {
@@ -1234,63 +1130,43 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/featured-jobs.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785487797.9735565,
-    "ast_hash": "22ded522404e02b58d5e692ddc500165",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/footer.tsx": {
-    "mtime": 1785487797.9755566,
-    "ast_hash": "d4dbaad60ebad61c149ce4099f822964",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/hero-search.tsx": {
-    "mtime": 1785319826.1881547,
-    "ast_hash": "5710f3b2bfb97793273be24f9c0d1b1a",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/how-it-works.tsx": {
-    "mtime": 1785487797.9786093,
-    "ast_hash": "09bfd729fd11d48e1877b5cfaa1632f4",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/landing-page-skeleton.tsx": {
-    "mtime": 1785487797.981557,
-    "ast_hash": "e205ddb3de4bff7b54cf1ac7c21af3e1",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/landing-page.tsx": {
-    "mtime": 1785308642.0247853,
-    "ast_hash": "6b64ae16aea4a628ec44fa904fc0973d",
-=======
-    "mtime": 1785653984.7894711,
+    "mtime": 1785672643.8404157,
     "ast_hash": "32256aab87f9dd5ba8242929249901f8",
     "semantic_hash": ""
   },
   "app/features/landing/components/footer.tsx": {
-    "mtime": 1785651107.9681692,
+    "mtime": 1785672643.8444185,
     "ast_hash": "aa778d9d901407d48acf9d8031f6eed2",
     "semantic_hash": ""
   },
   "app/features/landing/components/hero-search.tsx": {
-    "mtime": 1785663367.393995,
+    "mtime": 1785672643.8464155,
     "ast_hash": "fd8d7c1f043c3f24b8f739a4b0881590",
     "semantic_hash": ""
   },
   "app/features/landing/components/how-it-works.tsx": {
-    "mtime": 1785651185.1372058,
+    "mtime": 1785672643.849415,
     "ast_hash": "6f9daf3360a5c87f24d991ef8b9916c8",
     "semantic_hash": ""
   },
+  "app/features/landing/components/landing-glow.tsx": {
+    "mtime": 1785672643.850414,
+    "ast_hash": "13568169996ccf98829389da269b0f96",
+    "semantic_hash": ""
+  },
   "app/features/landing/components/landing-page-skeleton.tsx": {
-    "mtime": 1785651922.9086409,
+    "mtime": 1785672643.8534184,
     "ast_hash": "2c4c8d7bc4e4dd93f87281784ff3ce98",
     "semantic_hash": ""
   },
   "app/features/landing/components/landing-page.tsx": {
-    "mtime": 1785661462.7177355,
-    "ast_hash": "bd92721b287527dc34b37bc432c0743a",
->>>>>>> bug-fixes
+    "mtime": 1785672643.8554122,
+    "ast_hash": "a69f3947f127a9224a25c3942c3afca6",
+    "semantic_hash": ""
+  },
+  "app/features/landing/components/landing-particles.tsx": {
+    "mtime": 1785672643.8574173,
+    "ast_hash": "c48a23e3c7bc6a49f674dcbe64485221",
     "semantic_hash": ""
   },
   "app/features/landing/components/stats-banner.tsx": {
@@ -1304,23 +1180,13 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/testimonials.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785319826.282686,
-    "ast_hash": "dc9388e44d4297f8f07fa3131750d7e0",
-    "semantic_hash": ""
-  },
-  "app/features/messages/actions/get-unread-message-count.ts": {
-    "mtime": 1784905940.9954884,
-    "ast_hash": "8c41b3e98717578de5fcd3609364d44c",
-=======
-    "mtime": 1785662745.4951694,
+    "mtime": 1785672643.861418,
     "ast_hash": "1cac9f89874473e5eb327616a0e83b71",
     "semantic_hash": ""
   },
   "app/features/messages/actions/get-unread-message-count.ts": {
-    "mtime": 1785664323.664045,
-    "ast_hash": "c029b772fc9bbd01221e742fe9a29c11",
->>>>>>> bug-fixes
+    "mtime": 1785672643.8644137,
+    "ast_hash": "a472ea2fc5e5ecbb524fed50d428c931",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {
@@ -1349,13 +1215,8 @@
     "semantic_hash": ""
   },
   "app/features/particles/dust-particle.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785308642.4396105,
-    "ast_hash": "c7e5c1e8254dff569303f32b1e122424",
-=======
-    "mtime": 1785663336.6849623,
-    "ast_hash": "cb33b68802eb25fe780da3c54df01d26",
->>>>>>> bug-fixes
+    "mtime": 1785672643.8684132,
+    "ast_hash": "533669dd11abc98cd64f608d9233bfc2",
     "semantic_hash": ""
   },
   "app/features/particles/hash.ts": {
@@ -1369,23 +1230,13 @@
     "semantic_hash": ""
   },
   "app/features/particles/particle-types.ts": {
-<<<<<<< HEAD
-    "mtime": 1785308642.4951632,
-    "ast_hash": "f00e1039a769bf62df5b14fa0f692ac7",
+    "mtime": 1785672643.8724165,
+    "ast_hash": "6c3e8fbb324201438ba78a132171ef4a",
     "semantic_hash": ""
   },
   "app/features/particles/particle-varient.ts": {
-    "mtime": 1785308642.5231645,
-    "ast_hash": "198a2db3ba073b1207da02af2d4056c9",
-=======
-    "mtime": 1785662266.859311,
-    "ast_hash": "31dd4a15091dcea3e0282d33a70ce171",
-    "semantic_hash": ""
-  },
-  "app/features/particles/particle-varient.ts": {
-    "mtime": 1785662247.230741,
-    "ast_hash": "edb276f2aa4b0cc0c780c9a0ab2213c6",
->>>>>>> bug-fixes
+    "mtime": 1785672643.8744185,
+    "ast_hash": "ccf8c48609c761343a9d53e2879029ba",
     "semantic_hash": ""
   },
   "app/features/public/components/account-popover.tsx": {
@@ -1439,23 +1290,13 @@
     "semantic_hash": ""
   },
   "app/features/public/components/public-navbar.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785319826.740052,
-    "ast_hash": "c77276b41c8f2b965d566b47bb8a8750",
+    "mtime": 1785672643.8944159,
+    "ast_hash": "260e74c476ff28c3ea9fd7a49c54705d",
     "semantic_hash": ""
   },
   "app/features/public/hooks/use-sign-out.ts": {
-    "mtime": 1782877324.534778,
-    "ast_hash": "a86f04869051d6b08100d82c5b86f924",
-=======
-    "mtime": 1785651921.6813853,
-    "ast_hash": "fd624f79c8672ded597b58be02961fcb",
-    "semantic_hash": ""
-  },
-  "app/features/public/hooks/use-sign-out.ts": {
-    "mtime": 1785655561.9323602,
-    "ast_hash": "d90ba839fdd4afe7cf70555f9e9caa0d",
->>>>>>> bug-fixes
+    "mtime": 1785672643.8964226,
+    "ast_hash": "528f8a0baf07c033a9f5f3db026cbfda",
     "semantic_hash": ""
   },
   "app/features/public/hooks/use-unread-message-count.ts": {
@@ -1464,13 +1305,8 @@
     "semantic_hash": ""
   },
   "app/features/public/queries/list-featured-companies.ts": {
-<<<<<<< HEAD
-    "mtime": 1782882314.0937927,
-    "ast_hash": "7203a0247f9164392553205bcbe701a8",
-=======
     "mtime": 1785641234.1252792,
     "ast_hash": "8bdf417976e4e5c558510ca2f9e4e73d",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "app/features/recruiter/actions/bulk-invite-recruiters.ts": {
@@ -1659,13 +1495,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-sidebar.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785336283.841841,
-    "ast_hash": "5a02a71abe789b6ad580acafcf34e6a5",
-=======
-    "mtime": 1785643269.3581865,
-    "ast_hash": "ea51020b21ce83a271758141c3710a74",
->>>>>>> bug-fixes
+    "mtime": 1785672643.9014153,
+    "ast_hash": "77f5fa482df7114341a31a8a104a67d4",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-team-list.tsx": {
@@ -1959,13 +1790,8 @@
     "semantic_hash": ""
   },
   "app/features/user/components/user-sidebar.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785319829.7522604,
-    "ast_hash": "cca5bb4cd6b3cf1e048afbed72b853ee",
-=======
-    "mtime": 1785643269.475959,
-    "ast_hash": "e6a38e5e0dc6214f2caab6359f54e1b5",
->>>>>>> bug-fixes
+    "mtime": 1785672643.9044137,
+    "ast_hash": "0d42b427e291ff0cec1b2dc134dc2272",
     "semantic_hash": ""
   },
   "app/features/user/components/user-thread-view.tsx": {
@@ -2049,8 +1875,8 @@
     "semantic_hash": ""
   },
   "app/layout.tsx": {
-    "mtime": 1785409108.7619267,
-    "ast_hash": "69cb9fa2393c3ec30164f2aa3b4c2c12",
+    "mtime": 1785672643.912412,
+    "ast_hash": "5e2ad7e7944575b7e28a086546dc680f",
     "semantic_hash": ""
   },
   "app/providers.tsx": {
@@ -2104,13 +1930,8 @@
     "semantic_hash": ""
   },
   "components/chat/messages-page-layout.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341967.6545062,
-    "ast_hash": "d40b44a548c89dbaf5071548dc22614d",
-=======
-    "mtime": 1785642132.5740654,
+    "mtime": 1785672643.9154167,
     "ast_hash": "ee51a31220c7551b73aa0c60d3898612",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "components/chat/shared-thread-view.tsx": {
@@ -2144,13 +1965,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341967.672506,
-    "ast_hash": "58ffa7eccac43e42696582f3b85aa76b",
-=======
-    "mtime": 1785666280.5896277,
-    "ast_hash": "fdb4b3fce8ec6cc38c4d8c2df588cf69",
->>>>>>> bug-fixes
+    "mtime": 1785672643.918419,
+    "ast_hash": "e53f100879e747f3a11c7ddd6c78854b",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {
@@ -2209,13 +2025,8 @@
     "semantic_hash": ""
   },
   "components/shared/company-preview-card.tsx": {
-<<<<<<< HEAD
-    "mtime": 1785341967.6895175,
-    "ast_hash": "598badfb904444c26bf01cfde23aa34b",
-=======
-    "mtime": 1785662603.9115453,
+    "mtime": 1785672643.9214182,
     "ast_hash": "fc1731408f02652c6def1256900d64ee",
->>>>>>> bug-fixes
     "semantic_hash": ""
   },
   "components/shared/confirm-action-button.tsx": {
@@ -3409,11 +3220,7 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-<<<<<<< HEAD
-    "mtime": 1785341974.4248638,
-=======
     "mtime": 1785654186.5185003,
->>>>>>> bug-fixes
     "ast_hash": "b307db42b76c1954c3d4875b1aea43e4",
     "semantic_hash": ""
   },
@@ -3488,11 +3295,7 @@
     "semantic_hash": ""
   },
   "proxy.ts": {
-<<<<<<< HEAD
-    "mtime": 1785482089.5648863,
-=======
     "mtime": 1785654192.7899485,
->>>>>>> bug-fixes
     "ast_hash": "35cfbd361e7876fa71f80ee3547b3fd1",
     "semantic_hash": ""
   },
@@ -3817,8 +3620,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1785397762.240424,
-    "ast_hash": "c044f9d60224cd151a9a71bfb52c6e4f",
+    "mtime": 1785673329.3958743,
+    "ast_hash": "149572afefab1e1a4cbc26614a570279",
     "semantic_hash": ""
   },
   "docs/architecture/rate-limiting.md": {
@@ -3901,6 +3704,51 @@
     "ast_hash": "8e061864f388b47f33a1c3780831193e",
     "semantic_hash": ""
   },
+  "public/screenshots/screenshot-1.png": {
+    "mtime": 1785672644.1244156,
+    "ast_hash": "0ea3729120c5e88430fd598b8b2f8cca",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-2.png": {
+    "mtime": 1785672644.1424124,
+    "ast_hash": "4c2d4d37894a028ad93c98bb4ad1b42b",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-3.png": {
+    "mtime": 1785672644.1574175,
+    "ast_hash": "f77f713a1804090ea491b0f283e42aaf",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-4.png": {
+    "mtime": 1785672644.1664138,
+    "ast_hash": "ba134efcb0f2e1dc8c036f647fa37426",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-5.png": {
+    "mtime": 1785672644.177412,
+    "ast_hash": "77ad9bd495e6ebc8bb20aaf11e437359",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-6.png": {
+    "mtime": 1785672644.186415,
+    "ast_hash": "18522e1acabcc6f772d263260000389c",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-7.png": {
+    "mtime": 1785672644.1954162,
+    "ast_hash": "d20903ef1dcae2690e01223a9ae6afa3",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-8.png": {
+    "mtime": 1785672644.20241,
+    "ast_hash": "8275485d735613ae231caad47858e59f",
+    "semantic_hash": ""
+  },
+  "public/screenshots/screenshot-9.png": {
+    "mtime": 1785672644.2094135,
+    "ast_hash": "1238dbb07034ec52efc6240e6ac26182",
+    "semantic_hash": ""
+  },
   "public/vercel.svg": {
     "mtime": 1780988827.0085576,
     "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
@@ -3910,18 +3758,5 @@
     "mtime": 1780988827.0267193,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
     "semantic_hash": ""
-<<<<<<< HEAD
-=======
-  },
-  "app/features/landing/components/landing-glow.tsx": {
-    "mtime": 1785662232.3670177,
-    "ast_hash": "8d6f20991c0b021b2ea36fbb110d4bb4",
-    "semantic_hash": ""
-  },
-  "app/features/landing/components/landing-particles.tsx": {
-    "mtime": 1785663498.6829884,
-    "ast_hash": "2efc38f1936a34367d6a97cc1ffdd58e",
-    "semantic_hash": ""
->>>>>>> bug-fixes
   }
 }

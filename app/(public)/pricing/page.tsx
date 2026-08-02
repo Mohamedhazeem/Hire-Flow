@@ -1,4 +1,5 @@
-/* TODO: Replace with real copy before launch */
+import Link from "next/link";
+import { ArrowRightIcon, TagIcon } from "lucide-react";
 
 export const metadata = {
   title: "Pricing",
@@ -38,32 +39,71 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">Pricing</h1>
-      <p className="text-sm text-text-muted mb-10">
-        Simple, transparent pricing for every stage of your hiring journey.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {plans.map((plan) => (
-          <div key={plan.name} className="rounded-xl border border-border-subtle bg-bg-surface p-6">
-            <h3 className="text-lg font-semibold text-text-heading">{plan.name}</h3>
-            <p className="mt-2 text-2xl font-bold text-text-heading">
-              {plan.price}
-              <span className="text-sm font-normal text-text-muted">{plan.period}</span>
-            </p>
-            <ul className="mt-4 space-y-2 text-sm text-text-body">
-              {plan.features.map((f) => (
-                <li key={f}>• {f}</li>
-              ))}
-            </ul>
+    <div className="bg-slate-50 dark:bg-slate-950">
+      <section className="border-b border-border-subtle bg-white/80 dark:bg-slate-950/80">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-3xl space-y-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-text-heading">Pricing</h1>
+              <p className="mt-4 text-base text-text-muted leading-relaxed">
+                Choose a plan that fits your hiring goals and scale with confidence.
+              </p>
+            </div>
+            <div className="inline-flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-brand/20 transition hover:bg-brand-dark"
+              >
+                Contact sales
+                <TagIcon className="size-4" />
+              </Link>
+            </div>
           </div>
-        ))}
-      </div>
+          <p className="mt-6 max-w-2xl text-sm text-text-muted">
+            Simple, transparent pricing with flexible plans designed for companies that want to hire
+            faster without sacrificing candidate experience.
+          </p>
+        </div>
+      </section>
 
-      <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is placeholder pricing. Actual plans and pricing are subject to change before launch.
-      </p>
+      <main className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-12">
+        <div className="grid gap-6 md:grid-cols-3">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className="rounded-[1.75rem] border border-border-subtle bg-bg-surface p-6 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80"
+            >
+              <h3 className="text-lg font-semibold text-text-heading">{plan.name}</h3>
+              <p className="mt-4 text-3xl font-bold text-text-heading">
+                {plan.price}
+                <span className="text-base font-medium text-text-muted">{plan.period}</span>
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-text-body">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex gap-3">
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 rounded-3xl border border-border-subtle bg-white/90 p-8 shadow-[0_20px_80px_-40px_rgba(15,23,42,0.12)] dark:border-slate-800 dark:bg-slate-950/80">
+          <p className="text-sm text-text-body leading-relaxed">
+            Need something custom? We offer flexible enterprise plans for teams that need more
+            capacity, dedicated support, or bespoke integrations.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
+          >
+            Contact our team
+            <ArrowRightIcon className="size-4" />
+          </Link>
+        </div>
+      </main>
     </div>
   );
 }

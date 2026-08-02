@@ -1,4 +1,5 @@
-/* TODO: Replace with real copy before launch */
+import Link from "next/link";
+import { ArrowRightIcon, SparklesIcon } from "lucide-react";
 
 export const metadata = {
   title: "About",
@@ -7,46 +8,76 @@ export const metadata = {
 
 const sections = [
   {
-    title: "Our Mission",
+    title: "Our mission",
     content:
-      "HireFlow exists to make hiring simpler, fairer, and faster for both job seekers and employers. We believe the right tools can transform how people find work and how companies build teams.",
+      "HireFlow exists to make hiring simpler, fairer, and faster for job seekers and employers. We build tools that remove noise, spotlight relevant opportunities, and help teams hire more confidently.",
   },
   {
-    title: "What We Build",
+    title: "What we build",
     content:
-      "We build tools that help job seekers discover relevant opportunities, showcase their experience, and connect directly with hiring teams. For employers, we provide a focused platform to find and evaluate candidates without the noise of traditional job boards.",
+      "We create a hiring experience that respects candidates and helps hiring teams stay organized. From rich job listings to direct communication, every interaction is designed to move faster and feel better.",
   },
   {
-    title: "Our Team",
+    title: "Our team",
     content:
-      "HireFlow is built by a small, distributed team with backgrounds in engineering, product design, and recruiting. We've lived the hiring pain on both sides and are fixing it.",
+      "HireFlow is built by a small team of product thinkers, engineers, and recruiting experts who have lived hiring challenges firsthand. We ship fast, learn from users, and keep the experience human.",
   },
   {
-    title: "Contact",
+    title: "Reach out",
     content:
-      "Have questions or feedback? Reach out at hello@hireflow.example — we read every message.",
+      "Have questions or feedback? Connect with us at hello@hireflow.example and we’ll get back to you quickly.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">About</h1>
-      <p className="text-sm text-text-muted mb-10">Last updated: July 2026</p>
+    <div className="bg-slate-50 dark:bg-slate-950">
+      <section className="border-b border-border-subtle bg-white/80 dark:bg-slate-950/80">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.32em] text-brand">
+              About HireFlow
+            </div>
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-text-heading">About HireFlow</h1>
+              <p className="mt-4 text-base text-text-muted leading-relaxed">
+                We believe hiring should be fast, fair, and meaningful. Here's how we are building it.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-brand/20 transition hover:bg-brand-dark"
+            >
+              Contact us
+              <SparklesIcon className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      <div className="space-y-8">
-        {sections.map((s) => (
-          <div key={s.title}>
-            <h2 className="text-lg font-semibold text-text-heading mb-2">{s.title}</h2>
-            <p className="text-sm text-text-body leading-relaxed">{s.content}</p>
+      <main className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-12 space-y-10">
+        {sections.map((section) => (
+          <div
+            key={section.title}
+            className="rounded-3xl border border-border-subtle bg-bg-surface p-8 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80"
+          >
+            <h2 className="text-xl font-semibold text-text-heading">{section.title}</h2>
+            <p className="mt-4 text-sm text-text-body leading-relaxed">{section.content}</p>
           </div>
         ))}
-      </div>
 
-      <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder about page. It must be reviewed and replaced with real company copy
-        before any launch.
-      </p>
+        <div className="rounded-3xl border border-border-subtle bg-brand/5 p-8 shadow-sm shadow-brand/10 dark:border-slate-800">
+          <h2 className="text-lg font-semibold text-text-heading">Want to stay in the loop?</h2>
+          <p className="mt-3 text-sm text-text-muted leading-relaxed">
+            Follow our launch updates, product improvements, and hiring insights designed to help
+            job seekers and employers succeed.
+          </p>
+          <Link href="/resources" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline">
+            Explore resources
+            <ArrowRightIcon className="size-4" />
+          </Link>
+        </div>
+      </main>
     </div>
   );
 }

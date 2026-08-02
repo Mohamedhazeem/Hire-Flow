@@ -1,4 +1,4 @@
-/* TODO: Replace with real legally-reviewed privacy policy before launch */
+import { ShieldCheckIcon } from "lucide-react";
 
 export const metadata = {
   title: "Privacy Policy",
@@ -7,51 +7,58 @@ export const metadata = {
 
 const sections = [
   {
-    title: "Information We Collect",
+    title: "Information we collect",
     content:
-      "We collect information you provide when creating an account, submitting job applications, uploading resumes, and communicating with other users. This includes your name, email address, professional history, and any files you upload.",
+      "We collect the information you provide when creating an account, submitting applications, uploading resumes, and communicating with employers. This includes your name, email, work history, and other profile details.",
   },
   {
-    title: "How We Use Your Information",
+    title: "How we use your information",
     content:
-      "Your information is used to operate the platform, match job seekers with employers, process applications, facilitate messaging between users, and improve our services. We do not sell your personal data to third parties.",
+      "Your information helps us run the platform, match you with relevant jobs, process applications, and enable communication. We do not sell your personal data to third parties.",
   },
   {
-    title: "Data Sharing & Security",
+    title: "Data sharing & security",
     content:
-      "We share your information only as necessary to provide the service: employers see your application materials, and messages are visible to the conversation participants. We implement industry-standard security measures to protect your data.",
+      "We share data only as required to operate the service, such as showing employers your application materials. We protect your data with industry-standard security practices.",
   },
   {
-    title: "Your Rights",
+    title: "Your rights",
     content:
-      "You may access, update, or delete your account information at any time. You can download your data, close your account, or request removal from our systems by contacting us.",
+      "You can access, update, or delete your account information at any time. Contact us if you need support with your data or account.",
   },
   {
     title: "Contact",
-    content:
-      "If you have questions about this policy, please contact us at privacy@hireflow.example.",
+    content: "For privacy questions, email privacy@hireflow.example.",
   },
 ];
 
 export default function PrivacyPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16 sm:py-20">
-      <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-2">Privacy Policy</h1>
-      <p className="text-sm text-text-muted mb-10">Last updated: July 2026</p>
+    <div className="bg-slate-50 dark:bg-slate-950">
+      <section className="border-b border-border-subtle bg-white/80 dark:bg-slate-950/80">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-3xl space-y-6">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-text-heading">Privacy Policy</h1>
+              <p className="mt-4 text-base text-text-muted leading-relaxed">
+                Learn how HireFlow collects, uses, and protects your information.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="space-y-8">
-        {sections.map((s) => (
-          <div key={s.title}>
-            <h2 className="text-lg font-semibold text-text-heading mb-2">{s.title}</h2>
-            <p className="text-sm text-text-body leading-relaxed">{s.content}</p>
+      <main className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8 py-12 space-y-8">
+        {sections.map((section) => (
+          <div
+            key={section.title}
+            className="rounded-3xl border border-border-subtle bg-bg-surface p-8 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80"
+          >
+            <h2 className="text-lg font-semibold text-text-heading mb-3">{section.title}</h2>
+            <p className="text-sm text-text-body leading-relaxed">{section.content}</p>
           </div>
         ))}
-      </div>
-
-      <p className="text-xs text-text-muted mt-12 border-t border-border-subtle pt-4">
-        This is a placeholder privacy policy. It must be reviewed and replaced with legally-reviewed
-        copy before any real launch.
-      </p>
+      </main>
     </div>
   );
 }

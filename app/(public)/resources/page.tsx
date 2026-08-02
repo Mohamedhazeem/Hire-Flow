@@ -7,5 +7,9 @@ export const metadata = {
 };
 
 export default function ResourcesPage() {
-  return <CareerResourcesPage />;
+  return (
+    <div className="bg-slate-50 dark:bg-slate-950">
+      <CareerResourcesPage />
+    </div>
+  );
 }
