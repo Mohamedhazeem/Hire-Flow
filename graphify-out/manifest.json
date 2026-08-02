@@ -1955,8 +1955,8 @@
     "semantic_hash": ""
   },
   "components/layout/role-layout-client.tsx": {
-    "mtime": 1785656041.5759225,
-    "ast_hash": "2d332403d9db3e6a4820be2c6077c036",
+    "mtime": 1785666280.5896277,
+    "ast_hash": "fdb4b3fce8ec6cc38c4d8c2df588cf69",
     "semantic_hash": ""
   },
   "components/layout/sidebar.tsx": {

@@ -27,6 +27,79 @@ Built with **Next.js 16**, **React 19**, **Prisma 7**, and **Better Auth**, this
 
 Designed and built by **Mohamed Hazeem** — a full-stack engineer focused on production-grade architecture, scalable systems, AI Integration and pragmatic feature scoping.
 
+## 📸 App Screenshots
+
+<div align="center" style="position:relative;max-width:900px;margin:2rem auto">
+  <input type="radio" name="screenshot-carousel" id="ss1" checked style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss2" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss3" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss4" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss5" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss6" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss7" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss8" style="display:none">
+  <input type="radio" name="screenshot-carousel" id="ss9" style="display:none">
+
+  <div id="ss-slides" style="overflow:hidden;border-radius:12px;border:1px solid #e2e8f0">
+    <div style="display:flex;transition:transform 0.5s ease-in-out">
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-1.png" alt="Dashboard" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-2.png" alt="Job Search" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-3.png" alt="Applicant Pipeline" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-4.png" alt="Analytics" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-5.png" alt="Messaging" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-6.png" alt="Messaging" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-7.png" alt="Messaging" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-8.png" alt="Messaging" style="width:100%;display:block"></div>
+      <div style="min-width:100%"><img src="public/screenshots/screenshot-9.png" alt="Messaging" style="width:100%;display:block"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:1rem">
+    <label for="ss1" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss2" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss3" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss4" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss5" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss6" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss7" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss8" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+    <label for="ss9" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#cbd5e1;margin:0 4px;cursor:pointer"></label>
+  </div>
+</div>
+
+<style>
+  #ss-slides > div {
+    animation: autoSlide 18s infinite;
+  }
+  @keyframes autoSlide {
+    0% { transform: translateX(0); }
+    11.11% { transform: translateX(-100%); }
+    22.22% { transform: translateX(-200%); }
+    33.33% { transform: translateX(-300%); }
+    44.44% { transform: translateX(-400%); }
+    55.55% { transform: translateX(-500%); }
+    66.66% { transform: translateX(-600%); }
+    77.77% { transform: translateX(-700%); }
+    88.88% { transform: translateX(-800%); }
+    100% { transform: translateX(-800%); }
+  }
+  #ss1:checked ~ #ss-slides > div, #ss2:checked ~ #ss-slides > div, #ss3:checked ~ #ss-slides > div, #ss4:checked ~ #ss-slides > div, #ss5:checked ~ #ss-slides > div, #ss6:checked ~ #ss-slides > div, #ss7:checked ~ #ss-slides > div, #ss8:checked ~ #ss-slides > div, #ss9:checked ~ #ss-slides > div {
+    animation: none;
+  }
+  #ss1:checked ~ #ss-slides > div { transform: translateX(0); }
+  #ss2:checked ~ #ss-slides > div { transform: translateX(-100%); }
+  #ss3:checked ~ #ss-slides > div { transform: translateX(-200%); }
+  #ss4:checked ~ #ss-slides > div { transform: translateX(-300%); }
+  #ss5:checked ~ #ss-slides > div { transform: translateX(-400%); }
+  #ss6:checked ~ #ss-slides > div { transform: translateX(-500%); }
+  #ss7:checked ~ #ss-slides > div { transform: translateX(-600%); }
+  #ss8:checked ~ #ss-slides > div { transform: translateX(-700%); }
+  #ss9:checked ~ #ss-slides > div { transform: translateX(-800%); }
+  #ss1:checked ~ div + div label[for="ss1"], #ss2:checked ~ div + div label[for="ss2"], #ss3:checked ~ div + div label[for="ss3"], #ss4:checked ~ div + div label[for="ss4"], #ss5:checked ~ div + div label[for="ss5"], #ss6:checked ~ div + div label[for="ss6"], #ss7:checked ~ div + div label[for="ss7"], #ss8:checked ~ div + div label[for="ss8"], #ss9:checked ~ div + div label[for="ss9"] {
+    background: #475569 !important;
+  }
+</style>
+
 ---
 
 ## 🧱 Tech Stack
