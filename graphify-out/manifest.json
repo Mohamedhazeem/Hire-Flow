@@ -1115,8 +1115,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/employer-cta.tsx": {
-    "mtime": 1785653984.7348495,
-    "ast_hash": "3eac413cbc167250856d56fc4efd69e1",
+    "mtime": 1785662745.4791722,
+    "ast_hash": "7428b24eeaf8aaf02ee85d33fbd9b8ae",
     "semantic_hash": ""
   },
   "app/features/landing/components/featured-companies.tsx": {
@@ -1170,8 +1170,8 @@
     "semantic_hash": ""
   },
   "app/features/landing/components/testimonials.tsx": {
-    "mtime": 1785650291.5363805,
-    "ast_hash": "9c3b8bf317df1a8c7f95a24b76ca1f20",
+    "mtime": 1785662745.4951694,
+    "ast_hash": "1cac9f89874473e5eb327616a0e83b71",
     "semantic_hash": ""
   },
   "app/features/messages/actions/get-unread-message-count.ts": {

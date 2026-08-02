@@ -73,13 +73,11 @@ export function HeroSearch() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="flex items-center"
           >
-            <div className="w-full rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.18)] p-6 sm:p-7 dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
+            <div className="w-full rounded-[2rem] border border-white/40 bg-white/75 backdrop-blur-xl shadow-[0_30px_80px_-40px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.6)] p-6 sm:p-7 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45),inset_0_1px_0_rgba(255,255,255,0.05)]">
               <p className="text-sm uppercase tracking-[0.24em] text-brand mb-3">
                 Search the latest roles
               </p>
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950">
-                <JobSearchBar />
-              </div>
+              <JobSearchBar />
 
               <div className="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-300">
                 <div className="flex items-start gap-3">
