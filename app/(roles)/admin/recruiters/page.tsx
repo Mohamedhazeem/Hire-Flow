@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/layout/page-header";
+import { UserCogIcon } from "lucide-react";
 import { PeopleTable } from "@/app/features/admin/components/people-table";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 export default function AdminRecruitersPage() {
   return (
     <div className="space-y-6">
-      <PageHeader title="Recruiters" description="Manage all recruiter accounts" />
+      <PageHeader title="Recruiters" description="Manage all recruiter accounts" icon={<UserCogIcon className="size-5" />} />
       <PeopleTable roleFilter="recruiter" />
     </div>
   );

@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/layout/page-header";
+import { ShieldIcon } from "lucide-react";
 import { InviteAdminForm } from "@/app/features/admin/components/invite-admin-form";
 import { AdminTeamList } from "@/app/features/admin/components/admin-team-list";
 import { Suspense } from "react";
@@ -14,6 +15,7 @@ export default function AdminTeamPage() {
       <PageHeader
         title="Team Management"
         description="Invite new admins and manage existing team members"
+        icon={<ShieldIcon className="size-5" />}
       />
 
       <section className="space-y-4">
