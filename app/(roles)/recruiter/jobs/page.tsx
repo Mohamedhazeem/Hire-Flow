@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/layout/page-header";
+import { BriefcaseIcon } from "lucide-react";
 import { Suspense } from "react";
 import Link from "next/link";
 import { PlusIcon } from "lucide-react";
@@ -27,6 +28,7 @@ export default function RecruiterJobsPage() {
       <PageHeader
         title="Jobs"
         description="Create and manage your job postings"
+        icon={<BriefcaseIcon className="size-5" />}
         actions={<CreateJobButton />}
       />
       <Suspense

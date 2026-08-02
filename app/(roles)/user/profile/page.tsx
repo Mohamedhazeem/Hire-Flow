@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { ProfileForm } from "@/app/features/user/components/profile-form";
 import { PageHeader } from "@/components/layout/page-header";
+import { UserIcon } from "lucide-react";
 import type { ProfileInput } from "@/app/features/user/schema/profile.schema";
 
 export const metadata = {
@@ -62,7 +63,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Profile" description="Manage your personal and professional details" />
+      <PageHeader title="Profile" description="Manage your personal and professional details" icon={<UserIcon className="size-5" />} />
       <ProfileForm defaultValues={defaultValues} />
     </div>
   );
