@@ -1175,8 +1175,8 @@
     "semantic_hash": ""
   },
   "app/features/messages/actions/get-unread-message-count.ts": {
-    "mtime": 1784905940.9954884,
-    "ast_hash": "8c41b3e98717578de5fcd3609364d44c",
+    "mtime": 1785664323.664045,
+    "ast_hash": "c029b772fc9bbd01221e742fe9a29c11",
     "semantic_hash": ""
   },
   "app/features/notifications/components/notification-dropdown.tsx": {

@@ -4,14 +4,34 @@
   "graph": {},
   "nodes": [
     {
+      "label": "get-unread-message-count.ts",
+      "file_type": "code",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "actions_get_unread_message_count",
+      "community": 14,
+      "norm_label": "get-unread-message-count.ts"
+    },
+    {
+      "label": "getUnreadMessageCount()",
+      "file_type": "code",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "actions_get_unread_message_count_getunreadmessagecount",
+      "community": 14,
+      "norm_label": "getunreadmessagecount()"
+    },
+    {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "team_page",
-      "community": 113,
-      "norm_label": "page.tsx"
+      "community": 97,
+      "norm_label": "page.tsx",
+      "id": "team_page"
     },
     {
       "label": "metadata",
@@ -19,9 +39,9 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "team_page_metadata",
-      "community": 113,
-      "norm_label": "metadata"
+      "community": 97,
+      "norm_label": "metadata",
+      "id": "team_page_metadata"
     },
     {
       "label": "AdminTeamPage()",
@@ -29,9 +49,9 @@
       "source_file": "app/(roles)/admin/team/page.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "team_page_adminteampage",
-      "community": 113,
-      "norm_label": "adminteampage()"
+      "community": 97,
+      "norm_label": "adminteampage()",
+      "id": "team_page_adminteampage"
     },
     {
       "label": "landing-particles.tsx",
@@ -39,9 +59,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_landing_particles",
       "community": 105,
-      "norm_label": "landing-particles.tsx"
+      "norm_label": "landing-particles.tsx",
+      "id": "components_landing_particles"
     },
     {
       "label": "landingParticles",
@@ -49,9 +69,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "components_landing_particles_landingparticles",
       "community": 105,
-      "norm_label": "landingparticles"
+      "norm_label": "landingparticles",
+      "id": "components_landing_particles_landingparticles"
     },
     {
       "label": "dust-particle.tsx",
@@ -59,9 +79,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_dust_particle",
       "community": 105,
-      "norm_label": "dust-particle.tsx"
+      "norm_label": "dust-particle.tsx",
+      "id": "particles_dust_particle"
     },
     {
       "label": "Props",
@@ -69,9 +89,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "particles_dust_particle_props",
       "community": 105,
-      "norm_label": "props"
+      "norm_label": "props",
+      "id": "particles_dust_particle_props"
     },
     {
       "label": "DustParticle()",
@@ -79,9 +99,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "particles_dust_particle_dustparticle",
       "community": 105,
-      "norm_label": "dustparticle()"
+      "norm_label": "dustparticle()",
+      "id": "particles_dust_particle_dustparticle"
     },
     {
       "label": "job-card.tsx",
@@ -519,7 +539,7 @@
       "source_file": "app/features/admin/components/admin-sidebar.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 77,
+      "community": 63,
       "norm_label": "adminsidebar()",
       "id": "components_admin_sidebar_adminsidebar"
     },
@@ -599,7 +619,7 @@
       "source_file": "app/features/user/components/user-sidebar.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 63,
+      "community": 77,
       "norm_label": "usersidebar()",
       "id": "components_user_sidebar_usersidebar"
     },
@@ -679,7 +699,7 @@
       "source_file": "app/(roles)/recruiter/team/page.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 113,
+      "community": 97,
       "norm_label": "recruiterteampage()",
       "id": "team_page_recruiterteampage"
     },
@@ -689,7 +709,7 @@
       "source_file": "app/(roles)/user/profile/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 149,
+      "community": 170,
       "norm_label": "page.tsx",
       "id": "profile_page"
     },
@@ -699,7 +719,7 @@
       "source_file": "app/(roles)/user/profile/page.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 149,
+      "community": 170,
       "norm_label": "metadata",
       "id": "profile_page_metadata"
     },
@@ -759,7 +779,7 @@
       "source_file": "app/(roles)/admin/recruiters/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "page.tsx",
       "id": "recruiters_page"
     },
@@ -769,7 +789,7 @@
       "source_file": "app/(roles)/admin/recruiters/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "metadata",
       "id": "recruiters_page_metadata"
     },
@@ -779,7 +799,7 @@
       "source_file": "app/(roles)/admin/recruiters/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "adminrecruiterspage()",
       "id": "recruiters_page_adminrecruiterspage"
     },
@@ -789,7 +809,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "page.tsx",
       "id": "users_page"
     },
@@ -799,7 +819,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "metadata",
       "id": "users_page_metadata"
     },
@@ -809,7 +829,7 @@
       "source_file": "app/(roles)/admin/users/page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "adminuserspage()",
       "id": "users_page_adminuserspage"
     },
@@ -2249,7 +2269,7 @@
       "source_file": "app/(roles)/recruiter/jobs/new/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "page.tsx",
       "id": "new_page"
     },
@@ -2259,7 +2279,7 @@
       "source_file": "app/(roles)/recruiter/jobs/new/page.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "metadata",
       "id": "new_page_metadata"
     },
@@ -2269,7 +2289,7 @@
       "source_file": "app/(roles)/recruiter/jobs/new/page.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "createjobpage()",
       "id": "new_page_createjobpage"
     },
@@ -2369,7 +2389,7 @@
       "source_file": "app/(roles)/user/applications/[id]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "page.tsx",
       "id": "app_roles_user_applications_id_page_tsx_id_page"
     },
@@ -2379,7 +2399,7 @@
       "source_file": "app/(roles)/user/applications/[id]/page.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "metadata",
       "id": "app_roles_user_applications_id_page_tsx_id_page_metadata"
     },
@@ -2389,7 +2409,7 @@
       "source_file": "app/(roles)/user/applications/[id]/page.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "userapplicationdetailpage()",
       "id": "id_page_userapplicationdetailpage"
     },
@@ -2469,7 +2489,7 @@
       "source_file": "app/(roles)/user/messages/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "page.tsx",
       "id": "app_roles_user_messages_page_tsx_messages_page"
     },
@@ -2479,7 +2499,7 @@
       "source_file": "app/(roles)/user/messages/page.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "page()",
       "id": "app_roles_user_messages_page_tsx_messages_page_page"
     },
@@ -2659,7 +2679,7 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 25,
+      "community": 48,
       "norm_label": "route.ts",
       "id": "dashboard_route"
     },
@@ -2669,7 +2689,7 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 25,
+      "community": 48,
       "norm_label": "handleget()",
       "id": "dashboard_route_handleget"
     },
@@ -2679,7 +2699,7 @@
       "source_file": "app/api/admin/dashboard/route.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 25,
+      "community": 48,
       "norm_label": "get",
       "id": "dashboard_route_get"
     },
@@ -2769,7 +2789,7 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_admin_jobs_id_route_ts_id_route"
     },
@@ -2779,7 +2799,7 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handledelete()",
       "id": "app_api_admin_jobs_id_route_ts_id_route_handledelete"
     },
@@ -2789,7 +2809,7 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handlepatch()",
       "id": "app_api_admin_jobs_id_route_ts_id_route_handlepatch"
     },
@@ -2799,7 +2819,7 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "delete",
       "id": "app_api_admin_jobs_id_route_ts_id_route_delete"
     },
@@ -2809,7 +2829,7 @@
       "source_file": "app/api/admin/jobs/[id]/route.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "patch",
       "id": "app_api_admin_jobs_id_route_ts_id_route_patch"
     },
@@ -2889,7 +2909,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_admin_messages_search_route_ts_search_route"
     },
@@ -2899,7 +2919,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "app_api_admin_messages_search_route_ts_search_route_handleget"
     },
@@ -2909,7 +2929,7 @@
       "source_file": "app/api/admin/messages/search/route.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "get",
       "id": "app_api_admin_messages_search_route_ts_search_route_get"
     },
@@ -2919,7 +2939,7 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "route.ts",
       "id": "app_api_admin_team_id_route_ts_id_route"
     },
@@ -2929,7 +2949,7 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 95,
+      "community": 25,
       "norm_label": "handledelete()",
       "id": "app_api_admin_team_id_route_ts_id_route_handledelete"
     },
@@ -2939,7 +2959,7 @@
       "source_file": "app/api/admin/team/[id]/route.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "delete",
       "id": "app_api_admin_team_id_route_ts_id_route_delete"
     },
@@ -2999,7 +3019,7 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "route.ts",
       "id": "ban_route"
     },
@@ -3009,7 +3029,7 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 95,
+      "community": 25,
       "norm_label": "handlepost()",
       "id": "ban_route_handlepost"
     },
@@ -3019,7 +3039,7 @@
       "source_file": "app/api/admin/users/[id]/ban/route.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "post",
       "id": "ban_route_post"
     },
@@ -3029,7 +3049,7 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "route.ts",
       "id": "role_route"
     },
@@ -3039,7 +3059,7 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 95,
+      "community": 25,
       "norm_label": "handlepost()",
       "id": "role_route_handlepost"
     },
@@ -3049,7 +3069,7 @@
       "source_file": "app/api/admin/users/[id]/role/route.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "post",
       "id": "role_route_post"
     },
@@ -3159,7 +3179,7 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "route.ts",
       "id": "unban_route"
     },
@@ -3169,7 +3189,7 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 95,
+      "community": 25,
       "norm_label": "handlepost()",
       "id": "unban_route_handlepost"
     },
@@ -3179,7 +3199,7 @@
       "source_file": "app/api/admin/users/[id]/unban/route.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "post",
       "id": "unban_route_post"
     },
@@ -3219,7 +3239,7 @@
       "source_file": "app/api/auth/[...all]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "route.ts",
       "id": "all_route"
     },
@@ -3229,7 +3249,7 @@
       "source_file": "app/api/auth/[...all]/route.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "{ post, get }",
       "id": "all_route_post_get"
     },
@@ -3319,7 +3339,7 @@
       "source_file": "app/api/jobs/[id]/related/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 14,
       "norm_label": "route.ts",
       "id": "related_route"
     },
@@ -3339,7 +3359,7 @@
       "source_file": "app/api/jobs/[id]/related/route.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 9,
+      "community": 14,
       "norm_label": "get",
       "id": "related_route_get"
     },
@@ -3349,7 +3369,7 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 14,
       "norm_label": "route.ts",
       "id": "app_api_jobs_id_route_ts_id_route"
     },
@@ -3359,7 +3379,7 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 9,
+      "community": 14,
       "norm_label": "handleget()",
       "id": "app_api_jobs_id_route_ts_id_route_handleget"
     },
@@ -3369,7 +3389,7 @@
       "source_file": "app/api/jobs/[id]/route.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 9,
+      "community": 14,
       "norm_label": "get",
       "id": "app_api_jobs_id_route_ts_id_route_get"
     },
@@ -3509,7 +3529,7 @@
       "source_file": "app/api/pusher/auth/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "route.ts",
       "id": "auth_route"
     },
@@ -3519,7 +3539,7 @@
       "source_file": "app/api/pusher/auth/route.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "post()",
       "id": "auth_route_post"
     },
@@ -3759,7 +3779,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 64,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_invite_route_ts_invite_route"
     },
@@ -3769,7 +3789,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 64,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_invite_route_ts_invite_route_handleget"
     },
@@ -3779,7 +3799,7 @@
       "source_file": "app/api/recruiter/invite/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 64,
+      "community": 25,
       "norm_label": "get",
       "id": "app_api_recruiter_invite_route_ts_invite_route_get"
     },
@@ -3879,7 +3899,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route"
     },
@@ -3889,7 +3909,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_handleget"
     },
@@ -3899,7 +3919,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "handlepatch()",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_handlepatch"
     },
@@ -3909,7 +3929,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "handledelete()",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_handledelete"
     },
@@ -3919,7 +3939,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L60",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "get",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_get"
     },
@@ -3929,7 +3949,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "patch",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_patch"
     },
@@ -3939,7 +3959,7 @@
       "source_file": "app/api/recruiter/jobs/[id]/route.ts",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "delete",
       "id": "app_api_recruiter_jobs_id_route_ts_id_route_delete"
     },
@@ -4069,7 +4089,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_messages_search_route_ts_search_route"
     },
@@ -4079,7 +4099,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "app_api_recruiter_messages_search_route_ts_search_route_handleget"
     },
@@ -4089,7 +4109,7 @@
       "source_file": "app/api/recruiter/messages/search/route.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "get",
       "id": "app_api_recruiter_messages_search_route_ts_search_route_get"
     },
@@ -4099,7 +4119,7 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "route.ts",
       "id": "app_api_recruiter_team_id_route_ts_id_route"
     },
@@ -4109,7 +4129,7 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 95,
+      "community": 25,
       "norm_label": "handledelete()",
       "id": "app_api_recruiter_team_id_route_ts_id_route_handledelete"
     },
@@ -4119,7 +4139,7 @@
       "source_file": "app/api/recruiter/team/[id]/route.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "delete",
       "id": "app_api_recruiter_team_id_route_ts_id_route_delete"
     },
@@ -4149,7 +4169,7 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "route.ts",
       "id": "upload_route"
     },
@@ -4159,7 +4179,7 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "handlepost()",
       "id": "upload_route_handlepost"
     },
@@ -4169,7 +4189,7 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "handledelete()",
       "id": "upload_route_handledelete"
     },
@@ -4179,7 +4199,7 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "post",
       "id": "upload_route_post"
     },
@@ -4189,7 +4209,7 @@
       "source_file": "app/api/upload/route.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "delete",
       "id": "upload_route_delete"
     },
@@ -4259,7 +4279,7 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 64,
+      "community": 110,
       "norm_label": "route.ts",
       "id": "app_api_user_applications_route_ts_applications_route"
     },
@@ -4269,7 +4289,7 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 64,
+      "community": 110,
       "norm_label": "handleget",
       "id": "app_api_user_applications_route_ts_applications_route_handleget"
     },
@@ -4279,7 +4299,7 @@
       "source_file": "app/api/user/applications/route.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 64,
+      "community": 110,
       "norm_label": "get",
       "id": "app_api_user_applications_route_ts_applications_route_get"
     },
@@ -4319,7 +4339,7 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "jobid_route"
     },
@@ -4329,7 +4349,7 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "jobid_route_handleget"
     },
@@ -4339,7 +4359,7 @@
       "source_file": "app/api/user/bookmarks/[jobId]/route.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "get",
       "id": "jobid_route_get"
     },
@@ -4429,7 +4449,7 @@
       "source_file": "app/api/user/resumes/[id]/ai-enhance/route.perf.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "route.perf.test.ts",
       "id": "ai_enhance_route_perf_test"
     },
@@ -4499,7 +4519,7 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "route.ts",
       "id": "app_api_user_resumes_id_route_ts_id_route"
     },
@@ -4509,7 +4529,7 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "handlepatch()",
       "id": "app_api_user_resumes_id_route_ts_id_route_handlepatch"
     },
@@ -4519,7 +4539,7 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "handledelete()",
       "id": "app_api_user_resumes_id_route_ts_id_route_handledelete"
     },
@@ -4529,7 +4549,7 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "patch",
       "id": "app_api_user_resumes_id_route_ts_id_route_patch"
     },
@@ -4539,7 +4559,7 @@
       "source_file": "app/api/user/resumes/[id]/route.ts",
       "source_location": "L62",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "delete",
       "id": "app_api_user_resumes_id_route_ts_id_route_delete"
     },
@@ -4599,7 +4619,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "route.ts",
       "id": "app_api_users_id_route_ts_id_route"
     },
@@ -4609,7 +4629,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "handleget()",
       "id": "app_api_users_id_route_ts_id_route_handleget"
     },
@@ -4619,7 +4639,7 @@
       "source_file": "app/api/users/[id]/route.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "get",
       "id": "app_api_users_id_route_ts_id_route_get"
     },
@@ -4829,7 +4849,7 @@
       "source_file": "app/features/admin/components/admin-team-list.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 113,
+      "community": 97,
       "norm_label": "adminteamlist()",
       "id": "components_admin_team_list_adminteamlist"
     },
@@ -5139,7 +5159,7 @@
       "source_file": "app/features/admin/components/invite-admin-form.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 113,
+      "community": 97,
       "norm_label": "inviteadminform()",
       "id": "components_invite_admin_form_inviteadminform"
     },
@@ -5329,7 +5349,7 @@
       "source_file": "app/features/admin/components/people-table-columns.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "createpeopletablecolumns()",
       "id": "components_people_table_columns_createpeopletablecolumns"
     },
@@ -5339,7 +5359,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "people-table.tsx",
       "id": "components_people_table"
     },
@@ -5349,7 +5369,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "peopletableprops",
       "id": "components_people_table_peopletableprops"
     },
@@ -5359,7 +5379,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "computechatthreadid()",
       "id": "components_people_table_computechatthreadid"
     },
@@ -5369,7 +5389,7 @@
       "source_file": "app/features/admin/components/people-table.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "peopletable()",
       "id": "components_people_table_peopletable"
     },
@@ -5769,7 +5789,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "use-admin-users.ts",
       "id": "hooks_use_admin_users"
     },
@@ -5779,7 +5799,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "useadminusers()",
       "id": "hooks_use_admin_users_useadminusers"
     },
@@ -5789,7 +5809,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "useadminuser()",
       "id": "hooks_use_admin_users_useadminuser"
     },
@@ -5819,7 +5839,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "usedeleteuser()",
       "id": "hooks_use_admin_users_usedeleteuser"
     },
@@ -5829,7 +5849,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "usesetuserrole()",
       "id": "hooks_use_admin_users_usesetuserrole"
     },
@@ -5839,7 +5859,7 @@
       "source_file": "app/features/admin/hooks/use-admin-users.ts",
       "source_location": "L83",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "userevokeusersessions()",
       "id": "hooks_use_admin_users_userevokeusersessions"
     },
@@ -5979,7 +5999,7 @@
       "source_file": "app/features/admin/queries/dashboard-queries.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 25,
+      "community": 48,
       "norm_label": "getdashboardstats()",
       "id": "queries_dashboard_queries_getdashboardstats"
     },
@@ -5989,7 +6009,7 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "invite-queries.ts",
       "id": "app_features_admin_queries_invite_queries_ts_queries_invite_queries"
     },
@@ -5999,7 +6019,7 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "admininviterow",
       "id": "queries_invite_queries_admininviterow"
     },
@@ -6009,7 +6029,7 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "adminteammemberrow",
       "id": "queries_invite_queries_adminteammemberrow"
     },
@@ -6019,7 +6039,7 @@
       "source_file": "app/features/admin/queries/invite-queries.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "admininvitelistresponse",
       "id": "queries_invite_queries_admininvitelistresponse"
     },
@@ -6079,7 +6099,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "user-queries.ts",
       "id": "queries_user_queries"
     },
@@ -6089,7 +6109,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminuserrow",
       "id": "queries_user_queries_adminuserrow"
     },
@@ -6099,7 +6119,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminuserlistresult",
       "id": "queries_user_queries_adminuserlistresult"
     },
@@ -6119,7 +6139,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L76",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminuserprofile",
       "id": "queries_user_queries_adminuserprofile"
     },
@@ -6139,7 +6159,7 @@
       "source_file": "app/features/admin/queries/user-queries.ts",
       "source_location": "L148",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminuserdetail",
       "id": "queries_user_queries_adminuserdetail"
     },
@@ -6189,7 +6209,7 @@
       "source_file": "app/features/admin/schema/admin-user-types.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "parseusersresponse()",
       "id": "schema_admin_user_types_parseusersresponse"
     },
@@ -6219,7 +6239,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminlistusersparams",
       "id": "schema_admin_schema_adminlistusersparams"
     },
@@ -6239,7 +6259,7 @@
       "source_file": "app/features/admin/schema/admin.schema.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 32,
+      "community": 15,
       "norm_label": "adminbanuserinput",
       "id": "schema_admin_schema_adminbanuserinput"
     },
@@ -6409,7 +6429,7 @@
       "source_file": "app/features/auth/actions/logout-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "logout-action.ts",
       "id": "actions_logout_action"
     },
@@ -6449,7 +6469,7 @@
       "source_file": "app/features/auth/actions/request-password-reset-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "request-password-reset-action.ts",
       "id": "actions_request_password_reset_action"
     },
@@ -6469,7 +6489,7 @@
       "source_file": "app/features/auth/actions/reset-password-action.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 157,
       "norm_label": "reset-password-action.ts",
       "id": "actions_reset_password_action"
     },
@@ -6509,7 +6529,7 @@
       "source_file": "app/features/auth/actions/social-signin-action.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 82,
+      "community": 42,
       "norm_label": "socialsigninaction()",
       "id": "actions_social_signin_action_socialsigninaction"
     },
@@ -6999,7 +7019,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 82,
+      "community": 42,
       "norm_label": "social-signin-buttons.tsx",
       "id": "components_social_signin_buttons"
     },
@@ -7009,7 +7029,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 82,
+      "community": 42,
       "norm_label": "providers",
       "id": "components_social_signin_buttons_providers"
     },
@@ -7019,7 +7039,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 82,
+      "community": 42,
       "norm_label": "socialprovider",
       "id": "components_social_signin_buttons_socialprovider"
     },
@@ -7029,7 +7049,7 @@
       "source_file": "app/features/auth/components/social-signin-buttons.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 82,
+      "community": 42,
       "norm_label": "socialsigninbuttons()",
       "id": "components_social_signin_buttons_socialsigninbuttons"
     },
@@ -7099,7 +7119,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "auth.ts",
       "id": "libs_auth"
     },
@@ -7109,7 +7129,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "auth",
       "id": "libs_auth_auth"
     },
@@ -7119,7 +7139,7 @@
       "source_file": "app/features/auth/libs/auth.ts",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "getsession()",
       "id": "libs_auth_getsession"
     },
@@ -7169,7 +7189,7 @@
       "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "verification.ts",
       "id": "libs_verification"
     },
@@ -7179,7 +7199,7 @@
       "source_file": "app/features/auth/libs/verification.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 76,
+      "community": 82,
       "norm_label": "userstatusresult",
       "id": "libs_verification_userstatusresult"
     },
@@ -7279,7 +7299,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 74,
+      "community": 157,
       "norm_label": "auth.type.ts",
       "id": "schema_auth_type"
     },
@@ -7289,7 +7309,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 74,
+      "community": 76,
       "norm_label": "registerinputtype",
       "id": "schema_auth_type_registerinputtype"
     },
@@ -7299,7 +7319,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 74,
+      "community": 157,
       "norm_label": "logininputtype",
       "id": "schema_auth_type_logininputtype"
     },
@@ -7309,7 +7329,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 74,
+      "community": 82,
       "norm_label": "forgotpasswordtype",
       "id": "schema_auth_type_forgotpasswordtype"
     },
@@ -7319,7 +7339,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 74,
+      "community": 157,
       "norm_label": "resetpasswordtype",
       "id": "schema_auth_type_resetpasswordtype"
     },
@@ -7339,7 +7359,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 74,
+      "community": 76,
       "norm_label": "authtype",
       "id": "schema_auth_type_authtype"
     },
@@ -7369,7 +7389,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 74,
+      "community": 157,
       "norm_label": "sessioncredentials",
       "id": "schema_auth_type_sessioncredentials"
     },
@@ -7379,7 +7399,7 @@
       "source_file": "app/features/auth/schema/auth.type.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 74,
+      "community": 157,
       "norm_label": "session",
       "id": "schema_auth_type_session"
     },
@@ -7439,7 +7459,7 @@
       "source_file": "app/features/auth/utils/authError.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 74,
+      "community": 76,
       "norm_label": "autherror.ts",
       "id": "utils_autherror"
     },
@@ -7849,7 +7869,7 @@
       "source_file": "app/features/jobs/queries/public-job-queries.perf.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "public-job-queries.perf.test.ts",
       "id": "queries_public_job_queries_perf_test"
     },
@@ -8302,26 +8322,6 @@
       "community": 186,
       "norm_label": "statscounter()",
       "id": "components_stats_counter_statscounter"
-    },
-    {
-      "label": "get-unread-message-count.ts",
-      "file_type": "code",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 134,
-      "norm_label": "get-unread-message-count.ts",
-      "id": "actions_get_unread_message_count"
-    },
-    {
-      "label": "getUnreadMessageCount()",
-      "file_type": "code",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 134,
-      "norm_label": "getunreadmessagecount()",
-      "id": "actions_get_unread_message_count_getunreadmessagecount"
     },
     {
       "label": "notification-dropdown.tsx",
@@ -9239,7 +9239,7 @@
       "source_file": "app/features/recruiter/actions/upgrade-to-recruiter.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 97,
+      "community": 35,
       "norm_label": "upgrade-to-recruiter.ts",
       "id": "actions_upgrade_to_recruiter"
     },
@@ -9249,7 +9249,7 @@
       "source_file": "app/features/recruiter/actions/upgrade-to-recruiter.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 97,
+      "community": 35,
       "norm_label": "upgradetorecruiter()",
       "id": "actions_upgrade_to_recruiter_upgradetorecruiter"
     },
@@ -9309,7 +9309,7 @@
       "source_file": "app/features/recruiter/components/applicant-detail-dialogs.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "applicant-detail-dialogs.tsx",
       "id": "components_applicant_detail_dialogs"
     },
@@ -9319,7 +9319,7 @@
       "source_file": "app/features/recruiter/components/applicant-detail-dialogs.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "applicantdetaildialogsprops",
       "id": "components_applicant_detail_dialogs_applicantdetaildialogsprops"
     },
@@ -9499,7 +9499,7 @@
       "source_file": "app/features/recruiter/components/applicant-table-toolbar.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 87,
+      "community": 30,
       "norm_label": "applicanttabletoolbar()",
       "id": "components_applicant_table_toolbar_applicanttabletoolbar"
     },
@@ -9509,7 +9509,7 @@
       "source_file": "app/features/recruiter/components/applicants-table-dialogs.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "applicants-table-dialogs.tsx",
       "id": "components_applicants_table_dialogs"
     },
@@ -9519,7 +9519,7 @@
       "source_file": "app/features/recruiter/components/applicants-table-dialogs.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "applicantstabledialogsprops",
       "id": "components_applicants_table_dialogs_applicantstabledialogsprops"
     },
@@ -9569,7 +9569,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "application-dialogs.tsx",
       "id": "components_application_dialogs"
     },
@@ -9579,7 +9579,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "emailcheckbox()",
       "id": "components_application_dialogs_emailcheckbox"
     },
@@ -9589,7 +9589,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "confirmstatusdialogprops",
       "id": "components_application_dialogs_confirmstatusdialogprops"
     },
@@ -9599,7 +9599,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "reviewdialog()",
       "id": "components_application_dialogs_reviewdialog"
     },
@@ -9609,7 +9609,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "shortlistdialog()",
       "id": "components_application_dialogs_shortlistdialog"
     },
@@ -9619,7 +9619,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L143",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "scheduleinterviewdialogprops",
       "id": "components_application_dialogs_scheduleinterviewdialogprops"
     },
@@ -9629,7 +9629,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L149",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "formatdateforinput()",
       "id": "components_application_dialogs_formatdateforinput"
     },
@@ -9639,7 +9639,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L155",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "tomorrow_default",
       "id": "components_application_dialogs_tomorrow_default"
     },
@@ -9649,7 +9649,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L159",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "interviewformdata",
       "id": "components_application_dialogs_interviewformdata"
     },
@@ -9659,7 +9659,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L165",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "scheduleinterviewdialog()",
       "id": "components_application_dialogs_scheduleinterviewdialog"
     },
@@ -9669,7 +9669,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L254",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "sendofferdialogprops",
       "id": "components_application_dialogs_sendofferdialogprops"
     },
@@ -9679,7 +9679,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L260",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "offerformdata",
       "id": "components_application_dialogs_offerformdata"
     },
@@ -9689,7 +9689,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L265",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "sendofferdialog()",
       "id": "components_application_dialogs_sendofferdialog"
     },
@@ -9699,7 +9699,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L338",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "hiredialog()",
       "id": "components_application_dialogs_hiredialog"
     },
@@ -9709,7 +9709,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L384",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "invitedialog()",
       "id": "components_application_dialogs_invitedialog"
     },
@@ -9719,7 +9719,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L430",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "rejectdialogprops",
       "id": "components_application_dialogs_rejectdialogprops"
     },
@@ -9729,7 +9729,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L436",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "rejectformdata",
       "id": "components_application_dialogs_rejectformdata"
     },
@@ -9739,7 +9739,7 @@
       "source_file": "app/features/recruiter/components/application-dialogs.tsx",
       "source_location": "L441",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "rejectdialog()",
       "id": "components_application_dialogs_rejectdialog"
     },
@@ -10279,7 +10279,7 @@
       "source_file": "app/features/recruiter/components/invite-recruiter-form.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 113,
+      "community": 97,
       "norm_label": "inviterecruiterform()",
       "id": "components_invite_recruiter_form_inviterecruiterform"
     },
@@ -10539,7 +10539,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "recruiter-dashboard.tsx",
       "id": "components_recruiter_dashboard"
     },
@@ -10549,7 +10549,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "recruiterdashboardprops",
       "id": "components_recruiter_dashboard_recruiterdashboardprops"
     },
@@ -10559,7 +10559,7 @@
       "source_file": "app/features/recruiter/components/recruiter-dashboard.tsx",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "recentcolumns",
       "id": "components_recruiter_dashboard_recentcolumns"
     },
@@ -10699,7 +10699,7 @@
       "source_file": "app/features/recruiter/components/recruiter-team-list.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 113,
+      "community": 97,
       "norm_label": "recruiterteamlist()",
       "id": "components_recruiter_team_list_recruiterteamlist"
     },
@@ -10709,7 +10709,7 @@
       "source_file": "app/features/recruiter/components/recruiter-thread-view.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "recruiter-thread-view.tsx",
       "id": "components_recruiter_thread_view"
     },
@@ -10719,7 +10719,7 @@
       "source_file": "app/features/recruiter/components/recruiter-thread-view.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "props",
       "id": "components_recruiter_thread_view_props"
     },
@@ -10729,7 +10729,7 @@
       "source_file": "app/features/recruiter/components/recruiter-thread-view.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "hooks",
       "id": "components_recruiter_thread_view_hooks"
     },
@@ -10739,7 +10739,7 @@
       "source_file": "app/features/recruiter/components/recruiter-thread-view.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "config",
       "id": "components_recruiter_thread_view_config"
     },
@@ -10779,7 +10779,7 @@
       "source_file": "app/features/recruiter/components/revert-dialog.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "revertconfirmdialog()",
       "id": "components_revert_dialog_revertconfirmdialog"
     },
@@ -10789,7 +10789,7 @@
       "source_file": "app/features/recruiter/components/upgrade-to-recruiter-form.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 97,
+      "community": 35,
       "norm_label": "upgrade-to-recruiter-form.tsx",
       "id": "components_upgrade_to_recruiter_form"
     },
@@ -10799,7 +10799,7 @@
       "source_file": "app/features/recruiter/components/upgrade-to-recruiter-form.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 97,
+      "community": 35,
       "norm_label": "upgradetorecruiterform()",
       "id": "components_upgrade_to_recruiter_form_upgradetorecruiterform"
     },
@@ -10809,7 +10809,7 @@
       "source_file": "app/features/recruiter/components/use-applicants-table.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "use-applicants-table.ts",
       "id": "components_use_applicants_table"
     },
@@ -10819,7 +10819,7 @@
       "source_file": "app/features/recruiter/components/use-applicants-table.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "useapplicantstable()",
       "id": "components_use_applicants_table_useapplicantstable"
     },
@@ -10839,7 +10839,7 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "userecruitermessages",
       "id": "messages_use_recruiter_messages_userecruitermessages"
     },
@@ -10849,7 +10849,7 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "usesendrecruitermessage",
       "id": "messages_use_recruiter_messages_usesendrecruitermessage"
     },
@@ -10859,7 +10859,7 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "usedeleterecruitermessage",
       "id": "messages_use_recruiter_messages_usedeleterecruitermessage"
     },
@@ -10869,7 +10869,7 @@
       "source_file": "app/features/recruiter/hooks/messages/use-recruiter-messages.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 23,
+      "community": 185,
       "norm_label": "usedeleterecruiterthread",
       "id": "messages_use_recruiter_messages_usedeleterecruiterthread"
     },
@@ -10979,7 +10979,7 @@
       "source_file": "app/features/recruiter/hooks/use-applications.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "use-applications.ts",
       "id": "hooks_use_applications"
     },
@@ -10989,7 +10989,7 @@
       "source_file": "app/features/recruiter/hooks/use-applications.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "useapplicants()",
       "id": "hooks_use_applications_useapplicants"
     },
@@ -10999,7 +10999,7 @@
       "source_file": "app/features/recruiter/hooks/use-applications.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 41,
+      "community": 12,
       "norm_label": "usetransitionstatus()",
       "id": "hooks_use_applications_usetransitionstatus"
     },
@@ -11009,7 +11009,7 @@
       "source_file": "app/features/recruiter/hooks/use-applications.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "usebulktransitionstatus()",
       "id": "hooks_use_applications_usebulktransitionstatus"
     },
@@ -11019,7 +11019,7 @@
       "source_file": "app/features/recruiter/hooks/use-applications.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "userevertstatus()",
       "id": "hooks_use_applications_userevertstatus"
     },
@@ -11269,7 +11269,7 @@
       "source_file": "app/features/recruiter/queries/analytics-queries.perf.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "analytics-queries.perf.test.ts",
       "id": "queries_analytics_queries_perf_test"
     },
@@ -11409,7 +11409,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.perf.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "application-queries.perf.test.ts",
       "id": "queries_application_queries_perf_test"
     },
@@ -11419,7 +11419,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 32,
       "norm_label": "application-queries.ts",
       "id": "queries_application_queries"
     },
@@ -11429,7 +11429,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 96,
+      "community": 87,
       "norm_label": "applicantrow",
       "id": "queries_application_queries_applicantrow"
     },
@@ -11439,7 +11439,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 96,
+      "community": 32,
       "norm_label": "applicantcursorresult",
       "id": "queries_application_queries_applicantcursorresult"
     },
@@ -11449,7 +11449,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 96,
+      "community": 32,
       "norm_label": "applicantoffsetresult",
       "id": "queries_application_queries_applicantoffsetresult"
     },
@@ -11459,7 +11459,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 96,
+      "community": 32,
       "norm_label": "applicantlistresult",
       "id": "queries_application_queries_applicantlistresult"
     },
@@ -11479,7 +11479,7 @@
       "source_file": "app/features/recruiter/queries/application-queries.ts",
       "source_location": "L142",
       "_origin": "ast",
-      "community": 96,
+      "community": 32,
       "norm_label": "getapplicationbyid()",
       "id": "queries_application_queries_getapplicationbyid"
     },
@@ -11529,7 +11529,7 @@
       "source_file": "app/features/recruiter/queries/export-queries.perf.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "export-queries.perf.test.ts",
       "id": "queries_export_queries_perf_test"
     },
@@ -11599,7 +11599,7 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "invite-queries.ts",
       "id": "app_features_recruiter_queries_invite_queries_ts_queries_invite_queries"
     },
@@ -11609,7 +11609,7 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "recruiterinviterow",
       "id": "queries_invite_queries_recruiterinviterow"
     },
@@ -11619,7 +11619,7 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "recruiterteammemberrow",
       "id": "queries_invite_queries_recruiterteammemberrow"
     },
@@ -11629,7 +11629,7 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "recruiterinvitelistresponse",
       "id": "queries_invite_queries_recruiterinvitelistresponse"
     },
@@ -11639,7 +11639,7 @@
       "source_file": "app/features/recruiter/queries/invite-queries.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 64,
+      "community": 25,
       "norm_label": "listrecruiterinvites()",
       "id": "queries_invite_queries_listrecruiterinvites"
     },
@@ -11649,7 +11649,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 32,
+      "community": 1,
       "norm_label": "job-queries.ts",
       "id": "app_features_recruiter_queries_job_queries_ts_queries_job_queries"
     },
@@ -11669,7 +11669,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 32,
+      "community": 1,
       "norm_label": "recruiterjobdetail",
       "id": "queries_job_queries_recruiterjobdetail"
     },
@@ -11679,7 +11679,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 32,
+      "community": 1,
       "norm_label": "recruiterjoblistresult",
       "id": "queries_job_queries_recruiterjoblistresult"
     },
@@ -11699,7 +11699,7 @@
       "source_file": "app/features/recruiter/queries/job-queries.ts",
       "source_location": "L135",
       "_origin": "ast",
-      "community": 10,
+      "community": 25,
       "norm_label": "getjobbyid()",
       "id": "queries_job_queries_getjobbyid"
     },
@@ -11749,7 +11749,7 @@
       "source_file": "app/features/recruiter/schema/analytics.schema.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 89,
+      "community": 109,
       "norm_label": "funnelstage",
       "id": "schema_analytics_schema_funnelstage"
     },
@@ -11769,7 +11769,7 @@
       "source_file": "app/features/recruiter/schema/analytics.schema.ts",
       "source_location": "L50",
       "_origin": "ast",
-      "community": 89,
+      "community": 109,
       "norm_label": "stageconversion",
       "id": "schema_analytics_schema_stageconversion"
     },
@@ -11849,7 +11849,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "application.schema.ts",
       "id": "schema_application_schema"
     },
@@ -11869,7 +11869,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "applicationstatusschema",
       "id": "schema_application_schema_applicationstatusschema"
     },
@@ -11889,7 +11889,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "transitionstatusschema",
       "id": "schema_application_schema_transitionstatusschema"
     },
@@ -11899,7 +11899,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "listapplicantsparamsschema",
       "id": "schema_application_schema_listapplicantsparamsschema"
     },
@@ -11909,7 +11909,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "listapplicantsparams",
       "id": "schema_application_schema_listapplicantsparams"
     },
@@ -11919,7 +11919,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "basetransitionschema",
       "id": "schema_application_schema_basetransitionschema"
     },
@@ -11929,7 +11929,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "scheduleinterviewschema",
       "id": "schema_application_schema_scheduleinterviewschema"
     },
@@ -11939,7 +11939,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "sendofferschema",
       "id": "schema_application_schema_sendofferschema"
     },
@@ -11949,7 +11949,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L65",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "rejectschema",
       "id": "schema_application_schema_rejectschema"
     },
@@ -11959,7 +11959,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "statustransitionschema",
       "id": "schema_application_schema_statustransitionschema"
     },
@@ -11979,7 +11979,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "bulkstatustransitionschema",
       "id": "schema_application_schema_bulkstatustransitionschema"
     },
@@ -11989,7 +11989,7 @@
       "source_file": "app/features/recruiter/schema/application.schema.ts",
       "source_location": "L100",
       "_origin": "ast",
-      "community": 96,
+      "community": 41,
       "norm_label": "bulkstatustransitioninput",
       "id": "schema_application_schema_bulkstatustransitioninput"
     },
@@ -12109,7 +12109,7 @@
       "source_file": "app/features/recruiter/schema/job.schema.ts",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 32,
+      "community": 1,
       "norm_label": "joblistparams",
       "id": "schema_job_schema_joblistparams"
     },
@@ -12689,7 +12689,7 @@
       "source_file": "app/features/user/components/application-actions.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "application-actions.tsx",
       "id": "components_application_actions"
     },
@@ -12699,7 +12699,7 @@
       "source_file": "app/features/user/components/application-actions.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "props",
       "id": "components_application_actions_props"
     },
@@ -12709,7 +12709,7 @@
       "source_file": "app/features/user/components/application-actions.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "applicationactions()",
       "id": "components_application_actions_applicationactions"
     },
@@ -12719,7 +12719,7 @@
       "source_file": "app/features/user/components/application-detail-view.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "application-detail-view.tsx",
       "id": "components_application_detail_view"
     },
@@ -12729,7 +12729,7 @@
       "source_file": "app/features/user/components/application-detail-view.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "applicationdetailview()",
       "id": "components_application_detail_view_applicationdetailview"
     },
@@ -12759,7 +12759,7 @@
       "source_file": "app/features/user/components/application-header.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "applicationheader()",
       "id": "components_application_header_applicationheader"
     },
@@ -12769,7 +12769,7 @@
       "source_file": "app/features/user/components/application-resume-section.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 170,
+      "community": 16,
       "norm_label": "application-resume-section.tsx",
       "id": "components_application_resume_section"
     },
@@ -12779,7 +12779,7 @@
       "source_file": "app/features/user/components/application-resume-section.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 170,
+      "community": 16,
       "norm_label": "props",
       "id": "components_application_resume_section_props"
     },
@@ -12789,7 +12789,7 @@
       "source_file": "app/features/user/components/application-resume-section.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 170,
+      "community": 16,
       "norm_label": "applicationresumesection()",
       "id": "components_application_resume_section_applicationresumesection"
     },
@@ -12799,7 +12799,7 @@
       "source_file": "app/features/user/components/application-sections.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "application-sections.tsx",
       "id": "components_application_sections"
     },
@@ -12809,7 +12809,7 @@
       "source_file": "app/features/user/components/application-sections.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "props",
       "id": "components_application_sections_props"
     },
@@ -12819,7 +12819,7 @@
       "source_file": "app/features/user/components/application-sections.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "applicationsections()",
       "id": "components_application_sections_applicationsections"
     },
@@ -12829,7 +12829,7 @@
       "source_file": "app/features/user/components/application-timeline.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "application-timeline.tsx",
       "id": "components_application_timeline"
     },
@@ -12839,7 +12839,7 @@
       "source_file": "app/features/user/components/application-timeline.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "statuschange",
       "id": "components_application_timeline_statuschange"
     },
@@ -12849,7 +12849,7 @@
       "source_file": "app/features/user/components/application-timeline.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "props",
       "id": "components_application_timeline_props"
     },
@@ -12859,7 +12859,7 @@
       "source_file": "app/features/user/components/application-timeline.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "statuslabel()",
       "id": "components_application_timeline_statuslabel"
     },
@@ -12869,7 +12869,7 @@
       "source_file": "app/features/user/components/application-timeline.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 170,
+      "community": 141,
       "norm_label": "applicationtimeline()",
       "id": "components_application_timeline_applicationtimeline"
     },
@@ -12959,7 +12959,7 @@
       "source_file": "app/features/user/components/experience-list-editor.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "experience-list-editor.tsx",
       "id": "components_experience_list_editor"
     },
@@ -12969,7 +12969,7 @@
       "source_file": "app/features/user/components/experience-list-editor.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "props",
       "id": "components_experience_list_editor_props"
     },
@@ -12979,7 +12979,7 @@
       "source_file": "app/features/user/components/experience-list-editor.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "emptyexperience",
       "id": "components_experience_list_editor_emptyexperience"
     },
@@ -12989,7 +12989,7 @@
       "source_file": "app/features/user/components/experience-list-editor.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "experiencelisteditor()",
       "id": "components_experience_list_editor_experiencelisteditor"
     },
@@ -12999,7 +12999,7 @@
       "source_file": "app/features/user/components/profile-form.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "profile-form.tsx",
       "id": "components_profile_form"
     },
@@ -13009,7 +13009,7 @@
       "source_file": "app/features/user/components/profile-form.tsx",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "work_mode_options",
       "id": "components_profile_form_work_mode_options"
     },
@@ -13019,7 +13019,7 @@
       "source_file": "app/features/user/components/profile-form.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "props",
       "id": "components_profile_form_props"
     },
@@ -13329,7 +13329,7 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "user-messages-page.tsx",
       "id": "components_user_messages_page"
     },
@@ -13339,7 +13339,7 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "config",
       "id": "components_user_messages_page_config"
     },
@@ -13349,7 +13349,7 @@
       "source_file": "app/features/user/components/user-messages-page.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "usermessagespage()",
       "id": "components_user_messages_page_usermessagespage"
     },
@@ -13359,7 +13359,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "user-thread-view.tsx",
       "id": "components_user_thread_view"
     },
@@ -13369,7 +13369,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "props",
       "id": "components_user_thread_view_props"
     },
@@ -13379,7 +13379,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "hooks",
       "id": "components_user_thread_view_hooks"
     },
@@ -13389,7 +13389,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "config",
       "id": "components_user_thread_view_config"
     },
@@ -13399,7 +13399,7 @@
       "source_file": "app/features/user/components/user-thread-view.tsx",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "userthreadview()",
       "id": "components_user_thread_view_userthreadview"
     },
@@ -13419,7 +13419,7 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "useusermessages",
       "id": "messages_use_user_messages_useusermessages"
     },
@@ -13429,7 +13429,7 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "usesendusermessage",
       "id": "messages_use_user_messages_usesendusermessage"
     },
@@ -13439,7 +13439,7 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "usedeleteusermessage",
       "id": "messages_use_user_messages_usedeleteusermessage"
     },
@@ -13449,7 +13449,7 @@
       "source_file": "app/features/user/hooks/messages/use-user-messages.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 122,
+      "community": 23,
       "norm_label": "usedeleteuserthread",
       "id": "messages_use_user_messages_usedeleteuserthread"
     },
@@ -13469,7 +13469,7 @@
       "source_file": "app/features/user/hooks/messages/use-user-threads.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 122,
+      "community": 137,
       "norm_label": "useuserthreads",
       "id": "messages_use_user_threads_useuserthreads"
     },
@@ -13789,7 +13789,7 @@
       "source_file": "app/features/user/queries/bookmark-queries.ts",
       "source_location": "L92",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "checkbookmark()",
       "id": "queries_bookmark_queries_checkbookmark"
     },
@@ -14209,7 +14209,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "layout.tsx",
       "id": "app_layout"
     },
@@ -14219,7 +14219,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "inter",
       "id": "app_layout_inter"
     },
@@ -14229,7 +14229,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "geistsans",
       "id": "app_layout_geistsans"
     },
@@ -14239,7 +14239,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "geistmono",
       "id": "app_layout_geistmono"
     },
@@ -14249,7 +14249,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "metadata",
       "id": "app_layout_metadata"
     },
@@ -14259,7 +14259,7 @@
       "source_file": "app/layout.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 30,
+      "community": 4,
       "norm_label": "rootlayout()",
       "id": "app_layout_rootlayout"
     },
@@ -14309,7 +14309,7 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "sitemap.ts",
       "id": "app_sitemap"
     },
@@ -14319,7 +14319,7 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "sitemap()",
       "id": "app_sitemap_sitemap"
     },
@@ -14909,7 +14909,7 @@
       "source_file": "components/layout/mobile-menu-button.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 63,
       "norm_label": "mobile-menu-button.tsx",
       "id": "layout_mobile_menu_button"
     },
@@ -14919,7 +14919,7 @@
       "source_file": "components/layout/mobile-menu-button.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 4,
+      "community": 63,
       "norm_label": "mobilemenubutton()",
       "id": "layout_mobile_menu_button_mobilemenubutton"
     },
@@ -14929,7 +14929,7 @@
       "source_file": "components/layout/page-header.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "page-header.tsx",
       "id": "layout_page_header"
     },
@@ -14939,7 +14939,7 @@
       "source_file": "components/layout/page-header.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "pageheaderprops",
       "id": "layout_page_header_pageheaderprops"
     },
@@ -14949,7 +14949,7 @@
       "source_file": "components/layout/page-header.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 113,
+      "community": 170,
       "norm_label": "pageheader()",
       "id": "layout_page_header_pageheader"
     },
@@ -15159,7 +15159,7 @@
       "source_file": "components/shared/applicant-profile-card.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 141,
+      "community": 104,
       "norm_label": "applicant-profile-card.tsx",
       "id": "shared_applicant_profile_card"
     },
@@ -15169,7 +15169,7 @@
       "source_file": "components/shared/applicant-profile-card.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 141,
+      "community": 104,
       "norm_label": "applicantprofilecardprops",
       "id": "shared_applicant_profile_card_applicantprofilecardprops"
     },
@@ -15179,7 +15179,7 @@
       "source_file": "components/shared/applicant-profile-card.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 141,
+      "community": 104,
       "norm_label": "applicantprofilecard()",
       "id": "shared_applicant_profile_card_applicantprofilecard"
     },
@@ -15659,7 +15659,7 @@
       "source_file": "components/shared/info-row.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 104,
       "norm_label": "info-row.tsx",
       "id": "shared_info_row"
     },
@@ -15669,7 +15669,7 @@
       "source_file": "components/shared/info-row.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 18,
+      "community": 104,
       "norm_label": "inforowprops",
       "id": "shared_info_row_inforowprops"
     },
@@ -15679,7 +15679,7 @@
       "source_file": "components/shared/info-row.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 141,
+      "community": 104,
       "norm_label": "inforow()",
       "id": "shared_info_row_inforow"
     },
@@ -15689,7 +15689,7 @@
       "source_file": "components/shared/job-detail-tabs.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 30,
+      "community": 2,
       "norm_label": "job-detail-tabs.tsx",
       "id": "shared_job_detail_tabs"
     },
@@ -15699,7 +15699,7 @@
       "source_file": "components/shared/job-detail-tabs.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 30,
+      "community": 2,
       "norm_label": "tab",
       "id": "shared_job_detail_tabs_tab"
     },
@@ -15709,7 +15709,7 @@
       "source_file": "components/shared/job-detail-tabs.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 30,
+      "community": 2,
       "norm_label": "jobdetailtabsprops",
       "id": "shared_job_detail_tabs_jobdetailtabsprops"
     },
@@ -15719,7 +15719,7 @@
       "source_file": "components/shared/job-detail-tabs.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 30,
+      "community": 2,
       "norm_label": "jobdetailtabs()",
       "id": "shared_job_detail_tabs_jobdetailtabs"
     },
@@ -16109,7 +16109,7 @@
       "source_file": "components/shared/start-conversation-search.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "start-conversation-search.tsx",
       "id": "shared_start_conversation_search"
     },
@@ -16119,7 +16119,7 @@
       "source_file": "components/shared/start-conversation-search.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "searchresult",
       "id": "shared_start_conversation_search_searchresult"
     },
@@ -16129,7 +16129,7 @@
       "source_file": "components/shared/start-conversation-search.tsx",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "startconversationsearchprops",
       "id": "shared_start_conversation_search_startconversationsearchprops"
     },
@@ -16139,7 +16139,7 @@
       "source_file": "components/shared/start-conversation-search.tsx",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "startconversationsearch()",
       "id": "shared_start_conversation_search_startconversationsearch"
     },
@@ -16149,7 +16149,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "status-timeline.tsx",
       "id": "shared_status_timeline"
     },
@@ -16159,7 +16159,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "statustimelineentry",
       "id": "shared_status_timeline_statustimelineentry"
     },
@@ -16169,7 +16169,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "props",
       "id": "shared_status_timeline_props"
     },
@@ -16179,7 +16179,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L31",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "status_icons",
       "id": "shared_status_timeline_status_icons"
     },
@@ -16189,7 +16189,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L41",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "status_colors",
       "id": "shared_status_timeline_status_colors"
     },
@@ -16199,7 +16199,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L51",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "relativetime()",
       "id": "shared_status_timeline_relativetime"
     },
@@ -16209,7 +16209,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "geticon()",
       "id": "shared_status_timeline_geticon"
     },
@@ -16219,7 +16219,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "getcolor()",
       "id": "shared_status_timeline_getcolor"
     },
@@ -16229,7 +16229,7 @@
       "source_file": "components/shared/status-timeline.tsx",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "statustimeline()",
       "id": "shared_status_timeline_statustimeline"
     },
@@ -16279,7 +16279,7 @@
       "source_file": "components/shared/tag-chip.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 30,
+      "community": 104,
       "norm_label": "tag-chip.tsx",
       "id": "shared_tag_chip"
     },
@@ -16289,7 +16289,7 @@
       "source_file": "components/shared/tag-chip.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 30,
+      "community": 104,
       "norm_label": "tagchipprops",
       "id": "shared_tag_chip_tagchipprops"
     },
@@ -16299,7 +16299,7 @@
       "source_file": "components/shared/tag-chip.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 30,
+      "community": 104,
       "norm_label": "variants",
       "id": "shared_tag_chip_variants"
     },
@@ -16309,7 +16309,7 @@
       "source_file": "components/shared/tag-chip.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 30,
+      "community": 104,
       "norm_label": "tagchip()",
       "id": "shared_tag_chip_tagchip"
     },
@@ -16459,7 +16459,7 @@
       "source_file": "components/ui/checkbox.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "checkbox.tsx",
       "id": "ui_checkbox"
     },
@@ -16469,7 +16469,7 @@
       "source_file": "components/ui/checkbox.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "checkbox()",
       "id": "ui_checkbox_checkbox"
     },
@@ -16479,7 +16479,7 @@
       "source_file": "components/ui/data-table.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "data-table.tsx",
       "id": "ui_data_table"
     },
@@ -16499,7 +16499,7 @@
       "source_file": "components/ui/data-table.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "datatableprops",
       "id": "ui_data_table_datatableprops"
     },
@@ -16509,7 +16509,7 @@
       "source_file": "components/ui/data-table.tsx",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 97,
+      "community": 16,
       "norm_label": "datatable()",
       "id": "ui_data_table_datatable"
     },
@@ -16619,7 +16619,7 @@
       "source_file": "components/ui/dialog.tsx",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 30,
+      "community": 16,
       "norm_label": "dialogoverlay()",
       "id": "ui_dialog_dialogoverlay"
     },
@@ -16919,7 +16919,7 @@
       "source_file": "components/ui/stat-card.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "stat-card.tsx",
       "id": "ui_stat_card"
     },
@@ -16929,7 +16929,7 @@
       "source_file": "components/ui/stat-card.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "statcardprops",
       "id": "ui_stat_card_statcardprops"
     },
@@ -16939,7 +16939,7 @@
       "source_file": "components/ui/stat-card.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 51,
+      "community": 170,
       "norm_label": "statcard()",
       "id": "ui_stat_card_statcard"
     },
@@ -17009,7 +17009,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "table.tsx",
       "id": "ui_table"
     },
@@ -17019,7 +17019,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "table()",
       "id": "ui_table_table"
     },
@@ -17029,7 +17029,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tableheader()",
       "id": "ui_table_tableheader"
     },
@@ -17039,7 +17039,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablebody()",
       "id": "ui_table_tablebody"
     },
@@ -17049,7 +17049,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablefooter()",
       "id": "ui_table_tablefooter"
     },
@@ -17059,7 +17059,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablerow()",
       "id": "ui_table_tablerow"
     },
@@ -17069,7 +17069,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablehead()",
       "id": "ui_table_tablehead"
     },
@@ -17079,7 +17079,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablecell()",
       "id": "ui_table_tablecell"
     },
@@ -17089,7 +17089,7 @@
       "source_file": "components/ui/table.tsx",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 114,
+      "community": 16,
       "norm_label": "tablecaption()",
       "id": "ui_table_tablecaption"
     },
@@ -17099,7 +17099,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "textarea.tsx",
       "id": "ui_textarea"
     },
@@ -17109,7 +17109,7 @@
       "source_file": "components/ui/textarea.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 12,
+      "community": 149,
       "norm_label": "textarea()",
       "id": "ui_textarea_textarea"
     },
@@ -18399,7 +18399,7 @@
       "source_file": "lib/api/api-response.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 9,
+      "community": 25,
       "norm_label": "ok()",
       "id": "api_api_response_ok"
     },
@@ -18949,7 +18949,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "prisma.ts",
       "id": "lib_prisma"
     },
@@ -18959,7 +18959,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "globalforprisma",
       "id": "lib_prisma_globalforprisma"
     },
@@ -18969,7 +18969,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "pool",
       "id": "lib_prisma_pool"
     },
@@ -18979,7 +18979,7 @@
       "source_file": "lib/prisma.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "adapter",
       "id": "lib_prisma_adapter"
     },
@@ -19219,7 +19219,7 @@
       "source_file": "lib/rate-limiting/di.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 39,
       "norm_label": "di.ts",
       "id": "rate_limiting_di"
     },
@@ -19229,7 +19229,7 @@
       "source_file": "lib/rate-limiting/di.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 95,
+      "community": 39,
       "norm_label": "repository",
       "id": "rate_limiting_di_repository"
     },
@@ -19239,7 +19239,7 @@
       "source_file": "lib/rate-limiting/di.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 95,
+      "community": 39,
       "norm_label": "clock",
       "id": "rate_limiting_di_clock"
     },
@@ -20229,7 +20229,7 @@
       "source_file": "lib/routes.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 74,
       "norm_label": "routes.ts",
       "id": "lib_routes"
     },
@@ -20249,7 +20249,7 @@
       "source_file": "lib/routes.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 7,
+      "community": 74,
       "norm_label": "protected_routes",
       "id": "lib_routes_protected_routes"
     },
@@ -20259,7 +20259,7 @@
       "source_file": "lib/routes.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 7,
+      "community": 74,
       "norm_label": "additional_hidden_prefixes",
       "id": "lib_routes_additional_hidden_prefixes"
     },
@@ -20269,7 +20269,7 @@
       "source_file": "lib/routes.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 7,
+      "community": 74,
       "norm_label": "public_content_paths",
       "id": "lib_routes_public_content_paths"
     },
@@ -20279,7 +20279,7 @@
       "source_file": "lib/routes.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 7,
+      "community": 74,
       "norm_label": "hidden_route_prefixes",
       "id": "lib_routes_hidden_route_prefixes"
     },
@@ -20419,7 +20419,7 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "user-admin-service.ts",
       "id": "services_user_admin_service"
     },
@@ -20429,7 +20429,7 @@
       "source_file": "lib/services/user-admin-service.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 95,
+      "community": 64,
       "norm_label": "useradminservice",
       "id": "services_user_admin_service_useradminservice"
     },
@@ -20459,7 +20459,7 @@
       "source_file": "lib/slugify.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "slugify.ts",
       "id": "lib_slugify"
     },
@@ -20469,7 +20469,7 @@
       "source_file": "lib/slugify.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "slugify()",
       "id": "lib_slugify_slugify"
     },
@@ -20479,7 +20479,7 @@
       "source_file": "lib/slugify.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "ensureuniqueslug()",
       "id": "lib_slugify_ensureuniqueslug"
     },
@@ -20489,7 +20489,7 @@
       "source_file": "lib/test/auth-fixtures.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "auth-fixtures.ts",
       "id": "test_auth_fixtures"
     },
@@ -20499,7 +20499,7 @@
       "source_file": "lib/test/auth-fixtures.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mocksessionuser",
       "id": "test_auth_fixtures_mocksessionuser"
     },
@@ -20509,7 +20509,7 @@
       "source_file": "lib/test/auth-fixtures.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mocksessiondata",
       "id": "test_auth_fixtures_mocksessiondata"
     },
@@ -20519,7 +20519,7 @@
       "source_file": "lib/test/auth-fixtures.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mocksession",
       "id": "test_auth_fixtures_mocksession"
     },
@@ -21209,7 +21209,7 @@
       "source_file": "lib/test/components/start-conversation-search.dom.test.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "start-conversation-search.dom.test.tsx",
       "id": "components_start_conversation_search_dom_test"
     },
@@ -21219,7 +21219,7 @@
       "source_file": "lib/test/components/start-conversation-search.dom.test.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "mockapiclient",
       "id": "components_start_conversation_search_dom_test_mockapiclient"
     },
@@ -21229,7 +21229,7 @@
       "source_file": "lib/test/components/start-conversation-search.dom.test.tsx",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "testresults",
       "id": "components_start_conversation_search_dom_test_testresults"
     },
@@ -21239,7 +21239,7 @@
       "source_file": "lib/test/components/start-conversation-search.dom.test.tsx",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 150,
+      "community": 30,
       "norm_label": "baseprops()",
       "id": "components_start_conversation_search_dom_test_baseprops"
     },
@@ -21249,7 +21249,7 @@
       "source_file": "lib/test/components/status-timeline.dom.test.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 54,
+      "community": 141,
       "norm_label": "status-timeline.dom.test.tsx",
       "id": "components_status_timeline_dom_test"
     },
@@ -21289,7 +21289,7 @@
       "source_file": "lib/test/factories/application.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "application.factory.ts",
       "id": "factories_application_factory"
     },
@@ -21299,7 +21299,7 @@
       "source_file": "lib/test/factories/application.factory.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestapplication()",
       "id": "factories_application_factory_createtestapplication"
     },
@@ -21309,7 +21309,7 @@
       "source_file": "lib/test/factories/company.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "company.factory.ts",
       "id": "factories_company_factory"
     },
@@ -21319,7 +21319,7 @@
       "source_file": "lib/test/factories/company.factory.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestcompany()",
       "id": "factories_company_factory_createtestcompany"
     },
@@ -21329,7 +21329,7 @@
       "source_file": "lib/test/factories/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "factories_index"
     },
@@ -21339,7 +21339,7 @@
       "source_file": "lib/test/factories/job.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "job.factory.ts",
       "id": "factories_job_factory"
     },
@@ -21349,7 +21349,7 @@
       "source_file": "lib/test/factories/job.factory.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestjob()",
       "id": "factories_job_factory_createtestjob"
     },
@@ -21359,7 +21359,7 @@
       "source_file": "lib/test/factories/message.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "message.factory.ts",
       "id": "factories_message_factory"
     },
@@ -21369,7 +21369,7 @@
       "source_file": "lib/test/factories/message.factory.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "createtestmessage()",
       "id": "factories_message_factory_createtestmessage"
     },
@@ -21379,7 +21379,7 @@
       "source_file": "lib/test/factories/resume.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "resume.factory.ts",
       "id": "factories_resume_factory"
     },
@@ -21389,7 +21389,7 @@
       "source_file": "lib/test/factories/resume.factory.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestresume()",
       "id": "factories_resume_factory_createtestresume"
     },
@@ -21399,7 +21399,7 @@
       "source_file": "lib/test/factories/seed-factories.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "seed-factories.ts",
       "id": "factories_seed_factories"
     },
@@ -21409,7 +21409,7 @@
       "source_file": "lib/test/factories/seed-factories.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "seedapplications()",
       "id": "factories_seed_factories_seedapplications"
     },
@@ -21419,7 +21419,7 @@
       "source_file": "lib/test/factories/seed-factories.ts",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "seedjobs()",
       "id": "factories_seed_factories_seedjobs"
     },
@@ -21429,7 +21429,7 @@
       "source_file": "lib/test/factories/user.factory.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 48,
+      "community": 0,
       "norm_label": "user.factory.ts",
       "id": "factories_user_factory"
     },
@@ -21439,7 +21439,7 @@
       "source_file": "lib/test/factories/user.factory.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestuser()",
       "id": "factories_user_factory_createtestuser"
     },
@@ -21449,7 +21449,7 @@
       "source_file": "lib/test/global-setup.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "global-setup.ts",
       "id": "test_global_setup"
     },
@@ -21459,7 +21459,7 @@
       "source_file": "lib/test/global-setup.ts",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "globalsetup()",
       "id": "test_global_setup_globalsetup"
     },
@@ -21469,7 +21469,7 @@
       "source_file": "lib/test/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "test_index"
     },
@@ -21479,7 +21479,7 @@
       "source_file": "lib/test/integration/admin/ban.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "ban.test.ts",
       "id": "admin_ban_test"
     },
@@ -21489,7 +21489,7 @@
       "source_file": "lib/test/integration/admin/role.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "role.test.ts",
       "id": "admin_role_test"
     },
@@ -21499,7 +21499,7 @@
       "source_file": "lib/test/integration/admin/sessions.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "sessions.test.ts",
       "id": "admin_sessions_test"
     },
@@ -21509,7 +21509,7 @@
       "source_file": "lib/test/integration/analytics/analytics.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "analytics.test.ts",
       "id": "analytics_analytics_test"
     },
@@ -21519,7 +21519,7 @@
       "source_file": "lib/test/integration/applications/bulk-status.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "bulk-status.test.ts",
       "id": "applications_bulk_status_test"
     },
@@ -21529,7 +21529,7 @@
       "source_file": "lib/test/integration/applications/bulk-status.test.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedjobwithapplicants()",
       "id": "applications_bulk_status_test_seedjobwithapplicants"
     },
@@ -21539,7 +21539,7 @@
       "source_file": "lib/test/integration/applications/export.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "export.test.ts",
       "id": "applications_export_test"
     },
@@ -21549,7 +21549,7 @@
       "source_file": "lib/test/integration/applications/race.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "race.test.ts",
       "id": "applications_race_test"
     },
@@ -21559,7 +21559,7 @@
       "source_file": "lib/test/integration/applications/race.test.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "patchstatus()",
       "id": "applications_race_test_patchstatus"
     },
@@ -21569,7 +21569,7 @@
       "source_file": "lib/test/integration/applications/revert.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "revert.test.ts",
       "id": "applications_revert_test"
     },
@@ -21579,7 +21579,7 @@
       "source_file": "lib/test/integration/applications/status.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "status.test.ts",
       "id": "applications_status_test"
     },
@@ -21589,7 +21589,7 @@
       "source_file": "lib/test/integration/applications/withdraw.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "withdraw.test.ts",
       "id": "applications_withdraw_test"
     },
@@ -21599,7 +21599,7 @@
       "source_file": "lib/test/integration/applications/withdraw.test.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seeduserwithapplication()",
       "id": "applications_withdraw_test_seeduserwithapplication"
     },
@@ -21609,7 +21609,7 @@
       "source_file": "lib/test/integration/auth/auth.idor.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "auth.idor.test.ts",
       "id": "auth_auth_idor_test"
     },
@@ -21619,7 +21619,7 @@
       "source_file": "lib/test/integration/auth/auth.idor.test.ts",
       "source_location": "L272",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedrecruitercompany()",
       "id": "auth_auth_idor_test_seedrecruitercompany"
     },
@@ -21629,7 +21629,7 @@
       "source_file": "lib/test/integration/auth/auth.idor.test.ts",
       "source_location": "L279",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seeduserapplication()",
       "id": "auth_auth_idor_test_seeduserapplication"
     },
@@ -21639,7 +21639,7 @@
       "source_file": "lib/test/integration/auth/auth.session.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "auth.session.test.ts",
       "id": "auth_auth_session_test"
     },
@@ -21649,7 +21649,7 @@
       "source_file": "lib/test/integration/files/download.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "download.test.ts",
       "id": "files_download_test"
     },
@@ -21659,7 +21659,7 @@
       "source_file": "lib/test/integration/files/download.test.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "uploadsdir",
       "id": "files_download_test_uploadsdir"
     },
@@ -21669,7 +21669,7 @@
       "source_file": "lib/test/integration/files/download.test.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "createtestfileondisk()",
       "id": "files_download_test_createtestfileondisk"
     },
@@ -21679,7 +21679,7 @@
       "source_file": "lib/test/integration/helpers/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "helpers_index"
     },
@@ -21689,7 +21689,7 @@
       "source_file": "lib/test/integration/helpers/index.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedrecruitercompany()",
       "id": "helpers_index_seedrecruitercompany"
     },
@@ -21699,7 +21699,7 @@
       "source_file": "lib/test/integration/helpers/index.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seeduserapplication()",
       "id": "helpers_index_seeduserapplication"
     },
@@ -21709,7 +21709,7 @@
       "source_file": "lib/test/integration/helpers/index.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedresume()",
       "id": "helpers_index_seedresume"
     },
@@ -21719,7 +21719,7 @@
       "source_file": "lib/test/integration/helpers/index.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedjobwithapplicant()",
       "id": "helpers_index_seedjobwithapplicant"
     },
@@ -21729,7 +21729,7 @@
       "source_file": "lib/test/integration/jobs/apply.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "apply.test.ts",
       "id": "jobs_apply_test"
     },
@@ -21739,7 +21739,7 @@
       "source_file": "lib/test/integration/jobs/apply.test.ts",
       "source_location": "L192",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "seedapplydata()",
       "id": "jobs_apply_test_seedapplydata"
     },
@@ -21749,7 +21749,7 @@
       "source_file": "lib/test/integration/jobs/apply.test.ts",
       "source_location": "L203",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "sendapply()",
       "id": "jobs_apply_test_sendapply"
     },
@@ -21759,7 +21759,7 @@
       "source_file": "lib/test/integration/jobs/public-job-queries.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "public-job-queries.test.ts",
       "id": "jobs_public_job_queries_test"
     },
@@ -21769,7 +21769,7 @@
       "source_file": "lib/test/integration/jobs/related.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 0,
       "norm_label": "related.test.ts",
       "id": "jobs_related_test"
     },
@@ -21799,7 +21799,7 @@
       "source_file": "lib/test/integration/notifications.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "notifications.test.ts",
       "id": "integration_notifications_test"
     },
@@ -21809,7 +21809,7 @@
       "source_file": "lib/test/integration/profile/skills-persistence.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "skills-persistence.test.ts",
       "id": "profile_skills_persistence_test"
     },
@@ -21819,7 +21819,7 @@
       "source_file": "lib/test/integration/resume/builder-skills-persistence.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "builder-skills-persistence.test.ts",
       "id": "resume_builder_skills_persistence_test"
     },
@@ -21829,7 +21829,7 @@
       "source_file": "lib/test/integration/upload.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "upload.test.ts",
       "id": "integration_upload_test"
     },
@@ -21839,7 +21839,7 @@
       "source_file": "lib/test/integration/upload.test.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "saveuploadmock",
       "id": "integration_upload_test_saveuploadmock"
     },
@@ -21849,7 +21849,7 @@
       "source_file": "lib/test/integration/user/bookmarks.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "bookmarks.test.ts",
       "id": "user_bookmarks_test"
     },
@@ -21859,7 +21859,7 @@
       "source_file": "lib/test/integration/user/resumes.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "resumes.test.ts",
       "id": "user_resumes_test"
     },
@@ -21869,7 +21869,7 @@
       "source_file": "lib/test/mocks.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mocks.ts",
       "id": "test_mocks"
     },
@@ -21879,7 +21879,7 @@
       "source_file": "lib/test/mocks.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockpushertrigger()",
       "id": "test_mocks_mockpushertrigger"
     },
@@ -21889,7 +21889,7 @@
       "source_file": "lib/test/mocks.ts",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockaiclient()",
       "id": "test_mocks_mockaiclient"
     },
@@ -21899,7 +21899,7 @@
       "source_file": "lib/test/mocks.ts",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockresend()",
       "id": "test_mocks_mockresend"
     },
@@ -21909,7 +21909,7 @@
       "source_file": "lib/test/perf-teardown.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "perf-teardown.ts",
       "id": "test_perf_teardown"
     },
@@ -21919,7 +21919,7 @@
       "source_file": "lib/test/perf-teardown.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "globalteardown()",
       "id": "test_perf_teardown_globalteardown"
     },
@@ -21929,7 +21929,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "perf.ts",
       "id": "test_perf"
     },
@@ -21939,7 +21939,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "benchmarkresult",
       "id": "test_perf_benchmarkresult"
     },
@@ -21949,7 +21949,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "publishedresults",
       "id": "test_perf_publishedresults"
     },
@@ -21959,7 +21959,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "publishbenchmark()",
       "id": "test_perf_publishbenchmark"
     },
@@ -21969,7 +21969,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "writebenchmarkresults()",
       "id": "test_perf_writebenchmarkresults"
     },
@@ -21979,7 +21979,7 @@
       "source_file": "lib/test/perf.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 111,
+      "community": 0,
       "norm_label": "measure()",
       "id": "test_perf_measure"
     },
@@ -22009,7 +22009,7 @@
       "source_file": "lib/test/reset-db.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "reset-db.ts",
       "id": "test_reset_db"
     },
@@ -22019,7 +22019,7 @@
       "source_file": "lib/test/reset-db.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "resetdb()",
       "id": "test_reset_db_resetdb"
     },
@@ -22079,7 +22079,7 @@
       "source_file": "lib/test/schemas/recruiter/application.schema.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 96,
+      "community": 6,
       "norm_label": "application.schema.test.ts",
       "id": "recruiter_application_schema_test"
     },
@@ -22199,7 +22199,7 @@
       "source_file": "lib/test/shared-auth-mock.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "shared-auth-mock.ts",
       "id": "test_shared_auth_mock"
     },
@@ -22209,7 +22209,7 @@
       "source_file": "lib/test/shared-auth-mock.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockgetsession",
       "id": "test_shared_auth_mock_mockgetsession"
     },
@@ -22219,7 +22219,7 @@
       "source_file": "lib/test/shared-auth-mock.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockrevokeusersessions",
       "id": "test_shared_auth_mock_mockrevokeusersessions"
     },
@@ -22229,7 +22229,7 @@
       "source_file": "lib/test/shared-auth-mock.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 15,
+      "community": 0,
       "norm_label": "mockremoveuser",
       "id": "test_shared_auth_mock_mockremoveuser"
     },
@@ -22859,7 +22859,7 @@
       "source_file": "lib/test/unit/thread-utils.test.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "thread-utils.test.ts",
       "id": "unit_thread_utils_test"
     },
@@ -22949,7 +22949,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "thread-utils.ts",
       "id": "lib_thread_utils"
     },
@@ -22959,7 +22959,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "computethreadid()",
       "id": "lib_thread_utils_computethreadid"
     },
@@ -22969,7 +22969,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "getotheruserid()",
       "id": "lib_thread_utils_getotheruserid"
     },
@@ -22979,7 +22979,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "participatesinthread()",
       "id": "lib_thread_utils_participatesinthread"
     },
@@ -22989,7 +22989,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "parsethreadparticipants()",
       "id": "lib_thread_utils_parsethreadparticipants"
     },
@@ -22999,7 +22999,7 @@
       "source_file": "lib/thread-utils.ts",
       "source_location": "L54",
       "_origin": "ast",
-      "community": 178,
+      "community": 55,
       "norm_label": "isvalidthreadid()",
       "id": "lib_thread_utils_isvalidthreadid"
     },
@@ -23149,7 +23149,7 @@
       "source_file": "lib/upload.ts",
       "source_location": "L159",
       "_origin": "ast",
-      "community": 145,
+      "community": 9,
       "norm_label": "deleteupload()",
       "id": "lib_upload_deleteupload"
     },
@@ -23169,7 +23169,7 @@
       "source_file": "lib/utils.ts",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 30,
+      "community": 16,
       "norm_label": "cn()",
       "id": "lib_utils_cn"
     },
@@ -34769,7 +34769,7 @@
       "source_file": "docs/implementation/implementation-tasks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 56,
+      "community": 54,
       "norm_label": "implementation-tasks.md",
       "id": "implementation_implementation_tasks"
     },
@@ -34779,7 +34779,7 @@
       "source_file": "docs/implementation/implementation-tasks.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 56,
+      "community": 54,
       "norm_label": "implementation tasks",
       "id": "implementation_implementation_tasks_implementation_tasks"
     },
@@ -38725,6 +38725,104 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "actions_get_unread_message_count_getunreadmessagecount"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "api_api_error_forbiddenerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "api_api_error_unauthorizederror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "api_require_role"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "api_require_role_requirerole"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actions_get_unread_message_count",
+      "target": "lib_prisma"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/hooks/use-unread-message-count.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_unread_message_count",
+      "target": "actions_get_unread_message_count"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "actions_get_unread_message_count_getunreadmessagecount",
+      "target": "api_require_role_requirerole"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/hooks/use-unread-message-count.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_use_unread_message_count",
+      "target": "actions_get_unread_message_count_getunreadmessagecount"
+    },
     {
       "relation": "imports",
       "context": "import",
@@ -64224,82 +64322,6 @@
       "confidence_score": 1.0,
       "source": "components_stats_counter",
       "target": "components_stats_counter_statscounterprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_get_unread_message_count",
-      "target": "actions_get_unread_message_count_getunreadmessagecount"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_get_unread_message_count",
-      "target": "api_require_role"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_get_unread_message_count",
-      "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "actions_get_unread_message_count",
-      "target": "lib_prisma"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/hooks/use-unread-message-count.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hooks_use_unread_message_count",
-      "target": "actions_get_unread_message_count"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/messages/actions/get-unread-message-count.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "actions_get_unread_message_count_getunreadmessagecount",
-      "target": "api_require_role_requirerole"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/public/hooks/use-unread-message-count.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "hooks_use_unread_message_count",
-      "target": "actions_get_unread_message_count_getunreadmessagecount"
     },
     {
       "relation": "contains",
@@ -112532,5 +112554,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "218d60605daca6231ca31bbe8037fb229b9c2e68"
+  "built_at_commit": "4ae5534b0b3d7d0f7b88ddd947ee431ce91c97cc"
 }
