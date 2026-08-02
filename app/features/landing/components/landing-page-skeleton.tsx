@@ -3,98 +3,93 @@ import { Skeleton } from "@/components/ui/skeleton";
 export function LandingPageSkeleton() {
   return (
     <>
-      <section className="relative min-h-screen sm:min-h-[85vh] flex items-center justify-center overflow-hidden py-16 sm:py-0">
-        <div className="absolute inset-0 bg-neutral-800" />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
-          <Skeleton className="h-4 w-48 mx-auto mb-6 rounded-full" />
-          <Skeleton className="h-12 w-full max-w-2xl mx-auto mb-4 rounded-lg" />
-          <Skeleton className="h-6 w-full max-w-xl mx-auto mb-8 rounded-md" />
-          <Skeleton className="h-12 w-full max-w-md mx-auto rounded-xl" />
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
-            <Skeleton className="h-11 w-40 rounded-xl" />
-            <Skeleton className="h-11 w-40 rounded-xl" />
-          </div>
-        </div>
-      </section>
-
-      <div className="bg-bg-surface border-b border-border-subtle">
-        <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-6 sm:py-8">
-          <Skeleton className="h-5 w-40 mb-4 rounded-md" />
-          <div className="flex gap-3 overflow-x-auto pb-2">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} className="h-24 w-28 rounded-2xl shrink-0" />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <section className="py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <Skeleton className="h-8 w-48 rounded-lg" />
-              <Skeleton className="h-4 w-64 mt-1 rounded-md" />
-            </div>
-            <Skeleton className="h-5 w-24 rounded-md hidden sm:inline" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} className="h-44 rounded-xl" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="mb-8">
-            <Skeleton className="h-8 w-56 rounded-lg" />
-            <Skeleton className="h-4 w-48 mt-1 rounded-md" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <Skeleton key={i} className="h-40 rounded-2xl" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-bg-surface border-y border-border-subtle py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <Skeleton className="h-8 w-64 mx-auto mb-2 rounded-lg" />
-          <Skeleton className="h-4 w-80 mx-auto mb-10 rounded-md" />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div
-                key={i}
-                className="bg-bg-page border border-border-subtle rounded-2xl p-6 sm:p-8"
-              >
-                <Skeleton className="h-12 w-12 rounded-xl mx-auto mb-4" />
-                <Skeleton className="h-4 w-20 mx-auto mb-2 rounded-md" />
-                <Skeleton className="h-6 w-40 mx-auto mb-3 rounded-md" />
-                <Skeleton className="h-10 w-full rounded-md" />
-                <Skeleton className="h-10 w-full rounded-md mt-2" />
-                <Skeleton className="h-10 w-full rounded-md mt-2" />
+      <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 min-h-[85vh] py-12 sm:py-16">
+        <div className="absolute inset-0 bg-hero-hex-grid opacity-20 dark:opacity-15" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.14),transparent_28%),radial-gradient(circle_at_80%_15%,rgba(16,185,129,0.1),transparent_28%),radial-gradient(circle_at_50%_75%,rgba(236,72,153,0.12),transparent_28%)]" />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-center">
+            <div className="space-y-6">
+              <Skeleton className="h-6 w-44 rounded-full" />
+              <Skeleton className="h-14 w-full max-w-3xl rounded-[1.5rem]" />
+              <Skeleton className="h-5 w-full max-w-2xl rounded-md" />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Skeleton className="h-12 w-full sm:w-40 rounded-2xl" />
+                <Skeleton className="h-12 w-full sm:w-40 rounded-2xl" />
               </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {Array.from({ length: 3 }).map((_, index) => (
+                  <Skeleton key={index} className="h-24 rounded-[1.75rem]" />
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.18)] dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
+              <Skeleton className="h-6 w-40 rounded-full mb-6" />
+              <Skeleton className="h-12 w-full rounded-[1.75rem] mb-4" />
+              <Skeleton className="h-12 w-full rounded-[1.75rem]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-slate-950 dark:text-white border-t border-slate-200 dark:border-slate-800 py-12 sm:py-16">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <Skeleton className="h-5 w-48 rounded-full mb-6" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <Skeleton key={index} className="h-36 rounded-3xl" />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <Skeleton className="h-8 w-8 mx-auto mb-4 rounded-full" />
-          <Skeleton className="h-8 w-56 mx-auto mb-8 rounded-lg" />
-          <Skeleton className="h-20 w-full max-w-xl mx-auto rounded-lg" />
-          <Skeleton className="h-12 w-12 rounded-full mx-auto mt-6" />
+      <section className="py-12 sm:py-16 text-slate-950 dark:text-white">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="mb-8">
+            <Skeleton className="h-8 w-64 rounded-full mb-3" />
+            <Skeleton className="h-4 w-80 rounded-md" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Skeleton key={index} className="h-52 rounded-[2rem]" />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-neutral-900 dark:bg-neutral-950 py-16 sm:py-20">
-        <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <Skeleton className="h-9 w-80 mx-auto mb-4 rounded-lg" />
-          <Skeleton className="h-5 w-96 mx-auto mb-8 rounded-md" />
-          <Skeleton className="h-12 w-40 mx-auto rounded-xl" />
+      <section className="py-12 sm:py-16 text-slate-950 dark:text-white">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <Skeleton className="h-8 w-72 mx-auto rounded-full mb-3" />
+            <Skeleton className="h-4 w-60 mx-auto rounded-md" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Skeleton key={index} className="h-44 rounded-[2rem]" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 text-slate-950 dark:text-white">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <Skeleton className="h-8 w-72 mx-auto rounded-full mb-3" />
+            <Skeleton className="h-4 w-72 mx-auto rounded-md" />
+          </div>
+          <Skeleton className="h-72 rounded-[2rem] mx-auto max-w-4xl" />
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Skeleton key={index} className="h-2.5 w-10 rounded-full" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16 text-slate-950 dark:text-white">
+        <div className="relative max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
+          <Skeleton className="h-10 w-72 mx-auto rounded-full mb-4" />
+          <Skeleton className="h-5 w-80 mx-auto rounded-md mb-6" />
+          <Skeleton className="h-14 w-full max-w-xs mx-auto rounded-[1.5rem]" />
         </div>
       </section>
     </>

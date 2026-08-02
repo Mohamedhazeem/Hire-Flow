@@ -19,37 +19,48 @@ export function CompanyPreviewCard({
   locations,
 }: CompanyPreviewCardProps) {
   const initial = name ? name.charAt(0).toUpperCase() : "?";
+  const hasDetails = Boolean(website || description || locations.length > 0);
 
   return (
-    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 transition-colors hover:border-brand/20">
-      <div className="flex items-start gap-4">
-        <div className="size-12 sm:size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold">
+    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 transition-colors hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900">
+      <div className={hasDetails ? "flex items-start gap-4" : "flex flex-col items-center gap-3"}>
+        <div className={hasDetails ? "size-12 sm:size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold" : "size-14 sm:size-16 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-3xl font-bold"}>
           {logo ? (
             <Image
               src={logo}
               alt={`${name} logo`}
-              width={56}
-              height={56}
+              width={hasDetails ? 56 : 64}
+              height={hasDetails ? 56 : 64}
               className="size-full rounded-xl object-cover border border-white/10"
             />
           ) : (
             initial
           )}
         </div>
-        <div className="min-w-0 flex-1">
-          <h3 className="text-base font-semibold text-text-heading truncate">{name}</h3>
-          {locations.length > 0 && (
-            <p className="text-sm text-text-muted mt-0.5">
-              <MapPinIcon className="size-3.5 inline mr-1" />
-              {locations.join(", ")}
-            </p>
-          )}
-        </div>
+        {hasDetails ? (
+          <div className="min-w-0 flex-1">
+            <h3 className="text-base font-semibold text-slate-950 dark:text-white truncate">
+              {name}
+            </h3>
+            {locations.length > 0 && (
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+                <MapPinIcon className="size-3.5 inline mr-1" />
+                {locations.join(", ")}
+              </p>
+            )}
+          </div>
+        ) : (
+          <h3 className="text-lg sm:text-xl font-bold text-slate-950 dark:text-white text-center">
+            {name}
+          </h3>
+        )}
       </div>
-      {description && (
-        <p className="text-sm text-text-body mt-4 leading-relaxed line-clamp-3">{description}</p>
+      {hasDetails && description && (
+        <p className="text-sm text-slate-600 dark:text-slate-400 mt-4 leading-relaxed line-clamp-3">
+          {description}
+        </p>
       )}
-      {website && (website.startsWith("https://") || website.startsWith("http://")) && (
+      {hasDetails && website && (website.startsWith("https://") || website.startsWith("http://")) && (
         <a
           href={website}
           target="_blank"

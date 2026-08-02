@@ -36,18 +36,19 @@ export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const startInterval = useCallback(() => {
-    intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-  }, []);
-
   const stopInterval = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
   }, []);
+
+  const startInterval = useCallback(() => {
+    stopInterval();
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 5500);
+  }, [stopInterval]);
 
   useEffect(() => {
     startInterval();
@@ -77,81 +78,63 @@ export function Testimonials() {
   const t = testimonials[current];
 
   return (
-    <section className="py-16 sm:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80')]" />
-      <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <QuoteIcon className="size-8 text-brand/30 mx-auto mb-4" />
-        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading mb-8">
-          What Our Users Say
+    <section className="relative py-12 sm:py-16 overflow-hidden text-slate-950 dark:text-white">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 md:px-6 lg:px-8 text-center">
+        <p className="text-xs uppercase tracking-[0.32em] text-brand-light mb-3">
+          Community stories
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 dark:text-white mb-4">
+          What professionals love about HireFlow
         </h2>
+        <p className="mx-auto max-w-2xl text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+          Real feedback from candidates and hiring teams who use HireFlow to move faster and stay
+          organized.
+        </p>
 
-        {testimonials.length > 1 ? (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.3 }}
-            >
-              <blockquote className="text-base sm:text-lg text-text-body leading-relaxed italic">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <div className="flex items-center justify-center gap-3 mt-6">
-                <Image
-                  src={t.avatar}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="size-10 rounded-full object-cover"
-                />
-                <div className="text-left">
-                  <p className="text-sm font-semibold text-text-heading">{t.name}</p>
-                  <p className="text-xs text-text-muted">
-                    {t.role} at {t.company}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        ) : (
-          <div>
-            <blockquote className="text-base sm:text-lg text-text-body leading-relaxed italic">
-              &ldquo;{testimonials[0].quote}&rdquo;
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35 }}
+            className="mt-10 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.1)] dark:border-slate-800 dark:bg-slate-900"
+          >
+            <QuoteIcon className="size-10 text-brand/40 mx-auto mb-6" />
+            <blockquote className="text-lg sm:text-xl font-medium leading-relaxed text-slate-900 dark:text-slate-100 italic">
+              “{t.quote}”
             </blockquote>
-            <div className="flex items-center justify-center gap-3 mt-6">
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Image
-                src={testimonials[0].avatar}
-                alt=""
-                width={40}
-                height={40}
-                className="size-10 rounded-full object-cover"
+                src={t.avatar}
+                alt={t.name}
+                width={56}
+                height={56}
+                className="size-14 rounded-full object-cover"
               />
-              <div className="text-left">
-                <p className="text-sm font-semibold text-text-heading">{testimonials[0].name}</p>
-                <p className="text-xs text-text-muted">
-                  {testimonials[0].role} at {testimonials[0].company}
+              <div className="text-center sm:text-left">
+                <p className="text-base font-semibold text-slate-950 dark:text-white">{t.name}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  {t.role} at {t.company}
                 </p>
               </div>
             </div>
-          </div>
-        )}
+          </motion.div>
+        </AnimatePresence>
 
-        {testimonials.length > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => handleDotClick(i)}
-                aria-label={`Go to testimonial ${i + 1}`}
-                className={`size-2 rounded-full transition-all ${
-                  i === current ? "bg-brand w-6" : "bg-border-subtle hover:bg-text-muted"
-                }`}
-              />
-            ))}
-          </div>
-        )}
+        <div className="mt-8 flex items-center justify-center gap-2">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => handleDotClick(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+              className={`h-2.5 rounded-full transition-all ${
+                i === current ? "w-8 bg-brand" : "w-2.5 bg-slate-300 dark:bg-slate-600"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

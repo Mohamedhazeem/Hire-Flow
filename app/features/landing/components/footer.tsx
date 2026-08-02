@@ -70,7 +70,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-900 dark:bg-neutral-950 text-neutral-300 border-t border-neutral-800">
+    <footer className="bg-slate-950 text-slate-200 border-t border-slate-800 dark:bg-slate-950 dark:text-slate-200">
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {columns.map((col) => (
@@ -94,11 +94,11 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-neutral-800">
-          <p className="text-xs text-neutral-500 flex items-center gap-1">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-slate-800">
+          <p className="text-xs text-slate-400 flex items-center gap-1">
             &copy; {new Date().getFullYear()} HireFlow. Made with
-            <HeartIcon className="size-3 fill-red-400 text-red-400" />
-            for job seekers.
+            <HeartIcon className="size-3 fill-red-500 text-red-500" />
+            for job seekers by Mohammed Hazeem.
           </p>
           <div className="flex items-center gap-3">
             {socials

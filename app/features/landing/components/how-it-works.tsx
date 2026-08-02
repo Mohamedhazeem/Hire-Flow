@@ -6,21 +6,21 @@ import { UserPlusIcon, SearchIcon, BriefcaseIcon } from "lucide-react";
 const steps = [
   {
     icon: UserPlusIcon,
-    title: "Create Your Profile",
+    title: "Create your profile",
     description:
-      "Sign up in minutes and build a standout profile that showcases your skills, experience, and career goals.",
+      "Build a polished candidate profile with your skills, experience, and career goals in minutes.",
   },
   {
     icon: SearchIcon,
-    title: "Browse Opportunities",
+    title: "Find relevant openings",
     description:
-      "Explore thousands of curated job listings from innovative companies that match your expertise.",
+      "Filter by role, location, and work style to discover jobs that align with your ambitions.",
   },
   {
     icon: BriefcaseIcon,
-    title: "Apply & Get Hired",
+    title: "Apply with confidence",
     description:
-      "Submit applications with one click, track your progress, and land your next role faster.",
+      "Submit professional applications and track progress across every company in one place.",
   },
 ];
 
@@ -35,19 +35,23 @@ const childVariants = {
 
 export function HowItWorks() {
   return (
-    <section className="bg-bg-surface border-y border-border-subtle py-16 sm:py-20">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">How It Works</h2>
-        <p className="text-sm text-text-muted mt-1 max-w-xl mx-auto">
-          Three simple steps to land your next opportunity
-        </p>
+    <section className="text-slate-950 py-12 sm:py-16 dark:text-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="text-center mx-auto max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.32em] text-brand-light mb-3">How it works</p>
+          <h2 className="text-3xl sm:text-4xl font-bold">Three steps to elevate your job search</h2>
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+            A streamlined experience for candidates and hiring teams that prioritizes clarity,
+            speed, and quality.
+          </p>
+        </div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={parentVariants}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12"
         >
           {steps.map((step, i) => (
             <motion.div
@@ -55,14 +59,20 @@ export function HowItWorks() {
               variants={childVariants}
               whileHover={{ scale: 1.02, y: -4 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-bg-page border border-border-subtle rounded-2xl p-6 sm:p-8 text-left transition-shadow hover:shadow-sm cursor-default"
+              className="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900"
             >
-              <div className="size-12 rounded-xl bg-brand/10 flex items-center justify-center text-brand mb-4">
+              <div className="size-14 rounded-3xl bg-brand/10 text-brand flex items-center justify-center mb-5">
                 <step.icon className="size-6" />
               </div>
-              <div className="text-sm font-semibold text-text-muted mb-1">Step {i + 1}</div>
-              <h3 className="text-lg font-semibold text-text-heading mb-2">{step.title}</h3>
-              <p className="text-sm text-text-muted leading-relaxed">{step.description}</p>
+              <div className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-light mb-2">
+                Step {i + 1}
+              </div>
+              <h3 className="text-xl font-semibold text-slate-950 dark:text-white mb-3">
+                {step.title}
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
