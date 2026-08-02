@@ -63,13 +63,12 @@ export function RoleLayoutClient({
             </div>
           )}
         </div>
-        {/* bg-linear-to-r from-brand/5 via-brand/5 to-transparent */}
-        <div className="hidden absolute right-0 lg:flex items-center  justify-end gap-2 px-6 pt-4 pb-1 shrink-0">
+        <div className="flex-1 flex flex-col px-4 pb-4 md:px-6 lg:px-8 lg:pb-8 overflow-y-auto min-w-0 relative">
           {mounted && showNotification && (
-            <NotificationDropdown messagesBasePath={messagesBasePath} />
+            <div className="hidden lg:flex absolute top-4 right-6 items-center gap-2 z-20">
+              <NotificationDropdown messagesBasePath={messagesBasePath} />
+            </div>
           )}
-        </div>
-        <div className="flex-1 flex flex-col px-4 pb-4 md:px-6 lg:px-8 lg:pb-8  overflow-y-auto min-w-0">
           {children}
         </div>
       </main>
