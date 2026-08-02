@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { MobileMenuButton } from "@/components/layout/mobile-menu-button";
 import { NotificationDropdown } from "@/app/features/notifications/components/notification-dropdown";
@@ -19,8 +19,9 @@ export function RoleLayoutClient({
   messagesBasePath = "/admin/messages",
 }: RoleLayoutClientProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
-  const { data: session } = useSession();
+  const { data: session, isPending } = useSession();
   const userId = (session?.user as { id?: string })?.id;
 
   useEffect(() => {
@@ -28,6 +29,12 @@ export function RoleLayoutClient({
     const raf = window.requestAnimationFrame(onFrame);
     return () => window.cancelAnimationFrame(raf);
   }, []);
+
+  // If a cached restore (back/forward after logout) mounts this layout without a
+  // session, go home instead of showing role data.
+  useEffect(() => {
+    if (!isPending && !session) router.replace("/");
+  }, [isPending, session, router]);
 
   // Always subscribe to real-time notifications so thread list invalidations
   // from new_message notifications fire regardless of current page
@@ -38,6 +45,11 @@ export function RoleLayoutClient({
     mounted &&
     pathname &&
     (pathname === basePath || pathname === basePath + "/" || pathname.startsWith(messagesBasePath));
+
+  // Never render role content until a session is confirmed: a back/forward cache
+  // restore after logout can mount this layout without a session, and showing the
+  // children would expose data the proxy no longer guards.
+  if (isPending || !session) return null;
 
   return (
     <div className="flex h-screen overflow-hidden">
