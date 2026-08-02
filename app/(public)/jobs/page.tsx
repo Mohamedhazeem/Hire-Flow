@@ -55,7 +55,9 @@ export default function JobsPage() {
                   <feature.icon className="size-5" />
                 </div>
                 <h2 className="mt-5 text-base font-semibold text-text-heading">{feature.title}</h2>
-                <p className="mt-2 text-sm text-text-muted leading-relaxed">{feature.description}</p>
+                <p className="mt-2 text-sm text-text-muted leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>

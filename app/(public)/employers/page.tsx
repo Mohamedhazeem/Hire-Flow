@@ -100,7 +100,9 @@ export default async function EmployersPage() {
               </div>
             </div>
             <div className="rounded-[1.75rem] border border-border-subtle bg-bg-surface p-7 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80">
-              <p className="text-sm uppercase tracking-[0.32em] text-brand mb-4">Employer toolkit</p>
+              <p className="text-sm uppercase tracking-[0.32em] text-brand mb-4">
+                Employer toolkit
+              </p>
               <div className="space-y-4 text-sm leading-relaxed text-text-body">
                 <p>Post roles with rich descriptions and screening prompts.</p>
                 <p>Manage applicants with recruiter-friendly dashboards.</p>

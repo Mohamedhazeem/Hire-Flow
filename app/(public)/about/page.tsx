@@ -41,7 +41,8 @@ export default function AboutPage() {
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-text-heading">About HireFlow</h1>
               <p className="mt-4 text-base text-text-muted leading-relaxed">
-                We believe hiring should be fast, fair, and meaningful. Here's how we are building it.
+                We believe hiring should be fast, fair, and meaningful. Here's how we are building
+                it.
               </p>
             </div>
             <Link
@@ -72,7 +73,10 @@ export default function AboutPage() {
             Follow our launch updates, product improvements, and hiring insights designed to help
             job seekers and employers succeed.
           </p>
-          <Link href="/resources" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline">
+          <Link
+            href="/resources"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
+          >
             Explore resources
             <ArrowRightIcon className="size-4" />
           </Link>
