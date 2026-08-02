@@ -98,7 +98,7 @@ export function Testimonials() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35 }}
-            className="mt-10 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.1)] dark:border-slate-800 dark:bg-slate-900"
+            className="mt-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_35px_120px_-80px_rgba(15,23,42,0.1)] dark:border-slate-800 dark:bg-slate-900"
           >
             <QuoteIcon className="size-10 text-brand/40 mx-auto mb-6" />
             <blockquote className="text-lg sm:text-xl font-medium leading-relaxed text-slate-900 dark:text-slate-100 italic">

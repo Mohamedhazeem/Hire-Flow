@@ -76,7 +76,7 @@ export function JobCard({
           router.push(`/jobs/${slug ?? id}`);
         }
       }}
-      className="w-full text-left rounded-3xl border border-slate-200 bg-slate-50 p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer dark:border-slate-800 dark:bg-slate-900"
+      className="w-full text-left rounded-3xl border border-slate-200 bg-white p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer dark:border-slate-800 dark:bg-slate-900"
     >
       <div className="flex items-start gap-4 min-w-0">
         <div className="size-11 rounded-lg bg-brand/10 flex items-center justify-center text-brand shrink-0 text-lg font-bold">

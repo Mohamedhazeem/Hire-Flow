@@ -22,7 +22,7 @@ export function CompanyPreviewCard({
   const hasDetails = Boolean(website || description || locations.length > 0);
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 transition-colors hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900">
+    <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 transition-colors hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900">
       <div className={hasDetails ? "flex items-start gap-4" : "flex flex-col items-center gap-3"}>
         <div className={hasDetails ? "size-12 sm:size-14 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0 text-2xl font-bold" : "size-14 sm:size-16 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-3xl font-bold"}>
           {logo ? (

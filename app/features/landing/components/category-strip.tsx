@@ -64,7 +64,7 @@ export function CategoryStrip() {
                   variants={childVariants}
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900"
+                  className="rounded-3xl border border-slate-200 bg-white p-5 transition-all hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900"
                 >
                   <Link
                     href={`/jobs?${params.toString()}`}
