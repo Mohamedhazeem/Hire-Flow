@@ -4,6 +4,36 @@
   "graph": {},
   "nodes": [
     {
+      "label": "job-card.tsx",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_job_card",
+      "community": 144,
+      "norm_label": "job-card.tsx"
+    },
+    {
+      "label": "JobCardProps",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "components_job_card_jobcardprops",
+      "community": 144,
+      "norm_label": "jobcardprops"
+    },
+    {
+      "label": "JobCard()",
+      "file_type": "code",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "components_job_card_jobcard",
+      "community": 52,
+      "norm_label": "jobcard()"
+    },
+    {
       "label": "category-strip.tsx",
       "file_type": "code",
       "source_file": "app/features/landing/components/category-strip.tsx",
@@ -54,14 +84,84 @@
       "norm_label": "categorystrip()"
     },
     {
+      "label": "employer-cta.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/employer-cta.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_employer_cta",
+      "community": 11,
+      "norm_label": "employer-cta.tsx"
+    },
+    {
+      "label": "EmployerCTA()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/employer-cta.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_employer_cta_employercta",
+      "community": 11,
+      "norm_label": "employercta()"
+    },
+    {
+      "label": "testimonials.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_testimonials",
+      "community": 11,
+      "norm_label": "testimonials.tsx"
+    },
+    {
+      "label": "testimonials",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_testimonials_testimonials",
+      "community": 11,
+      "norm_label": "testimonials"
+    },
+    {
+      "label": "company-preview-card.tsx",
+      "file_type": "code",
+      "source_file": "components/shared/company-preview-card.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "shared_company_preview_card",
+      "community": 167,
+      "norm_label": "company-preview-card.tsx"
+    },
+    {
+      "label": "CompanyPreviewCardProps",
+      "file_type": "code",
+      "source_file": "components/shared/company-preview-card.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "shared_company_preview_card_companypreviewcardprops",
+      "community": 167,
+      "norm_label": "companypreviewcardprops"
+    },
+    {
+      "label": "CompanyPreviewCard()",
+      "file_type": "code",
+      "source_file": "components/shared/company-preview-card.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "shared_company_preview_card_companypreviewcard",
+      "community": 167,
+      "norm_label": "companypreviewcard()"
+    },
+    {
       "label": "hero-search.tsx",
       "file_type": "code",
       "source_file": "app/features/landing/components/hero-search.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_hero_search",
       "community": 181,
-      "norm_label": "hero-search.tsx"
+      "norm_label": "hero-search.tsx",
+      "id": "components_hero_search"
     },
     {
       "label": "HeroSearch()",
@@ -69,9 +169,9 @@
       "source_file": "app/features/landing/components/hero-search.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "components_hero_search_herosearch",
       "community": 181,
-      "norm_label": "herosearch()"
+      "norm_label": "herosearch()",
+      "id": "components_hero_search_herosearch"
     },
     {
       "label": "landing-glow.tsx",
@@ -79,9 +179,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_landing_glow",
       "community": 105,
-      "norm_label": "landing-glow.tsx"
+      "norm_label": "landing-glow.tsx",
+      "id": "components_landing_glow"
     },
     {
       "label": "LandingGlow()",
@@ -89,9 +189,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "components_landing_glow_landingglow",
       "community": 105,
-      "norm_label": "landingglow()"
+      "norm_label": "landingglow()",
+      "id": "components_landing_glow_landingglow"
     },
     {
       "label": "landing-page.tsx",
@@ -99,9 +199,9 @@
       "source_file": "app/features/landing/components/landing-page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_landing_page",
       "community": 11,
-      "norm_label": "landing-page.tsx"
+      "norm_label": "landing-page.tsx",
+      "id": "components_landing_page"
     },
     {
       "label": "LandingPage()",
@@ -109,9 +209,9 @@
       "source_file": "app/features/landing/components/landing-page.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "components_landing_page_landingpage",
       "community": 11,
-      "norm_label": "landingpage()"
+      "norm_label": "landingpage()",
+      "id": "components_landing_page_landingpage"
     },
     {
       "label": "landing-particles.tsx",
@@ -119,9 +219,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "components_landing_particles",
       "community": 105,
-      "norm_label": "landing-particles.tsx"
+      "norm_label": "landing-particles.tsx",
+      "id": "components_landing_particles"
     },
     {
       "label": "landingParticles",
@@ -129,9 +229,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "components_landing_particles_landingparticles",
       "community": 105,
-      "norm_label": "landingparticles"
+      "norm_label": "landingparticles",
+      "id": "components_landing_particles_landingparticles"
     },
     {
       "label": "dust-particle.tsx",
@@ -139,9 +239,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_dust_particle",
       "community": 105,
-      "norm_label": "dust-particle.tsx"
+      "norm_label": "dust-particle.tsx",
+      "id": "particles_dust_particle"
     },
     {
       "label": "Props",
@@ -149,9 +249,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "particles_dust_particle_props",
       "community": 105,
-      "norm_label": "props"
+      "norm_label": "props",
+      "id": "particles_dust_particle_props"
     },
     {
       "label": "DustParticle()",
@@ -159,9 +259,9 @@
       "source_file": "app/features/particles/dust-particle.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "particles_dust_particle_dustparticle",
       "community": 105,
-      "norm_label": "dustparticle()"
+      "norm_label": "dustparticle()",
+      "id": "particles_dust_particle_dustparticle"
     },
     {
       "label": "particle-types.ts",
@@ -169,9 +269,9 @@
       "source_file": "app/features/particles/particle-types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_particle_types",
       "community": 105,
-      "norm_label": "particle-types.ts"
+      "norm_label": "particle-types.ts",
+      "id": "particles_particle_types"
     },
     {
       "label": "ParticleVariant",
@@ -179,9 +279,9 @@
       "source_file": "app/features/particles/particle-types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_particle_types_particlevariant",
       "community": 105,
-      "norm_label": "particlevariant"
+      "norm_label": "particlevariant",
+      "id": "particles_particle_types_particlevariant"
     },
     {
       "label": "ParticleAnimation",
@@ -189,9 +289,9 @@
       "source_file": "app/features/particles/particle-types.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "particles_particle_types_particleanimation",
       "community": 105,
-      "norm_label": "particleanimation"
+      "norm_label": "particleanimation",
+      "id": "particles_particle_types_particleanimation"
     },
     {
       "label": "ParticleAppearance",
@@ -199,9 +299,9 @@
       "source_file": "app/features/particles/particle-types.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "particles_particle_types_particleappearance",
       "community": 105,
-      "norm_label": "particleappearance"
+      "norm_label": "particleappearance",
+      "id": "particles_particle_types_particleappearance"
     },
     {
       "label": "ParticleConfig",
@@ -209,9 +309,9 @@
       "source_file": "app/features/particles/particle-types.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "particles_particle_types_particleconfig",
       "community": 105,
-      "norm_label": "particleconfig"
+      "norm_label": "particleconfig",
+      "id": "particles_particle_types_particleconfig"
     },
     {
       "label": "particle-varient.ts",
@@ -219,9 +319,9 @@
       "source_file": "app/features/particles/particle-varient.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_particle_varient",
       "community": 105,
-      "norm_label": "particle-varient.ts"
+      "norm_label": "particle-varient.ts",
+      "id": "particles_particle_varient"
     },
     {
       "label": "particleVariants",
@@ -229,9 +329,9 @@
       "source_file": "app/features/particles/particle-varient.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "particles_particle_varient_particlevariants",
       "community": 105,
-      "norm_label": "particlevariants"
+      "norm_label": "particlevariants",
+      "id": "particles_particle_varient_particlevariants"
     },
     {
       "label": "admin-layout-client.tsx",
@@ -7514,36 +7614,6 @@
       "id": "components_filter_select_filterselect"
     },
     {
-      "label": "job-card.tsx",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 144,
-      "norm_label": "job-card.tsx",
-      "id": "components_job_card"
-    },
-    {
-      "label": "JobCardProps",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 144,
-      "norm_label": "jobcardprops",
-      "id": "components_job_card_jobcardprops"
-    },
-    {
-      "label": "JobCard()",
-      "file_type": "code",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 52,
-      "norm_label": "jobcard()",
-      "id": "components_job_card_jobcard"
-    },
-    {
       "label": "job-detail-view.tsx",
       "file_type": "code",
       "source_file": "app/features/jobs/components/job-detail-view.tsx",
@@ -7944,26 +8014,6 @@
       "id": "schema_application_submit_schema_applyinput"
     },
     {
-      "label": "employer-cta.tsx",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/employer-cta.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "employer-cta.tsx",
-      "id": "components_employer_cta"
-    },
-    {
-      "label": "EmployerCTA()",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/employer-cta.tsx",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "employercta()",
-      "id": "components_employer_cta_employercta"
-    },
-    {
       "label": "featured-companies.tsx",
       "file_type": "code",
       "source_file": "app/features/landing/components/featured-companies.tsx",
@@ -8252,26 +8302,6 @@
       "community": 186,
       "norm_label": "statscounter()",
       "id": "components_stats_counter_statscounter"
-    },
-    {
-      "label": "testimonials.tsx",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "testimonials.tsx",
-      "id": "components_testimonials"
-    },
-    {
-      "label": "testimonials",
-      "file_type": "code",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 11,
-      "norm_label": "testimonials",
-      "id": "components_testimonials_testimonials"
     },
     {
       "label": "get-unread-message-count.ts",
@@ -15362,36 +15392,6 @@
       "community": 18,
       "norm_label": "companycard()",
       "id": "shared_company_card_companycard"
-    },
-    {
-      "label": "company-preview-card.tsx",
-      "file_type": "code",
-      "source_file": "components/shared/company-preview-card.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 167,
-      "norm_label": "company-preview-card.tsx",
-      "id": "shared_company_preview_card"
-    },
-    {
-      "label": "CompanyPreviewCardProps",
-      "file_type": "code",
-      "source_file": "components/shared/company-preview-card.tsx",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 167,
-      "norm_label": "companypreviewcardprops",
-      "id": "shared_company_preview_card_companypreviewcardprops"
-    },
-    {
-      "label": "CompanyPreviewCard()",
-      "file_type": "code",
-      "source_file": "components/shared/company-preview-card.tsx",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 167,
-      "norm_label": "companypreviewcard()",
-      "id": "shared_company_preview_card_companypreviewcard"
     },
     {
       "label": "confirm-action-button.tsx",
@@ -38726,6 +38726,180 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_job_card"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "components_job_card_jobcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "components_job_card_jobcardprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "components_save_job_button"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "components_save_job_button_savejobbutton"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "lib_hydration"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "lib_hydration_hydrator"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_card",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/saved-jobs-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_saved_jobs_page",
+      "target": "components_job_card"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_job_card_jobcardprops"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_job_card_jobcard"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/jobs/components/job-card.tsx",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "components_job_card_jobcard",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-list-page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_list_page",
+      "target": "components_job_card_jobcard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/saved-jobs-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_saved_jobs_page",
+      "target": "components_job_card_jobcard"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/features/landing/components/category-strip.tsx",
@@ -38812,6 +38986,134 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/employer-cta.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_employer_cta",
+      "target": "components_employer_cta_employercta"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_employer_cta_employercta"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/testimonials.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_testimonials",
+      "target": "components_testimonials_testimonials"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_landing_page",
+      "target": "components_testimonials_testimonials"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-companies.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_featured_companies",
+      "target": "shared_company_preview_card"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-detail-view.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_detail_view",
+      "target": "shared_company_preview_card"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/company-preview-card.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_company_preview_card",
+      "target": "shared_company_preview_card_companypreviewcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/company-preview-card.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_company_preview_card",
+      "target": "shared_company_preview_card_companypreviewcardprops"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-companies.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_featured_companies",
+      "target": "shared_company_preview_card_companypreviewcard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/jobs/components/job-detail-view.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_job_detail_view",
+      "target": "shared_company_preview_card_companypreviewcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/features/landing/components/hero-search.tsx",
       "source_location": "L8",
       "weight": 1.0,
@@ -38869,9 +39171,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_glow",
-      "target": "components_landing_glow_landingglow",
-      "confidence_score": 1.0
+      "target": "components_landing_glow_landingglow"
     },
     {
       "relation": "imports_from",
@@ -38880,9 +39182,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_glow",
-      "target": "components_landing_particles",
-      "confidence_score": 1.0
+      "target": "components_landing_particles"
     },
     {
       "relation": "imports",
@@ -38891,9 +39193,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_glow",
-      "target": "components_landing_particles_landingparticles",
-      "confidence_score": 1.0
+      "target": "components_landing_particles_landingparticles"
     },
     {
       "relation": "imports_from",
@@ -38902,9 +39204,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_glow",
-      "target": "particles_dust_particle",
-      "confidence_score": 1.0
+      "target": "particles_dust_particle"
     },
     {
       "relation": "imports",
@@ -38913,9 +39215,9 @@
       "source_file": "app/features/landing/components/landing-glow.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_glow",
-      "target": "particles_dust_particle_dustparticle",
-      "confidence_score": 1.0
+      "target": "particles_dust_particle_dustparticle"
     },
     {
       "relation": "imports_from",
@@ -38924,9 +39226,9 @@
       "source_file": "app/features/landing/components/landing-page.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_page",
-      "target": "components_landing_glow",
-      "confidence_score": 1.0
+      "target": "components_landing_glow"
     },
     {
       "relation": "imports",
@@ -38935,31 +39237,9 @@
       "source_file": "app/features/landing/components/landing-page.tsx",
       "source_location": "L8",
       "weight": 1.0,
-      "source": "components_landing_page",
-      "target": "components_landing_glow_landingglow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_landing_page",
-      "target": "components_employer_cta"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_employer_cta_employercta"
+      "target": "components_landing_glow_landingglow"
     },
     {
       "relation": "imports_from",
@@ -39041,28 +39321,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_testimonials"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/landing-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_landing_page",
-      "target": "components_testimonials_testimonials"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/(public)/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -39087,9 +39345,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_particles",
-      "target": "components_landing_particles_landingparticles",
-      "confidence_score": 1.0
+      "target": "components_landing_particles_landingparticles"
     },
     {
       "relation": "imports_from",
@@ -39098,9 +39356,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_particles",
-      "target": "particles_particle_types",
-      "confidence_score": 1.0
+      "target": "particles_particle_types"
     },
     {
       "relation": "imports",
@@ -39109,9 +39367,9 @@
       "source_file": "app/features/landing/components/landing-particles.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_landing_particles",
-      "target": "particles_particle_types_particleconfig",
-      "confidence_score": 1.0
+      "target": "particles_particle_types_particleconfig"
     },
     {
       "relation": "imports_from",
@@ -62614,180 +62872,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_featured_jobs_grid",
-      "target": "components_job_card"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "components_job_card_jobcard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "components_job_card_jobcardprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "components_save_job_button"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "components_save_job_button_savejobbutton"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "lib_hydration"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "lib_hydration_hydrator"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "lib_utils"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_card",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/saved-jobs-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_saved_jobs_page",
-      "target": "components_job_card"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_featured_jobs_grid",
-      "target": "components_job_card_jobcardprops"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_featured_jobs_grid",
-      "target": "components_job_card_jobcard"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/features/jobs/components/job-card.tsx",
-      "source_location": "L131",
-      "weight": 1.0,
-      "source": "components_job_card_jobcard",
-      "target": "lib_utils_cn"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-list-page.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_list_page",
-      "target": "components_job_card_jobcard"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/user/components/saved-jobs-page.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_saved_jobs_page",
-      "target": "components_job_card_jobcard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/jobs/components/job-detail-view.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -62924,28 +63008,6 @@
       "confidence_score": 1.0,
       "source": "components_job_detail_view",
       "target": "queries_public_job_queries_publicjobdetail"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-detail-view.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_detail_view",
-      "target": "shared_company_preview_card"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/jobs/components/job-detail-view.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_job_detail_view",
-      "target": "shared_company_preview_card_companypreviewcard"
     },
     {
       "relation": "imports_from",
@@ -63835,16 +63897,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/employer-cta.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_employer_cta",
-      "target": "components_employer_cta_employercta"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/features/landing/components/featured-companies.tsx",
       "source_location": "L6",
       "weight": 1.0,
@@ -63873,28 +63925,6 @@
       "confidence_score": 1.0,
       "source": "components_featured_companies",
       "target": "queries_list_featured_companies_listfeaturedcompanies"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/featured-companies.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_featured_companies",
-      "target": "shared_company_preview_card"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/featured-companies.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_featured_companies",
-      "target": "shared_company_preview_card_companypreviewcard"
     },
     {
       "relation": "calls",
@@ -64194,16 +64224,6 @@
       "confidence_score": 1.0,
       "source": "components_stats_counter",
       "target": "components_stats_counter_statscounterprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/features/landing/components/testimonials.tsx",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_testimonials",
-      "target": "components_testimonials_testimonials"
     },
     {
       "relation": "contains",
@@ -82620,26 +82640,6 @@
       "confidence_score": 1.0,
       "source": "shared_company_card",
       "target": "shared_section_card_sectioncard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/company-preview-card.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_company_preview_card",
-      "target": "shared_company_preview_card_companypreviewcard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/company-preview-card.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_company_preview_card",
-      "target": "shared_company_preview_card_companypreviewcardprops"
     },
     {
       "relation": "contains",
@@ -112532,5 +112532,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "97bdc7148552e7c4a358ef3b385951e1b1074ce3"
+  "built_at_commit": "03bafeea4f20b13e1ac980db7236852983a32472"
 }
