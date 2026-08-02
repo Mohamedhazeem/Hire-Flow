@@ -11,13 +11,15 @@ export async function LandingPage() {
   return (
     <div className="relative overflow-hidden bg-slate-50 dark:bg-slate-950">
       <LandingGlow />
-      <HeroSearch />
-      <CategoryStrip />
-      <FeaturedJobs />
-      <FeaturedCompanies />
-      <HowItWorks />
-      <Testimonials />
-      <EmployerCTA />
+      <div className="relative z-10">
+        <HeroSearch />
+        <CategoryStrip />
+        <FeaturedJobs />
+        <FeaturedCompanies />
+        <HowItWorks />
+        <Testimonials />
+        <EmployerCTA />
+      </div>
     </div>
   );
 }

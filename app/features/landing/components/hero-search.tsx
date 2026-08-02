@@ -7,9 +7,7 @@ import { JobSearchBar } from "@/app/features/jobs/components/job-search-bar";
 
 export function HeroSearch() {
   return (
-    <section className="relative py-5 sm:py-7">
-      <div className="absolute inset-0 bg-hero-hex-grid opacity-30 dark:opacity-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_80%_15%,rgba(16,185,129,0.12),transparent_28%),radial-gradient(circle_at_50%_75%,rgba(236,72,153,0.14),transparent_28%)]" />
+    <section className="relative py-8 sm:py-12 pb-4 sm:pb-6">
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] items-center">
           <motion.div

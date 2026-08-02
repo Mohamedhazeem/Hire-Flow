@@ -31,7 +31,7 @@ const childVariants = {
 
 export function CategoryStrip() {
   return (
-    <section className="text-slate-950 border-t border-slate-200 dark:text-white dark:border-slate-800">
+    <section className="relative z-10 text-slate-950 dark:text-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-14">
         <motion.div
           initial="hidden"

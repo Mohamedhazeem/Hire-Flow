@@ -15,7 +15,7 @@ export function DustParticle({ particle }: Props) {
   return (
     <motion.div
       className={cn(
-        "absolute hidden sm:block rounded-full blur-3xl z-0",
+        "absolute hidden sm:block rounded-full blur-3xl -z-10",
         particle.appearance.size ?? "w-72 h-72",
         particleVariants[particle.appearance.variant],
       )}
@@ -29,6 +29,7 @@ export function DustParticle({ particle }: Props) {
         scale: particle.animation.scale ?? [1, 1.1, 0.9, 1.05, 0.95, 1.08, 1],
         opacity: particle.animation.opacity ?? [0.3, 0.7, 0.5, 0.8, 0.4, 0.65, 0.3],
       }}
+      initial={{ opacity: 0 }}
       transition={{
         repeat: Infinity,
         ease: "linear",
