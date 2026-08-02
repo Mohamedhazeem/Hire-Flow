@@ -15,7 +15,7 @@ export function DustParticle({ particle }: Props) {
   return (
     <motion.div
       className={cn(
-        "absolute hidden sm:block rounded-full blur-3xl -z-10",
+        "absolute hidden sm:block rounded-full blur-3xl z-0",
         particle.appearance.size ?? "w-72 h-72",
         particleVariants[particle.appearance.variant],
       )}

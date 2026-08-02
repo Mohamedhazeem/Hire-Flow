@@ -10,7 +10,7 @@ export const landingParticles: ParticleConfig[] = [
       x: [0, 200, -150, 300, -80, 0],
       y: [0, -120, 160, -80, 120, 0],
       scale: [1, 1.08, 0.94, 1.04, 0.96, 1],
-      opacity: [0.12, 0.35, 0.22, 0.38, 0.18, 0.12],
+      opacity: [0.15, 0.55, 0.35, 0.6, 0.3, 0.15],
     },
   },
   {
@@ -22,7 +22,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, -280, 160, -320, 80, 0],
       y: [0, 160, -120, 240, -80, 0],
-      opacity: [0.1, 0.32, 0.2, 0.36, 0.15, 0.1],
+      opacity: [0.12, 0.5, 0.3, 0.55, 0.25, 0.12],
     },
   },
   {
@@ -35,7 +35,7 @@ export const landingParticles: ParticleConfig[] = [
       x: [0, 200, -240, 320, -120, 0],
       y: [0, -160, 120, -200, 80, 0],
       scale: [1, 0.96, 1.06, 0.93, 1.04, 1],
-      opacity: [0.1, 0.3, 0.2, 0.34, 0.14, 0.1],
+      opacity: [0.12, 0.48, 0.3, 0.52, 0.22, 0.12],
     },
   },
   {
@@ -47,7 +47,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, -320, 240, -200, 400, 0],
       y: [0, 240, -160, 280, -120, 0],
-      opacity: [0.08, 0.28, 0.18, 0.32, 0.12, 0.08],
+      opacity: [0.1, 0.42, 0.25, 0.46, 0.18, 0.1],
     },
   },
   {
@@ -59,7 +59,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, 320, -240, 400, -160, 0],
       y: [0, -200, 160, -280, 120, 0],
-      opacity: [0.09, 0.3, 0.2, 0.34, 0.14, 0.09],
+      opacity: [0.1, 0.44, 0.28, 0.48, 0.2, 0.1],
     },
   },
   {
@@ -71,7 +71,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, -240, 180, -280, 100, 0],
       y: [0, 180, -130, 220, -90, 0],
-      opacity: [0.08, 0.26, 0.16, 0.3, 0.12, 0.08],
+      opacity: [0.08, 0.38, 0.22, 0.42, 0.16, 0.08],
     },
   },
   {
@@ -84,7 +84,7 @@ export const landingParticles: ParticleConfig[] = [
       x: [0, -200, 140, -260, 80, 0],
       y: [0, 160, -110, 200, -80, 0],
       scale: [1, 1.04, 0.96, 1.06, 0.94, 1],
-      opacity: [0.07, 0.24, 0.15, 0.28, 0.1, 0.07],
+      opacity: [0.08, 0.36, 0.22, 0.4, 0.15, 0.08],
     },
   },
   {
@@ -96,7 +96,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, -180, 120, -220, 60, 0],
       y: [0, 140, -100, 180, -70, 0],
-      opacity: [0.08, 0.26, 0.17, 0.3, 0.11, 0.08],
+      opacity: [0.08, 0.36, 0.22, 0.4, 0.15, 0.08],
     },
   },
   {
@@ -109,7 +109,7 @@ export const landingParticles: ParticleConfig[] = [
       x: [0, 240, -180, 300, -120, 0],
       y: [0, -180, 130, -220, 90, 0],
       scale: [1, 1.03, 0.97, 1.05, 0.95, 1],
-      opacity: [0.07, 0.24, 0.15, 0.28, 0.1, 0.07],
+      opacity: [0.08, 0.34, 0.2, 0.38, 0.14, 0.08],
     },
   },
   {
@@ -121,7 +121,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, 260, -200, 340, -140, 0],
       y: [0, -200, 150, -260, 100, 0],
-      opacity: [0.06, 0.22, 0.14, 0.26, 0.09, 0.06],
+      opacity: [0.06, 0.3, 0.18, 0.34, 0.12, 0.06],
     },
   },
   {
@@ -133,7 +133,7 @@ export const landingParticles: ParticleConfig[] = [
     animation: {
       x: [0, 220, -160, 280, -100, 0],
       y: [0, -150, 110, -190, 70, 0],
-      opacity: [0.06, 0.22, 0.14, 0.26, 0.09, 0.06],
+      opacity: [0.06, 0.3, 0.18, 0.34, 0.12, 0.06],
     },
   },
 ];
