@@ -1,0 +1,2249 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "public_page",
+      "community": 12,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "public_page_home",
+      "community": 12,
+      "norm_label": "home()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "id_page",
+      "community": 2,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "PageProps",
+      "file_type": "code",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "id_page_pageprops",
+      "community": 2,
+      "norm_label": "pageprops"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "id_page_generatemetadata",
+      "community": 2,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "JobDetailPage()",
+      "file_type": "code",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "id_page_jobdetailpage",
+      "community": 2,
+      "norm_label": "jobdetailpage()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "id_route",
+      "community": 0,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "resolveApplication()",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "id_route_resolveapplication",
+      "community": 0,
+      "norm_label": "resolveapplication()"
+    },
+    {
+      "label": "handleGET()",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "id_route_handleget",
+      "community": 0,
+      "norm_label": "handleget()"
+    },
+    {
+      "label": "handleDELETE()",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "id_route_handledelete",
+      "community": 0,
+      "norm_label": "handledelete()"
+    },
+    {
+      "label": "GET",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "id_route_get",
+      "community": 0,
+      "norm_label": "get"
+    },
+    {
+      "label": "DELETE",
+      "file_type": "code",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "id_route_delete",
+      "community": 0,
+      "norm_label": "delete"
+    },
+    {
+      "label": "category-strip.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_category_strip",
+      "community": 10,
+      "norm_label": "category-strip.tsx"
+    },
+    {
+      "label": "CATEGORY_ICONS",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "components_category_strip_category_icons",
+      "community": 10,
+      "norm_label": "category_icons"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "components_category_strip_parentvariants",
+      "community": 10,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "childVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "components_category_strip_childvariants",
+      "community": 10,
+      "norm_label": "childvariants"
+    },
+    {
+      "label": "CategoryStrip()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "components_category_strip_categorystrip",
+      "community": 10,
+      "norm_label": "categorystrip()"
+    },
+    {
+      "label": "featured-jobs-grid.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid",
+      "community": 4,
+      "norm_label": "featured-jobs-grid.tsx"
+    },
+    {
+      "label": "FeaturedJobsGridProps",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid_featuredjobsgridprops",
+      "community": 4,
+      "norm_label": "featuredjobsgridprops"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid_parentvariants",
+      "community": 4,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "childVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid_childvariants",
+      "community": 4,
+      "norm_label": "childvariants"
+    },
+    {
+      "label": "toCardProps()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid_tocardprops",
+      "community": 4,
+      "norm_label": "tocardprops()"
+    },
+    {
+      "label": "FeaturedJobsGrid()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "components_featured_jobs_grid_featuredjobsgrid",
+      "community": 4,
+      "norm_label": "featuredjobsgrid()"
+    },
+    {
+      "label": "featured-jobs.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_featured_jobs",
+      "community": 4,
+      "norm_label": "featured-jobs.tsx"
+    },
+    {
+      "label": "FeaturedJobs()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/featured-jobs.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_featured_jobs_featuredjobs",
+      "community": 4,
+      "norm_label": "featuredjobs()"
+    },
+    {
+      "label": "footer.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_footer",
+      "community": 7,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "label": "LinkedInIcon()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "components_footer_linkedinicon",
+      "community": 7,
+      "norm_label": "linkedinicon()"
+    },
+    {
+      "label": "GitHubIcon()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "components_footer_githubicon",
+      "community": 7,
+      "norm_label": "githubicon()"
+    },
+    {
+      "label": "columns",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "components_footer_columns",
+      "community": 7,
+      "norm_label": "columns"
+    },
+    {
+      "label": "socials",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "components_footer_socials",
+      "community": 7,
+      "norm_label": "socials"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "components_footer_footer",
+      "community": 7,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "how-it-works.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_how_it_works",
+      "community": 11,
+      "norm_label": "how-it-works.tsx"
+    },
+    {
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_how_it_works_steps",
+      "community": 11,
+      "norm_label": "steps"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "components_how_it_works_parentvariants",
+      "community": 11,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "childVariants",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "components_how_it_works_childvariants",
+      "community": 11,
+      "norm_label": "childvariants"
+    },
+    {
+      "label": "HowItWorks()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "components_how_it_works_howitworks",
+      "community": 11,
+      "norm_label": "howitworks()"
+    },
+    {
+      "label": "landing-page-skeleton.tsx",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/landing-page-skeleton.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_landing_page_skeleton",
+      "community": 12,
+      "norm_label": "landing-page-skeleton.tsx"
+    },
+    {
+      "label": "LandingPageSkeleton()",
+      "file_type": "code",
+      "source_file": "app/features/landing/components/landing-page-skeleton.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_landing_page_skeleton_landingpageskeleton",
+      "community": 12,
+      "norm_label": "landingpageskeleton()"
+    },
+    {
+      "label": "interview-checklist-section.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "career_resources_interview_checklist_section",
+      "community": 8,
+      "norm_label": "interview-checklist-section.tsx"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "career_resources_interview_checklist_section_items",
+      "community": 8,
+      "norm_label": "items"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "career_resources_interview_checklist_section_parentvariants",
+      "community": 8,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "sectionVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "career_resources_interview_checklist_section_sectionvariants",
+      "community": 8,
+      "norm_label": "sectionvariants"
+    },
+    {
+      "label": "InterviewChecklistSection()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "career_resources_interview_checklist_section_interviewchecklistsection",
+      "community": 8,
+      "norm_label": "interviewchecklistsection()"
+    },
+    {
+      "label": "resources-cta.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resources-cta.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "career_resources_resources_cta",
+      "community": 14,
+      "norm_label": "resources-cta.tsx"
+    },
+    {
+      "label": "ctaVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resources-cta.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "career_resources_resources_cta_ctavariants",
+      "community": 14,
+      "norm_label": "ctavariants"
+    },
+    {
+      "label": "ResourcesCTA()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resources-cta.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "career_resources_resources_cta_resourcescta",
+      "community": 14,
+      "norm_label": "resourcescta()"
+    },
+    {
+      "label": "resume-tips-section.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section",
+      "community": 5,
+      "norm_label": "resume-tips-section.tsx"
+    },
+    {
+      "label": "Tip",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section_tip",
+      "community": 5,
+      "norm_label": "tip"
+    },
+    {
+      "label": "tips",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section_tips",
+      "community": 5,
+      "norm_label": "tips"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section_parentvariants",
+      "community": 5,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "sectionVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section_sectionvariants",
+      "community": 5,
+      "norm_label": "sectionvariants"
+    },
+    {
+      "label": "ResumeTipsSection()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "career_resources_resume_tips_section_resumetipssection",
+      "community": 5,
+      "norm_label": "resumetipssection()"
+    },
+    {
+      "label": "salary-faq-section.tsx",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section",
+      "community": 6,
+      "norm_label": "salary-faq-section.tsx"
+    },
+    {
+      "label": "FAQ",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section_faq",
+      "community": 6,
+      "norm_label": "faq"
+    },
+    {
+      "label": "faqs",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section_faqs",
+      "community": 6,
+      "norm_label": "faqs"
+    },
+    {
+      "label": "parentVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section_parentvariants",
+      "community": 6,
+      "norm_label": "parentvariants"
+    },
+    {
+      "label": "sectionVariants",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section_sectionvariants",
+      "community": 6,
+      "norm_label": "sectionvariants"
+    },
+    {
+      "label": "SalaryFAQSection()",
+      "file_type": "code",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "career_resources_salary_faq_section_salaryfaqsection",
+      "community": 6,
+      "norm_label": "salaryfaqsection()"
+    },
+    {
+      "label": "job-detail.tsx",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_job_detail",
+      "community": 2,
+      "norm_label": "job-detail.tsx"
+    },
+    {
+      "label": "STATUS_BADGE",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "components_job_detail_status_badge",
+      "community": 2,
+      "norm_label": "status_badge"
+    },
+    {
+      "label": "TABS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "components_job_detail_tabs",
+      "community": 2,
+      "norm_label": "tabs"
+    },
+    {
+      "label": "JobDetailProps",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "components_job_detail_jobdetailprops",
+      "community": 2,
+      "norm_label": "jobdetailprops"
+    },
+    {
+      "label": "JobDetail()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "components_job_detail_jobdetail",
+      "community": 2,
+      "norm_label": "jobdetail()"
+    },
+    {
+      "label": "recruiter-job-columns.tsx",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_recruiter_job_columns",
+      "community": 1,
+      "norm_label": "recruiter-job-columns.tsx"
+    },
+    {
+      "label": "STATUS_BADGE",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "components_recruiter_job_columns_status_badge",
+      "community": 1,
+      "norm_label": "status_badge"
+    },
+    {
+      "label": "Actions",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "components_recruiter_job_columns_actions",
+      "community": 1,
+      "norm_label": "actions"
+    },
+    {
+      "label": "createRecruiterJobColumns()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "components_recruiter_job_columns_createrecruiterjobcolumns",
+      "community": 1,
+      "norm_label": "createrecruiterjobcolumns()"
+    },
+    {
+      "label": "recruiter-jobs-table.tsx",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_recruiter_jobs_table",
+      "community": 1,
+      "norm_label": "recruiter-jobs-table.tsx"
+    },
+    {
+      "label": "WORK_MODE_LABELS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "components_recruiter_jobs_table_work_mode_labels",
+      "community": 1,
+      "norm_label": "work_mode_labels"
+    },
+    {
+      "label": "EMPLOYMENT_TYPE_LABELS",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "components_recruiter_jobs_table_employment_type_labels",
+      "community": 1,
+      "norm_label": "employment_type_labels"
+    },
+    {
+      "label": "RecruiterJobsTable()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "components_recruiter_jobs_table_recruiterjobstable",
+      "community": 1,
+      "norm_label": "recruiterjobstable()"
+    },
+    {
+      "label": "job-queries.ts",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "queries_job_queries",
+      "community": 1,
+      "norm_label": "job-queries.ts"
+    },
+    {
+      "label": "RecruiterJobRow",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "queries_job_queries_recruiterjobrow",
+      "community": 1,
+      "norm_label": "recruiterjobrow"
+    },
+    {
+      "label": "RecruiterJobDetail",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "queries_job_queries_recruiterjobdetail",
+      "community": 2,
+      "norm_label": "recruiterjobdetail"
+    },
+    {
+      "label": "RecruiterJobListResult",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "queries_job_queries_recruiterjoblistresult",
+      "community": 1,
+      "norm_label": "recruiterjoblistresult"
+    },
+    {
+      "label": "listJobs()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "queries_job_queries_listjobs",
+      "community": 1,
+      "norm_label": "listjobs()"
+    },
+    {
+      "label": "getJobById()",
+      "file_type": "code",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L135",
+      "_origin": "ast",
+      "id": "queries_job_queries_getjobbyid",
+      "community": 1,
+      "norm_label": "getjobbyid()"
+    },
+    {
+      "label": "require-role.ts",
+      "file_type": "code",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_require_role",
+      "community": 0,
+      "norm_label": "require-role.ts"
+    },
+    {
+      "label": "ResolvedSession",
+      "file_type": "code",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "api_require_role_resolvedsession",
+      "community": 0,
+      "norm_label": "resolvedsession"
+    },
+    {
+      "label": "requireRole()",
+      "file_type": "code",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "api_require_role_requirerole",
+      "community": 0,
+      "norm_label": "requirerole()"
+    },
+    {
+      "label": "applications-page.tsx",
+      "file_type": "code",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_applications_page",
+      "community": 9,
+      "norm_label": "applications-page.tsx"
+    },
+    {
+      "label": "STATUSES",
+      "file_type": "code",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "components_applications_page_statuses",
+      "community": 9,
+      "norm_label": "statuses"
+    },
+    {
+      "label": "AppRow",
+      "file_type": "code",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "components_applications_page_approw",
+      "community": 9,
+      "norm_label": "approw"
+    },
+    {
+      "label": "daysAgo()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "components_applications_page_daysago",
+      "community": 9,
+      "norm_label": "daysago()"
+    },
+    {
+      "label": "ApplicationsPage()",
+      "file_type": "code",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "components_applications_page_applicationspage",
+      "community": 9,
+      "norm_label": "applicationspage()"
+    },
+    {
+      "label": "user-application-queries.ts",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "queries_user_application_queries",
+      "community": 0,
+      "norm_label": "user-application-queries.ts"
+    },
+    {
+      "label": "UserApplicationRow",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_userapplicationrow",
+      "community": 0,
+      "norm_label": "userapplicationrow"
+    },
+    {
+      "label": "UserApplicationDetail",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_userapplicationdetail",
+      "community": 0,
+      "norm_label": "userapplicationdetail"
+    },
+    {
+      "label": "UserApplicationListResult",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_userapplicationlistresult",
+      "community": 0,
+      "norm_label": "userapplicationlistresult"
+    },
+    {
+      "label": "listUserApplications()",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_listuserapplications",
+      "community": 0,
+      "norm_label": "listuserapplications()"
+    },
+    {
+      "label": "getUserApplicationDetail()",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_getuserapplicationdetail",
+      "community": 0,
+      "norm_label": "getuserapplicationdetail()"
+    },
+    {
+      "label": "getUserApplicationByJobSlug()",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L119",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_getuserapplicationbyjobslug",
+      "community": 0,
+      "norm_label": "getuserapplicationbyjobslug()"
+    },
+    {
+      "label": "mapApplication()",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_mapapplication",
+      "community": 0,
+      "norm_label": "mapapplication()"
+    },
+    {
+      "label": "getUserApplicationStats()",
+      "file_type": "code",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "queries_user_application_queries_getuserapplicationstats",
+      "community": 0,
+      "norm_label": "getuserapplicationstats()"
+    },
+    {
+      "label": "middleware.ts",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware",
+      "community": 3,
+      "norm_label": "middleware.ts"
+    },
+    {
+      "label": "RouteContext",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_routecontext",
+      "community": 3,
+      "norm_label": "routecontext"
+    },
+    {
+      "label": "SimpleHandler",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_simplehandler",
+      "community": 3,
+      "norm_label": "simplehandler"
+    },
+    {
+      "label": "ParamHandler",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_paramhandler",
+      "community": 3,
+      "norm_label": "paramhandler"
+    },
+    {
+      "label": "getEffectiveMax()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_geteffectivemax",
+      "community": 3,
+      "norm_label": "geteffectivemax()"
+    },
+    {
+      "label": "getActorKey()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_getactorkey",
+      "community": 3,
+      "norm_label": "getactorkey()"
+    },
+    {
+      "label": "extractIP()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_extractip",
+      "community": 3,
+      "norm_label": "extractip()"
+    },
+    {
+      "label": "buildServiceUnavailableResponse()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_buildserviceunavailableresponse",
+      "community": 3,
+      "norm_label": "buildserviceunavailableresponse()"
+    },
+    {
+      "label": "createWithRateLimit()",
+      "file_type": "code",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "rate_limiting_middleware_createwithratelimit",
+      "community": 3,
+      "norm_label": "createwithratelimit()"
+    },
+    {
+      "label": "status.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/integration/applications/status.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "applications_status_test",
+      "community": 15,
+      "norm_label": "status.test.ts"
+    },
+    {
+      "label": "require-role.test.ts",
+      "file_type": "code",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "unit_require_role_test",
+      "community": 13,
+      "norm_label": "require-role.test.ts"
+    },
+    {
+      "label": "mockSession",
+      "file_type": "code",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "unit_require_role_test_mocksession",
+      "community": 13,
+      "norm_label": "mocksession"
+    },
+    {
+      "label": "mockFindUnique",
+      "file_type": "code",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "unit_require_role_test_mockfindunique",
+      "community": 13,
+      "norm_label": "mockfindunique"
+    },
+    {
+      "label": "mockCompanyFindUnique",
+      "file_type": "code",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "unit_require_role_test_mockcompanyfindunique",
+      "community": 13,
+      "norm_label": "mockcompanyfindunique"
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "public_page",
+      "target": "components_landing_page_skeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "public_page",
+      "target": "components_landing_page_skeleton_landingpageskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(public)/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "public_page",
+      "target": "public_page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "id_page",
+      "target": "components_job_detail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "id_page",
+      "target": "components_job_detail_jobdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "id_page",
+      "target": "id_page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "id_page",
+      "target": "id_page_jobdetailpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(roles)/recruiter/jobs/[id]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "id_page",
+      "target": "id_page_pageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "api_require_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "id_route_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "id_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "id_route_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "id_route_handleget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "id_route_resolveapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "queries_user_application_queries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "queries_user_application_queries_getuserapplicationbyjobslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "id_route",
+      "target": "queries_user_application_queries_getuserapplicationdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "id_route_handledelete",
+      "target": "id_route_resolveapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "id_route_handleget",
+      "target": "id_route_resolveapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "id_route_resolveapplication",
+      "target": "queries_user_application_queries_getuserapplicationbyjobslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "id_route_resolveapplication",
+      "target": "queries_user_application_queries_getuserapplicationdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "id_route_handleget",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/user/applications/[id]/route.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "id_route_handledelete",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_category_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_categorystrip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_childvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/category-strip.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "components_category_strip",
+      "target": "components_category_strip_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_featured_jobs",
+      "target": "components_featured_jobs_grid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_featured_jobs_grid_childvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_featured_jobs_grid_featuredjobsgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_featured_jobs_grid_featuredjobsgridprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_featured_jobs_grid_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs-grid.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "components_featured_jobs_grid",
+      "target": "components_featured_jobs_grid_tocardprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_featured_jobs",
+      "target": "components_featured_jobs_grid_featuredjobsgrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/featured-jobs.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_featured_jobs",
+      "target": "components_featured_jobs_featuredjobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_githubicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_linkedinicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/footer.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_socials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "components_how_it_works",
+      "target": "components_how_it_works_childvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "components_how_it_works",
+      "target": "components_how_it_works_howitworks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "components_how_it_works",
+      "target": "components_how_it_works_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/how-it-works.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_how_it_works",
+      "target": "components_how_it_works_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/landing/components/landing-page-skeleton.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_landing_page_skeleton",
+      "target": "components_landing_page_skeleton_landingpageskeleton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "career_resources_interview_checklist_section",
+      "target": "career_resources_interview_checklist_section_interviewchecklistsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "career_resources_interview_checklist_section",
+      "target": "career_resources_interview_checklist_section_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "career_resources_interview_checklist_section",
+      "target": "career_resources_interview_checklist_section_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/interview-checklist-section.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "career_resources_interview_checklist_section",
+      "target": "career_resources_interview_checklist_section_sectionvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resources-cta.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "career_resources_resources_cta",
+      "target": "career_resources_resources_cta_ctavariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resources-cta.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "career_resources_resources_cta",
+      "target": "career_resources_resources_cta_resourcescta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "career_resources_resume_tips_section",
+      "target": "career_resources_resume_tips_section_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "career_resources_resume_tips_section",
+      "target": "career_resources_resume_tips_section_resumetipssection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "career_resources_resume_tips_section",
+      "target": "career_resources_resume_tips_section_sectionvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "career_resources_resume_tips_section",
+      "target": "career_resources_resume_tips_section_tip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/resume-tips-section.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "career_resources_resume_tips_section",
+      "target": "career_resources_resume_tips_section_tips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "career_resources_salary_faq_section",
+      "target": "career_resources_salary_faq_section_faq",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "career_resources_salary_faq_section",
+      "target": "career_resources_salary_faq_section_faqs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "career_resources_salary_faq_section",
+      "target": "career_resources_salary_faq_section_parentvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "career_resources_salary_faq_section",
+      "target": "career_resources_salary_faq_section_salaryfaqsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/public/components/career-resources/salary-faq-section.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "career_resources_salary_faq_section",
+      "target": "career_resources_salary_faq_section_sectionvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "components_job_detail_jobdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "components_job_detail_jobdetailprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "components_job_detail_status_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "components_job_detail_tabs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "queries_job_queries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/job-detail.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "components_job_detail",
+      "target": "queries_job_queries_recruiterjobdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "components_recruiter_job_columns",
+      "target": "components_recruiter_job_columns_actions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "components_recruiter_job_columns",
+      "target": "components_recruiter_job_columns_createrecruiterjobcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "components_recruiter_job_columns",
+      "target": "components_recruiter_job_columns_status_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_recruiter_job_columns",
+      "target": "queries_job_queries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-job-columns.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_recruiter_job_columns",
+      "target": "queries_job_queries_recruiterjobrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_recruiter_job_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_recruiter_job_columns_createrecruiterjobcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table_recruiterjobstable",
+      "target": "components_recruiter_job_columns_createrecruiterjobcolumns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_recruiter_jobs_table_employment_type_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_recruiter_jobs_table_recruiterjobstable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "components_recruiter_jobs_table_work_mode_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "queries_job_queries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/components/recruiter-jobs-table.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "components_recruiter_jobs_table",
+      "target": "queries_job_queries_recruiterjobrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "queries_job_queries",
+      "target": "queries_job_queries_getjobbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "queries_job_queries",
+      "target": "queries_job_queries_listjobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "queries_job_queries",
+      "target": "queries_job_queries_recruiterjobdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "queries_job_queries",
+      "target": "queries_job_queries_recruiterjoblistresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/recruiter/queries/job-queries.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "queries_job_queries",
+      "target": "queries_job_queries_recruiterjobrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "api_require_role_requirerole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/shared/api/require-role.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "api_require_role",
+      "target": "api_require_role_resolvedsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "components_applications_page",
+      "target": "components_applications_page_applicationspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "components_applications_page",
+      "target": "components_applications_page_approw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "components_applications_page",
+      "target": "components_applications_page_daysago",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/components/applications-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "components_applications_page",
+      "target": "components_applications_page_statuses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_getuserapplicationbyjobslug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_getuserapplicationdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_getuserapplicationstats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_listuserapplications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_mapapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_userapplicationdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_userapplicationlistresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "queries_user_application_queries",
+      "target": "queries_user_application_queries_userapplicationrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "queries_user_application_queries_getuserapplicationdetail",
+      "target": "queries_user_application_queries_mapapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/features/user/queries/user-application-queries.ts",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "queries_user_application_queries_getuserapplicationbyjobslug",
+      "target": "queries_user_application_queries_mapapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_buildserviceunavailableresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_createwithratelimit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_extractip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_getactorkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_geteffectivemax",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_paramhandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_routecontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/rate-limiting/middleware.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "rate_limiting_middleware",
+      "target": "rate_limiting_middleware_simplehandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "unit_require_role_test",
+      "target": "unit_require_role_test_mockcompanyfindunique",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "unit_require_role_test",
+      "target": "unit_require_role_test_mockfindunique",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/test/unit/require-role.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "unit_require_role_test",
+      "target": "unit_require_role_test_mocksession",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "41537f1f2487acbbdb343d01559415b9151d46c4"
+}
