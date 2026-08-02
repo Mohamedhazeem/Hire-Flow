@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRightIcon, CheckCircle2Icon, SparklesIcon, UsersIcon } from "lucide-react";
 import { JobSearchBar } from "@/app/features/jobs/components/job-search-bar";
+import { AnimatedBorderCard } from "./animated-border-card";
 
 export function HeroSearch() {
   return (
@@ -73,7 +74,7 @@ export function HeroSearch() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="flex items-center"
           >
-            <div className="w-full rounded-[2rem] border border-white/40 bg-white/75 backdrop-blur-xl shadow-[0_30px_80px_-40px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.6)] p-6 sm:p-7 dark:border-white/10 dark:bg-slate-900/70 dark:shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45),inset_0_1px_0_rgba(255,255,255,0.05)]">
+            <AnimatedBorderCard className="w-full p-6 sm:p-7">
               <p className="text-sm uppercase tracking-[0.24em] text-brand mb-3">
                 Search the latest roles
               </p>
@@ -89,7 +90,7 @@ export function HeroSearch() {
                   <p>Professional application tools built in.</p>
                 </div>
               </div>
-            </div>
+            </AnimatedBorderCard>
           </motion.div>
         </div>
       </div>
