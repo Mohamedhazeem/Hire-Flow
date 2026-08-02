@@ -21,15 +21,25 @@ const adminLinks: SidebarLink[] = [
   { href: "/admin/users", label: "Users", icon: UsersIcon },
 ];
 
-export function AdminSidebar() {
+type AdminSidebarProps = {
+  initialUser?: { id: string; name?: string; image?: string | null; role?: string } | null;
+};
+
+export function AdminSidebar({ initialUser }: AdminSidebarProps) {
   const { data: session } = useSession();
   const signOut = useSignOut();
 
-  const sidebarUser: SidebarUser | undefined = session?.user
+  const sidebarUser: SidebarUser | undefined = initialUser
+    ? {
+        name: initialUser.name ?? "",
+        image: initialUser.image ?? null,
+        role: initialUser.role ?? "admin",
+      }
+    : session?.user
     ? {
         name: session.user.name,
         image: session.user.image,
-        role: (session.user as { role?: string }).role ?? "user",
+        role: (session.user as { role?: string }).role ?? "admin",
       }
     : undefined;
 

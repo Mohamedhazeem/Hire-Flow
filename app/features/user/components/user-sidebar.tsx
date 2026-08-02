@@ -21,11 +21,21 @@ const userLinks: SidebarLink[] = [
   { href: "/user/messages", label: "Messages", icon: MessageSquareTextIcon },
 ];
 
-export function UserSidebar() {
+type UserSidebarProps = {
+  initialUser?: { id: string; name?: string; image?: string | null; role?: string } | null;
+};
+
+export function UserSidebar({ initialUser }: UserSidebarProps) {
   const { data: session } = useSession();
   const signOut = useSignOut();
 
-  const sidebarUser: SidebarUser | undefined = session?.user
+  const sidebarUser: SidebarUser | undefined = initialUser
+    ? {
+        name: initialUser.name ?? "",
+        image: initialUser.image ?? null,
+        role: initialUser.role ?? "user",
+      }
+    : session?.user
     ? {
         name: session.user.name,
         image: session.user.image,
