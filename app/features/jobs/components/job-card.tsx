@@ -76,7 +76,7 @@ export function JobCard({
           router.push(`/jobs/${slug ?? id}`);
         }
       }}
-      className="w-full text-left rounded-xl border border-border-subtle bg-bg-surface p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer"
+      className="w-full text-left rounded-3xl border border-slate-200 bg-white p-5 hover:border-brand/30 hover:shadow-sm transition-all cursor-pointer dark:border-slate-800 dark:bg-slate-900"
     >
       <div className="flex items-start gap-4 min-w-0">
         <div className="size-11 rounded-lg bg-brand/10 flex items-center justify-center text-brand shrink-0 text-lg font-bold">
@@ -93,8 +93,8 @@ export function JobCard({
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-text-heading truncate">{title}</h3>
-          <p className="text-sm text-text-muted mt-0.5">{companyName}</p>
+          <h3 className="font-semibold text-slate-950 dark:text-white truncate">{title}</h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">{companyName}</p>
         </div>
         <div className="flex items-center gap-1 shrink-0">
           {isExpired ? (

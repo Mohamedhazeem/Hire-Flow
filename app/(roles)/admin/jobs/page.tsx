@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/layout/page-header";
+import { BriefcaseIcon } from "lucide-react";
 import { AdminJobsTable } from "@/app/features/admin/components/admin-jobs-table";
 import { Suspense } from "react";
 import { Metadata } from "next";
@@ -14,7 +15,7 @@ export default function AdminJobsPage() {
       <PageHeader
         title="Jobs"
         description="Manage all job listings — toggle active/inactive status or delete listings"
-        className="text-center"
+        icon={<BriefcaseIcon className="size-5" />}
       />
       <Suspense
         fallback={<div className="text-text-muted text-sm py-8 text-center">Loading jobs...</div>}

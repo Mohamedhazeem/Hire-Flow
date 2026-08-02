@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/layout/page-header";
+import { UsersIcon } from "lucide-react";
 import { InviteRecruiterForm } from "@/app/features/recruiter/components/invite-recruiter-form";
 import { RecruiterTeamList } from "@/app/features/recruiter/components/recruiter-team-list";
 import { Suspense } from "react";
@@ -14,6 +15,7 @@ export default function RecruiterTeamPage() {
       <PageHeader
         title="Team Management"
         description="Invite new team members and manage your team"
+        icon={<UsersIcon className="size-5" />}
         className="text-center"
       />
 

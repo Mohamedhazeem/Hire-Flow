@@ -31,18 +31,25 @@ const childVariants = {
 
 export function CategoryStrip() {
   return (
-    <div className="bg-bg-surface border-b border-border-subtle">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-6 sm:py-8">
+    <section className="relative z-10 text-slate-950 dark:text-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-14">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-30px" }}
           variants={parentVariants}
+          className="space-y-6"
         >
-          <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4 text-center sm:text-left">
-            Browse by Category
-          </h2>
-          <div className="flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-5 sm:gap-4 scrollbar-none">
+          <div className="text-center sm:text-left">
+            <p className="text-xs uppercase tracking-[0.32em] text-brand-light mb-3">
+              Browse roles by category
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 dark:text-white">
+              Find opportunities that match your career focus.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {JOB_CATEGORIES.map((cat) => {
               const params = new URLSearchParams(
                 "industry" in cat.filter
@@ -55,18 +62,22 @@ export function CategoryStrip() {
                 <motion.div
                   key={cat.label}
                   variants={childVariants}
-                  whileHover={{ scale: 1.04, y: -2 }}
-                  whileTap={{ scale: 0.97 }}
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="rounded-3xl border border-slate-200 bg-white p-5 transition-all hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900"
                 >
                   <Link
                     href={`/jobs?${params.toString()}`}
-                    className="flex flex-col items-center gap-2 min-w-25 sm:min-w-0 px-5 py-4 rounded-2xl border border-border-subtle bg-bg-page hover:bg-bg-surface hover:border-brand/20 transition-all"
+                    className="flex h-full flex-col items-start gap-4"
                   >
-                    <div className="size-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
+                    <div className="size-11 rounded-3xl bg-brand/10 text-brand flex items-center justify-center">
                       <Icon className="size-5" />
                     </div>
-                    <span className="text-sm font-medium text-text-body whitespace-nowrap">
+                    <span className="text-sm font-semibold text-slate-950 dark:text-white">
                       {cat.label}
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      Explore curated openings
                     </span>
                   </Link>
                 </motion.div>
@@ -75,6 +86,6 @@ export function CategoryStrip() {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

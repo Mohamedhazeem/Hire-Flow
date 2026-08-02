@@ -73,9 +73,16 @@ function ThreadListPanel({
 
   return (
     <div className="flex flex-col min-h-0 h-full bg-bg-surface lg:border-r-2 lg:border-border-subtle lg:w-80 lg:shrink-0">
-      <div className="shrink-0 px-4 pt-12 pb-3 border-b border-border-subtle">
-        <h1 className="text-lg font-bold text-text-heading">Messages</h1>
-        <p className="text-xs text-text-muted mt-0.5">{panelDescription}</p>
+      <div className="shrink-0 px-4 pt-3 pb-3 border-b border-border-subtle">
+        <div className="flex items-center gap-3">
+          <div className="size-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand shrink-0">
+            <MessageSquareTextIcon className="size-5" />
+          </div>
+          <div>
+            <h1 className="text-lg font-bold text-text-heading">Messages</h1>
+            <p className="text-xs text-text-muted mt-0.5">{panelDescription}</p>
+          </div>
+        </div>
       </div>
       {searchEndpoint && (
         <div className="shrink-0 px-4 pt-3 pb-2">

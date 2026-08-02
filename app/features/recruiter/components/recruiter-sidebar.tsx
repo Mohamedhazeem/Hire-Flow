@@ -21,11 +21,21 @@ const recruiterLinks: SidebarLink[] = [
   { href: "/recruiter/analytics", label: "Analytics", icon: BarChart3Icon },
 ];
 
-export function RecruiterSidebar() {
+type RecruiterSidebarProps = {
+  initialUser?: { id: string; name?: string; image?: string | null; role?: string } | null;
+};
+
+export function RecruiterSidebar({ initialUser }: RecruiterSidebarProps) {
   const { data: session } = useSession();
   const signOut = useSignOut();
 
-  const sidebarUser: SidebarUser | undefined = session?.user
+  const sidebarUser: SidebarUser | undefined = initialUser
+    ? {
+        name: initialUser.name ?? "",
+        image: initialUser.image ?? null,
+        role: initialUser.role ?? "recruiter",
+      }
+    : session?.user
     ? {
         name: session.user.name,
         image: session.user.image,

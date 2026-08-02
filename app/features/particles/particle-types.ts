@@ -1,4 +1,4 @@
-export type ParticleVariant = "brand" | "accent" | "purple" | "cyan" | "pink";
+export type ParticleVariant = "brand" | "accent" | "purple" | "cyan" | "pink" | "emerald" | "violet" | "amber" | "rose" | "sky" | "indigo";
 
 export type ParticleAnimation = {
   x: number[];

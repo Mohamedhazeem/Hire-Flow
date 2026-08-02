@@ -36,6 +36,18 @@
   }
 }
 
+@keyframes hero-dot-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.2;
+  }
+}
+
 @theme inline {
   /* BRAND */
   --color-brand: var(--brand-default);
@@ -548,6 +560,46 @@
   }
   .bg-sunken {
     background-color: var(--color-bg-sunken);
+  }
+  .bg-hero-hex-grid {
+    background-image:
+      radial-gradient(circle, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+      radial-gradient(circle, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+    background-position:
+      0 0,
+      40px 34px;
+    background-size: 80px 68px;
+  }
+  .animate-hero-dot {
+    animation: hero-dot-pulse 4s ease-in-out infinite;
+  }
+  .animate-landing-glow-float {
+    animation: landing-glow-float 12s ease-in-out infinite;
+  }
+  .animate-landing-glow-pop {
+    animation: landing-glow-pop 14s ease-in-out infinite;
+  }
+  @keyframes landing-glow-float {
+    0%,
+    100% {
+      transform: translate(-50%, 0);
+      opacity: 0.75;
+    }
+    50% {
+      transform: translate(-50%, 8px);
+      opacity: 0.45;
+    }
+  }
+  @keyframes landing-glow-pop {
+    0%,
+    100% {
+      transform: translateX(0);
+      opacity: 0.65;
+    }
+    50% {
+      transform: translateX(-8px);
+      opacity: 0.35;
+    }
   }
   .shadow-brand {
     box-shadow: var(--shadow-brand);
