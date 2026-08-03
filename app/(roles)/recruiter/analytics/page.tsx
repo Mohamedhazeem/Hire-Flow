@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { RecruiterAnalyticsPage } from "@/app/features/recruiter/components/recruiter-analytics-page";
 
 export const metadata = {
@@ -6,5 +7,15 @@ export const metadata = {
 };
 
 export default function AnalyticsPage() {
-  return <RecruiterAnalyticsPage />;
+  return (
+    <Suspense
+      fallback={
+        <div className="flex-1 min-h-0 flex items-center justify-center">
+          <p className="text-text-muted text-sm">Loading analytics...</p>
+        </div>
+      }
+    >
+      <RecruiterAnalyticsPage />
+    </Suspense>
+  );
 }
