@@ -3620,8 +3620,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1785673329.3958743,
-    "ast_hash": "149572afefab1e1a4cbc26614a570279",
+    "mtime": 1785766870.2684803,
+    "ast_hash": "2e90ff959a8f87164df18a9cdba9f66e",
     "semantic_hash": ""
   },
   "docs/architecture/rate-limiting.md": {

@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-dashboard.tsx": {
-    "mtime": 1785341967.2027984,
-    "ast_hash": "ed66df0202495c28ae14c6a6c2da004e",
+    "mtime": 1785724966.8674464,
+    "ast_hash": "62ec93722da3c38c86413548eab0127a",
     "semantic_hash": ""
   },
   "app/features/admin/components/admin-jobs-table.tsx": {
@@ -945,8 +945,8 @@
     "semantic_hash": ""
   },
   "app/features/auth/components/form-input.tsx": {
-    "mtime": 1785308640.707396,
-    "ast_hash": "cc008087c6cfb830e77edf04f8ecb881",
+    "mtime": 1785721835.4689498,
+    "ast_hash": "0a0e0849f1d4363a881d67cee65b0372",
     "semantic_hash": ""
   },
   "app/features/auth/components/login-form.tsx": {
@@ -1395,18 +1395,18 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/charts/distribution-bar-chart.tsx": {
-    "mtime": 1785341967.396876,
-    "ast_hash": "aae7adef05a0e1f7d0a17480c4ecb994",
+    "mtime": 1785725537.5036087,
+    "ast_hash": "91ee1a68a3e933d6d63398ca4bec6167",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/charts/funnel-chart.tsx": {
-    "mtime": 1785319827.2414467,
-    "ast_hash": "b015291fa204a2c204fb8cd7720faf4d",
+    "mtime": 1785725578.8632815,
+    "ast_hash": "e3eec22217e01ba380df7ce32983d235",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/charts/trend-chart.tsx": {
-    "mtime": 1785319827.2664545,
-    "ast_hash": "4fa395c53ea998e53f07b65062b46672",
+    "mtime": 1785725524.7201097,
+    "ast_hash": "5c069c26c0cbf1cfeba4ddc830cef815",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/company-form.tsx": {
@@ -1465,13 +1465,13 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/per-job-analytics-page.tsx": {
-    "mtime": 1785319827.5971155,
-    "ast_hash": "f3c3607f18a04acdc5fecf5fb4665997",
+    "mtime": 1785725042.3180034,
+    "ast_hash": "7b65b1f50ec47367b0584f4cc63e86f2",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-analytics-page.tsx": {
-    "mtime": 1785319827.6436653,
-    "ast_hash": "ac49c75278aecd2f0b299730fc6173ad",
+    "mtime": 1785725010.9222777,
+    "ast_hash": "3a016442826d71c023cdcd8bc44a7634",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-dashboard.tsx": {
@@ -1485,8 +1485,8 @@
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-jobs-table.tsx": {
-    "mtime": 1785487797.999511,
-    "ast_hash": "7b2c9826fa5bc7f0b2f027ac5fe951c4",
+    "mtime": 1785721909.2299383,
+    "ast_hash": "8c3055fc19fc716d4d93520ed9228d13",
     "semantic_hash": ""
   },
   "app/features/recruiter/components/recruiter-messages-page.tsx": {
