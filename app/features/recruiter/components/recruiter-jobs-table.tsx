@@ -23,6 +23,7 @@ import { createRecruiterJobColumns } from "./recruiter-job-columns";
 import { SearchIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SkillFilter } from "@/app/features/jobs/components/skill-filter";
+import { CollapsibleFilters } from "@/components/shared/collapsible-filters";
 
 const WORK_MODE_LABELS: Record<string, string> = {
   all: "All Modes",
@@ -147,7 +148,7 @@ export function RecruiterJobsTable() {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <div className="flex flex-col gap-3">
         <div className="relative flex-1 min-w-0">
           <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
           <Input
@@ -160,66 +161,70 @@ export function RecruiterJobsTable() {
             className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
           />
         </div>
-        <Select
-          value={status}
-          onValueChange={(v) => updateParams({ status: v ?? "all", page: "1" })}
-        >
-          <SelectTrigger className="w-full sm:w-36">
-            <SelectValue>
-              {status === "all"
-                ? "All Status"
-                : status === "draft"
-                  ? "Draft"
-                  : status === "active"
-                    ? "Active"
-                    : "Archived"}
-            </SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Status</SelectItem>
-            <SelectItem value="draft">Draft</SelectItem>
-            <SelectItem value="active">Active</SelectItem>
-            <SelectItem value="archived">Archived</SelectItem>
-          </SelectContent>
-        </Select>
-        <Select
-          value={workMode}
-          onValueChange={(v) => updateParams({ workMode: v ?? "all", page: "1" })}
-        >
-          <SelectTrigger className="w-full sm:w-36">
-            <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            {Object.entries(WORK_MODE_LABELS).map(([k, l]) => (
-              <SelectItem key={k} value={k}>
-                {l}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select
-          value={employmentType}
-          onValueChange={(v) => updateParams({ employmentType: v ?? "all", page: "1" })}
-        >
-          <SelectTrigger className="w-full sm:w-40">
-            <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            {Object.entries(EMPLOYMENT_TYPE_LABELS).map(([k, l]) => (
-              <SelectItem key={k} value={k}>
-                {l}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <SkillFilter
-          value={skills}
-          onChange={(next) =>
-            updateParams({
-              skills: next.join(","),
-            })
-          }
-        />
+        <CollapsibleFilters>
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
+            <Select
+              value={status}
+              onValueChange={(v) => updateParams({ status: v ?? "all", page: "1" })}
+            >
+              <SelectTrigger className="w-full sm:w-36">
+                <SelectValue>
+                  {status === "all"
+                    ? "All Status"
+                    : status === "draft"
+                      ? "Draft"
+                      : status === "active"
+                        ? "Active"
+                        : "Archived"}
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Status</SelectItem>
+                <SelectItem value="draft">Draft</SelectItem>
+                <SelectItem value="active">Active</SelectItem>
+                <SelectItem value="archived">Archived</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select
+              value={workMode}
+              onValueChange={(v) => updateParams({ workMode: v ?? "all", page: "1" })}
+            >
+              <SelectTrigger className="w-full sm:w-36">
+                <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(WORK_MODE_LABELS).map(([k, l]) => (
+                  <SelectItem key={k} value={k}>
+                    {l}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select
+              value={employmentType}
+              onValueChange={(v) => updateParams({ employmentType: v ?? "all", page: "1" })}
+            >
+              <SelectTrigger className="w-full sm:w-40">
+                <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(EMPLOYMENT_TYPE_LABELS).map(([k, l]) => (
+                  <SelectItem key={k} value={k}>
+                    {l}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <SkillFilter
+              value={skills}
+              onChange={(next) =>
+                updateParams({
+                  skills: next.join(","),
+                })
+              }
+            />
+          </div>
+        </CollapsibleFilters>
       </div>
 
       <DataTable

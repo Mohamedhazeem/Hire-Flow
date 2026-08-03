@@ -182,7 +182,7 @@ export function AdminDashboard() {
           title="Applications"
           subtitle="Last 14 days"
         >
-          <LineChartCard data={data.applicationsLast14Days} color="#3b82f6" />
+          <LineChartCard data={data.applicationsLast14Days ?? []} color="#3b82f6" />
         </ChartCard>
         <ChartCard
           icon={<UserPlusIcon className="size-4" />}
@@ -191,7 +191,7 @@ export function AdminDashboard() {
           title="Signups"
           subtitle="Last 14 days"
         >
-          <LineChartCard data={data.signupsLast14Days} color="#10b981" />
+          <LineChartCard data={data.signupsLast14Days ?? []} color="#10b981" />
         </ChartCard>
         <ChartCard
           icon={<ActivityIcon className="size-4" />}
@@ -200,7 +200,7 @@ export function AdminDashboard() {
           title="Jobs by Work Mode"
           subtitle="Distribution"
         >
-          <WorkModeBarChart data={data.jobsByWorkMode} />
+          <WorkModeBarChart data={data.jobsByWorkMode ?? []} />
         </ChartCard>
       </div>
 

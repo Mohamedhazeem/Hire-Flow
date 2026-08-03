@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, AlertCircleIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { UseFormRegisterReturn, FieldError } from "react-hook-form";
 
@@ -52,10 +52,10 @@ export function FormInput({ label, id, error, register, ...props }: FormInputPro
         )}
       </div>
       {error && (
-        <p className="text-sm text-error flex items-center gap-1">
-          <span className="text-error">*</span>
-          {error.message}
-        </p>
+        <div className="flex items-center gap-2 rounded-lg border border-error/30 bg-error/5 px-3 py-2 text-sm text-error">
+          <AlertCircleIcon className="size-4 shrink-0" />
+          <span>{error.message}</span>
+        </div>
       )}
     </div>
   );

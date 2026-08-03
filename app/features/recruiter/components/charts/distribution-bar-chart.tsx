@@ -43,7 +43,7 @@ export function DistributionBarChart({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col",
+        "rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs flex flex-col",
         className,
       )}
     >
@@ -61,7 +61,7 @@ export function DistributionBarChart({
           {emptyMessage ?? "No data available"}
         </p>
       ) : (
-        <ResponsiveContainer width="100%" height="100%" className="flex-1 min-h-0">
+        <ResponsiveContainer width="100%" height={220}>
           <BarChart data={data} barCategoryGap="20%">
             <CartesianGrid
               strokeDasharray="3 3"

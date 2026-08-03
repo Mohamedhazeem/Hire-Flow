@@ -24,7 +24,7 @@ function filterFromParams(params: URLSearchParams): AnalyticsFilter {
 }
 
 function statusBarData(data: AnalyticsResponse) {
-  const statusMap = new Map(data.applicationsByStatus.map((s) => [s.stage, s.count]));
+  const statusMap = new Map((data.applicationsByStatus ?? []).map((s) => [s.stage, s.count]));
   return (Object.entries(CHART_COLORS) as Array<[string, string]>)
     .filter(([key]) => statusMap.has(key))
     .map(([key, color]) => ({
@@ -107,7 +107,7 @@ export function PerJobAnalyticsPage({ jobId }: PerJobAnalyticsPageProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <TrendChart
-          data={data.applicationTrend}
+          data={data.applicationTrend ?? []}
           color="#3b82f6"
           title="Applications Trend"
           subtitle={`${data.dateRange.from} to ${data.dateRange.to}`}
@@ -128,8 +128,8 @@ export function PerJobAnalyticsPage({ jobId }: PerJobAnalyticsPageProps) {
       </div>
 
       <FunnelChart
-        current={data.funnelCurrent}
-        historical={data.funnelHistorical}
+        current={data.funnelCurrent ?? []}
+        historical={data.funnelHistorical ?? []}
         emptyMessage="No pipeline data available"
       />
     </div>

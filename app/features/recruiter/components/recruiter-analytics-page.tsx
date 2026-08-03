@@ -43,7 +43,7 @@ function filterFromParams(params: URLSearchParams): AnalyticsFilter {
 }
 
 function statusBarData(data: AnalyticsResponse) {
-  const statusMap = new Map(data.applicationsByStatus.map((s) => [s.stage, s.count]));
+  const statusMap = new Map((data.applicationsByStatus ?? []).map((s) => [s.stage, s.count]));
   return (Object.entries(CHART_COLORS) as Array<[string, string]>)
     .filter(([key]) => statusMap.has(key))
     .map(([key, color]) => ({
@@ -54,14 +54,14 @@ function statusBarData(data: AnalyticsResponse) {
 }
 
 function workModeBarData(data: AnalyticsResponse) {
-  return data.applicationsByWorkMode.map((w) => ({
+  return (data.applicationsByWorkMode ?? []).map((w) => ({
     label: w.workMode.charAt(0).toUpperCase() + w.workMode.slice(1),
     value: w.count,
   }));
 }
 
 function employmentTypeBarData(data: AnalyticsResponse) {
-  return data.applicationsByEmploymentType.map((e) => ({
+  return (data.applicationsByEmploymentType ?? []).map((e) => ({
     label: e.employmentType.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
     value: e.count,
   }));
@@ -222,7 +222,7 @@ export function RecruiterAnalyticsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <TrendChart
-          data={data.applicationTrend}
+          data={data.applicationTrend ?? []}
           color="#3b82f6"
           title="Applications Trend"
           subtitle={`${data.dateRange.from} to ${data.dateRange.to}`}
@@ -244,8 +244,8 @@ export function RecruiterAnalyticsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         <FunnelChart
-          current={data.funnelCurrent}
-          historical={data.funnelHistorical}
+          current={data.funnelCurrent ?? []}
+          historical={data.funnelHistorical ?? []}
           emptyMessage="No pipeline data available"
         />
         <div className="flex flex-col gap-3">
@@ -269,7 +269,7 @@ export function RecruiterAnalyticsPage() {
         </div>
       </div>
 
-      {data.jobBreakdown.length > 0 && (
+      {(data.jobBreakdown ?? []).length > 0 && (
         <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs">
           <div className="mb-4">
             <h2 className="text-base font-semibold text-text-heading">Per-Job Breakdown</h2>

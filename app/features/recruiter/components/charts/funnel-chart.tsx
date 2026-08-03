@@ -77,7 +77,7 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
 
   if (current.length === 0) {
     return (
-      <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
+      <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs flex flex-col">
         <div className="flex items-center gap-2.5 mb-5">
           <div className="size-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
             <svg
@@ -103,7 +103,7 @@ export function FunnelChart({ current, historical, emptyMessage }: FunnelChartPr
   }
 
   return (
-    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
+    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs flex flex-col">
       <div className="flex items-center gap-2.5 mb-5">
         <div className="size-9 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
           <svg

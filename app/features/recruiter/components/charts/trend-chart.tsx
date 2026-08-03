@@ -40,7 +40,7 @@ export function TrendChart({
   emptyMessage,
 }: TrendChartProps) {
   return (
-    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs h-full flex flex-col">
+    <div className="rounded-2xl border border-border-subtle bg-bg-surface p-5 sm:p-6 shadow-xs flex flex-col">
       <div className="flex items-center gap-2.5 mb-5">
         <div
           className="size-9 rounded-xl flex items-center justify-center"
