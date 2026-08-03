@@ -629,8 +629,10 @@
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    animation: gradient-rotate 3s linear infinite;
     pointer-events: none;
+  }
+  .animated-gradient-border.is-animated::before {
+    animation: gradient-rotate 3s linear infinite;
   }
   .dark .animated-gradient-border {
     background: rgba(15, 23, 42, 1);
@@ -638,6 +640,30 @@
   }
   .animated-gradient-border:hover {
     box-shadow: 0 0 18px rgba(99, 102, 241, 0.25), 0 0 50px rgba(236, 72, 153, 0.18);
+  }
+
+  @media (max-width: 640px) {
+    .animated-gradient-border {
+      box-shadow: none;
+    }
+    .dark .animated-gradient-border {
+      box-shadow: none;
+    }
+    .animated-gradient-border.is-animated::before {
+      animation: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-gradient-border.is-animated::before {
+      animation: none;
+    }
+  }
+
+  @supports not (mask-composite: exclude) {
+    .animated-gradient-border::before {
+      display: none;
+    }
   }
   .shadow-brand {
     box-shadow: var(--shadow-brand);

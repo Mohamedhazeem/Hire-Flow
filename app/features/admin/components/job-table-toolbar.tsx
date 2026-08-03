@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { CollapsibleFilters } from "@/components/shared/collapsible-filters";
 import { SearchIcon } from "lucide-react";
 
 const WORK_MODE_LABELS: Record<string, string> = {
@@ -48,7 +49,7 @@ export function JobTableToolbar({
   onEmploymentTypeChange,
 }: JobTableToolbarProps) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+    <div className="flex flex-col gap-3">
       <div className="relative flex-1 min-w-0">
         <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-text-muted" />
         <Input
@@ -58,42 +59,46 @@ export function JobTableToolbar({
           className="pl-10 rounded-xl bg-bg-elevated border-border-subtle"
         />
       </div>
-      <Select value={status} onValueChange={onStatusChange}>
-        <SelectTrigger className="w-full sm:w-36">
-          <SelectValue>
-            {status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}
-          </SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Status</SelectItem>
-          <SelectItem value="active">Active</SelectItem>
-          <SelectItem value="inactive">Inactive</SelectItem>
-        </SelectContent>
-      </Select>
-      <Select value={workMode} onValueChange={onWorkModeChange}>
-        <SelectTrigger className="w-full sm:w-36">
-          <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Modes</SelectItem>
-          <SelectItem value="remote">Remote</SelectItem>
-          <SelectItem value="hybrid">Hybrid</SelectItem>
-          <SelectItem value="onsite">On-site</SelectItem>
-        </SelectContent>
-      </Select>
-      <Select value={employmentType} onValueChange={onEmploymentTypeChange}>
-        <SelectTrigger className="w-full sm:w-40">
-          <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All Types</SelectItem>
-          <SelectItem value="full_time">Full-time</SelectItem>
-          <SelectItem value="part_time">Part-time</SelectItem>
-          <SelectItem value="contract">Contract</SelectItem>
-          <SelectItem value="internship">Internship</SelectItem>
-          <SelectItem value="freelance">Freelance</SelectItem>
-        </SelectContent>
-      </Select>
+      <CollapsibleFilters>
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
+          <Select value={status} onValueChange={onStatusChange}>
+            <SelectTrigger className="w-full sm:w-36">
+              <SelectValue>
+                {status === "all" ? "All Status" : status === "active" ? "Active" : "Inactive"}
+              </SelectValue>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Status</SelectItem>
+              <SelectItem value="active">Active</SelectItem>
+              <SelectItem value="inactive">Inactive</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select value={workMode} onValueChange={onWorkModeChange}>
+            <SelectTrigger className="w-full sm:w-36">
+              <SelectValue>{WORK_MODE_LABELS[workMode] ?? workMode}</SelectValue>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Modes</SelectItem>
+              <SelectItem value="remote">Remote</SelectItem>
+              <SelectItem value="hybrid">Hybrid</SelectItem>
+              <SelectItem value="onsite">On-site</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select value={employmentType} onValueChange={onEmploymentTypeChange}>
+            <SelectTrigger className="w-full sm:w-40">
+              <SelectValue>{EMPLOYMENT_TYPE_LABELS[employmentType] ?? employmentType}</SelectValue>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Types</SelectItem>
+              <SelectItem value="full_time">Full-time</SelectItem>
+              <SelectItem value="part_time">Part-time</SelectItem>
+              <SelectItem value="contract">Contract</SelectItem>
+              <SelectItem value="internship">Internship</SelectItem>
+              <SelectItem value="freelance">Freelance</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </CollapsibleFilters>
     </div>
   );
 }

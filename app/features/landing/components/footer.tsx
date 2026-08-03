@@ -95,9 +95,9 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-slate-800">
-          <p className="text-xs text-slate-400 flex items-center gap-1">
-            &copy; {new Date().getFullYear()} HireFlow. Made with
-            <HeartIcon className="size-3 fill-red-500 text-red-500" />
+          <p className="text-xs text-slate-400 text-center sm:text-left">
+            &copy; {new Date().getFullYear()} HireFlow. Made with{" "}
+            <HeartIcon className="size-3 inline fill-red-500 text-red-500" />{" "}
             for job seekers by Mohammed Hazeem.
           </p>
           <div className="flex items-center gap-3">

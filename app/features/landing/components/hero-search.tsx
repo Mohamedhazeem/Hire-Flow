@@ -46,7 +46,7 @@ export function HeroSearch() {
               </Link>
             </div>
 
-            <div className="mt-7 grid gap-2 sm:grid-cols-3">
+            <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-3">
               <div className="rounded-3xl border border-slate-200 bg-white p-3 text-center dark:border-slate-800 dark:bg-slate-900">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   Jobs live
@@ -59,7 +59,7 @@ export function HeroSearch() {
                 </p>
                 <p className="mt-2 text-xl font-semibold text-slate-950 dark:text-white">2,100+</p>
               </div>
-              <div className="rounded-3xl border border-slate-200 bg-white p-3 text-center dark:border-slate-800 dark:bg-slate-900">
+              <div className="col-span-2 sm:col-span-1 rounded-3xl border border-slate-200 bg-white p-3 text-center dark:border-slate-800 dark:bg-slate-900">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   Avg time to hire
                 </p>

@@ -10,6 +10,7 @@ import { JobCard } from "./job-card";
 import { JobSearchBar } from "./job-search-bar";
 import { FilterSelect } from "./filter-select";
 import { SkillFilter } from "./skill-filter";
+import { CollapsibleFilters } from "@/components/shared/collapsible-filters";
 import type { PublicJobRow } from "@/app/features/jobs/queries/public-job-queries";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
@@ -101,54 +102,56 @@ export function JobListPage() {
       <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <JobSearchBar />
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
-            <SkillFilter
-              value={params.skills ?? []}
-              onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
-            />
-            <FilterSelect
-              label="Work Mode"
-              paramKey="workMode"
-              options={WORK_MODES}
-              value={params.workMode}
-              onChange={setParam}
-              labels={FILTER_LABELS}
-            />
-            <FilterSelect
-              label="Type"
-              paramKey="employmentType"
-              options={EMPLOYMENT_TYPES}
-              value={params.employmentType}
-              onChange={setParam}
-              labels={FILTER_LABELS}
-            />
-            <FilterSelect
-              label="Level"
-              paramKey="experienceLevel"
-              options={EXPERIENCE_LEVELS}
-              value={params.experienceLevel}
-              onChange={setParam}
-              labels={FILTER_LABELS}
-            />
-            <FilterSelect
-              label="Status"
-              paramKey="status"
-              options={STATUS_OPTIONS}
-              value={params.status}
-              onChange={setParam}
-              labels={FILTER_LABELS}
-            />
+          <CollapsibleFilters>
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
+              <SkillFilter
+                value={params.skills ?? []}
+                onChange={(skills) => setParam("skills", skills.join(",") || undefined)}
+              />
+              <FilterSelect
+                label="Work Mode"
+                paramKey="workMode"
+                options={WORK_MODES}
+                value={params.workMode}
+                onChange={setParam}
+                labels={FILTER_LABELS}
+              />
+              <FilterSelect
+                label="Type"
+                paramKey="employmentType"
+                options={EMPLOYMENT_TYPES}
+                value={params.employmentType}
+                onChange={setParam}
+                labels={FILTER_LABELS}
+              />
+              <FilterSelect
+                label="Level"
+                paramKey="experienceLevel"
+                options={EXPERIENCE_LEVELS}
+                value={params.experienceLevel}
+                onChange={setParam}
+                labels={FILTER_LABELS}
+              />
+              <FilterSelect
+                label="Status"
+                paramKey="status"
+                options={STATUS_OPTIONS}
+                value={params.status}
+                onChange={setParam}
+                labels={FILTER_LABELS}
+              />
 
-            {hasFilters && (
-              <button
-                type="button"
-                onClick={() => router.push("/jobs")}
-                className="bg-error/90 text-center font-bold text-text-inverse px-2.5 py-2.5 text-sm hover:text-text-body border border-border-subtle rounded-lg transition-colors"
-              >
-                Clear
-              </button>
-            )}
-          </div>
+              {hasFilters && (
+                <button
+                  type="button"
+                  onClick={() => router.push("/jobs")}
+                  className="bg-error/90 text-center font-bold text-text-inverse px-2.5 py-2.5 text-sm hover:text-text-body border border-border-subtle rounded-lg transition-colors"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+          </CollapsibleFilters>
         </div>
 
         {isLoading && (

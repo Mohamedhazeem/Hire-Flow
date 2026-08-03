@@ -28,18 +28,34 @@ export async function FeaturedCompanies() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {companies.map((c) => (
-              <Link key={c.id} href={`/jobs?companyId=${c.id}`} className="block">
-                <CompanyPreviewCard
-                  name={c.name}
-                  logo={c.logoUrl}
-                  website={null}
-                  description={null}
-                  locations={[]}
-                />
-              </Link>
-            ))}
+          <div
+            className={`grid gap-5 ${
+              companies.length === 2
+                ? "grid-cols-2"
+                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
+            {companies.map((c, index) => {
+              const isLast = index === companies.length - 1;
+              const isOdd = companies.length % 2 !== 0;
+              const isLastOdd = isLast && isOdd;
+
+              return (
+                <Link
+                  key={c.id}
+                  href={`/jobs?companyId=${c.id}`}
+                  className={`block ${isLastOdd ? "col-span-2 lg:col-span-3" : ""}`}
+                >
+                  <CompanyPreviewCard
+                    name={c.name}
+                    logo={c.logoUrl}
+                    website={null}
+                    description={null}
+                    locations={[]}
+                  />
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>

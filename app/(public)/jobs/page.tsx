@@ -1,6 +1,5 @@
 import { Suspense } from "react";
-import Link from "next/link";
-import { ArrowRightIcon, BriefcaseIcon, SparklesIcon, TargetIcon } from "lucide-react";
+import { BriefcaseIcon, SparklesIcon, TargetIcon } from "lucide-react";
 import { JobListPage } from "@/app/features/jobs/components/job-list-page";
 import { JobListSkeleton } from "@/app/features/jobs/components/job-list-skeleton";
 

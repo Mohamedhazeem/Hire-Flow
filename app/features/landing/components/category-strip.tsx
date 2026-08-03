@@ -40,7 +40,7 @@ export function CategoryStrip() {
           variants={parentVariants}
           className="space-y-6"
         >
-          <div className="text-center sm:text-left">
+          <div className="text-center">
             <p className="text-xs uppercase tracking-[0.32em] text-brand-light mb-3">
               Browse roles by category
             </p>
@@ -49,14 +49,16 @@ export function CategoryStrip() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {JOB_CATEGORIES.map((cat) => {
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+            {JOB_CATEGORIES.map((cat, index) => {
               const params = new URLSearchParams(
                 "industry" in cat.filter
                   ? { industry: cat.filter.industry! }
                   : { workMode: cat.filter.workMode! },
               );
               const Icon = CATEGORY_ICONS[cat.label] ?? BriefcaseIcon;
+              const isLastOdd =
+                index === JOB_CATEGORIES.length - 1 && JOB_CATEGORIES.length % 2 !== 0;
 
               return (
                 <motion.div
@@ -64,11 +66,13 @@ export function CategoryStrip() {
                   variants={childVariants}
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="rounded-3xl border border-slate-200 bg-white p-5 transition-all hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900"
+                  className={`rounded-3xl border border-slate-200 bg-white p-5 transition-all hover:border-brand/30 dark:border-slate-800 dark:bg-slate-900 ${
+                    isLastOdd ? "col-span-2 lg:col-span-1" : ""
+                  }`}
                 >
                   <Link
                     href={`/jobs?${params.toString()}`}
-                    className="flex h-full flex-col items-start gap-4"
+                    className="flex h-full flex-col items-center gap-4 text-center"
                   >
                     <div className="size-11 rounded-3xl bg-brand/10 text-brand flex items-center justify-center">
                       <Icon className="size-5" />

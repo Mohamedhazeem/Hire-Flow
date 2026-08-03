@@ -66,14 +66,14 @@ export default function CareersPage() {
                   key={job.role}
                   className="rounded-3xl border border-border-subtle bg-white p-5 shadow-sm shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-950/80"
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
                     <div>
                       <p className="text-base font-semibold text-text-heading">{job.role}</p>
                       <p className="text-sm text-text-muted mt-1">
                         {job.location} · {job.type}
                       </p>
                     </div>
-                    <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+                    <span className="self-start sm:self-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
                       Apply soon
                     </span>
                   </div>
