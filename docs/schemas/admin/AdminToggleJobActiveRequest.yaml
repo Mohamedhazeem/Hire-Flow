@@ -1,0 +1,8 @@
+type: object
+description: Request body for PATCH /api/admin/jobs/{id} (toggle isActive)
+required:
+  - isActive
+properties:
+  isActive:
+    type: boolean
+    example: true

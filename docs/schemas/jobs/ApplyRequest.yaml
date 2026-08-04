@@ -1,0 +1,14 @@
+type: object
+description: Request body for applying to a job. Requires an authenticated user session.
+required:
+  - resumeId
+properties:
+  resumeId:
+    type: string
+    description: ID of the user's resume to attach to the application. Must belong to the authenticated user and not be soft-deleted.
+    example: "clyz9"
+  coverLetter:
+    type: string
+    description: Optional cover letter. Max 5000 characters; blank strings are treated as absent.
+    maxLength: 5000
+    example: "I am excited to apply because..."

@@ -1,0 +1,35 @@
+type: object
+description: Admin invite row returned in the invite list
+required:
+  - id
+  - email
+  - invitedBy
+  - createdAt
+  - acceptedAt
+properties:
+  id:
+    type: string
+    example: clxxx006
+  email:
+    type: string
+    format: email
+    example: invitee@example.com
+  invitedBy:
+    type: object
+    required: [name, email]
+    properties:
+      name:
+        type: string
+        nullable: true
+        example: Jane Doe
+      email:
+        type: string
+        format: email
+        example: jane@example.com
+  createdAt:
+    type: string
+    format: date-time
+  acceptedAt:
+    type: string
+    format: date-time
+    nullable: true

@@ -1,0 +1,30 @@
+type: object
+description: Response body for POST /api/upload (201)
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    example: true
+  data:
+    type: object
+    required:
+      - url
+      - filename
+      - size
+      - mimeType
+    properties:
+      url:
+        type: string
+        format: uri
+        example: /uploads/1704067200000-a1b2c3d4.jpg
+      filename:
+        type: string
+        example: 1704067200000-a1b2c3d4.jpg
+      size:
+        type: integer
+        example: 204800
+      mimeType:
+        type: string
+        example: image/jpeg

@@ -1,0 +1,9 @@
+type: string
+description: Employment type for a job.
+enum:
+  - full_time
+  - part_time
+  - contract
+  - internship
+  - freelance
+example: full_time

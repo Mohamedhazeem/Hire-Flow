@@ -1,0 +1,20 @@
+type: object
+description: Applicant search result (used in message search).
+required:
+  - id
+  - name
+  - email
+  - role
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  email:
+    type: string
+  role:
+    type: string
+  company:
+    type: object
+    nullable: true
+    description: Always null in recruiter message search results.

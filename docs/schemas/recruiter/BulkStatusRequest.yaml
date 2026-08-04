@@ -1,0 +1,21 @@
+type: object
+description: Bulk status transition request body.
+required:
+  - applicationIds
+  - status
+properties:
+  applicationIds:
+    type: array
+    minItems: 1
+    maxItems: 50
+    items:
+      type: string
+  status:
+    $ref: ../shared/enums/ApplicationStatus.yaml
+  rejectionReason:
+    type: string
+    maxLength: 500
+    nullable: true
+  email:
+    type: boolean
+    default: false

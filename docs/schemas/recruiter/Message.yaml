@@ -1,0 +1,45 @@
+type: object
+description: Chat message object.
+required:
+  - id
+  - senderId
+  - receiverId
+  - content
+  - createdAt
+  - read
+  - deletedAt
+  - hiddenFor
+properties:
+  id:
+    type: string
+  senderId:
+    type: string
+  receiverId:
+    type: string
+  content:
+    type: string
+  fileUrl:
+    type: string
+    nullable: true
+  fileName:
+    type: string
+    nullable: true
+  fileSize:
+    type: integer
+    nullable: true
+  fileType:
+    type: string
+    nullable: true
+  createdAt:
+    type: string
+    format: date-time
+  read:
+    type: boolean
+  deletedAt:
+    type: string
+    format: date-time
+    nullable: true
+  hiddenFor:
+    type: array
+    items:
+      type: string

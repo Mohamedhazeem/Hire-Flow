@@ -1,0 +1,13 @@
+type: object
+description: Cursor-based pagination meta returned with messages
+required:
+  - nextCursor
+  - hasNextPage
+properties:
+  nextCursor:
+    type: string
+    nullable: true
+    example: clxxx010
+  hasNextPage:
+    type: boolean
+    example: true

@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Upload API
+  description: Modular OpenAPI specification for the upload API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/upload:
+    post:
+      tags: [upload]
+      operationId: uploadFile
+      summary: Upload a file (local storage or Vercel Blob)
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: The file to upload (max 5 MB; JPEG, PNG, WebP, GIF, PDF, DOC, DOCX)
+      responses:
+        '201':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/upload/UploadResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error — invalid file type, empty file, or too large
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Internal server error or upload provider failure
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+    delete:
+      tags: [upload]
+      operationId: deleteUpload
+      summary: Delete a previously uploaded file by URL or filename
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/upload/DeleteUploadRequest.yaml'
+      responses:
+        '200':
+          description: File deletion result returned
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/upload/DeleteUploadResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error — missing url/filename
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

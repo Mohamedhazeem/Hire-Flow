@@ -1,0 +1,30 @@
+type: object
+description: Recent message snippet used in ApplicantDetail
+required:
+  - id
+  - content
+  - fileUrl
+  - fileName
+  - senderId
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx014
+  content:
+    type: string
+    example: When is the interview?
+  fileUrl:
+    type: string
+    nullable: true
+    format: uri
+  fileName:
+    type: string
+    nullable: true
+    example: portfolio.pdf
+  senderId:
+    type: string
+    example: clxxx001
+  createdAt:
+    type: string
+    format: date-time

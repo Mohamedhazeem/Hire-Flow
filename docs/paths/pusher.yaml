@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Pusher Auth API
+  description: Modular OpenAPI specification for the Pusher auth API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/pusher/auth:
+    post:
+      tags: [pusher]
+      operationId: pusherAuth
+      summary: Authenticate a Pusher private/presence channel subscription
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '../schemas/pusher/PusherAuthRequest.yaml'
+      responses:
+        '200':
+          description: Channel authenticated; returns Pusher signed auth payload
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/pusher/PusherAuthResponse.yaml'
+        '400':
+          description: Missing socket_id or channel_name
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Not a participant in the requested private thread, or presence channel mismatch
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

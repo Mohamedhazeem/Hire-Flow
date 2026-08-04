@@ -1,0 +1,181 @@
+type: object
+description: Analytics response payload.
+required:
+  - dateRange
+  - summary
+  - applicationTrend
+  - applicationsByStatus
+  - applicationsByWorkMode
+  - applicationsByEmploymentType
+  - topJobsByApplications
+  - funnelCurrent
+  - funnelHistorical
+  - stageConversions
+  - jobBreakdown
+properties:
+  dateRange:
+    type: object
+    required:
+      - from
+      - to
+    properties:
+      from:
+        type: string
+        format: date
+      to:
+        type: string
+        format: date
+  summary:
+    type: object
+    required:
+      - totalApplications
+      - totalJobs
+      - totalHired
+      - conversionRate
+      - avgFulfillmentDays
+      - totalViews
+    properties:
+      totalApplications:
+        type: integer
+      totalJobs:
+        type: integer
+      totalHired:
+        type: integer
+      conversionRate:
+        type: number
+      avgFulfillmentDays:
+        type: number
+        nullable: true
+      totalViews:
+        type: integer
+  applicationTrend:
+    type: array
+    items:
+      type: object
+      required:
+        - date
+        - count
+      properties:
+        date:
+          type: string
+          format: date
+        count:
+          type: integer
+  applicationsByStatus:
+    type: array
+    items:
+      type: object
+      required:
+        - stage
+        - count
+      properties:
+        stage:
+          type: string
+        count:
+          type: integer
+  applicationsByWorkMode:
+    type: array
+    items:
+      type: object
+      required:
+        - workMode
+        - count
+      properties:
+        workMode:
+          type: string
+        count:
+          type: integer
+  applicationsByEmploymentType:
+    type: array
+    items:
+      type: object
+      required:
+        - employmentType
+        - count
+      properties:
+        employmentType:
+          type: string
+        count:
+          type: integer
+  topJobsByApplications:
+    type: array
+    items:
+      type: object
+      required:
+        - jobId
+        - title
+        - count
+      properties:
+        jobId:
+          type: string
+        title:
+          type: string
+        count:
+          type: integer
+  funnelCurrent:
+    type: array
+    items:
+      type: object
+      required:
+        - stage
+        - count
+      properties:
+        stage:
+          type: string
+        count:
+          type: integer
+  funnelHistorical:
+    type: array
+    items:
+      type: object
+      required:
+        - stage
+        - uniqueApplications
+      properties:
+        stage:
+          type: string
+        uniqueApplications:
+          type: integer
+  stageConversions:
+    type: array
+    items:
+      type: object
+      required:
+        - fromStage
+        - toStage
+        - count
+      properties:
+        fromStage:
+          type: string
+        toStage:
+          type: string
+        count:
+          type: integer
+  jobBreakdown:
+    type: array
+    items:
+      type: object
+      required:
+        - jobId
+        - title
+        - totalApplications
+        - hired
+        - conversionRate
+        - avgFulfillmentDays
+        - viewCount
+      properties:
+        jobId:
+          type: string
+        title:
+          type: string
+        totalApplications:
+          type: integer
+        hired:
+          type: integer
+        conversionRate:
+          type: number
+        avgFulfillmentDays:
+          type: number
+          nullable: true
+        viewCount:
+          type: integer

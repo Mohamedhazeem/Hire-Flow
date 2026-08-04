@@ -1,0 +1,15 @@
+type: object
+description: Thread item returned by GET /api/admin/threads
+required:
+  - threadId
+  - user
+  - lastMessage
+properties:
+  threadId:
+    type: string
+    description: Composite ID of the two participants, e.g. "clxxx001_clxxx002"
+    example: clxxx001_clxxx002
+  user:
+    $ref: './ThreadParticipant.yaml'
+  lastMessage:
+    $ref: './ThreadLastMessage.yaml'

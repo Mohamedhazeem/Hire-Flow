@@ -1,0 +1,9 @@
+sessionAuth:
+  type: apiKey
+  in: cookie
+  name: session_token
+  description: >-
+    Better Auth cookie-based session. The session is established by the
+    /api/auth/* sign-in/sign-up flows via a Set-Cookie response. Authenticated
+    requests must include the session cookie. Some admin/realtime flows also
+    accept an Authorization: Bearer <token> header.

@@ -1,0 +1,47 @@
+type: object
+description: User profile section within AdminUserDetail
+required:
+  - headline
+  - bio
+  - skills
+  - experiences
+  - location
+  - basePay
+  - ctc
+  - socialLinks
+properties:
+  headline:
+    type: string
+    nullable: true
+    example: Senior Recruiter at Acme
+  bio:
+    type: string
+    nullable: true
+    example: Passionate about talent acquisition
+  skills:
+    type: array
+    items:
+      type: string
+    example: [recruiting, sales, communication]
+  experiences:
+    type: object
+    nullable: true
+    description: JSON blob storing work experience history
+    example: {}
+  location:
+    type: string
+    nullable: true
+    example: New York, NY
+  basePay:
+    type: integer
+    nullable: true
+    example: 80000
+  ctc:
+    type: integer
+    nullable: true
+    example: 100000
+  socialLinks:
+    type: object
+    nullable: true
+    description: JSON blob storing social media links
+    example: {}

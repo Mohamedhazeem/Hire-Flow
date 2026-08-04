@@ -1,0 +1,13 @@
+type: object
+description: Response from POST /api/user/bookmarks (toggle result)
+required:
+  - bookmarked
+  - id
+properties:
+  bookmarked:
+    type: boolean
+    example: true
+  id:
+    type: string
+    description: Bookmark ID if created, or deleted bookmark ID if removed
+    example: clxxx099

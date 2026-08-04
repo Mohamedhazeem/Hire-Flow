@@ -1,0 +1,13 @@
+type: object
+description: Request body for PATCH /api/notifications (mark read)
+required:
+  - ids
+properties:
+  ids:
+    type: array
+    items:
+      type: string
+    minItems: 1
+    example:
+      - clxxx-notif-001
+      - clxxx-notif-002

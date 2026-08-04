@@ -1,0 +1,171 @@
+type: object
+description: Full applicant detail returned by GET /api/admin/applications/{applicationId}/detail
+required:
+  - application
+  - applicant
+  - applicantResume
+  - statusTimeline
+  - recentMessages
+properties:
+  application:
+    type: object
+    required:
+      - id
+      - jobId
+      - userId
+      - status
+      - rejectionReason
+      - recruiterNote
+      - interviewDate
+      - meetingLink
+      - offerDetails
+      - appliedAt
+      - updatedAt
+      - job
+      - resumeId
+    properties:
+      id:
+        type: string
+        example: clxxx012
+      jobId:
+        type: string
+        example: clxxx005
+      userId:
+        type: string
+        example: clxxx015
+      status:
+        type: string
+        example: reviewing
+      rejectionReason:
+        type: string
+        nullable: true
+      recruiterNote:
+        type: string
+        nullable: true
+      interviewDate:
+        type: string
+        format: date-time
+        nullable: true
+      meetingLink:
+        type: string
+        nullable: true
+        format: uri
+      offerDetails:
+        type: string
+        nullable: true
+      appliedAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+      job:
+        type: object
+        required: [id, title]
+        properties:
+          id:
+            type: string
+            example: clxxx005
+          title:
+            type: string
+            example: Senior Frontend Engineer
+      resumeId:
+        type: string
+        nullable: true
+        example: clxxx003
+  applicant:
+    type: object
+    required:
+      - id
+      - name
+      - email
+      - role
+      - profile
+    properties:
+      id:
+        type: string
+        example: clxxx015
+      name:
+        type: string
+        example: John Applicant
+      email:
+        type: string
+        format: email
+        example: john@example.com
+      role:
+        type: string
+        example: user
+      profile:
+        type: object
+        required:
+          - headline
+          - bio
+          - skills
+          - experiences
+          - location
+          - basePay
+          - ctc
+          - socialLinks
+        properties:
+          headline:
+            type: string
+            nullable: true
+          bio:
+            type: string
+            nullable: true
+          skills:
+            type: array
+            items:
+              type: string
+          experiences:
+            type: object
+            nullable: true
+          location:
+            type: string
+            nullable: true
+          basePay:
+            type: integer
+            nullable: true
+          ctc:
+            type: integer
+            nullable: true
+          socialLinks:
+            type: object
+            nullable: true
+  applicantResume:
+    oneOf:
+      - type: object
+        description: Resume info with source label
+        required: [id, label, fileUrl, isPrimary, createdAt, source]
+        properties:
+          id:
+            type: string
+          label:
+            type: string
+          fileUrl:
+            type: string
+            format: uri
+          isPrimary:
+            type: boolean
+          createdAt:
+            type: string
+            format: date-time
+          source:
+            type: string
+            enum: [application, current_profile]
+      - type: object
+        description: Deleted resume placeholder
+        required: [source]
+        properties:
+          source:
+            type: string
+            enum: [deleted]
+      - type: "null"
+  statusTimeline:
+    type: array
+    items:
+      $ref: './StatusTimelineEntry.yaml'
+  recentMessages:
+    type: array
+    items:
+      $ref: './RecentMessage.yaml'

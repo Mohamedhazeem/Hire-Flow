@@ -1,0 +1,7 @@
+type: object
+description: Revert status response.
+required:
+  - status
+properties:
+  status:
+    type: string

@@ -1,0 +1,14 @@
+type: object
+description: Multipart form-data request body for POST /api/user/resumes
+required:
+  - file
+properties:
+  file:
+    type: string
+    format: binary
+    description: Resume file (PDF or DOC/DOCX, max 5 MB)
+  label:
+    type: string
+    description: Optional label for the resume; defaults to uploaded file name
+    example: My Resume 2025
+    maxLength: 255

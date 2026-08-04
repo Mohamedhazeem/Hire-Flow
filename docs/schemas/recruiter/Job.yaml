@@ -1,0 +1,84 @@
+type: object
+description: Job model returned by create/update/toggle (scalar fields only, no relations or computed counts).
+required:
+  - id
+  - recruiterId
+  - companyId
+  - title
+  - description
+  - locations
+  - workMode
+  - employmentType
+  - experienceLevel
+  - status
+  - isActive
+  - viewCount
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    description: CUID identifier.
+  recruiterId:
+    type: string
+    description: ID of the recruiter who created the job.
+  companyId:
+    type: string
+    description: ID of the company owning the job.
+  title:
+    type: string
+  description:
+    type: string
+  locations:
+    type: array
+    items:
+      type: string
+  workMode:
+    $ref: ../shared/enums/WorkMode.yaml
+  employmentType:
+    $ref: ../shared/enums/EmploymentType.yaml
+  timezone:
+    type: string
+    nullable: true
+  skills:
+    type: array
+    items:
+      type: string
+  tags:
+    type: array
+    items:
+      type: string
+  experienceLevel:
+    type: string
+  salaryMin:
+    type: integer
+    nullable: true
+  salaryMax:
+    type: integer
+    nullable: true
+  salaryCurrency:
+    type: string
+    default: USD
+  applicationDeadline:
+    type: string
+    format: date-time
+    nullable: true
+  status:
+    $ref: ../shared/enums/JobStatus.yaml
+  isActive:
+    type: boolean
+  viewCount:
+    type: integer
+  slug:
+    type: string
+    nullable: true
+  applicationCount:
+    type: integer
+    description: Present in list/detail responses; may be absent in create/update responses.
+    nullable: true
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

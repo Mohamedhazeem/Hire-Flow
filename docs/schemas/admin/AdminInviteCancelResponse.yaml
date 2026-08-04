@@ -1,0 +1,8 @@
+type: object
+description: Response from DELETE /api/admin/invite/{id}
+required:
+  - cancelled
+properties:
+  cancelled:
+    type: boolean
+    example: true

@@ -1,0 +1,6 @@
+oneOf:
+  - $ref: ShortlistRequest.yaml
+  - $ref: ScheduleInterviewRequest.yaml
+  - $ref: SendOfferRequest.yaml
+  - $ref: RejectRequest.yaml
+description: Status transition request body (union of specific transition types).

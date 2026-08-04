@@ -1,0 +1,14 @@
+type: object
+description: Shortlist status transition request.
+required:
+  - status
+properties:
+  status:
+    $ref: ../shared/enums/ApplicationStatus.yaml
+  updatedAt:
+    type: string
+    format: date-time
+    nullable: true
+  email:
+    type: boolean
+    default: false

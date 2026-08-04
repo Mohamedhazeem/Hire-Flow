@@ -1,0 +1,30 @@
+type: object
+description: User session returned by GET /api/admin/users/{id}/sessions
+required:
+  - id
+  - token
+  - createdAt
+  - expiresAt
+  - ipAddress
+  - userAgent
+properties:
+  id:
+    type: string
+    example: clxxx004
+  token:
+    type: string
+    example: abc123def456
+  createdAt:
+    type: string
+    format: date-time
+  expiresAt:
+    type: string
+    format: date-time
+  ipAddress:
+    type: string
+    nullable: true
+    example: 192.168.1.1
+  userAgent:
+    type: string
+    nullable: true
+    example: Mozilla/5.0 (Windows NT 10.0; Win64; x64)

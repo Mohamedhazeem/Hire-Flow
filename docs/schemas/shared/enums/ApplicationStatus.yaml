@@ -1,0 +1,16 @@
+type: string
+description: >-
+  Applicant pipeline status. Ordered workflow is
+  applied -> invited -> reviewing -> shortlisted -> interview_scheduled ->
+  offered -> hired, with rejected and withdrawn as terminal exit states.
+enum:
+  - applied
+  - invited
+  - reviewing
+  - shortlisted
+  - interview_scheduled
+  - offered
+  - hired
+  - rejected
+  - withdrawn
+example: applied

@@ -1,0 +1,27 @@
+type: object
+description: Application statistics returned by GET /api/user/applications/stats
+required:
+  - total
+  - active
+  - interviews
+  - offers
+properties:
+  total:
+    type: integer
+    minimum: 0
+    example: 12
+  active:
+    type: integer
+    minimum: 0
+    description: Count of applications in applied, reviewing, or shortlisted status
+    example: 5
+  interviews:
+    type: integer
+    minimum: 0
+    description: Count of applications in interview_scheduled status
+    example: 2
+  offers:
+    type: integer
+    minimum: 0
+    description: Count of applications in offered or hired status
+    example: 1

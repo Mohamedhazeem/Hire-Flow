@@ -1,0 +1,51 @@
+type: object
+description: Created message returned by POST /api/admin/messages/{threadId}
+required:
+  - id
+  - threadId
+  - senderId
+  - receiverId
+  - content
+  - read
+  - hiddenFor
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx010
+  threadId:
+    type: string
+    example: clxxx001_clxxx002
+  senderId:
+    type: string
+    example: clxxx001
+  receiverId:
+    type: string
+    example: clxxx002
+  content:
+    type: string
+    example: Hello, are you available for an interview?
+  fileUrl:
+    type: string
+    nullable: true
+    format: uri
+  fileName:
+    type: string
+    nullable: true
+  fileSize:
+    type: integer
+    nullable: true
+  fileType:
+    type: string
+    nullable: true
+  read:
+    type: boolean
+    example: false
+  hiddenFor:
+    type: array
+    items:
+      type: string
+    example: []
+  createdAt:
+    type: string
+    format: date-time

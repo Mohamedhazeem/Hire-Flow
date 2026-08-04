@@ -1,0 +1,14 @@
+type: object
+description: Request body for POST /api/pusher/auth
+required:
+  - socket_id
+  - channel_name
+properties:
+  socket_id:
+    type: string
+    description: Pusher socket identifier
+    example: 1234.5678
+  channel_name:
+    type: string
+    description: Pusher channel to authenticate
+    example: private-thread-clxxxA_clxxxB

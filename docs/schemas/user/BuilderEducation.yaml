@@ -1,0 +1,25 @@
+type: object
+description: Education entry within builder resume data
+required:
+  - school
+  - degree
+  - field
+  - graduationYear
+properties:
+  school:
+    type: string
+    minLength: 1
+    example: Stanford University
+  degree:
+    type: string
+    minLength: 1
+    example: Bachelor of Science
+  field:
+    type: string
+    minLength: 1
+    example: Computer Science
+  graduationYear:
+    type: integer
+    minimum: 1950
+    maximum: 2099
+    example: 2020

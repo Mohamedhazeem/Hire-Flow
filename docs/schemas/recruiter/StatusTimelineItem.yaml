@@ -1,0 +1,37 @@
+type: object
+description: Status timeline item.
+required:
+  - id
+  - type
+  - fromStatus
+  - toStatus
+  - label
+  - changedByName
+  - note
+  - createdAt
+  - isUpcoming
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum: [application_submitted, status_change]
+  fromStatus:
+    type: string
+    nullable: true
+  toStatus:
+    type: string
+    nullable: true
+  label:
+    type: string
+  changedByName:
+    type: string
+    nullable: true
+  note:
+    type: string
+    nullable: true
+  createdAt:
+    type: string
+    format: date-time
+  isUpcoming:
+    type: boolean

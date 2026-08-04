@@ -1,0 +1,11 @@
+type: object
+description: Cursor pagination metadata.
+required:
+  - nextCursor
+  - hasNextPage
+properties:
+  nextCursor:
+    type: string
+    nullable: true
+  hasNextPage:
+    type: boolean

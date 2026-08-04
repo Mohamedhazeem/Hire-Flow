@@ -1,0 +1,25 @@
+type: object
+description: Request body for POST /api/auth/sign-up/email
+required:
+  - email
+  - password
+  - name
+properties:
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  password:
+    type: string
+    format: password
+    minLength: 8
+    example: SecurePass1
+  name:
+    type: string
+    minLength: 4
+    example: Jane Doe
+  role:
+    type: string
+    enum: [user, recruiter, admin, super_admin]
+    default: user
+    example: user

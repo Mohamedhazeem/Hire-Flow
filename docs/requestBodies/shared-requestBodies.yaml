@@ -1,0 +1,26 @@
+FileUpload:
+  required: true
+  description: Multipart file upload payload.
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        properties:
+          file:
+            type: string
+            format: binary
+            description: The file to upload (resume, logo, or message attachment).
+          label:
+            type: string
+            description: Optional human-readable label for the uploaded file.
+        required:
+          - file
+
+JsonBody:
+  required: true
+  description: Generic JSON request body placeholder.
+  content:
+    application/json:
+      schema:
+        type: object
+        description: TODO - request-specific schema

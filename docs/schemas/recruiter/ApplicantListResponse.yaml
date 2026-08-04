@@ -1,0 +1,4 @@
+oneOf:
+  - $ref: ApplicantOffsetListResponse.yaml
+  - $ref: ApplicantCursorListResponse.yaml
+description: Applicant list response (dual-mode pagination).

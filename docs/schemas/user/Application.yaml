@@ -1,0 +1,41 @@
+type: object
+description: Application row returned in user application list
+required:
+  - id
+  - jobId
+  - jobTitle
+  - companyName
+  - status
+  - appliedAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    example: clxxx012
+  jobId:
+    type: string
+    example: clxxx005
+  jobSlug:
+    type: string
+    nullable: true
+    example: senior-frontend-engineer
+  jobTitle:
+    type: string
+    example: Senior Frontend Engineer
+  companyName:
+    type: string
+    example: Acme Corp
+  companyLogo:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/logos/acme.png
+  status:
+    type: string
+    example: reviewing
+  appliedAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

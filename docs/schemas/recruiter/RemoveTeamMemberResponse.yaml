@@ -1,0 +1,8 @@
+type: object
+description: Remove team member response.
+required:
+  - removed
+properties:
+  removed:
+    type: boolean
+    example: true

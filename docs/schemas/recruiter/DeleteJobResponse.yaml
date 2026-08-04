@@ -1,0 +1,12 @@
+type: object
+description: Delete job response.
+required:
+  - deleted
+  - hardDeleted
+properties:
+  deleted:
+    type: boolean
+    example: true
+  hardDeleted:
+    type: boolean
+    example: false

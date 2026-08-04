@@ -1,0 +1,9 @@
+type: object
+description: Response body for POST /api/pusher/auth
+required:
+  - auth
+properties:
+  auth:
+    type: string
+    description: Pusher signed auth string
+    example: abc123def456:signature_hash

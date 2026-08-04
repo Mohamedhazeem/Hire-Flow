@@ -1,0 +1,12 @@
+type: object
+required:
+  - success
+  - message
+properties:
+  success:
+    type: boolean
+    example: false
+  message:
+    type: string
+    description: Human-readable error message.
+    example: Resource not found

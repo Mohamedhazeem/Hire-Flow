@@ -1,0 +1,12 @@
+type: object
+description: Cursor-paginated messages page returned by GET /api/admin/messages/{threadId}
+required:
+  - messages
+  - meta
+properties:
+  messages:
+    type: array
+    items:
+      $ref: './Message.yaml'
+  meta:
+    $ref: './CursorMeta.yaml'

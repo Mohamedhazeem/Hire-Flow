@@ -1,0 +1,14 @@
+type: object
+description: Invite and team member list response.
+required:
+  - invites
+  - teamMembers
+properties:
+  invites:
+    type: array
+    items:
+      $ref: Invite.yaml
+  teamMembers:
+    type: array
+    items:
+      $ref: TeamMember.yaml

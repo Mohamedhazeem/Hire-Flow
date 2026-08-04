@@ -1,0 +1,1622 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Recruiter API
+  version: 1.0.0
+  description: Modular OpenAPI specification for the recruiter API group.
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/recruiter/jobs:
+    get:
+      tags: [recruiter]
+      operationId: recruiterListJobs
+      summary: List jobs for the recruiter's company
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [draft, active, archived, all]
+            default: all
+        - name: workMode
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/WorkMode.yaml
+        - name: employmentType
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/EmploymentType.yaml
+        - name: experienceLevel
+          in: query
+          schema:
+            type: string
+        - name: skills
+          in: query
+          explode: true
+          style: form
+          schema:
+            type: array
+            maxItems: 10
+            items:
+              type: string
+        - name: sortBy
+          in: query
+          schema:
+            type: string
+            enum: [title, createdAt, updatedAt, viewCount, status]
+            default: createdAt
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/JobListResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+    post:
+      tags: [recruiter]
+      operationId: recruiterCreateJob
+      summary: Create a new job
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/JobCreateRequest.yaml
+      responses:
+        '201':
+          description: Job created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [job]
+                    properties:
+                      job:
+                        $ref: ../schemas/recruiter/Job.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/jobs/{id}:
+    get:
+      tags: [recruiter]
+      operationId: recruiterGetJob
+      summary: Get job by ID or slug
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID or slug (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [job]
+                    properties:
+                      job:
+                        $ref: ../schemas/recruiter/Job.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+    patch:
+      tags: [recruiter]
+      operationId: recruiterUpdateJob
+      summary: Update a job
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/JobUpdateRequest.yaml
+      responses:
+        '200':
+          description: Job updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [job]
+                    properties:
+                      job:
+                        $ref: ../schemas/recruiter/Job.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+    delete:
+      tags: [recruiter]
+      operationId: recruiterDeleteJob
+      summary: Delete or archive a job
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+        - name: force
+          in: query
+          schema:
+            type: boolean
+            description: Force hard delete even if not draft
+      responses:
+        '200':
+          description: Job deleted or archived successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/DeleteJobResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/jobs/{id}/toggle:
+    patch:
+      tags: [recruiter]
+      operationId: recruiterToggleJobStatus
+      summary: Toggle job active/archived status
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/ToggleJobStatusRequest.yaml
+      responses:
+        '200':
+          description: Job status toggled successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [job]
+                    properties:
+                      job:
+                        $ref: ../schemas/recruiter/Job.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/jobs/{id}/applicants:
+    get:
+      tags: [recruiter]
+      operationId: recruiterListApplicants
+      summary: List applicants for a job
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/ApplicationStatus.yaml
+        - name: sortBy
+          in: query
+          schema:
+            type: string
+            enum: [appliedAt, updatedAt, status]
+            default: appliedAt
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/ApplicantListResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/jobs/{id}/analytics:
+    get:
+      tags: [recruiter]
+      operationId: recruiterGetJobAnalytics
+      summary: Get analytics for a specific job
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+        - name: dateFrom
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: dateTo
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          schema:
+            type: string
+            description: Comma-separated application statuses
+        - name: workMode
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/WorkMode.yaml
+        - name: employmentType
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/EmploymentType.yaml
+        - name: location
+          in: query
+          schema:
+            type: string
+            description: Comma-separated locations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/AnalyticsResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/jobs/{id}/applicants/export:
+    get:
+      tags: [recruiter]
+      operationId: recruiterExportApplicantsCsv
+      summary: Export applicants as CSV
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: CSV file stream
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/applications/{applicationId}/detail:
+    get:
+      tags: [recruiter]
+      operationId: recruiterGetApplicantDetail
+      summary: Get full applicant detail with timeline and messages
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/ApplicantDetail.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/applications/{applicationId}/profile:
+    get:
+      tags: [recruiter]
+      operationId: recruiterGetApplicantProfile
+      summary: Get minimal applicant profile
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/ProfileMinimalResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/applications/{applicationId}/status:
+    patch:
+      tags: [recruiter]
+      operationId: recruiterTransitionApplicationStatus
+      summary: Transition application status
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID)
+            example: clxxx
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/StatusTransitionRequest.yaml
+      responses:
+        '200':
+          description: Status transitioned successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [success, status]
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                      status:
+                        type: string
+                        example: shortlisted
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '409':
+          description: Conflict (concurrency or invalid transition)
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/applications/{applicationId}/revert:
+    post:
+      tags: [recruiter]
+      operationId: recruiterRevertApplicationStatus
+      summary: Revert the last application status change
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Status reverted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/RevertResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Application not found or no previous status to revert
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/applications/bulk/status:
+    post:
+      tags: [recruiter]
+      operationId: recruiterBulkTransitionStatus
+      summary: Bulk transition application statuses
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/BulkStatusRequest.yaml
+      responses:
+        '200':
+          description: Bulk status transitioned successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/BulkStatusResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: One or more applications not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/analytics:
+    get:
+      tags: [recruiter]
+      operationId: recruiterListAnalytics
+      summary: Get company-wide analytics
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: dateFrom
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: dateTo
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          schema:
+            type: string
+            description: Comma-separated application statuses
+        - name: workMode
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/WorkMode.yaml
+        - name: employmentType
+          in: query
+          schema:
+            $ref: ../schemas/shared/enums/EmploymentType.yaml
+        - name: location
+          in: query
+          schema:
+            type: string
+            description: Comma-separated locations
+        - name: jobId
+          in: query
+          schema:
+            type: string
+            format: uuid
+            description: Filter to a specific job
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/AnalyticsResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/threads:
+    get:
+      tags: [recruiter]
+      operationId: recruiterListThreads
+      summary: List message threads for the current user
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: ../schemas/recruiter/Thread.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/messages/{threadId}:
+    get:
+      tags: [recruiter]
+      operationId: recruiterGetMessages
+      summary: Get messages in a thread
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Thread ID (e.g. smallerUserId_largerUserId)
+            example: clabc_clxyz
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [messages, meta]
+                    properties:
+                      messages:
+                        type: array
+                        items:
+                          $ref: ../schemas/recruiter/Message.yaml
+                      meta:
+                        $ref: ../schemas/recruiter/CursorPaginationMeta.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+    post:
+      tags: [recruiter]
+      operationId: recruiterSendMessage
+      summary: Send a message in a thread
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Thread ID (e.g. smallerUserId_largerUserId)
+            example: clabc_clxyz
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/recruiter/SendMessageRequest.yaml
+      responses:
+        '201':
+          description: Message sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/Message.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+    delete:
+      tags: [recruiter]
+      operationId: recruiterDeleteThread
+      summary: Hide all messages in a thread for the current user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Thread ID (e.g. smallerUserId_largerUserId)
+            example: clabc_clxyz
+      responses:
+        '200':
+          description: Thread deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [deleted]
+                    properties:
+                      deleted:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/messages/{threadId}/{messageId}:
+    delete:
+      tags: [recruiter]
+      operationId: recruiterDeleteMessage
+      summary: Soft-delete a single message
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Thread ID (e.g. smallerUserId_largerUserId)
+            example: clabc_clxyz
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Message ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Message deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [deleted]
+                    properties:
+                      deleted:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Message not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/messages/search:
+    get:
+      tags: [recruiter]
+      operationId: recruiterSearchMessagesApplicants
+      summary: Search applicants by name or email for messaging
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+            minLength: 1
+            description: Search query (name or email)
+            example: john
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: ../schemas/recruiter/SearchApplicantResult.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/invite:
+    get:
+      tags: [recruiter]
+      operationId: recruiterListInvites
+      summary: List recruiter invites and team members
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/InviteListResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/invite/{id}:
+    delete:
+      tags: [recruiter]
+      operationId: recruiterCancelInvite
+      summary: Cancel a pending recruiter invite
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Invite ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Invite cancelled successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [cancelled]
+                    properties:
+                      cancelled:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Invite not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/invite/accept:
+    post:
+      tags: [recruiter]
+      operationId: recruiterAcceptInvite
+      summary: Accept a recruiter invite by token
+      security: []
+      description: This endpoint is publicly accessible (no sessionAuth) because the invitee may not be logged in yet.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token]
+              properties:
+                token:
+                  type: string
+                  description: Invite token
+                  example: abc123
+      responses:
+        '200':
+          description: Invite acceptance result
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/AcceptInviteResponse.yaml
+        '400':
+          description: Bad request (invalid token)
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Invite not found or expired
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/recruiter/team/{id}:
+    delete:
+      tags: [recruiter]
+      operationId: recruiterRemoveTeamMember
+      summary: Remove a team member from the company
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Team member ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Team member removed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/recruiter/RemoveTeamMemberResponse.yaml
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Team member not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+components:
+  securitySchemes:
+    sessionAuth:
+      type: apiKey
+      in: cookie
+      name: session

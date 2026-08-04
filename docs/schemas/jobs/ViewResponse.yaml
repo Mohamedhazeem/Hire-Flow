@@ -1,0 +1,9 @@
+type: object
+description: Response body returned after successfully incrementing a job view count.
+required:
+  - success
+properties:
+  success:
+    type: boolean
+    description: Always true on success.
+    example: true

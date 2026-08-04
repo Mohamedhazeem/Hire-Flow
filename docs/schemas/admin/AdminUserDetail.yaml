@@ -1,0 +1,59 @@
+type: object
+description: Detailed user profile returned by GET /api/admin/users/{id}
+required:
+  - id
+  - name
+  - email
+  - role
+  - banned
+  - banReason
+  - banExpiresAt
+  - emailVerified
+  - image
+  - createdAt
+  - updatedAt
+  - profile
+  - resumes
+properties:
+  id:
+    type: string
+    example: clxxx001
+  name:
+    type: string
+    example: Jane Doe
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  role:
+    type: string
+    example: recruiter
+  banned:
+    type: boolean
+    example: false
+  banReason:
+    type: string
+    nullable: true
+  banExpiresAt:
+    type: string
+    format: date-time
+    nullable: true
+  emailVerified:
+    type: boolean
+    example: true
+  image:
+    type: string
+    nullable: true
+    example: https://cdn.example.com/avatar.jpg
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+  profile:
+    $ref: './AdminUserProfile.yaml'
+  resumes:
+    type: array
+    items:
+      $ref: './AdminUserResume.yaml'

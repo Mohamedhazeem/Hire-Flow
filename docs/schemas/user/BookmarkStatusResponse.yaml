@@ -1,0 +1,8 @@
+type: object
+description: Response from GET /api/user/bookmarks/{jobId} (check status)
+required:
+  - bookmarked
+properties:
+  bookmarked:
+    type: boolean
+    example: true

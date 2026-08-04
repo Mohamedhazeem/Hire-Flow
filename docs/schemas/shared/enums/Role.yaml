@@ -1,0 +1,8 @@
+type: string
+description: Platform role assigned to a user.
+enum:
+  - user
+  - recruiter
+  - admin
+  - super_admin
+example: user

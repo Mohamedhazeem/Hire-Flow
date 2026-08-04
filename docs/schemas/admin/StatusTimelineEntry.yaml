@@ -1,0 +1,46 @@
+type: object
+description: Status timeline entry used in ApplicantDetail
+required:
+  - id
+  - type
+  - fromStatus
+  - toStatus
+  - label
+  - changedByName
+  - note
+  - createdAt
+  - isUpcoming
+properties:
+  id:
+    type: string
+    example: clxxx013
+  type:
+    type: string
+    enum: [application_submitted, status_change]
+    example: status_change
+  fromStatus:
+    type: string
+    nullable: true
+    example: applied
+  toStatus:
+    type: string
+    nullable: true
+    example: reviewing
+  label:
+    type: string
+    example: Under Review
+  changedByName:
+    type: string
+    nullable: true
+    example: Jane Doe
+  note:
+    type: string
+    nullable: true
+    example: Strong candidate
+  createdAt:
+    type: string
+    format: date-time
+    example: "2026-08-01T10:00:00.000Z"
+  isUpcoming:
+    type: boolean
+    example: false

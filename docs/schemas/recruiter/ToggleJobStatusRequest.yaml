@@ -1,0 +1,7 @@
+type: object
+description: Toggle job status request body.
+required:
+  - status
+properties:
+  status:
+    $ref: ../shared/enums/JobStatus.yaml

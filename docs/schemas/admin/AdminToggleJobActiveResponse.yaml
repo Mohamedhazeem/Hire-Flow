@@ -1,0 +1,12 @@
+type: object
+description: Response from PATCH /api/admin/jobs/{id}
+required:
+  - toggled
+  - isActive
+properties:
+  toggled:
+    type: boolean
+    example: true
+  isActive:
+    type: boolean
+    example: true

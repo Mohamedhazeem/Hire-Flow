@@ -1,0 +1,18 @@
+type: object
+description: Request body for POST /api/admin/users/{id}/ban
+required:
+  - banReason
+  - banExpiresIn
+properties:
+  banReason:
+    type: string
+    maxLength: 500
+    nullable: true
+    description: Optional reason for the ban (max 500 chars)
+    example: Spam activity
+  banExpiresIn:
+    type: integer
+    minimum: 1
+    nullable: true
+    description: Optional ban duration in seconds from now
+    example: 86400

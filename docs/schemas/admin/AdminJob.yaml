@@ -1,0 +1,59 @@
+type: object
+description: Admin job row returned in list responses
+required:
+  - id
+  - title
+  - isActive
+  - viewCount
+  - applicationCount
+  - companyName
+  - recruiterName
+  - recruiterEmail
+  - workMode
+  - employmentType
+  - experienceLevel
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    example: clxxx005
+  title:
+    type: string
+    example: Senior Frontend Engineer
+  isActive:
+    type: boolean
+    example: true
+  viewCount:
+    type: integer
+    example: 150
+  applicationCount:
+    type: integer
+    example: 24
+  companyName:
+    type: string
+    nullable: true
+    example: Acme Corp
+  recruiterName:
+    type: string
+    nullable: true
+    example: Jane Doe
+  recruiterEmail:
+    type: string
+    format: email
+    example: jane@example.com
+  workMode:
+    type: string
+    example: remote
+  employmentType:
+    type: string
+    example: full_time
+  experienceLevel:
+    type: string
+    example: senior
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

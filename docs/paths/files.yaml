@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Files API
+  description: Modular OpenAPI specification for the file download API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/files/download:
+    get:
+      tags: [files]
+      operationId: downloadFile
+      summary: Proxy a local or remote file (auth-gated)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: path
+          in: query
+          required: true
+          schema:
+            type: string
+            description: |
+              Local relative path (e.g. /uploads/1704067200000.jpg) or a remote
+              https:// URL. Local files are path-traversal-protected; remote
+              resumes require a BLOB_READ_WRITE_TOKEN.
+            example: /uploads/1704067200000-a1b2c3d4.jpg
+      responses:
+        '200':
+          description: File streamed with appropriate Content-Type
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/png:
+              schema:
+                type: string
+                format: binary
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Missing 'path' query parameter
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Access denied — user cannot access this file or invalid path
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: File not found or removed
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '413':
+          description: File exceeds the 10 MB download limit
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, message]
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: File exceeds the 10 MB download limit
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

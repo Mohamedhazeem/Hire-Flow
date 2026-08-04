@@ -1,0 +1,38 @@
+type: object
+description: Response from GET /api/user/applications
+required:
+  - applications
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  applications:
+    type: array
+    items:
+      $ref: './Application.yaml'
+  page:
+    type: integer
+    minimum: 1
+    example: 1
+  pageSize:
+    type: integer
+    minimum: 1
+    maximum: 100
+    example: 20
+  total:
+    type: integer
+    minimum: 0
+    example: 42
+  totalPages:
+    type: integer
+    minimum: 1
+    example: 3
+  hasNextPage:
+    type: boolean
+    example: true
+  hasPrevPage:
+    type: boolean
+    example: false

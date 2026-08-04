@@ -1,0 +1,22 @@
+type: object
+description: Response body for GET /api/notifications (list)
+required:
+  - notifications
+  - unreadCount
+  - nextCursor
+  - hasMore
+properties:
+  notifications:
+    type: array
+    items:
+      $ref: './Notification.yaml'
+  unreadCount:
+    type: integer
+    example: 3
+  nextCursor:
+    type: string
+    nullable: true
+    example: clxxx-notif-020
+  hasMore:
+    type: boolean
+    example: true

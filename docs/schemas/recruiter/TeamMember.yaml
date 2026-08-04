@@ -1,0 +1,30 @@
+type: object
+description: Team member row.
+required:
+  - id
+  - role
+  - user
+  - createdAt
+properties:
+  id:
+    type: string
+  role:
+    type: string
+    default: member
+  user:
+    type: object
+    required:
+      - id
+      - name
+      - email
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        nullable: true
+      email:
+        type: string
+  createdAt:
+    type: string
+    format: date-time

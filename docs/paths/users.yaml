@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Users API
+  description: Modular OpenAPI specification for the users API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/users/{id}:
+    get:
+      tags: [users]
+      operationId: usersGetById
+      summary: Get a user by ID (public fields)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx123abc
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/users/UserPublic.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden — insufficient role
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

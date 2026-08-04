@@ -1,0 +1,31 @@
+type: object
+description: Offset-paginated applicant list response.
+required:
+  - mode
+  - applicants
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  mode:
+    type: string
+    enum: [offset]
+  applicants:
+    type: array
+    items:
+      $ref: Applicant.yaml
+  page:
+    type: integer
+  pageSize:
+    type: integer
+  total:
+    type: integer
+  totalPages:
+    type: integer
+  hasNextPage:
+    type: boolean
+  hasPrevPage:
+    type: boolean

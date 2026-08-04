@@ -1,0 +1,33 @@
+type: object
+description: Paginated list of admin jobs returned by GET /api/admin/jobs
+required:
+  - jobs
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  jobs:
+    type: array
+    items:
+      $ref: './AdminJob.yaml'
+  page:
+    type: integer
+    example: 1
+  pageSize:
+    type: integer
+    example: 20
+  total:
+    type: integer
+    example: 100
+  totalPages:
+    type: integer
+    example: 5
+  hasNextPage:
+    type: boolean
+    example: true
+  hasPrevPage:
+    type: boolean
+    example: false

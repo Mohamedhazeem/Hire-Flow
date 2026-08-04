@@ -522,6 +522,53 @@ hire-flow/
 
 ---
 
+## 📄 API Documentation (OpenAPI)
+
+A modular OpenAPI 3.0.3 specification is maintained under `docs/`, reverse-engineered from the live route handlers, Zod schemas, and Prisma models.
+
+```
+docs/
+├── openapi.yaml                      # Root: info, servers, tags, security, global component refs, path refs (dev/localhost)
+├── openapi.production.yaml           # Production variant: same spec with production Vercel server URL (gitignored)
+├── paths/                            # One file per API group (admin, recruiter, user, jobs, users, auth, notifications, pusher, files, upload)
+├── schemas/                          # Granular schemas by group + shared
+│   ├── admin/
+│   ├── recruiter/
+│   ├── user/
+│   ├── jobs/
+│   ├── users/
+│   ├── auth/
+│   ├── notifications/
+│   ├── pusher/
+│   ├── upload/
+│   └── shared/
+│       ├── ErrorResponse.yaml
+│       ├── ValidationErrorResponse.yaml
+│       └── enums/                    # Role, JobStatus, ApplicationStatus, WorkMode, EmploymentType, NotificationType
+├── parameters/shared-params.yaml
+├── requestBodies/shared-requestBodies.yaml
+├── responses/shared-responses.yaml
+├── headers/shared-headers.yaml
+└── security/securitySchemes.yaml
+```
+
+### Spec characteristics
+
+- **85 operations** across **10 API groups** with globally unique `operationId`s.
+- Responses follow the app's envelope: `{ success: boolean, data: <T> }`; errors return `{ success: false, message }` (422 validation errors additionally return `{ error, details }`).
+- Authentication modeled as Better Auth **cookie session** (`sessionAuth`); public endpoints explicitly omit the security requirement.
+- Shared components (error responses, enums, pagination params, rate-limit headers) are centralized under `docs/responses/`, `docs/parameters/`, `docs/headers/`, and `docs/security/`.
+- List endpoints embed pagination metadata directly in `data` — offset mode: `{page, pageSize, total, totalPages, hasNextPage, hasPrevPage}`; cursor mode: `{nextCursor, hasNextPage}`.
+- All **513 cross-file `$ref`s** resolve; **0 orphan schemas**.
+
+### Serving the spec
+
+Load `docs/openapi.yaml` into Swagger UI, Redoc, or any OpenAPI 3.0.3 tooling for local development — its `servers` entry points to `http://localhost:3000`.
+
+For production deployments, use `docs/openapi.production.yaml` instead. It is identical to the root spec except the `servers` entry points to the production Vercel URL. **This file is gitignored** to avoid exposing live infrastructure endpoints in the open source repository.
+
+---
+
 ## 🧩 Key Patterns
 
 - **Server Components by default** — client boundaries (`"use client"`) only where interactivity is required

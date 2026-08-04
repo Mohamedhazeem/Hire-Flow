@@ -1,0 +1,23 @@
+XRateLimitLimit:
+  description: Maximum number of requests allowed in the current window.
+  schema:
+    type: integer
+    example: 100
+
+XRateLimitRemaining:
+  description: Remaining requests in the current window.
+  schema:
+    type: integer
+    example: 95
+
+XRateLimitReset:
+  description: Unix epoch (seconds) when the current window resets.
+  schema:
+    type: integer
+    example: 1700000000
+
+XTotalCount:
+  description: Total number of items available for the query (list endpoints).
+  schema:
+    type: integer
+    example: 42

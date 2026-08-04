@@ -1,0 +1,32 @@
+type: object
+description: AI resume enhancement suggestion
+required:
+  - type
+  - section
+  - suggestion
+  - reasoning
+  - priority
+properties:
+  type:
+    type: string
+    enum: [bullet_improvement, skill_addition, section_expansion, ats_optimization, grammar]
+    example: bullet_improvement
+  section:
+    type: string
+    example: experience
+  original:
+    type: string
+    nullable: true
+    description: Original text before improvement
+    example: Worked on the frontend team
+  suggestion:
+    type: string
+    example: Led the frontend team in redesigning the customer portal using React and TypeScript
+  reasoning:
+    type: string
+    maxLength: 500
+    example: Adding action verbs and quantifiable results makes the bullet more impactful
+  priority:
+    type: string
+    enum: [high, medium, low]
+    example: high

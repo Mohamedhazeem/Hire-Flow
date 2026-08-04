@@ -1,0 +1,28 @@
+type: object
+description: Send message request body.
+required:
+  - content
+properties:
+  content:
+    type: string
+    minLength: 0
+    maxLength: 2000
+    default: ''
+  fileUrl:
+    type: string
+    format: uri
+    nullable: true
+  fileName:
+    type: string
+    minLength: 1
+    maxLength: 255
+    nullable: true
+  fileSize:
+    type: integer
+    minimum: 1
+    nullable: true
+  fileType:
+    type: string
+    minLength: 1
+    maxLength: 100
+    nullable: true

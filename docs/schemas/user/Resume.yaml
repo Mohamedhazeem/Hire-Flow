@@ -1,0 +1,52 @@
+type: object
+description: Resume entry returned in user resume endpoints
+required:
+  - id
+  - label
+  - fileUrl
+  - fileName
+  - fileSize
+  - fileType
+  - builderData
+  - isPrimary
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx001
+  label:
+    type: string
+    example: Software Engineer Resume 2025
+  fileUrl:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/resumes/clxxx001.pdf
+  fileName:
+    type: string
+    nullable: true
+    example: resume-2025.pdf
+  fileSize:
+    type: integer
+    nullable: true
+    example: 524288
+  fileType:
+    type: string
+    nullable: true
+    example: application/pdf
+  builderData:
+    type: object
+    nullable: true
+    description: JSON blob storing resume builder content (summary, educations, experiences, skills)
+    example: {}
+  isPrimary:
+    type: boolean
+    example: true
+  createdAt:
+    type: string
+    format: date-time
+  deletedAt:
+    type: string
+    nullable: true
+    format: date-time
+    description: Soft-delete timestamp; null means active

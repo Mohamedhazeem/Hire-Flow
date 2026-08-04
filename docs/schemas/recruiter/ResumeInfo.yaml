@@ -1,0 +1,23 @@
+type: object
+description: Resume info with source indicator.
+required:
+  - id
+  - label
+  - isPrimary
+  - source
+properties:
+  id:
+    type: string
+  label:
+    type: string
+  fileUrl:
+    type: string
+    nullable: true
+  isPrimary:
+    type: boolean
+  createdAt:
+    type: string
+    format: date-time
+  source:
+    type: string
+    enum: [application, current_profile]

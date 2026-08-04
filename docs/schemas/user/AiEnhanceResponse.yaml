@@ -1,0 +1,35 @@
+type: object
+description: AI enhancement response returned by POST /api/user/resumes/{id}/ai-enhance
+required:
+  - suggestions
+  - overallScore
+  - projectedScore
+  - keyStrengths
+  - improvementAreas
+properties:
+  suggestions:
+    type: array
+    items:
+      $ref: './ResumeSuggestion.yaml'
+  overallScore:
+    type: number
+    minimum: 0
+    maximum: 100
+    nullable: true
+    example: 72
+  projectedScore:
+    type: number
+    minimum: 0
+    maximum: 100
+    nullable: true
+    example: 88
+  keyStrengths:
+    type: array
+    items:
+      type: string
+    example: [Strong technical depth, Clear career progression]
+  improvementAreas:
+    type: array
+    items:
+      type: string
+    example: [Add quantifiable metrics, Improve ATS keywords]

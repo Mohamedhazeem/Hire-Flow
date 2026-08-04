@@ -1,0 +1,17 @@
+type: object
+description: Reject status transition request.
+required:
+  - status
+  - rejectionReason
+properties:
+  status:
+    $ref: ../shared/enums/ApplicationStatus.yaml
+  updatedAt:
+    type: string
+    format: date-time
+    nullable: true
+  email:
+    type: boolean
+    default: false
+  rejectionReason:
+    type: string

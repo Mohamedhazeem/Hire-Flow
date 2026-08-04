@@ -1,0 +1,57 @@
+Error:
+  description: Standard error envelope returned by failed requests.
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+ValidationError:
+  description: >-
+    Zod validation failure (HTTP 422). The body is a field-keyed map of
+    failure reasons.
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+
+Unauthorized:
+  description: Authentication required (HTTP 401).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+Forbidden:
+  description: Insufficient permissions for this resource (HTTP 403).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+NotFound:
+  description: The requested resource does not exist (HTTP 404).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+Conflict:
+  description: Resource conflict, e.g. duplicate or illegal state transition (HTTP 409).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+TooManyRequests:
+  description: Rate limit exceeded (HTTP 429).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'
+
+InternalServerError:
+  description: Unexpected server error (HTTP 500).
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/shared/ErrorResponse.yaml'

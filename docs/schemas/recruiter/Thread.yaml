@@ -1,0 +1,47 @@
+type: object
+description: Message thread metadata.
+required:
+  - threadId
+  - user
+  - lastMessage
+properties:
+  threadId:
+    type: string
+  user:
+    type: object
+    required:
+      - id
+      - name
+      - email
+      - role
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        nullable: true
+      email:
+        type: string
+      image:
+        type: string
+        nullable: true
+      role:
+        type: string
+  lastMessage:
+    type: object
+    nullable: true
+    required:
+      - content
+      - createdAt
+      - senderId
+      - unread
+    properties:
+      content:
+        type: string
+      createdAt:
+        type: string
+        format: date-time
+      senderId:
+        type: string
+      unread:
+        type: boolean

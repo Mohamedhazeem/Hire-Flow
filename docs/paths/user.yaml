@@ -1,0 +1,800 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow User API
+  description: Modular OpenAPI specification for the user (job seeker) API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/user/profile:
+    get:
+      tags: [user]
+      operationId: getUserProfile
+      summary: Get the current user's profile
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/UserProfile.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/resumes:
+    get:
+      tags: [user]
+      operationId: listUserResumes
+      summary: List resumes for the current user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            description: Page number (1-based). If omitted, returns unpaginated array.
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            description: Items per page
+      responses:
+        '200':
+          description: Resumes retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    oneOf:
+                      - type: array
+                        items:
+                          $ref: '../schemas/user/Resume.yaml'
+                      - $ref: '../schemas/user/ResumeListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    post:
+      tags: [user]
+      operationId: createUserResume
+      summary: Upload a new resume file
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '../schemas/user/ResumeCreateRequest.yaml'
+      responses:
+        '201':
+          description: Resume uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/Resume.yaml'
+        '400':
+          description: Bad request (validation error)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/resumes/{id}:
+    patch:
+      tags: [user]
+      operationId: updateUserResume
+      summary: Perform an action on a resume (e.g. set-primary)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Resume ID (CUID)
+            example: clxxx
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/user/ResumeActionRequest.yaml'
+      responses:
+        '200':
+          description: Resume action completed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/Resume.yaml'
+        '400':
+          description: Bad request (unknown action)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Resume not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    delete:
+      tags: [user]
+      operationId: deleteUserResume
+      summary: Soft-delete a resume
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Resume ID (CUID)
+            example: clxxx
+      responses:
+        '204':
+          description: Resume deleted successfully
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Resume not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/resumes/{id}/builder-data:
+    patch:
+      tags: [user]
+      operationId: updateUserResumeBuilderData
+      summary: Update builder data for a builder-mode resume
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Resume ID (CUID)
+            example: clxxx
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/user/ResumeUpdateBuilderDataRequest.yaml'
+      responses:
+        '200':
+          description: Builder data updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/Resume.yaml'
+        '400':
+          description: Bad request (resume is file-uploaded, not builder-mode)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Resume not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/resumes/{id}/ai-enhance:
+    post:
+      tags: [user]
+      operationId: enhanceUserResumeAi
+      summary: Generate AI-powered resume enhancement suggestions
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Resume ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: AI enhancement generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/AiEnhanceResponse.yaml'
+        '202':
+          description: AI service unreachable; returned fallback suggestions
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/AiEnhanceResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Resume not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/applications:
+    get:
+      tags: [user]
+      operationId: listUserApplications
+      summary: List applications for the current user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: status
+          in: query
+          schema:
+            $ref: '../schemas/shared/enums/ApplicationStatus.yaml'
+        - name: search
+          in: query
+          schema:
+            type: string
+            description: Case-insensitive search on job title
+            example: engineer
+      responses:
+        '200':
+          description: Applications retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/ApplicationListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/applications/stats:
+    get:
+      tags: [user]
+      operationId: getUserApplicationStats
+      summary: Get application statistics for the current user
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Stats retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/ApplicationStatsResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/applications/{id}:
+    get:
+      tags: [user]
+      operationId: getUserApplication
+      summary: Get application detail by ID or job slug
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID) or job slug
+            example: clxxx
+      responses:
+        '200':
+          description: Application detail retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/ApplicationDetail.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    delete:
+      tags: [user]
+      operationId: withdrawUserApplication
+      summary: Withdraw an application (soft-delete with audit trail)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Application ID (CUID) or job slug
+            example: clxxx
+      responses:
+        '204':
+          description: Application withdrawn successfully
+        '400':
+          description: Bad request (application not in withdrawable status)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/bookmarks:
+    get:
+      tags: [user]
+      operationId: listUserBookmarks
+      summary: List bookmarked jobs for the current user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            description: Page number (1-based). If omitted, returns unpaginated array.
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            description: Items per page
+      responses:
+        '200':
+          description: Bookmarks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    oneOf:
+                      - type: array
+                        items:
+                          $ref: '../schemas/user/Bookmark.yaml'
+                      - $ref: '../schemas/user/BookmarkListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    post:
+      tags: [user]
+      operationId: toggleUserBookmark
+      summary: Toggle bookmark for a job
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/user/BookmarkToggleRequest.yaml'
+      responses:
+        '200':
+          description: Bookmark toggled successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/BookmarkToggleResponse.yaml'
+        '400':
+          description: Bad request (missing jobId)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+  /api/user/bookmarks/{jobId}:
+    get:
+      tags: [user]
+      operationId: getUserBookmarkStatus
+      summary: Check if a job is bookmarked by the current user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
+            description: Job ID (CUID)
+            example: clxxx
+      responses:
+        '200':
+          description: Bookmark status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/user/BookmarkStatusResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+components:
+  securitySchemes:
+    sessionAuth:
+      type: apiKey
+      in: cookie
+      name: session

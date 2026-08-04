@@ -1,0 +1,10 @@
+type: object
+description: Request body for PATCH /api/user/resumes/{id} (action-based mutations)
+required:
+  - action
+properties:
+  action:
+    type: string
+    enum: [set-primary]
+    description: Action to perform on the resume
+    example: set-primary

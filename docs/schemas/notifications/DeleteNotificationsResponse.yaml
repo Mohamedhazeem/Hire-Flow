@@ -1,0 +1,8 @@
+type: object
+description: Response body for DELETE /api/notifications (delete all)
+required:
+  - deleted
+properties:
+  deleted:
+    type: integer
+    example: 14

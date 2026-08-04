@@ -1,0 +1,10 @@
+type: object
+description: Bulk status transition response.
+required:
+  - count
+  - status
+properties:
+  count:
+    type: integer
+  status:
+    type: string

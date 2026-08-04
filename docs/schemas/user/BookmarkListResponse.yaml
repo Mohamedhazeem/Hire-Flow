@@ -1,0 +1,38 @@
+type: object
+description: Response from GET /api/user/bookmarks when pagination params are provided
+required:
+  - bookmarks
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  bookmarks:
+    type: array
+    items:
+      $ref: './Bookmark.yaml'
+  page:
+    type: integer
+    minimum: 1
+    example: 1
+  pageSize:
+    type: integer
+    minimum: 1
+    maximum: 100
+    example: 20
+  total:
+    type: integer
+    minimum: 0
+    example: 15
+  totalPages:
+    type: integer
+    minimum: 1
+    example: 1
+  hasNextPage:
+    type: boolean
+    example: false
+  hasPrevPage:
+    type: boolean
+    example: false

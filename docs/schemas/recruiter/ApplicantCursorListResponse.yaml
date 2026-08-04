@@ -1,0 +1,16 @@
+type: object
+description: Cursor-paginated applicant list response.
+required:
+  - mode
+  - items
+  - meta
+properties:
+  mode:
+    type: string
+    enum: [cursor]
+  items:
+    type: array
+    items:
+      $ref: Applicant.yaml
+  meta:
+    $ref: CursorPaginationMeta.yaml

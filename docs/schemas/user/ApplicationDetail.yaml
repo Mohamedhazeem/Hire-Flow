@@ -1,0 +1,96 @@
+type: object
+description: Full application detail returned by GET /api/user/applications/{id}
+required:
+  - id
+  - jobId
+  - jobTitle
+  - jobCompanyName
+  - jobLocations
+  - jobWorkMode
+  - jobSalaryCurrency
+  - jobActive
+  - status
+  - appliedAt
+  - updatedAt
+  - statusChanges
+properties:
+  id:
+    type: string
+    example: clxxx012
+  jobId:
+    type: string
+    example: clxxx005
+  jobTitle:
+    type: string
+    example: Senior Frontend Engineer
+  jobCompanyName:
+    type: string
+    example: Acme Corp
+  jobCompanyLogo:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/logos/acme.png
+  jobLocations:
+    type: array
+    items:
+      type: string
+    example: [San Francisco, CA, Remote]
+  jobWorkMode:
+    type: string
+    example: hybrid
+  jobSalaryMin:
+    type: integer
+    nullable: true
+    example: 120000
+  jobSalaryMax:
+    type: integer
+    nullable: true
+    example: 180000
+  jobSalaryCurrency:
+    type: string
+    example: USD
+  jobActive:
+    type: boolean
+    example: true
+  status:
+    type: string
+    example: reviewing
+  resumeSnapshotUrl:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/resumes/snapshots/clxxx012.pdf
+  resumeSnapshotBuilderData:
+    type: object
+    nullable: true
+    description: JSON snapshot of builder data at time of application
+    example: {}
+  rejectionReason:
+    type: string
+    nullable: true
+    example: Position filled
+  interviewDate:
+    type: string
+    nullable: true
+    format: date-time
+    example: 2025-03-15T10:00:00Z
+  meetingLink:
+    type: string
+    nullable: true
+    format: uri
+    example: https://meet.example.com/interview/abc123
+  offerDetails:
+    type: string
+    nullable: true
+    example: Base $150k + equity
+  appliedAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+  statusChanges:
+    type: array
+    items:
+      $ref: './ApplicationStatusChange.yaml'

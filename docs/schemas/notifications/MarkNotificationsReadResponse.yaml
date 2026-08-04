@@ -1,0 +1,8 @@
+type: object
+description: Response body for PATCH /api/notifications (mark read)
+required:
+  - updated
+properties:
+  updated:
+    type: integer
+    example: 2

@@ -1,0 +1,8 @@
+type: object
+description: Response from POST /api/admin/users/{id}/ban
+required:
+  - banned
+properties:
+  banned:
+    type: boolean
+    example: true

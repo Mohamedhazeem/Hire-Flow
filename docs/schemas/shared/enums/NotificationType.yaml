@@ -1,0 +1,8 @@
+type: string
+description: Category of a platform notification.
+enum:
+  - application_status
+  - new_message
+  - profile_viewed
+  - ban_status
+example: new_message

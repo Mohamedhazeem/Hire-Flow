@@ -1,0 +1,115 @@
+type: object
+description: Dashboard statistics returned by GET /api/admin/dashboard
+required:
+  - totalUsers
+  - totalRecruiters
+  - totalJobs
+  - activeJobs
+  - totalApplications
+  - recentUsers
+  - recentApplications
+  - applicationsLast14Days
+  - signupsLast14Days
+  - jobsByWorkMode
+properties:
+  totalUsers:
+    type: integer
+    example: 1240
+  totalRecruiters:
+    type: integer
+    example: 45
+  totalJobs:
+    type: integer
+    example: 320
+  activeJobs:
+    type: integer
+    example: 210
+  totalApplications:
+    type: integer
+    example: 5600
+  recentUsers:
+    type: array
+    items:
+      type: object
+      required: [id, name, email, role, createdAt]
+      properties:
+        id:
+          type: string
+          example: clxxx001
+        name:
+          type: string
+          nullable: true
+          example: Jane Doe
+        email:
+          type: string
+          format: email
+          example: jane@example.com
+        role:
+          type: string
+          example: recruiter
+        createdAt:
+          type: string
+          format: date-time
+    example: []
+  recentApplications:
+    type: array
+    items:
+      type: object
+      required: [id, jobTitle, userName, status, appliedAt]
+      properties:
+        id:
+          type: string
+          example: clxxx002
+        jobTitle:
+          type: string
+          example: Senior Frontend Engineer
+        userName:
+          type: string
+          nullable: true
+          example: John Smith
+        status:
+          type: string
+          example: reviewing
+        appliedAt:
+          type: string
+          format: date-time
+    example: []
+  applicationsLast14Days:
+    type: array
+    items:
+      type: object
+      required: [date, count]
+      properties:
+        date:
+          type: string
+          example: "2026-07-21"
+        count:
+          type: integer
+          example: 42
+    example: []
+  signupsLast14Days:
+    type: array
+    items:
+      type: object
+      required: [date, count]
+      properties:
+        date:
+          type: string
+          example: "2026-07-21"
+        count:
+          type: integer
+          example: 12
+    example: []
+  jobsByWorkMode:
+    type: array
+    items:
+      type: object
+      required: [workMode, count]
+      properties:
+        workMode:
+          type: string
+          example: remote
+        count:
+          type: integer
+          example: 85
+    example: []

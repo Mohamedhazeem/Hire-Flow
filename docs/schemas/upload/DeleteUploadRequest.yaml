@@ -1,0 +1,13 @@
+type: object
+description: Request body for DELETE /api/upload
+required:
+  - url
+properties:
+  url:
+    type: string
+    format: uri
+    example: /uploads/1704067200000-a1b2c3d4.jpg
+  filename:
+    type: string
+    description: Alternative to url; resolves to /uploads/{filename}
+    example: 1704067200000-a1b2c3d4.jpg

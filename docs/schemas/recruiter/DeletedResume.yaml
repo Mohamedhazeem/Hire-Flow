@@ -1,0 +1,8 @@
+type: object
+description: Deleted resume placeholder.
+required:
+  - source
+properties:
+  source:
+    type: string
+    enum: [deleted]

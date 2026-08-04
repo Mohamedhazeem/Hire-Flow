@@ -1,0 +1,42 @@
+type: object
+description: Admin user row returned in list responses
+required:
+  - id
+  - name
+  - email
+  - role
+  - banned
+  - banReason
+  - emailVerified
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    example: clxxx001
+  name:
+    type: string
+    example: Jane Doe
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  role:
+    type: string
+    example: recruiter
+  banned:
+    type: boolean
+    example: false
+  banReason:
+    type: string
+    nullable: true
+    example: Spam activity
+  emailVerified:
+    type: boolean
+    example: true
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

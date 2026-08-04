@@ -1,0 +1,23 @@
+type: object
+description: Recent message summary.
+required:
+  - id
+  - content
+  - senderId
+  - createdAt
+properties:
+  id:
+    type: string
+  content:
+    type: string
+  fileUrl:
+    type: string
+    nullable: true
+  fileName:
+    type: string
+    nullable: true
+  senderId:
+    type: string
+  createdAt:
+    type: string
+    format: date-time

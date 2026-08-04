@@ -1,0 +1,30 @@
+type: object
+description: Single notification returned in the notifications list
+required:
+  - id
+  - userId
+  - type
+  - read
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx-notif-001
+  userId:
+    type: string
+    example: clxxx-user-001
+  type:
+    $ref: '../shared/enums/NotificationType.yaml'
+  data:
+    type: object
+    description: Arbitrary payload attached to the notification
+    example:
+      threadId: clxxxA_clxxxB
+      preview: "Hey, are you still interested?"
+  read:
+    type: boolean
+    example: false
+  createdAt:
+    type: string
+    format: date-time
+    example: '2026-01-15T10:30:00.000Z'

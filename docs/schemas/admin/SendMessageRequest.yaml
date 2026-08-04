@@ -1,0 +1,32 @@
+type: object
+description: Request body for POST /api/admin/messages/{threadId}
+required:
+  - content
+properties:
+  content:
+    type: string
+    maxLength: 2000
+    default: ""
+    example: Hello, are you available for an interview?
+  fileUrl:
+    type: string
+    format: uri
+    nullable: true
+    example: https://cdn.example.com/files/resume.pdf
+  fileName:
+    type: string
+    minLength: 1
+    maxLength: 255
+    nullable: true
+    example: resume.pdf
+  fileSize:
+    type: integer
+    minimum: 1
+    nullable: true
+    example: 204800
+  fileType:
+    type: string
+    minLength: 1
+    maxLength: 100
+    nullable: true
+    example: application/pdf

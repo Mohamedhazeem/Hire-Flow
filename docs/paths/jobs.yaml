@@ -1,0 +1,340 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Jobs API
+  version: 1.0.0
+  description: Public job marketplace API. All listing and detail endpoints are unauthenticated. Apply requires a user session.
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/jobs:
+    get:
+      tags: [jobs]
+      operationId: jobsListPublicJobs
+      summary: List public jobs with filtering and pagination
+      parameters:
+        - name: page
+          in: query
+          description: Page number (1-indexed)
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          description: Number of results per page
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: search
+          in: query
+          description: Full-text search query (title and description)
+          schema:
+            type: string
+            maxLength: 200
+        - name: workMode
+          in: query
+          description: Filter by work mode
+          schema:
+            $ref: ../schemas/shared/enums/WorkMode.yaml
+        - name: employmentType
+          in: query
+          description: Filter by employment type
+          schema:
+            $ref: ../schemas/shared/enums/EmploymentType.yaml
+        - name: experienceLevel
+          in: query
+          description: Filter by experience level (free text)
+          schema:
+            type: string
+        - name: industry
+          in: query
+          description: Filter by company industry
+          schema:
+            type: string
+        - name: companyId
+          in: query
+          description: Filter by company ID
+          schema:
+            type: string
+        - name: skills
+          in: query
+          explode: true
+          style: form
+          description: Filter by skills (repeatable param)
+          schema:
+            type: array
+            maxItems: 20
+            items:
+              type: string
+        - name: status
+          in: query
+          description: Filter by application deadline status
+          schema:
+            type: string
+            enum: [open, expired, all]
+            default: all
+        - name: sortBy
+          in: query
+          description: Sort field
+          schema:
+            type: string
+            enum: [createdAt, salaryMin, salaryMax, title, applicationDeadline]
+            default: createdAt
+        - name: sortOrder
+          in: query
+          description: Sort direction
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: Successful paginated job listing
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/jobs/PublicJobListResponse.yaml
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/jobs/{id}:
+    get:
+      tags: [jobs]
+      operationId: jobsGetPublicJob
+      summary: Get public job detail by ID or slug
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Job ID or slug
+          schema:
+            type: string
+            example: "clxxx"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/jobs/PublicJobDetail.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/jobs/{id}/apply:
+    post:
+      tags: [jobs]
+      operationId: jobsApplyToJob
+      summary: Apply to a job (requires authenticated user)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Job ID or slug
+          schema:
+            type: string
+            example: "clxxx"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/jobs/ApplyRequest.yaml
+      responses:
+        '201':
+          description: Application submitted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/jobs/ApplyResponse.yaml
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '403':
+          description: Forbidden — user role required
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '409':
+          description: Conflict — already applied or deadline passed
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ValidationErrorResponse.yaml
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/jobs/{id}/related:
+    get:
+      tags: [jobs]
+      operationId: jobsGetRelatedJobs
+      summary: Get related jobs (company jobs + similar jobs)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Job ID or slug
+          schema:
+            type: string
+            example: "clxxx"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/jobs/RelatedJobsResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+
+  /api/jobs/{id}/view:
+    post:
+      tags: [jobs]
+      operationId: jobsViewPublicJob
+      summary: Increment view count for a job (rate-limited, no auth required)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Job ID or slug
+          schema:
+            type: string
+            example: "clxxx"
+      responses:
+        '200':
+          description: View count incremented
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: ../schemas/jobs/ViewResponse.yaml
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/shared/ErrorResponse.yaml

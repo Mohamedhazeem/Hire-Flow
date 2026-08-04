@@ -1,0 +1,40 @@
+type: object
+description: Lightweight job row used in list responses.
+required:
+  - id
+  - slug
+  - title
+  - status
+  - workMode
+  - employmentType
+  - experienceLevel
+  - viewCount
+  - applicationCount
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+  slug:
+    type: string
+    nullable: true
+  title:
+    type: string
+  status:
+    $ref: ../shared/enums/JobStatus.yaml
+  workMode:
+    $ref: ../shared/enums/WorkMode.yaml
+  employmentType:
+    $ref: ../shared/enums/EmploymentType.yaml
+  experienceLevel:
+    type: string
+  viewCount:
+    type: integer
+  applicationCount:
+    type: integer
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

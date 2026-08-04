@@ -1,0 +1,21 @@
+type: object
+description: Last message summary within a thread list item
+required:
+  - content
+  - createdAt
+  - senderId
+  - unread
+properties:
+  content:
+    type: string
+    example: Hello, are you available for an interview?
+  createdAt:
+    type: string
+    format: date-time
+    example: "2026-08-03T10:00:00.000Z"
+  senderId:
+    type: string
+    example: clxxx009
+  unread:
+    type: boolean
+    example: true

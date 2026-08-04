@@ -1,0 +1,12 @@
+type: object
+description: Response from POST /api/admin/invite/accept
+required:
+  - accepted
+  - role
+properties:
+  accepted:
+    type: boolean
+    example: true
+  role:
+    type: string
+    example: admin

@@ -1,0 +1,28 @@
+type: object
+description: Lightweight application row within a user's application list
+required:
+  - id
+  - jobId
+  - jobTitle
+  - status
+  - appliedAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    example: clxxx012
+  jobId:
+    type: string
+    example: clxxx005
+  jobTitle:
+    type: string
+    example: Senior Frontend Engineer
+  status:
+    type: string
+    example: reviewing
+  appliedAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

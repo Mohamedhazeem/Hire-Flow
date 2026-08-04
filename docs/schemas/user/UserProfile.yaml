@@ -1,0 +1,57 @@
+type: object
+description: User profile returned by GET /api/user/profile
+required:
+  - headline
+  - bio
+  - location
+  - skills
+  - workMode
+  - basePay
+  - ctc
+  - ectc
+  - experiences
+  - socialLinks
+properties:
+  headline:
+    type: string
+    nullable: true
+    example: Senior Software Engineer
+  bio:
+    type: string
+    nullable: true
+    example: Passionate about building scalable systems
+  location:
+    type: string
+    nullable: true
+    example: San Francisco, CA
+  skills:
+    type: array
+    items:
+      type: string
+    example: [typescript, react, node.js, postgresql]
+  workMode:
+    type: string
+    nullable: true
+    example: remote
+  basePay:
+    type: integer
+    nullable: true
+    example: 120000
+  ctc:
+    type: integer
+    nullable: true
+    example: 150000
+  ectc:
+    type: integer
+    nullable: true
+    example: 180000
+  experiences:
+    type: object
+    nullable: true
+    description: JSON blob storing work experience history
+    example: {}
+  socialLinks:
+    type: object
+    nullable: true
+    description: JSON blob storing social media links
+    example: {}

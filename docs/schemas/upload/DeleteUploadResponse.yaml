@@ -1,0 +1,17 @@
+type: object
+description: Response body for DELETE /api/upload
+required:
+  - success
+  - data
+properties:
+  success:
+    type: boolean
+    example: true
+  data:
+    type: object
+    required:
+      - deleted
+    properties:
+      deleted:
+        type: boolean
+        example: true

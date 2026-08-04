@@ -1,0 +1,56 @@
+type: object
+description: Message model as stored/returned by the API
+required:
+  - id
+  - threadId
+  - senderId
+  - receiverId
+  - content
+  - read
+  - hiddenFor
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx010
+  threadId:
+    type: string
+    example: clxxx001_clxxx002
+  senderId:
+    type: string
+    example: clxxx001
+  receiverId:
+    type: string
+    example: clxxx002
+  content:
+    type: string
+    example: Hello, are you available for an interview?
+  fileUrl:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/files/resume.pdf
+  fileName:
+    type: string
+    nullable: true
+    example: resume.pdf
+  fileSize:
+    type: integer
+    nullable: true
+    example: 204800
+  fileType:
+    type: string
+    nullable: true
+    example: application/pdf
+  read:
+    type: boolean
+    example: false
+  hiddenFor:
+    type: array
+    items:
+      type: string
+    example: []
+  createdAt:
+    type: string
+    format: date-time
+    example: "2026-08-03T10:00:00.000Z"

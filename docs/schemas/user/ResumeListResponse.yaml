@@ -1,0 +1,9 @@
+type: object
+description: Response from GET /api/user/resumes
+required:
+  - resumes
+properties:
+  resumes:
+    type: array
+    items:
+      $ref: './Resume.yaml'

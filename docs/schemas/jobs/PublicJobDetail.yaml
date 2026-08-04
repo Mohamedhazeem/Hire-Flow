@@ -1,0 +1,134 @@
+type: object
+description: Full public job detail including company info and computed counts.
+required:
+  - id
+  - slug
+  - title
+  - description
+  - companyId
+  - companyName
+  - locations
+  - workMode
+  - employmentType
+  - skills
+  - tags
+  - experienceLevel
+  - salaryCurrency
+  - isActive
+  - status
+  - viewCount
+  - applicationCount
+  - createdAt
+properties:
+  id:
+    type: string
+    description: CUID identifier.
+    example: "clxxx"
+  slug:
+    type: string
+    nullable: true
+    description: URL-friendly slug.
+    example: "senior-frontend-engineer"
+  title:
+    type: string
+    example: "Senior Frontend Engineer"
+  description:
+    type: string
+    description: Full job description (HTML or plain text).
+    example: "We are looking for a senior frontend engineer..."
+  companyId:
+    type: string
+    description: ID of the owning company.
+    example: "clabc"
+  companyName:
+    type: string
+    example: "Acme Corp"
+  companyLogo:
+    type: string
+    nullable: true
+    description: URL to the company logo image.
+    example: "https://cdn.example.com/logos/acme.png"
+  companyWebsite:
+    type: string
+    nullable: true
+    description: Company website URL.
+    example: "https://acme.example.com"
+  companyDescription:
+    type: string
+    nullable: true
+    description: Short company description.
+    example: "Building the future of SaaS."
+  locations:
+    type: array
+    items:
+      type: string
+    example:
+      - "San Francisco, CA"
+      - "Remote"
+  workMode:
+    $ref: ../shared/enums/WorkMode.yaml
+  employmentType:
+    $ref: ../shared/enums/EmploymentType.yaml
+  timezone:
+    type: string
+    nullable: true
+    description: Primary timezone for this role.
+    example: "America/Los_Angeles"
+  skills:
+    type: array
+    items:
+      type: string
+    example:
+      - "React"
+      - "TypeScript"
+      - "Node.js"
+  tags:
+    type: array
+    items:
+      type: string
+    description: Additional free-form tags.
+    example:
+      - "fast-growing"
+      - "equity"
+  experienceLevel:
+    type: string
+    example: "Senior"
+  salaryMin:
+    type: integer
+    nullable: true
+    description: Minimum annual salary in salaryCurrency. Null if not disclosed.
+    example: 120000
+  salaryMax:
+    type: integer
+    nullable: true
+    description: Maximum annual salary in salaryCurrency. Null if not disclosed.
+    example: 180000
+  salaryCurrency:
+    type: string
+    default: USD
+    example: "USD"
+  applicationDeadline:
+    type: string
+    format: date-time
+    nullable: true
+    example: "2025-12-31T23:59:59Z"
+  applicationCount:
+    type: integer
+    description: Number of non-withdrawn applications received.
+    example: 24
+  isActive:
+    type: boolean
+    description: Admin kill-switch. Public queries filter isActive=true AND status="active".
+    example: true
+  status:
+    type: string
+    description: Recruiter-controlled status. Public queries require status="active".
+    example: "active"
+  viewCount:
+    type: integer
+    description: Total view count.
+    example: 356
+  createdAt:
+    type: string
+    format: date-time
+    example: "2025-01-15T10:00:00Z"

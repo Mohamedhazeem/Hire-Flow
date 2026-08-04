@@ -1,0 +1,19 @@
+oneOf:
+  - type: object
+    required:
+      - accepted
+    properties:
+      accepted:
+        type: boolean
+        example: true
+  - type: object
+    required:
+      - accepted
+      - error
+    properties:
+      accepted:
+        type: boolean
+        example: false
+      error:
+        type: string
+description: Accept invite response (success or failure).

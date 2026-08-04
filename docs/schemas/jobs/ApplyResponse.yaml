@@ -1,0 +1,15 @@
+type: object
+description: Response body returned after successfully submitting a job application.
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    description: ID of the newly created Application record.
+    example: "clapp1"
+  status:
+    type: string
+    description: Initial application status (always "applied" on creation).
+    enum: [applied]
+    example: "applied"

@@ -1,0 +1,26 @@
+type: object
+description: Admin team member row returned in the invite list
+required:
+  - id
+  - name
+  - email
+  - role
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx007
+  name:
+    type: string
+    nullable: true
+    example: Jane Doe
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  role:
+    type: string
+    example: admin
+  createdAt:
+    type: string
+    format: date-time

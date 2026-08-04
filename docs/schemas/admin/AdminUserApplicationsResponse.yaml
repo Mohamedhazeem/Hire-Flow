@@ -1,0 +1,9 @@
+type: object
+description: Response from GET /api/admin/users/{id}/applications
+required:
+  - applications
+properties:
+  applications:
+    type: array
+    items:
+      $ref: './AdminUserApplication.yaml'

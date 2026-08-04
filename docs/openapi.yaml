@@ -1,0 +1,242 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow API
+  version: 1.0.0
+  description: >-
+    Production-grade job board and applicant tracking system (ATS) API for
+    Hire Flow. Supports three roles — Admins, Recruiters, and Job Seekers —
+    with real-time messaging, AI-powered resume assistance, and a public-facing
+    job marketplace.
+
+    ## Conventions
+
+    - All responses are wrapped in a success envelope:
+      `{ "success": true, "data": <T> }`. Errors return
+      `{ "success": false, "message": "<reason>" }` (HTTP 422 validation errors
+      additionally return `{ "error": "Validation failed", "details": {...} }`).
+    - Authentication uses Better Auth cookie-based sessions (`sessionAuth`).
+      Most endpoints require an authenticated session; the public job
+      marketplace and the auth bootstrap flows are anonymous.
+    - Pagination is offset-based (`page`, `pageSize`) or cursor-based
+      (`cursor`, `limit`) depending on the endpoint; list responses embed the
+      pagination metadata directly under `data`.
+    - Every write path is validated with Zod before touching the database.
+  contact:
+    name: Hire Flow
+    url: https://github.com/Mohamedhazeem/hire-flow
+  license:
+    name: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+    url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+servers:
+  - url: http://localhost:3000
+    description: >-
+      Local development server
+tags:
+  - name: admin
+    description: Platform administration (users, jobs, team, messaging, analytics).
+  - name: recruiter
+    description: Recruiter job posting, applicant pipeline, analytics, and messaging.
+  - name: user
+    description: Job seeker profile, resumes, applications, and bookmarks.
+  - name: jobs
+    description: Public job marketplace (listing, detail, apply, related, view).
+  - name: users
+    description: Resolve a user's public identity by ID.
+  - name: auth
+    description: Better Auth authentication flows (sign-up, sign-in, session, etc.).
+  - name: notifications
+    description: Role-aware in-app notifications.
+  - name: pusher
+    description: Pusher private-channel authentication for realtime messaging.
+  - name: files
+    description: Auth-guarded file download proxy (resumes, logos, attachments).
+  - name: upload
+    description: Authenticated file upload and deletion (resume, logo, attachment).
+paths:
+  /api/admin/dashboard:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1dashboard'
+  /api/admin/users:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users'
+  /api/admin/users/{id}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}'
+  /api/admin/users/{id}/ban:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}~1ban'
+  /api/admin/users/{id}/unban:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}~1unban'
+  /api/admin/users/{id}/role:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}~1role'
+  /api/admin/users/{id}/sessions:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}~1sessions'
+  /api/admin/users/{id}/applications:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1users~1{id}~1applications'
+  /api/admin/jobs:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1jobs'
+  /api/admin/jobs/{id}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1jobs~1{id}'
+  /api/admin/invite:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1invite'
+  /api/admin/invite/{id}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1invite~1{id}'
+  /api/admin/invite/accept:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1invite~1accept'
+  /api/admin/team/{id}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1team~1{id}'
+  /api/admin/threads:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1threads'
+  /api/admin/messages/{threadId}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1messages~1{threadId}'
+  /api/admin/messages/{threadId}/{messageId}:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1messages~1{threadId}~1{messageId}'
+  /api/admin/messages/search:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1messages~1search'
+  /api/admin/applications/{applicationId}/detail:
+    $ref: './paths/admin.yaml#/paths/~1api~1admin~1applications~1{applicationId}~1detail'
+  /api/recruiter/jobs:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs'
+  /api/recruiter/jobs/{id}:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs~1{id}'
+  /api/recruiter/jobs/{id}/toggle:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs~1{id}~1toggle'
+  /api/recruiter/jobs/{id}/applicants:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs~1{id}~1applicants'
+  /api/recruiter/jobs/{id}/analytics:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs~1{id}~1analytics'
+  /api/recruiter/jobs/{id}/applicants/export:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1jobs~1{id}~1applicants~1export'
+  /api/recruiter/applications/{applicationId}/detail:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1applications~1{applicationId}~1detail'
+  /api/recruiter/applications/{applicationId}/profile:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1applications~1{applicationId}~1profile'
+  /api/recruiter/applications/{applicationId}/status:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1applications~1{applicationId}~1status'
+  /api/recruiter/applications/{applicationId}/revert:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1applications~1{applicationId}~1revert'
+  /api/recruiter/applications/bulk/status:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1applications~1bulk~1status'
+  /api/recruiter/analytics:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1analytics'
+  /api/recruiter/threads:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1threads'
+  /api/recruiter/messages/{threadId}:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1messages~1{threadId}'
+  /api/recruiter/messages/{threadId}/{messageId}:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1messages~1{threadId}~1{messageId}'
+  /api/recruiter/messages/search:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1messages~1search'
+  /api/recruiter/invite:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1invite'
+  /api/recruiter/invite/{id}:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1invite~1{id}'
+  /api/recruiter/invite/accept:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1invite~1accept'
+  /api/recruiter/team/{id}:
+    $ref: './paths/recruiter.yaml#/paths/~1api~1recruiter~1team~1{id}'
+  /api/user/profile:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1profile'
+  /api/user/resumes:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1resumes'
+  /api/user/resumes/{id}:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1resumes~1{id}'
+  /api/user/resumes/{id}/builder-data:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1resumes~1{id}~1builder-data'
+  /api/user/resumes/{id}/ai-enhance:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1resumes~1{id}~1ai-enhance'
+  /api/user/applications:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1applications'
+  /api/user/applications/stats:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1applications~1stats'
+  /api/user/applications/{id}:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1applications~1{id}'
+  /api/user/bookmarks:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1bookmarks'
+  /api/user/bookmarks/{jobId}:
+    $ref: './paths/user.yaml#/paths/~1api~1user~1bookmarks~1{jobId}'
+  /api/jobs:
+    $ref: './paths/jobs.yaml#/paths/~1api~1jobs'
+  /api/jobs/{id}:
+    $ref: './paths/jobs.yaml#/paths/~1api~1jobs~1{id}'
+  /api/jobs/{id}/apply:
+    $ref: './paths/jobs.yaml#/paths/~1api~1jobs~1{id}~1apply'
+  /api/jobs/{id}/related:
+    $ref: './paths/jobs.yaml#/paths/~1api~1jobs~1{id}~1related'
+  /api/jobs/{id}/view:
+    $ref: './paths/jobs.yaml#/paths/~1api~1jobs~1{id}~1view'
+  /api/users/{id}:
+    $ref: './paths/users.yaml#/paths/~1api~1users~1{id}'
+  /api/auth/sign-up/email:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1sign-up~1email'
+  /api/auth/sign-in/email:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1sign-in~1email'
+  /api/auth/sign-in/google:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1sign-in~1google'
+  /api/auth/session:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1session'
+  /api/auth/sign-out:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1sign-out'
+  /api/auth/forgot-password:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1forgot-password'
+  /api/auth/reset-password:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1reset-password'
+  /api/auth/verify-email:
+    $ref: './paths/auth.yaml#/paths/~1api~1auth~1verify-email'
+  /api/notifications:
+    $ref: './paths/notifications.yaml#/paths/~1api~1notifications'
+  /api/pusher/auth:
+    $ref: './paths/pusher.yaml#/paths/~1api~1pusher~1auth'
+  /api/files/download:
+    $ref: './paths/files.yaml#/paths/~1api~1files~1download'
+  /api/upload:
+    $ref: './paths/upload.yaml#/paths/~1api~1upload'
+components:
+  securitySchemes:
+    sessionAuth:
+      $ref: './security/securitySchemes.yaml#/sessionAuth'
+  responses:
+    Error:
+      $ref: './responses/shared-responses.yaml#/Error'
+    ValidationError:
+      $ref: './responses/shared-responses.yaml#/ValidationError'
+    Unauthorized:
+      $ref: './responses/shared-responses.yaml#/Unauthorized'
+    Forbidden:
+      $ref: './responses/shared-responses.yaml#/Forbidden'
+    NotFound:
+      $ref: './responses/shared-responses.yaml#/NotFound'
+    Conflict:
+      $ref: './responses/shared-responses.yaml#/Conflict'
+    TooManyRequests:
+      $ref: './responses/shared-responses.yaml#/TooManyRequests'
+    InternalServerError:
+      $ref: './responses/shared-responses.yaml#/InternalServerError'
+  parameters:
+    PageParam:
+      $ref: './parameters/shared-params.yaml#/PageParam'
+    PageSizeParam:
+      $ref: './parameters/shared-params.yaml#/PageSizeParam'
+    CursorParam:
+      $ref: './parameters/shared-params.yaml#/CursorParam'
+    LimitParam:
+      $ref: './parameters/shared-params.yaml#/LimitParam'
+    SearchParam:
+      $ref: './parameters/shared-params.yaml#/SearchParam'
+    SortByParam:
+      $ref: './parameters/shared-params.yaml#/SortByParam'
+    SortOrderParam:
+      $ref: './parameters/shared-params.yaml#/SortOrderParam'
+  requestBodies:
+    FileUpload:
+      $ref: './requestBodies/shared-requestBodies.yaml#/FileUpload'
+    JsonBody:
+      $ref: './requestBodies/shared-requestBodies.yaml#/JsonBody'
+  headers:
+    XRateLimitLimit:
+      $ref: './headers/shared-headers.yaml#/XRateLimitLimit'
+    XRateLimitRemaining:
+      $ref: './headers/shared-headers.yaml#/XRateLimitRemaining'
+    XRateLimitReset:
+      $ref: './headers/shared-headers.yaml#/XRateLimitReset'
+    XTotalCount:
+      $ref: './headers/shared-headers.yaml#/XTotalCount'
+externalDocs:
+  description: Project README and architecture documentation
+  url: https://github.com/Mohamedhazeem/hire-flow

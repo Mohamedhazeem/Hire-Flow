@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Notifications API
+  description: Modular OpenAPI specification for the notifications API group.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+paths:
+  /api/notifications:
+    get:
+      tags: [notifications]
+      operationId: listNotifications
+      summary: List the current user's notifications with cursor pagination
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: cursor
+          in: query
+          schema:
+            type: string
+            description: Cursor returned by a previous response (nextCursor)
+            example: clxxx-notif-020
+        - name: take
+          in: query
+          schema:
+            type: integer
+            default: 20
+            description: Number of items per page
+            example: 20
+        - name: type
+          in: query
+          schema:
+            $ref: '../schemas/shared/enums/NotificationType.yaml'
+            description: Filter by notification type
+        - name: read
+          in: query
+          schema:
+            type: boolean
+            description: Filter by read status
+            example: false
+      responses:
+        '200':
+          description: Notifications retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/notifications/NotificationsListResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+    patch:
+      tags: [notifications]
+      operationId: markNotificationsRead
+      summary: Mark one or more notifications as read
+      security:
+        - sessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/notifications/MarkNotificationsReadRequest.yaml'
+      responses:
+        '200':
+          description: Notifications marked as read
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/notifications/MarkNotificationsReadResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error — ids array must not be empty
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+
+    delete:
+      tags: [notifications]
+      operationId: deleteNotifications
+      summary: Delete all notifications for the current user
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: All notifications deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/notifications/DeleteNotificationsResponse.yaml'
+        '401':
+          description: Unauthorized — session required
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

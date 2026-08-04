@@ -1,0 +1,22 @@
+type: object
+required:
+  - error
+  - details
+properties:
+  error:
+    type: string
+    example: Validation failed
+  details:
+    type: object
+    description: >-
+      Field-level validation errors. Each key is a property name and each
+      value is a list of human-readable failure reasons for that property.
+    additionalProperties:
+      type: array
+      items:
+        type: string
+    example:
+      email:
+        - Invalid email address
+      role:
+        - Invalid enum value

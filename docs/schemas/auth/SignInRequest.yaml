@@ -1,0 +1,15 @@
+type: object
+description: Request body for POST /api/auth/sign-in/email
+required:
+  - email
+  - password
+properties:
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  password:
+    type: string
+    format: password
+    minLength: 8
+    example: SecurePass1

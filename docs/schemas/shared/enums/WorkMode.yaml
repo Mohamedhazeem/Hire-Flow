@@ -1,0 +1,7 @@
+type: string
+description: Work location mode for a job.
+enum:
+  - remote
+  - hybrid
+  - onsite
+example: remote

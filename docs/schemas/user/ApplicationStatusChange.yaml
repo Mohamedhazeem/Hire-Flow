@@ -1,0 +1,20 @@
+type: object
+description: Status change entry within application detail timeline
+required:
+  - id
+  - toStatus
+  - createdAt
+properties:
+  id:
+    type: string
+    example: clxxx099
+  fromStatus:
+    type: string
+    nullable: true
+    example: applied
+  toStatus:
+    type: string
+    example: reviewing
+  createdAt:
+    type: string
+    format: date-time

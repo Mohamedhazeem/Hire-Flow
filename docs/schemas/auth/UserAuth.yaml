@@ -1,0 +1,49 @@
+type: object
+description: Authenticated user returned by Better Auth session endpoints
+required:
+  - id
+  - email
+  - name
+  - emailVerified
+  - role
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    type: string
+    example: clxxx123abc
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  name:
+    type: string
+    example: Jane Doe
+  emailVerified:
+    type: boolean
+    example: true
+  role:
+    $ref: '../shared/enums/Role.yaml'
+  image:
+    type: string
+    nullable: true
+    format: uri
+    example: https://cdn.example.com/avatars/jane.jpg
+  banned:
+    type: boolean
+    nullable: true
+    example: false
+  banReason:
+    type: string
+    nullable: true
+    example: null
+  banExpires:
+    type: string
+    format: date-time
+    nullable: true
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

@@ -1,0 +1,21 @@
+type: object
+description: Schedule interview status transition request.
+required:
+  - status
+  - interviewDate
+properties:
+  status:
+    $ref: ../shared/enums/ApplicationStatus.yaml
+  updatedAt:
+    type: string
+    format: date-time
+    nullable: true
+  email:
+    type: boolean
+    default: false
+  interviewDate:
+    type: string
+    format: date-time
+  meetingLink:
+    type: string
+    default: ''

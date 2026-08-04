@@ -1,0 +1,8 @@
+type: object
+description: Request body for POST /api/admin/invite/accept
+required:
+  - token
+properties:
+  token:
+    type: string
+    example: abc123def456

@@ -1,0 +1,47 @@
+type: object
+description: Update job request body (all fields optional).
+properties:
+  title:
+    type: string
+  description:
+    type: string
+  locations:
+    type: array
+    minItems: 1
+    items:
+      type: string
+  workMode:
+    $ref: ../shared/enums/WorkMode.yaml
+  employmentType:
+    $ref: ../shared/enums/EmploymentType.yaml
+  timezone:
+    type: string
+    default: ''
+  skills:
+    type: array
+    items:
+      type: string
+    default: []
+  tags:
+    type: array
+    items:
+      type: string
+    default: []
+  experienceLevel:
+    type: string
+  salaryMin:
+    type: integer
+    minimum: 0
+    nullable: true
+  salaryMax:
+    type: integer
+    minimum: 0
+    nullable: true
+  salaryCurrency:
+    type: string
+    default: USD
+  applicationDeadline:
+    type: string
+    format: date-time
+    nullable: true
+    default: ''

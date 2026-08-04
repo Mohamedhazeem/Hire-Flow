@@ -1,0 +1,30 @@
+type: object
+description: Experience entry within builder resume data
+required:
+  - company
+  - title
+  - startYear
+properties:
+  company:
+    type: string
+    minLength: 1
+    example: Acme Corp
+  title:
+    type: string
+    minLength: 1
+    example: Senior Software Engineer
+  startYear:
+    type: integer
+    minimum: 1950
+    maximum: 2099
+    example: 2020
+  endYear:
+    type: integer
+    nullable: true
+    minimum: 1950
+    maximum: 2099
+    example: 2023
+  description:
+    type: string
+    maxLength: 2000
+    example: Led a team of 5 engineers to rebuild the core platform

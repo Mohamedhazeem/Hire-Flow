@@ -1,0 +1,27 @@
+type: object
+description: Offset-paginated job list response.
+required:
+  - jobs
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  jobs:
+    type: array
+    items:
+      $ref: JobRow.yaml
+  page:
+    type: integer
+  pageSize:
+    type: integer
+  total:
+    type: integer
+  totalPages:
+    type: integer
+  hasNextPage:
+    type: boolean
+  hasPrevPage:
+    type: boolean

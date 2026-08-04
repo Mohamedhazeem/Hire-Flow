@@ -1,0 +1,8 @@
+type: object
+description: Response from POST /api/admin/users/{id}/role
+required:
+  - roleSet
+properties:
+  roleSet:
+    type: string
+    example: admin

@@ -1,0 +1,1271 @@
+openapi: 3.0.3
+info:
+  title: Hire Flow Admin API
+  description: Admin-facing API routes for the Hire Flow job board. All routes require an admin or super_admin session cookie unless noted.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/admin/dashboard:
+    get:
+      tags: [admin]
+      operationId: adminGetDashboard
+      summary: Get dashboard statistics
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Dashboard statistics
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/DashboardStats.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users:
+    get:
+      tags: [admin]
+      operationId: adminListUsers
+      summary: List all users with optional filtering and pagination
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            example: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            example: 20
+        - name: search
+          in: query
+          schema:
+            type: string
+            example: jane
+        - name: role
+          in: query
+          schema:
+            $ref: '../schemas/shared/enums/Role.yaml'
+        - name: banned
+          in: query
+          schema:
+            type: string
+            enum: [true, false, all]
+            example: all
+        - name: sortBy
+          in: query
+          schema:
+            type: string
+            enum: [name, email, role, createdAt, updatedAt]
+            example: createdAt
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            example: desc
+      responses:
+        '200':
+          description: Paginated list of users
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminUserListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}:
+    get:
+      tags: [admin]
+      operationId: adminGetUser
+      summary: Get a single user's detailed profile
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: User detail
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminUserDetail.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    delete:
+      tags: [admin]
+      operationId: adminDeleteUser
+      summary: Delete a user account
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: User deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminUserDeleteResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Cannot delete yourself
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}/ban:
+    post:
+      tags: [admin]
+      operationId: adminBanUser
+      summary: Ban a user account
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/admin/AdminBanUserRequest.yaml'
+      responses:
+        '200':
+          description: User banned
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminBanUserResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Cannot ban yourself
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}/unban:
+    post:
+      tags: [admin]
+      operationId: adminUnbanUser
+      summary: Unban a user account
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: User unbanned
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminUnbanUserResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}/role:
+    post:
+      tags: [admin]
+      operationId: adminChangeUserRole
+      summary: Change a user's role
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/admin/AdminChangeUserRoleRequest.yaml'
+      responses:
+        '200':
+          description: Role updated
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminChangeUserRoleResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}/sessions:
+    get:
+      tags: [admin]
+      operationId: adminListUserSessions
+      summary: List all active sessions for a user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: List of sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: '../schemas/admin/AdminUserSession.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    delete:
+      tags: [admin]
+      operationId: adminRevokeUserSessions
+      summary: Revoke all sessions for a user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: Sessions revoked
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [revoked]
+                    properties:
+                      revoked:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/users/{id}/applications:
+    get:
+      tags: [admin]
+      operationId: adminListUserApplications
+      summary: List all applications submitted by a user
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001
+      responses:
+        '200':
+          description: List of applications
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminUserApplicationsResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/jobs:
+    get:
+      tags: [admin]
+      operationId: adminListJobs
+      summary: List all jobs with optional filtering and pagination
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            example: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            example: 20
+        - name: search
+          in: query
+          schema:
+            type: string
+            example: frontend
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, inactive, all]
+            example: all
+        - name: workMode
+          in: query
+          schema:
+            type: string
+            enum: [remote, hybrid, onsite]
+            example: remote
+        - name: employmentType
+          in: query
+          schema:
+            type: string
+            enum: [full_time, part_time, contract, internship, freelance]
+            example: full_time
+        - name: experienceLevel
+          in: query
+          schema:
+            type: string
+            example: senior
+        - name: sortBy
+          in: query
+          schema:
+            type: string
+            enum: [title, createdAt, updatedAt, viewCount, isActive]
+            example: createdAt
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            example: desc
+      responses:
+        '200':
+          description: Paginated list of jobs
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminJobListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/jobs/{id}:
+    delete:
+      tags: [admin]
+      operationId: adminDeleteJob
+      summary: Delete a job (hard delete if draft, archive otherwise)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx005
+      responses:
+        '200':
+          description: Job deleted or archived
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminJobDeleteResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    patch:
+      tags: [admin]
+      operationId: adminToggleJobActive
+      summary: Toggle the isActive kill-switch for a job
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/admin/AdminToggleJobActiveRequest.yaml'
+      responses:
+        '200':
+          description: isActive toggled
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminToggleJobActiveResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/invite:
+    get:
+      tags: [admin]
+      operationId: adminListInvites
+      summary: List all admin invites and current admin team members
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Invites and team members
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminInviteListResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/invite/{id}:
+    delete:
+      tags: [admin]
+      operationId: adminCancelInvite
+      summary: Cancel an admin invite (owner or super_admin only)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx006
+      responses:
+        '200':
+          description: Invite cancelled
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminInviteCancelResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden (can only cancel your own invites, unless super_admin)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Invite not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Cannot cancel already accepted invite
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/invite/accept:
+    post:
+      tags: [admin]
+      operationId: adminAcceptInvite
+      summary: Accept an admin invitation token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/admin/AdminAcceptInviteRequest.yaml'
+      responses:
+        '200':
+          description: Invite accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminAcceptInviteResponse.yaml'
+        '400':
+          description: Invalid token format
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Invalid or expired invitation token
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/team/{id}:
+    delete:
+      tags: [admin]
+      operationId: adminRemoveTeamMember
+      summary: Remove an admin team member (super_admin only)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx007
+      responses:
+        '200':
+          description: Admin removed from team
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/AdminRemoveTeamMemberResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '403':
+          description: Forbidden (super_admin only, cannot remove yourself)
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Admin not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/threads:
+    get:
+      tags: [admin]
+      operationId: adminListThreads
+      summary: List message threads for the current admin user
+      security:
+        - sessionAuth: []
+      responses:
+        '200':
+          description: Thread list
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: '../schemas/admin/Thread.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/messages/{threadId}:
+    get:
+      tags: [admin]
+      operationId: adminGetMessages
+      summary: Get messages in a thread (cursor-based pagination)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001_clxxx002
+        - name: cursor
+          in: query
+          schema:
+            type: string
+            nullable: true
+            example: clxxx010
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            example: 30
+      responses:
+        '200':
+          description: Paginated messages
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/MessagesPageResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Invalid thread ID or not a participant
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    post:
+      tags: [admin]
+      operationId: adminSendMessage
+      summary: Send a message in a thread
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001_clxxx002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/admin/SendMessageRequest.yaml'
+      responses:
+        '201':
+          description: Message sent
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/SendMessageResponse.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Invalid message body or thread
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+    delete:
+      tags: [admin]
+      operationId: adminDeleteThread
+      summary: Hide all messages in a thread for the current admin
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001_clxxx002
+      responses:
+        '200':
+          description: Thread hidden
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [deleted]
+                    properties:
+                      deleted:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '422':
+          description: Invalid thread ID or not a participant
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ValidationErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/messages/{threadId}/{messageId}:
+    delete:
+      tags: [admin]
+      operationId: adminDeleteMessage
+      summary: Soft-delete a single message (sender only)
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: threadId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx001_clxxx002
+        - name: messageId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx010
+      responses:
+        '200':
+          description: Message deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    required: [deleted]
+                    properties:
+                      deleted:
+                        type: boolean
+                        example: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Message not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/messages/search:
+    get:
+      tags: [admin]
+      operationId: adminSearchMessagesUsers
+      summary: Search users by name or email for starting a message thread
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            example: jane
+      responses:
+        '200':
+          description: Matching users
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: '../schemas/admin/AdminSearchMessagesUsersResponse.yaml'
+                    maxItems: 20
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+  /api/admin/applications/{applicationId}/detail:
+    get:
+      tags: [admin]
+      operationId: adminGetApplicantDetail
+      summary: Get full applicant detail for a specific application
+      security:
+        - sessionAuth: []
+      parameters:
+        - name: applicationId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: clxxx012
+      responses:
+        '200':
+          description: Applicant detail
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [success, data]
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '../schemas/admin/ApplicantDetail.yaml'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/shared/ErrorResponse.yaml'

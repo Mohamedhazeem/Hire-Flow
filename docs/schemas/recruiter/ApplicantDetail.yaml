@@ -1,0 +1,121 @@
+type: object
+description: Full applicant detail response.
+required:
+  - application
+  - applicant
+  - applicantResume
+  - statusTimeline
+  - recentMessages
+properties:
+  application:
+    type: object
+    required:
+      - id
+      - jobId
+      - userId
+      - status
+      - appliedAt
+      - updatedAt
+      - job
+      - resumeId
+    properties:
+      id:
+        type: string
+      jobId:
+        type: string
+      userId:
+        type: string
+      status:
+        type: string
+      rejectionReason:
+        type: string
+        nullable: true
+      recruiterNote:
+        type: string
+        nullable: true
+      interviewDate:
+        type: string
+        format: date-time
+        nullable: true
+      meetingLink:
+        type: string
+        nullable: true
+      offerDetails:
+        type: string
+        nullable: true
+      appliedAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time
+      job:
+        type: object
+        required:
+          - id
+          - title
+        properties:
+          id:
+            type: string
+          title:
+            type: string
+      resumeId:
+        type: string
+        nullable: true
+  applicant:
+    type: object
+    required:
+      - id
+      - name
+      - email
+      - role
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+      role:
+        type: string
+      profile:
+        type: object
+        nullable: true
+        properties:
+          headline:
+            type: string
+            nullable: true
+          bio:
+            type: string
+            nullable: true
+          skills:
+            type: array
+            items:
+              type: string
+          experiences:
+            type: object
+          location:
+            type: string
+            nullable: true
+          basePay:
+            type: integer
+            nullable: true
+          ctc:
+            type: integer
+            nullable: true
+          socialLinks:
+            type: object
+  applicantResume:
+    oneOf:
+      - $ref: ResumeInfo.yaml
+      - $ref: DeletedResume.yaml
+      - type: object
+        nullable: true
+  statusTimeline:
+    type: array
+    items:
+      $ref: StatusTimelineItem.yaml
+  recentMessages:
+    type: array
+    items:
+      $ref: RecentMessage.yaml

@@ -1,0 +1,9 @@
+type: object
+description: Request body for POST /api/user/bookmarks (toggle)
+required:
+  - jobId
+properties:
+  jobId:
+    type: string
+    description: Job ID to toggle bookmark for
+    example: clxxx005

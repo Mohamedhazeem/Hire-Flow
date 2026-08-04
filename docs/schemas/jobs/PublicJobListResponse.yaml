@@ -1,0 +1,40 @@
+type: object
+description: Offset-paginated list of public jobs.
+required:
+  - jobs
+  - page
+  - pageSize
+  - total
+  - totalPages
+  - hasNextPage
+  - hasPrevPage
+properties:
+  jobs:
+    type: array
+    items:
+      $ref: PublicJob.yaml
+    description: Array of lightweight job rows for the current page.
+  page:
+    type: integer
+    description: Current page number (1-indexed).
+    example: 1
+  pageSize:
+    type: integer
+    description: Number of items per page.
+    example: 20
+  total:
+    type: integer
+    description: Total number of matching jobs.
+    example: 142
+  totalPages:
+    type: integer
+    description: Total number of pages.
+    example: 8
+  hasNextPage:
+    type: boolean
+    description: Whether a next page exists.
+    example: true
+  hasPrevPage:
+    type: boolean
+    description: Whether a previous page exists.
+    example: false

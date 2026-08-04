@@ -1,0 +1,18 @@
+type: object
+description: Related jobs response containing company jobs and similar jobs.
+required:
+  - companyJobs
+  - similarJobs
+properties:
+  companyJobs:
+    type: array
+    items:
+      $ref: PublicJob.yaml
+    description: Up to 5 other active jobs from the same company, ordered by newest first.
+    maxItems: 5
+  similarJobs:
+    type: array
+    items:
+      $ref: PublicJob.yaml
+    description: Up to 5 similar active jobs from other companies, matched by overlapping skills, workMode, or experienceLevel.
+    maxItems: 5

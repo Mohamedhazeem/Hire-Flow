@@ -1,0 +1,90 @@
+type: object
+description: Bookmark entry (job data) returned in user bookmark endpoints
+required:
+  - id
+  - title
+  - locations
+  - workMode
+  - employmentType
+  - skills
+  - experienceLevel
+  - createdAt
+  - isActive
+  - status
+  - companyId
+  - company
+properties:
+  id:
+    type: string
+    example: clxxx005
+  slug:
+    type: string
+    nullable: true
+    example: senior-frontend-engineer
+  title:
+    type: string
+    example: Senior Frontend Engineer
+  locations:
+    type: array
+    items:
+      type: string
+    example: [San Francisco, CA, Remote]
+  workMode:
+    type: string
+    example: hybrid
+  employmentType:
+    type: string
+    example: full_time
+  salaryMin:
+    type: integer
+    nullable: true
+    example: 120000
+  salaryMax:
+    type: integer
+    nullable: true
+    example: 180000
+  salaryCurrency:
+    type: string
+    example: USD
+  skills:
+    type: array
+    items:
+      type: string
+    example: [typescript, react, node.js]
+  experienceLevel:
+    type: string
+    example: senior
+  applicationDeadline:
+    type: string
+    nullable: true
+    format: date-time
+    example: 2025-03-01T23:59:59Z
+  createdAt:
+    type: string
+    format: date-time
+  isActive:
+    type: boolean
+    example: true
+  status:
+    type: string
+    example: active
+  companyId:
+    type: string
+    example: clxxx007
+  company:
+    type: object
+    required:
+      - id
+      - name
+    properties:
+      id:
+        type: string
+        example: clxxx007
+      name:
+        type: string
+        example: Acme Corp
+      logoUrl:
+        type: string
+        nullable: true
+        format: uri
+        example: https://cdn.example.com/logos/acme.png

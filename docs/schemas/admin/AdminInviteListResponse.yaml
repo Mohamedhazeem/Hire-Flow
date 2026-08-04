@@ -1,0 +1,14 @@
+type: object
+description: Response from GET /api/admin/invite
+required:
+  - invites
+  - teamMembers
+properties:
+  invites:
+    type: array
+    items:
+      $ref: './AdminInvite.yaml'
+  teamMembers:
+    type: array
+    items:
+      $ref: './AdminTeamMember.yaml'

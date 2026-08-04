@@ -1,0 +1,7 @@
+type: object
+description: Request body for POST /api/admin/users/{id}/role
+required:
+  - role
+properties:
+  role:
+    $ref: '../shared/enums/Role.yaml'

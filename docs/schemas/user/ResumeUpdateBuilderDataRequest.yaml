@@ -1,0 +1,35 @@
+type: object
+description: Request body for PATCH /api/user/resumes/{id}/builder-data
+required:
+  - label
+properties:
+  label:
+    type: string
+    minLength: 1
+    maxLength: 255
+    example: Software Engineer Resume
+  summary:
+    type: string
+    maxLength: 2000
+    description: Professional summary
+    example: Experienced software engineer specializing in full-stack development
+  educations:
+    type: array
+    items:
+      $ref: './BuilderEducation.yaml'
+    maxItems: 10
+    description: Education entries
+  experiences:
+    type: array
+    items:
+      $ref: './BuilderExperience.yaml'
+    maxItems: 10
+    description: Work experience entries
+  skills:
+    type: array
+    items:
+      type: string
+      minLength: 1
+    maxItems: 50
+    description: List of skills
+    example: [typescript, react, node.js]

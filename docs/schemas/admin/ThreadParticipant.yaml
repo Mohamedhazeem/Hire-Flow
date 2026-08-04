@@ -1,0 +1,26 @@
+type: object
+description: Participant info within a thread list item
+required:
+  - id
+  - name
+  - email
+  - image
+  - role
+properties:
+  id:
+    type: string
+    example: clxxx008
+  name:
+    type: string
+    example: Jane Doe
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  image:
+    type: string
+    nullable: true
+    format: uri
+  role:
+    type: string
+    example: recruiter

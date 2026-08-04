@@ -1,0 +1,7 @@
+type: string
+description: Recruiter-controlled lifecycle state of a job posting.
+enum:
+  - draft
+  - active
+  - archived
+example: active

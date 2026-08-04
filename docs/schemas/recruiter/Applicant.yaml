@@ -1,0 +1,27 @@
+type: object
+description: Applicant row used in list responses.
+required:
+  - id
+  - userId
+  - name
+  - email
+  - status
+  - appliedAt
+  - updatedAt
+properties:
+  id:
+    type: string
+  userId:
+    type: string
+  name:
+    type: string
+  email:
+    type: string
+  status:
+    type: string
+  appliedAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time

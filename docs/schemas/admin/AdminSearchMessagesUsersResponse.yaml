@@ -1,0 +1,29 @@
+type: object
+description: Minimal user search result returned by GET /api/admin/messages/search
+required:
+  - id
+  - name
+  - email
+  - role
+  - company
+properties:
+  id:
+    type: string
+    example: clxxx011
+  name:
+    type: string
+    example: Jane Doe
+  email:
+    type: string
+    format: email
+    example: jane@example.com
+  role:
+    type: string
+    example: recruiter
+  company:
+    type: object
+    required: [name]
+    properties:
+      name:
+        type: string
+        example: Acme Corp
